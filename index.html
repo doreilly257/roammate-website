@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Roammate - Meet travel mates, make travel plans. The world platform for safe and friendly meetups abroad.">
+  <title>Roammate - Meet Travel Mates</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #f7931e;
+      --primary-dark: #e07d0a;
+      --secondary: #00a79d;
+      --text-dark: #333;
+      --text-light: #666;
+      --white: #fff;
+      --bg-light: #f9f9f9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 15px 0;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      color: var(--white);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .app-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .app-buttons img {
+      height: 50px;
+      transition: transform 0.3s;
+    }
+
+    .app-buttons a:hover img {
+      transform: scale(1.05);
+    }
+
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-height: 500px;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+    }
+
+    /* Discover Section */
+    .discover {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .discover .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .discover-image img {
+      max-height: 500px;
+    }
+
+    .discover h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .discover h2 .ora {
+      color: var(--primary);
+    }
+
+    .discover h2 .mat {
+      color: var(--secondary);
+    }
+
+    .discover p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .discover p strong {
+      color: var(--text-dark);
+    }
+
+    /* Inspire Section */
+    .inspire {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      text-align: center;
+    }
+
+    .inspire h2 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+
+    .inspire-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .inspire-intro {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+    }
+
+    .inspire-features {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .inspire-features strong {
+      color: var(--primary);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .testimonials h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 60px;
+    }
+
+    .testimonial-card {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 40px;
+      background: var(--bg-light);
+      border-radius: 20px;
+    }
+
+    .testimonial-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      margin-bottom: 25px;
+    }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-light);
+      margin-bottom: 25px;
+      line-height: 1.8;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .testimonial-author span {
+      color: var(--primary);
+    }
+
+    /* Download Section */
+    .download {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: var(--white);
+    }
+
+    .download .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .download-image img {
+      max-height: 450px;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+    }
+
+    .download-content {
+      text-align: center;
+    }
+
+    .download h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .download h2 strong {
+      color: var(--primary);
+    }
+
+    .download .app-buttons {
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .social-links a:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.1);
+    }
+
+    .social-links img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .follow-text {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background: #222;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .copyright {
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero .container,
+      .discover .container,
+      .download .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-image img {
+        max-height: 350px;
+      }
+
+      .discover-image {
+        order: -1;
+      }
+
+      .discover-image img {
+        max-height: 350px;
+      }
+
+      .download-image {
+        order: -1;
+      }
+
+      .download-image img {
+        max-height: 300px;
+      }
+
+      .app-buttons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding: 120px 0 60px;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .discover, .inspire, .testimonials, .download {
+        padding: 60px 0;
+      }
+
+      .discover h2, .testimonials h2, .download h2 {
+        font-size: 2rem;
+      }
+
+      .inspire h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .app-buttons img {
+        height: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="Roammate">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="mailto:hello@roammate.com">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        &#9776;
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="features">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Meet travel mates.<br>Make travel plans.<br><span>Anytime. Anywhere.</span></h1>
+        <p class="hero-subtitle">An app like no other designed for travellers like you to connect and explore all over the world.</p>
+        <div class="app-buttons">
+          <a href="#download"><img src="img/app-btn.png" alt="Download on App Store"></a>
+          <a href="#download"><img src="img/googl-btn.png" alt="Get it on Google Play"></a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="img/mobil-img1.png" alt="Roammate App">
+      </div>
+    </div>
+  </header>
+
+  <!-- Discover Section -->
+  <section class="discover">
+    <div class="container">
+      <div class="discover-image">
+        <img src="img/mobil-img2.png" alt="Roammate Features">
+      </div>
+      <div class="discover-content">
+        <h2>Discover <span class="ora">roam</span><span class="mat">mate</span></h2>
+        <p><strong>At roammate we believe when it comes to good company, the more the merrier.</strong></p>
+        <p>roammate is the world platform for safe and friendly meetups abroad. Whether it is with new friends or old, roammate is bringing the travel world together into a connected community.</p>
+        <p><strong>Don't miss out.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspire Section -->
+  <section class="inspire">
+    <div class="container">
+      <div class="inspire-content">
+        <h2>Inspire</h2>
+        <p class="inspire-intro">At roammate we believe when it comes to good company, the more the merrier. roammate is the world platform for safe and friendly meetups abroad. Whether it is with new friends or old, roammate is bringing the travel world together into a connected community. Don't miss out.</p>
+        <p class="inspire-features">Show off where you have been with the <strong>journeys</strong> feature, a virtual map with thumbtacks in all your favourite places. Your <strong>profile</strong> tells your story and offers pictures, suggestions, and advice to your mates. Fill your <strong>bucket list</strong> to display what you've accomplished and what travel goals still remain. When looking for some inspiration yourself, <strong>search</strong> any place to see what your mates have done as well as to see what travellers are doing there now.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial-card">
+        <img src="img/mem-pic.jpg" alt="Tom" class="testimonial-avatar">
+        <p class="testimonial-text">"There have been so many times traveling alone where staying in a quiet area or a mellow hotel has held me back from meeting people. There are a lot of things I would want to do but not alone. Now with roammate I'm glad that won't happen anymore."</p>
+        <p class="testimonial-author"><span>Tom, 25</span> &mdash; The Netherlands</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download" id="download">
+    <div class="container">
+      <div class="download-image">
+        <img src="img/download-img.png" alt="Download Roammate">
+      </div>
+      <div class="download-content">
+        <h2>Download for <strong>Free</strong></h2>
+        <div class="app-buttons">
+          <a href="#"><img src="img/app-btn.png" alt="Download on App Store"></a>
+          <a href="#"><img src="img/googl-btn.png" alt="Get it on Google Play"></a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><img src="img/f-icon.png" alt="Facebook"></a>
+          <a href="#" aria-label="Pinterest"><img src="img/p-icon.png" alt="Pinterest"></a>
+          <a href="#" aria-label="Twitter"><img src="img/t-icon.png" alt="Twitter"></a>
+          <a href="#" aria-label="Email"><img src="img/c-icon.png" alt="Email"></a>
+          <a href="#" aria-label="Instagram"><img src="img/tt-icon.png" alt="Instagram"></a>
+        </div>
+        <p class="follow-text">Follow us on social media</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:hello@roammate.com">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Disclaimers</a>
+      </div>
+      <p class="copyright">Copyright &copy; 2025 Roammate. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
