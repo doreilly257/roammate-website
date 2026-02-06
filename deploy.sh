@@ -10,17 +10,19 @@ DEPLOY_DIR=$(mktemp -d)
 
 echo "Preparing deployment..."
 
-# Copy the current site files
-cp index.html "$DEPLOY_DIR/"
-cp privacy.html "$DEPLOY_DIR/"
-cp terms.html "$DEPLOY_DIR/"
-cp faq.html "$DEPLOY_DIR/"
-cp favicon.svg "$DEPLOY_DIR/" 2>/dev/null || true
-cp site.webmanifest "$DEPLOY_DIR/" 2>/dev/null || true
-cp -r images "$DEPLOY_DIR/"
-cp -r css "$DEPLOY_DIR/"
-cp -r js "$DEPLOY_DIR/"
-cp -r fonts "$DEPLOY_DIR/"
+# Copy the current site files from www/
+cp www/index.html "$DEPLOY_DIR/"
+cp www/privacy.html "$DEPLOY_DIR/"
+cp www/terms.html "$DEPLOY_DIR/"
+cp www/faq.html "$DEPLOY_DIR/"
+cp www/favicon.svg "$DEPLOY_DIR/" 2>/dev/null || true
+cp www/site.webmanifest "$DEPLOY_DIR/" 2>/dev/null || true
+cp www/CNAME "$DEPLOY_DIR/" 2>/dev/null || true
+cp www/CORS "$DEPLOY_DIR/" 2>/dev/null || true
+cp -r www/images "$DEPLOY_DIR/"
+cp -r www/css "$DEPLOY_DIR/"
+cp -r www/js "$DEPLOY_DIR/"
+cp -r www/fonts "$DEPLOY_DIR/"
 
 # Build and copy the new Astro site
 echo "Building new Astro site..."
