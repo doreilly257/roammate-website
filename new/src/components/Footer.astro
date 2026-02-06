@@ -1,0 +1,166 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src={`${base}images/rm-full-hz.svg`} alt="roammate">
+      <p class="footer-tagline">Connecting travelers worldwide. Never roam alone.</p>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#how">How It Works</a>
+        <a href="#community">Community</a>
+        <a href={`${base}faq`}>FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="mailto:support@roammate.com">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/roammate" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/roammate_travel_app" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+      </a>
+      <a href="https://x.com/roammate" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 roammate. All rights reserved.</span>
+    <span class="footer-separator">&middot;</span>
+    <span>Made with love for travelers everywhere</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 80px 40px 40px;
+    background: var(--color-bg-warm);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr auto;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .footer-brand img {
+    height: 80px;
+    width: auto;
+    opacity: 0.7;
+    margin-bottom: 16px;
+  }
+
+  .footer-tagline {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 60px;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-col a {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    transition: color 0.3s;
+    font-weight: 300;
+  }
+
+  .footer-col a:hover {
+    color: var(--color-terracotta);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding-top: 4px;
+  }
+
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    color: var(--color-text-muted);
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .footer-social a:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-terracotta);
+    transform: translateY(-2px);
+  }
+
+  .footer-social svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-separator {
+    margin: 0 12px;
+    opacity: 0.4;
+  }
+
+  @media (max-width: 1024px) {
+    .footer { padding: 60px 24px 32px; }
+    .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .footer-brand { display: flex; flex-direction: column; align-items: center; }
+    .footer-nav { justify-content: center; }
+    .footer-social { justify-content: center; }
+  }
+
+  @media (max-width: 640px) {
+    .footer-nav { flex-direction: column; gap: 32px; align-items: center; }
+    .footer-bottom { display: flex; flex-direction: column; gap: 4px; }
+    .footer-separator { display: none; }
+  }
+</style>

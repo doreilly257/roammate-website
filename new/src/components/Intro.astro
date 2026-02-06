@@ -1,0 +1,80 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="intro" id="about">
+  <div class="intro-grid">
+    <div class="intro-text reveal">
+      <div class="section-label">About Roammate</div>
+      <h2 class="section-heading">Every journey is better <em>shared</em></h2>
+      <p class="intro-body">No more missing out on experiences because you're traveling solo. Roammate connects you with like-minded travelers nearby&mdash;whether you're looking to split a taxi, explore a hidden gem, or find friends for a sunset hike. Connect, explore, and create memories with new friends around the world.</p>
+    </div>
+    <div class="intro-visual reveal reveal-delay-2">
+      <div class="intro-phone">
+        <img src={`${base}images/Pasted-6.png`} alt="Roammate app interface">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro {
+    padding: 160px 40px;
+    position: relative;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .intro-text {
+    padding-right: 40px;
+  }
+
+  .intro-body {
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+  }
+
+  .intro-visual {
+    position: relative;
+  }
+
+  .intro-phone {
+    position: relative;
+    z-index: 1;
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow:
+      0 40px 80px rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(0, 0, 0, 0.06);
+  }
+
+  .intro-visual::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-terracotta) 0%, transparent 70%);
+    opacity: 0.06;
+    z-index: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .intro { padding: 100px 24px; }
+    .intro-grid { grid-template-columns: 1fr; gap: 60px; }
+    .intro-text { padding-right: 0; text-align: center; }
+  }
+</style>
