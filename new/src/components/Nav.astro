@@ -13,7 +13,14 @@ const base = import.meta.env.BASE_URL;
     <li><a href={`${base}faq`}>FAQ</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#community">Community</a></li>
-    <li><a href="javascript:void(0);" class="nav-cta">Get the App</a></li>
+    <li class="nav-downloads">
+      <a href="javascript:void(0);" class="nav-download-btn" aria-label="Download on App Store">
+        <img src={`${base}images/app-store-badge.svg`} alt="Download on App Store" class="nav-badge">
+      </a>
+      <a href="javascript:void(0);" class="nav-download-btn" aria-label="Get it on Google Play">
+        <img src={`${base}images/google-play-badge.svg`} alt="Get it on Google Play" class="nav-badge">
+      </a>
+    </li>
   </ul>
 </nav>
 
@@ -131,24 +138,26 @@ const base = import.meta.env.BASE_URL;
     width: 100%;
   }
 
-  .nav-cta {
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    letter-spacing: 2px !important;
-    padding: 12px 28px;
-    border: 1px solid var(--color-cream);
-    transition: all 0.4s var(--ease-out-expo) !important;
-    color: var(--color-cream) !important;
+  .nav-downloads {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  .nav-cta:hover {
-    background: var(--color-cream);
-    color: var(--color-bg) !important;
-    border-color: var(--color-cream);
+  .nav-download-btn {
+    display: block;
+    transition: opacity 0.3s, transform 0.3s;
   }
 
-  .nav-cta::after {
-    display: none !important;
+  .nav-download-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+  }
+
+  .nav-badge {
+    height: 32px;
+    width: auto;
+    display: block;
   }
 
   .nav-toggle {
@@ -206,6 +215,16 @@ const base = import.meta.env.BASE_URL;
     .nav-links a {
       font-size: 18px;
       letter-spacing: 3px;
+    }
+
+    .nav-downloads {
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .nav-badge {
+      height: 44px;
     }
   }
 </style>
