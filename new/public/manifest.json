@@ -1,0 +1,32 @@
+{
+  "name": "roammate - Never Travel Alone",
+  "short_name": "roammate",
+  "description": "Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf8f5",
+  "theme_color": "#c4562a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/rm.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/rm-notext-cropped.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["travel", "lifestyle", "social"],
+  "screenshots": [
+    {
+      "src": "/images/Pasted-6.png",
+      "sizes": "1170x2532",
+      "type": "image/png"
+    }
+  ]
+}
