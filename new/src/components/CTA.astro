@@ -10,8 +10,8 @@ const base = import.meta.env.BASE_URL;
     <h2 class="cta-heading">Start <em>Exploring</em></h2>
     <p class="cta-body">Download roammate and join thousands of travelers who've discovered that the best adventures are shared ones.</p>
     <div class="cta-downloads">
-      <a href="javascript:void(0);"><img src={`${base}images/Pasted-5.png`} alt="Download on App Store"></a>
-      <a href="javascript:void(0);"><img src={`${base}images/play-store.png`} alt="Get it on Google Play"></a>
+      <a href="javascript:void(0);" class="badge-link"><img src={`${base}images/app-store-badge.svg`} alt="Download on the App Store" class="store-badge"></a>
+      <a href="javascript:void(0);" class="badge-link"><img src={`${base}images/google-play-badge.svg`} alt="Get it on Google Play" class="store-badge"></a>
     </div>
   </div>
 </section>
@@ -86,16 +86,19 @@ const base = import.meta.env.BASE_URL;
     align-items: center;
   }
 
-  .cta-downloads img {
-    height: 56px;
-    width: auto;
+  .badge-link {
+    display: block;
     transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
-    opacity: 0.9;
   }
 
-  .cta-downloads a:hover img {
+  .badge-link:hover {
     transform: translateY(-4px);
-    opacity: 1;
+    opacity: 0.85;
+  }
+
+  .store-badge {
+    height: 52px;
+    width: auto;
   }
 
   @media (max-width: 1024px) {
@@ -104,6 +107,6 @@ const base = import.meta.env.BASE_URL;
 
   @media (max-width: 640px) {
     .cta-downloads { flex-direction: column; }
-    .cta-downloads img { height: 48px; }
+    .store-badge { height: 46px; }
   }
 </style>

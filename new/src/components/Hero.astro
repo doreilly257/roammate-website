@@ -11,8 +11,8 @@ const base = import.meta.env.BASE_URL;
     <h1 class="hero-title">Never Roam <em>Alone</em></h1>
     <p class="hero-subtitle">Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.</p>
     <div class="hero-actions">
-      <a href="javascript:void(0);"><img src={`${base}images/Pasted-5.png`} alt="Download on App Store"></a>
-      <a href="javascript:void(0);"><img src={`${base}images/play-store.png`} alt="Get it on Google Play"></a>
+      <a href="javascript:void(0);" class="badge-link"><img src={`${base}images/app-store-badge.svg`} alt="Download on the App Store" class="store-badge"></a>
+      <a href="javascript:void(0);" class="badge-link"><img src={`${base}images/google-play-badge.svg`} alt="Get it on Google Play" class="store-badge"></a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -125,16 +125,19 @@ const base = import.meta.env.BASE_URL;
     animation: fadeUp 1s var(--ease-out-expo) 1.2s forwards;
   }
 
-  .hero-actions img {
-    height: 52px;
-    width: auto;
+  .badge-link {
+    display: block;
     transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
-    opacity: 0.9;
   }
 
-  .hero-actions a:hover img {
+  .badge-link:hover {
     transform: translateY(-3px);
-    opacity: 1;
+    opacity: 0.85;
+  }
+
+  .store-badge {
+    height: 48px;
+    width: auto;
   }
 
   .hero-scroll {
