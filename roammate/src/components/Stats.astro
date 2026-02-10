@@ -1,0 +1,83 @@
+---
+const stats = [
+  { number: '10K+', label: 'Active Travelers', detail: 'and growing every day' },
+  { number: '50+', label: 'Countries', detail: 'across six continents' },
+  { number: '100K+', label: 'Connections Made', detail: 'friendships that last' },
+  { number: '4.8', label: 'App Store Rating', detail: 'from real travelers' },
+];
+---
+
+<section class="stats">
+  <div class="stats-inner">
+    {stats.map((s, i) => (
+      <div class={`stat reveal reveal-delay-${i + 1}`}>
+        <div class="stat-number">{s.number}</div>
+        <div class="stat-label">{s.label}</div>
+        <div class="stat-detail">{s.detail}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .stats {
+    padding: 100px 40px;
+    background: var(--color-bg-warm);
+    position: relative;
+  }
+
+  .stats::before,
+  .stats::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.08), transparent);
+  }
+
+  .stats::before { top: 0; }
+  .stats::after { bottom: 0; }
+
+  .stats-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 900;
+    color: var(--color-terracotta);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 8px;
+  }
+
+  .stat-detail {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @media (max-width: 1024px) {
+    .stats { padding: 80px 24px; }
+    .stats-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+  }
+
+  @media (max-width: 640px) {
+    .stats-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+</style>
