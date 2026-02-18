@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EUR (Euro)', detail: '1 USD ≈ €0.92' },
+  { icon: '🗣', label: 'Language', value: 'German', detail: 'English widely spoken in business areas' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) Mar–Oct' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: '18–26°C, warm with occasional rain' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$65–95 USD', detail: '€60–85 budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: 'EU/US/UK: 90 days visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Frankfurt in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Römerberg & Altstadt',
+          text: 'Start at Römerberg — Frankfurt\'s medieval heart, a square of half-timbered houses dominated by the Römer (city hall) with its stepped gable facade. The square was meticulously rebuilt after WWII bombing destroyed 95% of the old city. Walk through the DomRömer Quarter — 35 reconstructed historic buildings including Haus zur Goldenen Waage. Visit the Kaiserdom (Imperial Cathedral, free) where Holy Roman Emperors were crowned.',
+          tip: 'The DomRömer Quarter looks centuries old but was completed in 2018 — it\'s Europe\'s most ambitious old-town reconstruction.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Museumsufer & Main Tower',
+          text: 'Cross the Eiserner Steg (Iron Bridge) to the Museumsufer — the "Museum Embankment" with 13 museums along the south bank of the River Main. Visit the Städel Museum (€16) for Old Masters through contemporary art — Vermeer, Rembrandt, Monet, and Richter. Then cross back and ride the elevator to Main Tower\'s observation deck (€9, 200m) for Frankfurt\'s best skyline view. Lunch at Kleinmarkthalle — a food hall with 60+ stalls.',
+          tip: 'The Städel has one of Europe\'s finest collections — the basement contemporary section and the Vermeer are highlights.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sachsenhausen & Apfelwein',
+          text: 'Cross to Sachsenhausen — Frankfurt\'s cider quarter. Walk through the cobbled lanes around Schweizer Straße to an Apfelwein (apple wine) taverna — Wagner, Dauth-Schneider, or Adolf Wagner (no relation). Order a Bembel (blue-patterned jug) of Apfelwein (€2.50/glass) with Handkäs mit Musik (marinated cheese with onions) and Grüne Soße (Frankfurt\'s signature green herb sauce with eggs). This is peak Frankfurt.',
+          tip: 'Adolf Wagner on Schweizer Platz is the definitive Apfelwein experience — communal tables, gruff waiters, and perfect cider.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Old Town, Skyline & Cider',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Römerberg & DomRömer Quarter',
+          text: 'Start at Römerberg — the medieval heart of Frankfurt, rebuilt after WWII destroyed 95% of the old city. The Römer (city hall) with its iconic stepped gables has been Frankfurt\'s political centre since 1405. Walk through the DomRömer Quarter — 35 meticulously reconstructed historic buildings. Visit the Kaiserdom (free) — the Imperial Cathedral where Holy Roman Emperors were crowned. Climb the tower (€3, 328 steps) for old-town views.',
+          tip: 'The DomRömer Quarter\'s Haus zur Goldenen Waage is the crown jewel — a faithful reconstruction of a 1618 merchant\'s house.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Main Tower & Kleinmarkthalle',
+          text: 'Lunch at Kleinmarkthalle — Frankfurt\'s premier food hall with 60+ stalls selling everything from Handkäs mit Musik to Turkish börek, Italian pasta, and Vietnamese pho. A full meal costs €6–10. Then ride the elevator to Main Tower\'s observation deck (€9, 200m) — Frankfurt\'s only publicly accessible skyscraper roof with 360° views of the skyline, River Main, and Taunus hills beyond.',
+          tip: 'Kleinmarkthalle\'s upper level has a wine bar — grab a glass of Rheingau Riesling and watch the market bustle below.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sachsenhausen Apfelwein',
+          text: 'Cross to Sachsenhausen for the quintessential Frankfurt evening. Walk the cobbled lanes around Schweizer Straße and Alt-Sachsenhausen. Pick an Apfelwein taverna — Adolf Wagner, Dauth-Schneider, or Zum Gemalten Haus (the oldest, with painted facades). Order a Bembel of Apfelwein (€2.50/glass), Grüne Soße (green herb sauce), and Frankfurter Rippchen (cured pork chops). Communal tables and loud conversation.',
+          tip: 'Apfelwein is an acquired taste — slightly sour and dry. Order "süßer" (sweet) if you prefer. The sour version is the real deal.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Museumsufer & River Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Städel Museum',
+          text: 'Visit the Städel Museum (€16, free under 12) — one of Europe\'s finest art collections spanning 700 years. Cranach, Botticelli, Vermeer, Rembrandt, Monet, Kirchner, Bacon, and Richter all under one roof. The basement contemporary gallery in its underground light-dome space is architecturally stunning. Allow 2–3 hours minimum. Coffee at the museum\'s terrace café overlooking the River Main.',
+          tip: 'The Städel\'s basement contemporary gallery is architecturally extraordinary — the circular skylights are like artificial suns.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Museumsufer & Eiserner Steg',
+          text: 'Stroll the Museumsufer — 13 museums along the south bank. If the Städel was your morning, consider the German Film Museum (€7) for cinema lovers or the Museum of Applied Art (€12) in Richard Meier\'s beautiful white building. Walk across the Eiserner Steg footbridge — the love-lock bridge with views of the skyline reflected in the Main. Lunch at Maxie Eisen in Bahnhofsviertel for pastrami sandwiches (€10–14).',
+          tip: 'The Eiserner Steg at sunset is Frankfurt\'s most photographed spot — the skyline reflected in the river is iconic.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bahnhofsviertel & Nightlife',
+          text: 'Explore Bahnhofsviertel — Frankfurt\'s station quarter, once seedy, now the city\'s hottest neighbourhood for food and nightlife. Naiv has creative cocktails in a candlelit basement (€10–14). Stanley Diamond does excellent natural wines. For something edgier, Robert Johnson in Offenbach (20 min by S-Bahn) is one of Europe\'s best techno clubs. Or stay local at the bars along Münchener Straße.',
+          tip: 'Bahnhofsviertel is gentrifying fast — the contrast between old-school corner shops and trendy cocktail bars is very Frankfurt.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Goethe, Markets & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Goethe-Haus & Zeil Shopping',
+          text: 'Visit the Goethe-Haus (€10) — the childhood home of Germany\'s greatest writer, Johann Wolfgang von Goethe. The restored 18th-century interiors and family library give insight into bourgeois Frankfurt life. Walk to the Zeil — Frankfurt\'s main shopping street with the futuristic MyZeil mall (designed by Massimiliano Fuksas with a canyon-shaped atrium). Coffee at any of the third-wave cafés around Berger Straße.',
+          tip: 'The Goethe-Haus is genuinely interesting even if you haven\'t read Faust — the 18th-century domestic interiors are beautifully preserved.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Palmengarten & Bockenheim',
+          text: 'Take the U-Bahn to Palmengarten (€7) — Frankfurt\'s stunning 22-hectare botanical garden with tropical greenhouses, rose gardens, and a beautiful lake. Then walk through Bockenheim — a student neighbourhood around Goethe University with independent bookshops, affordable restaurants, and a multicultural food scene. Lunch at a Bockenheim Imbiss for döner or currywurst (€4–6).',
+          tip: 'Palmengarten\'s tropical greenhouses are a year-round escape — the orchid and cactus houses are particularly impressive.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Skyline',
+          text: 'Final dinner at Haus Wertheym on Fahrtor — the only half-timbered house that survived the WWII bombing, serving traditional Frankfurt cuisine since 1479 (mains €14–22). Or keep it budget at Kleinmarkthalle for a last round of market food. End the night on the Eiserner Steg bridge at dusk — the Frankfurt skyline (nicknamed "Mainhattan") reflected in the river is one of Europe\'s great urban views.',
+          tip: 'Haus Wertheym is the only original medieval building in the old town — everything else is a reconstruction. It survived by luck.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Old Town, Skyline & Cider',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Römerberg & DomRömer Quarter',
+          text: 'Start at Römerberg — Frankfurt\'s medieval heart, rebuilt after WWII. The Römer city hall, the DomRömer Quarter\'s 35 reconstructed buildings, and the Kaiserdom (free, climb tower €3). The square hosts markets year-round and is the centre of Frankfurt\'s public life. Walk through the quarter noting the mix of Gothic, Renaissance, and baroque styles — each building is based on historical records.',
+          tip: 'The DomRömer Quarter\'s Haus zur Goldenen Waage is the finest reconstruction — a 1618 merchant\'s house with a Renaissance garden.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Main Tower & Kleinmarkthalle',
+          text: 'Lunch at Kleinmarkthalle — 60+ food stalls from traditional German to international (€6–10 for a meal). The upper-floor wine bar has Rheingau Riesling by the glass. Then Main Tower observation deck (€9, 200m) for the only public rooftop view of "Mainhattan." On a clear day, you can see the Taunus hills and Odenwald beyond the skyline.',
+          tip: 'Kleinmarkthalle closes at 6pm on Saturday and is closed Sunday — plan your visit accordingly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sachsenhausen Apfelwein Evening',
+          text: 'Cross to Sachsenhausen for the essential Frankfurt experience. Adolf Wagner, Dauth-Schneider, or Zum Gemalten Haus — pick your Apfelwein taverna. Order a Bembel jug (€2.50/glass), Grüne Soße, Handkäs mit Musik, and Frankfurter Rippchen. Communal wooden tables, chatty regulars, and the sour-dry tang of cider. This is Frankfurt at its most authentic.',
+          tip: 'Adolf Wagner on Schweizer Platz is the definitive experience — arrive before 7pm or expect a long wait on weekends.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Museumsufer — Art & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Städel Museum',
+          text: 'The Städel Museum (€16) is one of Europe\'s great galleries — 700 years of art from Botticelli and Vermeer to Kirchner and Richter. The underground contemporary gallery with its garden of circular skylights is architecturally stunning. Allow 2–3 hours. Coffee on the museum terrace overlooking the Main.',
+          tip: 'The Städel\'s "Time Machine" app gives excellent free audio guidance — download before visiting.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Film Museum & Architecture Museum',
+          text: 'Continue along the Museumsufer. The German Film Museum (€7) is surprisingly excellent — the interactive exhibits on cinematography and special effects are fun for everyone. The German Architecture Museum (€9) explores the history of buildings from primitive huts to parametric design. Lunch at Holbein\'s near the Städel for modern German cuisine (mains €12–18).',
+          tip: 'The Museumsufer Ticket (€21) gives access to 34 museums over 2 days — excellent value if you love museums.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bahnhofsviertel Dinner & Bars',
+          text: 'Explore Bahnhofsviertel — the station quarter turned hip neighbourhood. Dinner at Maxie Eisen for excellent pastrami sandwiches and Israeli-inspired food (€10–14). Then drinks: Naiv for cocktails in a candlelit basement, Stanley Diamond for natural wines, or Bar Plank for gin tonics with river views. The neighbourhood is raw, multicultural, and increasingly creative.',
+          tip: 'Bahnhofsviertel\'s Münchener Straße has the most interesting bar concentration — walk the street and see what pulls you in.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Goethe, Gardens & Bockenheim',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Goethe-Haus & Old Town',
+          text: 'Visit the Goethe-Haus (€10) — the birth and childhood home of Germany\'s literary giant. The restored 18th-century rooms and family library reveal bourgeois life in Enlightenment-era Frankfurt. Walk to Liebfrauenkirche and the Paulskirche (free) — the "cradle of German democracy" where the first freely elected German parliament met in 1848.',
+          tip: 'The Paulskirche is one of the most important sites in German democratic history — the interior exhibition is free and well done.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Palmengarten & Bockenheim',
+          text: 'U-Bahn to Palmengarten (€7) — 22 hectares of botanical gardens with tropical greenhouses, lakes, and themed gardens. Then walk through Bockenheim — the student quarter around Goethe University with bookshops, cheap eats, and multicultural vibes. Lunch at Berger Straße\'s cafés and Imbisse — döner (€4–5), currywurst (€4), or a bowl at a Vietnamese spot.',
+          tip: 'Berger Straße in Bornheim (one neighbourhood over) has even better independent cafés and restaurants — take the tram.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Nordend & Wine Bars',
+          text: 'Explore Nordend — Frankfurt\'s quietest trendy neighbourhood with tree-lined streets, independent restaurants, and wine bars. Dinner at Margarete for modern German-Mediterranean cuisine (mains €14–20). Then wine at Wein & Wunder or cocktails at The Kinly. For a classic Frankfurt evening, detour to Lorsbacher Thal in Sachsenhausen — an atmospheric Apfelwein taverna with a garden.',
+          tip: 'Nordend feels like a different city from the financial district — leafy, residential, and full of excellent neighbourhood restaurants.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Rhine Valley Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Train to Rüdesheim',
+          text: 'Take the RE train to Rüdesheim am Rhein (1 hour, €14 return with Hessen-Ticket for groups). This small wine town is the gateway to the UNESCO Upper Middle Rhine Valley — the most dramatic stretch of the Rhine with castle-topped hills, steep vineyards, and river barges. Ride the cable car (€8 return) up to the Niederwald Monument for panoramic Rhine Valley views.',
+          tip: 'Buy a Hessen-Ticket (€38 for 1 person, €8 each additional) — it covers unlimited regional trains and buses all day.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rhine Cruise & Wine Tasting',
+          text: 'Take a KD Rhine cruise from Rüdesheim to St. Goar (1.5 hours, €15–20) — gliding past the Lorelei Rock, Marksburg Castle, and dozens of medieval towers perched on impossible clifftops. The Rhine here is at its most dramatic and romantic. In Rüdesheim, walk the Drosselgasse (tourist street with wine tavernas) and taste Rheingau Riesling at a weingut (winery). Glasses from €4.',
+          tip: 'The Rhine cruise between Rüdesheim and St. Goar passes 20+ castles — sit on the left side for the best views.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Quiet Night',
+          text: 'Evening train back to Frankfurt. Keep dinner simple at IMA 2 in Berger Straße for excellent Turkish food (mains €8–12) or Pizzeria Montana in Nordend. The contrast between a day on the medieval Rhine and Frankfurt\'s glass-and-steel skyline is one of the great European juxtapositions. A final glass of Riesling on the Eiserner Steg bridge watching the lights.',
+          tip: 'The Hessen-Ticket covers the return journey — make sure to validate it before boarding the first train.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Jewish Heritage & Modern Frankfurt',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jewish Museum & Judengasse',
+          text: 'Visit the Jewish Museum (€12) — completely renovated and reopened in a stunning new building. Frankfurt\'s Jewish community was one of Europe\'s most important — the Rothschild banking dynasty began here. Walk to the Museum Judengasse (included in ticket) — built above the excavated foundations of the historic Jewish ghetto with preserved mikvaot (ritual baths) and house ruins from the 15th–18th centuries.',
+          tip: 'The Jewish Museum and Judengasse together tell an extraordinary story — the Rothschild family history alone is fascinating.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'European Central Bank & Ostend',
+          text: 'Walk to the European Central Bank headquarters — the massive glass-and-steel Deconstructivist building (exterior only) designed by Coop Himmelb(l)au. The surrounding Ostend neighbourhood has transformed from industrial docks to Frankfurt\'s emerging creative quarter. Lunch at Oosten on the riverbank — modern European cuisine with an enormous terrace (mains €14–20). Walk through the Hafenpark along the river.',
+          tip: 'The ECB\'s blue euro sign sculpture was moved from Willy-Brandt-Platz — follow Instagram to find its current location.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Berger Straße & Bornheim',
+          text: 'Take the tram to Berger Straße in Bornheim — Frankfurt\'s most vibrant neighbourhood street with independent restaurants, cafés, and bars running for over a kilometre. Dinner at Albatros for Mediterranean-inspired dishes (mains €12–16) or Kebab Factory for gourmet döner. Then drinks at Apfelwein Solzer on Berger for a local Apfelwein experience, or Bar Celona for cocktails.',
+          tip: 'Berger Straße is where Frankfurters actually spend their evenings — it\'s more authentic than Sachsenhausen and Bahnhofsviertel.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Heidelberg Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Train to Heidelberg',
+          text: 'Train to Heidelberg (50 min, €20–25 return). This romantic university city on the Neckar River has Germany\'s most famous castle ruins and one of Europe\'s oldest universities (1386). Take the Bergbahn funicular (€9 return) up to Heidelberg Castle — the red sandstone ruins overlooking the old town and river are breathtaking. The castle courtyard, the Great Barrel (world\'s largest wine cask), and the Pharmaceutical Museum are highlights.',
+          tip: 'Heidelberg Castle is at its most atmospheric in the morning — the ruins catch the early light and tour groups haven\'t arrived.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Alte Brücke & University Quarter',
+          text: 'Walk down through the Altstadt (old town) to the Alte Brücke (Old Bridge) — a baroque stone bridge with a monkey sculpture and views of the castle above. Stroll the Hauptstraße — one of Europe\'s longest pedestrian streets. Visit the university\'s Student Prison (Studentenkarzer, €3) where unruly students were locked up until 1914 — the walls are covered in graffiti. Lunch at Goldener Hecht for traditional Palatinate food (€10–14).',
+          tip: 'The Philosophers\' Walk (Philosophenweg) across the river gives the best castle-and-river panorama — it\'s a gentle climb.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Final Sachsenhausen',
+          text: 'Evening train back to Frankfurt. Final Apfelwein evening in Sachsenhausen — Zum Gemalten Haus on Schweizer Straße has the most beautiful painted facade and serves excellent cider and traditional food (mains €12–18). Or Daheim im Lorsbacher Thal for a more intimate, garden-taverna vibe. One last Bembel of Apfelwein with Handkäs mit Musik — Frankfurt\'s truest farewell.',
+          tip: 'Zum Gemalten Haus is the most photogenic Apfelwein taverna — the painted interior walls depict Frankfurt scenes from centuries past.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Relaxation & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Grüneburgpark & Last Coffee',
+          text: 'Lazy morning walk through Grüneburgpark — Frankfurt\'s most beautiful park, formerly the Rothschild family estate. The Korean Garden within the park is a peaceful hidden gem. Coffee at Meta Mate on Fahrgasse for excellent third-wave coffee, or Hoppenworth & Ploch near the Zeil. Browse the bookshops on Berger Straße for German literature and design books.',
+          tip: 'The Korean Garden in Grüneburgpark is a genuinely tranquil spot — few tourists know it exists.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Souvenirs',
+          text: 'Final shopping at Kleinmarkthalle for Frankfurter Kranz (ring cake), Bethmännchen (marzipan cookies), Grüne Soße herb mix, and Apfelwein. The Zeil and MyZeil mall for bigger purchases. Last lunch at a favourite spot from the week, or grab a Bratwurst from a Kleinmarkthalle stall. Walk from the Römerberg across the Eiserner Steg one final time.',
+          tip: 'Grüne Soße herb mix packets from Kleinmarkthalle let you make Frankfurt\'s signature dish at home — lightweight and unique.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Farewell dinner at Haus Wertheym — the only surviving medieval building, serving traditional Frankfurt cuisine since 1479 (mains €14–22). Or for a modern send-off, Emma Metzler at the Museum für Angewandte Kunst has excellent German-international cuisine with river views. End on the Eiserner Steg at dusk — the Mainhattan skyline reflected in the Main, glass towers meeting medieval spires.',
+          tip: 'Frankfurt Airport is huge — allow 2+ hours for connections. The S-Bahn from Hauptbahnhof to the airport takes 15 minutes.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Kleinmarkthalle', text: 'Frankfurt\'s food hall has meals from €6–10 — better, cheaper, and more varied than any restaurant. The Turkish, Vietnamese, and German stalls are all excellent.' },
+  { title: 'Apfelwein value', text: 'A glass of Apfelwein at a traditional taverna costs €2.50 — it\'s Frankfurt\'s cheapest drink. A Bembel jug to share costs €7–10 and is a full evening\'s entertainment.' },
+  { title: 'Hessen-Ticket', text: 'The Hessen-Ticket (€38 for 1, €8 each additional person) gives unlimited regional trains and buses for a day — perfect for Rhine Valley or Heidelberg day trips with friends.' },
+  { title: 'Museumsufer Ticket', text: 'The Museumsufer Ticket (€21) covers 34 museums over 2 consecutive days. Individual museum tickets cost €7–16 each, so 2 museums makes it worthwhile.' },
+  { title: 'Walking & cycling', text: 'Frankfurt is compact — the old town, Sachsenhausen, and Museumsufer are all within walking distance. City bike rental (NextBike) costs €1 per 30 minutes.' },
+  { title: 'Student food', text: 'Bockenheim and Bornheim have cheap eats — döner from €4, currywurst from €4, and Vietnamese pho from €7. Skip the Zeil food courts and eat where students eat.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€20–40', midrange: '€80–150', splurge: '€250+', notes: 'Hostels → design hotels → luxury hotels' },
+  { category: 'Food', budget: '€12–22', midrange: '€30–50', splurge: '€80+', notes: 'Market food & Imbisse → restaurants → fine dining' },
+  { category: 'Transport', budget: '€5–10', midrange: '€15–30', splurge: '€50+', notes: 'Walking & single tickets → day pass → day trips' },
+  { category: 'Activities', budget: '€5–15', midrange: '€20–40', splurge: '€60+', notes: 'Free churches & 1 museum → Museumsufer pass → guided tours' },
+  { category: 'Drinks', budget: '€5–10', midrange: '€12–25', splurge: '€40+', notes: 'Apfelwein & beer → wine bars → cocktail lounges' },
+  { category: 'Daily Total', budget: '€47–97', midrange: '€157–295', splurge: '€480+', notes: '$52–107 → $173–325 → $528+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — EU/UK/US/Canadian citizens stay up to 90 days visa-free',
+      'Frankfurt Airport (FRA) is Europe\'s 4th busiest — S-Bahn S8/S9 to Hauptbahnhof (15 min, €5.35)',
+      'Frankfurt Hauptbahnhof is a major rail hub — ICE trains to all German cities and international connections',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No special vaccinations required. Tap water is safe and excellent quality throughout Germany',
+      'Frankfurt is generally safe. The Bahnhofsviertel (station area) can feel rough at night — stay aware but it\'s gentrifying fast',
+      'European Health Insurance Card (EHIC) covers EU citizens. Pharmacies (Apotheke) are marked with a green cross',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'U-Bahn, S-Bahn, trams, and buses form an efficient network. Single ticket €2.75, day ticket €5.95 (Frankfurt zone)',
+      'The centre is walkable — Römerberg to Sachsenhausen is a 10-minute walk across the Eiserner Steg bridge',
+      'DB Navigator app for trains, RMV app for local transit. Bolt and Uber available. Bikes via NextBike (€1/30 min)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in most cafés, hotels, and some public areas. Germany has good 4G/5G but WiFi can be spotty compared to other European capitals',
+      'EU roaming free for EU plans. Non-EU: Aldi Talk or Lebara tourist SIMs from €10 for 3GB at electronics stores',
+      'Download DB Navigator for trains, RMV for local transit, and Lieferando for food delivery',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Germany uses the Euro (€). ATMs are common — Sparkasse and Commerzbank have fair rates. Avoid Euronet',
+      'Germany is more cash-reliant than you expect — many restaurants, smaller shops, and Imbisse are cash-only. Always carry €30–50',
+      'Tipping: round up or leave 5–10% at restaurants. Say "stimmt so" (keep the change) or specify the total',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'An umbrella or rain jacket year-round — Frankfurt gets regular showers even in summer',
+      'Comfortable walking shoes for cobblestones in the old town and Sachsenhausen',
+      'Layers in spring/autumn — temperatures can shift 10°C in a day. Summers are warm (25°C+) but evenings cool',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🍎', title: 'Apfelwein Culture', text: 'Apfelwein (Ebbelwoi in dialect) is Frankfurt\'s signature drink — a dry, slightly sour apple cider served in a Bembel (blue-patterned jug). It\'s poured into a Geripptes (diamond-patterned glass). Never call it "cider" — that\'s something else to locals.' },
+  { icon: '🌿', title: 'Grüne Soße', text: 'Frankfurt\'s green sauce (Grüne Soße) is a cold herb sauce made from exactly seven herbs: borage, chervil, cress, parsley, salad burnet, sorrel, and chives. It\'s served with boiled eggs and potatoes. Goethe reportedly loved it.' },
+  { icon: '💼', title: 'Business Culture', text: 'Frankfurt is Germany\'s financial capital — suits and formality dominate the centre. But the city has a strong counter-cultural streak in areas like Bahnhofsviertel, Bockenheim, and Bornheim. Both versions are authentic.' },
+  { icon: '🗣', title: 'Language Tips', text: 'Learn "danke" (thanks), "bitte" (please/you\'re welcome), "Prost" (cheers), and "die Rechnung bitte" (the bill please). Frankfurters speak Hessisch dialect — "Ei gude wie?" means "How are you?"' },
+  { icon: '🕐', title: 'Sunday Closures', text: 'Almost everything is closed on Sundays — shops, supermarkets, and many restaurants. Plan ahead and stock up on Saturday. Train stations and airports are exceptions. Parks and museums are usually open.' },
+  { icon: '♻️', title: 'Pfand System', text: 'Germany has a bottle deposit (Pfand) system — return glass and plastic bottles to supermarket machines for €0.08–0.25 back. It\'s also common to leave your empties near bins for collectors who rely on this income.' },
+];
+---
+
+<CityGuideLayout
+  title="Frankfurt Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Frankfurt guide for young travelers. 3-day itinerary with Römerberg, Museumsufer, Rhine Valley, Apfelwein culture, and budget tips. Plan your trip with roammate."
+  heroImage="/images/guides/frankfurt-hero.webp"
+  heroFlag="🇩🇪"
+  heroCountry="Germany"
+  heroRegion="Europe"
+  heroCity="Frankfurt"
+  heroSubtitle="Europe's most underrated stopover — a city where skyscrapers frame medieval squares and apple wine flows in centuries-old taverns."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in EUR. Frankfurt is pricier than Eastern Europe but offers excellent value through markets, Apfelwein taverns, and smart transport tickets."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Frankfurt is Germany's most international city — a blend of global finance, deep tradition, and a creative underbelly most visitors never discover."
+  ctaCity="Frankfurt"
+  ctaText="Find travel companions for Rhine Valley cruises, split Hessen-Ticket costs, and explore Frankfurt's emerging food scene together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

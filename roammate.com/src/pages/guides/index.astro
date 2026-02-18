@@ -1,0 +1,747 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const backpackerRoutes = [
+  { slug: 'southeast-asia', title: 'Southeast Asia', flags: '🇹🇭🇻🇳🇰🇭🇱🇦', duration: '4–8 weeks', tagline: 'Temples, street food & tropical islands' },
+  { slug: 'europe', title: 'Europe', flags: '🇫🇷🇮🇹🇪🇸🇬🇷', duration: '6–10 weeks', tagline: 'History, culture & Mediterranean coasts' },
+  { slug: 'south-america', title: 'South America', flags: '🇵🇪🇧🇴🇧🇷🇦🇷', duration: '6–12 weeks', tagline: 'Andes, Amazon & ancient ruins' },
+  { slug: 'central-america', title: 'Central America', flags: '🇲🇽🇬🇹🇨🇷🇵🇦', duration: '4–8 weeks', tagline: 'Volcanoes, jungles & Caribbean vibes' },
+  { slug: 'india', title: 'India', flags: '🇮🇳', duration: '4–8 weeks', tagline: 'Chaos, colour & spiritual journeys' },
+  { slug: 'east-africa', title: 'East Africa', flags: '🇰🇪🇹🇿🇺🇬🇷🇼', duration: '4–8 weeks', tagline: 'Safari, mountains & spice islands' },
+  { slug: 'japan-south-korea', title: 'Japan & South Korea', flags: '🇯🇵🇰🇷', duration: '3–6 weeks', tagline: 'Neon cities, ancient temples & ramen' },
+  { slug: 'australia-new-zealand', title: 'Australia & New Zealand', flags: '🇦🇺🇳🇿', duration: '4–8 weeks', tagline: 'Outback, reef & adventure sports' },
+  { slug: 'indonesia-philippines', title: 'Indonesia & Philippines', flags: '🇮🇩🇵🇭', duration: '4–8 weeks', tagline: 'Volcanoes, dive sites & rice terraces' },
+  { slug: 'morocco-west-africa', title: 'Morocco & West Africa', flags: '🇲🇦🇸🇳🇬🇭', duration: '4–6 weeks', tagline: 'Medinas, Sahara & vibrant markets' },
+];
+
+const cityGuides = [
+  { slug: 'abu-dhabi', city: 'Abu Dhabi', country: 'UAE', flag: '🇦🇪', region: 'Middle East' },
+  { slug: 'amsterdam', city: 'Amsterdam', country: 'Netherlands', flag: '🇳🇱', region: 'Europe' },
+  { slug: 'antalya', city: 'Antalya', country: 'Türkiye', flag: '🇹🇷', region: 'Europe' },
+  { slug: 'athens', city: 'Athens', country: 'Greece', flag: '🇬🇷', region: 'Europe' },
+  { slug: 'denpasar', city: 'Bali', country: 'Indonesia', flag: '🇮🇩', region: 'Southeast Asia' },
+  { slug: 'bangkok', city: 'Bangkok', country: 'Thailand', flag: '🇹🇭', region: 'Southeast Asia' },
+  { slug: 'barcelona', city: 'Barcelona', country: 'Spain', flag: '🇪🇸', region: 'Europe' },
+  { slug: 'beijing', city: 'Beijing', country: 'China', flag: '🇨🇳', region: 'East Asia' },
+  { slug: 'berlin', city: 'Berlin', country: 'Germany', flag: '🇩🇪', region: 'Europe' },
+  { slug: 'bologna', city: 'Bologna', country: 'Italy', flag: '🇮🇹', region: 'Europe' },
+  { slug: 'brussels', city: 'Brussels', country: 'Belgium', flag: '🇧🇪', region: 'Europe' },
+  { slug: 'budapest', city: 'Budapest', country: 'Hungary', flag: '🇭🇺', region: 'Europe' },
+  { slug: 'buenos-aires', city: 'Buenos Aires', country: 'Argentina', flag: '🇦🇷', region: 'South America' },
+  { slug: 'busan', city: 'Busan', country: 'South Korea', flag: '🇰🇷', region: 'East Asia' },
+  { slug: 'cairo', city: 'Cairo', country: 'Egypt', flag: '🇪🇬', region: 'Africa' },
+  { slug: 'cancun', city: 'Cancún', country: 'Mexico', flag: '🇲🇽', region: 'North America' },
+  { slug: 'copenhagen', city: 'Copenhagen', country: 'Denmark', flag: '🇩🇰', region: 'Europe' },
+  { slug: 'delhi', city: 'Delhi', country: 'India', flag: '🇮🇳', region: 'South Asia' },
+  { slug: 'doha', city: 'Doha', country: 'Qatar', flag: '🇶🇦', region: 'Middle East' },
+  { slug: 'dubai', city: 'Dubai', country: 'UAE', flag: '🇦🇪', region: 'Middle East' },
+  { slug: 'dublin', city: 'Dublin', country: 'Ireland', flag: '🇮🇪', region: 'Europe' },
+  { slug: 'edinburgh', city: 'Edinburgh', country: 'UK', flag: '🇬🇧', region: 'Europe' },
+  { slug: 'florence', city: 'Florence', country: 'Italy', flag: '🇮🇹', region: 'Europe' },
+  { slug: 'frankfurt', city: 'Frankfurt', country: 'Germany', flag: '🇩🇪', region: 'Europe' },
+  { slug: 'fukuoka', city: 'Fukuoka', country: 'Japan', flag: '🇯🇵', region: 'East Asia' },
+  { slug: 'guangzhou', city: 'Guangzhou', country: 'China', flag: '🇨🇳', region: 'East Asia' },
+  { slug: 'hanoi', city: 'Hanoi', country: 'Vietnam', flag: '🇻🇳', region: 'Southeast Asia' },
+  { slug: 'helsinki', city: 'Helsinki', country: 'Finland', flag: '🇫🇮', region: 'Europe' },
+  { slug: 'heraklion', city: 'Heraklion', country: 'Greece', flag: '🇬🇷', region: 'Europe' },
+  { slug: 'ho-chi-minh-city', city: 'Ho Chi Minh City', country: 'Vietnam', flag: '🇻🇳', region: 'Southeast Asia' },
+  { slug: 'hong-kong', city: 'Hong Kong', country: 'China', flag: '🇭🇰', region: 'East Asia' },
+  { slug: 'honolulu', city: 'Honolulu', country: 'USA', flag: '🇺🇸', region: 'North America' },
+  { slug: 'istanbul', city: 'Istanbul', country: 'Türkiye', flag: '🇹🇷', region: 'Europe' },
+  { slug: 'jerusalem', city: 'Jerusalem', country: 'Israel', flag: '🇮🇱', region: 'Middle East' },
+  { slug: 'johor-bahru', city: 'Johor Bahru', country: 'Malaysia', flag: '🇲🇾', region: 'Southeast Asia' },
+  { slug: 'krakow', city: 'Kraków', country: 'Poland', flag: '🇵🇱', region: 'Europe' },
+  { slug: 'kuala-lumpur', city: 'Kuala Lumpur', country: 'Malaysia', flag: '🇲🇾', region: 'Southeast Asia' },
+  { slug: 'kyoto', city: 'Kyoto', country: 'Japan', flag: '🇯🇵', region: 'East Asia' },
+  { slug: 'las-vegas', city: 'Las Vegas', country: 'USA', flag: '🇺🇸', region: 'North America' },
+  { slug: 'lima', city: 'Lima', country: 'Peru', flag: '🇵🇪', region: 'South America' },
+  { slug: 'lisbon', city: 'Lisbon', country: 'Portugal', flag: '🇵🇹', region: 'Europe' },
+  { slug: 'london', city: 'London', country: 'UK', flag: '🇬🇧', region: 'Europe' },
+  { slug: 'los-angeles', city: 'Los Angeles', country: 'USA', flag: '🇺🇸', region: 'North America' },
+  { slug: 'macau', city: 'Macau', country: 'China', flag: '🇲🇴', region: 'East Asia' },
+  { slug: 'madrid', city: 'Madrid', country: 'Spain', flag: '🇪🇸', region: 'Europe' },
+  { slug: 'marne-la-vallee', city: 'Marne-la-Vallée', country: 'France', flag: '🇫🇷', region: 'Europe' },
+  { slug: 'marrakech', city: 'Marrakech', country: 'Morocco', flag: '🇲🇦', region: 'Africa' },
+  { slug: 'mecca', city: 'Mecca', country: 'Saudi Arabia', flag: '🇸🇦', region: 'Middle East' },
+  { slug: 'medina', city: 'Medina', country: 'Saudi Arabia', flag: '🇸🇦', region: 'Middle East' },
+  { slug: 'melbourne', city: 'Melbourne', country: 'Australia', flag: '🇦🇺', region: 'Oceania' },
+  { slug: 'mexico-city', city: 'Mexico City', country: 'Mexico', flag: '🇲🇽', region: 'North America' },
+  { slug: 'miami', city: 'Miami', country: 'USA', flag: '🇺🇸', region: 'North America' },
+  { slug: 'milan', city: 'Milan', country: 'Italy', flag: '🇮🇹', region: 'Europe' },
+  { slug: 'montreal', city: 'Montréal', country: 'Canada', flag: '🇨🇦', region: 'North America' },
+  { slug: 'munich', city: 'Munich', country: 'Germany', flag: '🇩🇪', region: 'Europe' },
+  { slug: 'new-york-city', city: 'New York City', country: 'USA', flag: '🇺🇸', region: 'North America' },
+  { slug: 'nice', city: 'Nice', country: 'France', flag: '🇫🇷', region: 'Europe' },
+  { slug: 'orlando', city: 'Orlando', country: 'USA', flag: '🇺🇸', region: 'North America' },
+  { slug: 'osaka', city: 'Osaka', country: 'Japan', flag: '🇯🇵', region: 'East Asia' },
+  { slug: 'oslo', city: 'Oslo', country: 'Norway', flag: '🇳🇴', region: 'Europe' },
+  { slug: 'palma-de-mallorca', city: 'Palma de Mallorca', country: 'Spain', flag: '🇪🇸', region: 'Europe' },
+  { slug: 'paris', city: 'Paris', country: 'France', flag: '🇫🇷', region: 'Europe' },
+  { slug: 'pattaya-chonburi', city: 'Pattaya', country: 'Thailand', flag: '🇹🇭', region: 'Southeast Asia' },
+  { slug: 'phuket', city: 'Phuket', country: 'Thailand', flag: '🇹🇭', region: 'Southeast Asia' },
+  { slug: 'porto', city: 'Porto', country: 'Portugal', flag: '🇵🇹', region: 'Europe' },
+  { slug: 'prague', city: 'Prague', country: 'Czech Republic', flag: '🇨🇿', region: 'Europe' },
+  { slug: 'punta-cana', city: 'Punta Cana', country: 'Dominican Republic', flag: '🇩🇴', region: 'Caribbean' },
+  { slug: 'rhodes', city: 'Rhodes', country: 'Greece', flag: '🇬🇷', region: 'Europe' },
+  { slug: 'rio-de-janeiro', city: 'Rio de Janeiro', country: 'Brazil', flag: '🇧🇷', region: 'South America' },
+  { slug: 'riyadh', city: 'Riyadh', country: 'Saudi Arabia', flag: '🇸🇦', region: 'Middle East' },
+  { slug: 'rome', city: 'Rome', country: 'Italy', flag: '🇮🇹', region: 'Europe' },
+  { slug: 'san-francisco', city: 'San Francisco', country: 'USA', flag: '🇺🇸', region: 'North America' },
+  { slug: 'santiago', city: 'Santiago', country: 'Chile', flag: '🇨🇱', region: 'South America' },
+  { slug: 'sao-paulo', city: 'São Paulo', country: 'Brazil', flag: '🇧🇷', region: 'South America' },
+  { slug: 'sapporo', city: 'Sapporo', country: 'Japan', flag: '🇯🇵', region: 'East Asia' },
+  { slug: 'seoul', city: 'Seoul', country: 'South Korea', flag: '🇰🇷', region: 'East Asia' },
+  { slug: 'seville', city: 'Seville', country: 'Spain', flag: '🇪🇸', region: 'Europe' },
+  { slug: 'shanghai', city: 'Shanghai', country: 'China', flag: '🇨🇳', region: 'East Asia' },
+  { slug: 'sharjah', city: 'Sharjah', country: 'UAE', flag: '🇦🇪', region: 'Middle East' },
+  { slug: 'shenzhen', city: 'Shenzhen', country: 'China', flag: '🇨🇳', region: 'East Asia' },
+  { slug: 'singapore', city: 'Singapore', country: 'Singapore', flag: '🇸🇬', region: 'Southeast Asia' },
+  { slug: 'stockholm', city: 'Stockholm', country: 'Sweden', flag: '🇸🇪', region: 'Europe' },
+  { slug: 'sydney', city: 'Sydney', country: 'Australia', flag: '🇦🇺', region: 'Oceania' },
+  { slug: 'taipei', city: 'Taipei', country: 'Taiwan', flag: '🇹🇼', region: 'East Asia' },
+  { slug: 'tallinn', city: 'Tallinn', country: 'Estonia', flag: '🇪🇪', region: 'Europe' },
+  { slug: 'tbilisi', city: 'Tbilisi', country: 'Georgia', flag: '🇬🇪', region: 'Europe' },
+  { slug: 'tel-aviv', city: 'Tel Aviv', country: 'Israel', flag: '🇮🇱', region: 'Middle East' },
+  { slug: 'thessaloniki', city: 'Thessaloniki', country: 'Greece', flag: '🇬🇷', region: 'Europe' },
+  { slug: 'tokyo', city: 'Tokyo', country: 'Japan', flag: '🇯🇵', region: 'East Asia' },
+  { slug: 'toronto', city: 'Toronto', country: 'Canada', flag: '🇨🇦', region: 'North America' },
+  { slug: 'valencia', city: 'Valencia', country: 'Spain', flag: '🇪🇸', region: 'Europe' },
+  { slug: 'vancouver', city: 'Vancouver', country: 'Canada', flag: '🇨🇦', region: 'North America' },
+  { slug: 'venice', city: 'Venice', country: 'Italy', flag: '🇮🇹', region: 'Europe' },
+  { slug: 'verona', city: 'Verona', country: 'Italy', flag: '🇮🇹', region: 'Europe' },
+  { slug: 'vienna', city: 'Vienna', country: 'Austria', flag: '🇦🇹', region: 'Europe' },
+  { slug: 'vilnius', city: 'Vilnius', country: 'Lithuania', flag: '🇱🇹', region: 'Europe' },
+  { slug: 'warsaw', city: 'Warsaw', country: 'Poland', flag: '🇵🇱', region: 'Europe' },
+  { slug: 'washington-dc', city: 'Washington D.C.', country: 'USA', flag: '🇺🇸', region: 'North America' },
+  { slug: 'zhuhai', city: 'Zhuhai', country: 'China', flag: '🇨🇳', region: 'East Asia' },
+  { slug: 'zurich', city: 'Zurich', country: 'Switzerland', flag: '🇨🇭', region: 'Europe' },
+];
+
+const placeGuides = [
+  { slug: 'perito-moreno', place: 'Perito Moreno', country: 'Argentina', flag: '🇦🇷', region: 'South America', type: 'Nature' },
+  { slug: 'iguazu-falls', place: 'Iguazú Falls', country: 'Argentina / Brazil', flag: '🇦🇷', region: 'South America', type: 'Nature' },
+  { slug: 'blue-mountains', place: 'Blue Mountains', country: 'Australia', flag: '🇦🇺', region: 'Oceania', type: 'Nature' },
+  { slug: 'great-barrier-reef', place: 'Great Barrier Reef', country: 'Australia', flag: '🇦🇺', region: 'Oceania', type: 'Dive' },
+  { slug: 'kgari', place: "K'gari", country: 'Australia', flag: '🇦🇺', region: 'Oceania', type: 'Nature' },
+  { slug: 'uluru', place: 'Uluru', country: 'Australia', flag: '🇦🇺', region: 'Oceania', type: 'Landmark' },
+  { slug: 'whitsunday-islands', place: 'Whitsundays', country: 'Australia', flag: '🇦🇺', region: 'Oceania', type: 'Beach' },
+  { slug: 'salar-de-uyuni', place: 'Salar de Uyuni', country: 'Bolivia', flag: '🇧🇴', region: 'South America', type: 'Nature' },
+  { slug: 'okavango-delta', place: 'Okavango Delta', country: 'Botswana', flag: '🇧🇼', region: 'Africa', type: 'Nature' },
+  { slug: 'sugarloaf-mountain', place: 'Sugarloaf Mountain', country: 'Brazil', flag: '🇧🇷', region: 'South America', type: 'Landmark' },
+  { slug: 'angkor-wat', place: 'Angkor Wat', country: 'Cambodia', flag: '🇰🇭', region: 'Southeast Asia', type: 'Landmark' },
+  { slug: 'banff', place: 'Banff', country: 'Canada', flag: '🇨🇦', region: 'North America', type: 'Nature' },
+  { slug: 'icefields-parkway', place: 'Icefields Parkway', country: 'Canada', flag: '🇨🇦', region: 'North America', type: 'Nature' },
+  { slug: 'atacama-desert', place: 'Atacama Desert', country: 'Chile', flag: '🇨🇱', region: 'South America', type: 'Nature' },
+  { slug: 'torres-del-paine', place: 'Torres del Paine', country: 'Chile', flag: '🇨🇱', region: 'South America', type: 'Trek' },
+  { slug: 'great-wall', place: 'Great Wall', country: 'China', flag: '🇨🇳', region: 'East Asia', type: 'Landmark' },
+  { slug: 'cocora-valley', place: 'Cocora Valley', country: 'Colombia', flag: '🇨🇴', region: 'South America', type: 'Nature' },
+  { slug: 'monteverde', place: 'Monteverde', country: 'Costa Rica', flag: '🇨🇷', region: 'Central America', type: 'Nature' },
+  { slug: 'plitvice-lakes', place: 'Plitvice Lakes', country: 'Croatia', flag: '🇭🇷', region: 'Europe', type: 'Nature' },
+  { slug: 'galapagos', place: 'Galápagos Islands', country: 'Ecuador', flag: '🇪🇨', region: 'South America', type: 'Nature' },
+  { slug: 'pyramids-of-giza', place: 'Pyramids of Giza', country: 'Egypt', flag: '🇪🇬', region: 'Africa', type: 'Landmark' },
+  { slug: 'yasawa-islands', place: 'Yasawa Islands', country: 'Fiji', flag: '🇫🇯', region: 'Oceania', type: 'Beach' },
+  { slug: 'calanques', place: 'Calanques', country: 'France', flag: '🇫🇷', region: 'Europe', type: 'Nature' },
+  { slug: 'mont-blanc', place: 'Mont Blanc', country: 'France', flag: '🇫🇷', region: 'Europe', type: 'Trek' },
+  { slug: 'bora-bora', place: 'Bora Bora', country: 'French Polynesia', flag: '🇵🇫', region: 'Oceania', type: 'Beach' },
+  { slug: 'neuschwanstein', place: 'Neuschwanstein', country: 'Germany', flag: '🇩🇪', region: 'Europe', type: 'Landmark' },
+  { slug: 'meteora', place: 'Meteora', country: 'Greece', flag: '🇬🇷', region: 'Europe', type: 'Landmark' },
+  { slug: 'santorini', place: 'Santorini', country: 'Greece', flag: '🇬🇷', region: 'Europe', type: 'Coastal' },
+  { slug: 'golden-circle-iceland', place: 'Golden Circle', country: 'Iceland', flag: '🇮🇸', region: 'Europe', type: 'Nature' },
+  { slug: 'jokulsarlon', place: 'Jökulsárlón', country: 'Iceland', flag: '🇮🇸', region: 'Europe', type: 'Nature' },
+  { slug: 'amber-fort', place: 'Amber Fort', country: 'India', flag: '🇮🇳', region: 'South Asia', type: 'Landmark' },
+  { slug: 'goa', place: 'Goa', country: 'India', flag: '🇮🇳', region: 'South Asia', type: 'Beach' },
+  { slug: 'pangong-lake', place: 'Pangong Lake', country: 'India', flag: '🇮🇳', region: 'South Asia', type: 'Nature' },
+  { slug: 'taj-mahal', place: 'Taj Mahal', country: 'India', flag: '🇮🇳', region: 'South Asia', type: 'Landmark' },
+  { slug: 'varanasi-ghats', place: 'Varanasi Ghats', country: 'India', flag: '🇮🇳', region: 'South Asia', type: 'Cultural' },
+  { slug: 'borobudur', place: 'Borobudur', country: 'Indonesia', flag: '🇮🇩', region: 'Southeast Asia', type: 'Landmark' },
+  { slug: 'komodo-national-park', place: 'Komodo', country: 'Indonesia', flag: '🇮🇩', region: 'Southeast Asia', type: 'Nature' },
+  { slug: 'ubud-rice-terraces', place: 'Ubud', country: 'Indonesia', flag: '🇮🇩', region: 'Southeast Asia', type: 'Cultural' },
+  { slug: 'cliffs-of-moher', place: 'Cliffs of Moher', country: 'Ireland', flag: '🇮🇪', region: 'Europe', type: 'Nature' },
+  { slug: 'amalfi-coast', place: 'Amalfi Coast', country: 'Italy', flag: '🇮🇹', region: 'Europe', type: 'Coastal' },
+  { slug: 'cinque-terre', place: 'Cinque Terre', country: 'Italy', flag: '🇮🇹', region: 'Europe', type: 'Coastal' },
+  { slug: 'dolomites', place: 'Dolomites', country: 'Italy', flag: '🇮🇹', region: 'Europe', type: 'Trek' },
+  { slug: 'fushimi-inari', place: 'Fushimi Inari', country: 'Japan', flag: '🇯🇵', region: 'East Asia', type: 'Landmark' },
+  { slug: 'mount-fuji', place: 'Mount Fuji', country: 'Japan', flag: '🇯🇵', region: 'East Asia', type: 'Trek' },
+  { slug: 'dead-sea', place: 'Dead Sea', country: 'Jordan', flag: '🇯🇴', region: 'Middle East', type: 'Nature' },
+  { slug: 'petra', place: 'Petra', country: 'Jordan', flag: '🇯🇴', region: 'Middle East', type: 'Landmark' },
+  { slug: 'wadi-rum', place: 'Wadi Rum', country: 'Jordan', flag: '🇯🇴', region: 'Middle East', type: 'Nature' },
+  { slug: 'maasai-mara', place: 'Maasai Mara', country: 'Kenya', flag: '🇰🇪', region: 'Africa', type: 'Safari' },
+  { slug: 'issyk-kul', place: 'Issyk-Kul', country: 'Kyrgyzstan', flag: '🇰🇬', region: 'Central Asia', type: 'Nature' },
+  { slug: 'kuang-si-falls', place: 'Kuang Si Falls', country: 'Laos', flag: '🇱🇦', region: 'Southeast Asia', type: 'Nature' },
+  { slug: 'batu-caves', place: 'Batu Caves', country: 'Malaysia', flag: '🇲🇾', region: 'Southeast Asia', type: 'Landmark' },
+  { slug: 'mount-kinabalu', place: 'Mount Kinabalu', country: 'Malaysia', flag: '🇲🇾', region: 'Southeast Asia', type: 'Trek' },
+  { slug: 'maldives-local-islands', place: 'Maldives', country: 'Maldives', flag: '🇲🇻', region: 'South Asia', type: 'Beach' },
+  { slug: 'chichen-itza', place: 'Chichén Itzá', country: 'Mexico', flag: '🇲🇽', region: 'North America', type: 'Landmark' },
+  { slug: 'riviera-maya-cenotes', place: 'Riviera Maya', country: 'Mexico', flag: '🇲🇽', region: 'North America', type: 'Nature' },
+  { slug: 'bay-of-kotor', place: 'Bay of Kotor', country: 'Montenegro', flag: '🇲🇪', region: 'Europe', type: 'Nature' },
+  { slug: 'atlas-mountains', place: 'Atlas Mountains', country: 'Morocco', flag: '🇲🇦', region: 'Africa', type: 'Trek' },
+  { slug: 'sossusvlei', place: 'Sossusvlei', country: 'Namibia', flag: '🇳🇦', region: 'Africa', type: 'Nature' },
+  { slug: 'annapurna-circuit', place: 'Annapurna Circuit', country: 'Nepal', flag: '🇳🇵', region: 'South Asia', type: 'Trek' },
+  { slug: 'everest-base-camp', place: 'Everest Base Camp', country: 'Nepal', flag: '🇳🇵', region: 'South Asia', type: 'Trek' },
+  { slug: 'abel-tasman', place: 'Abel Tasman', country: 'New Zealand', flag: '🇳🇿', region: 'Oceania', type: 'Trek' },
+  { slug: 'milford-sound', place: 'Milford Sound', country: 'New Zealand', flag: '🇳🇿', region: 'Oceania', type: 'Nature' },
+  { slug: 'tongariro', place: 'Tongariro', country: 'New Zealand', flag: '🇳🇿', region: 'Oceania', type: 'Trek' },
+  { slug: 'geirangerfjord', place: 'Geirangerfjord', country: 'Norway', flag: '🇳🇴', region: 'Europe', type: 'Nature' },
+  { slug: 'lofoten', place: 'Lofoten Islands', country: 'Norway', flag: '🇳🇴', region: 'Europe', type: 'Nature' },
+  { slug: 'musandam', place: 'Musandam', country: 'Oman', flag: '🇴🇲', region: 'Middle East', type: 'Nature' },
+  { slug: 'wadi-shab', place: 'Wadi Shab', country: 'Oman', flag: '🇴🇲', region: 'Middle East', type: 'Nature' },
+  { slug: 'machu-picchu', place: 'Machu Picchu', country: 'Peru', flag: '🇵🇪', region: 'South America', type: 'Landmark' },
+  { slug: 'sacred-valley', place: 'Sacred Valley', country: 'Peru', flag: '🇵🇪', region: 'South America', type: 'Cultural' },
+  { slug: 'el-nido', place: 'El Nido', country: 'Philippines', flag: '🇵🇭', region: 'Southeast Asia', type: 'Beach' },
+  { slug: 'siargao', place: 'Siargao', country: 'Philippines', flag: '🇵🇭', region: 'Southeast Asia', type: 'Surf' },
+  { slug: 'lake-bled', place: 'Lake Bled', country: 'Slovenia', flag: '🇸🇮', region: 'Europe', type: 'Nature' },
+  { slug: 'blyde-river-canyon', place: 'Blyde River Canyon', country: 'South Africa', flag: '🇿🇦', region: 'Africa', type: 'Nature' },
+  { slug: 'kruger-national-park', place: 'Kruger National Park', country: 'South Africa', flag: '🇿🇦', region: 'Africa', type: 'Safari' },
+  { slug: 'table-mountain', place: 'Table Mountain', country: 'South Africa', flag: '🇿🇦', region: 'Africa', type: 'Nature' },
+  { slug: 'alhambra', place: 'Alhambra', country: 'Spain', flag: '🇪🇸', region: 'Europe', type: 'Landmark' },
+  { slug: 'camino-de-santiago', place: 'Camino de Santiago', country: 'Spain', flag: '🇪🇸', region: 'Europe', type: 'Trek' },
+  { slug: 'sagrada-familia', place: 'Sagrada Família', country: 'Spain', flag: '🇪🇸', region: 'Europe', type: 'Landmark' },
+  { slug: 'ella', place: 'Ella', country: 'Sri Lanka', flag: '🇱🇰', region: 'South Asia', type: 'Nature' },
+  { slug: 'sigiriya', place: 'Sigiriya', country: 'Sri Lanka', flag: '🇱🇰', region: 'South Asia', type: 'Landmark' },
+  { slug: 'lauterbrunnen', place: 'Lauterbrunnen', country: 'Switzerland', flag: '🇨🇭', region: 'Europe', type: 'Nature' },
+  { slug: 'mount-kilimanjaro', place: 'Mount Kilimanjaro', country: 'Tanzania', flag: '🇹🇿', region: 'Africa', type: 'Trek' },
+  { slug: 'serengeti', place: 'Serengeti', country: 'Tanzania', flag: '🇹🇿', region: 'Africa', type: 'Safari' },
+  { slug: 'zanzibar', place: 'Zanzibar', country: 'Tanzania', flag: '🇹🇿', region: 'Africa', type: 'Beach' },
+  { slug: 'chiang-mai-temples', place: 'Chiang Mai Temples', country: 'Thailand', flag: '🇹🇭', region: 'Southeast Asia', type: 'Cultural' },
+  { slug: 'koh-tao', place: 'Koh Tao', country: 'Thailand', flag: '🇹🇭', region: 'Southeast Asia', type: 'Dive' },
+  { slug: 'cappadocia', place: 'Cappadocia', country: 'Türkiye', flag: '🇹🇷', region: 'Middle East', type: 'Landmark' },
+  { slug: 'pamukkale', place: 'Pamukkale', country: 'Türkiye', flag: '🇹🇷', region: 'Middle East', type: 'Nature' },
+  { slug: 'jebel-jais', place: 'Jebel Jais', country: 'UAE', flag: '🇦🇪', region: 'Middle East', type: 'Adventure' },
+  { slug: 'giants-causeway', place: "Giant's Causeway", country: 'UK', flag: '🇬🇧', region: 'Europe', type: 'Nature' },
+  { slug: 'scottish-highlands', place: 'Scottish Highlands', country: 'UK', flag: '🇬🇧', region: 'Europe', type: 'Nature' },
+  { slug: 'grand-canyon', place: 'Grand Canyon', country: 'USA', flag: '🇺🇸', region: 'North America', type: 'Nature' },
+  { slug: 'na-pali-coast', place: 'Nā Pali Coast', country: 'USA', flag: '🇺🇸', region: 'North America', type: 'Nature' },
+  { slug: 'yellowstone', place: 'Yellowstone', country: 'USA', flag: '🇺🇸', region: 'North America', type: 'Nature' },
+  { slug: 'yosemite', place: 'Yosemite', country: 'USA', flag: '🇺🇸', region: 'North America', type: 'Nature' },
+  { slug: 'zion', place: 'Zion', country: 'USA', flag: '🇺🇸', region: 'North America', type: 'Nature' },
+  { slug: 'registan-samarkand', place: 'Samarkand', country: 'Uzbekistan', flag: '🇺🇿', region: 'Central Asia', type: 'Landmark' },
+  { slug: 'ha-long-bay', place: 'Ha Long Bay', country: 'Vietnam', flag: '🇻🇳', region: 'Southeast Asia', type: 'Nature' },
+  { slug: 'hoi-an', place: 'Hoi An', country: 'Vietnam', flag: '🇻🇳', region: 'Southeast Asia', type: 'Cultural' },
+  { slug: 'victoria-falls', place: 'Victoria Falls', country: 'Zambia / Zimbabwe', flag: '🇿🇲', region: 'Africa', type: 'Nature' },
+];
+
+const typeIcons: Record<string, string> = {
+  Safari: '🦁', Nature: '🌿', Trek: '🥾', Beach: '🏖️', Landmark: '🏛️',
+  Cultural: '🎭', Coastal: '⛵', Dive: '🤿', Adventure: '⛰️', Surf: '🏄',
+};
+---
+
+<BaseLayout
+  title="Travel Guides — 200+ City & Place Itineraries | roammate"
+  description="Free travel guides for 100 cities, 100 bucket-list places, and 10 backpacker routes. Budget tips, day-by-day itineraries, and local recommendations for young travelers."
+  ogImage="/images/guides/tokyo-hero.webp"
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" type="image/webp" href="/images/guides/tokyo-hero.webp">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://roammate.com/guides/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="guides-hero">
+    <div class="guides-hero-bg" id="heroBackground" style="background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('/images/guides/tokyo-hero.webp');"></div>
+    <div class="guides-hero-content">
+      <div class="guides-hero-breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Guides</span>
+      </div>
+      <div class="guides-hero-tag">
+        <span>🌍</span>
+        <span>200+ Destinations</span>
+      </div>
+      <h1 class="guides-hero-title">Travel <em>Guides</em></h1>
+      <p class="guides-hero-subtitle">Day-by-day itineraries with budget breakdowns and local tips — curated for younger travelers.</p>
+      <div class="guides-hero-meta">
+        <a href="#routes" class="guides-meta-pill">Backpacker Routes</a>
+        <a href="#cities" class="guides-meta-pill">City Guides</a>
+        <a href="#places" class="guides-meta-pill">Places & Landmarks</a>
+      </div>
+    </div>
+    <div class="guides-hero-scroll">
+      <span>Explore</span>
+      <div class="guides-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Backpacker Routes -->
+  <section class="guides-section" id="routes">
+    <div class="guides-section-inner">
+      <div class="guide-section-header reveal">
+        <div class="section-label">Multi-Country</div>
+        <h2 class="section-heading">Backpacker <em>Routes</em></h2>
+        <p class="guides-section-intro">Long-stay routes through entire regions — week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.</p>
+      </div>
+      <div class="guides-routes-grid">
+        {backpackerRoutes.map((route, i) => (
+          <a href={`/guides/${route.slug}/`} class={`guides-route-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <div class="guides-route-flags">{route.flags}</div>
+            <h3 class="guides-route-title">{route.title}</h3>
+            <p class="guides-route-tagline">{route.tagline}</p>
+            <span class="guides-route-duration">{route.duration}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- City Guides -->
+  <section class="guides-section guides-section--alt" id="cities">
+    <div class="guides-section-inner">
+      <div class="guide-section-header reveal">
+        <div class="section-label">City Guides</div>
+        <h2 class="section-heading">100 <em>Cities</em></h2>
+        <p class="guides-section-intro">1, 3, and 7-day itineraries with morning-to-evening plans, budget tips, cultural insights, and practical information.</p>
+      </div>
+      <div class="guides-cities-grid">
+        {cityGuides.map((guide, i) => (
+          <a href={`/guides/${guide.slug}/`} class={`guides-city-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <span class="guides-city-flag">{guide.flag}</span>
+            <div>
+              <h3 class="guides-city-name">{guide.city}</h3>
+              <span class="guides-city-region">{guide.country} · {guide.region}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Places & Landmarks -->
+  <section class="guides-section" id="places">
+    <div class="guides-section-inner">
+      <div class="guide-section-header reveal">
+        <div class="section-label">Bucket List</div>
+        <h2 class="section-heading">100 <em>Places</em></h2>
+        <p class="guides-section-intro">National parks, UNESCO sites, bucket-list landmarks, epic treks, and island paradises — with 1 and 3-day itineraries.</p>
+      </div>
+      <div class="guides-places-grid">
+        {placeGuides.map((guide, i) => (
+          <a href={`/guides/${guide.slug}/`} class={`guides-place-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <span class="guides-place-flag">{guide.flag}</span>
+            <div class="guides-place-info">
+              <h3 class="guides-place-name">{guide.place}</h3>
+              <span class="guides-place-region">{guide.country}</span>
+            </div>
+            <span class="guides-place-type">{typeIcons[guide.type] || '📍'} {guide.type}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const heroImages = [
+    // Cities
+    'paris','london','barcelona','rome','amsterdam','berlin','madrid','lisbon','prague','vienna',
+    'dublin','milan','florence','venice','bologna','verona','munich','frankfurt','copenhagen','stockholm',
+    'oslo','helsinki','athens','zurich','budapest','edinburgh','brussels','nice','seville','valencia',
+    'palma-de-mallorca','warsaw','krakow','porto','rhodes','heraklion','thessaloniki','tallinn','vilnius','tbilisi',
+    'istanbul','antalya','tokyo','seoul','osaka','kyoto','taipei','hong-kong','shanghai','beijing',
+    'fukuoka','sapporo','busan','macau','guangzhou','shenzhen','zhuhai','singapore','bangkok','kuala-lumpur',
+    'pattaya-chonburi','phuket','ho-chi-minh-city','hanoi','denpasar','johor-bahru','delhi','dubai','abu-dhabi','sharjah',
+    'doha','riyadh','medina','mecca','tel-aviv','jerusalem','cairo','marrakech','sydney','melbourne',
+    'new-york-city','los-angeles','las-vegas','orlando','miami','san-francisco','washington-dc','honolulu','toronto','vancouver',
+    'montreal','mexico-city','cancun','sao-paulo','rio-de-janeiro','buenos-aires','lima','santiago','punta-cana','marne-la-vallee',
+    // Places
+    'kruger-national-park','serengeti','maasai-mara','victoria-falls','okavango-delta','sossusvlei','table-mountain',
+    'blyde-river-canyon','mount-kilimanjaro','zanzibar','atlas-mountains','pyramids-of-giza','petra','wadi-rum','dead-sea',
+    'wadi-shab','musandam','jebel-jais','cappadocia','pamukkale','golden-circle-iceland','jokulsarlon','geirangerfjord',
+    'lofoten','scottish-highlands','giants-causeway','cliffs-of-moher','cinque-terre','amalfi-coast','dolomites',
+    'lake-bled','plitvice-lakes','bay-of-kotor','meteora','santorini','lauterbrunnen','mont-blanc','calanques',
+    'alhambra','sagrada-familia','camino-de-santiago','neuschwanstein','taj-mahal','amber-fort','varanasi-ghats','goa',
+    'pangong-lake','annapurna-circuit','everest-base-camp','sigiriya','ella','maldives-local-islands','registan-samarkand',
+    'issyk-kul','ha-long-bay','hoi-an','angkor-wat','kuang-si-falls','chiang-mai-temples','koh-tao','mount-kinabalu',
+    'batu-caves','ubud-rice-terraces','komodo-national-park','borobudur','el-nido','siargao','mount-fuji','fushimi-inari',
+    'great-wall','great-barrier-reef','whitsunday-islands','kgari','uluru','blue-mountains','milford-sound','tongariro',
+    'abel-tasman','yasawa-islands','bora-bora','banff','icefields-parkway','zion','grand-canyon','yosemite','yellowstone',
+    'na-pali-coast','chichen-itza','riviera-maya-cenotes','monteverde','machu-picchu','sacred-valley','salar-de-uyuni',
+    'atacama-desert','torres-del-paine','perito-moreno','iguazu-falls','sugarloaf-mountain','cocora-valley','galapagos',
+  ];
+  const slug = heroImages[Math.floor(Math.random() * heroImages.length)];
+  const bg = document.getElementById('heroBackground');
+  if (bg) {
+    bg.style.backgroundImage = `linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('/images/guides/${slug}-hero.webp')`;
+  }
+</script>
+
+<style>
+  /* ========================
+     HERO (matches CityGuideLayout)
+     ======================== */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.01% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  .guides-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 40px 80px;
+    overflow: hidden;
+  }
+
+  .guides-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, #1a1714 0%, #2a2520 40%, #1a1714 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.6s ease;
+  }
+
+  .guides-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .guides-hero-breadcrumb {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.3s forwards;
+  }
+
+  .guides-hero-breadcrumb a {
+    color: rgba(245, 240, 232, 0.6);
+    transition: color 0.3s;
+  }
+
+  .guides-hero-breadcrumb a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .guides-hero-breadcrumb span {
+    margin: 0 8px;
+  }
+
+  .guides-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-terracotta-light);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.5s forwards;
+  }
+
+  .guides-hero-tag span:first-child {
+    font-size: 24px;
+  }
+
+  .guides-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(64px, 12vw, 140px);
+    font-weight: 900;
+    line-height: 0.9;
+    color: #f5f0e8;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s var(--ease-out-expo) 0.7s forwards;
+  }
+
+  .guides-hero-title em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .guides-hero-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.7);
+    max-width: 500px;
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.9s forwards;
+  }
+
+  .guides-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 1.1s forwards;
+  }
+
+  .guides-meta-pill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.8);
+    padding: 8px 16px;
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    border-radius: 100px;
+    transition: all 0.3s var(--ease-out-expo);
+    text-decoration: none;
+  }
+
+  .guides-meta-pill:hover {
+    color: var(--color-terracotta-light);
+    border-color: var(--color-terracotta-light);
+  }
+
+  .guides-hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
+  }
+
+  .guides-hero-scroll span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    writing-mode: vertical-rl;
+  }
+
+  .guides-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: rgba(245, 240, 232, 0.2);
+    animation: scrollLine 2.5s ease-in-out infinite;
+  }
+
+  /* ========================
+     SECTIONS
+     ======================== */
+  .guides-section {
+    padding: 100px 40px;
+  }
+
+  .guides-section--alt {
+    background: var(--color-bg-warm);
+  }
+
+  .guides-section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .guides-section-intro {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .guide-section-header {
+    margin-bottom: 56px;
+  }
+
+  /* ========================
+     BACKPACKER ROUTES GRID
+     ======================== */
+  .guides-routes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .guides-route-card {
+    display: block;
+    padding: 32px;
+    background: var(--color-bg-warm);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+    text-decoration: none;
+  }
+
+  .guides-route-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+  }
+
+  .guides-route-flags {
+    font-size: 24px;
+    margin-bottom: 16px;
+    letter-spacing: 4px;
+  }
+
+  .guides-route-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 8px;
+  }
+
+  .guides-route-tagline {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .guides-route-duration {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+
+  /* ========================
+     CITY GUIDES GRID
+     ======================== */
+  .guides-cities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .guides-city-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    background: var(--color-bg);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+    text-decoration: none;
+  }
+
+  .guides-city-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+
+  .guides-city-flag {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  .guides-city-name {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: 1.3;
+  }
+
+  .guides-city-region {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 300;
+  }
+
+  /* ========================
+     PLACES GRID
+     ======================== */
+  .guides-places-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .guides-place-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    background: var(--color-bg-warm);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+    text-decoration: none;
+  }
+
+  .guides-place-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+
+  .guides-place-flag {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .guides-place-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .guides-place-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: 1.3;
+  }
+
+  .guides-place-region {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 300;
+  }
+
+  .guides-place-type {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ========================
+     RESPONSIVE
+     ======================== */
+  @media (max-width: 1024px) {
+    .guides-hero { padding: 0 24px 60px; }
+    .guides-section { padding: 80px 24px; }
+    .guides-routes-grid { grid-template-columns: repeat(2, 1fr); }
+    .guides-cities-grid { grid-template-columns: repeat(3, 1fr); }
+    .guides-places-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .guides-hero { padding: 0 20px 40px; min-height: 90vh; }
+    .guides-hero-title { font-size: clamp(56px, 18vw, 100px); }
+    .guides-hero-scroll { display: none; }
+    .guides-section { padding: 60px 20px; }
+    .guides-routes-grid { grid-template-columns: 1fr; }
+    .guides-cities-grid { grid-template-columns: repeat(2, 1fr); }
+    .guides-places-grid { grid-template-columns: repeat(2, 1fr); }
+    .guide-section-header { margin-bottom: 40px; }
+  }
+</style>

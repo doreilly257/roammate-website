@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'IDR (Rupiah)', detail: '1 USD ≈ Rp16,000' },
+  { icon: '🗣', label: 'Language', value: 'Bahasa Indonesia', detail: 'Some English at tourist sites' },
+  { icon: '🕐', label: 'Timezone', value: 'WIB (UTC+7)', detail: 'Same as Bangkok/Jakarta' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Oct', detail: 'Dry season, clear sunrise views' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–40 USD', detail: 'Rp400,000–650,000 budget' },
+  { icon: '🛂', label: 'Visa', value: 'Free 30 days / VOA', detail: 'Visa on arrival Rp500,000 for 30 more' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Borobudur Sunrise & Prambanan in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Borobudur Sunrise',
+          text: 'Wake at 3:30am for the legendary sunrise experience at Borobudur. Enter through Manohara Resort gate (Rp450,000 sunrise ticket) and climb the ancient terraces in darkness as the first light reveals layer upon layer of 9th-century carved stone panels and 72 bell-shaped stupas. The mist rising from surrounding jungle as the volcano silhouettes appear on the horizon is one of Southeast Asia\'s most unforgettable moments.',
+          tip: 'Book the sunrise ticket through Manohara Hotel the day before. Bring a headlamp — the climb in darkness is steep and the stone steps are uneven.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Prambanan Temple Complex',
+          text: 'Drive 40 minutes east to Prambanan (Rp350,000), a towering 9th-century Hindu temple complex dedicated to Shiva, Vishnu, and Brahma. The 47-meter central spire is jaw-dropping, and the carved Ramayana reliefs circling the main temples tell an epic story across hundreds of intricately detailed panels. Explore the smaller Sewu and Plaosan temples nearby — far fewer crowds and equally atmospheric ruins scattered across grassy fields.',
+          tip: 'Combined Borobudur-Prambanan tickets (Rp575,000) save money. Visit Prambanan after 2pm when tour buses have left.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Yogyakarta Street Food & Malioboro',
+          text: 'Head to Yogyakarta (40 min from Prambanan) for dinner along Jalan Malioboro, the city\'s beating heart. Sit at a lesehan mat restaurant on the street and order gudeg (jackfruit stew, Rp15,000), ayam goreng (fried chicken, Rp20,000), and es dawet (coconut milk drink, Rp5,000). The energy is infectious — batik sellers, buskers, and becak drivers create a soundtrack that defines Jogja.',
+          tip: 'Lesehan restaurants south of Malioboro near the Kraton (palace) are more authentic and cheaper than the tourist-facing stalls.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Borobudur Sunrise & Temple Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Borobudur at Dawn',
+          text: 'The 3:30am alarm is brutal, but Borobudur at sunrise is worth every lost hour of sleep. Enter via Manohara Resort (Rp450,000 sunrise ticket) and climb to the upper circular terraces before first light. As dawn breaks, mist lifts from the Kedu Plain, volcanoes appear one by one, and 1,200-year-old Buddha statues glow gold in the early light. Spend an unhurried hour exploring the 2,672 carved relief panels that wrap the lower galleries.',
+          tip: 'The sunrise ticket includes breakfast at Manohara. Stay until 8am when regular ticket-holders arrive — you get quieter exploration time.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mendut & Pawon Temples',
+          text: 'Walk the ancient pilgrimage route connecting Borobudur to Mendut Temple (Rp15,000), a smaller 9th-century temple housing three stunning Buddha statues — considered the finest stone carvings in Java. The 3km path passes through village roads lined with banana trees and local warungs. Stop at tiny Pawon Temple midway, perfectly proportioned and beautifully carved. Lunch at a local warung — nasi goreng for Rp15,000–20,000.',
+          tip: 'The Mendut-Borobudur walking route follows the actual ancient Buddhist processional path. Early afternoon heat is intense — bring water and a hat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Punthuk Setumbu Sunset & Local Village',
+          text: 'For a different perspective, hike to Punthuk Setumbu hill (Rp30,000 entry) for panoramic views over Borobudur with the Merapi and Merbabu volcanoes behind it. The golden light at this hour paints the entire valley in amber. Back in the local village of Borobudur, join villagers at simple warungs for sate ayam (chicken satay, Rp15,000) and fresh es jeruk (orange juice, Rp5,000).',
+          tip: 'Punthuk Setumbu is the same hill used for sunrise viewing, but sunset is equally beautiful and far less crowded.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Yogyakarta — Culture, Craft & Street Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kraton Palace & Taman Sari Water Castle',
+          text: 'Start at the Kraton (Rp15,000), the 18th-century Sultan\'s palace still in active use. Watch traditional Javanese gamelan performances in the ornate pendopo halls. Walk south to Taman Sari Water Castle (Rp15,000), a crumbling royal bathing complex with underground tunnels, hidden pools, and moss-covered archways. The surrounding kampung (village neighborhood) is a living gallery of street art and batik workshops.',
+          tip: 'Gamelan performances happen daily from 10am–12pm inside the Kraton. Arrive by 9:30am for good seating — it is free with palace entry.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Batik Workshop & Jalan Prawirotaman',
+          text: 'Take a batik workshop in the Taman Sari area (Rp50,000–100,000 for a 2-hour class). Learn the wax-resist dyeing technique that UNESCO recognizes as intangible cultural heritage. You create your own piece to take home. Then stroll Jalan Prawirotaman, Yogyakarta\'s backpacker street lined with cafes, vintage shops, and guesthouses. Lunch at a local Padang restaurant — heap your plate with rendang, sambal eggs, and cassava leaves for Rp25,000.',
+          tip: 'Batik workshops near Taman Sari are run by local families and far more authentic than hotel-organized experiences.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Angkringan Night Markets',
+          text: 'Yogyakarta comes alive after dark at angkringan — tiny pushcart food stalls lit by oil lamps. The most famous cluster is at Angkringan Lik Man near the Tugu monument, where locals sit on low benches eating nasi kucing (cat rice — tiny banana-leaf parcels of rice with sambal, Rp3,000 each), sate usus (intestine satay, Rp2,000), and sweet kopi joss (coffee with a burning charcoal dropped in, Rp5,000).',
+          tip: 'Order five or six different nasi kucing parcels — each has a different filling. The whole spread with drinks rarely exceeds Rp30,000.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Prambanan & Surrounding Temples',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Prambanan Temple at Opening',
+          text: 'Arrive at Prambanan (Rp350,000) right at opening time for the best light and smallest crowds. The main Shiva temple rises 47 meters and the Ramayana reliefs circling its base are extraordinary — each panel tells part of the Hindu epic with remarkable detail and expression. Explore the Vishnu and Brahma temples flanking it, then cross to the Sewu Buddhist complex 800 meters north, a stunning 249-temple ruin mostly to yourself.',
+          tip: 'The inner chambers of the Shiva temple contain outstanding statues of Durga, Ganesha, and Agastya. Most visitors miss these — go inside each temple.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Plaosan & Ratu Boko',
+          text: 'Continue to Plaosan Lor (Rp15,000), a Buddhist-Hindu hybrid temple surrounded by rice fields, with twin main buildings featuring fine carved windows and guardian statues. Then drive uphill to Ratu Boko (Rp350,000 or combo ticket), a cliff-top palace ruin with massive stone gateways framing views across the entire Prambanan plain to the volcanoes beyond. The site feels more like a lost fortress than a temple.',
+          tip: 'Ratu Boko is best in late afternoon light when the stone glows golden. Combined tickets with Prambanan save Rp125,000.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ramayana Ballet or Farewell Dinner',
+          text: 'If visiting between May and October, catch the Ramayana Ballet at the open-air Prambanan stage (Rp150,000–350,000) — a spectacular performance of Javanese dance against the floodlit temples. Over 200 dancers perform the Hindu epic with gamelan orchestra, fire effects, and costumes that shimmer under the stars. Otherwise, head to Yogyakarta for a farewell dinner of bakmi Jawa (Javanese noodles, Rp15,000) at a local cart.',
+          tip: 'Book Ramayana Ballet tickets online in advance. Choose full-moon nights for the most atmospheric performances with the best lighting.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Warung eating', text: 'Local warungs serve nasi goreng, mie goreng, and nasi campur from Rp12,000–25,000. Eat where locals eat — if a warung is full of motorbikes, the food is good and cheap.' },
+  { title: 'Shared transport', text: 'Split jeep tours and car hires with other travelers. A hired car with driver for a full day costs Rp400,000–600,000 (split 4 ways: Rp100,000–150,000 each).' },
+  { title: 'Temple combos', text: 'Combined Borobudur + Prambanan tickets save Rp125,000. Student discounts exist — bring your student ID. Regular daytime entry is cheaper than sunrise.' },
+  { title: 'Homestays', text: 'Homestays near Borobudur from Rp100,000–200,000/night include breakfast and genuine Javanese hospitality. Book via Booking.com or ask at the village tourist office.' },
+  { title: 'Yogyakarta base', text: 'Stay in Yogyakarta\'s Prawirotaman or Sosrowijayan areas — hostels from Rp80,000/night. Day-trip to Borobudur by bus (Rp35,000) or shared minibus (Rp50,000).' },
+  { title: 'Angkringan feasts', text: 'Angkringan pushcart stalls are the cheapest eats in Java — a full dinner of nasi kucing, satay, and drinks costs Rp15,000–30,000 total.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'Rp80,000–200,000', midrange: 'Rp300,000–600,000', splurge: 'Rp1,000,000+', notes: 'Hostel/homestay → guesthouse → boutique hotel' },
+  { category: 'Food', budget: 'Rp40,000–75,000', midrange: 'Rp100,000–200,000', splurge: 'Rp400,000+', notes: 'Warungs & angkringan → cafes → fine dining' },
+  { category: 'Transport', budget: 'Rp35,000–100,000', midrange: 'Rp150,000–300,000', splurge: 'Rp500,000+', notes: 'Local bus → shared car → private driver' },
+  { category: 'Activities', budget: 'Rp50,000–150,000', midrange: 'Rp350,000–575,000', splurge: 'Rp800,000+', notes: 'Village walks → temple combos → sunrise + cave tours' },
+  { category: 'Drinks', budget: 'Rp10,000–30,000', midrange: 'Rp50,000–100,000', splurge: 'Rp150,000+', notes: 'Warung tea/coffee → cafe lattes → craft beer' },
+  { category: 'Daily Total', budget: 'Rp215,000–555,000', midrange: 'Rp950,000–1,775,000', splurge: 'Rp2,850,000+', notes: '$13–35 → $60–110 → $178+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Hire a car with driver for Rp400,000–600,000/day — the most practical way to visit temples spread across the region. Agree on price beforehand',
+      'Public buses run Yogyakarta–Borobudur (Rp35,000, 90 min) from Jombor terminal. Trans Jogja buses cover the city for Rp3,500',
+      'Motorbike rental is Rp60,000–80,000/day but roads around temples can be chaotic. Only ride if you have experience on Asian roads',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Telkomsel or XL SIM card at the airport or any phone shop (Rp50,000–100,000 for 10–30GB). Coverage is good across Java',
+      'eSIMs from Airalo or Holafly work well in Java. Pocket WiFi is overkill here — mobile data is fast and cheap',
+      'WiFi at guesthouses and cafes is generally reliable but can be slow in rural areas near Borobudur village',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs are widely available in Yogyakarta. BCA and Mandiri ATMs accept international cards. Carry cash for temples and rural areas',
+      'Temple ticket counters accept cash only for the most part. Bring Rp500,000–1,000,000 in cash for a temple day',
+      'Tipping is not mandatory but appreciated — Rp10,000–20,000 for drivers and guides. Round up at restaurants',
+    ],
+  },
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities get 30-day visa-free entry or can purchase a Visa on Arrival (Rp500,000) for 30 days extendable once',
+      'Fly into Adisucipto Airport (JOG) in Yogyakarta. Budget airlines AirAsia and Lion Air connect from Bali, Jakarta, and Kuala Lumpur',
+      'The new Yogyakarta International Airport (YIA) is further from the city but has more international connections',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Yogyakarta and surrounds are very safe for travelers. Petty theft is rare but keep valuables secure at crowded markets',
+      'Drink bottled water only — avoid ice in very small rural warungs. Bring mosquito repellent for evening temple visits',
+      'The nearest hospital is in Yogyakarta (RS Bethesda, RS Panti Rapih). Travel insurance is essential — medical evacuation can be costly',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Lightweight, breathable clothing is essential — temperatures hit 32°C daily. Bring a sarong for temple modesty requirements',
+      'Sturdy footwear for climbing Borobudur\'s steep stone stairs and exploring Jomblang Cave. Flip-flops won\'t cut it on temple steps',
+      'Pack a rain jacket April–October and a proper waterproof November–March. Afternoon showers are common even in dry season',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Temple Etiquette', text: 'Cover shoulders and knees at temples. Sarongs are available for rent (Rp5,000–10,000) at Borobudur and Prambanan entrances. Don\'t sit on or climb Buddha statues — it\'s deeply disrespectful.' },
+  { icon: '🤝', title: 'Javanese Politeness', text: 'Javanese culture values halus (refinement) and indirect communication. Raised voices and confrontation cause deep discomfort. Smile, speak softly, and accept tea when offered — refusing hospitality is rude.' },
+  { icon: '🖐️', title: 'Left Hand Rule', text: 'The left hand is considered unclean in Indonesian culture. Use your right hand for giving, receiving, eating, and pointing. If eating with your hands (common at warungs), always use your right.' },
+  { icon: '👗', title: 'Dress Modestly', text: 'Central Java is more conservative than Bali. Cover shoulders and knees, especially near temples and in villages. Swimwear is only for beach areas. Women should carry a sarong for quick cover-ups.' },
+  { icon: '📸', title: 'Photo Requests', text: 'Indonesian visitors often ask to take photos with foreign tourists, especially at Borobudur and Prambanan. It\'s friendly and harmless — smile and pose, or politely decline. Don\'t photograph people praying without asking.' },
+  { icon: '🕌', title: 'Prayer Times', text: 'Java is predominantly Muslim. The call to prayer sounds five times daily and is part of the atmosphere. During Ramadan, avoid eating openly in public during daylight hours out of respect for those fasting.' },
+];
+---
+
+<CityGuideLayout
+  title="Borobudur Travel Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Borobudur guide for young travelers. Sunrise temple experiences, Yogyakarta street food, Prambanan, Merapi volcano, and hidden caves. Plan your Java trip with roammate."
+  heroImage="/images/guides/borobudur-hero.webp"
+  heroFlag="🇮🇩"
+  heroCountry="Indonesia"
+  heroRegion="Southeast Asia"
+  heroCity="Borobudur"
+  heroSubtitle="The world's largest Buddhist temple rising from jungle mist at dawn — a 1,200-year-old stone mandala surrounded by volcanoes and rice paddies in the heart of Java."
+  heroPills={['3-Day Itinerary', 'Temples & Culture', 'Apr – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Indonesian Rupiah. Central Java is remarkably affordable — temple tickets are the biggest expense, while food and transport cost almost nothing."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Central Java blends Javanese tradition, Islamic values, and ancient Hindu-Buddhist heritage. Politeness and respect are deeply valued — small cultural awareness makes a big difference."
+  ctaCity="Borobudur"
+  ctaText="Find travel companions to split car hire costs, share sunrise experiences, and explore Yogyakarta's hidden food scene together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'CNY (Yuan/¥)', detail: '1 USD ≈ ¥7.25' },
+  { icon: '🗣', label: 'Language', value: 'Cantonese / Mandarin', detail: 'Very limited English' },
+  { icon: '🕐', label: 'Timezone', value: 'CST (UTC+8)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Dec', detail: '18–28°C, dry & pleasant' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–65 USD', detail: '¥290–470 budget' },
+  { icon: '🛂', label: 'Visa', value: '144-hour transit visa-free', detail: 'Or standard China visa required' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Guangzhou in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Shamian Island & Dim Sum Breakfast',
+          text: 'Start with dim sum at Diandude on Shamian Island — har gow, char siu bao, and cheong fun with unlimited tea from ¥50 per person. Then explore Shamian Island itself — a leafy colonial quarter with European architecture, banyan-lined avenues, and a peaceful riverfront promenade. This former British and French concession feels worlds away from the frenetic city. The morning light through the trees is beautiful.',
+          tip: 'Shamian Island is most atmospheric before 10am on weekdays — the colonial buildings and giant banyans make for stunning photos.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chen Clan Ancestral Hall & Shangxiajiu',
+          text: 'Metro to the Chen Clan Ancestral Hall (¥10) — a breathtaking 19th-century Lingnan-style compound with intricate roof carvings, woodwork, and ceramics depicting mythology and history. One of the finest examples of traditional Cantonese architecture. Then walk to Shangxiajiu Pedestrian Street — Guangzhou\'s oldest shopping street, lined with heritage arcade buildings and street food stalls selling roast goose and rice rolls.',
+          tip: 'The Chen Clan Hall\'s roof ridge carvings are the highlight — bring a zoom lens or binoculars to appreciate the incredible detail.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Canton Tower & Pearl River Night Cruise',
+          text: 'Metro to Canton Tower (¥150 for observation deck) — the 604m landmark that defines Guangzhou\'s skyline. The views at sunset are extraordinary. Alternatively, skip the tower and take a Pearl River night cruise (¥78–128, 1 hour from Tianzi Pier) — the illuminated bridges, Canton Tower, and skyline reflected in the water are unforgettable. Dinner at a riverside restaurant in Binjiang for wonton noodles and roast duck.',
+          tip: 'The Pearl River cruise is best value at the ¥78 basic level — the views are identical. Board at Tianzi Pier near Haizhu Square metro.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Heritage, Dim Sum & River Views',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Shamian Island & Dim Sum',
+          text: 'Start with an authentic dim sum breakfast — Guangzhou is the birthplace of yum cha culture. Head to Diandude or Guangzhou Restaurant for har gow, char siu bao, cheong fun, and phoenix claws with unlimited tea (¥50–80 per person). Then explore Shamian Island — a leafy colonial quarter with European architecture, giant banyan trees, and a peaceful riverfront promenade away from the city chaos.',
+          tip: 'Dim sum etiquette: tap two fingers on the table to say thank you when someone pours tea. Point at the trolley to order.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chen Clan Ancestral Hall & Liwan',
+          text: 'Metro to the Chen Clan Ancestral Hall (¥10) — one of the finest examples of Lingnan architecture in China. The intricate roof carvings, woodwork, and ceramic friezes depicting mythology are extraordinary. Then walk through the Liwan district — old Guangzhou with heritage arcade buildings (qilou), antique shops on Enning Road, and traditional medicine shops selling dried seahorses and herbs.',
+          tip: 'The Chen Clan Hall\'s ceramic roof ridge carvings are the masterpiece — bring a zoom lens or binoculars for the incredible detail.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pearl River Night Cruise',
+          text: 'Take a Pearl River night cruise from Tianzi Pier (¥78 basic, 1 hour) — the illuminated Canton Tower, Haiyin Bridge, and skyscrapers reflected in the water make this Guangzhou\'s most magical experience. Board at 7:30pm for the best light. Afterward, walk Binjiang Dong Road along the river for street food — roast goose, rice noodle rolls, and fresh coconut from pavement vendors, all under ¥30.',
+          tip: 'The ¥78 basic cruise has identical views to the premium tier — no need to upgrade. Sit on the top open-air deck for photos.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Modern Guangzhou & Cantonese Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Canton Tower & Flower City Square',
+          text: 'Metro to Canton Tower (¥150 observation deck, ¥228 with skywalk) — 604 metres of futuristic architecture and panoramic views of the entire Pearl River Delta. The outdoor sky walk at 488m is thrilling if you have the nerve. Then walk to the nearby Flower City Square and Guangzhou Library — a striking glass building with free entry and excellent views from the upper floors.',
+          tip: 'Visit Canton Tower on a clear morning for the best visibility — on hazy days you can\'t see beyond the immediate skyline.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Beijing Road & Street Food',
+          text: 'Metro to Beijing Road — Guangzhou\'s main pedestrian shopping street with a glass-floored archaeological site showing ancient road layers dating to the Song Dynasty. Lunch at Yinjichangfen for silky rice noodle rolls (¥15–25) — a Guangzhou institution. Walk through the lanes behind Beijing Road for local fashion, tech gadgets, and bubble tea shops. The energy here is pure Cantonese city life.',
+          tip: 'The underground Song Dynasty road ruins on Beijing Road are free to view through the glass panels — most tourists walk right over them.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Zhujiang New Town & Craft Beer',
+          text: 'Explore Zhujiang New Town — Guangzhou\'s sleek CBD district with the Opera House (designed by Zaha Hadid), Guangdong Museum, and IFC towers. Walk the waterfront promenade for Canton Tower views at sunset. For dinner, try claypot rice at Chaojifan on Tiyu Dong Road (¥25–40), then explore the craft beer scene at places like Taps or Nao Brewery — Guangzhou\'s beer scene is booming.',
+          tip: 'The Zaha Hadid-designed Opera House is worth seeing even from outside — the organic curved form is stunning at twilight.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Ancient Temples & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Temple of the Six Banyan Trees & Yuexiu Park',
+          text: 'Visit the Temple of the Six Banyan Trees (¥5) — a 1,400-year-old Buddhist temple with the Flower Pagoda, a colourful 57m tower you can climb for old town views. Then walk to Yuexiu Park — the largest park in the city centre with the Five Rams Statue (Guangzhou\'s symbol), the 600-year-old Zhenhai Tower (¥10), and locals practicing tai chi, line dancing, and shuttlecock kicking.',
+          tip: 'Yuexiu Park is most alive at 7–9am when hundreds of locals do morning exercise — join a tai chi group, they welcome visitors.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Qingping Market & Enning Road',
+          text: 'Walk through Qingping Market — one of China\'s most famous traditional markets, now focused on dried goods, herbs, jade, and flowers. The sensory overload of dried mushrooms, ginseng, and medicinal roots is unforgettable. Continue to Enning Road — the last street of original qilou (arcade buildings) in Guangzhou, now being revitalised with cafes, galleries, and the Yongqingfang creative district.',
+          tip: 'Yongqingfang on Enning Road is Guangzhou\'s coolest emerging creative district — converted heritage houses with art spaces and indie coffee shops.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Roast Goose Farewell',
+          text: 'Guangzhou is the roast goose capital of China. Head to Dadong or Bingsheng for the city\'s best — crispy skin, tender meat, plum sauce dip, served with rice and soup (¥50–80 per person). The Cantonese approach to goose is legendary and different from anywhere else. End the evening with a walk along the Liwan Lake, where locals sing Cantonese opera under illuminated bridges.',
+          tip: 'Cantonese roast goose is the dish you\'ll dream about after leaving — the crispy skin technique takes decades to master.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Heritage, Dim Sum & River Views',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Shamian Island & Dim Sum',
+          text: 'Start with dim sum at a traditional Cantonese restaurant — Guangzhou invented yum cha. Try Diandude or Guangzhou Restaurant for har gow, char siu bao, cheong fun, and phoenix claws with unlimited tea (¥50–80). Then explore Shamian Island — a leafy colonial quarter with European buildings, giant banyan trees, and a peaceful riverfront promenade. Morning light through the trees is magical.',
+          tip: 'Dim sum etiquette: tap two fingers on the table to say thank you when someone pours tea. Point at the trolley to order.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chen Clan Ancestral Hall & Liwan',
+          text: 'Metro to the Chen Clan Ancestral Hall (¥10) — one of the finest examples of Lingnan architecture in China. The roof carvings, woodwork, and ceramic friezes are extraordinary. Walk through the Liwan district — old Guangzhou with heritage qilou (arcade buildings), antique shops on Enning Road, and traditional medicine shops selling dried seahorses and ginseng roots.',
+          tip: 'The Chen Clan Hall\'s ceramic roof ridge carvings are the masterpiece — bring a zoom lens to appreciate the incredible detail.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pearl River Night Cruise',
+          text: 'Take a Pearl River night cruise from Tianzi Pier (¥78, 1 hour) — the illuminated Canton Tower, bridges, and skyscrapers reflected in the water create Guangzhou\'s most magical scene. Board at 7:30pm for peak illumination. Walk Binjiang Dong Road afterward for street food — roast goose, rice noodle rolls, and fresh coconut from pavement vendors, all under ¥30.',
+          tip: 'The ¥78 basic cruise has identical views to premium tiers — no need to upgrade. Sit on the top open-air deck for the best photos.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Modern Guangzhou & Skyline',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Canton Tower',
+          text: 'Metro to Canton Tower (¥150 observation deck) — 604 metres of futuristic architecture with panoramic views of the Pearl River Delta. The outdoor skywalk at 488m is thrilling. Then walk through Flower City Square and the Guangzhou Library — a stunning glass building with free entry and excellent upper-floor views. The modern architecture district around here rivals anything in Shanghai or Beijing.',
+          tip: 'Visit Canton Tower on a clear morning for best visibility — on hazy days you can\'t see past the immediate skyline.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Beijing Road & Street Food',
+          text: 'Metro to Beijing Road — Guangzhou\'s main pedestrian street with glass-floored archaeological ruins showing ancient Song Dynasty road layers beneath your feet. Lunch at Yinjichangfen for rice noodle rolls (¥15–25). Walk the lanes behind Beijing Road for local fashion, tech gadgets, and bubble tea. The energy here is pure Cantonese street life — loud, colourful, and delicious.',
+          tip: 'The underground Song Dynasty road ruins on Beijing Road are free to view — most tourists walk right over them without noticing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Zhujiang New Town',
+          text: 'Explore Zhujiang New Town — Guangzhou\'s CBD with the Zaha Hadid Opera House, Guangdong Museum, and IFC towers. Walk the waterfront promenade for Canton Tower views at sunset. Dinner at a claypot rice restaurant on Tiyu Dong Road (¥25–40), then check out Guangzhou\'s growing craft beer scene at Taps Brew House or Nao Brewery in Tianhe.',
+          tip: 'The Zaha Hadid Opera House is worth seeing even from outside — the organic curved form is stunning at twilight.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Ancient Temples & Parks',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Six Banyan Trees Temple & Yuexiu Park',
+          text: 'Visit the Temple of the Six Banyan Trees (¥5) — a 1,400-year-old Buddhist temple with the Flower Pagoda (57m), climbable for old-town views. Walk to Yuexiu Park — the city\'s largest with the Five Rams Statue (Guangzhou\'s symbol), the 600-year-old Zhenhai Tower (¥10), and hundreds of locals doing tai chi, line dancing, and playing with shuttlecocks.',
+          tip: 'Yuexiu Park at 7–9am is a cultural experience in itself — join a tai chi group; they genuinely welcome foreign participants.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Qingping Market & Yongqingfang',
+          text: 'Explore Qingping Market — famous for dried goods, herbs, jade, and flowers. The sensory overload of dried mushrooms, ginseng, and medicinal roots is uniquely Chinese. Continue to Yongqingfang on Enning Road — the last original qilou (arcade) street, now revitalised as Guangzhou\'s coolest creative district with converted heritage houses, art spaces, and indie coffee shops.',
+          tip: 'Yongqingfang is Guangzhou\'s answer to Beijing\'s hutong hipster districts — but more authentic and far fewer tourists.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Roast Goose & Liwan Evening',
+          text: 'Dinner at a Cantonese roast goose restaurant — try Dadong or Bingsheng for the city\'s best. Crispy skin, tender meat, plum sauce, rice and soup (¥50–80). Guangzhou\'s goose technique is legendary. End with a walk along Liwan Lake where locals sing Cantonese opera under illuminated bridges — a poetic scene that captures old Guangzhou perfectly.',
+          tip: 'Cantonese roast goose is the dish you\'ll dream about — the crispy skin technique takes decades for chefs to perfect.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Baiyun Mountain & Cantonese Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Baiyun Mountain Hike',
+          text: 'Take bus 24 or the cable car (¥25 one way) to Baiyun Mountain — Guangzhou\'s green lung. The hike to Moxing Peak (382m) takes 1.5–2 hours through forested trails with city panorama views. Locals hike here daily and the atmosphere is wonderfully social — people chat, exercise, and picnic along the trails. The summit views of Guangzhou\'s skyline rising from the Pearl River Delta are reward enough.',
+          tip: 'Hike up and take the cable car down (or vice versa) — the forest trail is beautiful but the views are the main attraction.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Locals\' Lunch & Tea Culture',
+          text: 'Descend for a late yum cha lunch at Panxi Restaurant in Liwan — one of Guangzhou\'s most famous dim sum halls, set in a classical garden. The fish ball congee and custard buns here are legendary (¥60–100 per person). Then visit the Fangcun Tea Market — rows of shops selling every Chinese tea variety. Shop owners offer free tastings — sit and learn about Cantonese tea culture.',
+          tip: 'At Fangcun Tea Market, accept the free tastings but don\'t feel pressured to buy — politely saying "xie xie" (thank you) is fine.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Xiaobei Little Africa & Night Markets',
+          text: 'Visit Xiaobei — Guangzhou\'s fascinating multicultural district, home to one of Asia\'s largest African communities. The neighbourhood has incredible Ethiopian, Nigerian, and West African restaurants alongside Cantonese shops. Try a West African suya or jollof rice for ¥30–50. Then head to a local night market for skewers (chuan\'r), stinky tofu, and the electric atmosphere of Cantonese street life.',
+          tip: 'Xiaobei\'s African restaurants are best around Dengfeng Road — the food is authentic and the cultural mix is genuinely fascinating.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Day Trip — Foshan & Kung Fu',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Foshan Ancestral Temple',
+          text: 'Take Guangfo Metro Line 1 to Foshan (40 minutes, ¥7) — the ancient city where Cantonese culture runs deepest. Start at the Foshan Ancestral Temple (¥20) — a spectacular 600-year-old Taoist temple with intricate ceramic roofs, stone carvings, and a martial arts museum dedicated to Foshan\'s kung fu legends including Huang Feihong and Ip Man (Bruce Lee\'s teacher).',
+          tip: 'The martial arts performances at the Ancestral Temple run at set times (usually 10:30am and 2:30pm) — check at the entrance.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lingnan Tiandi & Pottery District',
+          text: 'Walk to Lingnan Tiandi — a beautifully restored heritage district of traditional Lingnan houses now hosting cafes, boutiques, and galleries. Lunch at a local Foshan restaurant for double-skin milk (a legendary local dessert, ¥12) and dim sum. Then visit Nanfeng Ancient Kiln — a 500-year-old dragon kiln (the oldest still-firing kiln in the world) where you can watch potters at work.',
+          tip: 'The double-skin milk at Renxin Milk Dessert in Foshan is the original recipe — creamy, silky, and unlike any dairy dessert you\'ve had.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Guangzhou BBQ',
+          text: 'Metro back to Guangzhou. For a change from Cantonese cuisine, try Xinjiang lamb skewers at a street-side BBQ — cumin-rubbed lamb chuan\'r for ¥2–5 per skewer, paired with cold Tsingtao beer. The Tiyu Xi Road area near Tianhe has great late-night BBQ streets. The smoky, spiced atmosphere of a Chinese BBQ alley on a warm evening is one of China\'s great pleasures.',
+          tip: 'Chinese BBQ alleys are cash-heavy — load up your WeChat Pay or carry ¥50–100 in small notes for the best street-side skewers.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Markets, Art & Hidden Guangzhou',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Flower Markets & Sacred Heart Cathedral',
+          text: 'Visit Lingnan Flower Market — Guangzhou is the City of Flowers, and this wholesale market is a feast of orchids, bonsai, and tropical plants. Then walk to the Sacred Heart Cathedral — a spectacular Gothic church built entirely of granite, nicknamed the "Stone House." Free entry. One of only four all-stone Gothic cathedrals in the world, and it stands incongruously in the middle of Cantonese old town.',
+          tip: 'The Sacred Heart Cathedral\'s stained glass windows are best seen in the morning when eastern light floods the nave.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Redtory Art & Design Factory',
+          text: 'Metro to Redtory (¥uancun station) — a converted canning factory turned into Guangzhou\'s premier art district. Galleries, design studios, cafes in industrial spaces, and rotating exhibitions. Similar to Beijing\'s 798 but more intimate. Lunch at one of the factory cafes — creative Cantonese fusion dishes from ¥40. Then browse the independent design shops for unique souvenirs.',
+          tip: 'Redtory is open daily but galleries keep irregular hours — weekends are best for the full experience with all spaces open.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cantonese Opera & Tea',
+          text: 'Experience Cantonese opera at the Liyuan Theatre or the Guangdong Cantonese Opera Academy — tickets from ¥30–80 for a performance of this UNESCO-listed art form. The elaborate costumes, falsetto singing, and acrobatic movements are mesmerising even without understanding the language. End the evening at a traditional Cantonese teahouse for a final pot of pu-erh and quiet conversation.',
+          tip: 'Cantonese opera performances have English subtitles at some venues — check the Guangzhou cultural events listings online.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Farewell & Last Bites',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Dim Sum & Morning Walk',
+          text: 'One last dim sum breakfast — try a local\'s spot you haven\'t visited yet. Guangzhou has hundreds of dim sum restaurants, each with specialities. Walk through the morning wet markets of Liwan where locals shop for fresh produce, live fish, and herbs. The energy and colour of a Chinese morning market is a fitting farewell to the city that invented Cantonese cuisine.',
+          tip: 'Morning wet markets are the real Guangzhou — the vendors are friendly and happy to show you unusual ingredients if you show interest.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenirs & Shopping',
+          text: 'Last-minute shopping: pick up Cantonese dried goods (mushrooms, sausages) at Qingping Market, tea from Fangcun, or ceramics from the shops near Chen Clan Hall. For modern souvenirs, Yongqingfang on Enning Road has unique design pieces. Guangzhou is also famous for its wholesale markets — Haiyin Plaza for electronics, Liuhua for clothing — where prices are the cheapest in China.',
+          tip: 'Cantonese dried sausages (lap cheong) make excellent food gifts — vacuum-sealed packs from Qingping Market last for months.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell River Walk',
+          text: 'A final walk along the Pearl River at sunset — watch the city transition from day to night as the skyscrapers and bridges illuminate. Grab a last plate of roast goose and rice (¥40), a cold beer, and find a spot on the riverbank promenade near Ersha Island. Guangzhou doesn\'t shout for attention like Shanghai or Beijing, but it feeds you like no other city in China.',
+          tip: 'Guangzhou Baiyun Airport is far from the city — allow 1.5 hours by metro (Line 3 express) or 45 minutes by taxi (¥120–150).',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Dim sum on a budget', text: 'Avoid hotel dim sum restaurants. Local chain teahouses serve excellent yum cha from ¥35–60 per person. Lunchtime dim sum is cheaper than morning — the food is identical.' },
+  { title: 'Metro everywhere', text: 'Guangzhou Metro covers the entire city — ¥2–14 per ride with Yangcheng Tong card. Buy one at any station (¥50 incl. ¥20 deposit). Far cheaper than taxis for getting around.' },
+  { title: 'WeChat Pay essential', text: 'Cash is barely used in Guangzhou. Set up WeChat Pay before arrival (link international card) — it works at restaurants, convenience stores, markets, and even street food stalls.' },
+  { title: 'Free attractions', text: 'Shamian Island, Yuexiu Park, Cantonese opera street performances, Liwan Lake, temple grounds, wet markets, and the Pearl River promenade are all free to enjoy.' },
+  { title: 'Street food heaven', text: 'Rice noodle rolls (¥5–8), wonton noodles (¥12–18), claypot rice (¥20–30), and BBQ skewers (¥2–5) mean you can eat incredibly well for under ¥50 per day on street food alone.' },
+  { title: 'Budget accommodation', text: 'Hostels near Haizhu Square or Changgang run ¥60–100/night. Budget hotels on Booking.com start from ¥120. Avoid the Zhujiang New Town CBD area — prices double for the same quality.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '¥60–120', midrange: '¥200–400', splurge: '¥600+', notes: 'Hostels → 3-star hotels → luxury hotels' },
+  { category: 'Food', budget: '¥50–80', midrange: '¥120–200', splurge: '¥350+', notes: 'Street food & canteens → dim sum & restaurants → fine Cantonese dining' },
+  { category: 'Transport', budget: '¥10–25', midrange: '¥30–60', splurge: '¥100+', notes: 'Metro → taxi/DiDi → private car' },
+  { category: 'Activities', budget: '¥10–30', midrange: '¥50–150', splurge: '¥250+', notes: 'Temples & parks → tower & museums → shows & tours' },
+  { category: 'Drinks', budget: '¥10–20', midrange: '¥30–60', splurge: '¥100+', notes: 'Local tea & beer → craft beer → cocktail bars' },
+  { category: 'Daily Total', budget: '¥140–275', midrange: '¥430–870', splurge: '¥1,400+', notes: '$19–38 → $59–120 → $193+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      '144-hour visa-free transit for 54 nationalities — must have onward ticket to a third country within 144 hours',
+      'Otherwise, a standard China visa (L-type tourist) is required — apply at Chinese embassy before travel',
+      'Guangzhou Baiyun Airport (CAN) connects to the city via Metro Line 3 express (35 min, ¥25)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Tap water is NOT safe to drink — always use bottled or boiled water',
+      'Guangzhou is generally safe with low violent crime. Be aware of petty theft in crowded markets and metro stations',
+      'Air quality varies — check AQI before outdoor activities. Summer (Jun–Sep) is extremely hot and humid (35°C+)',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Guangzhou Metro: extensive 16-line network covering the entire city. Get a Yangcheng Tong card (¥50 incl. deposit)',
+      'DiDi (Chinese Uber) is the taxi app — download and set up before arrival. Regular taxis have a ¥12 flag fall',
+      'Shared bikes (Meituan, Hellobike) are everywhere — scan QR code with Alipay/WeChat to unlock. ¥1.5 per 15 min',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Most Western apps (Google, Instagram, WhatsApp) are BLOCKED in China. Download a VPN before arrival',
+      'Buy a China SIM at the airport: China Mobile or China Unicom, ¥100–200 for 7 days with data. Passport required',
+      'Essential apps: WeChat (messaging + payments), Alipay (payments), DiDi (taxis), Baidu Maps (navigation), Amap',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'China is nearly cashless — WeChat Pay and Alipay are used for everything. International cards can now link to both apps',
+      'Carry some cash (¥200–300) for emergencies. ATMs at Bank of China and ICBC accept foreign cards',
+      'Tipping is not practiced in China — it may even cause confusion. Service charges are included',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, breathable clothing for subtropical heat. Rain jacket or umbrella for sudden subtropical showers',
+      'Comfortable walking shoes — Guangzhou is flat but you\'ll walk a lot. Flip-flops for markets and casual areas',
+      'Download offline maps, VPN, and translation apps before arrival — internet access is restricted in China',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '📱', title: 'Digital Life', text: 'Cash is nearly obsolete. Set up WeChat Pay or Alipay before arrival. Even street food stalls, temples, and buskers use QR codes. Without mobile payment, you\'ll struggle in daily transactions.' },
+  { icon: '🍜', title: 'Dining Etiquette', text: 'Cantonese dining is communal — dishes are shared at the centre. Tap two fingers on the table to thank the tea pourer. Don\'t stick chopsticks upright in rice (it resembles funeral incense). Slurping noodles is acceptable.' },
+  { icon: '🗣', title: 'Language Barrier', text: 'English is very limited outside hotels. Download Pleco (dictionary) and Google Translate (with offline Chinese). Learn "ni hao" (hello), "xie xie" (thanks), "duoshao qian" (how much). Written communication via phone translator works well.' },
+  { icon: '🚬', title: 'Smoking Culture', text: 'Smoking is common in restaurants and public areas despite indoor bans. If it bothers you, sit outside or choose modern restaurants that enforce no-smoking rules. Offering cigarettes is a social gesture in Chinese culture.' },
+  { icon: '🔊', title: 'Noise & Space', text: 'Guangzhou is loud — conversations happen at high volume, phone calls on speaker are normal, and personal space is smaller. This isn\'t rudeness; it\'s the cultural norm. Embrace the energy rather than fighting it.' },
+  { icon: '🏪', title: 'Shopping Etiquette', text: 'Haggling is expected at markets but not in malls or restaurants. Start at 40–50% of the asking price. Be friendly, walk away to test the price, and don\'t haggle if you don\'t intend to buy.' },
+];
+---
+
+<CityGuideLayout
+  title="Guangzhou Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Guangzhou guide for young travelers. 3-day itinerary with dim sum, temples, river cruises, and the birthplace of Cantonese cuisine. Plan your trip with roammate."
+  heroImage="/images/guides/guangzhou-hero.webp"
+  heroFlag="🇨🇳"
+  heroCountry="China"
+  heroRegion="East Asia"
+  heroCity="Guangzhou"
+  heroSubtitle="The birthplace of dim sum, roast goose, and Cantonese culture — a megacity with 2,200 years of history hiding behind a modern skyline."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Oct – Dec Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Chinese Yuan (¥). Guangzhou is remarkably affordable — the food capital of China at backpacker prices."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Guangzhou has its own Cantonese identity within China — distinct food, language, and customs. Understanding the digital-first culture and dining etiquette will enrich your experience."
+  ctaCity="Guangzhou"
+  ctaText="Find travel companions for dim sum mornings, river cruises, and roast goose adventures with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

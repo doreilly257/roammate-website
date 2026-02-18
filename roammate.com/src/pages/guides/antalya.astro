@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'TRY (Lira)', detail: '1 USD ≈ 38 TRY' },
+  { icon: '🗣', label: 'Language', value: 'Turkish', detail: 'Some English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'TRT (UTC+3)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Jun, Sep – Oct', detail: '22–30°C, sunny & dry' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$35–55 USD', detail: '₺1,300–2,100 budget' },
+  { icon: '🛂', label: 'Visa', value: 'E-visa or free', detail: 'Many nationalities 90 days visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Antalya in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kaleiçi Old Town & Harbour',
+          text: 'Start your day in Kaleiçi, the atmospheric Ottoman-era old town enclosed by ancient Roman walls. Wander cobblestone lanes past restored wooden mansions, then descend to the picturesque Old Harbour where fishing boats bob beneath the clifftop. Stop at Hadrian\'s Gate, the ornate triple-arched Roman gate built in 130 AD. Grab a simit and Turkish tea from a street vendor along Hesapçı Sokak.',
+          tip: 'Enter Kaleiçi through Hadrian\'s Gate for the most dramatic first impression — the old town unfolds perfectly from there.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Antalya Museum & Konyaaltı Beach',
+          text: 'Walk or take the nostalgic tram to Antalya Museum (₺300) — one of Turkey\'s finest, with stunning Roman sarcophagi and a room of gods from Perge. The Heracles statue alone is worth the visit. Afterwards, hit Konyaaltı Beach — the long pebbly stretch backed by the Beydağları Mountains. Rent a sunbed (₺200–300) or use the free public sections. Swim in the impossibly turquoise Mediterranean.',
+          tip: 'The museum is cooler in the afternoon heat. The gods gallery on the upper floor is the highlight — don\'t rush through it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset Cliffs & Kaleiçi Nightlife',
+          text: 'Head to the cliffs at Karaalioğlu Park for a spectacular sunset over the Mediterranean and the Taurus Mountains. The park stretches along the clifftop with benches and tea gardens. Walk back into Kaleiçi for dinner — try Vanilla Lounge on Hesapçı Sokak for meze and grills (₺350–500 per person). Bar Street in Kaleiçi comes alive after 10pm with rooftop terraces and live music.',
+          tip: 'The rooftop bars on Bar Street (Selçuk Mahallesi) have great views — arrive by 9pm to grab a clifftop table.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Kaleiçi, History & Old Town Charm',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kaleiçi Old Town & Roman Ruins',
+          text: 'Start at Hadrian\'s Gate, the ornate triple-arched Roman gate built in 130 AD for Emperor Hadrian\'s visit. Walk through into Kaleiçi\'s labyrinth of cobblestone lanes, restored Ottoman mansions with wooden shutters, and tucked-away courtyards. Visit the Yivli Minare Mosque — the fluted 13th-century Seljuk minaret is the city\'s symbol. Grab a Turkish breakfast spread at Çakırlar Kahvaltı Evi (₺250 for two).',
+          tip: 'Turkish breakfast is an event — olives, cheese, honey, eggs, tomatoes. Share one spread between two people; it\'s enormous.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old Harbour & Antalya Museum',
+          text: 'Descend to the Old Harbour where colourful fishing boats and gulet yachts bob in turquoise water beneath the cliffs. Walk or take the nostalgic tram westward to Antalya Museum (₺300) — one of Turkey\'s best. The Hall of the Gods features marble statues from Perge, including a stunning Heracles. Allow two hours. The Roman sarcophagi collection rivals anything in Rome.',
+          tip: 'The nostalgic tram runs along Cumhuriyet Caddesi from the clock tower to the museum — a charming ride for just ₺15.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset at Karaalioğlu Park',
+          text: 'Walk to Karaalioğlu Park, the clifftop green space stretching along the Mediterranean. Find a bench on the cliff edge for a spectacular sunset over the bay and Beydağları Mountains. Dinner at Seraser Fine Dining in Kaleiçi for a splurge (₺800–1,200), or keep it budget at Parlak Restaurant near the bazaar — legendary İskender kebab for ₺180. Evening stroll through the lamp-lit streets of Kaleiçi.',
+          tip: 'Parlak Restaurant has been serving İskender kebab since 1922 — it\'s an Antalya institution. Go hungry.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Beaches, Waterfalls & Natural Beauty',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Düden Waterfalls',
+          text: 'Take a dolmuş (shared minibus, ₺25) from the city centre to Upper Düden Waterfall — a cascade plunging into a lush valley with walking paths behind the falls. The cool mist is glorious on a warm morning. Spend an hour exploring the park and caves. Then head to Lower Düden Waterfall on the coast, where the river plunges directly off a cliff into the Mediterranean — genuinely jaw-dropping.',
+          tip: 'Lower Düden is best viewed from the sea — a boat trip from the Old Harbour (₺250) gives you the perfect angle.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Konyaaltı Beach Day',
+          text: 'Antalya\'s main beach stretches 7km with the Taurus Mountains as a backdrop. The pebbly shore meets crystal-clear turquoise water. Rent a sunbed at one of the beach clubs (₺200–300 with towel) or use the free public sections. Beach Park area has restaurants and cafes right on the shore. Try a cold Efes beer (₺100) and a grilled fish sandwich — köfte and fish from beach vendors for ₺80–120.',
+          tip: 'The eastern end of Konyaaltı near the harbour is less crowded. Bring water shoes — the pebbles are tough on bare feet.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lara Beach Sunset & Seafood',
+          text: 'Taxi (₺150) to Lara Beach on the east side — sandier than Konyaaltı and lined with beachfront restaurants. Watch the sunset from the sand, then have dinner at one of the fish restaurants along the strip. Balık Evi serves fresh catches at ₺300–500 with meze. Return to Kaleiçi for drinks on the rooftop terraces — Castle Bar has views over the harbour and clifftops.',
+          tip: 'At fish restaurants, always ask for the catch of the day and negotiate the price per kilo before ordering.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Ancient Ruins & Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Perge Ancient City',
+          text: 'Take a dolmuş from Antalya Otogar to Perge (₺20, 30 minutes) — a spectacular Greco-Roman city with a 15,000-seat stadium, colonnaded streets, Roman baths, and an agora. This is where many of the museum\'s statues were found. The site is vast and uncrowded compared to Ephesus. Allow 2–3 hours to wander the ruins. Bring water and sunscreen — there\'s almost no shade.',
+          tip: 'Visit Perge first thing in the morning before the heat builds. The stadium and colonnaded street are the highlights.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Aspendos Theatre',
+          text: 'Continue to Aspendos (another ₺20 dolmuş, 30 minutes from Perge) — home to the best-preserved Roman theatre in the world. Built in 155 AD for 15,000 spectators, the acoustics are so perfect that a coin dropped on stage can be heard in the top row. Still used for concerts today. Entry ₺300. Grab lunch at one of the roadside lokanta restaurants nearby — home-cooked Turkish dishes for ₺120–180.',
+          tip: 'Stand at the very top row and have a friend whisper on stage — the acoustics are genuinely astonishing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner in Kaleiçi',
+          text: 'Return to Antalya and freshen up before a final evening in Kaleiçi. Walk the illuminated lanes one last time. Dinner at 7 Mehmet restaurant — a local institution since 1942 with traditional Antalyan cuisine. Try the piyaz (white bean salad with tahini — an Antalya specialty) and the tandır kebab. Finish with Turkish coffee and baklava at a courtyard café.',
+          tip: 'Piyaz is Antalya\'s signature dish — you won\'t find it this good anywhere else in Turkey. Order it as a starter everywhere.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Kaleiçi, History & Old Town Charm',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kaleiçi Old Town & Roman Ruins',
+          text: 'Start at Hadrian\'s Gate, the ornate triple-arched Roman gate built in 130 AD. Walk through into Kaleiçi\'s labyrinth of cobblestone lanes, restored Ottoman mansions with wooden shutters, and tucked-away courtyards. Visit the Yivli Minare Mosque — the fluted 13th-century Seljuk minaret is the city\'s symbol. Grab a Turkish breakfast spread at Çakırlar Kahvaltı Evi (₺250 for two).',
+          tip: 'Turkish breakfast is an event — olives, cheese, honey, eggs, tomatoes. Share one spread between two people; it\'s enormous.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old Harbour & Antalya Museum',
+          text: 'Descend to the Old Harbour where colourful fishing boats and gulet yachts bob in turquoise water. Walk or take the nostalgic tram to Antalya Museum (₺300) — one of Turkey\'s best archaeological museums. The Hall of the Gods features marble statues from Perge, including a stunning Heracles. Allow two hours. The Roman sarcophagi collection rivals anything in Rome itself.',
+          tip: 'The nostalgic tram runs along Cumhuriyet Caddesi from the clock tower to the museum — a charming ride for just ₺15.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset at Karaalioğlu Park',
+          text: 'Walk to Karaalioğlu Park, the clifftop green space stretching along the Mediterranean. Find a bench on the cliff edge for a spectacular sunset over the bay and Beydağları Mountains. Dinner at Parlak Restaurant near the bazaar — legendary İskender kebab since 1922 for ₺180. Evening stroll through the lamp-lit streets of Kaleiçi — the atmosphere after dark is magical.',
+          tip: 'Parlak Restaurant has been serving İskender kebab since 1922 — it\'s an Antalya institution. Go hungry.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Waterfalls & Beaches',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Düden Waterfalls',
+          text: 'Take a dolmuş (₺25) to Upper Düden Waterfall — a cascade plunging into a lush valley with walking paths behind the falls. The cool mist is glorious on a warm morning. Then head to Lower Düden Waterfall on the coast, where the river plunges directly off a cliff into the Mediterranean. The cliffside viewing platform gives you a front-row seat to one of nature\'s most dramatic scenes.',
+          tip: 'Lower Düden is best viewed from the sea — a boat trip from the Old Harbour (₺250) gives you the perfect angle.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Konyaaltı Beach Day',
+          text: 'Antalya\'s main beach stretches 7km with the Taurus Mountains behind. The pebbly shore meets crystal-clear turquoise water. Rent a sunbed at a beach club (₺200–300) or use free public sections. Beach Park area has restaurants right on the shore. Cold Efes beer (₺100) and grilled fish sandwiches from beach vendors (₺80–120) are the perfect lazy afternoon combo.',
+          tip: 'The eastern end of Konyaaltı near the harbour is less crowded. Bring water shoes — the pebbles are tough on bare feet.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kaleiçi Bar Street',
+          text: 'Dinner at Vanilla Lounge on Hesapçı Sokak — a courtyard restaurant in a restored Ottoman house with meze plates (₺80–120 each) and grilled lamb (₺280). Then head to Bar Street in Selçuk Mahallesi. The rooftop bars overlooking the harbour and cliffs come alive after 10pm. Try a cocktail at Club Ally (₺180) or keep it simple with rakı and meze at a traditional meyhane.',
+          tip: 'Meyhanes are traditional Turkish drinking houses — order a selection of meze and rakı. The waiters will guide you.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Ancient Ruins — Perge & Aspendos',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Perge Ancient City',
+          text: 'Dolmuş from Antalya Otogar to Perge (₺20, 30 minutes) — a spectacular Greco-Roman city with a 15,000-seat stadium, colonnaded streets, Roman baths, and an agora. This is where many of the Antalya Museum\'s statues were found. The site is vast and uncrowded compared to Ephesus. Allow 2–3 hours to wander the ruins. Bring water — there\'s virtually no shade.',
+          tip: 'Visit Perge first thing in the morning before the heat builds. The stadium and colonnaded street are the highlights.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Aspendos Theatre',
+          text: 'Continue to Aspendos (another ₺20 dolmuş, 30 minutes) — home to the best-preserved Roman theatre in the world. Built in 155 AD for 15,000 spectators, the acoustics are so perfect that a coin dropped on stage can be heard in the top row. Entry ₺300. Lunch at a roadside lokanta near Aspendos — home-cooked Turkish dishes like güveç stew and pide for ₺120–180.',
+          tip: 'Stand at the very top row and have a friend whisper on stage — the acoustics are genuinely astonishing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Dinner at Manavgat',
+          text: 'If time allows, visit Manavgat Waterfall (₺15 entry) — a wide, powerful cascade perfect for cooling off. Then have dinner at one of the riverside fish restaurants in Manavgat town. Fresh trout grilled over charcoal with salad and bread for ₺200–300. Return to Antalya by dolmuş (₺30, 1.5 hours) — or take a taxi to split with other travelers.',
+          tip: 'The riverside restaurants in Manavgat are magical at sunset — platforms over the water with fairy lights.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Olimpos, Çıralı & Eternal Flames',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bus to Olimpos',
+          text: 'Take a bus from Antalya Otogar to Olimpos (₺80, 1.5 hours) — a bohemian beach village nestled in a forested valley. Walk through the ancient Lycian ruins of Olympos (₺130 entry) — scattered amongst pine and laurel trees along a riverbed. The path leads to a pristine beach where the ruins meet the sea. This is Turkey at its most magical.',
+          tip: 'Olimpos treehouses are legendary — basic but atmospheric. Book Kadir\'s Treehouse or Bayrams for the classic experience (₺600–800 with dinner).',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Çıralı Beach',
+          text: 'Walk or drive to neighbouring Çıralı — a protected beach backed by orange orchards and the Taurus Mountains. This is a sea turtle nesting site, so the beach remains undeveloped. Swim in the clear water, lunch at one of the beachfront pansiyons — gözleme (Turkish flatbread, ₺60) and fresh orange juice (₺40). The pace here is blissfully slow compared to Antalya.',
+          tip: 'Çıralı is what the Turkish Riviera looked like before mass tourism. Savour the tranquillity — it\'s increasingly rare.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Chimaera — The Eternal Flames',
+          text: 'At dusk, hike up to Yanartaş (Chimaera) — natural gas flames that have been burning from the rocky hillside for millennia. Ancient sailors used them as a lighthouse. The 30-minute uphill hike rewards you with dozens of flickering flames emerging from the rocks against a star-filled sky. Bring marshmallows — toasting them on the ancient flames is a backpacker tradition.',
+          tip: 'Go at night, not daytime — the flames are only impressive in the dark. Bring a torch for the path and sturdy shoes.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Kaş & the Turquoise Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bus to Kaş',
+          text: 'Early bus from Olimpos to Kaş (₺120, 3 hours) — one of the most scenic coastal drives in the Mediterranean. Kaş is a charming harbour town built around ancient Lycian rock tombs. Check into a pansiyon in the old town (₺800–1,200/night) and explore the narrow streets filled with bougainvillea, craft shops, and tucked-away cafes. The Lycian sarcophagus sits right in the main street.',
+          tip: 'Book a pansiyon with a sea-view terrace in the Yeni Cami area — sunrise breakfasts overlooking the Greek island of Meis are unforgettable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Swimming & Cliff Jumping',
+          text: 'Walk 20 minutes to Küçükçakıl Beach — a small pebbly cove with luminous water and a dramatic cliff backdrop. Or head to the Limanağzı area for swimming platforms cut into the rocks over deep turquoise water. The cliff-jumping spots near the harbour are popular with locals. Rent snorkelling gear (₺100) and explore the underwater caves and rocky coastline.',
+          tip: 'The swimming platforms at Limanağzı are the best place to swim in Kaş — crystal water, no crowds, and easy access.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Harbour Dinner & Sunset',
+          text: 'Kaş comes alive at dusk. Walk along the harbour where wooden gulets are moored. Dinner at Bahçe Balık on the waterfront — fresh fish, meze, and rakı with views across to Meis island (₺400–600 for a full spread). The antique theatre above town offers a quiet spot for sunset. Afterwards, the cosy bars along Uzun Çarşı Street serve cocktails from ₺150.',
+          tip: 'Friday nights in Kaş have a lively vibe — locals and travelers mix at the harbour bars. It\'s a sociable town.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Boat Trip & Return to Antalya',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kekova Boat Trip',
+          text: 'Book a boat trip to Kekova and the Sunken City (₺400–600 full day, including lunch). The boat cruises along the turquoise coast past Lycian rock tombs carved into cliffsides, then over the submerged ruins of Simena — ancient walls visible through the crystal water. Stop at Kaleköy, a tiny village accessible only by boat, with a Byzantine castle perched above.',
+          tip: 'Bring an underwater camera — the sunken city ruins are visible through the clear water from the boat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Swimming Stops & Lunch',
+          text: 'The boat makes multiple swimming stops in secluded bays. The water is impossibly clear — you can see the bottom at 10+ metres. Lunch is typically fresh fish or chicken with salad served on board. Some tours include kayaking over the sunken city, which gives you a closer view of the submerged ruins. Return to Kaş harbour by late afternoon.',
+          tip: 'Kayak tours over the sunken city are restricted to certain areas — the glass-bottom boat option is a good alternative.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bus Back to Antalya',
+          text: 'Take the evening bus from Kaş back to Antalya (₺120, 3.5 hours). The coastal road is stunning at sunset — try to get a window seat on the right side. Arrive in Antalya and settle back into Kaleiçi. Grab a late dinner at one of the kebab shops near the clock tower — Dönerciler Çarşısı has several open late with döner kebabs from ₺80.',
+          tip: 'The Kaş–Antalya bus follows one of Turkey\'s most beautiful roads. Sit on the right for the sea views.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Relaxation & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Termessos Ancient City',
+          text: 'Rent a car or join a group tour (₺300) to Termessos, 34km northwest in the mountains — a remote hilltop city that even Alexander the Great couldn\'t conquer. The ruins cling to a mountainside at 1,000m elevation surrounded by pine forest. The theatre overlooking a sweeping mountain panorama is one of the most dramatic ancient sites you\'ll ever see.',
+          tip: 'Termessos requires a steep 30-minute uphill hike — bring water and proper shoes. The reward is utterly worth it.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Beach & Souvenirs',
+          text: 'Return to Antalya for a final afternoon at Mermerli Beach — the tiny beach accessible through Mermerli Restaurant in Kaleiçi (₺100 entry includes a drink). It\'s the most scenic swimming spot in the city centre, tucked beneath the cliffs. Shop for souvenirs — hand-painted ceramics, Turkish delight from the bazaar, and saffron from the Spice Market.',
+          tip: 'Mermerli Beach is tiny but the setting is unbeatable — swimming directly below the old town walls with harbour views.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Final dinner at 7 Mehmet — a beloved local institution since 1942 serving traditional Antalyan cuisine. Try piyaz (white bean salad with tahini — the city\'s signature dish), şiş kebab, and künefe for dessert (hot cheese pastry with syrup). End the evening with Turkish coffee in a Kaleiçi courtyard café as the call to prayer echoes across the old town.',
+          tip: 'Piyaz is Antalya\'s signature dish — you won\'t find it this good anywhere else in Turkey. It\'s a must-order.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat at lokanta', text: 'Self-service lokanta restaurants serve home-cooked dishes for ₺80–150 per plate. Look for ones packed with locals near Kışla Mahallesi and the bazaar area.' },
+  { title: 'Dolmuş everywhere', text: 'Shared minibuses (dolmuş) cost ₺15–30 and cover almost every route. They\'re faster and more frequent than municipal buses. Wave them down anywhere on the route.' },
+  { title: 'Free beaches', text: 'All beaches in Turkey are public by law. You only pay for sunbeds. Konyaaltı, Lara, and Çıralı beaches have free sections. Bring your own towel and save ₺200–300/day.' },
+  { title: 'Bazaar bargaining', text: 'Haggle at the old bazaar for souvenirs — start at 40% of the asking price. Ceramics, leather goods, and spices are best value. Don\'t haggle in restaurants or supermarkets.' },
+  { title: 'Turkish breakfast', text: 'A serpme kahvaltı (spread breakfast) for two costs ₺200–300 and is so massive it covers breakfast and lunch. Order one between two and skip lunch.' },
+  { title: 'Ancient ruins', text: 'Museum Pass Mediterranean (₺1,500) covers Perge, Aspendos, Termessos, Side, and more — pays for itself in three visits. Buy online or at any covered site.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '₺500–800', midrange: '₺1,200–2,500', splurge: '₺4,000+', notes: 'Hostels → boutique pansiyons → 5-star resorts' },
+  { category: 'Food', budget: '₺200–350', midrange: '₺500–800', splurge: '₺1,500+', notes: 'Lokanta & street food → restaurants → fine dining' },
+  { category: 'Transport', budget: '₺50–100', midrange: '₺150–300', splurge: '₺600+', notes: 'Dolmuş & tram → taxi → private driver' },
+  { category: 'Activities', budget: '₺100–250', midrange: '₺300–600', splurge: '₺1,500+', notes: 'Beaches & ruins → boat trips → paragliding & diving' },
+  { category: 'Drinks', budget: '₺50–100', midrange: '₺200–400', splurge: '₺800+', notes: 'Tea & ayran → beer & cocktails → rooftop bars' },
+  { category: 'Daily Total', budget: '₺900–1,600', midrange: '₺2,350–4,600', splurge: '₺8,400+', notes: '$24–42 → $62–121 → $220+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Many nationalities enter visa-free for 90 days (EU, UK, most Americas). US, Canada, Australia need an e-visa ($50) — apply at evisa.gov.tr',
+      'Passport must be valid for 6+ months from entry. Keep a copy of your e-visa printout handy',
+      'Antalya Airport (AYT) is 13km from the city centre. AntRay tram (₺15) connects to the centre in 40 minutes',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Tap water is technically safe but locals drink bottled (₺10–15 for 1.5L)',
+      'Antalya is very safe for tourists. Petty theft is rare but use common sense in crowded areas',
+      'Summer heat (Jul–Aug) hits 38–42°C — hydrate constantly, wear sunscreen, and avoid midday sun',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'AntRay tram runs from the airport through the centre to Expo. AntalyaKart (₺30 + credit) for public transport',
+      'Dolmuş (shared minibuses) cover routes not served by the tram — ₺15–30 per ride. Wave them down anywhere on the route',
+      'Taxis are metered (₺30 start + ₺30/km). Always insist on the meter. Uber doesn\'t operate; use BiTaksi app instead',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Turkcell, Vodafone, and Türk Telekom sell tourist SIMs at the airport — ₺500–800 for 20GB + calls (passport required)',
+      'Free WiFi in most cafes, restaurants, and hotels. Speed varies — Kaleiçi cafes are generally reliable',
+      'WhatsApp, Instagram, and most apps work fine. Some VPN services are blocked; download one before arriving',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Turkish Lira (₺) fluctuates — check rates daily. ATMs are everywhere; PTT (post office) ATMs have lowest fees',
+      'Cards accepted at most restaurants and shops. Cash needed for dolmuş, bazaars, and smaller lokanta restaurants',
+      'Tipping: 5–10% at restaurants is standard. Round up taxi fares. No tipping at lokanta or street food',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, breathable clothing. A scarf or shawl for mosque visits (women should cover hair, shoulders, and knees)',
+      'Water shoes for the pebbly beaches at Konyaaltı. Sturdy shoes for Termessos and Perge ruins',
+      'Sunscreen (SPF 50+), sunglasses, and a hat — the Mediterranean sun is intense even in shoulder season',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🕌', title: 'Mosque Etiquette', text: 'Remove shoes, cover shoulders and knees. Women must cover their hair — carry a scarf. Don\'t visit during prayer times. Be quiet and respectful inside.' },
+  { icon: '🍽️', title: 'Tea Culture', text: 'Accepting tea is a social ritual. Shopkeepers, hosts, and even taxi drivers may offer çay. It\'s rude to refuse — accept, sip slowly, and enjoy the hospitality.' },
+  { icon: '🤝', title: 'Bargaining', text: 'Expected in bazaars and markets but never in restaurants, supermarkets, or transport. Start at 40% of asking price and meet in the middle. Keep it friendly.' },
+  { icon: '👗', title: 'Dress Code', text: 'Antalya is liberal by Turkish standards. Beachwear is fine on beaches but cover up in town. Conservative dress required for mosques and rural areas.' },
+  { icon: '🌙', title: 'Ramadan', text: 'During Ramadan, avoid eating or drinking in public during daylight hours out of respect. Restaurants in tourist areas stay open but may be quieter. Iftar meals at sunset are a cultural highlight.' },
+  { icon: '🗣', title: 'Greetings', text: 'Learn "Merhaba" (hello), "Teşekkür ederim" (thank you), and "Lütfen" (please). A little Turkish goes a very long way. Locals genuinely appreciate the effort.' },
+];
+---
+
+<CityGuideLayout
+  title="Antalya Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Antalya guide for young travelers. 3-day itinerary with ancient ruins, turquoise beaches, budget tips, and Turkish Riviera adventures. Plan your trip with roammate."
+  heroImage="/images/guides/antalya-hero.webp"
+  heroFlag="🇹🇷"
+  heroCountry="Turkey"
+  heroRegion="Europe"
+  heroCity="Antalya"
+  heroSubtitle="Ancient ruins tumble into turquoise waters along the Turkish Riviera, where Roman theatres meet Mediterranean sunsets."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Apr – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Turkish Lira (₺). Antalya is excellent value — one of Europe's most affordable coastal destinations."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Turkey is a secular country with Muslim traditions. Antalya is one of the most liberal cities, but respect local customs especially at religious sites."
+  ctaCity="Antalya"
+  ctaText="Find travel companions, split boat trip costs, and share ancient ruin adventures with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'CAD (C$)', detail: '1 USD ≈ C$1.36' },
+  { icon: '🗣', label: 'Language', value: 'English', detail: 'French, Mandarin, Punjabi common' },
+  { icon: '🕐', label: 'Timezone', value: 'EST (UTC-5)', detail: 'EDT (UTC-4) Mar–Nov' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Oct', detail: '18–28°C, warm & vibrant' },
+  { icon: '🎒', label: 'Daily Budget', value: '~C$100–160', detail: 'Hostel, street food, TTC' },
+  { icon: '🛂', label: 'Visa', value: 'eTA / Visa', detail: 'eTA C$7 for visa-exempt countries' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Toronto in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kensington Market & Chinatown',
+          text: 'Start in Kensington Market — Toronto\'s most eclectic neighborhood. Victorian houses converted into vintage shops, record stores, spice markets, and cafes. Walk Augusta Avenue past graffiti murals and independent boutiques. Grab breakfast at Jimmy\'s Coffee (C$5–7) or Seven Lives Tacos for Baja-style fish tacos (C$7 each). Cross Spadina Avenue into Chinatown for dim sum at Rosewood Chinese Restaurant (C$4–6 per plate) — one of the last traditional cart-service dim sum spots.',
+          tip: 'Kensington Market is best on Sundays when Pedestrian Sundays (May–Oct) close the streets to cars and fill them with musicians and food vendors.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'CN Tower & Waterfront',
+          text: 'Take the TTC subway to Union Station and walk to the CN Tower (C$43 general admission) — Toronto\'s iconic 553-meter communications tower. The LookOut level at 346 meters has a glass floor and views to Niagara Falls on clear days. The EdgeWalk (C$225) lets you walk hands-free on the outside ledge at 356 meters. Walk south to the Harbourfront Centre on Lake Ontario — free art exhibitions, live music, and the waterfront promenade. Lunch at St. Lawrence Market (C$8–15) — peameal bacon sandwiches at Carousel Bakery are Toronto\'s signature food.',
+          tip: 'St. Lawrence Market\'s Carousel Bakery serves the peameal bacon sandwich — Toronto\'s version of bacon on a bun. Go before noon to avoid the lunch rush.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Distillery District & Dinner',
+          text: 'Walk east to the Distillery District — a pedestrian-only historic district of beautifully restored 1830s whiskey distillery buildings now housing galleries, restaurants, breweries, and shops. The cobblestone streets, Victorian industrial architecture, and art installations are stunning. Dinner at El Catrin for Mexican in a gorgeous setting (C$18–28 mains) or Cluny Bistro for French (C$22–36). Mill Street Brew Pub serves craft beer (C$8–10) brewed on-site. Browse the galleries and chocolate shops.',
+          tip: 'The Distillery District is most magical at night when the cobblestones, string lights, and brick buildings glow. It\'s also stunning during the Christmas market (Nov–Dec).',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Downtown, Markets & Waterfront',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kensington Market & Chinatown',
+          text: 'Start in Kensington Market — Victorian houses turned into vintage shops, record stores, spice markets, and cafes. Augusta Avenue is the main drag — graffiti murals, independent boutiques, and Bellevue Square Park. Grab breakfast at Jimmy\'s Coffee (C$5–7). Walk south to Chinatown on Spadina — dim sum at Rosewood (C$4–6 per plate, traditional cart service) or Swatow Restaurant for congee and hand-pulled noodles (C$8–12). The two neighborhoods blur together beautifully.',
+          tip: 'Pedestrian Sundays (May–Oct) close Kensington to cars — the streets fill with musicians, DJs, and food vendors. It\'s the best time to visit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'St. Lawrence Market & CN Tower',
+          text: 'Subway to Union Station. Walk to St. Lawrence Market — voted the world\'s best food market by National Geographic. The peameal bacon sandwich at Carousel Bakery (C$8) is Toronto\'s signature food. Browse artisan cheeses, fresh pasta, and the Saturday farmers market (5am–3pm). Then the CN Tower (C$43) — the glass floor and LookOut level at 346 meters have views to Niagara Falls on clear days. Walk the Harbourfront promenade along Lake Ontario for waterfront art and free exhibitions.',
+          tip: 'St. Lawrence Market Saturday farmers market starts at 5am — early birds get the best produce and baked goods. Carousel Bakery opens at 5am too.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Distillery District',
+          text: 'Walk to the Distillery District — a pedestrian-only cluster of 1830s whiskey distillery buildings beautifully converted into galleries, restaurants, breweries, and artisan shops. The cobblestones, Victorian industrial architecture, and public art installations are magical at night. Dinner at El Catrin for Mexican (C$18–28) or Cluny Bistro for French (C$22–36). Mill Street Brew Pub (C$8–10 pints) brews on-site. For cocktails, the Broadview Hotel rooftop bar has skyline views and craft cocktails (C$16–20).',
+          tip: 'The Broadview Hotel rooftop is the best sunset bar in Toronto — panoramic views of the skyline and lake. Arrive before 6pm for a guaranteed table.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'ROM, Yorkville & Queen West',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Royal Ontario Museum',
+          text: 'The ROM (C$23 adults) is Canada\'s largest museum — world cultures, natural history, and art across 40 galleries. The Michael Lee-Chin Crystal entrance (a Daniel Libeskind-designed glass and aluminum shard jutting from the historic building) is an architectural landmark. The dinosaur gallery, Chinese art collection, and the Bat Cave are highlights. The Indigenous galleries tell essential Canadian history. Allow 2–3 hours for the highlights. Breakfast at Future Bistro on Bloor (C$10–14) for oversized diner-style plates.',
+          tip: 'ROM is free on the third Monday of each month (check website). The museum shop has excellent Canadian-made gifts and Indigenous art prints.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Yorkville & Queen West',
+          text: 'Walk through Yorkville — Toronto\'s luxury neighborhood. The Village of Yorkville Park has a massive 650-ton Canadian Shield rock from northern Ontario. Browse the boutiques and galleries on Cumberland Street. Then subway to Queen West — Toronto\'s creative epicenter. Graffiti Alley (Rush Lane between Portland and Spadina) has the city\'s best street art. Walk Queen Street from Spadina to Bathurst past indie record shops, vintage stores, and galleries. Lunch at Banh Mi Boys (C$8–12) for Vietnamese subs with Korean flavors.',
+          tip: 'Graffiti Alley is most photogenic in the afternoon when sunlight hits the south-facing walls. The art changes constantly — no two visits are the same.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Queen West & Ossington Nightlife',
+          text: 'Queen West has Toronto\'s best bar scene. Start at Bellwoods Brewery on Ossington (C$8–10 pints) — one of Canada\'s best craft breweries. Walk Ossington Avenue — Toronto\'s cocktail bar strip. Cocktail Bar (yes, that\'s its name) has C$14–18 drinks in a dimly lit, intimate space. Bar Raval is a stunning Gaudi-inspired cocktail bar carved from mahogany (C$15–18). For food, Oyster Boy on Queen (C$16–24) does Canadian east coast seafood. Late night, dive bars on Dundas West have live music and C$5 beers.',
+          tip: 'Ossington Avenue between Queen and Dundas is Toronto\'s cocktail golden mile — walk the strip and bar-hop. Weeknights are far less crowded.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Islands, Neighborhoods & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Toronto Islands',
+          text: 'Take the ferry from Jack Layton Ferry Terminal to the Toronto Islands (C$9 return, 13-minute ride). Centre Island has the amusement park and Centreville, but walk or bike (rent for C$10/hour) to Ward\'s Island for a quieter, residential charm with cottage gardens and a beach. Hanlan\'s Point has the clothing-optional beach and the best skyline views. The islands offer the most iconic view of Toronto — the skyline rising above Lake Ontario. Pack a picnic or buy from the island cafes.',
+          tip: 'Ferry tickets sell out on summer weekends — buy online at torontoisland.com or arrive before 10am. Ward\'s Island ferry is usually less crowded than Centre Island.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Little Italy & College Street',
+          text: 'Return to the city and head to Little Italy on College Street west of Bathurst. The Italian cafes, trattorias, and gelaterias reflect Toronto\'s massive Italian community. Lunch at Café Diplomatico (C$14–20 Italian mains) on the famous patio, or grab a slice at Bitondo\'s (C$3.50) — Toronto\'s most famous slice. Walk to Trinity Bellwoods Park — the neighborhood\'s living room. On sunny days, it\'s packed with picnickers, dog walkers, and the rare sighting of the park\'s famous white squirrels.',
+          tip: 'Trinity Bellwoods is Toronto\'s Central Park equivalent — bring a Bellwoods Brewery tallboy from the LCBO and sit on the hill. White squirrel spotting is a local obsession.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Little India & Farewell',
+          text: 'Head east to Little India on Gerrard Street East — the largest South Asian market in North America. The neon signs, sari shops, sweet shops, and restaurant patios are vibrant. Dinner at Lahore Tikka House (C$12–18 for massive platters of butter chicken, biryani, and tandoori) or Udupi Palace for South Indian dosas (C$10–14). Farewell drinks at the rooftop of the Broadview Hotel with skyline views (C$16–20 cocktails). Toronto\'s diversity is its greatest strength — and you\'ve just scratched the surface.',
+          tip: 'Lahore Tikka House serves enormous portions — order one platter and a naan to share between two. The butter chicken is a Toronto institution.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Downtown Core & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kensington Market',
+          text: 'Start in Kensington Market — Toronto\'s most eclectic neighborhood. Victorian houses converted into vintage shops, record stores, and spice markets. Augusta Avenue has the best graffiti and Bellevue Square Park. Breakfast at Jimmy\'s Coffee (C$5–7) or Seven Lives for Baja-style fish tacos (C$7 each). Walk through to Chinatown on Spadina for dim sum at Rosewood (C$4–6 per plate, traditional cart service). These neighborhoods represent Toronto\'s multicultural DNA perfectly.',
+          tip: 'Pedestrian Sundays (May–Oct) close Kensington to cars — musicians, DJs, and food vendors fill the streets. It\'s the neighborhood\'s best expression.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'St. Lawrence Market & CN Tower',
+          text: 'Subway to St. Lawrence Market — voted the world\'s best food market. Peameal bacon sandwich at Carousel Bakery (C$8) is Toronto\'s signature bite. Browse artisan cheeses, smoked meats, and fresh pasta. Saturday farmers market runs 5am–3pm. Walk to the CN Tower (C$43) — the glass floor at 342 meters and the LookOut at 346 meters offer views to Niagara Falls on clear days. Continue to the Harbourfront for waterfront art galleries and Lake Ontario views.',
+          tip: 'If the CN Tower is too pricey, the free lobby viewpoints and Ripley\'s Aquarium next door (C$39.98) are alternatives with their own appeal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Distillery District',
+          text: 'Walk to the Distillery District — pedestrian-only 1830s whiskey distillery buildings now housing galleries, restaurants, and breweries. The cobblestones, industrial architecture, and string lights are magical at night. Dinner at El Catrin (C$18–28 Mexican) or Cluny Bistro (C$22–36 French). Mill Street Brew Pub (C$8–10 pints) brews on-site. The Spirit of York Distillery does cocktails with their own vodka and gin (C$14–16).',
+          tip: 'The Distillery District\'s Christmas Market (mid-Nov through Dec) is Toronto\'s most magical winter event — mulled wine, artisan gifts, and festive lights.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Museums & Yorkville',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Royal Ontario Museum',
+          text: 'The ROM (C$23) is Canada\'s largest museum. The Michael Lee-Chin Crystal entrance is an architectural landmark. Dinosaur gallery, Chinese art collection, and the Bat Cave are highlights. The Indigenous galleries are essential for understanding Canadian history. The gem and mineral gallery has one of the world\'s best collections. Allow 3 hours. Breakfast at Future Bistro on Bloor (C$10–14) for huge diner plates.',
+          tip: 'Free on the third Monday of each month. The museum shop has excellent Canadian-designed gifts and Indigenous art.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Art Gallery of Ontario',
+          text: 'Walk to the AGO (C$25, free Wed 6–9pm) — Frank Gehry\'s renovation transformed the building with soaring wooden galleries and a glass-fronted facade on Dundas. The Group of Seven Canadian landscape paintings are the soul of the collection. The Henry Moore sculpture collection is one of the world\'s largest. Contemporary galleries rotate world-class exhibitions. Lunch at the AGO cafe (C$12–18) or walk to Baldwin Village for the best cheap eats strip — Ethiopian at Nazareth (C$14–16) or Thai at Salad King (C$10–14).',
+          tip: 'The AGO is free every Wednesday evening (6–9pm). The Galleria Italia — a 600-foot Douglas fir and glass corridor — is worth the visit for the architecture alone.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Yorkville & Annex',
+          text: 'Walk through Yorkville — Toronto\'s luxury village. The 650-ton Canadian Shield rock in Yorkville Park is a geological marvel. Browse galleries and designer shops on Cumberland Street. For a less polished evening, walk south to the Annex — a university neighborhood with independent bookstores (BMV Books, massive and brilliant), pubs, and the Bloor Hot Docs Cinema for documentary screenings (C$12). Dinner at Byblos (C$22–38 mains) for Eastern Mediterranean or Bar Isabel (C$16–28) for Spanish.',
+          tip: 'BMV Books on Bloor is Toronto\'s largest independent bookstore — three floors of discounted new and used books. You\'ll lose at least an hour.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Toronto Islands & East End',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Toronto Islands',
+          text: 'Ferry from Jack Layton Terminal (C$9 return) to the Toronto Islands. Bike or walk to Ward\'s Island for cottage gardens, a quiet beach, and the most iconic skyline view in Canada. Hanlan\'s Point has a clothing-optional beach and sunset views. Centre Island has Centreville amusement park for families. Rent a bike (C$10/hour) and explore the car-free paths. Pack a picnic — the island cafes are limited and pricey.',
+          tip: 'Ferry tickets sell out on summer weekends — buy online or arrive before 10am. Ward\'s Island ferry is less crowded than Centre Island.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Leslieville & Riverside',
+          text: 'Return and head east to Leslieville — a gentrified neighborhood on Queen East with indie coffee shops, vintage stores, and excellent brunch. The Stockyards (C$14–20) does legendary fried chicken and smoked meat. Riverside is the adjacent neighborhood with the Broadview Hotel — a beautifully restored 1891 building with a rooftop bar offering the best skyline views in the east end (cocktails C$16–20). Walk through Jimmie Simpson Park and browse the antique shops.',
+          tip: 'The Broadview Hotel rooftop is the best free-entry viewpoint in east Toronto. Arrive before sunset for a table with full western skyline views.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Danforth Greektown',
+          text: 'Walk or subway to the Danforth — Toronto\'s Greek neighborhood. The strip from Broadview to Pape is lined with Greek restaurants, bakeries, and cafes. Dinner at Messini Authentic Gyros (C$12–16) for the city\'s best gyro or Mezes (C$18–26 mains) for a sit-down Greek feast. After dinner, browse the bakeries for baklava (C$3–5/piece) and Greek coffee. The Danforth has a relaxed neighborhood energy — families, old men playing backgammon, and the smell of grilled lamb.',
+          tip: 'Taste of the Danforth festival (August) is the neighborhood\'s biggest event — the entire strip becomes a massive street food and music festival. Over 1.5 million attendees.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Queen West, Ossington & Art',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Queen West & Graffiti Alley',
+          text: 'Start on Queen West — Toronto\'s creative strip. Walk from Spadina west to Bathurst past indie record shops (Rotate This, Sonic Boom), vintage stores, and galleries. Turn down Rush Lane for Graffiti Alley — a full city block of murals, tags, and street art that changes constantly. Breakfast at Le Petit Dejeuner (C$12–16) for French-Canadian breakfast — creton, eggs, and thick-cut toast. Drake General Store has the best curated Canadian souvenirs.',
+          tip: 'Graffiti Alley is most photogenic in the afternoon sun. The south-facing walls light up beautifully. Enter from Portland Street for the most impressive stretch.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Trinity Bellwoods & Little Portugal',
+          text: 'Walk to Trinity Bellwoods Park — Toronto\'s most beloved gathering spot. On sunny days, the hill is packed with picnickers, dogs, and the occasional white squirrel sighting (they\'re real and famous). Cross Dundas West into Little Portugal — a working-class neighborhood with excellent bakeries (natas from $1.50 at various Portuguese patisseries), hardware stores turned into cocktail bars, and the annual Dundas West Fest. Lunch at Pai Northern Thai (C$14–20) — some of the best Thai food in North America.',
+          tip: 'Trinity Bellwoods white squirrels are real — they\'re leucistic Eastern grey squirrels. Spotting one is a Toronto bucket-list moment.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ossington Cocktail Strip',
+          text: 'Ossington Avenue between Queen and Dundas is Toronto\'s cocktail golden mile. Start at Bellwoods Brewery (C$8–10 pints) — one of Canada\'s best craft breweries. Walk north to Bar Raval — a stunning Gaudi-inspired bar carved from mahogany (pintxos C$5–8, cocktails C$15–18). Cocktail Bar (its actual name) has creative C$14–18 drinks. For dinner, Foxley on Ossington (C$14–22 mains) serves Asian-Latin fusion in a tiny, buzzing room. Late night, Get Well has arcade games and cheap beer (C$5–7).',
+          tip: 'Bar Raval is the most beautiful bar in Toronto — the mahogany interior was hand-carved in Spain and shipped over. Go at 5pm for the pintxos menu.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Niagara Falls Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'GO Train to Niagara',
+          text: 'Take the GO Transit train from Union Station to Niagara Falls (C$19 each way, 2 hours). The seasonal Niagara Falls GO train runs direct on summer weekends. Walk from the station to the falls — Horseshoe Falls is the Canadian side and the more impressive of the two. The sheer volume of water (750,000 gallons per second) is staggering. The spray drenches you from the overlook. Table Rock Welcome Centre has the closest viewing platform.',
+          tip: 'The GO train to Niagara runs seasonally — check gotransit.com for schedules. Off-season, take the Flixbus (C$15–25 each way, 2 hours) from Union Station.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Falls Experiences',
+          text: 'The Hornblower boat cruise (C$30) takes you into the mist at the base of Horseshoe Falls — you\'ll get soaked and it\'s thrilling. Journey Behind the Falls (C$21) takes you through tunnels to an observation platform behind the waterfall curtain. The White Water Walk (C$16) along the rapids downstream is dramatic. Lunch on Clifton Hill — the touristy strip, overpriced but entertaining. Or pack a lunch and eat at Queen Victoria Park overlooking the falls.',
+          tip: 'The Hornblower boat cruise is the essential Niagara experience — buy tickets online to skip the line. They provide rain ponchos but you\'ll still get wet.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Falls Illumination & Return',
+          text: 'The falls are illuminated every night in rotating colors — the effect on the cascading water is spectacular. From the Canadian side, you see both the American and Horseshoe Falls lit up. In summer, fireworks over the falls happen every night at 10pm. Grab dinner at a restaurant overlooking the falls — Table Rock House (C$20–35) has the closest views. Take the last GO train or bus back to Toronto. The ride back gives time to rest and process the scale of what you\'ve just seen.',
+          tip: 'The illumination is best viewed from Table Rock or Niagara Parks areas — free to watch. Fireworks in summer start at 10pm from the Skylon Tower area.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Diverse Neighborhoods',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Little India & Gerrard',
+          text: 'Head to Little India on Gerrard Street East — the largest South Asian market in North America. The neon signs, sari shops, sweet shops, and spice stores are a sensory feast. Breakfast at Udupi Palace (C$10–14) for South Indian dosas and uttapam — crispy rice and lentil crepes with sambar and coconut chutney. Walk through the textile shops and pick up chai masala or mango pickle as souvenirs. The neighborhood is most vibrant on Saturday mornings.',
+          tip: 'Little India\'s sweet shops have incredible Indian confections — gulab jamun, jalebi, and barfi from C$1–3 per piece. Fresh samosas for C$1.50.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Koreatown & Christie Pits',
+          text: 'Subway to Koreatown on Bloor between Christie and Bathurst. Korean BBQ at Korean Grill House (C$25–35 per person all-you-can-eat) or fried chicken at Galleria Supermarket\'s food court (C$10–14). Christie Pits Park is a beautiful ravine park where locals play baseball, soccer, and picnic in the summer. Walk south to Bloor West Village\'s coffee shops and bookstores. High Park (subway to High Park station) has trails, a zoo (free), and cherry blossoms in spring.',
+          tip: 'High Park\'s cherry blossom season (late April–early May) is Toronto\'s most beautiful natural event. The Sakura trees near the restaurant are most spectacular.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dundas West & Little Portugal',
+          text: 'Dundas West between Ossington and Dufferin is Toronto\'s nightlife frontier. Start with dinner at Pho Tien Thanh (C$12–16) for some of the city\'s best Vietnamese, then walk the strip. Dock Ellis for natural wine (C$10–14/glass) and vinyl, Mahjong Bar for Asian-inspired cocktails (C$15–18), and Communist\'s Daughter — a tiny dive bar with no sign and C$6 tallboys. Late night, Handlebar for dancing and craft beer. The neighborhood embodies Toronto\'s creative energy.',
+          tip: 'Communist\'s Daughter is a Toronto institution — a 20-seat bar with mismatched furniture and no sign. Just look for the tiny storefront on Dundas.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'High Park & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'High Park',
+          text: 'Subway to High Park — Toronto\'s largest public park (400 acres). Walk the trails through ravines and oak savannahs, visit the free zoo with bison, capybaras, and llamas, and find Grenadier Pond where you can fish or ice skate in winter. The cherry blossoms (late April) are Toronto\'s most anticipated natural spectacle. Breakfast at Cafe Neon in the Junction (C$12–16) or grab coffee and a pastry from a Roncesvalles bakery.',
+          tip: 'High Park\'s free zoo is small but excellent — the capybaras are the stars. The Hillside Gardens near the restaurant have the best cherry blossom concentration.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Roncesvalles & Final Bites',
+          text: 'Walk to Roncesvalles — Toronto\'s Polish neighborhood. Bakeries with pierogi (C$3–4 each), Polish delis, and the beautiful Roncesvalles Avenue streetcar corridor. Lunch at Café Polonez (C$14–20) for traditional Polish fare or Churrasco of St. Clair for Portuguese chicken (C$12–16). Walk north to the Junction — a resurgent neighborhood with breweries (Junction Craft Brewing, C$7–9 pints), vintage shops, and excellent coffee at Crema in the Junction.',
+          tip: 'Roncesvalles\' annual Polish Festival (September) fills the street with pierogi, kielbasa, and polka music. It\'s Toronto multiculturalism at its best.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'For a final Toronto evening, choose your adventure. Canoe Restaurant on the 54th floor of the TD Tower (C$35–55 mains) has the most stunning skyline views and elevated Canadian cuisine. Or keep it real with a farewell meal at Lahore Tikka House in Little India (C$12–18 butter chicken platters). Walk the Harbourfront one last time for nighttime lake views. Toronto is one of the world\'s most diverse cities — you\'ve tasted a fraction, but that fraction was extraordinary.',
+          tip: 'Toronto Pearson Airport (YYZ) is 40–60 minutes from downtown. The UP Express train from Union Station (C$12.35, 25 minutes) is the fastest way.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free museum evenings', text: 'AGO is free Wednesday evenings (6–9pm). ROM is free on the third Monday of each month. Many galleries in the Distillery District and Queen West are always free.' },
+  { title: 'Diverse cheap eats', text: 'Toronto\'s diversity means cheap, authentic food from everywhere: C$7 fish tacos in Kensington, C$12 pho on Spadina, C$14 butter chicken in Little India, C$4 dim sum in Chinatown.' },
+  { title: 'Presto card transit', text: 'Get a Presto card (C$6 from any TTC station). Single rides: C$3.35. Two-hour transfers included (ride subway, streetcar, and bus on one fare). Day pass: C$13.50.' },
+  { title: 'LCBO vs bars', text: 'Drinks at bars are expensive (C$8–14/beer). Buy from the LCBO (government liquor store) or The Beer Store and drink at Trinity Bellwoods, Toronto Islands, or the waterfront.' },
+  { title: 'Toronto Islands escape', text: 'The ferry to the Islands (C$9 return) is one of Toronto\'s best budget activities — beaches, biking, and the best skyline photos for the price of a coffee.' },
+  { title: 'Free festivals', text: 'Toronto has massive free festivals: NXNE (music), Caribana (Caribbean), Pride, TIFF (some events), Taste of the Danforth, and Luminato arts festival. Check timing.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'C$40–75', midrange: 'C$130–220', splurge: 'C$300+', notes: 'Hostels → boutique hotels → luxury hotels' },
+  { category: 'Food', budget: 'C$20–35', midrange: 'C$50–80', splurge: 'C$120+', notes: 'Street food & markets → casual restaurants → fine dining' },
+  { category: 'Transport', budget: 'C$7–13', midrange: 'C$15–30', splurge: 'C$50+', notes: 'TTC + walking → TTC + Uber → Uber everywhere' },
+  { category: 'Activities', budget: 'C$0–15', midrange: 'C$25–50', splurge: 'C$80+', notes: 'Free galleries & parks → museums + CN Tower → CN EdgeWalk + tours' },
+  { category: 'Drinks', budget: 'C$10–18', midrange: 'C$25–40', splurge: 'C$60+', notes: 'LCBO + dive bars → craft breweries → cocktail bars' },
+  { category: 'Daily Total', budget: 'C$77–156', midrange: 'C$245–420', splurge: 'C$610+', notes: 'Budget → comfortable → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Visa-exempt countries (including EU, UK, Australia) need an eTA (C$7, apply online). US citizens need a passport only — no eTA required',
+      'Toronto Pearson Airport (YYZ): UP Express to Union Station (C$12.35, 25 min). TTC bus 192 + subway is cheaper (C$3.35) but slower (60–75 min)',
+      'Billy Bishop Airport (YTZ) is on the Toronto Islands — a 6-minute walk to downtown via pedestrian tunnel. Regional flights only',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Canada has universal healthcare for residents — visitors need travel insurance. Walk-in clinics charge C$100–200 without coverage',
+      'Toronto is very safe. Standard city precautions apply — watch your phone on the subway, be aware on quiet streets late at night',
+      'Winter (Dec–Mar) is cold (-10°C to -20°C with windchill). Layer up, bring thermal underwear, and watch for icy sidewalks',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Get a Presto card (C$6) for TTC subway, streetcars, and buses. Single ride: C$3.35 with 2-hour transfer. Day pass: C$13.50',
+      'The streetcar network is extensive — the 501 Queen line and 504 King are the most useful. Google Maps has real-time TTC integration',
+      'Uber and Lyft work well. Bike Share Toronto (C$3.25/30-min trip) has stations across the downtown core. Walking is easy — the city is flat',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi at most cafes, libraries, PATH underground (downtown), and many public spaces. TTC stations have WiFi through Freedom Mobile',
+      'Canadian SIM cards: Public Mobile or Chatr (C$25–35/month prepaid). Available at phone stores and some convenience stores',
+      'Cell coverage is excellent across the city. Download the TTC real-time app for subway and streetcar tracking',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Cards and tap payment accepted virtually everywhere. Many places are cashless. Apple Pay and Google Pay widely used',
+      'Tipping: 15–20% at restaurants (15% is more standard in Canada than the US), C$1–2/drink at bars, 15% for rideshare',
+      'Canadian pennies are discontinued — cash prices round to the nearest 5 cents. Tax (13% HST) is added at checkout, not included in listed prices',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Summer (Jun–Aug): light clothing, sunscreen, a rain jacket. Temperatures reach 30°C+ with humidity',
+      'Winter (Dec–Mar): thermal base layers, insulated jacket, waterproof boots, toque (beanie), and gloves. Wind chill makes it feel -20°C+',
+      'Spring/fall are unpredictable — layers are essential. Comfortable walking shoes year-round. An umbrella for the shoulder seasons',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '💵', title: 'Tipping Culture', text: 'Tip 15–20% at restaurants (15% is standard, 18–20% for great service). C$1–2/drink at bars. 15% for rideshare. Counter-service tips are increasingly expected (15–20%) but optional.' },
+  { icon: '🍁', title: 'Canadian Politeness', text: 'Canadians say "sorry" reflexively — even when you bump into them. Hold doors, say please and thank you, and you\'ll fit right in. The politeness is genuine, not performative.' },
+  { icon: '🌍', title: 'Multiculturalism', text: 'Toronto is the world\'s most multicultural city — over 200 ethnic groups and 140 languages. Every neighborhood has its own cultural identity. Respect and curiosity toward all cultures is the Toronto way.' },
+  { icon: '🏒', title: 'Hockey Culture', text: 'Hockey is a religion in Toronto. The Maple Leafs haven\'t won the Stanley Cup since 1967 but the devotion is unwavering. Catch a game at Scotiabank Arena (C$80+ for nosebleeds) or watch at a sports bar.' },
+  { icon: '🗣', title: 'Canadian English', text: 'It\'s "washroom" not "bathroom," "toque" not "beanie," "double-double" is coffee with two creams and two sugars (Tim Hortons standard), and "eh" is real but subtle. Colour has a U.' },
+  { icon: '🍺', title: 'Alcohol Laws', text: 'Legal drinking age is 19 in Ontario. Alcohol is sold through the LCBO (liquor stores) and The Beer Store — not at convenience stores or supermarkets (with limited exceptions). Bars close at 2am.' },
+];
+---
+
+<CityGuideLayout
+  title="Toronto Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Toronto guide for young travelers. 3-day itinerary with diverse neighborhoods, CN Tower, islands, and incredible food from every culture. Plan your trip with roammate."
+  heroImage="/images/guides/toronto-hero.webp"
+  heroFlag="🇨🇦"
+  heroCountry="Canada"
+  heroRegion="North America"
+  heroCity="Toronto"
+  heroSubtitle="A city built by the whole world, where you can eat your way across five continents without leaving the subway line."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in CAD. Toronto is affordable by world city standards — diverse cheap eats, free museums on select days, and a flat transit fare keep costs down."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Toronto is the world's most multicultural city — 200+ ethnic groups living in distinct neighborhoods. The diversity is not a feature, it's the foundation."
+  ctaCity="Toronto"
+  ctaText="Find travel companions to explore Toronto's neighborhoods, take the ferry to the Islands, and day-trip to Niagara Falls together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

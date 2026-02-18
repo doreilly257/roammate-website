@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'QAR (Riyal)', detail: '1 USD ≈ QAR 3.64' },
+  { icon: '🗣', label: 'Language', value: 'Arabic / English', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'AST (UTC+3)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: '18–28°C, dry & pleasant' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$80–120 USD', detail: 'QAR 290–440 budget' },
+  { icon: '🛂', label: 'Visa', value: 'Free on arrival', detail: 'Most nationalities 30–90 days' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Doha in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Museum of Islamic Art & Corniche',
+          text: 'Start at the Museum of Islamic Art (free) — I.M. Pei\'s geometric masterpiece on a purpose-built island. The collection spans 1,400 years of Islamic art from three continents — calligraphy, ceramics, textiles, and jewellery. The building itself is the highlight — the atrium\'s light play is mesmerising. Walk the Doha Corniche afterward — a 7km waterfront promenade with views of the West Bay skyline\'s futuristic towers.',
+          tip: 'The MIA is free and uncrowded weekday mornings. The cafe on the top floor has the best view of Doha\'s skyline — worth a coffee.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souq Waqif — Heart of Old Doha',
+          text: 'Walk to Souq Waqif — Doha\'s restored traditional market and the social heart of the city. The narrow lanes are filled with spice stalls, perfume shops, fabric dealers, gold merchants, and the famous falcon souq (yes, falcons). The animal market has cats, birds, and occasionally baby camels. Lunch at Damasca One for Syrian food (QAR 50–80) or Shay Al Shoomos for Qatari cuisine (QAR 60–100).',
+          tip: 'Souq Waqif comes alive after 4pm — visit in the afternoon for shopping, then stay for the evening atmosphere when cafes and shisha spots fill up.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Katara Cultural Village & Night Views',
+          text: 'Taxi to Katara Cultural Village — an open-air cultural district with an amphitheatre, mosques, galleries, and restaurants along a private beach. The architecture blends traditional Qatari and modern design. Walk the beachfront at sunset. Then head to The Pearl-Qatar — a man-made island with marina-front dining, boutique shopping, and Mediterranean-style waterfront promenades. Dinner at a Pearl restaurant (QAR 80–150).',
+          tip: 'Katara Beach is one of Doha\'s few public beaches — bring swimwear but women should use the designated women\'s section or wear modest swimwear.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Museums, Souqs & Corniche',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Museum of Islamic Art',
+          text: 'Start at the Museum of Islamic Art (free) — I.M. Pei\'s angular masterpiece on its own island, connected to the Corniche by a palm-lined walkway. The collection spans 1,400 years of Islamic art — hand-copied Qurans, Mughal jewellery, Ottoman ceramics, and Persian textiles. The building\'s geometric interiors and natural light are as impressive as the art. Allow 2 hours to explore the galleries and the sculpture garden outside.',
+          tip: 'The MIA Park behind the museum has free outdoor sculptures and the best angle to photograph the Doha skyline — arrive before 10am for the best light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souq Waqif',
+          text: 'Walk to Souq Waqif — Doha\'s restored traditional market. The narrow lanes sell spices (saffron from QAR 20/gram), Arabian perfumes (oud from QAR 50), gold jewellery, textiles, and falcons (the falcon souq is extraordinary). The animal market has cats, birds, and the occasional baby camel. Lunch at Al Shami Home Restaurant for Lebanese mezze (QAR 40–60) or Parisa for Persian cuisine in an ornate tiled interior.',
+          tip: 'The falcon souq is unlike anything you\'ve seen — handlers with hooded falcons on their arms. Photography is welcome; ask politely first.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Corniche Walk & Dhow Harbour',
+          text: 'Walk the 7km Doha Corniche at sunset — the waterfront promenade with West Bay\'s futuristic towers reflecting in the Gulf. Stop at the Dhow Harbour where traditional wooden boats are moored against the modern skyline. Book a dhow dinner cruise (QAR 150–250, 2 hours) for Doha\'s skyline illuminated from the water. Or return to Souq Waqif for shisha and Arabic coffee at an outdoor cafe.',
+          tip: 'The Corniche between MIA and the Dhow Harbour at sunset is the money shot — the towers catch the golden light perfectly.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Culture, Desert & Modern Doha',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'National Museum of Qatar',
+          text: 'Visit the National Museum of Qatar (QAR 50 foreigners) — Jean Nouvel\'s "Desert Rose" building is an architectural icon. The interlocking disc-shaped structure tells Qatar\'s story from geology to Bedouin life to the modern oil era through immersive galleries with projections, soundscapes, and artefacts. The 1.5km gallery path takes 2–3 hours. The pearl diving exhibition is particularly moving.',
+          tip: 'The National Museum\'s exterior is most photogenic at golden hour — but the interior exhibitions are best enjoyed in the cooler morning hours.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Katara Cultural Village',
+          text: 'Taxi to Katara Cultural Village (free entry) — Doha\'s open-air cultural hub with an amphitheatre, two mosques (one gold, one pigeon-hole design), art galleries, and restaurants along a private beach. The architecture blends traditional Qatari elements with contemporary design. Walk the heritage district, browse the galleries, and have lunch at Sukar Pasha for Turkish food (QAR 60–90) with sea views.',
+          tip: 'Katara hosts free cultural events, film screenings, and concerts — check the Katara website for the monthly programme.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Desert Safari',
+          text: 'Book a desert safari (QAR 200–350 per person, hotel pickup around 2:30pm). The experience includes dune bashing in a 4x4 across the Inland Sea (Khor Al Adaid) — one of only two places in the world where the desert meets the sea. Sandboarding, camel rides, and a Bedouin camp dinner under the stars. The sunset over the dunes where Qatar\'s desert reaches the Gulf is otherworldly.',
+          tip: 'The Inland Sea safari is Qatar\'s unique experience — no other country has sand dunes meeting the sea like this. Book the Khor Al Adaid route specifically.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'The Pearl, Art & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'The Pearl-Qatar & Lusail',
+          text: 'Explore The Pearl-Qatar — a man-made island with Mediterranean-style waterfront architecture, yacht marinas, boutique shopping, and restaurants. Walk the Qanat Quartier — Venice-inspired canals with colourful buildings. Then taxi to Lusail — Qatar\'s purpose-built new city, home to the 2022 World Cup final stadium (Lusail Iconic Stadium). The futuristic Lusail Boulevard has shops and restaurants opening steadily.',
+          tip: 'Qanat Quartier on The Pearl looks like Burano in Venice — the colourful canal buildings make for excellent photographs any time of day.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Msheireb & Fire Station Art',
+          text: 'Metro to Msheireb — Doha\'s revitalised heritage district with four restored heritage houses turned museums (QAR 50 combo). The Msheireb Museums tell stories of slavery abolition, oil discovery, and traditional Qatari family life. Walk to the nearby Fire Station (free) — a former fire brigade headquarters converted into Doha\'s leading contemporary art space with residencies and rotating exhibitions.',
+          tip: 'The Fire Station gallery is free, excellent, and virtually empty — one of Doha\'s best-kept secrets for contemporary art lovers.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Souq Night',
+          text: 'Return to Souq Waqif for a farewell evening — the market transforms at night with live music, shisha smoke, and the glow of lanterns. Dinner at Damasca One (Syrian, QAR 50–80) or IDAM by Alain Ducasse at the MIA for a splurge (QAR 300–500, French-Arabian fusion with harbour views). End with Arabic coffee and dates at a souq cafe — the traditional Qatari welcome that perfectly bookends your visit.',
+          tip: 'Souq Waqif\'s Gold Souq section stays open late — the evening light on the gold displays is worth a final browse.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Museums, Souqs & Corniche',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Museum of Islamic Art',
+          text: 'Start at the Museum of Islamic Art (free) — I.M. Pei\'s geometric masterpiece on its own island. The collection spans 1,400 years — hand-copied Qurans, Mughal jewellery, Ottoman ceramics, Persian textiles. The building\'s light play and geometric interiors are as impressive as the art. Walk through MIA Park afterward for outdoor sculptures and Doha skyline views across the water.',
+          tip: 'The MIA cafe on the top floor has the best skyline view in Doha — worth a coffee even if you don\'t visit the galleries.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souq Waqif',
+          text: 'Walk to Souq Waqif — the restored traditional market. Spice stalls, perfume shops, gold merchants, and the falcon souq fill the narrow lanes. The animal market is fascinating. Lunch at Al Shami Home Restaurant for Lebanese mezze (QAR 40–60) or find a Qatari machboos (spiced rice with meat) stall in the souq for QAR 30. This is Doha\'s social heart — locals and visitors mingle.',
+          tip: 'The falcon souq is extraordinary — hooded falcons on handlers\' arms. Photography is welcome; ask politely before shooting close-ups.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Corniche & Dhow Harbour',
+          text: 'Walk the 7km Corniche at sunset — West Bay\'s towers reflecting gold in the Gulf waters. Stop at the Dhow Harbour for traditional boats moored against the skyline. Book a dhow dinner cruise (QAR 150–250, 2 hours) or return to Souq Waqif for shisha and Arabic coffee at an outdoor cafe. The souq at night, lit by lanterns with live music, is atmospheric and unhurried.',
+          tip: 'The Corniche between MIA and Dhow Harbour at sunset is the classic Doha photograph — arrive 30 minutes before sunset.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'National Museum & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'National Museum of Qatar',
+          text: 'Visit the National Museum (QAR 50) — Jean Nouvel\'s "Desert Rose" building. The interlocking disc structure tells Qatar\'s story through immersive galleries with projections, soundscapes, and artefacts. The 1.5km gallery path takes 2–3 hours. The pearl diving and Bedouin life sections are particularly moving. The museum shop has the best design souvenirs in Doha.',
+          tip: 'The NMoQ is best experienced chronologically from the start — don\'t skip the geological formation gallery, which sets the desert context.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Katara Cultural Village',
+          text: 'Taxi to Katara (free entry) — an open-air cultural hub with two mosques (one gold-domed, one with a striking pigeon-hole facade), amphitheatre, galleries, and a beach. Walk the heritage architecture, browse the art galleries, and lunch at Sukar Pasha for Turkish food (QAR 60–90). The beach is one of Doha\'s few public beach options — bring swimwear but be mindful of modest swimwear customs.',
+          tip: 'Katara hosts free cultural events, concerts, and film screenings — check their website for the monthly programme before visiting.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'The Pearl-Qatar',
+          text: 'Explore The Pearl — a man-made island with marina-front dining and Mediterranean-style architecture. Walk the Qanat Quartier\'s Venice-inspired canals with colourful buildings, then stroll the marina watching superyachts. Dinner at a Pearl waterfront restaurant — cuisine ranges from Japanese to Italian to Arabic, QAR 80–200. The evening lighting and reflections make the marina very photogenic.',
+          tip: 'Qanat Quartier at The Pearl looks like colourful Venice — the canal reflections at night are stunning for photography.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Desert & Inland Sea',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Morning at Leisure',
+          text: 'Rest and prepare for the desert afternoon — the safari pickups usually begin at 2–2:30pm. Use the morning to explore your neighbourhood or revisit the MIA Park. Grab brunch at a Souq Waqif cafe — ful medames (fava beans, QAR 15), labneh, hummus, and flatbread make a traditional Qatari-style breakfast. The pace of morning life in the souq is gentle and atmospheric.',
+          tip: 'Use the morning to charge devices and apply sunscreen — the desert safari will have you outdoors for 5–6 hours with no shade.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Desert Safari to Khor Al Adaid',
+          text: 'Book a desert safari to Khor Al Adaid — the Inland Sea (QAR 250–400). The drive south through increasingly dramatic dunes takes 1.5 hours with dune bashing in a 4x4. Khor Al Adaid is a UNESCO-recognized natural reserve where the desert meets the sea — one of only two such places on earth. The turquoise water lapping against golden sand dunes is surreal and unique to Qatar.',
+          tip: 'Book the Khor Al Adaid (Inland Sea) route specifically — it\'s Qatar\'s most unique natural attraction. Regular desert safaris don\'t go there.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bedouin Camp & Stars',
+          text: 'The safari continues to a Bedouin camp at sunset — sandboarding, camel rides, henna painting, and a barbecue dinner under the desert stars. The silence of the Qatar desert at night, far from the city lights, is profound. Some operators offer overnight camping options (QAR 500+) — sleeping under the stars in the Empty Quarter is a once-in-a-lifetime experience. Return to Doha by 10pm.',
+          tip: 'The overnight desert camp option is worth the extra cost — the sunrise over the Inland Sea with no one around is transcendent.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Art, Heritage & Modern Qatar',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Msheireb Museums & Heritage',
+          text: 'Visit Msheireb Museums (QAR 50 combo for all four) — restored heritage houses telling stories of slavery abolition, the oil boom, and traditional Qatari family life. The Company House chronicles how oil transformed Qatar from a pearl-diving outpost to a modern state in a single generation. The architecture beautifully preserves traditional Qatari courtyard house design.',
+          tip: 'The Company House museum\'s oil discovery story is fascinating — Qatar went from one of the poorest to richest countries per capita within 50 years.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Fire Station Gallery & 3-2-1 Museum',
+          text: 'Walk to the Fire Station (free) — a converted fire brigade HQ now housing contemporary art residencies and galleries. Rotating exhibitions showcase Gulf and international artists. Then metro to the 3-2-1 Qatar Olympic and Sports Museum (QAR 50) — an interactive museum celebrating Olympic history and Qatar\'s sporting ambitions. The FIFA World Cup 2022 exhibition is a highlight.',
+          tip: 'The Fire Station is free, excellent, and virtually empty — one of Doha\'s best secrets for contemporary art.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lusail & World Cup Legacy',
+          text: 'Metro to Lusail — Qatar\'s gleaming new city built for the 2022 World Cup. Walk Lusail Boulevard past the Iconic Stadium (World Cup final venue), the Place Vendôme mall, and the futuristic towers. The city is still filling up but the scale and ambition are impressive. Dinner at a Lusail restaurant overlooking the marina — the evening lighting makes the new architecture glow.',
+          tip: 'Lusail is still developing — many restaurants and attractions are new. The metro connects Lusail to central Doha in 20 minutes.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Al Zubarah Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Al Zubarah Fort',
+          text: 'Rent a car or arrange transport to Al Zubarah (1.5 hours northwest, QAR 200–300 return taxi) — Qatar\'s only UNESCO World Heritage Site. The 18th-century fort and surrounding archaeological site represent a once-thriving pearl trading town that rivalled Bahrain. The fort is beautifully restored with exhibitions on pearl diving, trading routes, and archaeological discoveries. Free entry.',
+          tip: 'Combine Al Zubarah with a stop at the flamingo lagoons along the northern coast — seasonal flocks of flamingos gather in the shallow waters.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Northern Coast & Mangroves',
+          text: 'Drive along Qatar\'s northern coast — quieter and more natural than the urban south. Stop at Al Thakira Mangroves for a kayak trip through Qatar\'s largest mangrove forest (QAR 150–200, 2 hours). The paddling through green tunnels of mangroves with herons and egrets is a world away from Doha\'s skyscrapers. The ecological contrast within this tiny country is surprising.',
+          tip: 'Book kayaking with a local operator in advance — the mangroves are best at high tide when the water channels are deeper.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Seafood Dinner',
+          text: 'Drive back to Doha for a seafood dinner. Head to Al Mourjan restaurant at the Souq Waqif for Gulf-style grilled hammour (grouper), prawns, and Arabic salads (QAR 80–150). Or try a more casual spot — Souq Waqif\'s street-side grills do fresh fish with rice for QAR 40–60. The evening breeze in the souq with the smell of grilling fish and shisha is the essence of Arabian Gulf dining.',
+          tip: 'Al Mourjan\'s terrace tables overlooking the souq are the best seats — book ahead or arrive before 7pm to secure one.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Beach, Shopping & Nightlife',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Banana Island or Beach Day',
+          text: 'Take a short boat ride to Banana Island (accessible via resort day passes from QAR 300) — a crescent-shaped island with private beach, crystal-clear water, and water sports. Or head to Katara Beach (QAR 35 entry) for a more budget-friendly option with public facilities and clean sand. The Gulf water is warm year-round and calm. Swim, kayak, or just relax in the morning sun.',
+          tip: 'Katara Beach at QAR 35 is the best-value beach experience in Doha — it has clean facilities, food vendors, and calm Gulf water.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Villaggio Mall & Shopping',
+          text: 'Head to Villaggio Mall — an Italian-themed mega-mall with a Venetian canal running through the centre (gondola rides QAR 50). Or visit the Souq Al Wakra — a restored coastal market in the traditional fishing village of Al Wakra (30 min south). The souq has pearl shops, spice stalls, and waterfront restaurants with a more authentic atmosphere than tourist-focused Souq Waqif.',
+          tip: 'Al Wakra is a genuine fishing village — the souq here is less restored and more authentic than Souq Waqif. Worth the short taxi ride.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'West Bay Nightlife',
+          text: 'Explore West Bay — Doha\'s skyline district with hotel bars and lounges. The Skyview Lounge at La Cigale Hotel offers panoramic city views. The Nobu and Hakkasan restaurants combine fine dining with late-night ambiance. Qatar\'s nightlife is more refined than raucous — expect hotel bars, rooftop lounges, and upscale restaurants rather than clubs. Non-alcoholic cocktails (mocktails) are popular and delicious.',
+          tip: 'Alcohol is only served in licensed hotel venues — there are no standalone bars. Dress code is smart casual at all hotel bars.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Relaxation & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Souq Visit & Shopping',
+          text: 'One last visit to Souq Waqif for souvenir shopping — Arabian oud perfume (QAR 50–200), saffron (QAR 20–40/gram), Arabic coffee pots (dallah, QAR 30–80), camel-themed souvenirs, and spice mixes. The perfume shops will blend custom fragrances to your taste — a unique and lightweight souvenir. Also pick up dates — Qatar produces excellent varieties and gift boxes start from QAR 30.',
+          tip: 'Custom-blended oud perfume from Souq Waqif makes an exceptional souvenir — lightweight, unique, and the scent will forever remind you of Doha.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'MIA Revisit & Packing',
+          text: 'Return to MIA Park for a final walk — the outdoor sculpture park with Richard Serra\'s massive steel work and the views of Doha\'s skyline. Grab lunch at one of the Msheireb restaurants — the revitalised district has excellent options from QAR 50–100. Pack your bags. Doha is small but surprisingly deep — the museums alone justify the visit, and the desert is unlike anywhere on earth.',
+          tip: 'The MIA gift shop has the best design souvenirs in Qatar — Islamic art-inspired items that are far more tasteful than generic tourist shops.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Farewell dinner at Damasca One in Souq Waqif — Syrian cuisine with live music and shisha on the terrace (QAR 60–100). Or splurge at IDAM by Alain Ducasse in the MIA — French-Arabian fusion with harbour views (QAR 300–500). One final Arabic coffee and dates — the traditional Qatari welcome that bookends your visit perfectly. Hamad International Airport is 15 minutes from central Doha by taxi.',
+          tip: 'Hamad International Airport is consistently ranked world\'s best — arrive early and enjoy the Oryx lounge, art installations, and duty-free shopping.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free world-class museums', text: 'The Museum of Islamic Art is free. The Fire Station gallery is free. Katara Cultural Village is free to enter. Qatar has invested billions in culture — much of it accessible at no cost.' },
+  { title: 'Souq Waqif meals', text: 'Budget restaurants in Souq Waqif serve full meals for QAR 25–50 — machboos, shawarma, falafel, and Arabic breakfasts. Far cheaper than hotel restaurants for the same quality.' },
+  { title: 'Metro system', text: 'Doha Metro opened in 2019 — clean, fast, and cheap. QAR 2 per ride (standard class). Day pass QAR 6. Covers MIA, Souq Waqif, Katara, The Pearl, Lusail, and West Bay.' },
+  { title: 'Water is free', text: 'Tap water in Qatar is safe (desalinated). Carry a refillable bottle. Hotels and restaurants provide free water. Hydration is critical in the Gulf heat — drink 3+ litres daily.' },
+  { title: 'Desert safari deals', text: 'Book desert safaris online through platforms like GetYourGuide or Viator — QAR 200–300 vs QAR 400+ through hotel concierge. The experience is identical.' },
+  { title: 'Friday brunch culture', text: 'Hotel Friday brunches are all-you-can-eat-and-drink feasts (QAR 200–400). While not "budget," they replace lunch and dinner and include drinks. It\'s a Gulf social institution worth experiencing.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'QAR 120–250', midrange: 'QAR 350–700', splurge: 'QAR 1,200+', notes: 'Hostels → 3-star hotels → 5-star resorts' },
+  { category: 'Food', budget: 'QAR 50–100', midrange: 'QAR 150–300', splurge: 'QAR 500+', notes: 'Souq food & cafeterias → restaurants → fine dining' },
+  { category: 'Transport', budget: 'QAR 10–30', midrange: 'QAR 40–80', splurge: 'QAR 150+', notes: 'Metro → taxi/Uber → private car' },
+  { category: 'Activities', budget: 'QAR 0–50', midrange: 'QAR 100–300', splurge: 'QAR 500+', notes: 'Free museums & souqs → desert safari → island & water sports' },
+  { category: 'Drinks', budget: 'QAR 10–30', midrange: 'QAR 50–100', splurge: 'QAR 200+', notes: 'Arabic coffee & juice → hotel cafes → hotel bars' },
+  { category: 'Daily Total', budget: 'QAR 190–460', midrange: 'QAR 690–1,480', splurge: 'QAR 2,550+', notes: '$52–126 → $190–407 → $700+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Visa-free on arrival for 90+ nationalities (30–90 days depending on passport). No advance application needed',
+      'Hamad International Airport (DOH) — consistently ranked world\'s best. Metro connects to city centre in 15 minutes',
+      'Passport must be valid for 6+ months. Keep your boarding pass for potential hotel check-in requirements',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Tap water is safe (desalinated) but most people drink bottled. Medical facilities are excellent',
+      'Qatar is extremely safe — one of the lowest crime rates in the world. Very low risk for tourists',
+      'Summer heat (Jun–Sep) is extreme: 40–50°C. Limit outdoor time, carry water, wear sunscreen. Winter is ideal',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Doha Metro: 3 lines covering major areas. QAR 2 per ride (standard), QAR 10 (gold class). Day pass QAR 6. Clean and fast',
+      'Uber and Karwa (local) taxis work well. Base fare QAR 10. Doha is compact — most rides within the city are QAR 15–30',
+      'Walking is limited by heat — distances between areas require transport. Most attractions are metro-accessible',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Tourist SIM at the airport: Ooredoo or Vodafone Qatar, QAR 55–100 for data packages with local calls',
+      'Free WiFi in malls, hotels, the metro, and most restaurants. Coverage and speeds are excellent throughout Doha',
+      'All international apps work without restrictions — no VPN needed. WhatsApp is the primary communication app',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'QAR is pegged to USD (1 USD = 3.64 QAR). Exchange rates are stable. Money changers in Souq Waqif offer good rates',
+      'Cards accepted almost everywhere. Carry some cash for small souq purchases and taxis. ATMs are plentiful',
+      'Tipping is not mandatory but 10% at restaurants is appreciated. Round up taxi fares',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, modest clothing — cover shoulders and knees in public. Swimwear for beaches and pools only',
+      'Sunscreen (SPF 50+), sunglasses, hat, and a refillable water bottle. The sun is intense even in winter',
+      'Smart casual for hotel restaurants and bars — no shorts or flip-flops. A light jacket for over-air-conditioned malls',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '👗', title: 'Dress Code', text: 'Cover shoulders and knees in public — shorts above the knee and sleeveless tops are discouraged in malls and cultural sites. Swimwear only at beaches and pools. Qataris appreciate modest dress from visitors.' },
+  { icon: '🕌', title: 'Mosque Etiquette', text: 'Remove shoes before entering mosques. Women must cover hair, arms, and legs (abayas provided at major mosques). Don\'t walk in front of someone praying. Photography of worshippers requires permission.' },
+  { icon: '🍺', title: 'Alcohol Rules', text: 'Alcohol is only available at licensed hotel venues. Being drunk in public is illegal. Legal drinking age is 21. Non-alcoholic beer and cocktails (mocktails) are widely available and genuinely good.' },
+  { icon: '🌙', title: 'Ramadan', text: 'No eating, drinking, or smoking in public during daylight hours of Ramadan. Restaurants close during the day. Iftar (sunset meal) is a beautiful communal experience — many hotels offer special iftar buffets.' },
+  { icon: '📸', title: 'Photography', text: 'Never photograph Qatari women without explicit permission. Avoid photographing government buildings, military installations, or oil facilities. The souq and public areas are generally fine for photography.' },
+  { icon: '☕', title: 'Arabic Coffee & Dates', text: 'Being offered Arabic coffee (gahwa) and dates is the traditional Qatari welcome — always accept at least one cup. Hold the cup in your right hand. Shake the cup side-to-side when you\'ve had enough.' },
+];
+---
+
+<CityGuideLayout
+  title="Doha Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Doha guide for young travelers. 3-day itinerary with world-class museums, desert safaris, souqs, and Gulf culture. Plan your trip with roammate."
+  heroImage="/images/guides/doha-hero.webp"
+  heroFlag="🇶🇦"
+  heroCountry="Qatar"
+  heroRegion="Middle East"
+  heroCity="Doha"
+  heroSubtitle="A desert peninsula where world-class architecture rises from the sand, and the Inland Sea blurs the line between dune and ocean."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Nov – Mar Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Qatari Riyals (QAR). Doha is pricier than most Middle Eastern cities, but free museums, souq dining, and smart planning keep it manageable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Qatar is a deeply Islamic society with modern ambitions. Dress modestly, respect Ramadan, and accept Arabic coffee when offered — small gestures that show cultural awareness."
+  ctaCity="Doha"
+  ctaText="Find travel companions for desert safaris, museum visits, and souq explorations with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

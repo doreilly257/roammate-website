@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EUR (Euro)', detail: '1 USD ≈ €0.92' },
+  { icon: '🗣', label: 'Language', value: 'Greek', detail: 'English widely spoken in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'EET (UTC+2)', detail: 'EEST (UTC+3) Mar–Oct' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Oct', detail: '25–35°C, 300+ sunny days/year' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$55–80 USD', detail: '€50–75 budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: 'EU/US/UK: 90 days visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Rhodes Highlights in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rhodes Medieval Old Town',
+          text: 'Enter through the D\'Amboise Gate into Rhodes Old Town — the best-preserved medieval walled city in Europe and a UNESCO World Heritage Site. Walk the Street of the Knights (Odos Ippoton) where the Knights of St. John once lived in their national "Inns." Visit the Palace of the Grand Master (€8) — a massive fortified castle with mosaic floors from ancient Kos. The labyrinth of narrow lanes, Ottoman mosques, and Byzantine churches is endlessly explorable.',
+          tip: 'Enter the Old Town through the D\'Amboise Gate before 9am — you\'ll have the Street of the Knights almost to yourself.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mandraki Harbour & Elli Beach',
+          text: 'Walk to Mandraki Harbour — the ancient port where the Colossus of Rhodes once stood (two bronze deer statues now mark the spot). See the three medieval windmills on the harbour mole, Fort of St. Nicholas, and the Italian-era Governor\'s Palace. Then head to Elli Beach for a swim — the main town beach with sun loungers (€8 for two plus umbrella) and a famous diving platform.',
+          tip: 'The windmills on the Mandraki breakwater are most photogenic in the morning light — combine with a harbour stroll.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Old Town Dinner & Rooftops',
+          text: 'Dinner in the Old Town at Mama Sofia for traditional Rhodian cuisine — pitaroudia (chickpea fritters), melekouni (sesame honey bars), and fresh fish (mains €10–16). Then find a rooftop bar in the Old Town — Marco Polo Mansion has an atmospheric courtyard, or climb to one of the rooftop terraces on Sokratous Street for views over the medieval skyline under the stars.',
+          tip: 'The Old Town\'s Sokratous Street is touristy but the side alleys hide genuine tavernas — walk two blocks in any direction.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Rhodes Medieval Old Town',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Palace of the Grand Master & Street of the Knights',
+          text: 'Enter through the D\'Amboise Gate into the medieval walled city — UNESCO World Heritage and the finest medieval town in Europe. Walk the atmospheric Street of the Knights (Odos Ippoton). Visit the Palace of the Grand Master (€8) — originally a Byzantine citadel, rebuilt by the Knights of St. John, with stunning mosaic floors from ancient Kos. The sheer scale of the fortifications is extraordinary.',
+          tip: 'Enter the Old Town before 9am through the D\'Amboise Gate — the Street of the Knights is hauntingly quiet.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old Town Labyrinth & Jewish Quarter',
+          text: 'Lose yourself in the Old Town\'s maze of 200+ narrow lanes. Explore the Jewish Quarter around Plateia Evreon Martyron (Square of the Jewish Martyrs) with its seahorse fountain memorial. Visit the Ottoman-era Süleymaniye Mosque and the Turkish Bath (hamam, €5). Lunch at Hatzikelis in the old fish market for fresh seafood on the harbour wall (mains €12–18).',
+          tip: 'The Jewish Quarter is the quietest part of the Old Town — fewer tourists and more authentic medieval atmosphere.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset from the Walls & Dinner',
+          text: 'Walk the medieval walls from the Palace to the Clock Tower (€2.50, includes a drink) for panoramic views over the Old Town and harbour at sunset. Dinner at Mama Sofia on Orfeos Street for traditional Rhodian dishes — pitaroudia (chickpea fritters), stuffed vine leaves, and lamb kleftiko (€10–16). End at a rooftop bar on Sokratous Street watching the medieval skyline glow.',
+          tip: 'The Clock Tower terrace is the best affordable sunset viewpoint in town — arrive 30 minutes before golden hour.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Lindos & East Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bus to Lindos & Acropolis',
+          text: 'Take the KTEL bus from Rhodes Town to Lindos (1 hour, €5.50 each way). This sugar-cube village tumbles down a hillside beneath a spectacular ancient Acropolis. Climb to the Acropolis of Lindos (€12) — a Doric temple perched on a sheer cliff 116m above the sea with 360° views of the coastline. The climb is steep and hot, but the panorama from the top is the best on the island.',
+          tip: 'Take the first bus (8am) to reach the Acropolis before the heat and cruise ship crowds hit — by 11am it\'s unbearable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lindos Beach & Village',
+          text: 'Cool off at Lindos Beach or the more secluded St. Paul\'s Bay — a perfect sheltered cove framed by cliffs where St. Paul supposedly landed in 51 AD. Swim in the crystal-clear water and rent a sun lounger (€8). Walk through Lindos village\'s whitewashed lanes, admiring the "captain\'s houses" with their pebble-mosaic courtyards (kalderimi). Lunch at Mavrikos for upscale Greek (mains €14–20).',
+          tip: 'St. Paul\'s Bay is more beautiful and less crowded than the main beach — bring your own snorkel for incredible visibility.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lindos Sunset & Return',
+          text: 'Watch sunset from the Acropolis viewpoint above the village (you don\'t need to enter the site — the viewpoint is free). The sun setting behind the bay with the ancient columns silhouetted is magical. Take the evening bus back to Rhodes Town (last bus around 9pm). Late dinner at To Marouli in the Old Town for meze and local wine, or grab a gyros from a Nea Agora stall (€3–4).',
+          tip: 'Check the last bus time — it changes seasonally. Missing it means a €50+ taxi back to Rhodes Town.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Beaches, Ancient Sites & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ancient Kamiros & West Coast',
+          text: 'Rent a scooter (€20–25/day) or take a bus to Ancient Kamiros (35 min, €5) — one of the three ancient cities of Rhodes and the "Pompeii of Greece." The hillside ruins reveal an entire Hellenistic city layout with streets, houses, and a water system dating to the 5th century BC (€6). The site gets far fewer visitors than Lindos and the views over the Aegean are breathtaking.',
+          tip: 'Ancient Kamiros is best in the morning when the ruins catch the light — by afternoon the site is shadowless and scorching.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tsambika Beach & Swimming',
+          text: 'Head to Tsambika Beach on the east coast — arguably the island\'s most beautiful beach with fine golden sand and warm turquoise water. It\'s backed by dramatic cliffs and the monastery of Tsambika perches above. Sun loungers cost €8 for two, or stake out a spot on the free section at the south end. The water is shallow and warm — perfect for a long, lazy swim.',
+          tip: 'The south end of Tsambika is less crowded and has a small beach bar with cold Mythos beer for €4.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner in the Old Town',
+          text: 'Return to the Old Town for a farewell dinner. Splurge at Marco Polo Mansion — a boutique hotel with a candlelit Ottoman courtyard and Mediterranean-Greek fusion (mains €16–22). Or keep it simple at Nireas by the harbour for fresh grilled fish and a carafe of local wine. End with a final walk along the illuminated medieval walls, with the harbour lights reflecting on the dark water.',
+          tip: 'A carafe of house retsina or local white at a taverna costs €5–8 — it pairs perfectly with fresh fish.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Rhodes Medieval Old Town',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Palace of the Grand Master & Street of the Knights',
+          text: 'Enter through the D\'Amboise Gate into the medieval walled city — UNESCO World Heritage and the finest medieval town in Europe. Walk the atmospheric Street of the Knights (Odos Ippoton). Visit the Palace of the Grand Master (€8) — originally a Byzantine citadel, rebuilt by the Knights of St. John, with stunning mosaic floors from ancient Kos. The fortifications are extraordinary.',
+          tip: 'Enter the Old Town before 9am through the D\'Amboise Gate — the Street of the Knights is hauntingly quiet.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old Town Labyrinth & Jewish Quarter',
+          text: 'Lose yourself in the Old Town\'s maze of 200+ narrow lanes. Explore the Jewish Quarter around Plateia Evreon Martyron (Square of the Jewish Martyrs). Visit the Ottoman-era Süleymaniye Mosque and the Turkish Bath (hamam, €5). Lunch at Hatzikelis in the old fish market for fresh seafood on the harbour wall (mains €12–18). Browse the ceramic shops on Sokratous Street.',
+          tip: 'The Jewish Quarter is the quietest part of the Old Town — fewer tourists and more authentic medieval atmosphere.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset Walls & Old Town Dinner',
+          text: 'Walk the medieval walls from the Palace to the Clock Tower (€2.50, includes a drink) for panoramic sunset views. Dinner at Mama Sofia for traditional Rhodian dishes — pitaroudia (chickpea fritters), stuffed vine leaves, and lamb kleftiko (€10–16). End at a rooftop bar on Sokratous Street watching the medieval skyline glow under stars.',
+          tip: 'The Clock Tower terrace is the best affordable sunset viewpoint — arrive 30 minutes before golden hour.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Lindos & East Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lindos Acropolis',
+          text: 'Early KTEL bus to Lindos (1 hour, €5.50). Climb to the Acropolis of Lindos (€12) — a Doric temple perched on a sheer cliff 116m above the sea with 360° views of the coastline. The climb is steep but the panorama from the top is the best on the island. Along the way, you\'ll see a carved relief of a Rhodian trireme in the rock face. The Temple of Athena Lindia sits at the summit.',
+          tip: 'Take the first bus at 8am to reach the Acropolis before the heat and cruise ship crowds — by 11am it\'s packed.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'St. Paul\'s Bay & Lindos Village',
+          text: 'Cool off at St. Paul\'s Bay — a perfect sheltered cove framed by cliffs where St. Paul supposedly landed in 51 AD. Crystal-clear water, excellent snorkelling, and a tiny chapel by the shore. Walk through Lindos village\'s whitewashed lanes, admiring the "captain\'s houses" with their pebble-mosaic floors. Lunch at Mavrikos for upscale Greek cuisine with terrace views (mains €14–20).',
+          tip: 'Bring snorkelling gear to St. Paul\'s Bay — the rocky edges have incredible underwater visibility and small fish.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lindos Sunset & Return',
+          text: 'Watch sunset from the viewpoint above the village — the free path offers views of the Acropolis silhouetted against the sky. The sun dropping behind the bay is magical. Take the evening bus back (check last departure — usually around 9pm). Late dinner at To Marouli in the Old Town for meze, or grab a gyros from a stall near Nea Agora (€3–4).',
+          tip: 'Check the last bus time — it changes seasonally. Missing it means a €50+ taxi back to Rhodes Town.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Beaches & West Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ancient Kamiros',
+          text: 'Rent a scooter (€20–25/day) or bus to Ancient Kamiros (35 min, €5) — one of the three ancient cities of Rhodes. The hillside ruins reveal a complete Hellenistic city layout with streets, houses, temples, and a sophisticated water system dating to the 5th century BC (€6). Far fewer visitors than Lindos — you may have entire sections to yourself. The Aegean views from the site are spectacular.',
+          tip: 'Kamiros is best in the morning when the ruins catch the light — by afternoon the exposed site is shadowless and hot.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tsambika Beach',
+          text: 'Head to Tsambika Beach on the east coast — golden sand, warm turquoise water, and dramatic cliffs. Sun loungers cost €8 for two, or use the free section at the south end. The water is shallow and warm for hundreds of metres. The small Tsambika Monastery perches on the cliff above — a steep but rewarding climb (300 steps) for panoramic views over the coastline.',
+          tip: 'The south end of Tsambika is less crowded and has a small beach bar with cold Mythos beer for €4.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'New Town & Nightlife',
+          text: 'Explore Rhodes New Town — Nea Agora market hall has cheap eats, and the area around Orfanidou Street is the nightlife district. Start with drinks at the Colorado Entertainment Centre complex, then move to the bars along Bar Street (Orfanidou). Cocktails run €8–12, beers €4–6. For something mellower, find a harbour-side bar in Mandraki and watch the fishing boats come in.',
+          tip: 'Rhodes nightlife peaks on Friday and Saturday — Orfanidou bars have happy hours before midnight with two-for-one cocktails.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Valley of the Butterflies & Wine',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Valley of the Butterflies (Petaloudes)',
+          text: 'Bus or scooter to Petaloudes — the Valley of the Butterflies (€5 Jun–Sep). This lush river valley attracts thousands of Jersey Tiger moths (Panaxia quadripunctaria) each summer. Walk the shaded boardwalks along streams and waterfalls. The moths rest on trees with wings closed, revealing bright orange underwings when they fly. A magical, cool escape from the island\'s summer heat.',
+          tip: 'Visit June–September when the moths are present. Don\'t clap or make noise — the moths are sensitive to disturbance.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wine Tasting at Emery Winery',
+          text: 'Continue to the village of Embonas on the slopes of Mount Attavyros for wine tasting at Emery Winery — the island\'s oldest (tastings from €8). Rhodes has native grape varieties: Athiri (white) and Mandilaria (red). Try the local muscat. Lunch at a village taverna in Embonas — hearty mountain food with grilled meats, fresh bread, and salads (mains €8–12). The village feels untouched by tourism.',
+          tip: 'Embonas is genuine rural Greece — tavernas here serve food the family grows, and the wine is made by the owner\'s cousin.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Monte Smith Sunset & Dinner',
+          text: 'Return to Rhodes Town and climb Monte Smith (Agios Stefanos) for sunset — the ancient acropolis of Rhodes with a restored stadium, temple ruins, and 270° views over the city and sea. It\'s free and rarely crowded. Dinner in the Old Town at Nireas for fresh fish by the harbour (mains €12–18) with a carafe of local white wine. The harbour at night is atmospheric and calm.',
+          tip: 'Monte Smith is the locals\' sunset spot — bring a drink from a nearby periptero (kiosk) and watch from the stadium.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Symi Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ferry to Symi Island',
+          text: 'Take the morning catamaran from Mandraki Harbour to Symi (1 hour, €25–30 return). As you enter Symi\'s harbour, the neoclassical mansions climbing the hillside in shades of ochre, terracotta, and Aegean blue create one of the most photographed scenes in the Dodecanese. Climb the 500 Kali Strata steps from Gialos harbour to the upper town (Chorio) for panoramic views.',
+          tip: 'Sit on the right side of the catamaran for the best views entering Symi harbour — the arrival is unforgettable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Panormitis Monastery & Swimming',
+          text: 'Many day trips include a stop at Panormitis Monastery on the south coast — a striking waterfront monastery dedicated to Archangel Michael. Swim at one of Symi\'s secluded bays (the ferry often stops at Agios Georgios beach). The water is impossibly clear — some of the best swimming in Greece. Lunch at a waterfront taverna in Gialos — grilled octopus and Greek salad with harbour views (€12–16).',
+          tip: 'Bring your own snorkelling gear — Symi\'s bays have incredible underwater clarity and you can spot octopuses on the rocks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Old Town Evening',
+          text: 'The catamaran returns to Rhodes around 6pm. Back in the Old Town, take a sunset walk along the medieval moat — a peaceful tree-lined path that circles the fortifications. Dinner at To Steno for creative Greek cuisine in a candlelit alley (mains €12–18). Finish with a nightcap at Macao Bar in the Old Town — craft cocktails in a courtyard setting.',
+          tip: 'The medieval moat walk is one of Rhodes\' hidden gems — barely any tourists use it and it\'s beautifully shaded.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'South Coast & Mountain Villages',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Prasonisi — Where Two Seas Meet',
+          text: 'Rent a car or scooter and drive to Prasonisi at the island\'s southern tip (90 min) — a sand spit connecting Rhodes to a small island where the Aegean and Mediterranean seas literally meet. It\'s a world-famous windsurfing and kitesurfing spot. Even if you don\'t surf, the sight of two different-coloured seas meeting is extraordinary. The drive through the island\'s interior is beautiful and uncrowded.',
+          tip: 'Prasonisi is windiest in the afternoon — morning is calmer for swimming, afternoon for watching the surfers.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mountain Villages & Lunch',
+          text: 'Drive back through the mountain villages — stop in Apolakkia for a coffee, then Siana for its famous local honey and souma (a grappa-like spirit). Lunch at a village taverna in Monolithos with views of the medieval castle ruins perched on a dramatic rock (free to visit). The mountain villages offer a completely different Rhodes — stone houses, elderly locals in kafeneia, and no tourist shops.',
+          tip: 'Siana honey is the best on the island — buy directly from village producers for €6–8 per jar, a fraction of Rhodes Town prices.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Elli Beach Sunset & Seafood',
+          text: 'Return to Rhodes Town for a sunset swim at Elli Beach — the main town beach stays warm well into the evening. Then dinner at Koukos on the waterfront in Ixia for the best fish taverna experience outside the Old Town — the owner selects your fish from the day\'s catch (€15–25). End the night with drinks in the Old Town at Ronda Bar — relaxed jazz, cocktails, and courtyard vibes.',
+          tip: 'At a fish taverna, always ask to see the day\'s catch — point at what you want and they\'ll grill it fresh.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Relaxation & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Anthony Quinn Bay',
+          text: 'Early morning swim at Anthony Quinn Bay (30 min drive or bus to Faliraki then taxi) — a rocky cove with emerald-green water named after the actor who filmed nearby. It\'s one of the most beautiful swimming spots on the island. The snorkelling is excellent around the rocky edges. Arrive before 10am to get a good spot (limited space). Bring water and snacks — facilities are minimal.',
+          tip: 'Anthony Quinn Bay fills up by 10am — arrive early or visit in late afternoon when day-trippers leave.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Old Town Stroll & Souvenirs',
+          text: 'Final afternoon in the Old Town. Pick up souvenirs — local sponges from Symi, Rhodes ceramics, thyme honey, and olive oil soap. Browse the leather sandal workshops on Arionos Street. Last meal at Tamam for modern Greek tapas (plates €6–10) or a final gyros from the stalls near Nea Agora. Walk the harbour one last time.',
+          tip: 'The handmade leather sandals on Arionos Street are made to order — they\'re beautiful, durable, and uniquely Rhodian.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Farewell dinner at Marco Polo Mansion — a beautifully restored Ottoman house with a candlelit garden courtyard and Mediterranean-fusion cuisine (mains €16–22). Or keep it simple at a harbour taverna with fresh fish, house wine, and the sound of waves lapping the walls. The Old Town at night — with its gas lamps, medieval stones, and cat-filled alleys — is a place that stays with you.',
+          tip: 'Marco Polo Mansion is romantic and atmospheric — book ahead in summer as the courtyard tables go fast.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free beaches', text: 'All beaches in Greece are public by law. You don\'t need to rent loungers — bring a towel and sit on the free sections. Elli, Tsambika, and St. Paul\'s Bay all have free areas.' },
+  { title: 'Gyros meals', text: 'A gyros pita costs €3–4 and is a full meal. Souvlaki plates at local tavernas run €7–9. Nea Agora market has the cheapest eats — gyros, souvlaki, and loukoumades (donuts) from €3.' },
+  { title: 'Bus transport', text: 'KTEL buses connect most destinations — Rhodes to Lindos €5.50, to Faliraki €2.50. Buy tickets at the station or on board. A day of bus travel costs less than a single taxi ride.' },
+  { title: 'Museum pass', text: 'A combined ticket for the Palace of the Grand Master, Archaeological Museum, and Museum of Decorative Arts costs €10 — saving €6 over individual tickets.' },
+  { title: 'House wine', text: 'A carafe of house wine at tavernas costs €5–8. Local retsina is even cheaper. Supermarket wine is €3–5 for a decent bottle. Mythos beer costs €2–3 from a periptero kiosk.' },
+  { title: 'Scooter rental', text: 'Scooters cost €20–25/day and are the cheapest way to explore beyond Rhodes Town. Petrol is about €2/litre. Compare to taxis at €50+ for a Lindos round trip.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€15–35', midrange: '€60–120', splurge: '€200+', notes: 'Hostels/dorms → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '€12–20', midrange: '€25–45', splurge: '€70+', notes: 'Gyros & tavernas → seafood restaurants → fine dining' },
+  { category: 'Transport', budget: '€5–10', midrange: '€20–30', splurge: '€50+', notes: 'KTEL buses → scooter rental → car rental/taxis' },
+  { category: 'Activities', budget: '€5–15', midrange: '€20–40', splurge: '€60+', notes: 'Free beaches & walking → museums & day trips → boat tours' },
+  { category: 'Drinks', budget: '€3–8', midrange: '€10–20', splurge: '€30+', notes: 'Kiosk beer & house wine → bar cocktails → rooftop bars' },
+  { category: 'Daily Total', budget: '€40–88', midrange: '€135–255', splurge: '€410+', notes: '$44–97 → $148–280 → $451+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — EU/UK/US/Canadian citizens can stay up to 90 days without a visa',
+      'Rhodes Airport (RHO) is 16km from town — bus 19 runs to the centre (€2.50, 40 min) or taxi (€25–30)',
+      'Ferry connections from Piraeus (Athens) take 14–18 hours — the overnight ferry is a classic Greek experience',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No special vaccinations required. Tap water is safe in Rhodes Town but bottled is recommended in villages',
+      'Rhodes is very safe — petty crime is rare. Main risks are sunburn, dehydration, and scooter accidents',
+      'Pharmacies (farmakeio) are well-stocked. Green cross signs indicate locations. Many medications don\'t need prescriptions',
+    ],
+  },
+  {
+    icon: '🚌',
+    title: 'Getting Around',
+    items: [
+      'KTEL buses connect Rhodes Town to all major destinations. East coast buses run frequently; west coast less so',
+      'Scooter rental (€20–25/day) is the best way to explore. International driving licence required. Wear a helmet — police check',
+      'Walking is the only way to explore the Old Town — it\'s car-free inside the walls. Taxis wait outside the gates',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in most cafes, hotels, and restaurants. Coverage can be spotty in mountain villages',
+      'EU roaming is free for EU mobile plans. Non-EU visitors: Cosmote or Vodafone tourist SIMs from €10 for 5GB',
+      'Download KTEL Rhodes bus app for schedules — buses don\'t always run on time but the app helps',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Greece uses the Euro (€). ATMs are widespread in Rhodes Town and Lindos — less common in small villages',
+      'Cards accepted in restaurants and shops. Cash essential for village tavernas, kiosks, buses, and beach vendors',
+      'Tipping: leave €1–2 or round up at restaurants. Not expected at cafés or fast food. No tipping for taxis',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Reef-safe sunscreen (SPF 50+), hat, and sunglasses are essential — the Mediterranean sun is brutal',
+      'Water shoes for rocky beaches (Anthony Quinn Bay, St. Paul\'s Bay). Snorkelling gear saves money vs. renting',
+      'Light clothing and a cover-up for churches and monasteries. Comfortable shoes for the Old Town\'s cobblestones',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🍽', title: 'Taverna Culture', text: 'Greeks eat late — lunch at 2pm, dinner at 9–10pm. Ordering meze to share is the norm. Never rush a Greek meal; lingering is expected. The bill comes only when you ask for it.' },
+  { icon: '⛪', title: 'Church Etiquette', text: 'Rhodes has hundreds of churches and monasteries. Cover shoulders and knees. Women may need to wear a skirt (wraps often provided at the entrance). Photography is usually forbidden inside.' },
+  { icon: '☕', title: 'Greek Coffee Ritual', text: 'Order "elliniko" for traditional Greek coffee — it comes with grounds in the cup, so don\'t drain it. A freddo espresso or freddo cappuccino is the local iced coffee of choice in summer.' },
+  { icon: '🤝', title: 'Philoxenia', text: 'Greek hospitality (philoxenia — "friend of the stranger") is genuine. Accept offered food or drink graciously. Refusing hospitality can offend. Locals may invite you to join their table.' },
+  { icon: '🐙', title: 'Fresh Seafood Rules', text: 'Fresh fish at tavernas is priced by the kilo — ask the price before ordering. Good tavernas display the catch on ice. Grilled octopus, fried calamari, and sardines are the best budget options.' },
+  { icon: '🗓', title: 'Siesta Time', text: 'Many shops and businesses close 2–5pm for the afternoon siesta. Don\'t make noise near residential areas during this time — it\'s taken seriously, especially in villages.' },
+];
+---
+
+<CityGuideLayout
+  title="Rhodes Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Rhodes guide for young travelers. 3-day itinerary with medieval Old Town, Lindos, beaches, island hopping, budget tips, and taverna recommendations. Plan your trip with roammate."
+  heroImage="/images/guides/rhodes-hero.webp"
+  heroFlag="🇬🇷"
+  heroCountry="Greece"
+  heroRegion="Europe"
+  heroCity="Rhodes"
+  heroSubtitle="Where the Knights of St. John built a fortress city so perfect it survived seven centuries, and the Aegean stays warm until November."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in EUR. Rhodes is excellent value for a Greek island — cheaper than Santorini or Mykonos with better historical depth."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Rhodes blends Greek, Ottoman, and Italian influences into a uniquely layered culture. Embrace the slow pace, eat late, and say yes to everything offered."
+  ctaCity="Rhodes"
+  ctaText="Find travel companions for Symi day trips, split scooter rentals, and discover hidden beaches together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'MYR (RM Ringgit)', detail: '1 USD ≈ RM4.45' },
+  { icon: '🗣', label: 'Language', value: 'Malay / English', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'MYT (UTC+8)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: '27–34°C, drier period' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–45 USD', detail: 'RM100–200 budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 90 days', detail: 'Most nationalities — no advance application' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'KL Highlights in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Batu Caves & Little India',
+          text: 'Take the KTM Komuter train from KL Sentral to Batu Caves (RM2.60, 30 minutes). Climb the 272 rainbow-painted steps to the Hindu temple inside a 400-million-year-old limestone cave — free entry, monkeys everywhere. The massive 43-metre gold Murugan statue at the base is the tallest in the world. Head back and walk through Brickfields (KL\'s Little India) for banana leaf rice at Vishalatchi Food & Catering (RM8).',
+          tip: 'Arrive at Batu Caves by 9am to beat tour buses and midday heat. Watch your bags around the macaque monkeys — they will snatch food and shiny objects.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Petronas Twin Towers & KLCC Park',
+          text: 'LRT to KLCC station. The Petronas Twin Towers are mesmerizing up close — the skybridge and observation deck (RM98, book online in advance) offer stunning views. Below, KLCC Park is a free tropical garden with a wading pool, jogging track, and the Lake Symphony fountain show. Lunch at Suria KLCC food court — Madam Kwan\'s nasi lemak (RM16) is a local institution.',
+          tip: 'Skybridge tickets sell out days in advance — book online at least 3 days ahead. The afternoon slot gets the best light for photos.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jalan Alor Street Food & Rooftop Drinks',
+          text: 'Walk to Jalan Alor — KL\'s most famous street food strip, a 200-metre stretch of hawker stalls and plastic-chair restaurants. Grilled chicken wings (RM2 each), char kway teow (RM8), satay (RM1 per stick), and durian if you dare. For drinks with a view, Heli Lounge Bar on the rooftop of a Bukit Bintang building transforms a helicopter pad into a cocktail bar (drinks from RM35).',
+          tip: 'Jalan Alor peaks between 7–10pm. The grilled chicken wing stalls near the Changkat Bukit Bintang end are consistently the best.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Icons, Caves & Street Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Batu Caves',
+          text: 'KTM Komuter from KL Sentral to Batu Caves (RM2.60, 30 minutes). Climb the 272 rainbow-painted steps to the Hindu temple inside a 400-million-year-old limestone cave — free entry. The massive 43-metre gold Murugan statue at the base is the tallest in the world. Explore the smaller Dark Cave eco-tour (RM35) for a guided spelunking adventure through bat colonies and rare cave fauna.',
+          tip: 'Arrive by 9am to beat tour buses and midday heat. Watch your bags around the macaque monkeys — they will snatch food and shiny objects.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Petronas Twin Towers & KLCC Park',
+          text: 'LRT to KLCC. The Petronas Twin Towers dominate the skyline — the skybridge and observation deck (RM98, book online) offer stunning views from the 86th floor. KLCC Park below is a free tropical garden with a wading pool and the Lake Symphony fountain shows (every 30 minutes in the evening). Lunch at Suria KLCC food court — Madam Kwan\'s nasi lemak (RM16) is legendary.',
+          tip: 'Book Petronas Skybridge tickets online at least 3 days ahead — they sell out fast. The afternoon slot gets the best natural light.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jalan Alor Street Food Crawl',
+          text: 'Walk to Jalan Alor in Bukit Bintang — KL\'s most famous street food strip. A 200-metre stretch of hawker stalls and plastic-chair restaurants serving grilled chicken wings (RM2 each), char kway teow (RM8), satay (RM1 per stick), and the infamous stinky but addictive durian (RM15 per portion). Wash it down with fresh coconut water (RM5) and teh tarik (pulled tea, RM3).',
+          tip: 'Jalan Alor peaks between 7–10pm. Stalls near the Changkat Bukit Bintang end are consistently the best quality.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Heritage, Mosques & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Merdeka Square & Central Market',
+          text: 'Start at Merdeka Square — where Malaysian independence was declared in 1957. The Sultan Abdul Samad Building with its Moorish arches is one of KL\'s most photographed landmarks. Walk to the Central Market (Pasar Seni) — an art-deco building from 1888 now housing Malaysian craft vendors, batik painters, and a food court with excellent laksa (RM8). Browse for hand-painted batik and pewter souvenirs.',
+          tip: 'The back alley behind Central Market — Kasturi Walk — has better prices and less tourist markup than the stalls inside.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Masjid Jamek & Kampung Baru',
+          text: 'Walk to Masjid Jamek — KL\'s oldest mosque (1909), beautifully situated at the confluence of two rivers (the muddy waters that gave Kuala Lumpur its name). The River of Life project has transformed the surrounding riverbanks with blue lighting at night. Then walk to Kampung Baru — a traditional Malay village somehow surviving in the city centre with wooden stilt houses, coconut palms, and the best nasi campur stalls (RM7–12).',
+          tip: 'Kampung Baru is most atmospheric during Ramadan when the night market stretches for blocks — but it is excellent year-round for authentic Malay food.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Changkat Bukit Bintang Nightlife',
+          text: 'Changkat Bukit Bintang is KL\'s main nightlife strip — a row of converted shophouses turned bars and restaurants. Start with dinner at Opium KL (Asian fusion, mains RM25–45) then bar-hop along the strip. PS150 is a hidden speakeasy behind a Chinese medicine shop facade (cocktails RM38–48). For something cheaper, the rooftop beer gardens serve Tiger on tap from RM15 a pint.',
+          tip: 'PS150 is behind an unmarked door next to the medicine shop on Petaling Street — ring the bell. The cocktails are worth the hunt.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Nature, Art & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'KL Forest Eco Park',
+          text: 'Start your morning at the KL Forest Eco Park (free entry) — a remnant of primary rainforest right in the city centre, next to the KL Tower. The 200-metre canopy walk is suspended 30 metres above the forest floor with views of the Petronas Towers through the treetops. Then ascend KL Tower (RM52 observation deck) for panoramic city views — less crowded and cheaper than the Petronas Towers.',
+          tip: 'The KL Forest Eco Park canopy walk opens at 9:30am — arrive early as it closes during rain and can get crowded by late morning.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Petaling Street & Chinatown',
+          text: 'Walk down to Petaling Street — KL\'s bustling Chinatown market under a green canopy roof. Haggle for watches, bags, and souvenirs (start at 30% of the asking price). The real treasure is the food — Madras Lane hidden hawker stalls serve curry laksa (RM6), yong tau foo (RM8), and the famous Kim Lian Kee hokkien mee (RM10). Visit the ornate Chan See Shu Yuen temple at the end of the street.',
+          tip: 'Madras Lane is a narrow alley off Petaling Street — easy to miss but home to some of KL\'s oldest and best hawker stalls. Look for the queue.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'REXKL & Farewell Dinner',
+          text: 'Visit REXKL — a stunning 1947 cinema converted into a creative arts space in Chinatown with galleries, popup events, and a rooftop bar. For a farewell dinner, head to Village Park Restaurant in Damansara for what many consider the best nasi lemak in Malaysia (RM10–15) — the sambal is legendary. Or splurge at Marini\'s on 57 atop the Petronas Towers for Italian food with the ultimate skyline view.',
+          tip: 'Village Park opens until 7pm and the nasi lemak sells out regularly — aim for a late lunch by 4pm to be safe.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Icons, Caves & Street Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Batu Caves',
+          text: 'KTM Komuter from KL Sentral to Batu Caves (RM2.60, 30 minutes). Climb the 272 rainbow steps to the Hindu temple inside a limestone cave — free entry. The 43-metre gold Murugan statue is the tallest in the world. Explore the Dark Cave eco-tour (RM35) for a guided spelunking adventure through bat colonies and rare cave fauna. Return to Brickfields for banana leaf rice.',
+          tip: 'Arrive by 9am to beat tour buses and the midday heat. Watch your bags around the macaque monkeys at the steps.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Petronas Twin Towers & KLCC',
+          text: 'LRT to KLCC. The Petronas Twin Towers skybridge and observation deck (RM98, book online) offer stunning views from the 86th floor. KLCC Park below is a free tropical garden with a wading pool and the Lake Symphony fountain shows. Lunch at the Suria KLCC food court — Madam Kwan\'s nasi lemak is a local institution. The Aquaria KLCC (RM69) is worth it for the underwater tunnel.',
+          tip: 'Book Petronas tickets online 3+ days ahead. The afternoon slot gets the best natural light for photography.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jalan Alor Street Food',
+          text: 'Walk to Jalan Alor — KL\'s legendary street food strip. Grilled chicken wings (RM2 each), char kway teow (RM8), satay (RM1 per stick), and durian if you dare. The neon lights, sizzling woks, and plastic chairs create the quintessential KL dining experience. End with teh tarik (pulled tea, RM3) and a walk through the buzzing Bukit Bintang night scene.',
+          tip: 'Stalls near the Changkat Bukit Bintang end are consistently the best quality. The chicken wing stalls get the longest queues.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Heritage & Cultural Heart',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Merdeka Square & National Museum',
+          text: 'Start at Merdeka Square — where Malaysian independence was declared in 1957. The Sultan Abdul Samad Building is a Moorish masterpiece. Walk to the National Museum (RM5) for a sweep through Malaysian history from prehistoric times to independence. The building itself, designed like a traditional Malay palace, is beautiful. Continue to the Islamic Arts Museum (RM14) — the finest in Southeast Asia.',
+          tip: 'The Islamic Arts Museum is genuinely world-class and never crowded — the Ottoman and Mughal gallery replicas are extraordinary.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Masjid Jamek & Kampung Baru',
+          text: 'Walk to Masjid Jamek — KL\'s oldest mosque at the river confluence that gave the city its name. The River of Life project has transformed the area with beautiful blue-lit riverbanks. Walk to Kampung Baru — a traditional Malay village in the city centre with wooden stilt houses and the best nasi campur stalls (RM7–12). This is authentic Malaysia steps from the skyscrapers.',
+          tip: 'Kampung Baru is most atmospheric during Ramadan night markets but excellent year-round for authentic Malay food at local prices.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Changkat Nightlife',
+          text: 'Changkat Bukit Bintang — KL\'s main nightlife strip of converted shophouse bars. Start with dinner at Opium KL (Asian fusion, mains RM25–45). PS150 is a hidden speakeasy behind a Chinese medicine shop (cocktails RM38–48). Heli Lounge Bar transforms a helicopter pad into a rooftop cocktail bar with 360-degree views. For budget drinking, the beer gardens serve Tiger from RM15.',
+          tip: 'PS150 is unmarked — look for the medicine shop facade on Petaling Street and ring the bell. The molecular cocktails are worth the search.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Chinatown, Art & Local Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Petaling Street & Chinatown',
+          text: 'Explore Petaling Street — KL\'s Chinatown market under a green canopy roof. The real treasure is the food — Madras Lane hawker stalls serve curry laksa (RM6), yong tau foo (RM8), and Kim Lian Kee hokkien mee (RM10). Visit the ornate Thean Hou Temple on a hill overlooking the city — a stunning six-tier Chinese temple free to enter, rarely visited by tourists.',
+          tip: 'Madras Lane is a narrow alley off Petaling Street — easy to miss but home to some of KL\'s oldest hawker stalls. Follow the queue.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'REXKL & Kwai Chai Hong',
+          text: 'Visit REXKL — a stunning 1947 cinema converted into a creative arts space with galleries and popup events. Then walk to Kwai Chai Hong — a restored heritage alley in Chinatown with beautiful murals depicting 1960s KL life, now flanked by cocktail bars and cafes. The street art is photogenic and free. Lunch at the nearby Chocha Foodstore for modern Malaysian fusion in a heritage shophouse.',
+          tip: 'Kwai Chai Hong is most photogenic in the afternoon when sunlight hits the murals. The cocktail bar at the entrance makes excellent gin-based drinks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bangsar Dining & Drinks',
+          text: 'Take an LRT to Bangsar — KL\'s upscale residential neighbourhood with excellent restaurants and bars at more reasonable prices than Bukit Bintang. Dinner at Rebung by Chef Ismail — a legendary Malay buffet with 100+ traditional dishes (RM55). Then drinks at Coley on Jalan Maarof — a craft cocktail bar consistently ranked among Asia\'s best (cocktails RM40–55).',
+          tip: 'Bangsar has KL\'s best concentration of restaurants per square metre. Jalan Telawi is the main strip — walk it and follow your nose.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Nature & Rainforest',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'KL Forest Eco Park & KL Tower',
+          text: 'Start at the KL Forest Eco Park (free) — primary rainforest in the city centre next to KL Tower. The 200-metre canopy walk is 30 metres above the forest floor with Petronas Towers views through the treetops. Then ascend KL Tower observation deck (RM52) — panoramic city views, less crowded and cheaper than the Petronas Towers. The sky deck with glass floor (RM105) is thrilling.',
+          tip: 'The canopy walk opens at 9:30am and closes during rain. Arrive early — it can get crowded and has a capacity limit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Perdana Botanical Gardens',
+          text: 'Walk down to the Perdana Botanical Gardens (free) — 91 hectares of lush greenery with a deer park, orchid garden (RM1), butterfly park (RM25), and the KL Bird Park (RM67 — one of the largest walk-in aviaries in the world with 3,000 birds). Pack a lunch or eat at the Lakeside Restaurant within the gardens. The whole area feels worlds away from the concrete city.',
+          tip: 'The KL Bird Park is best visited in the morning when the feeding shows happen and the birds are most active.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bukit Bintang Night Walk',
+          text: 'Walk through the Bukit Bintang district as the city lights up. Start at Pavilion KL for window shopping, then walk the covered skywalk to Fahrenheit 88 and Lot 10 — the basement food court at Lot 10 Hutong recreates famous hawker stalls from across Malaysia under one roof (dishes RM8–15). End the night at SkyBar atop Traders Hotel for cocktails overlooking the illuminated Petronas Towers.',
+          tip: 'Lot 10 Hutong food court closes at 10pm — the Hokkien mee and curry mee stalls regularly have the longest queues for good reason.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Day Trip — Putrajaya & Cyberjaya',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Putrajaya — Malaysia\'s Garden City',
+          text: 'KLIA Transit train from KL Sentral to Putrajaya (RM14, 20 minutes). Malaysia\'s administrative capital is a planned city of grand Islamic architecture, manicured gardens, and eerily empty boulevards. Visit Putra Mosque (free, robes provided) — a pink granite mosque on the edge of a man-made lake. The Prime Minister\'s office building nearby is stunning Moorish-Islamic architecture.',
+          tip: 'Putrajaya is best explored by Grab — the city is spread out and designed for cars. A two-hour circuit costs about RM30–40.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Putrajaya Botanical Gardens & Lake Cruise',
+          text: 'The Putrajaya Botanical Gardens (free) span 92 hectares — the Moroccan Garden and Sun Garden are highlights. Then take a cruise on Putrajaya Lake (RM55 for 45 minutes) past the bridges and government buildings. There are 9 architecturally unique bridges — each inspired by a different world style. Lunch at Alamanda shopping centre food court (meals from RM8).',
+          tip: 'The cruise at sunset offers the best views when the government buildings are lit up and reflected in the lake.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & SS2 Night Hawkers',
+          text: 'Head back to KL and Grab to the SS2 hawker stalls in Petaling Jaya — a local favourite that tourists rarely find. The char siu wantan mee (RM7), satay celup (dip-your-own satay, RM0.80 per stick), and ais kacang (shaved ice dessert, RM5) are outstanding. The area around Damansara and SS2 represents how Malaysians actually eat — no tourists, incredible food.',
+          tip: 'SS2 stalls open from 5pm to midnight. Look for Murni SS2 — a 24-hour mamak restaurant with a 23-page menu that has achieved cult status.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Little India, Street Art & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Brickfields (Little India)',
+          text: 'Walk through Brickfields — KL\'s Little India district radiating from KL Sentral station. The air is thick with incense and spice. Visit the Sri Kandaswamy Temple (free) with its ornate gopuram tower. Breakfast at Vishalatchi Food & Catering — legendary banana leaf rice (RM8) where rice and curries are served on a fresh banana leaf. The flower garland stalls and sari shops are endlessly colourful.',
+          tip: 'Order banana leaf rice with a fish head curry — it sounds challenging but is one of the most flavourful meals in KL for under RM15.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Mosque & Lake Gardens',
+          text: 'Visit Masjid Negara (National Mosque, free) — a striking modernist mosque with a 73-metre minaret and an umbrella-inspired roof that can hold 15,000 worshippers. Robes and headscarves provided free for non-Muslim visitors. Walk through the Lake Gardens to the Tugu Negara (National Monument) — a dramatic bronze sculpture commemorating Malaysian independence. Lunch at the nearby mamak stall for roti canai (RM2).',
+          tip: 'The National Mosque is closed to non-Muslim visitors during prayer times — check the schedule posted at the entrance and plan accordingly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Taman Connaught Night Market',
+          text: 'Grab to Taman Connaught Night Market (Wednesday nights only) — the longest night market in Malaysia at 2km. If not Wednesday, the Sri Petaling Night Market (Saturday) or the Taman Tun Dr Ismail (TTDI) market are excellent alternatives. Street food from RM3, clothes from RM10, and the energy of a city that lives outdoors after dark. End with apam balik (crispy pancake, RM3).',
+          tip: 'Taman Connaught stretches 2km — wear comfortable shoes and start from the food end. The stinky tofu and grilled corn stalls are unmissable.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Food Tour & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Village Park & Damansara',
+          text: 'Grab to Village Park Restaurant in Damansara Uptown for what many consider the best nasi lemak in Malaysia (RM10–15) — the sambal is legendary and the fried chicken is perfectly crispy. Then explore the Damansara area — Starling Mall has a beautiful rooftop garden, and the surrounding streets are packed with local coffee shops serving kopi-o (RM2) and toast sets.',
+          tip: 'Village Park opens at 7am and the nasi lemak sells out regularly by early afternoon — go for breakfast to be safe.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last-Minute Shopping & Souvenirs',
+          text: 'Head to Central Market for Malaysian souvenirs — hand-painted batik (from RM30), pewter by Royal Selangor (from RM50), and keropok (prawn crackers) in gift boxes. For serious shopping, Mid Valley Megamall is one of the largest in Southeast Asia. Or head to Suria KLCC for last photos of the Petronas Towers. Pick up Beryl\'s chocolate or Boh tea as lightweight gifts.',
+          tip: 'Royal Selangor pewter makes an excellent Malaysian gift — the factory outlet in Setapak offers better prices than tourist shops.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell at Atmosphere 360',
+          text: 'For a final splurge, dinner at Atmosphere 360 in KL Tower — a revolving restaurant with a Malaysian buffet (RM150) and panoramic views of the city at night. Budget alternative: one last round of Jalan Alor street food and a goodbye teh tarik. Then Grab to KL Sentral for the airport train or to your accommodation. Malaysia will miss you — and you will miss the food.',
+          tip: 'KLIA Ekspres from KL Sentral to the airport takes 28 minutes (RM55). Book online for a 10% discount. The last train departs at 12:30am.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Hawker food paradise', text: 'Nasi lemak: RM3–8. Roti canai: RM1.50–3. Char kway teow: RM6–10. Teh tarik: RM2–3. A full day of incredible eating costs RM30–50 ($7–11 USD). Malaysia has some of the cheapest food in the world.' },
+  { title: 'Use the transit system', text: 'Touch n Go card works on LRT, MRT, Monorail, and buses. Single rides: RM1.20–6.40. Get the card at any station (RM10 + top-up). Avoid Grab during rush hour — trains are faster and cheaper.' },
+  { title: 'Free attractions', text: 'KLCC Park, Merdeka Square, Thean Hou Temple, all mosques, most temples, KL Forest Eco Park, Perdana Botanical Gardens, and the street art in Chinatown — all completely free to visit.' },
+  { title: 'Book Petronas online', text: 'Petronas Twin Towers tickets (RM98) sell out 3+ days ahead. Walk-ups are rarely available. Book online at the official site — avoid reseller markups. Alternatively, KL Tower (RM52) offers comparable views for half the price.' },
+  { title: 'Mamak restaurants', text: 'Mamak (Indian-Muslim) restaurants serve incredible roti canai, mee goreng, and nasi kandar 24/7 at rock-bottom prices. They are everywhere, always open, and always cheap — the backbone of KL budget eating.' },
+  { title: 'Grab everything', text: 'Grab is essential in KL — ride-hailing, food delivery, and payments. A cross-city ride costs RM10–20. GrabPay works at most food stalls. New users get promotional credit — sign up before you arrive.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'RM40–80', midrange: 'RM150–350', splurge: 'RM600+', notes: 'Hostels → boutique hotels → luxury towers' },
+  { category: 'Food', budget: 'RM25–50', midrange: 'RM60–120', splurge: 'RM200+', notes: 'Hawker stalls → restaurants → fine dining' },
+  { category: 'Transport', budget: 'RM10–25', midrange: 'RM30–60', splurge: 'RM100+', notes: 'LRT/MRT → Grab rides → private driver' },
+  { category: 'Activities', budget: 'RM0–50', midrange: 'RM80–200', splurge: 'RM400+', notes: 'Free temples & parks → towers & museums → premium tours' },
+  { category: 'Drinks', budget: 'RM5–15', midrange: 'RM30–60', splurge: 'RM100+', notes: 'Teh tarik & kopi → craft bars → rooftop cocktails' },
+  { category: 'Daily Total', budget: 'RM80–220', midrange: 'RM350–790', splurge: 'RM1,400+', notes: '$18–50 → $79–178 → $315+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities get 90 days visa-free — just show up with a valid passport (6+ months validity)',
+      'Malaysia Digital Arrival Card (MDAC) must be completed online within 3 days before arrival — free',
+      'Proof of onward travel is occasionally checked at immigration — have a booking ready on your phone',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No mandatory vaccinations. Hepatitis A recommended. Tap water in KL is treated but locals drink boiled or bottled — bottled water is RM1–2',
+      'KL is generally safe but petty theft exists in crowded areas — keep valuables in front pockets at markets',
+      'Dengue fever risk — use mosquito repellent, especially in the evenings and near parks. Pharmacies sell repellent for RM8–15',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'LRT, MRT, Monorail, and KTM Komuter cover the city. Get a Touch n Go card (RM10) at any station',
+      'Grab is the dominant ride-hailing app (Uber exited Malaysia). GrabCar is cheapest — cross-city rides RM10–20',
+      'KL Sentral is the main transport hub connecting trains, buses, and the KLIA Ekspres airport train (RM55, 28 mins)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Tourist SIM cards at KLIA: Celcom, Digi, or Maxis from RM15 for 7 days with 20GB+ data — excellent 4G coverage',
+      'Free WiFi is widespread — malls, cafes, restaurants, and even most hawker centres have decent connectivity',
+      'All apps and websites work unrestricted — no VPN needed. WhatsApp and Grab are the two essential apps',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs everywhere — Maybank and CIMB have the lowest fees. Withdraw RM1,000+ at a time to minimize charges',
+      'Cards accepted at malls and restaurants. Cash essential for hawker stalls, markets, and smaller shops',
+      'Tipping is not expected in Malaysia — a 10% service charge is already added at most restaurants',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, breathable clothing. Pack a modest outfit for mosque visits — long sleeves, long pants, headscarf for women',
+      'A compact umbrella is essential — KL gets sudden tropical downpours almost daily, usually mid-afternoon',
+      'Comfortable walking shoes, sunscreen, and a light layer for the air-conditioned malls and trains',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🕌', title: 'Mosque Etiquette', text: 'Remove shoes before entering. Women must cover hair, arms, and legs — free robes are usually provided. Do not walk in front of someone praying. Non-Muslims cannot enter during prayer times.' },
+  { icon: '🤲', title: 'Right Hand Rule', text: 'Use your right hand when eating, giving or receiving items, and shaking hands. The left hand is considered unclean in Malay and Indian cultures. When eating banana leaf rice, use only your right hand.' },
+  { icon: '🍽', title: 'Food & Religion', text: 'Malaysia is majority Muslim — pork is not served at Malay or Indian-Muslim (mamak) restaurants. Halal certification is displayed prominently. Chinese restaurants may serve pork — look for the "non-halal" sign.' },
+  { icon: '👗', title: 'Dress Modestly', text: 'KL is cosmopolitan but modest dress is appreciated outside of malls and tourist areas. Cover shoulders and knees when visiting mosques, temples, and government buildings. Swimwear only at beaches and pools.' },
+  { icon: '🎭', title: 'Multicultural Sensitivity', text: 'Malaysia has Malay, Chinese, and Indian communities with distinct customs. Be sensitive to religious and cultural differences. Avoid discussing race, religion, or politics — these are sensitive topics locally.' },
+  { icon: '💵', title: 'Tipping & Bargaining', text: 'Tipping is not customary — most restaurants add a 10% service charge. Bargaining is expected at markets and street stalls. At malls and fixed-price shops, prices are final. Round up taxi fares as a courtesy.' },
+];
+---
+
+<CityGuideLayout
+  title="Kuala Lumpur Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate KL guide for young travelers. 3-day itinerary with street food crawls, Batu Caves, Petronas Towers, nightlife, and budget tips. Plan your trip with roammate."
+  heroImage="/images/guides/kuala-lumpur-hero.webp"
+  heroFlag="🇲🇾"
+  heroCountry="Malaysia"
+  heroRegion="Southeast Asia"
+  heroCity="Kuala Lumpur"
+  heroSubtitle="A delicious collision of Malay, Chinese, and Indian cultures — where every meal is a revelation and every corner hides a temple."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in MYR (RM). KL is extraordinarily affordable — you can eat world-class food for pocket change."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Malaysia is a multicultural melting pot of Malay, Chinese, and Indian traditions. Respecting all three cultures is key to a rich experience."
+  ctaCity="Kuala Lumpur"
+  ctaText="Find travel companions, split Grab fares, and share Jalan Alor food crawls with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

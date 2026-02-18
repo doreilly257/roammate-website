@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'Euro (€)', detail: '1 USD ≈ €0.92' },
+  { icon: '🗣', label: 'Language', value: 'Finnish / Swedish', detail: 'Excellent English everywhere' },
+  { icon: '🕐', label: 'Timezone', value: 'EET (UTC+2)', detail: 'EEST (UTC+3) Mar–Oct' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Aug', detail: '17–23°C, up to 19hrs daylight' },
+  { icon: '🎒', label: 'Daily Budget', value: '~€60–100', detail: '$65–109 USD per day' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: 'EU/US/Can 90 days visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Helsinki in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Senate Square & Market Hall',
+          text: 'Start at Senate Square (Senaatintori) — the neoclassical heart of Helsinki with the white Helsinki Cathedral rising above it. The square was designed to rival St. Petersburg (Helsinki was part of Russia until 1917). Walk down to the Vanha Kauppahalli (Old Market Hall, since 1889) on the harbour for breakfast — salmon soup (€10), karjalanpiirakka (Karelian rice pastries, €3), and strong Finnish coffee.',
+          tip: 'The Old Market Hall is where locals eat, not tourists — sit at the counter for salmon soup and watch the harbour through the windows.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Suomenlinna Sea Fortress',
+          text: 'Ferry from Market Square to Suomenlinna (€5 return, 15 minutes, included in day ticket). This UNESCO World Heritage sea fortress was built in 1748 across six islands. Walk the fortifications, tunnels, and ramparts with views across the Baltic. The King\'s Gate is the main entrance — dramatic and photogenic. Bring a picnic or eat at Cafe Chapman. Allow 2–3 hours to explore properly.',
+          tip: 'Suomenlinna is Helsinki\'s top attraction and free to enter (only the ferry costs). The tunnels are fascinating — bring a torch on your phone.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kallio & Finnish Sauna',
+          text: 'Head to Kallio — Helsinki\'s hipster neighbourhood with the best bars, vintage shops, and street art. Dinner at Siltanen (burgers and live music, mains €12–16) or Fafa\'s (falafel, €8–11). Then experience a Finnish sauna — Löyly on the waterfront (€19, stunning wood-lattice architecture) or Allas Sea Pool (€15, harbour pools and saunas). The sauna-to-Baltic-swim cycle is transformative.',
+          tip: 'Löyly is the most architecturally stunning sauna in Finland — the wood-lattice building and waterfront terrace are extraordinary.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Senate Square, Harbour & Suomenlinna',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Senate Square & Market Square',
+          text: 'Start at Senate Square — the white Helsinki Cathedral dominates the neoclassical square designed to rival St. Petersburg. Walk down to Kauppatori (Market Square) on the harbour — fruit stalls, fish vendors, and reindeer sausage (€6). Visit the Vanha Kauppahalli (Old Market Hall, since 1889) for salmon soup (€10), karjalanpiirakka (Karelian pastries, €3), and strong Finnish coffee at a harbour-side counter.',
+          tip: 'Market Square vendors sell fresh fried vendace (muikku) in summer — tiny lake fish fried golden and eaten whole. A Finnish delicacy for €8.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Suomenlinna Fortress',
+          text: 'Ferry from Market Square to Suomenlinna (€5 return, 15 min). This UNESCO sea fortress was built across six islands in 1748 — walk the ramparts, tunnels, and cannon emplacements with sweeping Baltic views. The King\'s Gate is the iconic entrance. Pack a picnic or eat at Cafe Piper (in a former garden pavilion). The Suomenlinna Museum (€8) explains the fortress\'s three-empire history.',
+          tip: 'Suomenlinna is free to enter. Bring a picnic from the Old Market Hall — eating on the fortress walls overlooking the Baltic is perfection.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Design District & Sauna',
+          text: 'Return and walk through the Design District — Punavuori and Ullanlinna neighbourhoods with Finnish design shops, galleries, and cafes. Dinner at Juuri on Korkeavuorenkatu (Finnish tapas called "sapas", €5–12 each) or Ravintola Kuu (traditional Finnish, mains €18–28). Then a sauna at Löyly (€19, waterfront architecture) — swim in the Baltic between rounds.',
+          tip: 'Juuri\'s "sapas" are Finnish tapas — small plates of reindeer, Baltic herring, and wild mushroom that showcase Finnish ingredients brilliantly.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Architecture, Kallio & Finnish Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Temppeliaukio & National Museum',
+          text: 'Visit Temppeliaukio Church (€3) — the famous Rock Church, carved directly into granite bedrock with a stunning copper dome. The acoustics and raw stone walls are mesmerising. Then walk to the National Museum of Finland (€14) for the story of Finland from the Stone Age to independence — the Kalevala murals in the entrance hall are extraordinary. Coffee at Regatta (tiny red cafe on the shore, €2.50).',
+          tip: 'Temppeliaukio is an active church — check service times to avoid worship hours. The natural light through the dome changes throughout the day.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kallio & Street Culture',
+          text: 'Walk to Kallio — Helsinki\'s most vibrant neighbourhood, formerly working-class, now the creative heart of the city. Climb Kallio Church hill for panoramic views. Browse vintage at Relove and UFF on Vaasankatu. Lunch at Siltanen (burgers, live music, €12–16) or Fafa\'s (Middle Eastern chain, falafel €8–11). The Bear Park (Karhupuisto) hosts a weekend flea market.',
+          tip: 'Vaasankatu is Kallio\'s main strip — every bar is affordable by Helsinki standards and the street art changes monthly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kallio Nightlife',
+          text: 'Kallio has Helsinki\'s best nightlife. Start at Siltanen (bar with terrace and live music) or Roskapankki (dive bar, craft beer €6–8). Move to Kuudes Linja (club and live venue) or Kaiku (electronic music, open until 4am). Finnish drinking culture involves "sisu" — stoic determination — and late-night sauna. Dinner first at Roji (Japanese-Finnish fusion, mains €14–18) or Kolmon on Vaasankatu.',
+          tip: 'Finnish nightlife is quiet until 11pm then erupts. Kaiku is Helsinki\'s best electronic club — check Resident Advisor for listings.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Oodi Library, Islands & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Oodi Library & Kiasma',
+          text: 'Visit Oodi Central Library (free) — Finland\'s most celebrated new building, opened in 2018. Three floors of public space: maker labs, 3D printers, sewing machines, recording studios, gaming rooms, and books. The roof terrace has city views. Then cross to Kiasma Museum of Contemporary Art (€15) — Finland\'s premier contemporary art museum in a Steven Holl building. Coffee at Café Aalto in Akateeminen bookshop.',
+          tip: 'Oodi is the best public library in the world — you can borrow a sewing machine, use a 3D printer, or just sit in the reading cave.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pihlajasaari Island',
+          text: 'Ferry from Merisatama to Pihlajasaari (€7 return, 10 minutes, summer only). Helsinki\'s favourite island beach — pine forests, rocky shoreline, and sandy beaches. The south beach is clothing-optional (very Finnish). Pack a picnic from the Hakaniemi indoor market (traditional food hall) or eat at the island cafe. Swim in the Baltic — cold (16–19°C) but Finns do it without flinching.',
+          tip: 'Pihlajasaari is where Helsinki goes on summer weekends — the sandy beach and pine forest feel like you\'re on a Finnish lake, not in a capital city.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Finnish Dinner',
+          text: 'Farewell dinner with Finnish flavours. Ravintola Savotta near Senate Square (traditional Finnish, reindeer stew €26, elk €28) or Ravintola Nokka (fine Finnish, tasting menu €89). For budget, try Zetor (tractor-themed Finnish kitchen, mains €16–22) or Naughty BRGR (excellent burgers, €13–16). Final drink at Allas Sea Pool (harbour sauna and bar) or Liberty or Death cocktail bar.',
+          tip: 'Ravintola Savotta is designed like a Finnish log cabin — the reindeer dishes and wild mushroom soup capture Finnish cuisine perfectly.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Senate Square, Harbour & Suomenlinna',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Senate Square & Market Hall',
+          text: 'Helsinki Cathedral on Senate Square, designed to rival St. Petersburg. Walk to Kauppatori (Market Square) and Vanha Kauppahalli (Old Market Hall, since 1889) for salmon soup (€10), karjalanpiirakka (€3), and Finnish coffee.',
+          tip: 'Market Square\'s fried muikku (vendace fish) in summer is a seasonal Finnish delicacy — golden, crispy, and eaten whole.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Suomenlinna Fortress',
+          text: 'Ferry to Suomenlinna (€5 return, 15 min). UNESCO sea fortress on six islands — ramparts, tunnels, Baltic views. King\'s Gate entrance, Suomenlinna Museum (€8). Pack a picnic and eat on the fortress walls.',
+          tip: 'Suomenlinna is free to enter and feels like a small village — some 800 people actually live here year-round.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Design District & Sauna',
+          text: 'Walk the Design District — Punavuori\'s Finnish design shops and galleries. Dinner at Juuri (Finnish sapas, €5–12 each). Sauna at Löyly (€19) with Baltic swimming between rounds.',
+          tip: 'Löyly\'s wood-lattice architecture and waterfront terrace make it the most photogenic sauna in Finland.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Architecture & Rock Church',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Temppeliaukio & National Museum',
+          text: 'Rock Church (€3) — carved into granite with a copper dome. National Museum of Finland (€14) — Stone Age to independence, with Kalevala murals. Coffee at Regatta (tiny red shoreline cafe, €2.50).',
+          tip: 'Regatta is Helsinki\'s most charming cafe — a tiny red hut by the water serving coffee, cinnamon buns, and sausages.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Oodi & Kiasma',
+          text: 'Oodi Central Library (free) — Finland\'s architectural masterpiece with maker labs and rooftop terrace. Kiasma contemporary art museum (€15). Coffee at Café Aalto in Akateeminen bookshop (Alvar Aalto-designed).',
+          tip: 'Oodi represents Finland\'s values — free education, design excellence, and public space. It\'s the building Finland is most proud of.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kamppi & Chapel of Silence',
+          text: 'Visit the Kamppi Chapel of Silence (free) — a stunning wooden oval in the middle of a shopping district, designed for quiet contemplation. Dinner at Ravintola Kuu (traditional Finnish, mains €18–28) or Fafa\'s (€8–11). Drinks at Birgitta (harbour bar in Kalasatama) or Base Bar in Kamppi.',
+          tip: 'The Kamppi Chapel looks like a wooden egg — step inside for complete silence in the middle of a busy city. Extraordinary architecture.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Kallio & Finnish Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hakaniemi Market & Kallio',
+          text: 'Start at Hakaniemi Market Hall — the traditional Finnish food hall (downstairs) with karjalanpiirakka, rye bread, and Finnish sausage. Upstairs has design and crafts. Walk to Kallio Church hill for panoramic city views. Browse vintage on Vaasankatu — Relove, UFF, and Fidel.',
+          tip: 'Hakaniemi Market is where Finns buy their traditional food — less touristy than Market Square and more authentic.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ateneum & Esplanadi',
+          text: 'Visit Ateneum Art Museum (€17) — Finnish national gallery with Akseli Gallen-Kallela\'s Kalevala paintings and a strong Impressionist collection. Walk the Esplanadi — Helsinki\'s elegant boulevard with linden trees, buskers, and Stockmann department store. Lunch at Karl Fazer Café (€12–18) — Finland\'s most famous chocolate and pastry maker since 1891.',
+          tip: 'Karl Fazer\'s blue chocolate bar is to Finland what Cadbury is to the UK — buy one at the cafe for the authentic Finnish experience.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kallio Nightlife',
+          text: 'Kallio for the evening. Dinner at Roji (Japanese-Finnish, €14–18) or Siltanen (€12–16). Drinks at Roskapankki (dive bar, beer €6–8), then Kuudes Linja (live music) or Kaiku (electronic club, open until 4am). The Kallio bar crawl is Helsinki\'s quintessential night out.',
+          tip: 'Kallio bars are the cheapest in Helsinki — beer €6–8 vs €8–12 in the centre. The atmosphere is also infinitely better.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Day Trip — Tallinn, Estonia',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ferry to Tallinn',
+          text: 'Tallink or Viking Line ferry from Helsinki to Tallinn (€15–35 return, 2 hours). Tallinn\'s UNESCO medieval Old Town is one of the best-preserved in Europe — cobblestoned lanes, Gothic spires, merchant houses, and city walls. Start at Raekoja Plats (Town Hall Square) and climb Toompea Hill for panoramic views from the Kohtuotsa and Patkuli viewpoints.',
+          tip: 'Book the early morning ferry (usually 7:30am) to maximise time in Tallinn. The return ferries run until late evening.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tallinn Old Town & Telliskivi',
+          text: 'Explore the Old Town — St. Olaf\'s Church tower (€5, panoramic views), Alexander Nevsky Cathedral (free, stunning onion domes), and the medieval city walls. Then walk to Telliskivi Creative City — Tallinn\'s hip quarter with street art, flea markets, and cafes. Lunch in Tallinn is incredibly affordable — €6–10 for a full meal. Try Rataskaevu 16 (Estonian, mains €8–14) or Leib (bread-focused restaurant).',
+          tip: 'Tallinn is shockingly affordable compared to Helsinki — eat a proper Estonian lunch for €8–10 and stock up on cheap Baltic beer.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Helsinki Evening',
+          text: 'Evening ferry back to Helsinki (2 hours). The Baltic crossing at sunset is beautiful — sit on deck if weather allows. Back in Helsinki, dinner at Ravintola Savotta (Finnish, reindeer €26) or something quick at Naughty BRGR (€13–16). Sauna at Allas Sea Pool (€15) to end the day with a harbour swim.',
+          tip: 'The Helsinki–Tallinn ferry has an on-board bar — a beer on the Baltic at sunset is a fine way to cap a two-country day.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Islands, Beaches & Finnish Nature',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Pihlajasaari Island',
+          text: 'Ferry from Merisatama to Pihlajasaari (€7 return, 10 min, summer). Helsinki\'s favourite beach island — pine forests, rocky shores, and sandy beaches. South beach is clothing-optional. Pack a picnic. Swim in the Baltic — cold but Finns don\'t flinch.',
+          tip: 'Pihlajasaari feels like a Finnish lake cottage getaway — but it\'s 10 minutes from the city centre by ferry.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Seurasaari Open-Air Museum',
+          text: 'Bus to Seurasaari (included in day ticket) — an island open-air museum with 87 traditional Finnish wooden buildings from the 18th–20th century. Farm houses, a church, and manors from across Finland. The island itself is beautiful — squirrels, nature trails, and a beach. Museum entry €10 (buildings open June–August). Off-season, the island is free and peaceful.',
+          tip: 'Seurasaari has tame squirrels that eat from your hand — bring nuts. It\'s a favourite spot for Finnish families on summer Sundays.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sauna Crawl',
+          text: 'Helsinki sauna crawl evening. Start at Kotiharjun Sauna (€15) — a traditional wood-burning public sauna in Kallio since 1928. Then Löyly (€19) on the waterfront for a design sauna with Baltic dipping. Or Allas Sea Pool (€15) with heated seawater pools and a cold pool in the harbour. Dinner at Siltanen or Kolmon between saunas.',
+          tip: 'Kotiharjun Sauna is Helsinki\'s last traditional wood-fired public sauna — the authentic Finnish experience, unchanged since 1928.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Nuuksio & Finnish Wilderness',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Nuuksio National Park',
+          text: 'Bus 245 from Espoo centre (reachable by metro) to Nuuksio National Park (1 hour total from Helsinki). Ancient boreal forest with lakes, granite cliffs, and wildlife — flying squirrels, woodpeckers, and if you\'re lucky, elk. Walk the Haukkalampi trail (8km loop, moderate) through the forest to a pristine lake. Pack lunch from a Helsinki supermarket.',
+          tip: 'Nuuksio is proof that Finnish wilderness begins at the edge of every city — pristine forest just an hour from the capital.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Swimming & Forest Walk',
+          text: 'Swim in one of Nuuksio\'s forest lakes — the water is dark, clean, and cold, surrounded by ancient pines and granite boulders. Finland has 188,000 lakes — swimming in them is the most Finnish experience possible. Walk the shorter Punarinnankierros trail (2km) if you want more forest time. The silence of the Finnish forest is something you don\'t experience in cities.',
+          tip: 'Bring a camping stove and make coffee by the lake — the laavu (lean-to shelters) have fire pits where you can boil water Finnish-style.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Final Kallio',
+          text: 'Bus back to Helsinki. Final evening in Kallio — dinner at Roji (Japanese-Finnish, €14–18) or traditional Finnish at Ravintola Kuu (€18–28). Last drinks at your favourite Kallio bar. Try a nightcap of Salmiakki Koskenkorva — salted liquorice vodka, Finland\'s most distinctive and divisive spirit. It tastes like nothing else on earth.',
+          tip: 'Salmiakki Koskenkorva is the taste of Finland — black, salty, liquorice-flavoured vodka. Love it or hate it, you have to try it once.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'HAM, Shopping & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'HAM & Töölönlahti',
+          text: 'Visit HAM Helsinki Art Museum (€12) for Finnish contemporary art, then walk around Töölönlahti Bay — a peaceful urban waterway surrounded by the Finlandia Hall (Aalto-designed), the new Central Library Oodi, and the National Museum. The bay freezes in winter and locals skate on it. Coffee at Café Regatta one last time (cinnamon bun €3.50).',
+          tip: 'Töölönlahti Bay is Helsinki\'s quiet heart — the walking loop around it takes 30 minutes and passes the best of Finnish architecture.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Souvenirs',
+          text: 'Finnish design shopping on the Esplanadi and Design District. Buy Marimekko (Finnish patterns, outlet prices at the Herttoniemi outlet store), Iittala glassware, or Arabia ceramics from the Arabia factory shop in Arabianranta. For edible souvenirs: Fazer chocolate (Karl Fazer Café), salmiakki (salted liquorice, from any K-Market or S-Market), and rye bread. Finnish design is always the best souvenir.',
+          tip: 'The Arabia factory shop in Arabianranta sells seconds at 30–50% off — the same beautiful ceramics with tiny imperfections you\'ll never notice.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Helsinki',
+          text: 'Farewell dinner at Ravintola Savotta (reindeer and wild mushrooms, €22–28) or Sea Horse on Kapteeninkatu (classic Finnish, mains €14–20 — a working-class institution since 1934). Final sauna at Allas Sea Pool with a harbour swim at sunset. One last Finnish coffee, one last karjalanpiirakka, and Helsinki has quietly, beautifully, won you over.',
+          tip: 'Helsinki is the kind of city that grows on you — it doesn\'t shout for attention. By day seven, you\'ll understand why Finns love it fiercely.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free experiences', text: 'Senate Square, Esplanadi, Sibelius Monument, Suomenlinna (fortress grounds), Oodi Library, Kamppi Chapel, all parks, and harbour walking are completely free.' },
+  { title: 'HSL day ticket', text: 'An HSL AB day ticket (€8) covers all public transport including the Suomenlinna ferry. Single tickets are €2.80. The pass pays for itself in 3 trips.' },
+  { title: 'Market Hall meals', text: 'The Old Market Hall (Vanha Kauppahalli) has the best value meals in the centre — salmon soup €10, karjalanpiirakka €3. Far cheaper than restaurant lunches.' },
+  { title: 'Lunch deals', text: 'Finnish "lounas" (lunch) specials run 11am–2pm at most restaurants — a main course with salad, bread, and coffee for €10–14. This is how Finns eat affordably.' },
+  { title: 'Museum cards', text: 'The Helsinki Card (€49/24h, €59/48h, €69/72h) covers 30+ museums and all public transport. Worth it if visiting 3+ paid attractions per day.' },
+  { title: 'Sauna budget', text: 'Kotiharjun Sauna (€15) is the cheapest authentic sauna. Allas Sea Pool (€15) combines sauna, pools, and harbour views. Hotels often have free saunas — ask when booking.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€20–40', midrange: '€80–160', splurge: '€250+', notes: 'Hostels → 3-star hotels → design hotels' },
+  { category: 'Food', budget: '€10–20', midrange: '€25–45', splurge: '€70+', notes: 'Market halls & lounas → cafes & bistros → fine dining' },
+  { category: 'Transport', budget: '€3–8', midrange: '€10–20', splurge: '€30+', notes: 'Walking & day pass → taxis → day trips' },
+  { category: 'Activities', budget: '€0–10', midrange: '€15–35', splurge: '€60+', notes: 'Free sites & parks → museums & sauna → tours' },
+  { category: 'Drinks', budget: '€5–12', midrange: '€15–30', splurge: '€45+', notes: 'Supermarket & dive bars → craft beer → cocktail bars' },
+  { category: 'Daily Total', budget: '€38–90', midrange: '€145–290', splurge: '€455+', notes: '$41–98 → $158–316 → $495+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Finland is in the Schengen Zone and the EU (Eurozone). EU/EEA enter with ID. US, Canadian, Australian citizens get 90 days visa-free',
+      'Helsinki-Vantaa Airport (HEL): Train P/I to Central Station (€5.50, 30 min), Finnair City Bus (€6.90, 30 min), or taxi (€45–55)',
+      'Ferry arrivals from Tallinn and Stockholm dock at various terminals — all connected to the city by tram or bus',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Metro, trams, buses, and ferries. HSL single ticket €2.80 (80 min), day ticket €8, 3-day €16. Buy via HSL app or at machines',
+      'Helsinki is very walkable — the city centre is compact. Trams 2 and 3 loop the main sights. The metro connects to Espoo (Aalto University)',
+      'City bikes (HSL): €5/day, first 30 minutes free per trip. 350 stations across the city. Also available through the HSL app',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Elisa, DNA, and Telia offer prepaid SIMs from €5–15 for 5–20GB at the airport R-kioski or city centre shops',
+      'Free WiFi throughout the city — Helsinki Wi-Fi covers parks, public buildings, and public transport',
+      'EU roaming is free for EU residents. Finland has excellent 4G/5G coverage, even on the archipelago islands',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Euros. Finland is nearly cashless — cards accepted almost everywhere, even market stalls. MobilePay is used locally',
+      'ATMs (Otto) are common. OP and Nordea bank ATMs have fair rates. Avoid Forex and Euronet for poor exchange rates',
+      'Tipping: not expected — service is included by law. Rounding up at restaurants is appreciated but genuinely optional',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Helsinki is extremely safe — one of the safest capitals in the world. The only real concern is icy pavements in winter',
+      'Tap water is excellent — sourced from Päijänne, the world\'s second-largest lake entirely within one country. Refill freely',
+      'Emergency: 112. Pharmacies (apteekki): Yliopiston Apteekki on Mannerheimintie is open late. EU citizens use EHIC card',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Layers always. Summer: 15–23°C but evenings cool. Winter: -15 to -5°C — thermal base layers, insulated coat, and wool hat essential',
+      'Swimwear year-round — Finns sauna in every season. Quick-dry towel for impromptu lake/sea swims',
+      'Waterproof shoes and a good rain jacket. In winter, boots with grip — Helsinki\'s cobblestones become ice rinks',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🧖', title: 'Sauna is Sacred', text: 'Finland has 3.3 million saunas for 5.5 million people. Sauna is not a spa treatment — it\'s a social ritual, a meditation, and a way of life. Don\'t skip it. Public saunas are the most Finnish experience possible.' },
+  { icon: '🤫', title: 'Finnish Silence', text: 'Finns value silence. Long pauses in conversation are comfortable, not awkward. Don\'t fill silences with chatter — Finns see it as insincere. They talk when they have something to say.' },
+  { icon: '💪', title: 'Sisu', text: '"Sisu" is Finland\'s untranslatable word — gritty determination, resilience, and inner strength. It explains why Finns swim in frozen lakes, endure -30°C winters, and won their independence. It\'s a national identity.' },
+  { icon: '👞', title: 'Shoes Off', text: 'Always remove shoes when entering someone\'s home. This is non-negotiable in Finland. Many hostels and Airbnbs follow this rule too. Clean socks are essential.' },
+  { icon: '☕', title: 'Coffee Obsession', text: 'Finland consumes more coffee per capita than any country on earth — 12kg per person annually. Coffee is offered constantly and refusing is almost rude. Accept every cup offered to you.' },
+  { icon: '🍬', title: 'Salmiakki', text: 'Salted liquorice (salmiakki) is Finland\'s national candy — salty, ammoniac, and an acquired taste. Salmiakki Koskenkorva (salted liquorice vodka) is the spirit version. Try it once. You\'ve been warned.' },
+];
+---
+
+<CityGuideLayout
+  title="Helsinki Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Helsinki guide for young travelers. 3-day itinerary with Finnish saunas, Suomenlinna fortress, design district, Baltic swimming, and Kallio nightlife. Plan your trip with roammate."
+  heroImage="/images/guides/helsinki-hero.webp"
+  heroFlag="🇫🇮"
+  heroCountry="Finland"
+  heroRegion="Europe"
+  heroCity="Helsinki"
+  heroSubtitle="A city where saunas outnumber cars, the library lends sewing machines, and swimming in the Baltic is just a normal Tuesday."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Jun – Aug Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in euros. Helsinki is Nordic-priced but lunch deals, free saunas, and supermarket strategy keep it manageable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Finland runs on sisu, silence, and sauna. Accept the coffee, embrace the quiet, and jump in the Baltic — you'll understand Finland."
+  ctaCity="Helsinki"
+  ctaText="Find travel companions for sauna evenings, Suomenlinna fortress, and the Tallinn ferry on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

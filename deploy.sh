@@ -5,38 +5,18 @@
 
 set -e
 
-# Create a temporary deploy directory
-DEPLOY_DIR=$(mktemp -d)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
 
-echo "Preparing deployment..."
-
-# Build the new Astro site
 echo "Building Astro site..."
-cd new && npm run build && cd ..
+cd roammate.com && npm run build
+# Astro generates sitemap-index.xml + sitemap-0.xml; merge into single sitemap.xml
+cp dist/sitemap-0.xml dist/sitemap.xml 2>/dev/null || true
+rm -f dist/sitemap-index.xml dist/sitemap-0.xml
+cd ..
 
-# Copy the built Astro site
-echo "Copying Astro site..."
-cp -r new/dist/* "$DEPLOY_DIR/"
-
-# Copy static pages from www/ (privacy, terms) with their assets
-echo "Copying static pages..."
-cp www/privacy.html "$DEPLOY_DIR/" 2>/dev/null || true
-cp www/terms.html "$DEPLOY_DIR/" 2>/dev/null || true
-cp www/CNAME "$DEPLOY_DIR/" 2>/dev/null || true
-cp www/CORS "$DEPLOY_DIR/" 2>/dev/null || true
-
-# Copy supporting assets (css, js, images, fonts) needed by static pages
-echo "Copying static page assets..."
-cp -r www/css "$DEPLOY_DIR/" 2>/dev/null || true
-cp -r www/js "$DEPLOY_DIR/" 2>/dev/null || true
-cp -r www/images "$DEPLOY_DIR/" 2>/dev/null || true
-cp -r www/fonts "$DEPLOY_DIR/" 2>/dev/null || true
-
-echo "Deploying to www.roammate.com..."
-surge "$DEPLOY_DIR" www.roammate.com
-
-# Clean up
-rm -rf "$DEPLOY_DIR"
+echo "Deploying to roammate.com..."
+surge roammate.com/dist roammate.com
 
 echo "Deployment complete!"
-echo "Site live at: https://www.roammate.com"
+echo "Site live at: https://roammate.com"

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EUR (Euro)', detail: '1 USD ≈ 0.92 EUR' },
+  { icon: '🗣', label: 'Language', value: 'Dutch', detail: 'Almost everyone speaks English' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Jun, Sep', detail: '14–22°C, tulips Apr–May' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$85–130 USD', detail: '€80–120 budget–midrange' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: '90 days visa-free for most' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Amsterdam Essentials in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jordaan & Canal Ring',
+          text: 'Start in the Jordaan — Amsterdam\'s most charming neighbourhood with narrow 17th-century houses, hidden courtyards (hofjes), and independent shops along the canals. Walk the Prinsengracht, Keizersgracht, and Herengracht — the three main canal rings that form a UNESCO World Heritage site. Pop into the Noordermarkt (Saturday organic market) or the tiny shops of the Negen Straatjes (Nine Streets).',
+          tip: 'The Begijnhof courtyard off Spui is a hidden medieval oasis in the city centre — free entry, look for the wooden house from 1477.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Anne Frank House & Van Gogh Museum',
+          text: 'Pre-book the Anne Frank House (€16, book 6 weeks ahead — tickets release at 10am on Tuesdays). The experience is profound and moving. Walk to Museumplein for the Van Gogh Museum (€20, book online) — the world\'s largest collection of his work, from the dark early Dutch paintings to the vibrant Arles masterpieces. Allow 2 hours.',
+          tip: 'Anne Frank House tickets sell out in minutes — set an alarm for 10am on the Tuesday 6 weeks before your visit.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Leidseplein & Canal-side Drinks',
+          text: 'Head to Leidseplein for dinner — the area buzzes with restaurants, bars, and street performers. For authentic Dutch, try a broodje haring (herring sandwich, €4) from a market stall, or sit down at The Pantry for stamppot and bitterballen (€14–18). Walk the illuminated canals at night — the bridge lights reflected in the water are magical. Drinks at a brown café on Prinsengracht.',
+          tip: 'Brown cafés (bruine kroegen) are Amsterdam\'s traditional pubs — dark wood, candlelight, and local beers. Try Café \'t Smalle on Egelantiersgracht.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Canals, Anne Frank & Jordaan',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jordaan & Canal Walking',
+          text: 'Start in the Jordaan — Amsterdam\'s prettiest neighbourhood. Walk along Prinsengracht past houseboats and leaning gabled houses. Duck into hidden hofjes (courtyard gardens) — the Karthuizerhof on Karthuizerstraat is beautiful and free. Browse the Negen Straatjes (Nine Streets) for vintage shops, indie boutiques, and canal-side cafes. Coffee at Winkel 43 with their famous apple pie (€4.50).',
+          tip: 'The Monday Noordermarkt has a clothing/flea market, Saturday has an organic food market — both are excellent.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Anne Frank House',
+          text: 'Pre-book the Anne Frank House (€16, released 6 weeks ahead at 10am Tuesdays). Walk through the secret annex where Anne and her family hid for 761 days — the bookcase concealing the entrance, the tiny rooms, and Anne\'s original diary are intensely moving. Allow 90 minutes including the exhibition. Lunch afterwards at Foodhallen in Amsterdam-West — a food hall with 20+ stalls.',
+          tip: 'Visit in the late afternoon slot if possible — the experience is more intimate with smaller groups.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jordaan Brown Cafés & Dinner',
+          text: 'Amsterdam\'s brown cafés (bruine kroegen) are the soul of the city — centuries-old pubs with dark wood panelling, candles, and local beers on tap. Start at Café \'t Smalle on Egelantiersgracht (1786), then Café Papeneiland on Prinsengracht (1642). Dinner at De Reiger for Dutch-French bistro food (mains €16–22) or grab bitterballen (fried meat ragout balls, €6) at any brown café.',
+          tip: 'Bitterballen with mustard are the quintessential Amsterdam bar snack — order them at every brown café you visit.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Museums, Vondelpark & Nightlife',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Van Gogh Museum & Rijksmuseum',
+          text: 'Start at the Van Gogh Museum (€20, book online) — the world\'s largest Van Gogh collection, from sombre Dutch peasant scenes to the electric Starry Night Over the Rhône and Sunflowers. Allow 2 hours. Walk to the Rijksmuseum (€22.50) — Rembrandt\'s Night Watch in its dedicated gallery is staggering. The building itself, with its cycling tunnel, is iconic Amsterdam.',
+          tip: 'Book both museums for morning slots — they are busiest after 11am. Wednesday and Friday mornings are quietest.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Vondelpark & De Pijp',
+          text: 'Walk through Vondelpark — Amsterdam\'s beloved green lung where locals picnic, skate, and play guitar. Cross south to De Pijp neighbourhood for the Albert Cuyp Market (Mon–Sat) — Amsterdam\'s biggest street market with stroopwafels (€3), kibbeling (fried fish, €5), and Surinamese roti (€8). The neighbourhood has a multicultural, bohemian character.',
+          tip: 'Eat a fresh stroopwafel from the Albert Cuyp Market — made warm in front of you, it is infinitely better than packaged ones.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'De Pijp & Rembrandtplein Nightlife',
+          text: 'De Pijp has some of Amsterdam\'s best bars and restaurants. Dinner at Bakers & Roasters (brunch/dinner fusion, €12–16) or Firma Pekelharingen for a set menu (€25 for three courses). Walk to Rembrandtplein for the nightlife strip, or head to Paradiso (a converted church turned music venue) or Melkweg for live music and club nights. Entry €10–20.',
+          tip: 'Paradiso and Melkweg are legendary Amsterdam venues — check their listings for live shows. The church interior at Paradiso is extraordinary.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Noord, NDSM & Alternative Amsterdam',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Amsterdam Noord — Free Ferry & NDSM',
+          text: 'Take the free ferry from Centraal Station to Amsterdam Noord — a 5-minute crossing. NDSM Wharf is a former shipyard turned creative hub with street art, studios, and the IJ-Hallen flea market (first weekend of each month, €5 entry). Visit the A\'DAM Lookout tower (€14.50) for a panoramic view, or the Straat Museum (€18) for the world\'s largest street art collection indoors.',
+          tip: 'The free ferry runs 24 hours — even at night, the crossing gives you a beautiful view of the Amsterdam skyline.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Brewery Hopping & Waterfront',
+          text: 'Amsterdam Noord has a growing craft beer scene. Visit Brouwerij \'t IJ (windmill brewery, beers €3.50–5) — a beloved local institution set in a bath house beneath a windmill. Then Oedipus Brewery in Noord (taproom open Thu–Sun, beers €4–6) for experimental brews. Walk along the IJ waterfront back towards Centraal for views of the harbour and modern architecture.',
+          tip: 'Brouwerij \'t IJ closes at 8pm and does not take reservations — arrive by 3pm on weekends to guarantee a seat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Red Light District & Canal Night Walk',
+          text: 'Walk through De Wallen (Red Light District) — it is a historic neighbourhood with the oldest church in Amsterdam (Oude Kerk, 1213), secret chapels, and narrow medieval alleys alongside the famous windows. The area is safe but be respectful — no photography of workers. End with a canal-side walk — the Reguliersgracht seven-bridge view is the most romantic sight in the city.',
+          tip: 'The Reguliersgracht view from the Herengracht bridge shows seven bridges aligned in a row — best at dusk when the lights come on.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Canals, Anne Frank & Jordaan',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jordaan & Canal Walking',
+          text: 'Start in the Jordaan — Amsterdam\'s most atmospheric neighbourhood. Walk Prinsengracht past houseboats and leaning gabled houses. Explore hidden hofjes (courtyard gardens) like Karthuizerhof on Karthuizerstraat. Browse the Negen Straatjes for vintage shops and canal-side cafes. Coffee and famous apple pie at Winkel 43 (€4.50) on Noordermarkt.',
+          tip: 'Monday Noordermarkt has a clothing/vintage market, Saturday has an organic food market — arrive before 11am for both.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Anne Frank House',
+          text: 'Pre-book the Anne Frank House (€16, released 6 weeks ahead). Walk through the secret annex — the concealed bookcase entrance, the tiny rooms where eight people hid for two years, Anne\'s original diary pages. Profoundly moving. Allow 90 minutes. Afterwards, walk along Prinsengracht to decompress — the canal light is beautiful in the afternoon.',
+          tip: 'Tickets release at 10am on Tuesdays, 6 weeks ahead — set a reminder and be ready. They sell out within an hour.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jordaan Brown Cafés',
+          text: 'Amsterdam\'s brown cafés are the heart of the city. Café \'t Smalle (1786) on Egelantiersgracht, Café Papeneiland (1642) on Prinsengracht, and Café de Kat in de Wijngaert are all within walking distance. Order bitterballen with mustard (€6) and a local beer. Dinner at De Reiger (mains €16–22) or Balthazar\'s Keuken for a set menu (€35 for three courses).',
+          tip: 'Brown cafés are cosiest in autumn and winter — candles, dark wood, rain on the windows, and a beer in hand.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Van Gogh, Rijksmuseum & De Pijp',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Van Gogh Museum',
+          text: 'The Van Gogh Museum (€20) holds the world\'s largest collection — 200 paintings, 500 drawings. Walk chronologically from the dark Dutch peasant works through Paris, Arles, and Saint-Rémy. The Bedroom, Sunflowers, and Almond Blossom are here. The story of his life, told through his letters and art, is deeply moving. Allow 2 hours.',
+          tip: 'Wednesday and Friday mornings are quietest. The museum shop has excellent quality reproductions and gifts.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rijksmuseum & Albert Cuyp Market',
+          text: 'The Rijksmuseum (€22.50) is a masterpiece itself — the cycling tunnel through its arches is iconic. Rembrandt\'s Night Watch dominates its dedicated gallery. Vermeer\'s Milkmaid and other Dutch Golden Age paintings are extraordinary. Then walk to the Albert Cuyp Market (Mon–Sat) for stroopwafels (€3), kibbeling (€5), and the multicultural buzz of De Pijp.',
+          tip: 'The Rijksmuseum gardens are free and have a sculpture collection — worth a walk even if you skip the museum.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'De Pijp Dinner & Nightlife',
+          text: 'De Pijp has Amsterdam\'s best dining scene. Try Bakers & Roasters for fusion food (€12–16), Firma Pekelharingen for a €25 three-course set menu, or SLA for the health-conscious. For nightlife, walk to Paradiso (legendary church-turned-venue) or Melkweg for live music and club nights. Otherwise, the bars on Marie Heinekenplein have great terraces.',
+          tip: 'Paradiso\'s main hall in the converted church is one of the most beautiful live music spaces in Europe.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Noord, NDSM & Breweries',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Amsterdam Noord & NDSM',
+          text: 'Free ferry from Centraal Station to Noord (5 minutes). NDSM Wharf is a former shipyard turned creative precinct — enormous street art murals, artist studios, and the Straat Museum (€18) for the world\'s largest indoor street art collection. Walk the waterfront and explore the containers converted into cafes and workshops. A\'DAM Lookout (€14.50) has panoramic views.',
+          tip: 'The IJ-Hallen flea market at NDSM (first weekend of each month) is Europe\'s largest — 750 stalls, arrive early.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Brouwerij \'t IJ & Eastern Docklands',
+          text: 'Brouwerij \'t IJ (open 2–8pm daily) is Amsterdam\'s most beloved brewery — set beneath a windmill with a sunny terrace. Beers €3.50–5. Walk through the Eastern Docklands — modern architecture on former harbour islands. The KNSM-eiland and Java-eiland have striking building designs and waterfront cafes. The Nemo Science Museum\'s rooftop (free) offers city views.',
+          tip: 'Brouwerij \'t IJ\'s terrace fills fast on sunny days — arrive by 2pm or be prepared to stand.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Red Light District & Old Centre',
+          text: 'Walk De Wallen — the Red Light District is also Amsterdam\'s oldest neighbourhood. The Oude Kerk (1213) stands amid the windows. Visit the Museum Ons\' Lieve Heer op Solder — a 17th-century secret Catholic church hidden in an attic (€16). The area is safe and atmospheric at night. Dinner at Café de Jaren on the Amstel — huge waterside terrace overlooking the river.',
+          tip: 'Be respectful in De Wallen — no photos of workers, stay aware of pickpockets, and stick to well-lit streets.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Zaanse Schans & Dutch Countryside',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Zaanse Schans Windmills',
+          text: 'Bus 391 from Centraal Station (40 min, included with OV-chipkaart). Zaanse Schans is a living village of preserved Dutch windmills, green wooden houses, and traditional workshops. The windmills are working — visit a sawmill and paint mill (€5 each). The cheese farm and clog workshop are free. The village is open-air and free to walk. Arrive by 9am before coaches.',
+          tip: 'Go on a weekday morning to avoid the coach tours that arrive from 10:30am. The village is peaceful at 9am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Haarlem Day Extension',
+          text: 'Train from Zaandam to Haarlem (20 min, €4). Haarlem is a miniature Amsterdam without the crowds — canals, gabled houses, a beautiful Grote Markt square, and the Grote Kerk where a young Mozart played the organ. The Frans Hals Museum (€16) has excellent Golden Age paintings. Lunch at a Haarlem terrace on the Grote Markt (pancakes €10–14).',
+          tip: 'Haarlem is often called the prettier, quieter version of Amsterdam — locals escape here on weekends.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Oud-West Evening',
+          text: 'Train back to Amsterdam (15 min). Explore Oud-West — a residential neighbourhood with the Foodhallen (food court in a converted tram depot, mains €8–14), the Ten Katemarkt (daily street market), and excellent neighbourhood bars. De Hallen complex also has an art house cinema and cultural space. Drinks at Café Soundgarden or Butcher\'s Tears brewery.',
+          tip: 'Foodhallen has 20+ food stalls — Vietnamese, BBQ, sushi, oysters. It is Amsterdam\'s best casual dinner spot.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Hidden Museums & Waterways',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Stedelijk Museum & Museumplein',
+          text: 'The Stedelijk Museum (€22.50) is Amsterdam\'s modern and contemporary art museum — Mondrian, Malevich, de Kooning, Warhol, and excellent rotating exhibitions. The building\'s extension (nicknamed "the bathtub") is striking. Walk Museumplein afterwards — the "I Amsterdam" sign replacement, the Concertgebouw concert hall exterior, and buskers in the square.',
+          tip: 'The Concertgebouw offers free lunchtime concerts every Wednesday at 12:30pm — world-class musicians, no ticket needed.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Canal Cruise & Houseboat Museum',
+          text: 'Take a canal cruise (€14–18, 75 minutes) — the perspective from the water reveals details you miss on foot. The Woonbotenmuseum (Houseboat Museum, €5.50) on Prinsengracht lets you explore a real canal houseboat. Walk to the Bloemenmarkt (floating flower market) on Singel for tulip bulbs and souvenirs. Lunch at a canalside terrace.',
+          tip: 'Those Dam Boat Guys and Friendship Amsterdam offer smaller, more personal canal tours than the big operators.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Plantage & Artis Zoo Area',
+          text: 'The Plantage neighbourhood east of centre is quiet, leafy, and atmospheric. Walk along Plantage Middenlaan past the Hollandsche Schouwburg (Holocaust memorial, free) and the Hortus Botanicus (€12, one of the world\'s oldest botanical gardens). Dinner at Café Koosje or Restaurant Greetje for modern Dutch cuisine (mains €18–24). End at Hannekes Boom — a waterside bar.',
+          tip: 'Hannekes Boom is built on the waterfront with a DIY beach bar vibe — perfect for a sunset drink with skyline views.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Bikes, Markets & West Amsterdam',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cycling Day — Amstel & Waterland',
+          text: 'Rent a bike (€10–12/day from MacBike or Black Bikes) and cycle like a local. Head along the Amstel River south to the Amstelpark and Rieker windmill — flat, scenic, and traffic-free paths. Or cycle north on the Waterland route through the villages of Broek in Waterland and Monnickendam — polder landscapes, cows, and water as far as the eye can see.',
+          tip: 'Always use the dedicated bike lanes (fietspaden), signal before turning, and never cycle on the pavement or tram tracks.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Westerpark & Westergasfabriek',
+          text: 'Cycle to Westerpark and the Westergasfabriek — a former gas factory converted into a cultural complex with restaurants, a cinema, breweries, and the Sunday Market (first Sunday of each month). Pacific Parc has a huge terrace. The Westerpark itself is a local favourite for picnics. Lunch at Mossel en Gin (mussels and gin, naturally) or Kanteen inside the complex.',
+          tip: 'Westergasfabriek Sunday Market has handmade crafts, vintage clothing, and street food — much better than tourist markets.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Leidseplein & Last Night Out',
+          text: 'Return the bike and head to Leidseplein — Amsterdam\'s nightlife hub. Dinner at The Pantry for traditional Dutch food (stamppot, bitterballen, €14–18) or splurge at Restaurant Blauw for Indonesian rijsttafel (rice table, €30–38 per person — 12+ dishes). For nightlife, Club Air, Escape, or the jazz clubs around Leidseplein keep going until 4–5am.',
+          tip: 'Rijsttafel is the Dutch-Indonesian feast you cannot miss — 12–20 small dishes served simultaneously. Share with friends.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Farewell — Markets, Canals & Last Bites',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Morning Market & Last Canal Walk',
+          text: 'One final canal walk — take the route from Centraal along the Singel, past the Bloemenmarkt, down to Reguliersgracht for the seven-bridge view. If it is Saturday, catch the Lindengracht Market in the Jordaan (300 stalls, food and goods). Breakfast at The Breakfast Club (Bellamyplein) or grab a fresh stroopwafel from the Albert Cuyp Market one last time.',
+          tip: 'The Lindengracht Saturday market is where locals shop — better prices and more authentic than the Albert Cuyp Market.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenirs & Last Bites',
+          text: 'For souvenirs, skip the tourist shops — buy Delft Blue pottery at Heinen Delfts Blauw (Prinsengracht), cheese at Henri Willig, or stroopwafels from Van Wonderen. For a final Dutch treat, try a kapsalon (fries, shawarma, cheese, salad — a Rotterdam invention) from any snackbar (€8–10). Or one last pannenkoek (Dutch pancake) at The Pancake Bakery.',
+          tip: 'Dutch cheese makes an excellent gift — vacuum-packed gouda travels well and costs €4–8 per block at markets.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Departure',
+          text: 'Farewell dinner at Moeders (decorated with photos of mothers, Dutch home cooking, mains €14–18) or a final waterside drink at Café de Ceuvel in Noord — a sustainable cafe built on reclaimed houseboats. Schiphol Airport is 20 minutes by train from Centraal Station (€5.70) — trains run 24 hours. Amsterdam says a casual, cosy goodbye.',
+          tip: 'Schiphol trains run 24 hours but are hourly between 1–5am — check NS.nl for the exact schedule before heading out.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'I amsterdam City Card', text: 'The card (€65/24hr, €85/48hr, €100/72hr) includes 70+ museums, canal cruise, and unlimited GVB transport. If you plan to visit 2+ paid museums per day, it pays for itself quickly.' },
+  { title: 'Free experiences', text: 'Canal walking, Vondelpark, street markets, the Begijnhof, free ferry to Noord, Rijksmuseum gardens, NEMO rooftop, window shopping in the Negen Straatjes, and all the city\'s street art are free.' },
+  { title: 'Cheap eats', text: 'Albert Cuyp Market: stroopwafels €3, kibbeling €5, Surinamese roti €8. FEBO automat snacks: €2–4. Indonesian toko takeaway: €7–10. Broodje haring (herring sandwich) from street carts: €4.' },
+  { title: 'GVB transport', text: 'OV-chipkaart (€7.50 deposit + credit) for metro/tram/bus. Single ticket €3.40. 24hr pass €9, 48hr €15, 72hr €21. But Amsterdam is small — walk or cycle and save almost everything on transport.' },
+  { title: 'Bike rental', text: 'Rent from MacBike (€10/day), Black Bikes (€8/day), or Swapfiets (monthly). Cycling is free transport, exercise, and the most authentic Amsterdam experience. Most of the city is flat and has dedicated bike lanes.' },
+  { title: 'Brewery bars', text: 'Brouwerij \'t IJ beers are €3.50 — cheaper than most bars. Oedipus, Butcher\'s Tears, and Pontus in the Ten Katemarkt area all have taprooms with €4–6 beers. Much cheaper than city centre bars.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€25–50', midrange: '€80–160', splurge: '€200+', notes: 'Hostels → canal-side hotels → boutique hotels' },
+  { category: 'Food', budget: '€15–25', midrange: '€30–55', splurge: '€70+', notes: 'Markets & snackbars → restaurants → fine dining' },
+  { category: 'Transport', budget: '€0–8', midrange: '€10–18', splurge: '€25+', notes: 'Walking/cycling → tram/metro → taxis' },
+  { category: 'Activities', budget: '€0–15', midrange: '€20–45', splurge: '€60+', notes: 'Free sights & markets → museums → combined passes' },
+  { category: 'Drinks', budget: '€5–12', midrange: '€15–25', splurge: '€35+', notes: 'Brewery taprooms → brown cafés → cocktail bars' },
+  { category: 'Daily Total', budget: '€45–110', midrange: '€155–303', splurge: '€390+', notes: '$49–120 → $168–329 → $424+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — most nationalities get 90 days visa-free within any 180-day period',
+      'Schiphol Airport (AMS) is 20 minutes by train from Centraal Station (€5.70). Trains run 24 hours',
+      'Amsterdam is a popular Schengen entry point — queues at immigration can be 30–60 minutes. Have your documents ready',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Tap water is excellent — carry a reusable bottle. Free refill points marked across the city',
+      'Bike theft is the most common crime — always double-lock rentals. Pickpockets operate around Centraal and Dam Square',
+      'Emergency 112. Pharmacies (apotheek) are easy to find. Many are open late and some are 24 hours',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'GVB runs trams, buses, and metro. OV-chipkaart or contactless payment on board. Single €3.40, 24hr pass €9',
+      'Cycling is the local way — rent from MacBike (€10/day) or Black Bikes (€8/day). Flat terrain and dedicated bike lanes everywhere',
+      'The free ferry from Centraal to Noord runs 24 hours. Canal buses and water taxis are scenic but expensive alternatives',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in most cafes, restaurants, hotels, and on GVB trams. Amsterdam has good municipal WiFi coverage',
+      'EU roaming works at home rates. For non-EU visitors, Lebara, Lyca, or KPN prepaid SIMs from €10 at phone shops or Albert Heijn',
+      'Download 9292 app for Dutch public transport planning, and Google Maps offline for navigation',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Cards and contactless are accepted almost everywhere — the Netherlands is nearly cashless. Some markets still prefer cash',
+      'ATMs widely available. Use bank ATMs (ING, ABN AMRO, Rabobank). Avoid Euronet and tourist-area exchange bureaus',
+      'Tipping is not expected — service is included. Rounding up to the nearest euro or leaving 5–10% for good service is common',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Rain is possible any month — a good waterproof jacket and compact umbrella are essential. Layers for changeable weather',
+      'Comfortable shoes for cobblestones. Bring a light scarf for windy canal-side walks even in summer',
+      'A small backpack or crossbody bag — easier for cycling and navigating narrow canal-side streets',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🚲', title: 'Cycling Rules', text: 'Stay in bike lanes, signal turns, never stop in a bike lane, and watch for other cyclists. Amsterdam cyclists are fast and assertive. If you hear a bell, move — it is not a greeting.' },
+  { icon: '🌿', title: 'Coffee Shop Culture', text: 'Coffee shops sell cannabis (legal for adults). Cafés sell coffee. This distinction matters. Most coffee shops require a purchase to sit. Cannabis use in public is technically illegal but tolerated in designated areas.' },
+  { icon: '🏠', title: 'Directness', text: 'The Dutch are famously direct — this is not rudeness, it is cultural honesty. If a waiter says the food will take 30 minutes, it will take 30 minutes. Appreciate the clarity.' },
+  { icon: '👞', title: 'Take Off Shoes', text: 'When visiting a Dutch home, always offer to remove your shoes at the door. This is standard etiquette and will be appreciated even if the host says it is not necessary.' },
+  { icon: '🍟', title: 'Snack Culture', text: 'Dutch snack culture is serious — bitterballen, kroket, frikandel, and kaassoufflé from FEBO automats or frietkoten (chip shops) with mayonnaise, not ketchup. Fries with mayo is the local way.' },
+  { icon: '🌧️', title: 'Weather Resilience', text: 'The Dutch do not cancel plans for rain — they just get on their bikes with an umbrella. Pack a waterproof layer and embrace the weather. Some of Amsterdam\'s most atmospheric moments happen in the rain.' },
+];
+---
+
+<CityGuideLayout
+  title="Amsterdam Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Amsterdam guide for young travelers. 3-day itinerary with canal walks, Van Gogh Museum, brown cafés, cycling, and nightlife. Plan your trip with roammate."
+  heroImage="/images/guides/amsterdam-hero.webp"
+  heroFlag="🇳🇱"
+  heroCountry="Netherlands"
+  heroRegion="Europe"
+  heroCity="Amsterdam"
+  heroSubtitle="A city built on water and freedom, where Golden Age masterpieces share canal-side streets with the most progressive culture in Europe."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Apr – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in euros. Amsterdam is pricier than Southern Europe but cycling, market food, and free canal-side culture keep costs manageable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Amsterdam rewards the curious and the relaxed. Rent a bike, eat a stroopwafel, sit in a brown café, and let the canals set the pace."
+  ctaCity="Amsterdam"
+  ctaText="Find travel companions to cycle the canals, share a brown café evening, or explore Noord together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

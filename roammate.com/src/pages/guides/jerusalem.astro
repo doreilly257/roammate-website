@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'ILS (Shekel)', detail: '1 USD ≈ 3.6 ILS' },
+  { icon: '🗣', label: 'Language', value: 'Hebrew / Arabic', detail: 'English widely understood' },
+  { icon: '🕐', label: 'Timezone', value: 'IST (UTC+2/+3)', detail: 'Daylight saving Mar–Oct' },
+  { icon: '☀️', label: 'Best Months', value: 'Mar – May, Sep – Nov', detail: '18–28°C, dry & mild' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$70–110 USD', detail: '₪250–400 budget' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free most', detail: 'Most Western nationalities 90 days' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Jerusalem in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'The Old City — All Four Quarters',
+          text: 'Enter through Jaffa Gate and descend into the Old City — one square kilometre containing 4,000 years of history and three of the world\'s great religions. Walk through the Armenian Quarter\'s quiet lanes to the Jewish Quarter and the Western Wall — the holiest site in Judaism. Touch the ancient stones and place a prayer note. Then walk the Via Dolorosa through the Muslim Quarter to the Church of the Holy Sepulchre — where Jesus is believed to have been crucified and buried.',
+          tip: 'Arrive at the Western Wall before 8am for the most peaceful experience. Men and women have separate prayer sections. Head coverings provided free.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Temple Mount / Haram al-Sharif',
+          text: 'Visit the Temple Mount/Haram al-Sharif (free, non-Muslim visitors enter through the Mughrabi Gate near the Western Wall, limited hours). The golden Dome of the Rock is one of the most recognisable buildings on earth. The Al-Aqsa Mosque, the third-holiest site in Islam, stands at the southern end. Non-Muslims cannot enter the buildings but can walk the vast, peaceful plaza. Lunch at Abu Shukri in the Muslim Quarter — legendary hummus (₪30).',
+          tip: 'Temple Mount visiting hours for non-Muslims are limited (typically 7:30–10:30am and 12:30–1:30pm Sun–Thu). Check current times — they change frequently.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mount of Olives Sunset',
+          text: 'Taxi (₪30) to the Mount of Olives for the most iconic view in Jerusalem — the Old City, the golden Dome of the Rock, and the Judean Hills glowing at sunset. Walk down through the Garden of Gethsemane where Jesus prayed before his arrest. Return to the Old City for dinner at Armenian Tavern in the Armenian Quarter (₪60–100 mains) — set in a medieval vaulted cellar with traditional cuisine.',
+          tip: 'The Mount of Olives at sunset is one of the most moving sights on earth. Allow 30 minutes just to sit, look, and take it in.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'The Old City — Sacred Sites',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Western Wall & Jewish Quarter',
+          text: 'Enter through Jaffa Gate and walk to the Western Wall (Kotel) — the last remnant of the Second Temple and the holiest site in Judaism. The vast plaza before the wall holds worshippers at all hours. Touch the ancient stones and place a prayer note in the cracks. Then explore the Jewish Quarter — the Cardo (ancient Roman market), Hurva Synagogue (₪25), and the Burnt House archaeological site (₪30).',
+          tip: 'The Western Wall is most atmospheric at dawn or after dark when it\'s floodlit. Friday evening brings Shabbat celebrations — joyful singing and dancing.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Church of the Holy Sepulchre & Via Dolorosa',
+          text: 'Walk the Via Dolorosa — the path Jesus carried the cross through the Old City, marked with 14 Stations of the Cross. End at the Church of the Holy Sepulchre (free) — built over the sites of the crucifixion, burial, and resurrection. Inside: the Stone of Anointing, Golgotha, and the Tomb of Christ. The church is shared by six Christian denominations. It\'s overwhelming regardless of your faith.',
+          tip: 'The Church is most peaceful early morning (5–7am when it opens) or late afternoon. The Tomb of Christ line can be 1–2 hours midday.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Muslim Quarter & Rooftop Views',
+          text: 'Walk through the Muslim Quarter — the largest and most vibrant of the four quarters. The narrow lanes are lined with falafel shops, spice stalls, and fabric stores. Dinner at Lina Restaurant — the best hummus in the Old City according to many locals (₪25–35). Then climb to the rooftop terrace at the Austrian Hospice (₪5) for one of the best views over the Old City rooftops and the Dome of the Rock.',
+          tip: 'The Austrian Hospice rooftop is a hidden gem — ₪5 entry gives you a panoramic view and a peaceful escape from the Old City bustle.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Temple Mount, Mount of Olives & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Temple Mount / Haram al-Sharif',
+          text: 'Enter the Temple Mount through the Mughrabi Gate (near the Western Wall) during non-Muslim visiting hours. The golden Dome of the Rock — built in 691 CE over the rock where Muhammad ascended to heaven and Abraham prepared to sacrifice Isaac — is breathtaking. The Al-Aqsa Mosque, the third-holiest site in Islam, stands at the south end. Non-Muslims cannot enter the buildings but the expansive plaza is deeply peaceful.',
+          tip: 'Non-Muslim hours are typically 7:30–10:30am and 12:30–1:30pm Sun–Thu only. Arrive at 7:30am to maximise your time. Dress conservatively.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mount of Olives & Kidron Valley',
+          text: 'Taxi (₪30) to the Mount of Olives for the iconic panoramic view over Jerusalem. Walk down past the Dominus Flevit Chapel (where Jesus wept over the city), through the ancient Jewish cemetery (the oldest in the world, continuously used for 3,000 years), to the Garden of Gethsemane — where ancient olive trees still grow. The Church of All Nations at the base is beautifully atmospheric.',
+          tip: 'Walk downhill from the Mount of Olives through the sites — it\'s all downhill and the views unfold beautifully as you descend.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mahane Yehuda Market',
+          text: 'Head to Mahane Yehuda Market (the Shuk) — Jerusalem\'s buzzing food market. By day it\'s a produce market; by night it transforms into a bar and restaurant scene with street art on the shutters. Try the fresh rugelach at Marzipan Bakery (₪10 for a bag), burekas (₪15), and halva. Dinner at Machneyuda restaurant for creative Israeli cuisine (₪80–130 mains) — it\'s loud, energetic, and unforgettable.',
+          tip: 'Thursday evening is the Shuk\'s liveliest night — bars open, music plays, and the shutters reveal hidden murals. It\'s Jerusalem\'s best night out.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Yad Vashem, New City & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Yad Vashem Holocaust Memorial',
+          text: 'Take the light rail or bus to Yad Vashem (free, 1.5–2 hours minimum) — the world\'s leading Holocaust memorial and museum. The narrative museum traces the history of the Holocaust through personal testimonies, artifacts, and multimedia. The Children\'s Memorial and Hall of Names are profoundly moving. The architecture by Moshe Safdie channels visitors through darkness to a view of the Jerusalem hills — symbolising hope.',
+          tip: 'Yad Vashem is deeply emotional — allow at least 2 hours and prepare yourself. Audio guides (₪25) add context. Photography is restricted inside.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Israel Museum & City of David',
+          text: 'Visit the Israel Museum (₪54) — home to the Dead Sea Scrolls in the Shrine of the Book, a scale model of ancient Jerusalem, and world-class archaeology and art collections. Then head to the City of David (₪30) — the original settlement of Jerusalem 3,000 years ago. Walk through Hezekiah\'s Tunnel — a 2,700-year-old water tunnel carved through solid rock (wade through knee-deep water, bring a flashlight).',
+          tip: 'Hezekiah\'s Tunnel is a unique experience — you walk 533 metres through water in the dark. Wear water shoes and shorts. The dry tunnel is an alternative.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Old City Night Walk & Farewell',
+          text: 'Return to the Old City for a final evening. The lanes are quieter after dark and hauntingly atmospheric — 2,000-year-old stone walls lit by amber lamps. Walk the ramparts (₪18, available at Damascus Gate and Jaffa Gate) for elevated views. Farewell dinner at Armenian Tavern (₪60–100) in a medieval vaulted hall, or at Christ Church Guesthouse for simple, affordable food near Jaffa Gate.',
+          tip: 'The ramparts walk is divided into two sections — the southern route from Jaffa Gate to Dung Gate has the best views over the Western Wall.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'The Old City — Sacred Sites',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Western Wall & Jewish Quarter',
+          text: 'Enter through Jaffa Gate to the Western Wall (Kotel) — the holiest site in Judaism. The vast plaza holds worshippers at all hours. Touch the ancient Herodian stones and place a prayer note. Explore the Jewish Quarter — the Cardo (ancient Roman market), Hurva Synagogue (₪25), and the Burnt House archaeological site (₪30).',
+          tip: 'The Wall is most atmospheric at dawn or after dark when it\'s floodlit. Friday evening brings Shabbat celebrations with singing and dancing.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Church of the Holy Sepulchre',
+          text: 'Walk the Via Dolorosa — the path Jesus carried the cross, marked with 14 Stations. End at the Church of the Holy Sepulchre (free) — covering the sites of crucifixion, burial, and resurrection. The Stone of Anointing, Golgotha, and the Tomb of Christ are inside. The church, shared by six denominations, is a living expression of faith. Allow 1–2 hours to explore the many chapels and levels.',
+          tip: 'Early morning (5–7am) is the most peaceful time. The Tomb of Christ queue can be 1–2 hours at midday — go early or late.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Muslim Quarter Evening',
+          text: 'Walk the Muslim Quarter\'s vibrant lanes — falafel stalls, spice shops, and fabric stores. Dinner at Abu Shukri or Lina Restaurant for the city\'s best hummus (₪25–35). Then climb to the Austrian Hospice rooftop (₪5) for panoramic Old City views at dusk. The call to prayer from Al-Aqsa, church bells, and the rumble of the ancient streets create a uniquely Jerusalem soundscape.',
+          tip: 'The Austrian Hospice rooftop is a hidden gem — ₪5 for a panoramic view and a peaceful escape from the Old City bustle.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Temple Mount, Mount of Olives & Kidron Valley',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Temple Mount / Haram al-Sharif',
+          text: 'Enter through the Mughrabi Gate during non-Muslim visiting hours. The Dome of the Rock — built 691 CE — is breathtaking. Al-Aqsa Mosque stands at the south end. Non-Muslims walk the expansive, peaceful plaza. The vast esplanade with ancient trees and fountains is one of the most serene spaces in the otherwise intense city. Exit and walk through the Muslim Quarter.',
+          tip: 'Non-Muslim hours are typically 7:30–10:30am and 12:30–1:30pm Sun–Thu. Arrive at 7:30am. Dress conservatively — no shorts or tank tops.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mount of Olives & Garden of Gethsemane',
+          text: 'Taxi to the Mount of Olives for the iconic panoramic view. Walk down past the Dominus Flevit Chapel, through the 3,000-year-old Jewish cemetery, to the Garden of Gethsemane where ancient olive trees still stand. The Church of All Nations at the base has a striking mosaic facade and a rock where Jesus prayed. Continue to the Tomb of the Virgin Mary (free) in the Kidron Valley.',
+          tip: 'Walk downhill from the Mount of Olives — the views unfold beautifully. The descent takes 30–45 minutes with stops at each site.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'City of David & Silwan',
+          text: 'Visit the City of David (₪30) — the original settlement of Jerusalem. Walk through Hezekiah\'s Tunnel (533m through knee-deep water in the dark — bring a flashlight and water shoes) or the dry Warren\'s Shaft. Emerge at the Pool of Siloam where Jesus healed the blind man. Dinner at nearby Eucalyptus restaurant for biblical-era inspired Israeli cuisine (₪80–130).',
+          tip: 'Hezekiah\'s Tunnel is an unforgettable experience. Wear shorts and water shoes. The dry tunnel alternative is wheelchair accessible.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Yad Vashem & Israel Museum',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Yad Vashem Holocaust Memorial',
+          text: 'Take the light rail to Yad Vashem (free, 2+ hours). The narrative museum traces the Holocaust through personal testimonies and artifacts. The Children\'s Memorial — a dark space with candle reflections representing 1.5 million murdered children — is devastating. The Hall of Names records every known victim. The architecture leads from darkness to a panoramic view of the Jerusalem hills.',
+          tip: 'Allow 2–3 hours minimum. Audio guides (₪25) are essential. This is profoundly emotional — give yourself time to process afterwards.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Israel Museum',
+          text: 'Visit the Israel Museum (₪54) — the Dead Sea Scrolls in the Shrine of the Book, a 1:50 scale model of Second Temple Jerusalem, and world-class art and archaeology. The archaeology wing has artifacts spanning the entire history of the region. Allow 2–3 hours. Lunch at the museum\'s Modern restaurant overlooking the sculpture garden.',
+          tip: 'The Shrine of the Book building — designed to resemble a Dead Sea Scroll jar lid — is architecturally striking. See the scrolls first when it\'s quiet.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mahane Yehuda Market Night',
+          text: 'Head to Mahane Yehuda Market — by day a produce market, by night a bar scene with murals on the shutters. Fresh rugelach at Marzipan Bakery (₪10), burekas (₪15), and halva. Dinner at Machneyuda (₪80–130) — the city\'s most celebrated restaurant with creative Israeli food in a raucous atmosphere. Cocktails at the bars tucked into the market alleyways.',
+          tip: 'Thursday night at the Shuk is the best night out in Jerusalem — live music, art, and the market bars in full swing.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Bethlehem Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Church of the Nativity',
+          text: 'Take bus 231 from the Damascus Gate area (₪5.50) to Bethlehem — the birthplace of Jesus, now in the Palestinian West Bank. Visit the Church of the Nativity (free) — one of the oldest churches in continuous use, built over the traditional site of Jesus\'s birth. Descend to the Grotto of the Nativity where a silver star marks the spot. The church is a UNESCO World Heritage Site shared by multiple Christian denominations.',
+          tip: 'Bring your passport — you cross into the West Bank. The checkpoint is usually quick for tourists. The Grotto queue can be 1–2 hours.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Banksy & Separation Wall',
+          text: 'Walk to the Separation Wall — the massive concrete barrier that divides Bethlehem from Jerusalem. Several famous Banksy artworks are painted directly on the wall. The Walled Off Hotel (Banksy\'s hotel) has a gallery and the "worst view in the world." Visit the nearby Aida Refugee Camp for a sobering perspective on the conflict. Lunch at a Palestinian restaurant — maqluba (upside-down rice, ₪30) or falafel.',
+          tip: 'The Banksy artworks on the Wall are free to see. The Walled Off Hotel gallery and gift shop are worth a visit for the social commentary.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Jerusalem Evening',
+          text: 'Return to Jerusalem by bus or shared taxi (₪10). Walk through the Old City in the evening — the lanes are quieter and the amber-lit stone walls create an ancient atmosphere. Dinner at Tala Hummus & Falafel Bar on Agripas Street — a local favourite near Mahane Yehuda with huge portions (₪30–50). Or try Azura in the Shuk for Sephardic stews and couscous.',
+          tip: 'Shared service taxis (sherut) between Bethlehem and Jerusalem are faster and more frequent than buses. ₪10 per person.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Dead Sea Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Masada Fortress',
+          text: 'Take the Egged bus 486 from Jerusalem Central (₪42, 1.5 hours) to Masada. Hike the Snake Path (45 minutes) or take the cable car (₪54) to Herod\'s mountaintop fortress overlooking the Dead Sea. The sunrise from the summit over Jordan and the Dead Sea is extraordinary. The story of the Jewish revolt and last stand against Rome is powerfully told in the ruins.',
+          tip: 'The first bus from Jerusalem doesn\'t arrive for sunrise. For the sunrise experience, stay overnight at Masada Youth Hostel or drive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dead Sea Float',
+          text: 'Continue to Ein Bokek (20 minutes by bus) for the Dead Sea — the lowest point on earth. Float effortlessly in the ultra-salty water. Cover yourself in mineral-rich black mud from the shore for a natural spa treatment. Rinse off, relax on the beach, and marvel at the surreal landscape. The Jordanian mountains across the water glow pink at sunset.',
+          tip: 'Don\'t shave the day before — salt water stings cuts. Wear an old swimsuit; the minerals discolour fabric. Don\'t get water in your eyes.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Jerusalem',
+          text: 'Take the last bus back to Jerusalem (check schedule — last departure around 5–6pm from Ein Bokek). The drive through the Judean Desert is dramatic — barren, lunar landscape with occasional Bedouin camps. Arrive in Jerusalem for a late dinner. Try Abu Ghosh — a village 15 minutes from Jerusalem famous for hummus — or keep it in town at Tmol Shilshom for literary café culture and Israeli cuisine.',
+          tip: 'Check return bus times carefully — they\'re infrequent. An alternative is to book a group tour that includes transport back.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Ein Karem, Neighborhoods & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ein Karem Village',
+          text: 'Take bus 28 to Ein Karem — a picturesque village on Jerusalem\'s western hills, traditionally the birthplace of John the Baptist. Stone houses, terraced gardens, olive trees, and two beautiful churches — the Church of St. John the Baptist and the Church of the Visitation. The village has excellent art galleries and studios. Breakfast at one of the charming cafes in the village centre (₪40–60).',
+          tip: 'Ein Karem is Jerusalem\'s most charming neighbourhood — the opposite of the intensity of the Old City. Go on a weekday for a peaceful visit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'German Colony & Emek Refaim',
+          text: 'Head to the German Colony along Emek Refaim Street — Jerusalem\'s café and boutique neighbourhood. The Templar-era stone houses now host restaurants, bookshops, and ice cream parlours. Lunch at Caffit (₪55–90) or grab artisan ice cream at Mousseline. Walk through Liberty Bell Park and continue to the First Station — a redeveloped Ottoman-era train station with cafes, restaurants, and weekend events.',
+          tip: 'The First Station has events most weekends — live music, food festivals, and craft markets. Check the schedule online.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tower of David Night Show',
+          text: 'Experience the Tower of David Night Spectacular (₪69) — a stunning light and sound show projected onto the walls and chambers of the ancient citadel at Jaffa Gate. The 45-minute show covers Jerusalem\'s 4,000-year history through massive projections. Dinner at Rooftop on top of the Mamilla Hotel — panoramic Old City views and upscale Israeli cuisine (₪80–150 mains).',
+          tip: 'The Tower of David Night show runs several times weekly — book online. It\'s one of the best light shows anywhere in the world.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Reflections & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Dawn at the Western Wall',
+          text: 'A final dawn visit to the Western Wall — the early morning light on the golden stones and the quiet devotion of early worshippers create a deeply peaceful atmosphere. Spend time in the Western Wall Tunnels (₪40, book ahead) — a 488m underground passage along the full length of the Western Wall, revealing stones from the Herodian period, including the Western Stone — one of the heaviest objects ever lifted.',
+          tip: 'The Western Wall Tunnels must be booked in advance at thekotel.org. The 75-minute guided tour is one of Jerusalem\'s best experiences.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Souvenirs',
+          text: 'Explore the souks of the Old City one final time. Best souvenirs: olive wood carvings from the Christian Quarter (₪20–200), Armenian pottery (₪50–300), Dead Sea products, and spices from the Muslim Quarter. The Damascus Gate area has the most authentic shopping. Visit the Garden Tomb (free) — a quiet, Protestant-proposed alternative site for Jesus\'s crucifixion, with a peaceful garden atmosphere.',
+          tip: 'Armenian pottery from the Sandrouni and Balian studios is Jerusalem\'s signature souvenir — hand-painted in traditional patterns since the 16th century.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Final dinner at Eucalyptus near the Old City — a unique restaurant serving biblical-era recipes reimagined with modern techniques (₪80–130 mains). Or return to Mahane Yehuda for one last wander and a falafel from HaShamen (₪20). Walk through the illuminated Old City lanes one final time. Ben Gurion Airport is 50km west — sherut service runs ₪64, taxi ₪300–350.',
+          tip: 'Nesher sherut (shared taxis) to Ben Gurion Airport run 24/7 from ₪64 per person. Book a day ahead at nesher.co.il — they pick up from your hotel.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Sacred sites are free', text: 'The Western Wall, Church of the Holy Sepulchre, Temple Mount, Mount of Olives, and Garden of Gethsemane are all free. Jerusalem\'s greatest experiences cost nothing.' },
+  { title: 'Street food feast', text: 'Hummus (₪25–35), falafel (₪15–25), and sabich (₪30–35) are filling and delicious. Abu Shukri, Lina, and Abu Hassan serve legendary dishes at budget prices.' },
+  { title: 'Light rail & bus', text: 'Rav-Kav card works on the Jerusalem Light Rail (₪5.90) and buses. Daily pass ₪13.50. The light rail connects Damascus Gate, Mahane Yehuda, and Yad Vashem.' },
+  { title: 'Hostel dorms', text: 'Abraham Hostel (₪120–180/night) is one of the world\'s best hostels — great bar, free events, Shabbat dinner experience (₪85), and day trips. Citadel Youth Hostel is cheaper at ₪90.' },
+  { title: 'Free walking tours', text: 'Sandemans and Abraham Tours run free walking tours of the Old City (tip-based). Excellent for orientation and history. Book at Abraham Hostel reception.' },
+  { title: 'Shabbat planning', text: 'Friday sunset to Saturday sunset: public transport stops, most shops close. Walk the Old City (always alive), attend a synagogue Shabbat service, or join Abraham Hostel\'s Shabbat dinner.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '₪90–180', midrange: '₪350–700', splurge: '₪1,200+', notes: 'Hostels & pilgrim houses → boutique hotels → 5-star Old City' },
+  { category: 'Food', budget: '₪50–90', midrange: '₪130–230', splurge: '₪350+', notes: 'Street food & markets → restaurants → Machneyuda & fine dining' },
+  { category: 'Transport', budget: '₪15–30', midrange: '₪50–100', splurge: '₪200+', notes: 'Light rail & bus → taxi/Gett → private guide' },
+  { category: 'Activities', budget: '₪0–50', midrange: '₪100–200', splurge: '₪400+', notes: 'Free sites & walks → museums & tunnels → guided tours & day trips' },
+  { category: 'Drinks', budget: '₪15–30', midrange: '₪50–100', splurge: '₪180+', notes: 'Tea & juice → café & beer → cocktail bars' },
+  { category: 'Daily Total', budget: '₪170–380', midrange: '₪680–1,330', splurge: '₪2,330+', notes: '$47–106 → $189–369 → $647+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most Western nationalities enter visa-free for 90 days. You receive a paper entry slip (no passport stamp) — keep it throughout your stay',
+      'Ben Gurion Airport (TLV) is 50km from Jerusalem. Nesher sherut (shared taxi, ₪64) or bus 485 (₪16) to the city centre',
+      'Security at Ben Gurion is thorough — arrive 3 hours early for departure. Expect detailed questioning about your visit',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Tap water is safe. Healthcare is excellent but expensive — travel insurance is essential',
+      'Jerusalem is generally safe for tourists. The Old City can feel intense but crime against tourists is rare',
+      'Check security advisories before travel. Avoid demonstrations and large gatherings. Register with your embassy',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Jerusalem Light Rail runs one main line through the city — ₪5.90 per ride with Rav-Kav card. Connects key sites',
+      'Egged buses cover the city and intercity routes. Bus 405 to Tel Aviv (₪16, 1 hour). Buses stop on Shabbat',
+      'The Old City is walking-only. Gett app for taxis elsewhere. Taxis metered — ₪12 start + ₪3.40/km',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Israeli tourist SIMs at Ben Gurion Airport — ₪60–100 for 30 days with 10–20GB. Cellcom, Partner, and Pelephone available',
+      'Free WiFi in most hostels, cafes, and restaurants. Coverage is good throughout the city including the Old City',
+      'Download offline maps — the Old City\'s thick walls can disrupt GPS. Maps.me has excellent Old City detail',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Israeli Shekel (₪/ILS). ATMs widespread. Airport exchange rates are poor — use city ATMs or change shops on Jaffa Street',
+      'Cards accepted at most restaurants and shops. Cash essential in the Old City souks and for small eateries',
+      'Tipping: 10–15% at restaurants. No tipping at street food stalls. Round up taxi fares',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Conservative clothing is essential — cover shoulders and knees at ALL religious sites (Western Wall, churches, mosques, Temple Mount)',
+      'Women: carry a scarf for head covering at the Western Wall and mosques. Men: kippah provided free at the Western Wall',
+      'Comfortable walking shoes — the Old City has uneven stone streets and many steps. Sunscreen, hat, and water bottle year-round',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '✡️', title: 'Shabbat', text: 'Friday sunset to Saturday sunset. Public transport stops, most shops close. The Old City stays accessible on foot. The Western Wall on Friday evening is joyful — singing and dancing welcome the Sabbath.' },
+  { icon: '🕌', title: 'Temple Mount Access', text: 'Non-Muslim visiting hours are limited (typically mornings Sun–Thu). Dress conservatively — no shorts, tank tops, or visible religious symbols. No prayer permitted for non-Muslims. Times change frequently.' },
+  { icon: '👗', title: 'Dress Code', text: 'Conservative clothing at all times in the Old City and religious sites. Shoulders and knees covered. Women need a head covering at the Western Wall and inside mosques. Men need a kippah at the Western Wall (provided free).' },
+  { icon: '🕊️', title: 'Sensitivity', text: 'Jerusalem is sacred to three religions and politically complex. Be respectful at all sites. Avoid political discussions unless invited. Listen more than you speak. Treat all communities with equal respect.' },
+  { icon: '📸', title: 'Photography', text: 'No photography on Shabbat near the Western Wall. Ask permission before photographing worshippers anywhere. No photography inside the Tomb of Christ. Temple Mount security may restrict cameras.' },
+  { icon: '🔒', title: 'Security', text: 'Bag checks at the Western Wall, Temple Mount entrance, and major public buildings. Metal detectors are routine. Don\'t leave bags unattended. Police and military presence is normal and for safety.' },
+];
+---
+
+<CityGuideLayout
+  title="Jerusalem Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Jerusalem guide for young travelers. 3-day itinerary with the Old City, Western Wall, Temple Mount, Yad Vashem, and vibrant markets. Plan your trip with roammate."
+  heroImage="/images/guides/jerusalem-hero.webp"
+  heroFlag="🇮🇱"
+  heroCountry="Israel"
+  heroRegion="Middle East"
+  heroCity="Jerusalem"
+  heroSubtitle="Four thousand years of faith, conflict, and devotion compressed into ancient stone walls where three religions meet under a golden dome."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Mar – Nov Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Israeli Shekel (₪). Jerusalem's greatest treasures — the sacred sites — are mostly free. Food and accommodation are the main expenses."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Jerusalem is sacred to Judaism, Christianity, and Islam. Deep respect for all traditions, conservative dress, and cultural sensitivity are not optional — they're essential."
+  ctaCity="Jerusalem"
+  ctaText="Find travel companions, share day trip costs, and explore the ancient city with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

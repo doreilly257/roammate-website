@@ -1,0 +1,216 @@
+---
+import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+
+const routeOverview = [
+  { country: 'Iberia & Southern France', flag: '🇪🇸🇵🇹🇫🇷', weeks: '1–4', color: '#c4562a', stops: ['Lisbon', 'Porto', 'Seville', 'Granada', 'Barcelona', 'Marseille'] },
+  { country: 'Italy & Croatia', flag: '🇮🇹🇭🇷', weeks: '5–8', color: '#c9a84c', stops: ['Rome', 'Florence', 'Cinque Terre', 'Venice', 'Split', 'Dubrovnik'] },
+  { country: 'Balkans & Greece', flag: '🇲🇪🇦🇱🇬🇷', weeks: '9–12', color: '#2e6d79', stops: ['Kotor', 'Tirana', 'Athens', 'Santorini', 'Crete'] },
+];
+
+const countries = [
+  {
+    name: 'Iberia & Southern France',
+    flag: '🇪🇸',
+    weeks: 'Weeks 1–4',
+    color: '#c4562a',
+    intro: 'Start where the Atlantic meets the Mediterranean. Portugal and Spain offer world-class food, stunning architecture, and a nightlife scene that doesn\'t start until midnight — all at prices that won\'t destroy a backpacker budget. Southern France adds a splash of lavender and coastline.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$45–75', detail: 'Budget–comfortable range' },
+      { icon: '💵', label: 'Currency', value: 'Euro (€)', detail: '1 USD ≈ €0.92' },
+      { icon: '🛂', label: 'Visa', value: '90 days (Schengen)', detail: 'Most nationalities' },
+      { icon: '🗣', label: 'Languages', value: 'PT / ES / FR', detail: 'English in tourist areas' },
+      { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'WEST in Portugal' },
+      { icon: '☀️', label: 'Best Months', value: 'May – Oct', detail: 'Warm & sunny' },
+    ],
+    phases: [
+      {
+        title: 'Lisbon & Porto',
+        duration: '6–8 days',
+        description: 'Lisbon is Europe\'s most underrated capital — cobblestone hills, €1 pastel de nata, and Tram 28 winding through Alfama. Take the free walking tour, then lose yourself in the Bairro Alto bar scene (€2–3 beers). Day trip to Sintra (€2.25 train, 40 mins) for fairy-tale palaces. Bus to Porto (€15–20, 3.5 hrs) for port wine tastings in Vila Nova de Gaia (free–€5) and the most photogenic bookshop in the world (Livraria Lello, €8). Hostels: €15–25/night.',
+        tip: 'Get a Lisboa Card (€27/24hrs) for unlimited transport and free entry to 30+ museums. Porto has a similar Andante card for transport.',
+      },
+      {
+        title: 'Seville, Granada & Barcelona',
+        duration: '10–12 days',
+        description: 'Night bus from Porto to Seville (€25–35, 7 hrs). Seville\'s Real Alcázar (€14.50) rivals the Alhambra, and free flamenco shows pop up in Triana bars nightly. Bus to Granada (€12, 3 hrs) — the Alhambra is a must-book (€14, reserve 2 months ahead). Walk the Albaicín at sunset for views of the palace against the Sierra Nevada. Fly or bus to Barcelona (€15–40 budget airlines). La Sagrada Familia (€26), Gothic Quarter wandering, and beach time at Barceloneta. Bar-hop El Born for €3 vermouth.',
+        tip: 'The Alhambra sells out fast — book tickets the moment they release at midnight 2 months ahead, or try the free entry on Tuesday/Thursday evenings.',
+      },
+      {
+        title: 'Southern France',
+        duration: '4–6 days',
+        description: 'Train from Barcelona to Marseille on the coastal TGV (€25–50 with OUIGO, 4.5 hrs). Marseille\'s Vieux-Port has €5 bouillabaisse bowls and the MuCEM museum (free under 25). Day trip to the Calanques — hike from Luminy to Sugiton (2 hrs, free, bring water). Optional: stop in Montpellier or Avignon en route to Italy. France is pricier, so cook in hostel kitchens and picnic with supermarket wine (€3–5/bottle) and cheese.',
+        tip: 'Book OUIGO trains in advance — they\'re France\'s budget TGV service with fares from €10. BlaBlaCar rideshares are even cheaper between cities.',
+      },
+    ],
+  },
+  {
+    name: 'Italy & Croatia',
+    flag: '🇮🇹',
+    weeks: 'Weeks 5–8',
+    color: '#c9a84c',
+    intro: 'Italy needs no introduction — but it rewards backpackers who wander beyond the tourist trail. Skip the overpriced tourist menus, eat where the locals eat, and discover that €4 can buy you the best pizza of your life. Croatia\'s Dalmatian coast offers stunning value and Adriatic beauty.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$50–80', detail: 'Italy higher, Croatia lower' },
+      { icon: '💵', label: 'Currency', value: 'Euro (€)', detail: 'Croatia joined euro 2023' },
+      { icon: '🛂', label: 'Visa', value: '90 days (Schengen)', detail: 'Same visa as Iberia leg' },
+      { icon: '🗣', label: 'Languages', value: 'IT / HR', detail: 'English common in tourism' },
+      { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'Same as Spain/France' },
+      { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: 'Warm, ideal for coast' },
+    ],
+    phases: [
+      {
+        title: 'Rome & Florence',
+        duration: '7–8 days',
+        description: 'Fly or take the train from Marseille to Rome (€20–50). The Colosseum, Forum, and Palatine Hill combo ticket is €16 (book online). Vatican Museums on the last Sunday of the month are free (arrive by 7am). The best €4 pizza is in Trastevere — try supplì (fried rice balls, €2) from the street vendors. Train to Florence (€15–20 Italo, 1.5 hrs). The Uffizi is €20 but the real Florence is free — the Ponte Vecchio, Piazzale Michelangelo at sunset, and the leather markets of San Lorenzo.',
+        tip: 'In Rome, avoid restaurants near tourist sites — walk 3 blocks in any direction and prices drop 50%. Look for "menu del giorno" lunch specials (€10–12).',
+      },
+      {
+        title: 'Cinque Terre & Venice',
+        duration: '5–6 days',
+        description: 'Train from Florence to Cinque Terre (€12–15, 2.5 hrs). Buy the Cinque Terre Card (€16) for unlimited trail hiking and trains between the five villages. Hike the full coastal trail in a day (12km, 5 hrs) — Vernazza to Monterosso is the most dramatic stretch. Sleep in Riomaggiore or Manarola (€25–40/night for hostels). Then train to Venice (€20–30, 4 hrs). Venice is expensive but free to wander — get lost in the back alleys, take the €2 traghetto gondola across the Grand Canal, and eat €2 cicchetti (Venetian tapas) at bacari bars.',
+        tip: 'In Venice, stay in Mestre (mainland) for half-price accommodation — it\'s 10 minutes by train to Santa Lucia station.',
+      },
+      {
+        title: 'Split & Dubrovnik',
+        duration: '6–7 days',
+        description: 'Bus or ferry from Venice to Split (bus €35, 9 hrs; ferry €50–80, seasonal). Split\'s Diocletian\'s Palace is a living monument — people still live, eat, and party inside a Roman emperor\'s retirement home. The Riva waterfront promenade comes alive at sunset with €3 local beers. Take a day trip to Hvar Island (ferry €12–15 return) for beaches and lavender fields. Bus along the coast to Dubrovnik (€15–20, 4.5 hrs) — walk the city walls (€35 but unforgettable) and take the cable car up Mount Srđ for free sunset views.',
+        tip: 'Croatia\'s coast is cheaper in May/June and September than peak July/August. Avoid cruise ship days in Dubrovnik — check schedules online.',
+      },
+    ],
+  },
+  {
+    name: 'Balkans & Greece',
+    flag: '🇬🇷',
+    weeks: 'Weeks 9–12',
+    color: '#2e6d79',
+    intro: 'The Balkans are Europe\'s best-kept backpacker secret — jaw-dropping scenery, warm hospitality, and prices that feel like Southeast Asia. Montenegro and Albania are still discovering tourism, which means authentic experiences. Greece ties it all together with islands, history, and €2 souvlaki.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$30–55', detail: 'Balkans very cheap' },
+      { icon: '💵', label: 'Currency', value: 'Varies', detail: 'Euro in ME/GR, Lek in AL' },
+      { icon: '🛂', label: 'Visa', value: 'Varies', detail: 'AL & ME visa-free, GR Schengen' },
+      { icon: '🗣', label: 'Languages', value: 'ME / SQ / EL', detail: 'English improving' },
+      { icon: '🕐', label: 'Timezone', value: 'CET/EET', detail: 'Greece is UTC+2' },
+      { icon: '☀️', label: 'Best Months', value: 'May – Oct', detail: 'Warm & dry' },
+    ],
+    phases: [
+      {
+        title: 'Kotor & Montenegrin Coast',
+        duration: '4–5 days',
+        description: 'Bus from Dubrovnik to Kotor (€12–15, 2 hrs, one of Europe\'s most scenic drives). Kotor\'s medieval old town sits at the end of a dramatic fjord — climb the 1,350 steps to the fortress at sunset (€8) for the best view in the Balkans. Swim in the Bay of Kotor, take a boat to Our Lady of the Rocks island (€5), and eat ćevapi (grilled meat) for €3–5. Budva\'s old town and beaches are a short bus ride (€3, 30 mins). Accommodation: €15–20/night.',
+        tip: 'Kotor is tiny — 2 days in the old town is enough. Spend extra time in Perast or the Lovćen National Park (€5 entry, drive to the mausoleum at 1,657m).',
+      },
+      {
+        title: 'Albania',
+        duration: '5–6 days',
+        description: 'Bus from Kotor to Tirana (€15–20, 4–5 hrs). Albania is the biggest surprise on this route — incredible beaches, Ottoman architecture, and rock-bottom prices. Tirana is buzzy and colourful (Bunk\'Art museums €5 each, incredible). Bus to Berat (€5, 2.5 hrs) — the "City of a Thousand Windows" is a UNESCO site. Then south to Gjirokastër (€5, 3 hrs) for Ottoman stone houses and a massive hilltop castle (€2). If time allows, the Albanian Riviera (Ksamil, Himarë) has beaches rivalling Greece at a quarter of the price.',
+        tip: 'Albania runs on cash — ATMs exist in cities but stock up on lek before heading to smaller towns. Many places accept euros at a poor rate.',
+      },
+      {
+        title: 'Athens & the Islands',
+        duration: '7–10 days',
+        description: 'Bus or fly from Tirana to Athens (bus €25–30, 8 hrs; flights €30–60). The Acropolis (€20, free under 25 from EU) at opening time is magical before the crowds. Wander Plaka, eat €2 souvlaki in Monastiraki Square, and watch sunset from Filopappou Hill (free). Ferry to Santorini (€35–60, 5–8 hrs depending on speed) — skip Fira and stay in Perissa for €20–30/night hostels. Hike the Fira–Oia trail (10km, 3 hrs) for caldera views. If budget allows, end on Crete — bigger, cheaper, and wilder, with the Samariá Gorge hike (18km, €5).',
+        tip: 'Greek island ferries: book on ferryhopper.com. Slow ferries are half the price of high-speed. Bring food — onboard prices are tourist-grade.',
+      },
+    ],
+  },
+];
+
+const budgetColumns = [
+  { flag: '🇪🇸', label: 'Iberia/France' },
+  { flag: '🇮🇹', label: 'Italy/Croatia' },
+  { flag: '🇬🇷', label: 'Balkans/Greece' },
+];
+
+const budgetRows = [
+  { category: 'Accommodation', values: ['€15–35', '€15–40', '€10–25'], notes: 'Hostels, guesthouses, Airbnb' },
+  { category: 'Food', values: ['€8–18', '€10–20', '€5–15'], notes: 'Street food, markets, tavernas' },
+  { category: 'Transport', values: ['€5–15', '€5–15', '€3–12'], notes: 'Trains, buses, ferries' },
+  { category: 'Activities', values: ['€5–15', '€8–20', '€5–12'], notes: 'Museums, sites, hikes' },
+  { category: 'Drinks/Social', values: ['€5–10', '€5–12', '€3–8'], notes: 'Wine, beer, cafés' },
+  { category: 'Daily Total', values: ['€45–75', '€50–80', '€30–55'], notes: 'Budget–comfortable range' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visas',
+    items: [
+      'Schengen visa: 90 days in any 180-day period covers most of the route (Spain, Portugal, France, Italy, Greece)',
+      'Croatia joined Schengen in 2023 — same visa. Montenegro and Albania are non-Schengen (visa-free for most)',
+      'Non-Schengen days in Montenegro/Albania don\'t count toward your 90-day Schengen limit',
+    ],
+  },
+  {
+    icon: '🚆',
+    title: 'Transport',
+    items: [
+      'Eurail Pass can be worth it if you take 4+ long train rides — compare against point-to-point OUIGO/Italo fares',
+      'FlixBus connects most cities cheaply (€5–25). BlaBlaCar rideshares fill the gaps',
+      'Budget airlines (Ryanair, Wizz Air) are dirt cheap if you book early and travel carry-on only',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health',
+    items: [
+      'EHIC/GHIC card (EU citizens) gives free/reduced healthcare. Non-EU: travel insurance is essential',
+      'No special vaccinations required. Tap water is safe throughout (sometimes tastes of chlorine in Greece)',
+      'Pharmacies are excellent across Southern Europe — open late and often without prescription for basics',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'EU roaming: your home SIM works at domestic rates across all EU/EEA countries (if you have an EU SIM)',
+      'Non-EU visitors: buy a prepaid SIM in Portugal or Spain (€10–15 for 30 days, works across EU)',
+      'WiFi is strong everywhere. Montenegro and Albania may need separate local SIMs (€5–8)',
+    ],
+  },
+  {
+    icon: '🌦️',
+    title: 'Best Time',
+    items: [
+      'May–June and September: Goldilocks season — warm, uncrowded, affordable',
+      'July–August: Peak season, beaches packed, hostels full, prices jump 30–50%',
+      'October: Still warm in Greece and southern Italy; Iberia starts to cool but is beautiful',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Essentials',
+    items: [
+      'Lightweight daypack for hikes and city exploring. Padlock for hostel lockers',
+      'Swimsuit, quick-dry towel, reef shoes for rocky Mediterranean beaches',
+      'EU Type C/F adapter. Smart-casual outfit for nicer restaurants or clubs in Barcelona/Rome',
+    ],
+  },
+];
+---
+
+<BackpackerRouteLayout
+  title="Southern Europe Backpacker Route — 3-Month Itinerary: Iberia, Italy, Balkans & Greece | roammate"
+  description="The ultimate 3-month Southern Europe backpacker route. Week-by-week itinerary from Lisbon to the Greek islands with budget breakdowns, transport tips, and insider advice."
+  heroImages={[
+    { src: '/images/guides/eur-coast.webp', alt: 'Colorful cliffside village on the Mediterranean coast' },
+    { src: '/images/guides/eur-colosseum.webp', alt: 'The Colosseum in Rome at golden hour' },
+    { src: '/images/guides/eur-souvlaki.webp', alt: 'Greek souvlaki and street food spread' },
+    { src: '/images/guides/eur-santorini.webp', alt: 'Blue-domed churches of Santorini at sunset' },
+  ]}
+  heroFlags="🇪🇸 🇮🇹 🇬🇷"
+  heroRegion="Southern Europe"
+  heroTitle="The Southern<br>Europe Trail"
+  heroSubtitle="Twelve weeks from the Atlantic to the Aegean. Tapas in Seville, pizza in Rome, souvlaki in Athens — the grand tour on a backpacker budget."
+  heroPills={['3-Month Route', '€30–80/day', 'May – Oct Best', '8+ Countries']}
+  routeOverview={routeOverview}
+  countries={countries}
+  budgetIntro="Daily costs per person in EUR. Total 3-month budget: approximately €4,000–6,500 depending on your style. Western Europe is pricier, but the Balkans bring the average down significantly."
+  budgetColumns={budgetColumns}
+  budgetRows={budgetRows}
+  practicalInfo={practicalInfo}
+  ctaRegion="Southern Europe"
+  ctaText="Find travel companions for tapas crawls, split Airbnbs on the Amalfi Coast, and share ferry rides to Greek islands with fellow backpackers on roammate."
+  ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+  featuredGuides={['paris', 'rome', 'madrid', 'barcelona', 'amsterdam', 'berlin', 'lisbon', 'athens', 'prague', 'vienna', 'budapest', 'santorini', 'cinque-terre', 'amalfi-coast', 'meteora']}
+  accentColor="#c4562a"
+/>

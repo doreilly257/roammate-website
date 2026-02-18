@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Terms and Conditions – roammate – travel companion app" description="Terms and conditions for using roammate, the travel companion app for meeting fellow travelers, sharing experiences, and splitting costs.">
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="section-label section-label--center">Legal</div>
+      <h1 class="page-title">Terms and <em>Conditions</em></h1>
+      <p class="last-updated">Last updated: February 2026</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="content-box reveal">
+      <p>Welcome to roammate. By accessing or using our mobile application and services, you agree to be bound by these Terms and Conditions. Please read them carefully.</p>
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>By creating an account or using roammate, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions and our Privacy Policy. If you do not agree, please do not use our services.</p>
+
+      <h2>2. Eligibility</h2>
+      <p>You must be at least 18 years old to use roammate. By using our services, you represent and warrant that you meet this age requirement and have the legal capacity to enter into these terms.</p>
+
+      <h2>3. Account Registration</h2>
+      <p>To use certain features of roammate, you must create an account. You agree to:</p>
+      <ul>
+        <li>Provide accurate and complete information during registration</li>
+        <li>Maintain the security of your account credentials</li>
+        <li>Promptly update your information if it changes</li>
+        <li>Accept responsibility for all activities under your account</li>
+      </ul>
+
+      <h2>4. User Conduct</h2>
+      <p>When using roammate, you agree not to:</p>
+      <ul>
+        <li>Violate any applicable laws or regulations</li>
+        <li>Harass, threaten, or intimidate other users</li>
+        <li>Post false, misleading, or fraudulent content</li>
+        <li>Impersonate any person or entity</li>
+        <li>Use the platform for commercial solicitation without authorization</li>
+        <li>Attempt to gain unauthorized access to our systems</li>
+        <li>Interfere with the proper functioning of the service</li>
+      </ul>
+
+      <h2>5. Travel Plans and Meetups</h2>
+      <p>roammate facilitates connections between travelers but does not organize, supervise, or participate in any travel activities or meetups. You acknowledge that:</p>
+      <ul>
+        <li>You are solely responsible for your safety when meeting other users</li>
+        <li>roammate does not verify the identity or background of users</li>
+        <li>You should exercise caution and good judgment when meeting others</li>
+        <li>roammate is not liable for any incidents during user meetups</li>
+      </ul>
+
+      <h2>6. Content and Intellectual Property</h2>
+      <p>You retain ownership of content you post on roammate. However, by posting content, you grant us a non-exclusive, worldwide, royalty-free license to use, display, and distribute your content in connection with our services.</p>
+      <p>The roammate name, logo, and all related trademarks are our exclusive property. You may not use our intellectual property without prior written consent.</p>
+
+      <h2>7. Privacy</h2>
+      <p>Your privacy is important to us. Please review our <a href="/privacy">Privacy Policy</a> to understand how we collect, use, and protect your information.</p>
+
+      <h2>8. Disclaimers</h2>
+      <p>roammate is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that:</p>
+      <ul>
+        <li>The service will be uninterrupted or error-free</li>
+        <li>Any connections made will result in successful travel experiences</li>
+        <li>Other users' information is accurate or truthful</li>
+      </ul>
+
+      <h2>9. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, roammate and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use our services.</p>
+
+      <h2>10. Indemnification</h2>
+      <p>You agree to indemnify and hold harmless roammate, its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of the service or violation of these terms.</p>
+
+      <h2>11. Termination</h2>
+      <p>We reserve the right to suspend or terminate your account at any time for any reason, including violation of these terms. You may also delete your account at any time through the app settings.</p>
+
+      <h2>12. Changes to Terms</h2>
+      <p>We may modify these Terms and Conditions at any time. We will notify users of significant changes through the app or via email. Continued use of roammate after changes constitutes acceptance of the modified terms.</p>
+
+      <h2>13. Governing Law</h2>
+      <p>These Terms and Conditions shall be governed by and construed in accordance with applicable laws. Any disputes arising from these terms shall be resolved through binding arbitration.</p>
+
+      <h2>14. Contact</h2>
+      <p>If you have any questions about these Terms and Conditions, please contact us at legal@roammate.com.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 160px 40px 80px;
+    text-align: center;
+    position: relative;
+  }
+
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(196, 86, 42, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .page-hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label--center {
+    justify-content: center;
+  }
+
+  .section-label--center::before {
+    display: none;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 16px;
+  }
+
+  .page-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .last-updated {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .page-content {
+    padding: 0 40px 160px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .content-box h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin: 40px 0 16px;
+  }
+
+  .content-box p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .content-box a {
+    color: var(--color-terracotta);
+    transition: color 0.3s;
+  }
+
+  .content-box a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .content-box ul {
+    margin: 0 0 16px 24px;
+    list-style: disc;
+  }
+
+  .content-box li {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 1024px) {
+    .page-hero { padding: 140px 24px 60px; }
+    .page-content { padding: 0 24px 100px; }
+  }
+</style>

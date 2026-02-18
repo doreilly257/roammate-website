@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'VND (₫ Dong)', detail: '1 USD ≈ ₫25,000' },
+  { icon: '🗣', label: 'Language', value: 'Vietnamese', detail: 'English on boats & in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Apr', detail: '18–28°C, clearer skies & calmer seas' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–45 USD', detail: '₫625k–1.1M budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'E-visa or visa-free', detail: '45 days visa-free for many nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Ha Long Bay in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cruise Departure & Karst Panoramas',
+          text: 'Board a day cruise from Tuan Chau Marina or Bai Chay Tourist Wharf (₫600k–1M for budget day boats). As the boat threads between the first limestone karsts, the scale hits you — nearly 2,000 islands and islets rising from emerald water. Cruise past iconic formations like Fighting Cocks Islet and Incense Burner. Most day trips include a stop at Sung Sot Cave, the largest grotto in the bay, with cathedral-sized chambers and stalactite formations.',
+          tip: 'Book a day cruise the evening before from your Hanoi hotel or hostel — they include bus transfers (4 hours each way). Avoid the cheapest ₫300k tours as boats are overcrowded.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kayaking & Floating Village',
+          text: 'Most cruises include kayaking through tunnel caves and around karst formations — paddling beneath towering limestone walls into hidden lagoons is the highlight of any Ha Long visit. You will also visit a floating fishing village like Cua Van, where families have lived on the water for generations. Some tours stop at Ti Top Island for a steep climb to a viewpoint overlooking the entire bay and a swim at the small beach below.',
+          tip: 'Bring a dry bag for your phone and camera while kayaking — the water in the caves can splash unexpectedly. Waterproof phone pouches cost ₫30k in Hanoi.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Bai Chay Night Market',
+          text: 'The cruise returns to the wharf by late afternoon. If you are staying in Ha Long City rather than returning to Hanoi, explore the Bai Chay Night Market along the waterfront promenade. Grilled squid on sticks (₫30k), Vietnamese spring rolls (₫20k), and local seafood hotpot restaurants line the strip. The Sun Wheel ferris wheel (₫200k) offers panoramic views of the illuminated bay and bridge at night.',
+          tip: 'If returning to Hanoi, the bus arrives around 8–9pm. Eat on the boat during the cruise — dinner in the Old Quarter is late but Pho 10 on Ly Quoc Su stays open until 10pm.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Cruise Into the Bay',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Departure & Limestone Wonderland',
+          text: 'Board an overnight cruise from Tuan Chau Marina (budget junk boats from ₫1.5M/night, mid-range from ₫3M). As the boat enters the bay, nearly 2,000 limestone karsts and islets materialise from the mist. Lunch is served on deck — fresh spring rolls, grilled fish, and Vietnamese coffee — while the boat navigates past Fighting Cocks Islet and the towering Dinh Huong rock. The UNESCO-listed landscape is unlike anything else on earth.',
+          tip: 'Book a 2-night cruise for the best experience — 1-night trips feel rushed. Mid-range boats (₫3–5M) have much better food and smaller groups than budget options.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Sung Sot Cave & Kayaking',
+          text: 'Dock at Bo Hon Island and climb to Sung Sot (Surprise) Cave — the largest grotto in Ha Long Bay. The cave opens into a vast chamber with stalactites and stalagmites that look like frozen waterfalls. Back at water level, kayak through low-ceilinged tunnel caves into hidden lagoons surrounded by vertical karst walls covered in jungle. The silence in these enclosed lagoons, broken only by paddle strokes and birdsong, is unforgettable.',
+          tip: 'Wear water shoes with grip for Sung Sot Cave — the steps are slippery from humidity. Afternoon light inside the cave is best when sun angles illuminate the formations.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset on Deck & Squid Fishing',
+          text: 'Watch sunset from the top deck as the karsts turn golden then silhouette against the sky. Dinner is a multi-course Vietnamese seafood feast — expect prawns, morning glory, clay-pot fish, and pho. After dinner, most boats offer squid fishing from the lower deck with lights to attract the squid to the surface. The bay at night, with lanterns reflecting off still water between dark karst shadows, has an almost supernatural calm.',
+          tip: 'Bring a light jacket for the upper deck after sunset — evenings on the water are cooler than expected, especially from November to February.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Lan Ha Bay & Cat Ba Island',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lan Ha Bay — The Quieter Paradise',
+          text: 'The cruise sails into Lan Ha Bay — Ha Long\'s less-visited southern neighbour with equally stunning karsts but a fraction of the boat traffic. The water here is cleaner and greener. Swim off the boat in a secluded cove or join a guided kayaking excursion through the Dark and Bright Caves. Lan Ha has over 400 islands, many with tiny hidden beaches that you might have entirely to yourself in the early morning.',
+          tip: 'Lan Ha Bay is only accessible on 2-night cruises or via Cat Ba Island — this is the main reason the extra night is worthwhile.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cat Ba Island & Cannon Fort',
+          text: 'Tender to Cat Ba Island, the largest island in Ha Long Bay. Climb to Cannon Fort (₫40k) for the best panoramic viewpoint in the entire bay — 360-degree views of karsts stretching to the horizon. The fort itself dates from the Japanese occupation and has tunnels and bunkers to explore. Cat Ba Town below is a lively fishing port with seafood restaurants along the harbour (grilled clam hotpot for ₫80k).',
+          tip: 'Cannon Fort is a steep 20-minute climb but the view from the top is the single best viewpoint in the Ha Long Bay area. Go late afternoon for golden-hour light.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cat Ba Town Waterfront',
+          text: 'If your cruise includes a Cat Ba overnight, explore the waterfront strip. Seafood restaurants offer the catch of the day displayed on ice — pick your fish and they grill it (₫150–250k for a whole sea bass). The floating bar boats in the harbour are a unique experience with cheap Bia Hoi (₫10k/glass). Cat Ba at night is quiet and authentic compared to Ha Long City, with fishing boats bobbing under the stars.',
+          tip: 'The floating beer boats in Cat Ba harbour charge almost nothing and the atmosphere is wonderful — ask your hotel to point you to the right pier.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Bai Tu Long & Return',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tai Chi at Sunrise & Bai Tu Long Bay',
+          text: 'Wake for sunrise tai chi on the top deck — most cruises offer a guided session as the first light hits the karsts and mist rises from the water. After breakfast, the boat may cruise into Bai Tu Long Bay, the northeastern extension that sees even fewer tourists. Vung Vieng floating village here is one of the most photogenic communities in the bay, with colourful houses and fish farms reflecting in the still morning water.',
+          tip: 'Set an alarm for sunrise — it is the single most beautiful moment on the cruise and most passengers sleep through it. The light is magical around 5:30–6:00am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Swim & Cruise Back',
+          text: 'A last stop for swimming or kayaking in a secluded cove before the cruise begins the return journey. Lunch on deck as the boat threads back through the karst corridor. The return leg often passes different formations than the outward journey, so keep your camera ready. You will arrive at Tuan Chau Marina by midday and transfer back to Hanoi by bus (arriving around 4–5pm).',
+          tip: 'Pack your bags before the final activity — the turnaround at the marina is fast and you will board the bus to Hanoi almost immediately.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Back in Hanoi — Old Quarter Celebration',
+          text: 'Arrive in Hanoi by early evening. Celebrate your bay adventure with egg coffee at Giang Cafe (₫35k) — the original since 1946 — tucked up a narrow staircase in the Old Quarter. Then head to Bia Hoi Corner at the intersection of Ta Hien and Luong Ngoc Quyen streets for the cheapest fresh beer in the world (₫5–10k/glass). The pavement energy here on weekend nights rivals anywhere in Southeast Asia.',
+          tip: 'Bia Hoi Corner is best Friday and Saturday nights when the entire intersection becomes a massive open-air party. Sit on the tiny plastic stools like a local.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Cruise prices vary hugely', text: 'Day cruises from ₫600k–1M. Overnight budget junks from ₫1.5M. Mid-range 2-night cruises from ₫3M. Book in Hanoi or online — never at the pier where prices are inflated by 50% or more.' },
+  { title: 'Bia Hoi is the cheapest beer on earth', text: 'Fresh draught beer brewed daily: ₫5–10k per glass (under $0.50 USD). Available everywhere in Hanoi and Ha Long City. Pairs perfectly with peanuts and grilled street food.' },
+  { title: 'Street food is extraordinary value', text: 'Pho: ₫40k. Banh mi: ₫25k. Bun cha: ₫40k. Com binh dan (rice with dishes): ₫30k. You can eat three full meals for under ₫150k ($6 USD) per day.' },
+  { title: 'Negotiate at markets, not restaurants', text: 'Street food has fixed prices — just pay what is asked. Markets and taxis expect negotiation. Use Grab for fair taxi prices. For tours, compare at least three agencies on Hang Bac Street.' },
+  { title: 'Cat Ba is cheaper than Ha Long City', text: 'Hotels, food, and activities on Cat Ba Island cost 30–50% less than Ha Long City. The seafood is fresher, the atmosphere is better, and Lan Ha Bay is right on your doorstep.' },
+  { title: 'Sleeper buses save accommodation costs', text: 'Hanoi to Ninh Binh: ₫80k (2.5 hours). Budget overnight buses to other destinations save a night of accommodation. Fansipan Express to Sapa is ₫250k with a bed.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '₫150–300k', midrange: '₫500k–1.2M', splurge: '₫3M+', notes: 'Hostels → boutique hotels → bay-view resorts' },
+  { category: 'Food', budget: '₫100–200k', midrange: '₫300–600k', splurge: '₫1M+', notes: 'Street food → restaurants → cruise dining' },
+  { category: 'Transport', budget: '₫50–150k', midrange: '₫200–500k', splurge: '₫1M+', notes: 'Local bus → Grab & minivan → private car' },
+  { category: 'Activities', budget: '₫100–500k', midrange: '₫800k–2M', splurge: '₫5M+', notes: 'Temples & caves → day cruise → luxury overnight cruise' },
+  { category: 'Drinks', budget: '₫20–50k', midrange: '₫100–300k', splurge: '₫500k+', notes: 'Bia Hoi & tea → craft beer → cocktail bars' },
+  { category: 'Daily Total', budget: '₫420k–1.2M', midrange: '₫1.9–4.6M', splurge: '₫10.5M+', notes: '$17–48 → $76–184 → $420+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Many nationalities get 45 days visa-free. Others can apply for an e-visa (25 USD, processed in 3 working days) for 90 days',
+      'Passport must be valid for 6+ months. Immigration may ask for proof of onward travel — have a booking on your phone',
+      'Noi Bai Airport (Hanoi) has visa-on-arrival but e-visa is faster — avoid the queue and apply online before departure',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No mandatory vaccinations. Hepatitis A and typhoid recommended. Tap water is not safe to drink — bottled water is ₫5k everywhere',
+      'Ha Long Bay boat safety varies — check that your cruise has life jackets and safety equipment before boarding',
+      'Pharmacies in Hanoi sell most medications without prescription at very low prices. International SOS clinic for emergencies',
+    ],
+  },
+  {
+    icon: '🚌',
+    title: 'Getting Around',
+    items: [
+      'Hanoi to Ha Long Bay: 4 hours by bus (included with cruise bookings). Express highway has cut travel time significantly',
+      'Grab is essential in Hanoi — motorbike (₫15–30k) or car (₫40–100k) for any distance. Flagging taxis invites overcharging',
+      'In Ha Long City, taxis and local buses connect the tourist wharf to Bai Chay. On Cat Ba Island, rent a motorbike (₫150k/day)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Tourist SIM at the airport: Viettel, Mobifone, or Vinaphone from ₫100k for 30 days with 4G data — excellent coverage',
+      'WiFi is strong in most cafes, hotels, and hostels. Cruise boats have limited or no WiFi — download offline maps beforehand',
+      'All websites and apps work normally — no VPN needed. Zalo is the local messaging app but WhatsApp works fine for tourists',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs are everywhere in Hanoi — Vietcombank and BIDV have the lowest fees (₫22k per withdrawal). Withdraw ₫3–5M at a time',
+      'Cash is king for street food, markets, and smaller towns. Cards accepted at hotels, mid-range restaurants, and cruise boats',
+      'Vietnamese Dong has many zeros — ₫100,000 notes are common. Double-check when paying and receiving change to avoid confusion',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light layers — Ha Long Bay evenings are cool (15–20°C in winter). A waterproof jacket is essential for boat trips and kayaking',
+      'Water shoes for cave exploration (slippery limestone steps) and a dry bag for kayaking to protect electronics',
+      'Mosquito repellent for Cat Ba Island and Ninh Binh. Sunscreen for boat trips where the water reflection intensifies UV exposure',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Greetings & Respect', text: 'A slight bow with a smile is the standard greeting. Use both hands when giving or receiving items, especially business cards or money. Address older people with appropriate honorifics — "anh" (older brother) or "chi" (older sister) shows respect.' },
+  { icon: '🏛️', title: 'Temple Etiquette', text: 'Remove shoes before entering temple buildings. Dress modestly with covered shoulders and knees. Do not point your feet at Buddha images or altars. Photography is usually permitted outside but check before shooting inside prayer halls.' },
+  { icon: '🍜', title: 'Dining Culture', text: 'Vietnamese meals are communal — dishes are placed in the centre and shared. It is polite to serve others before yourself. Slurping noodles is perfectly normal and shows enjoyment. Leave a small amount of food on your plate to show you have had enough.' },
+  { icon: '💰', title: 'Haggling Etiquette', text: 'Bargaining is expected at markets but keep it friendly and respectful. Start at 40–50% of the asking price and meet in the middle. Never haggle at restaurants, cafes, or with street food vendors — prices are fixed and fair.' },
+  { icon: '📸', title: 'Photography Manners', text: 'Always ask before photographing people, especially ethnic minorities and fishermen. In floating villages, residents may be tired of cameras — a smile and gesture of permission goes a long way. Buy something small from vendors you photograph.' },
+  { icon: '🛵', title: 'Traffic Zen', text: 'Vietnamese traffic looks chaotic but follows an unspoken flow. When crossing roads, walk steadily at a constant pace — motorbikes will navigate around you. Never stop or run suddenly. Making eye contact with drivers helps them anticipate your path.' },
+];
+---
+
+<CityGuideLayout
+  title="Ha Long Bay Travel Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Ha Long Bay guide for young travelers. Overnight cruises, kayaking through karst caves, Cat Ba Island, floating villages, and budget tips. Plan your trip with roammate."
+  heroImage="/images/guides/ha-long-bay-hero.webp"
+  heroFlag="🇻🇳"
+  heroCountry="Vietnam"
+  heroRegion="Southeast Asia"
+  heroCity="Ha Long Bay"
+  heroSubtitle="Nearly 2,000 limestone karsts rising from emerald water — a UNESCO wonderland of hidden caves, floating villages, and sunsets that redefine beauty."
+  heroPills={['3-Day Itinerary', 'Adventure', 'Oct – Apr Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in VND (₫). Ha Long Bay cruise prices dominate the budget — but everything else in Vietnam is wonderfully affordable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Vietnamese culture is warm, hospitable, and deeply respectful of elders and tradition. A few simple gestures of awareness earn enormous goodwill."
+  ctaCity="Ha Long Bay"
+  ctaText="Find travel companions, share cruise costs, and split kayak adventures with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,216 @@
+---
+import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+
+const routeOverview = [
+  { country: 'Kenya', flag: '🇰🇪', weeks: '1–3', color: '#c4562a', stops: ['Nairobi', 'Masai Mara', 'Lake Nakuru', 'Diani Beach'] },
+  { country: 'Tanzania & Zanzibar', flag: '🇹🇿', weeks: '4–8', color: '#c9a84c', stops: ['Arusha', 'Serengeti', 'Ngorongoro', 'Kilimanjaro (optional)', 'Zanzibar'] },
+  { country: 'Uganda', flag: '🇺🇬', weeks: '9–12', color: '#2e6d79', stops: ['Kampala', 'Jinja', 'Bwindi (Gorillas)', 'Queen Elizabeth NP'] },
+];
+
+const countries = [
+  {
+    name: 'Kenya',
+    flag: '🇰🇪',
+    weeks: 'Weeks 1–3',
+    color: '#c4562a',
+    intro: 'Kenya is where the African safari was born, and it still delivers the continent\'s most iconic wildlife experiences. The Masai Mara during the Great Migration is nature at its most dramatic. Nairobi is East Africa\'s most cosmopolitan city, and the coast has palm-fringed beaches you\'d expect to find in the Caribbean.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$35–70', detail: 'Safaris push costs up' },
+      { icon: '💵', label: 'Currency', value: 'KES (KSh)', detail: '1 USD ≈ KSh 154' },
+      { icon: '🛂', label: 'Visa', value: 'eTA $30', detail: 'Apply online before travel' },
+      { icon: '🗣', label: 'Language', value: 'Swahili/English', detail: 'English widely spoken' },
+      { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'Same across East Africa' },
+      { icon: '☀️', label: 'Best Months', value: 'Jul – Oct', detail: 'Dry season & migration' },
+    ],
+    phases: [
+      {
+        title: 'Nairobi',
+        duration: '3–4 days',
+        description: 'Nairobi is vibrant and surprisingly cosmopolitan. Start at the David Sheldrick Elephant Trust (KSh 1,500 — orphaned baby elephants being rehabilitated, visit at 11am daily). The Giraffe Centre (KSh 1,500) lets you feed Rothschild\'s giraffes at eye level. Nairobi National Park (KSh 4,315 — lions, rhinos, and buffalo with the city skyline behind them) is unique globally. Eat nyama choma (grilled meat) at Carnivore restaurant for a splurge, or street ugali and sukuma wiki for KSh 100–200. The Maasai Market rotates locations — check for handicrafts.',
+        tip: 'Download Bolt or Uber for transport in Nairobi — much safer than flagging matatus (minibuses) as a newcomer. City centre to Karen is about KSh 800–1,200.',
+      },
+      {
+        title: 'Masai Mara & Lake Nakuru',
+        duration: '5–6 days',
+        description: 'Join a budget group safari from Nairobi to the Masai Mara ($250–400 for 3 days/2 nights including transport, accommodation, meals, and game drives). The Mara is the best place in Africa to see the Big Five — lion, leopard, elephant, buffalo, and rhino. During the Great Migration (July–October), over 1.5 million wildebeest cross the Mara River — the river crossings are heart-stopping. Budget safaris use camps just outside the reserve (conservancy fees KSh 1,000 vs park fees KSh 5,700). Add Lake Nakuru (1 day, often combined) for flamingos and rhinos.',
+        tip: 'Budget safaris are excellent value — shop around in Nairobi (Jungle Junction, Wildebeest Camp, and hostels in Westlands organise them). Avoid touts at the airport.',
+      },
+      {
+        title: 'Kenyan Coast',
+        duration: '4–5 days',
+        description: 'Fly from Nairobi to Mombasa (KSh 3,000–7,000 on Jambojet/Kenya Airways) or overnight train (Madaraka Express KSh 1,000–3,000, 5 hrs). Diani Beach is Kenya\'s best — white sand, warm Indian Ocean, and budget-friendly. Snorkelling at Kisite-Mpunguti Marine Park ($15 boat trip) for dolphins and sea turtles. Explore Mombasa Old Town and Fort Jesus (KSh 1,200). Eat fresh seafood at beach shacks — grilled lobster for KSh 1,000–1,500 ($7–10). Budget guesthouses and Airbnbs: KSh 2,000–4,000/night.',
+        tip: 'Take the SGR Madaraka Express train from Nairobi to Mombasa — it\'s brand new, comfortable, and offers views of Tsavo National Park from your window.',
+      },
+    ],
+  },
+  {
+    name: 'Tanzania & Zanzibar',
+    flag: '🇹🇿',
+    weeks: 'Weeks 4–8',
+    color: '#c9a84c',
+    intro: 'Tanzania is East Africa\'s crown jewel — the Serengeti, Ngorongoro Crater, and the summit of Kilimanjaro, the highest free-standing mountain on Earth. After the wildlife, Zanzibar rewards you with spice markets, Stone Town, and the kind of beaches that make you reconsider ever going home.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$30–60', detail: 'Safaris are the big expense' },
+      { icon: '💵', label: 'Currency', value: 'TZS (TSh)', detail: '1 USD ≈ TSh 2,700' },
+      { icon: '🛂', label: 'Visa', value: 'e-Visa $50', detail: 'Apply online before travel' },
+      { icon: '🗣', label: 'Language', value: 'Swahili/English', detail: 'Swahili widely spoken' },
+      { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'Same as Kenya' },
+      { icon: '☀️', label: 'Best Months', value: 'Jun – Oct', detail: 'Dry season, best game' },
+    ],
+    phases: [
+      {
+        title: 'Serengeti & Ngorongoro',
+        duration: '5–7 days',
+        description: 'Cross from Kenya at Namanga border or fly to Arusha ($80–150). Arusha is the safari capital — budget group safaris to the Northern Circuit run $150–250/day for 3–5 day trips covering Serengeti, Ngorongoro Crater, Lake Manyara, and Tarangire. The Serengeti in dry season is like watching a wildlife documentary in person — vast golden plains dotted with lions, cheetahs, and herds of everything. The Ngorongoro Crater is a natural amphitheatre with the densest concentration of wildlife in Africa. Budget camping safaris are the cheapest option — you sleep in tents at campsites inside the parks.',
+        tip: 'Safari prices in Tanzania are higher than Kenya due to park fees ($70/day for foreigners). A 3-day budget camping safari costs $450–600 all-in from Arusha — book directly, not through agents.',
+      },
+      {
+        title: 'Kilimanjaro (Optional)',
+        duration: '7–9 days',
+        description: 'If Kilimanjaro is on your list, the Marangu ("Coca-Cola") route is the cheapest — 5 days/4 nights from $1,200–1,800 including park fees, guide, porters, and meals. The Machame route (6–7 days) has better acclimatisation and scenery but costs $1,500–2,200. You don\'t need technical climbing skills, but you need fitness and altitude tolerance. The summit night (starting at midnight, reaching Uhuru Peak at 5,895m by dawn) is brutal but standing on the roof of Africa as the sun rises over the clouds is worth every step. Pack layers — it\'s tropical at the base and -15°C at the summit.',
+        tip: 'Don\'t skimp on the Kilimanjaro budget — underpaid porters and cut-rate operators compromise safety. Budget for tips too (10–15% of the trip cost, split between guide, cook, and porters).',
+      },
+      {
+        title: 'Zanzibar',
+        duration: '6–8 days',
+        description: 'Ferry from Dar es Salaam to Zanzibar (TSh 35,000–80,000/$13–30, 2 hrs). Stone Town is a UNESCO World Heritage labyrinth of narrow alleys, carved wooden doors, and the incredible Forodhani Night Market — Zanzibari pizza (it\'s a stuffed crepe, TSh 3,000–5,000), seafood skewers, and sugar cane juice. Spice tour ($20–25) to smell and taste cloves, cinnamon, and vanilla fresh from the plant. Head to Nungwi (north) or Paje (east) for postcard beaches. Jozani Forest (TSh 25,000) has endemic red colobus monkeys. Snorkelling day trips: $25–35. Budget guesthouses: $15–25/night.',
+        tip: 'The east coast (Paje, Jambiani) has better kite-surfing and lower prices than the north (Nungwi, Kendwa). The tide goes out 1km+ on the east coast — beautiful but no swimming at low tide.',
+      },
+    ],
+  },
+  {
+    name: 'Uganda',
+    flag: '🇺🇬',
+    weeks: 'Weeks 9–12',
+    color: '#2e6d79',
+    intro: 'Uganda is the "Pearl of Africa" — Winston Churchill\'s words, and they still hold. Home to half the world\'s remaining mountain gorillas, the source of the Nile, and some of Africa\'s most dramatic and uncrowded scenery. It\'s rawer and less developed than Kenya and Tanzania, which is exactly the appeal.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$30–60', detail: 'Gorilla permit is the big cost' },
+      { icon: '💵', label: 'Currency', value: 'UGX (USh)', detail: '1 USD ≈ USh 3,800' },
+      { icon: '🛂', label: 'Visa', value: 'e-Visa $50', detail: 'Or East Africa Tourist Visa $100 (covers KE/TZ/UG)' },
+      { icon: '🗣', label: 'Language', value: 'English/Swahili', detail: 'English is official' },
+      { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'Same across East Africa' },
+      { icon: '☀️', label: 'Best Months', value: 'Jun – Sep', detail: 'Dry season, easier trekking' },
+    ],
+    phases: [
+      {
+        title: 'Kampala & Jinja',
+        duration: '4–5 days',
+        description: 'Fly or overland from Tanzania/Kenya to Kampala. Uganda\'s capital is bustling and friendly. Visit the Kasubi Tombs (being restored), the Uganda Museum (USh 15,000), and the vibrant Owino Market. Eat a Rolex — Uganda\'s iconic street food (a rolled-up chapati with eggs and vegetables, USh 2,000–3,000). Matatu to Jinja (USh 10,000–15,000, 2 hrs) — the source of the Nile. White-water rafting on the Nile is world-class ($125–150 for a full day, Grade 5 rapids). Bungee jump over the Nile ($115). More chill: sunset boat cruise to the source ($15–20).',
+        tip: 'White-water rafting on the Nile is considered the best in the world — Grade 5 rapids, warm water, and no rocks. Nile River Explorers and Adrift are the top operators.',
+      },
+      {
+        title: 'Bwindi — Mountain Gorillas',
+        duration: '4–5 days',
+        description: 'The journey to Bwindi Impenetrable Forest takes 8–10 hours from Kampala by road (hire a driver $100–150 or budget bus/matatu). A gorilla trekking permit costs $800 (Uganda — cheaper than Rwanda\'s $1,500). It\'s the most expensive single activity on any backpacker trip, and it\'s worth every cent. You trek through dense rainforest for 1–6 hours until you find a habituated gorilla family — then you get one hour sitting metres from these incredible, gentle giants. Maximum 8 visitors per group per day. Book permits at least 3 months ahead via UWA (Uganda Wildlife Authority).',
+        tip: 'The $800 permit is non-negotiable — budget for it from day one. Some lodges near Bwindi offer backpacker rates ($30–50/night). The trek can be muddy — wear waterproof hiking boots and gloves.',
+      },
+      {
+        title: 'Queen Elizabeth & Lake Bunyonyi',
+        duration: '4–5 days',
+        description: 'From Bwindi, drive to Queen Elizabeth National Park (3–4 hrs). The Kazinga Channel boat cruise ($30, 2 hrs) is one of the best wildlife-viewing experiences in Africa — hippos, elephants, buffalo, and hundreds of bird species from the boat. Game drives ($30 + $40 park entry) through the Ishasha sector for tree-climbing lions — a behaviour unique to this region. Continue to Lake Bunyonyi (2 hrs) — the "Switzerland of Africa" with terraced hills around a deep lake dotted with 29 islands. Canoe between islands (USh 10,000–20,000), swim (bilharzia-free), and stay at backpacker camps on the islands (USh 40,000–80,000/night).',
+        tip: 'Lake Bunyonyi is the perfect end to an East Africa trip — peaceful, beautiful, and cheap. Byoona Amagara on Itambira Island is a legendary backpacker spot.',
+      },
+    ],
+  },
+];
+
+const budgetColumns = [
+  { flag: '🇰🇪', label: 'Kenya' },
+  { flag: '🇹🇿', label: 'Tanzania' },
+  { flag: '🇺🇬', label: 'Uganda' },
+];
+
+const budgetRows = [
+  { category: 'Accommodation', values: ['$10–25', '$10–25', '$8–20'], notes: 'Hostels, guesthouses, camps' },
+  { category: 'Food', values: ['$5–12', '$4–10', '$3–8'], notes: 'Local restaurants, markets' },
+  { category: 'Transport', values: ['$5–15', '$5–12', '$3–10'], notes: 'Matatus, buses, flights' },
+  { category: 'Activities', values: ['$10–30', '$10–30', '$10–40'], notes: 'Safaris, diving, gorillas' },
+  { category: 'Drinks/Social', values: ['$3–8', '$3–6', '$2–5'], notes: 'Tusker, Kilimanjaro beer' },
+  { category: 'Daily Total', values: ['$35–70', '$30–60', '$30–60'], notes: 'Budget–comfortable range' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visas',
+    items: [
+      'East Africa Tourist Visa ($100): covers Kenya, Tanzania, and Uganda for 90 days — best value for this route',
+      'Individual e-Visas: Kenya eTA $30, Tanzania e-Visa $50, Uganda e-Visa $50. Apply online before travel',
+      'Yellow Fever vaccination certificate required for Uganda entry and recommended for all three countries',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health',
+    items: [
+      'Yellow Fever vaccination mandatory for Uganda. Recommended: Hep A/B, Typhoid, Meningitis, Rabies',
+      'Malaria prophylaxis essential — Malarone (atovaquone/proguanil) is best tolerated. Take DEET repellent and sleep under nets',
+      'Drink bottled/filtered water. Medical facilities are limited outside major cities — good travel insurance is non-negotiable',
+    ],
+  },
+  {
+    icon: '🚌',
+    title: 'Transport',
+    items: [
+      'Matatus (shared minivans) are the cheapest local transport in all three countries',
+      'Between countries: Modern Coach, Easy Coach, and Kampala Coach run reliable cross-border buses ($15–30)',
+      'Internal flights save time on long distances — Precision Air, Fastjet (Tanzania), Fly Uganda, and Kenya Airways',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Kenya: Safaricom SIM (KSh 100 + data bundle). M-Pesa mobile money is ubiquitous — load it up for payments everywhere',
+      'Tanzania: Vodacom or Airtel SIM (TSh 5,000 for SIM + data). Coverage good in cities, patchy in parks',
+      'Uganda: MTN or Airtel SIM (USh 5,000). Good 4G in Kampala and Jinja, 3G elsewhere',
+    ],
+  },
+  {
+    icon: '🌦️',
+    title: 'Best Time',
+    items: [
+      'June–October: Dry season across the region — best for safaris and trekking (animals gather at water sources)',
+      'January–February: Short dry season, also good. Great Migration in the Mara is July–October',
+      'March–May: Long rains — roads can be impassable, some lodges close. Prices drop significantly',
+    ],
+  },
+  {
+    icon: '⚠️',
+    title: 'Safety',
+    items: [
+      'East Africa is generally safe for travellers on the tourist trail. Use common sense in cities after dark',
+      'Safari companies should be KATO (Kenya) or TATO (Tanzania) registered. Verify before booking',
+      'Don\'t walk alone in national parks — wildlife is genuinely dangerous. Always follow your guide\'s instructions',
+    ],
+  },
+];
+---
+
+<BackpackerRouteLayout
+  title="East Africa Backpacker Route — 2–3 Month Itinerary: Kenya, Tanzania & Uganda | roammate"
+  description="The ultimate 2-3 month East Africa backpacker route. Week-by-week safari itinerary through Kenya, Tanzania, and Uganda with budget breakdowns and gorilla trekking tips."
+  heroImages={[
+    { src: '/images/guides/eaf-safari.webp', alt: 'Elephant herd crossing golden savanna at sunset' },
+    { src: '/images/guides/eaf-zanzibar.webp', alt: 'Turquoise waters and white sand beach in Zanzibar' },
+    { src: '/images/guides/eaf-gorilla.webp', alt: 'Mountain gorilla in Bwindi Impenetrable Forest' },
+    { src: '/images/guides/eaf-kilimanjaro.webp', alt: 'Mount Kilimanjaro rising above the clouds at dawn' },
+  ]}
+  heroFlags="🇰🇪 🇹🇿 🇺🇬"
+  heroRegion="East Africa"
+  heroTitle="The East Africa<br>Circuit"
+  heroSubtitle="Three countries, twelve weeks, and the greatest wildlife show on Earth. From the Serengeti to mountain gorillas — the African adventure of a lifetime."
+  heroPills={['2–3 Month Route', '$30–70/day', 'Jun – Oct Best', '3 Countries']}
+  routeOverview={routeOverview}
+  countries={countries}
+  budgetIntro="Daily costs per person in USD. Total 2–3 month budget: approximately $3,000–6,000 depending on your style. Safari and gorilla permits are the big-ticket items — budget for these separately."
+  budgetColumns={budgetColumns}
+  budgetRows={budgetRows}
+  practicalInfo={practicalInfo}
+  ctaRegion="East Africa"
+  ctaText="Find travel companions to split safari costs, share gorilla trekking moments, and explore Zanzibar together with fellow backpackers on roammate."
+  ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+  featuredGuides={['cairo', 'marrakech', 'maasai-mara', 'serengeti', 'zanzibar', 'mount-kilimanjaro', 'okavango-delta', 'pyramids-of-giza', 'victoria-falls']}
+  accentColor="#c9a84c"
+/>

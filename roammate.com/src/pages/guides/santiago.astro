@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'CLP (Peso)', detail: '1 USD ≈ 950 CLP' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'Chilean accent, limited English' },
+  { icon: '🕐', label: 'Timezone', value: 'CLT (UTC−3)', detail: 'CLST (UTC−4) in winter' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Apr', detail: '18–32°C, dry & warm' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–80 USD', detail: 'CLP 38,000–76,000 budget–midrange' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free most', detail: '90 days for US/EU/UK citizens' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Essential Santiago in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cerro San Cristóbal & Bellavista',
+          text: 'Take the funicular (CLP 3,300 return) from Pío Nono up Cerro San Cristóbal for a panoramic view of Santiago with the Andes rising like a wall behind the city. On a clear day, the snow-capped peaks stretch across the entire horizon — one of the most dramatic urban backdrops anywhere. Descend to Bellavista neighbourhood — Pablo Neruda\'s La Chascona house museum (CLP 8,000) is here, plus street art covering every surface.',
+          tip: 'Go early on a clear morning — Santiago\'s smog can obscure the Andes by midday. Winter mornings after rain have the sharpest mountain views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Centro Histórico & Plaza de Armas',
+          text: 'Metro to Plaza de Armas — Santiago\'s colonial heart surrounded by the Cathedral, Central Post Office, and the Museo Histórico Nacional (free). Walk through the Paseo Ahumada pedestrian street to the Palacio de La Moneda — Chile\'s presidential palace (free tours, book online). The Centro Cultural Palacio La Moneda beneath it (CLP 3,000) has excellent exhibitions. Lunch at Mercado Central — the ornate iron structure houses legendary seafood restaurants.',
+          tip: 'At Mercado Central, avoid the restaurants in the centre (tourist prices) — eat at the stalls around the perimeter for the same fish at half the cost.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lastarria & Wine Bars',
+          text: 'Barrio Lastarria is Santiago\'s most charming neighbourhood — tree-lined streets with cafes, bookshops, galleries, and the GAM cultural centre (free exhibitions). Dinner at Bocanariz for Chilean wine paired with small plates — 400+ Chilean wines by the glass (CLP 3,500–8,000 per glass, flights from CLP 12,000). Or eat at Chipe Libre for creative Chilean-Peruvian fusion (CLP 8,000–14,000). The neighbourhood glows at night.',
+          tip: 'Bocanariz is the single best introduction to Chilean wine — the sommeliers are passionate and the by-the-glass selection is unmatched.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Cerro San Cristóbal, Bellavista & Lastarria',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cerro San Cristóbal Panorama',
+          text: 'Funicular from Pío Nono (CLP 3,300 return) up Cerro San Cristóbal — the view from the Virgen de la Inmaculada Concepción statue is Santiago\'s defining moment. The entire city spreads below with the Andes forming a colossal snow-capped wall to the east. Walk through Parque Metropolitano — one of the world\'s largest urban parks (722 hectares). Coffee at Emporio La Rosa in Bellavista on the way down (CLP 2,500–4,000).',
+          tip: 'Clear morning views are best October through March. Check Santiago\'s air quality forecast — smog days are frustrating from the summit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'La Chascona & Bellavista',
+          text: 'Visit Pablo Neruda\'s La Chascona (CLP 8,000) — the Nobel laureate\'s quirky Santiago home built for his lover, filled with ship-like staircases, art collections, and personal objects. The audio guide is excellent. Walk through Bellavista — Santiago\'s bohemian quarter with street art murals on every block, craft shops, and lively restaurants. Lunch at Galindo for classic Chilean food — pastel de choclo (CLP 6,000–8,000).',
+          tip: 'Book La Chascona tickets online — the house is small and tours are limited to 15 people. The garden has views of Cerro San Cristóbal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lastarria Wine & Dinner',
+          text: 'Barrio Lastarria is Santiago\'s cultural jewel — cobblestone streets, heritage buildings, galleries, and the GAM cultural centre (free exhibitions). Dinner at Bocanariz for Chilean wine flights (CLP 12,000–18,000 for 5 wines) paired with small plates. Or eat at Liguria for classic bistro fare in a buzzing atmosphere (CLP 7,000–12,000). The street performers and antique book stalls add charm.',
+          tip: 'Bocanariz has 400+ Chilean wines by the glass — ask the sommelier for a regional flight to compare valleys. The Colchagua Carménère is exceptional.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Centro, Markets & Barrio Italia',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Plaza de Armas & La Moneda',
+          text: 'Start at Plaza de Armas — Santiago\'s colonial plaza with the Cathedral, Correo Central, and street chess players. Walk Paseo Ahumada to the Palacio de La Moneda (free guided tours, book at palaciodelamoneda.cl). The neoclassical palace is where Allende\'s last stand happened in 1973. The underground Centro Cultural has rotating exhibitions (CLP 3,000). Walk through Paseo Bandera — a street painted with colourful murals.',
+          tip: 'La Moneda tours run weekdays and cover the history from Allende to the present — book 2+ days ahead. The changing of the guard happens every other day at 10am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mercado Central & Seafood',
+          text: 'Walk to the Mercado Central — an ornate 19th-century iron structure housing seafood restaurants and the freshest fish in Santiago. Eat at the perimeter stalls (not the centre restaurants which charge tourist prices) — caldillo de congrio (conger eel soup, CLP 5,000–8,000), ceviche, or a paila marina (seafood stew, CLP 6,000–10,000). Then head to Barrio Italia — a former warehouse district now home to vintage shops, cafes, and galleries.',
+          tip: 'Order caldillo de congrio — the national soup immortalised in a Pablo Neruda poem. The perimeter stalls serve it for half the price of the central restaurants.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Barrio Italia & Craft Scene',
+          text: 'Barrio Italia is Santiago\'s emerging creative hub — converted warehouses housing antique dealers, design studios, vinyl shops, and micro-roasteries. Walk Avenida Italia and the passages (pasajes) between buildings for hidden cafes and galleries. Dinner at De Patio for creative small plates (CLP 5,000–9,000) or Silvestre for seasonal Chilean cuisine. Craft cocktails at Bar The Singular (CLP 6,000–9,000).',
+          tip: 'The pasajes (interior passages) of Barrio Italia hide the best shops — walk through any open doorway and you will find courtyard galleries and vintage dealers.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Cerro Santa Lucía, Wine & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cerro Santa Lucía & MNBA',
+          text: 'Climb Cerro Santa Lucía (free) — a manicured hilltop park in the centre with fountains, terraces, and city views. The Spanish founded Santiago here in 1541. Walk to the Museo Nacional de Bellas Artes (free) — Chile\'s finest art museum in a gorgeous Beaux-Arts building. The permanent collection includes Chilean and international works. Brunch at Café de la Candelaria in Lastarria (CLP 5,000–8,000).',
+          tip: 'Cerro Santa Lucía has multiple entrances — the main entrance on Alameda is the most scenic with the fountain and Neptune terrace.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wine Tasting in the City',
+          text: 'Chile is one of the world\'s great wine countries. For a half-day vineyard visit, take the metro to Concha y Toro winery in Pirque (CLP 15,000–25,000 for tours with tasting, 45 min from the centre). Alternatively, stay in the city and do a guided wine tasting at Bocanariz or The Wine Loft (CLP 15,000–25,000 for a flight of 5–7 wines). Chilean Carménère is unique — you cannot get it anywhere else.',
+          tip: 'Concha y Toro\'s Casillero del Diablo cellar tour is their most popular — book online. For boutique wines, Santa Rita or Undurraga are closer alternatives.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Terremoto & Patio Bellavista',
+          text: 'For your final night, try a terremoto — Chile\'s infamous cocktail of pipeño wine and pineapple ice cream (CLP 3,000–5,000). La Piojera bar near Mercado Central is the legendary birthplace — a rough, loud, utterly authentic bar where everyone from politicians to backpackers shares wooden tables. Then to Patio Bellavista for a final dinner — the courtyard of restaurants, galleries, and bars is lit up and lively every evening.',
+          tip: 'La Piojera\'s terremoto is dangerous — it tastes sweet but hits hard. The aftershock (réplica, smaller version) is the wise follow-up.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Cerro San Cristóbal & Bellavista',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cerro San Cristóbal',
+          text: 'Funicular from Pío Nono (CLP 3,300 return) to the summit for Santiago\'s defining panorama — the city spreading below with the Andes as a colossal backdrop. Walk through the Parque Metropolitano, one of the world\'s largest urban parks. The Japanese Garden and Botanical Garden are peaceful stops. Descend to Bellavista on foot through the park trails.',
+          tip: 'Clear mornings are essential for the Andes view — check air quality before going. October to March has the best conditions.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'La Chascona & Bellavista Art',
+          text: 'Visit La Chascona (CLP 8,000) — Pablo Neruda\'s quirky Santiago home with ship-like architecture. The audio tour brings his poetry and life into vivid focus. Walk Bellavista\'s streets for murals — the Cerro San Cristóbal side streets have the best concentration. Lunch at Galindo for pastel de choclo (CLP 6,000–8,000) — a corn-based casserole that is pure Chilean comfort food.',
+          tip: 'Book La Chascona online — it sells out on weekends. The garden behind the house has beautiful views of Cerro San Cristóbal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lastarria First Night',
+          text: 'Barrio Lastarria is intimate and charming — cobblestones, heritage buildings, and warm light from cafe windows. Dinner at Bocanariz for a Chilean wine flight (CLP 12,000–18,000 for 5 wines) paired with local cheeses and charcuterie. Or Liguria for buzzing bistro atmosphere (CLP 7,000–12,000). Walk through the Parque Forestal along the Mapocho River afterwards — beautifully lit at night.',
+          tip: 'Liguria has two locations — the Lastarria one is more atmospheric but the Providencia branch is easier to get a table.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Centro Histórico & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Plaza de Armas & La Moneda',
+          text: 'Start at Plaza de Armas — the colonial centre with the Cathedral, Correo Central, and chess players. Walk to the Palacio de La Moneda for a free tour (book online) of Chile\'s presidential palace. The Centro Cultural underneath has excellent exhibitions (CLP 3,000). Walk Paseo Bandera for its colourful street murals and Paseo Ahumada for the bustling pedestrian energy.',
+          tip: 'La Moneda tours cover history from colonialism to the 1973 coup to present-day democracy. Book 2+ days ahead on palaciodelamoneda.cl.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mercado Central Seafood',
+          text: 'Lunch at Mercado Central — the ornate iron market. Eat at the perimeter stalls for authentic prices — caldillo de congrio (CLP 5,000–8,000), paila marina (CLP 6,000–10,000), or raw seafood plates. Walk to La Vega Central across the river — Santiago\'s chaotic wholesale market with fruit, vegetables, and incredibly cheap food stalls serving immigrant cuisines. A full lunch here costs CLP 3,000–5,000.',
+          tip: 'La Vega Central is the real Santiago — louder, cheaper, and more diverse than Mercado Central. The Peruvian and Colombian food stalls are outstanding.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Terremoto at La Piojera',
+          text: 'Walk to La Piojera near Mercado Central — the legendary bar where the terremoto cocktail was invented. Pipeño wine with pineapple ice cream in a huge glass (CLP 3,000–5,000) — it tastes innocent but devastates. The bar is rough, loud, and joyfully chaotic. Everyone from presidents to backpackers has drunk here. Dinner afterwards at a Centro restaurant or walk to Lastarria.',
+          tip: 'La Piojera gets wild on weekends — go Thursday or Friday for the full energy without the Saturday crush. Order one terremoto, then switch to beer.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Cerro Santa Lucía, Art & Barrio Italia',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cerro Santa Lucía & MNBA',
+          text: 'Climb Cerro Santa Lucía (free) — the hilltop park where Santiago was founded in 1541. Fountains, terraces, and city views from a modest summit. Walk to the Museo Nacional de Bellas Artes (free) — Chilean and international art in a gorgeous Beaux-Arts building. The Museo de Arte Contemporáneo (MAC, free) shares the same building with contemporary exhibitions.',
+          tip: 'The main Alameda entrance has the most scenic approach — fountains, stone staircases, and the Neptune terrace.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Barrio Italia',
+          text: 'Metro to Barrio Italia — a converted warehouse district now home to vintage shops, design studios, galleries, micro-roasteries, and some of the best food in Santiago. Walk the interior pasajes (passages) for hidden courtyards with cafes and antique dealers. Lunch at De Patio for creative Chilean dishes (CLP 5,000–9,000) or Mestizo for fusion cuisine. Browse vinyl at Fuga Records.',
+          tip: 'The pasajes are Barrio Italia\'s secret — walk through any open gate to find interior courtyards filled with art, coffee, and furniture.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Barrio Italia Evening',
+          text: 'Stay in Barrio Italia for dinner and drinks. Silvestre serves refined seasonal Chilean food (CLP 9,000–15,000) or keep it casual at Chipe Libre for pisco cocktails (CLP 4,000–7,000) and Peruvian-Chilean bites. The neighbourhood is quieter than Bellavista or Lastarria but the food quality is higher. Walk the tree-lined streets back toward Providencia.',
+          tip: 'Barrio Italia is best visited on weekends when all the shops and galleries are open. Weekday evenings have a more local, relaxed atmosphere.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Winery Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Concha y Toro Winery',
+          text: 'Take the metro to Puente Alto then a short taxi to Concha y Toro (CLP 15,000–25,000 for tours). Chile\'s most famous winery has beautiful gardens, a spooky Casillero del Diablo cellar, and tastings of their premium Don Melchor and Terrunyo wines. The Maipo Valley setting with Andean views is beautiful. Book the premium tour for older vintages.',
+          tip: 'Book online at least 3 days ahead — tours sell out. The morning slots are cooler and less crowded. The premium tour includes better wines.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Maipo Valley Exploration',
+          text: 'If you have a car, visit a second winery — Viña Santa Rita (CLP 12,000–20,000 including tour and tasting) in Alto Jahuel has a stunning park, an Andean museum, and a colonial house where Chilean independence heroes took refuge. The Cabernet Sauvignon from this valley is world-class. Lunch at the winery restaurant or a roadside restaurant for Chilean home cooking.',
+          tip: 'Santa Rita\'s grounds are beautiful for a post-tasting stroll. The Casa Real wine is their crown jewel — try it if the budget allows.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Providencia Dinner',
+          text: 'Return to Santiago and head to Providencia — the tree-lined upscale neighbourhood with excellent dining. Dinner at Osaka for Nikkei (Japanese-Peruvian-Chilean) cuisine (CLP 10,000–18,000) or Baco for a French-Chilean wine bar experience (CLP 8,000–14,000). Walk Avenida Suecia for the bar strip — craft cocktails from CLP 5,000–8,000.',
+          tip: 'Avenida Suecia nightlife is more upscale and less gritty than Bellavista — cocktail bars rather than clubs. Good for a weeknight out.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Valparaíso Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bus to Valparaíso',
+          text: 'Take a Turbus from Terminal Alameda to Valparaíso (CLP 4,000–7,000, 1.5 hours). Valpo is one of South America\'s most photogenic cities — a UNESCO-listed port town built on steep hills covered in colourful houses and street art. Start in the upper city — Cerro Alegre and Cerro Concepción have the most beautiful streets, galleries, and viewpoints. Ride a historic ascensor (funicular, CLP 300) between the hills.',
+          tip: 'Take a morning bus (8–9am) to maximise your time. The Turbus terminal is at Metro Universidad de Santiago.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Street Art, Neruda & Seafood',
+          text: 'Walk the cerros (hills) for street art — Valpo has the best urban art in Chile, possibly South America. Visit La Sebastiana (CLP 8,000) — Neruda\'s Valparaíso house with harbour views. Lunch at a cerro restaurant — chorrillana (fries topped with meat, onions, and eggs, CLP 5,000–8,000 to share) or fresh seafood at the port market (CLP 4,000–7,000). The peeling paint and crumbling facades are the charm.',
+          tip: 'The best street art is on Cerro Polanco (ride the unique vertical ascensor) and the staircases of Cerro Alegre. Just walk and look up.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Valpo Sunset & Return',
+          text: 'Watch the sunset from Cerro Artillería — the view over the harbour, container ships, and the Pacific is spectacular. If you have time, drinks at Fauna on Cerro Alegre for craft cocktails with harbour views (CLP 5,000–7,000). Catch the bus back to Santiago (last Turbus around 10pm). Dinner at Santiago\'s Mercado Central or a quick bite in Lastarria upon return.',
+          tip: 'If you fall in love with Valpo (most people do), consider spending a night — the hostels on Cerro Alegre are atmospheric and cheap (CLP 10,000–20,000).',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Cajón del Maipo & Nature',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cajón del Maipo',
+          text: 'Rent a car or join a tour to Cajón del Maipo (1.5 hours) — a dramatic Andean canyon with towering mountains, hot springs, and the turquoise Embalse El Yeso reservoir. The drive through the canyon is stunning — the landscape shifts from green valley to high-altitude desert. The reservoir at 2,500m sits below snow-capped peaks — completely surreal and only accessible by road.',
+          tip: 'The road to Embalse El Yeso is unpaved and steep — a 4x4 or high-clearance vehicle is strongly recommended. Tours cost CLP 25,000–40,000.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Hot Springs & Lunch',
+          text: 'Soak in the Baños Morales hot springs (CLP 5,000–8,000) surrounded by Andean peaks — natural thermal pools at the base of a mountain valley. Lunch at a roadside restaurant in San José de Maipo — charquicán (beef stew, CLP 4,000–6,000) or empanadas de pino (meat, CLP 1,500–2,000 each). The mountain air and silence are a world away from Santiago.',
+          tip: 'Baños Morales is basic but the setting is extraordinary. Bring a towel and flip-flops. The water temperature varies between pools.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Bellavista Night',
+          text: 'Return to Santiago for a Bellavista night out. The neighbourhood comes alive after dark — bars and restaurants fill Calle Constitución and Pío Nono. Dinner at Peumayen for indigenous Chilean cuisine (CLP 10,000–16,000) — dishes using ancestral Mapuche ingredients. Drinks at Bar Constitución or La Casa en el Aire — a multi-level bar with live music and a rooftop (CLP 4,000–7,000 cocktails).',
+          tip: 'Bellavista on Friday and Saturday nights is Santiago\'s wildest nightlife strip — expect crowds, music, and energy. Stick to the main streets.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Neighbourhoods & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ñuñoa & Local Santiago',
+          text: 'Metro to Ñuñoa — a residential neighbourhood where Santiaguinos actually live. Walk Plaza Ñuñoa for the weekend antique fair, browse independent bookshops on Irarrázaval Avenue, and discover craft coffee at local roasters. Brunch at one of Ñuñoa\'s family-run cafes (CLP 5,000–8,000). This is the Santiago tourists rarely see — genuine, unhurried, and full of charm.',
+          tip: 'Ñuñoa is increasingly hip without being pretentious — the food and coffee quality is excellent and prices are 30% below Providencia.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Museo de la Memoria & Last Stroll',
+          text: 'Visit the Museo de la Memoria y los Derechos Humanos (free) — a powerful museum documenting Chile\'s Pinochet-era human rights abuses. It is essential for understanding modern Chile. Allow 2 hours. Then a final walk through your favourite neighbourhood — Lastarria, Barrio Italia, or Bellavista — picking up souvenirs. Lapis lazuli jewellery (CLP 5,000–30,000) is Chile\'s national stone.',
+          tip: 'The Museo de la Memoria is one of the most important museums in South America — it provides crucial context for Chile\'s political identity.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Wine',
+          text: 'Final dinner at Boragó — frequently named Chile\'s best restaurant, celebrating endemic Chilean ingredients (tasting menu CLP 90,000–120,000). Or keep it real with a farewell terremoto at La Piojera, caldillo de congrio at Mercado Central, and a final stroll along the Mapocho River at sunset. Santiago grows on you quietly — it is a city that reveals itself over time.',
+          tip: 'Boragó requires booking weeks ahead. For a more accessible splurge, Ambrosia in Vitacura serves exceptional Chilean fine dining at half Boragó\'s price.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Menú del día', text: 'Most restaurants offer a "menú" at lunch (soup, main, drink) for CLP 4,000–7,000. Markets like La Vega Central serve full lunches for CLP 3,000–5,000. Eating the menú at lunch and cooking or snacking at dinner saves significantly.' },
+  { title: 'Metro Santiago', text: 'Metro single ride: CLP 800 off-peak, CLP 830 peak. The Bip! card (CLP 1,550) is rechargeable and covers metro and buses. A daily commuter would spend CLP 1,600–2,500 on transit.' },
+  { title: 'Wine from vinotecas', text: 'Chile produces world-class wine at incredible prices. A great bottle costs CLP 3,000–8,000 at a vinoteca or supermarket — the same wine is CLP 12,000–25,000 at a restaurant. Buy from Vinoteca Liguria or La Vinoteca chain.' },
+  { title: 'Free museums & parks', text: 'MNBA, MAC, Museo de la Memoria, and most church museums are free. Cerro Santa Lucía and Cerro San Cristóbal park are free. GAM cultural centre has free exhibitions and performances regularly.' },
+  { title: 'La Vega Central', text: 'La Vega is Santiago\'s massive wholesale market — food stalls serve full lunches for CLP 3,000–5,000. The fruit juice stands do enormous fresh juices for CLP 1,000–2,000. Cheaper and more authentic than any tourist restaurant.' },
+  { title: 'Turbus for day trips', text: 'Turbus runs comfortable coaches to Valparaíso (CLP 4,000–7,000, 1.5hrs), Viña del Mar, and other destinations. Book online for the cheapest fares. Semicama seats are fine — skip the salón cama upgrade.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'CLP 10,000–25,000', midrange: 'CLP 40,000–80,000', splurge: 'CLP 120,000+', notes: 'Hostels → boutique hotels → luxury hotels' },
+  { category: 'Food', budget: 'CLP 6,000–12,000', midrange: 'CLP 15,000–30,000', splurge: 'CLP 50,000+', notes: 'Markets & menú → restaurants → fine dining' },
+  { category: 'Transport', budget: 'CLP 2,000–4,000', midrange: 'CLP 5,000–12,000', splurge: 'CLP 20,000+', notes: 'Metro/bus → taxi/Uber → car rental' },
+  { category: 'Activities', budget: 'CLP 0–5,000', midrange: 'CLP 8,000–20,000', splurge: 'CLP 40,000+', notes: 'Free sites → museums & wineries → tours' },
+  { category: 'Drinks', budget: 'CLP 3,000–6,000', midrange: 'CLP 8,000–15,000', splurge: 'CLP 25,000+', notes: 'Terremoto & beer → wine bars → cocktail lounges' },
+  { category: 'Daily Total', budget: 'CLP 21,000–52,000', midrange: 'CLP 76,000–157,000', splurge: 'CLP 255,000+', notes: '$22–55 → $80–165 → $268+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'US, EU, UK, Canadian citizens get 90 days visa-free. US citizens no longer need the reciprocity fee',
+      'Passport must be valid for the duration of stay. You will receive a Tarjeta de Turismo (tourist card) — keep it safe for departure',
+      'SCL airport to city centre: Turbus/Centropuerto bus CLP 1,800, metro connection from Pajaritos. Uber CLP 15,000–25,000',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Tap water is safe to drink in Santiago. No vaccinations required for entry',
+      'Santiago is safe by South American standards. Pickpocketing occurs on the metro and in Centro — keep phones and wallets secure',
+      'Emergency: 131 (ambulance), 133 (police). Clínica Alemana and Clínica Las Condes are excellent private hospitals. Travel insurance recommended',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Metro Santiago: 7 lines, clean and efficient. CLP 800–830 per ride with Bip! card. Runs 5:30am–11:30pm (midnight Fri/Sat)',
+      'Uber works well and is cheap — CLP 3,000–8,000 for most rides within the city. Official taxis use meters',
+      'Walking is excellent in the central neighbourhoods — Lastarria, Bellavista, Centro, and Providencia are all walkable',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in most cafes, malls, and the metro stations. Santiago has good 4G/5G coverage across the city',
+      'Entel, Movistar, or WOM SIM cards from phone shops — CLP 5,000–10,000 for 5–10GB data. eSIMs from Airalo work well',
+      'Download Uber, Google Maps offline, and the Metro Santiago app. WhatsApp is the primary communication tool',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Cards accepted at most restaurants and shops. Cash needed at markets, street food, and some traditional restaurants',
+      'ATMs (Redbanc) at all banks. BCI, Santander, and Banco de Chile have the lowest foreign card fees. Withdraw CLP 200,000–400,000',
+      'Tip 10% at restaurants (not usually included). No tipping at cafes or bars',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Santiago has a Mediterranean climate — hot dry summers, cool wet winters. Layers essential year-round. Light jacket even in summer evenings',
+      'Comfortable walking shoes — the city is hilly and cobblestoned in the older neighbourhoods',
+      'Sunscreen and sunglasses — Santiago is at 520m altitude with strong UV. A reusable water bottle (tap water is safe)',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🍷', title: 'Wine Culture', text: 'Chile produces extraordinary wine — Carménère is the signature grape, unique to Chile. Wine is part of every meal. A good bottle costs CLP 3,000–8,000 at a shop. Do not leave without trying Carménère, Cabernet Sauvignon, and País.' },
+  { icon: '🍹', title: 'Terremoto', text: 'Chile\'s notorious cocktail — pipeño (sweet fermented wine) with pineapple ice cream. It translates to "earthquake" because of what it does to you. The follow-up is a réplica (aftershock). La Piojera bar is the spiritual home.' },
+  { icon: '🤝', title: 'Chilean Greetings', text: 'One kiss on the right cheek between everyone — men, women, all combinations. Handshakes are formal. Chileans are warm but initially reserved compared to other Latin Americans — the warmth comes after the first drink.' },
+  { icon: '⏰', title: 'Once & Chilean Time', text: 'Chileans eat "once" (afternoon tea, pronounced on-seh) around 5–7pm — bread, avocado, cheese, and tea. Dinner is late (9–10pm). Social events start 30–60 minutes after the stated time.' },
+  { icon: '🗣', title: 'Chilean Spanish', text: 'Chilean Spanish is fast and full of slang. "Cachai?" (you know?), "po" (filler word, like "then"), "fome" (boring), "bacán" (cool). Do not worry if you struggle — even other Spanish speakers find Chilean hard to follow.' },
+  { icon: '🏔', title: 'Earthquake Awareness', text: 'Chile is earthquake-prone. Buildings are well-engineered. In a tremor, stay calm — Chileans barely react to anything under 6.0. If strong, move away from windows and under a doorframe or sturdy table.' },
+];
+---
+
+<CityGuideLayout
+  title="Santiago Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Santiago guide for young travelers. 3-day itinerary with wine, Andes views, markets, and budget tips. Plan your Chile trip with roammate."
+  heroImage="/images/guides/santiago-hero.webp"
+  heroFlag="🇨🇱"
+  heroCountry="Chile"
+  heroRegion="South America"
+  heroCity="Santiago"
+  heroSubtitle="A city framed by the Andes where world-class wine flows freely, street art covers every hill, and the Pacific is only an hour away."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Oct – Apr Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Chilean pesos. Santiago is moderately priced by South American standards — excellent wine, free museums, and affordable markets keep costs reasonable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Santiago surprises visitors with its sophistication, warmth, and dramatic mountain setting. Drink wine, eat seafood, and let the Andes take your breath away every morning."
+  ctaCity="Santiago"
+  ctaText="Find travel companions to share a winery day trip, explore Valparaíso, or hit the Bellavista bars together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

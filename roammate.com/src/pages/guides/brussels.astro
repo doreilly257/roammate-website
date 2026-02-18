@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EUR (Euro)', detail: '1 USD ≈ €0.92' },
+  { icon: '🗣', label: 'Language', value: 'French / Dutch', detail: 'English widely spoken in centre' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: '15–25°C, long sunny days' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$75–110 USD', detail: '€70–100 per day' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: '90 days visa-free for most' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Grand Place, Chocolate & Beer in a Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Grand Place & Historic Centre',
+          text: 'Start at the Grand Place — arguably Europe\'s most beautiful square, ringed by gilded guild halls and the ornate Gothic Town Hall. Grab a coffee at one of the terrace cafes on Rue des Bouchers, then walk to the Manneken Pis (small but iconic). Continue through the elegant Galeries Royales Saint-Hubert — Europe\'s oldest covered shopping arcade — and pop into Pierre Marcolini or Mary Chocolatier for your first Belgian praline.',
+          tip: 'The Grand Place is most photogenic before 9am when the tour groups haven\'t arrived and the golden light hits the guild halls.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Marolles, Sablon & Comic Strip Art',
+          text: 'Walk up to Place du Grand Sablon — the upscale chocolate and antiques quarter. Try a hot chocolate at Wittamer. Continue to the Marolles flea market at Place du Jeu de Balle (daily until 2pm, best on weekends). Then explore the Belgian Comic Strip Centre (€12) — housed in a stunning Victor Horta Art Nouveau building — celebrating Tintin, the Smurfs, and Lucky Luke.',
+          tip: 'The Marolles neighbourhood has the best vintage shops in Brussels — Rue Haute and Rue Blaes are treasure troves.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Belgian Beer & Moules-Frites',
+          text: 'Head to Delirium Café near the Grand Place — over 2,000 beers on the menu and a labyrinth of underground rooms. Try a Trappist beer flight (€12–15 for 4 tasters). For dinner, walk to Chez Léon on Rue des Bouchers for classic moules-frites (€18–22). End the night at the atmospheric A La Mort Subite bar on Rue Montagne aux Herbes Potagères for a lambic beer in a 1920s setting.',
+          tip: 'Skip the tourist traps on Rue des Bouchers and look for restaurants with locals inside — Chez Léon is the genuine article since 1893.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Grand Place, Chocolate & Art Nouveau',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Grand Place & Historic Centre',
+          text: 'Start at the Grand Place — Europe\'s most spectacular square, surrounded by gilded guild halls and the Gothic Town Hall. Walk through the Galeries Royales Saint-Hubert, then find the Manneken Pis on Rue de l\'Étuve. Head to Pierre Marcolini on Place du Grand Sablon for exquisite pralines. Continue exploring the Sablon quarter\'s antique shops and the stunning Notre-Dame du Sablon church with its stained glass windows.',
+          tip: 'The Grand Place is most photogenic before 9am when tour groups haven\'t arrived. The guild halls glow golden in morning light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Art Nouveau & Horta Museum',
+          text: 'Brussels is the world capital of Art Nouveau. Take the tram to Saint-Gilles and visit the Horta Museum (€12) — Victor Horta\'s personal home, every detail a masterpiece of curved iron, stained glass, and mosaic floors. Walk along Rue Defacqz and Avenue Louise to spot more Art Nouveau facades. Lunch at the nearby Café Belga on Place Flagey — a local institution with good tartines and people-watching.',
+          tip: 'The Horta Museum is small — visit right at opening (2pm Tue–Fri, 11am weekends) to avoid feeling cramped in the narrow rooms.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Saint-Géry & Belgian Beer',
+          text: 'The Saint-Géry quarter is Brussels\' nightlife hub. Start with drinks at the Halles de Saint-Géry — a beautiful covered market turned bar. Dinner at Nüetnigenansen on Place du Nouveau Marché aux Grains — traditional Belgian cuisine in a buzzy brasserie. Then hit Delirium Café for its 2,000+ beer menu, or try the more intimate Moeder Lambic on Place Fontainas for craft brews and rare lambics.',
+          tip: 'Order a gueuze or kriek lambic — Brussels\' own spontaneously fermented beer style found nowhere else in the world.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Comics, Marolles & European Quarter',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Belgian Comic Strip Centre & Street Art',
+          text: 'Visit the Belgian Comic Strip Centre (€12) in a gorgeous Horta-designed building. Belgium invented Tintin, the Smurfs, and Lucky Luke — the museum celebrates them all with original artwork and interactive exhibits. Afterwards, follow the Comic Book Route — over 50 murals painted on buildings across the city centre. Pick up the free map at the museum or use the Brussels Comic Book Route app.',
+          tip: 'The most impressive comic murals are on Rue de l\'Étuve, Rue du Marché au Charbon, and Rue des Capucins — all walkable from the museum.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Marolles & Flea Market',
+          text: 'Head to the Marolles — Brussels\' most authentic working-class neighbourhood. Browse the daily flea market at Place du Jeu de Balle (best selection before noon, but bargains appear in the afternoon). Lunch at Restobières on Rue des Renards — traditional flemish beef stew carbonnade and waterzooi at fair prices. Take the free glass elevator from Place Poelaert for panoramic views of the city.',
+          tip: 'The Marolles flea market vendors accept cash only. Best finds are vintage posters, Art Deco lamps, and old vinyl records.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'European Quarter & Ixelles Nightlife',
+          text: 'Walk through the European Quarter past the EU Parliament building (free visitor centre, last entry 5pm). Then head to Place du Luxembourg — nicknamed "Place Lux" — where young EU staffers drink on the square every evening. For dinner, continue to Ixelles and the vibrant Matongé quarter on Chaussée de Wavre for excellent Congolese food at Inzia — a taste of Brussels\' rich African heritage.',
+          tip: 'Place Lux is buzzing on Thursday evenings when EU Parliament is in session — cheap beer and a very international crowd.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Museums, Waffles & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Royal Museums of Fine Arts',
+          text: 'Spend the morning at the Royal Museums of Fine Arts of Belgium (€15) on Rue de la Régence. The Old Masters collection includes Bruegel, Rubens, and van Dyck. The connected Magritte Museum houses the world\'s largest collection of René Magritte surrealist works — 200+ pieces including iconic bowler hats and floating apples. Allow 2–3 hours for both wings.',
+          tip: 'The Magritte Museum alone needs 90 minutes. Start there, then do Old Masters — most visitors tire and skip Magritte if they go last.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Atomium & Laeken',
+          text: 'Metro to Heysel for the Atomium (€16) — Brussels\' surreal 1958 World Expo icon, an iron crystal magnified 165 billion times. The top sphere has panoramic views. Nearby, Mini-Europe (€17.60) is kitschy but surprisingly fun. For a proper Belgian waffle, head back to the centre and find Maison Dandoy on Rue au Beurre — the Liège waffle with pearl sugar is the authentic version, not the tourist whipped-cream versions.',
+          tip: 'Book Atomium tickets online to skip the queue. The escalator between spheres is an experience in itself — pure retro-futurism.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Belgian Feast',
+          text: 'For a final evening, head to Fin de Siècle on Rue des Chartreux — no reservations, sharing tables, massive portions of Belgian classics like vol-au-vent and stoofvlees at honest prices (mains €14–18). Then a farewell drink at À La Bécasse on Rue de Tabora — a hidden-alley bar serving lambic beer in ceramic jugs since 1877. The perfect Brussels goodbye.',
+          tip: 'Fin de Siècle fills up by 7:30pm and doesn\'t take bookings — arrive at 7pm or be prepared to queue on the street.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Grand Place, Chocolate & Art Nouveau',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Grand Place & Historic Centre',
+          text: 'Start at the Grand Place — Europe\'s most spectacular square, surrounded by gilded guild halls and the Gothic Town Hall. Walk through the Galeries Royales Saint-Hubert, then find the Manneken Pis on Rue de l\'Étuve. Head to Pierre Marcolini on Place du Grand Sablon for exquisite pralines. Continue exploring the Sablon quarter\'s antique shops and the stunning Notre-Dame du Sablon church.',
+          tip: 'The Grand Place is most photogenic before 9am when tour groups haven\'t arrived. The guild halls glow golden in morning light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Art Nouveau & Horta Museum',
+          text: 'Take the tram to Saint-Gilles and visit the Horta Museum (€12) — Victor Horta\'s personal home with curved iron, stained glass, and mosaic floors throughout. Walk along Rue Defacqz and Avenue Louise to spot more Art Nouveau facades. Lunch at the nearby Café Belga on Place Flagey — a local institution with good tartines and people-watching over the square.',
+          tip: 'The Horta Museum is small — visit right at opening (2pm Tue–Fri, 11am weekends) to avoid feeling cramped in the rooms.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Saint-Géry & Belgian Beer',
+          text: 'The Saint-Géry quarter is Brussels\' nightlife hub. Start at the Halles de Saint-Géry — a beautiful covered market turned bar. Dinner at Nüetnigenansen on Place du Nouveau Marché aux Grains for traditional Belgian cuisine. Then explore Delirium Café\'s 2,000+ beer menu, or try Moeder Lambic on Place Fontainas for craft brews and rare spontaneous fermentations.',
+          tip: 'Order a gueuze or kriek lambic — Brussels\' own spontaneously fermented beer found nowhere else in the world.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Comics, Marolles & European Quarter',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Belgian Comic Strip Centre',
+          text: 'Visit the Belgian Comic Strip Centre (€12) in a gorgeous Horta-designed department store. Belgium invented Tintin, the Smurfs, and Lucky Luke — the museum celebrates them all. Afterwards, follow the Comic Book Route — over 50 murals painted on buildings across the city. Pick up the free walking map at the museum or download the Brussels Comic Book Route app.',
+          tip: 'The most impressive comic murals cluster around Rue de l\'Étuve and Rue du Marché au Charbon — all walkable from the museum.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Marolles Flea Market & Views',
+          text: 'Head to the Marolles neighbourhood. Browse the daily flea market at Place du Jeu de Balle — vintage posters, Art Deco lamps, and old vinyl records. Lunch at Restobières on Rue des Renards for flemish beef stew carbonnade. Take the free glass elevator from Place Poelaert for panoramic views of the lower city and distant Atomium.',
+          tip: 'The Marolles flea market vendors accept cash only. Saturday and Sunday mornings have the widest selection of goods.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'European Quarter & Place Lux',
+          text: 'Walk through the European Quarter past the EU Parliament building (free visitor centre). Head to Place du Luxembourg — nicknamed "Place Lux" — where young EU staffers drink on the square every Thursday. For dinner, continue to Ixelles and the Matongé quarter on Chaussée de Wavre for excellent Congolese food at Inzia — a taste of Brussels\' African heritage.',
+          tip: 'Place Lux is buzzing on Thursday evenings when Parliament is in session — cheap beer and a very international crowd.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Museums & Surrealism',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Royal Museums of Fine Arts',
+          text: 'Spend the morning at the Royal Museums of Fine Arts (€15) on Rue de la Régence. The Old Masters collection includes Bruegel, Rubens, and van Dyck. The connected Magritte Museum has the world\'s largest René Magritte collection — 200+ surrealist works including iconic bowler hats and floating apples. Allow 2–3 hours for both wings.',
+          tip: 'Start with the Magritte Museum — it needs 90 minutes minimum. Most visitors tire and skip it if they save it for last.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Musical Instruments Museum & Mont des Arts',
+          text: 'The MIM — Musical Instruments Museum (€15) is housed in a stunning Art Nouveau building on Mont des Arts. Over 7,000 instruments from around the world, with headphones that play each instrument as you approach. The rooftop restaurant has one of the best panoramic views in Brussels — worth a coffee even if you skip the museum.',
+          tip: 'The MIM rooftop terrace is free to access without a museum ticket — perfect for sunset photos over the city skyline.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Rue Antoine Dansaert & Cocktails',
+          text: 'Explore the Dansaert quarter — Brussels\' fashion and design district with Belgian designer boutiques, concept stores, and independent galleries. Dinner at Le Petit Chou de Bruxelles on Rue de Flandre for updated Belgian comfort food. Then cocktails at Café Walvis — a trendy canal-side bar popular with the creative crowd in the up-and-coming canal district.',
+          tip: 'The Dansaert area shops close by 7pm — come for dinner and drinks, but shop earlier if you want to browse.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Atomium & Laeken',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Atomium',
+          text: 'Metro to Heysel for the Atomium (€16) — Brussels\' surreal 1958 World Expo icon, an iron crystal magnified 165 billion times. The top sphere has panoramic city views. Each sphere hosts exhibitions or installations. The escalators between spheres are pure retro-futuristic design. Allow 90 minutes for the full experience.',
+          tip: 'Book Atomium tickets online to skip the queue. Go early on weekdays — school groups dominate from 10:30am onwards.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mini-Europe & Royal Greenhouses',
+          text: 'Mini-Europe (€17.60) next door is kitschy but surprisingly fun — 350 models of European landmarks at 1:25 scale. If visiting late April to early May, the Royal Greenhouses of Laeken open their doors for a few weeks — an extraordinary Art Nouveau glass palace designed by Alphonse Balat. Lunch at one of the casual restaurants around Heysel stadium.',
+          tip: 'The Royal Greenhouses only open for about three weeks yearly — check dates and book early. It\'s one of Belgium\'s hidden gems.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Schaerbeek & International Dining',
+          text: 'Head to Schaerbeek — an increasingly hip neighbourhood with Turkish bakeries, Moroccan restaurants, and craft beer bars along Rue Royale Sainte-Marie. Dinner at Chez Abed for Lebanese mezze platters (€12–18), then drinks at the Green Lab — a botanical-themed bar in a converted greenhouse. End at Le Roi des Belges on Place Saint-Géry.',
+          tip: 'Schaerbeek\'s Rue Josaphat has some of the best kebabs in Brussels — Doner Dünya is a local favourite, open late.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Day Trip to Bruges',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Train to Bruges & Markt Square',
+          text: 'Take the train from Bruxelles-Midi to Bruges (1 hour, €15.20 return with Go Pass for under-26s). Walk from the station through the medieval streets to the Markt — the main square with its iconic Belfry tower. Climb the 366 steps (€14) for views over the canal-threaded rooftops. Grab a fresh waffle at a stand near the square for €3–4.',
+          tip: 'The Go Pass (10 journeys for €56) makes Belgian train travel very affordable if you\'re doing multiple day trips.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Canals, Beer & Chocolate',
+          text: 'Take a canal boat tour (€12, 30 minutes) for a different perspective on the medieval facades. Visit the Basilica of the Holy Blood — a 12th-century chapel housing a relic supposedly containing Christ\'s blood. Lunch at De Vlaamsche Pot on Helmstraat for classic Flemish stew. Stop at The Chocolate Line on Simon Stevinplein for eccentric flavour combinations by Dominique Persoone.',
+          tip: 'The canal boat queues are shortest between 1–2pm when most tourists are at lunch. Afternoon light is best for photos.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bruges Beer & Return',
+          text: 'Visit the De Halve Maan brewery (€16 including a beer) — the last active brewery in Bruges\' historic centre, complete with a beer pipeline running under the city streets. Walk the quieter streets around the Begijnhof — a serene 13th-century walled community of whitewashed houses. Grab a final beer at \'t Brugs Beertje before catching the train back to Brussels.',
+          tip: 'Bruges empties out after 6pm when day-trippers leave — the golden hour is magical on the canals without the crowds.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Day Trip to Ghent',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Train to Ghent & Graslei',
+          text: 'Train from Bruxelles-Midi to Gent-Sint-Pieters (35 minutes, €10.60 return with Go Pass). Walk or tram to the medieval centre. Start at Graslei and Korenlei — facing rows of stunning guild houses along the canal. Cross the bridge between them for the classic Ghent photo. Visit Saint Bavo\'s Cathedral to see the Ghent Altarpiece (€16) — van Eyck\'s 15th-century masterpiece, recently restored.',
+          tip: 'The Ghent Altarpiece is one of the most important paintings in Western art — the newly restored panels are jaw-dropping in detail.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Castle, Street Art & Patershol',
+          text: 'Visit Gravensteen — the Castle of the Counts (€12), a 12th-century fortress in the city centre with a torture museum and rooftop views. Explore the street art scene in the Werregarenstraat graffiti alley. Lunch in the Patershol quarter — a medieval web of lanes now home to cozy restaurants. Try Brasserie Pakhuis for Ghent\'s famous waterzooi (chicken or fish cream stew).',
+          tip: 'Ghent is Belgium\'s most vegetarian-friendly city — every Thursday is "Veggie Thursday" with special menus city-wide.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ghent Nightlife & Return',
+          text: 'Ghent has a massive student population and the nightlife shows it. Head to the Overpoortstraat for cheap drinks (beers from €2), or try the more refined Trollekelder on Bij Sint-Jacobs for 200+ Belgian beers. Walk along the lit-up canals at dusk — Ghent\'s illuminated medieval skyline rivals Bruges but feels far less touristy. Catch a late train back to Brussels.',
+          tip: 'The last train to Brussels leaves around 11:30pm — check the SNCB app for exact times on your travel date.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Waffles, Shopping & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Maison Dandoy & Sablon Market',
+          text: 'Start with breakfast at Maison Dandoy on Rue au Beurre — the Liège waffle with pearl sugar is the authentic version, not the tourist whipped-cream varieties. On weekends, browse the Sablon Antiques Market (Sat 9am–5pm, Sun 9am–2pm) for art, silverware, and vintage finds. Walk through the charming Petit Sablon garden with its 48 bronze statuettes.',
+          tip: 'Ask for the "gaufre de Liège" specifically — the Brussels waffle is lighter but the Liège version with caramelised sugar is the real deal.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Souvenirs & Hidden Gems',
+          text: 'Pick up souvenirs at the specialist shops: Dandoy for speculoos biscuits, Leonidas for affordable pralines (from €2/100g), and the Tintin Shop on Rue de la Colline for comic memorabilia. Visit the lesser-known Coudenberg Palace archaeological site (€10) beneath Place Royale — the underground ruins of the medieval palace of Brussels, eerily atmospheric.',
+          tip: 'Leonidas pralines are a fraction of the price of Pierre Marcolini and still excellent — the manon blanc is their signature.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Grand Place by Night',
+          text: 'Final dinner at Fin de Siècle on Rue des Chartreux — shared tables, massive portions of Belgian classics like vol-au-vent and stoofvlees at honest prices (mains €14–18). Farewell drink at À La Bécasse on Rue de Tabora — a hidden-alley bar serving lambic beer in ceramic jugs since 1877. End with a midnight walk past the illuminated Grand Place.',
+          tip: 'Fin de Siècle fills by 7:30pm with no reservations — arrive at 7pm or expect a queue. Worth the wait every time.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free experiences', text: 'Grand Place, Comic Book Route murals, Marolles flea market, Place Poelaert viewpoint, EU Parliament visitor centre, Parc du Cinquantenaire, and many churches are all free.' },
+  { title: 'Belgian food deals', text: 'Friteries serve massive portions of frites (€3–4). Pitta and kebab shops around Midi station offer meals for €5–7. Supermarket chain Delhaize has excellent prepared foods for picnics.' },
+  { title: 'Transport card', text: 'STIB/MIVB day pass (€8) covers all Brussels metro, tram, and bus. 10-journey card (€16.50) is better for 3+ days. Under-25s ride for €1.40 per trip with the new tariff.' },
+  { title: 'Museum pass', text: 'Brussels Card (€30/24hrs) includes 49 museums and unlimited transit. Pays for itself with just 2–3 major museum visits plus transport.' },
+  { title: 'Beer savings', text: 'Supermarket beers cost €1–3 for excellent Trappist ales. Bar prices: €3–5 in local cafés vs €6–9 in tourist spots. Delirium Café is touristy but the beer range justifies the premium.' },
+  { title: 'Train deals', text: 'Go Pass (under 26): 10 trips for €56 anywhere in Belgium. Weekend Return tickets are 50% off regular fares. Book at SNCB counters or the app.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€25–40', midrange: '€80–140', splurge: '€200+', notes: 'Hostels → boutique hotels → luxury hotels' },
+  { category: 'Food', budget: '€15–25', midrange: '€35–55', splurge: '€80+', notes: 'Friteries & kebabs → brasseries → gastronomic restaurants' },
+  { category: 'Transport', budget: '€5–8', midrange: '€10–20', splurge: '€30+', notes: 'Day pass & walking → taxis → private transfers' },
+  { category: 'Activities', budget: '€0–15', midrange: '€20–40', splurge: '€60+', notes: 'Free sites & walks → museums → guided tours & experiences' },
+  { category: 'Drinks', budget: '€5–10', midrange: '€15–25', splurge: '€40+', notes: 'Supermarket beers → local cafés → specialty beer bars' },
+  { category: 'Daily Total', budget: '€50–98', midrange: '€160–280', splurge: '€410+', notes: '$55–107 → $174–305 → $447+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — most nationalities get 90 days visa-free within any 180-day period',
+      'Brussels Airport (BRU) is 12km from centre. Train to Bruxelles-Central takes 17 minutes (€14.70)',
+      'Charleroi Airport (CRL) is 60km south — budget airlines fly here. Bus to Midi station takes 55 min (€17)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No special vaccinations required. European Health Insurance Card (EHIC) covers EU citizens',
+      'Tap water is safe to drink throughout Belgium — carry a refillable bottle',
+      'Pickpocketing around Midi station and on metro — keep valuables secure. Avoid Midi at night',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'STIB/MIVB runs metro, tram, and bus. Buy a MOBIB card (€5) and load trips. Day pass: €8',
+      'Brussels is very walkable — the historic centre is compact. Bike-share Villo (€1.60/day + first 30 min free)',
+      'Taxis are expensive (€2.40/km). Use the Uber or Bolt app for better rates',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'EU roaming included for European SIM cards. Local SIMs from Proximus, Base, or Orange (€10–15 for 5GB)',
+      'Free WiFi at most cafés, museums, and all STIB metro stations',
+      'Download the STIB app for real-time transit info and the SNCB app for national train schedules',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Euro (€) used everywhere. ATMs (called "Bancontact") are widespread. Avoid Euronet ATMs — high fees',
+      'Cards accepted almost everywhere, but carry cash for flea markets, small cafés, and friteries',
+      'Tipping is not mandatory — service is included. Rounding up or 5–10% for good service is appreciated',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Rain gear is essential year-round — Brussels gets frequent light rain even in summer',
+      'Comfortable walking shoes for cobblestones. Layers for unpredictable weather (10–25°C range in summer)',
+      'A tote bag for market shopping and museum freebies. Smart-casual for evening restaurants',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🗣', title: 'Language Sensitivity', text: 'Brussels is officially bilingual French/Dutch but French dominates. Starting with "Bonjour" is polite. The Flemish-Walloon divide is a real political tension — avoid taking sides.' },
+  { icon: '🍺', title: 'Beer Culture', text: 'Belgium has over 1,500 beer varieties. Each beer has its own glass — bartenders will refuse to serve in the wrong one. Order a "pintje" (25cl) not a pint. Trappist ales are brewed by monks.' },
+  { icon: '🍫', title: 'Chocolate Etiquette', text: 'Belgian pralines are serious business. Don\'t call them "candy." Artisan chocolatiers like Marcolini and Mary are to Belgium what wine châteaux are to France. A box makes an excellent gift.' },
+  { icon: '🚬', title: 'Café Culture', text: 'Brussels café culture is about lingering — nobody rushes you. Ordering one coffee earns you hours of people-watching. Many cafés double as bars from afternoon onwards. "Terrace season" is sacred.' },
+  { icon: '⏰', title: 'Timing & Pace', text: 'Belgians eat dinner at 7–8pm, later than the Dutch but earlier than the French. Sunday is quiet — many shops close. Monday is museum closure day for most institutions.' },
+  { icon: '🤝', title: 'Social Norms', text: 'Greet with one kiss on the cheek (right cheek first) among friends. Handshake for strangers. Belgians are modest and self-deprecating — they\'ll joke about their own country before you can.' },
+];
+---
+
+<CityGuideLayout
+  title="Brussels Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Brussels guide for young travelers. 3-day itinerary with Belgian beer crawls, chocolate trails, Art Nouveau walks, and budget-friendly moules-frites spots. Plan your trip with roammate."
+  heroImage="/images/guides/brussels-hero.webp"
+  heroFlag="🇧🇪"
+  heroCountry="Belgium"
+  heroRegion="Europe"
+  heroCity="Brussels"
+  heroSubtitle="A surrealist capital where gilded squares hide behind grey skies, and every corner promises another beer, another chocolate, another comic-book mural."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in EUR. Brussels is mid-range for Western Europe — cheaper than Paris or Amsterdam, and Belgian food quality punches well above its price."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Brussels is relaxed and multicultural, but there are quirks. The city straddles two linguistic communities and has a self-deprecating charm you won't find anywhere else."
+  ctaCity="Brussels"
+  ctaText="Find travel companions, split day-trip fares to Bruges and Ghent, and discover hidden beer bars together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

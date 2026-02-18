@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'NZ Dollar (NZD)', detail: '1 USD ≈ NZ$1.72' },
+  { icon: '🗣', label: 'Language', value: 'English / Te Reo Māori', detail: 'English spoken everywhere' },
+  { icon: '🕐', label: 'Timezone', value: 'NZST (UTC+12)', detail: 'NZDT (UTC+13) Sep–Apr' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Apr', detail: '12–22°C, clearest skies' },
+  { icon: '🎒', label: 'Daily Budget', value: '~NZ$90–160', detail: '$52–93 USD per day' },
+  { icon: '🛂', label: 'Visa', value: 'NZeTA required', detail: 'Most nationalities 90 days visa-free with NZeTA' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Tongariro Alpine Crossing',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mangatepopo to South Crater',
+          text: 'Catch the shuttle from your accommodation to Mangatepopo car park by 6:30am. The first section follows the Mangatepopo Valley through tussock grassland with views of Mount Ngauruhoe (Mount Doom). After 4km the track steepens dramatically — the Devil\'s Staircase climbs 250 metres via switchbacks. Push through to South Crater, a vast flat plateau that feels like walking on the moon.',
+          tip: 'Start early — the crossing takes 6–8 hours and afternoon weather deteriorates. Bring 2+ litres of water and all layers.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Red Crater, Emerald Lakes & Blue Lake',
+          text: 'Climb to Red Crater at 1,886m — the highest point of the crossing and an active volcanic vent steaming with sulphurous gas. The descent reveals the Emerald Lakes — three vivid turquoise pools coloured by volcanic minerals, set against the rust-red scoria of the crater. Continue past Blue Lake (Nga Rotopounamu, sacred to Māori — do not touch the water) and across North Crater\'s flat plateau.',
+          tip: 'The Emerald Lakes are the most photographed spot in New Zealand. The scree descent from Red Crater is steep — go slowly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Descent to Ketetahi & Recovery',
+          text: 'The final 6km descends through tussock and native bush to Ketetahi car park where your shuttle waits. The views over Lake Rotoaira and Lake Taupo are spectacular on clear days. Back at your accommodation (National Park village or Ohakune), recover with a hot shower and a massive meal at Station Cafe in National Park (burgers NZ$22, pizza NZ$20) or The Cyprus Tree in Ohakune (NZ$24–36).',
+          tip: 'Book your return shuttle in advance — Tongariro Expeditions and Adrift Tongariro both run reliable services (NZ$45 return).',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Arrival & Taranaki Falls',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Settle into National Park Village',
+          text: 'Arrive at National Park village — a tiny settlement at the foot of the volcanic plateau. Check into your hostel or lodge and visit the DOC Visitor Centre at Whakapapa for trail conditions, weather forecasts, and hut bookings. The centre has excellent displays on the volcanism and Māori cultural significance of the Tongariro mountains — three active volcanoes that the Ngāti Tūwharetoa people consider sacred ancestors.',
+          tip: 'National Park village has limited supplies. Stock up on food and water in Taupo or Ohakune before arriving.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Taranaki Falls Loop',
+          text: 'Drive to Whakapapa Village (15 minutes) and walk the Taranaki Falls Loop (6km, 2 hours). The track crosses alpine tussocklands with sweeping views of Mount Ruapehu before reaching the falls — a 20-metre cascade plunging over a 15,000-year-old lava flow into a boulder-ringed pool. The return loop passes through goblin-like beech forest draped in moss and lichens. It is the perfect warm-up hike for the crossing.',
+          tip: 'Walk the loop clockwise for the best approach to the falls. The tussock section can be windy — bring a windbreaker.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pre-Crossing Preparation',
+          text: 'Prepare for tomorrow\'s Alpine Crossing. Pack lunch, 2+ litres of water, rain gear, warm layers, sun protection, and sturdy boots. Check the weather forecast at the DOC centre — the crossing should only be attempted in reasonable conditions. Dinner at Schnapps Bar in National Park village (mains NZ$20–30, good craft beer selection) and an early night — you will be up before dawn.',
+          tip: 'The weather forecast at ruapehu.co.nz/tongariro is specific to the crossing. If Red Crater winds exceed 60km/h, don\'t attempt it.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Tongariro Alpine Crossing',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mangatepopo to Red Crater',
+          text: 'Shuttle departs at 6:30am to Mangatepopo trailhead. The first hour follows the gentle Mangatepopo Valley with Mount Ngauruhoe (Mount Doom from Lord of the Rings) looming ahead. Then comes the Devil\'s Staircase — a 250-metre climb up switchbacks through volcanic rock to South Crater. Cross the flat, lunar plateau to the base of Red Crater, then scramble up loose scoria to the summit at 1,886m — the high point of the crossing.',
+          tip: 'The scramble to Red Crater summit is steep but short. Take your time and watch for steam vents — they are genuinely hot.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Emerald Lakes to Ketetahi',
+          text: 'Descend from Red Crater into the Central Crater where three Emerald Lakes glow an unreal turquoise against red volcanic scoria. The colours are caused by dissolved minerals from underwater vents. Pass sacred Blue Lake and cross North Crater before the final 6km descent through tussock and native bush to Ketetahi. Total distance: 19.4km, elevation gain: 765m. Views on clear days extend to Lake Taupo.',
+          tip: 'Don\'t swim in or touch Blue Lake — it is sacred (tapu) to Ngāti Tūwharetoa. Even dipping your fingers is considered disrespectful.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Recovery & Celebration',
+          text: 'Your shuttle returns you to National Park village. Your legs will be destroyed in the best possible way. Soak tired muscles in a hot shower and head to Station Cafe for a well-earned meal — the lamb shank (NZ$30) and local craft beers hit different after 7 hours of volcanic hiking. Share stories with other hikers who completed the crossing that day — every group has different weather tales.',
+          tip: 'The pub quiz at Schnapps Bar on Tuesday nights is a fun way to meet other backpackers recovering from the crossing.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Ohakune & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Silica Rapids Track',
+          text: 'Drive to Whakapapa Village for the Silica Rapids Track (7km, 2.5 hours return). A gentle walk through beech forest and alpine scrub to the Silica Rapids — cascading terraces of white silica deposits where hot water from underground meets a cold stream. The mineral formations look like something from another planet. This is an easier walk for legs that are still recovering from yesterday\'s crossing.',
+          tip: 'The Rapids are best photographed in morning light when the white silica glows. Bring a tripod for long-exposure waterfall shots.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ohakune Town & Old Coach Road',
+          text: 'Drive to Ohakune (30 minutes) — the "Carrot Capital of New Zealand" (yes, there is a giant carrot sculpture). This small town has a better food scene than National Park. Walk a section of the Old Coach Road — a historic 15km trail following the original road built in the 1900s, crossing viaducts and through regenerating bush. The Hapuawhenua Viaduct is the highlight — a steel bridge above the forest canopy.',
+          tip: 'The giant carrot in Ohakune is genuinely 7.5 metres tall. Take the obligatory tourist photo — everyone does.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Ohakune has the region\'s best dining. Try The Cyprus Tree for modern New Zealand cuisine (duck confit NZ$34, venison NZ$36) or Eat Indian Kitchen for excellent curries (NZ$16–22). The town is lively in ski season (June–October) but charming year-round. Pick up supplies at the Four Square if heading onward. The Northern Explorer train from National Park to Wellington runs three times a week — a scenic alternative to driving.',
+          tip: 'The Northern Explorer scenic train is one of the world\'s great rail journeys. Book at greatjourneysofnz.co.nz well in advance.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Stay in National Park village', text: 'Hostels in National Park village cost NZ$30–45 per night. Accommodation in Whakapapa or on-mountain lodges costs NZ$150+. The village has everything you need and shuttle buses go to all trailheads.' },
+  { title: 'Cook at the hostel', text: 'Eating out in National Park costs NZ$20–35 per meal. Self-catering from the Four Square or stocking up in Taupo brings daily food costs down to NZ$20–30. Most hostels have fully equipped kitchens.' },
+  { title: 'Shuttle vs car rental', text: 'Tongariro Crossing shuttles cost NZ$45 return. If you are staying multiple days and want to explore Taupo and Ohakune, a rental car (NZ$50–70/day from Taupo) offers more flexibility and works out cheaper for groups.' },
+  { title: 'Free hikes everywhere', text: 'Taranaki Falls, Silica Rapids, Tama Lakes, Mangawhero Falls, and dozens of other walks are completely free. The national park has no entry fee. Only the Alpine Crossing requires a shuttle cost.' },
+  { title: 'Spa Thermal Park', text: 'Skip paid hot pools in Taupo (NZ$25–35). Spa Thermal Park is a free natural hot stream where geothermal water meets the Waikato River. Bring a towel and arrive before locals finish work.' },
+  { title: 'Backcountry huts', text: 'DOC backcountry huts outside the Great Walk season cost NZ$5–15 per night with a Backcountry Hut Pass. The Tongariro Northern Circuit huts cost NZ$65/night in season — book early on doc.govt.nz.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'NZ$30–45', midrange: 'NZ$100–180', splurge: 'NZ$250+', notes: 'Hostels → motels & lodges → Chateau Tongariro' },
+  { category: 'Food', budget: 'NZ$20–30', midrange: 'NZ$40–65', splurge: 'NZ$90+', notes: 'Self-catered → cafes & pubs → restaurant dining' },
+  { category: 'Transport', budget: 'NZ$10–25', midrange: 'NZ$40–70', splurge: 'NZ$100+', notes: 'Shuttle only → rental car → private guide' },
+  { category: 'Activities', budget: 'NZ$0–45', midrange: 'NZ$50–100', splurge: 'NZ$200+', notes: 'Free hikes → shuttles & gondola → guided tours & heli' },
+  { category: 'Extras', budget: 'NZ$5–10', midrange: 'NZ$15–30', splurge: 'NZ$50+', notes: 'Snacks → hot pools → premium experiences' },
+  { category: 'Daily Total', budget: 'NZ$65–155', midrange: 'NZ$245–445', splurge: 'NZ$690+', notes: '$38–90 → $143–259 → $400+ USD' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities need a New Zealand Electronic Travel Authority (NZeTA, NZ$23 via app) plus International Visitor Levy (NZ$35)',
+      'Australian citizens enter freely. UK, US, Canadian, EU citizens get 90 days visa-free with NZeTA',
+      'Strict biosecurity at customs — declare all food, hiking boots, and outdoor gear or face NZ$400 instant fines',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'National Park village is on SH4. InterCity buses run from Taupo (1hr, from NZ$15), Auckland (5hrs), and Wellington (4hrs)',
+      'The Northern Explorer scenic train stops at National Park station — a spectacular way to arrive from Wellington or Auckland',
+      'A rental car gives the most flexibility. Alpine Crossing shuttles (NZ$45) run from National Park village and Whakapapa',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile coverage is patchy in National Park village and nonexistent on most trails. Download offline maps before hiking',
+      'Most accommodation has WiFi. Spark has the best coverage in the region, followed by Vodafone',
+      'No reception on the Alpine Crossing itself. Carry a personal locator beacon (PLB) for backcountry safety',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'National Park village has no ATM — withdraw cash in Taupo or Ohakune before arriving',
+      'EFTPOS and contactless payment accepted at most businesses, but some smaller operators are cash-only',
+      'Tipping is not expected in New Zealand. All prices include 15% GST',
+    ],
+  },
+  {
+    icon: '🌧',
+    title: 'Weather & Packing',
+    items: [
+      'Weather at altitude changes rapidly. Summer (Dec–Feb): 12–22°C at village, 0–15°C on the crossing. Snow possible year-round above 1,500m',
+      'Pack waterproof jacket, warm layers (fleece/down), sun protection, sturdy hiking boots, and 2+ litres of water per person',
+      'Wind chill on the crossing can make temperatures feel 10–15°C colder. Hypothermia is a real risk in bad weather',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Nearest hospital is Taupo (1 hour). National Park has no medical facilities — carry a first aid kit on all hikes',
+      'The Alpine Crossing has multiple fatalities each year from exposure and falls. Only attempt in good weather with proper gear',
+      'Emergency number: 111. Carry a PLB or satellite communicator — there is no mobile reception on trails',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏔', title: 'Sacred Mountains', text: 'Tongariro, Ngauruhoe, and Ruapehu are sacred ancestors of Ngāti Tūwharetoa. The 1887 gift of these mountains to the nation was an act of protection, not relinquishment. Treat the land with deep respect — it is a cultural landscape, not just a hiking destination.' },
+  { icon: '💧', title: 'Blue Lake is Tapu', text: 'Te Wai-whakaata-o-te-Rangihīroa (Blue Lake) on the Alpine Crossing is sacred. Do not touch the water, swim, or put anything in it. It is considered the tears of a grieving mother in Māori tradition.' },
+  { icon: '🎬', title: 'Lord of the Rings', text: 'Mount Ngauruhoe is "Mount Doom" and Tongariro is "Mordor" in Peter Jackson\'s films. The landscape is genuinely otherworldly. But remember this place was sacred long before Hollywood arrived — lead with cultural respect, not movie references.' },
+  { icon: '🥾', title: 'Track Etiquette', text: 'New Zealand trails have a strong culture of friendliness. Say "Kia ora" or "good morning" to every person you pass. Pack out all rubbish — leaving litter on tracks is considered deeply disrespectful in Kiwi hiking culture.' },
+  { icon: '🚗', title: 'Driving Manners', text: 'Pull over to let faster traffic pass on rural roads — New Zealand roads are narrow and locals get frustrated behind slow tourist drivers. Wave thanks when someone lets you through. Driving on the left.' },
+  { icon: '☕', title: 'Kiwi Culture', text: 'Kiwis are laid-back but expect basic manners. "Sweet as" means great. "Yeah nah" means no. Order flat whites, not lattes. Don\'t compare New Zealand to Australia — they are very different countries and Kiwis are proud of the distinction.' },
+];
+---
+
+<CityGuideLayout
+  title="Tongariro Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Tongariro Alpine Crossing guide for young travelers. 3-day itinerary with hiking tips, Emerald Lakes, volcanic landscapes, and budget advice. Plan your trip with roammate."
+  heroImage="/images/guides/tongariro-hero.webp"
+  heroFlag="🇳🇿"
+  heroCountry="New Zealand"
+  heroRegion="Oceania"
+  heroCity="Tongariro"
+  heroSubtitle="Walk across active volcanoes, past emerald lakes and steaming craters, on one of the greatest single-day hikes on earth."
+  heroPills={['3-Day Itinerary', 'Hiking & Adventure', 'Nov – Apr Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in NZD. Tongariro is surprisingly affordable — the national park is free to enter and the best experiences are hiking trails that cost nothing."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Tongariro is a dual UNESCO World Heritage site — sacred to Māori and a geological wonder. Understanding both dimensions makes the experience far richer."
+  ctaCity="Tongariro"
+  ctaText="Find hiking partners for the Tongariro Alpine Crossing and volcanic adventures on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

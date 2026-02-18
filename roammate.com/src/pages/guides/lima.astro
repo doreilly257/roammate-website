@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PEN (Sol)', detail: '1 USD ≈ 3.75 PEN' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'Limited English outside Miraflores' },
+  { icon: '🕐', label: 'Timezone', value: 'PET (UTC−5)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Dec – Apr', detail: '22–30°C, sunny & warm' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$35–70 USD', detail: 'S/ 130–260 budget–midrange' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free most', detail: '90–183 days for US/EU/UK' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Essential Lima in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Miraflores & Malecón',
+          text: 'Start with a walk along the Malecón de Miraflores — a clifftop boardwalk with paragliders soaring above and the Pacific Ocean crashing below. Pass through Parque del Amor with its Gaudí-inspired mosaic benches and stop at Parque Kennedy where cats lounge in the gardens. Breakfast at La Lucha Sanguchería (S/ 12–20 for a chicharrón sandwich) or Pan de la Chola for artisan bread and coffee (S/ 15–25).',
+          tip: 'Paragliding tandem flights launch from the Malecón cliffs daily (S/ 250–350 for 10 minutes). No experience needed — just a willingness to leap.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Centro Histórico & Plaza Mayor',
+          text: 'Metro to Centro for Lima\'s colonial heart. The Plaza Mayor is flanked by the Cathedral (S/ 35, Pizarro\'s tomb), the Government Palace (changing of the guard at noon), and the Archbishop\'s Palace with its carved cedar balconies. Walk to the Convento de San Francisco (S/ 15) for the eerie catacombs — thousands of bones arranged in geometric patterns beneath the church.',
+          tip: 'The San Francisco catacombs are genuinely fascinating and slightly macabre — the guided tour takes 45 minutes. Photos allowed.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Barranco — Art, Bars & Ceviche',
+          text: 'Barranco is Lima\'s bohemian neighbourhood — colourful colonial buildings, street art, galleries, and the best nightlife in the city. Walk across the Puente de los Suspiros (Bridge of Sighs), then dinner at Canta Rana for ceviche at local prices (S/ 25–40) or Isolina for hearty criollo food (S/ 30–55). Drinks at Ayahuasca Bar — a stunning mansion converted into a multi-room cocktail bar (pisco sours S/ 20–30).',
+          tip: 'Canta Rana is a legendary cevichería — cash only, no reservations, packed at lunch, but the ceviche is worth any wait.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Miraflores, Malecón & Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Malecón & Miraflores',
+          text: 'Walk the Malecón de Miraflores — a stunning clifftop boardwalk stretching 10km above the Pacific with paragliders overhead and surfers below. Stop at Parque del Amor for its mosaic benches, then Parque Kennedy where friendly cats own the gardens. Breakfast at La Lucha Sanguchería (S/ 12–20) for a chicharrón sandwich or Pan de la Chola for sourdough and specialty coffee (S/ 15–25).',
+          tip: 'Walk south along the Malecón toward Barranco — the path takes 40 minutes and the ocean views are spectacular. Best before 10am when the garúa (fog) lifts.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Huaca Pucllana & Larcomar',
+          text: 'Visit Huaca Pucllana (S/ 15) — a 1,500-year-old adobe pyramid right in the middle of Miraflores, illuminated at night and surrounded by modern restaurants. The guided tour explains the Lima culture that built it. Walk to Larcomar — a shopping centre built into the cliffs overlooking the ocean. Lunch at a nearby cevichería — Punto Azul for budget ceviche (S/ 22–35) or Rafael for refined Peruvian cuisine.',
+          tip: 'Huaca Pucllana at night is magical — the illuminated pyramid against the Miraflores skyline is one of Lima\'s best photo opportunities.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Barranco Nightlife',
+          text: 'Barranco is Lima\'s bohemian heart. Walk across the Puente de los Suspiros, then explore the street art along Bajada de Baños to the ocean. Dinner at Isolina for criollo comfort food — tacu tacu, lomo saltado, and arroz con pato (S/ 30–55). Drinks at Ayahuasca Bar in a gorgeous colonial mansion (pisco sours S/ 20–30) or Bar Piselli for a more intimate cocktail experience.',
+          tip: 'Ayahuasca Bar is spread across three floors of a restored mansion — each room has a different atmosphere. The rooftop is the highlight.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Centro Histórico & Culinary Lima',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Plaza Mayor & Colonial Lima',
+          text: 'Metro to Centro for Lima\'s magnificent colonial core. The Plaza Mayor features the Cathedral (S/ 35, Pizarro\'s tomb), Government Palace (changing of the guard at noon daily), and the Archbishop\'s Palace with stunning wooden balconies. Visit the Convento de San Francisco (S/ 15) for the catacombs — bones of 25,000 people arranged in geometric patterns. Remarkable and slightly eerie.',
+          tip: 'The changing of the guard at the Government Palace happens at noon — arrive 15 minutes early for a good view. It involves mounted cavalry.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mercado Central & Food Tour',
+          text: 'Walk to the Mercado Central de Lima — a sensory explosion of Peruvian ingredients. Try fresh juices (S/ 3–5), ceviche from a market stall (S/ 10–15), and anticuchos (grilled beef heart skewers, S/ 5–8) from the vendors outside. Continue to Chinatown (Barrio Chino) for chifa — Peruvian-Chinese fusion cuisine. Wa Lok or Salón Capón for arroz chaufa and tallarin saltado (S/ 15–25).',
+          tip: 'Anticuchos are one of Lima\'s greatest street foods — beef heart grilled over charcoal with ají sauce. The Mercado Central vendors do it best.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pisco Sour Trail',
+          text: 'Peru invented the pisco sour — and Lima is the place to drink it. Start at Hotel Bolívar\'s bar on Plaza San Martín — the legendary birthplace of the Cathedral pisco sour (S/ 25–35 for a huge glass). Walk to Queirolo in Pueblo Libre for their classic version (S/ 12–18) at a bar that has been pouring since 1880. Dinner at Maido for Nikkei (Japanese-Peruvian) cuisine if you splurge, or Tanta for everyday Peruvian fare (S/ 25–40).',
+          tip: 'The Hotel Bolívar serves the "Cathedral" — a massive pisco sour for S/ 35 that serves two. Split it or prepare for a very jolly evening.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Pachacámac, Markets & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Pachacámac Ruins',
+          text: 'Take a colectivo or Uber (30 min south) to Pachacámac (S/ 15) — a massive pre-Inca archaeological complex overlooking the Pacific. Occupied for 1,500 years by successive cultures, the Temple of the Sun sits on a cliff above the ocean. The on-site museum explains the site\'s role as the most important oracle in the Inca Empire. Far less crowded than Cusco ruins and equally impressive.',
+          tip: 'Hire a bike at the entrance (S/ 15) to cover the vast site — walking the full circuit takes 2+ hours in the sun. Bring water and a hat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Surquillo Market & Cooking',
+          text: 'Return to Lima and visit Mercado No. 1 de Surquillo — the market Lima\'s top chefs use. Stalls overflow with tropical fruits, Amazonian fish, highland potatoes in every colour, and ají peppers. Try lucuma ice cream (S/ 5–8) — a fruit unique to Peru. If time allows, book a Peruvian cooking class (S/ 100–180) where you shop the market then cook ceviche, causa, and lomo saltado.',
+          tip: 'Surquillo market is where chefs from Central and Maido shop — the quality is higher and prices lower than tourist-facing markets.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Ceviche & Sunset',
+          text: 'Last dinner at a proper cevichería — La Mar by Gastón Acurio for the city\'s best ceviche (S/ 35–60, closes at 5pm) or El Mercado for a more relaxed setting. Walk the Malecón for a final Pacific sunset — the sky turns orange over the ocean while paragliders drift above. A farewell pisco sour at Huaringas Bar in Miraflores (S/ 20–28) caps the perfect Lima trip.',
+          tip: 'Cevicherías close early — most stop serving by 4–5pm because Peruvians believe fresh ceviche should only be eaten with the freshest fish, which arrives in the morning.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Miraflores & Malecón',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Malecón Clifftop Walk',
+          text: 'Walk the Malecón de Miraflores — a 10km clifftop boardwalk above the Pacific with paragliders overhead and surfers below. Pass Parque del Amor, Parque Kennedy (cats!), and the lighthouse at Faro de la Marina. Breakfast at La Lucha Sanguchería for a chicharrón sandwich (S/ 12–20) — pork, sweet potato, and salsa criolla in fresh bread.',
+          tip: 'The Malecón is best before 10am when the coastal fog (garúa) lifts. South toward Barranco has the most dramatic cliff views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Huaca Pucllana & Miraflores',
+          text: 'Visit Huaca Pucllana (S/ 15) — a 1,500-year-old adobe pyramid in the heart of Miraflores. The guided tour explains the Lima culture that built it. Walk to Parque Kennedy for people-watching and browse the crafts market (daily from 5pm). Lunch at Punto Azul for excellent affordable ceviche (S/ 22–35) or grab empanadas from La Lucha (S/ 6–10 each).',
+          tip: 'Huaca Pucllana is illuminated at night — the restaurant next to it serves dinner overlooking the lit pyramid. Pricey but unforgettable.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'First Night in Barranco',
+          text: 'Walk or Uber to Barranco — Lima\'s bohemian arts district. Cross the Puente de los Suspiros (Bridge of Sighs) then explore street art along Bajada de Baños down to the ocean. Dinner at Canta Rana for no-frills ceviche (S/ 25–40, cash only) or Isolina for criollo comfort food (S/ 30–55). First pisco sour at Ayahuasca Bar in a gorgeous restored mansion (S/ 20–30).',
+          tip: 'Canta Rana fills up fast at lunch — dinner is slightly calmer. The leche de tigre (ceviche juice) is legendary and allegedly cures hangovers.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Centro Histórico & Colonial Lima',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Plaza Mayor & Catacombs',
+          text: 'Metro to Centro for colonial Lima. The Plaza Mayor is flanked by the Cathedral (S/ 35), Government Palace, and the Archbishop\'s Palace. Visit the Convento de San Francisco (S/ 15) for the catacombs — 25,000 bones arranged in eerie geometric patterns. Walk through the ornate Palacio de Torre Tagle (exterior only) and the beautiful Casa de Aliaga — the oldest colonial house in the Americas (since 1535).',
+          tip: 'The changing of the guard happens daily at noon at the Government Palace — arrive 15 minutes early. The cavalry procession is impressive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Barrio Chino & Chifa Lunch',
+          text: 'Walk to Barrio Chino (Chinatown) through the ornate gateway on Jirón Ucayali. Lima has the largest Chinese population in South America, creating chifa — Peruvian-Chinese fusion cuisine. Lunch at Wa Lok or Salón Capón for arroz chaufa (fried rice, S/ 15–20) and tallarin saltado (stir-fried noodles, S/ 15–22). Browse the shops for Asian ingredients and curious imports.',
+          tip: 'Chifa is uniquely Peruvian — do not skip it. Order arroz chaufa de mariscos (seafood fried rice) for the best of both cultures in one dish.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pisco Sour Trail',
+          text: 'Start at the Gran Hotel Bolívar bar on Plaza San Martín — birthplace of the Cathedral pisco sour (S/ 25–35, serves two). Walk to the historic Queirolo bar in Pueblo Libre (S/ 12–18) for their version in a setting unchanged since 1880. Dinner at Tanta for everyday Peruvian dishes by Gastón Acurio (S/ 25–40) — the causa limeña and lomo saltado are outstanding.',
+          tip: 'The Hotel Bolívar Cathedral is legendary — one giant pisco sour meant for sharing. The bar is faded-grandeur gorgeous.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Culinary Lima Deep Dive',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Surquillo Market & Cooking Class',
+          text: 'Visit Mercado No. 1 de Surquillo — the market where Lima\'s top chefs source their ingredients. Tropical fruits, highland potatoes in a dozen colours, Amazonian fish, and every chilli pepper imaginable. Book a cooking class (S/ 100–180) that starts with a market tour and ends with you cooking ceviche, causa, and lomo saltado. Try lucuma ice cream (S/ 5–8) — a uniquely Peruvian flavour.',
+          tip: 'Lima Gourmet and Peru Hop run excellent cooking classes that include the market visit. Book a day ahead.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'MATE Museum & Barranco Art',
+          text: 'Walk to MATE Museum in Barranco (S/ 30) — the former home of fashion photographer Mario Testino, now a gallery of his work and rotating contemporary exhibitions. The building and garden are beautiful. Continue through Barranco\'s galleries — Revolver, Dédalo, and the street art on Pedro de Osma. Lunch at Mérito for creative Peruvian cuisine (S/ 35–60).',
+          tip: 'Barranco has the best concentration of galleries in Lima — most are free. Check the first Thursday of the month for gallery openings with free drinks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Peña Criolla Night',
+          text: 'Experience a peña — a traditional evening of live criolla music, Afro-Peruvian rhythms, and dancing. De Rompe y Raja in Barranco is one of the best (cover S/ 20–40). The music moves from melancholic vals criollo to explosive festejo — and the crowd dances. Dinner at the venue or eat beforehand at El Rincón que No Conoces for home-style criollo food (S/ 20–35).',
+          tip: 'Peñas start slow around 10pm and build intensity. By midnight the entire room is dancing. Join in — nobody cares if you do not know the steps.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Pachacámac & Pueblo Libre',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Pachacámac Ruins',
+          text: 'Uber or colectivo 30km south to Pachacámac (S/ 15) — a massive pre-Inca complex overlooking the Pacific. Occupied for 1,500+ years, the Temple of the Sun sits dramatically on a cliff. The on-site museum houses the original Pachacámac idol. Rent a bike (S/ 15) at the entrance to cover the vast site — the painted adobe temple is the highlight.',
+          tip: 'Pachacámac is huge — biking is the only way to see it without exhaustion. Bring water, sunscreen, and a hat. Almost no shade.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Museo Larco & Pueblo Libre',
+          text: 'Return to Lima and Uber to the Museo Larco in Pueblo Libre (S/ 30) — Peru\'s best privately owned museum in a beautiful 18th-century mansion. The pre-Columbian gold and silver collection is jaw-dropping. The famous erotic pottery room (yes, really) is unforgettable. The garden cafe serves excellent lunch (S/ 25–40). Walk to nearby Queirolo bar for a pisco (S/ 12–18).',
+          tip: 'The Museo Larco storage room is open to visitors — thousands of ceramics on open shelves. It feels like a scene from an Indiana Jones warehouse.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'San Isidro & Fine Dining',
+          text: 'San Isidro is Lima\'s upscale financial district with excellent restaurants. For a splurge, Maido (ranked among the world\'s best, tasting menu S/ 550–700) serves extraordinary Nikkei (Japanese-Peruvian) cuisine. More accessible is Fiesta for northern Peruvian food (S/ 35–60) — the ceviche de conchas negras and arroz con pato are outstanding. Walk through Olivar Park — olive trees planted by the Spanish in 1560.',
+          tip: 'Maido requires booking weeks ahead. Central by Virgilio Martínez is even harder — book months in advance. Both are genuine bucket-list restaurants.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Callao, Coast & Seafood',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Callao Monumental & Street Art',
+          text: 'Uber to Callao — Lima\'s port district undergoing a massive street art revival. The Callao Monumental project has transformed entire buildings into galleries and murals. Walk through the converted warehouses housing contemporary art spaces. The Real Felipe Fortress (S/ 10) is a massive 18th-century star fort. Callao is gritty and gentrifying — go with a guide or in a group.',
+          tip: 'The Callao Monumental project has revitalised the area but the surrounding streets can be rough. Stay within the art district and take Uber to/from.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Costa Verde & Chorrillos',
+          text: 'Walk or Uber to the Costa Verde — the clifftop road connecting Lima\'s coastal districts with views of the Pacific. Stop at Chorrillos fishing village to watch the boats come in and eat at a local cevichería — ceviche mixto for S/ 15–25 with the freshest fish in the city. The Pantanos de Villa wetlands (S/ 5) are a surprising natural reserve with flamingos and migratory birds.',
+          tip: 'Chorrillos cevicherías serve the freshest fish in Lima — the boats literally unload at the pier next door. Go before 2pm for the best selection.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Anticucho Street Food Night',
+          text: 'Lima\'s street food scene peaks at night. Walk Avenida 28 de Julio in Miraflores for anticucheras — women grilling beef heart skewers over charcoal (S/ 5–8 each) with ají sauce. The smoke, the sizzle, and the flavour are extraordinary. Pair with a chicha morada (purple corn drink, S/ 3–5). End at Barranco bars — Juanito\'s for cheap beer (S/ 5–8) or Dada Bar for cocktails.',
+          tip: 'Anticucho stands appear after 7pm along main avenues. Tía Grimanesa on Parque de la Reserva is the most famous anticuchera in Lima.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Museums, Markets & Local Lima',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Museo de la Nación or MAC',
+          text: 'Visit the Museo de la Nación (free) in San Borja for the Yuyanapaq photo exhibition — a powerful documentation of Peru\'s internal conflict. It is the most important museum about modern Peru. Alternatively, the MAC (Museo de Arte Contemporáneo, S/ 10) in Barranco has rotating contemporary exhibitions in a beautiful modernist building overlooking the Pacific.',
+          tip: 'Yuyanapaq is deeply moving and provides essential context for understanding modern Peru. Allow 1–2 hours and be prepared for emotional content.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mercado de Magdalena & Local Life',
+          text: 'Explore Mercado de Magdalena — a neighbourhood market without tourists. Fresh fruit juice (S/ 3–5), ceviche from a market stall (S/ 10–15), and excellent menú del día (set lunch, S/ 8–12). Walk through the residential streets of Magdalena and San Miguel — middle-class Lima with parks, bakeries, and a pace that feels nothing like the tourist circuits.',
+          tip: 'Menú del día at market comedores is the best meal deal in Lima — soup, main course, drink, and sometimes dessert for S/ 8–12.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Circuito Mágico del Agua',
+          text: 'Visit the Circuito Mágico del Agua in Parque de la Reserva (S/ 4) — a park with 13 illuminated fountains set to music and coloured lights. It is surprisingly beautiful and popular with local families. Dinner nearby at Panchita for traditional Peruvian comfort food (S/ 25–45) — anticuchos, tamales, and picarones (sweet potato doughnuts with fig syrup). One of Gastón Acurio\'s most accessible restaurants.',
+          tip: 'The fountain park is best after 7pm when the lights are on. Wednesday through Sunday has the full light show. Very popular with families.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Last Ceviche & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Paragliding & Malecón',
+          text: 'If you have not yet, paraglide off the Miraflores cliffs (S/ 250–350 tandem, 10 min). The flight soars along the coastline with views of the city, the Pacific, and the green parks below. No experience needed — just courage. If not paragliding, one last Malecón walk with coffee from Pan de la Chola (S/ 10–15) and a quiet morning absorbing the ocean view.',
+          tip: 'Paragliding operators line the Malecón near Parque del Amor. Morning flights are smoother — afternoon thermals make it bumpier but more exciting.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Ceviche & Souvenirs',
+          text: 'Final ceviche at La Mar (closes 5pm, S/ 35–60) — widely considered the best in Lima by Gastón Acurio. Or keep it humble at a Surquillo market stall for S/ 10–15. Pick up souvenirs — alpaca wool scarves at the Indio Market in Miraflores (S/ 30–80), Peruvian chocolate from Cacaosuyo, or pisco from a liquor store (S/ 30–60 for a good bottle).',
+          tip: 'Alpaca products at the Indio Market are half the price of boutique shops. Bargain politely — starting at 30–40% below asking price is normal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Pisco Sunset',
+          text: 'Watch the sunset from the Malecón one last time — the Pacific turns gold as paragliders drift above. A farewell pisco sour at Huaringas Bar (S/ 20–28) or splurge on dinner at Central by Virgilio Martínez — frequently ranked the world\'s best restaurant, exploring Peru\'s ecosystems through tasting courses (S/ 700–900, book months ahead). Lima is a city you will miss the moment you leave.',
+          tip: 'If Central is booked (it always is), try Kjolle — Virgilio Martínez\'s partner\'s restaurant, equally extraordinary and slightly easier to book.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Menú del día', text: 'Almost every local restaurant offers a menú (set lunch) for S/ 8–15 — soup, main, drink, and sometimes dessert. It is where all Limeños eat lunch. Markets have the cheapest versions at S/ 8–10.' },
+  { title: 'Ceviche before 3pm', text: 'Cevicherías close by 4–5pm — Peruvians only eat ceviche with the freshest fish. Market ceviche costs S/ 10–15 vs S/ 35–60 at restaurants. The quality at good markets is just as high.' },
+  { title: 'Metropolitano bus', text: 'The Metropolitano BRT costs S/ 2.50 per ride and connects Barranco, Miraflores, and Centro on a dedicated busway. Buy a rechargeable card at any station. Faster than taxis in traffic.' },
+  { title: 'Free museums', text: 'Museo de la Nación is free. Museo Larco is free the first Sunday of the month. MALI (Museo de Arte de Lima) is free Sundays. Most churches in Centro are free entry.' },
+  { title: 'Street food mastery', text: 'Anticuchos: S/ 5–8. Empanadas: S/ 3–5. Tamales: S/ 4–7. Chicha morada: S/ 3–5. Picarones: S/ 5–8. You can eat a full dinner from street vendors for S/ 15–25 and it will be extraordinary.' },
+  { title: 'Walk the Malecón', text: 'The Malecón clifftop walk from Miraflores to Barranco (40 min) is free and one of the best urban walks in South America. Parque Kennedy, Parque del Amor, and all the clifftop parks are free.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'S/ 30–70', midrange: 'S/ 120–300', splurge: 'S/ 500+', notes: 'Hostels → boutique hotels → luxury hotels' },
+  { category: 'Food', budget: 'S/ 25–50', midrange: 'S/ 60–130', splurge: 'S/ 250+', notes: 'Markets & street food → cevicherías → fine dining' },
+  { category: 'Transport', budget: 'S/ 5–15', midrange: 'S/ 20–50', splurge: 'S/ 80+', notes: 'Metro/bus → Uber → private transfers' },
+  { category: 'Activities', budget: 'S/ 0–20', midrange: 'S/ 40–100', splurge: 'S/ 200+', notes: 'Free sites & walks → museums → paragliding' },
+  { category: 'Drinks', budget: 'S/ 8–20', midrange: 'S/ 25–50', splurge: 'S/ 80+', notes: 'Chicha morada → pisco at bars → cocktail lounges' },
+  { category: 'Daily Total', budget: 'S/ 68–175', midrange: 'S/ 265–630', splurge: 'S/ 1,110+', notes: '$18–47 → $71–168 → $296+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'US, EU, UK, Canadian citizens get 90–183 days visa-free. Immigration stamps your allowed days — check and negotiate if needed',
+      'Passport must be valid for 6+ months. Proof of onward travel occasionally requested',
+      'Jorge Chávez airport (LIM) to Miraflores: Airport Express Lima bus S/ 25, Uber S/ 30–50 (40 min without traffic)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Tap water is NOT safe to drink — use bottled water everywhere. Ice at restaurants is generally safe (made from purified water)',
+      'Altitude sickness is not an issue in Lima (sea level). Miraflores and Barranco are safe. Use Uber at night. Be cautious in Centro after dark',
+      'Emergency: 105 (police), 116 (firefighters). Clínica Anglo Americana and Clínica Javier Prado are the best hospitals. Travel insurance essential',
+    ],
+  },
+  {
+    icon: '🚌',
+    title: 'Getting Around',
+    items: [
+      'Metropolitano BRT: S/ 2.50 per ride, connects Barranco–Miraflores–Centro on a fast dedicated busway',
+      'Metro Line 1 serves Villa El Salvador to San Juan de Lurigancho. Limited use for tourists. More lines coming soon',
+      'Uber is cheap, safe, and widely used. S/ 8–15 for most Miraflores–Barranco rides. Always use rideshare at night',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in most cafes, restaurants, and malls. Parks and public spaces have limited WiFi',
+      'Claro, Movistar, or Entel SIM cards from any phone shop — S/ 20–40 for 5–10GB data. eSIMs from Airalo work well',
+      'Download Uber, Google Maps offline, and WhatsApp. Lima traffic means Google Maps walking routes are often faster than driving',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Cards accepted at restaurants and shops in Miraflores and San Isidro. Cash essential at markets, street food, and smaller establishments',
+      'ATMs at BCP, BBVA, and Interbank. Withdraw S/ 400–800 at a time. Street money changers offer decent rates but count carefully',
+      'Tip 10% at restaurants (sometimes included as "servicio"). No tipping at casual eateries or bars',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Lima has a "garúa" (fog/drizzle) from May to November — bring a light waterproof jacket. Summer (Dec–Mar) is sunny and warm',
+      'Comfortable walking shoes — Lima\'s sidewalks are uneven. A crossbody bag for security',
+      'Layers — coastal Lima can be cool and damp even in "warm" months. Sunscreen for sunny days',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🍽', title: 'Gastronomy Capital', text: 'Lima is widely considered the gastronomic capital of South America, with multiple restaurants in the world\'s top 50. From S/ 8 market menú to S/ 700 tasting courses — every price point delivers extraordinary food.' },
+  { icon: '🐟', title: 'Ceviche Rules', text: 'Peruvians only eat ceviche at lunch — cevicherías close by 4–5pm. Order mixto for variety. Drink the leche de tigre (ceviche juice). Never eat ceviche after dark — if a place serves it at night, the fish is not fresh.' },
+  { icon: '🤝', title: 'Greetings', text: 'One kiss on the right cheek between women and between men and women. Men shake hands firmly. When entering a room or gathering, greet each person individually.' },
+  { icon: '💰', title: 'Bargaining', text: 'Bargaining is normal at markets and with street vendors. Not appropriate at restaurants or shops with fixed prices. Start at 30–40% below the asking price and negotiate warmly.' },
+  { icon: '🚕', title: 'Safety Smarts', text: 'Use Uber or licensed taxis (yellow, with company markings). Never hail random cars on the street. Keep phones in inside pockets. Miraflores and Barranco are safe day and night. Centro and Callao require more caution.' },
+  { icon: '🗣', title: 'Peruvian Spanish', text: 'Peruvian Spanish is among the clearest in Latin America — no heavy slang or accent. "Chévere" (cool), "ya" (OK/yes), and "pe" (shortened pues, emphasis word). Basic Spanish makes a huge difference here.' },
+];
+---
+
+<CityGuideLayout
+  title="Lima Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Lima guide for young travelers. 3-day itinerary with ceviche, pisco bars, ancient ruins, and budget tips. Plan your Peru trip with roammate."
+  heroImage="/images/guides/lima-hero.webp"
+  heroFlag="🇵🇪"
+  heroCountry="Peru"
+  heroRegion="South America"
+  heroCity="Lima"
+  heroSubtitle="A clifftop city where the world's best ceviche meets ancient pyramids, bohemian bars, and sunsets over the endless Pacific."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Dec – Apr Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Peruvian soles. Lima offers world-class gastronomy at every price point — from S/ 8 market lunches to top-50-in-the-world restaurants."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Lima is South America's gastronomic capital and one of its most underrated cities. Eat ceviche at lunch, drink pisco at sunset, and explore a city built on 2,000 years of history."
+  ctaCity="Lima"
+  ctaText="Find travel companions to share a ceviche lunch, explore Barranco's bars, or take a cooking class together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EUR (Euro)', detail: '1 USD ≈ €0.92' },
+  { icon: '🗣', label: 'Language', value: 'Spanish / Valencian', detail: 'English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Oct', detail: '20–32°C, 300 days sunshine' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$60–90 USD', detail: '€55–82 per day' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: '90 days visa-free for most' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Old Town, Paella & City of Arts in a Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Town & Central Market',
+          text: 'Start at the Mercado Central — one of Europe\'s largest and most beautiful covered markets, a stunning modernista iron-and-glass building with over 1,200 stalls. Try horchata (tiger nut milk, €2) and fartons (sweet pastry fingers for dipping). Walk to the Plaza de la Virgen — the city\'s most beautiful square with the Cathedral, Basilica, and the Turia Fountain. Climb the Miguelete bell tower (€3) for 360° old-town views.',
+          tip: 'The Mercado Central is best before 11am — locals shop early and many stalls sell fresh juices and tapas to eat standing.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Authentic Paella & Jardín del Turia',
+          text: 'Lunch at Casa Roberto or La Pepica on Playa de la Malvarrosa for authentic Valencian paella — this is where the dish was invented. The real version uses chicken, rabbit, green beans, and snails (not seafood). Bus or metro to the Jardín del Turia — a 9km-long park built in a drained riverbed that cuts through the city, perfect for walking, cycling, or just sitting under the palm trees.',
+          tip: 'Never order paella at dinner in Valencia — it\'s a lunch dish. Locals eat it between 2–3:30pm. Ordering at night marks you as a tourist.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'City of Arts & Sciences & Ruzafa',
+          text: 'Walk the Turia Gardens to the City of Arts and Sciences — Santiago Calatrava\'s futuristic complex of white bone-like structures reflected in pools of water. The L\'Hemisfèric (IMAX, €9), Oceanogràfic (Europe\'s largest aquarium, €38), and Palau de les Arts are stunning at sunset. Then metro to Ruzafa — Valencia\'s hippest barrio with cocktail bars, international restaurants, and nightlife on Calle Sueca.',
+          tip: 'The City of Arts and Sciences is most photogenic at blue hour (just after sunset) when the buildings glow against the sky.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Old Town, Markets & Paella',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mercado Central & Old Town',
+          text: 'Start at the Mercado Central — a breathtaking modernista building with 1,200+ stalls selling everything from Iberian ham to fresh horchata. Grab a horchata and fartons (€3–4) for breakfast. Walk to the Plaza de la Virgen — the Cathedral, Basilica de la Virgen, and Turia fountain create Valencia\'s finest square. Visit the Cathedral (€9 with audioguide) — the chapel claims to hold the Holy Grail. Climb the Miguelete tower (€3) for panoramic views.',
+          tip: 'The Holy Grail in Valencia Cathedral is taken seriously here — Pope Benedict XVI drank from it in 2006. It\'s in a side chapel.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'La Lonja & Authentic Paella',
+          text: 'Visit La Lonja de la Seda (€2, free Sundays) — a 15th-century UNESCO-listed silk exchange with a stunning Gothic hall of twisted columns. Then lunch at a paella restaurant — Casa Roberto near the Mercado Central or El Palmar village (30 min south, bus 25) for the most authentic. Valencian paella has chicken, rabbit, green beans, and garrofó — not seafood. Expect to wait 30–40 minutes (it\'s made fresh).',
+          tip: 'Real paella takes 40+ minutes to cook — if it arrives fast, it was premade. Eat it at lunch, never dinner. This is the law in Valencia.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'El Carmen & Barrio del Carmen',
+          text: 'Explore El Carmen — the old town\'s most atmospheric barrio with medieval streets, street art, and indie bars. Start with drinks at Café de las Horas on Calle Conde de Almodóvar — a decadently baroque bar famous for Agua de Valencia (orange juice, cava, vodka, and gin). Walk to Plaza del Tossal for terrace drinks, then down to Calle Caballeros for bar-hopping. Radio City on Calle Santa Teresa for live music.',
+          tip: 'Café de las Horas\' Agua de Valencia cocktail is the city\'s signature drink — a jug (shared) is better value than individual glasses.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'City of Arts, Beach & Ruzafa',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'City of Arts and Sciences',
+          text: 'Walk or cycle the Jardín del Turia — a 9km park in a drained riverbed — to the City of Arts and Sciences. Calatrava\'s futuristic complex includes the Hemisfèric (IMAX eye, €9), Príncipe Felipe science museum (€9), and the Oceanogràfic (€38) — Europe\'s largest aquarium with a 35m underwater tunnel. The exteriors alone are worth the trip — bone-white structures reflected in turquoise pools.',
+          tip: 'Combined tickets for multiple City of Arts venues save 15–20%. The Oceanogràfic needs 3+ hours to do properly.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Malvarrosa Beach',
+          text: 'Tram or bus to Playa de la Malvarrosa — Valencia\'s main city beach with wide golden sand, a palm-lined promenade, and excellent chiringuito beach bars. Swim in the warm Mediterranean — the water is calm and clear. Lunch at La Pepica on the Paseo Marítimo — paella right on the beach, a favourite of Hemingway when he visited Valencia. The seafood fideuà (noodle paella) here is legendary.',
+          tip: 'The beach is huge — walk past the first rows of sunbeds for more space. The sand is golden and the water is warm May–October.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ruzafa — Valencia\'s Hipster Barrio',
+          text: 'Metro to Ruzafa — Valencia\'s trendiest neighbourhood, packed into a grid of streets around the Mercado de Ruzafa. Calle Sueca and Calle Cuba are the main drags — craft cocktail bars, international restaurants, and vintage shops. Dinner at Canalla Bistro by Ricard Camarena on Calle Maestro José Serrano — a Michelin-starred chef\'s casual concept (tapas €5–12). Then bar-hop — Olhöps for craft beer, Ubik Café for books and wine.',
+          tip: 'Ruzafa is where Valencia\'s young creatives live and go out. Thursday–Saturday nights are busiest. Calle Sueca is the spine.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Albufera, Street Art & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Albufera Natural Park',
+          text: 'Bus 25 from Valencia (30 min, €1.45) to Albufera Natural Park — a freshwater lagoon surrounded by rice paddies where paella was born. Take a traditional wooden boat (albuferenc) ride on the lagoon (€5, 45 min) through the channels past rice fields and fishing huts. The birdlife is extraordinary — herons, flamingos, and migrating waterbirds. Visit El Palmar village — the spiritual home of paella.',
+          tip: 'Albufera boat rides are best in the early morning when the lagoon is glassy calm and the birdlife is most active.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Street Art Tour & IVAM',
+          text: 'Valencia is one of Europe\'s best street art cities. Walk El Carmen — every wall is a canvas, with murals by internationally known artists on Calle de Moret, Calle Alta, and around the Torres de Quart. Visit IVAM — the Valencian Institute of Modern Art (€2, free Sundays) for rotating contemporary exhibitions. Lunch at Bar Ricardo on Calle del Doctor Zamenhof for a menú del día (€12–15 for three courses with wine).',
+          tip: 'Valencia\'s street art changes monthly — the murals around Calle Alta and the Torres de Quart area are the most concentrated.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Agua de Valencia',
+          text: 'Final dinner at El Poblet on Calle Correos — Quique Dacosta\'s (3 Michelin stars at his Dénia restaurant) more accessible Valencia venue, with a tasting menu from €65. Or casual at La Más Bonita on the beach promenade for sunset cocktails. End at Café de las Horas for one last Agua de Valencia — the perfect farewell toast to the city that invented paella and cocktails equally well.',
+          tip: 'La Más Bonita on the Malvarrosa promenade combines sunset, cocktails, and beach views — arrive by 7pm for a terrace table.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Old Town, Markets & Paella',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mercado Central & Old Town',
+          text: 'Start at the Mercado Central — 1,200+ stalls in a stunning modernista building. Try horchata and fartons (€3–4). Walk to Plaza de la Virgen — Cathedral, Basilica, and Turia fountain. Visit the Cathedral (€9) with the Holy Grail chapel. Climb the Miguelete tower (€3) for 360° views over terracotta rooftops to the sea.',
+          tip: 'The Mercado Central is best before 11am. The Holy Grail in the Cathedral is taken seriously — it\'s in a small side chapel.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'La Lonja & Paella Lunch',
+          text: 'La Lonja de la Seda (€2, free Sundays) — a Gothic silk exchange with twisted columns, UNESCO-listed. Lunch at a paella spot — Casa Roberto near the market or take bus 25 to El Palmar for the most authentic experience. Real Valencian paella has chicken, rabbit, and beans — not seafood. It takes 40 minutes to cook properly.',
+          tip: 'Paella is a lunch dish in Valencia — ordering it at dinner is a tourist tell. El Palmar village is the spiritual home.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'El Carmen & Agua de Valencia',
+          text: 'Explore El Carmen — medieval streets, street art, and indie bars. Drinks at Café de las Horas for Agua de Valencia (the signature cocktail). Plaza del Tossal for terrace drinks, then Calle Caballeros for bar-hopping. Radio City on Santa Teresa for live music. El Carmen doesn\'t get going until 10pm on weekends.',
+          tip: 'Agua de Valencia (orange juice, cava, vodka, gin) is the city\'s signature — share a jug at Café de las Horas.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'City of Arts & Sciences',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Turia Gardens & Calatrava',
+          text: 'Walk or rent a bike (Valenbisi, €13.30/week) through the Jardín del Turia — a 9km park in the drained riverbed. Pass under medieval bridges and through palm groves to the City of Arts and Sciences. Start with the Príncipe Felipe science museum (€9) — interactive and fun. The architecture outside is equally impressive — bone-white ribs reflected in pools.',
+          tip: 'Valenbisi bike-share is the best way to travel the Turia — the whole 9km ride to the City of Arts takes 30 minutes.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Oceanogràfic',
+          text: 'The Oceanogràfic (€38) is Europe\'s largest aquarium — a 35m underwater tunnel, dolphin shows, beluga whales, and Mediterranean marine ecosystems. Each building is designed by Félix Candela with parabolic shell structures. Allow 3+ hours. Combined tickets with the Hemisfèric save 15–20%. The arctic section with penguins and belugas is the highlight.',
+          tip: 'The Oceanogràfic is expensive but genuinely world-class. Book online for €3–5 savings. Wednesday afternoons are quietest.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Blue Hour Photos & Dinner',
+          text: 'Stay at the City of Arts for blue hour — the buildings glow white against the deepening sky, reflected in the surrounding pools. It\'s one of Europe\'s most photogenic urban landscapes. Dinner at Ruzafa — Canalla Bistro by Ricard Camarena (tapas €5–12) or Central Bar at the Mercado Central for late-evening pintxos and vermouth.',
+          tip: 'Blue hour at the City of Arts is 20–40 minutes after sunset — the reflections in the pools are extraordinary for photos.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Beach Day & Ruzafa',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Malvarrosa Beach',
+          text: 'Tram to Playa de la Malvarrosa — golden sand, warm Mediterranean water, and a palm-lined promenade. The beach is huge — walk past the main section for more space. Swim, sunbathe, or rent a paddleboard (€15/hour). For a quieter beach, continue south to Playa de El Saler in the Albufera park — wilder, backed by dunes and pine forest.',
+          tip: 'Malvarrosa is wide and sandy — the southern end near the port is quieter. Water is swimmable from May to October.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Seafood Lunch & Port',
+          text: 'Lunch at La Pepica on Paseo Marítimo — paella and fideuà on the beach, Hemingway\'s favourite. Or walk to the Port area — the Marina de València has been transformed with restaurants, a food market, and the Veles e Vents building by David Chipperfield. The Mercado del Cabanyal in the old fisherman\'s quarter has artisan food stalls and craft beer.',
+          tip: 'La Pepica\'s seafood fideuà (noodle paella) is as good as their rice paella — try both if you\'re with a group.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ruzafa Nightlife',
+          text: 'Metro to Ruzafa for Valencia\'s best nightlife. Start at Olhöps Craft Beer House on Calle Sueca for local brews (€4–6). Dinner at Mistral (creative Mediterranean, mains €12–18) or Aloha Poké for something lighter. Bar-hop along Calle Cuba and Calle Literato Azorín. La Fustería for natural wines, Ubik Café for books and cocktails. Dancing at Mya at Marina Beach Club after midnight.',
+          tip: 'Ruzafa is compact and walkable — Calle Sueca is the main strip but the side streets hide the best spots.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Albufera & Rice Paddies',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Albufera Boat Ride',
+          text: 'Bus 25 to Albufera Natural Park (30 min, €1.45). Take a traditional albuferenc boat ride (€5, 45 min) through the freshwater lagoon — rice paddies, fishing huts, and extraordinary birdlife including flamingos and herons. The lagoon is the birthplace of paella — the rice that grows here feeds the recipe.',
+          tip: 'The boat rides are best at dawn for birdwatching, but the 10am departures are more practical and still beautiful.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'El Palmar Village & Paella',
+          text: 'Walk to El Palmar — a tiny lakeside village that claims to be the birthplace of paella. Lunch at Restaurante Mateu or Bon Aire — traditional Valencian rice dishes cooked over wood fire in wide, shallow pans. The arroz a banda (fish stock rice) and all i pebre (eel stew) are local specialities beyond paella. Return via the El Saler beach — wild dunes, pine forest, and few tourists.',
+          tip: 'El Palmar restaurants are busy on weekends — book ahead or go on a weekday. The all i pebre is the real local dish.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & El Carmen Night',
+          text: 'Back in Valencia, explore El Carmen by night. Dinner at La Lola on Calle Subida del Toledano — creative tapas in a beautiful old-town setting (dishes €6–12). Walk the illuminated Torres de Serranos and Torres de Quart — the medieval city gates lit up against the night sky. End at Café Berlin on Plaza de San Jaime for late-night drinks and DJ sets.',
+          tip: 'The Torres de Serranos are free to climb on Sundays — at night they\'re beautifully lit and visible from across the Turia.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Street Art, Museums & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Street Art Walk & Torres',
+          text: 'Valencia is one of Europe\'s great street art cities. Walk El Carmen — Calle de Moret, Calle Alta, and the areas around Torres de Quart and Torres de Serranos for the best murals by international artists. Climb the Torres de Serranos (€2, free Sundays) — the 14th-century city gate with excellent views. The contrast between medieval walls and contemporary art is pure Valencia.',
+          tip: 'Street art in El Carmen changes constantly — the area around Calle Alta has the highest concentration of large-scale murals.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'IVAM & Bombas Gens',
+          text: 'IVAM — the Valencian Institute of Modern Art (€2, free Sundays) — for contemporary exhibitions. Then taxi to Bombas Gens Centre d\'Art (free) — a converted Art Deco factory with contemporary art, a Roman-era refuge discovered during renovation, and a restaurant by Ricard Camarena (2 Michelin stars, lunch menu from €45). The building alone is extraordinary.',
+          tip: 'Bombas Gens is free and rarely crowded — the converted factory space is one of Valencia\'s most impressive architectural transformations.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Benimaclet — Student Quarter',
+          text: 'Metro to Benimaclet — a village-like barrio absorbed by the city, now a student-heavy neighbourhood with cheap eats and authentic atmosphere. Dinner at a local taberna on Calle de José Benlliure — menú del día for €10–12 including wine. Browse the Sunday craft market. Benimaclet feels like a separate village — neighbours chat in the streets, kids play in the plaza.',
+          tip: 'Benimaclet\'s Sunday market on Calle Barón de San Petrillo has handmade crafts, organic produce, and live music.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Day Trip to Xàtiva or Peñíscola',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Train to Xàtiva',
+          text: 'Cercanías train to Xàtiva (50 min, €5.70) — a beautiful historic town dominated by a massive hillside castle. The Castell de Xàtiva (€2.40) stretches across the ridge with panoramic views over the valley and orange groves. Two connected forts with medieval towers, gardens, and one of Spain\'s best castle views. The climb takes 30 minutes uphill through pine forest.',
+          tip: 'Xàtiva is a day trip gem that most tourists miss. The castle has almost no visitors and the views rival any in Spain.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Xàtiva Old Town',
+          text: 'Descend through Xàtiva\'s old town — a network of narrow streets with Renaissance palaces, Gothic churches, and the Colegiata basilica. The town was the birthplace of two Borgia popes. Lunch at a local restaurant for arròs al forn (oven-baked rice, Xàtiva\'s signature dish). The Museo del Almodí has the famous upside-down portrait of Felipe V — the town\'s revenge for his 1707 destruction of the city.',
+          tip: 'The upside-down portrait of Felipe V in the museum is delightfully petty — Xàtiva has never forgiven the Bourbons.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Cabanyal Quarter',
+          text: 'Train back to Valencia. Explore the Cabanyal — the old fisherman\'s quarter near the beach, with colourful tiled facades and a gritty character. Dinner at Casa Montaña on Calle José Benlliure — one of Valencia\'s best tapas bars since 1836 (tapas €4–10). The neighbourhood is gentrifying fast but still has authentic character. Walk the seafront promenade to Marina de València.',
+          tip: 'Casa Montaña is a local institution — the jamón ibérico, pickled anchovies, and vermouth are outstanding. Book ahead.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Markets, Horchata & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mercado de Colón & Horchata',
+          text: 'Visit the Mercado de Colón — a stunning modernista market building, now a gourmet food hall in the Eixample neighbourhood. Have breakfast at one of the terraces. Then head to Horchatería Daniel on Avenida de la Horchata in Alboraya (tram L3) — the best horchata in Valencia from the village where tiger nuts are grown. Freshly made horchata with fartons (€4) is the real Valencian experience.',
+          tip: 'Alboraya\'s horchaterías use fresh-ground tiger nuts — the taste is completely different from the bottled version in the city.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Souvenirs',
+          text: 'Pick up souvenirs: hand-painted Manises ceramics from shops near the Mercado Central, sobrasada sausage, turrón (almond nougat), and Valencian olive oil. Browse the independent boutiques on Calle de la Paz and Calle Colón. Visit the Museo Nacional de Cerámica (€3, free Saturdays) in the extraordinary Palacio del Marqués de Dos Aguas — a rococo facade that looks like melting chocolate.',
+          tip: 'The Palacio del Marqués de Dos Aguas has the most extravagant facade in Spain — the ceramic museum inside is excellent too.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell at Sunset',
+          text: 'Final sunset at the City of Arts — the pools and buildings turn gold and pink. Farewell dinner at El Poblet on Calle Correos — Quique Dacosta\'s Valencia restaurant (tasting menu from €65) for a memorable last meal. Or keep it simple at the Mercado Central\'s Central Bar for standing pintxos and wine. One last Agua de Valencia at Café de las Horas. Bona nit, València.',
+          tip: 'El Poblet\'s lunch menu is significantly cheaper than dinner — if you want the experience without the full price, go midday.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free experiences', text: 'Turia Gardens, Malvarrosa Beach, street art walks, Torres de Serranos (free Sundays), IVAM (free Sundays), Bombas Gens (always free), and wandering El Carmen and Ruzafa.' },
+  { title: 'Menú del día magic', text: 'The Spanish menú del día (set lunch) is extraordinary value — €10–15 for three courses plus bread and wine. Available at most non-tourist restaurants Mon–Fri. Always ask "¿Hay menú del día?"' },
+  { title: 'Transport', text: 'Valenbisi bike-share: €13.30/week with first 30 min free. Metro single: €1.50. T1/T2/T3 bus: €1.50. 10-trip card: €8.50. Valencia is flat and very cyclable — bikes are the best transport.' },
+  { title: 'Paella price check', text: 'Authentic paella at local restaurants: €8–15 per person. Tourist restaurants near the beach charge €15–25 for the same dish. Head to El Palmar for the real deal. Never order paella for one — it\'s always shared.' },
+  { title: 'Cheap drinks', text: 'Caña (small beer): €1.50–2.50. Agua de Valencia jug (shared): €12–15. Tinto de verano: €2–3. Supermarket wine: €2–4. Ruzafa bars have happy hours and craft beer from €3.50.' },
+  { title: 'Free attractions', text: 'City of Arts exteriors are free to photograph. Many churches are free. The Silk Exchange is €2 (free Sundays). Torres de Serranos: €2 (free Sundays). Albufera bus is €1.45 each way.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€18–35', midrange: '€65–120', splurge: '€180+', notes: 'Hostels → boutique hotels → luxury hotels' },
+  { category: 'Food', budget: '€12–20', midrange: '€30–50', splurge: '€70+', notes: 'Menú del día & markets → Ruzafa restaurants → tasting menus' },
+  { category: 'Transport', budget: '€3–6', midrange: '€8–15', splurge: '€25+', notes: 'Bike & walking → metro/bus → taxis & car rental' },
+  { category: 'Activities', budget: '€0–10', midrange: '€15–40', splurge: '€60+', notes: 'Free sights & beach → museums & aquarium → private tours' },
+  { category: 'Drinks', budget: '€5–10', midrange: '€12–20', splurge: '€30+', notes: 'Cañas & tinto → wine bars → cocktail lounges' },
+  { category: 'Daily Total', budget: '€38–81', midrange: '€130–245', splurge: '€365+', notes: '$41–88 → $142–267 → $397+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — 90 days visa-free for most nationalities within any 180-day period',
+      'Valencia Airport (VLC) is 8km from centre. Metro lines 3 & 5 to the city (€5.80 including airport surcharge, 25 min). Taxi: €20–25',
+      'AVE from Madrid (1h40, €20–50). Regional trains from Barcelona (3h, €15–40). Renfe connects most Spanish cities',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. EHIC covers EU citizens. Spanish pharmacies are excellent and well-stocked',
+      'Tap water is safe. Sun protection essential May–September — Valencia is very sunny with high UV',
+      'Valencia is very safe. Minor pickpocketing at tourist sites and on the beach. Lock bikes properly — theft happens',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Metrovalencia runs metro and tram. Single ticket: €1.50. The T1 card (10 trips, €8.50) is best value',
+      'Valenbisi bike-share: €13.30/week, first 30 min free per trip. Valencia is flat and perfect for cycling',
+      'The city is very walkable. Bolt and Uber work. Taxis are metered — green light means available',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'EU roaming for European SIMs. Local prepaid from Vodafone, Orange, or Lycamobile (€10–15 for 5–10GB)',
+      'Free WiFi in cafés, museums, and the Turia Gardens (spotty). 4G/5G coverage is excellent city-wide',
+      'Download the EMT Valencia app for bus routes and the Metrovalencia app for metro and tram schedules',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Euro (€) everywhere. Cards accepted widely — contactless is standard at most businesses',
+      'ATMs from CaixaBank, BBVA, and Santander have lowest fees. Avoid independent ATMs in tourist areas',
+      'Tipping not expected — service is included. Leaving small change or rounding up is appreciated but not required',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Swimwear, sunscreen (SPF 50+), hat, sunglasses — Valencia has 300+ sunshine days per year',
+      'Comfortable shoes for cobblestones. Light, breathable clothing. A light layer for air-conditioned museums',
+      'A lock for Valenbisi bikes. Water shoes if heading to rocky coves south of the city',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🥘', title: 'Paella Rules', text: 'Paella is a lunch dish — NEVER order it at dinner. Real Valencian paella has chicken, rabbit, green beans, and garrofó beans — not seafood (that\'s arroz a la marinera). Don\'t ask for chorizo in paella. Ever. Locals will judge you.' },
+  { icon: '🗣', title: 'Valenciano & Castellano', text: 'Valencia is bilingual — Valenciano (related to Catalan) and Castellano (Spanish). Street signs are in Valenciano. Locals appreciate "Bon dia" or "Gràcies." Don\'t call Valenciano "Catalan dialect" — it\'s politically sensitive.' },
+  { icon: '🔥', title: 'Las Fallas', text: 'If you visit in March, Las Fallas (15–19 March) is Valencia\'s most spectacular festival — giant papier-mâché sculptures burned in bonfires, 24-hour firecrackers, and the Mascletà daily at 2pm in Plaza del Ayuntamiento. Book accommodation months ahead.' },
+  { icon: '🕐', title: 'Spanish Timing', text: 'Lunch: 2–3:30pm. Dinner: 9:30pm onwards. Shops close for siesta 2–5pm. Sunday most shops close. The menú del día is only available at lunchtime. Nightlife starts at midnight. Adjust your body clock.' },
+  { icon: '🌊', title: 'Beach Etiquette', text: 'All Spanish beaches are public by law. Topless sunbathing is common. Don\'t play loud music. Clean up after yourself — Valencians are proud of their beaches. The chiringuito (beach bar) is the social hub.' },
+  { icon: '💧', title: 'Water Tribunal', text: 'Every Thursday at noon, the Tribunal de las Aguas meets at the Cathedral door — a 1,000-year-old water court settling irrigation disputes. It\'s a UNESCO-listed living tradition and one of Europe\'s most ancient institutions.' },
+];
+---
+
+<CityGuideLayout
+  title="Valencia Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Valencia guide for young travelers. 3-day itinerary with authentic paella, futuristic architecture, street art, and Mediterranean beaches. Plan your trip with roammate."
+  heroImage="/images/guides/valencia-hero.webp"
+  heroFlag="🇪🇸"
+  heroCountry="Spain"
+  heroRegion="Europe"
+  heroCity="Valencia"
+  heroSubtitle="Where futuristic white domes rise from a riverbed park, paella simmers over orange-wood fire, and every neighbourhood has its own rhythm."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Apr – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in EUR. Valencia is one of Spain's most affordable cities — incredible food, free beaches, bike-friendly streets, and genuine value at every turn."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Valencia has its own language, its own cuisine, and its own way of life. Learn the paella rules, respect the timing, and you'll discover a city that runs on sunshine and generosity."
+  ctaCity="Valencia"
+  ctaText="Find travel companions, share authentic paella lunches, and explore the Albufera together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

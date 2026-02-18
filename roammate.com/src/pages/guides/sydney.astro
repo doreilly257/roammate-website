@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'AUD (A$)', detail: '1 USD ≈ A$1.55' },
+  { icon: '🗣', label: 'Language', value: 'English', detail: 'Multicultural — 200+ languages spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'AEST (UTC+10/11)', detail: 'Daylight saving Oct–Apr' },
+  { icon: '☀️', label: 'Best Months', value: 'Sep – Nov', detail: '18–25°C, spring wildflowers' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$80–120 USD', detail: 'A$125–185 budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'eVisitor / ETA', detail: 'A$20 online — most nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Sydney Highlights in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Opera House, Harbour & The Rocks',
+          text: 'Start at Circular Quay for the iconic double view — the Sydney Opera House on your left, the Harbour Bridge on your right. Walk to the Opera House forecourt for close-up photos of Jørn Utzon\'s masterwork. Then wander through The Rocks — Sydney\'s oldest neighbourhood with sandstone buildings, cobblestone lanes, and weekend markets. Breakfast at The Fine Food Store on the harbour (flat white A$5.50, smashed avo A$19).',
+          tip: 'The Opera House is most photogenic from Mrs Macquarie\'s Chair — a 15-minute walk east through the Botanic Gardens with both icons perfectly framed.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Bondi Beach & Coastal Walk',
+          text: 'Bus 333 from Circular Quay to Bondi Beach (Opal card A$3.20, 40 minutes). Bondi is Australia\'s most famous beach — swim between the iconic red and yellow flags, watch the surfers from the promenade, and have lunch at Bondi Icebergs Club (A$20–35 mains, ocean pool views). Then walk the Bondi to Coogee coastal trail (6km, 2 hours) — cliff edges, rock pools, Tamarama and Bronte beaches, and the Waverley Cemetery overlooking the Pacific.',
+          tip: 'Start the Bondi to Coogee walk at Bondi heading south — the views get progressively more dramatic and you finish at Coogee for a rewarding swim.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Harbour Bridge Sunset & Darling Harbour',
+          text: 'Walk across the Sydney Harbour Bridge at sunset (free, pedestrian path on the east side) — the views of the Opera House and harbour are spectacular as the sky turns golden. The BridgeClimb (A$268–398) is a bucket-list splurge but the free walkway is nearly as good. Then head to Darling Harbour for waterfront dining — the Street Food Markets have affordable options (A$12–18) and the harbour lights up beautifully at night.',
+          tip: 'The Harbour Bridge pedestrian walkway is accessed from stairs near Milsons Point station on the north side — most tourists miss this free viewpoint.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Harbour Icons & Coastal Walks',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Opera House & Royal Botanic Gardens',
+          text: 'Start at Circular Quay for the double icon view — Opera House left, Harbour Bridge right. Walk around the Opera House forecourt, then through the Royal Botanic Gardens (free) — 30 hectares of lush greenery with harbour views, flying foxes hanging from trees, and the Mrs Macquarie\'s Chair viewpoint. The gardens are genuinely one of the most beautiful urban parks in the world. Flat white from a harbourside cafe: A$5.50.',
+          tip: 'Mrs Macquarie\'s Chair is the classic postcard shot — both the Opera House and Harbour Bridge perfectly framed with harbour water between them.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Bondi to Coogee Coastal Walk',
+          text: 'Bus 333 from Circular Quay to Bondi (Opal A$3.20, 40 min). Swim at Bondi between the red and yellow flags, then walk the Bondi to Coogee coastal trail (6km, 2 hours) — cliff edges, rock pools, hidden beaches at Tamarama and Bronte, the Gothic Waverley Cemetery overlooking the Pacific, and finally Coogee\'s family-friendly beach. This is Sydney\'s best free activity, period.',
+          tip: 'Start at Bondi heading south for increasingly dramatic views. Bronte Beach midway has a great park for a picnic break and cheaper food than Bondi.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'The Rocks & Harbour Bridge Sunset',
+          text: 'Walk across the Sydney Harbour Bridge at sunset (free pedestrian path, east side) — the views are spectacular. Then explore The Rocks — Sydney\'s oldest neighbourhood with sandstone pubs dating to the 1800s. Dinner at The Glenmore rooftop (pub meals A$22–30) with direct Opera House views and cold schooners (A$10). The Lord Nelson Brewery Hotel brews its own ales in Australia\'s oldest pub hotel.',
+          tip: 'The Glenmore rooftop fills fast after 5pm on weekdays — arrive by 4:30pm on Friday for a table with an Opera House view.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Harbour Ferries, Beaches & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Manly Ferry & Beach',
+          text: 'Take the Manly Ferry from Circular Quay (Opal A$6.12, 30 minutes) — the most scenic commute in Australia, cruising past the Opera House and through Sydney Heads. Manly Beach is a long, beautiful surf beach with a relaxed Northern Beaches vibe entirely different from Bondi. Walk "The Corso" pedestrian street for breakfast — Fika Swedish Kitchen (A$16–22) or grab fish and chips from the Manly Wharf takeaways (A$15).',
+          tip: 'The Manly Ferry is an Opal card fare, not a tourist cruise — it is Sydney\'s best-value harbour experience. Sit on the right side heading out for Opera House views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Manly to Spit Bridge Walk',
+          text: 'Walk the Manly to Spit Bridge trail (10km, 4 hours) — Sydney\'s best bushwalk, winding through Sydney Harbour National Park along sandstone clifftops, through eucalyptus forest, past Aboriginal rock carvings, and along secluded harbour beaches. Grotto Point and Dobroyd Head offer jaw-dropping harbour views. Bring water and a swimming costume — the harbour beaches along the route are perfect for a dip.',
+          tip: 'Start at Spit Bridge (bus from city) and walk to Manly — you finish at the beach for a swim and the ferry home. Download the trail map offline.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Newtown Dining & Nightlife',
+          text: 'Train to Newtown — Sydney\'s alternative, multicultural heartland on King Street. Thai at Thai Pothong (mains A$16–22), craft beer at Young Henrys brewery (pints A$12), or catch live music at the Enmore Theatre or Lazybones Lounge. The street is packed with every cuisine imaginable and the vibe is creative, inclusive, and unapologetically weird. Mary\'s serves legendary fried chicken burgers (A$17).',
+          tip: 'Newtown on a Friday or Saturday night is Sydney at its most alive — the live music venues and bars along King Street run until 3am.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Art, Markets & Blue Mountains',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Blue Mountains Day Trip',
+          text: 'Train from Central to Katoomba (Opal A$5.60, 2 hours) — the Blue Mountains are a UNESCO World Heritage Site with eucalyptus forests, waterfalls, and the famous Three Sisters rock formation. Walk the Prince Henry Cliff Walk for panoramic views. The Scenic Railway (A$16 one-way) drops 415 metres through cliff-face tunnels into the valley. The blue haze from eucalyptus oil is genuinely visible on warm days.',
+          tip: 'Take the 7:11am train from Central for a full day. The Three Sisters are best lit in the morning. Bring warm layers — the mountains are 5–10°C cooler.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Leura Village & Valley Walks',
+          text: 'Walk from Katoomba to Leura (30 minutes along the cliff path) — a charming village with cafes, bookshops, and antique stores. Lunch at Leura Garage (A$18–28, relaxed fine dining). If time allows, descend the Giant Stairway (800+ steps) into the Jamison Valley for a walk through temperate rainforest among ancient tree ferns. The valley floor feels like a different world from the cliff tops.',
+          tip: 'The Giant Stairway is steep — descend only and catch the Scenic Railway back up. The valley walk below is flat and beautiful.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Farewell at Opera Bar',
+          text: 'Train back to Sydney (2 hours). For a farewell drink, the Opera Bar sits directly beneath the Opera House sails with harbour views — schooners A$12, cocktails A$24. Alternatively, walk to Barangaroo — Sydney\'s newest waterfront precinct with restaurants and bars. For budget farewell food, Spice Alley in Chippendale serves excellent hawker-style Asian dishes from A$12 in a laneway setting.',
+          tip: 'Opera Bar is the quintessential Sydney experience — arrive before 5pm on a weekday for the best waterside seats and watch the bridge light up.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Harbour Icons & Coastal Walks',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Opera House & Botanic Gardens',
+          text: 'Start at Circular Quay — Opera House left, Harbour Bridge right. Walk the Opera House forecourt then through the Royal Botanic Gardens (free) to Mrs Macquarie\'s Chair for the classic postcard shot. The gardens have flying foxes, harbour views, and 30 hectares of peace in the city centre. Flat white from a harbourside cafe: A$5.50.',
+          tip: 'Mrs Macquarie\'s Chair frames both icons perfectly — arrive before 9am for soft light and fewer tourists blocking your shot.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Bondi to Coogee Walk',
+          text: 'Bus 333 to Bondi (Opal A$3.20). Swim at Bondi, then walk the coastal trail to Coogee (6km, 2 hours) — cliff edges, rock pools, Tamarama, Bronte, Waverley Cemetery, and Coogee. This is Sydney\'s best free activity. The Bondi Icebergs ocean pool (A$9 entry) is worth the detour before starting the walk.',
+          tip: 'Start at Bondi heading south for the best views. Stop at Bronte for a cheaper lunch than Bondi\'s tourist strip.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'The Rocks & Bridge Walk',
+          text: 'Walk across the Harbour Bridge at sunset (free, east side). Then explore The Rocks — sandstone pubs from the 1800s. The Glenmore rooftop (A$22–30 pub meals) has Opera House views with cold schooners (A$10). The Lord Nelson Brewery Hotel brews its own ales in Sydney\'s oldest pub hotel. The Rocks on a Friday evening is magical.',
+          tip: 'The Glenmore rooftop fills fast — arrive by 4:30pm on Friday for a table with a direct Opera House line of sight.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Manly & Northern Beaches',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Manly Ferry & Beach',
+          text: 'Manly Ferry from Circular Quay (Opal A$6.12, 30 min) — the most scenic commute in Australia. Manly Beach is a long surf beach with a relaxed vibe. Walk The Corso for breakfast at Fika (A$16–22) or grab fish and chips from the wharf (A$15). Rent a surfboard (A$25/2 hours) or bodyboard for the moderate waves.',
+          tip: 'The ferry is an Opal fare, not a cruise. Sit on the right heading out for Opera House views. The return at sunset is equally spectacular.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Manly to Spit Bridge Walk',
+          text: 'Walk the Spit to Manly trail (10km, 4 hours) through Sydney Harbour National Park — sandstone clifftops, eucalyptus forest, Aboriginal rock carvings, and secluded harbour beaches. Grotto Point and Dobroyd Head have jaw-dropping harbour views. Swim at the harbour beaches along the route. This is arguably the best urban bushwalk in Australia.',
+          tip: 'Start at Spit Bridge (bus 144 from city) and walk to Manly — finish at the beach for a swim and the ferry home.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Manly Wharf Dining',
+          text: 'Dinner at Manly Wharf with harbour views — The Boathouse does excellent seafood (mains A$28–42) or keep it casual at Hugos Manly (pizza A$22–28). For budget eats, the Thai and kebab shops on The Corso serve meals from A$14. Catch the sunset ferry back to the city — the Opera House lit up from the water is one of Sydney\'s most beautiful moments.',
+          tip: 'The last ferry back to Circular Quay varies by day — check the timetable. Missing it means an expensive Uber from Manly (A$50+).',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Culture, Art & Inner West',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Art Gallery of NSW & The Domain',
+          text: 'Visit the Art Gallery of New South Wales (free, the new SANAA-designed extension is stunning) — the Yiribana Gallery of Aboriginal and Torres Strait Islander art is the highlight, with bark paintings, contemporary installations, and the largest collection of Indigenous art in any gallery. The rooftop terrace has harbour views. Walk through The Domain — a 34-hectare parkland where Sydney comes to picnic and protest.',
+          tip: 'The Aboriginal art collection is world-class and free — allow 90 minutes. The new underground galleries opened in 2022 and are architecturally breathtaking.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Surry Hills & Newtown',
+          text: 'Walk to Surry Hills — Sydney\'s foodie neighbourhood with some of the best cafes and restaurants per square metre. Lunch at Bourke Street Bakery (legendary sausage rolls A$9) or Spice I Am (Thai, mains A$15–19). Then train to Newtown for alternative Sydney — King Street\'s vintage shops, bookstores, and street art. Grab a craft beer at Young Henrys brewery (pints A$12) in the industrial backstreets.',
+          tip: 'Surry Hills on a Saturday morning is peak Sydney brunch culture — the queues at Bourke Street Bakery and Single Origin are part of the ritual.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Newtown Nightlife',
+          text: 'Stay in Newtown for dinner and drinks. Thai Pothong has huge portions for A$16–22. Mary\'s serves legendary fried chicken burgers (A$17) with a punk rock vibe. For live music, the Enmore Theatre and Lazybones Lounge host everything from jazz to indie. The Marlborough Hotel has a great rooftop with King Street views. The energy on a Friday or Saturday night is electric.',
+          tip: 'Newtown is Sydney\'s late-night heartland — most bars stay open until 3am and the street food vans appear after midnight.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Blue Mountains Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Three Sisters & Cliff Walk',
+          text: 'Train from Central to Katoomba (Opal A$5.60, 2 hours). The Blue Mountains are UNESCO-listed with eucalyptus forests, waterfalls, and the Three Sisters rock formation. Walk the Prince Henry Cliff Walk for panoramic views. The Scenic Railway (A$16) drops 415 metres through cliff-face tunnels. The blue haze from eucalyptus oil is genuinely visible on warm days.',
+          tip: 'Take the 7:11am train for a full day. The Three Sisters are best lit in the morning. Bring warm layers — 5–10°C cooler than Sydney.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Leura Village & Valley',
+          text: 'Walk from Katoomba to Leura (30 min cliff path) — a charming village with cafes and antique stores. Lunch at Leura Garage (A$18–28). Descend the Giant Stairway (800+ steps) into Jamison Valley for rainforest among ancient tree ferns. Take the Scenic Railway back up. The valley floor is a different world from the clifftops — quiet, ancient, and lush.',
+          tip: 'The Giant Stairway is steep — descend only and catch the Scenic Railway back up. Wear proper shoes, not flip-flops.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Chippendale Dinner',
+          text: 'Train back to Sydney. Dinner in Chippendale — a revitalized neighbourhood near Central station. Spice Alley serves hawker-style Asian from A$12 in a laneway. The Old Clare Hotel has excellent cocktails in an art-deco setting. White Rabbit Gallery (free, check hours) houses one of the world\'s best collections of contemporary Chinese art.',
+          tip: 'Spice Alley in Chippendale is the budget dinner champion of inner Sydney — excellent Malaysian, Thai, and Chinese dishes from A$12 in a charming laneway.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Harbour Kayaking & Hidden Sydney',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Harbour Kayaking',
+          text: 'Book a harbour kayak tour from Lavender Bay (A$79–119, 2.5 hours) — paddle under the Harbour Bridge and past the Opera House at water level. The perspective from the harbour surface is completely different from land. Morning tours catch the best light and calmest water. Sydney Harbour Kayaks and Oz Paddle both run excellent guided tours departing from Milsons Point.',
+          tip: 'Book the sunrise tour for the most magical light and emptiest harbour. No kayak experience needed — guides provide full instruction.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Taronga Zoo or Barangaroo',
+          text: 'Ferry to Taronga Zoo (A$51 entry, ferry included in Opal) — one of the world\'s best-located zoos with harbour views from every enclosure. The Australian animals section (platypus, koalas, echidnas) is excellent. Or explore Barangaroo — Sydney\'s newest waterfront precinct with the Barangaroo Reserve (6-hectare headland park) and Nawi Cove for swimming with harbour views.',
+          tip: 'At Taronga, take the Sky Safari cable car to the top first and walk downhill — saves energy and the views from the cable car are free with entry.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Barangaroo & Darling Harbour',
+          text: 'Walk from Barangaroo to Darling Harbour along the waterfront. The ICC precinct has excellent restaurants. Smoke Bar (barbecue, A$20–35) and Bea by Tetsuya are local favourites. For drinks, The Loft at Barangaroo has harbour views and cocktails from A$22. Darling Harbour\'s Chinese Garden of Friendship (A$6) is a peaceful escape lit up beautifully at night.',
+          tip: 'The Barangaroo to Darling Harbour waterfront walk takes 20 minutes and is one of Sydney\'s best evening promenades.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Beaches, Markets & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Paddington Markets & Oxford Street',
+          text: 'Saturday morning at Paddington Markets (10am–4pm) — a Sydney institution since 1973 with handmade jewellery, fashion, art, and vintage finds under the Paddington Uniting Church. Walk Oxford Street for the terraced houses with wrought-iron lacework balconies. Brunch at Bills in Surry Hills — the ricotta hotcakes (A$23) at the restaurant where Bill Granger popularized Australian brunch culture worldwide.',
+          tip: 'Paddington Markets are Saturday only. Arrive at 10am for the best selection. The local designers and handmade jewellery stalls are at the back.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Watsons Bay & South Head',
+          text: 'Ferry from Circular Quay to Watsons Bay (Opal A$6.12, 25 min) — a harbourside village with a fish and chip institution (Doyles, A$18–25). Walk to South Head for dramatic cliff views where the harbour meets the Pacific — the Hornby Lighthouse and the Gap are spectacular. The ferry ride itself passes harbour mansions, sailing boats, and secluded beaches.',
+          tip: 'The Watsons Bay ferry is one of Sydney\'s hidden gems — combine it with a South Head walk for a perfect half-day excursion with harbour views throughout.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Surry Hills & Crown Street',
+          text: 'Return for dinner in Surry Hills — Crown Street has Sydney\'s densest concentration of excellent restaurants. Porteño for Argentine barbecue (A$30–45), Chin Chin for Thai (A$22–32), or Toko for Japanese (A$20–35). For post-dinner drinks, the Winery and Dead Ringer are excellent wine bars. The neighbourhood is walkable, vibrant, and represents Sydney dining at its best.',
+          tip: 'Crown Street in Surry Hills is best experienced without a reservation — walk the strip and choose based on what smells and looks good.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Last Beach & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise Swim at Bronte',
+          text: 'Wake early for a sunrise swim at Bronte Baths (free) — a natural ocean pool carved into the sandstone rocks with waves crashing over the edge. This is how Sydney locals start their day. The pool is empty at dawn and the morning light on the water is golden. Walk up to the Bronte cliffs for final coastal views. Breakfast at the Bronte Beach kiosk — a flat white and a bacon roll with ocean views.',
+          tip: 'Bronte ocean pool is free and uncrowded before 7am — the experience of swimming as the sun rises over the Pacific is quintessentially Sydney.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Souvenirs',
+          text: 'Queen Victoria Building (QVB) on George Street is Sydney\'s most beautiful shopping centre — a Romanesque Revival building from 1898 with stained glass and ornate balconies. For Australian souvenirs, the Australian Museum Shop and Opal Minded in The Rocks sell authentic gifts. For last-minute edible souvenirs, T2 tea (Australian brand) and Tim Tams from any Woolworths are lightweight classics.',
+          tip: 'The QVB is worth visiting for the architecture alone — the central dome, stained glass, and Pierre statues are extraordinary even if you buy nothing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell at Opera Bar',
+          text: 'For the final Sydney moment, Opera Bar — directly beneath the Opera House sails, harbour views, schooners A$12, cocktails A$24. Watch the bridge light up as ferries cross the water. Budget farewell: grab fish and chips from the Circular Quay takeaway, sit on the harbour steps, and watch the world\'s most beautiful harbour turn golden. Sydney is a hard city to leave — but it will be here when you come back.',
+          tip: 'Opera Bar on a weekday afternoon is more relaxed and affordable than weekends. The sunset view from here is the definitive Sydney memory.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free beach life', text: 'All Sydney beaches are free with free lifeguard-patrolled areas. Bondi, Manly, Bronte, Coogee, and Shelly Beach cost nothing. The Bondi to Coogee walk is free. Ocean pools (Bronte, Coogee, Icebergs) are free or A$9.' },
+  { title: 'Opal card everything', text: 'Get an Opal card (free, top up A$20+) at any station. Trains, buses, ferries, and light rail. Daily cap: A$16.80 (A$8.40 Sunday). The Manly Ferry alone justifies the card — A$6.12 for the best harbour cruise versus A$30+ tourist cruises.' },
+  { title: 'Eat in food courts', text: 'Restaurant mains: A$25–40. Food court meals: A$12–18. The food courts in Westfield, World Square, and Spice Alley (Chippendale) serve excellent Asian food at half restaurant prices. Woolworths and Coles sell ready meals from A$5.' },
+  { title: 'Free cultural experiences', text: 'Art Gallery of NSW, Museum of Contemporary Art, Barangaroo Reserve, Royal Botanic Gardens, The Rocks weekend markets, and all harbour foreshore walks — completely free. Friday evening gallery hours often include free talks.' },
+  { title: 'Happy hour strategy', text: 'Sydney drinks are expensive — A$10–14 for a schooner, A$20+ for cocktails. Happy hours (4–6pm) at pubs cut prices by 30–40%. Pre-drink at bottle shops (Dan Murphy\'s) where beer is A$15–20 for a six-pack.' },
+  { title: 'Blue Mountains on Opal', text: 'The Blue Mountains day trip costs only A$5.60 on Opal (Sunday: A$2.80) — compare that to A$120+ for organized tours. The train goes direct to Katoomba and all the walks are free. Pack lunch to save A$20+.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'A$30–55', midrange: 'A$120–250', splurge: 'A$400+', notes: 'Hostels → boutique hotels → harbour-view luxury' },
+  { category: 'Food', budget: 'A$25–40', midrange: 'A$50–90', splurge: 'A$150+', notes: 'Food courts & supermarkets → casual restaurants → fine dining' },
+  { category: 'Transport', budget: 'A$10–20', midrange: 'A$25–50', splurge: 'A$80+', notes: 'Opal trains & ferries → Uber → harbour taxis' },
+  { category: 'Activities', budget: 'A$0–20', midrange: 'A$50–120', splurge: 'A$250+', notes: 'Free walks & beaches → zoo & kayak → BridgeClimb' },
+  { category: 'Drinks', budget: 'A$10–25', midrange: 'A$30–60', splurge: 'A$100+', notes: 'Bottle shop & happy hour → pub schooners → rooftop cocktails' },
+  { category: 'Daily Total', budget: 'A$75–160', midrange: 'A$275–570', splurge: 'A$980+', notes: '$48–103 → $177–368 → $632+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'eVisitor (subclass 651) for EU/UK citizens: free, 3 months. ETA (subclass 601) for others: A$20 online. Visitor visa (600) for longer stays',
+      'Australia has strict biosecurity — declare all food, plant material, and wooden items. Fines are severe and they X-ray every bag',
+      'Kingsford Smith Airport is 8km from the CBD — train to Central (A$18.70 Opal, 15 min) or bus 400 to Bondi Junction (A$3.20, 30 min)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Tap water is safe everywhere. Sunburn is the main health risk — Australian UV is intense year-round. SPF 50+ always',
+      'Sydney is very safe. Swim only between the red and yellow flags — rip currents are powerful and lifeguards save hundreds yearly',
+      'Medicare does not cover tourists — travel insurance is essential. Hospital visits without insurance cost A$500+ for basic treatment',
+    ],
+  },
+  {
+    icon: '🚆',
+    title: 'Getting Around',
+    items: [
+      'Opal card (free, top up) works on trains, buses, ferries, and light rail. Daily cap A$16.80 (A$8.40 Sunday). Tap on/off at readers',
+      'Trains are the fastest way around — Central, Town Hall, Circular Quay, and Bondi Junction are the key stations',
+      'Uber and Didi are cheaper than taxis. The ferry network is extensive and scenic — use it for Manly, Watsons Bay, and Taronga Zoo',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Tourist SIM: Optus, Telstra, or Vodafone from A$10 for 7 days with 10–30GB data at the airport or any supermarket',
+      'Free WiFi on some buses and trains, in libraries, and at most cafes. Coverage is excellent in the city, patchy on bushwalks',
+      'Google Maps, TripView (real-time train/bus times), and the Opal Travel app are essential',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Australia is nearly cashless — cards and phones (Apple Pay, Google Pay) accepted almost everywhere including markets',
+      'ATMs are fee-free at the big four banks (CBA, ANZ, Westpac, NAB). Avoid independent ATMs that charge A$2–3 per withdrawal',
+      'Tipping is not expected in Australia — Australians earn a living wage. Rounding up or 10% at restaurants is appreciated but never obligatory',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'SPF 50+ sunscreen (Australian UV is extreme), hat, and sunglasses are non-negotiable year-round',
+      'Swimwear, a quick-dry towel, and reef-safe sunscreen for the beaches. Thongs (flip-flops) are acceptable almost everywhere',
+      'A light jacket for evenings (Sydney nights can drop to 10°C in winter) and proper walking shoes for bushwalks',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏖', title: 'Beach Culture', text: 'Always swim between the red and yellow flags — this is the lifeguard-patrolled zone. Never swim alone, at night, or after drinking. Rip currents are the main danger — if caught, swim parallel to shore, never against the current.' },
+  { icon: '☀️', title: 'Sun Safety', text: 'Australian UV index regularly exceeds 11 (extreme). Apply SPF 50+ every 2 hours, wear a hat, and seek shade between 10am–2pm. Sunburn can happen in 15 minutes. "Slip, slop, slap" is the national mantra — take it seriously.' },
+  { icon: '🦘', title: 'Wildlife Awareness', text: 'Sydney has blue-ringed octopus (rock pools), funnel-web spiders (suburban gardens), and jellyfish (seasonal). The risk is low but real. Shake out shoes left outside. Do not touch rock pool creatures. Ask lifeguards about jellyfish.' },
+  { icon: '🤙', title: 'Aussie Culture', text: 'Australians are informal, direct, and love self-deprecating humour. "No worries" is the national philosophy. Tipping is not expected. Queuing is sacred. Calling someone "mate" is genuinely friendly, not sarcastic.' },
+  { icon: '🏛', title: 'Indigenous Respect', text: 'Australia\'s Aboriginal and Torres Strait Islander peoples have 65,000+ years of continuous culture — the oldest on earth. Respect Indigenous sites, art, and cultural practices. Acknowledgement of Country is practiced at events and gatherings.' },
+  { icon: '🍺', title: 'Drinking Culture', text: 'Australians love a drink but public drunkenness laws are enforced. No drinking on most beaches or public transport. "Shouting" a round means buying drinks for your group — if someone shouts you, return the favour.' },
+];
+---
+
+<CityGuideLayout
+  title="Sydney Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Sydney guide for young travelers. 3-day itinerary with harbour walks, Bondi Beach, Blue Mountains, nightlife, and budget tips. Plan your trip with roammate."
+  heroImage="/images/guides/sydney-hero.webp"
+  heroFlag="🇦🇺"
+  heroCountry="Australia"
+  heroRegion="Oceania"
+  heroCity="Sydney"
+  heroSubtitle="A harbour city where golden beaches meet world-class culture — and every ferry ride feels like a postcard coming to life."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Sep – Nov Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in AUD (A$). Sydney is expensive but smart choices — Opal card, food courts, free beaches — make it very manageable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Sydney is safe, welcoming, and incredibly multicultural — but respect the ocean, the sun, and the Indigenous heritage that predates the city by 65,000 years."
+  ctaCity="Sydney"
+  ctaText="Find travel companions, share Blue Mountains day trips, and split harbour kayak tours with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

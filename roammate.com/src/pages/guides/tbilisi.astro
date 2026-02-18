@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'GEL (Georgian Lari)', detail: '1 USD ≈ 2.70 GEL' },
+  { icon: '🗣', label: 'Language', value: 'Georgian', detail: 'English growing among younger generation' },
+  { icon: '🕐', label: 'Timezone', value: 'GET (UTC+4)', detail: 'No daylight saving time' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Jun, Sep – Oct', detail: '20–28°C, mild and pleasant' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$30–50 USD', detail: '80–135 GEL budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 1 year', detail: 'Most nationalities — no visa needed' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Tbilisi in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Town & Narikala Fortress',
+          text: 'Start in the Old Town (Kala) — a labyrinth of crooked lanes, carved wooden balconies, crumbling facades, and hidden courtyards. Take the cable car (3 GEL return) from Rike Park up to Narikala Fortress — the 4th-century citadel offers the definitive Tbilisi panorama. Below, the sulphur baths district (Abanotubani) with its brick domes has been steaming since the 13th century. Walk down through the botanical garden\'s waterfall trail.',
+          tip: 'The cable car to Narikala is Tbilisi\'s best €1 experience — ride it at 9am before heat and crowds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rustaveli Avenue & National Museum',
+          text: 'Walk Rustaveli Avenue — Tbilisi\'s grand boulevard lined with the Opera House, Parliament, and National Museum. The Georgian National Museum (15 GEL) houses the Archaeology Treasury with 3,000-year-old Colchian gold — the real Golden Fleece story. Lunch at Machakhela on Rustaveli for khinkali (Georgian dumplings, 1.20 GEL each) — eat them by hand, bite a hole, slurp the broth, then eat the filling.',
+          tip: 'Eating khinkali is an art — hold the top knot, bite a small hole, slurp the soup inside, then eat. Never use a fork.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sulphur Baths & Wine District',
+          text: 'Book a private sulphur bath at Chreli Abano or Royal Bath House (30–80 GEL for a private room, 45 min) — the hot, mineral-rich water is followed by a vigorous scrub from a kisi (bath attendant). Then walk to the wine district on Lado Asatiani Street in Sololaki — dozens of tiny wine bars serve natural Georgian wine from clay qvevri vessels. Dinner at Shavi Lomi for modern Georgian (mains 15–30 GEL).',
+          tip: 'The sulphur baths are best in the evening — book a private room at Chreli Abano for the tiled interiors and skylight.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Old Tbilisi & Narikala',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Town & Narikala Fortress',
+          text: 'Start in Tbilisi\'s Old Town — a photogenic maze of leaning wooden balconies, crumbling facades, grapevines crawling up walls, and hidden courtyards. Take the cable car (3 GEL return) from Rike Park to Narikala Fortress — the 4th-century citadel with the best panorama in the city. Walk down through the Botanical Garden (4 GEL) — the waterfall trail is a green oasis below the fortress walls.',
+          tip: 'Take the cable car before 10am — the morning light on the old town below is golden and the fortress is nearly empty.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Abanotubani & Leghvtakhevi',
+          text: 'Explore Abanotubani — the sulphur bath district with its brick domes steaming since the 13th century. Walk up the Leghvtakhevi gorge — a hidden canyon with a waterfall right in the city centre, accessible by a pedestrian path from the bath district. See the Jumah Mosque and the Anchiskhati Basilica (6th century, Tbilisi\'s oldest church) side by side. Lunch at Samikitno near Baratashvili Bridge — enormous Georgian meals for 8–15 GEL.',
+          tip: 'Leghvtakhevi waterfall is Tbilisi\'s hidden gem — a canyon with a cascade right in the old town. The path starts behind the baths.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sulphur Baths & Wine Bars',
+          text: 'Book a private sulphur bath at Chreli Abano (30–80 GEL, 45 min) — the hot mineral water and vigorous kisi scrub are deeply rejuvenating. Then walk to Sololaki\'s wine bars — Lado Asatiani Street has dozens of tiny bars pouring natural Georgian wine from qvevri (clay vessels). Vino Underground is the pioneer. A glass of amber wine costs 8–15 GEL. Dinner at Café Littera for fine Georgian dining (mains 25–45 GEL).',
+          tip: 'Georgian amber wine (skin-contact white) is unique — the tannins and colour come from fermenting with grape skins in buried clay vessels.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Rustaveli, Markets & Modernity',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rustaveli Avenue & National Museum',
+          text: 'Walk Rustaveli Avenue — Tbilisi\'s grand boulevard past the Opera House, Parliament, and Soviet-era facades. Visit the Georgian National Museum (15 GEL) — the Archaeology Treasury holds 3,000-year-old Colchian gold jewellery (the real Golden Fleece story), and the Soviet Occupation exhibition is powerful. Coffee at Stamba Hotel\'s lobby café — a converted Soviet printing house turned design hotel.',
+          tip: 'The Soviet Occupation exhibition on the top floor of the National Museum is essential — it tells Georgia\'s 20th-century story unflinchingly.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dry Bridge Market & Fabrika',
+          text: 'Browse the Dry Bridge Flea Market — a sprawling outdoor market selling Soviet memorabilia, antique jewellery, paintings, old cameras, and military medals. Bargaining is expected — start at 50% of the asking price. Then walk to Fabrika — a converted Soviet sewing factory now housing a hostel, co-working space, cafés, and a courtyard that\'s the social hub of young Tbilisi. Lunch at Fabrika\'s food court (mains 8–15 GEL).',
+          tip: 'The Dry Bridge Market\'s Soviet military gear, propaganda posters, and Orthodox icons make unique souvenirs — bargain hard.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mtatsminda & Georgian Feast',
+          text: 'Take the funicular (5 GEL return) up Mtatsminda — Tbilisi\'s sacred mountain with panoramic views over the city and the Caucasus Mountains beyond. Visit at sunset for the best light. Back in town, find a traditional supra-style dinner — Georgian feasting with endless toasts (tamada tradition), khachapuri (cheese bread), khinkali (dumplings), pkhali (walnut-herb spreads), and chacha (grape brandy). Try Kakhelebi (mains 12–20 GEL).',
+          tip: 'A Georgian supra (feast) has structured toasting — the tamada (toastmaster) leads. Follow their lead and drink to each toast.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Mtskheta, Churches & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Day Trip to Mtskheta',
+          text: 'Marshrutka (minibus) from Didube station to Mtskheta (30 min, 1 GEL) — Georgia\'s ancient capital and spiritual heart, a UNESCO World Heritage Site. Visit Svetitskhoveli Cathedral — one of the oldest churches in the world (4th century), believed to house Christ\'s robe. Then taxi or hike up to Jvari Monastery (6th century) perched on a clifftop above the confluence of the Mtkvari and Aragvi rivers — the views are transcendent.',
+          tip: 'Jvari Monastery has no public transport — split a taxi from Mtskheta (10–15 GEL) or hike up (45 min, steep but rewarding).',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Return & Sololaki Stroll',
+          text: 'Back in Tbilisi, walk through Sololaki — the old residential quarter with art nouveau buildings, hidden courtyards, and the finest carved balconies in the city. Walk up to the Chronicles of Georgia monument (free) on a hill above Tbilisi Sea — 16 massive stone pillars carved with scenes from Georgian history. Lunch at Ezo on Abashidze Street for traditional Georgian food in a courtyard (mains 12–18 GEL).',
+          tip: 'Sololaki\'s courtyards are Tbilisi\'s soul — push open any unlocked gate and you\'ll find grapevines, cats, and crumbling beauty.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Georgian Feast',
+          text: 'Final dinner at Shavi Lomi for modern Georgian cuisine — creative takes on traditional dishes using seasonal, local ingredients (tasting plates 15–30 GEL). Or go full traditional at Sakhli 11 for a proper supra with tamada-led toasts, unlimited khinkali, and rivers of wine and chacha. Finish at Bassiani — Tbilisi\'s world-famous techno club in a converted Soviet swimming pool, if the night calls.',
+          tip: 'Bassiani is one of the world\'s best techno clubs — events run Friday and Saturday, doors open around midnight. Check listings.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Old Tbilisi & Narikala',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Town & Narikala Fortress',
+          text: 'Start in the Old Town — leaning wooden balconies, crumbling facades, grapevines on walls, and hidden courtyards. Cable car from Rike Park to Narikala Fortress (3 GEL return) for the definitive city panorama. Walk down through the Botanical Garden (4 GEL) via the waterfall trail. The old town is best explored slowly — every courtyard and side street reveals something.',
+          tip: 'Take the cable car before 10am — morning light on the old town is golden and the fortress is nearly empty.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Abanotubani & Leghvtakhevi',
+          text: 'Explore the sulphur bath district — brick domes steaming since the 13th century. Walk up the Leghvtakhevi canyon to the waterfall. See the Jumah Mosque and Anchiskhati Basilica (6th century) side by side — Georgia\'s religious tolerance in physical form. Lunch at Samikitno for enormous Georgian meals (8–15 GEL) — try lobio (bean stew), pkhali, and Acharuli khachapuri.',
+          tip: 'Leghvtakhevi waterfall is Tbilisi\'s best hidden gem — the canyon path starts behind the sulphur baths.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sulphur Baths & Wine Bars',
+          text: 'Private sulphur bath at Chreli Abano (30–80 GEL, 45 min) — hot mineral water and a kisi scrub. Then Sololaki wine bars: Vino Underground for natural Georgian wine, g.Vino for a broader selection, or Wine Bar Moustache for the atmosphere. Georgian amber wine (skin-contact, qvevri-fermented) is unlike anything else. Dinner at Café Littera in the Writers\' House (mains 25–45 GEL).',
+          tip: 'Georgian amber wine is unique — try Rkatsiteli or Mtsvane from Kakheti. The colour and tannins come from clay-vessel fermentation.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Rustaveli & Modern Tbilisi',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rustaveli Avenue & National Museum',
+          text: 'Walk Rustaveli Avenue past the Opera House, Parliament, and National Gallery. Visit the Georgian National Museum (15 GEL) — Colchian gold in the Archaeology Treasury, and the Soviet Occupation exhibition upstairs. Coffee at Stamba Hotel — a converted Soviet printing house, now Tbilisi\'s most stylish hotel lobby. The building\'s industrial-meets-design aesthetic is worth seeing even without staying.',
+          tip: 'The Soviet Occupation exhibition tells Georgia\'s 20th-century story unflinchingly — don\'t skip the top floor.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dry Bridge Market & Fabrika',
+          text: 'The Dry Bridge Flea Market is a sprawling treasure hunt — Soviet medals, antique jewellery, old cameras, propaganda art, and Georgian silverwork. Bargaining starts at 50% of asking. Then Fabrika — the converted Soviet factory that\'s Tbilisi\'s creative hub. The courtyard has food, drinks, music, and the most diverse crowd in the city. Lunch at Fabrika\'s food court (8–15 GEL).',
+          tip: 'Dry Bridge Market\'s best finds are in the mornings before 11am — serious collectors pick through early arrivals.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mtatsminda Sunset & Feast',
+          text: 'Funicular up Mtatsminda (5 GEL return) for sunset over the city and Caucasus. Then a traditional supra at Kakhelebi or Sakhli 11 — Georgian feasting with tamada-led toasts, rivers of wine, khachapuri, khinkali, mtsvadi (grilled meat), and chacha. A supra is not just a meal — it\'s a ritual of hospitality, storytelling, and connection.',
+          tip: 'At a supra, the tamada leads toasts — to family, friends, peace, and the dead. Drink when they drink and follow their lead.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Mtskheta — Ancient Capital',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mtskheta & Svetitskhoveli',
+          text: 'Marshrutka from Didube to Mtskheta (30 min, 1 GEL). Svetitskhoveli Cathedral (4th century, free) is one of the world\'s oldest churches — believed to house Christ\'s robe brought by a Georgian Jew after the Crucifixion. The stone carvings and frescoes are extraordinary. Then taxi to Jvari Monastery (10–15 GEL split) — a 6th-century church on a clifftop above the river confluence with transcendent views.',
+          tip: 'Jvari Monastery is the setting of a famous Lermontov poem — the views of the two rivers meeting below are genuinely spiritual.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Samtavro Monastery & Return',
+          text: 'Visit Samtavro Monastery in Mtskheta — where King Mirian and Queen Nana, who converted Georgia to Christianity in 337 AD, are buried. The monastery is still active and serene. Have lunch at a Mtskheta restaurant — churchkhela (grape-walnut candy) and fresh bread from a tone oven are available from street vendors. Return to Tbilisi by marshrutka in the afternoon.',
+          tip: 'Buy churchkhela in Mtskheta — they\'re fresher and cheaper than in Tbilisi. The walnut version is the classic.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Vera Neighbourhood & Dinner',
+          text: 'Explore Vera — a quietly trendy neighbourhood with tree-lined streets, hidden cafés, and Tbilisi\'s best independent restaurants. Dinner at Shavi Lomi for modern Georgian cuisine (tasting plates 15–30 GEL) — their take on traditional dishes is creative and seasonal. Then drinks at Dive Bar on Tabidze for craft cocktails in a basement, or Lolita for wine and vinyl records.',
+          tip: 'Vera is where young Tbilisians hang out — the cafés on Barnov Street are the city\'s creative living room.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Georgian Food & Cooking',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Dezerter Bazaar & Food Market',
+          text: 'Visit Dezerter Bazaar (Barakashvili Street) — Tbilisi\'s largest market, named after soldiers who deserted to sell goods here. The market overflows with spices (adjika, khmeli suneli), churchkhela, cheese, fresh produce, and dried fruits. The basement level has the meat and dairy section. Buy spice mixes as souvenirs — the saffron-like flower powder (imeruli) and walnut pastes are unique to Georgia.',
+          tip: 'Dezerter Bazaar\'s spice vendors will mix custom blends — khmeli suneli (Georgian mixed spice) is essential for cooking Georgian at home.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cooking Class',
+          text: 'Take a Georgian cooking class (60–100 GEL for 3–4 hours) — learn to make khinkali (dumplings), khachapuri (cheese bread), pkhali (walnut-herb pastes), and other staples. Gastronomy is Georgia\'s greatest cultural expression — the techniques are ancient, the flavours are unique, and the hospitality of sharing food is sacred. Several companies run classes from Fabrika or in the old town.',
+          tip: 'Khinkali folding is harder than it looks — aim for at least 18 pleats in the top knot. Locals judge your technique.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Eat Your Creations & Night Out',
+          text: 'Most cooking classes end with eating everything you\'ve made — paired with Georgian wine and chacha toasts. If you\'re still hungry, walk to the Marjanishvili area for Tbilisi\'s best street food — lobiani (bean-filled bread) from a tone oven for 2–3 GEL. Then Bassiani or Khidi for techno, or the bars around Saarbrücken Bridge for a mellower night.',
+          tip: 'Bassiani and Khidi are globally renowned techno clubs — check who\'s playing and arrive after midnight for the full experience.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Kazbegi Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Georgian Military Highway to Kazbegi',
+          text: 'Join a shared minibus or tour to Kazbegi/Stepantsminda (3 hours, 25–40 GEL return) along the Georgian Military Highway — one of the world\'s most dramatic mountain roads. Pass through Ananuri Fortress on the Zhinvali Reservoir (stop for photos), ascend through the Jvari Pass at 2,395m with views of the Greater Caucasus, and arrive in Stepantsminda with 5,033m Mount Kazbek towering above.',
+          tip: 'Book a shared minibus from Fabrika or your hostel — it\'s cheaper than a private car and the driver knows the best photo stops.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gergeti Trinity Church',
+          text: 'Hike to Gergeti Trinity Church (1.5 hours up, 1 hour down) — a 14th-century church perched at 2,170m with Mount Kazbek\'s glaciers as a backdrop. The hike is steep but non-technical. Alternatively, a 4x4 taxi goes to the top (25 GEL from Stepantsminda). The view — stone church, snow-capped peak, and sweeping valleys — is one of the most iconic in the Caucasus. Lunch in Stepantsminda at Rooms Hotel or a local café.',
+          tip: 'The hike to Gergeti is steep but manageable — start early, bring water, and the reward at the top is extraordinary.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Light Dinner',
+          text: 'Return to Tbilisi along the Military Highway — the late afternoon light on the mountains is spectacular. Back in the city, keep dinner light at Entrée on Marjanishvili for modern café food and natural wine (mains 15–25 GEL). The contrast between the high Caucasus in the morning and Tbilisi\'s wine bars in the evening captures Georgia\'s extraordinary range perfectly.',
+          tip: 'The drive back catches golden hour on the Greater Caucasus — sit on the right side of the bus for the best mountain views.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Art, Architecture & Nightlife',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Soviet Architecture & MOMA',
+          text: 'Explore Tbilisi\'s Soviet architectural heritage — the Ministry of Roads (a Brutalist masterpiece), the Wedding Palace, and the Andropov\'s Ears residential blocks. Then visit the MOMA Tbilisi (10 GEL) in the Zubalashvili Building for contemporary Georgian art — the post-Soviet art scene is vibrant and politically charged. Walk through Vera and Vake neighbourhoods for tree-lined boulevards and café culture.',
+          tip: 'The Ministry of Roads building is one of the world\'s finest Brutalist structures — it\'s outside the centre but worth a detour.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chronicles of Georgia & Turtle Lake',
+          text: 'Taxi or bus to the Chronicles of Georgia (free) — 16 massive stone pillars on a hill above Tbilisi Sea, carved with scenes from Georgian history and Biblical stories. Nearby, walk to Turtle Lake (Kus Tba) — a small mountain lake surrounded by forest with a trail circling it. In summer, locals swim and sunbathe on the shores. Rent a paddleboat (5 GEL) and enjoy the mountain-city views.',
+          tip: 'The Chronicles of Georgia is grandly ambitious but little-known — the carved pillars are best in afternoon light.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Techno & Nightlife',
+          text: 'Tbilisi has one of Europe\'s most exciting nightlife scenes. Pre-drinks at Fabrika\'s courtyard or Dive Bar. Then the choice: Bassiani (techno in a converted swimming pool under a football stadium), Khidi (techno in a power plant on the river), or Mtkvarze (a floating club on the water). Cover charges are 20–40 GEL. The scene is inclusive, creative, and genuinely world-class.',
+          tip: 'Tbilisi clubs run until morning — Bassiani and Khidi often continue until noon the next day. Pace yourself accordingly.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Relaxation & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Sulphur Bath & Old Town',
+          text: 'One last sulphur bath — this time at Royal Bath House for the most traditional experience (private rooms from 40 GEL). Then a final walk through the old town — push open courtyard gates, photograph the balconies, pet the cats, and buy churchkhela from a street vendor. Coffee at Café Leila in Sololaki — a gorgeous courtyard café that captures Tbilisi\'s crumbling elegance perfectly.',
+          tip: 'Café Leila\'s courtyard is Tbilisi in a single frame — grapevines, peeling walls, warm light, and excellent coffee.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenirs & Last Khinkali',
+          text: 'Souvenir shopping at Dry Bridge Market for final treasures. Pick up Georgian wine (Saperavi, Rkatsiteli) from a wine shop on Lado Asatiani — quality bottles cost 15–30 GEL. Buy spices at Dezerter Bazaar and churchkhela from any street vendor. Final lunch of khinkali at Zakhar Zakharich or Pasanauri (1–1.50 GEL per dumpling) — eat at least 10 and remember the technique.',
+          tip: 'Georgian wine bottles make excellent souvenirs — Saperavi (red) and qvevri-fermented Rkatsiteli (amber) are the essentials.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Supra',
+          text: 'Final dinner at Sakhli 11 for a proper Georgian supra — the tamada leads toasts, the wine flows endlessly, the dishes keep arriving: khachapuri, lobio, mtsvadi, aubergine rolls with walnut paste, and chacha to finish. Georgia is a country that feeds your soul through your stomach. Leave as Georgians would want you to — full, warm, and planning your return.',
+          tip: 'The traditional supra toast order: to God, to family, to the departed, to peace, to Georgia, to love. Follow the tamada.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Incredible value', text: 'Tbilisi is one of Europe\'s cheapest cities. A full restaurant meal costs 15–25 GEL (€5–9), a glass of wine 8–12 GEL, and khinkali are 1–1.50 GEL per dumpling. You can eat like royalty on €15/day.' },
+  { title: 'Marshrutka travel', text: 'Marshrutkas (minibuses) cost 0.50–1 GEL within the city and 1–5 GEL to nearby destinations. Mtskheta is just 1 GEL. Buy a Metromoney card (2 GEL) for metro and buses.' },
+  { title: 'Free walking tours', text: 'Multiple free (tips-based) walking tours run daily from Liberty Square — they\'re excellent and cover the old town, Abanotubani, and Sololaki. Budget 20–30 GEL as a generous tip.' },
+  { title: 'Cheap wine', text: 'Georgia is one of the world\'s oldest wine-producing countries. A glass of excellent natural wine costs 8–15 GEL at wine bars. Supermarket bottles of quality wine cost 8–15 GEL.' },
+  { title: 'Sulphur bath deals', text: 'Shared public baths cost just 5 GEL. Private rooms start at 30 GEL. Chreli Abano has the best value private rooms. Evening slots are more atmospheric than daytime.' },
+  { title: 'Street food', text: 'Lobiani (bean bread) from a tone oven: 2–3 GEL. Churchkhela: 2–3 GEL. Khachapuri slice from a bakery: 2–4 GEL. Shotis puri bread: 1 GEL. You can eat well for under 15 GEL/day.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '25–60 GEL', midrange: '100–200 GEL', splurge: '350+ GEL', notes: 'Hostels → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '20–40 GEL', midrange: '50–90 GEL', splurge: '150+ GEL', notes: 'Street food & bakeries → restaurants → fine dining' },
+  { category: 'Transport', budget: '2–8 GEL', midrange: '15–30 GEL', splurge: '60+ GEL', notes: 'Metro & marshrutka → Bolt taxi → day trip transfers' },
+  { category: 'Activities', budget: '5–20 GEL', midrange: '30–60 GEL', splurge: '100+ GEL', notes: 'Free walks & churches → museums & baths → cooking class & tours' },
+  { category: 'Drinks', budget: '10–20 GEL', midrange: '25–50 GEL', splurge: '80+ GEL', notes: 'House wine & beer → wine bars → cocktail bars' },
+  { category: 'Daily Total', budget: '62–148 GEL', midrange: '220–430 GEL', splurge: '740+ GEL', notes: '$23–55 → $81–159 → $274+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities can stay up to 1 year without a visa — one of the world\'s most generous visa policies',
+      'Tbilisi Airport (TBS) is 17km from the centre — bus 37 runs to Liberty Square (0.50 GEL) or Bolt taxi (15–20 GEL)',
+      'Land borders with Turkey, Armenia, and Azerbaijan are open. The Russian border situation varies — check current status',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No special vaccinations required. Tap water is safe in Tbilisi but bottled is recommended in rural areas',
+      'Tbilisi is very safe — violent crime is rare. Watch for pickpockets on crowded marshrutkas and at markets',
+      'Pharmacies (Aptiaki) are well-stocked and many medications don\'t need a prescription. GPC and PSP are the main chains',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Metro has 2 lines (0.50 GEL per ride with Metromoney card). Buy the card at any station for 2 GEL',
+      'Bolt is the primary ride-hailing app — very cheap (cross-city 5–10 GEL). Regular taxis don\'t use meters — agree on a price first',
+      'Marshrutkas (minibuses) connect everywhere — no fixed schedules, they leave when full. Ask locals which number to take',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in most cafés, hostels, and Fabrika. Georgia has good 4G coverage in cities, spotty in mountains',
+      'Magti or Geocell tourist SIMs at the airport for 10–15 GEL with 5–10GB data. Bring your passport to register',
+      'Download Bolt for taxis, Google Maps (works well offline), and TBC or Bank of Georgia apps for currency exchange info',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Georgia uses the Lari (GEL). ATMs are common — TBC Bank and Bank of Georgia machines have fair rates',
+      'Cards accepted in most restaurants and shops. Cash essential for marshrutkas, street food, markets, and some wine bars',
+      'Tipping: not traditional but increasingly common. 10% at upscale restaurants is appreciated. Not expected at casual spots',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Comfortable walking shoes — Tbilisi\'s old town has steep, uneven cobblestones. The Narikala and Botanical Garden trails are rocky',
+      'Layers year-round: summers are hot (30°C+), but evenings cool. Spring/autumn are ideal. Winters can be cold',
+      'A scarf or cover-up for visiting churches — shoulders and knees should be covered. Women need head coverings in Orthodox churches',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🍷', title: 'Wine Culture', text: 'Georgia has 8,000 years of winemaking history — the oldest in the world. Traditional qvevri (clay vessel) winemaking is UNESCO-listed. Amber wine is the flagship style. Always toast with "gaumarjos!" (cheers).' },
+  { icon: '🥟', title: 'Khinkali Rules', text: 'Hold the khinkali by the top knot (don\'t eat the knot), bite a small hole, slurp the broth, then eat the filling. Never use a fork or knife. The number of knots left on your plate is your score.' },
+  { icon: '🙏', title: 'Orthodox Traditions', text: 'Georgia is deeply Orthodox Christian (one of the earliest Christian nations, 337 AD). Cover shoulders and knees in churches. Women should cover their hair. Be respectful during services — don\'t photograph people praying.' },
+  { icon: '🍞', title: 'Hospitality Culture', text: 'Georgian hospitality (stumasperveli) is legendary and genuine. If invited to someone\'s home, you\'ll be fed beyond capacity. Refusing food is impolite. Bringing wine or sweets as a gift is expected.' },
+  { icon: '🎵', title: 'Polyphonic Singing', text: 'Georgian polyphonic singing is UNESCO-listed and deeply embedded in the culture. Listen for it at churches, supra feasts, and wine tavernas. The harmonies are unlike anything in Western music — haunting and ancient.' },
+  { icon: '💃', title: 'Dance & Nightlife', text: 'Georgian traditional dance is acrobatic and breathtaking — catch a performance if possible. Modern Tbilisi also has a world-class techno scene. Bassiani and Khidi put the city on the global club map.' },
+];
+---
+
+<CityGuideLayout
+  title="Tbilisi Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Tbilisi guide for young travelers. 3-day itinerary with old town, sulphur baths, Georgian feasts, Kazbegi mountains, wine culture, and nightlife. Plan your trip with roammate."
+  heroImage="/images/guides/tbilisi-hero.webp"
+  heroFlag="🇬🇪"
+  heroCountry="Georgia"
+  heroRegion="Europe"
+  heroCity="Tbilisi"
+  heroSubtitle="A city of hot springs and cold wine, crumbling balconies and world-class techno, where 8,000 years of civilisation meet boundless hospitality."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Jun, Sep – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in GEL (Georgian Lari). Tbilisi is extraordinarily cheap — world-class food, wine, and culture at a fraction of Western European prices."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Georgia is ancient, deeply hospitable, and utterly unique. The food, wine, and warmth of its people will ruin you for everywhere else."
+  ctaCity="Tbilisi"
+  ctaText="Find travel companions for Kazbegi trips, share Georgian feasts, and discover Tbilisi's legendary nightlife together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

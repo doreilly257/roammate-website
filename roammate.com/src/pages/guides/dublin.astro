@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'Euro (€)', detail: '1 USD ≈ €0.92' },
+  { icon: '🗣', label: 'Language', value: 'English / Irish', detail: 'English is primary language' },
+  { icon: '🕐', label: 'Timezone', value: 'GMT (UTC+0)', detail: 'IST (UTC+1) Mar–Oct' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: '14–20°C, longest days' },
+  { icon: '🎒', label: 'Daily Budget', value: '~€70–110', detail: '$76–120 USD per day' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free (most)', detail: 'EU/US/Can/Aus up to 90 days' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Dublin in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Trinity College & Georgian Dublin',
+          text: 'Start at Trinity College to see the Book of Kells and the stunning Long Room library (€18 combined ticket). Cross into the cobblestone Front Square, then walk through the Georgian streets of Merrion Square — colourful doors, Oscar Wilde statue, and the National Gallery of Ireland (free). Grab a coffee at 3FE on Grand Canal Street, one of Dublin\'s best specialty roasters.',
+          tip: 'Book Book of Kells tickets online to skip the queue — morning slots before 10am are least crowded.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Temple Bar & Dublin Castle',
+          text: 'Walk through Temple Bar — yes, it\'s touristy, but the cobbled lanes, buskers, and vintage shops are genuinely charming midweek. Visit Dublin Castle\'s State Apartments (€8) and the Chester Beatty Library next door (free, stunning collection of manuscripts from every civilisation). Lunch at Bunsen on Essex Street — Dublin\'s cult burger joint with queues for a reason.',
+          tip: 'Chester Beatty was named European Museum of the Year — it\'s free and criminally underrated by tourists.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Guinness, Trad Music & Pub Culture',
+          text: 'Take the Luas Red Line to the Guinness Storehouse (€26 online, includes a pint with panoramic views from the Gravity Bar). Walk back through the Liberties neighbourhood. End at The Cobblestone in Smithfield for authentic trad music sessions — no cover, no tourists pretending to like it. Pints of Guinness here are €5.80, a rarity in Dublin now.',
+          tip: 'Skip Temple Bar pubs for music — locals go to The Cobblestone, Devitt\'s on Camden Street, or O\'Donoghue\'s on Merrion Row.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Historic Dublin & Literary Heritage',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Trinity College & Book of Kells',
+          text: 'Start at Trinity College to see the Book of Kells and the magnificent Long Room library (€18 combined). The 9th-century illuminated manuscript is mesmerising up close. Walk through Front Square, then head to Merrion Square — Georgian townhouses with iconic colourful doors, the Oscar Wilde statue, and the free National Gallery of Ireland with its Caravaggio and Jack B. Yeats collection.',
+          tip: 'Book online for the earliest slot — you get 10 minutes almost alone with the Book of Kells before crowds arrive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dublin Castle & Chester Beatty',
+          text: 'Explore Dublin Castle\'s State Apartments (€8) — the heart of British rule for 700 years. Next door, the Chester Beatty Library (free) houses one of the finest collections of manuscripts, miniature paintings, and early texts from across Asia, the Middle East, and Europe. Lunch at Fade Street Social or grab a toastie at Grogan\'s pub on South William Street.',
+          tip: 'Chester Beatty\'s Roof Garden is a hidden oasis in the city centre — bring your lunch up there on a sunny day.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Temple Bar & Trad Music',
+          text: 'Wander Temple Bar\'s cobbled lanes — skip the overpriced pubs on Temple Bar Street itself and head to The Porterhouse for craft beers brewed on-site (pints from €5.50). For proper trad music, cross the river to The Cobblestone in Smithfield — sessions every night, no cover charge, and a crowd of locals who actually play. Dinner at Leo Burdock\'s for legendary fish and chips (€12).',
+          tip: 'Temple Bar pubs charge €8–9 for a pint. Walk two streets in any direction and prices drop to €5.50–6.50.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Guinness, Kilmainham & Southside',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Guinness Storehouse',
+          text: 'Take the Luas Red Line or walk through the Liberties to the Guinness Storehouse (€26 online). Seven floors tracing the history of Ireland\'s most famous export, ending at the Gravity Bar — a 360-degree glass-walled bar at the top where your ticket includes a perfectly poured pint with panoramic city views. Learn to pull your own pint at the Guinness Academy (included).',
+          tip: 'The Connoisseur Experience (€56) is worth it if you love stout — you\'ll taste rare variants in a private tasting room.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kilmainham Gaol & IMMA',
+          text: 'Walk 15 minutes to Kilmainham Gaol (€8, must pre-book). The guided tour through the prison where leaders of the 1916 Rising were executed is one of the most powerful historical experiences in Ireland. The execution yard is haunting. Afterward, visit the Irish Museum of Modern Art (IMMA) next door — free, set in the beautiful Royal Hospital Kilmainham.',
+          tip: 'Kilmainham Gaol sells out weeks in advance — book the moment tickets drop online or you will miss out.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Camden Street & Portobello',
+          text: 'Head to Camden Street and Wexford Street — Dublin\'s best stretch for young locals. Start with tacos at 777 or ramen at Neon, then pub-crawl from Whelan\'s (live music venue) to The Bernard Shaw\'s outdoor area, Devitt\'s for trad, and Cassidy\'s for late-night pints. If you want cocktails, try Vintage Cocktail Club on Crown Alley — speakeasy style, ring the doorbell.',
+          tip: 'Camden Street on a Thursday or Friday night is where Dublin\'s under-30s go — it\'s the real social scene.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Seaside, Markets & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Howth Cliff Walk',
+          text: 'Take the DART train from Connolly or Tara Street station to Howth (30 minutes, €3.60 with Leap Card). Walk the Howth Cliff Path — a stunning 6km loop along dramatic sea cliffs with views of Ireland\'s Eye island and the Dublin Mountains. Seals bask on the rocks below, and wildflowers line the trail in summer. The harbour village has colourful fishing boats and fresh seafood stalls.',
+          tip: 'The loop trail takes 90 minutes at a relaxed pace. Bring a windbreaker — it\'s exposed and windy even in summer.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Howth Seafood & Craft Markets',
+          text: 'Lunch at the Howth Market on the pier — fresh seafood chowder (€7), fish and chips, oysters, and smoked salmon. Or splurge at Octopussy\'s on the harbour (crab claws €14). Take the DART back and hop off at Pearse Station for a wander through the Creative Quarter — Drury Street, George\'s Street Arcade (Dublin\'s oldest covered market), and the indie shops of Cow\'s Lane.',
+          tip: 'George\'s Street Arcade has excellent vintage clothing, vinyl records, and fortune tellers — proper Dublin character.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Pints in Dublin',
+          text: 'End your Dublin trip properly. Start with a pint at Mulligan\'s on Poolbeg Street — unchanged since 1782, serving the best Guinness in Dublin (locals will fight you on this). Walk to O\'Donoghue\'s on Merrion Row where The Dubliners started their sessions. Finish at Toner\'s on Baggot Street — a pub so old it was originally a grocery shop. Order a toastie with your last pint.',
+          tip: 'The best Guinness in Dublin is always debated — Mulligan\'s, Kehoe\'s, and The Gravediggers in Glasnevin are the usual contenders.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Historic Dublin & Literary Heritage',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Trinity College & Book of Kells',
+          text: 'Start at Trinity College to see the Book of Kells and the magnificent Long Room library (€18 combined). The 9th-century illuminated manuscript is mesmerising up close. Walk through Front Square, then head to Merrion Square — Georgian townhouses with iconic colourful doors, the Oscar Wilde statue, and the free National Gallery of Ireland with its Caravaggio and Jack B. Yeats collection.',
+          tip: 'Book online for the earliest slot — you get 10 minutes almost alone with the Book of Kells before crowds arrive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dublin Castle & Chester Beatty',
+          text: 'Explore Dublin Castle\'s State Apartments (€8) — the heart of British rule for 700 years. Next door, the Chester Beatty Library (free) houses one of the finest collections of manuscripts, miniature paintings, and early texts from across Asia, the Middle East, and Europe. Lunch at Fade Street Social or grab a toastie at Grogan\'s pub on South William Street.',
+          tip: 'Chester Beatty\'s Roof Garden is a hidden oasis in the city centre — bring your lunch up there on a sunny day.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Temple Bar & Trad Music',
+          text: 'Wander Temple Bar\'s cobbled lanes — skip the overpriced pubs on Temple Bar Street itself and head to The Porterhouse for craft beers brewed on-site (pints from €5.50). For proper trad music, cross the river to The Cobblestone in Smithfield — sessions every night, no cover charge, and a crowd of locals who actually play. Dinner at Leo Burdock\'s for legendary fish and chips (€12).',
+          tip: 'Temple Bar pubs charge €8–9 for a pint. Walk two streets in any direction and prices drop to €5.50–6.50.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Guinness, Kilmainham & Liberties',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Guinness Storehouse',
+          text: 'Take the Luas Red Line or walk through the Liberties to the Guinness Storehouse (€26 online). Seven floors tracing the history of Ireland\'s most famous export, ending at the Gravity Bar — a 360-degree glass-walled bar at the top where your ticket includes a perfectly poured pint with panoramic city views. Learn to pull your own pint at the Guinness Academy (included).',
+          tip: 'The Connoisseur Experience (€56) is worth it if you love stout — you\'ll taste rare variants in a private tasting room.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kilmainham Gaol & IMMA',
+          text: 'Walk 15 minutes to Kilmainham Gaol (€8, must pre-book). The guided tour through the prison where leaders of the 1916 Rising were executed is one of the most powerful historical experiences in Ireland. The execution yard is haunting. Afterward, visit the Irish Museum of Modern Art (IMMA) next door — free, set in the beautiful Royal Hospital Kilmainham.',
+          tip: 'Kilmainham Gaol sells out weeks in advance — book the moment tickets drop online or you will miss out.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Camden Street & Portobello',
+          text: 'Head to Camden Street and Wexford Street — Dublin\'s best stretch for young locals. Start with tacos at 777 or ramen at Neon, then pub-crawl from Whelan\'s (live music venue) to Devitt\'s for trad, and Cassidy\'s for late-night pints. If you want cocktails, try Vintage Cocktail Club on Crown Alley — speakeasy style, ring the doorbell to enter.',
+          tip: 'Camden Street on a Thursday or Friday night is where Dublin\'s under-30s go — it\'s the real social scene.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Howth Peninsula & Coastal Dublin',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Howth Cliff Walk',
+          text: 'Take the DART train from Connolly or Tara Street to Howth (30 minutes, €3.60 with Leap Card). Walk the Howth Cliff Path — a stunning 6km loop along dramatic sea cliffs with views of Ireland\'s Eye island and the Dublin Mountains. Seals bask on the rocks below, and wildflowers line the trail in summer. The harbour village has colourful fishing boats and seafood stalls.',
+          tip: 'The loop trail takes 90 minutes at a relaxed pace. Bring a windbreaker — it\'s exposed and windy even in summer.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Howth Harbour & Seafood',
+          text: 'Lunch at the Howth Market on the pier — fresh seafood chowder (€7), fish and chips, oysters, and smoked salmon from local fishers. Take the DART back to Dun Laoghaire — another gorgeous coastal town with a Victorian harbour, the People\'s Park, and views across Dublin Bay. Walk the East Pier for sunset views.',
+          tip: 'Dun Laoghaire\'s East Pier walk is a local institution — bring a 99 cone from Teddy\'s ice cream at the harbour.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ranelagh & Rathmines',
+          text: 'Head to Ranelagh and Rathmines — leafy southside suburbs where Dublin\'s young professionals live. Dinner at Kimchi Hophouse (Korean-Irish fusion, mains €14–18) or Musashi for sushi (€12–16). Drinks at The Hill on Ranelagh Road, or the Stella Cinema in Rathmines — a restored art deco cinema where you can watch films with cocktails in hand.',
+          tip: 'The Stella Cinema does €7 tickets on Tuesdays — pair it with dinner in Rathmines for a cheap but classy night.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Wicklow Mountains Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Glendalough & Monastic City',
+          text: 'Take the St Kevin\'s Bus from Dawson Street (€20 return, 90 minutes) to Glendalough — a 6th-century monastic settlement nestled in a glacial valley in the Wicklow Mountains. The round tower, Celtic crosses, and two lakes surrounded by ancient oak forests are otherworldly. Walk the Green Road trail along the Upper Lake for the best views.',
+          tip: 'The bus runs at 11:30am daily and returns at 4:30pm — arrive early to get a seat as it doesn\'t take bookings.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wicklow Way Trails',
+          text: 'Hike the Spinc and Glenealo Valley trail (9km, 3 hours) — a boardwalk climbing through the forest to a ridge with panoramic views of both Glendalough lakes and the Wicklow Mountains stretching to the horizon. Pack lunch from Dublin or eat at the Glendalough Hotel (soup and sandwiches €10–14). The valley is one of Ireland\'s most photographed landscapes.',
+          tip: 'Wear proper hiking boots — the Spinc trail has rocky sections and gets muddy after rain, which is most days.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Back to Dublin & Stoneybatter',
+          text: 'Bus back to Dublin by early evening. Head to Stoneybatter — Dublin\'s hippest neighbourhood, full of independent cafes, vintage shops, and excellent pubs. Dinner at L. Mulligan Grocer (gastropub with craft beers, mains €16–22) or Oxmantown for gourmet sandwiches. Pints at The Belfry or Walsh\'s — both proper old Dublin pubs with no pretension.',
+          tip: 'Stoneybatter is what Temple Bar used to be before it got touristy — authentic, creative, and full of character.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Phoenix Park, Museums & Northside',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Phoenix Park',
+          text: 'Rent a Dublin Bike (€3.50 for 3-day pass) and cycle to Phoenix Park — one of the largest enclosed city parks in Europe. Spot the wild fallow deer herd near the Papal Cross, visit the People\'s Garden, and find the Wellington Monument. The park has been here since 1662 and covers 707 hectares — larger than Central Park and Hyde Park combined.',
+          tip: 'The deer are most active early morning — you can get surprisingly close if you approach slowly and quietly.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Museum & Dead Zoo',
+          text: 'Cycle back to the city centre. Visit the National Museum of Ireland on Kildare Street (free) — the Bog Bodies exhibition, with perfectly preserved 2,000-year-old remains found in Irish peat bogs, is unforgettable. Next door, the Natural History Museum (locals call it "The Dead Zoo") hasn\'t changed since Victorian times — taxidermy everywhere, creaky wooden cabinets, and an eerie charm.',
+          tip: 'The Bog Bodies exhibit is genuinely one of the most fascinating museum displays in Europe — don\'t rush through it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Capel Street & Northside Nightlife',
+          text: 'Cross the Liffey to Capel Street — Dublin\'s most vibrant strip of restaurants and pubs. Start with food at Kimchi on Capel Street (Korean fried chicken, €14) or Sano Pizza (Neapolitan pies, €11–14). Drinks at Pantibar (LGBTQ+ friendly, always buzzing), The Big Romance for natural wines, or MVP for craft beer and ping pong.',
+          tip: 'Capel Street was pedestrianised and is now the beating heart of Dublin\'s nightlife — Friday nights are electric.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Dalkey, Markets & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Dalkey Village & Killiney Hill',
+          text: 'DART south to Dalkey (35 minutes, €3.60) — a charming seaside village once home to Bono and Enya. Browse the independent bookshops and cafes on Castle Street, then hike Killiney Hill (20 minutes up) for what\'s often called the best view in Dublin — a sweeping panorama of Killiney Bay that locals compare to the Bay of Naples.',
+          tip: 'The Vico Road bathing spot below Killiney Hill is where Dubliners swim year-round — join them if you dare.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Creative Quarter & Shopping',
+          text: 'Head back to the city centre for the Creative Quarter — Drury Street, South William Street, and George\'s Street Arcade. Browse vintage at Tola Vintage, vinyl at Spindizzy Records, and books at The Winding Stair. Lunch at Brother Hubbard on Capel Street (Middle Eastern-Irish brunch, €12–16) or Lemon on South William Street for crepes (€8–12).',
+          tip: 'George\'s Street Arcade is Dublin\'s oldest covered market — great for vintage finds, curiosities, and people-watching.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'EPIC Museum & Docklands',
+          text: 'Visit EPIC — The Irish Emigration Museum in the Docklands (€16.50) — an interactive journey through the Irish diaspora that\'s far more engaging than you\'d expect. Walk along Grand Canal Dock past the illuminated Bord Gais Energy Theatre designed by Daniel Libeskind. Dinner at Eatyard in the Docklands or Herbstreet for modern Irish food overlooking the water.',
+          tip: 'Grand Canal Dock at sunset is one of Dublin\'s most underrated views — the glass buildings catch golden light beautifully.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Glasnevin, Markets & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Glasnevin Cemetery & Botanic Gardens',
+          text: 'Bus or cycle to Glasnevin Cemetery — the final resting place of Michael Collins, Eamon de Valera, and many of Ireland\'s historical figures. The guided tour (€14) is riveting. Then walk next door to the National Botanic Gardens (free) — Victorian glasshouses, a rose garden, and 15,000 plant species spread across 19 hectares.',
+          tip: 'The Gravediggers pub (John Kavanagh\'s) is right beside the cemetery — it\'s been serving pints since 1833 and has excellent Guinness.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Souvenirs',
+          text: 'Head to Grafton Street for last-minute shopping and busker-watching — Dublin\'s busking tradition produced the likes of Glen Hansard and Damien Rice. Pop into Avoca on Suffolk Street for Irish woolens, or Kilkenny Shop for quality Irish crafts and design. Grab a farewell lunch at Cornucopia on Wicklow Street (vegetarian buffet, €14–16).',
+          tip: 'For authentic Irish souvenirs, skip the tourist tat — Avoca woolens, Barry\'s Tea, and Butlers Chocolates are the real deal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Pub Crawl',
+          text: 'End your Dublin trip with a proper pub crawl. Start at Kehoe\'s on South Anne Street — mahogany snugs, stained glass, and one of the best pints in Dublin. Move to The Long Hall on South Great George\'s Street — a Victorian masterpiece unchanged since 1881. Finish at Mulligan\'s on Poolbeg Street, where the Guinness is legendary and the craic is mighty.',
+          tip: 'Ask any Dubliner for their favourite pub and you\'ll get a different answer every time — that\'s the beauty of this city.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free experiences', text: 'National Gallery, National Museum, Chester Beatty Library, Natural History Museum, Phoenix Park, and all public parks are completely free. Dublin\'s best experiences cost nothing.' },
+  { title: 'Leap Card savings', text: 'Get a Visitor Leap Card (€10 for 72 hours) for unlimited bus, Luas, and DART travel. Individual fares are €2–3.60, so it pays for itself in 4–5 trips.' },
+  { title: 'Eat beyond Temple Bar', text: 'Full meals in Temple Bar cost €18–25. Walk to Camden Street, Capel Street, or Stoneybatter for the same quality at €10–16. Ethnic food is your best value.' },
+  { title: 'Pub strategy', text: 'Pints in Temple Bar: €8–9. Pints two streets away: €5.50–6.50. Early pubs (Grogan\'s, Toner\'s) have the best atmosphere and better prices.' },
+  { title: 'Dublin Pass', text: 'The Dublin Pass (€74 for 2 days) covers Guinness Storehouse, Kilmainham Gaol, EPIC, and hop-on buses. Worth it if you\'re hitting 3+ paid attractions.' },
+  { title: 'Supermarket lunches', text: 'Tesco and Centra do meal deals — sandwich, drink, and snack for €4–5. Supervalu delis have hot food boxes from €5. Perfect for park picnics.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€20–35', midrange: '€80–150', splurge: '€200+', notes: 'Hostels → 3-star hotels → boutique hotels' },
+  { category: 'Food', budget: '€15–25', midrange: '€35–55', splurge: '€80+', notes: 'Delis & ethnic food → gastropubs → fine dining' },
+  { category: 'Transport', budget: '€5–10', midrange: '€15–25', splurge: '€40+', notes: 'Leap Card & walking → DART trips → taxis' },
+  { category: 'Activities', budget: '€0–15', midrange: '€25–50', splurge: '€80+', notes: 'Free museums → paid attractions → tours & shows' },
+  { category: 'Drinks', budget: '€10–18', midrange: '€25–40', splurge: '€60+', notes: 'Local pubs → craft beer bars → cocktail bars' },
+  { category: 'Daily Total', budget: '€50–103', midrange: '€180–320', splurge: '€460+', notes: '$55–112 → $196–348 → $500+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'EU/EEA citizens need only an ID card. US, Canadian, Australian citizens get 90 days visa-free',
+      'Ireland is NOT in the Schengen Area — you\'ll go through Irish immigration separately',
+      'UK visa does NOT cover Ireland and vice versa — they are separate countries with separate entry requirements',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Luas (tram): Green and Red lines. DART (train): coastal route. Dublin Bus covers everything else',
+      'Get a Visitor Leap Card at airport or Spar/Centra — €10 for 72 hours unlimited public transport',
+      'Dublin Bikes: €3.50 for 3-day pass, first 30 minutes free per trip. 100+ stations across the city centre',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Three, Vodafone, and Eir offer tourist SIMs from €10–20 for 10–30GB at the airport or high street shops',
+      'Free WiFi in most cafes, pubs, and public buildings. Dublin Bus and Luas have free WiFi',
+      'EU roaming is free for EU residents. US visitors should check carrier international plans or buy a local SIM',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Contactless payment accepted almost everywhere — even in traditional pubs. Apple/Google Pay widely used',
+      'ATMs (called "bank machines") are free for Irish/EU cards. International cards may incur €1.50–3 fees',
+      'Tipping: 10–15% at sit-down restaurants. Not expected in pubs when ordering at the bar. Round up taxis',
+    ],
+  },
+  {
+    icon: '🌧',
+    title: 'Weather & Packing',
+    items: [
+      'Dublin weather changes hourly — layers are essential. Average summer highs: 18–20°C. Winter: 5–8°C',
+      'A waterproof jacket is the single most important item you\'ll pack. Umbrellas are useless in the wind',
+      'Comfortable walking shoes — Dublin is best explored on foot and the Georgian-era pavements are uneven',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Tap water is safe to drink everywhere. Pharmacies (Boots, McCabes) are on every high street',
+      'Dublin is generally safe. Watch for pickpockets on Grafton Street and O\'Connell Street during peak hours',
+      'Emergency number: 999 or 112. A&E wait times can be long — minor injuries go to Grafton Medical or D-Doc',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🍺', title: 'Pub Etiquette', text: 'Order at the bar — table service is rare in traditional pubs. Rounds are sacred: when someone buys you a drink, you buy the next one. Leaving a round unreciprocated is a social sin.' },
+  { icon: '🗣', title: 'The Craic', text: '"Craic" (pronounced "crack") means fun, conversation, and atmosphere. "What\'s the craic?" is a greeting. "The craic was mighty" means you had a great time. Embrace it.' },
+  { icon: '☔', title: 'Weather Chat', text: 'Talking about the weather is not small talk in Ireland — it\'s a national obsession and a perfectly valid conversation topic. "Soft day" means light rain. "Grand" means acceptable.' },
+  { icon: '🚶', title: 'Don\'t Say "British Isles"', text: 'Ireland is not part of the UK and the term "British Isles" is politically sensitive. Say "Ireland and Britain" instead. Also, it\'s "Republic of Ireland" or just "Ireland" — never "Southern Ireland".' },
+  { icon: '🎵', title: 'Trad Sessions', text: 'If you find a trad music session in a pub, sit quietly and listen. Don\'t talk loudly over the music, clap between tunes (not during), and never request "Danny Boy" — it\'s a tourist cliche.' },
+  { icon: '💚', title: 'GAA & Sports', text: 'Gaelic football and hurling are Ireland\'s national sports — catch a game at Croke Park if you can. Asking about someone\'s county team is an instant conversation starter in any pub.' },
+];
+---
+
+<CityGuideLayout
+  title="Dublin Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Dublin guide for young travelers. 3-day itinerary with budget tips, best pubs for trad music, Howth cliff walks, and insider food spots. Plan your trip with roammate."
+  heroImage="/images/guides/dublin-hero.webp"
+  heroFlag="🇮🇪"
+  heroCountry="Ireland"
+  heroRegion="Europe"
+  heroCity="Dublin"
+  heroSubtitle="A city where every pub has a story, every street has a song, and the Guinness genuinely tastes better than anywhere else on earth."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in euros. Dublin is one of Europe's pricier capitals, but free museums and pub culture keep costs manageable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Ireland is famously welcoming, but a few cultural codes will help you fit in and get the most from the legendary craic."
+  ctaCity="Dublin"
+  ctaText="Find travel companions for pub crawls, cliff walks, and day trips to the Wicklow Mountains on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

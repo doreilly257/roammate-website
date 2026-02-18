@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EUR (Euro)', detail: '1 USD ≈ 0.92 EUR' },
+  { icon: '🗣', label: 'Language', value: 'German', detail: 'Excellent English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: '18–28°C, long daylight hours' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$55–95 USD', detail: '€50–85 budget–midrange' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: '90 days visa-free for most' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Berlin Essentials in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Brandenburg Gate, Reichstag & Memorial',
+          text: 'Start at the Brandenburg Gate — the symbol of German unity. Walk to the Reichstag building and up to the glass dome (free, pre-book online) for panoramic views and a fascinating audio guide about German parliament. Walk south to the Memorial to the Murdered Jews of Europe — 2,711 concrete slabs of varying heights that create a disorienting, powerful experience. The underground information centre (free) is essential.',
+          tip: 'Book the Reichstag dome weeks ahead at bundestag.de — free entry, but slots fill quickly. Morning visits have the best light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Berlin Wall — East Side Gallery & Checkpoint Charlie',
+          text: 'Metro to Ostbahnhof for the East Side Gallery — the longest remaining stretch of the Berlin Wall, now an open-air gallery with 100+ murals including the famous Brezhnev-Honecker kiss. Walk the full 1.3km. Then to Checkpoint Charlie — the most famous Cold War crossing point. Skip the overpriced museum and instead visit the free outdoor exhibition and Topography of Terror (free, former Gestapo HQ).',
+          tip: 'The Topography of Terror is the most powerful free museum in Berlin — the outdoor wall exhibition is unflinching and essential.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kreuzberg — Street Food & Nightlife',
+          text: 'Kreuzberg is Berlin\'s edgiest, most multicultural neighbourhood. Dinner at Mustafa\'s Gemüse Kebap (legendary veggie kebab, €5 — expect a 30-min queue) or sit down at Markthalle Neun for street food (Thursday evening Street Food Thursday, stalls from €4–8). Walk along the Spree river, then drinks at a Kreuzberg Kneipe (pub) or Watergate club on the riverfront.',
+          tip: 'Markthalle Neun\'s Street Food Thursday (5–10pm) is Berlin\'s best food event — arrive early, bring cash, and try everything.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'History, Memorials & Kreuzberg',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Brandenburg Gate & Reichstag',
+          text: 'Start at the Brandenburg Gate — Berlin\'s most iconic landmark, once trapped in no-man\'s-land between East and West. Walk to the Reichstag — the glass dome (free, pre-book online) offers city views and an audio guide about German democracy. The graffiti from Soviet soldiers in 1945 is still visible inside. Walk to the Memorial to the Murdered Jews of Europe — the underground information centre is free and devastating.',
+          tip: 'Book the Reichstag dome at bundestag.de — free but must be reserved. Sunset slots are most popular.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Topography of Terror & Checkpoint Charlie',
+          text: 'The Topography of Terror (free) occupies the former Gestapo and SS headquarters — an unflinching documentation of Nazi terror with a preserved section of the Berlin Wall. Walk to Checkpoint Charlie for the outdoor exhibition about escape attempts. Skip the overpriced private museum. Lunch at Curry 36 on Mehringdamm — Berlin\'s best currywurst (€3.50), a genuine Berlin institution since 1981.',
+          tip: 'Curry 36 is cash-only and always has a queue — it moves fast. Get the currywurst mit Darm (with skin) and extra sauce.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kreuzberg — Food & Kneipe Culture',
+          text: 'Kreuzberg (Kreuzberg 36 specifically) is Berlin\'s most vibrant neighbourhood. Dinner at Markthalle Neun (Street Food Thursday 5–10pm, stalls €4–8) or Hasir for the kebab that started Berlin\'s döner culture (1971, mains €8–12). Walk the Landwehr Canal, then drinks at Kneipe bars on Oranienstraße — Luzia, Roses, or the anarchic Südblock with its outdoor beer garden.',
+          tip: 'Berlin\'s Kneipe bars are the city\'s soul — cheap beer (€3–4), no pretension, and conversations with strangers until 4am.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Museum Island, Berlin Wall & Mitte',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Museum Island',
+          text: 'Museum Island (UNESCO) holds five world-class museums. The Pergamon Museum (partially closed for renovation — check ahead, €14) has the Ishtar Gate of Babylon and the Pergamon Altar. The Neues Museum (€14) has the bust of Nefertiti. A combined day pass (€22) covers all five. Even from outside, the architecture and Spree riverside setting are impressive. Allow 3 hours for two museums.',
+          tip: 'Check which Pergamon galleries are open before visiting — major renovations mean some star exhibits are temporarily closed.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'East Side Gallery & Friedrichshain',
+          text: 'Metro to the East Side Gallery — 1.3km of murals on the longest remaining Berlin Wall stretch. The Fraternal Kiss, the Trabant breaking through the wall, and dozens more. Walk across the Oberbaumbrücke — Berlin\'s most beautiful bridge connecting Kreuzberg and Friedrichshain. Lunch at Burgermeister under the U-Bahn tracks (gourmet burgers, €7–10) at Schlesisches Tor.',
+          tip: 'Burgermeister in the old toilet booth under the Schlesisches Tor U-Bahn is a Berlin institution — queues are long but worth it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Friedrichshain & Simon-Dach-Straße',
+          text: 'Friedrichshain is Berlin\'s young, student-heavy neighbourhood. Simon-Dach-Straße is lined with bars and restaurants at student prices — beers from €3, burgers from €7. For something different, RAW Gelände is a former railway repair yard turned art and nightlife complex — Cassiopeia beer garden, street art, and a Saturday flea market. Clubs here open after midnight.',
+          tip: 'RAW Gelände is gritty and alive — the Flohmarkt am RAW (Sunday) has vinyl, vintage, and oddities. Go with an open mind.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Neukölln, Urban Culture & Alt Berlin',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Neukölln — Berlin\'s Creative Engine',
+          text: 'Neukölln is where Berlin\'s creative class lives now — Turkish bakeries next to third-wave coffee shops, vinyl stores next to kebab joints. Breakfast at Two and Two (Australian cafe, avocado toast €8) or Café Engels for German pastries. Walk the Weserstraße and Sonnenallee strip — the multicultural energy is palpable. Visit the Tempelhofer Feld — a massive former airport runway turned public park.',
+          tip: 'Tempelhofer Feld is surreal — you can cycle, skate, and picnic on the actual runway where planes once landed. Free, open daily.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mauerpark & Prenzlauer Berg',
+          text: 'If it is Sunday, Mauerpark flea market (10am–6pm) is unmissable — vintage clothing, records, street food, and the legendary outdoor karaoke. Prenzlauer Berg around Kollwitzplatz is beautiful — tree-lined streets, pre-war apartment buildings, and excellent cafes. The Kulturbrauerei (free) is a converted brewery complex with a GDR museum (€6) and cultural events.',
+          tip: 'Mauerpark karaoke (Sundays 3pm) is Berlin\'s most joyful free experience — hundreds of people cheering strangers singing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell at a Spätis',
+          text: 'Berlin\'s Spätis (late-night kiosks) are the city\'s unofficial living rooms — buy a €1.50 beer and sit on the pavement with locals. It is the most authentically Berlin thing you can do. For a farewell dinner, try Cocolo Ramen in Mitte (€10–13) or the Vietnamese on Kottbusser Damm. If it is the weekend, Berlin\'s legendary techno clubs (Berghain, Tresor, Sisyphos) go until Monday morning.',
+          tip: 'Berghain has the world\'s most famous door policy — dress in dark, minimal clothes, go alone or in pairs, and do not talk in the queue.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'History, Memorials & Kreuzberg',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Brandenburg Gate & Reichstag',
+          text: 'Start at the Brandenburg Gate, then walk to the Reichstag for the free glass dome visit (pre-book at bundestag.de). The audio guide explains German parliamentary democracy while you spiral up with panoramic views. Walk south to the Memorial to the Murdered Jews of Europe — the underground information centre documents individual stories. Free and essential.',
+          tip: 'Book Reichstag dome weeks ahead — free but reservation required. Sunset slots are spectacular but book out fastest.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Topography of Terror & Jewish Museum',
+          text: 'Topography of Terror (free) at the former Gestapo HQ documents Nazi persecution with unflinching detail. A section of the Berlin Wall is preserved outside. Walk to the Jewish Museum Berlin (€8) — Daniel Libeskind\'s zinc-clad building is powerful architecture. The empty Memory Void room and the Garden of Exile are visceral experiences. Lunch at Curry 36 (€3.50 currywurst).',
+          tip: 'The Jewish Museum\'s architecture tells the story before you read a single exhibit — allow 2 hours minimum.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kreuzberg Kneipe Night',
+          text: 'Dinner at Markthalle Neun (Street Food Thursday 5–10pm) or Hasir on Adalbertstraße for the original Berlin döner. Walk the Landwehr Canal at sunset. Then the Kneipe bars on Oranienstraße — Luzia, Roses, Südblock, and the bars along Kottbusser Tor. Berlin beer is cheap (€3–4 for a half litre) and the conversation is free.',
+          tip: 'Kottbusser Tor is gritty but the heart of Kreuzberg 36 — the bars are unpretentious and the crowd is wonderfully mixed.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Museum Island & Berlin Wall',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Museum Island',
+          text: 'Museum Island (UNESCO) on the Spree. The Neues Museum (€14) has Nefertiti\'s bust and extraordinary Egyptian and prehistoric collections. The Alte Nationalgalerie (€14) has Romantic and Impressionist paintings including Caspar David Friedrich. Day pass (€22) covers all five museums. The Berliner Dom cathedral (€9) next door has a dome with city views.',
+          tip: 'The Neues Museum\'s Nefertiti room is free from crowds in the last hour before closing — time your visit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'East Side Gallery & Oberbaumbrücke',
+          text: 'The East Side Gallery — 1.3km of murals on the Berlin Wall. Walk the full length from Ostbahnhof. The Fraternal Kiss, the Trabant, and the Test the Best murals are the most iconic. Cross the Oberbaumbrücke (Berlin\'s most beautiful bridge) into Friedrichshain. Lunch at Burgermeister (gourmet burgers in a former public toilet, €7–10) under the U-Bahn at Schlesisches Tor.',
+          tip: 'The gallery is open-air and free 24/7 — early morning has the best light and fewest people for photos.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Friedrichshain Nightlife',
+          text: 'Simon-Dach-Straße is Friedrichshain\'s bar strip — beers from €3, pizza from €6, and a young international crowd. RAW Gelände compound has Cassiopeia beer garden, Urban Spree gallery, and club nights. For more alternative vibes, Boxhagener Platz area has quieter bars. Weekend clubs — About Blank, ://about blank, or Berghain (if you dare) — open after midnight.',
+          tip: 'Berlin clubs use cash at the door and often the bar — carry €20–30 in cash. Many do not take cards at all.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Neukölln & Tempelhof',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Neukölln Brunch & Culture',
+          text: 'Neukölln is where Berlin\'s creative energy lives. Breakfast at Two and Two (Australian cafe, brunch €8–12) or Five Elephant (specialty coffee and cheesecake). Walk Weserstraße for vintage shops, record stores, and galleries. The Neukölln Arcaden mall contrasts with the Turkish markets on Karl-Marx-Straße — the neighbourhood\'s dual identity is fascinating.',
+          tip: 'Five Elephant roasts their own coffee and bakes what many consider Berlin\'s best cheesecake — arrive before the lunch rush.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tempelhofer Feld',
+          text: 'Tempelhofer Feld is surreal — a massive former airport (closed 2008) with runways now used for cycling, skating, urban gardening, and kitesurfing. The terminal building itself is a Nazi-era structure. You can cycle the 6km perimeter runway loop. Bring a picnic and join the locals — this is Berlin\'s most beloved public space. Free, open sunrise to sunset.',
+          tip: 'Rent a bike from a nearby shop and cycle the runways — the scale of the open space inside a city is extraordinary.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Neukölln Nightlife',
+          text: 'Neukölln bars are cheap and unpretentious. Weserstraße is the main strip — Tier, Ä, and Laidak are local favourites. The Klunkerkranich rooftop bar on a Neukölln parking garage has sunset views, DJs, and a garden (€3–5 entry on weekends). Dinner at Lavanderia Vecchia (Italian, €20 set menu with wine — book ahead) or Sonnenallee for Middle Eastern food.',
+          tip: 'Klunkerkranich is Berlin\'s best rooftop — the entrance is on the top floor of the Neukölln Arcaden car park.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Potsdam Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'S-Bahn to Potsdam',
+          text: 'S-Bahn S7 from Berlin Hauptbahnhof to Potsdam (40 min, covered by Berlin ABC ticket). Sanssouci Palace (€14) was Frederick the Great\'s summer retreat — the Rococo interiors, the vineyard terraces, and the 300-hectare park are magnificent. Book a timed entry slot. The palace is sometimes called the German Versailles but has a more intimate, personal scale.',
+          tip: 'Buy the Sanssouci+ ticket (€22) for all palaces and gardens — worth it if you plan to visit the New Palace and Orangery too.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Sanssouci Park & New Palace',
+          text: 'Walk through Sanssouci Park — 300 hectares of gardens, fountains, follies, and hidden palaces. The New Palace at the far end is enormous and ornate. The Chinese Tea House is charming. Bring a picnic lunch — the park is perfect for it. Alternatively, walk to the Dutch Quarter in Potsdam town centre — 134 red-brick houses built for Dutch artisans in the 1730s, now filled with cafes.',
+          tip: 'The Dutch Quarter has the best cafes and restaurants in Potsdam — the contrast with the palace formality is refreshing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Prenzlauer Berg',
+          text: 'S-Bahn back to Berlin. Explore Prenzlauer Berg — beautiful pre-war apartments, tree-lined streets, and a polished but pleasant atmosphere. Dinner at Konnopke\'s Imbiss (currywurst from 1930, the oldest in Berlin, €3.50) under the U-Bahn tracks at Eberswalder Straße. Walk Kastanienallee for boutiques and bars. Drinks at Prater Garten — Berlin\'s oldest beer garden (1837).',
+          tip: 'Prater Garten is Berlin\'s oldest beer garden — grab a Pilsner (€4) and a Flammkuchen (€8) under the chestnut trees.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Markets, Street Art & Alternative Berlin',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mauerpark & Flea Markets',
+          text: 'Sunday Mauerpark flea market (10am–6pm) is a Berlin institution — vintage clothing, vinyl, antiques, and handmade goods. Street food stalls line the edges (Thai curry €6, bratwurst €3). The outdoor karaoke at 3pm draws hundreds of spectators. If not Sunday, the Nowkoelln Flowmarkt on Maybachufer (every other Sunday) or the Arkonaplatz flea market (Sunday) are excellent alternatives.',
+          tip: 'Mauerpark karaoke is the most joyful free experience in Berlin — even if you don\'t sing, the crowd energy is infectious.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Street Art & Urban Exploration',
+          text: 'Berlin is one of the world\'s great street art cities. Walk from Kreuzberg\'s Cuvrystraße (massive murals) through the Oberbaumbrücke area to Friedrichshain\'s RAW Gelände. The Haus Schwarzenberg courtyard in Mitte has politically charged art. The Urban Nation Museum (free) on Bülowstraße has curated international street art. Join an Alternative Berlin walking tour (pay-what-you-want) for insider context.',
+          tip: 'The Haus Schwarzenberg courtyard on Rosenthaler Straße is a decaying, art-covered protest space — look for the Anne Frank memorial.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Spree River & Holzmarkt',
+          text: 'Walk along the Spree river from Jannowitzbrücke to Holzmarkt — a community-run riverside village with bars, restaurants, a sauna, and a club in former warehouse buildings. The sunset over the Spree with the TV Tower in the background is classic Berlin. Dinner at Holzmarkt\'s restaurants or nearby Marktfisch (fresh fish, mains €10–14). Katerschmaus has excellent food and live music.',
+          tip: 'Holzmarkt is a genuinely community-run space on prime riverside land — the story of how they saved it from developers is inspiring.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Cold War Berlin & Charlottenburg',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Berlin Wall Memorial & Bernauer Straße',
+          text: 'The Berlin Wall Memorial on Bernauer Straße (free) is the most comprehensive Wall site — a preserved death strip, watchtower, and the documentation centre with a viewing platform. This stretch saw dramatic escape attempts and the famous church demolition. The Gedenkstätte Berliner Mauer visitor centre has personal stories of divided families. Allow 90 minutes for the full outdoor exhibition.',
+          tip: 'The documentation centre\'s viewing platform lets you look down onto the preserved death strip — the most powerful Berlin Wall perspective.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Charlottenburg Palace & KaDeWe',
+          text: 'Schloss Charlottenburg (€14 for Old Palace) is Berlin\'s largest palace — Baroque and Rococo rooms, landscaped gardens (free), and the Belvedere tea house. Walk to KaDeWe (Kaufhaus des Westens) — Europe\'s second-largest department store. The 6th-floor food hall is extraordinary — 30,000 products, fresh oyster bar, sushi counters, and German deli counters. Lunch here is an experience.',
+          tip: 'KaDeWe\'s food hall is worth visiting even without buying — the sheer variety and quality is staggering.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Savignyplatz & West Berlin Vibes',
+          text: 'Savignyplatz in Charlottenburg has a different energy — literary cafes, jazz bars, and old West Berlin sophistication. Dinner at Restaurant 1990 (Vietnamese, mains €10–14) or Schwarzes Café (open 24 hours, bohemian institution). Walk Kantstraße for Asian food (Berlin\'s best Chinese and Korean restaurants are here). Drinks at A-Trane jazz club for live performances nightly.',
+          tip: 'Schwarzes Café on Kantstraße is open 24 hours and has been Berlin\'s bohemian headquarters since the 1970s.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Farewell — Beer Gardens & Last Looks',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Viktoriapark & Kreuzberg Hill',
+          text: 'Walk up Kreuzberg hill in Viktoriapark — the highest natural point in central Berlin (66m) with a waterfall cascading down from a Gothic monument. The view from the top stretches across the city. Walk through the surrounding Bergmannstraße neighbourhood — Marheineke Markthalle for breakfast (fresh pastries, coffee, and market stalls), then browse the antique and vintage shops.',
+          tip: 'Bergmannstraße is the nicest shopping street in Kreuzberg — boutiques, bookshops, and cafes without the tourism of Mitte.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Bites & Souvenirs',
+          text: 'For Berlin souvenirs, try Ampelmann shops (East German traffic light man merchandise), Bonbonmacherei (handmade candy shop in Hackescher Markt), or vinyl records from Hard Wax in Kreuzberg. One last döner at Imren Grill on Oranienplatz or a final currywurst at Konnopke\'s. Pack your bags with a Berliner Kindl beer in hand.',
+          tip: 'Hard Wax on Paul-Lincke-Ufer is the world\'s most famous electronic music record shop — a Berlin pilgrimage for music lovers.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Beer Garden Farewell',
+          text: 'A Berlin farewell belongs in a beer garden. Prater Garten (Kastanienallee), Café am Neuen See (Tiergarten lakeside), or Golgatha in Viktoriapark for sunset views. A Pilsner costs €4, a Flammkuchen €8. Berlin says goodbye casually — no fuss, no formality, just good beer and long summer evenings. BER airport is 30 min by S-Bahn/FEX express (€3.80).',
+          tip: 'Café am Neuen See in the Tiergarten has rowing boats, a lakeside terrace, and Bavarian food — the most idyllic farewell spot.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free museums & memorials', text: 'The Reichstag dome, Topography of Terror, Berlin Wall Memorial, Holocaust Memorial, East Side Gallery, Haus Schwarzenberg, and most churches are free. Many museums offer free entry on the first Sunday of each month.' },
+  { title: 'Cheap street food', text: 'Döner kebab: €5–7. Currywurst: €3–4. Vietnamese (Kreuzberg/Mitte): €7–9. Turkish breakfast in Neukölln: €8–10. Spätis sell beer for €1–2 — grab one and sit on the Spree riverbank.' },
+  { title: 'BVG transport', text: 'Day ticket AB zone: €8.80. 7-day ticket: €36.50. Single ride: €3.20. Berlin is huge — you need the public transport. The AB zone covers nearly everything tourists need.' },
+  { title: 'Späti culture', text: 'Spätis (late-night kiosks) sell beer for €1–2. Sitting outside a Späti with a beer is an authentic Berlin social experience — free seating, free conversation, and the cheapest night out in the city.' },
+  { title: 'Free parks & culture', text: 'Tempelhofer Feld, Tiergarten, Mauerpark, Viktoriapark, and the Spree riverside are all free. Summer brings free outdoor cinema, concerts, and festivals in parks across the city.' },
+  { title: 'Club culture', text: 'Many clubs have €5–15 entry including Berghain. Pre-game at Spätis (beer €1.50) and arrive after midnight. No photos allowed inside clubs. Wear dark, comfortable clothing. Check Resident Advisor for events.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€15–35', midrange: '€55–110', splurge: '€140+', notes: 'Hostels → boutique hotels → design hotels' },
+  { category: 'Food', budget: '€10–18', midrange: '€22–40', splurge: '€55+', notes: 'Street food & markets → restaurants → fine dining' },
+  { category: 'Transport', budget: '€5–9', midrange: '€10–18', splurge: '€25+', notes: 'Day ticket & walking → taxis → private transfers' },
+  { category: 'Activities', budget: '€0–8', midrange: '€12–25', splurge: '€40+', notes: 'Free memorials & parks → museums → guided tours' },
+  { category: 'Drinks', budget: '€3–8', midrange: '€10–18', splurge: '€25+', notes: 'Spätis & beer gardens → bars → cocktail bars' },
+  { category: 'Daily Total', budget: '€33–78', midrange: '€109–211', splurge: '€285+', notes: '$36–85 → $118–229 → $310+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — most nationalities get 90 days visa-free within any 180-day period',
+      'Berlin Brandenburg Airport (BER): FEX express to Hauptbahnhof (30 min, €3.80) or S-Bahn S9/S45 (45 min, €3.80)',
+      'Passport valid for 3+ months beyond departure. EU/EEA citizens need only a national ID card',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Tap water is excellent and safe — Berlin water is some of the cleanest in Europe',
+      'Berlin is very safe. Standard awareness at Alexanderplatz, Kottbusser Tor, and late-night U-Bahn. Bike theft is common — double-lock',
+      'Emergency 112. Pharmacies (Apotheke) marked by red A signs are on most blocks. Charité hospital for emergencies',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'BVG runs U-Bahn, S-Bahn, trams, and buses. Day ticket AB: €8.80. Single: €3.20. Weekly: €36.50. Buy at machines or the BVG app',
+      'Berlin is huge — public transport is essential. U-Bahn runs until ~12:30am weekdays, 24hr Fri/Sat (night buses fill gaps)',
+      'Cycling is excellent — flat city with bike lanes. Nextbike/Lime: €1 to unlock + €0.15/min. Bolt/Uber taxis also available',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in most cafes, many restaurants, and some U-Bahn stations. BVG WiFi on some buses and trams',
+      'EU roaming works at home rates. Otherwise, Aldi Talk, Lebara, or Lycamobile SIMs from €8 for 3–5GB at electronics shops',
+      'Download BVG app (public transport), Google Maps offline, and Too Good To Go for discounted restaurant meals',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'CASH IS KING in Berlin — many restaurants, bars, clubs, and markets are cash-only. Always carry €30–50. This is not a joke.',
+      'ATMs (Geldautomat) everywhere. Use bank ATMs (Deutsche Bank, Commerzbank, Sparkasse). Avoid Euronet-style tourist machines',
+      'Tipping: round up to the nearest euro or add 5–10% for good service. Tell the waiter the total you want to pay when paying',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Layers year-round — Berlin weather changes quickly. A waterproof jacket for surprise rain. Warm coat essential Nov–Mar',
+      'Comfortable shoes for Berlin\'s vast distances. Dark clothing for nightlife — Berlin club dress code is black on black',
+      'A reusable water bottle (tap water is excellent) and a tote bag for market shopping',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '💶', title: 'Cash Is King', text: 'Berlin is surprisingly cash-dependent. Many restaurants, clubs, Spätis, and market stalls do not accept cards. Always carry at least €30–50 in cash. This catches most visitors off-guard.' },
+  { icon: '🍺', title: 'Beer Culture', text: 'Pilsner is the Berlin standard — Berliner Kindl, Berliner Pilsner, Augustiner from Bavaria. A half litre at a Kneipe costs €3–4. Drinking in public is legal and normal — the Späti and park combo is the Berlin way.' },
+  { icon: '🌙', title: 'Club Culture', text: 'Berlin\'s techno scene is world-famous. Clubs open Saturday night and close Monday morning. No phones or photos inside (stickers on cameras). Dress dark and minimal. Door policies can be strict — do not take rejection personally.' },
+  { icon: '♻️', title: 'Pfand System', text: 'Germany has a bottle deposit system (Pfand) — 8 or 25 cents per bottle. Return bottles to machines in supermarkets for a receipt. Or leave them next to a bin — someone will collect them. It is a social system.' },
+  { icon: '🚶', title: 'Ampelmann Respect', text: 'Wait for the green pedestrian signal even if no cars are coming — jaywalking is socially frowned upon and can get you dirty looks (or a €5 fine). The East German Ampelmann figure is a beloved cultural icon.' },
+  { icon: '🏗️', title: 'Respect the History', text: 'Berlin\'s history is raw and recent. The memorials, Stolpersteine (brass pavement stones marking deportation sites), and preserved Wall sections deserve quiet respect. This is not a theme park.' },
+];
+---
+
+<CityGuideLayout
+  title="Berlin Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Berlin guide for young travelers. 3-day itinerary with history, street art, techno culture, cheap eats, and nightlife. Plan your trip with roammate."
+  heroImage="/images/guides/berlin-hero.webp"
+  heroFlag="🇩🇪"
+  heroCountry="Germany"
+  heroRegion="Europe"
+  heroCity="Berlin"
+  heroSubtitle="A city that wears its scars openly, where Cold War history meets the world's most legendary nightlife and everything costs less than you expect."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in euros. Berlin is one of Western Europe's cheapest capitals — street food, free memorials, and Späti beer culture make it incredibly accessible."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Berlin is raw, direct, and unapologetically itself. Carry cash, wear black, respect the history, and let the city's creative chaos pull you in."
+  ctaCity="Berlin"
+  ctaText="Find travel companions to explore the Wall, share a beer at a Späti, or brave the Berghain queue together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

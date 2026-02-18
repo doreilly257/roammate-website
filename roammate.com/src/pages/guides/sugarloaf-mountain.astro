@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'R$ (Real)', detail: '1 USD ≈ R$ 5.80' },
+  { icon: '🗣', label: 'Language', value: 'Portuguese', detail: 'English in tourist areas, limited elsewhere' },
+  { icon: '🕐', label: 'Timezone', value: 'BRT (UTC−3)', detail: 'Daylight saving abolished in 2019' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Oct', detail: '20–28°C, dry season, clear skies' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$45–90 USD', detail: 'R$ 260–520 budget–midrange' },
+  { icon: '🛂', label: 'Visa', value: 'E-visa for US', detail: 'EU/UK visa-free 90 days; US e-visa required' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Sugarloaf Mountain & Rio Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sugarloaf Mountain — Pão de Açúcar',
+          text: 'Take the cable car from Praia Vermelha to Sugarloaf Mountain (R$ 130). The ride ascends in two stages — first to Morro da Urca (220m), then to the Sugarloaf summit (396m). The 360-degree panorama from the top is Rio de Janeiro distilled into a single view — Copacabana and Ipanema beaches curving below, Christ the Redeemer on Corcovado, Guanabara Bay studded with islands, and the green mountains of Tijuca Forest rolling into the distance.',
+          tip: 'Arrive at opening (8am) for smaller crowds and softer morning light. Alternatively, time it for sunset — the view of Rio illuminating at dusk is unforgettable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Copacabana & Ipanema Beaches',
+          text: 'Walk from Sugarloaf along the Praia Vermelha coastal path, then bus or metro to Copacabana — the world\'s most famous urban beach. Walk the 4km mosaic boardwalk past beach vendors, football games, and cariocas sunbathing. Continue around the Arpoador headland to Ipanema for a more upscale atmosphere. Watch the sunset from Arpoador Rock — the crowd applauds when the sun hits the horizon. Cold açaí bowls (R$ 15–25) from beach kiosks.',
+          tip: 'At the beach, rent a chair from a vendor (R$ 10–15) and buy drinks from them to keep your spot. Do not bring valuables — leave phones at your hotel.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lapa Nightlife & Live Samba',
+          text: 'Lapa is Rio\'s pulsing nightlife district. Start at the Arcos da Lapa (colonial aqueduct) and walk Rua do Lavradio — bars spill live samba, forró, and MPB (Brazilian popular music) into the streets on Friday and Saturday nights. Rio Scenarium (R$ 50–80 cover) is the city\'s most famous samba venue — three floors of dancing, antiques, and extraordinary musicians. Or drink caipirinhas (R$ 15–25) at street bars along Rua Mem de Sá.',
+          tip: 'Lapa is best on Friday and Saturday nights — the energy is electric. Keep your phone in a front pocket and do not wander into dark side streets.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Sugarloaf & Copacabana',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sugarloaf Mountain at Sunrise',
+          text: 'Take the bondinho (cable car, R$ 130) to Sugarloaf Mountain. The two-stage ascent stops first at Morro da Urca — explore the café, viewpoints, and marmosets (small monkeys) that roam freely. The final car to the 396m summit reveals Rio\'s full panorama — Christ the Redeemer, the Atlantic coastline, Guanabara Bay, and the Serra do Mar mountains fading into haze. On clear days the visibility is extraordinary. Sugarloaf is the single best viewpoint in Rio.',
+          tip: 'For adventurers, hiking trails lead from Praia Vermelha to Morro da Urca (free, 30 minutes) — you can hike up and cable car down, saving half the ticket price.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Copacabana Beach & Forte de Copacabana',
+          text: 'Spend the afternoon at Copacabana — 4km of golden sand, constant football and volleyball games, and beach vendors selling everything from cold beer to grilled cheese. Visit the Forte de Copacabana (R$ 8) at the southern end — a military fort with a museum and the Confeitaria Colombo café (R$ 20–40 for pastries) with ocean views. Walk the mosaic promenade designed by Roberto Burle Marx — the wavy black-and-white pattern is iconic.',
+          tip: 'Beach theft is common in Copacabana — bring only what you can carry in a swimsuit. Use the hotel safe and carry a small amount of cash in a waterproof pouch.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset at Arpoador & Dinner',
+          text: 'Walk from Copacabana around the headland to Arpoador Rock for Rio\'s legendary sunset — the entire crowd applauds as the sun sinks behind the Dois Irmãos peaks. Then walk to Ipanema for dinner — Garota de Ipanema restaurant (R$ 60–100 mains) is where the famous bossa nova song was written. For better food, try Zazá Bistrô Tropical (R$ 70–120 mains) for creative Brazilian-Asian fusion in a bohemian setting.',
+          tip: 'Arpoador sunset is a daily ritual in Rio — arrive 30 minutes before for a good spot on the rocks. The applause at sundown is genuine and moving.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Christ the Redeemer & Santa Teresa',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cristo Redentor — Corcovado',
+          text: 'Take the cog train (R$ 100 return) or van from Largo do Machado to the summit of Corcovado (710m) and the Cristo Redentor statue. The 30-metre art deco Christ with outstretched arms is the defining image of Brazil. On a clear morning, the views rival Sugarloaf — you see the entire city, both coastlines, and the Tijuca Forest canopy below. The statue\'s scale is humbling up close, and the engineering of placing it on a sheer peak is remarkable.',
+          tip: 'Book timed tickets online at least a day ahead — walk-ups face hour-long queues. Early morning (8–9am) has the best light and fewest crowds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Santa Teresa — Art & Cobblestones',
+          text: 'Descend to Santa Teresa — Rio\'s bohemian hilltop neighbourhood with winding cobblestone streets, colonial mansions turned art studios, and panoramic views over Guanabara Bay. Walk Rua Almirante Alexandrino past galleries and cafes. Visit Parque das Ruínas (free) — a mansion ruin turned cultural centre with rooftop views. Lunch at Espírito Santa (R$ 50–80) for Amazonian-inspired cuisine — try the moqueca de pirarucu (giant Amazonian fish stew).',
+          tip: 'Santa Teresa is hilly — wear comfortable shoes. The neighbourhood is safe during the day but take a taxi after dark. The art scene here is the most authentic in Rio.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lapa Samba Night',
+          text: 'Walk downhill from Santa Teresa to Lapa — Rio\'s legendary nightlife district. The Arcos da Lapa (old aqueduct) marks the entrance. On Friday and Saturday nights, the streets fill with thousands of people dancing to live samba, forró, and funk. Rio Scenarium (R$ 50–80 cover) has three floors of live music and dancing. For something more local, Carioca da Gema (R$ 30–50 cover) is smaller and the musicians are outstanding.',
+          tip: 'Caipirinhas in Lapa street bars cost R$ 12–20 — try them with different fruits (passion fruit, cashew, strawberry). Pace yourself — they are deceptively strong.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Tijuca Forest, Ipanema & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tijuca National Park Hike',
+          text: 'Hike in Tijuca Forest — the world\'s largest urban rainforest, surrounding Rio like a green amphitheatre. The trail to Pico da Tijuca (1,022m, 2–3 hours return) rewards with 360-degree views of the city. Alternatively, hike to the Cascatinha Taunay waterfall (30 minutes, easy) — a peaceful cascade in dense jungle just 15 minutes from the city centre. Toucans, monkeys, and coatis are common on all trails.',
+          tip: 'Tijuca trails are well-marked but bring water, sunscreen, and insect repellent. The Pico da Tijuca hike has steep sections with ladders — moderate fitness required.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ipanema & Leblon',
+          text: 'Spend the afternoon at Ipanema — Rio\'s more fashionable beach with cleaner sand and a younger crowd. Each section of the beach has its own identity — Posto 8 is the LGBTQ+ section, Posto 9 is the young and beautiful crowd, and Arpoador is for surfers. Walk to neighbouring Leblon for a quieter vibe and excellent restaurants. Cold água de coco (coconut water, R$ 8–12) from beach vendors is the essential Rio refreshment.',
+          tip: 'Ipanema is safer than Copacabana but the same rules apply — no valuables on the beach. The water is clean and the waves are gentle for swimming.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Rio',
+          text: 'Final dinner in Leblon — Sushi Leblon (R$ 80–150 mains) for Japanese-Brazilian fusion, or CT Boucherie (R$ 100–180) for the best steak in Rio. For something casual, a boteco (neighbourhood bar) on Rua Dias Ferreira serves cold chopps (draft beer, R$ 10–15) and petiscos (bar snacks) — bolinhos de bacalhau (cod croquettes, R$ 30–45) are essential. Watch the lights of Sugarloaf from Ipanema beach one last time.',
+          tip: 'Rua Dias Ferreira in Leblon has the highest concentration of excellent restaurants in Rio — walk the street and choose whatever appeals.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Hike to Morro da Urca', text: 'Save half the Sugarloaf cable car cost by hiking to Morro da Urca from Praia Vermelha (30 minutes, free) and buying a one-way ticket for the summit stage only. The hike through Atlantic Forest is beautiful and you see wildlife most cable car riders miss.' },
+  { title: 'Beach life is free', text: 'Rio\'s beaches cost nothing. Rent a chair (R$ 10–15), buy a coconut water (R$ 8–12), and spend the day people-watching. The beach is Rio\'s living room — locals spend entire days there, and you can eat cheaply from vendors.' },
+  { title: 'Ride the metro & VLT', text: 'Rio\'s metro (R$ 6.50 per ride) and VLT light rail (R$ 4.30 in Centro) are efficient and cheap. Buy a Giro card at any station. Buses are R$ 4.30 but routes are confusing — metro is easier for tourists.' },
+  { title: 'Eat at padarias & botecos', text: 'Padarias (bakeries) sell pão de queijo, pastéis, and sandwiches for R$ 5–15. Botecos (neighbourhood bars) serve a full plate of rice, beans, and meat for R$ 20–35. Skip tourist restaurants on the beachfront.' },
+  { title: 'Free museums & parks', text: 'Parque das Ruínas, Centro Cultural Banco do Brasil (CCBB), Museu de Arte do Rio (MAR, free Tuesdays), and Tijuca National Park are free or nearly free. Rio\'s best cultural experiences rarely cost more than R$ 30.' },
+  { title: 'Cheap caipirinhas', text: 'Bar and street caipirinhas cost R$ 12–20 in Lapa versus R$ 35–50 at beachfront restaurants. Make friends and share a table at a street bar — the experience is better and the drinks are stronger.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'R$ 60–120', midrange: 'R$ 200–400', splurge: 'R$ 600+', notes: 'Hostels → boutique hotels → beachfront luxury' },
+  { category: 'Food', budget: 'R$ 40–80', midrange: 'R$ 100–200', splurge: 'R$ 350+', notes: 'Padarias & botecos → mid-range → fine dining' },
+  { category: 'Transport', budget: 'R$ 20–40', midrange: 'R$ 50–100', splurge: 'R$ 200+', notes: 'Metro/bus → Uber → private transfers' },
+  { category: 'Activities', budget: 'R$ 0–80', midrange: 'R$ 130–250', splurge: 'R$ 400+', notes: 'Free beaches & parks → Sugarloaf & Cristo → hang gliding & tours' },
+  { category: 'Drinks', budget: 'R$ 20–40', midrange: 'R$ 50–100', splurge: 'R$ 150+', notes: 'Street bars → craft beer → cocktail bars' },
+  { category: 'Daily Total', budget: 'R$ 140–360', midrange: 'R$ 530–1,050', splurge: 'R$ 1,700+', notes: '$24–62 → $91–181 → $293+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '✈️',
+    title: 'Getting There',
+    items: [
+      'International flights arrive at Galeão Airport (GIG), 20km from Zona Sul. Domestic flights also use Santos Dumont Airport (SDU) in Centro — much closer',
+      'Galeão to Zona Sul: Uber R$ 80–120 (40–90 minutes depending on traffic). Premium bus (BRT Gentileza) connects to metro. Avoid unlicensed taxis',
+      'Long-distance buses arrive at Rodoviária Novo Rio. Direct buses from São Paulo (6 hours, R$ 100–200) and Iguaçu (22 hours, R$ 200–350)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Yellow fever vaccination recommended. Dengue and Zika exist — use insect repellent especially near parks and at dusk. Tap water is safe in Zona Sul',
+      'Street crime and phone theft are real in tourist areas. Keep phones concealed, avoid wearing visible jewellery, and be alert in Copacabana, Centro, and Lapa at night',
+      'Emergency: 190 (police), 192 (ambulance). UPA clinics offer free emergency care. Travel insurance is essential — private hospitals are expensive',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Metro (R$ 6.50) runs from Zona Sul through Centro to Tijuca. Lines 1 and 4 cover most tourist areas. Buy a Giro card at any station',
+      'Uber and 99 ride-hailing apps are cheap and reliable — R$ 15–40 for most trips within Zona Sul. Much safer than hailing street taxis',
+      'Bikes: Bike Rio stations throughout Zona Sul (R$ 5 for 60 min). Walking is fine in Copacabana, Ipanema, and Leblon by day',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi at most restaurants, cafes, and hotels. Rio has city-wide WiFi (Rio WiFi) at beaches and public spaces — works intermittently',
+      'SIM cards from Claro, Vivo, or TIM at phone shops or airports — R$ 30–50 for 10GB data. Coverage is excellent throughout the city',
+      'Download 99 (ride-hailing), Google Maps offline, and WhatsApp. Brazilians use WhatsApp for everything including restaurant reservations',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Credit and debit cards accepted almost everywhere. Visa and Mastercard are most common. Small street vendors and botecos may be cash-only',
+      'ATMs at Banco do Brasil and Bradesco dispense up to R$ 1,000 per withdrawal. International cards work but check fees with your bank',
+      'Tip 10% at restaurants (often included as "taxa de serviço" on the bill). Check before adding more. Tip hotel staff R$ 5–10 per service',
+    ],
+  },
+  {
+    icon: '🏖️',
+    title: 'Beach Safety',
+    items: [
+      'Never bring valuables to the beach — phone theft is common. Carry only enough cash for drinks and chair rental in a waterproof pouch',
+      'Strong currents exist at all beaches — swim near lifeguard posts (postos). Red flags mean no swimming. Riptides are common at Copacabana',
+      'Rent a chair and umbrella from a barraca vendor (R$ 10–15) and buy drinks from them throughout the day — this is how beach economics work in Rio',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏖️', title: 'Carioca Beach Culture', text: 'The beach is not a place — it is a way of life. Cariocas go to the beach year-round, spend hours with friends, and have their "home" posto (lifeguard station). Rent a chair, order a drink, and settle in. Rushing through the beach misses the entire point.' },
+  { icon: '🎶', title: 'Samba & Music', text: 'Samba is Rio\'s heartbeat. In Lapa, live samba pours out of every bar on weekends. Roda de samba (samba circles) happen in neighbourhood squares and are free. The music pulls you in — dancing is expected, even if you have no idea what you are doing.' },
+  { icon: '🍹', title: 'Caipirinha Culture', text: 'The caipirinha — cachaça, lime, sugar, and ice — is Brazil\'s national cocktail. Order with different fruits (passion fruit, strawberry, kiwi) for variety. They taste light but hit hard. Two is a warm-up. Five is a mistake.' },
+  { icon: '🤗', title: 'Warmth & Physicality', text: 'Cariocas are physically warm — greetings involve kisses on the cheek (two in Rio), hugs are frequent, and personal space is smaller. Embrace it. This warmth extends to strangers — people strike up conversations easily and include newcomers generously.' },
+  { icon: '⚽', title: 'Football Religion', text: 'Football in Rio is not a sport — it is identity. Flamengo, Fluminense, Vasco, and Botafogo divide the city. Attending a Maracanã match (R$ 40–100) is one of the great sports experiences on Earth. Ask your hostel about getting tickets safely.' },
+  { icon: '🌈', title: 'Diversity & Inclusion', text: 'Rio is one of the most diverse and LGBTQ+-friendly cities in Latin America. Ipanema\'s Posto 8 is the historic gay beach. Carnival is the ultimate expression of freedom and inclusion. Rio celebrates difference — bring your whole self.' },
+];
+---
+
+<CityGuideLayout
+  title="Sugarloaf Mountain Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Sugarloaf Mountain and Rio de Janeiro guide for young travelers. 3-day itinerary with beaches, samba, and budget tips. Plan your trip with roammate."
+  heroImage="/images/guides/sugarloaf-mountain-hero.webp"
+  heroFlag="🇧🇷"
+  heroCountry="Brazil"
+  heroRegion="South America"
+  heroCity="Sugarloaf Mountain"
+  heroSubtitle="A granite peak rising from Guanabara Bay with Rio de Janeiro spread below — beaches, samba, and one of Earth's most beautiful cities at your feet."
+  heroPills={['3-Day Itinerary', 'Culture', 'May – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Brazilian reais. Rio is mid-range by South American standards — beaches and samba are free, while attractions and dining range from cheap street food to world-class restaurants."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Rio runs on rhythm, warmth, and beauty. The carioca lifestyle centres on the beach, live music, and generous hospitality. Slow down, dance badly, eat well, and let the city's infectious energy carry you."
+  ctaCity="Sugarloaf Mountain"
+  ctaText="Find travel companions to watch the sunset from Arpoador, dance samba in Lapa, or hike Tijuca Forest together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

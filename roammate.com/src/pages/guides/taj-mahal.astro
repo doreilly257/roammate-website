@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'INR (Rupee/₹)', detail: '1 USD ≈ ₹84' },
+  { icon: '🗣', label: 'Language', value: 'Hindi / English', detail: 'Urdu widely spoken in Agra' },
+  { icon: '🕐', label: 'Timezone', value: 'IST (UTC+5:30)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Mar', detail: '10–28°C, cool & dry' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–40 USD', detail: '₹1,700–3,400 budget' },
+  { icon: '🛂', label: 'Visa', value: 'e-Visa available', detail: 'Apply online before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Taj Mahal & Agra in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Taj Mahal at Sunrise',
+          text: 'Arrive at the East Gate before sunrise to witness the Taj Mahal emerge from the morning mist. The white Makrana marble shifts from pale blue to warm pink as the sun rises behind you. Entry is ₹1,100 for foreigners including water and shoe covers. Walk through the Great Gate — that first glimpse of the Taj framed in the archway is the most iconic moment in travel. Spend two hours exploring the marble platform, the inlay work of semi-precious stones, and the echoing interior chamber.',
+          tip: 'The East Gate has shorter queues than the West Gate. Arrive 30 minutes before sunrise. Friday is closed for prayers — plan around this.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Agra Fort & Baby Taj',
+          text: 'Auto-rickshaw to Agra Fort (₹600) — the massive red sandstone Mughal fortress where Shah Jahan was imprisoned by his own son, spending his final years gazing at the Taj Mahal he built for his wife. The view from the Musamman Burj octagonal tower is heartbreaking. Then visit Itimad-ud-Daulah (₹210), known as the Baby Taj — a jewel-box tomb covered in marble inlay that pioneered the pietra dura technique later perfected at the Taj.',
+          tip: 'Agra Fort\'s Musamman Burj is where Shah Jahan died gazing at the Taj — the view from here across the river is profoundly moving.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mehtab Bagh Sunset & Agra Street Food',
+          text: 'Cross the Yamuna River to Mehtab Bagh (₹300) — the Mughal garden directly behind the Taj Mahal with the most photographed sunset view in India. The white marble dome turning gold and pink in the evening light is extraordinary. Then head to Sadar Bazaar for Agra\'s famous petha (sweet pumpkin candy, ₹100–200/box) and chaat. Dinner at Pinch of Spice near Fatehabad Road for excellent Mughlai cuisine (₹250–500).',
+          tip: 'Mehtab Bagh closes at sunset — arrive one hour before. A telephoto lens or phone zoom captures the Taj beautifully from this distance.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Taj Mahal — The Wonder of the World',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Taj Mahal at Sunrise',
+          text: 'Enter through the East Gate before sunrise for the most magical experience at the Taj Mahal. The white Makrana marble transforms colour as the light changes — pale blue, soft pink, warm gold. Entry is ₹1,100 for foreigners. Pass through the Great Gate and let the symmetry and scale overwhelm you. The pietra dura inlay of jasper, jade, turquoise, and lapis lazuli on the marble surface is exquisite. The interior chamber echoes for 28 seconds — whisper and listen.',
+          tip: 'Sunrise visits mean smaller crowds and the best light. The East Gate opens 30 minutes before sunrise. Bring a tripod for long-exposure dawn shots.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Agra Fort — Mughal Power & Prison',
+          text: 'Auto-rickshaw to Agra Fort (₹600) — the red sandstone fortress that served as the Mughal capital. The Diwan-i-Am (public audience hall) and the white marble Diwan-i-Khas (private audience hall) show the progression from military power to refined luxury. Shah Jahan\'s imprisonment in the Musamman Burj — an octagonal marble tower with the Taj visible across the river — is one of history\'s most poignant stories. Audio guide (₹150) is highly recommended.',
+          tip: 'Visit the Nagina Masjid (Gem Mosque) inside the fort — a tiny private mosque made entirely of white marble, often missed by visitors.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mehtab Bagh & Sadar Bazaar',
+          text: 'Head to Mehtab Bagh (₹300) for the sunset view of the Taj Mahal across the Yamuna. This is where the Mughals planned a mirror tomb in black marble — never built, but the gardens remain. Watch the Taj turn from white to gold to pink. Then explore Sadar Bazaar for petha (Agra\'s signature sweet, ₹100–200/box at Panchhi Petha), marble inlay handicrafts, and leather goods. Dinner at Mama Chicken for butter chicken (₹200–350).',
+          tip: 'Agra\'s marble inlay craftsmen work in the lanes behind the Taj — visit a workshop to see the same pietra dura technique used on the Taj itself.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Fatehpur Sikri — The Ghost Capital',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Fatehpur Sikri Palace Complex',
+          text: 'Day trip to Fatehpur Sikri (37 km, ₹200 by shared auto or ₹800 private). Emperor Akbar built this entire city in 1571 as his capital, then mysteriously abandoned it 14 years later. The red sandstone palace complex (₹610) is phenomenally preserved. The Panch Mahal — a five-storey palace of 176 columns with no two alike — is architecturally stunning. The Diwan-i-Khas has a central pillar connected to four walkways where Akbar debated scholars of every religion.',
+          tip: 'Hire a government-approved guide at the ticket office (₹400–600) — the stories of Akbar\'s court bring these empty palaces to life.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jama Masjid & Buland Darwaza',
+          text: 'Adjacent to the palace complex is Fatehpur Sikri\'s Jama Masjid (free entry) — one of India\'s largest mosques, with the Buland Darwaza (Gate of Magnificence) towering 54 metres high. This victory gate, built after Akbar conquered Gujarat, is the tallest gateway in the world. Inside the mosque courtyard is the tomb of Sufi saint Salim Chishti — a masterpiece of marble lattice screens where devotees tie threads to make wishes. The white marble against the red sandstone is stunning.',
+          tip: 'Tie a thread at Salim Chishti\'s tomb to make a wish — pilgrims have done this for over 400 years. The marble jali screens are exquisitely carved.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Itimad-ud-Daulah & Agra Twilight',
+          text: 'Return to Agra and visit Itimad-ud-Daulah (₹210) — the Baby Taj. Built in 1628, this tomb pioneered the marble inlay technique that the Taj Mahal later perfected. The garden setting and smaller scale allow you to appreciate the craftsmanship up close. Each flower panel uses dozens of semi-precious stones. Then walk along the Yamuna River bank for twilight views of the Taj. Dinner at Peshawri at ITC Mughal for legendary kebabs (₹800–1,500) or Dasaprakash for South Indian thali (₹200–300).',
+          tip: 'Itimad-ud-Daulah is quiet and uncrowded compared to the Taj — the marble inlay here is arguably more intricate. Late afternoon light is perfect.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Taj by Moonlight & Hidden Agra',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kinari Bazaar & Local Life',
+          text: 'Explore Agra\'s Kinari Bazaar — the old market near Jama Masjid crammed with wedding decoration shops, jewellery stalls, and street food vendors. Try bedai with jalebi (₹40) — Agra\'s signature breakfast of fried puffed bread with spicy potato curry and fresh jalebi. The market atmosphere is authentic and tourist-free. Walk to Agra\'s Jama Masjid (free) — built by Shah Jahan\'s daughter Jahanara, with a distinctive zigzag marble pattern on its dome.',
+          tip: 'Kinari Bazaar\'s bedai-jalebi breakfast is an Agra institution — look for the busiest stall near the mosque. The jalebi must be hot and crispy.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Akbar\'s Tomb at Sikandra',
+          text: 'Auto to Sikandra (10 km, ₹300 return) to visit Akbar\'s Tomb (₹210) — the Mughal emperor\'s mausoleum set in a vast garden where wild monkeys and deer roam freely. The five-storey structure blends Hindu, Christian, Islamic, and Buddhist motifs — reflecting Akbar\'s religious tolerance. The geometric marble inlay on the upper levels is stunning. The gardens are peaceful and rarely crowded — a welcome contrast to the Taj.',
+          tip: 'The wild deer and langur monkeys in Sikandra\'s gardens make this feel like a safari and monument combined. Keep food hidden from the monkeys.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Taj Mahal Moonlight Visit',
+          text: 'On full-moon nights (and two days either side), the Taj Mahal opens for a limited-capacity night viewing (₹750, advance booking required through ASI). Seeing the white marble glow under moonlight is an utterly transcendent experience — the dome seems to float in darkness. Only 400 visitors are admitted in eight groups of 50. If not a full-moon night, revisit Mehtab Bagh for a final evening view. Farewell dinner at Bon Barbecue rooftop with Taj views (₹400–700).',
+          tip: 'Book moonlight Taj tickets through ASI\'s official website at least one week ahead — they sell out immediately. The 8:30pm slot is best.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Composite monument ticket', text: 'The ASI Composite Ticket covers Taj Mahal + Agra Fort + Fatehpur Sikri + Baby Taj for ₹1,560 — saving ₹560+ over individual tickets. Buy at any participating monument ticket counter.' },
+  { title: 'Stay in Taj Ganj', text: 'The backpacker neighbourhood directly behind the Taj has guesthouses from ₹400–1,000/night. Rooftop restaurants with Taj views serve thalis for ₹150–300. Saniya Palace and Hotel Kamal are solid budget picks.' },
+  { title: 'Train travel is cheapest', text: 'Delhi–Agra by Gatimaan Express (₹755 AC Chair, 1h40m) or Shatabdi (₹550, 2h). Agra–Jaipur trains from ₹300 Sleeper class. Book on IRCTC app weeks ahead — tickets sell out fast.' },
+  { title: 'Street food capital', text: 'Bedai-jalebi breakfast ₹40, chaat ₹30–50, biryani ₹100–150, thali ₹120–200. Agra\'s food is Mughlai heritage — cheap and exceptional. Pinch of Spice is the mid-range sweet spot.' },
+  { title: 'Negotiate auto-rickshaws', text: 'Fix prices before boarding — Agra autos don\'t use meters. Typical fares: station to Taj ₹100, Taj to Fort ₹80, Agra to Fatehpur Sikri ₹800 return. Use Ola/Uber in Delhi for fair pricing.' },
+  { title: 'Free & cheap attractions', text: 'Mehtab Bagh is only ₹50 for Indians. Kinari Bazaar, Jama Masjid, and Yamuna riverbank walks are free. Jaipur\'s bazaars are free to explore — the architecture is the attraction.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '₹400–1,000', midrange: '₹2,000–4,000', splurge: '₹8,000+', notes: 'Taj Ganj guesthouses → heritage hotels → luxury resorts' },
+  { category: 'Food', budget: '₹200–400', midrange: '₹500–1,000', splurge: '₹2,000+', notes: 'Street food → restaurants → fine dining' },
+  { category: 'Transport', budget: '₹100–300', midrange: '₹400–800', splurge: '₹2,000+', notes: 'Shared auto → private auto → private car + driver' },
+  { category: 'Activities', budget: '₹600–1,100', midrange: '₹1,200–2,000', splurge: '₹3,500+', notes: 'Key monuments → composite ticket + guides → private tours' },
+  { category: 'Drinks', budget: '₹50–100', midrange: '₹200–400', splurge: '₹600+', notes: 'Chai & lassi → restaurant drinks → hotel bars' },
+  { category: 'Daily Total', budget: '₹1,350–2,900', midrange: '₹4,300–8,200', splurge: '₹16,100+', notes: '$16–35 → $51–98 → $192+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities need an e-Visa — apply at indianvisaonline.gov.in at least 4 days before travel. Cost: $10–25 USD',
+      'Fly into Delhi (DEL) and take Gatimaan Express to Agra (1h40m). Or fly into Agra (AGR) — limited but growing flight connections',
+      'Keep printouts of e-Visa, hotel bookings, and travel insurance. Agra train station has prepaid auto-rickshaw counters to avoid scams',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Recommended vaccines: Hepatitis A, Typhoid, Tetanus. Tap water is NOT safe — always drink bottled (₹20) or filtered water',
+      'Agra has aggressive touts near the Taj — ignore anyone offering "free tours" or claiming monuments are "closed today." Walk past firmly',
+      'Summer (Apr–Jun) exceeds 45°C in Agra — the Taj marble can burn feet. Winter mornings (Dec–Jan) can be foggy with limited visibility',
+    ],
+  },
+  {
+    icon: '🚂',
+    title: 'Getting Around',
+    items: [
+      'Delhi–Agra: Gatimaan Express (₹755, 1h40m) or Shatabdi Express (₹550, 2h). Book on IRCTC app weeks ahead',
+      'Within Agra: auto-rickshaws are the main transport. Agree on price first. Typical Taj to Fort: ₹80. Station to Taj: ₹100',
+      'Agra–Jaipur: trains (4–5h, ₹300–700) or buses. Delhi–Jaipur: Vande Bharat Express (3.5h) or Shatabdi Express (4.5h)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Get a SIM at Delhi airport — Airtel or Jio, ₹500–700 for 28 days with data. Activation can take 24 hours',
+      'Taj Mahal has no WiFi inside. Most Agra hotels and restaurants have WiFi. Delhi has strong 4G/5G coverage everywhere',
+      'Google Maps, IRCTC app (train bookings), Ola/Uber (Delhi), and WhatsApp are essential travel apps',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Cards work at hotels and restaurants. Cash needed for monuments, autos, street food, and markets. Carry ₹1,000–2,000 daily',
+      'ATMs in Agra: SBI near Sadar Bazaar, HDFC on Fatehabad Road. Delhi has ATMs everywhere. Withdraw in ₹500 notes',
+      'Tipping: ₹50–100 at restaurants. ₹100–200 for monument guides. Round up auto fares. Taj Mahal shoe-cover attendants expect ₹20',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Modest clothing for mosques and temples — cover shoulders and knees. Remove shoes at religious sites. Carry a scarf',
+      'Comfortable walking shoes for fort climbs and cobbled streets. Sandals for easy removal at monuments. Sunhat essential in summer',
+      'Sunscreen, sunglasses, refillable water bottle with filter, and hand sanitiser. Power bank for long days of photography',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🕌', title: 'Mosque Etiquette', text: 'The Taj Mahal is a functioning mosque on Fridays (closed to tourists). Remove shoes at all mosques including Fatehpur Sikri\'s Jama Masjid. Dress modestly — cover shoulders and knees. Free robes are available at some entrances.' },
+  { icon: '🤝', title: 'Dealing with Touts', text: 'Agra has India\'s most persistent touts. "The Taj is closed" is always a lie. "I\'ll show you a shortcut" leads to a shop. Walk past firmly with a polite "no thank you." Never engage in conversation with strangers near monuments.' },
+  { icon: '📸', title: 'Photography', text: 'Tripods are technically not allowed inside the Taj Mahal complex but phone selfie sticks are fine. Don\'t photograph military installations. Ask before photographing people. Drone photography is strictly illegal at all monuments.' },
+  { icon: '🍽️', title: 'Food Culture', text: 'Eat with your right hand if eating without cutlery. Agra\'s Mughlai cuisine is its heritage — try seekh kebabs, biryani, and petha sweets. Vegetarian food is widely available. Don\'t offer beef to Hindus or pork to Muslims.' },
+  { icon: '🎭', title: 'Bargaining', text: 'Expect to haggle at all markets — start at 30% of asking price. Marble inlay souvenirs vary wildly in quality and price. Government emporiums have fixed prices. Never feel pressured — walk away and the price drops.' },
+  { icon: '🛕', title: 'Sacred Spaces', text: 'The Taj Mahal is Mumtaz Mahal\'s tomb — show respect in the main chamber. Don\'t shout, play music, or sit on the marble platform. Walk clockwise at Hindu temples. Remove shoes at all Sufi shrines and tie a wish-thread at Salim Chishti\'s tomb.' },
+];
+---
+
+<CityGuideLayout
+  title="Taj Mahal Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Taj Mahal and Golden Triangle guide for young travelers. 3-day itinerary covering the Taj Mahal, Agra Fort, Fatehpur Sikri, and the best of Mughal India."
+  heroImage="/images/guides/taj-mahal-hero.webp"
+  heroFlag="🇮🇳"
+  heroCountry="India"
+  heroRegion="South Asia"
+  heroCity="Taj Mahal"
+  heroSubtitle="A monument to eternal love carved from white marble — where Mughal emperors turned grief into the most beautiful building humanity has ever created."
+  heroPills={['3-Day Itinerary', 'Golden Triangle', 'Oct – Mar Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Indian Rupees (₹). Agra is remarkably affordable — world-class monuments, Mughlai cuisine, and heritage accommodation at prices that barely register."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="The Taj Mahal sits at the crossroads of Hindu and Islamic culture. Understanding mosque etiquette, market customs, and how to deal with Agra's persistent touts will transform your experience."
+  ctaCity="Taj Mahal"
+  ctaText="Find travel companions for Taj Mahal sunrise visits, Golden Triangle road trips, and Agra food walks with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

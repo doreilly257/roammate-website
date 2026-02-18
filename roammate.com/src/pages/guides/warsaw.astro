@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PLN (Złoty)', detail: '1 USD ≈ 4.05 PLN' },
+  { icon: '🗣', label: 'Language', value: 'Polish', detail: 'English common among younger locals' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: '18–28°C, long sunny days' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$45–70 USD', detail: '180–280 PLN per day' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: '90 days visa-free for most' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Old Town, History & Vodka in a Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Town & Royal Castle',
+          text: 'Start at the meticulously reconstructed Old Town — a UNESCO World Heritage Site rebuilt from rubble after the 1944 Warsaw Uprising. Walk through the Barbican gate to the Rynek Starego Miasta (Old Town Market Square) with its colourful merchant houses. Visit the Royal Castle (30 PLN) — rebuilt from scratch using original plans and salvaged fragments. The Canaletto Room houses the 18th-century vedute paintings that guided the reconstruction.',
+          tip: 'The Royal Castle is free on Wednesdays — arrive at opening (10am) as the free tickets draw long queues by midday.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Warsaw Uprising Museum & Złote Tarasy',
+          text: 'Tram or metro to the Warsaw Uprising Museum (25 PLN) in the Wola district — an immersive, deeply moving experience chronicling the 63-day 1944 uprising against Nazi occupation. A replica B-24 Liberator hangs from the ceiling, and the 3D film about the city\'s destruction is devastating. Allow 2–3 hours. Then head to the modern city centre — the Palace of Culture and Science (20 PLN for observation deck) dominates the skyline, a Stalinist "gift" from the Soviet Union.',
+          tip: 'The Warsaw Uprising Museum is emotionally intense — budget 2.5 hours and don\'t rush it. Free entry on Sundays (very crowded).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Praga District & Vodka Tasting',
+          text: 'Cross the Vistula to the Praga district — Warsaw\'s edgy, artsy right-bank neighbourhood with street art, pre-war buildings, and craft beer bars. Dinner at Ząbkowska 25 (mains 25–40 PLN) — the street is Praga\'s social spine. Then to the Polish Vodka Museum (30 PLN including tasting) in the former Koneser Vodka Factory, or simply bar-hop along Ząbkowska — try Woda Ognista for flights of Polish craft vodkas.',
+          tip: 'Praga still has a gritty reputation but it\'s now one of Warsaw\'s most exciting neighbourhoods — just stay on the main streets at night.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Old Town, Royal Route & History',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Town & Royal Castle',
+          text: 'Start at Plac Zamkowy (Castle Square) with the Sigismund III Column. The Old Town — a UNESCO World Heritage Site rebuilt from rubble after WWII — is a miracle of reconstruction. Walk through the Barbican gate to the Rynek (Market Square) with its colourful merchant houses and Mermaid statue. Visit the Royal Castle (30 PLN) — the Canaletto Room has the paintings that guided the entire post-war reconstruction effort.',
+          tip: 'The Royal Castle is free on Wednesdays — arrive at 10am opening as queues build quickly for free admission days.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Royal Route & Łazienki Park',
+          text: 'Walk the Royal Route (Trakt Królewski) south from Castle Square — past the Presidential Palace, the University of Warsaw campus, and the Holy Cross Church (where Chopin\'s heart is preserved in a pillar). Continue to Łazienki Park — Warsaw\'s most beautiful green space with the Palace on the Isle reflected in a lake, a neoclassical amphitheatre, and free Chopin concerts at the monument every Sunday in summer.',
+          tip: 'Chopin concerts at the Łazienki monument run every Sunday at noon and 4pm from May–September — bring a blanket and a picnic.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Nowy Świat & Milk Bar Dinner',
+          text: 'Nowy Świat is Warsaw\'s most elegant street — lined with cafés, bookshops, and bars. Start with a drink at Kafka on Oboźna. For dinner, try a milk bar (bar mleczny) — communist-era subsidised canteens still serving huge portions of Polish comfort food for almost nothing. Bar Mleczny Prasowy on Marszałkowska serves pierogi (12 PLN), bigos stew, and żurek soup. Then to Pawilony — a cluster of tiny bars in a courtyard off Nowy Świat.',
+          tip: 'Pawilony (the "Pavilions") on Nowy Świat is Warsaw\'s worst-kept secret — a courtyard of tiny bars packed with students every night.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Warsaw Uprising & Modern City',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Warsaw Uprising Museum',
+          text: 'Metro to Warsaw Uprising Museum (25 PLN) in Wola — an immersive, devastating chronicle of the 63-day 1944 uprising. A replica B-24 Liberator bomber hangs from the ceiling, and the reconstructed sewer tunnels show how fighters moved through the city. The 3D film about the destruction of Warsaw is hard to watch but essential for understanding this city. Allow 2.5 hours minimum.',
+          tip: 'The Warsaw Uprising Museum is free on Sundays but extremely crowded. Weekday mornings are the best time for a contemplative visit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Palace of Culture & Hala Koszyki',
+          text: 'Walk to the Palace of Culture and Science — Stalin\'s controversial "gift" dominating the skyline. Love it or hate it, the observation deck (20 PLN) has the best city views. Then head to Hala Koszyki on Koszykowa — a beautifully restored 1906 market hall now housing craft beer bars, ramen shops, and artisan food stalls. Lunch here (25–40 PLN for a full meal). The architecture alone is worth the visit.',
+          tip: 'The Palace of Culture observation deck at sunset is spectacular — arrive 30 minutes before golden hour for the best light.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Powiśle & Vistula Riverside',
+          text: 'Head to Powiśle — the riverside neighbourhood that\'s become Warsaw\'s hippest district. Walk down to the Vistula boulevards — in summer, the riverbank transforms into an open-air living room with beach bars, food trucks, and DJ sets. Barka on the Vistula is a floating bar with craft beer and river views. Dinner at Elektrownia Powiśle — a converted power station with restaurants and bars (mains 35–55 PLN).',
+          tip: 'The Vistula boulevards in summer are peak Warsaw — locals picnic, dance, and drink along the river. It\'s completely free.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Praga, Street Art & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'POLIN Museum of Polish Jews',
+          text: 'Visit the POLIN Museum (25 PLN) on Anielewicza — built on the site of the former Warsaw Ghetto. The permanent exhibition spans 1,000 years of Polish-Jewish history through immersive galleries, from a reconstructed synagogue ceiling to WWII-era hidden rooms. It\'s one of Europe\'s most important and moving museums. Walk around the Ghetto Heroes Monument and the Umschlagplatz memorial nearby.',
+          tip: 'POLIN needs 2–3 hours minimum. The audioguide (10 PLN) adds essential context. Free on Thursdays — arrive early.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Praga District & Street Art',
+          text: 'Cross the Vistula to Praga — Warsaw\'s right-bank bohemian quarter. Pre-war buildings, street art, and a completely different energy from the rebuilt left bank. Walk Ząbkowska and Stalowa streets for the best murals and graffiti. Visit the Soho Factory complex on Mińska for galleries and design shops. Lunch at Pyzy Flaki Gorące on Brzeska for legendary Warsaw-style pyzy dumplings (8–15 PLN).',
+          tip: 'Praga\'s Brzeska and Ząbkowska streets have the best concentration of street art — download the Praga Mural Guide app.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Vodka Tasting & Farewell Dinner',
+          text: 'Visit the Polish Vodka Museum (30 PLN including tasting) in the Koneser Vodka Factory complex — learn about żubrówka, Wyborowa, and the craft of Polish distilling. For a farewell dinner, Stary Dom on Puławska serves refined Polish cuisine (mains 40–65 PLN) — try the duck with plum sauce or venison pierogi. End with a walk through the illuminated Old Town one last time.',
+          tip: 'At the Vodka Museum, the "vodka academy" upgrade (45 PLN) includes a guided tasting flight — far better value than drinking at bars.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Old Town, Royal Route & History',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Town & Royal Castle',
+          text: 'Start at Plac Zamkowy with the Sigismund III Column. The Old Town — a UNESCO Site rebuilt from rubble after WWII — is a miracle of reconstruction. Walk through the Barbican to the Rynek with colourful merchant houses. Visit the Royal Castle (30 PLN) — the Canaletto Room has the paintings that guided the post-war reconstruction of the entire city.',
+          tip: 'The Royal Castle is free on Wednesdays — arrive at 10am opening. The Canaletto Room alone justifies the visit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Royal Route & Łazienki Park',
+          text: 'Walk the Royal Route south from Castle Square past the Presidential Palace, University of Warsaw, and the Holy Cross Church (Chopin\'s heart is in a pillar here). Continue to Łazienki Park — Palace on the Isle reflected in its lake, neoclassical amphitheatre, and free Chopin concerts at the monument on summer Sundays.',
+          tip: 'Chopin concerts run Sundays at noon and 4pm, May–September. Bring a blanket and arrive 30 minutes early for a good spot.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Nowy Świat & Pawilony',
+          text: 'Nowy Świat street is lined with cafés and bars. Dinner at a milk bar — Bar Mleczny Prasowy on Marszałkowska serves pierogi (12 PLN), bigos, and żurek. Then to Pawilony — a courtyard of tiny bars off Nowy Świat packed with students every night. Each bar is barely bigger than a living room, and the whole complex buzzes with energy.',
+          tip: 'Pawilony is Warsaw\'s best-loved bar courtyard — arrive by 9pm to get a table. Beer starts at 8 PLN for a half-litre.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Warsaw Uprising & Modern City',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Warsaw Uprising Museum',
+          text: 'Metro to the Warsaw Uprising Museum (25 PLN) in Wola — immersive galleries chronicling the 63-day 1944 uprising. The replica B-24 bomber, reconstructed sewers, and 3D destruction film make this one of Europe\'s most powerful war museums. Allow 2.5 hours. Exit through the Wall of Memory listing over 10,000 names of the fallen.',
+          tip: 'Weekday mornings offer the most contemplative experience. The free Sundays are packed — worth paying for the quiet.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Palace of Culture & Hala Koszyki',
+          text: 'Walk to the Palace of Culture — Stalin\'s controversial skyline gift. The observation deck (20 PLN) gives the best city panorama. Head to Hala Koszyki on Koszykowa — a restored 1906 market hall with craft beer bars, ramen shops, and artisan food stalls (25–40 PLN for lunch). The Art Nouveau ironwork is stunning.',
+          tip: 'The Palace of Culture at sunset is spectacular. Time your visit for golden hour — arrive 30 minutes before for the best light.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Powiśle & Vistula Boulevards',
+          text: 'Powiśle is Warsaw\'s riverside hangout. Walk down to the Vistula boulevards — summer transforms the riverbank into beach bars, food trucks, and DJ sets. Barka is a floating bar with craft beer and river views. Dinner at Elektrownia Powiśle — a converted power station with restaurants (mains 35–55 PLN). This is where young Warsaw comes alive.',
+          tip: 'The Vistula summer scene is peak Warsaw nightlife — free, outdoors, and packed with locals every warm evening.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Jewish Heritage & POLIN',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'POLIN Museum',
+          text: 'Visit POLIN (25 PLN) — one of Europe\'s most important museums, spanning 1,000 years of Polish-Jewish history. Built on the former Warsaw Ghetto site, the immersive galleries include a reconstructed synagogue ceiling and WWII-era hidden rooms. The section on the thriving pre-war Jewish community makes the Holocaust galleries even more devastating.',
+          tip: 'POLIN needs 2–3 hours. The audioguide (10 PLN) is essential. Free on Thursdays — but arrive early to avoid crowds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ghetto Traces & Muranów',
+          text: 'Walk the traces of the Warsaw Ghetto. The Umschlagplatz memorial marks where 300,000 Jews were loaded onto trains to Treblinka. See the remaining ghetto wall fragment on Sienna street. Walk through Muranów — built on the rubble of the ghetto, the neighbourhood sits several metres higher than surrounding streets. Lunch at Elixir by Dom Wódki on Wierzbowa for elevated Polish cuisine (mains 35–50 PLN).',
+          tip: 'Download the "Warsaw Ghetto" walking tour app — it overlays historical photos onto your camera view at each stop.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Żoliborz & Local Nightlife',
+          text: 'Head north to Żoliborz — a quiet, intellectual neighbourhood rarely visited by tourists. The Citadel Park (Warsaw Citadel, free) is a massive 19th-century fortress with a dark history as a political prison. Dinner at Charlotte on Plac Zbawiciela — a bakery-café-wine-bar beloved by locals (sandwiches 18–25 PLN, wine 20–30 PLN/glass). The square buzzes with life on warm evenings.',
+          tip: 'Plac Zbawiciela (Saviour Square) is where Warsaw\'s creative class hangs out — Charlotte and Plan B are the anchor spots.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Praga District & Street Art',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Praga Murals & Markets',
+          text: 'Cross the Vistula to Praga — Warsaw\'s gritty, creative right-bank quarter. Walk Ząbkowska and Stalowa streets for the best street art. Visit the Bazar Różyckiego — Warsaw\'s oldest market, semi-legal under communism, now revived with vintage stalls and food vendors. The Soho Factory complex on Mińska has galleries, design shops, and the Neon Museum.',
+          tip: 'Praga\'s murals change regularly — the best concentration is on Ząbkowska, Brzeska, and Inżynierska streets.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Neon Museum & Koneser',
+          text: 'Visit the Neon Museum (15 PLN) in Soho Factory — a collection of communist-era neon signs rescued from buildings across Poland. The glowing signs in the darkened gallery are hauntingly beautiful. Then walk to the Koneser Vodka Factory complex — now a hip destination with the Polish Vodka Museum (30 PLN + tasting), restaurants, and a weekend market.',
+          tip: 'The Neon Museum is best visited in the afternoon when the contrast between dark gallery and glowing signs is strongest.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Praga Nightlife',
+          text: 'Dinner at Pyzy Flaki Gorące on Brzeska — legendary Warsaw-style pyzy dumplings (8–15 PLN) in a no-frills setting. Then bar-hop Ząbkowska street — Woda Ognista for Polish craft vodka flights, BarStudio for cocktails in a converted cinema, and Hydrozagadka for live music and alternative nightlife. Praga after dark is raw, creative, and nothing like the polished left bank.',
+          tip: 'Hydrozagadka on 11 Listopada is Praga\'s legendary live music venue — check their programme for gigs. Cover is usually 20–30 PLN.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Day Trip to Kraków or Wilanów',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Option A: Kraków or Option B: Wilanów Palace',
+          text: 'For a day trip, take the Pendolino express to Kraków (2.5 hours, 120–180 PLN return). Explore the Rynek Główny — Europe\'s largest medieval square — with the Cloth Hall and St. Mary\'s Basilica. Alternatively, stay local and bus to Wilanów Palace (1 PLN by city bus, entry 30 PLN) — a stunning baroque "Polish Versailles" with landscaped gardens, Etruscan-inspired interiors, and a poster museum.',
+          tip: 'Book Pendolino tickets 30 days ahead for the cheapest fares (69 PLN one way vs 120 PLN last-minute). The train has WiFi and power.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Exploring Further',
+          text: 'In Kraków: walk Wawel Castle (free courtyard, rooms 25 PLN), explore Kazimierz (the Jewish quarter, now full of bars and galleries), and lunch at Starka on Józefa for pierogi and Polish craft beer (mains 30–45 PLN). In Warsaw: explore Wilanów\'s gardens, then head to nearby Miasteczko Wilanów — a modern neighbourhood with waterside restaurants.',
+          tip: 'In Kraków, Kazimierz is the real highlight — Plac Nowy\'s zapiekanka (Polish pizza, 8–12 PLN) is the essential Kraków street food.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Local Dinner',
+          text: 'Back in Warsaw (or never having left), dinner at Stary Dom on Puławska — refined Polish cuisine in an old-town house. Try the duck with plum sauce or wild boar pierogi (mains 40–65 PLN). Or go casual at Zapiecek on the Old Town square for classic Polish comfort food in a vaulted cellar — pierogi, placki ziemniaczane (potato pancakes), and barszcz (beetroot soup).',
+          tip: 'Stary Dom is where Warsaw food enthusiasts go for a special meal — the wine list focuses on Polish and Georgian bottles.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Chopin, Parks & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Chopin Museum & Multimedia Experience',
+          text: 'Visit the Fryderyk Chopin Museum (23 PLN) on Tamka — a multimedia experience in the Ostrogski Palace. Interactive exhibits let you explore his compositions, letters, and personal effects. The original last piano Chopin ever played is here. Then walk along Tamka and Dobra streets — a quiet, residential area with excellent independent coffee shops and bookshops.',
+          tip: 'The Chopin Museum limits visitors per hour — book online to guarantee a specific entry slot. Allow 90 minutes.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pole Mokotowskie & Vistula Beach',
+          text: 'Head to Pole Mokotowskie — a huge park where Warsaw\'s young locals picnic, play volleyball, and sunbathe. There\'s a zip line, skatepark, and food trucks. In summer, walk down to the Vistula "beach" (Plaża Żoliborz or Poniatówka) — sandy riverbanks where locals swim and barbecue. It\'s a surprise urban beach scene in the heart of a capital city.',
+          tip: 'Pole Mokotowskie on a sunny weekend afternoon is peak Warsaw summer life — grab a blanket and join the locals.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mokotów & Craft Beer Scene',
+          text: 'Explore Mokotów — a residential neighbourhood with Warsaw\'s best craft beer scene. Kufle i Kapsle on Nowogrodzka has 20+ taps of Polish craft beer (12–18 PLN per pint) and no music — just good conversation. Dinner at SAM on Lipowa — a neighbourhood restaurant with excellent seasonal Polish dishes (mains 35–50 PLN). Then walk to Plac Zbawiciela for late-night drinks at Plan B.',
+          tip: 'Poland\'s craft beer scene has exploded — look for breweries like Pinta, AleBrowar, and Trzech Kumpli on tap.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Markets, Souvenirs & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hala Gwardii & Last Wandering',
+          text: 'Saturday or Sunday morning at Hala Gwardii — a weekend market with artisan food vendors, vintage stalls, and craft producers. Try oscypek (smoked sheep\'s cheese from the Tatra Mountains, 10–15 PLN) and fresh obwarzanek (Kraków-style pretzels, 3 PLN). Walk through the Saski Garden — Warsaw\'s oldest public park — past the Tomb of the Unknown Soldier.',
+          tip: 'Hala Gwardii weekend market is one of Warsaw\'s best food experiences — arrive at 10am for the widest selection.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenirs & Hidden Gems',
+          text: 'Pick up souvenirs: Bolesławiec pottery (iconic blue-spotted ceramics) at shops on the Royal Route, Polish amber jewellery, and żubrówka (bison grass vodka) from any supermarket (25–40 PLN). Visit the Fotoplastikon on Aleje Jerozolimskie — a rare pre-war stereoscopic theatre showing 3D images from 1905, still working. It\'s bizarre, wonderful, and uniquely Warsaw.',
+          tip: 'The Fotoplastikon is possibly the strangest museum in Europe — a Victorian 3D viewer still in use. Admission is just 10 PLN.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Polish Feast',
+          text: 'Final dinner at U Kucharzy on Długa — chefs cook traditional Polish dishes in front of you in the open kitchen of the former Presidential Palace kitchens. The duck, venison, and żurek soup are exceptional (mains 45–75 PLN). One last walk through the illuminated Old Town — the reconstruction that shouldn\'t exist but does, glowing defiantly in the night.',
+          tip: 'U Kucharzy is one of Warsaw\'s most unique dining experiences — book ahead, request a seat at the kitchen counter.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free experiences', text: 'Old Town walking, Łazienki Park, Chopin concerts (summer Sundays), Vistula boulevards, Saski Garden, Praga street art, most churches, and the University Library rooftop garden.' },
+  { title: 'Milk bars (bar mleczny)', text: 'Communist-era canteens still operating with subsidised prices. Pierogi: 10–15 PLN. Żurek soup: 8–12 PLN. Full lunch: 15–25 PLN. Bar Mleczny Prasowy, Bar Bambino, and Bar Mleczny Familijny are the best.' },
+  { title: 'Transport pass', text: 'ZTM 24-hour ticket: 15 PLN — unlimited metro, tram, and bus. 72-hour: 36 PLN. Single journey: 4.40 PLN (20 min) or 6 PLN (75 min). Buy at machines using contactless cards.' },
+  { title: 'Free museum days', text: 'Royal Castle: free Wednesdays. POLIN: free Thursdays. Warsaw Uprising: free Sundays. National Museum: free Tuesdays. Plan museum visits around these to save 100+ PLN.' },
+  { title: 'Cheap drinks', text: 'Beer at Pawilony: 8–12 PLN per half-litre. Żubrówka with apple juice ("tatanka"): 10–15 PLN. Supermarket craft beer: 5–8 PLN. Avoid Nowy Świat cocktail bars — same drinks cost 30–40 PLN.' },
+  { title: 'Food markets', text: 'Hala Koszyki and Hala Gwardii have excellent food at fair prices (25–40 PLN per meal). Biedronka and Żabka supermarkets for budget supplies. Warsaw\'s kebab shops serve full meals from 15–20 PLN.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '60–120 PLN', midrange: '250–450 PLN', splurge: '700+ PLN', notes: 'Hostels → boutique hotels → luxury hotels' },
+  { category: 'Food', budget: '40–70 PLN', midrange: '80–150 PLN', splurge: '250+ PLN', notes: 'Milk bars & street food → restaurants → fine dining' },
+  { category: 'Transport', budget: '15–20 PLN', midrange: '30–60 PLN', splurge: '100+ PLN', notes: 'Day pass & walking → taxis/Bolt → private transfers' },
+  { category: 'Activities', budget: '0–30 PLN', midrange: '50–100 PLN', splurge: '150+ PLN', notes: 'Free days & walks → museums → guided tours' },
+  { category: 'Drinks', budget: '20–40 PLN', midrange: '50–100 PLN', splurge: '150+ PLN', notes: 'Milk bars & Pawilony → craft beer bars → cocktail lounges' },
+  { category: 'Daily Total', budget: '135–280 PLN', midrange: '460–860 PLN', splurge: '1,350+ PLN', notes: '$33–69 → $114–212 → $333+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — 90 days visa-free for most nationalities within any 180-day period',
+      'Warsaw Chopin Airport (WAW) is 10km from centre. Bus 175/188 to Centrum (4.40 PLN, 25 min) or taxi (40–60 PLN)',
+      'Modlin Airport (WMI) handles budget airlines — Modlin Bus to Centrum (35 PLN, 50 min)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No special vaccinations required. EHIC covers EU citizens. Polish pharmacies (apteka) are well-stocked',
+      'Tap water is safe to drink in Warsaw — it\'s been excellent quality since 2020 infrastructure upgrades',
+      'Warsaw is very safe. Minor pickpocketing at tourist spots. Some football hooligan activity — avoid match days in Praga',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'ZTM runs metro (2 lines), trams, and buses. Buy tickets at machines (contactless accepted) or via the Jakdojade app',
+      'Metro line M1 (north-south) and M2 (east-west) cover major tourist areas. Trams are scenic and extensive',
+      'Bolt and Uber are cheap and reliable. Warsaw taxis should use meters — avoid unmarked cabs at the airport',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'EU roaming included for European SIMs. Local SIMs from Play, Orange, or T-Mobile (25–40 PLN for 10GB) at Żabka shops',
+      'Free WiFi in cafés, malls, and some trams. Warsaw has excellent 4G/5G coverage city-wide',
+      'Download Jakdojade (best transit app), Google Maps, and the Warsaw City Guide app for offline maps',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Poland uses Złoty (PLN), not Euro. Avoid exchange offices (kantors) at the airport — rates are 10–15% worse',
+      'Cards accepted almost everywhere including small shops. Contactless payment is universal in Warsaw',
+      'ATMs: use bank ATMs from PKO BP, mBank, or ING. Avoid Euronet — charges 15+ PLN per withdrawal plus bad rates',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Layers are essential — Warsaw weather changes quickly. Summer: 15–30°C range. Rain jacket advisable year-round',
+      'Comfortable walking shoes — the Royal Route alone is a 4km walk. Cobblestones in the Old Town',
+      'Smart-casual for nicer restaurants. Poles dress well for going out — no shorts and flip-flops at evening venues',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏛', title: 'History Sensitivity', text: 'Warsaw was 85% destroyed in WWII and rebuilt by its citizens. The reconstruction is a point of immense pride. Be respectful at memorials — the Uprising and Holocaust are living memory for many families.' },
+  { icon: '🍽️', title: 'Dining Customs', text: 'Poles eat lunch (obiad) as their main meal, around 2–3pm. Dinner (kolacja) is lighter and later. Bread and butter often come free. "Smacznego" (smach-NEH-go) means "bon appétit" — say it before eating.' },
+  { icon: '🥃', title: 'Vodka Etiquette', text: 'Vodka is sipped neat and chilled, never mixed (that\'s a Western thing). Toast with "Na zdrowie!" (nah ZDRO-vye-eh). It\'s polite to finish your glass before it\'s refilled. Don\'t refuse the first toast.' },
+  { icon: '🇵🇱', title: 'National Pride', text: 'Poles are fiercely patriotic. Don\'t confuse Poland with Eastern Europe (it\'s Central Europe). Don\'t make communist jokes — the occupation is remembered with pain. Appreciate the rebuilding achievement.' },
+  { icon: '💵', title: 'Tipping', text: 'Tip 10% at restaurants — tell the waiter the total amount you want to pay including tip (don\'t leave it on the table). Round up taxi fares. No tipping at milk bars or fast food.' },
+  { icon: '⛪', title: 'Religious Culture', text: 'Poland is predominantly Catholic. Churches are active places of worship — dress modestly, stay quiet, and don\'t take flash photos during services. Many shops close on Sundays by law (except some in tourist areas).' },
+];
+---
+
+<CityGuideLayout
+  title="Warsaw Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Warsaw guide for young travelers. 3-day itinerary with WWII history, vodka tasting, ruin bars, and pierogi on a shoestring budget. Plan your trip with roammate."
+  heroImage="/images/guides/warsaw-hero.webp"
+  heroFlag="🇵🇱"
+  heroCountry="Poland"
+  heroRegion="Europe"
+  heroCity="Warsaw"
+  heroSubtitle="A phoenix city risen from ashes, where rebuilt cobblestone squares meet underground bars and the Vistula riverbank pulses with defiant energy."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in PLN. Warsaw is one of Europe's best-value capitals — world-class museums, incredible food, and vibrant nightlife for a fraction of Western prices."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Warsaw's story is one of destruction and resurrection. Understanding its history isn't just respectful — it transforms the city from interesting to unforgettable."
+  ctaCity="Warsaw"
+  ctaText="Find travel companions, share vodka tastings, and explore Praga's street art scene together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'CHF (Swiss Franc)', detail: '1 USD ≈ 0.88 CHF' },
+  { icon: '🗣', label: 'Language', value: 'Swiss German', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) Mar–Oct' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Sep', detail: '18–26°C, warm & sunny' },
+  { icon: '🎒', label: 'Daily Budget', value: '~CHF 90–150', detail: '$102–170 USD per day' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: 'EU/US/Can 90 days visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Zurich in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Altstadt & Lindenhof',
+          text: 'Start in the Altstadt (Old Town) on both sides of the Limmat River. Cross the Münsterbrücke between the twin towers of Grossmünster (free, climb the tower CHF 5) and the elegant spire of Fraumünster with its Chagall stained-glass windows (CHF 5). Walk up to Lindenhof — a hidden hilltop square with views over the Old Town, river, and on clear days, the Alps. Coffee at Café Sprüngli on Bahnhofstrasse (Switzerland\'s most famous confectioner since 1836).',
+          tip: 'Buy Luxemburgerli at Sprüngli — tiny Swiss macarons (CHF 1.20 each) that are lighter than French ones. A Zurich institution.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Zurich & Bürkliplatz',
+          text: 'Walk down Bahnhofstrasse — one of the world\'s most expensive shopping streets — to the lake. Stroll along the Zürichhorn promenade or rent a pedalo (CHF 22/hour) on Lake Zurich. In summer, the Seebad Enge (CHF 8) is a lakeside bathing facility with swimming, sunbathing, and a bar. Lunch at Sternen Grill on Theaterstrasse — Zurich\'s most famous wurst stand (Bratwurst im Bürli, CHF 8.50).',
+          tip: 'Sternen Grill has had a queue since 1963 — the bratwurst in a bun is the definitive Zurich street food. Accept no substitutes.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Zürich West & Nightlife',
+          text: 'Head to Zürich West — the former industrial district turned creative hub around Viadukt (railway arches turned shops and restaurants). Im Viadukt Market Hall has artisan food stalls. Dinner at Frau Gerolds Garten — a container garden restaurant with seasonal food and skyline views (mains CHF 22–32). Drinks at the bars along Langstrasse — Zurich\'s multicultural nightlife strip with clubs, bars, and kebab shops.',
+          tip: 'Frau Gerolds Garten is the place to be in summer — a rooftop garden made from shipping containers with views of the city skyline.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Old Town, Churches & Lake',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Altstadt & Churches',
+          text: 'Start at Grossmünster — Zurich\'s Romanesque landmark where Zwingli launched the Reformation. Climb the Karlsturm tower (CHF 5) for Old Town views. Cross to Fraumünster for Marc Chagall\'s five stunning stained-glass windows (CHF 5) — jewel-toned and luminous. Walk up to Lindenhof for panoramic views. Coffee at Café Sprüngli on Bahnhofstrasse — Luxemburgerli macarons (CHF 1.20 each) since 1836.',
+          tip: 'Chagall\'s windows in Fraumünster are genuinely breathtaking — the blue-green light they cast in the afternoon is unforgettable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Zurich & Promenades',
+          text: 'Walk Bahnhofstrasse to the lake. The Zürichhorn promenade stretches east with parks, sculpture gardens, and the Chinese Garden (free). Rent a pedalo (CHF 22/hour) or swim at Seebad Enge (CHF 8) — one of Zurich\'s many bathing spots (Badis). On clear days, the snow-capped Alps frame the southern horizon. Lunch at Sternen Grill (Bratwurst im Bürli, CHF 8.50) — Zurich\'s most famous sausage stand.',
+          tip: 'The free boat shuttle across the lake (Limmatschiff) runs in summer and connects Bürkliplatz to the Zürichhorn park.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Niederdorf & River Bars',
+          text: 'Explore Niederdorf (Niederdörfli) — the car-free quarter of the Old Town with narrow lanes, boutiques, and restaurants. Dinner at Zeughauskeller (traditional Swiss food in a 500-year-old armoury, Zürcher Geschnetzeltes CHF 28–35) or Raclette Factory (raclette from CHF 16). Walk along the Limmat as the lights reflect on the water. Drinks at Rimini Bar (riverside) or Jules Verne (panoramic rooftop bar).',
+          tip: 'Zeughauskeller serves 20 different types of sausage and has been here since 1487 — come hungry and order the metre-long bratwurst.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Zürich West, Art & Mountains',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kunsthaus & Museum Quarter',
+          text: 'Visit the Kunsthaus Zürich (CHF 23) — one of Switzerland\'s most important art museums. The Chipperfield extension opened in 2021 with an outstanding modern collection — Giacometti, Rothko, Baselitz, and the largest Munch collection outside Norway. The original building has Monet, Picasso, and a strong Dada collection (Zurich is where Dada was born). Coffee at Café Motta on Limmatquai.',
+          tip: 'The Kunsthaus is free on Wednesdays — save CHF 23 and visit the permanent collection and Giacometti gallery for nothing.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Uetliberg — Zurich\'s Mountain',
+          text: 'Take the S10 train from Zurich HB to Uetliberg (30 minutes, regular ZVV ticket). Zurich\'s 871m local mountain offers a panoramic view of the city, lake, and on clear days, a wall of Alps from Säntis to the Bernese Oberland. Walk the Planetenweg (Planet Path, 6km) from Uetliberg to Felsenegg with scale models of the solar system. Ride the cable car down to Adliswil (CHF 8).',
+          tip: 'Check the webcam at Uetliberg before going — the view is worth it only on clear days. Post-rain mornings are often the clearest.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Zürich West & Viadukt',
+          text: 'Explore Zürich West — the former industrial quarter now housing Zurich\'s creative scene. Im Viadukt arches hold artisan food shops and the Markthalle food court. Dinner at Frau Gerolds Garten (container garden, mains CHF 22–32) or Clouds in the Prime Tower (36th floor, prix fixe CHF 85). Drinks along Langstrasse — International, Gonzo, and Longstreet Bar are reliable.',
+          tip: 'Langstrasse is Zurich\'s most eclectic strip — a mix of cultures, cuisines, and nightlife. Kebabs at 3am are a Zurich tradition.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Swiss Museum, Markets & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Swiss National Museum',
+          text: 'Visit the Landesmuseum (Swiss National Museum, CHF 10) next to the Hauptbahnhof — Switzerland\'s history from prehistoric lake dwellers to modern democracy, with excellent exhibits on Swiss identity, design, and the four-language culture. The building itself is a neo-Gothic castle. Walk through the attached park along the Sihl River for a quiet green space in the city centre.',
+          tip: 'The Swiss National Museum is free on Saturday afternoons — a rare bargain in Zurich. The medieval and Reformation rooms are excellent.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Flohmarkt & Shopping',
+          text: 'If it\'s Saturday, hit the Bürkliplatz Flohmarkt — Zurich\'s best flea market with vintage, antiques, and Swiss finds. Otherwise, browse the boutiques in the Augustinergasse (Zurich\'s most beautiful street) and Rennweg. Buy Swiss chocolate at Läderach or Teuscher (truffle CHF 2.50 each). Lunch at Hiltl (world\'s oldest vegetarian restaurant, since 1898, buffet CHF 4.80/100g).',
+          tip: 'Hiltl has been vegetarian since 1898 — long before it was trendy. The lunch buffet is outstanding value by Zurich standards.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Fondue & Lake Views',
+          text: 'Farewell dinner with cheese fondue — the quintessential Swiss experience. Le Dézaley on Römergasse (fondue CHF 28–35) or Chässtube on Lagerstrasse. Half a litre of white wine (CHF 12–18), crusty bread, and a pot of molten Gruyère and Emmentaler. Final drinks at Frau Gerolds Garten or the rooftop at Hotel Widder looking out over the Old Town.',
+          tip: 'Fondue rule: if you drop your bread in the pot, tradition says you buy the next round. Stir in a figure-eight pattern, not circles.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Old Town, Churches & Lake',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Altstadt & Churches',
+          text: 'Start at Grossmünster — climb the Karlsturm (CHF 5) for Old Town views. Cross to Fraumünster for Chagall\'s stained-glass windows (CHF 5). Walk up to Lindenhof for panoramic views. Coffee at Café Sprüngli — Luxemburgerli macarons (CHF 1.20 each) since 1836.',
+          tip: 'Chagall\'s windows cast jewel-toned light in the afternoon — time your visit for the best effect.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Zurich & Swimming',
+          text: 'Walk Bahnhofstrasse to the lake. Swim at Seebad Enge (CHF 8), rent a pedalo (CHF 22/hour), or walk the Zürichhorn promenade past the Chinese Garden (free). The Alps frame the southern horizon on clear days. Lunch at Sternen Grill (Bratwurst im Bürli, CHF 8.50).',
+          tip: 'Zurich has 18 public Badis (bathing facilities) on the lake and river — swimming in the city is a core part of summer life here.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Niederdorf & Traditional Dinner',
+          text: 'Dinner at Zeughauskeller (500-year-old armoury, Zürcher Geschnetzeltes CHF 28–35) or Raclette Factory (from CHF 16). Walk the Limmat at night — both churches reflected in the water. Drinks at Rimini Bar (riverside) or Bar am Wasser under the Rathaus bridge.',
+          tip: 'Bar am Wasser is literally under the town hall bridge — the most atmospheric bar in the Old Town.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Art Museums & Uetliberg',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kunsthaus Zürich',
+          text: 'Kunsthaus (CHF 23, free Wednesdays) — Chipperfield\'s 2021 extension holds Giacometti, Rothko, and the largest Munch collection outside Norway. The original building has Monet, Picasso, and Zurich\'s Dada heritage (Cabaret Voltaire, where Dada was born in 1916, is a 5-minute walk).',
+          tip: 'Visit Cabaret Voltaire on Spiegelgasse — the actual bar where Dada was invented in 1916. It\'s still a cultural venue.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Uetliberg Mountain',
+          text: 'S10 from Zurich HB to Uetliberg (30 min). Zurich\'s 871m mountain with panoramic city, lake, and Alpine views. Walk the Planetenweg to Felsenegg (6km, easy) or the Gratweg ridge trail. Cable car down to Adliswil (CHF 8). Pack a picnic from Coop or Migros for the summit.',
+          tip: 'Post-rain mornings have the clearest Alpine views — check the Uetliberg webcam before going.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Zürich West',
+          text: 'Im Viadukt Markthalle for artisan food. Dinner at Frau Gerolds Garten (container garden, mains CHF 22–32) or Chez Fritz in the Gerold Cuchi complex. Langstrasse for nightlife — International, Gonzo, and Hive Club for electronic music.',
+          tip: 'Zurich\'s club scene is world-class but underground — check Resident Advisor for listings. Hive and Zukunft are the standout venues.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Swiss Museum & River Swimming',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Landesmuseum & Platzspitz Park',
+          text: 'Landesmuseum (CHF 10, free Saturday afternoons) — Switzerland\'s history in a neo-Gothic castle. Medieval rooms, Reformation history, and exhibitions on Swiss democracy and neutrality. Walk through Platzspitz Park where the Sihl and Limmat rivers meet.',
+          tip: 'The Swiss National Museum explains how a tiny landlocked country became one of the world\'s wealthiest — fascinating even if you\'re not a history buff.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Limmat River Swimming',
+          text: 'In summer, Zurich swims. Join locals at Oberer Letten (free) — a converted river bathing spot on the Limmat with a bar, DJ sets, and swimming in the fast-flowing turquoise river. Or Frauenbadi (women only until 8pm, then co-ed bar) with views of the Old Town. The Flussbad culture is uniquely Zurich — no other city lets you swim through its centre like this.',
+          tip: 'Oberer Letten swimmers use drybags to carry belongings while floating downstream — rent or buy one from a sports shop.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Seefeld & Wine Bars',
+          text: 'Explore Seefeld — the neighbourhood along the lake\'s eastern shore with boutiques, wine bars, and excellent restaurants. Dinner at Seefeld\'s Haus Hiltl (vegetarian) or Razzia (brasserie in a former cinema, mains CHF 25–38). Wine at Barchetta on Seefeldstrasse or cocktails at Tales Bar (one of the world\'s best bars).',
+          tip: 'Tales Bar was ranked in the World\'s 50 Best Bars — the cocktails (CHF 22–28) justify the splurge.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Day Trip — Lucerne & Lake',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Train to Lucerne',
+          text: 'Direct train from Zurich HB to Lucerne (CHF 25, 45 minutes). Lucerne is Switzerland on a postcard — a medieval old town on a lake surrounded by mountains. Cross the Chapel Bridge (Kapellbrücke), Europe\'s oldest covered wooden bridge (1333), with its painted panels. Visit the Lion Monument — a dying lion carved into rock, described by Mark Twain as the saddest stone in the world.',
+          tip: 'The Half-Fare Card (CHF 120/month) halves all Swiss transport prices — worth it for multiple day trips.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Lucerne & Mountains',
+          text: 'Take a lake cruise on the Vierwaldstättersee (1-hour round trip, CHF 28). The lake is surrounded by Alps on all sides — deep green water, dramatic peaks, and a sense of being entirely inside the mountains. Alternatively, ride the Pilatus gondola (CHF 72 return) for one of the most spectacular mountain panoramas in Switzerland. Lunch at Rathaus Brauerei on the river (bratwurst and beer, CHF 18–25).',
+          tip: 'If you only ride one Swiss mountain, make it Pilatus — the cogwheel railway is the steepest in the world (48% gradient).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Zurich Dinner',
+          text: 'Train back to Zurich by early evening. Dinner at Hiltl (world\'s oldest vegetarian restaurant, buffet CHF 4.80/100g) or Tibet Restaurant on Zähringerstrasse (Tibetan momos, CHF 16–22 — one of Zurich\'s best-value restaurants). Evening stroll along the Limmat or drinks at Nietturm on Schiffbauplatz (craft beer in a former turbine hall).',
+          tip: 'Tibet Restaurant is the rare Zurich restaurant where you can eat well for under CHF 20 — the momos are excellent.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Rhine Falls & Winterthur',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rhine Falls — Europe\'s Largest Waterfall',
+          text: 'Train to Neuhausen Rheinfall (CHF 15, 50 minutes). The Rhine Falls are Europe\'s largest waterfall — 150m wide and 23m high, thundering with 600 cubic metres of water per second. Take a boat to the rock in the middle (CHF 7) for a drenching close-up. Walk along both banks for different perspectives. The Schloss Laufen viewing platform (CHF 5) has the best vantage point.',
+          tip: 'Visit in the morning — the rainbow over the falls appears when the sun is in the east, usually between 9–11am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Winterthur — Museums & Gardens',
+          text: 'Train to Winterthur (20 min from Neuhausen). This small city has an outsized art scene — Museum Oskar Reinhart (CHF 12) has Impressionists and Old Masters. The Fotomuseum (CHF 12) is Switzerland\'s premier photography museum. Walk through the charming Old Town and the Stadtpark gardens. Lunch at Blinde Kuh (dining in total darkness, CHF 45–65 for 3 courses — unique experience).',
+          tip: 'Blinde Kuh ("Blind Cow") is a restaurant in complete darkness staffed by blind waiters — book ahead for a sensory experience.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Back in Zurich',
+          text: 'Return to Zurich for a relaxed evening. Dinner at Raclette Factory in Niederdorf (raclette from CHF 16 — melted cheese scraped onto potatoes with pickles) or Kronenhalle on Rämistrasse (classic Swiss, mains CHF 35–55, art by Picasso, Chagall, and Matisse on the walls). Drinks at Dante on Mühlegasse or the rooftop at 25hours Hotel Langstrasse.',
+          tip: 'Kronenhalle has original Picasso, Miró, and Chagall on the walls — diners literally eat under masterpieces. It\'s been serving since 1924.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Markets, Fondue & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Flohmarkt & Bürkliplatz',
+          text: 'If Saturday, visit the Bürkliplatz Flohmarkt — Zurich\'s best flea market along the lake with vintage, antiques, and food stalls. Otherwise, explore the Saturday Helvetiaplatz market in Zürich West (organic farmers, street food). Buy Swiss chocolate at Läderach (handmade, try the FrischSchoggi) or Teuscher on Storchengasse (champagne truffles, CHF 2.50 each).',
+          tip: 'Läderach\'s FrischSchoggi is fresh chocolate bark with nuts and fruit — it\'s the best souvenir from Switzerland, bar none.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rietberg Museum & Rieterpark',
+          text: 'Tram to Museum Rietberg (CHF 18) in the beautiful Rieterpark — Switzerland\'s only museum of non-European art, with collections from Asia, Africa, and the Americas in a hilltop villa. The Smaragd extension is architecturally stunning. Walk through Rieterpark — one of Zurich\'s most scenic green spaces with lake and Alpine views.',
+          tip: 'Rieterpark on a clear day has views of the lake with the Alps behind — the most underrated viewpoint in Zurich.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Fondue Night',
+          text: 'A proper Swiss fondue evening. Le Dézaley on Römergasse (fondue moitié-moitié, CHF 28) is the classic choice — Vaudois atmosphere with wooden beams and wine from their own vineyards. Or Chässtube on Lagerstrasse for a more modern take. Half a litre of Fendant wine (CHF 15), crusty bread cubes, and a pot of molten Gruyère and Vacherin. Don\'t drink cold water with fondue — the Swiss say it solidifies the cheese.',
+          tip: 'The Swiss fondue rule: always stir in a figure-eight, never let the cheese settle. And kirsch is the traditional digestif after.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Last Swim, Chocolate & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Lake Swim',
+          text: 'One last morning at the lake or river. Swim at Badi Tiefenbrunnen (CHF 8, lakeside with diving boards) or float down the Limmat from Oberer Letten. The ritual of morning swimming and coffee is quintessentially Zurich. Dry off and walk through the Altstadt one last time — peek into the Augustinergasse, Zurich\'s prettiest street with its painted facades.',
+          tip: 'The morning swim-and-coffee ritual is how Zurich starts its summer days — join in and you\'ll understand why people love this city.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Chocolate',
+          text: 'Final shopping. Migros and Coop supermarkets have excellent Swiss chocolate for a fraction of boutique prices (Frey, Cailler, Ragusa bars CHF 3–5). For gifts, Swiss army knives from Victorinox on Rennweg, Sigg water bottles, or a bottle of Swiss wine from Baur au Lac Vins. Lunch at the Markthalle Im Viadukt food court (diverse options, CHF 12–20).',
+          tip: 'Coop\'s Prix Garantie Swiss chocolate is genuinely good and costs CHF 2–3 per bar — perfect for bulk souvenirs.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Zurich',
+          text: 'Farewell dinner at Clouds (36th floor of Prime Tower, prix fixe CHF 85, panoramic views) for a splurge, or Tibits (vegetarian buffet, CHF 4.60/100g) by the station for budget. Final drinks at Frau Gerolds Garten if summer, or Widder Bar (hotel bar with live jazz, cocktails CHF 20–28). Watch the lights on the lake one last time from Bürkliplatz.',
+          tip: 'The view from Clouds in the Prime Tower at sunset — with the lake, Old Town, and Alps — is the perfect farewell to Zurich.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Supermarket strategy', text: 'Coop and Migros meals-to-go are CHF 6–12 for quality sandwiches, salads, and sushi. Restaurants charge CHF 25–40 for a main. Supermarket eating saves CHF 15–25 per meal.' },
+  { title: 'Free swimming', text: 'Oberer Letten river swimming is free. Many Badis cost CHF 0–8. Swimming in the lake and rivers is one of Zurich\'s greatest pleasures and costs virtually nothing.' },
+  { title: 'Free Wednesdays', text: 'Kunsthaus is free on Wednesday evenings. Swiss National Museum is free Saturday afternoons. Check opening hours for other free-entry periods.' },
+  { title: 'ZürichCARD', text: 'The ZürichCARD (CHF 27/24h, CHF 53/72h) covers all public transport, museum discounts, and a free Limmat river cruise. Good value if using public transport heavily.' },
+  { title: 'Water fountains', text: 'Zurich has 1,200 public fountains — all with drinkable water (the ones with the crossed-out cup symbol aren\'t drinkable, but they\'re rare). A bottle of water at a cafe costs CHF 5–7.' },
+  { title: 'Kebab & immigrant food', text: 'Zurich\'s cheapest meals are along Langstrasse — Turkish kebabs (CHF 10–12), Vietnamese pho (CHF 14), and Indian curries (CHF 15). This is where Zurich eats affordably.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'CHF 35–55', midrange: 'CHF 120–220', splurge: 'CHF 350+', notes: 'Hostels → 3-star hotels → lakefront luxury' },
+  { category: 'Food', budget: 'CHF 15–30', midrange: 'CHF 40–70', splurge: 'CHF 100+', notes: 'Supermarket & kebabs → cafes & Beizli → fine dining' },
+  { category: 'Transport', budget: 'CHF 5–10', midrange: 'CHF 15–27', splurge: 'CHF 40+', notes: 'Walking & short trips → day pass → taxis' },
+  { category: 'Activities', budget: 'CHF 0–10', midrange: 'CHF 15–30', splurge: 'CHF 60+', notes: 'Free swims & parks → museums → mountain trips' },
+  { category: 'Drinks', budget: 'CHF 8–15', midrange: 'CHF 20–35', splurge: 'CHF 50+', notes: 'Supermarket beer → craft bars → cocktail bars' },
+  { category: 'Daily Total', budget: 'CHF 63–120', midrange: 'CHF 210–382', splurge: 'CHF 600+', notes: '$72–136 → $239–434 → $682+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Switzerland is in the Schengen Zone but NOT in the EU. EU/EEA enter with ID. US, Canadian, Australian citizens get 90 days visa-free',
+      'Zurich Airport (ZRH): S-Bahn S2/S16 to Hauptbahnhof (CHF 7, 12 min). Taxis cost CHF 50–70 to the centre',
+      'Switzerland uses Swiss Francs (CHF), not Euros. Some shops near borders accept Euros but give change in CHF at poor rates',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Trams, buses, and S-Bahn. Single ticket CHF 4.40 (2 zones), short-trip CHF 2.70, day pass CHF 8.80. Buy from machines at stops',
+      'The ZürichCARD (CHF 27/24h) covers unlimited transport plus museum discounts — worth calculating before buying',
+      'The city centre is very walkable. Zurich is compact — most attractions are within 20 minutes of the Hauptbahnhof on foot',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Swisscom, Sunrise, and Salt offer prepaid SIMs from CHF 10–20 for 2–5GB at the airport or Interdiscount shops',
+      'Free WiFi in most cafes, the train station, and public buildings. SBB (Swiss Rail) WiFi is free on trains and in stations',
+      'Swiss data is NOT covered by EU roaming — EU SIM cards will roam at international rates. Buy a Swiss SIM or use WiFi',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Swiss Francs (CHF). Cards accepted widely — Visa and MasterCard everywhere, AmEx less so. Some bakeries and small shops prefer cash',
+      'ATMs (Bancomat) are on every block. PostFinance and UBS ATMs are fair. Twint is Switzerland\'s mobile payment app',
+      'Tipping: not mandatory (service included), but rounding up 5–10% at restaurants is appreciated. Say "stimmt so" (keep the change)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Zurich is extremely safe — one of the safest cities in the world. No real crime concerns for tourists',
+      'Tap water is excellent everywhere — the 1,200 public fountains are all drinkable unless marked otherwise',
+      'Emergency: 112. Pharmacy (Apotheke): Bellevue Apotheke is centrally located. Healthcare is excellent but expensive — insurance essential',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Layers year-round — weather changes fast. Summer: 20–26°C but evenings cool. Winter: 0–5°C with fog (Hochnebel)',
+      'Good walking shoes for cobblestones and hiking. Swimwear for the Badis (essential June–September)',
+      'Swiss plugs are unique (Type J, 3-pin hexagonal) — bring a universal adapter or buy one at Coop or Manor',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏊', title: 'Badi Culture', text: 'Zurich\'s Badis (public bathing facilities) are sacred. Locals swim in the lake and rivers daily from May to September. Don\'t just watch — jump in. It\'s the most Zurich thing you can do.' },
+  { icon: '🤫', title: 'Quiet Hours', text: 'Sunday is quiet in Switzerland — most shops are closed, noise is discouraged, and you shouldn\'t mow your lawn. Also no washing machines or vacuuming after 10pm or before 7am. Respect the Sonntagsruhe.' },
+  { icon: '⏰', title: 'Swiss Punctuality', text: 'The Swiss are legendarily punctual. Trains run to the second. Arriving 5 minutes late to a meeting is considered rude. If you arrange to meet a Swiss friend at 7pm, they\'ll be there at 6:58.' },
+  { icon: '♻️', title: 'Recycling Obsession', text: 'Switzerland takes recycling extremely seriously. Separate glass (by colour), paper, PET, aluminium, and compost. General waste requires official Züri-Sack bags (CHF 2 per 35L bag). Fines for violations are real.' },
+  { icon: '🗣', title: 'Swiss German', text: '"Grüezi" (hello), "Merci" (thanks, yes, they use the French), "En Guete" (enjoy your meal). Swiss German sounds nothing like High German — even Germans struggle with it.' },
+  { icon: '🧀', title: 'Fondue Rules', text: 'Fondue is winter food (November–March). Ordering it in July will get you served but possibly judged. Stir in figure-eights. Don\'t drink cold water with fondue — the Swiss say it solidifies the cheese in your stomach.' },
+];
+---
+
+<CityGuideLayout
+  title="Zurich Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Zurich guide for young travelers. 3-day itinerary with lake swimming, Alpine views, fondue nights, and insider tips for the world's most expensive city. Plan your trip with roammate."
+  heroImage="/images/guides/zurich-hero.webp"
+  heroFlag="🇨🇭"
+  heroCountry="Switzerland"
+  heroRegion="Europe"
+  heroCity="Zurich"
+  heroSubtitle="Where you can swim through the city centre, see the Alps from a rooftop bar, and eat fondue in a 500-year-old armoury."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Jun – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in CHF. Zurich is the world's most expensive city, but supermarket meals, free swimming, and smart choices make it survivable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Switzerland is polite, precise, and quietly proud. Swim in the rivers, recycle everything, and never, ever be late."
+  ctaCity="Zurich"
+  ctaText="Find travel companions for Alpine day trips, lake swimming, and fondue nights in Zurich on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

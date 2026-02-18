@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PLN (Złoty)', detail: '1 USD ≈ 4.05 PLN' },
+  { icon: '🗣', label: 'Language', value: 'Polish', detail: 'English common among younger locals' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) Mar–Oct' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: '18–26°C, warm and sunny' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–60 USD', detail: '160–240 PLN budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: 'EU/US/UK: 90 days visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Kraków Essentials in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Town & Rynek Główny',
+          text: 'Start at Rynek Główny — Europe\'s largest medieval market square, dominated by the Cloth Hall (Sukiennice) and St. Mary\'s Basilica. Listen for the hejnał trumpet call played hourly from the basilica\'s tower. Inside, the Veit Stoss altarpiece is extraordinary (12 PLN). Walk through the Cloth Hall\'s ground-floor market for amber and local crafts, then explore the narrow streets of Stare Miasto towards Floriańska Gate.',
+          tip: 'Arrive at St. Mary\'s before 10am to hear the hejnał without crowds — the trumpeter plays to all four compass points.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wawel Castle & Kazimierz',
+          text: 'Walk up Wawel Hill to the Royal Castle complex — the spiritual heart of Poland. Tour the State Rooms (30 PLN) and admire the Renaissance courtyard. Then descend to Kazimierz, the historic Jewish quarter turned bohemian neighbourhood. Walk ul. Szeroka and visit the Old Synagogue (free Mondays). Lunch at Starka for traditional Polish food — pierogi, żurek soup, and bigos for under 40 PLN.',
+          tip: 'Wawel tickets sell out by midday in summer — buy online or arrive by 10am. The Crown Treasury is the quickest visit.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kazimierz Bars & Plac Nowy',
+          text: 'Kazimierz comes alive at night. Start at Plac Nowy for a zapiekanka (Polish street pizza, 10–15 PLN) from the round market hall — the classic Kraków late-night snack. Then bar-hop: Alchemia is the legendary cellar bar with candle-lit interiors and live klezmer music, Miejsce has craft cocktails, and Singer is named for its sewing machine tables. Beer is 10–15 PLN, cocktails 20–30 PLN.',
+          tip: 'Alchemia\'s back room hosts free live music most nights — klezmer, jazz, and folk. Arrive by 9pm for a seat.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Old Town & Wawel Royal District',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rynek Główny & St. Mary\'s Basilica',
+          text: 'Start at Rynek Główny — Europe\'s largest medieval market square. The Cloth Hall (Sukiennice) houses souvenir stalls below and the Gallery of 19th Century Polish Art above (free Sundays). St. Mary\'s Basilica\'s Veit Stoss altarpiece is one of Europe\'s greatest Gothic masterpieces (12 PLN). Listen for the hejnał trumpet call every hour. Coffee at Camelot on ul. Św. Tomasza — a Kraków institution.',
+          tip: 'The Gallery above the Cloth Hall is free on Sundays and offers great views of the square from its windows.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wawel Castle Complex',
+          text: 'Walk up Wawel Hill — the seat of Polish kings for 500 years. The Royal Castle has multiple exhibitions: State Rooms (30 PLN), Royal Private Apartments (27 PLN), Crown Treasury & Armoury (25 PLN). The Renaissance courtyard is stunning and free to enter. Walk the castle ramparts for views over the Vistula River. Visit Wawel Cathedral (free, tower climb 18 PLN) where Polish monarchs were crowned.',
+          tip: 'Each exhibition requires a separate ticket and they sell out — prioritise State Rooms and the Cathedral tower.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Vistula Riverbank & Dinner',
+          text: 'Walk along the Vistula River boulevards — a favourite local hangout. In summer, pop-up bars and food trucks line the banks. Dinner at Pod Baranem on Rynek Główny for traditional Polish cuisine with a view — pierogi, golonka (pork knuckle), and żurek soup in a bread bowl. Then a nightcap at Bunkier Café — a modernist cultural space overlooking the Planty gardens.',
+          tip: 'The Vistula boulevards south of Wawel are the local favourite for sunset drinks — bring your own beer from a nearby sklep.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Kazimierz & Jewish Heritage',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kazimierz Jewish Quarter',
+          text: 'Explore Kazimierz — once the centre of Jewish life in Kraków and now the city\'s most vibrant neighbourhood. Walk ul. Szeroka, visit the Old Synagogue museum (free Mondays), and see the Remuh Synagogue and cemetery still in active use. The area\'s history spans 600 years — from a thriving Jewish community to the devastation of the Holocaust and its rebirth as a cultural quarter.',
+          tip: 'Join a free walking tour of Kazimierz (tips-based) — the guides bring the neighbourhood\'s complex history to life.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Schindler\'s Factory & Podgórze',
+          text: 'Cross the river to Podgórze — the wartime Jewish ghetto. Visit Oskar Schindler\'s Factory museum (free Mondays, otherwise 32 PLN) — a powerful, immersive exhibition about Kraków under Nazi occupation. Walk to Ghetto Heroes Square with its haunting empty chairs memorial, and see the remnants of the ghetto wall on ul. Lwowska. Lunch at Starka on ul. Józefa — excellent Polish comfort food.',
+          tip: 'Book Schindler\'s Factory tickets online at least 3 days ahead — it\'s Kraków\'s most visited museum and sells out daily.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Plac Nowy & Kazimierz Nightlife',
+          text: 'Start at Plac Nowy for a zapiekanka from the round okrąglak market hall — toasted baguettes with mushrooms, cheese, and toppings (10–15 PLN). Kazimierz\'s nightlife is legendary: Alchemia is the iconic candlelit cellar bar with live klezmer music. Eszeweria has a vintage-furniture aesthetic. Omerta does excellent cocktails. Beer is 10–15 PLN everywhere, making this one of Europe\'s cheapest nights out.',
+          tip: 'Alchemia\'s back room has free live music most nights — arrive by 9pm for seats and stay for the atmosphere.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Day Trip — Wieliczka Salt Mine',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wieliczka Salt Mine',
+          text: 'Take bus 304 from Kraków Główny to Wieliczka (40 minutes, 5 PLN). The 700-year-old salt mine descends 135 metres underground through carved chapels, underground lakes, and crystalline chambers. The Chapel of St. Kinga — an entire cathedral carved from salt — is jaw-dropping. The Tourist Route takes 2–3 hours and covers 3.5km underground. Book the English-language tour (94 PLN online).',
+          tip: 'Book the first morning slot (8am or 9am) — afternoon tours are packed with bus groups and the experience suffers.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Podgórze Food & Zabłocie',
+          text: 'Back in Kraków, explore the emerging Zabłocie neighbourhood — a former industrial area now home to galleries, cafés, and MOCAK (Museum of Contemporary Art, 14 PLN). Lunch at Przystanek Pierogarnia for handmade pierogi (traditional Polish dumplings) with fillings from classic potato-cheese (ruskie) to wild mushroom — plates from 22 PLN. This is comfort food at its finest.',
+          tip: 'MOCAK is free on Tuesdays and has a great rooftop café — combine it with Schindler\'s Factory next door if you missed it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Old Town Farewell',
+          text: 'Final evening in the Old Town. Walk the Planty — the green belt encircling the old city where the medieval walls once stood. Dinner at Miód Malina for Polish-Mediterranean fusion in a beautiful vaulted cellar (mains 35–55 PLN). End at Piękny Pies in Kazimierz — a relaxed bar with craft beer and a loyal local crowd — or Black Gallery for late-night dancing.',
+          tip: 'The Planty park circuit is 4km — a perfect evening stroll with views of the Barbican and Floriańska Gate illuminated.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Old Town & Rynek Główny',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rynek Główny & St. Mary\'s',
+          text: 'Start at Rynek Główny — Europe\'s largest medieval market square. The Cloth Hall (Sukiennice) houses souvenir stalls below and the Gallery of 19th Century Polish Art above. St. Mary\'s Basilica\'s Veit Stoss altarpiece is one of Europe\'s greatest Gothic masterpieces (12 PLN). Listen for the hejnał trumpet call every hour. Coffee at Camelot on ul. Św. Tomasza — a Kraków institution.',
+          tip: 'The Gallery above the Cloth Hall is free on Sundays and offers great views of the square from its windows.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rynek Underground & Collegium Maius',
+          text: 'Descend into the Rynek Underground Museum beneath the main square (free Tuesdays, otherwise 28 PLN) — a fascinating multimedia journey through medieval Kraków. Then visit the Collegium Maius, the oldest building of Jagiellonian University where Copernicus studied. The courtyard is free; the museum tour (12 PLN) includes historic instruments and ceremonial halls.',
+          tip: 'The Collegium Maius courtyard has a musical clock that plays at set hours — check the schedule at the entrance.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dinner & Planty Stroll',
+          text: 'Dinner at Miód Malina in the Old Town — Polish-Mediterranean fusion in a beautiful vaulted cellar (mains 35–55 PLN). Then walk the Planty — the green belt encircling the old city where medieval walls once stood. The 4km circuit passes the Barbican, Floriańska Gate, and Wawel Hill, all beautifully lit after dark. Nightcap at Bunkier Café overlooking the park.',
+          tip: 'Miód Malina\'s cellar rooms fill up fast — book for 8pm online or try their second location on ul. Grodzka.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Wawel Castle & Vistula',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wawel Castle Complex',
+          text: 'Walk up Wawel Hill — the seat of Polish kings for 500 years. Tour the State Rooms (30 PLN) for Renaissance tapestries and the stunning Senators\' Hall. The Crown Treasury & Armoury (25 PLN) holds the famous Szczerbiec coronation sword. Walk the castle ramparts for views over the Vistula. Visit Wawel Cathedral (free, tower 18 PLN) where Polish monarchs were crowned and buried.',
+          tip: 'Arrive when the ticket office opens at 9am — each exhibition has limited daily tickets and State Rooms sell out first.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Vistula Boulevards & Manggha',
+          text: 'Walk the Vistula River boulevards south of Wawel — Kraków\'s favourite promenade with pop-up bars in summer. Cross to the Manggha Centre of Japanese Art & Technology (20 PLN) — a striking building by Arata Isozaki with excellent exhibitions. Lunch at Kogel Mogel on ul. Garbarska for modern Polish cuisine (mains 30–45 PLN) or grab a kebab from one of the riverside food trucks.',
+          tip: 'The Vistula boulevards between Wawel and Dębnicki Bridge are perfect at golden hour — locals bring blankets and beer.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kanonicza Street & Wine Bars',
+          text: 'Walk ul. Kanonicza — considered Poland\'s most beautiful street with Renaissance and Gothic townhouses. Dinner at Pod Baranem on the main square for a proper Polish feast: żurek (sour rye soup) in a bread bowl, followed by duck with dumplings. Then explore the wine bars tucked into Old Town cellars — Vis-a-Vis on Rynek Główny or Szara Gęś\'s wine bar.',
+          tip: 'Ul. Kanonicza is most atmospheric at dusk when the gas lamps are lit — it\'s also where Pope John Paul II once lived.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Kazimierz & Jewish Heritage',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kazimierz Jewish Quarter',
+          text: 'Explore Kazimierz\'s Jewish heritage — walk ul. Szeroka, visit the Old Synagogue museum (free Mondays), and see the Remuh Synagogue and cemetery still in active use. The Galicia Jewish Museum (20 PLN) on ul. Dajwór has a moving photographic exhibition of traces of Jewish life in southern Poland. The area spans 600 years of history from thriving community to devastation and rebirth.',
+          tip: 'Join a free walking tour of Kazimierz (tips-based) — the guides bring the neighbourhood\'s complex history to life.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Schindler\'s Factory Museum',
+          text: 'Cross the river to Podgórze. Visit Oskar Schindler\'s Factory museum (free Mondays, otherwise 32 PLN) — a powerful, immersive exhibition about Kraków under Nazi occupation. Walk to Ghetto Heroes Square with its haunting 70 empty chairs memorial representing the victims. See the remnants of the ghetto wall on ul. Lwowska. Lunch at Starka on ul. Józefa for pierogi and beetroot soup.',
+          tip: 'Book Schindler\'s Factory tickets online at least 3 days ahead — it sells out daily and walk-ins rarely get in.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kazimierz Nightlife',
+          text: 'Kazimierz has Kraków\'s best nightlife. Start with a zapiekanka at Plac Nowy\'s okrąglak (10–15 PLN). Then bar-hop: Alchemia for candlelit cellar atmosphere and klezmer music, Eszeweria for vintage furniture vibes, Singer for sewing machine tables and cheap beer. Most places serve beer at 10–15 PLN. For dancing, try Miejsce or head to Thirty Three for cocktails.',
+          tip: 'Alchemia\'s back room has free live music most nights — arrive by 9pm for seats and stay for the atmosphere.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Wieliczka Salt Mine',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wieliczka Salt Mine',
+          text: 'Take bus 304 from Kraków Główny to Wieliczka (40 minutes, 5 PLN). The 700-year-old salt mine descends 135 metres underground through carved chapels, underground lakes, and crystalline chambers. The Chapel of St. Kinga — an entire cathedral carved from rock salt with chandeliers made of salt crystals — is jaw-dropping. Book the English-language Tourist Route tour (94 PLN online).',
+          tip: 'Book the first morning slot — afternoon tours are packed with bus groups and you spend more time queuing than exploring.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Zabłocie & MOCAK',
+          text: 'Back in Kraków, explore Zabłocie — a former industrial area now home to galleries, cafés, and MOCAK (Museum of Contemporary Art, free Tuesdays, otherwise 14 PLN). The converted factory space hosts cutting-edge exhibitions. Lunch at Przystanek Pierogarnia for the best handmade pierogi in the city — traditional ruskie, wild mushroom, and seasonal specials from 22 PLN.',
+          tip: 'MOCAK and Schindler\'s Factory are next door to each other — a combined ticket saves money if you haven\'t visited.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Nowa Huta District',
+          text: 'Take tram 4 to Nowa Huta — the socialist-realist "ideal city" built by the communist regime in the 1950s as a workers\' utopia. The monumental architecture along Aleja Róż is surreal. Visit the Nowa Huta Museum (free) and have dinner at Stylowa — a retro milk bar (bar mleczny) serving Polish classics for 10–20 PLN. The contrast with the Old Town is fascinating and deeply Kraków.',
+          tip: 'Crazy Guides runs excellent Nowa Huta tours in a vintage Trabant car — it\'s touristy but genuinely fun and informative.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Auschwitz-Birkenau Memorial',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Auschwitz I',
+          text: 'Take the early bus from MDA station (1.5 hours, 18 PLN return). Auschwitz-Birkenau is the most important memorial site of the Holocaust. Entry to Auschwitz I is free but guided tours (75 PLN, 3.5 hours) are recommended and often required in peak season. The exhibition in the original camp buildings is deeply harrowing and profoundly important. Allow your emotions space.',
+          tip: 'Book tickets months in advance — free entry time slots and guided tours sell out fast. Arrive with a charged phone for audio guide.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Birkenau (Auschwitz II)',
+          text: 'A free shuttle runs between Auschwitz I and Birkenau (3km apart). Birkenau is vast — 170 hectares of barracks, ruins, and the railway tracks that carried victims to the gas chambers. Walk the site at your own pace. The scale is overwhelming and communicates the industrial nature of the horror in a way nothing else can. The memorial at the end of the railway tracks is a place for reflection.',
+          tip: 'Birkenau takes 1–2 hours minimum. Wear comfortable shoes and bring water — there\'s no shade and limited facilities.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Quiet Evening & Reflection',
+          text: 'Return to Kraków in the late afternoon. After Auschwitz, most people need a quiet evening. Walk along the Vistula in the fading light. Have a gentle dinner at Marchewka z Groszkiem in Kazimierz — a vegetarian-friendly spot with comforting Polish food (mains 25–35 PLN). Or simply sit in the Planty gardens and let the day settle. There\'s no pressure to "do" anything tonight.',
+          tip: 'It\'s okay to feel heavy after visiting — most travelers need a quiet evening. Kazimierz\'s calm side streets are perfect.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Podgórze, Markets & Street Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Podgórze & Krakus Mound',
+          text: 'Explore Podgórze beyond the war history — it\'s now one of Kraków\'s most creative neighbourhoods. Climb Krakus Mound (free) for a 360° panorama of the city — locals consider this the best viewpoint in Kraków. Walk through the green spaces of Park Bednarskiego, then browse the independent shops and cafés along ul. Kalwaryjska and ul. Limanowskiego.',
+          tip: 'Krakus Mound at sunrise is magical — hardly anyone is there and you can see Wawel Castle perfectly from the top.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Stary Kleparz Market & Milk Bars',
+          text: 'Head to Stary Kleparz Market near the train station — Kraków\'s oldest market with fresh produce, flowers, cheese, smoked meats, and local products at a fraction of Old Town prices. Lunch at a genuine bar mleczny (milk bar) — these communist-era subsidised canteens still serve Polish classics for 10–20 PLN. Try Bar Mleczny pod Temidą near the courts for an authentic experience.',
+          tip: 'Milk bars have no English menus — use Google Translate on the handwritten Polish menu board, or just point at what looks good.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Craft Beer & Late Night',
+          text: 'Kraków has a booming craft beer scene. Start at Omerta for cocktails, then House of Beer on ul. Św. Tomasza for 100+ Polish craft brews on tap (15–22 PLN per pint). Forum Przestrzenie on the Vistula riverbank is a repurposed communist-era hotel turned bar and cultural space — sit on the concrete terrace with cheap beer and river views. Live DJ sets on weekends.',
+          tip: 'Forum Przestrzenie is the quintessential Kraków experience — industrial-chic, riverside, cheap beer, and great people-watching.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Relaxation & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Breakfast & Botanical Gardens',
+          text: 'Lazy morning at Bunkier Café with coffee and cake overlooking the Planty gardens. Then visit the Jagiellonian University Botanical Garden (10 PLN) — a peaceful oasis of greenery in the city centre, dating to 1783. Walk through the greenhouses and herb gardens. Then stroll ul. Grodzka — one of Kraków\'s oldest streets, connecting the main square to Wawel.',
+          tip: 'The Botanical Garden\'s greenhouses are a hidden escape on rainy days — the tropical house is particularly impressive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenir Shopping & Last Pierogi',
+          text: 'Last shopping at the Cloth Hall for Polish souvenirs — amber jewellery, Bolesławiec pottery, and wooden boxes. For foodie souvenirs, pick up oscypek (smoked sheep\'s cheese from the Tatras) and Kraków\'s famous obwarzanek (pretzel rings, 2–3 PLN from street carts). Final pierogi lunch at Pierogarnia Krakowiacy on Rynek Główny or the more authentic Zapiecek.',
+          tip: 'Obwarzanki from the blue street carts are an official Kraków symbol — buy them fresh in the morning when they\'re still warm.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Final dinner at Starka on ul. Józefa in Kazimierz for a farewell Polish feast — house-infused vodkas, wild boar pierogi, and traditional desserts. Or splurge at Pod Różą, one of Kraków\'s oldest restaurants in a historic hotel. End the night at Piękny Pies in Kazimierz — a relaxed local bar with craft beer and a crowd that embodies everything great about this city.',
+          tip: 'Starka\'s house-infused vodkas are exceptional — try the quince or cherry varieties with your meal.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free Mondays & Tuesdays', text: 'Many museums are free on specific days: Old Synagogue (Monday), Schindler\'s Factory (Monday), MOCAK (Tuesday), Rynek Underground (Tuesday). Plan your week around these.' },
+  { title: 'Milk bar meals', text: 'Bar mleczny (milk bars) serve full Polish meals for 10–20 PLN. Try Pod Temidą, Krakus, or Bar Mleczny Gornik. A plate of pierogi with sour cream costs about 15 PLN.' },
+  { title: 'Cheap drinks', text: 'Beer costs 10–15 PLN in Kazimierz bars, cocktails 20–30 PLN. Pre-game with supermarket beer (4–6 PLN for 500ml) on the Vistula boulevards like locals do.' },
+  { title: 'Obwarzanki', text: 'The blue street carts sell Kraków\'s iconic pretzel rings for 2–3 PLN — a perfect breakfast or snack. Filled obwarzanki from bakeries cost 5–8 PLN.' },
+  { title: 'Walking city', text: 'Kraków\'s centre is compact — the Old Town, Kazimierz, and Podgórze are all within walking distance. Save tram fares for Nowa Huta and airport trips.' },
+  { title: 'Free walking tours', text: 'Several companies run free (tips-based) walking tours of the Old Town, Kazimierz, and Jewish Quarter daily. They\'re excellent and save 80–120 PLN on paid tours.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '50–100 PLN', midrange: '200–400 PLN', splurge: '600+PLN', notes: 'Hostels → boutique hotels → 5-star hotels' },
+  { category: 'Food', budget: '40–70 PLN', midrange: '100–180 PLN', splurge: '300+ PLN', notes: 'Milk bars & street food → restaurants → fine dining' },
+  { category: 'Transport', budget: '0–15 PLN', midrange: '20–50 PLN', splurge: '80+ PLN', notes: 'Walking → trams & buses → taxis & Bolt' },
+  { category: 'Activities', budget: '20–50 PLN', midrange: '80–150 PLN', splurge: '250+ PLN', notes: 'Free museums & walking → paid museums → guided tours' },
+  { category: 'Drinks', budget: '20–40 PLN', midrange: '50–100 PLN', splurge: '150+ PLN', notes: 'Supermarket beer → bar drinks → cocktail lounges' },
+  { category: 'Daily Total', budget: '130–275 PLN', midrange: '450–880 PLN', splurge: '1,380+ PLN', notes: '$32–68 → $111–217 → $341+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — EU/UK/US/Canadian citizens can stay up to 90 days without a visa',
+      'Passport must be valid for 3+ months beyond planned departure from the Schengen area',
+      'Kraków Airport (KRK) to centre: train to Kraków Główny (18 min, 12 PLN) or bus 208/252 (40 min, 5 PLN)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No special vaccinations required. Tap water is safe to drink in Kraków',
+      'Kraków is very safe — occasional pickpocketing in the Old Town, otherwise low crime',
+      'European Health Insurance Card (EHIC) covers EU citizens. Travel insurance recommended for others',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Trams are the main transport — buy tickets at kiosks or use the Jakdojade app. Single ride: 4.60 PLN (20 min) or 6 PLN (60 min)',
+      'The centre is very walkable — Old Town, Kazimierz, and Podgórze are all within 20 minutes on foot',
+      'Bolt is the cheapest ride-hailing app (cheaper than Uber in Poland). A cross-city ride costs 15–25 PLN',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in most cafes, restaurants, and public spaces. Poland has excellent 4G/5G coverage',
+      'EU roaming is free for EU mobile plans. Non-EU visitors: Play or Orange tourist SIMs from 25 PLN for 10GB',
+      'Download Jakdojade for public transport, Bolt for ride-hailing, and Google Maps works well offline',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Poland uses PLN (Złoty), not Euro. ATMs are everywhere — avoid Euronet ATMs (terrible exchange rates)',
+      'Cards accepted in most places, but carry cash for milk bars, markets, and street food. Exchange at kantors, not airports',
+      'Tipping: round up at restaurants (10% for good service). Not expected at milk bars, cafes, or taxis',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Comfortable walking shoes essential — Kraków\'s cobblestones are hard on feet and ankles',
+      'Layers year-round: warm summers (25°C+) but cool evenings. Winters are cold (below 0°C) — bring a heavy coat',
+      'A light rain jacket and scarf — weather changes quickly and old churches can be chilly even in summer',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🥟', title: 'Pierogi Culture', text: 'Pierogi are sacred in Poland. Ruskie (potato-cheese), mięsne (meat), and z jagodami (blueberry) are classics. Never add ketchup — sour cream and fried onions are the proper accompaniments.' },
+  { icon: '🥃', title: 'Vodka Traditions', text: 'Polish vodka is world-class — try Żubrówka (bison grass), Żołądkowa Gorzka (herbal), or Wyborowa. Vodka is sipped neat and chilled. Toasting is a social ritual: say "na zdrowie" and maintain eye contact.' },
+  { icon: '⛪', title: 'Religious Respect', text: 'Poland is deeply Catholic. Cover shoulders and knees when visiting churches. Remove hats. Silence your phone. Mass times are busy — visit as a tourist outside these hours out of respect.' },
+  { icon: '🕊', title: 'Holocaust Memory', text: 'Kraków\'s Jewish heritage is profound and painful. Approach Kazimierz, Auschwitz, and Schindler\'s Factory with solemnity. The city takes its role as a guardian of this memory seriously.' },
+  { icon: '🗣', title: 'Language Basics', text: 'Learn "dzień dobry" (hello), "dziękuję" (thank you), "proszę" (please), and "przepraszam" (sorry/excuse me). Polish is difficult but locals deeply appreciate any effort with the language.' },
+  { icon: '🍺', title: 'Social Norms', text: 'Poles are warm once you get past initial formality. Handshakes are standard greetings. Remove shoes when entering homes. Bringing flowers or wine as a guest is expected — always odd numbers of flowers.' },
+];
+---
+
+<CityGuideLayout
+  title="Kraków Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Kraków guide for young travelers. 3-day itinerary with Old Town, Kazimierz nightlife, Wieliczka Salt Mine, budget tips, and pierogi spots. Plan your trip with roammate."
+  heroImage="/images/guides/krakow-hero.webp"
+  heroFlag="🇵🇱"
+  heroCountry="Poland"
+  heroRegion="Europe"
+  heroCity="Kraków"
+  heroSubtitle="A city where medieval grandeur meets bohemian soul, and a plate of pierogi costs less than a London coffee."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in PLN (Polish Złoty). Kraków is one of Europe's best-value cities — world-class culture at backpacker-friendly prices."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Kraków is Poland's cultural capital — deeply proud of its heritage, warmly hospitable, and carrying the weight of a profound history with dignity."
+  ctaCity="Kraków"
+  ctaText="Find travel companions for Wieliczka trips, split Auschwitz tour costs, and bar-hop through Kazimierz together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

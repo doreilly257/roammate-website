@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: 'What is roammate?',
+    a: "roammate is a travel app that connects solo travelers and small groups with like-minded people nearby. Whether you're looking for someone to share a taxi, explore a museum, or join you on a hike, roammate helps you find travel companions to share experiences and costs.",
+  },
+  {
+    q: 'How does roammate work?',
+    a: "Simply create a profile, set your location, and browse travel plans created by other users near you. You can also create your own travel plans and let others request to join. Once connected, you can chat and coordinate your meetup.",
+  },
+  {
+    q: 'Is roammate free to use?',
+    a: 'Yes! roammate is free to download and use. We believe everyone should have the opportunity to connect with fellow travelers and make the most of their adventures.',
+  },
+  {
+    q: 'How do I create a travel plan?',
+    a: "Tap the \"+\" button in the app to create a new travel plan. Add details like the activity, location, date, and how many people you'd like to join. Other travelers nearby will be able to see your plan and request to join.",
+  },
+  {
+    q: 'Is it safe to meet strangers through roammate?',
+    a: "Your safety is important to us. We recommend meeting in public places, letting someone know your plans, and trusting your instincts. You can view other users' profiles and reviews before connecting.",
+  },
+  {
+    q: 'Can I use roammate anywhere in the world?',
+    a: "Yes! roammate works globally. Wherever you're traveling, you can connect with other roammate users in that area. The more travelers using the app, the more connections you can make.",
+  },
+  {
+    q: 'What if I need to cancel a plan?',
+    a: 'Life happens! You can cancel or modify your travel plans at any time through the app. We encourage you to notify anyone who has joined your plan as soon as possible if your plans change.',
+  },
+  {
+    q: 'How do I report inappropriate behavior?',
+    a: 'If you encounter any inappropriate behavior, you can report a user directly through their profile or contact our support team. We take all reports seriously and will investigate promptly.',
+  },
+  {
+    q: 'Do I need an internet connection to use roammate?',
+    a: 'Yes, roammate requires an internet connection to browse and create travel plans, and to communicate with other users. However, you can view previously loaded content offline.',
+  },
+  {
+    q: 'How do I delete my account?',
+    a: 'You can delete your account at any time through the app settings. Go to Settings > Account > Delete Account. Please note that this action is permanent and all your data will be removed.',
+  },
+  {
+    q: 'How can I contact roammate support?',
+    a: 'You can reach our support team by emailing support@roammate.com. We typically respond within 24-48 hours.',
+  },
+];
+---
+
+<BaseLayout title="FAQ – roammate – travel companion app" description="Find answers about how roammate works, safety features, cost splitting, and connecting with travelers worldwide. Free travel companion app for iOS and Android.">
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
+    })} />
+  </Fragment>
+  <section class="faq-hero">
+    <div class="faq-hero-inner">
+      <div class="section-label section-label--center">Support</div>
+      <h1 class="faq-title">Frequently Asked <em>Questions</em></h1>
+    </div>
+  </section>
+
+  <section class="faq-content">
+    <div class="faq-list">
+      {faqs.map((faq, i) => (
+        <details class={`faq-item reveal reveal-delay-${(i % 4) + 1}`}>
+          <summary class="faq-question">{faq.q}</summary>
+          <div class="faq-answer">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .faq-hero {
+    padding: 160px 40px 80px;
+    text-align: center;
+    position: relative;
+  }
+
+  .faq-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(196, 86, 42, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .faq-hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label--center {
+    justify-content: center;
+  }
+
+  .section-label--center::before {
+    display: none;
+  }
+
+  .faq-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+  }
+
+  .faq-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .faq-content {
+    padding: 0 40px 160px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0;
+  }
+
+  .faq-question {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-cream);
+    cursor: pointer;
+    padding: 28px 40px 28px 0;
+    position: relative;
+    list-style: none;
+    transition: color 0.3s;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--color-terracotta);
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .faq-question:hover {
+    color: var(--color-terracotta);
+  }
+
+  .faq-answer {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    padding: 0 40px 28px 0;
+  }
+
+  @media (max-width: 1024px) {
+    .faq-hero { padding: 140px 24px 60px; }
+    .faq-content { padding: 0 24px 100px; }
+  }
+</style>

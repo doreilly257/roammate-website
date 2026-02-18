@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'MOP$ (Pataca)', detail: '1 USD ≈ MOP$8.05 · HKD accepted 1:1' },
+  { icon: '🗣', label: 'Language', value: 'Cantonese / Portuguese', detail: 'English in tourist areas & casinos' },
+  { icon: '🕐', label: 'Timezone', value: 'CST (UTC+8)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Dec', detail: '20–26°C, dry & comfortable' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$55–85 USD', detail: 'MOP$440–680 budget' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free for most', detail: '30–90 days depending on nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Macau in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ruins of St. Paul\'s & Historic Centre',
+          text: 'Start at the Ruins of St. Paul\'s — the iconic stone facade of a 17th-century Jesuit church and Macau\'s most photographed landmark. Walk through the UNESCO-listed Historic Centre: Senado Square with its Portuguese wave-pattern cobblestones, the pastel Holy House of Mercy, and Leal Senado Building. Grab a free sample of almond cookies and jerky from the shops lining Rua de S. Paulo.',
+          tip: 'Arrive before 9am to photograph the Ruins without crowds — by 10am, tour groups overwhelm the steps.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Taipa Village & Portuguese Egg Tarts',
+          text: 'Take bus 11 or 33 to Taipa Village — Macau\'s charming old quarter with pastel colonial buildings, narrow cobbled streets, and the best food scene on the peninsula. Lord Stow\'s Bakery here serves Macau\'s famous Portuguese egg tarts (MOP$11 each) — flaky pastry, caramelised custard. Walk the Taipa Houses Museum (free), five mint-green colonial mansions showing traditional Macanese life.',
+          tip: 'Lord Stow\'s in Taipa Village is the original — the Coloane branch is also good but this one has the best fresh-from-oven timing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cotai Strip & Casino Lights',
+          text: 'Walk the Cotai Strip — Macau\'s answer to Las Vegas, with the Venetian (free gondola-lined canal inside), City of Dreams, and the Parisian with its half-scale Eiffel Tower. All casinos are free to enter and explore. Watch the free water shows at Wynn Palace or the Dancing Water show (from MOP$580). Dinner at a casino food court — surprisingly affordable at MOP$50–80.',
+          tip: 'Casino food courts offer incredible value — the Venetian\'s food court has Michelin-recommended noodles for MOP$40.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'UNESCO Heritage & Street Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ruins of St. Paul\'s & Monte Fort',
+          text: 'Start at the Ruins of St. Paul\'s — the stone facade of a 17th-century Jesuit church. Climb the steps to Monte Fort behind it for panoramic views of old Macau and the casino skyline beyond. The Macau Museum inside the fort (MOP$15) covers 400 years of East-meets-West history. Walk down through the narrow streets lined with shops offering free samples of almond cookies, pork jerky, and peanut candy.',
+          tip: 'Monte Fort is free and offers the best vantage point in the old town — combine it with the Ruins visit to beat the crowds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Senado Square & Historic Centre Walk',
+          text: 'Stroll through Senado Square — the heart of Macau\'s UNESCO zone with Portuguese wave-pattern cobblestones and pastel neoclassical buildings. Visit the Holy House of Mercy, St. Dominic\'s Church (baroque beauty, free), and A-Ma Temple — the oldest temple in Macau, dedicated to the sea goddess. Lunch at Wong Chi Kei on Senado Square — wonton noodles for MOP$38, a Macau institution since 1946.',
+          tip: 'A-Ma Temple gave Macau its name (A-Ma-Gao). Visit early afternoon when incense smoke and light create an atmospheric scene.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Rua do Cunha Street Food Crawl',
+          text: 'Head to Taipa Village\'s Rua do Cunha — the most famous food street in Macau. Sample egg tarts at Lord Stow\'s (MOP$11), pork chop buns at Tai Lei Loi Kei (MOP$40), durian ice cream, serradura (sawdust pudding, MOP$25), and Macanese curry fish balls. This 200-metre street packs more culinary history than most cities. End with craft cocktails at a Taipa Village rooftop bar.',
+          tip: 'Rua do Cunha stalls close by 7pm — start your food crawl by 4pm to hit everything before they shut.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Cotai Glamour & Coloane Island',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Coloane Village & Hac Sa Beach',
+          text: 'Bus 21A or 26A to Coloane Island — Macau\'s quiet, green escape. Explore Coloane Village with its pastel Chapel of St. Francis Xavier, banyan trees, and fishing-village atmosphere. Then head to Hac Sa Beach — Macau\'s only natural beach with black sand and hiking trails. The beach is clean and uncrowded on weekdays. Grab a pork chop bun from a village bakery for breakfast.',
+          tip: 'Coloane Village feels like stepping back 50 years — it\'s the antithesis of the casino strip and the most authentic corner of Macau.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cotai Strip Casino Crawl',
+          text: 'Explore the mega-casinos of the Cotai Strip — all free to enter. The Venetian has a full-scale indoor Venice with canals and gondoliers. The Parisian features a half-scale Eiffel Tower (MOP$100 observation deck). Studio City has a figure-8 Ferris wheel between two towers (MOP$100). City of Dreams has the free House of Dancing Water lobby display. Lunch at the Venetian food court — MOP$40–60.',
+          tip: 'Free casino shuttle buses run from the ferry terminal and border gates to every major resort — use them as free transport.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Wynn Palace & Macau Tower Night',
+          text: 'Watch the free fountain show at Wynn Palace — choreographed water, fire, and light every 15 minutes from 5pm. For an adrenaline rush, Macau Tower offers the world\'s highest bungee jump (233m, MOP$3,488) or the Sky Walk around the rim (MOP$888). Even without jumping, the observation deck (MOP$165) offers stunning night views. Dinner at Espaço Lisboa in Taipa for authentic Macanese cuisine (MOP$150–250).',
+          tip: 'The Wynn Palace fountain show is as good as the Bellagio\'s in Vegas — and completely free. The fire effects at night are spectacular.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Arts, Architecture & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mandarin\'s House & St. Lazarus Quarter',
+          text: 'Visit Mandarin\'s House (free) — a sprawling 1869 Chinese compound and UNESCO site that most tourists miss. The architecture blends Chinese and Western styles beautifully. Then walk to the St. Lazarus Quarter — Macau\'s creative district with art studios, boutique shops in colonial buildings, and excellent cafes. This is where young Macanese creatives are revitalising the city\'s Portuguese heritage.',
+          tip: 'The St. Lazarus Quarter is Macau\'s hidden gem — barely any tourists but the best indie cafes and street art in the territory.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Guia Fortress & Light Lunch',
+          text: 'Walk or take the cable car (MOP$3) up to Guia Fortress — the highest point on the Macau Peninsula with a 17th-century lighthouse (the oldest on the China coast) and chapel with rare Western-Chinese fusion frescoes. Views stretch across the entire territory. Descend for lunch at a local cha chaan teng (Hong Kong-style cafe) for milk tea and a club sandwich — MOP$35–50 fills you up.',
+          tip: 'The Guia Lighthouse frescoes are one of the most unique artworks in Asia — Chinese and Catholic imagery blended on the same walls.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Night Views',
+          text: 'For a final meal, head to António in Taipa — authentic Portuguese-Macanese cuisine with seafood rice, African chicken, and bacalhau. Mains MOP$120–200. Then walk to the Taipa waterfront for night views of the glittering Cotai Strip reflected in the water. If you have time, pop into one of the Cotai casinos for a final look at Macau\'s extraordinary collision of cultures.',
+          tip: 'António often has a queue by 7pm — reserve or arrive at 6pm. The African chicken is the signature dish and worth every pataca.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'UNESCO Heritage & Street Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ruins of St. Paul\'s & Monte Fort',
+          text: 'Start at the Ruins of St. Paul\'s — the stone facade of a 17th-century Jesuit church. Climb to Monte Fort behind it for panoramic views of old Macau and the casino skyline beyond. The Macau Museum inside (MOP$15) covers 400 years of East-meets-West history. Walk the narrow streets for free samples of almond cookies, pork jerky, and peanut candy from century-old shops.',
+          tip: 'Monte Fort is free and offers the best vantage point in the old town — combine it with the Ruins visit to beat the crowds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Senado Square & A-Ma Temple',
+          text: 'Stroll through Senado Square with its Portuguese wave-pattern cobblestones and pastel neoclassical buildings. Visit St. Dominic\'s Church (baroque, free) and continue to A-Ma Temple — the oldest temple in Macau, dedicated to the sea goddess and the origin of the city\'s name. Lunch at Wong Chi Kei on Senado Square — wonton noodles since 1946, MOP$38 for a steaming bowl.',
+          tip: 'A-Ma Temple gave Macau its name (A-Ma-Gao). Visit early afternoon when incense smoke and light create an atmospheric scene.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Rua do Cunha Food Crawl',
+          text: 'Head to Taipa Village\'s Rua do Cunha — the most famous food street in Macau. Sample egg tarts at Lord Stow\'s (MOP$11), pork chop buns at Tai Lei Loi Kei (MOP$40), durian ice cream, serradura pudding (MOP$25), and curry fish balls. End with a cold beer and people-watching at one of the Taipa Village square restaurants under the fairy-lit banyan trees.',
+          tip: 'Rua do Cunha stalls close by 7pm — start your food crawl by 4pm to hit everything before they shut.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Cotai Strip & Casino Architecture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Venetian & Parisian Macau',
+          text: 'Explore The Venetian — a full-scale indoor Venice with canals, gondoliers (MOP$128 per ride), and a sprawling casino floor. Even if you don\'t gamble, the ceiling frescoes and architecture are jaw-dropping. Walk to The Parisian and ride the half-scale Eiffel Tower observation deck (MOP$100) for aerial views of the Cotai Strip. Free shuttle buses connect all the resorts.',
+          tip: 'Free casino shuttle buses from the ferry terminal and border gates are the best free transport in Macau — use them strategically.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Studio City & City of Dreams',
+          text: 'Studio City houses the Golden Reel — a figure-8 Ferris wheel between two towers (MOP$100, worth it for the views). City of Dreams has the House of Dancing Water show — a spectacular water-based circus (from MOP$580). Even without the show, the lobby art installations are free and impressive. Lunch at a casino food court — the Venetian\'s has Michelin-recommended noodle stalls from MOP$40.',
+          tip: 'The Golden Reel at Studio City offers the most unique views — you pass through the building\'s central gap in a figure-8 pattern.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Wynn Palace Fountains & Night Walk',
+          text: 'The Wynn Palace fountain show runs every 15 minutes from 5pm — choreographed water, fire, and light set to music. Walk through the resort\'s SkyCab (free cable car over the lake) and explore the flower installations. Dinner at the Venetian\'s restaurant level — options from casual Asian to Portuguese, MOP$80–150. Then walk the Cotai Strip at night when the architecture glows.',
+          tip: 'The Wynn Palace cable car over the fountains is free and gives you an aerial view of the water show — combine both.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Coloane Island & Nature',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Coloane Village',
+          text: 'Bus 21A to Coloane Village — Macau\'s quiet fishing village with pastel colonial buildings, the Chapel of St. Francis Xavier, and ancient banyan trees. The original Lord Stow\'s Bakery is here (egg tarts, MOP$11). Walk the village pier for views of fishing boats and the Zhuhai coast across the water. The pace here is the polar opposite of Cotai — slow, peaceful, and deeply charming.',
+          tip: 'Coloane Village feels like stepping back 50 years — it\'s the most authentic corner of Macau and the locals are incredibly friendly.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Hac Sa Beach & Hiking',
+          text: 'Continue to Hac Sa Beach — Macau\'s only natural beach, named for its distinctive dark sand. Swim or walk the beach, then hike the Coloane Trail (2km, 45 minutes) through forested hills to the A-Ma Statue — a 20-metre white jade goddess overlooking the sea. The trail is shaded and well-marked. On clear days, the views stretch to the Pearl River Delta islands.',
+          tip: 'Bring water for the Coloane Trail — there are no shops along the way. The A-Ma Statue viewing platform is worth the climb.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Fernando\'s & Coloane Sunset',
+          text: 'Dinner at Fernando\'s on Hac Sa Beach — a legendary Portuguese restaurant beloved by locals since 1986. No reservations, no menus on the wall — just ask what\'s fresh. The garlic prawns, grilled sardines, and Portuguese sangria are unmissable. Mains MOP$100–180. Eat on the outdoor terrace with beach views. Take the bus back to the peninsula as the sun sets over the Pearl River.',
+          tip: 'Fernando\'s is cash only and doesn\'t take reservations — arrive by 6:30pm or expect a 30-minute wait.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Hong Kong Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ferry to Hong Kong',
+          text: 'Take the TurboJET ferry from Macau Outer Harbour to Hong Kong (1 hour, MOP$175–210). Arrive at Sheung Wan and take the MTR to Central. Ride the Mid-Levels Escalator — the world\'s longest covered escalator system — up through SoHo\'s gallery district. Walk through Hollywood Road for antique shops and street art, and visit Man Mo Temple (free) for incense coils and Taoist atmosphere.',
+          tip: 'Book the earliest ferry (7am) to maximise your Hong Kong time. Return ferries run until 11pm from the Shun Tak Centre.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Victoria Peak & Street Markets',
+          text: 'Take the Peak Tram (HK$88 return) to Victoria Peak for the most iconic view in Asia — Hong Kong\'s skyline, harbour, and Kowloon beyond. Walk the Peak Circle Walk (45 minutes, free). Descend and take the Star Ferry (HK$4, a bargain for the view) across to Kowloon. Explore the Temple Street Night Market for street food, fake goods, and fortune tellers.',
+          tip: 'The Star Ferry is Hong Kong\'s best experience — sit on the upper deck for HK$4 and watch the skyline glide past.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Symphony of Lights & Return',
+          text: 'Watch the Symphony of Lights show from the Tsim Sha Tsui waterfront at 8pm — the world\'s largest permanent light and sound show, with Hong Kong Island\'s skyscrapers illuminated across the harbour. Free. Grab dinner at a cha chaan teng in Kowloon for HK$50–80. Take the late ferry back to Macau, watching the harbour lights fade as you cross the Pearl River Delta.',
+          tip: 'Catch the 9:30 or 10:30pm return ferry — this gives you time for the light show and a proper dinner in Kowloon.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Arts, Architecture & Hidden Macau',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mandarin\'s House & Lilau Square',
+          text: 'Visit Mandarin\'s House (free) — a sprawling 1869 Chinese compound blending Eastern and Western architecture, and one of Macau\'s least-visited UNESCO sites. Walk to Lilau Square — a tiny, atmospheric Portuguese plaza with a fountain and banyan tree. Continue through the narrow streets of the old quarter past churches, temples, and colonial houses standing side by side.',
+          tip: 'Mandarin\'s House is closed on Wednesdays. The inner courtyard with its round moon gate is the most photogenic architectural detail.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'St. Lazarus Quarter & Galleries',
+          text: 'Walk to the St. Lazarus Quarter — Macau\'s creative district where young artists have set up studios, boutiques, and cafes in colonial buildings. The Art Garden and Ox Warehouse gallery host rotating exhibitions (free). Lunch at a local cha chaan teng for milk tea and a club sandwich (MOP$35–50). Browse the indie bookshops and design stores along Rua de Abreu Nunes.',
+          tip: 'The St. Lazarus Quarter is Macau\'s hidden gem — barely any tourists but the best indie cafes and street art in the territory.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Guia Fortress & Sunset Views',
+          text: 'Take the cable car (MOP$3) or walk up to Guia Fortress — the highest point on the Macau Peninsula. The 17th-century lighthouse (oldest on the China coast) and chapel with rare Western-Chinese fusion frescoes are unique in Asia. Watch the sunset from the fortress walls with 360-degree views. Dinner at Carlos on Rua da Cidade de Braga — local Portuguese-Macanese comfort food, MOP$80–120.',
+          tip: 'The Guia Lighthouse frescoes feature Chinese and Catholic imagery blended on the same walls — one of the most unique artworks in Asia.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Macanese Food Deep Dive',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Red Market & Local Breakfast',
+          text: 'Start at the Red Market (Mercado Almirante Lacerda) — a striking art deco building housing a traditional wet market where locals buy fresh produce, meat, and seafood. It\'s authentic Macau life far from the casinos. Breakfast at a nearby dim sum restaurant — har gow, siu mai, and cheong fun with unlimited tea, MOP$60–80 per person. The Horta e Costa area has the best local morning spots.',
+          tip: 'Red Market is best before 9am when it\'s busiest. The upper floors have cooked food stalls with cheap, authentic Cantonese breakfast.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Macanese Cooking & Food Culture',
+          text: 'Macanese cuisine is the world\'s first fusion food — a 400-year-old blend of Portuguese, Chinese, Indian, Malay, and African flavours. Try minchi (minced meat with fried egg, MOP$50) at Sei Kee on Rua da Felicidade. Then walk to Koi Kei Bakery for boxes of almond cookies and egg rolls to take home. The old street Rua da Felicidade was once the red-light district, now a charming food lane.',
+          tip: 'Koi Kei gives unlimited free samples — try the Phoenix egg rolls and peanut candy before buying your boxes.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Portuguese Farewell Dinner',
+          text: 'Dinner at Espaço Lisboa in Taipa — one of the best Portuguese restaurants in Macau. The African chicken (frango à africana), bacalhau à brás (shredded salt cod), and arroz de marisco (seafood rice) are outstanding. Mains MOP$120–200. The wine list features affordable Portuguese imports. End the evening with a serradura (sawdust pudding) and a glass of port.',
+          tip: 'Espaço Lisboa is tiny — book ahead or arrive before 7pm. The African chicken is the dish that defines Macanese Portuguese food.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Relaxation & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Morning Tai Chi & Gardens',
+          text: 'Join the locals for early morning tai chi at Camões Garden — a shaded park filled with elderly Cantonese practicing martial arts, playing Chinese chess, and walking songbirds in ornamental cages. It\'s a beautiful, meditative scene. Visit the adjacent Old Protestant Cemetery where early Western missionaries and traders are buried. Grab a dan tat (egg tart) and coffee from a nearby bakery.',
+          tip: 'Camões Garden is most alive between 7–9am — arrive early to see the tai chi groups and birdcage walkers in full flow.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Souvenirs',
+          text: 'Final shopping along Rua de S. Paulo and Rua da Felicidade for almond cookies, egg rolls, and pork jerky — Macau\'s classic souvenirs. Koi Kei and Choi Heong both offer beautifully packaged gift boxes from MOP$50. Visit the Macau Design Centre in Taipa for contemporary local crafts. Pack your bags and make one last egg tart run — you\'ll miss them tomorrow.',
+          tip: 'Koi Kei\'s gift boxes are vacuum-sealed and last 2–3 weeks — they make perfect lightweight souvenirs for home.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset & Farewell',
+          text: 'Final evening walk along the Macau-Taipa waterfront promenade with views of the glittering Cotai Strip. Watch the Wynn Palace fountain show one last time. For a farewell meal, grab a pork chop bun and milk tea from Tai Lei Loi Kei — the flavours that define Macau in every bite. This tiny territory packs more history, food, and culture per square kilometre than anywhere on earth.',
+          tip: 'If departing via the Hong Kong-Zhuhai-Macau Bridge bus, the night crossing offers spectacular bridge-lit views of the Pearl River.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free casino transport', text: 'Free shuttle buses run from the ferry terminal and border gates to every major casino resort. Use them as free transport across the Cotai Strip and back — no need for taxis or buses.' },
+  { title: 'Casino food courts', text: 'The Venetian food court has Michelin-recommended noodles from MOP$40. Casino food courts are subsidised to keep gamblers inside — take advantage of the low prices without gambling.' },
+  { title: 'HKD accepted everywhere', text: 'Hong Kong dollars are accepted at par (1:1) in Macau, even though MOP is worth slightly less. Use HKD if you\'re coming from Hong Kong — no need to exchange currency.' },
+  { title: 'Free heritage sites', text: 'Almost all UNESCO sites are free: Ruins of St. Paul\'s, Monte Fort, A-Ma Temple, Mandarin\'s House, Guia Fortress, churches, and the entire Historic Centre. Macau\'s best attractions cost nothing.' },
+  { title: 'Bus system is cheap', text: 'Macau\'s bus system covers the entire territory for MOP$3.20–6.40 per ride. Use Macau Pass (MOP$130 incl. MOP$100 credit) for tap-and-go convenience on all buses.' },
+  { title: 'Stay in Macau Peninsula', text: 'Hotels on the Macau Peninsula are significantly cheaper than Cotai casino resorts. Guesthouses and budget hotels from MOP$250–400/night with easy bus access to the Strip.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'MOP$250–450', midrange: 'MOP$600–1,200', splurge: 'MOP$2,000+', notes: 'Guesthouses → 3-star hotels → casino resorts' },
+  { category: 'Food', budget: 'MOP$100–160', midrange: 'MOP$200–350', splurge: 'MOP$600+', notes: 'Street food & cha chaan teng → local restaurants → fine dining' },
+  { category: 'Transport', budget: 'MOP$15–30', midrange: 'MOP$40–80', splurge: 'MOP$150+', notes: 'Buses & free shuttles → taxis → private car' },
+  { category: 'Activities', budget: 'MOP$0–50', midrange: 'MOP$100–300', splurge: 'MOP$500+', notes: 'Free UNESCO sites → towers & shows → bungee & gambling' },
+  { category: 'Drinks', budget: 'MOP$20–50', midrange: 'MOP$80–150', splurge: 'MOP$300+', notes: 'Convenience store beer → local bars → casino lounges' },
+  { category: 'Daily Total', budget: 'MOP$385–740', midrange: 'MOP$1,020–2,080', splurge: 'MOP$3,550+', notes: '$48–92 → $127–258 → $441+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities get 30–90 days visa-free. Macau has separate immigration from mainland China and Hong Kong',
+      'Entry from Hong Kong: TurboJET ferry (1 hour, MOP$175) or Hong Kong-Zhuhai-Macau Bridge bus (45 min, MOP$65)',
+      'Entry from mainland China: walk across the Portas do Cerco / Gongbei border gate (separate China visa required)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Tap water is safe but bottled is preferred. Macau has excellent hospitals',
+      'Extremely safe — one of the lowest crime rates in the world. Casinos have heavy security everywhere',
+      'Summer (Jun–Sep) is hot, humid, and typhoon-prone. Typhoon signal 8+ means everything shuts down',
+    ],
+  },
+  {
+    icon: '🚌',
+    title: 'Getting Around',
+    items: [
+      'Macau is tiny — you can walk across the peninsula in 30 minutes. Buses cover the entire territory for MOP$3.20–6.40',
+      'Free casino shuttle buses are the best transport hack — routes from ferry terminal and border gates to all major resorts',
+      'Taxis are cheap (flag fall MOP$19, MOP$2/400m). Macau has no metro or rail system',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Tourist SIM cards at the ferry terminal: CTM or 3 Macau, MOP$50–100 for 1–5 days with data',
+      'Free WiFi: "wifiGO" government hotspots cover tourist areas, casinos have excellent free WiFi',
+      'Google and most Western apps work fine — Macau does not have mainland China\'s internet restrictions',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'MOP (Pataca) pegged to HKD at 1:1.03. HKD accepted everywhere at par. USD and CNY also widely accepted',
+      'Cards accepted at casinos, hotels, and larger restaurants. Carry cash for street food, buses, and small shops',
+      'ATMs are plentiful — casino lobbies have multiple. Most accept international cards with no surcharge',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Comfortable walking shoes — Macau\'s old town is hilly with cobblestone streets. Blisters are common for the unprepared',
+      'Light, breathable clothing for the subtropical climate. A light rain jacket for sudden downpours',
+      'Smart casual for upscale casino restaurants — no flip-flops or shorts. Most casinos have a basic dress code',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🎰', title: 'Casino Etiquette', text: 'Casinos are free to enter (18+ with ID). No photography on the gaming floor. Minimum bets start from MOP$100–300 at table games. If you gamble, set a strict budget — the house always wins long term.' },
+  { icon: '🙏', title: 'Temple Manners', text: 'Remove hats at temples. Don\'t step on door thresholds — step over them. Incense is often free to light. Walk clockwise around temple halls. Photography is usually fine outside prayer areas.' },
+  { icon: '🗣', title: 'Language Mix', text: 'Cantonese is the main language. Portuguese is official but rarely spoken by younger generations. English works in tourist areas and casinos. Learning "m\'goi" (thank you/excuse me) in Cantonese goes far.' },
+  { icon: '🍜', title: 'Dining Culture', text: 'Tapping two fingers on the table means "thank you" when someone pours your tea. Dim sum is meant to be shared. Don\'t flip a fish — it\'s bad luck (lift the bone off instead). Tipping is not expected.' },
+  { icon: '🇵🇹', title: 'Portuguese Heritage', text: 'Macau was Portuguese until 1999. The cuisine, architecture, and street names reflect 400 years of history. Macanese food (Portuguese-Asian fusion) is UNESCO-recognized and worth seeking out.' },
+  { icon: '📸', title: 'Photography', text: 'No photos on casino gaming floors — security will stop you. Heritage sites and street photography are fine. Avoid photographing people without asking, especially elderly residents in quieter neighbourhoods.' },
+];
+---
+
+<CityGuideLayout
+  title="Macau Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Macau guide for young travelers. 3-day itinerary covering casinos, Portuguese heritage, egg tarts, and UNESCO sites. Plan your trip with roammate."
+  heroImage="/images/guides/macau-hero.webp"
+  heroFlag="🇲🇴"
+  heroCountry="China"
+  heroRegion="East Asia"
+  heroCity="Macau"
+  heroSubtitle="Where Portuguese cobblestones meet neon casino lights, and the world's best egg tart is never more than five minutes away."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Oct – Dec Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Macau Patacas (MOP$). Macau can be surprisingly affordable if you avoid the casino tables and eat where locals do."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Macau's unique blend of Cantonese and Portuguese culture creates a one-of-a-kind atmosphere. Respecting both traditions shows cultural awareness."
+  ctaCity="Macau"
+  ctaText="Find travel companions for casino crawls, food tours, and Hong Kong day trips with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

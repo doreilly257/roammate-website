@@ -1,0 +1,1229 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getRelated, getRoutes } from '../data/guides';
+const base = import.meta.env.BASE_URL;
+
+interface Props {
+  /* SEO */
+  title: string;
+  description: string;
+  /* hero */
+  heroImage: string;
+  heroFlag: string;
+  heroCountry: string;
+  heroRegion: string;
+  heroCity: string;
+  heroSubtitle: string;
+  heroPills: string[];
+  /* data sections */
+  quickFacts: { icon: string; label: string; value: string; detail: string }[];
+  itineraries: Record<number, { num: number; title: string; periods: { time: string; icon: string; title: string; text: string; tip: string }[] }[]>;
+  defaultDays?: number;
+  budgetTips: { title: string; text: string }[];
+  budgetBreakdown: { category: string; budget: string; midrange: string; splurge: string; notes: string }[];
+  budgetIntro?: string;
+  practicalInfo: { icon: string; title: string; items: string[] }[];
+  culturalTips: { icon: string; title: string; text: string }[];
+  culturalIntro?: string;
+  /* CTA */
+  ctaCity: string;
+  ctaText: string;
+  ctaCustomise: string;
+}
+
+const {
+  title, description,
+  heroImage, heroFlag, heroCountry, heroRegion, heroCity, heroSubtitle, heroPills,
+  quickFacts, itineraries, defaultDays = 3,
+  budgetTips, budgetBreakdown, budgetIntro,
+  practicalInfo,
+  culturalTips, culturalIntro,
+  ctaCity, ctaText, ctaCustomise,
+} = Astro.props;
+
+const defaultDaysStr = String(defaultDays);
+const currentSlug = Astro.url.pathname.replace(/^\/guides\//, '').replace(/\/$/, '');
+const relatedGuides = getRelated(currentSlug, heroRegion, 6);
+const relatedRoutes = getRoutes(currentSlug);
+---
+
+<BaseLayout title={title} description={description} ogImage={heroImage}>
+  <Fragment slot="head">
+    <link rel="preload" as="image" type="image/webp" href={heroImage}>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": heroCity,
+      "description": description,
+      "image": new URL(heroImage, Astro.site).href,
+      "url": new URL(Astro.url.pathname, Astro.site).href,
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": heroCountry
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://roammate.com/guides/" },
+        { "@type": "ListItem", "position": 3, "name": heroCity, "item": new URL(Astro.url.pathname, Astro.site).href }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="guide-hero">
+    <div class="guide-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${heroImage}');`}></div>
+    <div class="guide-hero-content">
+      <div class="guide-hero-breadcrumb">
+        <a href="/guides">Guides</a>
+        <span>/</span>
+        <span>{heroRegion}</span>
+      </div>
+      <div class="guide-hero-tag">
+        <span class="guide-hero-flag">{heroFlag}</span>
+        <span>{heroCountry}</span>
+      </div>
+      <h1 class="guide-hero-title">{heroCity}</h1>
+      <p class="guide-hero-subtitle">{heroSubtitle}</p>
+      <div class="guide-hero-meta">
+        {heroPills.map((pill) => (
+          <span class="guide-meta-pill">{pill}</span>
+        ))}
+      </div>
+    </div>
+    <div class="guide-hero-scroll">
+      <span>Explore</span>
+      <div class="guide-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Quick Facts -->
+  <section class="guide-facts reveal">
+    <div class="guide-facts-grid">
+      {quickFacts.map((f) => (
+        <div class="guide-fact">
+          <span class="guide-fact-icon">{f.icon}</span>
+          <div>
+            <div class="guide-fact-label">{f.label}</div>
+            <div class="guide-fact-value">{f.value}</div>
+            <div class="guide-fact-detail">{f.detail}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Duration Toggle -->
+  <section class="guide-duration reveal" id="itinerary">
+    <div class="guide-duration-inner">
+      <span class="guide-duration-label">How long are you staying?</span>
+      <div class="guide-duration-toggle">
+        {Object.keys(itineraries).map((d) => (
+          <button class={`guide-duration-btn ${d === defaultDaysStr ? 'active' : ''}`} data-days={d}>{d === '1' ? '1 Day' : `${d} Days`}</button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Itinerary -->
+  <section class="guide-itinerary">
+    {Object.entries(itineraries).map(([duration, daysData]) => (
+      <div class={`guide-itinerary-variant ${duration === defaultDaysStr ? 'active' : ''}`} data-itinerary={duration}>
+        <div class="guide-section-header reveal">
+          <div class="section-label">Your Itinerary</div>
+          <h2 class="section-heading">{duration === '1' ? '1 day' : `${duration} days`} in <em>{heroCity}</em></h2>
+          <p class="guide-section-intro">{
+            duration === '1'
+              ? `Only got 24 hours? Here's how to experience the best of ${heroCity} in a single action-packed day.`
+              : duration === '3'
+              ? `A carefully curated route mixing iconic landmarks, hidden gems, street food, culture, and adventure — designed for younger travelers.`
+              : `A full week to go deep — from famous landmarks to local neighbourhoods, day trips, hidden gems, and proper local immersion.`
+          }</p>
+        </div>
+
+        {daysData.map((day) => (
+          <div class="guide-day reveal">
+            <div class="guide-day-header">
+              <div class="guide-day-number">Day {day.num}</div>
+              <h3 class="guide-day-title">{day.title}</h3>
+            </div>
+            <div class="guide-day-periods">
+              {day.periods.map((p) => (
+                <div class="guide-period">
+                  <div class="guide-period-time">
+                    <span class="guide-period-icon">{p.icon}</span>
+                    <span>{p.time}</span>
+                  </div>
+                  <div class="guide-period-content">
+                    <h4 class="guide-period-title">{p.title}</h4>
+                    <p class="guide-period-text">{p.text}</p>
+                    <div class="guide-period-tip">
+                      <strong>Tip:</strong> {p.tip}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    ))}
+  </section>
+
+  <!-- Budget Tips -->
+  <section class="guide-budget" id="budget">
+    <div class="guide-section-header reveal">
+      <div class="section-label">Save Money</div>
+      <h2 class="section-heading">Budget <em>tips</em></h2>
+    </div>
+    <div class="guide-budget-grid">
+      {budgetTips.map((tip, i) => (
+        <div class={`guide-budget-card reveal reveal-delay-${(i % 4) + 1}`}>
+          <h4 class="guide-budget-title">{tip.title}</h4>
+          <p class="guide-budget-text">{tip.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Budget Breakdown -->
+  <section class="guide-breakdown" id="breakdown">
+    <div class="guide-section-header reveal">
+      <div class="section-label">Money</div>
+      <h2 class="section-heading">Budget <em>breakdown</em></h2>
+      {budgetIntro && <p class="guide-section-intro">{budgetIntro}</p>}
+    </div>
+    <div class="guide-breakdown-table reveal">
+      <div class="guide-breakdown-header-row">
+        <div class="guide-breakdown-cell guide-breakdown-label"></div>
+        <div class="guide-breakdown-cell guide-breakdown-tier">🎒 Budget</div>
+        <div class="guide-breakdown-cell guide-breakdown-tier">✨ Mid-Range</div>
+        <div class="guide-breakdown-cell guide-breakdown-tier">💎 Splurge</div>
+      </div>
+      {budgetBreakdown.map((row) => (
+        <div class={`guide-breakdown-row ${row.category === 'Daily Total' ? 'guide-breakdown-total' : ''}`}>
+          <div class="guide-breakdown-cell guide-breakdown-label">
+            {row.category}
+            <span class="guide-breakdown-notes">{row.notes}</span>
+          </div>
+          <div class="guide-breakdown-cell">{row.budget}</div>
+          <div class="guide-breakdown-cell">{row.midrange}</div>
+          <div class="guide-breakdown-cell">{row.splurge}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Practical Info -->
+  <section class="guide-practical" id="practical">
+    <div class="guide-section-header reveal">
+      <div class="section-label">Essentials</div>
+      <h2 class="section-heading">Practical <em>info</em></h2>
+    </div>
+    <div class="guide-practical-grid">
+      {practicalInfo.map((info, i) => (
+        <div class={`guide-practical-card reveal reveal-delay-${(i % 4) + 1}`}>
+          <span class="guide-practical-icon">{info.icon}</span>
+          <h4 class="guide-practical-title">{info.title}</h4>
+          <ul class="guide-practical-list">
+            {info.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Cultural Tips -->
+  <section class="guide-culture" id="culture">
+    <div class="guide-section-header reveal">
+      <div class="section-label">Know Before You Go</div>
+      <h2 class="section-heading">Cultural <em>tips</em></h2>
+      {culturalIntro && <p class="guide-section-intro">{culturalIntro}</p>}
+    </div>
+    <div class="guide-culture-grid">
+      {culturalTips.map((tip, i) => (
+        <div class={`guide-culture-card reveal reveal-delay-${(i % 4) + 1}`}>
+          <span class="guide-culture-icon">{tip.icon}</span>
+          <h4 class="guide-culture-title">{tip.title}</h4>
+          <p class="guide-culture-text">{tip.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Related Guides -->
+  {relatedGuides.length > 0 && (
+    <section class="guide-related reveal">
+      <div class="guide-section-header">
+        <div class="section-label">Keep Exploring</div>
+        <h2 class="section-heading">More in <em>{heroRegion}</em></h2>
+      </div>
+      <div class="guide-related-grid">
+        {relatedGuides.map((g) => (
+          <a href={`/guides/${g.slug}/`} class="guide-related-card">
+            <span class="guide-related-flag">{g.flag}</span>
+            <div class="guide-related-info">
+              <span class="guide-related-name">{g.name}</span>
+              <span class="guide-related-country">{g.country}</span>
+            </div>
+            <span class="guide-related-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Backpacker Routes -->
+  {relatedRoutes.length > 0 && (
+    <section class="guide-routes reveal">
+      <div class="guide-section-header">
+        <div class="section-label">Multi-Week Travel</div>
+        <h2 class="section-heading"><em>{heroCity}</em> is on these routes</h2>
+      </div>
+      <div class="guide-routes-list">
+        {relatedRoutes.map((r) => (
+          <a href={`/guides/${r.slug}/`} class="guide-route-link">
+            <span class="guide-route-flags">{r.flags}</span>
+            <span class="guide-route-name">{r.name} Backpacker Route</span>
+            <span class="guide-route-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="guide-cta reveal">
+    <div class="guide-cta-inner">
+      <h2 class="guide-cta-heading">Heading to <em>{ctaCity}</em>?</h2>
+      <p class="guide-cta-text">{ctaText}</p>
+      <div class="guide-cta-downloads">
+        <a href="#" class="badge-link"><img src={`${base}images/app-store-badge.svg`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
+        <a href="#" class="badge-link"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="646" height="250" loading="lazy"></a>
+      </div>
+      <p class="guide-cta-customise">{ctaCustomise}</p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ========================
+     HERO
+     ======================== */
+  .guide-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 40px 80px;
+    overflow: hidden;
+  }
+
+  .guide-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .guide-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .guide-hero-breadcrumb {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.3s forwards;
+  }
+
+  .guide-hero-breadcrumb a {
+    color: rgba(245, 240, 232, 0.6);
+    transition: color 0.3s;
+  }
+
+  .guide-hero-breadcrumb a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .guide-hero-breadcrumb span {
+    margin: 0 8px;
+  }
+
+  .guide-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-terracotta-light);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.5s forwards;
+  }
+
+  .guide-hero-flag {
+    font-size: 24px;
+  }
+
+  .guide-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(64px, 12vw, 140px);
+    font-weight: 900;
+    line-height: 0.9;
+    color: #f5f0e8;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s var(--ease-out-expo) 0.7s forwards;
+  }
+
+  .guide-hero-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.7);
+    max-width: 500px;
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.9s forwards;
+  }
+
+  .guide-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 1.1s forwards;
+  }
+
+  .guide-meta-pill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.8);
+    padding: 8px 16px;
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    border-radius: 100px;
+  }
+
+  .guide-hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
+  }
+
+  .guide-hero-scroll span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    writing-mode: vertical-rl;
+  }
+
+  .guide-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: rgba(245, 240, 232, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guide-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-terracotta);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  /* ========================
+     QUICK FACTS
+     ======================== */
+  .guide-facts {
+    padding: 80px 40px;
+    background: var(--color-bg-warm);
+  }
+
+  .guide-facts-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 32px;
+  }
+
+  .guide-fact {
+    text-align: center;
+  }
+
+  .guide-fact-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .guide-fact-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .guide-fact-value {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 4px;
+  }
+
+  .guide-fact-detail {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 300;
+  }
+
+  /* ========================
+     DURATION TOGGLE
+     ======================== */
+  .guide-duration {
+    padding: 0 40px;
+    max-width: 900px;
+    margin: 80px auto 0;
+  }
+
+  .guide-duration-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 28px;
+    background: var(--color-bg-warm);
+    border-radius: 8px;
+  }
+
+  .guide-duration-label {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-cream);
+  }
+
+  .guide-duration-toggle {
+    display: flex;
+    gap: 6px;
+    background: var(--color-bg);
+    padding: 4px;
+    border-radius: 100px;
+  }
+
+  .guide-duration-btn {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .guide-duration-btn:hover {
+    color: var(--color-cream);
+  }
+
+  .guide-duration-btn.active {
+    background: var(--color-terracotta);
+    color: #fff;
+  }
+
+  /* ========================
+     ITINERARY VARIANTS
+     ======================== */
+  .guide-itinerary-variant {
+    display: none;
+  }
+
+  .guide-itinerary-variant.active {
+    display: block;
+  }
+
+  /* ========================
+     ITINERARY
+     ======================== */
+  .guide-itinerary {
+    padding: 60px 40px 120px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .guide-section-header {
+    margin-bottom: 64px;
+  }
+
+  .guide-section-intro {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .guide-day {
+    margin-bottom: 80px;
+    position: relative;
+  }
+
+  .guide-day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .guide-day-number {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    white-space: nowrap;
+  }
+
+  .guide-day-title {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: 1.2;
+  }
+
+  .guide-day-periods {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 24px;
+    border-left: 2px solid rgba(196, 86, 42, 0.15);
+  }
+
+  .guide-period {
+    position: relative;
+  }
+
+  .guide-period::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-terracotta);
+    border: 2px solid var(--color-bg);
+  }
+
+  .guide-period-time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 12px;
+  }
+
+  .guide-period-icon {
+    font-size: 16px;
+  }
+
+  .guide-period-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+  }
+
+  .guide-period-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .guide-period-tip {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    padding: 14px 18px;
+    background: var(--color-bg-warm);
+    border-left: 3px solid var(--color-terracotta);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .guide-period-tip strong {
+    color: var(--color-terracotta);
+    font-weight: 600;
+  }
+
+  /* ========================
+     BUDGET TIPS
+     ======================== */
+  .guide-budget {
+    padding: 120px 40px;
+    background: var(--color-bg-warm);
+  }
+
+  .guide-budget-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .guide-budget-card {
+    background: var(--color-bg);
+    padding: 32px;
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .guide-budget-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .guide-budget-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+    text-transform: capitalize;
+  }
+
+  .guide-budget-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+  }
+
+  /* ========================
+     BUDGET BREAKDOWN TABLE
+     ======================== */
+  .guide-breakdown {
+    padding: 120px 40px;
+  }
+
+  .guide-breakdown-table {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-bg-warm);
+  }
+
+  .guide-breakdown-header-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    background: var(--color-cream);
+    color: var(--color-bg);
+  }
+
+  .guide-breakdown-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .guide-breakdown-row:last-child {
+    border-bottom: none;
+  }
+
+  .guide-breakdown-total {
+    background: rgba(196, 86, 42, 0.06);
+  }
+
+  .guide-breakdown-total .guide-breakdown-label {
+    font-weight: 700;
+    color: var(--color-cream);
+  }
+
+  .guide-breakdown-total .guide-breakdown-cell {
+    color: var(--color-terracotta);
+    font-weight: 700;
+  }
+
+  .guide-breakdown-cell {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--color-cream-muted);
+  }
+
+  .guide-breakdown-label {
+    font-weight: 600;
+    color: var(--color-cream);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .guide-breakdown-notes {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+  }
+
+  .guide-breakdown-tier {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-bg);
+    padding: 14px 20px;
+  }
+
+  /* ========================
+     PRACTICAL INFO
+     ======================== */
+  .guide-practical {
+    padding: 120px 40px;
+    background: var(--color-bg-warm);
+  }
+
+  .guide-practical-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .guide-practical-card {
+    padding: 32px;
+    background: var(--color-bg);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .guide-practical-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .guide-practical-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .guide-practical-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 16px;
+  }
+
+  .guide-practical-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .guide-practical-list li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .guide-practical-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-terracotta);
+    opacity: 0.5;
+  }
+
+  /* ========================
+     CULTURAL TIPS
+     ======================== */
+  .guide-culture {
+    padding: 120px 40px;
+  }
+
+  .guide-culture-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .guide-culture-card {
+    padding: 32px;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .guide-culture-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .guide-culture-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .guide-culture-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+  }
+
+  .guide-culture-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+  }
+
+  /* ========================
+     CTA
+     ======================== */
+  .guide-cta {
+    padding: 120px 40px;
+    background: #0f0f0f;
+    text-align: center;
+  }
+
+  .guide-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .guide-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    color: #f5f0e8;
+    margin-bottom: 20px;
+    line-height: 1.15;
+  }
+
+  .guide-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .guide-cta-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.65);
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  .guide-cta-downloads {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .badge-link {
+    display: block;
+    transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
+  }
+
+  .badge-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+  }
+
+  .store-badge {
+    height: 52px;
+    width: auto;
+  }
+
+  /* Google Play PNG has built-in padding — scale it up to match App Store visually */
+  img[alt*="Google Play"].store-badge {
+    height: 76px;
+    margin: -12px 0;
+  }
+
+  .guide-cta-customise {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245, 240, 232, 0.4);
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 32px;
+  }
+
+  /* ========================
+     RELATED GUIDES
+     ======================== */
+  .guide-related {
+    padding: 120px 40px;
+    background: var(--color-bg-warm);
+  }
+
+  .guide-related-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .guide-related-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    background: var(--color-bg);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s var(--ease-out-expo);
+  }
+
+  .guide-related-card:hover {
+    background: rgba(196, 86, 42, 0.08);
+    transform: translateX(4px);
+  }
+
+  .guide-related-flag {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .guide-related-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .guide-related-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-cream);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .guide-related-country {
+    font-size: 12px;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+  }
+
+  .guide-related-arrow {
+    color: var(--color-terracotta);
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .guide-related-card:hover .guide-related-arrow {
+    transform: translateX(4px);
+  }
+
+  /* ========================
+     BACKPACKER ROUTES
+     ======================== */
+  .guide-routes {
+    padding: 80px 40px;
+    background: #111;
+  }
+
+  .guide-routes .guide-section-header {
+    max-width: 900px;
+    margin: 0 auto 32px;
+    text-align: center;
+  }
+
+  .guide-routes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .guide-route-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .guide-route-link:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.18);
+  }
+
+  .guide-route-flags { font-size: 20px; flex-shrink: 0; }
+
+  .guide-route-name {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .guide-route-arrow {
+    font-size: 14px;
+    color: rgba(255,255,255,0.35);
+    flex-shrink: 0;
+  }
+
+  /* ========================
+     RESPONSIVE
+     ======================== */
+  @media (max-width: 1024px) {
+    .guide-hero { padding: 0 24px 60px; }
+    .guide-facts { padding: 60px 24px; }
+    .guide-facts-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .guide-duration { padding: 0 24px; margin-top: 60px; }
+    .guide-itinerary { padding: 40px 24px 80px; }
+    .guide-budget { padding: 80px 24px; }
+    .guide-budget-grid { grid-template-columns: repeat(2, 1fr); }
+    .guide-breakdown { padding: 80px 24px; }
+    .guide-practical { padding: 80px 24px; }
+    .guide-practical-grid { grid-template-columns: repeat(2, 1fr); }
+    .guide-culture { padding: 80px 24px; }
+    .guide-culture-grid { grid-template-columns: repeat(2, 1fr); }
+    .guide-related { padding: 80px 24px; }
+    .guide-related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .guide-hero { padding: 0 20px 40px; min-height: 90vh; }
+    .guide-hero-title { font-size: clamp(56px, 18vw, 100px); }
+    .guide-hero-scroll { display: none; }
+    .guide-facts { padding: 40px 20px; }
+    .guide-facts-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .guide-duration { padding: 0 20px; margin-top: 40px; }
+    .guide-duration-inner { flex-direction: column; gap: 16px; text-align: center; padding: 20px; }
+    .guide-itinerary { padding: 40px 20px 60px; }
+    .guide-day-header { flex-direction: column; gap: 8px; }
+    .guide-day-periods { padding-left: 20px; }
+    .guide-period::before { left: -25px; }
+    .guide-budget { padding: 60px 20px; }
+    .guide-budget-grid { grid-template-columns: 1fr; }
+    .guide-breakdown { padding: 60px 20px; }
+    .guide-breakdown-header-row,
+    .guide-breakdown-row { grid-template-columns: 1.2fr 1fr 1fr 1fr; }
+    .guide-breakdown-cell { padding: 12px 10px; font-size: 12px; }
+    .guide-breakdown-tier { font-size: 11px; padding: 12px 10px; }
+    .guide-breakdown-notes { display: none; }
+    .guide-practical { padding: 60px 20px; }
+    .guide-practical-grid { grid-template-columns: 1fr; }
+    .guide-culture { padding: 60px 20px; }
+    .guide-culture-grid { grid-template-columns: 1fr; }
+    .guide-related { padding: 60px 20px; }
+    .guide-related-grid { grid-template-columns: 1fr; }
+    .guide-cta { padding: 80px 20px; }
+    .guide-cta-downloads { flex-direction: column; }
+    .guide-section-header { margin-bottom: 40px; }
+  }
+</style>
+
+<script>
+  const btns = document.querySelectorAll('.guide-duration-btn');
+  const variants = document.querySelectorAll('.guide-itinerary-variant');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const days = btn.dataset.days;
+
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      variants.forEach(v => {
+        v.classList.toggle('active', v.dataset.itinerary === days);
+      });
+
+      // Re-trigger reveal animations for newly visible elements
+      const active = document.querySelector(`.guide-itinerary-variant[data-itinerary="${days}"]`);
+      if (active) {
+        active.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+          );
+          observer.observe(el);
+        });
+      }
+    });
+  });
+</script>

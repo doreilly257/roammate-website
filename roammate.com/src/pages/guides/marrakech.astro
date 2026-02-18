@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'MAD (Dirham)', detail: '1 USD ≈ 10 MAD' },
+  { icon: '🗣', label: 'Language', value: 'Arabic / French', detail: 'French widely spoken, some English' },
+  { icon: '🕐', label: 'Timezone', value: 'WET (UTC+1)', detail: 'No daylight saving since 2018' },
+  { icon: '☀️', label: 'Best Months', value: 'Mar – May, Sep – Nov', detail: '20–30°C, warm & pleasant' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–65 USD', detail: '400–650 MAD budget' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free many', detail: 'EU, US, UK, etc. 90 days visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Marrakech in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bahia Palace & Medina Souks',
+          text: 'Start at Bahia Palace (70 MAD) — a stunning 19th-century palace with intricate zellige tilework, carved cedar ceilings, and peaceful courtyards filled with orange and banana trees. Then plunge into the medina souks — a labyrinth of narrow alleys bursting with leather goods, carpets, lanterns, spices, and Berber jewellery. Get deliberately lost. Breakfast at a medina café — msemen (flatbread) with honey and mint tea (20–30 MAD).',
+          tip: 'Entering the souks from Bahia Palace means you approach from the quieter side — fewer touts and a more authentic start.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jardin Majorelle & Gueliz',
+          text: 'Taxi (20–30 MAD) to Jardin Majorelle (150 MAD) — the cobalt-blue Art Deco garden created by Jacques Majorelle and later owned by Yves Saint Laurent. Cacti, bamboo groves, and the electric blue of the buildings are impossibly photogenic. The YSL Museum next door (100 MAD) is world-class. Walk through the Gueliz neighbourhood — the French colonial new town with cafes, galleries, and boutiques along Avenue Mohammed V.',
+          tip: 'Visit Majorelle at opening time (8am) or after 4pm — midday is packed with tour groups. The museum has changing exhibitions.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jemaa el-Fnaa & Rooftop Dinner',
+          text: 'As the sun sets, Jemaa el-Fnaa square erupts into life — snake charmers, musicians, acrobats, henna artists, and dozens of smoke-billowing food stalls. Eat at the food stalls — grilled meats, snail soup, fried fish (30–60 MAD for a full meal). Then climb to a rooftop terrace at Café Glacier or Nomad for panoramic views over the square buzzing below. Mint tea and shisha as the night unfolds.',
+          tip: 'The food stalls are safe and delicious — stall 14 and stall 1 have the best reputations. Point at what looks good and sit down.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Palaces, Souks & the Medina',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bahia Palace & Saadian Tombs',
+          text: 'Start at Bahia Palace (70 MAD) — intricate zellige tilework, carved cedar ceilings, and serene courtyards. Then walk to the nearby Saadian Tombs (70 MAD) — a hidden royal necropolis from the 16th century, walled up for centuries and only rediscovered in 1917. The Hall of Twelve Columns with its Italian Carrara marble and cedarwood dome is extraordinary. Breakfast at Café des Épices on Rahba Kedima (30–50 MAD).',
+          tip: 'Visit the Saadian Tombs at opening (9am) before tour buses arrive. The small chambers fill up quickly — early visitors get unobstructed views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Medina Souks — Deep Dive',
+          text: 'Plunge into the medina souks — each neighbourhood specialises in different crafts. The leather souk (Souk Cherratine) is pungent and fascinating. The carpet souk (Souk des Tapis) is a world of Berber patterns. The metalwork souk (Souk Haddadine) rings with hammers. Haggling is expected and part of the experience. Lunch at a hidden riad restaurant — Dar Cherifa for traditional pastilla and tagine (120–180 MAD).',
+          tip: 'Start at 50% of the asking price and work up. Never accept the first price. Walking away is the strongest negotiating move.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jemaa el-Fnaa & Night Market',
+          text: 'As sunset approaches, Jemaa el-Fnaa transforms from a daytime market into the world\'s most spectacular open-air theatre. Musicians, storytellers, snake charmers, and acrobats perform as the food stalls fire up. Eat at the stalls — brochettes, merguez sausages, harira soup, snail soup, and fresh-squeezed orange juice (5 MAD). Then a rooftop mint tea at Le Grand Balcon overlooking the chaos.',
+          tip: 'Orange juice sellers line the square — always 5 MAD per glass. The ones in the centre are better quality than the edges.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Gardens, Art & the New City',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jardin Majorelle & YSL Museum',
+          text: 'Taxi to Jardin Majorelle (150 MAD) — the cobalt-blue Art Deco garden with cacti, bougainvillea, and bamboo groves. Created by Jacques Majorelle in the 1920s and restored by Yves Saint Laurent. The electric blue buildings against the green foliage are mesmerising. The Berber Museum inside (30 MAD extra) is excellent. Then visit the Musée Yves Saint Laurent next door (100 MAD) — a stunning building showcasing the designer\'s work.',
+          tip: 'Visit at 8am opening or after 4pm. The morning light in the garden is best for photos. Buy combo tickets online to skip the queue.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gueliz & Le Jardin Secret',
+          text: 'Walk through Gueliz, the French-built new town — wide boulevards, Art Deco buildings, contemporary galleries, and pavement cafes. Lunch at Grand Café de la Poste (120–200 MAD) — a colonial-era brasserie with a beautiful terrace. Then return to the medina for Le Jardin Secret (60 MAD) — a beautifully restored riad garden with Islamic geometric water channels and views from the tower.',
+          tip: 'Le Jardin Secret\'s tower offers the best panoramic view of the medina rooftops with the Atlas Mountains behind — climb it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Hammam & Riad Dinner',
+          text: 'Experience a traditional hammam — Les Bains de Marrakech or Heritage Spa offer tourist-friendly versions (300–500 MAD for scrub, mask, and massage). It\'s a deeply relaxing ritual: steam room, black soap scrub, ghassoul clay mask. Dinner at your riad (many serve evening meals for 200–350 MAD) or at Al Fassia — a women-run restaurant with outstanding Moroccan cuisine.',
+          tip: 'Heritage Spa in the medina is excellent — less commercial than luxury hotel hammams. Book a late afternoon slot to arrive relaxed for dinner.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Atlas Mountains Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ourika Valley',
+          text: 'Book a day trip to the Ourika Valley in the High Atlas Mountains (shared transport 200–300 MAD, or private taxi 500–800 MAD round trip). The valley is 60km from Marrakech — terraced Berber villages cling to green hillsides along a rushing river. Visit a Berber family home for mint tea and learn about traditional mountain life. The seven waterfalls of Setti Fatma involve a 1.5-hour hike along the river.',
+          tip: 'The Ourika Valley is 15°C cooler than Marrakech — bring a jacket. The Berber villages are photogenic but always ask before photographing people.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Berber Lunch & Waterfalls',
+          text: 'Lunch at one of the riverside restaurants in Setti Fatma — tables set on platforms over the rushing water. Tagine with chicken and preserved lemons (80–120 MAD) in a stunning mountain setting. The cascade hike requires a local guide (50 MAD) and scrambling over wet rocks. The reward is a series of dramatic waterfalls in a narrow canyon. Return to Marrakech by late afternoon.',
+          tip: 'The river restaurants with platforms over the water are the experience — choose one with good shade and happy locals already eating.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Night in Marrakech',
+          text: 'Final evening in the medina. Walk through Jemaa el-Fnaa one last time — the sensory overload never gets old. Splurge dinner at Dar Yacout (700–1,000 MAD) — a legendary multi-course Moroccan feast in a palatial riad with a candlelit rooftop. Or keep it budget at the food stalls. End with mint tea at a rooftop café overlooking the Atlas Mountains glowing in the last light.',
+          tip: 'Dar Yacout requires reservations at least a day ahead. Dress up — it\'s a special occasion restaurant. The rooftop after dinner is magical.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Palaces, Souks & the Medina',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bahia Palace & Saadian Tombs',
+          text: 'Start at Bahia Palace (70 MAD) — a 19th-century masterpiece of Islamic architecture with zellige tilework, carved stucco, and painted cedar ceilings. Walk to the Saadian Tombs (70 MAD) — a royal necropolis hidden for centuries, rediscovered in 1917. The Hall of Twelve Columns is extraordinary. Breakfast at Café des Épices on Rahba Kedima (30–50 MAD) — excellent people-watching.',
+          tip: 'Visit the Saadian Tombs at 9am opening before tour buses. The small chambers fill quickly — early visitors get unobstructed views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Medina Souks Immersion',
+          text: 'Plunge into the souks. The leather souk (Souk Cherratine) is pungent with tanning vats. The carpet souk showcases Berber patterns. The metalwork souk rings with craftsmen. Each alley reveals a new speciality — slippers, lanterns, spices, jewellery. Haggling is expected. Lunch at a riad restaurant — Dar Cherifa serves pastilla and tagine in a 16th-century riad (120–180 MAD).',
+          tip: 'Start at 50% of asking price. Walking away is the strongest negotiating move. Never accept the first or second price offered.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jemaa el-Fnaa at Night',
+          text: 'Jemaa el-Fnaa erupts at sunset — musicians, acrobats, storytellers, snake charmers, and the famous food stalls. Eat at the stalls: brochettes, harira soup, grilled fish, snail soup, fresh orange juice (5 MAD). The atmosphere is intoxicating — smoke, music, drumming, and thousands of people. Rooftop mint tea at Café Glacier or Nomad with views over the square.',
+          tip: 'The food stalls are safe — stalls 14 and 1 are the most popular. Point at what looks good. A full meal costs 30–60 MAD.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Gardens, Art & the Nouvelle Ville',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jardin Majorelle & YSL Museum',
+          text: 'Taxi to Jardin Majorelle (150 MAD) — the cobalt-blue Art Deco garden is Marrakech\'s most iconic sight. Created by Jacques Majorelle in the 1920s and restored by Yves Saint Laurent. Cacti, bamboo groves, and the electric blue buildings are impossibly photogenic. The Musée Yves Saint Laurent next door (100 MAD) showcases decades of haute couture in a stunning modern building.',
+          tip: 'Visit at 8am opening for empty paths and perfect photography light. Buy combo tickets online at jardinmajorelle.com.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gueliz & Contemporary Art',
+          text: 'Walk through Gueliz — the French-built new town with Art Deco buildings, contemporary galleries, and pavement cafes. Lunch at Grand Café de la Poste (120–200 MAD) in a gorgeous colonial building. Visit MACMA (Musée d\'Art et de Culture de Marrakech) or the David Bloch Gallery for contemporary Moroccan and international art. The contrast with the medina is striking.',
+          tip: 'Gueliz is where young Marrakchis hang out. The café culture on Avenue Mohammed V is vibrant and less touristy than the medina.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Hammam Experience',
+          text: 'Experience a traditional hammam — Heritage Spa or Les Bains de Marrakech (300–500 MAD). The ritual: steam room, black soap scrub with a kessa glove, rhassoul clay mask, massage. It\'s deeply cleansing and relaxing. Then dinner at Le Jardin — a beautiful restaurant in the medina with a garden courtyard, serving modern Moroccan cuisine (120–200 MAD mains).',
+          tip: 'Heritage Spa in the medina is tourist-friendly but authentic. Book the late afternoon slot and arrive post-hammam at dinner perfectly relaxed.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Hidden Medina & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tanneries & Mellah',
+          text: 'Visit the Tanneries in the Bab Debbagh area — vats of coloured dye where leather is still treated using medieval methods. The smell is intense (you\'ll be given mint to hold to your nose) but the visual is extraordinary. Then explore the Mellah (Jewish Quarter) — the market here is more local and less touristy. Visit the Lazama Synagogue and the Miara Jewish Cemetery.',
+          tip: 'The tanneries require a guide to navigate (150–200 MAD). The rooftop leather shops above offer free views — buying leather is optional.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Le Jardin Secret & Ben Youssef',
+          text: 'Visit Le Jardin Secret (60 MAD) — a restored riad garden with Islamic water channels and a tower with panoramic medina views. Then walk to the Ben Youssef area — the old theological quarter. The Ben Youssef Madrasa, when open, is one of the most beautiful Islamic buildings in North Africa. Lunch at Nomad (100–170 MAD) — modern Moroccan food with stunning terrace views over the medina.',
+          tip: 'The tower at Le Jardin Secret has the best panoramic view of the medina rooftops with the Atlas Mountains behind.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cooking Class & Riad Dinner',
+          text: 'Join an evening Moroccan cooking class (300–500 MAD) — learn to make tagine, pastilla, and Moroccan salads with a local chef in a medina riad kitchen. Most classes include a market visit to buy ingredients. You eat what you cook. Alternatively, dinner at Al Fassia — a legendary women-run restaurant with traditional Moroccan dishes. Slow-cooked lamb tangia is their speciality.',
+          tip: 'Cooking classes sell out — book 2–3 days ahead. Souk Cuisine and Atelier de Cuisine run excellent half-day sessions.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Atlas Mountains Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Ourika Valley',
+          text: 'Book a day trip to the Ourika Valley in the High Atlas (shared transport 200–300 MAD, private taxi 500–800 MAD round trip). The valley is 60km south — terraced Berber villages cling to green hillsides along a rushing river. Visit a Berber family for mint tea and a glimpse of mountain life. The landscape is dramatically different from the dusty medina.',
+          tip: 'The Ourika Valley is 15°C cooler than Marrakech — bring a jacket. Mondays have a traditional Berber market in Tnine Ourika.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Waterfalls & Berber Lunch',
+          text: 'Hike to the Setti Fatma waterfalls (1.5 hours, local guide 50 MAD recommended) — scrambling over wet rocks to reach cascading falls in a narrow canyon. Lunch at a riverside restaurant — tables on platforms over the rushing water. Tagine with chicken and preserved lemons (80–120 MAD) in a spectacular mountain setting. Return to Marrakech by late afternoon.',
+          tip: 'The river restaurants with platforms over the water are the experience. Choose one with happy locals already eating — that\'s the quality signal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Medina Night',
+          text: 'Return to Marrakech refreshed by the mountain air. Dinner at Dar Zellij — a beautiful riad restaurant in the medina with traditional Moroccan cuisine and live music (200–350 MAD). The courtyard setting with lanterns and rose petals is pure Marrakech romance. Walk through the illuminated lanes of the medina afterwards — the city takes on a magical quality at night.',
+          tip: 'Dar Zellij and similar riad restaurants require reservations. The multi-course Moroccan feast is the way to go — you won\'t be hungry.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Essaouira Coastal Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bus to Essaouira',
+          text: 'Take the Supratours bus from Marrakech to Essaouira (80 MAD, 3 hours) — a beautiful whitewashed coastal town with a Portuguese-built medina, working fishing harbour, and year-round Atlantic winds that attract surfers and windsurfers. The drive passes through argan tree forests where goats climb the branches. Arrive and explore the compact, car-free medina.',
+          tip: 'Book the Supratours bus a day ahead — it sells out. The 8am departure gives you a full day. Return buses leave until 5pm.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Harbour, Ramparts & Beach',
+          text: 'Walk the dramatic ramparts (skala) overlooking the Atlantic — the cannons and views featured in Game of Thrones. Visit the fishing harbour where the day\'s catch is grilled on the spot — choose your fish and eat at communal tables (60–100 MAD for a plate with salad and bread). The wide sandy beach stretches south for kilometres — walk, ride a camel (100 MAD), or try windsurfing.',
+          tip: 'The harbour fish grill is the must-eat experience — point at what you want, they grill it fresh. The sardines are incredible and cost almost nothing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Marrakech',
+          text: 'Catch the 5pm Supratours bus back to Marrakech (arrive 8pm). Before leaving, wander the Essaouira medina for Thuya wood crafts — a speciality of the town. The wind-sculpted argan wood items are unique souvenirs. Arrive in Marrakech and head to your riad for dinner, or grab food at Jemaa el-Fnaa on the way.',
+          tip: 'Essaouira is windier and cooler than Marrakech — bring a windbreaker even in summer. The town is compact and walkable.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Crafts, Culture & Palm Groves',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Artisan Workshops',
+          text: 'Visit the artisan workshops in the medina — many craftspeople welcome visitors. Watch zellige tile-cutting, leather-working, and metalwork being done by hand using techniques unchanged for centuries. The carpet cooperatives in the Mouassine quarter let you see weaving in progress. The Ensemble Artisanal near the Koutoubia has fixed-price crafts — useful for understanding fair prices before haggling in the souks.',
+          tip: 'The Ensemble Artisanal is government-run with fixed prices — use it to calibrate what things should cost before negotiating in the souks.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Palmeraie & Camel Ride',
+          text: 'Taxi (60–80 MAD) to the Palmeraie — a vast palm grove on the city\'s edge with over 100,000 date palms. Take a camel ride through the groves (200–300 MAD for 1–2 hours) — the classic Marrakech experience. Or rent a quad bike (300–500 MAD) for an adrenaline-fuelled ride through the desert terrain. The Palmeraie also has several luxury hotel pool clubs if you want a splash.',
+          tip: 'The camel ride at sunset is the most atmospheric — the light through the palm trees is beautiful. Negotiate firmly on price.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Koutoubia & Night Walk',
+          text: 'Walk past the Koutoubia Mosque — Marrakech\'s 12th-century landmark with a 77m minaret visible from across the city. Non-Muslims can\'t enter but the exterior and gardens are beautiful at night when illuminated. Dinner at Café Clock in the Kasbah area (80–150 MAD) — they\'re famous for their camel burger. Live music and storytelling evenings on Thursdays.',
+          tip: 'Café Clock\'s camel burger (100 MAD) is surprisingly good and something to tell people about. The rooftop has Koutoubia views.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Relaxation & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Morning Hammam & Spa',
+          text: 'Treat yourself to a morning hammam — Le Bain Bleu or Hammam de la Rose offer premium experiences (400–700 MAD). The ritual of steam, scrub, and massage is the perfect way to wind down a week in Marrakech. Or visit a traditional neighbourhood hammam for a more local experience (50–100 MAD — bring your own towel, black soap, and kessa glove).',
+          tip: 'Local neighbourhood hammams are authentic but basic — bring everything with you. Ask your riad host to recommend their local one.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Shopping & Souvenirs',
+          text: 'Final souvenir shopping in the souks. Best buys: Berber carpets (500–5,000+ MAD), leather babouche slippers (80–200 MAD), argan oil (100–200 MAD for pure cosmetic grade), ras el hanout spice mix (30–50 MAD), handmade lanterns, and zellige pottery. Pack carefully — fragile items travel well wrapped in scarves and clothing.',
+          tip: 'For authentic argan oil, buy from a women\'s cooperative — Amal Centre or Cooperative Feminine d\'Argan guarantee quality and fair trade.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Feast',
+          text: 'Final dinner at Dar Yacout — a legendary multi-course Moroccan feast in a palatial riad (700–1,000 MAD per person). Seven courses, candlelit courtyard, rooftop with views of the Koutoubia. Or at La Maison Arabe for an equally impressive but slightly more intimate experience. One last walk through the medina as the calls to prayer echo. Marrakech Menara Airport is 15 minutes away.',
+          tip: 'Dar Yacout requires reservations at least a day ahead. The after-dinner rooftop with the illuminated Koutoubia is the perfect farewell.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Jemaa el-Fnaa food stalls', text: 'A full meal at the night market stalls costs 30–60 MAD — brochettes, harira soup, grilled fish, and bread. Fresh orange juice is 5 MAD everywhere on the square.' },
+  { title: 'Haggle everything', text: 'In the souks, start at 30–50% of the asking price. Never accept the first or second price. Walk away and they\'ll call you back. Fixed-price at the Ensemble Artisanal for calibration.' },
+  { title: 'Riad over hotel', text: 'Budget riads in the medina cost 200–400 MAD/night including breakfast — a traditional courtyard house. Better value and more atmospheric than hotels. Book on riad-specific sites.' },
+  { title: 'Local transport', text: 'Petit taxis within the medina cost 20–30 MAD. Insist on the meter (compteur) or agree a price before getting in. Buses cost 4 MAD but are slow.' },
+  { title: 'Free attractions', text: 'Jemaa el-Fnaa, the medina souks, Koutoubia Mosque exterior, and wandering the medina lanes are all free. The real Marrakech experience is walking and absorbing.' },
+  { title: 'Supratours buses', text: 'Supratours and CTM buses are cheap and reliable — Essaouira 80 MAD, Fes 200 MAD, Casablanca 120 MAD. Book a day ahead for guaranteed seats.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '200–400 MAD', midrange: '600–1,200 MAD', splurge: '2,500+ MAD', notes: 'Budget riads → boutique riads → luxury palaces' },
+  { category: 'Food', budget: '80–150 MAD', midrange: '200–400 MAD', splurge: '800+ MAD', notes: 'Street food & stalls → riad restaurants → Dar Yacout feast' },
+  { category: 'Transport', budget: '20–50 MAD', midrange: '80–150 MAD', splurge: '300+ MAD', notes: 'Walking & petit taxi → grand taxi → private driver' },
+  { category: 'Activities', budget: '50–150 MAD', midrange: '200–500 MAD', splurge: '1,000+ MAD', notes: 'Palaces & souks → hammam & cooking class → hot air balloon' },
+  { category: 'Drinks', budget: '20–40 MAD', midrange: '60–120 MAD', splurge: '200+ MAD', notes: 'Mint tea & juice → café terraces → rooftop cocktails' },
+  { category: 'Daily Total', budget: '370–790 MAD', midrange: '1,140–2,370 MAD', splurge: '4,800+ MAD', notes: '$37–79 → $114–237 → $480+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'US, EU, UK, Canada, Australia enter visa-free for 90 days. No advance application needed — just a valid passport',
+      'Passport must be valid for 6+ months from entry. Some nationalities require a visa — check before travel',
+      'Marrakech Menara Airport (RAK) is 6km from the medina. Taxi 70–100 MAD (insist on meter or agree price before getting in)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Hepatitis A and typhoid recommended. Avoid tap water — bottled water is 5–10 MAD everywhere',
+      'Marrakech is generally safe but medina scams are common — fake guides, "my uncle\'s shop" tours, and taxi overcharging. Be firm',
+      'Summer heat (Jun–Aug) reaches 40–45°C. Carry water, wear a hat, and rest during peak hours. Medina lanes provide some shade',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'The medina is best explored on foot — it\'s car-free and compact. Petit taxis (beige) for rides outside the medina — 20–50 MAD',
+      'Grand taxis (large shared cars) for day trips — negotiate price in advance. Supratours/CTM buses for intercity travel',
+      'Airport transfer: petit taxi 70–100 MAD or airport bus 30 MAD. Avoid unofficial taxis who approach you inside the terminal',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Maroc Telecom, Orange, and Inwi sell SIMs at the airport — 50–100 MAD for 5–10GB data. Maroc Telecom has the best coverage',
+      'WiFi in most riads and cafes, though speeds vary. The medina\'s thick walls can block signals',
+      'Maps.me and Google Maps work offline — essential for navigating the medina. Download the offline map before arrival',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Moroccan Dirham (MAD). ATMs everywhere in the new city; fewer in the medina. Airport exchange rates are reasonable',
+      'Cash is essential in the medina — souks, food stalls, and petit taxis are cash-only. Carry 500–1,000 MAD in small notes',
+      'Tipping: 10–15% at restaurants, 10–20 MAD for guides and helpful locals. Small tips are expected for many services',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, breathable clothing covering shoulders and knees. A scarf for mosque areas and sun protection. Comfortable walking shoes',
+      'The medina lanes are uneven — avoid heels or flip-flops. Closed-toe shoes protect against the cobblestones and motorbike traffic',
+      'A small daypack for water, camera, and purchases. Keep valuables in inside pockets — pickpockets operate in crowded souks',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🤝', title: 'Haggling Culture', text: 'Bargaining is expected and enjoyable in the souks. Start at 30–50% of the asking price. Never accept the first price. It\'s a social interaction, not a confrontation — smile, be patient, and enjoy the process.' },
+  { icon: '🕌', title: 'Mosque Access', text: 'Non-Muslims cannot enter mosques in Morocco (exception: Hassan II Mosque in Casablanca). You can admire exteriors and minarets. Dress modestly when passing mosques and during prayer times.' },
+  { icon: '📸', title: 'Photography', text: 'Always ask before photographing people. Some vendors and performers expect payment (5–10 MAD). Snake charmers and monkey handlers will demand money aggressively — avoid engaging unless you want to pay.' },
+  { icon: '👗', title: 'Dress Code', text: 'Morocco is moderate but conservative. Cover shoulders and knees in the medina. Beachwear only at beaches. Women may attract unwanted attention in revealing clothing — dress modestly for comfort.' },
+  { icon: '🍽️', title: 'Food & Drink', text: 'Morocco is a Muslim country but alcohol is available in licensed restaurants, bars, and hotels (beer 30–50 MAD). Avoid drinking in public or the medina. Pork is rare but available in some tourist restaurants.' },
+  { icon: '⚠️', title: 'Scam Awareness', text: 'Common scams: "the road is closed" (it isn\'t), unsolicited guides demanding payment, "come see my uncle\'s shop." Say "la shukran" (no thanks) firmly. Never follow strangers into shops or down alleys.' },
+];
+---
+
+<CityGuideLayout
+  title="Marrakech Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Marrakech guide for young travelers. 3-day itinerary with medina souks, Jemaa el-Fnaa, Atlas Mountains, hammams, and budget tips. Plan your trip with roammate."
+  heroImage="/images/guides/marrakech-hero.webp"
+  heroFlag="🇲🇦"
+  heroCountry="Morocco"
+  heroRegion="Africa"
+  heroCity="Marrakech"
+  heroSubtitle="A labyrinth of terracotta lanes where the scent of spices, the sound of hammers, and the chaos of Jemaa el-Fnaa overwhelm every sense."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Mar – May Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Moroccan Dirham (MAD). Marrakech is excellent value — one of the cheapest destinations in the Mediterranean region."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Morocco blends Arab, Berber, and French influences. Marrakech is tourist-friendly but the medina has its own rules — learn the haggling game, respect the mosques, and embrace the beautiful chaos."
+  ctaCity="Marrakech"
+  ctaText="Find travel companions, split Atlas Mountains day trip costs, and navigate the medina with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

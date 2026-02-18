@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'HUF (Forint)', detail: '1 USD ≈ 370 HUF' },
+  { icon: '🗣', label: 'Language', value: 'Hungarian', detail: 'English common among younger locals' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Oct', detail: '18–30°C, outdoor bath season' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$50–75 USD', detail: '18,500–28,000 HUF per day' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen Zone', detail: '90 days visa-free for most' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Buda, Baths & Ruin Bars in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Buda Castle & Fisherman\'s Bastion',
+          text: 'Take bus 16 from Deák Ferenc tér to Buda Castle. Walk through the castle district\'s cobblestone streets past pastel-coloured baroque houses. Fisherman\'s Bastion is free before 9am — the seven turrets frame a postcard-perfect panorama of the Parliament building across the Danube. Visit Matthias Church (2,000 HUF) with its stunning Zsolnay ceramic roof tiles. Grab a lángos from a street vendor on the way down.',
+          tip: 'Fisherman\'s Bastion charges an entrance fee from 9am — arrive at 8am for free access and empty terraces with the best views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Széchenyi Thermal Baths',
+          text: 'Metro M1 (the oldest on the continent) to Széchenyi fürdő station. Széchenyi Baths (7,200 HUF with locker) is a stunning neo-baroque palace of 18 pools fed by natural hot springs. Soak in the 38°C outdoor pool — the sight of steam rising from bright yellow buildings while you float is pure Budapest. The chess-playing grandpas in the water are a bonus. Allow 2–3 hours.',
+          tip: 'Bring your own towel and flip-flops to save on rental fees. Go on weekday afternoons to avoid the weekend crowd.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ruin Bars of the Jewish Quarter',
+          text: 'The ruin bar scene is Budapest\'s greatest gift to nightlife. Start at Szimpla Kert on Kazinczy utca — the original ruin bar set in a derelict apartment building filled with mismatched furniture, bathtubs, and a Trabant car. Try a fröccs (wine spritzer, 600 HUF). Walk to Instant-Fogas — a multi-level maze of dance floors and bars. Street food at Karaván next door — langós, chimney cake, and craft beer.',
+          tip: 'Szimpla Kert is touristy but still essential. Visit early (7–9pm) for photos, then move to Instant-Fogas when the DJ sets kick off.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Buda Castle, Views & Thermal Baths',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Buda Castle District',
+          text: 'Take bus 16 from Deák Ferenc tér or the Buda Castle funicular (2,000 HUF) up to Castle Hill. Explore the cobblestone streets and pastel baroque houses. Fisherman\'s Bastion is free before 9am — seven neo-Gothic turrets with Parliament views across the Danube. Visit Matthias Church (2,000 HUF) with its Zsolnay ceramic roof. Then walk to the Hungarian National Gallery inside the Royal Palace (free permanent collection).',
+          tip: 'Fisherman\'s Bastion charges from 9am in summer — arrive at 8am for free access and the best morning light over Parliament.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Széchenyi Thermal Baths',
+          text: 'Metro M1 to Széchenyi fürdő. The Széchenyi Baths (7,200 HUF with locker) is a neo-baroque palace with 18 pools fed by natural hot springs at 38°C. The outdoor pools are magical — steam rising from yellow buildings while you soak. Chess-playing regulars in the water are a quintessential Budapest scene. Allow 2–3 hours to properly relax. Grab a lángos from the poolside stand.',
+          tip: 'Bring your own towel and flip-flops to avoid the rental surcharge. Weekday afternoons are least crowded.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ruin Bars & Jewish Quarter',
+          text: 'Walk the Jewish Quarter (District VII). Visit the Dohány Street Synagogue — Europe\'s largest (5,000 HUF) — from outside if it\'s closed. Then begin the ruin bar crawl at Szimpla Kert on Kazinczy utca — a derelict apartment building turned into Budapest\'s most iconic bar. Dinner at the Karaván street food court next door — try langós, chimney cake, and Hungarian craft beer from the taps.',
+          tip: 'Szimpla Kert is touristy but essential. Visit early (7–9pm) for photos and cheaper drinks before the late-night crowds.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Parliament, Danube & Gellért Hill',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hungarian Parliament & Shoes on the Danube',
+          text: 'Join a guided tour of the Hungarian Parliament (6,000 HUF for non-EU, 3,000 HUF EU citizens) — the third-largest parliament building in the world, with 691 rooms and 40 kg of gold used in the interior. Book online, tours sell out. Afterwards, walk along the Danube promenade to the Shoes on the Danube memorial — 60 cast-iron shoes marking where Jews were shot into the river during WWII.',
+          tip: 'Book Parliament tickets online at least 2 days ahead — morning English-language tours at 10am sell out fast.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Central Market Hall & Gellért Hill',
+          text: 'Tram 2 along the Danube (one of Europe\'s most scenic tram rides) to the Central Market Hall (Nagycsarnok) — a stunning iron-and-glass 1897 building. Ground floor for fresh produce and paprika (Hungary\'s essential spice); upstairs for traditional langós and goulash stalls (1,500–2,500 HUF). Then cross Liberty Bridge and climb Gellért Hill for the Citadella viewpoint — the best 360° panorama in Budapest.',
+          tip: 'Tram 2 along the Pest embankment at sunset is genuinely one of Europe\'s great rides — sit on the river side.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Gellért Baths & Pest Nightlife',
+          text: 'If you didn\'t visit Széchenyi, try Gellért Baths (9,000 HUF) — more ornate Art Nouveau interiors with thermal pools and a stunning main hall. For dinner, head to Menza on Liszt Ferenc tér — retro Hungarian comfort food at fair prices (mains 3,500–5,500 HUF). The street is lined with terrace bars. Then to Instant-Fogas in District VII — a multi-floor maze of dance floors and bars.',
+          tip: 'Liszt Ferenc tér terraces are great for people-watching. Avoid the restaurants directly on the square — prices are inflated. Side streets are better value.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Markets, Art & Margaret Island',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hospital in the Rock & Buda Backstreets',
+          text: 'Start with the Hospital in the Rock (4,800 HUF) — a secret WWII hospital and Cold War nuclear bunker carved into the limestone caves beneath Buda Castle. The guided tour uses wax figures and original equipment to recreate wartime surgery scenes. Afterwards, explore the quieter side of Buda — Víziváros (Watertown) below the castle has charming cafes like Ördögjárat and Ruszwurm, Budapest\'s oldest café since 1827.',
+          tip: 'Hospital in the Rock tours run hourly and sell out — book online or arrive at 9am opening. It\'s one of Budapest\'s most unique experiences.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Margaret Island & City Park',
+          text: 'Walk across Margaret Bridge to Margaret Island — a 2.5km-long park in the middle of the Danube with a musical fountain, Japanese garden, medieval ruins, and free outdoor pools in summer. Rent a four-person bike buggy (2,500 HUF/hour) to explore. Then metro to City Park — see the Vajdahunyad Castle (free grounds), the Budapest Zoo, and Heroes\' Square with its Millennium Monument.',
+          tip: 'Margaret Island\'s musical fountain show runs every hour from May–October and is best after dark when the light show starts.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell on the Danube',
+          text: 'For a final meal, head to Borkonyha Winekitchen on Sas utca — Michelin-starred Hungarian cuisine with tasting menus from 18,000 HUF (remarkable value for a star). Or keep it casual at Bors GasztroBar on Kazinczy utca — legendary soups and sandwiches for 1,800–2,500 HUF. End with a walk along the Danube at night — the illuminated Chain Bridge, Parliament, and Buda Castle are unforgettable.',
+          tip: 'The Danube promenade between Chain Bridge and Parliament at night is one of Europe\'s most beautiful walks — no reservation needed.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Buda Castle, Views & Thermal Baths',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Buda Castle District',
+          text: 'Take bus 16 from Deák Ferenc tér or the funicular (2,000 HUF) up Castle Hill. Explore cobblestone streets and pastel baroque houses. Fisherman\'s Bastion is free before 9am — seven turrets with Parliament views. Visit Matthias Church (2,000 HUF) for its Zsolnay ceramic roof tiles. Walk to the Hungarian National Gallery inside the Royal Palace for the free permanent collection.',
+          tip: 'Fisherman\'s Bastion charges from 9am in summer — arrive at 8am for free access and perfect morning light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Széchenyi Thermal Baths',
+          text: 'Metro M1 to Széchenyi fürdő. The baths (7,200 HUF) feature 18 pools fed by natural hot springs at 38°C inside a neo-baroque palace. The outdoor pools are magical — steam rising from yellow buildings. Chess-playing regulars in the water are a quintessential Budapest scene. Allow 2–3 hours. Grab a lángos from the poolside stand on your way out.',
+          tip: 'Bring your own towel and flip-flops to avoid rental surcharges. Weekday afternoons are least crowded for proper relaxation.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ruin Bars & Jewish Quarter',
+          text: 'Walk District VII\'s Jewish Quarter. See the Dohány Street Synagogue — Europe\'s largest — from outside. Begin the ruin bar crawl at Szimpla Kert on Kazinczy utca — Budapest\'s original ruin bar in a derelict apartment building. Dinner at Karaván street food court next door for langós, chimney cake, and craft beer. Then to Instant-Fogas for the multi-floor party maze.',
+          tip: 'Szimpla Kert is touristy but still essential. Visit early (7–9pm) for photos, then move on when things get rowdy.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Parliament, Danube & Gellért Hill',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Parliament & Danube Memorial',
+          text: 'Guided tour of the Hungarian Parliament (6,000 HUF non-EU) — 691 rooms, 40kg of gold in the interior, and the Holy Crown of Hungary. Book online. Walk the Danube promenade to the Shoes on the Danube — 60 cast-iron shoes marking where Jews were shot into the river in 1944–45. Continue to the Chain Bridge for photos with Buda Castle rising behind.',
+          tip: 'Book Parliament tickets online 2+ days ahead — the 10am English tour sells out fast. EU citizens pay half price.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Central Market & Gellért Hill',
+          text: 'Tram 2 to the Central Market Hall — a stunning 1897 iron-and-glass building. Ground floor for fresh produce and paprika; upstairs for langós and goulash (1,500–2,500 HUF). Cross Liberty Bridge and climb Gellért Hill to the Citadella for the best 360° panorama in Budapest — the entire city, both banks, and every bridge laid out below you.',
+          tip: 'Tram 2 along the Pest embankment at sunset is one of Europe\'s great rides — sit on the right side facing the river.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Gellért Baths & Terrace Drinks',
+          text: 'Gellért Baths (9,000 HUF) has the most ornate Art Nouveau interiors of any Budapest bath — thermal pools under sculpted columns and mosaic ceilings. Dinner at Menza on Liszt Ferenc tér for retro Hungarian comfort food (mains 3,500–5,500 HUF). The square is lined with terrace bars — perfect for a warm evening drink.',
+          tip: 'Liszt Ferenc tér restaurants have inflated tourist prices. Walk one block to Nagymező utca for the same atmosphere at local rates.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Underground History & Margaret Island',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hospital in the Rock',
+          text: 'Start with the Hospital in the Rock (4,800 HUF) — a secret WWII hospital and Cold War nuclear bunker carved into caves beneath Castle Hill. Guided tours use wax figures and original equipment. Then explore Víziváros (Watertown) below the castle — charming cafes like Ruszwurm (Budapest\'s oldest, since 1827) and quiet cobblestone streets rarely seen by tourists.',
+          tip: 'Hospital in the Rock tours run hourly and sell out — book online or arrive at 9am opening for the first English tour.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Margaret Island',
+          text: 'Walk across Margaret Bridge to Margaret Island — a 2.5km park in the middle of the Danube with a musical fountain, Japanese garden, medieval ruins, and free outdoor pools in summer. Rent a four-person bike buggy (2,500 HUF/hour) to explore the whole island. Stop at the Palatinus outdoor bath complex on hot days — wave pool, slides, and thermal pools.',
+          tip: 'Margaret Island\'s musical fountain show runs hourly May–October. After dark, the light show synchronised to music is spectacular.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bors GasztroBar & Night Walk',
+          text: 'Dinner at Bors GasztroBar on Kazinczy utca — legendary soups and baguette sandwiches (1,800–2,500 HUF) with a cult following. Then take the Danube night walk from Chain Bridge to Parliament — both buildings illuminated against the dark water. Cross to the Buda side for drinks at Pontoon — a floating bar under the Chain Bridge with DJ sets and river views.',
+          tip: 'Bors GasztroBar closes early (around 6–7pm) and has no seating — get there by 5:30pm and eat standing. It\'s worth the rush.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Art, Architecture & Local Budapest',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'House of Terror & Andrássy Avenue',
+          text: 'Visit the House of Terror (3,000 HUF) on Andrássy Avenue — a haunting museum in the former headquarters of the fascist Arrow Cross and the communist secret police (ÁVH). The basement interrogation rooms are chilling. Walk down Andrássy Avenue — Budapest\'s answer to the Champs-Élysées — a UNESCO World Heritage boulevard lined with neo-Renaissance mansions.',
+          tip: 'Allow 90 minutes for House of Terror. The basement floor hits hardest — it\'s the actual cells where prisoners were held.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Heroes\' Square & City Park',
+          text: 'Continue down Andrássy to Heroes\' Square — the Millennium Monument flanked by the Museum of Fine Arts and the Hall of Art. Enter City Park to see Vajdahunyad Castle — a fairy-tale pastiche of Hungarian architectural styles (free grounds). Lunch at Gundel, Budapest\'s most famous restaurant since 1894, or the more budget-friendly Bagolyvár next door (mains 3,500–5,500 HUF) in the park.',
+          tip: 'City Park is beautiful in autumn with changing leaves reflected in the boating lake — a favourite spot for locals.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Local Nightlife in District IX',
+          text: 'Venture to Ráday utca in District IX — a street of restaurants, wine bars, and student hangouts away from the tourist circuit. Try Csiga Café for Hungarian comfort food (2,500–4,000 HUF) and local wines by the glass (800–1,500 HUF). Then walk to Dürer Kert — a large outdoor garden venue with live music, craft beer, and Budapest\'s alternative crowd.',
+          tip: 'District IX is where Budapest\'s university students hang out — cheaper drinks, better music, and more genuine atmosphere than District VII.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Day Trip to the Danube Bend',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Szentendre — Artists\' Village',
+          text: 'Take the HÉV suburban railway from Batthyány tér to Szentendre (45 minutes, 620 HUF with Budapest pass). This charming Serbian-influenced village has cobblestone streets lined with galleries, colourful baroque houses, and the Marzipan Museum. Walk up to the hilltop Serbian Orthodox church for views over the Danube. Grab a coffee on the main square — Fő tér — surrounded by pastel facades.',
+          tip: 'Szentendre gets crowded by midday — arrive early on the 8:30am HÉV to have the cobblestone streets to yourself.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Visegrád Citadel',
+          text: 'Bus from Szentendre to Visegrád (30 minutes, 500 HUF). Climb to the hilltop Visegrád Citadel (2,200 HUF) — a medieval fortress with panoramic views of the Danube Bend, where the river makes its dramatic turn through forested hills. This is one of Hungary\'s most spectacular viewpoints. The Royal Palace ruins at the base are free to explore. Lunch at Renaissance Restaurant for medieval-style dishes.',
+          tip: 'The climb to Visegrád Citadel takes 30 minutes uphill — wear proper shoes. The view from the top is worth every step.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Sunset Drinks',
+          text: 'Bus back to Szentendre, then HÉV to Budapest (or direct bus from Visegrád to Budapest\'s Árpád híd metro station, 90 minutes). Back in Budapest, head to the Buda side for sunset drinks at Fellini Római Kultúrbisztró in Római part — a stretch of outdoor bars along the Danube with fairy lights, food trucks, and a relaxed local vibe far from the tourist centre.',
+          tip: 'Római part (Roman Shore) is Budapest\'s hidden summer gem — locals barbecue, swim, and drink along the riverbank on warm evenings.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Markets, Caves & Spa Party',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Fény utca Market & Buda Hills',
+          text: 'Skip the tourist markets — head to Fény utca Piac near Széll Kálmán tér for where locals actually shop. Fresh produce, Hungarian sausages, and the best lángos in the city (600–900 HUF). Then take the Cogwheel Railway (tram ticket) up to the Buda Hills. Transfer to the Children\'s Railway — a narrow-gauge train run almost entirely by children since 1948 — through the forested hills.',
+          tip: 'The Children\'s Railway is not just for kids — it\'s a charming piece of communist-era nostalgia through beautiful forest scenery.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pálvölgyi Cave & Rudas Baths',
+          text: 'Visit the Pálvölgyi Cave system (2,500 HUF) — Budapest sits on a honeycomb of thermal caves, and this is the most accessible. The 45-minute guided tour involves squeezing through narrow passages. Then head to Rudas Baths (4,900 HUF weekday) — the most atmospheric bath in Budapest, a 16th-century Ottoman hammam with an octagonal pool under a domed ceiling with light streaming through star-shaped openings.',
+          tip: 'Rudas has a rooftop hot tub with Danube views — open to all on weekends. It\'s the best-kept-secret viewpoint in Budapest.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sparty or Ruin Bar Crawl',
+          text: 'If it\'s Saturday, Sparty (spartybooking.com) transforms Széchenyi Baths into a pool party with DJs, laser shows, and unlimited drinks (15,000–20,000 HUF). If not, do a deeper ruin bar crawl — Ellátó Kert on Kazinczy for cocktails, Kőleves Kert for the garden atmosphere, and Fogasház for the underground techno scene. End with a 3am kebab at the 24-hour joints on Király utca.',
+          tip: 'Sparty sells out weeks ahead in summer — book online early. It\'s an experience unlike anything else in European nightlife.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Hidden Budapest & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'New York Café & Bookshops',
+          text: 'Breakfast at the New York Café (Boscolo Budapest) — the "most beautiful café in the world," a gilded Italian Renaissance fantasy of frescoes, chandeliers, and marble columns. A cappuccino costs 2,800 HUF — expensive by Budapest standards but the interiors are jaw-dropping. Then browse Massolit Books on Nagy Diófa utca — an English-language bookshop and café beloved by expats.',
+          tip: 'New York Café is worth visiting for the architecture even if the food is overpriced. Go at 9am opening to avoid the selfie queues.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Souvenirs & Hidden Spots',
+          text: 'Pick up souvenirs at the Central Market Hall — premium Hungarian paprika (sweet and hot), Tokaji wine, and hand-embroidered linen. For something different, visit the Pinball Museum (3,000 HUF) on Radnóti Miklós utca — 130+ vintage pinball machines, all playable. Or explore the underground Labyrinth beneath Buda Castle — a network of natural caves used as a prison and air-raid shelter.',
+          tip: 'The best paprika souvenir is from the ground floor of the Central Market — look for "Kalocsai" brand in tin boxes.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner on the Danube',
+          text: 'Final dinner at Két Szerecsen on Nagymező utca — a beloved bistro with Hungarian-Mediterranean fusion (mains 4,500–7,000 HUF) and excellent wines. Or for a splurge, Onyx (two Michelin stars) on Vörösmarty tér offers a tasting menu from 35,000 HUF. End with a midnight walk along the Danube — the illuminated Parliament, Chain Bridge, and Castle create one of Europe\'s greatest cityscapes.',
+          tip: 'The Danube promenade between Elizabeth Bridge and Parliament at midnight is unforgettable — bring a bottle of wine from the market.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free experiences', text: 'Fisherman\'s Bastion (before 9am), Danube promenade, Shoes on the Danube, National Gallery, Margaret Island, Heroes\' Square, Great Market Hall (browsing), and the Comic Book Route murals.' },
+  { title: 'Eat like a local', text: 'Lángos at market stalls: 600–1,200 HUF. Bors GasztroBar soups: 1,200 HUF. University canteens (menü) serve two courses for 1,500–2,000 HUF. Gyros on Király utca: 1,200–1,800 HUF.' },
+  { title: 'Transport pass', text: 'Budapest 72-hour travel card: 5,500 HUF — unlimited metro, tram, bus, HÉV, and even the Cogwheel Railway. Single tickets (450 HUF) add up fast. Always validate.' },
+  { title: 'Bath savings', text: 'Széchenyi is cheapest (7,200 HUF). Bring your own towel (rental: 2,000 HUF). Visit after 5pm on weekdays for quieter pools. Rudas weekday entry is 4,900 HUF vs 6,600 HUF weekends.' },
+  { title: 'Wine over cocktails', text: 'Hungarian wines are extraordinary and cheap. A glass of excellent Egri Bikavér or Tokaji at wine bars: 800–1,500 HUF. Cocktails at ruin bars: 2,500–3,500 HUF. Supermarket wine from 1,000 HUF.' },
+  { title: 'Free walking tours', text: 'Multiple companies run tip-based free walking tours daily from Deák Ferenc tér. Separate communist history, Jewish Quarter, and food tours available. Budget 2,000–3,000 HUF tip per person.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '4,000–8,000 HUF', midrange: '15,000–30,000 HUF', splurge: '50,000+ HUF', notes: 'Hostels → boutique hotels → luxury hotels' },
+  { category: 'Food', budget: '4,000–6,000 HUF', midrange: '8,000–15,000 HUF', splurge: '25,000+ HUF', notes: 'Street food & markets → restaurants → Michelin dining' },
+  { category: 'Transport', budget: '1,500–2,000 HUF', midrange: '3,000–5,000 HUF', splurge: '8,000+ HUF', notes: 'Day pass → taxis → private transfers' },
+  { category: 'Activities', budget: '2,000–5,000 HUF', midrange: '6,000–12,000 HUF', splurge: '20,000+ HUF', notes: 'Free walks & parks → museums & baths → private tours' },
+  { category: 'Drinks', budget: '1,500–3,000 HUF', midrange: '4,000–8,000 HUF', splurge: '12,000+ HUF', notes: 'Supermarket wine → ruin bars → rooftop cocktail bars' },
+  { category: 'Daily Total', budget: '13,000–24,000 HUF', midrange: '36,000–70,000 HUF', splurge: '115,000+ HUF', notes: '$35–65 → $97–189 → $311+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Schengen Zone — most nationalities get 90 days visa-free. Hungary joined Schengen fully in 2024',
+      'Budapest Airport (BUD) is 16km from centre. Bus 100E to Deák Ferenc tér (2,200 HUF, 35 min) or taxi (9,000–11,000 HUF)',
+      'Trains from Vienna (2.5 hrs), Prague (7 hrs), and Bratislava (2.5 hrs) arrive at Keleti or Déli station',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No special vaccinations required. European Health Insurance Card covers EU citizens at public hospitals',
+      'Tap water is safe and excellent quality — Budapest sits on thermal springs and the water is heavily monitored',
+      'Pickpocketing on trams 2 and 4/6 and in ruin bars. Avoid unlicensed "massage parlours" in District VII',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'BKK runs metro (4 lines), trams, and buses. Get a travel card at metro stations. Validate single tickets on each journey',
+      'Tram 2 along the Danube and tram 4/6 on the Grand Boulevard are the most useful tourist lines',
+      'Bolt is the best ride-hailing app (cheaper than taxis). Budapest taxis must use meters — insist on it',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'EU roaming applies. Local SIMs from Telekom, Yettel, or Vodafone (2,000–4,000 HUF for 5–10GB) at airport or Vodafone shops',
+      'Free WiFi in most cafés, ruin bars, and shopping centres. Budapest has excellent 4G/5G coverage',
+      'Download the BKK Futár app for real-time public transport. Google Maps works well for navigation',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Hungary uses Forints (HUF), not Euros. Many tourist spots accept EUR but at terrible rates — always pay in HUF',
+      'ATMs are everywhere. Avoid Euronet ATMs (high fees). Use bank ATMs from OTP, K&H, or Erste',
+      'Cards accepted at most restaurants and shops. Cash needed for markets, smaller cafés, and tram ticket machines',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Swimwear for thermal baths. Bring flip-flops and a microfibre towel to save on bath rental fees',
+      'Comfortable shoes for cobblestones on Castle Hill. Layers — Budapest gets cold at night even in summer',
+      'A light rain jacket for occasional summer storms. Smart-casual for nicer restaurants and the opera',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🥂', title: 'The Beer-Clinking Rule', text: 'Hungarians don\'t clink beer glasses — it\'s linked to the Austrian execution of 13 Hungarian generals in 1849 who were toasted with beer. Wine glasses are fine to clink. The ban is softening with younger locals but respect it.' },
+  { icon: '🛁', title: 'Bath Etiquette', text: 'Bring swimwear (mandatory in mixed pools). Shower before entering. Don\'t splash or be loud — thermal baths are for relaxation. The rubber cap rule varies by bath but bring one just in case.' },
+  { icon: '💵', title: 'Tipping Culture', text: 'Tip 10% at restaurants by telling the waiter the total you want to pay when handing over cash. Don\'t leave money on the table. Tip thermal bath attendants 500–1,000 HUF if they show you to a locker.' },
+  { icon: '🚇', title: 'Transport Inspectors', text: 'Budapest has plain-clothes ticket inspectors on metro and trams. Fines are 16,000 HUF on the spot (higher later). Always validate your ticket. Inspectors target tourists — carry your pass visibly.' },
+  { icon: '🏛', title: 'History Sensitivity', text: 'Hungary\'s 20th century — Habsburg rule, WWII, Soviet occupation, 1956 revolution — is complex and emotional. Be respectful at memorials. The House of Terror and Holocaust Memorial Centre are profound but heavy.' },
+  { icon: '🗣', title: 'Language Basics', text: 'Hungarian is famously difficult but locals appreciate any attempt. "Szia" (see-ya) for hello, "Köszönöm" (keu-seu-neum) for thank you, "Egészségedre" (eh-gays-shay-ged-reh) for cheers. English is common among under-40s.' },
+];
+---
+
+<CityGuideLayout
+  title="Budapest Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Budapest guide for young travelers. 3-day itinerary with thermal baths, ruin bars, Danube walks, and incredible food on a backpacker budget. Plan your trip with roammate."
+  heroImage="/images/guides/budapest-hero.webp"
+  heroFlag="🇭🇺"
+  heroCountry="Hungary"
+  heroRegion="Europe"
+  heroCity="Budapest"
+  heroSubtitle="Two cities fused by a river, where Ottoman baths steam beneath ornate bridges and every ruin hides a bar worth finding."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Apr – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in HUF. Budapest is one of Europe's best-value capitals — outstanding food, thermal baths, and nightlife for a fraction of Western European prices."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Hungarians are warm but direct, and their culture carries the weight of a turbulent history. A few local customs go a long way."
+  ctaCity="Budapest"
+  ctaText="Find travel companions, share ruin bar crawls, and split day-trip costs to the Danube Bend with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

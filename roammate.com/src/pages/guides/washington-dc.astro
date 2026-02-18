@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'USD ($)', detail: '1 EUR ≈ $1.08' },
+  { icon: '🗣', label: 'Language', value: 'English', detail: 'Spanish also common' },
+  { icon: '🕐', label: 'Timezone', value: 'EST (UTC-5)', detail: 'EDT (UTC-4) Mar–Nov' },
+  { icon: '☀️', label: 'Best Months', value: 'Mar – May, Sep – Nov', detail: '15–25°C, cherry blossoms Mar–Apr' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$90–140', detail: 'Free museums cut costs hugely' },
+  { icon: '🛂', label: 'Visa', value: 'ESTA / B1-B2', detail: 'VWP countries need ESTA ($21)' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'DC Highlights in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'National Mall & Monuments',
+          text: 'Start at the Lincoln Memorial at sunrise — the 19-foot marble Abraham Lincoln gazes across the Reflecting Pool toward the Washington Monument. Walk the length of the Mall, stopping at the Vietnam Veterans Memorial (the black granite wall is devastating at any hour), the World War II Memorial, and the Washington Monument. The walk from Lincoln to the Capitol is 2 miles. Grab coffee and a breakfast sandwich from a food truck near the Smithsonian Metro ($6–8).',
+          tip: 'The Lincoln Memorial before 8am is nearly empty — you can stand at the spot where MLK gave the "I Have a Dream" speech marked on the steps.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Smithsonian Museums',
+          text: 'The Smithsonian Institution has 21 museums — all free. The National Air and Space Museum has the Wright Flyer, Apollo 11 command module, and the Space Shuttle Discovery. The National Museum of African American History and Culture is the most powerful museum in the city (free timed-entry passes required, book online months ahead). If you can only visit one, choose that. The Natural History Museum has the Hope Diamond and dinosaur halls. Allow 2–3 hours per museum minimum.',
+          tip: 'The African American Museum timed-entry passes release at 10am on the first Wednesday of each month. Set an alarm — they sell out in minutes.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Georgetown & Monuments by Night',
+          text: 'Head to Georgetown — DC\'s oldest neighborhood with Federal-era rowhouses, a waterfront boardwalk on the Potomac, and Wisconsin Avenue\'s shops and restaurants. Dinner at Mambo Sauce for DC\'s signature mumbo sauce wings ($10–14) or at Martin\'s Tavern — where JFK proposed to Jackie (burgers $18). Return to the Mall at night — the memorials are illuminated and the crowds vanish. The Lincoln Memorial reflected in the pool at night is one of America\'s most powerful images.',
+          tip: 'The monuments are most beautiful and least crowded between 9pm and midnight. The National Mall is safe and well-lit after dark.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'National Mall & Monuments',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lincoln Memorial & Monuments Walk',
+          text: 'Start at the Lincoln Memorial before 8am — the 19-foot marble Lincoln is nearly alone with you at this hour. Stand on the step marked with the inscription where Martin Luther King Jr. delivered his "I Have a Dream" speech. Walk past the Vietnam Veterans Memorial — the black granite wall reflects your face among the 58,318 names. Continue along the Reflecting Pool to the World War II Memorial and Washington Monument. The 2-mile walk to the Capitol is the spine of American democracy.',
+          tip: 'Free timed-entry tickets for the Washington Monument elevator ride (554 feet, 360-degree views) are available at recreation.gov — book well ahead.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Smithsonian Air & Space + Natural History',
+          text: 'Start at the National Air and Space Museum (free) — the Wright Flyer, Apollo 11 command module, Spirit of St. Louis, and Space Shuttle Discovery (at the Udvar-Hazy Center annex in Virginia) are here. The "One World Connected" exhibit explores satellite technology. Then the National Museum of Natural History (free) — the Hope Diamond, dinosaur hall, and ocean hall. Lunch from a food truck on the Mall ($8–12) — DC has some of the best food truck culture in America.',
+          tip: 'Air and Space Museum is undergoing renovation — check si.edu for current gallery closures. The gift shop has real astronaut ice cream ($6).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Monuments by Night',
+          text: 'The National Mall transforms after dark. The memorials are illuminated and the daytime crowds disappear. Walk from the Capitol (lit and glowing) west to the Lincoln Memorial. The WWII Memorial fountain, the Korean War Veterans Memorial (soldier statues illuminated in ghostly light), and the MLK Memorial are all profoundly different at night. The FDR Memorial along the Tidal Basin is a hidden favorite. Dinner at Ben\'s Chili Bowl on U Street — a DC institution since 1958. The half-smoke ($7.50) is the city\'s signature dish.',
+          tip: 'Rent a Capital Bikeshare bike ($2/30-min ride) to cover the Mall at night. The Tidal Basin loop at night is gorgeous and nearly empty.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Museums, Capitol & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'National Museum of African American History',
+          text: 'The NMAAHC is the most important museum in Washington — possibly in America. The building itself is a bronze-clad crown inspired by Yoruba art. Start in the basement with the history galleries (slavery through civil rights) and work upward through the culture galleries (music, art, sports). Allow 3–4 hours minimum. It\'s emotionally intense — the Emmett Till memorial and the Greensboro lunch counter are devastating. Free timed-entry passes are required — book online months ahead.',
+          tip: 'Free timed-entry passes release at 10am on the first Wednesday of each month. Same-day passes are available at 1pm at the museum — line up by 12:30pm.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Capitol Hill & Library of Congress',
+          text: 'Walk to Capitol Hill. Free tours of the US Capitol building are available (book at visitthecapitol.gov). The dome interior and National Statuary Hall are stunning. Then the Library of Congress — the Main Reading Room is one of the most beautiful spaces in America (view from the gallery, free). The Gutenberg Bible and Thomas Jefferson\'s personal library are on display. Lunch at Eastern Market — a covered market since 1873 with produce, crafts, and prepared food ($8–14). The crab cakes are legendary.',
+          tip: 'Capitol tours book up fast during cherry blossom season (late March–early April). Book 2+ weeks ahead. Security lines are long — bring minimal items.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'U Street & Adams Morgan',
+          text: 'Head to U Street — once called "Black Broadway" for its jazz clubs where Duke Ellington got his start. Ben\'s Chili Bowl (since 1958) serves the iconic half-smoke ($7.50). Walk to Adams Morgan on 18th Street — DC\'s most diverse nightlife strip. Madam\'s Organ is the neighborhood\'s iconic blues bar (live music nightly, $5–10 cover). Songbyrd Music House has indie bands and a record store. For cocktails, the Gibson is a speakeasy with no sign — just a buzzer and a curtain.',
+          tip: 'The Gibson speakeasy on U Street has no sign — look for the unmarked door with a buzzer. Reservations recommended on weekends.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Georgetown, Dupont Circle & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Georgetown Walk',
+          text: 'Walk Georgetown — DC\'s oldest neighborhood (1751). The Federal and Georgian rowhouses on N Street and Dumbarton Street are postcard-perfect. Walk the C&O Canal towpath — a flat, tree-lined path along the historic canal. Georgetown Waterfront Park on the Potomac has stunning river views. Breakfast at Baked & Wired — the rival to the more famous Georgetown Cupcake next door (cupcakes $4.50, their Texas sheet cake cupcake wins). Browse the vintage shops on Wisconsin Avenue.',
+          tip: 'Baked & Wired beats Georgetown Cupcake in every way — no line, bigger portions, and better frosting-to-cake ratio. Locals know this.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dupont Circle & Embassy Row',
+          text: 'Walk or Metro to Dupont Circle — a vibrant neighborhood with bookshops, cafes, and the Dupont Circle fountain. Walk Embassy Row on Massachusetts Avenue — each embassy flies its national flag and many have stunning architecture. Phillips Collection ($16, free weekdays before noon) is America\'s first modern art museum with Renoir, Rothko, and Jacob Lawrence. Lunch at Kramers — an iconic bookstore-cafe-bar since 1976 ($14–20). The Sunday farmers market in the circle is excellent.',
+          tip: 'Embassy Row is most interesting with a map — many embassies have remarkable architecture. The Indonesian, French, and British embassies are standouts.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tidal Basin & Farewell',
+          text: 'Walk the Tidal Basin for farewell views — the Jefferson Memorial at sunset is magnificent, especially during cherry blossom season (late March–early April). The FDR Memorial and MLK Memorial are along the basin path and are powerful at dusk. Farewell dinner at Rasika on Penn Quarter — modern Indian cuisine ($20–35 mains) that\'s consistently rated DC\'s best restaurant. Or keep it budget at Jumbo Slice in Adams Morgan — massive $6 pizza slices that serve as DC\'s answer to New York\'s dollar slice.',
+          tip: 'Cherry blossom season (late March–early April) is DC\'s most magical time — the Tidal Basin ringed in pink is unforgettable. Hotels book up months ahead.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'National Mall & Monuments',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lincoln Memorial & Monument Walk',
+          text: 'Start at the Lincoln Memorial before 8am — nearly empty, deeply powerful. Stand on the "I Have a Dream" step inscription. Walk past the Vietnam Veterans Memorial — 58,318 names on black granite. Continue along the Reflecting Pool to the WWII Memorial and Washington Monument. Free timed-entry tickets for the monument\'s elevator (recreation.gov) take you 554 feet up for 360-degree views. The 2-mile walk to the Capitol is the most symbolically charged stretch in America.',
+          tip: 'Washington Monument elevator tickets are free but limited — release schedule varies. Check recreation.gov 30 days ahead for availability.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Smithsonian Museums',
+          text: 'All 21 Smithsonian museums are free — start with the National Air and Space Museum (Wright Flyer, Apollo 11, Spirit of St. Louis) and the National Museum of Natural History (Hope Diamond, dinosaur hall, ocean hall). The Hirshhorn Museum has excellent modern art in a circular brutalist building. Lunch from the Mall food trucks ($8–12) — look for the Korean BBQ and Ethiopian trucks. You\'ll return to the Mall for more museums later — today is just the appetizer.',
+          tip: 'The Mall food trucks cluster near the Smithsonian Metro exit and the Air and Space Museum. The Korean BBQ tacos ($10) are consistently the best option.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Monuments by Night',
+          text: 'Return to the Mall after dark — the memorials illuminated against the night sky are DC\'s most powerful experience. Walk the full loop: Capitol to Lincoln Memorial, then south to the MLK Memorial, Jefferson Memorial on the Tidal Basin, FDR Memorial, and the Korean War Veterans Memorial (the soldier statues in ghostly light are haunting). Rent a Capital Bikeshare bike ($2/ride) to cover more ground. Dinner at Ben\'s Chili Bowl on U Street — the half-smoke ($7.50) is DC\'s signature food.',
+          tip: 'The Korean War Memorial at night is the most underappreciated sight in DC. The stainless steel soldier statues reflected in the granite wall are profoundly moving.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'African American History & Capitol Hill',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'NMAAHC',
+          text: 'The National Museum of African American History and Culture is the most important museum in Washington. The bronze-clad building descends three stories underground into the history galleries — slavery, Reconstruction, Jim Crow, civil rights — before rising upward through culture, music, and sports. The Emmett Till memorial, Greensboro lunch counter, and a segregation-era train car are devastating. Allow 3–4 hours. Free timed-entry passes required — book months ahead.',
+          tip: 'Start in the lowest history galleries and work upward — the journey from darkness to light is intentional and powerful.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Capitol Building & Library of Congress',
+          text: 'Walk to Capitol Hill for a free tour of the US Capitol (book at visitthecapitol.gov). The Rotunda\'s Apotheosis of Washington fresco and the National Statuary Hall are breathtaking. Then the Library of Congress — the Main Reading Room viewed from the gallery is one of the most beautiful spaces on earth. The Gutenberg Bible and Thomas Jefferson\'s personal library are on permanent display. Lunch at Eastern Market — crab cakes ($12), pupusas ($4), and fresh-squeezed lemonade from a 150-year-old covered market.',
+          tip: 'The Library of Congress is free and criminally under-visited. The Great Hall ceiling and Main Reading Room are architectural masterpieces.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Eastern Market & Barracks Row',
+          text: 'Stay on Capitol Hill for the evening. Barracks Row on 8th Street SE is DC\'s oldest commercial corridor — restaurants, bars, and the historic Marine Barracks (free Friday evening parades in summer). Dinner at Rose\'s Luxury on 8th Street — one of DC\'s most celebrated restaurants with a no-reservations policy (line up at 4:30pm for 5pm seating, $18–30 shareable plates). For drinks, Ambar does unlimited Balkan small plates during happy hour ($30 all-you-can-eat).',
+          tip: 'Rose\'s Luxury line starts forming at 4pm for 5pm seating. Come with the group and commit — the pork lychee salad is transcendent.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Georgetown & Dupont Circle',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Georgetown',
+          text: 'Walk Georgetown — DC\'s oldest neighborhood dating to 1751, predating the nation\'s capital itself. The cobblestone streets, Federal rowhouses, and the C&O Canal towpath feel like a different city. Georgetown University\'s Gothic campus is worth a wander. The Exorcist Steps on Prospect Street are the famous staircase from the film. Breakfast at Baked & Wired — cupcakes ($4.50), coffee, and a line-free alternative to Georgetown Cupcake next door.',
+          tip: 'The C&O Canal towpath is a flat, tree-lined walking and biking path that runs 184 miles to Cumberland, Maryland. Even a 2-mile section is beautiful.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dumbarton Oaks & Embassy Row',
+          text: 'Visit Dumbarton Oaks ($10) — a historic estate with stunning formal gardens (10 acres of terraced beauty) and a museum of Byzantine and Pre-Columbian art. Walk Massachusetts Avenue\'s Embassy Row — each embassy flies its flag and many have remarkable architecture. The Phillips Collection ($16, free weekdays before noon) on Dupont Circle is America\'s first modern art museum — Renoir\'s Luncheon of the Boating Party alone is worth the visit. Lunch at Kramers bookstore-cafe ($14–20).',
+          tip: 'Dumbarton Oaks gardens are free November through March. Cherry blossom season (April) makes the gardens extraordinary — rival the Tidal Basin.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dupont Circle & U Street',
+          text: 'Dupont Circle buzzes at night — the fountain, cafes, and bookshops create a Left Bank atmosphere. Walk to U Street — "Black Broadway" where Duke Ellington grew up. Ben\'s Chili Bowl (since 1958) serves the iconic half-smoke ($7.50). Busboys and Poets is a bookstore-cafe-bar with a social justice focus and excellent comfort food ($14–20). For nightlife, 9:30 Club is one of America\'s best live music venues ($20–50), or the Black Cat for indie rock ($10–15).',
+          tip: '9:30 Club has hosted every major indie and alternative act — check their calendar. Tickets sell out for big names. The sound system is legendary.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'More Smithsonians & Penn Quarter',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'National Gallery of Art',
+          text: 'The National Gallery (free) has two buildings: the West Building (European masters — da Vinci, Vermeer, Monet, Van Gogh) and the East Building (modern art — Calder mobile, Rothko, Picasso). The underground connection tunnel has a moving walkway with a Leo Villareal light installation (Multiverse) that\'s mesmerizing. Allow 2–3 hours for the highlights. The sculpture garden outside has a fountain (ice rink in winter) and pieces by Lichtenstein and Miro.',
+          tip: 'The National Gallery\'s East Building by I.M. Pei is an architectural landmark itself. The Calder mobile in the atrium is one of his largest works.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'American History & Penn Quarter',
+          text: 'The National Museum of American History (free) has the actual Star-Spangled Banner, Dorothy\'s ruby slippers, Julia Child\'s kitchen, and Abraham Lincoln\'s top hat. It\'s America in one building. Walk to Penn Quarter — DC\'s downtown dining and entertainment district. The International Spy Museum ($25) is surprisingly engaging with interactive exhibits. Lunch at Founding Farmers ($16–24 mains) for sustainable American comfort food. The National Building Museum (free lobby, $10 exhibitions) has a stunning Great Hall.',
+          tip: 'The American History Museum\'s third floor has the original Star-Spangled Banner in a climate-controlled gallery. The flag is 30x34 feet — genuinely awe-inspiring.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Penn Quarter & Chinatown',
+          text: 'DC\'s Chinatown is small but has the ornate Friendship Archway and a cluster of restaurants. Walk to Penn Quarter for evening entertainment — the Shakespeare Theatre Company ($20–100) and Woolly Mammoth Theatre Company ($30–60) are nationally acclaimed. Dinner at Zaytinya by Jose Andres — Turkish, Greek, and Lebanese mezze plates ($12–18 each, order 3–4 to share). For cocktails, Columbia Room on Blagden Alley is DC\'s most celebrated cocktail bar (reservations essential, $18–22).',
+          tip: 'Jose Andres has multiple restaurants in DC — Zaytinya, Jaleo, and Oyamel are all excellent and reasonably priced for the quality.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Alexandria & Arlington',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arlington National Cemetery',
+          text: 'Metro to Arlington National Cemetery (free entry). Walk the rolling hills of white headstones — over 400,000 service members are buried here. Visit the Tomb of the Unknown Soldier for the changing of the guard ceremony (every hour October–March, every 30 minutes April–September). JFK\'s grave with the eternal flame overlooks the city. The Memorial Amphitheater and the Arlington House (Robert E. Lee\'s former home) are also on the grounds. Allow 2–3 hours.',
+          tip: 'The changing of the guard is the most powerful ceremony you can witness for free in DC. Arrive 15 minutes early for a good position.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old Town Alexandria',
+          text: 'Take the Metro or water taxi to Old Town Alexandria — a beautifully preserved 18th-century port town on the Potomac. King Street is lined with independent shops, restaurants, and galleries in historic buildings. Visit the Torpedo Factory Art Center (free, 82 artist studios), Christ Church (where Washington worshipped, free), and Gadsby\'s Tavern Museum ($5). Lunch at Virtue Feed & Grain — a restaurant in a 1940s feed warehouse with exposed brick and American comfort food ($16–24).',
+          tip: 'The King Street Trolley runs free between the Metro station and the waterfront. Old Town is very walkable — park at the Metro and take the trolley.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Alexandria Waterfront',
+          text: 'Walk the Alexandria waterfront at sunset — the Potomac glows gold and the monuments are visible across the river. Dinner at Hank\'s Oyster Bar ($18–28 mains) or the casual Fish Market on the pier ($14–22). Take the water taxi back to Georgetown ($16) for a nighttime walk along the waterfront. Or stay in Alexandria for drinks at Captain Gregory\'s — a speakeasy hidden behind a faux donut shop (reservations recommended, cocktails $14–16).',
+          tip: 'Captain Gregory\'s entrance is through what looks like a donut shop — ask for a table "downstairs." The prohibition-era cocktails are perfectly executed.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Adams Morgan, Columbia Heights & Hidden DC',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'National Zoo & Woodley Park',
+          text: 'The Smithsonian National Zoo (free) in Woodley Park has 2,700 animals across 163 acres. The giant pandas were the signature attraction (check current residents). The great ape house, elephant trail, and the Amazonia exhibit are highlights. The zoo sits in Rock Creek Park — the surrounding trails are excellent for a morning walk. Breakfast at Open City on Connecticut Avenue ($12–16 for eggs and coffee) — a neighborhood cafe with a book exchange.',
+          tip: 'The zoo is hilly — start at the top (Connecticut Ave entrance) and walk downhill through the exhibits. Opens at 8am, animals are most active in the morning.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Adams Morgan & Columbia Heights',
+          text: 'Walk from the zoo to Adams Morgan — DC\'s most diverse neighborhood. 18th Street is lined with Ethiopian, Salvadoran, Vietnamese, and Eritrean restaurants. Lunch at Mama Ayesha\'s for Middle Eastern platters ($14–18) or Donburi for Japanese rice bowls ($12–16). Walk to Columbia Heights for the DC murals scene — Ben\'s Chili Bowl has commissioned massive murals on U Street. The neighborhood\'s rapid evolution reflects DC\'s broader cultural shifts.',
+          tip: 'Adams Morgan has DC\'s best Ethiopian food — Dukem and Zenebech are both excellent. Ethiopian dining is communal — share injera and stews with your hands.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Adams Morgan Nightlife',
+          text: 'Adams Morgan is DC\'s liveliest nightlife neighborhood. Madam\'s Organ is the iconic blues bar — live music nightly, taxidermied animals on the walls, and a rooftop deck (cover $5–10). Songbyrd Music House has indie bands and a vinyl record shop. For cocktails, Jack Rose Dining Saloon has 2,700 whiskeys — one of the world\'s largest collections. Late-night food at Amsterdam Falafel ($8–10 with unlimited toppings) is the DC late-night institution.',
+          tip: 'Madam\'s Organ\'s neon "Sorry, We\'re Open" sign is an Adams Morgan landmark. The rooftop opens at 5pm — grab a seat before the music starts at 9pm.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Tidal Basin & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tidal Basin Walk',
+          text: 'Walk the Tidal Basin loop (2 miles) past the Jefferson Memorial, FDR Memorial, and MLK Memorial. During cherry blossom season (late March–early April), the 3,000 pink cherry trees ringing the basin create one of the most photographed scenes in America. Outside of bloom season, the basin is still beautiful and far less crowded. The Jefferson Memorial at sunrise with the Washington Monument reflected in the water is a quiet, powerful moment.',
+          tip: 'Cherry blossom peak bloom is tracked by the National Park Service — check nps.gov/subjects/cherryblossoms for the forecast. Peak typically lasts 4–10 days.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Museum & Souvenirs',
+          text: 'Pick your final Smithsonian: the Renwick Gallery (free, crafts and decorative arts in a stunning building near the White House), the National Portrait Gallery (free, every US president\'s portrait including the viral Obama portrait by Kehinde Wiley), or the Postal Museum (free, surprisingly fascinating). Walk past the White House (security perimeter limits proximity but the North Lawn view is iconic). Souvenir shopping at the museum gift shops — Smithsonian shops have unique, quality items.',
+          tip: 'The Obama portrait at the National Portrait Gallery draws the longest line — go first thing or near closing. The courtyard Kogod Garden is a peaceful oasis.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Farewell dinner at one of DC\'s best: Rasika on Penn Quarter for modern Indian ($20–35, palak chaat is the signature dish), Zaytinya for Mediterranean mezze ($12–18 per plate), or keep it classic at Old Ebbitt Grill — DC\'s oldest saloon (1856), steps from the White House, with a raw bar and political atmosphere ($20–35 mains). One final walk past the illuminated Capitol at night. DC proves that a city of power can also be a city of profound beauty.',
+          tip: 'Reagan National Airport (DCA) is the closest — just across the Potomac, 15 minutes by Metro. Dulles (IAD) is for international flights (45–60 min by Silver Line + bus).',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Everything is free', text: 'All 21 Smithsonian museums, the National Gallery, National Zoo, monuments, memorials, Capitol tours, Library of Congress, and most attractions are completely free.' },
+  { title: 'Half-smoke at Ben\'s', text: 'Ben\'s Chili Bowl\'s half-smoke ($7.50) is DC\'s signature food. The U Street institution has fed presidents and protesters since 1958. It\'s a proper meal for under $10.' },
+  { title: 'Metro everywhere', text: 'Get a SmarTrip card ($2, available at any Metro station). Fares: $2–6 depending on distance and time. The system connects all major sites, airports, and neighborhoods efficiently.' },
+  { title: 'Food truck culture', text: 'DC has some of America\'s best food trucks — they cluster around the Mall, Farragut Square, and L\'Enfant Plaza. Full lunches for $8–12 from Korean BBQ to Ethiopian to empanadas.' },
+  { title: 'Free tours', text: 'Free walking tours of the monuments, Capitol, and neighborhoods are abundant. Free DC Tours (tip-based) runs excellent daily walks. Congressional offices give free Capitol and White House tour passes.' },
+  { title: 'Capital Bikeshare', text: 'A day pass is $8 for unlimited 30-minute rides. Perfect for covering the long Mall and connecting neighborhoods. Stations are everywhere — 700+ across the city.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$35–70', midrange: '$120–200', splurge: '$300+', notes: 'Hostels → boutique hotels → luxury hotels' },
+  { category: 'Food', budget: '$20–35', midrange: '$45–80', splurge: '$120+', notes: 'Food trucks & delis → casual restaurants → Jose Andres empire' },
+  { category: 'Transport', budget: '$5–12', midrange: '$15–25', splurge: '$40+', notes: 'Metro + bikeshare → Metro + Uber → Uber everywhere' },
+  { category: 'Activities', budget: '$0', midrange: '$10–30', splurge: '$60+', notes: 'Free Smithsonians → Spy Museum + paid tours → VIP experiences' },
+  { category: 'Drinks', budget: '$8–15', midrange: '$20–35', splurge: '$50+', notes: 'Happy hour specials → craft cocktails → rooftop bars' },
+  { category: 'Daily Total', budget: '$68–132', midrange: '$210–370', splurge: '$570+', notes: 'Budget → comfortable → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Visa Waiver Program countries need an ESTA ($21) — apply at least 72 hours before travel',
+      'Reagan National (DCA) is closest — Metro Blue/Yellow Line direct. Dulles (IAD) for international — Silver Line + bus or Uber ($50–70)',
+      'BWI Airport in Baltimore is often cheapest — MARC train to Union Station ($8, 40 min) or Uber ($60–80)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Travel insurance essential — US healthcare costs are extreme without coverage',
+      'DC is safe in tourist areas (Mall, Georgetown, Dupont). Standard city caution at night in SE neighborhoods',
+      'Summer (Jun–Aug) is hot and humid (32–38°C) — stay hydrated on the Mall where shade is limited. Cherry blossom season (late March) is peak weather',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'DC Metro (Metrorail) covers all major areas. SmarTrip card ($2 at any station). Fares: $2–6 per ride. Runs 5am–midnight (1am Fri/Sat)',
+      'Capital Bikeshare ($8 day pass) has 700+ stations. Perfect for the Mall, which is too long to walk end-to-end comfortably',
+      'The Circulator bus ($1/ride) runs popular routes including Georgetown to Union Station and the National Mall',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi in all Smithsonian museums, most cafes, and Metro stations. Many public parks have city WiFi',
+      'Cell coverage is excellent. US SIM: T-Mobile prepaid ($30/month unlimited)',
+      'Download the Smithsonian app for museum maps and exhibits, and the DC Metro app for real-time train arrivals',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Cards accepted everywhere. Food trucks increasingly take cards but carry $20 in cash just in case',
+      'Tipping: 18–20% at restaurants, $1–2/drink at bars, 15–20% for rideshare. DC service workers depend on tips',
+      'The free attractions mean your biggest expenses are food and accommodation — focus your budget there',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Comfortable walking shoes — you\'ll cover 8–12 miles per day across the Mall and neighborhoods. The Mall alone is 2+ miles end-to-end',
+      'Layers for spring/fall. Summer is brutal (hot and humid). Cherry blossom season (late March–April) is mild but unpredictable',
+      'Small bag only — many museums and the Capitol have security screening. Large bags must be checked or aren\'t allowed',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '💵', title: 'Tipping Culture', text: 'Tip 18–20% at restaurants. DC has eliminated the tip credit for many workers but tipping remains expected. $1–2/drink at bars. Tip tour guides $5–10 per person, even on "free" walking tours.' },
+  { icon: '🏛️', title: 'Political Culture', text: 'DC is political — you\'ll see protests, rallies, and lobbyists. Locals work in government, policy, and nonprofits. Don\'t assume anyone\'s political leanings. Respectful curiosity about American politics is always welcome.' },
+  { icon: '🏛️', title: 'Museum Etiquette', text: 'Smithsonians are free but treat them with respect — no touching artifacts, no flash photography, and be mindful of other visitors. Some exhibits (NMAAHC slavery galleries) require quiet, reflective behavior.' },
+  { icon: '🚇', title: 'Metro Etiquette', text: 'Stand right, walk left on escalators — DC takes this seriously. No eating or drinking on the Metro (actually enforced, unlike NYC). Let passengers exit before boarding. Keep backpacks off seats.' },
+  { icon: '🌸', title: 'Cherry Blossom Season', text: 'Late March to early April is DC\'s most magical and crowded time. Book hotels months ahead. The National Cherry Blossom Festival brings millions of visitors. Peak bloom lasts only 4–10 days.' },
+  { icon: '🍽️', title: 'Food Scene', text: 'DC has evolved from a food desert to a culinary capital. Ethiopian food on U Street, crab cakes at Eastern Market, Jose Andres restaurants everywhere, and the half-smoke at Ben\'s Chili Bowl are all essential eating.' },
+];
+---
+
+<CityGuideLayout
+  title="Washington D.C. Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Washington D.C. guide for young travelers. 3-day itinerary with free Smithsonians, monuments by night, and hidden neighborhoods. Plan your trip with roammate."
+  heroImage="/images/guides/washington-dc-hero.webp"
+  heroFlag="🇺🇸"
+  heroCountry="United States"
+  heroRegion="North America"
+  heroCity="Washington D.C."
+  heroSubtitle="Where marble monuments to democracy line a two-mile lawn, and every museum worth visiting is free."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Mar – May Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in USD. Washington D.C. is the best budget city in America — 21 free Smithsonian museums, free monuments, and free tours mean your wallet barely opens."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="DC is a city of power and purpose, but also neighborhoods with soul. Look beyond the marble and you'll find a city with world-class food, diverse culture, and genuine warmth."
+  ctaCity="Washington D.C."
+  ctaText="Find travel companions to explore the Smithsonians, walk the monuments at night, and discover DC's neighborhoods together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

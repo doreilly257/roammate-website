@@ -1,0 +1,128 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/fonts.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description = 'Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.jpg' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+const isHome = Astro.url.pathname === '/';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <title>{title}</title>
+  <link rel="canonical" href={canonicalURL}>
+  <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`}>
+  <link rel="preload" href="/fonts/fraunces-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={isHome ? 'website' : 'article'}>
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImageURL}>
+  <meta property="og:site_name" content="roammate">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@roammate">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImageURL}>
+  <!-- Preconnect for analytics -->
+  <link rel="preconnect" href="https://us.i.posthog.com">
+  <link rel="dns-prefetch" href="https://us-assets.i.posthog.com">
+  {isHome && <link rel="preload" as="image" type="image/webp" href={`${import.meta.env.BASE_URL}images/hero-travelers-on-bus.webp`}>}
+  <link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`}>
+  <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`}>
+  <slot name="head" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "roammate",
+    "url": "https://roammate.com/",
+    "logo": "https://roammate.com/images/rm-full.svg",
+    "sameAs": [
+      "https://www.facebook.com/roammate",
+      "https://www.instagram.com/roammate_travel_app",
+      "https://x.com/roammate",
+      "https://bsky.app/profile/roammate.bsky.social",
+      "https://www.linkedin.com/company/roammate"
+    ]
+  })} />
+  {isHome && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "roammate",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "iOS, Android",
+      "url": "https://roammate.com/",
+      "description": "Travel companion app to connect with fellow travelers, share experiences, and split costs.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "category": "Free"
+      }
+    })} />
+  )}
+
+  <script>
+    // Defer PostHog until browser is idle to avoid blocking initial render
+    function loadPostHog() {
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init rs ls wi ns us ts ss capture calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty fs ds createPersonProfile setInternalOrTestUser ps Qr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing hs debug M cs getPageViewId captureTraceFeedback captureTraceMetric Kr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_4k6qY9TfSxtBwP6wyHaulKcBOPUqIFicoO1x3ZStFU6', {
+          api_host: 'https://us.i.posthog.com',
+          defaults: '2025-11-30',
+          person_profiles: 'identified_only',
+      })
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadPostHog);
+    } else {
+      setTimeout(loadPostHog, 3500);
+    }
+  </script>
+</head>
+<body>
+  <Nav />
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer />
+
+  <script>
+    // Scroll reveal observer
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+    reveals.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,1085 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getBySlug, cityGuideSlugs } from '../data/guides';
+const base = import.meta.env.BASE_URL;
+
+interface Props {
+  /* page meta */
+  title: string;
+  description: string;
+  /* hero */
+  heroImages: { src: string; alt: string }[];
+  heroFlags: string;
+  heroRegion: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  heroPills: string[];
+  /* route overview */
+  routeOverview: { country: string; flag: string; weeks: string; color: string; stops: string[] }[];
+  /* countries */
+  countries: {
+    name: string;
+    flag: string;
+    weeks: string;
+    color: string;
+    intro: string;
+    quickFacts: { icon: string; label: string; value: string; detail: string }[];
+    phases: { title: string; duration: string; description: string; tip: string }[];
+  }[];
+  /* budget */
+  budgetIntro: string;
+  budgetColumns: { flag: string; label: string }[];
+  budgetRows: { category: string; values: string[]; notes: string }[];
+  /* practical info */
+  practicalInfo: { icon: string; title: string; items: string[] }[];
+  /* CTA */
+  ctaRegion: string;
+  ctaText: string;
+  ctaCustomise: string;
+  /* cross-links: slugs for city + place guides on this route */
+  featuredGuides?: string[];
+  /* accent color */
+  accentColor?: string;
+}
+
+const {
+  title, description,
+  heroImages, heroFlags, heroRegion, heroTitle, heroSubtitle, heroPills,
+  routeOverview, countries,
+  budgetIntro, budgetColumns, budgetRows,
+  practicalInfo,
+  ctaRegion, ctaText, ctaCustomise,
+  featuredGuides = [],
+  accentColor = '#2e6d79',
+} = Astro.props;
+
+const colCount = budgetColumns.length + 1; // +1 for the label column
+const ogImage = heroImages[0]?.src;
+const routeGuides = getBySlug(featuredGuides);
+const routeCityGuides = routeGuides.filter(g => cityGuideSlugs.has(g.slug));
+const routePlaceGuides = routeGuides.filter(g => !cityGuideSlugs.has(g.slug));
+
+function phasePills(phaseTitle: string) {
+  const t = phaseTitle.toLowerCase();
+  const cities = routeCityGuides.filter(g => t.includes(g.name.toLowerCase()));
+  const places = routePlaceGuides.filter(g => t.includes(g.name.toLowerCase()));
+  return { cities, places };
+}
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+  <Fragment slot="head">
+    {ogImage && <link rel="preload" as="image" type="image/webp" href={ogImage}>}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://roammate.com/guides/" },
+        { "@type": "ListItem", "position": 3, "name": heroRegion, "item": new URL(Astro.url.pathname, Astro.site).href }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="route-hero" style={`--accent: ${accentColor};`}>
+    <div class="route-hero-bg">
+      <div class="montage-grid">
+        {heroImages.map((img, i) => (
+          <img src={img.src} alt={img.alt} width="900" height="600" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : 'low'}>
+        ))}
+      </div>
+      <div class="route-hero-overlay"></div>
+    </div>
+    <div class="route-hero-content">
+      <div class="route-hero-breadcrumb">
+        <a href="/guides">Guides</a>
+        <span>/</span>
+        <span>Backpacker Routes</span>
+      </div>
+      <div class="route-hero-tag">
+        <span class="route-hero-flags">{heroFlags}</span>
+        <span>{heroRegion}</span>
+      </div>
+      <h1 class="route-hero-title" set:html={heroTitle} />
+      <p class="route-hero-subtitle">{heroSubtitle}</p>
+      <div class="route-hero-meta">
+        {heroPills.map((pill) => (
+          <span class="route-meta-pill">{pill}</span>
+        ))}
+      </div>
+    </div>
+    <div class="route-hero-scroll">
+      <span>Explore</span>
+      <div class="route-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Route Overview -->
+  <section class="route-overview reveal">
+    <div class="route-overview-inner">
+      <div class="route-section-header">
+        <div class="section-label">The Route</div>
+        <h2 class="section-heading">Your <em>journey</em></h2>
+      </div>
+      <div class="route-map">
+        {routeOverview.map((r, i) => (
+          <div class="route-map-country">
+            <div class="route-map-dot" style={`background: ${r.color};`}></div>
+            {i < routeOverview.length - 1 && <div class="route-map-line" style={`background: linear-gradient(to bottom, ${r.color}, ${routeOverview[i+1].color});`}></div>}
+            <div class="route-map-info">
+              <div class="route-map-flag">{r.flag}</div>
+              <div class="route-map-details">
+                <h3 class="route-map-name">{r.country}</h3>
+                <div class="route-map-weeks" style={`color: ${r.color};`}>Weeks {r.weeks}</div>
+                <div class="route-map-stops">{r.stops.join(' → ')}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Country Sections -->
+  {countries.map((country) => (
+    <section class="route-country" id={country.name.toLowerCase().replace(/\s+/g, '-')}>
+      <div class="route-country-header reveal">
+        <div class="route-country-flag">{country.flag}</div>
+        <div class="route-country-meta">
+          <div class="route-country-weeks" style={`color: ${country.color};`}>{country.weeks}</div>
+          <h2 class="route-country-name">{country.name}</h2>
+          <p class="route-country-intro">{country.intro}</p>
+        </div>
+      </div>
+
+      <div class="route-country-facts reveal">
+        <div class="route-facts-grid">
+          {country.quickFacts.map((f) => (
+            <div class="route-fact">
+              <span class="route-fact-icon">{f.icon}</span>
+              <div>
+                <div class="route-fact-label">{f.label}</div>
+                <div class="route-fact-value">{f.value}</div>
+                <div class="route-fact-detail">{f.detail}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="route-phases">
+        {country.phases.map((phase) => {
+          const { cities, places } = phasePills(phase.title);
+          return (
+            <div class="route-phase reveal">
+              <div class="route-phase-header">
+                <div class="route-phase-title-row">
+                  <h3 class="route-phase-title">{phase.title}</h3>
+                  {cities.map(g => (
+                    <a href={`/guides/${g.slug}/`} class="route-guide-pill">More →</a>
+                  ))}
+                  {places.map(g => (
+                    <a href={`/guides/${g.slug}/`} class="route-place-pill">{g.name}</a>
+                  ))}
+                </div>
+                <span class="route-phase-duration" style={`border-color: ${country.color}; color: ${country.color};`}>{phase.duration}</span>
+              </div>
+              <p class="route-phase-text">{phase.description}</p>
+              <div class="route-phase-tip">
+                <strong>Tip:</strong> {phase.tip}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+
+  <!-- Budget Breakdown -->
+  <section class="route-budget" id="budget" style={`--budget-cols: ${colCount};`}>
+    <div class="route-section-header reveal">
+      <div class="section-label">Money</div>
+      <h2 class="section-heading">Budget <em>breakdown</em></h2>
+      <p class="route-section-intro">{budgetIntro}</p>
+    </div>
+    <div class="route-budget-table reveal">
+      <div class="route-budget-header-row">
+        <div class="route-budget-cell route-budget-label"></div>
+        {budgetColumns.map((col) => (
+          <div class="route-budget-cell route-budget-flag">{col.flag} {col.label}</div>
+        ))}
+      </div>
+      {budgetRows.map((row) => (
+        <div class={`route-budget-row ${row.category === 'Daily Total' ? 'route-budget-total' : ''}`}>
+          <div class="route-budget-cell route-budget-label">
+            {row.category}
+            <span class="route-budget-notes">{row.notes}</span>
+          </div>
+          {row.values.map((val) => (
+            <div class="route-budget-cell">{val}</div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Practical Info -->
+  <section class="route-practical" id="practical">
+    <div class="route-section-header reveal">
+      <div class="section-label">Essentials</div>
+      <h2 class="section-heading">Practical <em>info</em></h2>
+    </div>
+    <div class="route-practical-grid">
+      {practicalInfo.map((info, i) => (
+        <div class={`route-practical-card reveal reveal-delay-${(i % 4) + 1}`}>
+          <span class="route-practical-icon">{info.icon}</span>
+          <h4 class="route-practical-title">{info.title}</h4>
+          <ul class="route-practical-list">
+            {info.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="route-cta reveal" style={`--accent: ${accentColor};`}>
+    <div class="route-cta-inner">
+      <h2 class="route-cta-heading">Ready for <em>{ctaRegion}</em>?</h2>
+      <p class="route-cta-text">{ctaText}</p>
+      <div class="route-cta-downloads">
+        <a href="#" class="badge-link"><img src={`${base}images/app-store-badge.svg`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
+        <a href="#" class="badge-link"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="646" height="250" loading="lazy"></a>
+      </div>
+      <p class="route-cta-customise">{ctaCustomise}</p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ========================
+     HERO
+     ======================== */
+  .route-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 40px 80px;
+    overflow: hidden;
+  }
+
+  .route-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .montage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+  }
+
+  .montage-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .route-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to top, rgba(15,15,15,0.95) 0%, rgba(15,15,15,0.7) 30%, rgba(15,15,15,0.3) 55%, rgba(15,15,15,0.15) 75%, rgba(15,15,15,0.35) 100%);
+    z-index: 1;
+  }
+
+  .route-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+
+  .route-hero-breadcrumb {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.3s forwards;
+  }
+
+  .route-hero-breadcrumb a {
+    color: rgba(245, 240, 232, 0.6);
+    transition: color 0.3s;
+  }
+
+  .route-hero-breadcrumb a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .route-hero-breadcrumb span {
+    margin: 0 8px;
+  }
+
+  .route-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.5s forwards;
+  }
+
+  .route-hero-flags {
+    font-size: 22px;
+    letter-spacing: 4px;
+  }
+
+  .route-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 10vw, 110px);
+    font-weight: 900;
+    line-height: 0.95;
+    color: #f5f0e8;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s var(--ease-out-expo) 0.7s forwards;
+  }
+
+  .route-hero-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.7);
+    max-width: 560px;
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.9s forwards;
+  }
+
+  .route-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 1.1s forwards;
+  }
+
+  .route-meta-pill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.8);
+    padding: 8px 16px;
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    border-radius: 100px;
+  }
+
+  .route-hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
+  }
+
+  .route-hero-scroll span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    writing-mode: vertical-rl;
+  }
+
+  .route-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: rgba(245, 240, 232, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .route-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  /* ========================
+     ROUTE OVERVIEW
+     ======================== */
+  .route-overview {
+    padding: 100px 40px;
+    background: var(--color-bg-warm);
+  }
+
+  .route-overview-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .route-map {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 20px;
+  }
+
+  .route-map-country {
+    position: relative;
+    padding-left: 40px;
+    padding-bottom: 48px;
+  }
+
+  .route-map-country:last-child {
+    padding-bottom: 0;
+  }
+
+  .route-map-dot {
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid var(--color-bg-warm);
+    z-index: 1;
+  }
+
+  .route-map-line {
+    position: absolute;
+    left: -1px;
+    top: 22px;
+    width: 2px;
+    height: calc(100% - 14px);
+  }
+
+  .route-map-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .route-map-flag {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  .route-map-details {
+    flex: 1;
+  }
+
+  .route-map-name {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 4px;
+  }
+
+  .route-map-weeks {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .route-map-stops {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+  }
+
+
+  /* ========================
+     COUNTRY SECTIONS
+     ======================== */
+  .route-country {
+    padding: 100px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .route-country:nth-child(even) {
+    background: transparent;
+  }
+
+  .route-country-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .route-country-flag {
+    font-size: 56px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .route-country-meta {
+    flex: 1;
+  }
+
+  .route-country-weeks {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .route-country-name {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .route-country-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    max-width: 640px;
+  }
+
+  .route-country-facts {
+    padding: 48px 40px;
+    background: var(--color-bg-warm);
+    border-radius: 8px;
+    margin-bottom: 48px;
+  }
+
+  .route-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 32px;
+  }
+
+  .route-fact {
+    text-align: center;
+  }
+
+  .route-fact-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .route-fact-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .route-fact-value {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 4px;
+  }
+
+  .route-fact-detail {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 300;
+  }
+
+  /* ========================
+     PHASES (stops)
+     ======================== */
+  .route-phases {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .route-phase {
+    padding: 32px;
+    background: var(--color-bg-warm);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .route-phase:hover {
+    transform: translateY(-3px);
+  }
+
+  .route-phase-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .route-phase-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .route-phase-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-cream);
+  }
+
+  .route-guide-pill,
+  .route-place-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .route-guide-pill {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .route-guide-pill:hover {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+  }
+
+  .route-place-pill {
+    background: rgba(233,115,74,0.15);
+    color: var(--color-terracotta, #e9734a);
+    border: 1px solid rgba(233,115,74,0.25);
+  }
+
+  .route-place-pill:hover {
+    background: rgba(233,115,74,0.25);
+  }
+
+  .route-phase-duration {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid;
+    border-radius: 100px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .route-phase-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .route-phase-tip {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    padding: 14px 18px;
+    background: var(--color-bg);
+    border-left: 3px solid var(--color-terracotta);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .route-phase-tip strong {
+    color: var(--color-terracotta);
+    font-weight: 600;
+  }
+
+  /* ========================
+     BUDGET TABLE
+     ======================== */
+  .route-budget {
+    padding: 100px 40px;
+    background: var(--color-bg-warm);
+  }
+
+  .route-section-header {
+    max-width: 900px;
+    margin: 0 auto 48px;
+  }
+
+  .route-section-intro {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .route-budget-table {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-bg);
+  }
+
+  .route-budget-header-row {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(calc(var(--budget-cols) - 1), 1fr);
+    background: var(--color-cream);
+    color: var(--color-bg);
+  }
+
+  .route-budget-row {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(calc(var(--budget-cols) - 1), 1fr);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .route-budget-row:last-child {
+    border-bottom: none;
+  }
+
+  .route-budget-total {
+    background: rgba(196, 86, 42, 0.06);
+    font-weight: 600;
+  }
+
+  .route-budget-total .route-budget-label {
+    font-weight: 700;
+    color: var(--color-cream);
+  }
+
+  .route-budget-total .route-budget-cell {
+    color: var(--color-terracotta);
+    font-weight: 700;
+  }
+
+  .route-budget-cell {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--color-cream-muted);
+  }
+
+  .route-budget-label {
+    font-weight: 600;
+    color: var(--color-cream);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .route-budget-notes {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+  }
+
+  .route-budget-flag {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-bg);
+    padding: 14px 20px;
+  }
+
+  /* ========================
+     PRACTICAL INFO
+     ======================== */
+  .route-practical {
+    padding: 100px 40px;
+  }
+
+  .route-practical-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .route-practical-card {
+    padding: 32px;
+    background: var(--color-bg-warm);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .route-practical-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .route-practical-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .route-practical-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 16px;
+  }
+
+  .route-practical-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .route-practical-list li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .route-practical-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-terracotta);
+    opacity: 0.5;
+  }
+
+  /* ========================
+     FEATURED GUIDES
+     ======================== */
+  .route-featured {
+    padding: 80px 40px;
+    background: #0f0f0f;
+  }
+
+  .route-featured .guide-section-header {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .route-featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .route-featured-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .route-featured-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.18);
+  }
+
+  .route-featured-flag {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .route-featured-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .route-featured-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .route-featured-country {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .route-featured-arrow {
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .route-featured-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .route-featured { padding: 60px 20px; }
+    .route-featured-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ========================
+     CTA
+     ======================== */
+  .route-cta {
+    padding: 120px 40px;
+    background: #0f0f0f;
+    text-align: center;
+  }
+
+  .route-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .route-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    color: #f5f0e8;
+    margin-bottom: 20px;
+    line-height: 1.15;
+  }
+
+  .route-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .route-cta-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.65);
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  .route-cta-downloads {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .badge-link {
+    display: block;
+    transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
+  }
+
+  .badge-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+  }
+
+  .store-badge {
+    height: 52px;
+    width: auto;
+  }
+
+  /* Google Play PNG has built-in padding — scale it up to match App Store visually */
+  img[alt*="Google Play"].store-badge {
+    height: 76px;
+    margin: -12px 0;
+  }
+
+  .route-cta-customise {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245, 240, 232, 0.4);
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  /* ========================
+     RESPONSIVE
+     ======================== */
+  @media (max-width: 1024px) {
+    .route-hero { padding: 0 24px 60px; }
+    .route-overview { padding: 80px 24px; }
+    .route-country { padding: 80px 24px; }
+    .route-facts-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .route-budget { padding: 80px 24px; }
+    .route-practical { padding: 80px 24px; }
+    .route-practical-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .route-hero { padding: 0 20px 40px; min-height: auto; padding-top: 120px; }
+    .route-hero-title { font-size: clamp(40px, 12vw, 72px); }
+    .route-hero-scroll { display: none; }
+    .route-overview { padding: 60px 20px; }
+    .route-country { padding: 60px 20px; }
+    .route-country-header { flex-direction: column; gap: 12px; }
+    .route-country-flag { font-size: 40px; }
+    .route-country-facts { padding: 32px 20px; }
+    .route-facts-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .route-phase { padding: 24px; }
+    .route-phase-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .route-budget { padding: 60px 20px; }
+    .route-budget-header-row,
+    .route-budget-row { grid-template-columns: 1.2fr repeat(calc(var(--budget-cols) - 1), 1fr); }
+    .route-budget-cell { padding: 12px 10px; font-size: 12px; }
+    .route-budget-flag { font-size: 11px; padding: 12px 10px; }
+    .route-budget-notes { display: none; }
+    .route-practical { padding: 60px 20px; }
+    .route-practical-grid { grid-template-columns: 1fr; }
+    .route-cta { padding: 80px 20px; }
+    .route-cta-downloads { flex-direction: column; }
+    .route-section-header { margin-bottom: 32px; }
+  }
+</style>

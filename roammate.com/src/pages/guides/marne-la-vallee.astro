@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EUR (Euro)', detail: '1 USD ≈ 0.92 EUR' },
+  { icon: '🗣', label: 'Language', value: 'French', detail: 'English spoken at parks & hotels' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1/+2)', detail: 'Daylight saving Mar–Oct' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Jun, Sep – Oct', detail: '15–25°C, mild & less crowded' },
+  { icon: '🎒', label: 'Daily Budget', value: '~€100–160 USD', detail: '€90–150 budget per day' },
+  { icon: '🛂', label: 'Visa', value: 'Schengen rules', detail: 'EU free, others 90-day Schengen visa' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Disneyland Paris in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Disneyland Park — Classic Magic',
+          text: 'Arrive at rope drop (park opening) and head straight to the most popular rides before queues build. Start with Big Thunder Mountain in Frontierland — the runaway mine train coaster is the park\'s most beloved ride. Then cross to Adventureland for Pirates of the Caribbean and Indiana Jones and the Temple of Peril. Walk through Sleeping Beauty Castle for the stained glass gallery inside. Grab a croissant at Cable Car Bake Shop on Main Street.',
+          tip: 'Download the Disneyland Paris app for live queue times. Rides under 20 minutes wait in the first hour after opening are common.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Walt Disney Studios & Avengers Campus',
+          text: 'Cross to Walt Disney Studios Park for the newer attractions. Avengers Campus is the centrepiece — Spider-Man W.E.B. Adventure is an interactive ride, and Avengers Assemble: Flight Force is a high-speed indoor coaster. Ratatouille: L\'Aventure Totalement Toquée shrinks you to rat-size in a Parisian kitchen — charming and unique to this park. Crush\'s Coaster (Nemo-themed) has the longest queues — use Premier Access (€8–18 per ride) if budget allows.',
+          tip: 'Crush\'s Coaster has no Premier Access — ride it first or accept 60–90 minute waits. Ratatouille is quieter after 5pm.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Fireworks & Disney Village',
+          text: 'Return to Disneyland Park for the evening. Queue times drop significantly after 6pm — re-ride favourites with shorter waits. Catch Disney Illuminations — the nightly fireworks, projections, and laser show on Sleeping Beauty Castle. It\'s genuinely spectacular, with music from decades of Disney films. After the show, head to Disney Village for dinner — Annette\'s Diner for retro American burgers (€15–25) or Earl of Sandwich for budget bites (€8–12).',
+          tip: 'Stake out your fireworks spot 30 minutes early — the central hub in front of the castle gives the best view. Bring a blanket to sit on.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Disneyland Park — Full Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Frontierland & Adventureland',
+          text: 'Arrive at rope drop and beeline for Big Thunder Mountain — the runaway mine train coaster is the park\'s signature thrill. Then Pirates of the Caribbean in Adventureland — the European version has unique touches including a pirate ship battle scene. Indiana Jones and the Temple of Peril is a short but intense looping coaster. Walk through Adventure Isle — hidden caves and Skull Rock are fun exploration. Breakfast croissant at Cable Car Bake Shop (€5–8).',
+          tip: 'Big Thunder Mountain opens 15 minutes before the rest of the park on Extra Magic Time mornings — stay at a Disney hotel for this perk.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Fantasyland & Discoveryland',
+          text: 'Explore Fantasyland — Sleeping Beauty Castle\'s interior has beautiful stained glass and a dragon animatronic in the dungeon below. Peter Pan\'s Flight has a permanent 45–60 minute queue but is worth it for the flying-over-London scene. Cross to Discoveryland for Hyperspace Mountain (Star Wars themed coaster in darkness) and Buzz Lightyear Laser Blast. Lunch at Au Chalet de la Marionnette — pizza and pasta from €12.',
+          tip: 'Peter Pan\'s Flight queue is shortest during the parade and in the last hour before closing. Hyperspace Mountain is best after dark.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Parade, Fireworks & Disney Village',
+          text: 'Watch Disney Stars on Parade — the daily float procession along Main Street, U.S.A. with music, dancers, and beloved characters. Stake your spot 20 minutes before. Then stay for Disney Illuminations — the fireworks, projections, and laser show on Sleeping Beauty Castle is genuinely breathtaking. After the show, exit through Disney Village for dinner at Vapiano (€12–18 pasta), or pick up crêpes from a Village kiosk (€5–8).',
+          tip: 'The parade is best viewed from the Town Square end of Main Street where the floats slow down. The castle hub is best for fireworks.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Walt Disney Studios & Avengers Campus',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Avengers Campus',
+          text: 'Head to Walt Disney Studios Park at opening and rush to Avengers Campus. Spider-Man W.E.B. Adventure is an interactive dark ride where you flick webs at escaping spider-bots — addictive and re-rideable. Avengers Assemble: Flight Force is a high-speed indoor coaster through an Avengers battle. Meet Marvel characters — Iron Man, Spider-Man, and Black Widow appear throughout the campus. Grab a Marvel-themed snack at PYM Kitchen.',
+          tip: 'Spider-Man W.E.B. Adventure\'s queue builds fast — ride it within the first 30 minutes. The single rider line is much faster for Flight Force.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ratatouille, Crush & Production Courtyard',
+          text: 'Ratatouille: L\'Aventure Totalement Toquée shrinks you to rat-size in Gusteau\'s kitchen — a trackless dark ride unique to Paris. The Place de Rémy area is beautifully themed like a Parisian neighbourhood. Crush\'s Coaster is a spinning shell coaster — expect 60–90 minute waits (no Premier Access available). The Twilight Zone Tower of Terror drops you 13 storeys. Lunch at Bistrot Chez Rémy (€25–35) for the best in-park dining.',
+          tip: 'Crush\'s Coaster is the park\'s most popular ride with no skip option. Ride during the parade or at park opening for shorter waits.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Evening Back in Disneyland Park',
+          text: 'Your park ticket includes both parks. Return to Disneyland Park in the evening for re-rides with shorter queues — Big Thunder Mountain and Hyperspace Mountain at night are even better. Catch the fireworks from Main Street. Dinner at Restaurant Hakuna Matata in Adventureland (€15–22) for a quick meal before the show. End the night with a walk down Main Street as the castle lights reflect on the ground.',
+          tip: 'Evening queues drop dramatically after 7pm — your second and third rides on Big Thunder Mountain are often walk-ons.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Paris & Île-de-France Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Provins Medieval Town',
+          text: 'Take the Transilien P train from Marne-la-Vallée to Provins (1 hour, €12) — a UNESCO World Heritage medieval town with remarkably preserved 12th-century walls, towers, and underground tunnels. Walk the ramparts, visit the Tour César (€5) for panoramic views, and explore the underground passages (€5.50). The town hosts medieval jousting shows (Apr–Nov, €14) with knights in full armour — cheesy but entertaining.',
+          tip: 'Provins is most magical on a quiet weekday morning when the medieval lanes are empty. The jousting shows run weekends and holidays.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Château de Vaux-le-Vicomte',
+          text: 'Continue to Château de Vaux-le-Vicomte (€19, taxi from Provins or drive) — the baroque masterpiece that inspired Versailles. The symmetrical gardens by André Le Nôtre are magnificent. The château\'s owner, Nicolas Fouquet, threw a party so lavish that Louis XIV had him arrested and built Versailles to surpass it. Candlelit evening visits (Saturdays, May–Oct) illuminate 2,000 candles throughout the gardens.',
+          tip: 'Vaux-le-Vicomte is far less crowded than Versailles and equally beautiful. The Saturday candlelit visits are genuinely magical.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Farewell Dinner',
+          text: 'Return to Marne-la-Vallée for a final evening. Dinner at the Val d\'Europe shopping centre — a massive mall 5 minutes from the parks with restaurants including Five Guys (€12–15), Hippopotamus steakhouse (€18–30), and Asian buffets (€15–20). Or splurge at one of the Disney hotels\' restaurants — Inventions at Disneyland Hotel has character dining (€60–90 per person). Walk Disney Village one last time.',
+          tip: 'Val d\'Europe mall has a Sea Life aquarium (€18) and La Vallée Village designer outlet next door — worth a browse if you have time.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Disneyland Park — Full Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Frontierland & Adventureland',
+          text: 'Arrive at rope drop and head to Big Thunder Mountain — the park\'s signature coaster. Then Pirates of the Caribbean in Adventureland — the European version has unique pirate battle scenes. Indiana Jones and the Temple of Peril is a short looping coaster. Explore Adventure Isle\'s caves and Skull Rock. Breakfast croissant at Cable Car Bake Shop (€5–8).',
+          tip: 'Big Thunder Mountain opens early during Extra Magic Time — Disney hotel guests get 30 minutes before general opening.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Fantasyland & Discoveryland',
+          text: 'Sleeping Beauty Castle has beautiful stained glass inside and a dragon in the dungeon. Peter Pan\'s Flight has a 45–60 minute queue — the flying-over-London scene is magical. Hyperspace Mountain in Discoveryland is a Star Wars coaster in total darkness. Buzz Lightyear Laser Blast is interactive fun. Lunch at Au Chalet de la Marionnette (€12–18).',
+          tip: 'Peter Pan is shortest during the parade and in the last hour. Hyperspace Mountain is even better at night — the darkness is total.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Parade & Fireworks',
+          text: 'Disney Stars on Parade — floats, music, and characters along Main Street. Then Disney Illuminations — fireworks, projections, and lasers on Sleeping Beauty Castle. Both are spectacular. After the show, re-ride favourites with short waits — most rides are walk-ons in the final 30 minutes. Dinner at Earl of Sandwich in Disney Village (€8–12) or Annette\'s Diner for burgers (€15–25).',
+          tip: 'Stake out your fireworks spot 30 minutes early. The castle hub gives the best view. Blankets help if the ground is damp.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Walt Disney Studios & Avengers Campus',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Avengers Campus Rush',
+          text: 'Rush to Avengers Campus at park opening. Spider-Man W.E.B. Adventure — an interactive ride where you throw webs — is addictive. Avengers Assemble: Flight Force is a high-speed indoor coaster. Meet Marvel characters throughout the campus. Grab breakfast at PYM Kitchen — the oversized and undersized food items match the Ant-Man theme.',
+          tip: 'Ride Spider-Man W.E.B. Adventure in the first 30 minutes — the queue builds to 60+ minutes by midday. Single rider line exists for Flight Force.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ratatouille & Crush\'s Coaster',
+          text: 'Ratatouille: L\'Aventure Totalement Toquée — a trackless dark ride shrinking you to rat-size in Gusteau\'s kitchen. The themed area, Place de Rémy, recreates a Parisian neighbourhood. Crush\'s Coaster — a spinning Nemo-themed coaster with 60–90 minute waits and no skip option. Tower of Terror drops 13 storeys. Lunch at Bistrot Chez Rémy (€25–35) — the best in-park restaurant.',
+          tip: 'Ride Crush\'s Coaster during the parade or at park opening. There\'s no Premier Access for this ride — patience is required.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Evening in Disneyland Park',
+          text: 'Cross back to Disneyland Park for evening re-rides. Big Thunder Mountain and Hyperspace Mountain at night are even better. Evening queues drop dramatically after 7pm — many rides become walk-ons. Catch the fireworks again from a different vantage point — try the bridge near Fantasyland for a unique angle. Dinner at Captain Jack\'s in Adventureland (€25–40) — a unique pirates-themed restaurant beside the ride.',
+          tip: 'Captain Jack\'s Restaurant is inside the Pirates of the Caribbean building — boats drift past while you eat. Book ahead.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Paris — The Essentials',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'RER to Paris — Eiffel Tower',
+          text: 'Take the RER A from Marne-la-Vallée–Chessy to Paris (40 minutes, €8.65 one-way). Start at the Eiffel Tower — take the lift to the 2nd floor (€18.80) or climb the stairs to the 2nd floor (€11.80). The views over Paris are iconic. Walk across the Pont d\'Iéna to the Trocadéro esplanade for the classic Eiffel Tower photo. Grab a crêpe from a street vendor (€4–6).',
+          tip: 'Book Eiffel Tower tickets online months ahead at toureiffel.paris. Without a booking, the queue can be 2+ hours. Morning is quietest.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Louvre & Seine Walk',
+          text: 'Metro to the Louvre (€22, book online at louvre.fr). Even if you skip the interior, the glass pyramid courtyard is iconic. If you enter, focus on the highlights: Mona Lisa, Venus de Milo, and Winged Victory of Samothrace. Allow 2–3 hours for a focused visit. Walk along the Seine through the Tuileries Garden towards Place de la Concorde. Lunch at a café near Palais Royal (€12–18 for a plat du jour).',
+          tip: 'Book Louvre tickets for after 3pm on Wednesdays or Fridays — the museum is open until 9pm and far less crowded in the evening.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Montmartre & Sacré-Cœur',
+          text: 'Metro to Montmartre — the hilltop artistic quarter. Climb to Sacré-Cœur Basilica (free) for panoramic Paris views from the dome (€7). Walk Place du Tertre where artists paint portraits and street performers entertain. Dinner at Le Consulat or Le Relais Gascon for French bistro food (€15–25 mains). The illuminated Sacré-Cœur against the night sky is magnificent. RER back to Marne-la-Vallée (40 min, last train ~midnight).',
+          tip: 'The funicular saves you the steep Montmartre stairclimb (€2.15, regular transit ticket). The steps are charming if you have the energy.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Versailles Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Palace of Versailles',
+          text: 'RER A to Paris, then RER C to Versailles-Château (1.5 hours total, €12). The Palace of Versailles (€21, book online at chateauversailles.fr) is overwhelming — the Hall of Mirrors, the King\'s State Apartments, and the Chapel are extraordinary. Arrive at 9am opening to beat the tour groups. The audio guide is excellent and included. Allow 2–3 hours for the palace interior.',
+          tip: 'Tuesday is the busiest day (many Paris museums are closed). Buy tickets online with a specific time slot to skip the ticket queue.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gardens & Grand Trianon',
+          text: 'The Gardens of Versailles (free except during Musical Fountain shows, Apr–Oct, €10.50) are as impressive as the palace. Walk the Grand Canal, explore the Orangerie, and visit the Grand Trianon and Marie Antoinette\'s Estate (included in full ticket). The Hamlet — a mock village Marie Antoinette had built — is surreal and charming. Rent a rowing boat on the Grand Canal (€16/30 min) or rent bikes (€10/hour).',
+          tip: 'The Musical Fountain shows (weekends Apr–Oct) are spectacular — fountains dance to Baroque music. Worth the €10.50 supplement.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Versailles Town & Return',
+          text: 'Explore the charming town of Versailles — Rue de la Paroisse and the Marché Notre-Dame area have excellent restaurants and cafes. Dinner at La Cour (€18–30) or a crêperie for Breton galettes (€10–14). Return to Marne-la-Vallée via Paris. If it\'s a Saturday (Jun–Sep), consider staying for the Grandes Eaux Nocturnes — a nighttime fountain and firework show in the gardens.',
+          tip: 'The Grandes Eaux Nocturnes on summer Saturdays are Versailles\' most spectacular event — fountains, fireworks, and music until 11pm.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Provins & Île-de-France Heritage',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Provins Medieval Town',
+          text: 'Transilien P train to Provins (1 hour, €12) — a UNESCO World Heritage medieval town. Walk the remarkably preserved 12th-century walls, visit the Tour César (€5) for panoramic views, and explore the underground tunnels (€5.50). The Grange aux Dîmes (Tithe Barn) recreates medieval market life. The town feels like stepping back 800 years. Grab a pastry at a boulangerie in the lower town.',
+          tip: 'Provins is most magical on a weekday morning when the medieval streets are empty. Combine the Tour César and underground visits for a discount.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Medieval Shows or Château de Vaux-le-Vicomte',
+          text: 'If visiting a weekend (Apr–Nov), catch the Provins medieval show — jousting knights in full armour at the foot of the ramparts (€14). Or continue to Château de Vaux-le-Vicomte (€19, by taxi or car) — the baroque masterpiece that inspired Versailles. The gardens by Le Nôtre are exquisite. Nicolas Fouquet built it so extravagantly that Louis XIV imprisoned him and copied his architects for Versailles.',
+          tip: 'Vaux-le-Vicomte\'s candlelit visits (Saturdays May–Oct, 2,000 candles) are genuinely magical — among the most romantic evenings in France.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Val d\'Europe',
+          text: 'Return to Marne-la-Vallée. Dinner at Val d\'Europe shopping centre — a massive mall 5 minutes from the parks with diverse dining. Five Guys (€12–15), Asian restaurants (€12–18), or Hippopotamus steakhouse (€18–30). The Sea Life aquarium (€18) in the mall is a fun evening activity. La Vallée Village designer outlet is next door for discounted luxury brands.',
+          tip: 'Val d\'Europe has a Carrefour hypermarket — stock up on French cheese, wine, and pastries for picnic lunches to save money.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Paris — Art, Food & Neighborhoods',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Le Marais & Musée d\'Orsay',
+          text: 'RER to Paris. Start in Le Marais — the trendy neighbourhood with medieval streets, Jewish delis, LGBTQ+ scene, and some of Paris\'s best galleries. Walk Rue des Rosiers for falafel at L\'As du Fallafel (€8–12) — the queue is always worth it. Then to Musée d\'Orsay (€16) — the converted railway station housing the world\'s greatest Impressionist collection. Monet, Renoir, Van Gogh, and Degas in a stunning setting.',
+          tip: 'Musée d\'Orsay is least crowded on Thursday evenings (open until 9:45pm). The Impressionist galleries on the top floor are the unmissable highlight.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Saint-Germain & Latin Quarter',
+          text: 'Walk across the river to Saint-Germain-des-Prés — literary cafes, bookshops, and boulevards where Hemingway and Sartre once sat. Browse Shakespeare and Company bookshop (free) near Notre-Dame. Walk through the Latin Quarter — Rue Mouffetard market, the Panthéon (€11.50), and Luxembourg Gardens (free). Lunch at a classic bistro — try croque monsieur (€10–14) or steak-frites (€16–22).',
+          tip: 'Shakespeare and Company is free to browse and has free readings and events. The upstairs reading room has a magical, lived-in atmosphere.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Seine Cruise & Return',
+          text: 'Take a Seine river cruise at sunset — Bateaux Mouches or Vedettes du Pont Neuf (€12–16 for 1 hour). Drift past the Eiffel Tower, Notre-Dame, Musée d\'Orsay, and the Louvre as the city lights up. It\'s the most romantic way to see Paris\'s landmarks. Return to Marne-la-Vallée via RER. Last train around midnight — check schedules.',
+          tip: 'The sunset departure (typically 7–8pm in summer) gives you daylight, golden hour, and the city illuminated — all in one cruise.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Parks Revisit or Fontainebleau',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Fontainebleau or Parks Re-ride',
+          text: 'Option A: Train to Fontainebleau (1 hour, €10) — a magnificent royal palace with 1,500 rooms, less crowded than Versailles. Napoleon\'s apartments, the Renaissance gallery, and the vast forest for hiking. Option B: Return to the Disney parks for re-rides and anything you missed. Use Premier Access (€8–18 per ride) for your must-dos. Early morning and late evening have the shortest queues.',
+          tip: 'Fontainebleau Forest has world-class rock climbing (bouldering) if you\'re outdoorsy — rent crash pads from shops in the town.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Val d\'Europe Shopping or Park Time',
+          text: 'If at Fontainebleau, return to Marne-la-Vallée for a final afternoon. Browse La Vallée Village designer outlet — 110+ boutiques with 33% off retail (Prada, Gucci, Nike, etc.). Or spend the afternoon in the parks — catch any rides, shows, or character meets you missed earlier in the week. Pick up Disney souvenirs — the park shops have exclusive Paris merchandise.',
+          tip: 'La Vallée Village offers tax-free shopping for non-EU visitors — save an additional 12% at the centre\'s tax refund office.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Fireworks & Farewell',
+          text: 'Return to Disneyland Park for a final Disney Illuminations — seeing the show for a second time, knowing the music and timing, is even more emotional. Walk down Main Street one last time as the castle glows. Farewell dinner at Billy Bob\'s Country Western Saloon in Disney Village (€20–35) for a lively final evening, or the quieter Steakhouse for a more refined meal. Marne-la-Vallée–Chessy station connects to CDG Airport via RER and TGV.',
+          tip: 'Direct TGV trains connect Marne-la-Vallée–Chessy to CDG Airport in 10 minutes. Check timetables — they run several times daily.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Buy tickets in advance', text: 'Disneyland Paris tickets are cheaper online than at the gate — €56–99 for a 1-park day vs €105+ at the gate. Multi-day passes drop significantly per day (€60–70/day for 3+ days).' },
+  { title: 'Bring your own food', text: 'You can bring food and non-alcoholic drinks into both parks (no glass bottles or alcohol). A baguette, cheese, and charcuterie from a supermarket saves €20–30 per person per meal.' },
+  { title: 'Stay off-site', text: 'Disney hotels are expensive (€200–600/night). Off-site hotels near Val d\'Europe or the RER station cost €60–120/night. The free shuttle buses and 5-minute RER ride make off-site practical.' },
+  { title: 'Use the RER wisely', text: 'RER A connects to central Paris in 40 minutes (€8.65). Buy a Navigo Easy card and load individual tickets. Day passes to Paris and back can save money if making multiple trips.' },
+  { title: 'Skip Premier Access', text: 'Premier Access costs €8–18 per ride. Instead, use the free Disneyland app to monitor queue times and ride during parades, meal times, and the last hour before closing when waits drop to under 15 minutes.' },
+  { title: 'Val d\'Europe savings', text: 'The Carrefour hypermarket in Val d\'Europe sells water, snacks, and meals far cheaper than in the parks. Stock up and bring a daypack — you\'ll save significantly.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '€60–120', midrange: '€150–300', splurge: '€500+', notes: 'Off-site hotels → partner hotels → Disney on-site' },
+  { category: 'Food', budget: '€20–40', midrange: '€50–90', splurge: '€150+', notes: 'Picnic & fast food → park restaurants → character dining' },
+  { category: 'Transport', budget: '€10–20', midrange: '€20–40', splurge: '€60+', notes: 'RER & bus → taxi → private transfer' },
+  { category: 'Activities', budget: '€56–80', midrange: '€90–140', splurge: '€200+', notes: '1-park ticket → 2-park + Premier Access → VIP tours' },
+  { category: 'Drinks', budget: '€5–10', midrange: '€15–30', splurge: '€50+', notes: 'Water & coffee → park drinks → Disney Village bars' },
+  { category: 'Daily Total', budget: '€151–270', midrange: '€325–600', splurge: '€960+', notes: '$164–293 → $353–652 → $1,043+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'EU/EEA citizens enter freely. US, UK, Canada, Australia — 90 days visa-free in the Schengen Area. No advance application needed',
+      'Passport must be valid for 3 months beyond your stay. Non-EU visitors should carry their passport at all times',
+      'Nearest airports: CDG (35km, TGV direct 10 min), Orly (40km, bus 2 hours), Paris city (RER A, 40 min)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. EU Health Insurance Card (EHIC) covers EU citizens. Travel insurance strongly recommended for all',
+      'Marne-la-Vallée and the parks are very safe. Standard pickpocket awareness in Paris and on the RER trains',
+      'Weather is temperate — summer can hit 35°C, winter drops to 0–5°C. Rain is possible year-round; bring layers and a light rain jacket',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'RER A line: Marne-la-Vallée–Chessy station is directly at the park entrance. Paris in 40 min (€8.65). Runs 5:30am–midnight',
+      'TGV high-speed trains stop at Marne-la-Vallée–Chessy — direct connections to CDG Airport (10 min), Lille, Lyon, and Brussels',
+      'Free shuttle buses connect Disney hotels. Val d\'Europe has a shopping shuttle. Uber and taxis available for local trips',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'EU roaming: EU SIM cards work at no extra charge. Non-EU visitors can buy Orange or SFR SIMs at CDG Airport (€20–40 for 10–20GB)',
+      'Free WiFi throughout the Disney parks, hotels, and Disney Village. Generally reliable for checking queue times on the app',
+      'Download the Disneyland Paris app — real-time queue times, restaurant bookings, show schedules, and park maps',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Euro (€). Cards accepted everywhere in the parks and hotels. Contactless payment is standard throughout France',
+      'ATMs at Disney Village and Val d\'Europe. Park food and merchandise are card-friendly — minimal cash needed',
+      'Tipping: not expected in France (service included by law). Rounding up at restaurants is appreciated but not required',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Comfortable walking shoes — you\'ll walk 15–25km per day in the parks. Avoid new shoes. Break them in before your trip',
+      'Layers: mornings and evenings can be cool even in summer. A light rain jacket or poncho is essential — weather changes quickly',
+      'Small backpack for water, snacks, sunscreen, and a portable phone charger — the Disneyland app drains your battery fast',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🇫🇷', title: 'French Greetings', text: 'Always say "Bonjour" when entering a shop, restaurant, or interacting with staff. "Merci" and "S\'il vous plaît" go a long way. The French appreciate basic effort with their language.' },
+  { icon: '🕐', title: 'French Timing', text: 'Lunch is sacred in France — restaurants serve 12–2pm and may close outside these hours. Dinner starts at 7:30pm earliest. The parks follow more flexible American-style hours for food.' },
+  { icon: '🎢', title: 'Park Etiquette', text: 'Queue jumping is taken seriously — the French are orderly in theme park queues. Don\'t save spots for large groups. Flash photography on dark rides is annoying and may be prohibited.' },
+  { icon: '🍷', title: 'Wine & Dining', text: 'France allows wine and beer in the parks — unlike US Disney parks. A glass of wine with lunch at a park restaurant is perfectly normal and expected. Enjoy the French touch.' },
+  { icon: '🗣', title: 'Bilingual Experience', text: 'Rides and shows are in French and English. Cast members are bilingual. Menus are in French with English translations. The French theming adds charm — embrace the Parisian touches.' },
+  { icon: '⏰', title: 'Seasonal Events', text: 'Halloween (Oct), Christmas (Nov–Jan), and Bastille Day (Jul 14) have special park events, decorations, and shows. The Christmas season is particularly magical — book accommodation well ahead.' },
+];
+---
+
+<CityGuideLayout
+  title="Marne-la-Vallée Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Marne-la-Vallée guide for young travelers. 3-day itinerary covering Disneyland Paris, Walt Disney Studios, Versailles, and Île-de-France day trips. Plan your trip with roammate."
+  heroImage="/images/guides/marne-la-vallee-hero.webp"
+  heroFlag="🇫🇷"
+  heroCountry="France"
+  heroRegion="Europe"
+  heroCity="Marne-la-Vallée"
+  heroSubtitle="Where Sleeping Beauty's castle meets the châteaux of Île-de-France, and the magic of Disney sits 40 minutes from the City of Light."
+  heroPills={['3-Day Itinerary', 'Family & Fun', 'Apr – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Euros (€). Theme parks are expensive, but smart planning — advance tickets, off-site stays, and packed lunches — makes it manageable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="You're in France, not Florida — the Disney parks here have a distinctly French flavour with wine, croissants, and bilingual charm. Embrace the Parisian touches."
+  ctaCity="Marne-la-Vallée"
+  ctaText="Find travel companions, split accommodation and day trip costs, and enjoy the magic of Disneyland Paris with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

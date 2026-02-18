@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'SAR (Riyal)', detail: '1 USD ≈ 3.75 SAR' },
+  { icon: '🗣', label: 'Language', value: 'Arabic', detail: 'English growing in business areas' },
+  { icon: '🕐', label: 'Timezone', value: 'AST (UTC+3)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: '15–25°C, cool & pleasant' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$65–100 USD', detail: 'SAR 245–375 budget' },
+  { icon: '🛂', label: 'Visa', value: 'eVisa or on arrival', detail: 'Tourist visa SAR 480 for many nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Riyadh in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Diriyah & At-Turaif District',
+          text: 'Start at Diriyah, the birthplace of the Saudi state — the UNESCO-listed At-Turaif district features beautifully restored mud-brick palaces and fortifications of the first Saudi dynasty. The golden-brown Najdi architecture against the blue sky is stunning. The Bujairi Terrace development next door has upscale restaurants and cafes overlooking the ruins. Grab Arabic coffee and dates while admiring the heritage site.',
+          tip: 'Visit At-Turaif early morning when the light on the mud-brick walls is warmest. Entry is free to the surrounding areas; museum tickets SAR 75.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kingdom Centre & Modern Riyadh',
+          text: 'Head to Kingdom Centre Tower — Riyadh\'s most iconic skyscraper with its distinctive sky bridge at 300m. The Sky Bridge observation deck (SAR 75) offers panoramic views over the sprawling desert city. Then walk along Olaya Street, the commercial spine of modern Riyadh, lined with malls, restaurants, and sleek office towers. Lunch at The Globe in Al Faisaliah Tower — equally dramatic views and a revolving restaurant.',
+          tip: 'Visit Kingdom Centre Sky Bridge at sunset — the view of the city transitioning from golden daylight to glittering night lights is spectacular.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Boulevard Riyadh City & Nightlife',
+          text: 'Head to Boulevard Riyadh City — a massive entertainment district with restaurants, concerts, events, and immersive experiences. The area buzzes with energy, especially on weekends (Thursday–Friday in Saudi Arabia). Dinner at one of the diverse restaurants — international and Saudi options from SAR 50–150. End with Arabic coffee at a traditional café or explore the entertainment zones.',
+          tip: 'Boulevard Riyadh City events change seasonally — check the Riyadh Season website for what\'s on. Thursday nights are the busiest.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Heritage Riyadh — Diriyah & History',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Diriyah & At-Turaif UNESCO Site',
+          text: 'Start at Diriyah, 20 minutes northwest of central Riyadh — the birthplace of Saudi Arabia. The UNESCO-listed At-Turaif district features restored mud-brick palaces of the first Saudi dynasty, with museums chronicling the founding of the kingdom. The Najdi architecture — thick mud walls, geometric patterns, courtyards — is hauntingly beautiful. Bujairi Terrace has upscale dining overlooking the heritage site.',
+          tip: 'Visit At-Turaif early morning for the best light on the mud-brick walls. The museums inside require tickets (SAR 75) but the exterior is free.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Museum & Masmak Fortress',
+          text: 'Head to the National Museum of Saudi Arabia (SAR 25) — an outstanding modern museum covering Arabian history from prehistoric times through the Islamic golden age to the modern kingdom. The eight galleries need 2–3 hours minimum. Then walk to Masmak Fortress — the mud-brick citadel where Ibn Saud captured Riyadh in 1902, founding the modern state. Entry is free.',
+          tip: 'The National Museum is one of the best in the Middle East — don\'t rush it. The pre-Islamic and early Islamic galleries are highlights.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Deera Souq & Traditional Dinner',
+          text: 'Explore the old Deera district — the Thumairi Souq for perfumes, oud, and incense. The traditional gold souq here is less touristy than the malls. Dinner at Najd Village — a restaurant designed like a traditional Najdi village with clay walls, carved wooden doors, and floor seating. Try jareesh (cracked wheat porridge, SAR 40), kabsa (SAR 50), and their famous Arabic coffee.',
+          tip: 'Najd Village is one of Riyadh\'s most atmospheric restaurants — the architecture alone is worth the visit. Book ahead on weekends.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Modern Riyadh — Towers, Art & Entertainment',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kingdom Centre & Olaya Street',
+          text: 'Head to Kingdom Centre Tower — Riyadh\'s most iconic building. The Sky Bridge observation deck at 300m (SAR 75) offers panoramic views over the vast desert metropolis. The parabolic arch at the top is an engineering marvel. Walk south along Olaya Street through Riyadh\'s financial district — glass towers, luxury shops, and a glimpse of Saudi Arabia\'s ambitious modern transformation.',
+          tip: 'Visit the Sky Bridge mid-morning for clear views without the evening crowds. The photography opportunities from 300m are incredible.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'KAFD & Contemporary Art',
+          text: 'Explore King Abdullah Financial District (KAFD) — a futuristic cluster of skyscrapers and public spaces. The architecture is jaw-dropping — organic shapes, geometric facades, and a conference centre that looks like a giant stingray. Visit the nearby Ithra (King Abdulaziz Centre for World Culture) vibes at local galleries, or head to the JAX District in Diriyah for emerging Saudi art.',
+          tip: 'KAFD is best appreciated on foot — the pedestrian areas between the towers have impressive public art and landscaping.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Boulevard Riyadh City',
+          text: 'Head to Boulevard Riyadh City — Riyadh\'s mega entertainment district with restaurants, concerts, immersive experiences, and seasonal events. The zone spans a massive area with themed sections. Dinner options range from SAR 40 street food to SAR 200+ fine dining. The atmosphere on Thursday and Friday nights is electric — this is where young Riyadh comes to play.',
+          tip: 'Boulevard Riyadh City changes with Riyadh Season (Oct–Mar). Check riyadhseason.sa for current events and performers.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Edge of Riyadh & Nature',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Edge of the World (Jebel Fihrayn)',
+          text: 'Book a guided tour or rent a 4x4 to the Edge of the World (Jebel Fihrayn), 90km northwest — dramatic 300m cliffs dropping into a vast desert plain that stretches to the horizon. It genuinely feels like the earth simply ends. The drive through Wadi Al-Disah adds to the adventure. Allow 4–5 hours total for the trip. Best in cooler months (Nov–Mar).',
+          tip: 'A 4x4 is essential — the last 15km is unpaved desert track. Join a guided group tour (SAR 250–400) if you\'re not confident off-road.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Return & Lunch in Riyadh',
+          text: 'Return to Riyadh for a late lunch. Head to Al Baik if you haven\'t tried Saudi Arabia\'s most loved fast-food chain (SAR 15–25) — the garlic sauce and broasted chicken are legendary. Or for a more refined lunch, try Takya in the Al Bujairi district for modern Saudi cuisine (SAR 80–150). Rest during the afternoon heat — Riyadh life resumes after 4pm.',
+          tip: 'Riyadh shuts down in the afternoon heat — embrace the siesta culture. Malls and cafes are air-conditioned refuges.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell at Al Faisaliah & Riyadh Skyline',
+          text: 'End your trip at Al Faisaliah Tower\'s Globe restaurant — the golden sphere at the top of this 266m pyramid-shaped tower offers 360-degree views and fine dining (SAR 150–300). Or keep it budget by visiting the observation deck only (SAR 50). The Riyadh skyline at night — Kingdom Tower, Al Faisaliah, and the new KAFD towers — is increasingly spectacular.',
+          tip: 'Al Faisaliah\'s Globe restaurant requires a reservation — book 2–3 days ahead. The window tables are worth requesting specifically.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Heritage Riyadh — Diriyah & History',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Diriyah & At-Turaif',
+          text: 'Start at Diriyah, 20 minutes northwest — birthplace of Saudi Arabia. The UNESCO-listed At-Turaif district features restored mud-brick palaces of the first Saudi dynasty. The Najdi architecture — thick mud walls, geometric patterns, courtyards — is stunning. Bujairi Terrace next door has upscale restaurants with views. Arabic coffee and dates while admiring the heritage site.',
+          tip: 'Visit At-Turaif early morning for the best light. The museums require tickets (SAR 75) but the surrounding area is free to explore.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Museum & Masmak Fortress',
+          text: 'Head to the National Museum of Saudi Arabia (SAR 25) — eight galleries covering Arabian history from prehistory through the Islamic golden age. A world-class museum that deserves 2–3 hours. Then walk to Masmak Fortress — the mud-brick citadel where Ibn Saud captured Riyadh in 1902, the founding event of the modern kingdom. Entry is free and the displays are well done.',
+          tip: 'The National Museum is one of the best in the Middle East — don\'t rush it. The pre-Islamic and unification galleries are highlights.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Deera Souq & Traditional Dinner',
+          text: 'Explore old Deera — the Thumairi Souq for perfumes, oud, and incense. The traditional gold souq here is atmospheric and less commercial than mall jewellers. Dinner at Najd Village — designed like a traditional Najdi settlement with clay walls and floor seating. Try jareesh (SAR 40), kabsa (SAR 50), and the famous Arabic coffee.',
+          tip: 'Najd Village is one of Riyadh\'s most atmospheric restaurants — the architecture is worth the visit alone. Book ahead on weekends.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Modern Riyadh — Towers & Commerce',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kingdom Centre Sky Bridge',
+          text: 'Visit Kingdom Centre Tower — Riyadh\'s most iconic skyscraper. The Sky Bridge at 300m (SAR 75) offers panoramic views over the sprawling desert city extending to the horizon in every direction. The sheer scale of Riyadh is only apparent from up here. Walk south through the financial district along Olaya Street and King Fahad Road.',
+          tip: 'The Sky Bridge opens at 10am. Mid-morning has fewer visitors and clearer skies than afternoon or sunset time.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'KAFD & Modern Architecture',
+          text: 'Explore King Abdullah Financial District (KAFD) — a futuristic cluster of organic-shaped skyscrapers and public spaces representing Saudi Arabia\'s economic vision. The architecture is globally significant. Lunch at one of the KAFD restaurants or head to Via Riyadh for international dining options (SAR 60–120). The afternoon is best spent in air-conditioned malls during summer months.',
+          tip: 'KAFD is best explored on foot. The public art installations between the towers are impressive — look for the sculptures by international artists.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tahlia Street & Dining',
+          text: 'Walk Tahlia Street (King Abdullah Road) — Riyadh\'s dining and lifestyle avenue. The street has transformed with outdoor seating, specialty coffee shops, and international restaurants. Dinner at LPM (La Petite Maison) for French-Mediterranean (SAR 150–250) or Myazu for Japanese-Saudi fusion. The café culture here is thriving — specialty coffee shops like Barn\'s and Elixir Bunn are excellent.',
+          tip: 'Riyadh\'s specialty coffee scene has exploded — Saudi baristas are winning international competitions. Try Elixir Bunn for single-origin beans.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Edge of the World & Desert',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Edge of the World (Jebel Fihrayn)',
+          text: 'Book a 4x4 tour or rent an SUV to the Edge of the World (Jebel Fihrayn), 90km northwest. The 300m cliffs drop into a vast desert plain stretching to the horizon — it genuinely feels like the earth ends. The drive through desert wadis adds to the adventure. Allow 4–5 hours for the full trip. Best November to March when temperatures are bearable.',
+          tip: 'A 4x4 is essential — the last 15km is unpaved. Group tours (SAR 250–400) include transport, guide, and sometimes breakfast at the cliffs.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Return & Rest',
+          text: 'Return to Riyadh for a late lunch. Al Baik (SAR 15–25) for the legendary Saudi fried chicken, or head to Mama Noura (SAR 25–50) for shawarma and grilled meats. Rest during the afternoon heat — this is culturally normal in Riyadh. Malls are air-conditioned havens; Riyadh Gallery, Panorama Mall, and Al Nakheel Mall are popular choices.',
+          tip: 'Embrace the siesta culture — Riyadh life genuinely pauses between 1–4pm in summer. Cafes and malls are the social gathering spots.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Boulevard Riyadh City',
+          text: 'Experience Boulevard Riyadh City — the massive entertainment zone that\'s the centrepiece of Riyadh Season (Oct–Mar). Themed zones, international restaurants, live performances, and immersive experiences. The atmosphere on Thursday nights is electric with families and young Saudis out enjoying the city\'s new entertainment scene. Food options from SAR 40–200.',
+          tip: 'Riyadh Season runs October to March with massive events, concerts, and festivals. Check riyadhseason.sa for the current schedule.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Art, Culture & Coffee Scene',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'JAX District & Saudi Art',
+          text: 'Visit JAX District in Diriyah — a creative hub in converted warehouses showcasing Saudi and international contemporary art. Free galleries, artist studios, and design shops. The emerging Saudi art scene is exciting and politically charged. Then head to Hayy Jameel — a community arts complex by the Abdul Latif Jameel Foundation with exhibitions, cinema, and workshops.',
+          tip: 'Hayy Jameel has rotating exhibitions and a great cafe. Check their website for current shows — the programming is consistently excellent.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Specialty Coffee Trail',
+          text: 'Riyadh\'s specialty coffee scene is among the best in the Middle East. Start at Barn\'s Coffee Roasters on Tahlia Street — single-origin beans, expert baristas. Then try Volume Coffee near KAFD, and Elixir Bunn for their unique Saudi-roasted blends. A cappuccino runs SAR 20–30. Saudi baristas are winning international competitions — the quality rivals Melbourne and Tokyo.',
+          tip: 'Saudi Arabia is discovering its own coffee heritage — Khawlani beans from Jazan province are exceptional. Ask for local-origin coffee.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Diplomatic Quarter & Dinner',
+          text: 'Walk through the Diplomatic Quarter (DQ) — surprisingly green and peaceful with parks, walking trails, and public art. The Wadi Hanifah runs through it, now restored as a green corridor. Dinner at Lusin in DQ for Armenian cuisine (SAR 80–150) — one of Riyadh\'s most popular restaurants. Or try Suhail for upscale Levantine food with rooftop dining.',
+          tip: 'Wadi Hanifah is Riyadh\'s hidden gem — a restored natural valley running 120km through the city. Walk the 4km stretch in the DQ at sunset.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Day Trip to Ushaiger Heritage Village',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Ushaiger',
+          text: 'Drive 200km northwest (2.5 hours) to Ushaiger Heritage Village — a remarkably preserved Najdi village with 400-year-old mud-brick buildings, labyrinthine alleyways, and traditional architecture. Unlike Diriyah, Ushaiger is uncommercialised — you\'ll likely have the place almost to yourself. The village sits on a historical trade route and some structures are still inhabited.',
+          tip: 'Ushaiger is best visited on a weekday when it\'s virtually empty. The morning light on the mud-brick walls is perfect for photography.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Return via Red Sand Dunes',
+          text: 'On the way back, stop at the Red Sand Dunes (Dahna Desert), 90km from Riyadh — towering red-orange dunes perfect for sandboarding, dune bashing, or simply marvelling at the desert landscape. Many tour operators offer sunset experiences here (SAR 150–300 including 4x4 ride and BBQ). The contrast between the red sand and blue sky is extraordinary.',
+          tip: 'The red sand dunes are most dramatic at golden hour — plan to arrive 2 hours before sunset for the best light.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Via Riyadh & Local Dining',
+          text: 'Return to Riyadh for dinner at Via Riyadh — a lifestyle destination on King Abdulaziz Road with restaurants, cafes, and shops in a modern outdoor setting. Try Flat White Specialty Coffee (SAR 25) then dinner at Nusr-Et for the Salt Bae experience if you\'re splurging (SAR 200+), or Al Tazaj for excellent grilled chicken (SAR 30–50).',
+          tip: 'Via Riyadh is pleasant year-round due to cooling systems — it\'s a favourite evening hangout for young Saudis.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Shopping, Food & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Souq Al Zal — Traditional Market',
+          text: 'Visit Souq Al Zal in the old city — Riyadh\'s most traditional market, operating since the 1800s. Narrow alleyways packed with vendors selling antiques, daggers (khanjar), traditional textiles, oud perfume, Arabian coffee pots (dallah), and prayer beads. Haggling is expected and part of the fun. The souq opens early and the morning atmosphere is authentically local.',
+          tip: 'Souq Al Zal is busiest on Fridays. Visit on a weekday morning for a more relaxed experience and better bargaining.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Al Murabba Historical Palace',
+          text: 'Visit Al Murabba Palace (free entry) — the former residence of King Abdulaziz built in the 1930s, now a museum complex. The palace shows how the founder of modern Saudi Arabia lived, with traditional Najdi architecture on a grand scale. The surrounding historical district includes the old water tower and government buildings from early Riyadh. Lunch at a nearby Yemeni restaurant for mandi (SAR 35–50).',
+          tip: 'Al Murabba Palace is underrated — far fewer visitors than Masmak Fortress but equally fascinating for understanding Saudi history.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riyadh Front & Evening Entertainment',
+          text: 'Explore Riyadh Front (Wajhat Riyadh) — a newer entertainment and dining district. Or head to Riyadh Boulevard Walk for a stroll past restaurants and shops. For a cultural evening, check if there\'s a performance at the King Fahad Cultural Centre — the national performing arts venue hosts concerts, theatre, and dance. Farewell dinner at Suhail for rooftop Levantine cuisine.',
+          tip: 'Riyadh\'s entertainment scene is evolving rapidly — new venues and events open monthly. Check local social media for the latest openings.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Explorations & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wadi Hanifah Morning Walk',
+          text: 'Walk or cycle along Wadi Hanifah — Riyadh\'s restored natural valley, a 120km green corridor running through the city. The 4km stretch in the Diplomatic Quarter is the most scenic, with palm-lined paths, natural pools, and surprising biodiversity. It\'s a peaceful escape from the city and genuinely beautiful. Breakfast at one of the cafes along the wadi trail.',
+          tip: 'Wadi Hanifah is best before 9am when temperatures are cooler. The bioremediation lake section has the most interesting landscape.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Souvenirs & Shopping',
+          text: 'Final shopping at Riyadh Park Mall or Kingdom Centre Mall for international brands, or return to Souq Al Zal for traditional souvenirs. Best buys: oud perfume oil (SAR 50–300), Arabian coffee sets (dallah pot + cups, SAR 100–500), dates from Al Barakah date markets (SAR 30–200/kg), and Saudi chocolates with Arabic coffee flavour.',
+          tip: 'Saudi oud oil and dates are the quintessential souvenirs. Buy oud from specialist shops, not general souks — the quality is markedly better.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Skyline',
+          text: 'Final dinner at Al Faisaliah Tower\'s Globe restaurant — the golden sphere at 266m offers 360-degree views and refined dining (SAR 150–300). Or keep it classic with a final Saudi feast at Najd Village. End the evening at a rooftop cafe overlooking the Riyadh skyline — the city lights stretching endlessly into the desert darkness. King Khalid Airport is 35km north.',
+          tip: 'King Khalid International Airport is 35km from the city centre — allow 45 minutes by taxi (SAR 60–80). Terminal 5 serves international flights.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Al Baik everything', text: 'Saudi\'s beloved fried chicken chain serves meals for SAR 15–25. The garlic sauce, broasted chicken, and shrimp meals are legendary. Every Saudi will tell you it\'s the best.' },
+  { title: 'Free heritage sites', text: 'Masmak Fortress, Al Murabba Palace, and many historical sites are free. The National Museum is only SAR 25 — one of the region\'s best museums for the price.' },
+  { title: 'Ride-share smart', text: 'Uber and Careem are essential in Riyadh — no public rail yet. Rides cost SAR 15–40 for most journeys. Split rides with other travelers to save on the city\'s vast distances.' },
+  { title: 'Mall food courts', text: 'Food courts in malls offer international cuisine for SAR 25–50 per meal. Quality is good and the air conditioning is welcome. Better value than hotel restaurants.' },
+  { title: 'Coffee culture', text: 'Specialty coffee (SAR 15–30) is the social currency of Riyadh. Many cafes have free WiFi and encourage lingering — it\'s a cheap way to spend a few hours.' },
+  { title: 'Weekend timing', text: 'The Saudi weekend is Friday–Saturday. Thursday evening is the "going out" night. Riyadh Season events (Oct–Mar) often have free entry zones alongside paid attractions.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'SAR 120–250', midrange: 'SAR 400–800', splurge: 'SAR 1,500+', notes: 'Budget hotels → 4-star chains → luxury resorts' },
+  { category: 'Food', budget: 'SAR 50–90', midrange: 'SAR 120–220', splurge: 'SAR 400+', notes: 'Fast food & lokanta → restaurants → fine dining' },
+  { category: 'Transport', budget: 'SAR 30–60', midrange: 'SAR 80–150', splurge: 'SAR 300+', notes: 'Uber/Careem → private taxi → car rental with driver' },
+  { category: 'Activities', budget: 'SAR 25–75', midrange: 'SAR 150–300', splurge: 'SAR 600+', notes: 'Free sites & parks → towers & tours → desert experiences' },
+  { category: 'Drinks', budget: 'SAR 15–30', midrange: 'SAR 40–80', splurge: 'SAR 120+', notes: 'Tea & juice → specialty coffee → hotel cafes' },
+  { category: 'Daily Total', budget: 'SAR 240–505', midrange: 'SAR 790–1,550', splurge: 'SAR 2,920+', notes: '$64–135 → $211–413 → $779+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Tourist e-visa (SAR 480 / ~$128) for 49+ nationalities at visa.visitsaudi.com. 1 year validity, 90 days per visit, multiple entry',
+      'GCC nationals enter freely. US, UK, EU, and Schengen visa holders may be eligible for visa on arrival',
+      'King Khalid International Airport (RUH) is 35km north. Uber/Careem to city SAR 60–80 (45 min)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No mandatory vaccinations. Healthcare is excellent but expensive without insurance — travel insurance is essential',
+      'Riyadh is very safe — crime rates are among the lowest in the world for a major capital',
+      'Summer heat is extreme (Jun–Sep, 40–50°C). Even short outdoor exposure can cause heat exhaustion. Carry water constantly',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Riyadh Metro is opening in phases — 6 lines covering 176km. Check current status at riyadhmetro.sa',
+      'Until metro is fully operational, Uber and Careem are essential. Riyadh is vast — distances are large between areas',
+      'SAPTCO buses connect to Jeddah (SAR 150, 10 hours), Medina (SAR 150, 9 hours), and Dammam (SAR 100, 4.5 hours)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'STC, Mobily, and Zain sell tourist SIMs at the airport — SAR 50–100 for 10–30GB data. STC has the best nationwide coverage',
+      'Free WiFi in malls, most cafes, and hotels. Generally fast and reliable in the city',
+      'WhatsApp works fine. Some VoIP services may be restricted — download a VPN before arriving if needed',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Saudi Riyal (SAR) pegged to USD at 3.75. ATMs are everywhere. International cards work at most ATMs',
+      'Cards widely accepted at restaurants, malls, and shops. Cash useful for traditional souks and smaller eateries',
+      'No tipping culture in Saudi Arabia, though rounding up or 5–10% at restaurants is increasingly common',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Conservative dress required — men: trousers and sleeved shirts. Women: loose-fitting clothing covering arms and legs; headscarf recommended but not always required in Riyadh',
+      'Layers for winter evenings (Nov–Feb) when temperatures drop to 8–12°C. Summer is strictly indoor weather',
+      'Comfortable shoes for souks and heritage sites. Sunscreen, sunglasses, and a hat year-round',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '👗', title: 'Dress Code', text: 'Conservative dress for both genders. Women no longer legally require an abaya in Riyadh, but loose-fitting clothes covering arms and legs are expected. A light headscarf is respectful in traditional areas.' },
+  { icon: '🙏', title: 'Prayer Times', text: 'Shops and restaurants close for 15–30 minutes five times daily during prayer. Don\'t be frustrated — use the Athan app to plan around prayer times. It\'s a fundamental part of life here.' },
+  { icon: '🚫', title: 'Alcohol', text: 'Alcohol is completely prohibited in Saudi Arabia — zero tolerance. No bars, no restaurants serving alcohol, no importing. The penalty is severe. Non-alcoholic beer and mocktails are widely available.' },
+  { icon: '📸', title: 'Photography', text: 'Never photograph people (especially women) without explicit permission. No photos of government or military buildings. In souks, ask vendors before photographing their stalls.' },
+  { icon: '🤝', title: 'Social Customs', text: 'Greet with "As-salamu alaykum." Physical contact between unrelated men and women is avoided. Saudi hospitality is legendary — accept Arabic coffee and dates when offered.' },
+  { icon: '📅', title: 'Weekend & Timing', text: 'The Saudi weekend is Friday–Saturday. Thursday evening is the big "going out" night. Riyadh comes alive after 9pm — dining at 10–11pm is normal. Mornings are for business and rest.' },
+];
+---
+
+<CityGuideLayout
+  title="Riyadh Travel Guide 2026 — 3-Day Itinerary for Young Travelers | roammate"
+  description="The ultimate Riyadh guide for young travelers. 3-day itinerary with heritage sites, modern towers, desert adventures, and Saudi culture. Plan your trip with roammate."
+  heroImage="/images/guides/riyadh-hero.webp"
+  heroFlag="🇸🇦"
+  heroCountry="Saudi Arabia"
+  heroRegion="Middle East"
+  heroCity="Riyadh"
+  heroSubtitle="A desert capital reinventing itself at breakneck speed, where mud-brick fortresses stand in the shadow of glass supertowers."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Nov – Mar Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Saudi Riyal (SAR). Riyadh is moderately priced — food is cheap, but transport and entertainment add up."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Saudi Arabia is opening to tourism rapidly, but remains a deeply conservative society. Respect for local customs, dress codes, and Islamic practices is essential and warmly appreciated."
+  ctaCity="Riyadh"
+  ctaText="Find travel companions, split desert tour costs, and explore Saudi Arabia's new tourism scene with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

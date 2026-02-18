@@ -1,0 +1,185 @@
+---
+import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+
+const routeOverview = [
+  { country: 'Japan', flag: '🇯🇵', weeks: '1–8', color: '#c4562a', stops: ['Tokyo', 'Hakone', 'Kyoto', 'Osaka', 'Hiroshima', 'Nara'] },
+  { country: 'South Korea', flag: '🇰🇷', weeks: '9–12', color: '#2e6d79', stops: ['Seoul', 'DMZ', 'Gyeongju', 'Busan', 'Jeju Island'] },
+];
+
+const countries = [
+  {
+    name: 'Japan',
+    flag: '🇯🇵',
+    weeks: 'Weeks 1–8',
+    color: '#c4562a',
+    intro: 'Japan is the trip that exceeds even the highest expectations. Neon-lit Tokyo, ancient Kyoto, the best food culture on the planet, and a level of politeness and organisation that borders on art. It\'s expensive by Asian standards, but 7-Eleven meals, capsule hotels, and the JR Pass make it surprisingly doable on a budget.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '¥8,000–14,000', detail: '$55–95 USD' },
+      { icon: '💵', label: 'Currency', value: 'JPY (¥)', detail: '1 USD ≈ ¥150' },
+      { icon: '🛂', label: 'Visa', value: '90 days free', detail: 'Most nationalities' },
+      { icon: '🗣', label: 'Language', value: 'Japanese', detail: 'English limited but improving' },
+      { icon: '🕐', label: 'Timezone', value: 'JST (UTC+9)', detail: 'No daylight saving' },
+      { icon: '☀️', label: 'Best Months', value: 'Mar–May / Oct–Nov', detail: 'Cherry blossom or autumn' },
+    ],
+    phases: [
+      {
+        title: 'Tokyo',
+        duration: '7–10 days',
+        description: 'Tokyo is a city of contrasts — Shibuya Crossing\'s controlled chaos, then the silent serenity of Meiji Shrine (free). Explore Shinjuku for nightlife and Golden Gai (200+ tiny bars, most seat 6 people — cover charge ¥300–500). Akihabara for anime and electronics. Harajuku for Takeshita Street\'s cosplay culture. Sensō-ji in Asakusa (free) is Tokyo\'s oldest temple. Tsukiji Outer Market for the best sushi breakfast of your life (¥1,500–3,000). Ramen from ¥600–900 at ticket-machine shops. Stay in a capsule hotel (¥3,000–4,500/night) for the experience. Day trip to Kamakura (¥950 train) for the Great Buddha.',
+        tip: 'Get a Suica or Pasmo IC card (¥500 deposit + top up) — works on all trains, buses, and convenience stores. Japan is still heavily cash-based, so carry ¥10,000+ at all times.',
+      },
+      {
+        title: 'Hakone & Mount Fuji Region',
+        duration: '3–4 days',
+        description: 'Hakone Free Pass from Shinjuku (¥6,100 for 2 days) covers the Romancecar train, cable cars, pirate ship on Lake Ashi, and buses — an incredible loop tour. On clear days, Mount Fuji dominates the skyline from Hakone. If visiting Jul–Sep, you can climb Fuji itself (2-day hike, mountain hut ¥8,000–10,000). Onsen (hot spring baths, ¥800–2,000) are a cultural must — Hakone has dozens. For budget Fuji views, stay near Kawaguchiko (hostels ¥3,000–5,000/night) and hike the Panorama Terrace trail.',
+        tip: 'Most onsen require full nudity and ban tattoos. Tattoo-friendly onsen exist but check ahead. Private onsen (kashikiri) cost ¥2,000–4,000/hr and avoid the issue entirely.',
+      },
+      {
+        title: 'Kyoto & Nara',
+        duration: '7–10 days',
+        description: 'Shinkansen from Tokyo to Kyoto (¥13,970, 2 hrs 15 mins — JR Pass covers this). Kyoto has 2,000+ temples and shrines. Must-sees: Fushimi Inari\'s 10,000 orange torii gates (free, go at dawn for empty shots), Kinkaku-ji (Golden Pavilion, ¥500), Arashiyama Bamboo Grove (free), and Gion geisha district at dusk. Rent a bike (¥1,000/day) — Kyoto is flat and perfect for cycling. Day trip to Nara (¥720 train, 45 mins) for the free-roaming sacred deer and Todai-ji\'s giant Buddha (¥600). Eat yudofu (tofu cuisine), matcha everything, and kaiseki (multi-course) on a budget at department store basements (depachika).',
+        tip: 'A 7-day JR Pass (¥50,000) pays for itself if you\'re doing Tokyo–Kyoto–Hiroshima return. Buy before arriving in Japan (or at major stations). Green Car (first class) isn\'t worth the upgrade.',
+      },
+      {
+        title: 'Osaka & Hiroshima',
+        duration: '5–7 days',
+        description: 'Train from Kyoto to Osaka (¥580, 15 mins). Osaka is Japan\'s kitchen — street food capital of the country. Dōtonbori is sensory overload: takoyaki (octopus balls, ¥500), okonomiyaki (savoury pancakes, ¥800–1,200), and kushikatsu (deep-fried skewers, ¥100–200 each). Osaka Castle (¥600) and the quirky Shinsekai district. Nightlife in Namba is wilder than Tokyo. Day trip to Hiroshima (Shinkansen ¥10,440, 1.5 hrs, JR Pass covers it) — the Peace Memorial Museum (¥200) and A-Bomb Dome are essential. Ferry to Miyajima Island (JR Pass covers it) for the floating torii gate and wild deer.',
+        tip: 'Osaka hostels are Japan\'s cheapest (¥2,500–3,500/night in Namba). The city is a better budget base than Kyoto — train connections are quick and cheap.',
+      },
+    ],
+  },
+  {
+    name: 'South Korea',
+    flag: '🇰🇷',
+    weeks: 'Weeks 9–12',
+    color: '#2e6d79',
+    intro: 'South Korea is Japan\'s underrated neighbour — K-pop, kimchi, ancient palaces, and a nightlife culture that puts most of the world to shame. Seoul is one of Asia\'s most exciting cities, Busan has the best beaches on the peninsula, and the whole country is connected by fast, cheap trains. Budget-friendlier than Japan and just as fascinating.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '₩60,000–100,000', detail: '$45–75 USD' },
+      { icon: '💵', label: 'Currency', value: 'KRW (₩)', detail: '1 USD ≈ ₩1,350' },
+      { icon: '🛂', label: 'Visa', value: '90 days free', detail: 'K-ETA required for some' },
+      { icon: '🗣', label: 'Language', value: 'Korean', detail: 'English in Seoul/tourist areas' },
+      { icon: '🕐', label: 'Timezone', value: 'KST (UTC+9)', detail: 'Same as Japan' },
+      { icon: '☀️', label: 'Best Months', value: 'Apr–May / Sep–Nov', detail: 'Cherry blossom or autumn' },
+    ],
+    phases: [
+      {
+        title: 'Seoul',
+        duration: '6–8 days',
+        description: 'Fly from Osaka to Seoul (₩80,000–150,000 on Peach/Jin Air) or take the ferry from Fukuoka. Seoul is massive and endlessly explorable. Gyeongbokgung Palace (₩3,000, free in hanbok — rent one for ₩15,000–20,000) is stunning. Bukchon Hanok Village for traditional houses, Insadong for art and tea, and Myeongdong for K-beauty shopping. Korean BBQ from ₩12,000–18,000 per person (samgyeopsal — pork belly). Nightlife in Hongdae is legendary — clubs, live music, street performers until 6am. Jjimjilbang (Korean spa, ₩12,000–15,000) — you can sleep overnight for the price of a hostel.',
+        tip: 'Get a T-money card (₩2,500 + top up) for all public transport. The Seoul Metro is one of the best in the world — English signage everywhere.',
+      },
+      {
+        title: 'DMZ & Gyeongju',
+        duration: '4–5 days',
+        description: 'DMZ day tour from Seoul (₩50,000–70,000, book through your hostel). The Demilitarised Zone is the most heavily fortified border on Earth — you\'ll visit the Joint Security Area (JSA) where North and South Korean soldiers stand metres apart, the infiltration tunnels, and Dorasan Observatory. Chilling and fascinating. KTX train to Gyeongju (₩25,000–40,000, 2 hrs) — the "museum without walls". The ancient capital of the Silla kingdom has royal tombs you can walk among (Daereungwon, ₩3,000), Bulguksa Temple (₩6,000), and Seokguram Grotto (₩6,000). Rent a bike (₩10,000/day) to explore the surrounding countryside and the Bomun Lake area.',
+        tip: 'The JSA at the DMZ requires booking 72+ hours ahead — your passport details are submitted to the UN Command. Dress code enforced (no shorts, flip-flops, or military-style clothing).',
+      },
+      {
+        title: 'Busan & Jeju Island',
+        duration: '6–8 days',
+        description: 'KTX from Gyeongju to Busan (₩10,000–15,000, 30 mins). Busan is Korea\'s beach city — Haeundae Beach is iconic, but Gwangalli Beach has better sunset views with the Diamond Bridge lit up. Gamcheon Culture Village (free) is Korea\'s most colourful neighbourhood. Jagalchi Fish Market has the freshest seafood — raw fish platters from ₩15,000. Haedong Yonggungsa Temple (free) sits right on the ocean cliffs. Fly to Jeju Island (₩30,000–60,000, 1 hr) — Korea\'s Hawaii. Hike Hallasan (Korea\'s highest peak, 1,950m, free), explore lava tube caves (₩4,000), and eat black pork BBQ (₩15,000–20,000). Stay in guesthouses from ₩25,000/night.',
+        tip: 'Jeju is best explored by rental car (₩30,000–50,000/day) — split between 2–3 people. International license required. The coastal roads are beautiful.',
+      },
+    ],
+  },
+];
+
+const budgetColumns = [
+  { flag: '🇯🇵', label: 'Japan' },
+  { flag: '🇰🇷', label: 'South Korea' },
+];
+
+const budgetRows = [
+  { category: 'Accommodation', values: ['¥3,000–5,000', '₩20,000–35,000'], notes: 'Hostels, capsules, jjimjilbang' },
+  { category: 'Food', values: ['¥1,500–3,000', '₩10,000–20,000'], notes: 'Ramen, konbini, BBQ, street food' },
+  { category: 'Transport', values: ['¥1,500–3,000', '₩10,000–15,000'], notes: 'JR Pass, metro, KTX' },
+  { category: 'Activities', values: ['¥1,000–2,500', '₩10,000–20,000'], notes: 'Temples, museums, tours' },
+  { category: 'Drinks/Social', values: ['¥1,000–2,000', '₩10,000–15,000'], notes: 'Izakayas, soju, bars' },
+  { category: 'Daily Total', values: ['¥8,000–14,000', '₩60,000–100,000'], notes: 'Budget–comfortable range' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visas',
+    items: [
+      'Japan: 90-day visa-free for most nationalities. No extension possible — exit and re-enter if needed',
+      'South Korea: 90-day visa-free for most. K-ETA (₩10,000) may be required — check before booking flights',
+      'Visit Japan Web: fill out the immigration and customs form digitally before arrival to skip queues',
+    ],
+  },
+  {
+    icon: '🚅',
+    title: 'Transport',
+    items: [
+      'Japan Rail Pass: 7-day ¥50,000 / 14-day ¥80,000 / 21-day ¥100,000. Covers most Shinkansen and JR trains',
+      'South Korea: KTX high-speed trains connect Seoul–Busan in 2.5 hrs. Book on Korail app. KORAIL Pass available for tourists',
+      'Budget flights: Peach, Jetstar, Jin Air connect Japan and Korea from ¥5,000–15,000 one way',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health',
+    items: [
+      'No special vaccinations required. Both countries have excellent, affordable healthcare',
+      'Japan: pharmacies (yakkyoku) are well-stocked. South Korea: pharmacies are on every block',
+      'Tap water is safe to drink in both countries. Convenience store food is fresh, cheap, and surprisingly healthy',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Japan: pocket WiFi rental (¥500–800/day) from the airport. eSIM from Ubigi or Airalo (¥2,000–3,000 for 30 days)',
+      'South Korea: SIM or eSIM from KT or SK Telecom at Incheon Airport (₩30,000–40,000 for 30 days). Excellent 5G coverage',
+      'Free WiFi is everywhere in Korea (cafes, metro, buses). Japan has less public WiFi but is improving',
+    ],
+  },
+  {
+    icon: '🌦️',
+    title: 'Best Time',
+    items: [
+      'Cherry blossom season (late March–mid April): magical but crowded. Book accommodation months ahead',
+      'Autumn (October–November): vivid red/orange foliage, comfortable temperatures, fewer tourists than spring',
+      'Avoid rainy season (tsuyu/jangma) in June–July. Summer (August) is hot and humid in both countries',
+    ],
+  },
+  {
+    icon: '🍜',
+    title: 'Food Tips',
+    items: [
+      'Japan: 7-Eleven/FamilyMart onigiri (¥120–200) and bento boxes (¥400–600) are genuinely good budget meals',
+      'South Korea: convenience store kimbap (₩2,000–3,000) and cup ramyeon stations. Lunch sets (정식) at local restaurants ₩7,000–9,000',
+      'Both countries: department store basement food halls (depachika/depato) have incredible prepared food at reasonable prices',
+    ],
+  },
+];
+---
+
+<BackpackerRouteLayout
+  title="Japan & South Korea Backpacker Route — 2–3 Month Itinerary | roammate"
+  description="The ultimate 2-3 month Japan and South Korea backpacker route. Week-by-week itinerary from Tokyo to Busan with budget breakdowns, JR Pass tips, and insider advice."
+  heroImages={[
+    { src: '/images/guides/jpk-temple.webp', alt: 'Fushimi Inari torii gates in golden light' },
+    { src: '/images/guides/jpk-tokyo.webp', alt: 'Neon-lit Tokyo street at night with crowds' },
+    { src: '/images/guides/jpk-ramen.webp', alt: 'Bowl of steaming Japanese ramen with toppings' },
+    { src: '/images/guides/jpk-seoul.webp', alt: 'Traditional Korean palace with cherry blossoms' },
+  ]}
+  heroFlags="🇯🇵 🇰🇷"
+  heroRegion="Japan & South Korea"
+  heroTitle="Japan &<br>South Korea"
+  heroSubtitle="Two months exploring East Asia's most fascinating cultures. From Tokyo's neon wonderland to Seoul's K-pop energy — ramen, temples, and unforgettable nightlife."
+  heroPills={['2–3 Month Route', '$45–95/day', 'Mar–May / Oct–Nov Best', '2 Countries']}
+  routeOverview={routeOverview}
+  countries={countries}
+  budgetIntro="Daily costs per person in local currency (JPY / KRW). Total 2–3 month budget: approximately $4,000–7,000 USD. Japan is pricier but 7-Eleven meals and capsule hotels keep costs manageable."
+  budgetColumns={budgetColumns}
+  budgetRows={budgetRows}
+  practicalInfo={practicalInfo}
+  ctaRegion="Japan & South Korea"
+  ctaText="Find travel companions for temple hopping in Kyoto, karaoke nights in Tokyo, and Korean BBQ in Seoul with fellow backpackers on roammate."
+  ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+  featuredGuides={['tokyo', 'osaka', 'kyoto', 'seoul', 'busan', 'fukuoka', 'sapporo', 'mount-fuji', 'fushimi-inari']}
+  accentColor="#c4562a"
+/>
