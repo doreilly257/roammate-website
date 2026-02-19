@@ -33,26 +33,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Productivity",
     "readMinutes": 14,
     "heroImage": "/images/blog/remote-work-backpacking-rhythm-hero.webp",
-    "intro": "Build this plan around [Krakow](/guides/krakow/), [Sharjah](/guides/sharjah/), [Vientiane](/guides/vientiane/), and [Korean Dmz](/guides/korean-dmz/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Krakow](/guides/krakow/), [Sharjah](/guides/sharjah/), [Vientiane](/guides/vientiane/), and [Korean Dmz](/guides/korean-dmz/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [El Calafate](/guides/el-calafate/), then connect to [Hong Kong](/guides/hong-kong/) and [Paris](/guides/paris/) for realistic transit flow. Add [Riviera Maya Cenotes](/guides/riviera-maya-cenotes/) when you need lower-cost alternatives, and use [Johor Bahru](/guides/johor-bahru/) with [Helsinki](/guides/helsinki/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [El Calafate](/guides/el-calafate/), then move through [Hong Kong](/guides/hong-kong/) and [Paris](/guides/paris/) to keep transfers practical instead of rushed. If costs climb, swap in [Riviera Maya Cenotes](/guides/riviera-maya-cenotes/), and pair [Johor Bahru](/guides/johor-bahru/) with [Helsinki](/guides/helsinki/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/remote-work-backpacking-rhythm-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Jeju Island](/guides/jeju-island/), then connect to [Leh Ladakh](/guides/leh-ladakh/) and [Lake Tekapo](/guides/lake-tekapo/) for realistic transit flow. Add [Antigua Guatemala](/guides/antigua-guatemala/) when you need lower-cost alternatives, and use [Entebbe](/guides/entebbe/) with [El Nido](/guides/el-nido/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Jeju Island](/guides/jeju-island/), then move through [Leh Ladakh](/guides/leh-ladakh/) and [Lake Tekapo](/guides/lake-tekapo/) to keep transfers practical instead of rushed. If costs climb, swap in [Antigua Guatemala](/guides/antigua-guatemala/), and pair [Entebbe](/guides/entebbe/) with [El Nido](/guides/el-nido/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/remote-work-backpacking-rhythm-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Bwindi](/guides/bwindi/), then connect to [Seoul](/guides/seoul/) and [Manila](/guides/manila/) for realistic transit flow. Add [Snow Monkeys](/guides/snow-monkeys/) when you need lower-cost alternatives, and use [Wadi Rum](/guides/wadi-rum/) with [Abu Dhabi](/guides/abu-dhabi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Bwindi](/guides/bwindi/), then move through [Seoul](/guides/seoul/) and [Manila](/guides/manila/) to keep transfers practical instead of rushed. If costs climb, swap in [Snow Monkeys](/guides/snow-monkeys/), and pair [Wadi Rum](/guides/wadi-rum/) with [Abu Dhabi](/guides/abu-dhabi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/remote-work-backpacking-rhythm-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Ella](/guides/ella/), then connect to [San Francisco](/guides/san-francisco/) and [Berat](/guides/berat/) for realistic transit flow. Add [Stone Town](/guides/stone-town/) when you need lower-cost alternatives, and use [Mekong Slow Boat](/guides/mekong-slow-boat/) with [Milan](/guides/milan/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Ella](/guides/ella/), then move through [San Francisco](/guides/san-francisco/) and [Berat](/guides/berat/) to keep transfers practical instead of rushed. If costs climb, swap in [Stone Town](/guides/stone-town/), and pair [Mekong Slow Boat](/guides/mekong-slow-boat/) with [Milan](/guides/milan/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/remote-work-backpacking-rhythm-inline-2.webp"
       }
     ],
@@ -90,26 +90,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Budget",
     "readMinutes": 14,
     "heroImage": "/images/blog/budget-travel-cashflow-playbook-hero.webp",
-    "intro": "Build this plan around [Indonesia Philippines](/guides/indonesia-philippines/), [Lauterbrunnen](/guides/lauterbrunnen/), [Kandy](/guides/kandy/), and [Warsaw](/guides/warsaw/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Indonesia Philippines](/guides/indonesia-philippines/), [Lauterbrunnen](/guides/lauterbrunnen/), [Kandy](/guides/kandy/), and [Warsaw](/guides/warsaw/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Coron](/guides/coron/), then connect to [Valparaiso](/guides/valparaiso/) and [Seoul](/guides/seoul/) for realistic transit flow. Add [Nairobi](/guides/nairobi/) when you need lower-cost alternatives, and use [Kathmandu](/guides/kathmandu/) with [Berlin](/guides/berlin/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Coron](/guides/coron/), then move through [Valparaiso](/guides/valparaiso/) and [Seoul](/guides/seoul/) to keep transfers practical instead of rushed. If costs climb, swap in [Nairobi](/guides/nairobi/), and pair [Kathmandu](/guides/kathmandu/) with [Berlin](/guides/berlin/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/budget-travel-cashflow-playbook-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Perito Moreno](/guides/perito-moreno/), then connect to [Jaipur](/guides/jaipur/) and [Plitvice Lakes](/guides/plitvice-lakes/) for realistic transit flow. Add [Thresher Sharks](/guides/thresher-sharks/) when you need lower-cost alternatives, and use [Komodo National Park](/guides/komodo-national-park/) with [Los Angeles](/guides/los-angeles/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Perito Moreno](/guides/perito-moreno/), then move through [Jaipur](/guides/jaipur/) and [Plitvice Lakes](/guides/plitvice-lakes/) to keep transfers practical instead of rushed. If costs climb, swap in [Thresher Sharks](/guides/thresher-sharks/), and pair [Komodo National Park](/guides/komodo-national-park/) with [Los Angeles](/guides/los-angeles/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/budget-travel-cashflow-playbook-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [New York City](/guides/new-york-city/), then connect to [Lake Bled](/guides/lake-bled/) and [Canggu](/guides/canggu/) for realistic transit flow. Add [Sao Paulo](/guides/sao-paulo/) when you need lower-cost alternatives, and use [Marseille](/guides/marseille/) with [Hong Kong](/guides/hong-kong/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [New York City](/guides/new-york-city/), then move through [Lake Bled](/guides/lake-bled/) and [Canggu](/guides/canggu/) to keep transfers practical instead of rushed. If costs climb, swap in [Sao Paulo](/guides/sao-paulo/), and pair [Marseille](/guides/marseille/) with [Hong Kong](/guides/hong-kong/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/budget-travel-cashflow-playbook-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Great Migration](/guides/great-migration/), then connect to [Lisbon](/guides/lisbon/) and [Budapest](/guides/budapest/) for realistic transit flow. Add [Leon Nicaragua](/guides/leon-nicaragua/) when you need lower-cost alternatives, and use [Nile Rafting](/guides/nile-rafting/) with [Borobudur](/guides/borobudur/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Great Migration](/guides/great-migration/), then move through [Lisbon](/guides/lisbon/) and [Budapest](/guides/budapest/) to keep transfers practical instead of rushed. If costs climb, swap in [Leon Nicaragua](/guides/leon-nicaragua/), and pair [Nile Rafting](/guides/nile-rafting/) with [Borobudur](/guides/borobudur/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/budget-travel-cashflow-playbook-inline-2.webp"
       }
     ],
@@ -147,31 +147,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Itineraries",
     "readMinutes": 11,
     "heroImage": "/images/blog/first-month-southeast-asia-hero.webp",
-    "intro": "Build this plan around [Elmina](/guides/elmina/), [Victoria Falls](/guides/victoria-falls/), [Zhuhai](/guides/zhuhai/), and [Perito Moreno](/guides/perito-moreno/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Elmina](/guides/elmina/), [Victoria Falls](/guides/victoria-falls/), [Zhuhai](/guides/zhuhai/), and [Perito Moreno](/guides/perito-moreno/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [San Cristobal](/guides/san-cristobal/), then connect to [Chiang Mai](/guides/chiang-mai/) and [Luang Prabang](/guides/luang-prabang/) for realistic transit flow. Add [Galle](/guides/galle/) when you need lower-cost alternatives, and use [Kumasi](/guides/kumasi/) with [La Paz](/guides/la-paz/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [San Cristobal](/guides/san-cristobal/), then move through [Chiang Mai](/guides/chiang-mai/) and [Luang Prabang](/guides/luang-prabang/) to keep transfers practical instead of rushed. If costs climb, swap in [Galle](/guides/galle/), and pair [Kumasi](/guides/kumasi/) with [La Paz](/guides/la-paz/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/first-month-southeast-asia-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Hakone](/guides/hakone/), then connect to [Dubrovnik](/guides/dubrovnik/) and [Copenhagen](/guides/copenhagen/) for realistic transit flow. Add [Neuschwanstein](/guides/neuschwanstein/) when you need lower-cost alternatives, and use [Vilnius](/guides/vilnius/) with [Macau](/guides/macau/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Hakone](/guides/hakone/), then move through [Dubrovnik](/guides/dubrovnik/) and [Copenhagen](/guides/copenhagen/) to keep transfers practical instead of rushed. If costs climb, swap in [Neuschwanstein](/guides/neuschwanstein/), and pair [Vilnius](/guides/vilnius/) with [Macau](/guides/macau/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/first-month-southeast-asia-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Luang Prabang](/guides/luang-prabang/), then connect to [Nara](/guides/nara/) and [Brussels](/guides/brussels/) for realistic transit flow. Add [Cairo](/guides/cairo/) when you need lower-cost alternatives, and use [Japan South Korea](/guides/japan-south-korea/) with [Amber Fort](/guides/amber-fort/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Luang Prabang](/guides/luang-prabang/), then move through [Nara](/guides/nara/) and [Brussels](/guides/brussels/) to keep transfers practical instead of rushed. If costs climb, swap in [Cairo](/guides/cairo/), and pair [Japan South Korea](/guides/japan-south-korea/) with [Amber Fort](/guides/amber-fort/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/first-month-southeast-asia-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Bora Bora](/guides/bora-bora/), then connect to [Giraffe Centre](/guides/giraffe-centre/) and [Los Angeles](/guides/los-angeles/) for realistic transit flow. Add [Agra](/guides/agra/) when you need lower-cost alternatives, and use [Thessaloniki](/guides/thessaloniki/) with [Oaxaca](/guides/oaxaca/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Bora Bora](/guides/bora-bora/), then move through [Giraffe Centre](/guides/giraffe-centre/) and [Los Angeles](/guides/los-angeles/) to keep transfers practical instead of rushed. If costs climb, swap in [Agra](/guides/agra/), and pair [Thessaloniki](/guides/thessaloniki/) with [Oaxaca](/guides/oaxaca/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/first-month-southeast-asia-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Seoul](/guides/seoul/), then connect to [Rome](/guides/rome/) and [Sossusvlei](/guides/sossusvlei/) for realistic transit flow. Add [Vang Vieng](/guides/vang-vieng/) when you need lower-cost alternatives, and use [Singapore](/guides/singapore/) with [Komodo National Park](/guides/komodo-national-park/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Seoul](/guides/seoul/), then move through [Rome](/guides/rome/) and [Sossusvlei](/guides/sossusvlei/) to keep transfers practical instead of rushed. If costs climb, swap in [Vang Vieng](/guides/vang-vieng/), and pair [Singapore](/guides/singapore/) with [Komodo National Park](/guides/komodo-national-park/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/first-month-southeast-asia-inline-1.webp"
       }
     ],
@@ -209,26 +209,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Planning",
     "readMinutes": 14,
     "heroImage": "/images/blog/city-base-vs-fast-hopping-hero.webp",
-    "intro": "Build this plan around [La Fortuna](/guides/la-fortuna/), [Athens](/guides/athens/), [Marrakech](/guides/marrakech/), and [Manali](/guides/manali/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [La Fortuna](/guides/la-fortuna/), [Athens](/guides/athens/), [Marrakech](/guides/marrakech/), and [Manali](/guides/manali/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Split](/guides/split/), then connect to [Plitvice Lakes](/guides/plitvice-lakes/) and [Wadi Rum](/guides/wadi-rum/) for realistic transit flow. Add [Copan](/guides/copan/) when you need lower-cost alternatives, and use [Lake Atitlan](/guides/lake-atitlan/) with [Leon Nicaragua](/guides/leon-nicaragua/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Split](/guides/split/), then move through [Plitvice Lakes](/guides/plitvice-lakes/) and [Wadi Rum](/guides/wadi-rum/) to keep transfers practical instead of rushed. If costs climb, swap in [Copan](/guides/copan/), and pair [Lake Atitlan](/guides/lake-atitlan/) with [Leon Nicaragua](/guides/leon-nicaragua/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/city-base-vs-fast-hopping-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Okavango Delta](/guides/okavango-delta/), then connect to [Tokyo](/guides/tokyo/) and [Tikal](/guides/tikal/) for realistic transit flow. Add [Rome](/guides/rome/) when you need lower-cost alternatives, and use [Berlin](/guides/berlin/) with [Pyramids Of Giza](/guides/pyramids-of-giza/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Okavango Delta](/guides/okavango-delta/), then move through [Tokyo](/guides/tokyo/) and [Tikal](/guides/tikal/) to keep transfers practical instead of rushed. If costs climb, swap in [Rome](/guides/rome/), and pair [Berlin](/guides/berlin/) with [Pyramids Of Giza](/guides/pyramids-of-giza/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/city-base-vs-fast-hopping-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Tel Aviv](/guides/tel-aviv/), then connect to [Antalya](/guides/antalya/) and [Angkor Wat](/guides/angkor-wat/) for realistic transit flow. Add [Frankfurt](/guides/frankfurt/) when you need lower-cost alternatives, and use [Whitsunday Islands](/guides/whitsunday-islands/) with [Great Migration](/guides/great-migration/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Tel Aviv](/guides/tel-aviv/), then move through [Antalya](/guides/antalya/) and [Angkor Wat](/guides/angkor-wat/) to keep transfers practical instead of rushed. If costs climb, swap in [Frankfurt](/guides/frankfurt/), and pair [Whitsunday Islands](/guides/whitsunday-islands/) with [Great Migration](/guides/great-migration/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/city-base-vs-fast-hopping-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Perito Moreno](/guides/perito-moreno/), then connect to [San Francisco](/guides/san-francisco/) and [Chiang Mai](/guides/chiang-mai/) for realistic transit flow. Add [Southeast Asia](/guides/southeast-asia/) when you need lower-cost alternatives, and use [Dakar](/guides/dakar/) with [Madrid](/guides/madrid/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Perito Moreno](/guides/perito-moreno/), then move through [San Francisco](/guides/san-francisco/) and [Chiang Mai](/guides/chiang-mai/) to keep transfers practical instead of rushed. If costs climb, swap in [Southeast Asia](/guides/southeast-asia/), and pair [Dakar](/guides/dakar/) with [Madrid](/guides/madrid/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/city-base-vs-fast-hopping-inline-2.webp"
       }
     ],
@@ -266,26 +266,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Accommodation",
     "readMinutes": 8,
     "heroImage": "/images/blog/hostel-selection-operator-checklist-hero.webp",
-    "intro": "Build this plan around [Sigiriya](/guides/sigiriya/), [Guangzhou](/guides/guangzhou/), [Lofoten](/guides/lofoten/), and [New York City](/guides/new-york-city/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Sigiriya](/guides/sigiriya/), [Guangzhou](/guides/guangzhou/), [Lofoten](/guides/lofoten/), and [New York City](/guides/new-york-city/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Wanaka](/guides/wanaka/), then connect to [Riyadh](/guides/riyadh/) and [Berlin](/guides/berlin/) for realistic transit flow. Add [Rome](/guides/rome/) when you need lower-cost alternatives, and use [Japan South Korea](/guides/japan-south-korea/) with [Singapore](/guides/singapore/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Wanaka](/guides/wanaka/), then move through [Riyadh](/guides/riyadh/) and [Berlin](/guides/berlin/) to keep transfers practical instead of rushed. If costs climb, swap in [Rome](/guides/rome/), and pair [Japan South Korea](/guides/japan-south-korea/) with [Singapore](/guides/singapore/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hostel-selection-operator-checklist-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Seoul](/guides/seoul/), then connect to [Utila](/guides/utila/) and [Cenote Diving](/guides/cenote-diving/) for realistic transit flow. Add [Mount Kilimanjaro](/guides/mount-kilimanjaro/) when you need lower-cost alternatives, and use [Dead Sea](/guides/dead-sea/) with [Cocora Valley](/guides/cocora-valley/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Seoul](/guides/seoul/), then move through [Utila](/guides/utila/) and [Cenote Diving](/guides/cenote-diving/) to keep transfers practical instead of rushed. If costs climb, swap in [Mount Kilimanjaro](/guides/mount-kilimanjaro/), and pair [Dead Sea](/guides/dead-sea/) with [Cocora Valley](/guides/cocora-valley/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hostel-selection-operator-checklist-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [New York City](/guides/new-york-city/), then connect to [Petra](/guides/petra/) and [Annapurna Circuit](/guides/annapurna-circuit/) for realistic transit flow. Add [Gili Islands](/guides/gili-islands/) when you need lower-cost alternatives, and use [Brussels](/guides/brussels/) with [Arusha](/guides/arusha/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [New York City](/guides/new-york-city/), then move through [Petra](/guides/petra/) and [Annapurna Circuit](/guides/annapurna-circuit/) to keep transfers practical instead of rushed. If costs climb, swap in [Gili Islands](/guides/gili-islands/), and pair [Brussels](/guides/brussels/) with [Arusha](/guides/arusha/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hostel-selection-operator-checklist-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Bay Of Kotor](/guides/bay-of-kotor/), then connect to [Macau](/guides/macau/) and [Johor Bahru](/guides/johor-bahru/) for realistic transit flow. Add [Bwindi](/guides/bwindi/) when you need lower-cost alternatives, and use [Dublin](/guides/dublin/) with [Hoi An](/guides/hoi-an/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Bay Of Kotor](/guides/bay-of-kotor/), then move through [Macau](/guides/macau/) and [Johor Bahru](/guides/johor-bahru/) to keep transfers practical instead of rushed. If costs climb, swap in [Bwindi](/guides/bwindi/), and pair [Dublin](/guides/dublin/) with [Hoi An](/guides/hoi-an/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hostel-selection-operator-checklist-inline-2.webp"
       }
     ],
@@ -323,26 +323,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Packing",
     "readMinutes": 12,
     "heroImage": "/images/blog/carry-on-only-long-term-hero.webp",
-    "intro": "Build this plan around [Bora Bora](/guides/bora-bora/), [Hoi An](/guides/hoi-an/), [Lauterbrunnen](/guides/lauterbrunnen/), and [Jokulsarlon](/guides/jokulsarlon/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Bora Bora](/guides/bora-bora/), [Hoi An](/guides/hoi-an/), [Lauterbrunnen](/guides/lauterbrunnen/), and [Jokulsarlon](/guides/jokulsarlon/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Cliffs Of Moher](/guides/cliffs-of-moher/), then connect to [Vancouver](/guides/vancouver/) and [Diani Beach](/guides/diani-beach/) for realistic transit flow. Add [Mendoza](/guides/mendoza/) when you need lower-cost alternatives, and use [Brussels](/guides/brussels/) with [Galapagos](/guides/galapagos/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cliffs Of Moher](/guides/cliffs-of-moher/), then move through [Vancouver](/guides/vancouver/) and [Diani Beach](/guides/diani-beach/) to keep transfers practical instead of rushed. If costs climb, swap in [Mendoza](/guides/mendoza/), and pair [Brussels](/guides/brussels/) with [Galapagos](/guides/galapagos/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/carry-on-only-long-term-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Zanzibar](/guides/zanzibar/), then connect to [Ubud Rice Terraces](/guides/ubud-rice-terraces/) and [Antigua Guatemala](/guides/antigua-guatemala/) for realistic transit flow. Add [Phuket](/guides/phuket/) when you need lower-cost alternatives, and use [Johor Bahru](/guides/johor-bahru/) with [Rishikesh](/guides/rishikesh/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Zanzibar](/guides/zanzibar/), then move through [Ubud Rice Terraces](/guides/ubud-rice-terraces/) and [Antigua Guatemala](/guides/antigua-guatemala/) to keep transfers practical instead of rushed. If costs climb, swap in [Phuket](/guides/phuket/), and pair [Johor Bahru](/guides/johor-bahru/) with [Rishikesh](/guides/rishikesh/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/carry-on-only-long-term-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Nuwara Eliya](/guides/nuwara-eliya/), then connect to [Busan](/guides/busan/) and [Cebu](/guides/cebu/) for realistic transit flow. Add [Morocco West Africa](/guides/morocco-west-africa/) when you need lower-cost alternatives, and use [Table Mountain](/guides/table-mountain/) with [Queenstown](/guides/queenstown/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Nuwara Eliya](/guides/nuwara-eliya/), then move through [Busan](/guides/busan/) and [Cebu](/guides/cebu/) to keep transfers practical instead of rushed. If costs climb, swap in [Morocco West Africa](/guides/morocco-west-africa/), and pair [Table Mountain](/guides/table-mountain/) with [Queenstown](/guides/queenstown/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/carry-on-only-long-term-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Cliffs Of Moher](/guides/cliffs-of-moher/), then connect to [Kathmandu](/guides/kathmandu/) and [Bologna](/guides/bologna/) for realistic transit flow. Add [Macau](/guides/macau/) when you need lower-cost alternatives, and use [Cusco](/guides/cusco/) with [Yasawa Islands](/guides/yasawa-islands/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cliffs Of Moher](/guides/cliffs-of-moher/), then move through [Kathmandu](/guides/kathmandu/) and [Bologna](/guides/bologna/) to keep transfers practical instead of rushed. If costs climb, swap in [Macau](/guides/macau/), and pair [Cusco](/guides/cusco/) with [Yasawa Islands](/guides/yasawa-islands/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/carry-on-only-long-term-inline-2.webp"
       }
     ],
@@ -380,31 +380,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Planning",
     "readMinutes": 9,
     "heroImage": "/images/blog/slow-travel-momentum-system-hero.webp",
-    "intro": "Build this plan around [Lisbon](/guides/lisbon/), [Zanzibar](/guides/zanzibar/), [Galapagos](/guides/galapagos/), and [Milan](/guides/milan/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Lisbon](/guides/lisbon/), [Zanzibar](/guides/zanzibar/), [Galapagos](/guides/galapagos/), and [Milan](/guides/milan/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Chiang Rai](/guides/chiang-rai/), then connect to [Rishikesh](/guides/rishikesh/) and [Melbourne](/guides/melbourne/) for realistic transit flow. Add [Chiang Mai](/guides/chiang-mai/) when you need lower-cost alternatives, and use [Komodo Dragons](/guides/komodo-dragons/) with [Byron Bay](/guides/byron-bay/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Chiang Rai](/guides/chiang-rai/), then move through [Rishikesh](/guides/rishikesh/) and [Melbourne](/guides/melbourne/) to keep transfers practical instead of rushed. If costs climb, swap in [Chiang Mai](/guides/chiang-mai/), and pair [Komodo Dragons](/guides/komodo-dragons/) with [Byron Bay](/guides/byron-bay/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/slow-travel-momentum-system-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Tirana](/guides/tirana/), then connect to [Europe](/guides/europe/) and [Dakar](/guides/dakar/) for realistic transit flow. Add [Ait Benhaddou](/guides/ait-benhaddou/) when you need lower-cost alternatives, and use [Bohol](/guides/bohol/) with [Denpasar](/guides/denpasar/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Tirana](/guides/tirana/), then move through [Europe](/guides/europe/) and [Dakar](/guides/dakar/) to keep transfers practical instead of rushed. If costs climb, swap in [Ait Benhaddou](/guides/ait-benhaddou/), and pair [Bohol](/guides/bohol/) with [Denpasar](/guides/denpasar/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/slow-travel-momentum-system-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Taj Mahal](/guides/taj-mahal/), then connect to [San Cristobal](/guides/san-cristobal/) and [Tongariro](/guides/tongariro/) for realistic transit flow. Add [Seoul](/guides/seoul/) when you need lower-cost alternatives, and use [Abu Dhabi](/guides/abu-dhabi/) with [La Fortuna](/guides/la-fortuna/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Taj Mahal](/guides/taj-mahal/), then move through [San Cristobal](/guides/san-cristobal/) and [Tongariro](/guides/tongariro/) to keep transfers practical instead of rushed. If costs climb, swap in [Seoul](/guides/seoul/), and pair [Abu Dhabi](/guides/abu-dhabi/) with [La Fortuna](/guides/la-fortuna/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/slow-travel-momentum-system-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Chiang Rai](/guides/chiang-rai/), then connect to [Registan Samarkand](/guides/registan-samarkand/) and [Pai](/guides/pai/) for realistic transit flow. Add [Cappadocia](/guides/cappadocia/) when you need lower-cost alternatives, and use [Ngorongoro](/guides/ngorongoro/) with [Geirangerfjord](/guides/geirangerfjord/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Chiang Rai](/guides/chiang-rai/), then move through [Registan Samarkand](/guides/registan-samarkand/) and [Pai](/guides/pai/) to keep transfers practical instead of rushed. If costs climb, swap in [Cappadocia](/guides/cappadocia/), and pair [Ngorongoro](/guides/ngorongoro/) with [Geirangerfjord](/guides/geirangerfjord/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/slow-travel-momentum-system-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Tamale](/guides/tamale/), then connect to [Jokulsarlon](/guides/jokulsarlon/) and [Nusa Penida](/guides/nusa-penida/) for realistic transit flow. Add [Fes](/guides/fes/) when you need lower-cost alternatives, and use [Cocora Valley](/guides/cocora-valley/) with [Ometepe](/guides/ometepe/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Tamale](/guides/tamale/), then move through [Jokulsarlon](/guides/jokulsarlon/) and [Nusa Penida](/guides/nusa-penida/) to keep transfers practical instead of rushed. If costs climb, swap in [Fes](/guides/fes/), and pair [Cocora Valley](/guides/cocora-valley/) with [Ometepe](/guides/ometepe/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/slow-travel-momentum-system-inline-1.webp"
       }
     ],
@@ -442,26 +442,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Wellbeing",
     "readMinutes": 14,
     "heroImage": "/images/blog/social-energy-management-abroad-hero.webp",
-    "intro": "Build this plan around [Helsinki](/guides/helsinki/), [Gili Islands](/guides/gili-islands/), [Munich](/guides/munich/), and [Galle](/guides/galle/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Helsinki](/guides/helsinki/), [Gili Islands](/guides/gili-islands/), [Munich](/guides/munich/), and [Galle](/guides/galle/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Ziguinchor](/guides/ziguinchor/), then connect to [Galle](/guides/galle/) and [Everest Base Camp](/guides/everest-base-camp/) for realistic transit flow. Add [Rhodes](/guides/rhodes/) when you need lower-cost alternatives, and use [Medina](/guides/medina/) with [Madrid](/guides/madrid/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Ziguinchor](/guides/ziguinchor/), then move through [Galle](/guides/galle/) and [Everest Base Camp](/guides/everest-base-camp/) to keep transfers practical instead of rushed. If costs climb, swap in [Rhodes](/guides/rhodes/), and pair [Medina](/guides/medina/) with [Madrid](/guides/madrid/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/social-energy-management-abroad-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Wadi Shab](/guides/wadi-shab/), then connect to [Varanasi Ghats](/guides/varanasi-ghats/) and [Dakar](/guides/dakar/) for realistic transit flow. Add [Four Thousand Islands](/guides/four-thousand-islands/) when you need lower-cost alternatives, and use [Manali](/guides/manali/) with [Jeju Island](/guides/jeju-island/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Wadi Shab](/guides/wadi-shab/), then move through [Varanasi Ghats](/guides/varanasi-ghats/) and [Dakar](/guides/dakar/) to keep transfers practical instead of rushed. If costs climb, swap in [Four Thousand Islands](/guides/four-thousand-islands/), and pair [Manali](/guides/manali/) with [Jeju Island](/guides/jeju-island/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/social-energy-management-abroad-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Kruger National Park](/guides/kruger-national-park/), then connect to [Ella](/guides/ella/) and [Rome](/guides/rome/) for realistic transit flow. Add [Sugarloaf Mountain](/guides/sugarloaf-mountain/) when you need lower-cost alternatives, and use [Sagrada Familia](/guides/sagrada-familia/) with [Nairobi](/guides/nairobi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Kruger National Park](/guides/kruger-national-park/), then move through [Ella](/guides/ella/) and [Rome](/guides/rome/) to keep transfers practical instead of rushed. If costs climb, swap in [Sugarloaf Mountain](/guides/sugarloaf-mountain/), and pair [Sagrada Familia](/guides/sagrada-familia/) with [Nairobi](/guides/nairobi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/social-energy-management-abroad-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Pangong Lake](/guides/pangong-lake/), then connect to [Mombasa](/guides/mombasa/) and [Oaxaca](/guides/oaxaca/) for realistic transit flow. Add [Nara](/guides/nara/) when you need lower-cost alternatives, and use [Mekong Slow Boat](/guides/mekong-slow-boat/) with [Mole National Park](/guides/mole-national-park/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Pangong Lake](/guides/pangong-lake/), then move through [Mombasa](/guides/mombasa/) and [Oaxaca](/guides/oaxaca/) to keep transfers practical instead of rushed. If costs climb, swap in [Nara](/guides/nara/), and pair [Mekong Slow Boat](/guides/mekong-slow-boat/) with [Mole National Park](/guides/mole-national-park/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/social-energy-management-abroad-inline-2.webp"
       }
     ],
@@ -499,31 +499,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Safety",
     "readMinutes": 13,
     "heroImage": "/images/blog/travel-insurance-claim-proofing-hero.webp",
-    "intro": "Build this plan around [Tel Aviv](/guides/tel-aviv/), [Orlando](/guides/orlando/), [Rhodes](/guides/rhodes/), and [Salento](/guides/salento/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Tel Aviv](/guides/tel-aviv/), [Orlando](/guides/orlando/), [Rhodes](/guides/rhodes/), and [Salento](/guides/salento/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Tallinn](/guides/tallinn/), then connect to [Tokyo](/guides/tokyo/) and [Zion](/guides/zion/) for realistic transit flow. Add [Musandam](/guides/musandam/) when you need lower-cost alternatives, and use [Lisbon](/guides/lisbon/) with [Manali](/guides/manali/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Tallinn](/guides/tallinn/), then move through [Tokyo](/guides/tokyo/) and [Zion](/guides/zion/) to keep transfers practical instead of rushed. If costs climb, swap in [Musandam](/guides/musandam/), and pair [Lisbon](/guides/lisbon/) with [Manali](/guides/manali/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-insurance-claim-proofing-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Korean Dmz](/guides/korean-dmz/), then connect to [Dakar](/guides/dakar/) and [Golden Circle Iceland](/guides/golden-circle-iceland/) for realistic transit flow. Add [Atacama Desert](/guides/atacama-desert/) when you need lower-cost alternatives, and use [Blyde River Canyon](/guides/blyde-river-canyon/) with [Amalfi Coast](/guides/amalfi-coast/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Korean Dmz](/guides/korean-dmz/), then move through [Dakar](/guides/dakar/) and [Golden Circle Iceland](/guides/golden-circle-iceland/) to keep transfers practical instead of rushed. If costs climb, swap in [Atacama Desert](/guides/atacama-desert/), and pair [Blyde River Canyon](/guides/blyde-river-canyon/) with [Amalfi Coast](/guides/amalfi-coast/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-insurance-claim-proofing-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Utila](/guides/utila/), then connect to [Hoi An](/guides/hoi-an/) and [Cape Coast](/guides/cape-coast/) for realistic transit flow. Add [Lauterbrunnen](/guides/lauterbrunnen/) when you need lower-cost alternatives, and use [Madrid](/guides/madrid/) with [Fushimi Inari](/guides/fushimi-inari/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Utila](/guides/utila/), then move through [Hoi An](/guides/hoi-an/) and [Cape Coast](/guides/cape-coast/) to keep transfers practical instead of rushed. If costs climb, swap in [Lauterbrunnen](/guides/lauterbrunnen/), and pair [Madrid](/guides/madrid/) with [Fushimi Inari](/guides/fushimi-inari/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-insurance-claim-proofing-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Coron Houseboat](/guides/coron-houseboat/), then connect to [Marseille](/guides/marseille/) and [Cap Skirring](/guides/cap-skirring/) for realistic transit flow. Add [Utila](/guides/utila/) when you need lower-cost alternatives, and use [Stockholm](/guides/stockholm/) with [Budapest](/guides/budapest/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Coron Houseboat](/guides/coron-houseboat/), then move through [Marseille](/guides/marseille/) and [Cap Skirring](/guides/cap-skirring/) to keep transfers practical instead of rushed. If costs climb, swap in [Utila](/guides/utila/), and pair [Stockholm](/guides/stockholm/) with [Budapest](/guides/budapest/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-insurance-claim-proofing-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Tel Aviv](/guides/tel-aviv/), then connect to [Issyk Kul](/guides/issyk-kul/) and [Kgari](/guides/kgari/) for realistic transit flow. Add [Chichen Itza](/guides/chichen-itza/) when you need lower-cost alternatives, and use [Sossusvlei](/guides/sossusvlei/) with [Kotor](/guides/kotor/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Tel Aviv](/guides/tel-aviv/), then move through [Issyk Kul](/guides/issyk-kul/) and [Kgari](/guides/kgari/) to keep transfers practical instead of rushed. If costs climb, swap in [Chichen Itza](/guides/chichen-itza/), and pair [Sossusvlei](/guides/sossusvlei/) with [Kotor](/guides/kotor/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-insurance-claim-proofing-inline-1.webp"
       }
     ],
@@ -561,26 +561,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Logistics",
     "readMinutes": 14,
     "heroImage": "/images/blog/airport-day-efficiency-system-hero.webp",
-    "intro": "Build this plan around [Central America](/guides/central-america/), [Cliffs Of Moher](/guides/cliffs-of-moher/), [Pamukkale](/guides/pamukkale/), and [Queenstown](/guides/queenstown/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Central America](/guides/central-america/), [Cliffs Of Moher](/guides/cliffs-of-moher/), [Pamukkale](/guides/pamukkale/), and [Queenstown](/guides/queenstown/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Pyramids Of Giza](/guides/pyramids-of-giza/), then connect to [Pokhara](/guides/pokhara/) and [London](/guides/london/) for realistic transit flow. Add [Essaouira](/guides/essaouira/) when you need lower-cost alternatives, and use [Tongariro](/guides/tongariro/) with [River Tubing](/guides/river-tubing/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Pyramids Of Giza](/guides/pyramids-of-giza/), then move through [Pokhara](/guides/pokhara/) and [London](/guides/london/) to keep transfers practical instead of rushed. If costs climb, swap in [Essaouira](/guides/essaouira/), and pair [Tongariro](/guides/tongariro/) with [River Tubing](/guides/river-tubing/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/airport-day-efficiency-system-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Lima](/guides/lima/), then connect to [Labuan Bajo](/guides/labuan-bajo/) and [Cappadocia](/guides/cappadocia/) for realistic transit flow. Add [Ngorongoro](/guides/ngorongoro/) when you need lower-cost alternatives, and use [Nara](/guides/nara/) with [Fushimi Inari](/guides/fushimi-inari/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Lima](/guides/lima/), then move through [Labuan Bajo](/guides/labuan-bajo/) and [Cappadocia](/guides/cappadocia/) to keep transfers practical instead of rushed. If costs climb, swap in [Ngorongoro](/guides/ngorongoro/), and pair [Nara](/guides/nara/) with [Fushimi Inari](/guides/fushimi-inari/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/airport-day-efficiency-system-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Wadi Rum](/guides/wadi-rum/), then connect to [Antigua Guatemala](/guides/antigua-guatemala/) and [Volcano Boarding](/guides/volcano-boarding/) for realistic transit flow. Add [Medellin](/guides/medellin/) when you need lower-cost alternatives, and use [Sahara Desert](/guides/sahara-desert/) with [Mount Fuji](/guides/mount-fuji/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Wadi Rum](/guides/wadi-rum/), then move through [Antigua Guatemala](/guides/antigua-guatemala/) and [Volcano Boarding](/guides/volcano-boarding/) to keep transfers practical instead of rushed. If costs climb, swap in [Medellin](/guides/medellin/), and pair [Sahara Desert](/guides/sahara-desert/) with [Mount Fuji](/guides/mount-fuji/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/airport-day-efficiency-system-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Bogota](/guides/bogota/), then connect to [Lake Tekapo](/guides/lake-tekapo/) and [Fukuoka](/guides/fukuoka/) for realistic transit flow. Add [Cliffs Of Moher](/guides/cliffs-of-moher/) when you need lower-cost alternatives, and use [Atacama Desert](/guides/atacama-desert/) with [Batu Caves](/guides/batu-caves/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Bogota](/guides/bogota/), then move through [Lake Tekapo](/guides/lake-tekapo/) and [Fukuoka](/guides/fukuoka/) to keep transfers practical instead of rushed. If costs climb, swap in [Cliffs Of Moher](/guides/cliffs-of-moher/), and pair [Atacama Desert](/guides/atacama-desert/) with [Batu Caves](/guides/batu-caves/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/airport-day-efficiency-system-inline-2.webp"
       }
     ],
@@ -618,31 +618,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Productivity",
     "readMinutes": 13,
     "heroImage": "/images/blog/weekend-reset-for-digital-nomads-hero.webp",
-    "intro": "Build this plan around [Palma De Mallorca](/guides/palma-de-mallorca/), [Europe](/guides/europe/), [Nile Rafting](/guides/nile-rafting/), and [River Tubing](/guides/river-tubing/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Palma De Mallorca](/guides/palma-de-mallorca/), [Europe](/guides/europe/), [Nile Rafting](/guides/nile-rafting/), and [River Tubing](/guides/river-tubing/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Whitsunday Islands](/guides/whitsunday-islands/), then connect to [Venice](/guides/venice/) and [Abu Dhabi](/guides/abu-dhabi/) for realistic transit flow. Add [Lake Titicaca](/guides/lake-titicaca/) when you need lower-cost alternatives, and use [Bohol](/guides/bohol/) with [Copan](/guides/copan/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Whitsunday Islands](/guides/whitsunday-islands/), then move through [Venice](/guides/venice/) and [Abu Dhabi](/guides/abu-dhabi/) to keep transfers practical instead of rushed. If costs climb, swap in [Lake Titicaca](/guides/lake-titicaca/), and pair [Bohol](/guides/bohol/) with [Copan](/guides/copan/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/weekend-reset-for-digital-nomads-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Medina](/guides/medina/), then connect to [Mount Kinabalu](/guides/mount-kinabalu/) and [Thresher Sharks](/guides/thresher-sharks/) for realistic transit flow. Add [Chitwan](/guides/chitwan/) when you need lower-cost alternatives, and use [Miami](/guides/miami/) with [Flores](/guides/flores/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Medina](/guides/medina/), then move through [Mount Kinabalu](/guides/mount-kinabalu/) and [Thresher Sharks](/guides/thresher-sharks/) to keep transfers practical instead of rushed. If costs climb, swap in [Chitwan](/guides/chitwan/), and pair [Miami](/guides/miami/) with [Flores](/guides/flores/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/weekend-reset-for-digital-nomads-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Plitvice Lakes](/guides/plitvice-lakes/), then connect to [Sagrada Familia](/guides/sagrada-familia/) and [Medina](/guides/medina/) for realistic transit flow. Add [Valparaiso](/guides/valparaiso/) when you need lower-cost alternatives, and use [Venice](/guides/venice/) with [Great Barrier Reef](/guides/great-barrier-reef/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Plitvice Lakes](/guides/plitvice-lakes/), then move through [Sagrada Familia](/guides/sagrada-familia/) and [Medina](/guides/medina/) to keep transfers practical instead of rushed. If costs climb, swap in [Valparaiso](/guides/valparaiso/), and pair [Venice](/guides/venice/) with [Great Barrier Reef](/guides/great-barrier-reef/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/weekend-reset-for-digital-nomads-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Hoi An](/guides/hoi-an/), then connect to [Giants Causeway](/guides/giants-causeway/) and [Lake Nakuru](/guides/lake-nakuru/) for realistic transit flow. Add [Manila](/guides/manila/) when you need lower-cost alternatives, and use [Giraffe Centre](/guides/giraffe-centre/) with [Lake Titicaca](/guides/lake-titicaca/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Hoi An](/guides/hoi-an/), then move through [Giants Causeway](/guides/giants-causeway/) and [Lake Nakuru](/guides/lake-nakuru/) to keep transfers practical instead of rushed. If costs climb, swap in [Manila](/guides/manila/), and pair [Giraffe Centre](/guides/giraffe-centre/) with [Lake Titicaca](/guides/lake-titicaca/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/weekend-reset-for-digital-nomads-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Registan Samarkand](/guides/registan-samarkand/), then connect to [Mole National Park](/guides/mole-national-park/) and [Thresher Sharks](/guides/thresher-sharks/) for realistic transit flow. Add [Australia New Zealand](/guides/australia-new-zealand/) when you need lower-cost alternatives, and use [Cusco](/guides/cusco/) with [Macau](/guides/macau/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Registan Samarkand](/guides/registan-samarkand/), then move through [Mole National Park](/guides/mole-national-park/) and [Thresher Sharks](/guides/thresher-sharks/) to keep transfers practical instead of rushed. If costs climb, swap in [Australia New Zealand](/guides/australia-new-zealand/), and pair [Cusco](/guides/cusco/) with [Macau](/guides/macau/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/weekend-reset-for-digital-nomads-inline-1.webp"
       }
     ],
@@ -680,31 +680,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Visas",
     "readMinutes": 7,
     "heroImage": "/images/blog/visa-run-risk-reduction-hero.webp",
-    "intro": "Build this plan around [Johor Bahru](/guides/johor-bahru/), [Icefields Parkway](/guides/icefields-parkway/), [Mombasa](/guides/mombasa/), and [Yasawa Islands](/guides/yasawa-islands/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Johor Bahru](/guides/johor-bahru/), [Icefields Parkway](/guides/icefields-parkway/), [Mombasa](/guides/mombasa/), and [Yasawa Islands](/guides/yasawa-islands/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Kumasi](/guides/kumasi/), then connect to [Cusco](/guides/cusco/) and [Osaka](/guides/osaka/) for realistic transit flow. Add [Batu Caves](/guides/batu-caves/) when you need lower-cost alternatives, and use [Tongariro](/guides/tongariro/) with [Tbilisi](/guides/tbilisi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Kumasi](/guides/kumasi/), then move through [Cusco](/guides/cusco/) and [Osaka](/guides/osaka/) to keep transfers practical instead of rushed. If costs climb, swap in [Batu Caves](/guides/batu-caves/), and pair [Tongariro](/guides/tongariro/) with [Tbilisi](/guides/tbilisi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/visa-run-risk-reduction-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Santa Teresa](/guides/santa-teresa/), then connect to [Bangkok](/guides/bangkok/) and [Lima](/guides/lima/) for realistic transit flow. Add [Jinja](/guides/jinja/) when you need lower-cost alternatives, and use [Banff](/guides/banff/) with [Geirangerfjord](/guides/geirangerfjord/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Santa Teresa](/guides/santa-teresa/), then move through [Bangkok](/guides/bangkok/) and [Lima](/guides/lima/) to keep transfers practical instead of rushed. If costs climb, swap in [Jinja](/guides/jinja/), and pair [Banff](/guides/banff/) with [Geirangerfjord](/guides/geirangerfjord/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/visa-run-risk-reduction-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Munich](/guides/munich/), then connect to [Bocas Del Toro](/guides/bocas-del-toro/) and [Yasawa Islands](/guides/yasawa-islands/) for realistic transit flow. Add [Busan](/guides/busan/) when you need lower-cost alternatives, and use [Heraklion](/guides/heraklion/) with [Mont Blanc](/guides/mont-blanc/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Munich](/guides/munich/), then move through [Bocas Del Toro](/guides/bocas-del-toro/) and [Yasawa Islands](/guides/yasawa-islands/) to keep transfers practical instead of rushed. If costs climb, swap in [Busan](/guides/busan/), and pair [Heraklion](/guides/heraklion/) with [Mont Blanc](/guides/mont-blanc/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/visa-run-risk-reduction-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Meteora](/guides/meteora/), then connect to [Nice](/guides/nice/) and [Siargao](/guides/siargao/) for realistic transit flow. Add [Kampala](/guides/kampala/) when you need lower-cost alternatives, and use [Scuba Diving Gili](/guides/scuba-diving-gili/) with [Batu Caves](/guides/batu-caves/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Meteora](/guides/meteora/), then move through [Nice](/guides/nice/) and [Siargao](/guides/siargao/) to keep transfers practical instead of rushed. If costs climb, swap in [Kampala](/guides/kampala/), and pair [Scuba Diving Gili](/guides/scuba-diving-gili/) with [Batu Caves](/guides/batu-caves/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/visa-run-risk-reduction-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Paris](/guides/paris/), then connect to [Blue Mountains](/guides/blue-mountains/) and [Washington Dc](/guides/washington-dc/) for realistic transit flow. Add [Ha Long Bay](/guides/ha-long-bay/) when you need lower-cost alternatives, and use [Stone Town](/guides/stone-town/) with [Utila](/guides/utila/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Paris](/guides/paris/), then move through [Blue Mountains](/guides/blue-mountains/) and [Washington Dc](/guides/washington-dc/) to keep transfers practical instead of rushed. If costs climb, swap in [Ha Long Bay](/guides/ha-long-bay/), and pair [Stone Town](/guides/stone-town/) with [Utila](/guides/utila/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/visa-run-risk-reduction-inline-1.webp"
       }
     ],
@@ -742,26 +742,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Connectivity",
     "readMinutes": 14,
     "heroImage": "/images/blog/local-sim-and-esim-strategy-hero.webp",
-    "intro": "Build this plan around [Labuan Bajo](/guides/labuan-bajo/), [Golden Circle Iceland](/guides/golden-circle-iceland/), [Osaka](/guides/osaka/), and [Great Migration](/guides/great-migration/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Labuan Bajo](/guides/labuan-bajo/), [Golden Circle Iceland](/guides/golden-circle-iceland/), [Osaka](/guides/osaka/), and [Great Migration](/guides/great-migration/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Coron Houseboat](/guides/coron-houseboat/), then connect to [Mole National Park](/guides/mole-national-park/) and [Dubai](/guides/dubai/) for realistic transit flow. Add [La Fortuna](/guides/la-fortuna/) when you need lower-cost alternatives, and use [Musandam](/guides/musandam/) with [Dead Sea](/guides/dead-sea/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Coron Houseboat](/guides/coron-houseboat/), then move through [Mole National Park](/guides/mole-national-park/) and [Dubai](/guides/dubai/) to keep transfers practical instead of rushed. If costs climb, swap in [La Fortuna](/guides/la-fortuna/), and pair [Musandam](/guides/musandam/) with [Dead Sea](/guides/dead-sea/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/local-sim-and-esim-strategy-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Guangzhou](/guides/guangzhou/), then connect to [San Francisco](/guides/san-francisco/) and [Victoria Falls](/guides/victoria-falls/) for realistic transit flow. Add [Tirana](/guides/tirana/) when you need lower-cost alternatives, and use [Jaipur](/guides/jaipur/) with [Kotor](/guides/kotor/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Guangzhou](/guides/guangzhou/), then move through [San Francisco](/guides/san-francisco/) and [Victoria Falls](/guides/victoria-falls/) to keep transfers practical instead of rushed. If costs climb, swap in [Tirana](/guides/tirana/), and pair [Jaipur](/guides/jaipur/) with [Kotor](/guides/kotor/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/local-sim-and-esim-strategy-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Cebu](/guides/cebu/), then connect to [Plitvice Lakes](/guides/plitvice-lakes/) and [South America](/guides/south-america/) for realistic transit flow. Add [Nusa Penida](/guides/nusa-penida/) when you need lower-cost alternatives, and use [Jokulsarlon](/guides/jokulsarlon/) with [Dubrovnik](/guides/dubrovnik/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cebu](/guides/cebu/), then move through [Plitvice Lakes](/guides/plitvice-lakes/) and [South America](/guides/south-america/) to keep transfers practical instead of rushed. If costs climb, swap in [Nusa Penida](/guides/nusa-penida/), and pair [Jokulsarlon](/guides/jokulsarlon/) with [Dubrovnik](/guides/dubrovnik/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/local-sim-and-esim-strategy-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Atlas Mountains](/guides/atlas-mountains/), then connect to [Pattaya Chonburi](/guides/pattaya-chonburi/) and [Shenzhen](/guides/shenzhen/) for realistic transit flow. Add [Sapporo](/guides/sapporo/) when you need lower-cost alternatives, and use [Gorilla Trekking](/guides/gorilla-trekking/) with [Kampot](/guides/kampot/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Atlas Mountains](/guides/atlas-mountains/), then move through [Pattaya Chonburi](/guides/pattaya-chonburi/) and [Shenzhen](/guides/shenzhen/) to keep transfers practical instead of rushed. If costs climb, swap in [Sapporo](/guides/sapporo/), and pair [Gorilla Trekking](/guides/gorilla-trekking/) with [Kampot](/guides/kampot/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/local-sim-and-esim-strategy-inline-2.webp"
       }
     ],
@@ -799,31 +799,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Productivity",
     "readMinutes": 7,
     "heroImage": "/images/blog/travel-workspace-setup-kit-hero.webp",
-    "intro": "Build this plan around [Lima](/guides/lima/), [Krabi](/guides/krabi/), [Berat](/guides/berat/), and [Central America](/guides/central-america/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Lima](/guides/lima/), [Krabi](/guides/krabi/), [Berat](/guides/berat/), and [Central America](/guides/central-america/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Miami](/guides/miami/), then connect to [Angkor Wat](/guides/angkor-wat/) and [Nusa Penida](/guides/nusa-penida/) for realistic transit flow. Add [Bora Bora](/guides/bora-bora/) when you need lower-cost alternatives, and use [Kumasi](/guides/kumasi/) with [Four Thousand Islands](/guides/four-thousand-islands/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Miami](/guides/miami/), then move through [Angkor Wat](/guides/angkor-wat/) and [Nusa Penida](/guides/nusa-penida/) to keep transfers practical instead of rushed. If costs climb, swap in [Bora Bora](/guides/bora-bora/), and pair [Kumasi](/guides/kumasi/) with [Four Thousand Islands](/guides/four-thousand-islands/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-workspace-setup-kit-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Uluwatu](/guides/uluwatu/), then connect to [Mendoza](/guides/mendoza/) and [Cairo](/guides/cairo/) for realistic transit flow. Add [Seville](/guides/seville/) when you need lower-cost alternatives, and use [Zanzibar](/guides/zanzibar/) with [Punta Cana](/guides/punta-cana/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Uluwatu](/guides/uluwatu/), then move through [Mendoza](/guides/mendoza/) and [Cairo](/guides/cairo/) to keep transfers practical instead of rushed. If costs climb, swap in [Seville](/guides/seville/), and pair [Zanzibar](/guides/zanzibar/) with [Punta Cana](/guides/punta-cana/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-workspace-setup-kit-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Mount Kinabalu](/guides/mount-kinabalu/), then connect to [Hakone](/guides/hakone/) and [Vienna](/guides/vienna/) for realistic transit flow. Add [Dubrovnik](/guides/dubrovnik/) when you need lower-cost alternatives, and use [Japan South Korea](/guides/japan-south-korea/) with [Kumasi](/guides/kumasi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Mount Kinabalu](/guides/mount-kinabalu/), then move through [Hakone](/guides/hakone/) and [Vienna](/guides/vienna/) to keep transfers practical instead of rushed. If costs climb, swap in [Dubrovnik](/guides/dubrovnik/), and pair [Japan South Korea](/guides/japan-south-korea/) with [Kumasi](/guides/kumasi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-workspace-setup-kit-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Rhodes](/guides/rhodes/), then connect to [Sacred Valley](/guides/sacred-valley/) and [Central America](/guides/central-america/) for realistic transit flow. Add [Rishikesh](/guides/rishikesh/) when you need lower-cost alternatives, and use [Queen Elizabeth Np](/guides/queen-elizabeth-np/) with [Australia New Zealand](/guides/australia-new-zealand/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Rhodes](/guides/rhodes/), then move through [Sacred Valley](/guides/sacred-valley/) and [Central America](/guides/central-america/) to keep transfers practical instead of rushed. If costs climb, swap in [Rishikesh](/guides/rishikesh/), and pair [Queen Elizabeth Np](/guides/queen-elizabeth-np/) with [Australia New Zealand](/guides/australia-new-zealand/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-workspace-setup-kit-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Dubrovnik](/guides/dubrovnik/), then connect to [Giraffe Centre](/guides/giraffe-centre/) and [Maasai Mara](/guides/maasai-mara/) for realistic transit flow. Add [Gjirokaster](/guides/gjirokaster/) when you need lower-cost alternatives, and use [Amalfi Coast](/guides/amalfi-coast/) with [Victoria Falls](/guides/victoria-falls/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Dubrovnik](/guides/dubrovnik/), then move through [Giraffe Centre](/guides/giraffe-centre/) and [Maasai Mara](/guides/maasai-mara/) to keep transfers practical instead of rushed. If costs climb, swap in [Gjirokaster](/guides/gjirokaster/), and pair [Amalfi Coast](/guides/amalfi-coast/) with [Victoria Falls](/guides/victoria-falls/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-workspace-setup-kit-inline-1.webp"
       }
     ],
@@ -861,31 +861,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Transit",
     "readMinutes": 13,
     "heroImage": "/images/blog/night-bus-survival-guide-hero.webp",
-    "intro": "Build this plan around [Koh Tao](/guides/koh-tao/), [Sagrada Familia](/guides/sagrada-familia/), [Lombok](/guides/lombok/), and [Coron Houseboat](/guides/coron-houseboat/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Koh Tao](/guides/koh-tao/), [Sagrada Familia](/guides/sagrada-familia/), [Lombok](/guides/lombok/), and [Coron Houseboat](/guides/coron-houseboat/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Koh Phangan](/guides/koh-phangan/), then connect to [Okavango Delta](/guides/okavango-delta/) and [Antigua Guatemala](/guides/antigua-guatemala/) for realistic transit flow. Add [Utila](/guides/utila/) when you need lower-cost alternatives, and use [Maasai Mara](/guides/maasai-mara/) with [Hiroshima](/guides/hiroshima/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Koh Phangan](/guides/koh-phangan/), then move through [Okavango Delta](/guides/okavango-delta/) and [Antigua Guatemala](/guides/antigua-guatemala/) to keep transfers practical instead of rushed. If costs climb, swap in [Utila](/guides/utila/), and pair [Maasai Mara](/guides/maasai-mara/) with [Hiroshima](/guides/hiroshima/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/night-bus-survival-guide-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Bora Bora](/guides/bora-bora/), then connect to [Ho Chi Minh City](/guides/ho-chi-minh-city/) and [Pamukkale](/guides/pamukkale/) for realistic transit flow. Add [Johor Bahru](/guides/johor-bahru/) when you need lower-cost alternatives, and use [Tallinn](/guides/tallinn/) with [Copenhagen](/guides/copenhagen/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Bora Bora](/guides/bora-bora/), then move through [Ho Chi Minh City](/guides/ho-chi-minh-city/) and [Pamukkale](/guides/pamukkale/) to keep transfers practical instead of rushed. If costs climb, swap in [Johor Bahru](/guides/johor-bahru/), and pair [Tallinn](/guides/tallinn/) with [Copenhagen](/guides/copenhagen/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/night-bus-survival-guide-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Dolomites](/guides/dolomites/), then connect to [Gorilla Trekking](/guides/gorilla-trekking/) and [Serengeti](/guides/serengeti/) for realistic transit flow. Add [Diani Beach](/guides/diani-beach/) when you need lower-cost alternatives, and use [Stockholm](/guides/stockholm/) with [Jerusalem](/guides/jerusalem/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Dolomites](/guides/dolomites/), then move through [Gorilla Trekking](/guides/gorilla-trekking/) and [Serengeti](/guides/serengeti/) to keep transfers practical instead of rushed. If costs climb, swap in [Diani Beach](/guides/diani-beach/), and pair [Stockholm](/guides/stockholm/) with [Jerusalem](/guides/jerusalem/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/night-bus-survival-guide-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Musandam](/guides/musandam/), then connect to [Kuang Si Falls](/guides/kuang-si-falls/) and [Morocco West Africa](/guides/morocco-west-africa/) for realistic transit flow. Add [Heraklion](/guides/heraklion/) when you need lower-cost alternatives, and use [La Fortuna](/guides/la-fortuna/) with [Varanasi Ghats](/guides/varanasi-ghats/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Musandam](/guides/musandam/), then move through [Kuang Si Falls](/guides/kuang-si-falls/) and [Morocco West Africa](/guides/morocco-west-africa/) to keep transfers practical instead of rushed. If costs climb, swap in [Heraklion](/guides/heraklion/), and pair [La Fortuna](/guides/la-fortuna/) with [Varanasi Ghats](/guides/varanasi-ghats/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/night-bus-survival-guide-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Tokyo](/guides/tokyo/), then connect to [Hoi An](/guides/hoi-an/) and [Ha Long Bay](/guides/ha-long-bay/) for realistic transit flow. Add [Komodo National Park](/guides/komodo-national-park/) when you need lower-cost alternatives, and use [Macau](/guides/macau/) with [Istanbul](/guides/istanbul/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Tokyo](/guides/tokyo/), then move through [Hoi An](/guides/hoi-an/) and [Ha Long Bay](/guides/ha-long-bay/) to keep transfers practical instead of rushed. If costs climb, swap in [Komodo National Park](/guides/komodo-national-park/), and pair [Macau](/guides/macau/) with [Istanbul](/guides/istanbul/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/night-bus-survival-guide-inline-1.webp"
       }
     ],
@@ -923,26 +923,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Seasonality",
     "readMinutes": 10,
     "heroImage": "/images/blog/rainy-season-travel-advantage-hero.webp",
-    "intro": "Build this plan around [Blyde River Canyon](/guides/blyde-river-canyon/), [Tallinn](/guides/tallinn/), [Magnetic Island](/guides/magnetic-island/), and [Gyeongju](/guides/gyeongju/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Blyde River Canyon](/guides/blyde-river-canyon/), [Tallinn](/guides/tallinn/), [Magnetic Island](/guides/magnetic-island/), and [Gyeongju](/guides/gyeongju/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Jokulsarlon](/guides/jokulsarlon/), then connect to [Banff](/guides/banff/) and [Blyde River Canyon](/guides/blyde-river-canyon/) for realistic transit flow. Add [Tel Aviv](/guides/tel-aviv/) when you need lower-cost alternatives, and use [Cairo](/guides/cairo/) with [Seoul](/guides/seoul/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Jokulsarlon](/guides/jokulsarlon/), then move through [Banff](/guides/banff/) and [Blyde River Canyon](/guides/blyde-river-canyon/) to keep transfers practical instead of rushed. If costs climb, swap in [Tel Aviv](/guides/tel-aviv/), and pair [Cairo](/guides/cairo/) with [Seoul](/guides/seoul/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/rainy-season-travel-advantage-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Giraffe Centre](/guides/giraffe-centre/), then connect to [Honolulu](/guides/honolulu/) and [Jaipur](/guides/jaipur/) for realistic transit flow. Add [Issyk Kul](/guides/issyk-kul/) when you need lower-cost alternatives, and use [Sagrada Familia](/guides/sagrada-familia/) with [Cliffs Of Moher](/guides/cliffs-of-moher/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Giraffe Centre](/guides/giraffe-centre/), then move through [Honolulu](/guides/honolulu/) and [Jaipur](/guides/jaipur/) to keep transfers practical instead of rushed. If costs climb, swap in [Issyk Kul](/guides/issyk-kul/), and pair [Sagrada Familia](/guides/sagrada-familia/) with [Cliffs Of Moher](/guides/cliffs-of-moher/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/rainy-season-travel-advantage-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Marseille](/guides/marseille/), then connect to [Hiroshima](/guides/hiroshima/) and [Cenote Diving](/guides/cenote-diving/) for realistic transit flow. Add [Great Migration](/guides/great-migration/) when you need lower-cost alternatives, and use [Granada Spain](/guides/granada-spain/) with [Victoria Falls](/guides/victoria-falls/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Marseille](/guides/marseille/), then move through [Hiroshima](/guides/hiroshima/) and [Cenote Diving](/guides/cenote-diving/) to keep transfers practical instead of rushed. If costs climb, swap in [Great Migration](/guides/great-migration/), and pair [Granada Spain](/guides/granada-spain/) with [Victoria Falls](/guides/victoria-falls/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/rainy-season-travel-advantage-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Amsterdam](/guides/amsterdam/), then connect to [Dmz](/guides/dmz/) and [Riyadh](/guides/riyadh/) for realistic transit flow. Add [Jinja](/guides/jinja/) when you need lower-cost alternatives, and use [Bogota](/guides/bogota/) with [Morocco West Africa](/guides/morocco-west-africa/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Amsterdam](/guides/amsterdam/), then move through [Dmz](/guides/dmz/) and [Riyadh](/guides/riyadh/) to keep transfers practical instead of rushed. If costs climb, swap in [Jinja](/guides/jinja/), and pair [Bogota](/guides/bogota/) with [Morocco West Africa](/guides/morocco-west-africa/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/rainy-season-travel-advantage-inline-2.webp"
       }
     ],
@@ -980,31 +980,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Itineraries",
     "readMinutes": 11,
     "heroImage": "/images/blog/three-day-city-sprint-template-hero.webp",
-    "intro": "Build this plan around [Zion](/guides/zion/), [Galapagos](/guides/galapagos/), [Istanbul](/guides/istanbul/), and [Pangong Lake](/guides/pangong-lake/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Zion](/guides/zion/), [Galapagos](/guides/galapagos/), [Istanbul](/guides/istanbul/), and [Pangong Lake](/guides/pangong-lake/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Japan South Korea](/guides/japan-south-korea/), then connect to [Volcano Boarding](/guides/volcano-boarding/) and [Valencia](/guides/valencia/) for realistic transit flow. Add [Sahara Desert](/guides/sahara-desert/) when you need lower-cost alternatives, and use [Salento](/guides/salento/) with [Blue Mountains](/guides/blue-mountains/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Japan South Korea](/guides/japan-south-korea/), then move through [Volcano Boarding](/guides/volcano-boarding/) and [Valencia](/guides/valencia/) to keep transfers practical instead of rushed. If costs climb, swap in [Sahara Desert](/guides/sahara-desert/), and pair [Salento](/guides/salento/) with [Blue Mountains](/guides/blue-mountains/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/three-day-city-sprint-template-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [India](/guides/india/), then connect to [Salento](/guides/salento/) and [Melbourne](/guides/melbourne/) for realistic transit flow. Add [Macau](/guides/macau/) when you need lower-cost alternatives, and use [Split](/guides/split/) with [Manali](/guides/manali/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [India](/guides/india/), then move through [Salento](/guides/salento/) and [Melbourne](/guides/melbourne/) to keep transfers practical instead of rushed. If costs climb, swap in [Macau](/guides/macau/), and pair [Split](/guides/split/) with [Manali](/guides/manali/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/three-day-city-sprint-template-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Coron](/guides/coron/), then connect to [Saint Louis Senegal](/guides/saint-louis-senegal/) and [Buenos Aires](/guides/buenos-aires/) for realistic transit flow. Add [Pamukkale](/guides/pamukkale/) when you need lower-cost alternatives, and use [Pai](/guides/pai/) with [Cocora Valley](/guides/cocora-valley/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Coron](/guides/coron/), then move through [Saint Louis Senegal](/guides/saint-louis-senegal/) and [Buenos Aires](/guides/buenos-aires/) to keep transfers practical instead of rushed. If costs climb, swap in [Pamukkale](/guides/pamukkale/), and pair [Pai](/guides/pai/) with [Cocora Valley](/guides/cocora-valley/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/three-day-city-sprint-template-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Ile De Goree](/guides/ile-de-goree/), then connect to [Mont Blanc](/guides/mont-blanc/) and [Yosemite](/guides/yosemite/) for realistic transit flow. Add [Na Pali Coast](/guides/na-pali-coast/) when you need lower-cost alternatives, and use [Dead Sea](/guides/dead-sea/) with [Toronto](/guides/toronto/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Ile De Goree](/guides/ile-de-goree/), then move through [Mont Blanc](/guides/mont-blanc/) and [Yosemite](/guides/yosemite/) to keep transfers practical instead of rushed. If costs climb, swap in [Na Pali Coast](/guides/na-pali-coast/), and pair [Dead Sea](/guides/dead-sea/) with [Toronto](/guides/toronto/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/three-day-city-sprint-template-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Marne La Vallee](/guides/marne-la-vallee/), then connect to [Japan South Korea](/guides/japan-south-korea/) and [Barcelona](/guides/barcelona/) for realistic transit flow. Add [Lima](/guides/lima/) when you need lower-cost alternatives, and use [Goa](/guides/goa/) with [Snow Monkeys](/guides/snow-monkeys/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Marne La Vallee](/guides/marne-la-vallee/), then move through [Japan South Korea](/guides/japan-south-korea/) and [Barcelona](/guides/barcelona/) to keep transfers practical instead of rushed. If costs climb, swap in [Lima](/guides/lima/), and pair [Goa](/guides/goa/) with [Snow Monkeys](/guides/snow-monkeys/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/three-day-city-sprint-template-inline-1.webp"
       }
     ],
@@ -1042,31 +1042,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Food",
     "readMinutes": 9,
     "heroImage": "/images/blog/food-safety-street-markets-hero.webp",
-    "intro": "Build this plan around [Abu Dhabi](/guides/abu-dhabi/), [Cocora Valley](/guides/cocora-valley/), [Haridwar](/guides/haridwar/), and [Tikal](/guides/tikal/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Abu Dhabi](/guides/abu-dhabi/), [Cocora Valley](/guides/cocora-valley/), [Haridwar](/guides/haridwar/), and [Tikal](/guides/tikal/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Hakone](/guides/hakone/), then connect to [Tallinn](/guides/tallinn/) and [Nice](/guides/nice/) for realistic transit flow. Add [Cenote Diving](/guides/cenote-diving/) when you need lower-cost alternatives, and use [Labuan Bajo](/guides/labuan-bajo/) with [Frankfurt](/guides/frankfurt/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Hakone](/guides/hakone/), then move through [Tallinn](/guides/tallinn/) and [Nice](/guides/nice/) to keep transfers practical instead of rushed. If costs climb, swap in [Cenote Diving](/guides/cenote-diving/), and pair [Labuan Bajo](/guides/labuan-bajo/) with [Frankfurt](/guides/frankfurt/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-safety-street-markets-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Manila](/guides/manila/), then connect to [Mexico City](/guides/mexico-city/) and [Marrakech](/guides/marrakech/) for realistic transit flow. Add [Amber Fort](/guides/amber-fort/) when you need lower-cost alternatives, and use [Bullet Train](/guides/bullet-train/) with [Tamale](/guides/tamale/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Manila](/guides/manila/), then move through [Mexico City](/guides/mexico-city/) and [Marrakech](/guides/marrakech/) to keep transfers practical instead of rushed. If costs climb, swap in [Amber Fort](/guides/amber-fort/), and pair [Bullet Train](/guides/bullet-train/) with [Tamale](/guides/tamale/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-safety-street-markets-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Agra](/guides/agra/), then connect to [Lake Atitlan](/guides/lake-atitlan/) and [Lisbon](/guides/lisbon/) for realistic transit flow. Add [Iguazu Falls](/guides/iguazu-falls/) when you need lower-cost alternatives, and use [Ubud Rice Terraces](/guides/ubud-rice-terraces/) with [Krabi](/guides/krabi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Agra](/guides/agra/), then move through [Lake Atitlan](/guides/lake-atitlan/) and [Lisbon](/guides/lisbon/) to keep transfers practical instead of rushed. If costs climb, swap in [Iguazu Falls](/guides/iguazu-falls/), and pair [Ubud Rice Terraces](/guides/ubud-rice-terraces/) with [Krabi](/guides/krabi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-safety-street-markets-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Sossusvlei](/guides/sossusvlei/), then connect to [Chichen Itza](/guides/chichen-itza/) and [Koh Rong](/guides/koh-rong/) for realistic transit flow. Add [Blyde River Canyon](/guides/blyde-river-canyon/) when you need lower-cost alternatives, and use [Giraffe Centre](/guides/giraffe-centre/) with [Mole National Park](/guides/mole-national-park/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sossusvlei](/guides/sossusvlei/), then move through [Chichen Itza](/guides/chichen-itza/) and [Koh Rong](/guides/koh-rong/) to keep transfers practical instead of rushed. If costs climb, swap in [Blyde River Canyon](/guides/blyde-river-canyon/), and pair [Giraffe Centre](/guides/giraffe-centre/) with [Mole National Park](/guides/mole-national-park/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-safety-street-markets-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Icefields Parkway](/guides/icefields-parkway/), then connect to [El Calafate](/guides/el-calafate/) and [Dubrovnik](/guides/dubrovnik/) for realistic transit flow. Add [Golden Circle Iceland](/guides/golden-circle-iceland/) when you need lower-cost alternatives, and use [Sharjah](/guides/sharjah/) with [Stockholm](/guides/stockholm/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Icefields Parkway](/guides/icefields-parkway/), then move through [El Calafate](/guides/el-calafate/) and [Dubrovnik](/guides/dubrovnik/) to keep transfers practical instead of rushed. If costs climb, swap in [Golden Circle Iceland](/guides/golden-circle-iceland/), and pair [Sharjah](/guides/sharjah/) with [Stockholm](/guides/stockholm/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-safety-street-markets-inline-1.webp"
       }
     ],
@@ -1104,26 +1104,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Wellbeing",
     "readMinutes": 8,
     "heroImage": "/images/blog/burnout-signals-on-the-road-hero.webp",
-    "intro": "Build this plan around [Pattaya Chonburi](/guides/pattaya-chonburi/), [Tallinn](/guides/tallinn/), [Milan](/guides/milan/), and [Cairns](/guides/cairns/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Pattaya Chonburi](/guides/pattaya-chonburi/), [Tallinn](/guides/tallinn/), [Milan](/guides/milan/), and [Cairns](/guides/cairns/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Great Barrier Reef](/guides/great-barrier-reef/), then connect to [Marseille](/guides/marseille/) and [Golden Circle Iceland](/guides/golden-circle-iceland/) for realistic transit flow. Add [Dublin](/guides/dublin/) when you need lower-cost alternatives, and use [Jebel Jais](/guides/jebel-jais/) with [Nusa Penida](/guides/nusa-penida/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Great Barrier Reef](/guides/great-barrier-reef/), then move through [Marseille](/guides/marseille/) and [Golden Circle Iceland](/guides/golden-circle-iceland/) to keep transfers practical instead of rushed. If costs climb, swap in [Dublin](/guides/dublin/), and pair [Jebel Jais](/guides/jebel-jais/) with [Nusa Penida](/guides/nusa-penida/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/burnout-signals-on-the-road-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Chiang Mai](/guides/chiang-mai/), then connect to [Osaka](/guides/osaka/) and [Borobudur](/guides/borobudur/) for realistic transit flow. Add [East Africa](/guides/east-africa/) when you need lower-cost alternatives, and use [Saint Louis Senegal](/guides/saint-louis-senegal/) with [Coromandel](/guides/coromandel/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Chiang Mai](/guides/chiang-mai/), then move through [Osaka](/guides/osaka/) and [Borobudur](/guides/borobudur/) to keep transfers practical instead of rushed. If costs climb, swap in [East Africa](/guides/east-africa/), and pair [Saint Louis Senegal](/guides/saint-louis-senegal/) with [Coromandel](/guides/coromandel/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/burnout-signals-on-the-road-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Issyk Kul](/guides/issyk-kul/), then connect to [Pamukkale](/guides/pamukkale/) and [Johor Bahru](/guides/johor-bahru/) for realistic transit flow. Add [Cebu](/guides/cebu/) when you need lower-cost alternatives, and use [Orlando](/guides/orlando/) with [Lake Nakuru](/guides/lake-nakuru/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Issyk Kul](/guides/issyk-kul/), then move through [Pamukkale](/guides/pamukkale/) and [Johor Bahru](/guides/johor-bahru/) to keep transfers practical instead of rushed. If costs climb, swap in [Cebu](/guides/cebu/), and pair [Orlando](/guides/orlando/) with [Lake Nakuru](/guides/lake-nakuru/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/burnout-signals-on-the-road-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Rome](/guides/rome/), then connect to [Salar De Uyuni](/guides/salar-de-uyuni/) and [Siem Reap](/guides/siem-reap/) for realistic transit flow. Add [Los Angeles](/guides/los-angeles/) when you need lower-cost alternatives, and use [Heraklion](/guides/heraklion/) with [Doha](/guides/doha/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Rome](/guides/rome/), then move through [Salar De Uyuni](/guides/salar-de-uyuni/) and [Siem Reap](/guides/siem-reap/) to keep transfers practical instead of rushed. If costs climb, swap in [Los Angeles](/guides/los-angeles/), and pair [Heraklion](/guides/heraklion/) with [Doha](/guides/doha/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/burnout-signals-on-the-road-inline-2.webp"
       }
     ],
@@ -1161,31 +1161,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Safety",
     "readMinutes": 9,
     "heroImage": "/images/blog/adventure-day-risk-matrix-hero.webp",
-    "intro": "Build this plan around [Iguazu Falls](/guides/iguazu-falls/), [Chiang Rai](/guides/chiang-rai/), [Victoria Falls](/guides/victoria-falls/), and [Moalboal](/guides/moalboal/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Iguazu Falls](/guides/iguazu-falls/), [Chiang Rai](/guides/chiang-rai/), [Victoria Falls](/guides/victoria-falls/), and [Moalboal](/guides/moalboal/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Venice](/guides/venice/), then connect to [Valencia](/guides/valencia/) and [La Fortuna](/guides/la-fortuna/) for realistic transit flow. Add [Utila](/guides/utila/) when you need lower-cost alternatives, and use [Registan Samarkand](/guides/registan-samarkand/) with [Riyadh](/guides/riyadh/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Venice](/guides/venice/), then move through [Valencia](/guides/valencia/) and [La Fortuna](/guides/la-fortuna/) to keep transfers practical instead of rushed. If costs climb, swap in [Utila](/guides/utila/), and pair [Registan Samarkand](/guides/registan-samarkand/) with [Riyadh](/guides/riyadh/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/adventure-day-risk-matrix-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [La Paz](/guides/la-paz/), then connect to [Europe](/guides/europe/) and [Heraklion](/guides/heraklion/) for realistic transit flow. Add [Los Angeles](/guides/los-angeles/) when you need lower-cost alternatives, and use [Wanaka](/guides/wanaka/) with [Nairobi](/guides/nairobi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [La Paz](/guides/la-paz/), then move through [Europe](/guides/europe/) and [Heraklion](/guides/heraklion/) to keep transfers practical instead of rushed. If costs climb, swap in [Los Angeles](/guides/los-angeles/), and pair [Wanaka](/guides/wanaka/) with [Nairobi](/guides/nairobi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/adventure-day-risk-matrix-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Tikal](/guides/tikal/), then connect to [Kampala](/guides/kampala/) and [Zhuhai](/guides/zhuhai/) for realistic transit flow. Add [Lake Bunyonyi](/guides/lake-bunyonyi/) when you need lower-cost alternatives, and use [New York City](/guides/new-york-city/) with [Rome](/guides/rome/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Tikal](/guides/tikal/), then move through [Kampala](/guides/kampala/) and [Zhuhai](/guides/zhuhai/) to keep transfers practical instead of rushed. If costs climb, swap in [Lake Bunyonyi](/guides/lake-bunyonyi/), and pair [New York City](/guides/new-york-city/) with [Rome](/guides/rome/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/adventure-day-risk-matrix-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Nara](/guides/nara/), then connect to [Denpasar](/guides/denpasar/) and [Paris](/guides/paris/) for realistic transit flow. Add [Galle](/guides/galle/) when you need lower-cost alternatives, and use [Scottish Highlands](/guides/scottish-highlands/) with [Coron Houseboat](/guides/coron-houseboat/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Nara](/guides/nara/), then move through [Denpasar](/guides/denpasar/) and [Paris](/guides/paris/) to keep transfers practical instead of rushed. If costs climb, swap in [Galle](/guides/galle/), and pair [Scottish Highlands](/guides/scottish-highlands/) with [Coron Houseboat](/guides/coron-houseboat/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/adventure-day-risk-matrix-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Milford Sound](/guides/milford-sound/), then connect to [Buenos Aires](/guides/buenos-aires/) and [Gorilla Trekking](/guides/gorilla-trekking/) for realistic transit flow. Add [Medellin](/guides/medellin/) when you need lower-cost alternatives, and use [Nairobi](/guides/nairobi/) with [Thessaloniki](/guides/thessaloniki/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Milford Sound](/guides/milford-sound/), then move through [Buenos Aires](/guides/buenos-aires/) and [Gorilla Trekking](/guides/gorilla-trekking/) to keep transfers practical instead of rushed. If costs climb, swap in [Medellin](/guides/medellin/), and pair [Nairobi](/guides/nairobi/) with [Thessaloniki](/guides/thessaloniki/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/adventure-day-risk-matrix-inline-1.webp"
       }
     ],
@@ -1223,26 +1223,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Health",
     "readMinutes": 10,
     "heroImage": "/images/blog/long-haul-recovery-protocol-hero.webp",
-    "intro": "Build this plan around [Montreal](/guides/montreal/), [Bohol](/guides/bohol/), [Ha Long Bay](/guides/ha-long-bay/), and [San Cristobal](/guides/san-cristobal/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Montreal](/guides/montreal/), [Bohol](/guides/bohol/), [Ha Long Bay](/guides/ha-long-bay/), and [San Cristobal](/guides/san-cristobal/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Mecca](/guides/mecca/), then connect to [Granada Nicaragua](/guides/granada-nicaragua/) and [Prague](/guides/prague/) for realistic transit flow. Add [Kruger National Park](/guides/kruger-national-park/) when you need lower-cost alternatives, and use [Ngorongoro](/guides/ngorongoro/) with [Rhodes](/guides/rhodes/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Mecca](/guides/mecca/), then move through [Granada Nicaragua](/guides/granada-nicaragua/) and [Prague](/guides/prague/) to keep transfers practical instead of rushed. If costs climb, swap in [Kruger National Park](/guides/kruger-national-park/), and pair [Ngorongoro](/guides/ngorongoro/) with [Rhodes](/guides/rhodes/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-haul-recovery-protocol-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Riyadh](/guides/riyadh/), then connect to [Magnetic Island](/guides/magnetic-island/) and [Great Ocean Road](/guides/great-ocean-road/) for realistic transit flow. Add [Delhi](/guides/delhi/) when you need lower-cost alternatives, and use [Manila](/guides/manila/) with [Nusa Penida](/guides/nusa-penida/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Riyadh](/guides/riyadh/), then move through [Magnetic Island](/guides/magnetic-island/) and [Great Ocean Road](/guides/great-ocean-road/) to keep transfers practical instead of rushed. If costs climb, swap in [Delhi](/guides/delhi/), and pair [Manila](/guides/manila/) with [Nusa Penida](/guides/nusa-penida/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-haul-recovery-protocol-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Sao Paulo](/guides/sao-paulo/), then connect to [Jerusalem](/guides/jerusalem/) and [Stone Town](/guides/stone-town/) for realistic transit flow. Add [Oslo](/guides/oslo/) when you need lower-cost alternatives, and use [Antalya](/guides/antalya/) with [Osaka](/guides/osaka/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sao Paulo](/guides/sao-paulo/), then move through [Jerusalem](/guides/jerusalem/) and [Stone Town](/guides/stone-town/) to keep transfers practical instead of rushed. If costs climb, swap in [Oslo](/guides/oslo/), and pair [Antalya](/guides/antalya/) with [Osaka](/guides/osaka/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-haul-recovery-protocol-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Pattaya Chonburi](/guides/pattaya-chonburi/), then connect to [Bocas Del Toro](/guides/bocas-del-toro/) and [Mekong Slow Boat](/guides/mekong-slow-boat/) for realistic transit flow. Add [Jeju Island](/guides/jeju-island/) when you need lower-cost alternatives, and use [Saint Louis Senegal](/guides/saint-louis-senegal/) with [Okavango Delta](/guides/okavango-delta/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Pattaya Chonburi](/guides/pattaya-chonburi/), then move through [Bocas Del Toro](/guides/bocas-del-toro/) and [Mekong Slow Boat](/guides/mekong-slow-boat/) to keep transfers practical instead of rushed. If costs climb, swap in [Jeju Island](/guides/jeju-island/), and pair [Saint Louis Senegal](/guides/saint-louis-senegal/) with [Okavango Delta](/guides/okavango-delta/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-haul-recovery-protocol-inline-2.webp"
       }
     ],
@@ -1280,31 +1280,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Relationships",
     "readMinutes": 9,
     "heroImage": "/images/blog/couples-travel-systems-hero.webp",
-    "intro": "Build this plan around [Santiago](/guides/santiago/), [Okavango Delta](/guides/okavango-delta/), [Utila](/guides/utila/), and [Wellington](/guides/wellington/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Santiago](/guides/santiago/), [Okavango Delta](/guides/okavango-delta/), [Utila](/guides/utila/), and [Wellington](/guides/wellington/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Jebel Jais](/guides/jebel-jais/), then connect to [Musandam](/guides/musandam/) and [Sigiriya](/guides/sigiriya/) for realistic transit flow. Add [Kgari](/guides/kgari/) when you need lower-cost alternatives, and use [Jinja](/guides/jinja/) with [Nuwara Eliya](/guides/nuwara-eliya/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Jebel Jais](/guides/jebel-jais/), then move through [Musandam](/guides/musandam/) and [Sigiriya](/guides/sigiriya/) to keep transfers practical instead of rushed. If costs climb, swap in [Kgari](/guides/kgari/), and pair [Jinja](/guides/jinja/) with [Nuwara Eliya](/guides/nuwara-eliya/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/couples-travel-systems-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Dar Es Salaam](/guides/dar-es-salaam/), then connect to [Berat](/guides/berat/) and [Shenzhen](/guides/shenzhen/) for realistic transit flow. Add [Maasai Mara](/guides/maasai-mara/) when you need lower-cost alternatives, and use [Whitsunday Islands](/guides/whitsunday-islands/) with [Uluwatu](/guides/uluwatu/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Dar Es Salaam](/guides/dar-es-salaam/), then move through [Berat](/guides/berat/) and [Shenzhen](/guides/shenzhen/) to keep transfers practical instead of rushed. If costs climb, swap in [Maasai Mara](/guides/maasai-mara/), and pair [Whitsunday Islands](/guides/whitsunday-islands/) with [Uluwatu](/guides/uluwatu/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/couples-travel-systems-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Komodo National Park](/guides/komodo-national-park/), then connect to [Angkor Wat](/guides/angkor-wat/) and [Jaipur](/guides/jaipur/) for realistic transit flow. Add [Kumasi](/guides/kumasi/) when you need lower-cost alternatives, and use [Milford Sound](/guides/milford-sound/) with [Mirissa](/guides/mirissa/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Komodo National Park](/guides/komodo-national-park/), then move through [Angkor Wat](/guides/angkor-wat/) and [Jaipur](/guides/jaipur/) to keep transfers practical instead of rushed. If costs climb, swap in [Kumasi](/guides/kumasi/), and pair [Milford Sound](/guides/milford-sound/) with [Mirissa](/guides/mirissa/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/couples-travel-systems-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Prague](/guides/prague/), then connect to [Valparaiso](/guides/valparaiso/) and [Copan](/guides/copan/) for realistic transit flow. Add [Ha Long Bay](/guides/ha-long-bay/) when you need lower-cost alternatives, and use [Kruger National Park](/guides/kruger-national-park/) with [Manila](/guides/manila/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Prague](/guides/prague/), then move through [Valparaiso](/guides/valparaiso/) and [Copan](/guides/copan/) to keep transfers practical instead of rushed. If costs climb, swap in [Ha Long Bay](/guides/ha-long-bay/), and pair [Kruger National Park](/guides/kruger-national-park/) with [Manila](/guides/manila/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/couples-travel-systems-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Seville](/guides/seville/), then connect to [Kathmandu](/guides/kathmandu/) and [Whitsunday Islands](/guides/whitsunday-islands/) for realistic transit flow. Add [Central America](/guides/central-america/) when you need lower-cost alternatives, and use [Cenote Diving](/guides/cenote-diving/) with [Tbilisi](/guides/tbilisi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Seville](/guides/seville/), then move through [Kathmandu](/guides/kathmandu/) and [Whitsunday Islands](/guides/whitsunday-islands/) to keep transfers practical instead of rushed. If costs climb, swap in [Central America](/guides/central-america/), and pair [Cenote Diving](/guides/cenote-diving/) with [Tbilisi](/guides/tbilisi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/couples-travel-systems-inline-1.webp"
       }
     ],
@@ -1342,26 +1342,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Safety",
     "readMinutes": 12,
     "heroImage": "/images/blog/solo-female-travel-operations-hero.webp",
-    "intro": "Build this plan around [Pamukkale](/guides/pamukkale/), [Chiang Mai](/guides/chiang-mai/), [Plitvice Lakes](/guides/plitvice-lakes/), and [Wadi Shab](/guides/wadi-shab/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Pamukkale](/guides/pamukkale/), [Chiang Mai](/guides/chiang-mai/), [Plitvice Lakes](/guides/plitvice-lakes/), and [Wadi Shab](/guides/wadi-shab/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Gyeongju](/guides/gyeongju/), then connect to [Alhambra](/guides/alhambra/) and [Shanghai](/guides/shanghai/) for realistic transit flow. Add [Leh Ladakh](/guides/leh-ladakh/) when you need lower-cost alternatives, and use [Magnetic Island](/guides/magnetic-island/) with [Bohol](/guides/bohol/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Gyeongju](/guides/gyeongju/), then move through [Alhambra](/guides/alhambra/) and [Shanghai](/guides/shanghai/) to keep transfers practical instead of rushed. If costs climb, swap in [Leh Ladakh](/guides/leh-ladakh/), and pair [Magnetic Island](/guides/magnetic-island/) with [Bohol](/guides/bohol/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/solo-female-travel-operations-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Milan](/guides/milan/), then connect to [Paris](/guides/paris/) and [Lake Bunyonyi](/guides/lake-bunyonyi/) for realistic transit flow. Add [Kyoto](/guides/kyoto/) when you need lower-cost alternatives, and use [Europe](/guides/europe/) with [Frankfurt](/guides/frankfurt/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Milan](/guides/milan/), then move through [Paris](/guides/paris/) and [Lake Bunyonyi](/guides/lake-bunyonyi/) to keep transfers practical instead of rushed. If costs climb, swap in [Kyoto](/guides/kyoto/), and pair [Europe](/guides/europe/) with [Frankfurt](/guides/frankfurt/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/solo-female-travel-operations-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [New York City](/guides/new-york-city/), then connect to [Lake Bled](/guides/lake-bled/) and [Paris](/guides/paris/) for realistic transit flow. Add [Chiang Mai Temples](/guides/chiang-mai-temples/) when you need lower-cost alternatives, and use [Kuang Si Falls](/guides/kuang-si-falls/) with [Shanghai](/guides/shanghai/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [New York City](/guides/new-york-city/), then move through [Lake Bled](/guides/lake-bled/) and [Paris](/guides/paris/) to keep transfers practical instead of rushed. If costs climb, swap in [Chiang Mai Temples](/guides/chiang-mai-temples/), and pair [Kuang Si Falls](/guides/kuang-si-falls/) with [Shanghai](/guides/shanghai/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/solo-female-travel-operations-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Chichen Itza](/guides/chichen-itza/), then connect to [Borobudur](/guides/borobudur/) and [Camino De Santiago](/guides/camino-de-santiago/) for realistic transit flow. Add [Nara](/guides/nara/) when you need lower-cost alternatives, and use [London](/guides/london/) with [Krabi](/guides/krabi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Chichen Itza](/guides/chichen-itza/), then move through [Borobudur](/guides/borobudur/) and [Camino De Santiago](/guides/camino-de-santiago/) to keep transfers practical instead of rushed. If costs climb, swap in [Nara](/guides/nara/), and pair [London](/guides/london/) with [Krabi](/guides/krabi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/solo-female-travel-operations-inline-2.webp"
       }
     ],
@@ -1399,31 +1399,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Creator",
     "readMinutes": 9,
     "heroImage": "/images/blog/creator-workflow-while-traveling-hero.webp",
-    "intro": "Build this plan around [Mount Fuji](/guides/mount-fuji/), [Granada Spain](/guides/granada-spain/), [Ait Benhaddou](/guides/ait-benhaddou/), and [Kathmandu](/guides/kathmandu/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Mount Fuji](/guides/mount-fuji/), [Granada Spain](/guides/granada-spain/), [Ait Benhaddou](/guides/ait-benhaddou/), and [Kathmandu](/guides/kathmandu/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Lofoten](/guides/lofoten/), then connect to [Cairns](/guides/cairns/) and [Seville](/guides/seville/) for realistic transit flow. Add [Thessaloniki](/guides/thessaloniki/) when you need lower-cost alternatives, and use [Chiang Mai Temples](/guides/chiang-mai-temples/) with [Cancun](/guides/cancun/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Lofoten](/guides/lofoten/), then move through [Cairns](/guides/cairns/) and [Seville](/guides/seville/) to keep transfers practical instead of rushed. If costs climb, swap in [Thessaloniki](/guides/thessaloniki/), and pair [Chiang Mai Temples](/guides/chiang-mai-temples/) with [Cancun](/guides/cancun/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/creator-workflow-while-traveling-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Cusco](/guides/cusco/), then connect to [Mole National Park](/guides/mole-national-park/) and [Antalya](/guides/antalya/) for realistic transit flow. Add [Punta Cana](/guides/punta-cana/) when you need lower-cost alternatives, and use [Lofoten](/guides/lofoten/) with [Jaipur](/guides/jaipur/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cusco](/guides/cusco/), then move through [Mole National Park](/guides/mole-national-park/) and [Antalya](/guides/antalya/) to keep transfers practical instead of rushed. If costs climb, swap in [Punta Cana](/guides/punta-cana/), and pair [Lofoten](/guides/lofoten/) with [Jaipur](/guides/jaipur/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/creator-workflow-while-traveling-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Cappadocia](/guides/cappadocia/), then connect to [Mont Blanc](/guides/mont-blanc/) and [Koh Rong](/guides/koh-rong/) for realistic transit flow. Add [Four Thousand Islands](/guides/four-thousand-islands/) when you need lower-cost alternatives, and use [Dubai](/guides/dubai/) with [Angkor Wat](/guides/angkor-wat/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cappadocia](/guides/cappadocia/), then move through [Mont Blanc](/guides/mont-blanc/) and [Koh Rong](/guides/koh-rong/) to keep transfers practical instead of rushed. If costs climb, swap in [Four Thousand Islands](/guides/four-thousand-islands/), and pair [Dubai](/guides/dubai/) with [Angkor Wat](/guides/angkor-wat/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/creator-workflow-while-traveling-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Semuc Champey](/guides/semuc-champey/), then connect to [Phuket](/guides/phuket/) and [La Paz](/guides/la-paz/) for realistic transit flow. Add [Mecca](/guides/mecca/) when you need lower-cost alternatives, and use [Porto](/guides/porto/) with [London](/guides/london/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Semuc Champey](/guides/semuc-champey/), then move through [Phuket](/guides/phuket/) and [La Paz](/guides/la-paz/) to keep transfers practical instead of rushed. If costs climb, swap in [Mecca](/guides/mecca/), and pair [Porto](/guides/porto/) with [London](/guides/london/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/creator-workflow-while-traveling-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Kyoto](/guides/kyoto/), then connect to [Paris](/guides/paris/) and [Delhi](/guides/delhi/) for realistic transit flow. Add [Hanoi](/guides/hanoi/) when you need lower-cost alternatives, and use [Stone Town](/guides/stone-town/) with [Tirana](/guides/tirana/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Kyoto](/guides/kyoto/), then move through [Paris](/guides/paris/) and [Delhi](/guides/delhi/) to keep transfers practical instead of rushed. If costs climb, swap in [Hanoi](/guides/hanoi/), and pair [Stone Town](/guides/stone-town/) with [Tirana](/guides/tirana/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/creator-workflow-while-traveling-inline-1.webp"
       }
     ],
@@ -1461,31 +1461,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Photography",
     "readMinutes": 11,
     "heroImage": "/images/blog/photography-walk-planning-hero.webp",
-    "intro": "Build this plan around [Serengeti](/guides/serengeti/), [Morocco West Africa](/guides/morocco-west-africa/), [Santorini](/guides/santorini/), and [Mombasa](/guides/mombasa/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Serengeti](/guides/serengeti/), [Morocco West Africa](/guides/morocco-west-africa/), [Santorini](/guides/santorini/), and [Mombasa](/guides/mombasa/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Ile De Goree](/guides/ile-de-goree/), then connect to [Fushimi Inari](/guides/fushimi-inari/) and [Maasai Mara](/guides/maasai-mara/) for realistic transit flow. Add [Registan Samarkand](/guides/registan-samarkand/) when you need lower-cost alternatives, and use [Cocora Valley](/guides/cocora-valley/) with [Sapporo](/guides/sapporo/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Ile De Goree](/guides/ile-de-goree/), then move through [Fushimi Inari](/guides/fushimi-inari/) and [Maasai Mara](/guides/maasai-mara/) to keep transfers practical instead of rushed. If costs climb, swap in [Registan Samarkand](/guides/registan-samarkand/), and pair [Cocora Valley](/guides/cocora-valley/) with [Sapporo](/guides/sapporo/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/photography-walk-planning-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Santorini](/guides/santorini/), then connect to [Haridwar](/guides/haridwar/) and [Giants Causeway](/guides/giants-causeway/) for realistic transit flow. Add [Registan Samarkand](/guides/registan-samarkand/) when you need lower-cost alternatives, and use [Victoria Falls](/guides/victoria-falls/) with [Ngorongoro](/guides/ngorongoro/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Santorini](/guides/santorini/), then move through [Haridwar](/guides/haridwar/) and [Giants Causeway](/guides/giants-causeway/) to keep transfers practical instead of rushed. If costs climb, swap in [Registan Samarkand](/guides/registan-samarkand/), and pair [Victoria Falls](/guides/victoria-falls/) with [Ngorongoro](/guides/ngorongoro/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/photography-walk-planning-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Madrid](/guides/madrid/), then connect to [Miyajima](/guides/miyajima/) and [Sugarloaf Mountain](/guides/sugarloaf-mountain/) for realistic transit flow. Add [Saint Louis Senegal](/guides/saint-louis-senegal/) when you need lower-cost alternatives, and use [Borobudur](/guides/borobudur/) with [Taj Mahal](/guides/taj-mahal/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Madrid](/guides/madrid/), then move through [Miyajima](/guides/miyajima/) and [Sugarloaf Mountain](/guides/sugarloaf-mountain/) to keep transfers practical instead of rushed. If costs climb, swap in [Saint Louis Senegal](/guides/saint-louis-senegal/), and pair [Borobudur](/guides/borobudur/) with [Taj Mahal](/guides/taj-mahal/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/photography-walk-planning-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [East Africa](/guides/east-africa/), then connect to [Nile Rafting](/guides/nile-rafting/) and [Sharjah](/guides/sharjah/) for realistic transit flow. Add [Miami](/guides/miami/) when you need lower-cost alternatives, and use [Lake Atitlan](/guides/lake-atitlan/) with [Yosemite](/guides/yosemite/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [East Africa](/guides/east-africa/), then move through [Nile Rafting](/guides/nile-rafting/) and [Sharjah](/guides/sharjah/) to keep transfers practical instead of rushed. If costs climb, swap in [Miami](/guides/miami/), and pair [Lake Atitlan](/guides/lake-atitlan/) with [Yosemite](/guides/yosemite/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/photography-walk-planning-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [River Tubing](/guides/river-tubing/), then connect to [Lisbon](/guides/lisbon/) and [Lauterbrunnen](/guides/lauterbrunnen/) for realistic transit flow. Add [Kruger National Park](/guides/kruger-national-park/) when you need lower-cost alternatives, and use [Iguazu Falls](/guides/iguazu-falls/) with [Hakone](/guides/hakone/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [River Tubing](/guides/river-tubing/), then move through [Lisbon](/guides/lisbon/) and [Lauterbrunnen](/guides/lauterbrunnen/) to keep transfers practical instead of rushed. If costs climb, swap in [Kruger National Park](/guides/kruger-national-park/), and pair [Iguazu Falls](/guides/iguazu-falls/) with [Hakone](/guides/hakone/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/photography-walk-planning-inline-1.webp"
       }
     ],
@@ -1523,31 +1523,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Transit",
     "readMinutes": 7,
     "heroImage": "/images/blog/public-transport-mastery-hero.webp",
-    "intro": "Build this plan around [Lake Atitlan](/guides/lake-atitlan/), [Barcelona](/guides/barcelona/), [Taj Mahal](/guides/taj-mahal/), and [London](/guides/london/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Lake Atitlan](/guides/lake-atitlan/), [Barcelona](/guides/barcelona/), [Taj Mahal](/guides/taj-mahal/), and [London](/guides/london/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Mount Kinabalu](/guides/mount-kinabalu/), then connect to [Neuschwanstein](/guides/neuschwanstein/) and [Punta Cana](/guides/punta-cana/) for realistic transit flow. Add [Cape Coast](/guides/cape-coast/) when you need lower-cost alternatives, and use [Batu Caves](/guides/batu-caves/) with [Valencia](/guides/valencia/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Mount Kinabalu](/guides/mount-kinabalu/), then move through [Neuschwanstein](/guides/neuschwanstein/) and [Punta Cana](/guides/punta-cana/) to keep transfers practical instead of rushed. If costs climb, swap in [Cape Coast](/guides/cape-coast/), and pair [Batu Caves](/guides/batu-caves/) with [Valencia](/guides/valencia/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/public-transport-mastery-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Pokhara](/guides/pokhara/), then connect to [Haridwar](/guides/haridwar/) and [Marseille](/guides/marseille/) for realistic transit flow. Add [Wadi Shab](/guides/wadi-shab/) when you need lower-cost alternatives, and use [Antalya](/guides/antalya/) with [Alhambra](/guides/alhambra/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Pokhara](/guides/pokhara/), then move through [Haridwar](/guides/haridwar/) and [Marseille](/guides/marseille/) to keep transfers practical instead of rushed. If costs climb, swap in [Wadi Shab](/guides/wadi-shab/), and pair [Antalya](/guides/antalya/) with [Alhambra](/guides/alhambra/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/public-transport-mastery-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Copenhagen](/guides/copenhagen/), then connect to [Tallinn](/guides/tallinn/) and [Iguazu Falls](/guides/iguazu-falls/) for realistic transit flow. Add [Ha Long Bay](/guides/ha-long-bay/) when you need lower-cost alternatives, and use [Sharjah](/guides/sharjah/) with [Labuan Bajo](/guides/labuan-bajo/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Copenhagen](/guides/copenhagen/), then move through [Tallinn](/guides/tallinn/) and [Iguazu Falls](/guides/iguazu-falls/) to keep transfers practical instead of rushed. If costs climb, swap in [Ha Long Bay](/guides/ha-long-bay/), and pair [Sharjah](/guides/sharjah/) with [Labuan Bajo](/guides/labuan-bajo/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/public-transport-mastery-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Manali](/guides/manali/), then connect to [Cinque Terre](/guides/cinque-terre/) and [Busan](/guides/busan/) for realistic transit flow. Add [Japan South Korea](/guides/japan-south-korea/) when you need lower-cost alternatives, and use [Uluwatu](/guides/uluwatu/) with [Flores](/guides/flores/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Manali](/guides/manali/), then move through [Cinque Terre](/guides/cinque-terre/) and [Busan](/guides/busan/) to keep transfers practical instead of rushed. If costs climb, swap in [Japan South Korea](/guides/japan-south-korea/), and pair [Uluwatu](/guides/uluwatu/) with [Flores](/guides/flores/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/public-transport-mastery-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Queenstown](/guides/queenstown/), then connect to [Granada Nicaragua](/guides/granada-nicaragua/) and [Chefchaouen](/guides/chefchaouen/) for realistic transit flow. Add [Sao Paulo](/guides/sao-paulo/) when you need lower-cost alternatives, and use [Granada Spain](/guides/granada-spain/) with [Korean Dmz](/guides/korean-dmz/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Queenstown](/guides/queenstown/), then move through [Granada Nicaragua](/guides/granada-nicaragua/) and [Chefchaouen](/guides/chefchaouen/) to keep transfers practical instead of rushed. If costs climb, swap in [Sao Paulo](/guides/sao-paulo/), and pair [Granada Spain](/guides/granada-spain/) with [Korean Dmz](/guides/korean-dmz/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/public-transport-mastery-inline-1.webp"
       }
     ],
@@ -1585,31 +1585,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Health",
     "readMinutes": 13,
     "heroImage": "/images/blog/altitude-acclimatization-itinerary-hero.webp",
-    "intro": "Build this plan around [Southeast Asia](/guides/southeast-asia/), [Palma De Mallorca](/guides/palma-de-mallorca/), [Riyadh](/guides/riyadh/), and [Kampot](/guides/kampot/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Southeast Asia](/guides/southeast-asia/), [Palma De Mallorca](/guides/palma-de-mallorca/), [Riyadh](/guides/riyadh/), and [Kampot](/guides/kampot/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Sugarloaf Mountain](/guides/sugarloaf-mountain/), then connect to [Barcelona](/guides/barcelona/) and [Split](/guides/split/) for realistic transit flow. Add [Golden Circle Iceland](/guides/golden-circle-iceland/) when you need lower-cost alternatives, and use [Zanzibar](/guides/zanzibar/) with [Granada Spain](/guides/granada-spain/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sugarloaf Mountain](/guides/sugarloaf-mountain/), then move through [Barcelona](/guides/barcelona/) and [Split](/guides/split/) to keep transfers practical instead of rushed. If costs climb, swap in [Golden Circle Iceland](/guides/golden-circle-iceland/), and pair [Zanzibar](/guides/zanzibar/) with [Granada Spain](/guides/granada-spain/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/altitude-acclimatization-itinerary-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Cocora Valley](/guides/cocora-valley/), then connect to [Mombasa](/guides/mombasa/) and [Gorilla Trekking](/guides/gorilla-trekking/) for realistic transit flow. Add [Copan](/guides/copan/) when you need lower-cost alternatives, and use [Vienna](/guides/vienna/) with [Shanghai](/guides/shanghai/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cocora Valley](/guides/cocora-valley/), then move through [Mombasa](/guides/mombasa/) and [Gorilla Trekking](/guides/gorilla-trekking/) to keep transfers practical instead of rushed. If costs climb, swap in [Copan](/guides/copan/), and pair [Vienna](/guides/vienna/) with [Shanghai](/guides/shanghai/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/altitude-acclimatization-itinerary-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Cairns](/guides/cairns/), then connect to [Taj Mahal](/guides/taj-mahal/) and [Sugarloaf Mountain](/guides/sugarloaf-mountain/) for realistic transit flow. Add [Krakow](/guides/krakow/) when you need lower-cost alternatives, and use [Mexico City](/guides/mexico-city/) with [Yosemite](/guides/yosemite/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cairns](/guides/cairns/), then move through [Taj Mahal](/guides/taj-mahal/) and [Sugarloaf Mountain](/guides/sugarloaf-mountain/) to keep transfers practical instead of rushed. If costs climb, swap in [Krakow](/guides/krakow/), and pair [Mexico City](/guides/mexico-city/) with [Yosemite](/guides/yosemite/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/altitude-acclimatization-itinerary-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Stone Town](/guides/stone-town/), then connect to [Maldives Local Islands](/guides/maldives-local-islands/) and [Kuala Lumpur](/guides/kuala-lumpur/) for realistic transit flow. Add [Blue Mountains](/guides/blue-mountains/) when you need lower-cost alternatives, and use [Sharjah](/guides/sharjah/) with [Cap Skirring](/guides/cap-skirring/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Stone Town](/guides/stone-town/), then move through [Maldives Local Islands](/guides/maldives-local-islands/) and [Kuala Lumpur](/guides/kuala-lumpur/) to keep transfers practical instead of rushed. If costs climb, swap in [Blue Mountains](/guides/blue-mountains/), and pair [Sharjah](/guides/sharjah/) with [Cap Skirring](/guides/cap-skirring/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/altitude-acclimatization-itinerary-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Sugarloaf Mountain](/guides/sugarloaf-mountain/), then connect to [Lamu](/guides/lamu/) and [Copenhagen](/guides/copenhagen/) for realistic transit flow. Add [Thessaloniki](/guides/thessaloniki/) when you need lower-cost alternatives, and use [Chitwan](/guides/chitwan/) with [Blyde River Canyon](/guides/blyde-river-canyon/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sugarloaf Mountain](/guides/sugarloaf-mountain/), then move through [Lamu](/guides/lamu/) and [Copenhagen](/guides/copenhagen/) to keep transfers practical instead of rushed. If costs climb, swap in [Thessaloniki](/guides/thessaloniki/), and pair [Chitwan](/guides/chitwan/) with [Blyde River Canyon](/guides/blyde-river-canyon/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/altitude-acclimatization-itinerary-inline-1.webp"
       }
     ],
@@ -1647,31 +1647,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Lifestyle",
     "readMinutes": 7,
     "heroImage": "/images/blog/beach-town-vs-mountain-town-work-hero.webp",
-    "intro": "Build this plan around [Salar De Uyuni](/guides/salar-de-uyuni/), [Uluru](/guides/uluru/), [Rhodes](/guides/rhodes/), and [Annapurna Circuit](/guides/annapurna-circuit/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Salar De Uyuni](/guides/salar-de-uyuni/), [Uluru](/guides/uluru/), [Rhodes](/guides/rhodes/), and [Annapurna Circuit](/guides/annapurna-circuit/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Helsinki](/guides/helsinki/), then connect to [Johor Bahru](/guides/johor-bahru/) and [Salento](/guides/salento/) for realistic transit flow. Add [Antigua Guatemala](/guides/antigua-guatemala/) when you need lower-cost alternatives, and use [Wanaka](/guides/wanaka/) with [Icefields Parkway](/guides/icefields-parkway/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Helsinki](/guides/helsinki/), then move through [Johor Bahru](/guides/johor-bahru/) and [Salento](/guides/salento/) to keep transfers practical instead of rushed. If costs climb, swap in [Antigua Guatemala](/guides/antigua-guatemala/), and pair [Wanaka](/guides/wanaka/) with [Icefields Parkway](/guides/icefields-parkway/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/beach-town-vs-mountain-town-work-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Great Barrier Reef](/guides/great-barrier-reef/), then connect to [Barcelona](/guides/barcelona/) and [Goa](/guides/goa/) for realistic transit flow. Add [Accra](/guides/accra/) when you need lower-cost alternatives, and use [Essaouira](/guides/essaouira/) with [Koh Phangan](/guides/koh-phangan/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Great Barrier Reef](/guides/great-barrier-reef/), then move through [Barcelona](/guides/barcelona/) and [Goa](/guides/goa/) to keep transfers practical instead of rushed. If costs climb, swap in [Accra](/guides/accra/), and pair [Essaouira](/guides/essaouira/) with [Koh Phangan](/guides/koh-phangan/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/beach-town-vs-mountain-town-work-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Montreal](/guides/montreal/), then connect to [Tamale](/guides/tamale/) and [Vilnius](/guides/vilnius/) for realistic transit flow. Add [Chitwan](/guides/chitwan/) when you need lower-cost alternatives, and use [Giants Causeway](/guides/giants-causeway/) with [Perito Moreno](/guides/perito-moreno/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Montreal](/guides/montreal/), then move through [Tamale](/guides/tamale/) and [Vilnius](/guides/vilnius/) to keep transfers practical instead of rushed. If costs climb, swap in [Chitwan](/guides/chitwan/), and pair [Giants Causeway](/guides/giants-causeway/) with [Perito Moreno](/guides/perito-moreno/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/beach-town-vs-mountain-town-work-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Annapurna Circuit](/guides/annapurna-circuit/), then connect to [Hakone](/guides/hakone/) and [Yosemite](/guides/yosemite/) for realistic transit flow. Add [Full Moon Party](/guides/full-moon-party/) when you need lower-cost alternatives, and use [Lake Tekapo](/guides/lake-tekapo/) with [Iguazu Falls](/guides/iguazu-falls/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Annapurna Circuit](/guides/annapurna-circuit/), then move through [Hakone](/guides/hakone/) and [Yosemite](/guides/yosemite/) to keep transfers practical instead of rushed. If costs climb, swap in [Full Moon Party](/guides/full-moon-party/), and pair [Lake Tekapo](/guides/lake-tekapo/) with [Iguazu Falls](/guides/iguazu-falls/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/beach-town-vs-mountain-town-work-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Bwindi](/guides/bwindi/), then connect to [Koh Phangan](/guides/koh-phangan/) and [Machu Picchu](/guides/machu-picchu/) for realistic transit flow. Add [Shanghai](/guides/shanghai/) when you need lower-cost alternatives, and use [Salento](/guides/salento/) with [Issyk Kul](/guides/issyk-kul/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Bwindi](/guides/bwindi/), then move through [Koh Phangan](/guides/koh-phangan/) and [Machu Picchu](/guides/machu-picchu/) to keep transfers practical instead of rushed. If costs climb, swap in [Shanghai](/guides/shanghai/), and pair [Salento](/guides/salento/) with [Issyk Kul](/guides/issyk-kul/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/beach-town-vs-mountain-town-work-inline-1.webp"
       }
     ],
@@ -1709,31 +1709,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Learning",
     "readMinutes": 13,
     "heroImage": "/images/blog/language-learning-travel-routine-hero.webp",
-    "intro": "Build this plan around [Venice](/guides/venice/), [Guangzhou](/guides/guangzhou/), [Lombok](/guides/lombok/), and [Porto](/guides/porto/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Venice](/guides/venice/), [Guangzhou](/guides/guangzhou/), [Lombok](/guides/lombok/), and [Porto](/guides/porto/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [New York City](/guides/new-york-city/), then connect to [Paris](/guides/paris/) and [Taj Mahal](/guides/taj-mahal/) for realistic transit flow. Add [Amsterdam](/guides/amsterdam/) when you need lower-cost alternatives, and use [Toronto](/guides/toronto/) with [Kuala Lumpur](/guides/kuala-lumpur/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [New York City](/guides/new-york-city/), then move through [Paris](/guides/paris/) and [Taj Mahal](/guides/taj-mahal/) to keep transfers practical instead of rushed. If costs climb, swap in [Amsterdam](/guides/amsterdam/), and pair [Toronto](/guides/toronto/) with [Kuala Lumpur](/guides/kuala-lumpur/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/language-learning-travel-routine-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Cap Skirring](/guides/cap-skirring/), then connect to [Lisbon](/guides/lisbon/) and [Plitvice Lakes](/guides/plitvice-lakes/) for realistic transit flow. Add [Koh Phangan](/guides/koh-phangan/) when you need lower-cost alternatives, and use [Medina](/guides/medina/) with [Queenstown](/guides/queenstown/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cap Skirring](/guides/cap-skirring/), then move through [Lisbon](/guides/lisbon/) and [Plitvice Lakes](/guides/plitvice-lakes/) to keep transfers practical instead of rushed. If costs climb, swap in [Koh Phangan](/guides/koh-phangan/), and pair [Medina](/guides/medina/) with [Queenstown](/guides/queenstown/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/language-learning-travel-routine-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Valencia](/guides/valencia/), then connect to [Prague](/guides/prague/) and [Toronto](/guides/toronto/) for realistic transit flow. Add [Scottish Highlands](/guides/scottish-highlands/) when you need lower-cost alternatives, and use [Meteora](/guides/meteora/) with [Vancouver](/guides/vancouver/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Valencia](/guides/valencia/), then move through [Prague](/guides/prague/) and [Toronto](/guides/toronto/) to keep transfers practical instead of rushed. If costs climb, swap in [Scottish Highlands](/guides/scottish-highlands/), and pair [Meteora](/guides/meteora/) with [Vancouver](/guides/vancouver/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/language-learning-travel-routine-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Valencia](/guides/valencia/), then connect to [Ho Chi Minh City](/guides/ho-chi-minh-city/) and [Koh Tao](/guides/koh-tao/) for realistic transit flow. Add [Dubai](/guides/dubai/) when you need lower-cost alternatives, and use [Lake Bled](/guides/lake-bled/) with [Milford Sound](/guides/milford-sound/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Valencia](/guides/valencia/), then move through [Ho Chi Minh City](/guides/ho-chi-minh-city/) and [Koh Tao](/guides/koh-tao/) to keep transfers practical instead of rushed. If costs climb, swap in [Dubai](/guides/dubai/), and pair [Lake Bled](/guides/lake-bled/) with [Milford Sound](/guides/milford-sound/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/language-learning-travel-routine-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Vilnius](/guides/vilnius/), then connect to [Salar De Uyuni](/guides/salar-de-uyuni/) and [Mole National Park](/guides/mole-national-park/) for realistic transit flow. Add [Jaipur](/guides/jaipur/) when you need lower-cost alternatives, and use [Pai](/guides/pai/) with [Melbourne](/guides/melbourne/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Vilnius](/guides/vilnius/), then move through [Salar De Uyuni](/guides/salar-de-uyuni/) and [Mole National Park](/guides/mole-national-park/) to keep transfers practical instead of rushed. If costs climb, swap in [Jaipur](/guides/jaipur/), and pair [Pai](/guides/pai/) with [Melbourne](/guides/melbourne/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/language-learning-travel-routine-inline-1.webp"
       }
     ],
@@ -1771,31 +1771,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Packing",
     "readMinutes": 7,
     "heroImage": "/images/blog/packing-cubes-real-usage-hero.webp",
-    "intro": "Build this plan around [Marne La Vallee](/guides/marne-la-vallee/), [Rhodes](/guides/rhodes/), [Na Pali Coast](/guides/na-pali-coast/), and [Guangzhou](/guides/guangzhou/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Marne La Vallee](/guides/marne-la-vallee/), [Rhodes](/guides/rhodes/), [Na Pali Coast](/guides/na-pali-coast/), and [Guangzhou](/guides/guangzhou/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Kgari](/guides/kgari/), then connect to [Roatan](/guides/roatan/) and [Jokulsarlon](/guides/jokulsarlon/) for realistic transit flow. Add [Lake Tekapo](/guides/lake-tekapo/) when you need lower-cost alternatives, and use [Johor Bahru](/guides/johor-bahru/) with [Great Barrier Reef](/guides/great-barrier-reef/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Kgari](/guides/kgari/), then move through [Roatan](/guides/roatan/) and [Jokulsarlon](/guides/jokulsarlon/) to keep transfers practical instead of rushed. If costs climb, swap in [Lake Tekapo](/guides/lake-tekapo/), and pair [Johor Bahru](/guides/johor-bahru/) with [Great Barrier Reef](/guides/great-barrier-reef/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/packing-cubes-real-usage-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Osaka](/guides/osaka/), then connect to [Chichen Itza](/guides/chichen-itza/) and [Komodo Dragons](/guides/komodo-dragons/) for realistic transit flow. Add [Giants Causeway](/guides/giants-causeway/) when you need lower-cost alternatives, and use [Uluru](/guides/uluru/) with [Zanzibar](/guides/zanzibar/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Osaka](/guides/osaka/), then move through [Chichen Itza](/guides/chichen-itza/) and [Komodo Dragons](/guides/komodo-dragons/) to keep transfers practical instead of rushed. If costs climb, swap in [Giants Causeway](/guides/giants-causeway/), and pair [Uluru](/guides/uluru/) with [Zanzibar](/guides/zanzibar/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/packing-cubes-real-usage-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Mekong Slow Boat](/guides/mekong-slow-boat/), then connect to [Cusco](/guides/cusco/) and [Snow Monkeys](/guides/snow-monkeys/) for realistic transit flow. Add [Ella](/guides/ella/) when you need lower-cost alternatives, and use [Munich](/guides/munich/) with [Bay Of Kotor](/guides/bay-of-kotor/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Mekong Slow Boat](/guides/mekong-slow-boat/), then move through [Cusco](/guides/cusco/) and [Snow Monkeys](/guides/snow-monkeys/) to keep transfers practical instead of rushed. If costs climb, swap in [Ella](/guides/ella/), and pair [Munich](/guides/munich/) with [Bay Of Kotor](/guides/bay-of-kotor/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/packing-cubes-real-usage-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Fes](/guides/fes/), then connect to [Rome](/guides/rome/) and [Lofoten](/guides/lofoten/) for realistic transit flow. Add [Australia New Zealand](/guides/australia-new-zealand/) when you need lower-cost alternatives, and use [Los Angeles](/guides/los-angeles/) with [Mont Blanc](/guides/mont-blanc/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Fes](/guides/fes/), then move through [Rome](/guides/rome/) and [Lofoten](/guides/lofoten/) to keep transfers practical instead of rushed. If costs climb, swap in [Australia New Zealand](/guides/australia-new-zealand/), and pair [Los Angeles](/guides/los-angeles/) with [Mont Blanc](/guides/mont-blanc/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/packing-cubes-real-usage-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Mendoza](/guides/mendoza/), then connect to [Krakow](/guides/krakow/) and [Hoi An](/guides/hoi-an/) for realistic transit flow. Add [Mole National Park](/guides/mole-national-park/) when you need lower-cost alternatives, and use [Lima](/guides/lima/) with [Sossusvlei](/guides/sossusvlei/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Mendoza](/guides/mendoza/), then move through [Krakow](/guides/krakow/) and [Hoi An](/guides/hoi-an/) to keep transfers practical instead of rushed. If costs climb, swap in [Mole National Park](/guides/mole-national-park/), and pair [Lima](/guides/lima/) with [Sossusvlei](/guides/sossusvlei/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/packing-cubes-real-usage-inline-1.webp"
       }
     ],
@@ -1833,31 +1833,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Budget",
     "readMinutes": 9,
     "heroImage": "/images/blog/travel-finance-automation-hero.webp",
-    "intro": "Build this plan around [Berlin](/guides/berlin/), [Bangkok](/guides/bangkok/), [Leon Nicaragua](/guides/leon-nicaragua/), and [Lake Bunyonyi](/guides/lake-bunyonyi/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Berlin](/guides/berlin/), [Bangkok](/guides/bangkok/), [Leon Nicaragua](/guides/leon-nicaragua/), and [Lake Bunyonyi](/guides/lake-bunyonyi/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Serengeti](/guides/serengeti/), then connect to [Na Pali Coast](/guides/na-pali-coast/) and [Tirana](/guides/tirana/) for realistic transit flow. Add [Cairo](/guides/cairo/) when you need lower-cost alternatives, and use [Ile De Goree](/guides/ile-de-goree/) with [Gjirokaster](/guides/gjirokaster/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Serengeti](/guides/serengeti/), then move through [Na Pali Coast](/guides/na-pali-coast/) and [Tirana](/guides/tirana/) to keep transfers practical instead of rushed. If costs climb, swap in [Cairo](/guides/cairo/), and pair [Ile De Goree](/guides/ile-de-goree/) with [Gjirokaster](/guides/gjirokaster/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-finance-automation-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Galle](/guides/galle/), then connect to [Volcano Boarding](/guides/volcano-boarding/) and [Antalya](/guides/antalya/) for realistic transit flow. Add [New York City](/guides/new-york-city/) when you need lower-cost alternatives, and use [London](/guides/london/) with [Blue Mountains](/guides/blue-mountains/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Galle](/guides/galle/), then move through [Volcano Boarding](/guides/volcano-boarding/) and [Antalya](/guides/antalya/) to keep transfers practical instead of rushed. If costs climb, swap in [New York City](/guides/new-york-city/), and pair [London](/guides/london/) with [Blue Mountains](/guides/blue-mountains/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-finance-automation-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [San Cristobal](/guides/san-cristobal/), then connect to [Rotorua](/guides/rotorua/) and [Ho Chi Minh City](/guides/ho-chi-minh-city/) for realistic transit flow. Add [Sao Paulo](/guides/sao-paulo/) when you need lower-cost alternatives, and use [Koh Phangan](/guides/koh-phangan/) with [Petra](/guides/petra/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [San Cristobal](/guides/san-cristobal/), then move through [Rotorua](/guides/rotorua/) and [Ho Chi Minh City](/guides/ho-chi-minh-city/) to keep transfers practical instead of rushed. If costs climb, swap in [Sao Paulo](/guides/sao-paulo/), and pair [Koh Phangan](/guides/koh-phangan/) with [Petra](/guides/petra/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-finance-automation-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Warsaw](/guides/warsaw/), then connect to [Torres Del Paine](/guides/torres-del-paine/) and [Maasai Mara](/guides/maasai-mara/) for realistic transit flow. Add [Bay Of Kotor](/guides/bay-of-kotor/) when you need lower-cost alternatives, and use [Panama City](/guides/panama-city/) with [Okavango Delta](/guides/okavango-delta/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Warsaw](/guides/warsaw/), then move through [Torres Del Paine](/guides/torres-del-paine/) and [Maasai Mara](/guides/maasai-mara/) to keep transfers practical instead of rushed. If costs climb, swap in [Bay Of Kotor](/guides/bay-of-kotor/), and pair [Panama City](/guides/panama-city/) with [Okavango Delta](/guides/okavango-delta/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-finance-automation-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Goa](/guides/goa/), then connect to [Dolomites](/guides/dolomites/) and [Whitsunday Islands](/guides/whitsunday-islands/) for realistic transit flow. Add [Uluru](/guides/uluru/) when you need lower-cost alternatives, and use [Torres Del Paine](/guides/torres-del-paine/) with [Tallinn](/guides/tallinn/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Goa](/guides/goa/), then move through [Dolomites](/guides/dolomites/) and [Whitsunday Islands](/guides/whitsunday-islands/) to keep transfers practical instead of rushed. If costs climb, swap in [Uluru](/guides/uluru/), and pair [Torres Del Paine](/guides/torres-del-paine/) with [Tallinn](/guides/tallinn/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-finance-automation-inline-1.webp"
       }
     ],
@@ -1895,26 +1895,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Health",
     "readMinutes": 8,
     "heroImage": "/images/blog/backpacker-gym-alternatives-hero.webp",
-    "intro": "Build this plan around [Milan](/guides/milan/), [Dead Sea](/guides/dead-sea/), [Tamale](/guides/tamale/), and [Taj Mahal](/guides/taj-mahal/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Milan](/guides/milan/), [Dead Sea](/guides/dead-sea/), [Tamale](/guides/tamale/), and [Taj Mahal](/guides/taj-mahal/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Lamu](/guides/lamu/), then connect to [East Africa](/guides/east-africa/) and [Pamukkale](/guides/pamukkale/) for realistic transit flow. Add [Amber Fort](/guides/amber-fort/) when you need lower-cost alternatives, and use [New York City](/guides/new-york-city/) with [Cebu](/guides/cebu/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Lamu](/guides/lamu/), then move through [East Africa](/guides/east-africa/) and [Pamukkale](/guides/pamukkale/) to keep transfers practical instead of rushed. If costs climb, swap in [Amber Fort](/guides/amber-fort/), and pair [New York City](/guides/new-york-city/) with [Cebu](/guides/cebu/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/backpacker-gym-alternatives-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [San Cristobal](/guides/san-cristobal/), then connect to [Machu Picchu](/guides/machu-picchu/) and [Mendoza](/guides/mendoza/) for realistic transit flow. Add [Caye Caulker](/guides/caye-caulker/) when you need lower-cost alternatives, and use [Banff](/guides/banff/) with [Jebel Jais](/guides/jebel-jais/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [San Cristobal](/guides/san-cristobal/), then move through [Machu Picchu](/guides/machu-picchu/) and [Mendoza](/guides/mendoza/) to keep transfers practical instead of rushed. If costs climb, swap in [Caye Caulker](/guides/caye-caulker/), and pair [Banff](/guides/banff/) with [Jebel Jais](/guides/jebel-jais/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/backpacker-gym-alternatives-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Stone Town](/guides/stone-town/), then connect to [Scottish Highlands](/guides/scottish-highlands/) and [Sacred Valley](/guides/sacred-valley/) for realistic transit flow. Add [Fukuoka](/guides/fukuoka/) when you need lower-cost alternatives, and use [Jerusalem](/guides/jerusalem/) with [Geirangerfjord](/guides/geirangerfjord/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Stone Town](/guides/stone-town/), then move through [Scottish Highlands](/guides/scottish-highlands/) and [Sacred Valley](/guides/sacred-valley/) to keep transfers practical instead of rushed. If costs climb, swap in [Fukuoka](/guides/fukuoka/), and pair [Jerusalem](/guides/jerusalem/) with [Geirangerfjord](/guides/geirangerfjord/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/backpacker-gym-alternatives-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Serengeti](/guides/serengeti/), then connect to [Chiang Mai](/guides/chiang-mai/) and [Hakone](/guides/hakone/) for realistic transit flow. Add [Montreal](/guides/montreal/) when you need lower-cost alternatives, and use [Blyde River Canyon](/guides/blyde-river-canyon/) with [Phnom Penh](/guides/phnom-penh/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Serengeti](/guides/serengeti/), then move through [Chiang Mai](/guides/chiang-mai/) and [Hakone](/guides/hakone/) to keep transfers practical instead of rushed. If costs climb, swap in [Montreal](/guides/montreal/), and pair [Blyde River Canyon](/guides/blyde-river-canyon/) with [Phnom Penh](/guides/phnom-penh/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/backpacker-gym-alternatives-inline-2.webp"
       }
     ],
@@ -1952,31 +1952,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Planning",
     "readMinutes": 9,
     "heroImage": "/images/blog/storm-day-backup-plan-hero.webp",
-    "intro": "Build this plan around [Fukuoka](/guides/fukuoka/), [Kumasi](/guides/kumasi/), [Golden Circle Iceland](/guides/golden-circle-iceland/), and [Ometepe](/guides/ometepe/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Fukuoka](/guides/fukuoka/), [Kumasi](/guides/kumasi/), [Golden Circle Iceland](/guides/golden-circle-iceland/), and [Ometepe](/guides/ometepe/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Blyde River Canyon](/guides/blyde-river-canyon/), then connect to [Yosemite](/guides/yosemite/) and [Cape Coast](/guides/cape-coast/) for realistic transit flow. Add [Galle](/guides/galle/) when you need lower-cost alternatives, and use [Cairo](/guides/cairo/) with [Thessaloniki](/guides/thessaloniki/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Blyde River Canyon](/guides/blyde-river-canyon/), then move through [Yosemite](/guides/yosemite/) and [Cape Coast](/guides/cape-coast/) to keep transfers practical instead of rushed. If costs climb, swap in [Galle](/guides/galle/), and pair [Cairo](/guides/cairo/) with [Thessaloniki](/guides/thessaloniki/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/storm-day-backup-plan-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Petra](/guides/petra/), then connect to [Macau](/guides/macau/) and [Cap Skirring](/guides/cap-skirring/) for realistic transit flow. Add [Frankfurt](/guides/frankfurt/) when you need lower-cost alternatives, and use [Saint Louis Senegal](/guides/saint-louis-senegal/) with [Budapest](/guides/budapest/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Petra](/guides/petra/), then move through [Macau](/guides/macau/) and [Cap Skirring](/guides/cap-skirring/) to keep transfers practical instead of rushed. If costs climb, swap in [Frankfurt](/guides/frankfurt/), and pair [Saint Louis Senegal](/guides/saint-louis-senegal/) with [Budapest](/guides/budapest/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/storm-day-backup-plan-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Sapporo](/guides/sapporo/), then connect to [Auckland](/guides/auckland/) and [Rome](/guides/rome/) for realistic transit flow. Add [Nice](/guides/nice/) when you need lower-cost alternatives, and use [Granada Nicaragua](/guides/granada-nicaragua/) with [Thessaloniki](/guides/thessaloniki/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sapporo](/guides/sapporo/), then move through [Auckland](/guides/auckland/) and [Rome](/guides/rome/) to keep transfers practical instead of rushed. If costs climb, swap in [Nice](/guides/nice/), and pair [Granada Nicaragua](/guides/granada-nicaragua/) with [Thessaloniki](/guides/thessaloniki/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/storm-day-backup-plan-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Sahara Desert](/guides/sahara-desert/), then connect to [India](/guides/india/) and [Yellowstone](/guides/yellowstone/) for realistic transit flow. Add [Sacred Valley](/guides/sacred-valley/) when you need lower-cost alternatives, and use [Hong Kong](/guides/hong-kong/) with [Vienna](/guides/vienna/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sahara Desert](/guides/sahara-desert/), then move through [India](/guides/india/) and [Yellowstone](/guides/yellowstone/) to keep transfers practical instead of rushed. If costs climb, swap in [Sacred Valley](/guides/sacred-valley/), and pair [Hong Kong](/guides/hong-kong/) with [Vienna](/guides/vienna/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/storm-day-backup-plan-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Toronto](/guides/toronto/), then connect to [Great Barrier Reef](/guides/great-barrier-reef/) and [Pyramids Of Giza](/guides/pyramids-of-giza/) for realistic transit flow. Add [Camino De Santiago](/guides/camino-de-santiago/) when you need lower-cost alternatives, and use [Jaipur](/guides/jaipur/) with [Flores](/guides/flores/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Toronto](/guides/toronto/), then move through [Great Barrier Reef](/guides/great-barrier-reef/) and [Pyramids Of Giza](/guides/pyramids-of-giza/) to keep transfers practical instead of rushed. If costs climb, swap in [Camino De Santiago](/guides/camino-de-santiago/), and pair [Jaipur](/guides/jaipur/) with [Flores](/guides/flores/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/storm-day-backup-plan-inline-1.webp"
       }
     ],
@@ -2014,26 +2014,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Transit",
     "readMinutes": 10,
     "heroImage": "/images/blog/overnight-train-productivity-hero.webp",
-    "intro": "Build this plan around [La Paz](/guides/la-paz/), [Dubai](/guides/dubai/), [Rotorua](/guides/rotorua/), and [Mombasa](/guides/mombasa/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [La Paz](/guides/la-paz/), [Dubai](/guides/dubai/), [Rotorua](/guides/rotorua/), and [Mombasa](/guides/mombasa/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [El Nido](/guides/el-nido/), then connect to [Caye Caulker](/guides/caye-caulker/) and [Amsterdam](/guides/amsterdam/) for realistic transit flow. Add [Toronto](/guides/toronto/) when you need lower-cost alternatives, and use [Petra](/guides/petra/) with [Phnom Penh](/guides/phnom-penh/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [El Nido](/guides/el-nido/), then move through [Caye Caulker](/guides/caye-caulker/) and [Amsterdam](/guides/amsterdam/) to keep transfers practical instead of rushed. If costs climb, swap in [Toronto](/guides/toronto/), and pair [Petra](/guides/petra/) with [Phnom Penh](/guides/phnom-penh/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/overnight-train-productivity-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Cape Coast](/guides/cape-coast/), then connect to [San Francisco](/guides/san-francisco/) and [Zhuhai](/guides/zhuhai/) for realistic transit flow. Add [Dublin](/guides/dublin/) when you need lower-cost alternatives, and use [Goa](/guides/goa/) with [Cliffs Of Moher](/guides/cliffs-of-moher/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Cape Coast](/guides/cape-coast/), then move through [San Francisco](/guides/san-francisco/) and [Zhuhai](/guides/zhuhai/) to keep transfers practical instead of rushed. If costs climb, swap in [Dublin](/guides/dublin/), and pair [Goa](/guides/goa/) with [Cliffs Of Moher](/guides/cliffs-of-moher/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/overnight-train-productivity-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Nairobi](/guides/nairobi/), then connect to [Granada Spain](/guides/granada-spain/) and [Shenzhen](/guides/shenzhen/) for realistic transit flow. Add [Split](/guides/split/) when you need lower-cost alternatives, and use [Borobudur](/guides/borobudur/) with [San Cristobal](/guides/san-cristobal/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Nairobi](/guides/nairobi/), then move through [Granada Spain](/guides/granada-spain/) and [Shenzhen](/guides/shenzhen/) to keep transfers practical instead of rushed. If costs climb, swap in [Split](/guides/split/), and pair [Borobudur](/guides/borobudur/) with [San Cristobal](/guides/san-cristobal/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/overnight-train-productivity-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Mole National Park](/guides/mole-national-park/), then connect to [Mexico City](/guides/mexico-city/) and [Tikal](/guides/tikal/) for realistic transit flow. Add [Abel Tasman](/guides/abel-tasman/) when you need lower-cost alternatives, and use [La Paz](/guides/la-paz/) with [Atlas Mountains](/guides/atlas-mountains/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Mole National Park](/guides/mole-national-park/), then move through [Mexico City](/guides/mexico-city/) and [Tikal](/guides/tikal/) to keep transfers practical instead of rushed. If costs climb, swap in [Abel Tasman](/guides/abel-tasman/), and pair [La Paz](/guides/la-paz/) with [Atlas Mountains](/guides/atlas-mountains/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/overnight-train-productivity-inline-2.webp"
       }
     ],
@@ -2071,26 +2071,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Itineraries",
     "readMinutes": 10,
     "heroImage": "/images/blog/coastal-route-planning-framework-hero.webp",
-    "intro": "Build this plan around [Cairo](/guides/cairo/), [Queen Elizabeth Np](/guides/queen-elizabeth-np/), [Cape Coast](/guides/cape-coast/), and [Brussels](/guides/brussels/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Cairo](/guides/cairo/), [Queen Elizabeth Np](/guides/queen-elizabeth-np/), [Cape Coast](/guides/cape-coast/), and [Brussels](/guides/brussels/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Nuwara Eliya](/guides/nuwara-eliya/), then connect to [Gyeongju](/guides/gyeongju/) and [Thresher Sharks](/guides/thresher-sharks/) for realistic transit flow. Add [El Calafate](/guides/el-calafate/) when you need lower-cost alternatives, and use [Agra](/guides/agra/) with [Seville](/guides/seville/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Nuwara Eliya](/guides/nuwara-eliya/), then move through [Gyeongju](/guides/gyeongju/) and [Thresher Sharks](/guides/thresher-sharks/) to keep transfers practical instead of rushed. If costs climb, swap in [El Calafate](/guides/el-calafate/), and pair [Agra](/guides/agra/) with [Seville](/guides/seville/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/coastal-route-planning-framework-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Salar De Uyuni](/guides/salar-de-uyuni/), then connect to [Chiang Mai Temples](/guides/chiang-mai-temples/) and [Madrid](/guides/madrid/) for realistic transit flow. Add [Semuc Champey](/guides/semuc-champey/) when you need lower-cost alternatives, and use [Siem Reap](/guides/siem-reap/) with [Jerusalem](/guides/jerusalem/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Salar De Uyuni](/guides/salar-de-uyuni/), then move through [Chiang Mai Temples](/guides/chiang-mai-temples/) and [Madrid](/guides/madrid/) to keep transfers practical instead of rushed. If costs climb, swap in [Semuc Champey](/guides/semuc-champey/), and pair [Siem Reap](/guides/siem-reap/) with [Jerusalem](/guides/jerusalem/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/coastal-route-planning-framework-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Prague](/guides/prague/), then connect to [Sagrada Familia](/guides/sagrada-familia/) and [Montreal](/guides/montreal/) for realistic transit flow. Add [Serengeti](/guides/serengeti/) when you need lower-cost alternatives, and use [Mombasa](/guides/mombasa/) with [Mendoza](/guides/mendoza/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Prague](/guides/prague/), then move through [Sagrada Familia](/guides/sagrada-familia/) and [Montreal](/guides/montreal/) to keep transfers practical instead of rushed. If costs climb, swap in [Serengeti](/guides/serengeti/), and pair [Mombasa](/guides/mombasa/) with [Mendoza](/guides/mendoza/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/coastal-route-planning-framework-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Colombo](/guides/colombo/), then connect to [Kumasi](/guides/kumasi/) and [Kruger National Park](/guides/kruger-national-park/) for realistic transit flow. Add [Chiang Mai](/guides/chiang-mai/) when you need lower-cost alternatives, and use [Ile De Goree](/guides/ile-de-goree/) with [Cinque Terre](/guides/cinque-terre/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Colombo](/guides/colombo/), then move through [Kumasi](/guides/kumasi/) and [Kruger National Park](/guides/kruger-national-park/) to keep transfers practical instead of rushed. If costs climb, swap in [Chiang Mai](/guides/chiang-mai/), and pair [Ile De Goree](/guides/ile-de-goree/) with [Cinque Terre](/guides/cinque-terre/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/coastal-route-planning-framework-inline-2.webp"
       }
     ],
@@ -2128,26 +2128,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Planning",
     "readMinutes": 10,
     "heroImage": "/images/blog/mountain-route-weather-windows-hero.webp",
-    "intro": "Build this plan around [Ait Benhaddou](/guides/ait-benhaddou/), [Kruger National Park](/guides/kruger-national-park/), [Kampala](/guides/kampala/), and [Ubud Rice Terraces](/guides/ubud-rice-terraces/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Ait Benhaddou](/guides/ait-benhaddou/), [Kruger National Park](/guides/kruger-national-park/), [Kampala](/guides/kampala/), and [Ubud Rice Terraces](/guides/ubud-rice-terraces/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Hanoi](/guides/hanoi/), then connect to [Sydney](/guides/sydney/) and [Pangong Lake](/guides/pangong-lake/) for realistic transit flow. Add [Abel Tasman](/guides/abel-tasman/) when you need lower-cost alternatives, and use [Yasawa Islands](/guides/yasawa-islands/) with [Iguazu Falls](/guides/iguazu-falls/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Hanoi](/guides/hanoi/), then move through [Sydney](/guides/sydney/) and [Pangong Lake](/guides/pangong-lake/) to keep transfers practical instead of rushed. If costs climb, swap in [Abel Tasman](/guides/abel-tasman/), and pair [Yasawa Islands](/guides/yasawa-islands/) with [Iguazu Falls](/guides/iguazu-falls/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/mountain-route-weather-windows-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Sossusvlei](/guides/sossusvlei/), then connect to [Oaxaca](/guides/oaxaca/) and [Stone Town](/guides/stone-town/) for realistic transit flow. Add [Machu Picchu](/guides/machu-picchu/) when you need lower-cost alternatives, and use [Kampot](/guides/kampot/) with [Camino De Santiago](/guides/camino-de-santiago/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sossusvlei](/guides/sossusvlei/), then move through [Oaxaca](/guides/oaxaca/) and [Stone Town](/guides/stone-town/) to keep transfers practical instead of rushed. If costs climb, swap in [Machu Picchu](/guides/machu-picchu/), and pair [Kampot](/guides/kampot/) with [Camino De Santiago](/guides/camino-de-santiago/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/mountain-route-weather-windows-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Goa](/guides/goa/), then connect to [Mont Blanc](/guides/mont-blanc/) and [Galapagos](/guides/galapagos/) for realistic transit flow. Add [Budapest](/guides/budapest/) when you need lower-cost alternatives, and use [Taipei](/guides/taipei/) with [Byron Bay](/guides/byron-bay/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Goa](/guides/goa/), then move through [Mont Blanc](/guides/mont-blanc/) and [Galapagos](/guides/galapagos/) to keep transfers practical instead of rushed. If costs climb, swap in [Budapest](/guides/budapest/), and pair [Taipei](/guides/taipei/) with [Byron Bay](/guides/byron-bay/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/mountain-route-weather-windows-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Milan](/guides/milan/), then connect to [Kakum](/guides/kakum/) and [Sossusvlei](/guides/sossusvlei/) for realistic transit flow. Add [Buenos Aires](/guides/buenos-aires/) when you need lower-cost alternatives, and use [Europe](/guides/europe/) with [Edinburgh](/guides/edinburgh/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Milan](/guides/milan/), then move through [Kakum](/guides/kakum/) and [Sossusvlei](/guides/sossusvlei/) to keep transfers practical instead of rushed. If costs climb, swap in [Buenos Aires](/guides/buenos-aires/), and pair [Europe](/guides/europe/) with [Edinburgh](/guides/edinburgh/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/mountain-route-weather-windows-inline-2.webp"
       }
     ],
@@ -2185,31 +2185,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Visas",
     "readMinutes": 13,
     "heroImage": "/images/blog/border-crossing-document-pack-hero.webp",
-    "intro": "Build this plan around [Blyde River Canyon](/guides/blyde-river-canyon/), [Milford Sound](/guides/milford-sound/), [Pamukkale](/guides/pamukkale/), and [Borobudur](/guides/borobudur/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Blyde River Canyon](/guides/blyde-river-canyon/), [Milford Sound](/guides/milford-sound/), [Pamukkale](/guides/pamukkale/), and [Borobudur](/guides/borobudur/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Sydney](/guides/sydney/), then connect to [Great Barrier Reef](/guides/great-barrier-reef/) and [Great Wall](/guides/great-wall/) for realistic transit flow. Add [Milford Sound](/guides/milford-sound/) when you need lower-cost alternatives, and use [Luang Prabang](/guides/luang-prabang/) with [Coron Houseboat](/guides/coron-houseboat/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sydney](/guides/sydney/), then move through [Great Barrier Reef](/guides/great-barrier-reef/) and [Great Wall](/guides/great-wall/) to keep transfers practical instead of rushed. If costs climb, swap in [Milford Sound](/guides/milford-sound/), and pair [Luang Prabang](/guides/luang-prabang/) with [Coron Houseboat](/guides/coron-houseboat/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/border-crossing-document-pack-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Caye Caulker](/guides/caye-caulker/), then connect to [Taj Mahal](/guides/taj-mahal/) and [Santiago](/guides/santiago/) for realistic transit flow. Add [Riviera Maya Cenotes](/guides/riviera-maya-cenotes/) when you need lower-cost alternatives, and use [Salar De Uyuni](/guides/salar-de-uyuni/) with [Amber Fort](/guides/amber-fort/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Caye Caulker](/guides/caye-caulker/), then move through [Taj Mahal](/guides/taj-mahal/) and [Santiago](/guides/santiago/) to keep transfers practical instead of rushed. If costs climb, swap in [Riviera Maya Cenotes](/guides/riviera-maya-cenotes/), and pair [Salar De Uyuni](/guides/salar-de-uyuni/) with [Amber Fort](/guides/amber-fort/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/border-crossing-document-pack-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Orlando](/guides/orlando/), then connect to [Jokulsarlon](/guides/jokulsarlon/) and [Berat](/guides/berat/) for realistic transit flow. Add [Issyk Kul](/guides/issyk-kul/) when you need lower-cost alternatives, and use [Kandy](/guides/kandy/) with [Canggu](/guides/canggu/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Orlando](/guides/orlando/), then move through [Jokulsarlon](/guides/jokulsarlon/) and [Berat](/guides/berat/) to keep transfers practical instead of rushed. If costs climb, swap in [Issyk Kul](/guides/issyk-kul/), and pair [Kandy](/guides/kandy/) with [Canggu](/guides/canggu/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/border-crossing-document-pack-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Yasawa Islands](/guides/yasawa-islands/), then connect to [Kandy](/guides/kandy/) and [Zion](/guides/zion/) for realistic transit flow. Add [Oaxaca](/guides/oaxaca/) when you need lower-cost alternatives, and use [Diani Beach](/guides/diani-beach/) with [Pattaya Chonburi](/guides/pattaya-chonburi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Yasawa Islands](/guides/yasawa-islands/), then move through [Kandy](/guides/kandy/) and [Zion](/guides/zion/) to keep transfers practical instead of rushed. If costs climb, swap in [Oaxaca](/guides/oaxaca/), and pair [Diani Beach](/guides/diani-beach/) with [Pattaya Chonburi](/guides/pattaya-chonburi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/border-crossing-document-pack-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Antigua Guatemala](/guides/antigua-guatemala/), then connect to [Rio De Janeiro](/guides/rio-de-janeiro/) and [Queenstown](/guides/queenstown/) for realistic transit flow. Add [Mexico City](/guides/mexico-city/) when you need lower-cost alternatives, and use [Great Migration](/guides/great-migration/) with [Tikal](/guides/tikal/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Antigua Guatemala](/guides/antigua-guatemala/), then move through [Rio De Janeiro](/guides/rio-de-janeiro/) and [Queenstown](/guides/queenstown/) to keep transfers practical instead of rushed. If costs climb, swap in [Mexico City](/guides/mexico-city/), and pair [Great Migration](/guides/great-migration/) with [Tikal](/guides/tikal/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/border-crossing-document-pack-inline-1.webp"
       }
     ],
@@ -2247,26 +2247,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Safety",
     "readMinutes": 10,
     "heroImage": "/images/blog/anti-theft-city-routines-hero.webp",
-    "intro": "Build this plan around [Tamale](/guides/tamale/), [Sapporo](/guides/sapporo/), [Chiang Rai](/guides/chiang-rai/), and [Jerusalem](/guides/jerusalem/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Tamale](/guides/tamale/), [Sapporo](/guides/sapporo/), [Chiang Rai](/guides/chiang-rai/), and [Jerusalem](/guides/jerusalem/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Zanzibar](/guides/zanzibar/), then connect to [Cusco](/guides/cusco/) and [Dubai](/guides/dubai/) for realistic transit flow. Add [Tbilisi](/guides/tbilisi/) when you need lower-cost alternatives, and use [Annapurna Circuit](/guides/annapurna-circuit/) with [Fukuoka](/guides/fukuoka/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Zanzibar](/guides/zanzibar/), then move through [Cusco](/guides/cusco/) and [Dubai](/guides/dubai/) to keep transfers practical instead of rushed. If costs climb, swap in [Tbilisi](/guides/tbilisi/), and pair [Annapurna Circuit](/guides/annapurna-circuit/) with [Fukuoka](/guides/fukuoka/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/anti-theft-city-routines-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Ubud Rice Terraces](/guides/ubud-rice-terraces/), then connect to [Ha Long Bay](/guides/ha-long-bay/) and [Sagrada Familia](/guides/sagrada-familia/) for realistic transit flow. Add [Medina](/guides/medina/) when you need lower-cost alternatives, and use [Sugarloaf Mountain](/guides/sugarloaf-mountain/) with [Split](/guides/split/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Ubud Rice Terraces](/guides/ubud-rice-terraces/), then move through [Ha Long Bay](/guides/ha-long-bay/) and [Sagrada Familia](/guides/sagrada-familia/) to keep transfers practical instead of rushed. If costs climb, swap in [Medina](/guides/medina/), and pair [Sugarloaf Mountain](/guides/sugarloaf-mountain/) with [Split](/guides/split/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/anti-theft-city-routines-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Queen Elizabeth Np](/guides/queen-elizabeth-np/), then connect to [Cairo](/guides/cairo/) and [Stockholm](/guides/stockholm/) for realistic transit flow. Add [Banff](/guides/banff/) when you need lower-cost alternatives, and use [Wadi Shab](/guides/wadi-shab/) with [Zhuhai](/guides/zhuhai/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Queen Elizabeth Np](/guides/queen-elizabeth-np/), then move through [Cairo](/guides/cairo/) and [Stockholm](/guides/stockholm/) to keep transfers practical instead of rushed. If costs climb, swap in [Banff](/guides/banff/), and pair [Wadi Shab](/guides/wadi-shab/) with [Zhuhai](/guides/zhuhai/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/anti-theft-city-routines-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Coromandel](/guides/coromandel/), then connect to [Bora Bora](/guides/bora-bora/) and [Ella](/guides/ella/) for realistic transit flow. Add [Fukuoka](/guides/fukuoka/) when you need lower-cost alternatives, and use [Korean Dmz](/guides/korean-dmz/) with [Bocas Del Toro](/guides/bocas-del-toro/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Coromandel](/guides/coromandel/), then move through [Bora Bora](/guides/bora-bora/) and [Ella](/guides/ella/) to keep transfers practical instead of rushed. If costs climb, swap in [Fukuoka](/guides/fukuoka/), and pair [Korean Dmz](/guides/korean-dmz/) with [Bocas Del Toro](/guides/bocas-del-toro/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/anti-theft-city-routines-inline-2.webp"
       }
     ],
@@ -2304,31 +2304,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Itineraries",
     "readMinutes": 9,
     "heroImage": "/images/blog/micro-adventure-in-major-cities-hero.webp",
-    "intro": "Build this plan around [Busan](/guides/busan/), [Galapagos](/guides/galapagos/), [Hakone](/guides/hakone/), and [Thessaloniki](/guides/thessaloniki/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Busan](/guides/busan/), [Galapagos](/guides/galapagos/), [Hakone](/guides/hakone/), and [Thessaloniki](/guides/thessaloniki/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Mount Kinabalu](/guides/mount-kinabalu/), then connect to [South America](/guides/south-america/) and [Marseille](/guides/marseille/) for realistic transit flow. Add [Dmz](/guides/dmz/) when you need lower-cost alternatives, and use [Bocas Del Toro](/guides/bocas-del-toro/) with [Mekong Slow Boat](/guides/mekong-slow-boat/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Mount Kinabalu](/guides/mount-kinabalu/), then move through [South America](/guides/south-america/) and [Marseille](/guides/marseille/) to keep transfers practical instead of rushed. If costs climb, swap in [Dmz](/guides/dmz/), and pair [Bocas Del Toro](/guides/bocas-del-toro/) with [Mekong Slow Boat](/guides/mekong-slow-boat/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/micro-adventure-in-major-cities-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Lauterbrunnen](/guides/lauterbrunnen/), then connect to [Abu Dhabi](/guides/abu-dhabi/) and [Saint Louis Senegal](/guides/saint-louis-senegal/) for realistic transit flow. Add [Gjirokaster](/guides/gjirokaster/) when you need lower-cost alternatives, and use [Copenhagen](/guides/copenhagen/) with [Kotor](/guides/kotor/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Lauterbrunnen](/guides/lauterbrunnen/), then move through [Abu Dhabi](/guides/abu-dhabi/) and [Saint Louis Senegal](/guides/saint-louis-senegal/) to keep transfers practical instead of rushed. If costs climb, swap in [Gjirokaster](/guides/gjirokaster/), and pair [Copenhagen](/guides/copenhagen/) with [Kotor](/guides/kotor/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/micro-adventure-in-major-cities-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Galle](/guides/galle/), then connect to [Kruger National Park](/guides/kruger-national-park/) and [El Calafate](/guides/el-calafate/) for realistic transit flow. Add [Hong Kong](/guides/hong-kong/) when you need lower-cost alternatives, and use [La Fortuna](/guides/la-fortuna/) with [Machu Picchu](/guides/machu-picchu/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Galle](/guides/galle/), then move through [Kruger National Park](/guides/kruger-national-park/) and [El Calafate](/guides/el-calafate/) to keep transfers practical instead of rushed. If costs climb, swap in [Hong Kong](/guides/hong-kong/), and pair [La Fortuna](/guides/la-fortuna/) with [Machu Picchu](/guides/machu-picchu/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/micro-adventure-in-major-cities-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Yosemite](/guides/yosemite/), then connect to [Chefchaouen](/guides/chefchaouen/) and [Issyk Kul](/guides/issyk-kul/) for realistic transit flow. Add [Serengeti](/guides/serengeti/) when you need lower-cost alternatives, and use [Rome](/guides/rome/) with [Lake Atitlan](/guides/lake-atitlan/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Yosemite](/guides/yosemite/), then move through [Chefchaouen](/guides/chefchaouen/) and [Issyk Kul](/guides/issyk-kul/) to keep transfers practical instead of rushed. If costs climb, swap in [Serengeti](/guides/serengeti/), and pair [Rome](/guides/rome/) with [Lake Atitlan](/guides/lake-atitlan/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/micro-adventure-in-major-cities-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Gili Islands](/guides/gili-islands/), then connect to [Tokyo](/guides/tokyo/) and [Phuket](/guides/phuket/) for realistic transit flow. Add [Galle](/guides/galle/) when you need lower-cost alternatives, and use [Europe](/guides/europe/) with [Lake Bled](/guides/lake-bled/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Gili Islands](/guides/gili-islands/), then move through [Tokyo](/guides/tokyo/) and [Phuket](/guides/phuket/) to keep transfers practical instead of rushed. If costs climb, swap in [Galle](/guides/galle/), and pair [Europe](/guides/europe/) with [Lake Bled](/guides/lake-bled/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/micro-adventure-in-major-cities-inline-1.webp"
       }
     ],
@@ -2366,31 +2366,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Budget",
     "readMinutes": 13,
     "heroImage": "/images/blog/flexible-booking-strategy-hero.webp",
-    "intro": "Build this plan around [Cappadocia](/guides/cappadocia/), [Dubai](/guides/dubai/), [Vancouver](/guides/vancouver/), and [Mendoza](/guides/mendoza/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Cappadocia](/guides/cappadocia/), [Dubai](/guides/dubai/), [Vancouver](/guides/vancouver/), and [Mendoza](/guides/mendoza/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Calanques](/guides/calanques/), then connect to [El Calafate](/guides/el-calafate/) and [Koh Tao](/guides/koh-tao/) for realistic transit flow. Add [El Nido](/guides/el-nido/) when you need lower-cost alternatives, and use [Saint Louis Senegal](/guides/saint-louis-senegal/) with [Cenote Diving](/guides/cenote-diving/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Calanques](/guides/calanques/), then move through [El Calafate](/guides/el-calafate/) and [Koh Tao](/guides/koh-tao/) to keep transfers practical instead of rushed. If costs climb, swap in [El Nido](/guides/el-nido/), and pair [Saint Louis Senegal](/guides/saint-louis-senegal/) with [Cenote Diving](/guides/cenote-diving/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/flexible-booking-strategy-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Meteora](/guides/meteora/), then connect to [Moalboal](/guides/moalboal/) and [Auckland](/guides/auckland/) for realistic transit flow. Add [Bogota](/guides/bogota/) when you need lower-cost alternatives, and use [El Calafate](/guides/el-calafate/) with [Wadi Shab](/guides/wadi-shab/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Meteora](/guides/meteora/), then move through [Moalboal](/guides/moalboal/) and [Auckland](/guides/auckland/) to keep transfers practical instead of rushed. If costs climb, swap in [Bogota](/guides/bogota/), and pair [El Calafate](/guides/el-calafate/) with [Wadi Shab](/guides/wadi-shab/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/flexible-booking-strategy-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Australia New Zealand](/guides/australia-new-zealand/), then connect to [Uluru](/guides/uluru/) and [Pokhara](/guides/pokhara/) for realistic transit flow. Add [Machu Picchu](/guides/machu-picchu/) when you need lower-cost alternatives, and use [Siargao](/guides/siargao/) with [Quito](/guides/quito/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Australia New Zealand](/guides/australia-new-zealand/), then move through [Uluru](/guides/uluru/) and [Pokhara](/guides/pokhara/) to keep transfers practical instead of rushed. If costs climb, swap in [Machu Picchu](/guides/machu-picchu/), and pair [Siargao](/guides/siargao/) with [Quito](/guides/quito/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/flexible-booking-strategy-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Kgari](/guides/kgari/), then connect to [Na Pali Coast](/guides/na-pali-coast/) and [Gyeongju](/guides/gyeongju/) for realistic transit flow. Add [Everest Base Camp](/guides/everest-base-camp/) when you need lower-cost alternatives, and use [Elmina](/guides/elmina/) with [Sydney](/guides/sydney/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Kgari](/guides/kgari/), then move through [Na Pali Coast](/guides/na-pali-coast/) and [Gyeongju](/guides/gyeongju/) to keep transfers practical instead of rushed. If costs climb, swap in [Everest Base Camp](/guides/everest-base-camp/), and pair [Elmina](/guides/elmina/) with [Sydney](/guides/sydney/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/flexible-booking-strategy-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Coron Houseboat](/guides/coron-houseboat/), then connect to [Split](/guides/split/) and [Salar De Uyuni](/guides/salar-de-uyuni/) for realistic transit flow. Add [Bohol](/guides/bohol/) when you need lower-cost alternatives, and use [Tikal](/guides/tikal/) with [Jebel Jais](/guides/jebel-jais/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Coron Houseboat](/guides/coron-houseboat/), then move through [Split](/guides/split/) and [Salar De Uyuni](/guides/salar-de-uyuni/) to keep transfers practical instead of rushed. If costs climb, swap in [Bohol](/guides/bohol/), and pair [Tikal](/guides/tikal/) with [Jebel Jais](/guides/jebel-jais/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/flexible-booking-strategy-inline-1.webp"
       }
     ],
@@ -2428,26 +2428,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Adventure",
     "readMinutes": 8,
     "heroImage": "/images/blog/scuba-snorkel-trip-integration-hero.webp",
-    "intro": "Build this plan around [Batu Caves](/guides/batu-caves/), [Yasawa Islands](/guides/yasawa-islands/), [Istanbul](/guides/istanbul/), and [Kotor](/guides/kotor/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Batu Caves](/guides/batu-caves/), [Yasawa Islands](/guides/yasawa-islands/), [Istanbul](/guides/istanbul/), and [Kotor](/guides/kotor/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Riyadh](/guides/riyadh/), then connect to [Cenote Diving](/guides/cenote-diving/) and [Tongariro](/guides/tongariro/) for realistic transit flow. Add [Crete](/guides/crete/) when you need lower-cost alternatives, and use [Kumasi](/guides/kumasi/) with [Hanoi](/guides/hanoi/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Riyadh](/guides/riyadh/), then move through [Cenote Diving](/guides/cenote-diving/) and [Tongariro](/guides/tongariro/) to keep transfers practical instead of rushed. If costs climb, swap in [Crete](/guides/crete/), and pair [Kumasi](/guides/kumasi/) with [Hanoi](/guides/hanoi/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/scuba-snorkel-trip-integration-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Queen Elizabeth Np](/guides/queen-elizabeth-np/), then connect to [Dolomites](/guides/dolomites/) and [Mekong Slow Boat](/guides/mekong-slow-boat/) for realistic transit flow. Add [Colombo](/guides/colombo/) when you need lower-cost alternatives, and use [Grand Canyon](/guides/grand-canyon/) with [Yellowstone](/guides/yellowstone/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Queen Elizabeth Np](/guides/queen-elizabeth-np/), then move through [Dolomites](/guides/dolomites/) and [Mekong Slow Boat](/guides/mekong-slow-boat/) to keep transfers practical instead of rushed. If costs climb, swap in [Colombo](/guides/colombo/), and pair [Grand Canyon](/guides/grand-canyon/) with [Yellowstone](/guides/yellowstone/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/scuba-snorkel-trip-integration-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Pamukkale](/guides/pamukkale/), then connect to [Yosemite](/guides/yosemite/) and [Buenos Aires](/guides/buenos-aires/) for realistic transit flow. Add [Pyramids Of Giza](/guides/pyramids-of-giza/) when you need lower-cost alternatives, and use [Crete](/guides/crete/) with [Arusha](/guides/arusha/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Pamukkale](/guides/pamukkale/), then move through [Yosemite](/guides/yosemite/) and [Buenos Aires](/guides/buenos-aires/) to keep transfers practical instead of rushed. If costs climb, swap in [Pyramids Of Giza](/guides/pyramids-of-giza/), and pair [Crete](/guides/crete/) with [Arusha](/guides/arusha/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/scuba-snorkel-trip-integration-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Denpasar](/guides/denpasar/), then connect to [Tikal](/guides/tikal/) and [Sapporo](/guides/sapporo/) for realistic transit flow. Add [Canggu](/guides/canggu/) when you need lower-cost alternatives, and use [Dolomites](/guides/dolomites/) with [Maldives Local Islands](/guides/maldives-local-islands/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Denpasar](/guides/denpasar/), then move through [Tikal](/guides/tikal/) and [Sapporo](/guides/sapporo/) to keep transfers practical instead of rushed. If costs climb, swap in [Canggu](/guides/canggu/), and pair [Dolomites](/guides/dolomites/) with [Maldives Local Islands](/guides/maldives-local-islands/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/scuba-snorkel-trip-integration-inline-2.webp"
       }
     ],
@@ -2485,31 +2485,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Adventure",
     "readMinutes": 13,
     "heroImage": "/images/blog/hiking-rotation-for-multi-country-trips-hero.webp",
-    "intro": "Build this plan around [Bologna](/guides/bologna/), [Sigiriya](/guides/sigiriya/), [Hoi An](/guides/hoi-an/), and [Valparaiso](/guides/valparaiso/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Bologna](/guides/bologna/), [Sigiriya](/guides/sigiriya/), [Hoi An](/guides/hoi-an/), and [Valparaiso](/guides/valparaiso/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Athens](/guides/athens/), then connect to [Kgari](/guides/kgari/) and [Dolomites](/guides/dolomites/) for realistic transit flow. Add [Komodo Dragons](/guides/komodo-dragons/) when you need lower-cost alternatives, and use [South America](/guides/south-america/) with [Whitsunday Islands](/guides/whitsunday-islands/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Athens](/guides/athens/), then move through [Kgari](/guides/kgari/) and [Dolomites](/guides/dolomites/) to keep transfers practical instead of rushed. If costs climb, swap in [Komodo Dragons](/guides/komodo-dragons/), and pair [South America](/guides/south-america/) with [Whitsunday Islands](/guides/whitsunday-islands/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hiking-rotation-for-multi-country-trips-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Orlando](/guides/orlando/), then connect to [Singapore](/guides/singapore/) and [Gili Islands](/guides/gili-islands/) for realistic transit flow. Add [Vienna](/guides/vienna/) when you need lower-cost alternatives, and use [Kandy](/guides/kandy/) with [Cebu](/guides/cebu/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Orlando](/guides/orlando/), then move through [Singapore](/guides/singapore/) and [Gili Islands](/guides/gili-islands/) to keep transfers practical instead of rushed. If costs climb, swap in [Vienna](/guides/vienna/), and pair [Kandy](/guides/kandy/) with [Cebu](/guides/cebu/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hiking-rotation-for-multi-country-trips-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Denpasar](/guides/denpasar/), then connect to [Krakow](/guides/krakow/) and [Shenzhen](/guides/shenzhen/) for realistic transit flow. Add [Verona](/guides/verona/) when you need lower-cost alternatives, and use [San Cristobal](/guides/san-cristobal/) with [Toronto](/guides/toronto/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Denpasar](/guides/denpasar/), then move through [Krakow](/guides/krakow/) and [Shenzhen](/guides/shenzhen/) to keep transfers practical instead of rushed. If costs climb, swap in [Verona](/guides/verona/), and pair [San Cristobal](/guides/san-cristobal/) with [Toronto](/guides/toronto/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hiking-rotation-for-multi-country-trips-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Bologna](/guides/bologna/), then connect to [Krakow](/guides/krakow/) and [Central America](/guides/central-america/) for realistic transit flow. Add [Chitwan](/guides/chitwan/) when you need lower-cost alternatives, and use [Pai](/guides/pai/) with [Melbourne](/guides/melbourne/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Bologna](/guides/bologna/), then move through [Krakow](/guides/krakow/) and [Central America](/guides/central-america/) to keep transfers practical instead of rushed. If costs climb, swap in [Chitwan](/guides/chitwan/), and pair [Pai](/guides/pai/) with [Melbourne](/guides/melbourne/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hiking-rotation-for-multi-country-trips-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Great Wall](/guides/great-wall/), then connect to [Split](/guides/split/) and [Bwindi](/guides/bwindi/) for realistic transit flow. Add [Oslo](/guides/oslo/) when you need lower-cost alternatives, and use [New York City](/guides/new-york-city/) with [Leon Nicaragua](/guides/leon-nicaragua/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Great Wall](/guides/great-wall/), then move through [Split](/guides/split/) and [Bwindi](/guides/bwindi/) to keep transfers practical instead of rushed. If costs climb, swap in [Oslo](/guides/oslo/), and pair [New York City](/guides/new-york-city/) with [Leon Nicaragua](/guides/leon-nicaragua/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/hiking-rotation-for-multi-country-trips-inline-1.webp"
       }
     ],
@@ -2547,31 +2547,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Culture",
     "readMinutes": 7,
     "heroImage": "/images/blog/cultural-site-day-planning-hero.webp",
-    "intro": "Build this plan around [Oslo](/guides/oslo/), [Banff](/guides/banff/), [Prague](/guides/prague/), and [Jebel Jais](/guides/jebel-jais/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Oslo](/guides/oslo/), [Banff](/guides/banff/), [Prague](/guides/prague/), and [Jebel Jais](/guides/jebel-jais/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Calanques](/guides/calanques/), then connect to [Beijing](/guides/beijing/) and [Great Ocean Road](/guides/great-ocean-road/) for realistic transit flow. Add [Copan](/guides/copan/) when you need lower-cost alternatives, and use [Kathmandu](/guides/kathmandu/) with [Lombok](/guides/lombok/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Calanques](/guides/calanques/), then move through [Beijing](/guides/beijing/) and [Great Ocean Road](/guides/great-ocean-road/) to keep transfers practical instead of rushed. If costs climb, swap in [Copan](/guides/copan/), and pair [Kathmandu](/guides/kathmandu/) with [Lombok](/guides/lombok/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/cultural-site-day-planning-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Budapest](/guides/budapest/), then connect to [Atlas Mountains](/guides/atlas-mountains/) and [Warsaw](/guides/warsaw/) for realistic transit flow. Add [Cliffs Of Moher](/guides/cliffs-of-moher/) when you need lower-cost alternatives, and use [Fukuoka](/guides/fukuoka/) with [Giraffe Centre](/guides/giraffe-centre/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Budapest](/guides/budapest/), then move through [Atlas Mountains](/guides/atlas-mountains/) and [Warsaw](/guides/warsaw/) to keep transfers practical instead of rushed. If costs climb, swap in [Cliffs Of Moher](/guides/cliffs-of-moher/), and pair [Fukuoka](/guides/fukuoka/) with [Giraffe Centre](/guides/giraffe-centre/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/cultural-site-day-planning-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Kgari](/guides/kgari/), then connect to [Medina](/guides/medina/) and [Venice](/guides/venice/) for realistic transit flow. Add [Blue Mountains](/guides/blue-mountains/) when you need lower-cost alternatives, and use [Nice](/guides/nice/) with [Los Angeles](/guides/los-angeles/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Kgari](/guides/kgari/), then move through [Medina](/guides/medina/) and [Venice](/guides/venice/) to keep transfers practical instead of rushed. If costs climb, swap in [Blue Mountains](/guides/blue-mountains/), and pair [Nice](/guides/nice/) with [Los Angeles](/guides/los-angeles/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/cultural-site-day-planning-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Lisbon](/guides/lisbon/), then connect to [Quito](/guides/quito/) and [Saint Louis Senegal](/guides/saint-louis-senegal/) for realistic transit flow. Add [Labuan Bajo](/guides/labuan-bajo/) when you need lower-cost alternatives, and use [Vancouver](/guides/vancouver/) with [Magnetic Island](/guides/magnetic-island/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Lisbon](/guides/lisbon/), then move through [Quito](/guides/quito/) and [Saint Louis Senegal](/guides/saint-louis-senegal/) to keep transfers practical instead of rushed. If costs climb, swap in [Labuan Bajo](/guides/labuan-bajo/), and pair [Vancouver](/guides/vancouver/) with [Magnetic Island](/guides/magnetic-island/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/cultural-site-day-planning-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Chiang Mai Temples](/guides/chiang-mai-temples/), then connect to [Chitwan](/guides/chitwan/) and [Macau](/guides/macau/) for realistic transit flow. Add [Lake Titicaca](/guides/lake-titicaca/) when you need lower-cost alternatives, and use [Bay Of Kotor](/guides/bay-of-kotor/) with [Medellin](/guides/medellin/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Chiang Mai Temples](/guides/chiang-mai-temples/), then move through [Chitwan](/guides/chitwan/) and [Macau](/guides/macau/) to keep transfers practical instead of rushed. If costs climb, swap in [Lake Titicaca](/guides/lake-titicaca/), and pair [Bay Of Kotor](/guides/bay-of-kotor/) with [Medellin](/guides/medellin/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/cultural-site-day-planning-inline-1.webp"
       }
     ],
@@ -2609,26 +2609,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Food",
     "readMinutes": 8,
     "heroImage": "/images/blog/food-trail-by-neighborhood-hero.webp",
-    "intro": "Build this plan around [Kampot](/guides/kampot/), [Queenstown](/guides/queenstown/), [Abu Dhabi](/guides/abu-dhabi/), and [Vientiane](/guides/vientiane/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Kampot](/guides/kampot/), [Queenstown](/guides/queenstown/), [Abu Dhabi](/guides/abu-dhabi/), and [Vientiane](/guides/vientiane/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Coron](/guides/coron/), then connect to [Berlin](/guides/berlin/) and [Chiang Rai](/guides/chiang-rai/) for realistic transit flow. Add [Milan](/guides/milan/) when you need lower-cost alternatives, and use [River Tubing](/guides/river-tubing/) with [Chiang Mai Temples](/guides/chiang-mai-temples/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Coron](/guides/coron/), then move through [Berlin](/guides/berlin/) and [Chiang Rai](/guides/chiang-rai/) to keep transfers practical instead of rushed. If costs climb, swap in [Milan](/guides/milan/), and pair [River Tubing](/guides/river-tubing/) with [Chiang Mai Temples](/guides/chiang-mai-temples/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-trail-by-neighborhood-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Siargao](/guides/siargao/), then connect to [Mekong Slow Boat](/guides/mekong-slow-boat/) and [Rome](/guides/rome/) for realistic transit flow. Add [Marseille](/guides/marseille/) when you need lower-cost alternatives, and use [Geirangerfjord](/guides/geirangerfjord/) with [Alhambra](/guides/alhambra/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Siargao](/guides/siargao/), then move through [Mekong Slow Boat](/guides/mekong-slow-boat/) and [Rome](/guides/rome/) to keep transfers practical instead of rushed. If costs climb, swap in [Marseille](/guides/marseille/), and pair [Geirangerfjord](/guides/geirangerfjord/) with [Alhambra](/guides/alhambra/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-trail-by-neighborhood-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Lake Nakuru](/guides/lake-nakuru/), then connect to [Santorini](/guides/santorini/) and [Warsaw](/guides/warsaw/) for realistic transit flow. Add [Hong Kong](/guides/hong-kong/) when you need lower-cost alternatives, and use [Pyramids Of Giza](/guides/pyramids-of-giza/) with [Riyadh](/guides/riyadh/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Lake Nakuru](/guides/lake-nakuru/), then move through [Santorini](/guides/santorini/) and [Warsaw](/guides/warsaw/) to keep transfers practical instead of rushed. If costs climb, swap in [Hong Kong](/guides/hong-kong/), and pair [Pyramids Of Giza](/guides/pyramids-of-giza/) with [Riyadh](/guides/riyadh/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-trail-by-neighborhood-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Registan Samarkand](/guides/registan-samarkand/), then connect to [Rishikesh](/guides/rishikesh/) and [Caye Caulker](/guides/caye-caulker/) for realistic transit flow. Add [Everest Base Camp](/guides/everest-base-camp/) when you need lower-cost alternatives, and use [Antigua Guatemala](/guides/antigua-guatemala/) with [San Francisco](/guides/san-francisco/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Registan Samarkand](/guides/registan-samarkand/), then move through [Rishikesh](/guides/rishikesh/) and [Caye Caulker](/guides/caye-caulker/) to keep transfers practical instead of rushed. If costs climb, swap in [Everest Base Camp](/guides/everest-base-camp/), and pair [Antigua Guatemala](/guides/antigua-guatemala/) with [San Francisco](/guides/san-francisco/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/food-trail-by-neighborhood-inline-2.webp"
       }
     ],
@@ -2666,26 +2666,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Photography",
     "readMinutes": 12,
     "heroImage": "/images/blog/sunrise-sunset-shooting-workflow-hero.webp",
-    "intro": "Build this plan around [Kuala Lumpur](/guides/kuala-lumpur/), [Nile Rafting](/guides/nile-rafting/), [Palma De Mallorca](/guides/palma-de-mallorca/), and [Macau](/guides/macau/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Kuala Lumpur](/guides/kuala-lumpur/), [Nile Rafting](/guides/nile-rafting/), [Palma De Mallorca](/guides/palma-de-mallorca/), and [Macau](/guides/macau/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Galapagos](/guides/galapagos/), then connect to [Rishikesh](/guides/rishikesh/) and [Chiang Rai](/guides/chiang-rai/) for realistic transit flow. Add [Toronto](/guides/toronto/) when you need lower-cost alternatives, and use [Jebel Jais](/guides/jebel-jais/) with [Cairo](/guides/cairo/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Galapagos](/guides/galapagos/), then move through [Rishikesh](/guides/rishikesh/) and [Chiang Rai](/guides/chiang-rai/) to keep transfers practical instead of rushed. If costs climb, swap in [Toronto](/guides/toronto/), and pair [Jebel Jais](/guides/jebel-jais/) with [Cairo](/guides/cairo/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/sunrise-sunset-shooting-workflow-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Honolulu](/guides/honolulu/), then connect to [Diani Beach](/guides/diani-beach/) and [Heraklion](/guides/heraklion/) for realistic transit flow. Add [Lauterbrunnen](/guides/lauterbrunnen/) when you need lower-cost alternatives, and use [River Tubing](/guides/river-tubing/) with [Lake Atitlan](/guides/lake-atitlan/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Honolulu](/guides/honolulu/), then move through [Diani Beach](/guides/diani-beach/) and [Heraklion](/guides/heraklion/) to keep transfers practical instead of rushed. If costs climb, swap in [Lauterbrunnen](/guides/lauterbrunnen/), and pair [River Tubing](/guides/river-tubing/) with [Lake Atitlan](/guides/lake-atitlan/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/sunrise-sunset-shooting-workflow-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Fukuoka](/guides/fukuoka/), then connect to [Phuket](/guides/phuket/) and [Vancouver](/guides/vancouver/) for realistic transit flow. Add [Guangzhou](/guides/guangzhou/) when you need lower-cost alternatives, and use [Lombok](/guides/lombok/) with [Seville](/guides/seville/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Fukuoka](/guides/fukuoka/), then move through [Phuket](/guides/phuket/) and [Vancouver](/guides/vancouver/) to keep transfers practical instead of rushed. If costs climb, swap in [Guangzhou](/guides/guangzhou/), and pair [Lombok](/guides/lombok/) with [Seville](/guides/seville/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/sunrise-sunset-shooting-workflow-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Kotor](/guides/kotor/), then connect to [Lake Tekapo](/guides/lake-tekapo/) and [Mount Fuji](/guides/mount-fuji/) for realistic transit flow. Add [San Francisco](/guides/san-francisco/) when you need lower-cost alternatives, and use [Mecca](/guides/mecca/) with [Elmina](/guides/elmina/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Kotor](/guides/kotor/), then move through [Lake Tekapo](/guides/lake-tekapo/) and [Mount Fuji](/guides/mount-fuji/) to keep transfers practical instead of rushed. If costs climb, swap in [San Francisco](/guides/san-francisco/), and pair [Mecca](/guides/mecca/) with [Elmina](/guides/elmina/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/sunrise-sunset-shooting-workflow-inline-2.webp"
       }
     ],
@@ -2723,26 +2723,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Packing",
     "readMinutes": 10,
     "heroImage": "/images/blog/rain-heat-humidity-gear-guide-hero.webp",
-    "intro": "Build this plan around [Kuala Lumpur](/guides/kuala-lumpur/), [Marrakech](/guides/marrakech/), [Hoi An](/guides/hoi-an/), and [Elmina](/guides/elmina/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Kuala Lumpur](/guides/kuala-lumpur/), [Marrakech](/guides/marrakech/), [Hoi An](/guides/hoi-an/), and [Elmina](/guides/elmina/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Ubud Rice Terraces](/guides/ubud-rice-terraces/), then connect to [Gorilla Trekking](/guides/gorilla-trekking/) and [Lisbon](/guides/lisbon/) for realistic transit flow. Add [Cocora Valley](/guides/cocora-valley/) when you need lower-cost alternatives, and use [Denpasar](/guides/denpasar/) with [Salar De Uyuni](/guides/salar-de-uyuni/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Ubud Rice Terraces](/guides/ubud-rice-terraces/), then move through [Gorilla Trekking](/guides/gorilla-trekking/) and [Lisbon](/guides/lisbon/) to keep transfers practical instead of rushed. If costs climb, swap in [Cocora Valley](/guides/cocora-valley/), and pair [Denpasar](/guides/denpasar/) with [Salar De Uyuni](/guides/salar-de-uyuni/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/rain-heat-humidity-gear-guide-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Frankfurt](/guides/frankfurt/), then connect to [Berlin](/guides/berlin/) and [Budapest](/guides/budapest/) for realistic transit flow. Add [Beijing](/guides/beijing/) when you need lower-cost alternatives, and use [Elmina](/guides/elmina/) with [Pangong Lake](/guides/pangong-lake/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Frankfurt](/guides/frankfurt/), then move through [Berlin](/guides/berlin/) and [Budapest](/guides/budapest/) to keep transfers practical instead of rushed. If costs climb, swap in [Beijing](/guides/beijing/), and pair [Elmina](/guides/elmina/) with [Pangong Lake](/guides/pangong-lake/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/rain-heat-humidity-gear-guide-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Gili Islands](/guides/gili-islands/), then connect to [Scottish Highlands](/guides/scottish-highlands/) and [Lake Bled](/guides/lake-bled/) for realistic transit flow. Add [Chiang Rai](/guides/chiang-rai/) when you need lower-cost alternatives, and use [Manali](/guides/manali/) with [Dakar](/guides/dakar/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Gili Islands](/guides/gili-islands/), then move through [Scottish Highlands](/guides/scottish-highlands/) and [Lake Bled](/guides/lake-bled/) to keep transfers practical instead of rushed. If costs climb, swap in [Chiang Rai](/guides/chiang-rai/), and pair [Manali](/guides/manali/) with [Dakar](/guides/dakar/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/rain-heat-humidity-gear-guide-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Zion](/guides/zion/), then connect to [Vienna](/guides/vienna/) and [Uluru](/guides/uluru/) for realistic transit flow. Add [Sao Paulo](/guides/sao-paulo/) when you need lower-cost alternatives, and use [Hoi An](/guides/hoi-an/) with [Lake Nakuru](/guides/lake-nakuru/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Zion](/guides/zion/), then move through [Vienna](/guides/vienna/) and [Uluru](/guides/uluru/) to keep transfers practical instead of rushed. If costs climb, swap in [Sao Paulo](/guides/sao-paulo/), and pair [Hoi An](/guides/hoi-an/) with [Lake Nakuru](/guides/lake-nakuru/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/rain-heat-humidity-gear-guide-inline-2.webp"
       }
     ],
@@ -2780,31 +2780,31 @@ export const blogPosts: BlogPost[] = [
     "category": "Creator",
     "readMinutes": 11,
     "heroImage": "/images/blog/long-trip-memory-capture-hero.webp",
-    "intro": "Build this plan around [Jerusalem](/guides/jerusalem/), [Vancouver](/guides/vancouver/), [Los Angeles](/guides/los-angeles/), and [Bwindi](/guides/bwindi/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Jerusalem](/guides/jerusalem/), [Vancouver](/guides/vancouver/), [Los Angeles](/guides/los-angeles/), and [Bwindi](/guides/bwindi/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Scuba Diving Gili](/guides/scuba-diving-gili/), then connect to [Cap Skirring](/guides/cap-skirring/) and [Sahara Desert](/guides/sahara-desert/) for realistic transit flow. Add [Bay Of Kotor](/guides/bay-of-kotor/) when you need lower-cost alternatives, and use [Sydney](/guides/sydney/) with [Great Wall](/guides/great-wall/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Scuba Diving Gili](/guides/scuba-diving-gili/), then move through [Cap Skirring](/guides/cap-skirring/) and [Sahara Desert](/guides/sahara-desert/) to keep transfers practical instead of rushed. If costs climb, swap in [Bay Of Kotor](/guides/bay-of-kotor/), and pair [Sydney](/guides/sydney/) with [Great Wall](/guides/great-wall/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-trip-memory-capture-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Labuan Bajo](/guides/labuan-bajo/), then connect to [Queenstown](/guides/queenstown/) and [Abel Tasman](/guides/abel-tasman/) for realistic transit flow. Add [Wanaka](/guides/wanaka/) when you need lower-cost alternatives, and use [Batu Caves](/guides/batu-caves/) with [Yosemite](/guides/yosemite/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Labuan Bajo](/guides/labuan-bajo/), then move through [Queenstown](/guides/queenstown/) and [Abel Tasman](/guides/abel-tasman/) to keep transfers practical instead of rushed. If costs climb, swap in [Wanaka](/guides/wanaka/), and pair [Batu Caves](/guides/batu-caves/) with [Yosemite](/guides/yosemite/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-trip-memory-capture-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Vang Vieng](/guides/vang-vieng/), then connect to [Berat](/guides/berat/) and [San Cristobal](/guides/san-cristobal/) for realistic transit flow. Add [Abel Tasman](/guides/abel-tasman/) when you need lower-cost alternatives, and use [Sahara Desert](/guides/sahara-desert/) with [Rome](/guides/rome/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Vang Vieng](/guides/vang-vieng/), then move through [Berat](/guides/berat/) and [San Cristobal](/guides/san-cristobal/) to keep transfers practical instead of rushed. If costs climb, swap in [Abel Tasman](/guides/abel-tasman/), and pair [Sahara Desert](/guides/sahara-desert/) with [Rome](/guides/rome/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-trip-memory-capture-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Banff](/guides/banff/), then connect to [Doha](/guides/doha/) and [Venice](/guides/venice/) for realistic transit flow. Add [Great Ocean Road](/guides/great-ocean-road/) when you need lower-cost alternatives, and use [Bangkok](/guides/bangkok/) with [Rhodes](/guides/rhodes/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Banff](/guides/banff/), then move through [Doha](/guides/doha/) and [Venice](/guides/venice/) to keep transfers practical instead of rushed. If costs climb, swap in [Great Ocean Road](/guides/great-ocean-road/), and pair [Bangkok](/guides/bangkok/) with [Rhodes](/guides/rhodes/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-trip-memory-capture-inline-2.webp"
       },
       {
         "heading": "Recovery and Risk Controls",
-        "content": "Anchor this part of the plan with [Coron Houseboat](/guides/coron-houseboat/), then connect to [Dolomites](/guides/dolomites/) and [Budapest](/guides/budapest/) for realistic transit flow. Add [Plitvice Lakes](/guides/plitvice-lakes/) when you need lower-cost alternatives, and use [Marseille](/guides/marseille/) with [Chichen Itza](/guides/chichen-itza/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Coron Houseboat](/guides/coron-houseboat/), then move through [Dolomites](/guides/dolomites/) and [Budapest](/guides/budapest/) to keep transfers practical instead of rushed. If costs climb, swap in [Plitvice Lakes](/guides/plitvice-lakes/), and pair [Marseille](/guides/marseille/) with [Chichen Itza](/guides/chichen-itza/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/long-trip-memory-capture-inline-1.webp"
       }
     ],
@@ -2842,26 +2842,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Logistics",
     "readMinutes": 8,
     "heroImage": "/images/blog/travel-day-mistakes-checklist-hero.webp",
-    "intro": "Build this plan around [Bora Bora](/guides/bora-bora/), [Buenos Aires](/guides/buenos-aires/), [Los Angeles](/guides/los-angeles/), and [Miyajima](/guides/miyajima/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Bora Bora](/guides/bora-bora/), [Buenos Aires](/guides/buenos-aires/), [Los Angeles](/guides/los-angeles/), and [Miyajima](/guides/miyajima/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Honolulu](/guides/honolulu/), then connect to [El Nido](/guides/el-nido/) and [Wellington](/guides/wellington/) for realistic transit flow. Add [Dead Sea](/guides/dead-sea/) when you need lower-cost alternatives, and use [Ngorongoro](/guides/ngorongoro/) with [La Paz](/guides/la-paz/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Honolulu](/guides/honolulu/), then move through [El Nido](/guides/el-nido/) and [Wellington](/guides/wellington/) to keep transfers practical instead of rushed. If costs climb, swap in [Dead Sea](/guides/dead-sea/), and pair [Ngorongoro](/guides/ngorongoro/) with [La Paz](/guides/la-paz/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-day-mistakes-checklist-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Perito Moreno](/guides/perito-moreno/), then connect to [Morocco West Africa](/guides/morocco-west-africa/) and [Mendoza](/guides/mendoza/) for realistic transit flow. Add [Sugarloaf Mountain](/guides/sugarloaf-mountain/) when you need lower-cost alternatives, and use [Thessaloniki](/guides/thessaloniki/) with [Komodo Dragons](/guides/komodo-dragons/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Perito Moreno](/guides/perito-moreno/), then move through [Morocco West Africa](/guides/morocco-west-africa/) and [Mendoza](/guides/mendoza/) to keep transfers practical instead of rushed. If costs climb, swap in [Sugarloaf Mountain](/guides/sugarloaf-mountain/), and pair [Thessaloniki](/guides/thessaloniki/) with [Komodo Dragons](/guides/komodo-dragons/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-day-mistakes-checklist-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Marrakech](/guides/marrakech/), then connect to [Mount Kilimanjaro](/guides/mount-kilimanjaro/) and [Blue Mountains](/guides/blue-mountains/) for realistic transit flow. Add [Nuwara Eliya](/guides/nuwara-eliya/) when you need lower-cost alternatives, and use [Siargao](/guides/siargao/) with [Arusha](/guides/arusha/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Marrakech](/guides/marrakech/), then move through [Mount Kilimanjaro](/guides/mount-kilimanjaro/) and [Blue Mountains](/guides/blue-mountains/) to keep transfers practical instead of rushed. If costs climb, swap in [Nuwara Eliya](/guides/nuwara-eliya/), and pair [Siargao](/guides/siargao/) with [Arusha](/guides/arusha/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-day-mistakes-checklist-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Lima](/guides/lima/), then connect to [Atlas Mountains](/guides/atlas-mountains/) and [Meteora](/guides/meteora/) for realistic transit flow. Add [Pattaya Chonburi](/guides/pattaya-chonburi/) when you need lower-cost alternatives, and use [Great Migration](/guides/great-migration/) with [Amalfi Coast](/guides/amalfi-coast/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Lima](/guides/lima/), then move through [Atlas Mountains](/guides/atlas-mountains/) and [Meteora](/guides/meteora/) to keep transfers practical instead of rushed. If costs climb, swap in [Pattaya Chonburi](/guides/pattaya-chonburi/), and pair [Great Migration](/guides/great-migration/) with [Amalfi Coast](/guides/amalfi-coast/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/travel-day-mistakes-checklist-inline-2.webp"
       }
     ],
@@ -2899,26 +2899,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Planning",
     "readMinutes": 12,
     "heroImage": "/images/blog/region-hopping-without-exhaustion-hero.webp",
-    "intro": "Build this plan around [Stone Town](/guides/stone-town/), [Ile De Goree](/guides/ile-de-goree/), [Magnetic Island](/guides/magnetic-island/), and [Rome](/guides/rome/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Stone Town](/guides/stone-town/), [Ile De Goree](/guides/ile-de-goree/), [Magnetic Island](/guides/magnetic-island/), and [Rome](/guides/rome/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Granada Spain](/guides/granada-spain/), then connect to [Maasai Mara](/guides/maasai-mara/) and [Entebbe](/guides/entebbe/) for realistic transit flow. Add [Jokulsarlon](/guides/jokulsarlon/) when you need lower-cost alternatives, and use [Dolomites](/guides/dolomites/) with [Canggu](/guides/canggu/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Granada Spain](/guides/granada-spain/), then move through [Maasai Mara](/guides/maasai-mara/) and [Entebbe](/guides/entebbe/) to keep transfers practical instead of rushed. If costs climb, swap in [Jokulsarlon](/guides/jokulsarlon/), and pair [Dolomites](/guides/dolomites/) with [Canggu](/guides/canggu/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/region-hopping-without-exhaustion-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Na Pali Coast](/guides/na-pali-coast/), then connect to [Hiroshima](/guides/hiroshima/) and [Bay Of Kotor](/guides/bay-of-kotor/) for realistic transit flow. Add [Cinque Terre](/guides/cinque-terre/) when you need lower-cost alternatives, and use [Stockholm](/guides/stockholm/) with [Los Angeles](/guides/los-angeles/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Na Pali Coast](/guides/na-pali-coast/), then move through [Hiroshima](/guides/hiroshima/) and [Bay Of Kotor](/guides/bay-of-kotor/) to keep transfers practical instead of rushed. If costs climb, swap in [Cinque Terre](/guides/cinque-terre/), and pair [Stockholm](/guides/stockholm/) with [Los Angeles](/guides/los-angeles/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/region-hopping-without-exhaustion-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Sapporo](/guides/sapporo/), then connect to [Singapore](/guides/singapore/) and [Tallinn](/guides/tallinn/) for realistic transit flow. Add [Australia New Zealand](/guides/australia-new-zealand/) when you need lower-cost alternatives, and use [Cusco](/guides/cusco/) with [Yosemite](/guides/yosemite/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Sapporo](/guides/sapporo/), then move through [Singapore](/guides/singapore/) and [Tallinn](/guides/tallinn/) to keep transfers practical instead of rushed. If costs climb, swap in [Australia New Zealand](/guides/australia-new-zealand/), and pair [Cusco](/guides/cusco/) with [Yosemite](/guides/yosemite/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/region-hopping-without-exhaustion-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Wanaka](/guides/wanaka/), then connect to [Sharjah](/guides/sharjah/) and [Oaxaca](/guides/oaxaca/) for realistic transit flow. Add [Granada Spain](/guides/granada-spain/) when you need lower-cost alternatives, and use [Los Angeles](/guides/los-angeles/) with [Yellowstone](/guides/yellowstone/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Wanaka](/guides/wanaka/), then move through [Sharjah](/guides/sharjah/) and [Oaxaca](/guides/oaxaca/) to keep transfers practical instead of rushed. If costs climb, swap in [Granada Spain](/guides/granada-spain/), and pair [Los Angeles](/guides/los-angeles/) with [Yellowstone](/guides/yellowstone/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/region-hopping-without-exhaustion-inline-2.webp"
       }
     ],
@@ -2956,26 +2956,26 @@ export const blogPosts: BlogPost[] = [
     "category": "Itineraries",
     "readMinutes": 8,
     "heroImage": "/images/blog/year-of-backpacking-strategy-hero.webp",
-    "intro": "Build this plan around [Blyde River Canyon](/guides/blyde-river-canyon/), [Antalya](/guides/antalya/), [Perito Moreno](/guides/perito-moreno/), and [Palma De Mallorca](/guides/palma-de-mallorca/). The goal is to keep momentum high while preserving flexibility for weather, transport disruptions, and energy swings.",
+    "intro": "This itinerary combines [Blyde River Canyon](/guides/blyde-river-canyon/), [Antalya](/guides/antalya/), [Perito Moreno](/guides/perito-moreno/), and [Palma De Mallorca](/guides/palma-de-mallorca/) into a route that feels ambitious without becoming brittle. Keep your momentum, but leave room for weather shifts, transport delays, and lower-energy days.",
     "sections": [
       {
         "heading": "Route Architecture",
-        "content": "Anchor this part of the plan with [Vancouver](/guides/vancouver/), then connect to [Wanaka](/guides/wanaka/) and [Berlin](/guides/berlin/) for realistic transit flow. Add [Thresher Sharks](/guides/thresher-sharks/) when you need lower-cost alternatives, and use [River Tubing](/guides/river-tubing/) with [Serengeti](/guides/serengeti/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Vancouver](/guides/vancouver/), then move through [Wanaka](/guides/wanaka/) and [Berlin](/guides/berlin/) to keep transfers practical instead of rushed. If costs climb, swap in [Thresher Sharks](/guides/thresher-sharks/), and pair [River Tubing](/guides/river-tubing/) with [Serengeti](/guides/serengeti/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/year-of-backpacking-strategy-inline-1.webp"
       },
       {
         "heading": "Daily Execution",
-        "content": "Anchor this part of the plan with [Labuan Bajo](/guides/labuan-bajo/), then connect to [Vang Vieng](/guides/vang-vieng/) and [Haridwar](/guides/haridwar/) for realistic transit flow. Add [Blue Mountains](/guides/blue-mountains/) when you need lower-cost alternatives, and use [Coromandel](/guides/coromandel/) with [Bocas Del Toro](/guides/bocas-del-toro/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Labuan Bajo](/guides/labuan-bajo/), then move through [Vang Vieng](/guides/vang-vieng/) and [Haridwar](/guides/haridwar/) to keep transfers practical instead of rushed. If costs climb, swap in [Blue Mountains](/guides/blue-mountains/), and pair [Coromandel](/guides/coromandel/) with [Bocas Del Toro](/guides/bocas-del-toro/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/year-of-backpacking-strategy-inline-2.webp"
       },
       {
         "heading": "Budget and Logistics",
-        "content": "Anchor this part of the plan with [Elmina](/guides/elmina/), then connect to [Everest Base Camp](/guides/everest-base-camp/) and [Mekong Slow Boat](/guides/mekong-slow-boat/) for realistic transit flow. Add [Pokhara](/guides/pokhara/) when you need lower-cost alternatives, and use [Na Pali Coast](/guides/na-pali-coast/) with [Haridwar](/guides/haridwar/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Elmina](/guides/elmina/), then move through [Everest Base Camp](/guides/everest-base-camp/) and [Mekong Slow Boat](/guides/mekong-slow-boat/) to keep transfers practical instead of rushed. If costs climb, swap in [Pokhara](/guides/pokhara/), and pair [Na Pali Coast](/guides/na-pali-coast/) with [Haridwar](/guides/haridwar/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/year-of-backpacking-strategy-inline-1.webp"
       },
       {
         "heading": "Experience Layering",
-        "content": "Anchor this part of the plan with [Maasai Mara](/guides/maasai-mara/), then connect to [Heraklion](/guides/heraklion/) and [Utila](/guides/utila/) for realistic transit flow. Add [Camino De Santiago](/guides/camino-de-santiago/) when you need lower-cost alternatives, and use [Jinja](/guides/jinja/) with [Chiang Rai](/guides/chiang-rai/) to stack sunrise/sunset blocks, cultural stops, and recovery windows without overloading a single day.",
+        "content": "Start this leg in [Maasai Mara](/guides/maasai-mara/), then move through [Heraklion](/guides/heraklion/) and [Utila](/guides/utila/) to keep transfers practical instead of rushed. If costs climb, swap in [Camino De Santiago](/guides/camino-de-santiago/), and pair [Jinja](/guides/jinja/) with [Chiang Rai](/guides/chiang-rai/) to balance sunrise and sunset windows, culture-heavy stops, and real recovery time.",
         "image": "/images/blog/year-of-backpacking-strategy-inline-2.webp"
       }
     ],

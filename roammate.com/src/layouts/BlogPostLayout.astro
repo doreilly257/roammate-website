@@ -86,6 +86,55 @@ const toParagraphs = (content: string | string[]) => {
     .map((item) => item.trim())
     .filter(Boolean);
 };
+
+const escapeHtml = (value: string) =>
+  value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+
+const sanitizeHref = (value: string) => {
+  const href = value.trim();
+  if (!href) return '#';
+
+  const lower = href.toLowerCase();
+  if (lower.startsWith('javascript:') || lower.startsWith('data:') || lower.startsWith('vbscript:')) {
+    return '#';
+  }
+
+  if (
+    href.startsWith('/') ||
+    href.startsWith('#') ||
+    href.startsWith('http://') ||
+    href.startsWith('https://') ||
+    href.startsWith('mailto:') ||
+    href.startsWith('tel:')
+  ) {
+    return href;
+  }
+
+  return '#';
+};
+
+const renderInlineLinks = (text: string) => {
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let html = '';
+  let lastIndex = 0;
+
+  for (const match of text.matchAll(linkPattern)) {
+    const [fullMatch, label, rawHref] = match;
+    const index = match.index ?? 0;
+
+    html += escapeHtml(text.slice(lastIndex, index));
+    html += `<a href="${escapeHtml(sanitizeHref(rawHref))}">${escapeHtml(label)}</a>`;
+    lastIndex = index + fullMatch.length;
+  }
+
+  html += escapeHtml(text.slice(lastIndex));
+  return html;
+};
 ---
 
 <BaseLayout title={`${title} | roammate Blog`} description={description} ogImage={heroImage}>
@@ -150,7 +199,7 @@ const toParagraphs = (content: string | string[]) => {
 
     <section class="blog-post-body">
       <div class="blog-post-intro reveal">
-        {intro && <p>{intro}</p>}
+        {intro && <p set:html={renderInlineLinks(intro)} />}
       </div>
 
       <div class="blog-post-sections">
@@ -162,7 +211,7 @@ const toParagraphs = (content: string | string[]) => {
                 {section.kicker && <p class="blog-post-section-kicker">{section.kicker}</p>}
                 <h2>{section.heading}</h2>
                 {sectionParagraphs.map((paragraph) => (
-                  <p>{paragraph}</p>
+                  <p set:html={renderInlineLinks(paragraph)} />
                 ))}
                 {section.quote && <blockquote>{section.quote}</blockquote>}
               </div>
