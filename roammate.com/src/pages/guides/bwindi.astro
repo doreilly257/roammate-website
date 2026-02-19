@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'UGX (Ugandan Shilling)', detail: 'USD required for gorilla permits' },
+  { icon: '🗣', label: 'Language', value: 'English / Rukiga', detail: 'English spoken by guides and lodges' },
+  { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Aug, Dec – Feb', detail: 'Dry seasons, easier trekking conditions' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$50–120 USD', detail: 'Plus $700 gorilla permit' },
+  { icon: '🛂', label: 'Visa', value: 'eVisa required', detail: '$50 USD — apply online before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Gorilla Trekking Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mountain Gorilla Trekking',
+          text: 'The experience of a lifetime begins at the park headquarters in Buhoma, Ruhija, Rushaga, or Nkuringo sector — depending on which gorilla family you are assigned. After a briefing at 7:30am, your group (maximum 8 people) sets off with armed rangers and trackers into the impenetrable forest. The trek can take anywhere from 30 minutes to 7 hours depending on where the gorillas have moved. The forest is dense, steep, and muddy — the "impenetrable" name is well earned. When you find the gorilla family, everything changes. The hour you spend with them — sitting within metres of silverbacks, watching mothers nursing infants, and observing juveniles playing — is utterly extraordinary.',
+          tip: 'Gorilla permits cost $700 USD per person and must be booked months in advance through the Uganda Wildlife Authority (UWA). This is non-negotiable and worth every cent. Book as early as possible — permits sell out, especially in peak season.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Post-Trek Recovery & Buhoma Village',
+          text: 'After returning from the trek (typically early to mid-afternoon), rest at your lodge and process what you have just experienced. Later, walk to Buhoma village — the small community at the park\'s main entrance. The Buhoma Community Rest Camp and surrounding shops sell local crafts, and the village atmosphere is warm and welcoming. Many lodges in the area are community-owned, meaning your accommodation money directly supports the families who live alongside the gorillas.',
+          tip: 'The trek is physically demanding — rest in the afternoon. Drink plenty of water and treat any scratches from the undergrowth with antiseptic. The forest is full of stinging nettles.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lodge Dinner & Gorilla Stories',
+          text: 'End your day with dinner at your lodge, surrounded by the sounds of the forest at night — tree hyraxes screaming, insects chirping, and occasional rustling in the undergrowth. Share your gorilla stories with fellow trekkers — every group\'s experience is different, and comparing encounters is part of the magic. The lodges in Bwindi range from budget bandas to luxury eco-lodges, but the forest setting and night sounds are the same everywhere.',
+          tip: 'Bwindi gets cold at night — temperatures can drop to 10°C at the higher altitude sectors (Ruhija). Bring warm layers and a headlamp for walking between your room and the dining area.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Arrival & Batwa Pygmy Trail',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival at Bwindi',
+          text: 'Arrive at Bwindi Impenetrable Forest after a long but scenic drive from Kampala (8–10 hours via Mbarara) or a short domestic flight to Kihihi airstrip followed by a 1.5-hour drive. The journey by road passes through rolling green hills, tea plantations, and terraced farmland — some of the most beautiful countryside in East Africa. Check into your lodge and settle into the forest environment. The air is cool, fresh, and thick with the sound of birds and insects.',
+          tip: 'The drive from Kampala is long but stunning. Break the journey in Mbarara or Lake Bunyonyi. Alternatively, domestic flights to Kihihi or Kisoro save time — around $150–250 one way with Aerolink Uganda.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Batwa Pygmy Trail Experience',
+          text: 'Join the Batwa Pygmy Trail — a guided cultural experience led by the Batwa people, who were the original forest inhabitants before being relocated when the national park was established in 1991. The Batwa guides take you into the forest edge, demonstrating how they lived: building shelters from branches and leaves, making fire by rubbing sticks, setting traps, and gathering medicinal plants. The experience is moving and complex — the Batwa lost their ancestral homeland to conservation but now earn income by sharing their knowledge with visitors.',
+          tip: 'The Batwa Trail costs around $80 USD per person and is run by the Batwa community. The experience lasts 3–4 hours. It is one of the most thought-provoking cultural experiences in Uganda.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Forest Night Sounds & Lodge Dinner',
+          text: 'Dinner at your lodge as darkness falls over the forest. Bwindi at night is alive with sound — tree hyraxes produce an eerie, screaming call, owls hoot, and the forest canopy rustles with unseen movement. The isolation and remoteness of the lodges create a powerful sense of being deep in the African wilderness. Many lodges have fireplaces or outdoor campfires for evening warmth.',
+          tip: 'Bring a headlamp — paths between rooms and the dining area are unlit. Temperatures drop to 10–15°C after dark. Warm layers and a good sleeping bag (or check lodge bedding quality) are essential.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Mountain Gorilla Trekking',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Gorilla Trek — Into the Impenetrable Forest',
+          text: 'The main event. Report to the park headquarters by 7:30am for your briefing — you will be assigned a gorilla family and a trekking group of maximum 8 people. Armed rangers and expert trackers lead you into the forest, following the gorillas\' trail from where they were last seen the previous evening. The terrain is steep, muddy, and dense — hacking through undergrowth, climbing ridges, and crossing streams. The trek can take 30 minutes to 7 hours depending on the gorillas\' movements. When you find them, you are allowed exactly one hour in their presence.',
+          tip: 'Permits cost $700 USD per person — book through UWA months in advance. Hire a porter at the trailhead ($15–20) to carry your bag and help you on steep sections. This supports the local community and makes the trek significantly easier.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'The Gorilla Encounter',
+          text: 'Your hour with the mountain gorillas is unlike any wildlife experience on earth. The silverback — often weighing over 200kg — may sit within 3 metres of you, calmly chewing bamboo while juveniles wrestle around him. Mothers cradle infants, blackbacks display for attention, and the family interacts with a social complexity that is unmistakably close to human. The rangers ensure a safe distance, but the gorillas are habituated and largely indifferent to your presence. Photography is allowed without flash. The emotional impact of this encounter stays with people for life.',
+          tip: 'Keep 7 metres distance from the gorillas — the rangers will guide you. Do not use flash photography. If a gorilla approaches you, stay still, look down, and do not make direct eye contact. The experience is safe but profoundly humbling.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Certificate & Celebration Dinner',
+          text: 'Return to the park headquarters for your gorilla trekking certificate — a tangible memento of an extraordinary experience. Back at your lodge, celebrate with a special dinner. The lodges often arrange celebratory meals for returning trekkers, and the communal dining atmosphere means you will share the evening with others who had their own unique gorilla encounters that day.',
+          tip: 'The $700 permit fee funds gorilla conservation and community development around the park. Uganda has approximately 460 mountain gorillas — roughly half the world\'s remaining population. Your visit directly supports their survival.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Forest Hike, Birding & Community Walk',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Forest Nature Walk & Birding',
+          text: 'Take a guided forest nature walk along the park\'s maintained trails — a different experience from the off-trail gorilla trek. The forest is home to 350+ bird species, 220 butterfly species, and 10 primate species beyond gorillas. Your guide will point out L\'Hoest\'s monkeys, black-and-white colobus, red-tailed monkeys, and if you are lucky, chimpanzees calling from the canopy. Bwindi is one of Africa\'s most important birding destinations — the African green broadbill, Grauer\'s broadbill, and the short-tailed warbler are among the rarities.',
+          tip: 'Forest walks cost $30–50 per person. Birding-specific walks can be arranged — bring binoculars and a bird guide. The early morning (before 8am) is best for bird activity.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Community Walk & Local Life',
+          text: 'Join a community walk through the villages surrounding the park. Visit a local school, a banana beer brewing family, a traditional healer, and terraced hillside farms. The walks reveal how communities coexist with the gorillas — crop raiding by forest animals is a real challenge, and the revenue-sharing from gorilla permits helps compensate. Understanding this human-wildlife balance adds depth to your gorilla experience.',
+          tip: 'Community walks cost $15–30 per person with fees going directly to village projects. Bring small donations for the school (exercise books, pens) if you wish — but cash contributions to the community fund are more impactful.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Forest Evening & Departure Prep',
+          text: 'Spend your final evening in the forest taking in the extraordinary biodiversity of this place. Bwindi Impenetrable Forest is one of the most biologically rich areas on earth — a remnant of the great African rainforest that once covered the continent. The mountain gorillas are the headline act, but the forest itself is the real star. Pack for an early departure the next morning, and carry the sounds, smells, and memories of the impenetrable forest with you.',
+          tip: 'If heading to Queen Elizabeth National Park, the drive via Ishasha (tree-climbing lion territory) takes about 3–4 hours. To Lake Bunyonyi, it is about 1–2 hours depending on your Bwindi sector.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Travel Day & Arrival at Bwindi',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Departure from Kampala',
+          text: 'Leave Kampala early for the long drive southwest to Bwindi — approximately 8–10 hours via Mbarara and Kabale. The drive passes through some of Uganda\'s most beautiful countryside: rolling green hills, banana plantations, tea estates, and the dramatic Kigezi Highlands. Alternatively, take a domestic flight to Kihihi or Kisoro airstrip (1 hour) followed by a 1.5-hour drive to the park.',
+          tip: 'The drive is long but scenic — break it with a stop in Mbarara for lunch. If driving, leave Kampala before 7am to avoid traffic and arrive before dark.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kigezi Highlands Scenery',
+          text: 'The final section of the drive through the Kigezi Highlands is spectacular — steep terraced hills, volcanic lakes, and mist-shrouded valleys. This region is called the "Switzerland of Africa" for its green, mountainous landscape. The altitude increases noticeably and the air cools. You are entering one of Africa\'s most remote and biologically rich regions.',
+          tip: 'The roads in the Kigezi Highlands are winding and sometimes rough. A 4WD vehicle is recommended, especially in wet season.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lodge Check-in & Forest Orientation',
+          text: 'Arrive at your lodge near Bwindi and settle in. The lodges range from budget bandas (thatched huts) to luxury eco-lodges with stunning forest views. Take a short walk around the lodge grounds to acclimatise — listen to the forest sounds and watch for monkeys and birds in the surrounding trees.',
+          tip: 'Bwindi has four trekking sectors: Buhoma, Ruhija, Rushaga, and Nkuringo. Make sure your lodge is near your assigned sector — some are hours apart.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Batwa Pygmy Trail & Forest Walks',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Batwa Pygmy Trail',
+          text: 'Join the Batwa Pygmy Trail — a cultural experience led by the Batwa, the forest\'s original inhabitants. They demonstrate traditional survival skills: shelter building, fire making, trap setting, and medicinal plant identification. The experience is moving — the Batwa lost their homeland when the park was gazetted in 1991 but now share their knowledge with visitors for income.',
+          tip: 'The trail costs around $80 USD per person and lasts 3–4 hours. It is run by the Batwa community. One of the most thought-provoking experiences in Uganda.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Waterfall Trail Hike',
+          text: 'Hike the Munyaga River Waterfall Trail — a 3-hour return walk through the forest to a beautiful waterfall. The trail passes through primary forest with excellent birdwatching and primate sightings. The waterfall drops into a pool surrounded by ferns and moss. The hike gives you a taste of the impenetrable forest terrain before tomorrow\'s gorilla trek.',
+          tip: 'The waterfall hike costs $30 per person. Wear sturdy boots — the trail is muddy and steep in places. Bring a rain jacket regardless of the weather forecast.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pre-Trek Preparation',
+          text: 'Prepare for tomorrow\'s gorilla trek. Pack your daypack with water, snacks, rain gear, long-sleeved shirt, gardening gloves (for grabbing vegetation on steep slopes), gaiters or tucked-in trousers, and your camera. Eat well at dinner and get an early night — the trek can be physically demanding and you need to be at the park headquarters by 7:30am.',
+          tip: 'Hire a porter at the trailhead tomorrow ($15–20) — they carry your bag, help on steep sections, and the income supports local families. It is strongly recommended for all fitness levels.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Mountain Gorilla Trekking Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Gorilla Trek — Into the Forest',
+          text: 'Report to park headquarters at 7:30am for your briefing. You are assigned a gorilla family and a group of maximum 8 people. Armed rangers and trackers lead you into the impenetrable forest, following the gorillas\' trail from where they were last seen yesterday evening. The terrain is steep, muddy, and densely vegetated — the "impenetrable" name is accurate. The trek may last anywhere from 30 minutes to 7 hours.',
+          tip: 'Permits cost $700 USD — book months in advance through UWA. Wear sturdy waterproof boots, long sleeves, and gardening gloves. Tuck trousers into socks to prevent ant bites.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'One Hour With Gorillas',
+          text: 'Your hour with the mountain gorillas is the most extraordinary wildlife encounter on earth. The silverback may sit within metres, chewing bamboo while juveniles play around him. Mothers nurse infants, blackbacks display, and the family\'s social complexity is unmistakably close to human. Photography is allowed without flash. The emotional impact stays with people for life.',
+          tip: 'Maintain 7 metres distance. No flash photography. If a gorilla approaches, stay still, look down, and avoid direct eye contact. The rangers will guide you.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Certificate & Celebration',
+          text: 'Receive your gorilla trekking certificate at headquarters, then return to your lodge for a celebratory dinner. Share stories with other trekkers — every group\'s experience is unique. The communal atmosphere at Bwindi lodges makes these evenings special.',
+          tip: 'Your $700 permit directly funds gorilla conservation and community development. Uganda has roughly 460 mountain gorillas — about half the world\'s population.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Birding & Forest Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Birding Walk — Bwindi Specials',
+          text: 'Take a dedicated birding walk with a specialist guide. Bwindi has 350+ bird species, including 23 Albertine Rift endemics. Target species include the African green broadbill, Grauer\'s broadbill, handsome francolin, and short-tailed warbler. The early morning forest is alive with bird calls and activity.',
+          tip: 'Birding walks cost $30–50 per person. Start as early as possible — bird activity peaks in the first 2 hours of daylight. Bring binoculars and a field guide.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Primate Trail — Other Forest Residents',
+          text: 'Bwindi is home to 10 primate species beyond gorillas. A guided forest walk targeting primates may reveal L\'Hoest\'s monkeys (a Bwindi speciality), black-and-white colobus, red-tailed monkeys, olive baboons, and if you are very lucky, chimpanzees. The forest canopy is dense but experienced guides know where to look.',
+          tip: 'Primate walks can be combined with birding for a full-day forest experience. The guides are exceptional — their knowledge of the forest is encyclopaedic.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Night Walk (Optional)',
+          text: 'Some lodges and the park offer guided night walks along the forest edge. The nocturnal forest is a different world — bushbabies, owls, chameleons, and extraordinary insects emerge after dark. The soundscape changes completely as diurnal species fall silent and nocturnal calls take over.',
+          tip: 'Night walks must be arranged in advance. Bring a headlamp and warm layers. The experience is surreal and adds a completely new dimension to the forest.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Community Walk & Local Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Community Walk — Village Life',
+          text: 'Join a guided walk through the villages surrounding the park. Visit a local school, watch banana beer being brewed, meet a traditional healer, and see the terraced hillside farms that characterise this region. The walks reveal the complex relationship between communities and the forest — crop raiding by forest animals is a real challenge.',
+          tip: 'Community walks cost $15–30 per person. Fees go directly to village development projects. A genuinely enriching experience.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Buhoma Village & Crafts',
+          text: 'Explore Buhoma village — the main settlement at the park entrance. Browse local craft cooperatives selling baskets, bark cloth products, and beaded jewellery made by community groups. The Buhoma Community Rest Camp and surrounding shops support families who live on the park boundary.',
+          tip: 'Buying crafts from community cooperatives ensures the income reaches local families. Baskets and bark cloth items are lightweight and make excellent souvenirs.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cultural Performance',
+          text: 'Some lodges and community groups arrange traditional dance and music performances in the evening. The Bakiga people of the Kigezi region have vibrant cultural traditions — energetic dances, call-and-response singing, and drumming. The performances are authentic and often spontaneous rather than staged.',
+          tip: 'Ask your lodge about evening cultural performances. The Batwa also occasionally perform — their music and dance traditions are distinct from the Bakiga.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Second Gorilla Trek or Habituation Experience',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Gorilla Habituation Experience',
+          text: 'If you have booked a second permit, consider the Gorilla Habituation Experience — available only in Bwindi\'s Rushaga sector. Unlike the standard 1-hour trek, the habituation experience gives you 4 hours with a gorilla family that is still being accustomed to human presence. You accompany the researchers and trackers as they work to habituate a semi-wild family. The experience is more intimate, more unpredictable, and far fewer visitors participate.',
+          tip: 'The habituation experience costs $1,500 USD per person and only 4 visitors per day are allowed. It is the most exclusive gorilla experience available. Book far in advance.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Extended Forest Time',
+          text: 'The habituation experience continues through the morning and into early afternoon. The extended time allows you to observe natural gorilla behaviour that the standard 1-hour visit cannot capture — feeding, nesting, social grooming, and the movement patterns of a family through their territory. Researchers share insights about individual gorillas and the challenges of the habituation process.',
+          tip: 'The habituation trek is physically demanding — 4+ hours in the forest requires good fitness. The terrain is the same steep, muddy impenetrable forest as the standard trek.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Reflection & Final Forest Night',
+          text: 'Spend your final evening at the lodge reflecting on what is likely one of the most profound wildlife experiences of your life. The mountain gorillas of Bwindi are among the rarest and most endangered animals on earth, and to have spent time in their presence — in their home — is a privilege shared by only a few thousand people each year.',
+          tip: 'If not doing the habituation experience, this day can be spent on additional forest walks, birding, or simply absorbing the forest environment.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Departure & Onward Travel',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Morning Walk',
+          text: 'Take an early morning walk around the lodge grounds or a short forest trail for a final encounter with Bwindi\'s birdlife and primates. The morning forest is magical — mist hangs in the canopy, sunlight filters through the trees, and the air is cool and fragrant. Say goodbye to the impenetrable forest.',
+          tip: 'Even a 30-minute walk around the lodge at dawn can yield excellent bird and monkey sightings. The mornings are the best time.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Drive to Lake Bunyonyi or Queen Elizabeth NP',
+          text: 'Depart Bwindi for your next destination. Lake Bunyonyi is 1–2 hours south through beautiful highland scenery — a perfect recovery stop after the intensity of gorilla trekking. Queen Elizabeth National Park is 3–4 hours north via Ishasha, where tree-climbing lions await. Or drive to Kisoro for the domestic flight back to Entebbe.',
+          tip: 'The road from Bwindi is rough but scenic. 4WD is recommended. If driving to Queen Elizabeth NP, the Ishasha sector is on the way — time your drive to arrive for an afternoon game drive.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Arrival at Next Destination',
+          text: 'Settle into your next destination — whether it is the tranquil shores of Lake Bunyonyi, the savannahs of Queen Elizabeth National Park, or a flight home. The memories of Bwindi will stay with you permanently. The impenetrable forest and its mountain gorilla residents are among the most powerful experiences Africa offers.',
+          tip: 'If flying from Kisoro or Kihihi, book your domestic flight in advance. Aerolink Uganda operates scheduled and charter flights to Entebbe.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Book gorilla permits early', text: 'Gorilla permits cost $700 USD per person and must be booked through the Uganda Wildlife Authority (UWA) months in advance. This is the biggest single expense — everything else in Bwindi is relatively affordable. Rwanda charges $1,500 for the same experience.' },
+  { title: 'Stay at budget bandas', text: 'Budget bandas (thatched huts) near the park start from $20–40 per night. Community-run guesthouses in Buhoma village are even cheaper. You do not need a luxury lodge to have an extraordinary gorilla experience.' },
+  { title: 'Hire a porter', text: 'Porters cost $15–20 at the trailhead and carry your daypack on the gorilla trek. This is not a luxury — it makes the trek significantly easier and the income supports local families. Strongly recommended for all fitness levels.' },
+  { title: 'Combine with other parks', text: 'Book an East Africa Tourist Visa ($100) covering Uganda, Kenya, and Rwanda. Combine Bwindi with Queen Elizabeth NP, Lake Bunyonyi, and other western Uganda destinations to spread the travel costs across multiple experiences.' },
+  { title: 'Drive instead of fly', text: 'The drive from Kampala to Bwindi (8–10 hours) costs $40–60 by public transport versus $150–250 for a domestic flight. The road journey is beautiful and breaks up well with stops at Lake Mburo or Mbarara.' },
+  { title: 'Pack your own snacks', text: 'Lodge restaurants in Bwindi are limited and charge premium prices. Bring snacks, energy bars, and trail food from Kampala for the gorilla trek and general snacking. The nearest proper shops are hours away.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$20–40', midrange: '$60–150', splurge: '$250+', notes: 'Budget bandas → mid-range lodges → luxury eco-lodges' },
+  { category: 'Food', budget: '$10–20', midrange: '$20–40', splurge: '$50+', notes: 'Self-catering → lodge meals → luxury dining' },
+  { category: 'Transport', budget: '$10–20', midrange: '$30–60', splurge: '$100+', notes: 'Public transport → shared 4WD → private vehicle/flight' },
+  { category: 'Gorilla Permit', budget: '$700', midrange: '$700', splurge: '$1,500', notes: 'Standard trek $700 → habituation experience $1,500' },
+  { category: 'Other Activities', budget: '$15–30', midrange: '$30–80', splurge: '$100+', notes: 'Forest walks → Batwa trail → specialist birding guides' },
+  { category: 'Daily Total', budget: '$50–120', midrange: '$140–330', splurge: '$500+', notes: 'Plus $700 gorilla permit (one-time cost)' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Permits',
+    items: [
+      'Gorilla trekking permit: $700 USD per person — book through UWA (ugandawildlife.org) at least 3–6 months in advance',
+      'Gorilla habituation experience: $1,500 USD per person — Rushaga sector only, 4 hours instead of 1 hour',
+      'Park entry fee ($40 per person per day) is usually included in the permit. Verify when booking',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'High altitude (1,160–2,607m) — acclimatise before strenuous trekking. Drink plenty of water',
+      'The forest is full of stinging nettles, thorns, and biting ants. Wear long sleeves, long trousers tucked into socks, and gardening gloves',
+      'Travel insurance with medical evacuation is essential — the nearest hospital is hours away. Malaria is present at lower altitudes',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting There',
+    items: [
+      'Drive from Kampala: 8–10 hours via Mbarara and Kabale. 4WD essential for the final section',
+      'Domestic flights: Aerolink Uganda flies to Kihihi and Kisoro airstrips (1 hour from Entebbe)',
+      'From Kigali (Rwanda): 4–5 hours via the Katuna/Gatuna border crossing',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile signal is weak to non-existent inside the forest. MTN has the best coverage in surrounding villages',
+      'WiFi at lodges is limited and slow. Download everything you need before arriving',
+      'Inform someone at home of your itinerary — communication can be unreliable for days',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Bring sufficient USD cash — there are no ATMs near Bwindi. The nearest reliable ATMs are in Kabale (1.5–3 hours away)',
+      'Gorilla permits must be paid in advance via bank transfer to UWA',
+      'Cash is needed for porters ($15–20), community walks, and tips. Carry small bills',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Essentials',
+    items: [
+      'Sturdy waterproof hiking boots with ankle support — the forest is steep and muddy',
+      'Gardening gloves (for grabbing vegetation on steep slopes), gaiters or long socks, rain jacket, and warm layers',
+      'Waterproof camera bag or dry bag — it rains frequently and without warning in the forest',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect the Gorillas', text: 'Follow all ranger instructions during the trek. Maintain 7 metres distance. No flash photography. If you feel unwell (cold, flu, stomach bug), do not trek — human diseases can be fatal to gorillas. Your permit can be rescheduled.' },
+  { icon: '🌍', title: 'Conservation Context', text: 'Mountain gorillas were near extinction in the 1980s (fewer than 300 remained). Conservation efforts — funded largely by tourism — have increased the population to approximately 1,060. Your $700 permit directly funds this work. You are part of the conservation story.' },
+  { icon: '📸', title: 'Photography Rules', text: 'No flash photography near gorillas — flash can disturb and agitate them. Keep shutter sounds to a minimum. Do not use selfie sticks or drones. The rangers will tell you when and how to photograph. These rules exist to protect the gorillas.' },
+  { icon: '🗣', title: 'Batwa Sensitivity', text: 'The Batwa pygmy people were displaced from their forest homeland when the park was created. Their story is complex — conservation success came at a significant human cost. Approach the Batwa Trail with sensitivity and respect for what was lost as well as what was gained.' },
+  { icon: '🤝', title: 'Support Local Communities', text: 'Stay at community-owned lodges, hire local porters, and participate in community walks. The long-term survival of the gorillas depends on local communities benefiting economically from conservation. Your choices as a visitor directly affect this balance.' },
+  { icon: '🕐', title: 'Be Patient', text: 'The gorilla trek may be short or very long — you cannot control where the gorillas move. Embrace the uncertainty. The trek through the impenetrable forest is an experience in itself, regardless of how quickly you find the gorillas.' },
+];
+---
+
+<CityGuideLayout
+  title="Bwindi Impenetrable Forest Guide 2026 — Gorilla Trekking Itinerary | roammate"
+  description="The ultimate Bwindi guide for young travelers. Mountain gorilla trekking, Batwa pygmy trail, forest hikes with 1, 3 and 7-day itineraries. Permit info, budget tips and practical advice."
+  heroImage="/images/guides/bwindi-hero.webp"
+  heroFlag="🇺🇬"
+  heroCountry="Uganda"
+  heroRegion="Africa"
+  heroCity="Bwindi Impenetrable Forest"
+  heroSubtitle="Home to half the world's remaining mountain gorillas — trek through one of Africa's oldest and most biodiverse rainforests for the most extraordinary wildlife encounter on earth."
+  heroPills={["3-Day Trek","Wildlife","Jun – Aug Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. The gorilla permit ($700) is the major expense — everything else in Bwindi is relatively affordable. Rwanda charges $1,500 for the same experience, making Uganda the better-value option."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Bwindi Impenetrable Forest is a place of extraordinary natural importance and complex human stories. Approach with humility, follow the rules, and you will have one of the most profound experiences of your life."
+  ctaCity="Bwindi"
+  ctaText="Find travel companions for gorilla trekking on roammate — split transport costs, share the experience, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

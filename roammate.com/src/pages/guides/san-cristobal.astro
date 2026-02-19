@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'MXN (Mexican Peso)', detail: 'Cash essential in indigenous villages' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'Tzotzil and Tzeltal Maya also spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'CST (UTC-6)', detail: 'Central Standard Time' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Apr', detail: 'Dry season, cool highland climate' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–45 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: '180-day FMM', detail: 'Most nationalities visa-free on arrival' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'San Cristóbal Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Centro Histórico & Cathedral',
+          text: 'Begin at the yellow-and-red Cathedral of San Cristóbal on the main plaza, built in the 16th century with a baroque facade that glows in the morning light. Walk the pedestrianised Andador Eclesiástico and Real de Guadalupe — the twin arteries of the colonial centro lined with amber jewellery shops, indigenous textile stalls, and cafés serving Chiapanecan coffee. Climb the steps to the Templo de Guadalupe on the eastern hill for a panoramic view over the terracotta rooftops to the green highland valley beyond.',
+          tip: 'San Cristóbal sits at 2,200m elevation — take it easy on your first morning. The thin air and cool temperatures are noticeable coming from the lowlands.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Amber Museum & Craft Markets',
+          text: 'Visit the Museo del Ámbar de Chiapas in the ex-convent of La Merced — Chiapas produces some of the world\'s finest amber, and the museum displays pieces with 25-million-year-old insects, plants, and even small lizards preserved inside. Learn to distinguish genuine amber from copal resin (the common fake) using UV light tests. Continue to the Santo Domingo artisan market surrounding the Templo de Santo Domingo — hundreds of indigenous Tzotzil and Tzeltal vendors sell handwoven textiles, embroidered blouses, wool shawls, and carved wooden masks.',
+          tip: 'At the amber museum, ask for the UV light demonstration — genuine Chiapanecan amber fluoresces blue-green under ultraviolet, while copal resin does not.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Chocolate & Chiapanecan Dinner',
+          text: 'San Cristóbal is Mexico\'s chocolate capital — cacao has been cultivated in the Chiapas lowlands since the Maya era. Visit Kakaw Museo del Cacao for a tasting and history of Mesoamerican cacao culture, then buy artisanal bars at one of the many chocolate shops along Real de Guadalupe. For dinner, try Chiapanecan specialities: tamales de chipilín (herb tamales), cochito horneado (slow-roasted pork), and pozol (fermented cacao corn drink) at a traditional restaurant near the plaza.',
+          tip: 'Evenings in San Cristóbal are cold — temperatures drop to 5–10°C after dark. Bring a warm jacket and enjoy the wood-fire atmosphere of the highland restaurants.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Centro Histórico & Santo Domingo',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cathedral, Na Bolom & Cerro de San Cristóbal',
+          text: 'Start at the cathedral on the main plaza, then walk north to Na Bolom — the house-museum of Danish archaeologist Frans Blom and Swiss photographer Gertrude Duby, who spent decades documenting and advocating for the Lacandón Maya of the Chiapas jungle. The museum contains their photographs, Lacandón artefacts, and a beautiful garden. Continue uphill to the Cerro de San Cristóbal church for the best elevated view of the city — the 79 steps are lined with vendors selling handmade dolls and woven bracelets.',
+          tip: 'Na Bolom museum tours run at set times — check the schedule at the door. The library is particularly remarkable for researchers interested in Maya culture.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Santo Domingo Church & Textile Market',
+          text: 'Walk to the Templo de Santo Domingo de Guzmán — the most ornate church in Chiapas with an elaborately carved pink facade and a gilded pulpit inside. The surrounding market is the largest indigenous craft market in southern Mexico: Tzotzil women in traditional embroidered blouses sell handwoven huipiles, wool chamulas, and beaded jewellery. Each design tells the story of its village and weaver. Take time to examine the quality and artistry — these are genuine living traditions, not tourist reproductions.',
+          tip: 'Bargaining at the Santo Domingo market is acceptable but respectful — these artisans spend days or weeks on each piece. A fair price respects their labour.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mezcal Bars & Live Music',
+          text: 'San Cristóbal has a thriving bar scene along Real de Guadalupe and in the streets surrounding the main plaza. Mezcal and local pox (pronounced "posh") — a sugarcane spirit distilled by Tzotzil communities with ceremonial significance — are the drinks of choice. Several bars host live marimba, son jarocho, and folk music most evenings. Try TierrAdentro for mezcal flights or Calavera Bar for a younger, backpacker-friendly vibe.',
+          tip: 'Pox is traditionally used in Maya healing ceremonies — when offered at a bar, sip it respectfully. The spirit has a soft, slightly sweet profile quite different from mezcal.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'San Juan Chamula & Zinacantán',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'San Juan Chamula — Indigenous Church',
+          text: 'Take a colectivo 10km north to San Juan Chamula, a Tzotzil Maya town governed entirely by indigenous customary law — Mexican federal police and the Catholic Church have no authority here. The Church of San Juan is one of the most extraordinary religious spaces in the Americas: the floor is covered in pine needles, thousands of candles burn in rows, families conduct healing rituals involving pox, Coca-Cola (used for its "burping" cleansing properties), and live chickens, and there are no pews or priests. Shamanic Maya cosmology is fused with Catholic imagery in a way found nowhere else on earth.',
+          tip: 'Photography is STRICTLY FORBIDDEN inside the Chamula church and during any ceremony — violating this can result in confiscation of your camera, fines, or detention by community police. Respect this absolutely.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Zinacantán — Flower & Textile Village',
+          text: 'Continue 7km to Zinacantán, another Tzotzil village with a dramatically different character — where Chamula is austere and intense, Zinacantán is colourful and welcoming. The villagers are master flower growers and textile weavers. Visit a family home for a weaving demonstration and a meal of handmade tortillas cooked on a comal, accompanied by pox and a display of the family\'s finest embroidered textiles. The church of San Lorenzo in the village centre has a richly decorated interior draped in flowers and woven cloth.',
+          tip: 'In Zinacantán, the family home visits are paid experiences (50–100 MXN) — the money goes directly to the family and the visit is genuine and unhurried. This is ethical tourism at its simplest.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Chocolate Workshop & Highland Dinner',
+          text: 'Return to San Cristóbal for an evening chocolate workshop — several shops offer hands-on classes where you roast, grind, and mould cacao beans into chocolate bars using traditional Maya techniques. The Chiapas lowlands produce some of Mexico\'s finest cacao, and the highland city has built a chocolate culture around it. Dinner at a comedor serving tamales de bola (Chiapanecan ball-shaped tamales), sopa de pan (bread soup with fruits and spices), and hot chocolate.',
+          tip: 'Book chocolate workshops a day ahead — they run with small groups and fill quickly in high season. The evening sessions are most atmospheric.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Cañón del Sumidero Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cañón del Sumidero Boat Trip',
+          text: 'Depart early for the Cañón del Sumidero, 65km west of San Cristóbal — a colossal canyon carved by the Grijalva River with walls rising up to 1,000 metres on either side. Take a 2-hour speedboat trip from the embarcadero at Chiapa de Corzo through the canyon, passing crocodiles basking on the banks, spider monkeys in the trees, and the famous "Christmas Tree" — a waterfall draped in moss and mineral deposits that has formed a tree-shaped cascade on the canyon wall. The scale of the canyon is staggering and the boat gives the only true perspective.',
+          tip: 'Boats depart from Chiapa de Corzo from 8am — the earliest departures have the best light and wildlife sighting chances. Bring sunscreen and a waterproof layer for spray.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chiapa de Corzo & Canyon Viewpoints',
+          text: 'After the boat trip, explore the colonial town of Chiapa de Corzo — its 16th-century fountain, La Pila, is a Mudéjar-style octagonal structure considered one of the finest colonial fountains in the Americas. The town is the centre of lacquerware production in Chiapas — hand-painted gourds and boxes in vivid colours using techniques predating the Spanish conquest. Drive up to the canyon rim viewpoints (miradores) for a vertigo-inducing perspective looking straight down into the gorge — five viewpoints are accessible by road.',
+          tip: 'The canyon rim viewpoints and the boat trip are completely different experiences — do both if possible. The rim road has five mirador stops with parking.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Amber Shopping',
+          text: 'Return to San Cristóbal for a final evening. Browse the amber shops along Real de Guadalupe for genuine Chiapanecan amber — the finest pieces contain preserved insects and are authenticated with UV testing. Choose a restaurant on the pedestrian Andador for a last dinner of Chiapanecan cuisine: tamales, cochito, and a glass of comiteco (a local spirit distilled from agave and piloncillo). The cobblestone streets and warm lighting of this highland city are at their most beautiful on your final evening.',
+          tip: 'Genuine amber with insect inclusions is priced by the rarity and quality of the preserved specimen — expect to pay 500–5,000 MXN for authenticated pieces with visible insects.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Centro Histórico',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cathedral & Main Plaza',
+          text: 'Arrive in San Cristóbal and acclimatise to the 2,200m altitude with a gentle walk around the centro histórico. The cathedral\'s yellow-and-red baroque facade dominates the main plaza. Walk north along Real de Guadalupe, the pedestrianised street lined with cafés, chocolate shops, and hostels that serves as the city\'s social spine.',
+          tip: 'The altitude can cause mild headache and breathlessness — drink plenty of water, avoid alcohol on the first day, and take it slow. Symptoms pass within 24 hours.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Templo de Guadalupe & Cerro Viewpoint',
+          text: 'Climb the eastern hill to the Templo de Guadalupe for a panoramic view over the terracotta rooftops and surrounding green valley. The 79 steps are lined with vendors and the small church at the top is a peaceful spot. Descend through the residential streets where colonial houses in faded pastels and bougainvillea-draped balconies give the city its photogenic character.',
+          tip: 'The Guadalupe hill is most photogenic in late afternoon light — the sun illuminates the city rooftops and the mountains behind catch golden hour beautifully.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'First Taste of Chiapanecan Cuisine',
+          text: 'Settle into the city with dinner at a traditional restaurant — try tamales de chipilín (herb tamales wrapped in banana leaf), sopa de pan (a sweet-savoury bread soup unique to Chiapas), and a cup of thick hot chocolate made from locally grown cacao. The highland climate makes evenings cool and atmospheric, perfect for the warming cuisine of the region.',
+          tip: 'Restaurants close earlier than in other Mexican cities — dinner by 8pm is typical. The early-evening dining scene has the best atmosphere.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Na Bolom, Santo Domingo & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Na Bolom Museum',
+          text: 'Visit Na Bolom, the house-museum of Frans Blom and Gertrude Duby-Blom, who devoted their lives to documenting the Lacandón Maya of the Chiapas jungle. The museum contains their photographic archive, ethnographic collections, Lacandón artefacts, and a library of Mesoamerican research. The gardens are a peaceful oasis with native plants and a greenhouse.',
+          tip: 'Na Bolom runs guided tours at fixed times — arrive early to get a spot on the English-language tour. The bookshop has excellent publications on Maya culture.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Santo Domingo & Indigenous Textile Market',
+          text: 'Spend the afternoon at the Templo de Santo Domingo de Guzmán and its surrounding artisan market. The church\'s carved pink facade is the most elaborate in Chiapas. The market stretching along the churchyard walls is where Tzotzil and Tzeltal women sell handwoven textiles — each village has distinctive patterns and colour palettes. Examine the embroidered huipiles, woven shawls, and beaded accessories that represent living traditions passed through generations of indigenous weavers.',
+          tip: 'The best textiles are at the stalls closest to the church — these vendors are typically from the weaving villages of Chamula, Zinacantán, and Tenejapa.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Amber Museum & Evening Walk',
+          text: 'Visit the Museo del Ámbar in the ex-convent of La Merced for Chiapas\'s amber story — pieces with 25-million-year-old insect inclusions and the UV authentication process. Walk the Andador Eclesiástico in the evening light, stopping at cafés and galleries. The pedestrianised streets are most alive at dusk when locals and travellers mix in the plazas.',
+          tip: 'The amber museum is small — 45 minutes is sufficient. Combine it with the evening paseo along the Andador for a relaxed end to the day.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'San Juan Chamula & Zinacantán',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'San Juan Chamula Church',
+          text: 'Take a colectivo to San Juan Chamula for the most extraordinary religious experience in Mexico. The church floor is covered in pine needles, thousands of candles burn in rows, and Tzotzil families conduct shamanic healing ceremonies involving pox, live chickens, and eggs. There are no pews, no priest, and no Mass — this is Maya cosmology fused with Catholic imagery under indigenous community law. The experience is profound and unlike anything else in the Americas.',
+          tip: 'Photography is absolutely forbidden inside the church and at ceremonies — community police enforce this strictly. Enter quietly, observe respectfully, and do not interfere with any ritual.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Zinacantán Weaving & Home Visit',
+          text: 'Continue to Zinacantán for a family home visit. A Tzotzil family welcomes you into their home for a backstrap loom weaving demonstration, followed by a meal of handmade tortillas cooked on a comal with pox and a display of the family\'s embroidered textiles. Zinacantán specialises in flower-patterned embroidery and the colours are vivid and beautiful. The church of San Lorenzo in the village centre is richly decorated with flowers and woven cloth.',
+          tip: 'Buy textiles directly from the weaving family — the prices are fair and the money goes directly to the artisan. These are among the finest handwoven textiles in Mexico.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pox Tasting & Night Market',
+          text: 'Return to San Cristóbal and explore the pox (pronounced "posh") culture — this sugarcane spirit has ceremonial significance in Tzotzil communities and is increasingly available in the city\'s bars. Try different varieties at a specialised pox bar. Walk through the evening food stalls near the market for elotes, marquesitas (crispy crepes with Edam cheese), and champurrado.',
+          tip: 'Pox is traditionally used in Maya healing ceremonies — treat it with the same cultural respect as mezcal in Oaxaca. Sip slowly and appreciate the context.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Cañón del Sumidero',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Canyon Boat Trip',
+          text: 'Depart early for Chiapa de Corzo and board a speedboat into the Cañón del Sumidero. The 2-hour trip takes you through the colossal canyon with walls rising 1,000 metres on either side. Watch for crocodiles, spider monkeys, and kingfishers along the riverbanks. The "Christmas Tree" waterfall — a moss-and-mineral formation on the canyon wall — is the trip\'s iconic photo stop. The scale of the canyon is impossible to convey in photographs.',
+          tip: 'The first boats depart at 8am — earlier departures have calmer water and better wildlife sightings. Sit near the front of the boat for the best views and least spray.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Canyon Rim Viewpoints & Chiapa de Corzo',
+          text: 'Drive up to the canyon rim for five mirador viewpoints looking straight down into the gorge — the perspective is completely different from the boat trip below and genuinely vertigo-inducing. Afterwards, explore Chiapa de Corzo\'s colonial plaza with its Mudéjar-style fountain and the lacquerware workshops where artisans paint gourds and boxes using pre-Columbian techniques.',
+          tip: 'The mirador road adds 1–2 hours to the trip — hire a taxi for the half-day or join a tour that includes both boat and rim. The fifth viewpoint (La Coyota) is the most dramatic.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Chiapanecan Cooking & Evening Rest',
+          text: 'Return to San Cristóbal and find a cooking class or restaurant specialising in Chiapanecan cuisine. Cochito horneado (slow-roasted pork in adobo) is the regional signature — served with rice, black beans, and handmade tortillas. The highland evening is cool and quiet, perfect for a rest day after the canyon trip.',
+          tip: 'Chiapa de Corzo to San Cristóbal is 65km — the return drive takes 90 minutes through winding mountain roads. Plan to be back by early evening.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Coffee Fincas & Chocolate',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Chiapas Coffee Farm Visit',
+          text: 'Chiapas produces some of Mexico\'s finest coffee — take a morning tour of a coffee finca (farm) in the highlands around San Cristóbal. Learn the full process from cherry to cup: picking ripe cherries, wet processing, sun drying, roasting, and cupping. The volcanic soil and altitude produce a clean, bright cup with chocolate and citrus notes. Many fincas are cooperatives run by indigenous communities practicing organic shade-grown cultivation.',
+          tip: 'Book finca tours through your hostel or a local tour operator — Café Museo Café in the centro also offers an excellent introduction to Chiapas coffee culture.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chocolate Tour & Cacao Culture',
+          text: 'Spend the afternoon immersed in San Cristóbal\'s chocolate culture. Visit Kakaw Museo del Cacao for the history of Mesoamerican cacao — from the Maya who first cultivated it to its role in ceremonies and currency. Then join a hands-on workshop at one of the artisan chocolatiers: roast, grind on a metate, and mould cacao beans into bars with chilli, vanilla, or cinnamon. Chiapas cacao has a distinctive fruity, slightly acidic profile.',
+          tip: 'The best chocolate workshops run 2–3 hours and include a cacao ceremony element — choose one that emphasises the cultural history, not just the making process.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Café Culture & Live Music',
+          text: 'San Cristóbal\'s café scene is thriving — locally roasted single-origin Chiapas coffee is served at small roasteries throughout the centro. Spend the evening café-hopping along Real de Guadalupe and the surrounding streets, then find a bar with live music — marimba, trova, and cumbia are the local sounds. Caravanserai and TierrAdentro both host regular live performances.',
+          tip: 'Chiapas coffee is best as pour-over or French press — the highland beans have too much nuance for espresso. Ask for the day\'s single-origin selection at any serious café.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Surrounding Villages & Nature',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'San Lorenzo Zinacantán Market Day',
+          text: 'Return to Zinacantán on market day (check locally for the schedule) when the village plaza fills with flower vendors, textile sellers, and food stalls. The Sunday market is the most vibrant — Tzotzil families from surrounding hamlets descend in traditional dress to trade flowers, vegetables, and handwoven cloth. The atmosphere is authentic and deeply rooted in community life.',
+          tip: 'Market days vary — ask at your hostel for the current schedule. Zinacantán\'s flower market is most active in the early morning when wholesale buyers arrive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'El Arcotete Natural Park',
+          text: 'Take a colectivo or bicycle 4km east to El Arcotete, a natural limestone arch over a small river surrounded by forest. The park has walking trails through the woods, a zip-line over the river gorge, and picnic areas. It is a popular local outing and offers a taste of the highland landscape beyond the city. The rock formations and cave at the river\'s edge are photogenic and peaceful.',
+          tip: 'El Arcotete is an easy half-day trip — rent a bicycle in the centro for the scenic ride through highland farmland. Entry is free and the park closes at sunset.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cooking Class — Chiapanecan Cuisine',
+          text: 'Join an evening cooking class to learn the dishes of highland Chiapas. Prepare tamales de chipilín (herb tamales wrapped in banana leaf), sopa de pan (bread soup with plantain, cinnamon, and cheese), and tasajo con chirmol (dried beef with tomato salsa). The class takes you through the market to buy ingredients, then to a kitchen to cook and eat together.',
+          tip: 'Cooking classes in San Cristóbal are smaller and more personal than in larger cities — expect 4–8 participants and a very hands-on experience.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Cerro de San Cristóbal & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cerro de San Cristóbal Sunrise',
+          text: 'Climb the western hill to the Cerro de San Cristóbal for a sunrise view over the city. The small church at the top is quiet at dawn and the panorama of mist-filled valley and terracotta rooftops is the defining image of the city. Descend through the residential streets where the colonial architecture is most authentic — faded blue, yellow, and pink facades without tourist infrastructure.',
+          tip: 'The Cerro path is safe at dawn but less trafficked — go with another traveller. The view is best when morning mist lingers in the valley.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Market Visit & Souvenirs',
+          text: 'Spend your last afternoon at the Santo Domingo textile market for final purchases. Handwoven huipiles, embroidered blouses, amber jewellery, local chocolate, and bags of Chiapas coffee beans make excellent gifts. Walk the centro one last time, stopping at your favourite café for a final pour-over and a quiet moment in this extraordinary highland city.',
+          tip: 'Vacuum-sealed Chiapas coffee beans travel well — buy them freshly roasted and sealed at any serious roastery. Amber jewellery should come with a certificate of authenticity.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'End your week at a restaurant overlooking the main plaza. Order the greatest hits of Chiapanecan cuisine: tamales de chipilín, cochito horneado, hot chocolate, and a final glass of pox. San Cristóbal is a city that earns its place in the heart — the combination of indigenous culture, colonial beauty, and highland atmosphere is unique in Mexico and difficult to leave.',
+          tip: 'If continuing to Palenque or Guatemala, ADO and OCC buses depart from the terminal on the highway — book first-class seats the day before for comfort on the long mountain roads.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Street food is king', text: 'Tamales, elotes, marquesitas, and market meals cost 30–80 MXN ($1.50–4 USD). Tourist restaurants on Real de Guadalupe charge 3–4x market prices for similar quality.' },
+  { title: 'Colectivos to villages', text: 'Shared vans to Chamula, Zinacantán, and Chiapa de Corzo cost 25–50 MXN from designated stops in the centro. Private taxis charge 5–10x more for the same routes.' },
+  { title: 'Budget hostels', text: 'Dorm beds in the centro start at 150–250 MXN ($8–13 USD) per night. Many hostels include breakfast and have communal kitchens for cooking your own meals.' },
+  { title: 'Free city walks', text: 'The centro histórico, hills, and markets are all free to explore on foot. Several hostels offer free walking tours with tips appreciated.' },
+  { title: 'Buy chocolate at source', text: 'Chocolate and coffee bought directly from producers or at market stalls is significantly cheaper than packaged tourist-shop versions.' },
+  { title: 'Negotiate tours wisely', text: 'Group tours to Chamula, Zinacantán, and the canyon are much cheaper than private trips. Book through hostels or directly with operators near the plaza — avoid street touts.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$8–13', midrange: '$20–50', splurge: '$70+', notes: 'Hostel dorms → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '$4–10', midrange: '$12–25', splurge: '$35+', notes: 'Market food → local restaurants → fine dining' },
+  { category: 'Transport', budget: '$1–5', midrange: '$8–20', splurge: '$30+', notes: 'Colectivos → shared taxis → private transfers' },
+  { category: 'Activities', budget: '$3–8', midrange: '$10–25', splurge: '$40+', notes: 'Self-guided → group tours → private guides' },
+  { category: 'Entry Fees', budget: '$1–3', midrange: '$3–8', splurge: '$10–20', notes: 'Most churches and markets are free' },
+  { category: 'Daily Total', budget: '$20–45', midrange: '$55–130', splurge: '$185+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities receive a 180-day FMM tourist permit on arrival — no visa required',
+      'Keep your FMM form safe — required for exit from Mexico',
+      'If crossing to Guatemala, note that re-entering Mexico requires a new FMM',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Altitude sickness is possible at 2,200m — hydrate well and take it easy on the first day',
+      'Drink bottled or purified water only — tap water is not safe',
+      'San Cristóbal is generally safe for tourists but be aware of your surroundings at night in quieter streets',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'The centro histórico is entirely walkable — 15 minutes from end to end',
+      'Colectivos to surrounding villages depart from marked stops near the market — ask locals for current pickup points',
+      'For Cañón del Sumidero, hire a driver for the day or join a group tour — the 130km round trip is not practical by colectivo',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Telcel has the best coverage — buy a SIM at any OXXO or phone shop in the centro',
+      'WiFi in hostels is generally reliable but slow. Mobile data works in the city but drops in the villages and canyon',
+      'Download offline maps before visiting Chamula, Zinacantán, or the Sierra — coverage is patchy outside the city',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: MXN (Mexican Peso). Cash is essential for markets, colectivos, and village visits',
+      'ATMs on the main plaza dispense pesos — use bank-attached machines to avoid skimming',
+      'Tipping 10–15% at restaurants. Village guides and family visits: 50–100 MXN per person is appreciated',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Warm layers essential — highland evenings drop to 5–10°C even in the dry season',
+      'Rain jacket year-round — afternoon showers are common even in "dry" months',
+      'Comfortable walking shoes for cobblestone streets and hill climbs. Hiking boots if visiting El Arcotete or surrounding trails',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Indigenous Sovereignty', text: 'San Juan Chamula and other Tzotzil communities are self-governing under indigenous customary law. You are a guest on their terms. Obey all local rules, especially the absolute prohibition on photography inside the Chamula church and at ceremonies.' },
+  { icon: '🌍', title: 'Ethical Tourism', text: 'Buy textiles directly from indigenous weavers, not middlemen. Choose community-run tours over commercial operators. Your spending has the most impact when it reaches indigenous families directly.' },
+  { icon: '📸', title: 'Photography Rules', text: 'Never photograph people in Chamula or Zinacantán without explicit permission. The prohibition inside the Chamula church is non-negotiable. In Zinacantán, families usually permit photos during paid home visits but always ask first.' },
+  { icon: '🗣', title: 'Language & Respect', text: 'Learn basic Spanish greetings. In Tzotzil communities, a respectful demeanour matters more than language — enter quietly, observe without intruding, and follow the lead of your guide or host.' },
+  { icon: '🤝', title: 'Support Local Artisans', text: 'The textiles, amber, chocolate, and coffee of Chiapas are world-class artisan products. Buying directly from producers ensures fair compensation and preserves living traditions that span millennia.' },
+  { icon: '🕐', title: 'Highland Rhythm', text: 'San Cristóbal moves at a gentler pace than the coast — mornings start slowly, afternoons are for exploration, and evenings are for food and conversation. Embrace the highland tempo and you will connect more deeply with the city.' },
+];
+---
+
+<CityGuideLayout
+  title="San Cristóbal de las Casas Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate San Cristóbal guide for young travelers. Indigenous villages, chocolate, canyon trips with 1, 3 and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/san-cristobal-hero.webp"
+  heroFlag="🇲🇽"
+  heroCountry="Mexico"
+  heroRegion="Central America"
+  heroCity="San Cristóbal de las Casas"
+  heroSubtitle="A misty highland city where colonial cobblestone streets meet living Maya traditions — indigenous villages, canyon adventures, and the heart of Chiapas."
+  heroPills={["3-Day Highland","Indigenous Culture","Nov – Apr Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. San Cristóbal is one of Mexico's most affordable travel destinations — these ranges cover the spectrum from budget backpacker to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="San Cristóbal sits at the crossroads of colonial Mexico and living Maya culture — approach indigenous communities with the utmost respect and your experience will be profoundly rewarding."
+  ctaCity="San Cristóbal de las Casas"
+  ctaText="Find travel companions to explore San Cristóbal together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'KRW (Won)', detail: 'Cards widely accepted' },
+  { icon: '🗣', label: 'Language', value: 'Korean', detail: 'Some English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'KST (UTC+9)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Jun, Sep – Oct', detail: 'Mild weather, fewer typhoons' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–80 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free for many', detail: 'Special Jeju visa exemption for some nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Jeju Island Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Seongsan Ilchulbong Sunrise Peak',
+          text: 'Wake before dawn and drive to Seongsan Ilchulbong (Sunrise Peak) on Jeju\'s eastern tip — a dramatic volcanic tuff cone rising 182 metres from the sea. The 25-minute hike up the staircase to the crater rim rewards with views into the massive bowl-shaped crater and across the ocean. On clear mornings, the sunrise over the East Sea from the summit is one of Korea\'s most famous natural spectacles. The crater is lush and green, and the surrounding cliffs drop vertically into crashing waves.',
+          tip: 'Check sunrise time and arrive 30-40 minutes early. The staircase opens at different times by season. Bring a jacket — the summit is exposed and windy even in summer.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Haenyeo Women Divers & Manjanggul Lava Tube',
+          text: 'Watch the legendary haenyeo (sea women) divers at work near Seongsan — these free-diving women, many in their 70s and 80s, harvest abalone, sea urchin, and octopus from the ocean floor without breathing equipment. Their tradition is UNESCO-listed. Then drive north to Manjanggul Lava Tube — one of the world\'s longest and best-preserved lava tubes at 7.4km, formed by volcanic eruptions from Hallasan. Walk 1km through the illuminated cave past lava columns, stalactites, and the world\'s tallest lava column (7.6m).',
+          tip: 'Haenyeo demonstrate at set times near Seongsan and Udo Island — check locally. Manjanggul is a constant 11-15°C inside — bring a jacket even on hot days. The cave floor is uneven.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jeju Black Pork BBQ',
+          text: 'End the day with Jeju\'s most famous meal — heuk dwaeji (black pork) BBQ. Jeju\'s indigenous black pigs produce richly marbled pork with a distinctive nutty flavour. Grill thick slices of samgyeopsal (pork belly) and moksal (shoulder) at your table, wrap them in lettuce with garlic, chilli paste, and raw garlic, and wash it down with soju. The black pork restaurants in Jeju City\'s Nohyeong-dong or near Seogwipo are the best.',
+          tip: 'Black pork is more expensive than mainland pork but worth the premium — budget 15,000-25,000 won per person. The best restaurants have the pigs visible in a pen outside.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Seongsan Sunrise, Haenyeo & Lava Tube',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Seongsan Ilchulbong at Dawn',
+          text: 'Rise before dawn and drive to Seongsan Ilchulbong, the dramatic volcanic tuff cone on Jeju\'s eastern tip. Hike the 25-minute staircase to the 182-metre crater rim as the sun rises over the East Sea, illuminating the massive green crater bowl and the coastline of the island. UNESCO-listed, the peak was formed by a volcanic eruption 5,000 years ago and is now connected to the main island by a sandy isthmus. The surrounding cliffs host colonies of seabirds.',
+          tip: 'The park opens an hour before sunrise. In peak season (July-August) the staircase gets crowded — arrive early. The descent takes 15 minutes. Toilets and cafes at the base.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Haenyeo Divers & Manjanggul Cave',
+          text: 'Watch haenyeo (sea women) divers harvest seafood near Seongsan harbour — these remarkable women free-dive to depths of 10 metres, holding their breath for minutes, using techniques passed down through generations. Their distinctive whistle when surfacing (called sumbisori) is haunting and unforgettable. Then drive to Manjanggul Lava Tube, one of the world\'s finest volcanic caves — walk 1km through the illuminated section past lava columns, stone turtles, and the world\'s tallest lava column at 7.6 metres.',
+          tip: 'The lava tube is a constant cool temperature — bring a layer. The illuminated section is well-maintained but the floor is uneven and can be slippery. Closed shoes essential.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jeju Black Pork BBQ',
+          text: 'Dine on heuk dwaeji (Jeju black pork) — the island\'s most celebrated dish. The indigenous black pigs produce intensely flavoured, richly marbled meat that is grilled at your table. Wrap thick slices of pork belly in perilla leaves with garlic, ssamjang paste, and raw chilli. The Black Pork Street (Heukdwaeji-geori) in Jeju City has a concentration of specialist restaurants where the quality is consistently excellent.',
+          tip: 'Order moksal (pork neck/shoulder) alongside samgyeopsal (belly) for variety — both are excellent. A typical meal costs 15,000-25,000 won per person including sides.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Hallasan Volcano Hike',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hallasan Summit Hike — Seongpanak Trail',
+          text: 'Attempt the summit of Hallasan (1,950m), South Korea\'s highest mountain and a UNESCO World Heritage shield volcano. The Seongpanak trail (9.6km one way) is the most popular route, climbing through temperate forest, sub-alpine meadow, and finally volcanic rock to the Baengnokdam crater lake at the summit. The crater lake is filled with snowmelt and rainwater, and the views from the rim extend across the entire island and the surrounding sea. Start hiking at dawn to reach the summit by late morning.',
+          tip: 'Summit access is restricted — you must pass the Jindallaebat shelter checkpoint by 12:30pm (Seongpanak) to be allowed to continue. Start by 7am at the latest. Bring food, water, and warm layers.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Summit & Descent',
+          text: 'Spend time at the Baengnokdam crater rim, photographing the lake and the panoramic views across Jeju\'s volcanic landscape. The descent back to the trailhead takes 3-4 hours. The forest zones change with altitude — sub-alpine at the top, temperate in the middle, and subtropical at the base — making the hike a journey through multiple climate zones in a single day. Wild deer are sometimes seen in the upper meadows.',
+          tip: 'The descent is harder on the knees than the ascent — bring trekking poles if possible. The total hike takes 8-10 hours. Rest at the shelters on the way down.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Recovery Meal & Jjimjilbang',
+          text: 'After the demanding hike, reward yourself with a hearty Jeju meal — try galchi jorim (braised hairtail fish), abalone porridge, or another round of black pork. Then visit a jjimjilbang (Korean bathhouse/spa) to soak aching muscles in hot pools, steam rooms, and saunas. The volcanic hot spring water on Jeju is mineral-rich and deeply restorative.',
+          tip: 'Jjimjilbang entry costs around 10,000-15,000 won and includes use of all facilities. Bring or rent a towel. The hot pools and cold plunge cycle is excellent for post-hike recovery.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'South Coast — Waterfalls, Cliffs & Olle Trail',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jeongbang & Cheonjiyeon Waterfalls',
+          text: 'Drive to Seogwipo on Jeju\'s south coast and visit Jeongbang Waterfall — one of the only waterfalls in Asia that drops directly into the ocean. The 23-metre cascade plunges from basalt cliffs into the sea, with the spray creating rainbows in the morning light. Nearby, Cheonjiyeon Waterfall drops into a lush subtropical gorge filled with tropical plants and a warm micro-climate. Both sites are compact and easy to visit in a morning.',
+          tip: 'Jeongbang Waterfall entry is 2,000 won. The viewing platform is at the base — you can feel the spray on windy days. Visit in the morning before tour buses arrive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Olle Trail Coastal Walk',
+          text: 'Walk a section of the Jeju Olle Trail, a network of 26 long-distance walking routes that circle the entire island along the coast. Route 7 from Seogwipo to Jungmun is particularly scenic, following cliffside paths above columnar basalt formations, passing through orange orchards, and winding along beaches. The Olle trails are Korea\'s most famous long-distance walks and each section takes 4-6 hours, but shorter segments are easily done.',
+          tip: 'Olle trails are well-marked with ribbon waymarkers and blue arrow signs. Download the Jeju Olle app for GPS routes. Carry water — the coastal sections are exposed to sun and wind.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jungmun Beach & Seafood Dinner',
+          text: 'End at Jungmun Beach, a photogenic crescent of dark sand framed by columnar basalt cliffs. The turquoise water and volcanic rock formations make this one of Jeju\'s most beautiful beaches. Have a farewell seafood dinner in Seogwipo — the haenyeo-caught abalone is served as porridge, grilled, or raw. Pair with a final round of Hallasan soju, the local spirit distilled with volcanic water.',
+          tip: 'Abalone porridge (jeonbok-juk) is a Jeju breakfast staple and one of the island\'s signature dishes. Many restaurants serve it all day — rich, savoury, and deeply satisfying.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Jeju City',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival & Island Orientation',
+          text: 'Fly into Jeju International Airport (domestic flights from Seoul take 1 hour, no passport needed for Korean residents). Rent a car — essential for exploring the island, as public transport is limited. Jeju is roughly oval-shaped, 73km east-west and 41km north-south, with Hallasan volcano dominating the centre. Check into accommodation in Jeju City (north) or Seogwipo (south).',
+          tip: 'Rent a car at the airport — driving is the best way to explore Jeju. International driving permits are accepted. Roads are well-maintained and clearly signed in Korean and English.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dongmun Market & Jeju City',
+          text: 'Explore Dongmun Market in Jeju City — the island\'s largest traditional market, selling fresh seafood, tropical fruit, and Jeju specialities. Sample hallabong (tangerines), dried fish, and street snacks. The surrounding streets have cafes, galleries, and the waterfront promenade. Visit Yongyeon Pond and its elegant arched bridge for a peaceful introduction to the island.',
+          tip: 'Dongmun Market is best in the morning when the seafood is freshest. The orange hallabong tangerines (in season November-April) are Jeju\'s most famous fruit export.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Black Pork Street Dinner',
+          text: 'Head to Heukdwaeji-geori (Black Pork Street) in Jeju City for your first taste of the island\'s signature dish. The indigenous Jeju black pigs are smaller and more flavourful than mainland breeds, producing richly marbled meat that sizzles perfectly on the tabletop grill. Multiple specialist restaurants line the street — pick one with a queue and eat like a local.',
+          tip: 'Ordering: choose samgyeopsal (belly), moksal (shoulder), or both. The restaurant provides lettuce, garlic, ssamjang paste, and banchan. Two servings per person is usually enough.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Seongsan Sunrise & East Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Seongsan Ilchulbong Sunrise',
+          text: 'Rise before dawn and drive to the eastern tip of the island for the sunrise hike up Seongsan Ilchulbong. The volcanic tuff cone rises 182m from the ocean, and the 25-minute climb to the crater rim gives a panoramic view of the sunrise over the East Sea, the lush crater bowl, and the coastline stretching in both directions. The geological formation is UNESCO-listed and genuinely spectacular.',
+          tip: 'The park opens 1 hour before sunrise. Check the exact time and arrive early to secure your spot on the crater rim. Sunrise is different every day — even cloudy mornings produce dramatic skies.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Udo Island & Haenyeo Divers',
+          text: 'Take the 15-minute ferry from Seongsan to Udo Island — a small volcanic island off Jeju\'s coast with beautiful beaches, coral reefs, and rolling green hills. Rent a scooter or electric bike to circle the island (12km), stopping at Sanho Beach (made of crushed coral), the lighthouse viewpoint, and the haenyeo demonstration area where the sea women dive for abalone and sea urchin. Udo produces famous peanut ice cream and peanut makgeolli.',
+          tip: 'Udo ferries run frequently from Seongsan port (return 8,500 won). Scooter rental on the island costs about 20,000 won for 3 hours. International driving permits may be required.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'East Coast Seafood Dinner',
+          text: 'Eat dinner at a coastal restaurant near Seongsan — freshly caught hoe (raw fish), haemul-tang (spicy seafood hotpot), or grilled mackerel with rice. The east coast fishing villages have simple but superb seafood restaurants where the catch arrives daily. Watch the fishing boats return to harbour as you eat.',
+          tip: 'Look for restaurants with outdoor tanks of live fish and shellfish — this guarantees freshness. Prices are lower at smaller village restaurants than at tourist-oriented spots.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Hallasan Volcano Summit',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hallasan Summit via Seongpanak',
+          text: 'Tackle the full summit hike of Hallasan (1,950m) via the Seongpanak trail (9.6km each way). Begin hiking at dawn through subtropical forest that transitions to temperate, then sub-alpine zones as you climb. The trail is well-maintained with stone steps and wooden boardwalks through the upper sections. Pass through the Jindallaebat shelter checkpoint before 12:30pm to be allowed to continue to the summit.',
+          tip: 'This is a full-day hike (8-10 hours). Pack lunch, 2 litres of water, rain gear, and warm layers. The weather changes rapidly — summit temperatures can be 10-15°C lower than the base.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Baengnokdam Crater Lake',
+          text: 'Reach the summit and stand at the rim of Baengnokdam, the volcanic crater lake at the top of Hallasan. The emerald-green lake (or snow-covered bowl in winter) is surrounded by a dramatic rim of volcanic rock. The views extend across the entire island, the surrounding sea, and on clear days, the Korean mainland to the north. The descent retraces the ascent route through the changing forest zones.',
+          tip: 'Do not attempt to descend into the crater — it is prohibited and dangerous. The summit area is very exposed to wind — secure loose items. Start the descent by 2pm at the latest.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Post-Hike Recovery',
+          text: 'After the demanding hike, soak at a jjimjilbang (bathhouse) in Jeju City or Seogwipo. The volcanic hot spring water is mineral-rich and restorative. Then eat a recovery meal of galchi jorim (braised hairtail fish) or abalone porridge — both rich in protein and flavour.',
+          tip: 'If your legs are spent, many restaurants and cafes near the trailhead cater to hikers with hearty meals and good coffee. No shame in ordering extra rice.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'South Coast Waterfalls & Olle Trail',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jeongbang & Cheonjiyeon Waterfalls',
+          text: 'Visit Seogwipo\'s two famous waterfalls. Jeongbang Waterfall drops 23 metres directly into the ocean — one of the few coastal waterfalls in Asia. The basalt cliff face is draped with vegetation and the ocean spray creates rainbows on sunny mornings. Nearby Cheonjiyeon Waterfall plunges into a lush subtropical gorge — the micro-climate supports tropical plants, damselflies, and the rare Camellia forest along the walking path.',
+          tip: 'Both waterfalls charge 2,000 won entry. Visit Jeongbang first (best in morning light) then walk 15 minutes to Cheonjiyeon. Wear shoes with grip — paths can be wet from spray.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Olle Trail Route 7 Coastal Walk',
+          text: 'Walk a section of the iconic Jeju Olle Trail — Route 7 from Seogwipo follows the south coast past Jungmun beach, columnar basalt formations called Jusangjeolli (perfectly geometric hexagonal columns formed by cooling lava), orange orchards, and small fishing harbours. The trail hugs the coastline with the sound of crashing waves and views of Hallasan rising behind you.',
+          tip: 'Walk as much or as little as you like — the Olle trail is segmented and you can rejoin your car at various points. Blue arrow markers and orange ribbon waymarkers guide the route.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jungmun Beach Sunset',
+          text: 'End at Jungmun Beach, a crescent of dark volcanic sand framed by basalt cliffs. The turquoise water and black rock create a dramatic colour contrast. Watch the sunset from the beach, then dine on haenyeo-caught seafood at a Seogwipo restaurant — try raw abalone, grilled turban shells, or the signature jeonbok-juk (abalone rice porridge).',
+          tip: 'Jungmun Beach has strong currents — swim only in the designated area with lifeguards. The beach is beautiful year-round but swimming season is June to September.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Manjanggul Cave & North Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Manjanggul Lava Tube',
+          text: 'Explore Manjanggul Lava Tube — one of the world\'s longest (7.4km) and best-preserved volcanic caves, formed by ancient lava flows from Hallasan. The publicly accessible 1km section is illuminated and features lava stalactites, stone bridges, and the world\'s tallest lava column (7.6m). The cave is a constant 11-15°C year-round, creating a cool retreat on hot days. The geological formations took thousands of years to form and are remarkable in their variety.',
+          tip: 'Bring a jacket — the cave is much cooler than outside. The path is paved but uneven in places, with some low ceilings. Allow 40-60 minutes for the walk. Entry 4,000 won.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gimnyeong & Woljeongri Beaches',
+          text: 'Drive to the north coast\'s best beaches. Gimnyeong Beach has turquoise water, white sand, and a calm swimming lagoon. Adjacent Woljeongri Beach is Jeju\'s Instagram-famous strip — a row of colourful cafes facing a shallow emerald lagoon with white sand. The north coast beaches are more sheltered than the south, making them ideal for swimming and relaxing. Rent a stand-up paddleboard or kayak from the beach rental shops.',
+          tip: 'Woljeongri\'s cafes are stylish but tourist-priced. The beach itself is free and beautiful — bring your own drinks and food for a budget-friendly afternoon.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Hallim & West Coast Sunset',
+          text: 'Drive west along the north coast to Hallim for a sunset view over the sea toward the offshore volcanic islands. The west coast has excellent seafood restaurants, particularly for grilled mackerel and raw fish. Try Hallim\'s local speciality — jeonbok-juk (abalone porridge) at a harbourside restaurant as the sun sets over the East China Sea.',
+          tip: 'The west coast gets the best sunsets on Jeju. The Hallim and Hyeopjae beach area is particularly scenic with the volcanic islands of Biyangdo visible offshore.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Oreum Hiking & Rural Jeju',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Oreum (Volcanic Cone) Hike',
+          text: 'Jeju has over 360 parasitic volcanic cones (oreum) scattered across the island — small cone-shaped hills formed by minor eruptions. Hike Darangshi Oreum (382m) for panoramic views from its grassy crater rim, or Yongmeori Coast for dramatic coastal cliffs carved by waves into layered sedimentary rock. Each oreum offers a different perspective on Jeju\'s volcanic landscape and most take only 30-60 minutes to summit.',
+          tip: 'Darangshi Oreum is one of the most scenic — the crater is perfect and the views extend to Hallasan and the sea. Start early to avoid the midday heat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rural Jeju & Green Tea Fields',
+          text: 'Drive through Jeju\'s interior to see the rural landscape — stone wall-lined fields, tangerine orchards, and horse farms. Visit the Osulloc Tea Museum and green tea plantation, where rows of manicured tea bushes stretch across the hillside. The museum is free and includes a tea shop serving matcha desserts and freshly brewed green tea. The surrounding area is dotted with quirky museums and galleries.',
+          tip: 'Osulloc is free and has excellent matcha ice cream and green tea cake. The plantation viewing area behind the museum is the most scenic spot for photos.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Hyeopjae Beach & Stargazing',
+          text: 'Watch the sunset at Hyeopjae Beach on the west coast — white sand, turquoise water, and the volcanic island of Biyangdo on the horizon. After dark, Jeju\'s relatively low light pollution makes for excellent stargazing, especially on the south coast or the mountain slopes. On clear nights, the Milky Way is visible from elevated locations.',
+          tip: 'For the best stargazing, drive to the 1100 Altitude Wetland road on the slopes of Hallasan. The high elevation and darkness provide Jeju\'s clearest night sky.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Udo Island & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Udo Island Day Trip',
+          text: 'Take the ferry from Seongsan to Udo Island (15 minutes) and spend the morning circling this small volcanic island by scooter or electric bike. Stop at Sanho Beach (crushed coral sand), the black stone Geommeolle Beach, the lighthouse viewpoint, and the haenyeo diving areas. Udo is quieter and slower than the main island — a perfect final-day excursion. Try the famous peanut ice cream made from Udo-grown peanuts.',
+          tip: 'Return ferries run until late afternoon. Udo is small (6km circumference) — allow 3-4 hours to circle the island with stops. Bring sunscreen — the island is exposed.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Jeju Shopping & Souvenirs',
+          text: 'Return to Jeju City for last-minute shopping. Pick up hallabong tangerines (in season), Jeju green tea products from Osulloc, haenyeo-themed crafts, and the famous Jeju dol hareubang (stone grandfather statues) in miniature. Dongmun Market has the best selection and prices. Try a final round of street food — odeng (fish cake soup), tteokbokki, and hotteok (sweet filled pancakes).',
+          tip: 'Hallabong tangerines are in season November to April and make excellent gifts. Dried hallabong chips are available year-round. Vacuum-packed black pork can be carried home.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Departure & Farewell',
+          text: 'Return the rental car to Jeju Airport and fly to Seoul (1 hour), Busan, or other Korean cities. Alternatively, take the overnight ferry to the mainland for a different perspective on Jeju as the island\'s volcanic silhouette recedes into the distance. Jeju is one of those rare islands that rewards a full week — there is always another oreum to climb, another beach to find, and another meal to eat.',
+          tip: 'Return rental cars at least 2 hours before your flight — the airport area can be congested. Domestic flights from Jeju are frequent and cheap if booked in advance.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Rent a car', text: 'A rental car is the most efficient way to explore Jeju — public transport is limited outside the cities. Small cars cost from 30,000-50,000 won per day. Split between 2-4 travelers, this is cheaper than taxis.' },
+  { title: 'Free natural attractions', text: 'Many of Jeju\'s best experiences are free — sunrise at Seongsan (entry 5,000 won), hiking Hallasan trails, walking the Olle Trail, beach time, and watching haenyeo divers. Budget for a few paid caves and museums.' },
+  { title: 'Eat local, not tourist', text: 'Avoid tourist restaurants near major attractions. Seek out local restaurants in villages and residential areas for authentic food at half the price. Korean BBQ costs 10,000-15,000 won at local spots vs 25,000+ at tourist restaurants.' },
+  { title: 'Stay in pensions', text: 'Jeju has affordable pensions (Korean-style guesthouses) from 40,000-70,000 won per night. Many have kitchens for self-catering and are located in scenic areas away from the tourist zones.' },
+  { title: 'Pack lunches for hikes', text: 'Buy kimbap (seaweed rice rolls) from convenience stores or market stalls for 2,500-4,000 won — perfect hiking food. Fill water bottles at your accommodation or from free public water fountains.' },
+  { title: 'Jeju visa-free entry', text: 'Some nationalities that normally require visas for South Korea can enter Jeju visa-free for up to 30 days. Check if this applies to your passport — it could save time and fees.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$25–45', midrange: '$60–120', splurge: '$150+', notes: 'Hostels & pensions → guesthouses → resorts' },
+  { category: 'Food', budget: '$12–25', midrange: '$25–50', splurge: '$60+', notes: 'Konbini & markets → restaurants → black pork & seafood' },
+  { category: 'Transport', budget: '$10–20', midrange: '$25–40', splurge: '$50+', notes: 'Bus → rental car (shared) → private car & driver' },
+  { category: 'Activities', budget: '$5–15', midrange: '$15–40', splurge: '$60+', notes: 'Hiking (free) → caves & museums → diving & tours' },
+  { category: 'Entry Fees', budget: '$3–10', midrange: '$10–20', splurge: '$20–40', notes: 'Most sites very affordable' },
+  { category: 'Daily Total', budget: '$40–80', midrange: '$130–260', splurge: '$350+', notes: 'Budget backpacker → comfortable mid → luxury resort' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Jeju offers visa-free entry for many nationalities (up to 30 days) even if mainland Korea requires a visa',
+      'Domestic flights from Seoul to Jeju take 1 hour and do not require passport for Korean residents',
+      'International visitors need passport for all domestic flights within South Korea',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Jeju is very safe with excellent medical facilities in Jeju City and Seogwipo',
+      'Hallasan hike requires preparation — weather changes rapidly and mountain rescue is limited',
+      'Ocean currents can be strong — swim only at designated beaches with lifeguards',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'A rental car is strongly recommended — public buses exist but are infrequent for coastal sites',
+      'International driving permits are accepted. Roads are well-maintained with clear signage',
+      'Jeju is about 73km east-west — you can drive across the island in 90 minutes without stops',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile coverage is excellent across the island, including most hiking trails',
+      'WiFi available at virtually all accommodation, cafes, and restaurants',
+      'Download Naver Map (superior to Google Maps in Korea) for driving navigation and real-time traffic',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: KRW (Korean Won). Cards accepted at most places — carry cash for markets and small restaurants',
+      'ATMs at convenience stores (CU, GS25, 7-Eleven) accept international cards',
+      'Tipping is not customary — prices include service',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Hiking boots for Hallasan, comfortable shoes for oreum hikes, sandals for beaches',
+      'Rain jacket — Jeju gets more rainfall than the mainland, especially June-September',
+      'Warm layers for Hallasan summit — temperatures drop dramatically with altitude, even in summer',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect the Haenyeo', text: 'The haenyeo (sea women) divers are UNESCO-listed cultural treasure holders. Watch from a respectful distance, do not interrupt their work, and do not touch their catch or equipment. If they sell seafood directly, buying supports their livelihood and tradition.' },
+  { icon: '🌍', title: 'Volcanic Landscape Protection', text: 'Do not remove rocks, lava, or geological samples from any site — it is illegal and damages the UNESCO-protected landscape. Stay on marked trails in volcanic areas and do not enter restricted cave sections.' },
+  { icon: '📸', title: 'Photography Tips', text: 'Jeju is exceptionally photogenic but respect private property and agricultural land. Do not trample crops or tangerine orchards for photos. Drone use requires registration with Korean authorities and is restricted near airports and military areas.' },
+  { icon: '🗣', title: 'Jeju Dialect', text: 'Jeju has its own distinct dialect (Jejueo) — so different from standard Korean that it is classified as a separate language by UNESCO. Older residents may speak Jejueo, which even mainland Koreans struggle to understand. Standard Korean and basic English work fine for visitors.' },
+  { icon: '🤝', title: 'Support Local Communities', text: 'Buy tangerines, green tea, and seafood directly from local producers. Stay at family-run pensions rather than chain hotels. Eat at haenyeo restaurants where the women sell their own catch — the freshest seafood on the island.' },
+  { icon: '🕐', title: 'Weather Awareness', text: 'Jeju weather is notoriously changeable — the island sits in the path of Pacific weather systems. Always carry a rain layer. Hallasan can be clear at the base and foggy at the summit. Check forecasts before hiking and accept that some plans may need to flex.' },
+];
+---
+
+<CityGuideLayout
+  title="Jeju Island Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Jeju Island guide for young travelers. Hallasan volcano, haenyeo divers, and volcanic landscapes with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/jeju-island-hero.webp"
+  heroFlag="🇰🇷"
+  heroCountry="South Korea"
+  heroRegion="East Asia"
+  heroCity="Jeju Island"
+  heroSubtitle="A volcanic island where Korea's highest mountain rises from subtropical shores, legendary women divers harvest the sea, and lava tubes wind beneath emerald landscapes."
+  heroPills={["3-Day Adventure", "Volcanic", "Apr – Jun Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Jeju is moderately priced by Korean standards — car rental and accommodation are the main costs, while food and attractions are very affordable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Jeju Island has a distinct culture, dialect, and identity within Korea. Its volcanic landscape, maritime heritage, and the remarkable haenyeo diving women make it unlike anywhere else on the peninsula."
+  ctaCity="Jeju Island"
+  ctaText="Find travel companions to explore Jeju together on roammate — split car rental costs, share hiking adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PEN (Sol) / BOB (Boliviano)', detail: 'Depends on which side' },
+  { icon: '🗣', label: 'Language', value: 'Spanish / Aymara / Quechua', detail: 'Limited English' },
+  { icon: '🕐', label: 'Timezone', value: 'PET (UTC-5) / BOT (UTC-4)', detail: 'Peru / Bolivia sides' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: 'Dry season, cold but clear' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–45 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Check both Peru & Bolivia', detail: 'Border crossing required' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Uros Floating Islands & Puno',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Uros Floating Islands',
+          text: 'Take an early boat from Puno harbour to the Uros floating islands, one of the most extraordinary human habitats on Earth. The islands are constructed entirely from totora reeds harvested from the lake shallows, layered and re-layered as the bottom layers decompose. The Uros people have lived on these islands for centuries, originally to escape Inca aggression. Walk carefully on the spongy surface, visit a family home, and ride a traditional reed boat between islands. The light on the vast lake at dawn is ethereal.',
+          tip: 'Book a small-group tour or negotiate directly with boat captains at Puno harbour — avoid the large tour boats that rush through in 45 minutes. Spend at least 2 hours.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Puno Waterfront & Market',
+          text: 'Return to Puno and explore the lakeside town. The central market sells alpaca clothing, dried quinoa, and medicinal herbs. Walk to the Mirador Kuntur Wasi viewpoint for panoramic views over the city and the vast lake stretching to the horizon. Puno is the folklore capital of Peru with more traditional dances than any other city — the Museo Carlos Dreyer has exhibits on local culture and pre-Inca civilisations. Have lunch at a market comedor for fresh trucha (lake trout) and quinoa soup.',
+          tip: 'Puno is at 3,830m — higher than Cusco. If you have not acclimatised, take it very easy. The dry air and intense sun at altitude dehydrate you quickly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Sunset & Trucha Dinner',
+          text: 'Walk along the lake promenade as the sun sets over Titicaca — the colours reflected on the vast body of water are extraordinary, shifting from gold to purple as darkness falls. The lake is the highest navigable body of water in the world at 3,812m and covers 8,372 square kilometres, straddling the Peru-Bolivia border. Eat trucha frita (fried trout) at a lakeside restaurant — the fish is pulled from the lake daily and served with potatoes, rice, and salad. Puno\'s evenings are bitterly cold, so bring warm layers.',
+          tip: 'Night temperatures in Puno drop below freezing — bring a warm hat, gloves, and thermal layers. Many budget hotels lack heating, so a sleeping bag liner is useful.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Uros Floating Islands & Taquile',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Uros Floating Islands',
+          text: 'Depart Puno harbour at dawn for the Uros floating islands, 6km offshore. These extraordinary reed islands have been home to the Uros people for centuries — constructed entirely from totora reeds that must be constantly replenished as the lower layers decompose in the water. Walk on the spongy surface, enter a family dwelling, and learn how the islands are built and maintained. Ride a traditional balsa de totora (reed boat) between islands. The scale of Lake Titicaca becomes apparent from the water — it stretches to the horizon in every direction.',
+          tip: 'The Uros communities nearest to Puno are the most touristic. Ask your boat captain to visit islands further from the harbour for a more authentic experience.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Taquile Island',
+          text: 'Continue by boat to Taquile Island, a 35km ride from the Uros. Taquile is a real island with stone terraces, ancient ruins, and a community of 2,200 people known for their extraordinary textile traditions — UNESCO-recognised as an Intangible Cultural Heritage. The men knit colourful woollen caps that indicate their marital status, while the women weave belts and blankets. Climb the 533 stone steps from the dock to the main plaza at the summit for a stunning 360-degree view of the deep blue lake and the snow-capped Cordillera Real on the Bolivian horizon.',
+          tip: 'The 533-step climb from the dock is brutal at 3,950m — take it extremely slowly. Bring water and snacks. The thin air makes every step feel like ten.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Puno & Dinner',
+          text: 'The boat ride back to Puno takes about 3 hours and passes through golden late-afternoon light reflecting off the vast lake surface. Arrive back in Puno as evening falls and find a restaurant on Calle Lima — the main pedestrian street — for trucha a la plancha (grilled trout) and a warming sopa de quinoa. Puno\'s evenings are freezing cold but the pedestrian streets have a lively atmosphere with folk music drifting from doorways and vendors selling hot api (purple corn drink) and empanadas.',
+          tip: 'The boat ride back from Taquile can be rough in the afternoon wind. Sit towards the stern for a smoother ride and bring a warm jacket — it is cold on the water.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Amantaní Island Homestay',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Boat to Amantaní Island',
+          text: 'Take a morning boat from Puno to Amantaní Island, a 3-4 hour ride across the open lake. Amantaní is less visited than Taquile and offers homestay experiences with local families — you sleep in their homes, eat their food, and participate in daily life. The island has no cars, no hotels, and minimal tourism infrastructure. The families rotate hosting guests to distribute income fairly across the community. Arrival involves walking up stone paths from the dock to the family\'s home on the terraced hillside.',
+          tip: 'Bring gifts for your host family — fruit, rice, sugar, or school supplies for children are appreciated. Cash payment goes to the community, not individual families.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pachatata & Pachamama Peaks',
+          text: 'After a home-cooked lunch with your host family, hike to the twin peaks of Pachatata (Father Earth) and Pachamama (Mother Earth) at the island\'s summit. The 360-degree view from the top encompasses the entire lake, the distant snow-capped Andes, and the island\'s ancient agricultural terraces cascading down to the water. The peaks hold pre-Inca temples still used for ceremonies during solstice celebrations. The walk takes about 2 hours round trip and the altitude (4,150m at the summit) makes it challenging but the panorama is the finest on Lake Titicaca.',
+          tip: 'The hike is moderate but the altitude is extreme — 4,150m at the summit. Carry water and take frequent breaks. The sunset from the top is spectacular if you time it right.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Homestay Dinner & Stargazing',
+          text: 'Return to your host family for a home-cooked dinner — typically quinoa soup, potatoes, lake fish, and herbal tea. After dinner, the family may invite you to a community gathering with traditional music and dancing. The highlight of an Amantaní evening is the stargazing — with no light pollution and the thin atmosphere at 3,900m, the night sky is extraordinary. The Milky Way arcs overhead with a clarity you have never experienced, and the Southern Cross is visible on the horizon.',
+          tip: 'Bring a headlamp — there is no street lighting on Amantaní. The temperature drops well below freezing at night, so extra layers and a sleeping bag liner are essential.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Sillustani Towers & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Return from Amantaní',
+          text: 'Say goodbye to your host family after a breakfast of bread, eggs, and coca tea. Walk back down to the dock for the morning boat back to Puno. The ride back passes through the calm morning waters with the Cordillera Real glowing pink on the Bolivian side. The homestay experience is the most authentic interaction with highland communities available on Lake Titicaca — the income directly supports families and the island school. Arrive back in Puno by late morning.',
+          tip: 'The morning boat is calmer than afternoon departures. Sit on the left side for the best views of the Bolivian mountains on the return journey.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Sillustani Funerary Towers',
+          text: 'Take a tour or taxi 34km north of Puno to Sillustani, a pre-Inca burial ground on a peninsula jutting into Lake Umayo. The site features chullpas — circular stone funerary towers up to 12 metres tall built by the Colla people before the Inca conquest. The towers held the mummified remains of nobility and were originally covered in smooth plaster. The setting is dramatic — the towers stand on a windswept bluff overlooking the jade-green lake with llamas and alpacas grazing among the ruins.',
+          tip: 'Sillustani is exposed and windy — bring a warm jacket and hat even on sunny days. Tours from Puno cost 30-40 soles and take about 3 hours including transport.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Puno Farewell & Onward Travel',
+          text: 'Return to Puno for a final evening meal of trucha and quinoa. If heading to Bolivia, the border crossing at Desaguadero or the more scenic Copacabana route can be done the next morning. Night buses to Cusco depart from Puno\'s terminal and take 6-7 hours on a comfortable Cruz del Sur or Inka Express service. The route from Puno to Cusco passes through the Altiplano at over 4,000m with stops at La Raya pass (4,335m) and the town of Andahuaylillas.',
+          tip: 'The Puno to Cusco tourist bus (Inka Express, $50) stops at Andahuaylillas, Raqchi, and La Raya pass — far more interesting than the direct night bus if you have the time.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival in Puno & Lake Views',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival & Acclimatisation',
+          text: 'Arrive in Puno and take the first day gently. At 3,830m, Puno is higher than Cusco and altitude sickness is very common. Check into your accommodation, drink coca tea, and take a slow walk along the lake promenade. The sheer scale of Lake Titicaca is immediately impressive — the deep blue water stretches to the horizon with snow-capped mountains on the Bolivian side. Rest frequently and eat lightly during your first hours at altitude.',
+          tip: 'If arriving from sea level, do not underestimate the altitude. Puno at 3,830m can cause severe symptoms. Rest, hydrate, and avoid exertion for the first 12 hours.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mirador Kuntur Wasi & City Walk',
+          text: 'Walk to the Mirador Kuntur Wasi, a viewpoint above the city with a large condor statue and panoramic views over Puno, the harbour, and the lake. The climb is moderate but demanding at altitude. Descend through the city to explore the central market and the main plaza with its colonial cathedral. Puno is not a beautiful city architecturally, but it has authentic highland character — the market sells dried llama foetuses for Pachamama offerings alongside practical goods and vibrant textiles.',
+          tip: 'Take the viewpoint climb very slowly. If you feel dizzy or nauseous, descend immediately. The afternoon sun at 3,830m is deceptively strong — wear sunscreen and a hat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Calle Lima & Trucha Dinner',
+          text: 'Walk the pedestrian section of Calle Lima, Puno\'s main commercial street with shops, restaurants, and folk music venues. Try trucha frita with papas huayro (native potatoes) and quinoa soup at a local restaurant. Puno is the folklore capital of Peru and often has impromptu musical performances in the streets. The cold evening air drives everyone indoors early — warm up with a glass of api, a thick hot drink made from purple corn, cinnamon, and cloves.',
+          tip: 'Puno nights drop below freezing year-round. Many budget hotels lack heating — bring thermals and a sleeping bag liner. Hot showers are not always reliable.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Uros Floating Islands',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Dawn Boat to Uros Islands',
+          text: 'Depart Puno harbour at dawn for the Uros floating islands, 6km offshore. The early morning light on the lake is magical — mist rises off the water and the reed islands glow golden. The Uros people have lived on these constructed islands for centuries, originally fleeing Inca and Colla aggression. Each island is built from layers of totora reeds that are constantly replenished as the bottom layers decompose. Walk on the spongy surface, enter a family home, and learn the construction techniques directly from the residents.',
+          tip: 'Avoid the cheapest large group tours that spend 30 minutes on one island. Negotiate with a boat captain for a 3-hour tour that visits 2-3 islands including outer ones further from Puno.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Traditional Reed Boat Ride',
+          text: 'Ride between islands on a traditional balsa de totora — a reed boat with a curved prow that is the iconic image of Lake Titicaca. The boats are still built by hand and used for fishing, transport, and now tourism. The ride is peaceful and offers views across the vast lake to the mountains on the horizon. Visit a second island to see the school, the watchtower, and the solar panels that now power some island homes. The Uros are navigating modernity while maintaining their unique lake-dwelling culture.',
+          tip: 'Bring small gifts if you visit the school — notebooks, pens, and colouring supplies are appreciated. Do not give sweets to children.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Puno & Folklore Show',
+          text: 'Return to Puno and attend a traditional folklore show at one of the peñas (folk music venues) on Calle Lima. Puno has more registered traditional dances than any other Peruvian city — the Diablada (Devil Dance) and Morenada are the most famous, performed in elaborate costumes with brass bands. The shows are lively and authentic, accompanied by food and drinks. Puno\'s Fiesta de la Candelaria in February is one of the largest folk festivals in South America.',
+          tip: 'Peña shows typically start at 8pm and cost 20-30 soles including a drink. They fill up quickly — arrive early for a good seat near the stage.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Taquile Island',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Boat to Taquile Island',
+          text: 'Take a morning boat to Taquile Island, a 2.5-hour ride across the open lake. Taquile is a real island with 2,200 permanent residents known for their UNESCO-recognised textile traditions. The men knit colourful woollen caps — a red cap indicates a married man, a half-red cap indicates he is single. The women weave intricate belts and blankets. Climb the 533 stone steps from the dock to the main plaza at the summit, passing through ancient agricultural terraces and stone archways.',
+          tip: 'The 533 steps at 3,950m are genuinely exhausting. Take 3-4 rest stops, drink water, and do not rush. The view from the top makes the climb worthwhile.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Community Lunch & Textile Traditions',
+          text: 'Eat lunch at one of the community-run restaurants at the top of the island — trucha and quinoa soup with a view over the endless blue lake. Browse the textile cooperative where islanders sell their handmade products directly. The quality of Taquile textiles is extraordinary — centuries of tradition have refined the techniques to an art form. Walk the island trails along the terraced hillsides, past pre-Inca ruins and stone gateways, with the Cordillera Real mountains visible on the Bolivian side.',
+          tip: 'Buy textiles directly from the cooperative — the proceeds go to the community. A hand-knitted hat takes days to make and costs 30-50 soles. Fair trade at its most direct.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Puno',
+          text: 'Take the afternoon boat back to Puno as the late light turns the lake surface to liquid gold. The 3-hour return ride is beautiful but cold — bring a warm jacket for the open-air boat. Arrive back in Puno for dinner at a lakeside restaurant. Try sopa de morón (barley soup), a highland staple that warms you from the inside. The streets around the market come alive in the early evening with food vendors selling anticuchos and api before the cold drives everyone indoors.',
+          tip: 'The return boat can be rough in afternoon winds. Sit near the centre for the most stable ride. Seasickness medication is worth taking if you are susceptible.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Amantaní Island Homestay',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Boat to Amantaní',
+          text: 'Take the morning boat to Amantaní Island, a 3-4 hour ride across the lake. Amantaní is larger and less visited than Taquile, with a community that offers authentic homestay experiences. You are assigned to a family who provides meals and accommodation in their home. The island has no cars, no hotels, and limited electricity. Walking up from the dock, the terraced hillsides and stone paths feel unchanged for centuries. Your host family will welcome you with coca tea and a warm meal.',
+          tip: 'Bring gifts for your host family — rice, fruit, sugar, cooking oil, or school supplies for children. The families are generous hosts on very modest incomes.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pachatata & Pachamama Peaks',
+          text: 'Hike to the twin peaks of Pachatata (Father Earth, 4,150m) and Pachamama (Mother Earth, 4,130m) for the finest panorama on Lake Titicaca. The 360-degree views encompass the entire lake, the Bolivian Cordillera Real, and the island\'s terraced slopes dropping to the deep blue water. Both peaks hold pre-Inca temples still used for solstice ceremonies. The hike takes about 2 hours round trip and the altitude makes it challenging, but the reward is one of the most spectacular viewpoints in the Andes.',
+          tip: 'Time the hike to arrive at the peak for sunset — the light across the lake and mountains is extraordinary. Bring a headlamp for the walk back in the dark.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Homestay Dinner & Community Night',
+          text: 'Return to your host family for a home-cooked dinner of quinoa soup, potatoes, and fried trout from the lake. After dinner, the community often organises a gathering in the meeting hall with traditional music and dancing — visitors are encouraged to join in. Costumes may be provided. The night sky over Amantaní is extraordinary — zero light pollution at 3,900m creates stargazing conditions that rival anywhere on Earth. The Milky Way is a visible band across the sky.',
+          tip: 'Sleeping conditions are basic but warm — thick blankets and alpaca wool covers are provided. The silence and stars make up for any lack of comfort.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Border Crossing & Copacabana',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Return to Puno & Border Crossing',
+          text: 'Take the morning boat back to Puno and catch a bus to Copacabana on the Bolivian side of the lake. The scenic route runs along the lakeshore through Yunguyo (Peru border) and enters Bolivia at Kasani. The border crossing is straightforward — exit stamp from Peru, walk across the line, entry stamp from Bolivia. The landscape shifts subtly — the same high-altitude terrain but drier and more remote on the Bolivian side. Arrive in Copacabana after about 4-5 hours from Puno.',
+          tip: 'Check Bolivian visa requirements before travelling — some nationalities need a visa. US citizens pay $160 for a tourist visa at the border. Bring passport photos and cash in USD.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Copacabana Town & Cerro Calvario',
+          text: 'Explore Copacabana, a small lakeside town dominated by its Moorish-style cathedral housing the Virgen de Copacabana, Bolivia\'s most important religious icon. The town has a relaxed atmosphere with waterfront restaurants, colourful boats, and views across the lake to Isla del Sol. Climb Cerro Calvario, the hill above town with 14 stations of the cross, for a panoramic view over the lake, the town, and the mountains. The climb takes 30 minutes and the views are worth the effort.',
+          tip: 'Copacabana is Bolivia\'s most important pilgrimage site. The town is much cheaper than the Peruvian side — meals cost half the price and accommodation is very affordable.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Trucha & Sunset',
+          text: 'Eat dinner at one of the waterfront restaurants on the main beach. Trucha (trout) is the speciality — grilled, fried, or baked and served with rice and salad for around 25 bolivianos ($3.50). Watch the sunset over the lake from the beach promenade — Copacabana faces west and the sunsets are spectacular, with the sun dropping behind the lake and the mountains turning purple. The town is small and safe in the evening, with a handful of bars and a mellow traveller atmosphere.',
+          tip: 'Bolivia is on BOT (UTC-4), one hour ahead of Peru. Adjust your watch when crossing the border. Bolivianos can be exchanged at money changers in Copacabana.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Isla del Sol',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Boat to Isla del Sol (South)',
+          text: 'Take an 8:30am boat from Copacabana to the southern end of Isla del Sol — the island where, according to Inca mythology, the sun god Inti was born and the first Inca emperor Manco Cápac emerged from the lake. The boat ride takes 1.5 hours across crystal-clear water with views of the Cordillera Real on the horizon. Disembark at the Escalera del Inca (Inca Staircase) and climb the ancient stone steps to the Pilko Kaina Inca ruins at the top, a multi-storey palace complex with stunning lake views.',
+          tip: 'There is an ongoing land dispute between the north and south communities. As of 2024-2025, the south end is generally accessible but check current conditions before visiting.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Island Trek to Yumani',
+          text: 'Walk the ridgeline trail from the ruins to the village of Yumani, the main settlement on the south end. The trail follows the spine of the island with the lake on both sides — deep blue water stretching to the snow-capped mountains in every direction. The island is terraced and farmed with ancient techniques, and donkeys carry goods along the stone paths. Yumani has basic hostels and restaurants with panoramic lake views. The Fuente del Inca (Inca Fountain) still flows with clear water through stone channels near the village.',
+          tip: 'Bring lunch, water, and snacks — food options on the island are limited and expensive by Bolivian standards. The sun at 3,800m burns intensely — cover up.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset on the Island or Return',
+          text: 'Stay overnight on the island for the sunset and stargazing experience, or catch the 4pm boat back to Copacabana. If staying, the simple hostels in Yumani offer basic rooms with the most extraordinary lake views in Bolivia. The sunset from the island is unforgettable — the sun drops into the lake and the water turns from gold to deep indigo as stars begin to appear. With no light pollution, the night sky over Isla del Sol is one of the finest in South America.',
+          tip: 'Overnight accommodation on the island is basic — bring a sleeping bag liner and warm clothes. There is limited electricity and hot water is not guaranteed.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Sillustani & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Return to Puno (or Copacabana Morning)',
+          text: 'If staying on Isla del Sol, take the morning boat back to Copacabana and then a bus to Puno via the border. If already in Puno, take the morning to revisit the waterfront or explore any areas you missed. The border crossing back to Peru is the same process in reverse — exit Bolivia, enter Peru. The journey from Copacabana to Puno takes about 4 hours including the border stop. Arrive in Puno by late morning.',
+          tip: 'Keep your Bolivian exit and Peruvian entry stamps organised. The border officials are efficient but queues can form when tourist buses arrive simultaneously.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Sillustani Funerary Towers',
+          text: 'Visit Sillustani, 34km north of Puno — a pre-Inca burial ground on a windswept peninsula jutting into Lake Umayo. The chullpas (funerary towers) stand up to 12 metres tall and were built by the Colla people to house mummified nobility. The cylindrical towers are wider at the top than the base — an engineering achievement that defies intuition. The setting is hauntingly beautiful — the towers silhouetted against the jade-green lake with llamas and alpacas grazing among the ruins.',
+          tip: 'Sillustani tours from Puno cost 30-40 soles and take 3 hours. The site is exposed and windy — bring a warm jacket even on sunny days.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Onward Travel',
+          text: 'Return to Puno for a final trucha dinner and quinoa soup. Lake Titicaca is one of the most extraordinary places in South America — the combination of altitude, scale, indigenous culture, and stark beauty stays with you long after you leave. Night buses to Cusco and La Paz depart from Puno\'s terminal. The Inka Express tourist bus to Cusco ($50) departs in the morning and stops at interesting sites along the way, including the highest point of the journey at La Raya pass (4,335m).',
+          tip: 'Night buses to Cusco take 6-7 hours and to La Paz about 5-6 hours. Cruz del Sur runs the most comfortable services. Book in advance during peak season.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat at market comedores', text: 'Puno\'s central market serves almuerzo set lunches for 5-8 soles ($1.50-2.50). Trucha (trout) dishes cost 10-15 soles in local restaurants versus 30+ soles in tourist-facing places near the plaza.' },
+  { title: 'Negotiate boat tours directly', text: 'Walk to Puno harbour and negotiate directly with boat captains — you can arrange Uros and Taquile tours for 30-50 soles versus 80-120 soles through hotel desks. Form a group with other travellers to share costs.' },
+  { title: 'Homestays include meals', text: 'Amantaní homestays cost 30-50 soles including dinner, bed, and breakfast — one of the cheapest and most authentic accommodation options in all of Peru. The experience is far richer than any hotel.' },
+  { title: 'Bolivia is much cheaper', text: 'Crossing to Copacabana and Isla del Sol drops costs by 40-50%. Meals that cost $5 on the Peru side cost $2-3 in Bolivia. Accommodation is similarly cheaper. If you are on a tight budget, spend more days on the Bolivian side.' },
+  { title: 'Take colectivos to the border', text: 'Shared minivans from Puno to the Bolivian border at Yunguyo cost 10 soles. From Kasani to Copacabana is another 5 bolivianos. Much cheaper than tourist shuttle buses charging $15-20 for the same route.' },
+  { title: 'Bring warm layers to save money', text: 'Many travellers buy expensive alpaca clothing in Puno because they underestimated the cold. Bring proper thermals, a warm hat, and gloves from home to avoid emergency purchases at inflated tourist prices.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$4–10', midrange: '$15–35', splurge: '$50+', notes: 'Homestays → guesthouses → lakeside hotels' },
+  { category: 'Food', budget: '$5–10', midrange: '$10–25', splurge: '$30+', notes: 'Market meals → restaurants → hotel dining' },
+  { category: 'Transport', budget: '$3–8', midrange: '$8–20', splurge: '$25+', notes: 'Colectivos → tourist buses → private boats' },
+  { category: 'Activities', budget: '$5–15', midrange: '$15–40', splurge: '$50+', notes: 'Shared boats → small groups → private tours' },
+  { category: 'Entry Fees', budget: '$2–5', midrange: '$5–10', splurge: '$10–20', notes: 'Island landing fees and site entries' },
+  { category: 'Daily Total', budget: '$20–45', midrange: '$55–130', splurge: '$165+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Peru: most nationalities get 90-183 days visa-free. Bolivia: check requirements — some nationalities need a visa ($160 for US citizens)',
+      'The Yunguyo/Kasani border crossing is straightforward but bring passport photos and cash USD for Bolivian visas',
+      'Keep passport copies and travel insurance documents accessible at all times on both sides of the border',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Altitude at 3,830m is severe — acclimatise in Cusco first if possible. Coca tea and slow acclimatisation are essential',
+      'The sun at altitude is dangerous — apply SPF 50+ every 2 hours and wear a hat. Sunburn happens even on cloudy days',
+      'Travel insurance with altitude and evacuation coverage is essential — medical facilities in Puno are very basic',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Boats are the main transport on the lake — negotiate directly at Puno harbour for the best rates',
+      'Colectivos run between Puno and the border. Buses connect Copacabana to La Paz (4 hours)',
+      'Walking is the only transport on the islands — prepare for steep climbs at extreme altitude',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile coverage exists in Puno and Copacabana but is nonexistent on the islands',
+      'WiFi is available in Puno hotels but is very slow. Download offline maps and guides before island trips',
+      'Inform someone of your plans before heading to remote islands — communication is limited once on the water',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Peru uses PEN (Sol), Bolivia uses BOB (Boliviano). ATMs in Puno and Copacabana; carry cash for islands',
+      'Money changers at the border offer reasonable rates — compare 2-3 before exchanging',
+      'Island communities deal in cash only. Bring small bills in both currencies',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Extreme cold gear — thermals, fleece, down jacket, warm hat, gloves. Night temperatures drop well below freezing',
+      'Sleeping bag liner for homestays and basic island accommodation where blankets may not be enough',
+      'Sunscreen, sunglasses, lip balm with SPF, reusable water bottle, headlamp, and small gifts for host families',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect Indigenous Communities', text: 'The Uros, Taquile, and Amantaní communities are not theme parks — they are living cultures with ancient traditions. Ask before photographing people and their homes. Participate respectfully in any activities offered. Your visit should benefit the community, not exploit it.' },
+  { icon: '🌍', title: 'Leave No Trace', text: 'The islands are fragile ecosystems. Take all rubbish with you — there are no waste management systems on the floating islands or remote communities. Do not disturb the reed structures on the Uros islands. The lake is the lifeline of these communities — keep it clean.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Ask permission before photographing islanders, especially during cultural activities and in their homes. On Amantaní, ask your host family before photographing their home and belongings. A genuine connection matters more than a photo — put the camera down sometimes and be present.' },
+  { icon: '🗣', title: 'Language', text: 'Spanish is understood on all islands but Aymara is the first language on Amantaní and Quechua on Taquile. Learn basic greetings in both — "Kamisaraki" (Aymara hello) and "Allianchu" (Quechua hello) open doors. Your host family will appreciate any effort to communicate in their language.' },
+  { icon: '🤝', title: 'Support Homestay Communities', text: 'Homestays on Amantaní distribute income across the community through a rotation system. Respect this by using the assigned family rather than seeking alternatives. Bring useful gifts, pay the agreed rate, and write a positive review — tourism income is critical for these remote communities.' },
+  { icon: '🕐', title: 'Embrace the Pace', text: 'Lake Titicaca operates on its own timescale. Boats leave when they are full, meals are served when ready, and the islands have no concept of rush. Embrace the slowness — it is part of the experience and a window into a way of life that has persisted for centuries at the roof of the world.' },
+];
+---
+
+<CityGuideLayout
+  title="Lake Titicaca Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Lake Titicaca guide for young travelers. Floating islands, homestays, and border-crossing adventures with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/lake-titicaca-hero.webp"
+  heroFlag="🇵🇪"
+  heroCountry="Peru / Bolivia"
+  heroRegion="South America"
+  heroCity="Lake Titicaca"
+  heroSubtitle="The highest navigable lake in the world at 3,812m — floating reed islands, indigenous homestays, and ancient cultures spanning the Peru-Bolivia border."
+  heroPills={["7-Day Lake","Cultural","May – Sep Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Lake Titicaca is one of the most affordable destinations in South America — homestays, market food, and shared boats keep costs remarkably low."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Lake Titicaca is home to ancient indigenous communities who have maintained their traditions for centuries at the roof of the world — visit with deep respect and genuine curiosity."
+  ctaCity="Lake Titicaca"
+  ctaText="Find travel companions to explore Lake Titicaca together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'NZD (New Zealand Dollar)', detail: 'Cards accepted almost everywhere' },
+  { icon: '🗣', label: 'Language', value: 'English / Te Reo Māori', detail: 'English universally spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'NZST (UTC+12)', detail: 'NZDT (UTC+13) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'Dec – Mar', detail: 'Warm, long days — wind year-round' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$45–90 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'NZeTA or visa-free', detail: 'Check requirements for your nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Wellington Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Te Papa & the Waterfront',
+          text: 'Start at Te Papa Tongarewa — New Zealand\'s national museum on the Wellington waterfront. Te Papa is one of the best free museums in the Southern Hemisphere, with interactive exhibits on Māori culture, natural history, the Gallipoli campaign, and the Colossal Squid specimen. The building itself sits on base isolators to survive earthquakes. Allow two to three hours to cover the key galleries. Afterwards, walk along the waterfront promenade past the Writers Walk sculptures and the Wharewaka Function Centre towards Frank Kitts Park.',
+          tip: 'Te Papa opens at 10am and is free. Go straight to Level 4 for the Gallipoli exhibit and the nature galleries before school groups arrive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cable Car & Botanic Garden',
+          text: 'Walk up Lambton Quay to the Wellington Cable Car terminus. The iconic red funicular climbs 120 metres up the hillside in five minutes, delivering you to the Kelburn lookout with panoramic views across the harbour, CBD, and on clear days, the snow-capped Rimutaka Range. From the top, descend on foot through the Wellington Botanic Garden — 25 hectares of native bush, rose gardens, and a begonia house. The path winds downhill past the Carter Observatory and exits on Glenmore Street near the Bolton Street Cemetery, one of the oldest European burial grounds in New Zealand.',
+          tip: 'The cable car runs every 10 minutes. Buy a return ticket if you want to ride both ways, but walking down through the Botanic Garden is the better experience.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cuba Street & Craft Beer',
+          text: 'Head to Cuba Street — Wellington\'s bohemian heart. The pedestrianised strip is lined with independent cafes, vintage shops, street performers, and the iconic bucket fountain. Wellington is the craft beer capital of New Zealand, and Cuba Street is the epicentre: try Golding\'s Free Dive for a rotating tap list of local brews, or Fortune Favours for their own-brewed lagers and ales with food trucks. For dinner, Fidel\'s Cafe is a Cuba Street institution, or walk two blocks to Courtenay Place for a wider choice of restaurants and late-night bars.',
+          tip: 'Wellington is famously windy — dress in layers and bring a windbreaker even in summer. Cuba Street is sheltered by buildings and is one of the calmer spots in the city.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Te Papa, Cable Car & Cuba Street',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Te Papa Tongarewa Museum',
+          text: 'Begin at Te Papa Tongarewa on the waterfront — New Zealand\'s national museum and one of the finest free museums in the Southern Hemisphere. The Māori collection is extraordinary: the carved meeting house Te Hau ki Tūranga dates to the 1840s and is one of the oldest surviving wharenui. The natural environment galleries house the Colossal Squid specimen and an earthquake simulator. The Gallipoli exhibition uses giant-scale figures created by Weta Workshop to tell the story of the 1915 campaign with visceral emotional impact. Allow a full morning to do the museum justice.',
+          tip: 'Te Papa is free and opens at 10am. Arrive at opening to explore the Gallipoli and nature galleries before the midday crowds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wellington Cable Car & Botanic Garden',
+          text: 'Walk up Lambton Quay to the Cable Car terminus and ride the iconic red funicular 120 metres up to Kelburn. The views from the top sweep across the harbour, the Beehive parliament building, and Oriental Bay. From Kelburn, walk downhill through the Wellington Botanic Garden — 25 hectares of native bush, formal rose gardens, the Lady Norwood Rose Garden, and a duck pond. The path passes the Carter Observatory and winds through Bolton Street Memorial Park, one of Wellington\'s oldest cemeteries, before depositing you back in the city centre near the Parliamentary precinct.',
+          tip: 'The Cable Car runs every 10 minutes and costs around $10 NZD return. Walking downhill through the Botanic Garden is more rewarding than riding back down.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cuba Street & Craft Beer Scene',
+          text: 'Head to Cuba Street for Wellington\'s best evening atmosphere. The pedestrianised strip is the creative heart of the city — buskers, vintage shops, the famous bucket fountain, and a density of independent bars and restaurants unmatched in New Zealand. Wellington\'s craft beer scene rivals much larger cities: Golding\'s Free Dive offers a rotating list of 18 local taps, Fortune Favours brews on-site, and Garage Project\'s taproom on Aro Street is a 10-minute walk away. For dinner, try Loretta for modern New Zealand cuisine or Fidel\'s for a Cuba Street institution.',
+          tip: 'Wellington restaurants are compact and popular — book dinner for 7pm or later to avoid waits, especially on Friday and Saturday nights.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Zealandia, Mount Victoria & Parliament',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Zealandia Ecosanctuary',
+          text: 'Take the free Zealandia shuttle from the i-SITE visitor centre to New Zealand\'s groundbreaking urban ecosanctuary — a 225-hectare valley enclosed by a predator-proof fence where native wildlife has been reintroduced. Walk the 2-hour loop trail through regenerating forest to spot tuatara (the last surviving reptile from the age of dinosaurs), takahē (a flightless bird once thought extinct), kākā parrots, and hihi (stitchbirds). The dam loop and the upper reservoir trail give the best chances of wildlife encounters. Zealandia is the reason native birdsong has returned to suburban Wellington.',
+          tip: 'Book the guided tour for the best wildlife spotting — guides know exactly where the tuatara are basking and where the takahē are feeding.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mount Victoria Lookout',
+          text: 'Drive, bus, or walk (30 minutes from Oriental Bay) to the summit of Mount Victoria — the best 360-degree panorama in Wellington. At 196 metres, the lookout offers views of the entire harbour, the CBD skyline, the airport runway extending into the sea, the Hutt Valley, and the Rimutaka Range. On clear days you can see the South Island across Cook Strait. The area around the lookout was used as a filming location for the Shire in Peter Jackson\'s Lord of the Rings — a plaque marks the spot. Descend via the town belt trails through native bush back to Oriental Bay.',
+          tip: 'Walk up from Oriental Bay via the Alexandra Road path for the best approach — the views unfold gradually as you climb.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Parliament & Beehive Tour',
+          text: 'Walk to the Parliamentary precinct on Molesworth Street for a free guided tour of New Zealand\'s Parliament — one of the most accessible parliaments in the world. The Beehive (Executive Wing) is an iconic brutalist building designed by Sir Basil Spence, and the adjacent Parliament House is a neo-classical marble building where the House of Representatives sits. Tours run hourly and are free — you\'ll see the debating chamber, the Māori Affairs Select Committee room, and the underground Beehive bunker. Afterwards, walk to Thorndon for dinner — the neighbourhood has excellent restaurants including Ortega Fish Shack for seafood.',
+          tip: 'Free parliament tours run every hour from 10am to 4pm on weekdays and 10am to 3pm on Saturdays. No booking needed — just show up at the visitor entrance.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Waterfront, Markets & Sunset',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Harbourside Market & Waterfront',
+          text: 'If visiting on a Sunday, start at the Harbourside Market on the waterfront near Te Papa — Wellington\'s best weekly market with fresh produce, artisan bread, coffee roasters, and street food from around the world. Try the dumplings, fresh oysters, or a flat white from one of the specialty coffee stalls. On other days, walk the waterfront from Queens Wharf past the Rowing Club and along Oriental Parade — Wellington\'s most popular seaside walk. The 3km path runs from the CBD to Oriental Bay beach, passing public art installations and harbour views.',
+          tip: 'The Harbourside Market runs Sundays 7:30am–1pm. Arrive before 9am for the best selection and to beat the crowds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wellington Museum & City Gallery',
+          text: 'Visit the Wellington Museum in the restored Bond Store on Queens Wharf — a thoughtful museum telling the story of Wellington through Māori and European settler perspectives, maritime history, and the 1968 Wahine disaster. The building itself is a beautifully preserved 1892 brick warehouse. Walk across Civic Square to the City Gallery Wellington for contemporary New Zealand and international art — the gallery is free and hosts rotating exhibitions that range from video art to large-scale installations. The adjacent Wellington Central Library is a striking postmodern building worth seeing inside.',
+          tip: 'Both the Wellington Museum and City Gallery are free. The Museum\'s Wahine storm exhibit is particularly powerful and immersive.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset from Oriental Bay',
+          text: 'End your Wellington stay at Oriental Bay — the city\'s closest beach to downtown, a 10-minute walk from Cuba Street. The sandy crescent faces north-west and catches the evening light beautifully. In summer, locals swim, paddleboard, and picnic on the grass above the beach until late. For a final dinner, walk up to Mount Victoria\'s Majoribanks Street strip — Husk is excellent for cocktails, and Capitol for a relaxed dinner. Wellington\'s compact size means you\'re never more than 15 minutes\' walk from anywhere.',
+          tip: 'Oriental Bay faces west — perfect for sunset. The pohutukawa trees along the promenade flower red in December and January, adding to the summer atmosphere.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Te Papa & City Orientation',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Te Papa Tongarewa Museum',
+          text: 'Begin at Te Papa Tongarewa — New Zealand\'s national museum on the waterfront. Spend a full morning exploring the Māori galleries, the Colossal Squid, the earthquake house, and the Gallipoli exhibition created by Weta Workshop. Te Papa is one of the best free museums in the world and deserves at least three hours.',
+          tip: 'Arrive at opening (10am) to explore the key galleries before school groups and tour buses arrive after 11am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Waterfront Walk & Oriental Bay',
+          text: 'Walk the full length of Wellington\'s waterfront from Queens Wharf past the Wharewaka, along the Writers Walk sculpture trail, through Frank Kitts Park, and along Oriental Parade to Oriental Bay beach. The 3km route is flat and passes public art, cafes, and harbour views. Swim or paddleboard at Oriental Bay if the weather is warm.',
+          tip: 'The waterfront walk is flat and sheltered from the wind by buildings. It\'s the most pleasant walk in the city on any day.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cuba Street Exploration',
+          text: 'Explore Cuba Street\'s independent shops, cafes, and bars. Have dinner at one of the many restaurants — from Vietnamese to Mexican to modern New Zealand — and try your first Wellington craft beer at Golding\'s Free Dive or Fortune Favours.',
+          tip: 'Cuba Street is pedestrianised and sheltered. It\'s the best area for your first evening in Wellington.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Cable Car, Botanic Garden & Parliament',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cable Car & Botanic Garden',
+          text: 'Ride the iconic Wellington Cable Car from Lambton Quay to Kelburn. Walk through the 25-hectare Botanic Garden, passing the Lady Norwood Rose Garden, native bush sections, the duck pond, and the Carter Observatory. The downhill walk takes about an hour at a relaxed pace.',
+          tip: 'The Cable Car runs every 10 minutes. Walking downhill through the gardens is the best direction — ride up, walk down.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Parliament & Thorndon',
+          text: 'Take a free guided tour of New Zealand\'s Parliament — see the Beehive, the debating chamber, and the select committee rooms. Afterwards, explore Thorndon — Wellington\'s oldest suburb, with heritage wooden houses, Katherine Mansfield\'s birthplace museum, and excellent cafes.',
+          tip: 'Free parliament tours run hourly. Katherine Mansfield\'s birthplace on Tinakori Road is a small but beautifully preserved museum.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Courtenay Place Nightlife',
+          text: 'Head to Courtenay Place — Wellington\'s main entertainment strip. Start with dinner at one of the many restaurants, then explore the bars. Rogue & Vagabond has an excellent beer garden, and Havana Bar on Wigan Street is a Wellington institution for cocktails and live music.',
+          tip: 'Courtenay Place gets lively after 9pm on weekends. The Embassy Theatre nearby is the historic cinema where Lord of the Rings premiered.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Zealandia Ecosanctuary',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Zealandia Wildlife Sanctuary',
+          text: 'Spend a full morning at Zealandia — the 225-hectare predator-free ecosanctuary in the Karori valley. Walk the loop trails through regenerating native bush to spot tuatara, takahē, kākā, saddlebacks, and hihi. The dam and upper reservoir loop is the best route for wildlife encounters.',
+          tip: 'Book the guided tour — guides know exactly where the tuatara and takahē are on any given day.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Aro Valley & Garage Project',
+          text: 'Walk from Zealandia through the town belt to Aro Valley — Wellington\'s most alternative neighbourhood. Browse the eclectic shops and cafes on Aro Street, then visit Garage Project\'s taproom for one of New Zealand\'s most innovative craft breweries. Their Wild Workshop sour beers and hop-forward IPAs are exceptional.',
+          tip: 'Garage Project\'s taproom is open from 12pm daily. They brew over 100 different beers a year — ask for the current seasonal specials.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dinner in the City',
+          text: 'Wellington has more restaurants per capita than New York City. Tonight, try something special: Hiakai for indigenous Māori-inspired fine dining, or Hillside Kitchen & Cellar in Brooklyn for a seasonal tasting menu using local produce. Book in advance.',
+          tip: 'Wellington\'s best restaurants are small and popular. Book at least a week ahead for Hiakai or Hillside.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Mount Victoria & Museums',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mount Victoria Sunrise Walk',
+          text: 'Walk up Mount Victoria from Oriental Bay for the best 360-degree panorama in Wellington. At 196 metres, the lookout offers views of the harbour, CBD, airport, Hutt Valley, and on clear days the South Island. Parts of the surrounding bush were used as Hobbiton filming locations for Lord of the Rings.',
+          tip: 'The walk up takes about 30 minutes from Oriental Bay. Early morning gives the clearest views before cloud builds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wellington Museum & City Gallery',
+          text: 'Visit the Wellington Museum in the Bond Store on Queens Wharf for maritime history and the powerful Wahine disaster exhibit. Then walk to City Gallery Wellington for contemporary art — free entry, rotating exhibitions of New Zealand and international artists.',
+          tip: 'Both museums are free. The Wellington Museum\'s Wahine exhibit is the standout — allow an hour.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Night at Weta Workshop',
+          text: 'Drive or bus to Miramar for the Weta Workshop Unleashed experience — the expanded visitor attraction at Peter Jackson\'s legendary special effects studio. See props, miniatures, and costumes from Lord of the Rings, Avatar, and other blockbusters. The evening session is less crowded.',
+          tip: 'Book Weta Workshop tickets online in advance. The Miramar peninsula also has good fish and chips at the Maranui Cafe.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Makara Beach & South Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Red Rocks Seal Colony',
+          text: 'Drive or bus to Owhiro Bay on Wellington\'s south coast and walk the 45-minute coastal trail to the Red Rocks seal colony. Between May and October, up to 100 New Zealand fur seals haul out on the rocky shore. The red-coloured pillow lava rocks are 200 million years old. The wild south coast is a stark contrast to the sheltered harbour.',
+          tip: 'Keep at least 10 metres from the seals — they are wild animals and can move surprisingly fast. The walk is exposed to wind and spray.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Makara Beach & Wind Turbines',
+          text: 'Drive over to Makara Beach on the west coast — a wild, remote-feeling beach just 30 minutes from the CBD. The Makara Walkway passes the West Wind wind turbine farm on the ridgeline above. The rugged coastline and crashing Tasman Sea waves feel a world away from urban Wellington.',
+          tip: 'Makara Beach has no facilities — bring water and snacks. The wind is almost always strong here.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lyall Bay Sunset',
+          text: 'End the day at Lyall Bay — a surfer-friendly beach near the airport where planes land dramatically low overhead. Watch the sunset from the beach or grab fish and chips from Spruce Goose and sit on the seawall. The combination of surf, planes, and sunset is uniquely Wellington.',
+          tip: 'Lyall Bay faces south-west and catches great sunsets. It\'s also the best surfing beach in Wellington.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Matiu / Somes Island Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ferry to Matiu / Somes Island',
+          text: 'Take the East by West ferry from Queens Wharf to Matiu / Somes Island — a predator-free wildlife sanctuary in the middle of Wellington Harbour. The island served as a quarantine station in the 19th century and an internment camp during both World Wars. Walk the loop trail through regenerating bush to spot little blue penguins, tuatara, wētā, and skinks. The island is managed by DOC and has composting toilets but no shops.',
+          tip: 'Check the ferry timetable in advance — there are usually only 2-3 departures per day. Bring all food and water with you.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Island Exploration & Lighthouse',
+          text: 'Explore the island\'s WWII gun emplacements, the historic lighthouse (the last lighthouse built in Wellington Harbour), and the quarantine buildings. The loop walk takes about 90 minutes. Picnic on the northern end of the island with views back to the CBD skyline and the Hutt Valley. Return on the afternoon ferry.',
+          tip: 'Matiu / Somes Island has no shade in many areas — bring sun protection and a hat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Petone Waterfront',
+          text: 'Back on the mainland, take the train or drive to Petone — Lower Hutt\'s waterfront suburb with a revitalised Jackson Street strip of cafes, bars, and restaurants. Petone has a more relaxed, suburban vibe than central Wellington. Try the Garage Project Kingsland for dinner and beers, or Comes & Goes for excellent coffee and food.',
+          tip: 'Petone is a 15-minute train ride from Wellington Station. Jackson Street has become a dining destination in its own right.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Markets, Beaches & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Harbourside Market & Last Coffee',
+          text: 'If your last day falls on a Sunday, visit the Harbourside Market for fresh produce, dumplings, oysters, and artisan coffee. Otherwise, revisit your favourite Cuba Street cafe for a final flat white — Wellington takes its coffee extremely seriously and has some of the best specialty roasters in the country, including Flight Coffee, Peoples Coffee, and Customs by Coffee Supreme.',
+          tip: 'Wellington flat whites are exceptional. Locals will argue passionately about which roaster is best — try at least three during your visit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Scorching Bay & Shelly Bay',
+          text: 'Drive around the Miramar peninsula to Scorching Bay — a sheltered north-facing beach with calm swimming water and a classic Kiwi beach cafe. Continue around to Shelly Bay, a former military base being redeveloped, for views across the harbour entrance. The peninsula road passes through the suburb of Seatoun, which has a village-like feel.',
+          tip: 'Scorching Bay is the calmest swimming beach in Wellington — warm, sheltered, and family-friendly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'For your final Wellington evening, return to the city centre for a farewell dinner. Logan Brown on Cuba Street is one of Wellington\'s finest restaurants, housed in a former bank building. Or keep it casual with a final round of Cuba Street craft beers and street food. Wellington is a city that rewards return visits — there is always more to discover.',
+          tip: 'Logan Brown is a special-occasion restaurant — book well in advance. For a more casual farewell, Loretta or Dragonfly are excellent.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free museums', text: 'Te Papa, Wellington Museum, and City Gallery are all free. Zealandia is the main paid attraction — book online for a discount. Wellington has more free cultural experiences per square kilometre than almost any city in New Zealand.' },
+  { title: 'Walk everywhere', text: 'Wellington\'s CBD is compact and walkable — you rarely need transport within the central city. Save on buses and taxis by walking between attractions. The waterfront, Cuba Street, and parliament are all within 15 minutes of each other.' },
+  { title: 'Cook at hostels', text: 'Wellington restaurants are excellent but not cheap. Stay at a hostel with a kitchen and shop at New World or Pak\'nSave supermarkets. A week of self-catering saves $100-200 NZD compared to eating out three meals a day.' },
+  { title: 'Happy hour craft beer', text: 'Wellington\'s craft beer bars run happy hours typically 4-6pm — pints drop from $12-14 NZD to $8-10 NZD. Golding\'s, Fortune Favours, and Little Beer Quarter all offer daily specials.' },
+  { title: 'Snapper card for transport', text: 'If you do need buses, a Snapper card gives discounted fares compared to cash. Useful for trips to Zealandia, the south coast, or Miramar/Weta Workshop.' },
+  { title: 'Free events and festivals', text: 'Wellington hosts numerous free events — check the Wellington.govt.nz events calendar. CubaDupa street festival, LUX light festival, and summer outdoor concerts are often free.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$25–50', midrange: '$60–120', splurge: '$150+', notes: 'Hostels → boutique hotels → luxury stays' },
+  { category: 'Food', budget: '$15–25', midrange: '$30–55', splurge: '$70+', notes: 'Self-catering → cafes → fine dining' },
+  { category: 'Transport', budget: '$0–10', midrange: '$10–25', splurge: '$40+', notes: 'Walking → bus → rental car' },
+  { category: 'Activities', budget: '$0–15', midrange: '$20–50', splurge: '$60+', notes: 'Free museums → Zealandia → Weta Workshop' },
+  { category: 'Coffee & Beer', budget: '$5–10', midrange: '$10–20', splurge: '$25+', notes: 'Flat whites and craft pints add up fast' },
+  { category: 'Daily Total', budget: '$45–110', midrange: '$130–270', splurge: '$345+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities need an NZeTA (New Zealand Electronic Travel Authority) — apply online before travel',
+      'An International Visitor Conservation and Tourism Levy (IVL) of $35 NZD applies',
+      'Keep a digital and physical copy of your passport and travel insurance',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'New Zealand has excellent public healthcare but travel insurance is essential for visitors',
+      'Wellington is very safe — normal city awareness applies at night around Courtenay Place',
+      'The sun is extremely strong due to thin ozone layer — wear SPF 50+ even on cloudy days',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'The CBD is compact and easily walkable — most attractions are within 20 minutes on foot',
+      'Metlink buses serve the wider Wellington region — Snapper card for discounted fares',
+      'The Interislander or Bluebridge ferry to the South Island departs from Wellington — book in advance',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a local SIM from Spark, Vodafone, or 2degrees at the airport — affordable data plans available',
+      'Free WiFi available at most cafes, the library, and Te Papa',
+      'Download offline maps — mobile coverage drops quickly outside the city in hill areas',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: NZD. Contactless payment accepted almost everywhere — New Zealand is nearly cashless',
+      'ATMs widely available. Visa and Mastercard universally accepted',
+      'Tipping is not expected in New Zealand but appreciated for exceptional service — round up or leave 5-10%',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Wellington is the windiest city in the world — a quality windbreaker is essential year-round',
+      'Layers are key — temperatures can swing 10°C in a day and rain can arrive without warning',
+      'Comfortable walking shoes for hills and bush trails. The city is built on steep terrain',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Te Reo Māori', text: 'Learn a few Māori greetings — kia ora (hello), ka pai (good/well done), and whānau (family) are used daily in New Zealand English. Place names are almost all Māori — learning pronunciation shows respect.' },
+  { icon: '🌍', title: 'Kaitiakitanga (Guardianship)', text: 'New Zealanders take environmental stewardship seriously. Leave no trace in natural areas, stay on tracks, and never disturb wildlife. The predator-free movement is a national mission — report any rat or stoat sightings to DOC.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Ask before photographing Māori cultural performances or carvings in meeting houses. Most outdoor locations are freely photographable. Drone regulations are strict near the airport and city centre — check CAA rules.' },
+  { icon: '🗣', title: 'Kiwi Culture', text: 'New Zealanders are friendly, understated, and egalitarian. Tall poppy syndrome means boasting is frowned upon. Kiwis appreciate genuine interest in their country and are generous with travel advice and hospitality.' },
+  { icon: '🤝', title: 'Support Local', text: 'Wellington\'s strength is its independent businesses — choose locally owned cafes, restaurants, and shops over chains. The Cuba Street area is almost entirely independent and reflects the city\'s creative character.' },
+  { icon: '🕐', title: 'Pace & Weather', text: 'Wellington\'s weather changes rapidly — locals say you can experience four seasons in one day. Pack for all conditions and embrace the wind as part of the Wellington character. The city rewards those who stay flexible.' },
+];
+---
+
+<CityGuideLayout
+  title="Wellington Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Wellington guide for young travelers. Culture, craft beer, nature with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/wellington-hero.webp"
+  heroFlag="🇳🇿"
+  heroCountry="New Zealand"
+  heroRegion="Oceania"
+  heroCity="Wellington"
+  heroSubtitle="New Zealand's compact capital — world-class museums, craft beer, wild coastlines, and more cafes per capita than New York City."
+  heroPills={["3-Day City","Culture & Nature","Dec – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Wellington is mid-range by New Zealand standards — many top attractions are free, but food and accommodation are the main expenses."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Wellington is creative, compact, and deeply connected to both Māori heritage and contemporary New Zealand culture. Approach with curiosity and you will find one of the friendliest capital cities in the world."
+  ctaCity="Wellington"
+  ctaText="Find travel companions to explore Wellington together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

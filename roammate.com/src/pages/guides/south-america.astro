@@ -28,18 +28,21 @@ const countries = [
         duration: '5–6 days',
         description: 'Cartagena\'s walled old city is pure magic — colonial buildings in every colour, street vendors selling arepas de huevo (COP$3,000), and salsa blasting from open doorways. Walk the walls at sunset (free), explore Getsemaní neighbourhood for street art and nightlife, and day trip to the Rosario Islands (COP$60,000–80,000 boat trip). Side trip to Minca in the Sierra Nevada (bus COP$15,000, 2 hrs) for coffee farms, waterfalls, and mountain hammock hostels at COP$30,000–40,000/night.',
         tip: 'Don\'t buy jewellery or emeralds from street sellers — the markup is absurd. For beaches, skip Bocagrande (dirty) and go to Playa Blanca or the islands.',
+        guides: ['cartagena'],
       },
       {
         title: 'Medellín, Coffee Country & Bogotá',
         duration: '10–12 days',
         description: 'Fly from Cartagena to Medellín (COP$80,000–150,000 on Viva Air). The city of eternal spring has reinvented itself — take the free walking tour through Comuna 13 (must-do), ride the cable car to Parque Arví (COP$6,300), and eat bandeja paisa (COP$15,000–20,000). Bus to Salento (COP$35,000, 6 hrs) for the Cocora Valley hike — the world\'s tallest palm trees in a misty Andean valley (free). Coffee farm tours: COP$25,000–40,000. Fly or bus to Bogotá — the Gold Museum (free Sundays), Monserrate hill (funicular COP$23,000), and the food scene in Usaquén.',
         tip: 'Medellín is at 1,500m altitude — perfect weather year-round. Bogotá is at 2,600m — bring a jacket and give yourself a day to acclimatise.',
+        guides: ['medellin', 'bogota', 'salento', 'cocora-valley'],
       },
       {
         title: 'Ecuador: Quito & Beyond',
         duration: '7–10 days',
         description: 'Fly from Bogotá to Quito ($80–150). Quito\'s old town is a UNESCO World Heritage Site — the Basílica del Voto Nacional ($2 to climb the towers) has the best views. Take the TelefériQo cable car ($8.50) up to 4,100m on Volcán Pichincha. Day trip to Otavalo indigenous market (bus $2.50, 2 hrs) — the biggest in South America. The equator line at Mitad del Mundo ($5) is a tourist trap but fun. If budget allows, the Galápagos ($1,000–1,500 for 5 days budget — expensive but life-changing). Otherwise, head to Baños for adventure sports and the Ruta de las Cascadas bike ride ($5 rental).',
         tip: 'Galápagos on a budget: fly from Guayaquil (cheaper than Quito), stay in town on Santa Cruz/Isabela, and take day tours instead of cruise boats.',
+        guides: ['quito', 'galapagos'],
       },
     ],
   },
@@ -63,18 +66,21 @@ const countries = [
         duration: '8–10 days',
         description: 'Fly from Quito/Guayaquil to Lima ($100–180). Lima is the gastronomic capital of South America — ceviche in Surquillo market (S/15–20), street food in Miraflores, and if you splurge once, try a S/45–60 menú at one of the world\'s top restaurants (Central, Maido). Explore Barranco\'s street art and Lima\'s colonial centre (free walking tour). Fly to Cusco (S/80–200 on Sky/JetSMART). Spend 2 days acclimatising to 3,400m — coca tea helps. Explore the Inca sites: Sacsayhuamán (Boleto Turístico S/130 covers 16 sites), San Pedro Market for fresh juices (S/5), and the chocolate museum.',
         tip: 'Altitude sickness in Cusco is real — arrive, drink coca tea, walk slowly, and don\'t plan anything strenuous for 48 hours.',
+        guides: ['lima', 'cusco'],
       },
       {
         title: 'Sacred Valley & Machu Picchu',
         duration: '5–7 days',
         description: 'Colectivo from Cusco to Ollantaytambo (S/10, 1.5 hrs). The Sacred Valley has Inca ruins without the Cusco crowds — Pisac ruins and market, Moray terraces, and Maras salt mines (S/15). For Machu Picchu, the budget route: train from Ollantaytambo to Aguas Calientes (PeruRail Expedition S/220–300 return) or the 2-day Salkantay Trek ($180–250 all-inclusive, a cheaper alternative to the classic Inca Trail at $650+). Machu Picchu entry: S/152 + Huayna Picchu S/200 extra. Arrive at opening (6am) for the iconic mist-clearing moment.',
         tip: 'The Inca Trail requires booking 4–6 months in advance and costs $650+. The Salkantay Trek is equally beautiful, cheaper, and bookable a few days ahead.',
+        guides: ['sacred-valley', 'machu-picchu'],
       },
       {
         title: 'Lake Titicaca, La Paz & Uyuni',
         duration: '10–12 days',
         description: 'Bus from Cusco to Puno (S/30–60, 6–7 hrs or luxury Cruz del Sur S/120). Lake Titicaca is the world\'s highest navigable lake at 3,812m. Visit the floating Uros Islands (S/5 boat, S/5 entry) and stay overnight on Amantaní or Taquile (S/30 including meals). Cross the border at Desaguadero to Bolivia. La Paz is chaotic and electrifying — ride the teleférico cable car system (Bs3/$0.44 per ride, 10 lines), explore the Witches\' Market, and mountain bike the Death Road (Bs350–500/$50–72, including transport and gear). Bus to Uyuni (Bs80–120, 12 hrs overnight) for the 3-day salt flat tour ($150–200 all-inclusive) — the Salar de Uyuni at sunrise is one of the most surreal landscapes on Earth.',
         tip: 'The Uyuni salt flat tour: go in the wet season (Dec–Mar) for the famous mirror effect, dry season (May–Oct) for the white-hexagon patterns. Both are incredible.',
+        guides: ['lake-titicaca', 'la-paz', 'salar-de-uyuni'],
       },
     ],
   },
@@ -98,18 +104,21 @@ const countries = [
         duration: '6–7 days',
         description: 'From Uyuni, many salt flat tours end in San Pedro de Atacama (arrange at booking). The Atacama is the driest desert on Earth — Valle de la Luna sunset (CLP$3,000), geyser field at El Tatio (CLP$15,000, depart 4am), and stargazing tours (CLP$20,000–30,000 — the clearest skies in the world). The altitude here is 2,400m so you\'re acclimatised from Bolivia. Fly to Santiago (CLP$20,000–50,000 on SKY/JetSMART). Explore the Mercado Central for seafood (CLP$5,000–8,000 for a massive plate), climb Cerro San Cristóbal (free, or funicular CLP$3,000), and bar-hop Barrio Bellavista.',
         tip: 'Argentina\'s "blue dollar" parallel exchange rate gives you nearly double the official rate — change USD cash at cuevas (exchange houses) in Buenos Aires, not at ATMs.',
+        guides: ['atacama-desert'],
       },
       {
         title: 'Valparaíso & Mendoza',
         duration: '5–6 days',
         description: 'Bus from Santiago to Valparaíso (CLP$3,000–5,000, 1.5 hrs). Valpo is Chile\'s street art capital — the cerros (hills) are an open-air gallery. Ride the historic ascensores (funicular lifts, CLP$300), eat chorrillana (a mountain of fries, cheese, eggs, and beef, CLP$6,000 shared), and catch live music in Cerro Alegre. Then cross the Andes to Mendoza, Argentina (bus CLP$15,000–25,000, 7 hrs through stunning mountain passes). Mendoza is wine country — rent a bike and self-guide through Maipú bodegas (tastings AR$3,000–5,000). A full asado with Malbec: AR$8,000–12,000.',
         tip: 'The Santiago–Mendoza bus crosses at 3,800m — sit on the left side for the best views. The road is sometimes closed in winter (June–August).',
+        guides: ['valparaiso', 'mendoza'],
       },
       {
         title: 'Buenos Aires & Patagonia',
         duration: '8–10 days',
         description: 'Fly from Mendoza to Buenos Aires (AR$15,000–30,000). BA is one of the world\'s great cities — free tango shows in San Telmo on Sundays, the best steak you\'ll ever eat at a parrilla (AR$8,000–12,000 for a massive bife de chorizo), and all-night milongas (tango dancehalls, AR$2,000–5,000 entry). Explore La Boca, Recoleta Cemetery (free), and the bookshops of Palermo. For Patagonia: fly to El Calafate (AR$25,000–50,000) for the Perito Moreno Glacier (AR$15,000 park entry — watching bus-sized chunks of ice calve into the lake is unforgettable). If time allows, El Chaltén for free hiking to Laguna de los Tres.',
         tip: 'Buenos Aires runs late — dinner starts at 9–10pm, clubs at 2am. Adjust your body clock. Sunday Feria de San Telmo is the best market on the continent.',
+        guides: ['buenos-aires', 'el-calafate', 'perito-moreno', 'torres-del-paine'],
       },
     ],
   },
@@ -211,6 +220,6 @@ const practicalInfo = [
   ctaRegion="South America"
   ctaText="Find travel companions for Inca Trail treks, split Uyuni tours, and share asado nights in Buenos Aires with fellow backpackers on roammate."
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
-  featuredGuides={['buenos-aires', 'rio-de-janeiro', 'lima', 'santiago', 'sao-paulo', 'machu-picchu', 'salar-de-uyuni', 'iguazu-falls', 'perito-moreno', 'galapagos', 'torres-del-paine', 'sacred-valley']}
+  featuredGuides={['buenos-aires', 'rio-de-janeiro', 'lima', 'santiago', 'sao-paulo', 'machu-picchu', 'salar-de-uyuni', 'iguazu-falls', 'perito-moreno', 'galapagos', 'torres-del-paine', 'sacred-valley', 'cartagena', 'medellin', 'bogota', 'salento', 'cusco', 'quito', 'la-paz', 'lake-titicaca', 'atacama-desert', 'valparaiso', 'mendoza', 'el-calafate', 'cocora-valley']}
   accentColor="#c4562a"
 />

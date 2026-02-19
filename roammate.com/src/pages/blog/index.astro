@@ -1,0 +1,388 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import * as blogData from '../../data/blog';
+
+interface BlogPostSummary {
+  slug: string;
+  title: string;
+  description: string;
+  heroImage: string;
+  category?: string;
+  publishedAt?: string;
+  readingTime?: string;
+}
+
+const source = blogData as {
+  allBlogPosts?: BlogPostSummary[];
+  blogPosts?: BlogPostSummary[];
+};
+
+const blogPosts = (source.allBlogPosts ?? source.blogPosts ?? [])
+  .filter((post) => post.slug && post.title && post.description)
+  .sort((a, b) => {
+    const aTime = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+    const bTime = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+    return bTime - aTime;
+  });
+
+const featuredPost = blogPosts[0];
+
+const formatDate = (value?: string) => {
+  if (!value) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  return new Intl.DateTimeFormat('en', { dateStyle: 'medium' }).format(date);
+};
+---
+
+<BaseLayout
+  title={`Travel Blog | roammate`}
+  description="Travel stories, practical backpacking advice, destination deep-dives, and route planning tips from roammate."
+  ogImage={featuredPost?.heroImage || '/images/guides/tokyo-hero.webp'}
+>
+  <Fragment slot="head">
+    {featuredPost?.heroImage && <link rel="preload" as="image" type="image/webp" href={featuredPost.heroImage}>}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "roammate Blog",
+      "url": "https://roammate.com/blog/",
+      "description": "Travel stories, practical backpacking advice, destination deep-dives, and route planning tips from roammate.",
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://roammate.com/blog/" },
+      ],
+    })} />
+  </Fragment>
+
+  <section class="blog-hero">
+    <div class="blog-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${featuredPost?.heroImage || '/images/guides/tokyo-hero.webp'}');`}></div>
+    <div class="blog-hero-content">
+      <div class="blog-hero-breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Blog</span>
+      </div>
+      <div class="blog-hero-tag">
+        <span>✍️</span>
+        <span>{blogPosts.length} Articles</span>
+      </div>
+      <h1 class="blog-hero-title">Travel <em>Blog</em></h1>
+      <p class="blog-hero-subtitle">Stories from the road, smarter trip planning, and practical tactics for younger independent travelers.</p>
+      <div class="blog-hero-meta">
+        <a href="#latest" class="blog-meta-pill">Latest Posts</a>
+      </div>
+    </div>
+    <div class="blog-hero-scroll">
+      <span>Explore</span>
+      <div class="blog-scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="blog-section" id="latest">
+    <div class="blog-section-inner">
+      <div class="guide-section-header reveal">
+        <div class="section-label">Latest</div>
+        <h2 class="section-heading">Recent <em>posts</em></h2>
+        <p class="blog-section-intro">Advice and destination ideas for planning better trips and making the most of every stop.</p>
+      </div>
+      <div class="blog-grid">
+        {blogPosts.map((post, i) => (
+          <a href={`/blog/${post.slug}/`} class={`blog-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <img src={post.heroImage} alt={post.title} loading={i === 0 ? 'eager' : 'lazy'} width="1200" height="800" />
+            <div class="blog-card-content">
+              {post.category && <span class="blog-card-category">{post.category}</span>}
+              <h3>{post.title}</h3>
+              <p>{post.description}</p>
+              <div class="blog-card-meta">
+                {formatDate(post.publishedAt) && <span>{formatDate(post.publishedAt)}</span>}
+                {post.readingTime && <span>{post.readingTime}</span>}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    position: relative;
+    min-height: 95vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 40px 80px;
+    overflow: hidden;
+  }
+
+  .blog-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.08);
+    animation: heroZoom 9s var(--ease-out-expo) forwards;
+  }
+
+  .blog-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    color: #f5f1eb;
+  }
+
+  .blog-hero-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid rgba(245, 241, 235, 0.24);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    margin-bottom: 24px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .blog-hero-breadcrumb a {
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .blog-hero-breadcrumb a:hover {
+    color: #fff;
+  }
+
+  .blog-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(245, 241, 235, 0.86);
+  }
+
+  .blog-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(62px, 12vw, 130px);
+    line-height: 0.9;
+    margin-bottom: 20px;
+    color: #f7f2ea;
+    letter-spacing: -0.03em;
+  }
+
+  .blog-hero-title em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .blog-hero-subtitle {
+    font-size: clamp(19px, 2.4vw, 26px);
+    line-height: 1.5;
+    color: rgba(245, 241, 235, 0.9);
+    margin-bottom: 30px;
+  }
+
+  .blog-hero-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .blog-meta-pill {
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 241, 235, 0.22);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.3s ease, transform 0.3s var(--ease-out-expo);
+  }
+
+  .blog-meta-pill:hover {
+    background-color: rgba(245, 241, 235, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .blog-hero-scroll {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(245, 241, 235, 0.75);
+    z-index: 2;
+  }
+
+  .blog-hero-scroll span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .blog-scroll-line {
+    width: 1px;
+    height: 48px;
+    background: rgba(245, 241, 235, 0.3);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .blog-scroll-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: rgba(245, 241, 235, 0.95);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  .blog-section {
+    padding: 96px 40px;
+  }
+
+  .blog-section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .blog-section-intro {
+    max-width: 720px;
+    color: var(--color-text-muted);
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.65;
+    margin-bottom: 34px;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .blog-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background: #fff;
+    border: 1px solid rgba(196, 86, 42, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.35s var(--ease-out-expo), border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(196, 86, 42, 0.32);
+    box-shadow: 0 20px 32px rgba(26, 23, 20, 0.12);
+  }
+
+  .blog-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .blog-card-content {
+    padding: 20px;
+  }
+
+  .blog-card-category {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--color-terracotta);
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-weight: 600;
+    font-size: 11px;
+  }
+
+  .blog-card h3 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 2.2vw, 32px);
+    line-height: 1.15;
+    color: var(--color-cream);
+    margin-bottom: 10px;
+  }
+
+  .blog-card p {
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+
+  .blog-card-meta {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .blog-card-meta span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--color-cream-muted);
+    background: #f7f2ea;
+    border: 1px solid rgba(196, 86, 42, 0.12);
+    border-radius: 999px;
+    padding: 6px 10px;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-hero {
+      min-height: 82vh;
+      padding: 0 24px 56px;
+    }
+
+    .blog-hero-scroll {
+      right: 24px;
+      bottom: 30px;
+    }
+
+    .blog-section {
+      padding: 80px 24px;
+    }
+
+    .blog-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blog-hero {
+      min-height: 75vh;
+      padding: 0 20px 38px;
+    }
+
+    .blog-hero-title {
+      font-size: clamp(54px, 20vw, 98px);
+    }
+
+    .blog-hero-scroll {
+      display: none;
+    }
+
+    .blog-section {
+      padding: 64px 20px;
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

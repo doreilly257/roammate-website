@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PHP (Philippine Peso)', detail: 'Cards accepted in malls, cash elsewhere' },
+  { icon: '🗣', label: 'Language', value: 'Filipino / English', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'PHT (UTC+8)', detail: 'Philippine Time' },
+  { icon: '☀️', label: 'Best Months', value: 'Dec – Feb', detail: 'Cool dry season, comfortable for walking' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–50 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 30 days', detail: 'Most nationalities, extendable' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Manila Highlights — History & Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Intramuros — The Walled City',
+          text: 'Start early at Intramuros, Manila\'s historic walled city built by the Spanish in the 16th century. Walk through the massive stone gates and along the fortified walls that once defended the colonial capital. Visit San Agustin Church — a UNESCO World Heritage Site and the oldest stone church in the Philippines, completed in 1607 with a stunning baroque interior and trompe-l\'oeil ceiling. Explore Fort Santiago, the citadel where national hero Jose Rizal was imprisoned before his execution in 1896. The fort\'s Rizal Shrine museum tells the story of Philippine independence through his life.',
+          tip: 'Arrive at Intramuros by 8am before the heat and crowds build. A bamboo bicycle tour (350 PHP for 2 hours) is an excellent way to cover the walled city with a knowledgeable guide.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Binondo Chinatown Food Tour',
+          text: 'Cross the Pasig River to Binondo — the oldest Chinatown in the world, established in 1594. The narrow streets are packed with family-run restaurants, bakeries, and market stalls that have served Manila\'s Chinese-Filipino community for generations. This is Manila\'s food heartland — eat your way through lumpia (spring rolls), siopao (steamed buns), hopia (flaky pastries), fresh noodle soup, and dim sum at institutions that have been operating for decades. Binondo Minor Basilica, the district\'s main church, sits at the centre of this extraordinary cultural blend.',
+          tip: 'A guided food tour of Binondo (500–800 PHP) is worth every peso — the guide knows which stalls and restaurants are authentic and helps navigate the chaotic streets. Come hungry.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Rizal Park & Manila Bay Sunset',
+          text: 'Walk through Rizal Park (Luneta) — Manila\'s central green space where the national hero was executed by firing squad in 1896, an event that ignited the Philippine revolution against Spain. The park contains the Rizal Monument, a large fountain, Chinese and Japanese gardens, and the National Museum complex. Walk west to the Manila Bay boardwalk for sunset — the sky over the bay turns spectacular shades of orange and purple, and the baywalk area has been revitalised with restaurants and bars. End the evening in Poblacion, Makati\'s rooftop bar district.',
+          tip: 'The National Museum of Fine Arts and National Museum of Natural History are both free and world-class — allow at least 30 minutes each if you visit during the afternoon.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Intramuros & National Museum',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Fort Santiago & San Agustin',
+          text: 'Begin at Fort Santiago, the 16th-century citadel on the banks of the Pasig River where Jose Rizal spent his final days. Walk the cobblestone streets past the barracks and dungeons to the Rizal Shrine — a museum occupying his former cell with original manuscripts, personal effects, and the story of his life and execution. Continue to San Agustin Church next door — the only building in Intramuros that survived the devastating Battle of Manila in 1945. The baroque interior, massive chandeliers, and trompe-l\'oeil ceiling are breathtaking.',
+          tip: 'Fort Santiago entry is 75 PHP and San Agustin Church is 200 PHP. Combined, they provide the best introduction to Manila\'s colonial and revolutionary history. Allow 2 hours for both.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Museum Complex',
+          text: 'Cross Rizal Park to the National Museum complex — three magnificent buildings housing the Philippines\' finest art, history, and natural history collections, all free of charge. The National Museum of Fine Arts contains Juan Luna\'s enormous Spoliarium (1884) — a masterpiece depicting Roman gladiatorial death that won the gold medal at the Madrid Exposition. The National Museum of Anthropology covers the Philippines\' indigenous peoples, colonial history, and the remarkable pre-colonial gold artefacts recovered from burial sites across the archipelago.',
+          tip: 'The National Museums are closed on Mondays. The Fine Arts building is the must-see — allow at least 1 hour. Air-conditioned interiors are a welcome escape from the Manila heat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Poblacion Nightlife',
+          text: 'Head to Poblacion in Makati — Manila\'s trendiest neighbourhood, a former residential area transformed into a dense cluster of rooftop bars, speakeasies, restaurants, and live music venues. The compact streets are walkable and the atmosphere on weekend nights is electric. Start with drinks at a rooftop bar for views over the Makati skyline, then move to one of the many restaurants for dinner — the food scene ranges from modern Filipino to Japanese izakaya to Mexican street food. Poblacion is where Manila\'s creative energy is most concentrated.',
+          tip: 'Poblacion is best on Thursday to Saturday nights. Grab transport (Grab is the ride-hailing app) from Intramuros — the journey takes 20–40 minutes depending on traffic.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Binondo Food & Local Manila',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Binondo Chinatown Breakfast',
+          text: 'Start the day in Binondo with a traditional Chinese-Filipino breakfast — fresh congee (rice porridge), siopao (steamed buns filled with pork or chicken), and pan de sal (Filipino bread rolls) from bakeries that open before dawn. Walk the narrow streets of the world\'s oldest Chinatown as merchants set up shop and the district comes alive. Visit the Binondo Church (Minor Basilica of San Lorenzo Ruiz), the district\'s spiritual centre since 1596, and the atmospheric Ongpin Street market where dried goods, herbs, and traditional Chinese medicine stalls line the pavement.',
+          tip: 'The best Binondo breakfast spots are along Ongpin Street and Carvajal Street. Eng Bee Tin and Dong Bei Dumplings are local institutions — arrive early before the queues form.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Quiapo & Manila Markets',
+          text: 'Walk south from Binondo to Quiapo, one of Manila\'s most authentic and vibrant districts. Quiapo Church is the centre of devotion to the Black Nazarene — a life-sized statue of Christ that attracts millions of devotees annually. The streets around the church form a massive open-air market selling everything from medicinal herbs and amulets to electronics and second-hand books. The energy is intense and the people-watching extraordinary. Continue to the Manila Metropolitan Theater (recently restored) for its stunning art deco architecture.',
+          tip: 'Quiapo is crowded and chaotic — watch your belongings and keep valuables in a front pocket or money belt. The market is most atmospheric in the morning.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Manila Bay Sunset & Seafood',
+          text: 'Take a jeepney or Grab to the Manila Bay boardwalk for sunset — the reclaimed waterfront area has been transformed with parks, restaurants, and a promenade with views over the bay. The sunset over Manila Bay is one of the city\'s most celebrated natural spectacles — the sky turns through gold, orange, and deep crimson. After sunset, head to Dampa seafood markets in Pasay where you choose live seafood from market stalls and have it cooked to your specification at adjoining restaurants — a quintessential Manila dining experience.',
+          tip: 'At Dampa, negotiate seafood prices before buying and agree on cooking fees with the restaurant separately. A feast of grilled prawns, crabs, and fish costs 500–1,000 PHP per person.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Modern Manila & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Makati & Ayala Triangle',
+          text: 'Explore Makati, Manila\'s central business district and the heart of modern Philippine life. Walk through Ayala Triangle Gardens — a manicured green space surrounded by skyscrapers that fills with office workers during lunch breaks. The Ayala Museum nearby houses an excellent collection of Philippine gold artefacts, dioramas depicting the country\'s history, and contemporary Filipino art. The surrounding streets have upscale shopping, international restaurants, and the kind of polished urban energy that contrasts sharply with the historic districts you visited yesterday.',
+          tip: 'Ayala Museum entry is 425 PHP and worth every peso for the gold collection and historical dioramas. The air-conditioned museum is also a perfect retreat from the heat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'BGC — Art & Street Food',
+          text: 'Take a short ride to Bonifacio Global City (BGC), Manila\'s newest urban district built on a former military base. BGC is a walkable, well-planned neighbourhood with street art murals, public sculptures, and the Bonifacio High Street open-air mall. The district attracts Manila\'s creative class and the food scene is diverse — from Korean barbecue to Filipino tapas to artisan coffee. Walk the art corridor between 5th and 7th Avenues where large-scale murals by Filipino and international artists transform building facades into an open-air gallery.',
+          tip: 'BGC is the most walkable district in Manila — flat, well-maintained sidewalks and pedestrian crossings. The Mercato Centrale weekend night market (Friday–Sunday) is excellent for street food.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Filipino Farewell Dinner',
+          text: 'End your Manila trip with a farewell dinner at a Filipino restaurant that showcases the country\'s incredible culinary heritage. Try sinigang (sour tamarind soup), kare-kare (oxtail peanut stew), sisig (sizzling chopped pork face), and the national dish adobo (meat braised in vinegar, soy, and garlic). Pair with a San Miguel Pale Pilsen or a craft beer from one of Manila\'s growing microbreweries. Manila is chaotic, exhausting, and exhilarating in equal measure — and the food alone justifies the visit.',
+          tip: 'For an authentic Filipino dinner with modern presentation, try Toyo Eatery, Locavore, or Manam — all serve elevated versions of traditional dishes at reasonable prices. Book ahead on weekends.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Intramuros',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive in Manila',
+          text: 'Arrive at Ninoy Aquino International Airport (NAIA) and transfer to your accommodation. Manila traffic is legendary — allow 1–2 hours for the transfer depending on your destination and time of day. Check into your hotel in Makati, Ermita, or the Intramuros area. Spend the late morning orienting yourself and adjusting to the sensory intensity of one of Asia\'s most densely populated cities. The heat, noise, and energy are overwhelming at first but quickly become part of Manila\'s unique character.',
+          tip: 'Pre-book your airport transfer or use the Grab app — metered airport taxis and fixed-fare yellow cabs are available but Grab is the most reliable and transparent option.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Fort Santiago & Intramuros Walk',
+          text: 'Head to Intramuros for an afternoon exploration of the walled city. Enter through the Puerta Real gate and walk the ramparts — massive stone walls built by the Spanish to defend their colonial capital. Visit Fort Santiago and the Rizal Shrine, then wander the cobblestone streets past colonial-era buildings, horse-drawn calesas, and the atmospheric ruins of churches destroyed in World War II. The contrast between the 16th-century walled city and the modern megalopolis outside the walls is striking.',
+          tip: 'A calesa (horse-drawn carriage) ride around Intramuros costs 350–500 PHP for 30 minutes. It is touristy but atmospheric and covers ground quickly in the heat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ermita Dinner & Orientation',
+          text: 'Explore the Ermita district adjacent to Intramuros — a historic neighbourhood with hotels, restaurants, and the Remedios Circle dining area. Try Filipino comfort food for your first Manila dinner — tapsilog (cured beef with garlic rice and egg), pork sisig, or a bowl of bulalo (bone marrow soup). The Remedios Circle area has a cluster of restaurants specialising in Pampanga cuisine — widely considered the best regional cooking in the Philippines.',
+          tip: 'Manila is safest when using Grab for transport after dark. The Ermita and Malate areas have improved significantly but exercise normal city caution with belongings.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'San Agustin, Rizal Park & Museums',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'San Agustin Church & Casa Manila',
+          text: 'Return to Intramuros for the sites you did not cover yesterday. San Agustin Church is the jewel — a UNESCO World Heritage Site completed in 1607, it is the oldest stone church in the Philippines and the only building in Intramuros that survived the 1945 Battle of Manila. The baroque interior features massive chandeliers, carved molave wood choir stalls, and a ceiling painted in trompe-l\'oeil by Italian artists. Adjacent Casa Manila is a reconstructed Spanish colonial house museum showing how Manila\'s elite lived during the colonial period.',
+          tip: 'San Agustin entry is 200 PHP and includes a small museum with religious artefacts. The church interior is most atmospheric in the morning when light streams through the windows.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Museum Complex',
+          text: 'Cross Rizal Park to the National Museum — all three buildings are free and world-class. The National Museum of Fine Arts houses masterworks of Filipino painting including Luna\'s Spoliarium. The National Museum of Anthropology covers everything from pre-colonial gold artefacts to the San Diego shipwreck to indigenous textiles. The National Museum of Natural History, in a striking renovated building with a central atrium and canopy walkway, covers the Philippines\' extraordinary biodiversity — from whale sharks to the Philippine eagle to the smallest primate.',
+          tip: 'The museums are closed on Mondays. Allow 3–4 hours for all three buildings. The air conditioning makes them a perfect midday activity when the heat is at its peak.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Manila Ocean Park & Baywalk',
+          text: 'Visit Manila Ocean Park in the late afternoon — a marine theme park on the Manila Bay waterfront with an oceanarium, jellyfish exhibit, and a glass tunnel walkway through a shark tank. It is particularly popular with families and couples and provides a different perspective on Manila\'s marine life. After the aquarium, walk the Manila Baywalk as the sun sets over the bay — the boardwalk has been revitalised with restaurants, food stalls, and a promenade with bay views.',
+          tip: 'Manila Ocean Park entry starts at 600 PHP. The sunset from the Baywalk is free and spectacular — arrive by 5:30pm during dry season for the best colours.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Binondo & Quiapo',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Binondo Food Crawl',
+          text: 'Dedicate a full morning to eating your way through Binondo — the world\'s oldest Chinatown. Start with congee and siopao for breakfast, then progress through lumpia, dumplings, hopia, noodle soups, and roasted meats at legendary establishments. Dong Bei Dumplings serves hand-pulled noodles and pork dumplings that draw queues. Eng Bee Tin\'s hopia (flaky bean-paste pastries) has been a Binondo institution for decades. The narrow streets, market stalls, and family businesses create an atmosphere that is authentically Chinese-Filipino and unlike anywhere else.',
+          tip: 'Pace yourself — the temptation is to eat at every stall, but the best Binondo crawl covers 5–6 stops with small portions at each. Bring cash — most stalls do not accept cards.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Quiapo Church & Markets',
+          text: 'Walk south to Quiapo, Manila\'s most intense and authentic district. Quiapo Church houses the Black Nazarene — a 17th-century statue of Christ that is the focus of the Philippines\' largest religious procession each January, attracting millions. The streets surrounding the church form a sprawling market selling everything from herbal remedies and anting-anting (amulets) to electronics and second-hand cameras. The energy is raw, the crowds dense, and the experience thoroughly local — this is Manila without any tourist polish.',
+          tip: 'Visit Hidalgo Street for camera and electronics bargains. The second-hand camera market is one of the best in Asia for film cameras and vintage lenses.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Jeepney Experience & Street Food',
+          text: 'Experience Manila\'s most iconic transport — the jeepney. These converted American military jeeps, decorated with elaborate chrome and painted designs, are the arteries of Manila\'s public transport system. Take a jeepney ride along a main route for the full experience of packed humanity, shouted destinations, and coins passed hand-to-hand to the driver. Afterwards, head to a street food area for an evening of isaw (grilled chicken intestines), betamax (grilled blood cubes), kwek-kwek (deep-fried quail eggs), and other distinctly Filipino street snacks.',
+          tip: 'Jeepney routes are posted on the side of the vehicle. Base fare is 13 PHP. Tell the driver your destination before boarding and pay by passing coins forward. Say "para" (stop) when you want to get off.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Makati & BGC Modern Manila',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ayala Museum & Makati CBD',
+          text: 'Explore Makati, Manila\'s financial heart and the centre of modern Philippine culture. The Ayala Museum is the standout attraction — its collection includes pre-colonial gold artefacts, intricate dioramas depicting Philippine history from prehistoric times to independence, and a rotating contemporary art gallery. Walk through Ayala Triangle Gardens and the surrounding CBD streets where Manila\'s corporate energy contrasts with the historic districts across the river.',
+          tip: 'Ayala Museum entry is 425 PHP. The gold collection and dioramas are the highlights — allow 1.5–2 hours. The museum shop has excellent Filipino design products and books.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'BGC Art Walk & High Street',
+          text: 'Take a bus or Grab to Bonifacio Global City for an afternoon exploring Manila\'s most walkable district. BGC was built on a former military base and is planned with wide sidewalks, public art, and green spaces. Walk the art corridor between 5th and 7th Avenues — large-scale murals by Filipino and international artists cover entire building facades. Bonifacio High Street is an open-air mall with restaurants, boutiques, and a weekend market. The Mind Museum, a science centre with interactive exhibits, is excellent for curious minds.',
+          tip: 'BGC is the best district in Manila for walking — flat, clean sidewalks and enforced pedestrian crossings. The district feels more like Singapore than the rest of Manila.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Poblacion Rooftop Bars',
+          text: 'Head back to Makati\'s Poblacion neighbourhood for Manila\'s best nightlife. The compact area has an extraordinary density of rooftop bars, speakeasies, live music venues, and restaurants packed into a few square blocks. Start with sunset drinks at a rooftop, move to a restaurant for dinner, then explore the ground-level bars and clubs that stay open late. The crowd is a mix of expats, local creatives, and travellers, and the atmosphere on weekend nights is among the most vibrant in Southeast Asia.',
+          tip: 'Poblacion is best experienced on foot — park yourself in the area and walk between venues. Start with dinner around 8pm and the bar scene picks up from 10pm onwards.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Tagaytay Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Tagaytay Ridge',
+          text: 'Escape Manila\'s heat with a day trip to Tagaytay, a ridge-top city 60km south with panoramic views over Taal Volcano and Lake — one of the Philippines\' most iconic landscapes. Taal is one of the world\'s smallest active volcanoes, sitting within a lake, which sits within a larger volcanic crater — a volcano within a lake within a volcano. The view from Tagaytay Ridge on a clear morning, looking down over the deep blue lake with the volcanic cone rising from the centre, is genuinely extraordinary.',
+          tip: 'Leave Manila by 6am to avoid traffic — the drive takes 1.5–2 hours via SLEX expressway. Clear morning views of Taal are best before clouds build in the afternoon.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Taal Heritage Town',
+          text: 'Drive down from the ridge to Taal town, a beautifully preserved Spanish colonial town on the shores of Balayan Bay. The Basilica de San Martin de Tours is the largest Catholic church in Asia, and the surrounding streets are lined with ancestral houses featuring carved wooden facades, capiz shell windows, and tile roofs from the 18th and 19th centuries. Walk the heritage trail past the old houses, visit the Taal embroidery workshops that produce intricate barong tagalog fabric, and explore a town that feels frozen in the colonial era.',
+          tip: 'Taal town is often overlooked in favour of Tagaytay views. The ancestral houses are privately owned but several are open for tours — ask at the town tourism office near the basilica.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tagaytay Dinner & Return',
+          text: 'Return to Tagaytay Ridge for dinner at one of the many restaurants with views over the lake and volcano. Bulalo (beef bone marrow soup) is Tagaytay\'s signature dish — the cool ridge-top air makes the hot, rich broth particularly satisfying. Several restaurants along the ridge serve bulalo with the volcanic lake view as backdrop. Return to Manila in the evening — the drive back is faster after rush hour and the city lights from the expressway are impressive.',
+          tip: 'Bag of Beans and Balay Dako are popular Tagaytay restaurants with lake views. For the best bulalo, try the simpler local eateries along the ridge road rather than the tourist restaurants.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Local Manila & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Divisoria Market',
+          text: 'Dive into Divisoria, Manila\'s largest and most chaotic market district. Spread across several blocks near the Pasig River, Divisoria sells everything at wholesale prices — clothing, textiles, toys, electronics, dried fish, spices, and household goods. The energy is overwhelming and the bargains are real — this is where ordinary Filipinos shop when they need to stretch their pesos. Navigate the narrow alleys between stalls, practice your bargaining, and absorb an experience that is the polar opposite of a shopping mall.',
+          tip: 'Keep valuables secure at Divisoria — pickpockets are active in crowded market areas. Bring a small backpack or crossbody bag. Visit in the morning when it is slightly less crowded.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'San Sebastian Church & Manila Cathedral',
+          text: 'Visit San Sebastian Church — the only all-steel church in Asia and one of the few prefabricated steel structures in the world, shipped in pieces from Belgium in the 1880s and assembled in Manila. The neo-Gothic interior with its steel columns, vaulted ceiling, and stained glass windows is stunning. Continue to Manila Cathedral near Intramuros — rebuilt multiple times after earthquakes, fires, and war, the current structure features remarkable stained glass, a pipe organ, and a peaceful cloister garden.',
+          tip: 'San Sebastian Church is in Quiapo and best combined with a market visit. The church interior is most impressive in the afternoon when light streams through the western windows.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dampa Seafood Market Feast',
+          text: 'Head to a Dampa (wet market and cook-to-order) for the quintessential Manila seafood experience. At Dampa sa Seaside in Pasay, choose live crabs, prawns, lobsters, clams, and fish from market vendors, then hand your selection to a restaurant upstairs to cook in your chosen style — grilled, buttered, steamed, or in sinigang soup. It is theatrical, social, and delivers some of the freshest and cheapest seafood dining in Manila. Share a long table with friends and enjoy the controlled chaos.',
+          tip: 'Dampa prices are negotiable at the market stalls. Cooking fees are separate and listed at each restaurant. Budget 500–1,500 PHP per person for a generous feast including drinks.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Day & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise at Rizal Park or Free Morning',
+          text: 'Use your final morning to revisit a favourite spot or explore somewhere you missed. Rizal Park at dawn is peaceful — joggers, tai chi practitioners, and families enjoy the green space before the heat builds. The nearby Metropolitan Museum of Manila has a small but excellent collection of Filipino contemporary art. Alternatively, return to Binondo for a farewell breakfast of congee and dumplings, or explore the Escolta street area — a former commercial hub being revived by young Filipino artists and entrepreneurs.',
+          tip: 'Escolta\'s HUB: Make Lab is a creative space in a restored art deco building with studios, a cafe, and weekend markets. It represents Manila\'s creative renaissance at its best.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenir Shopping & Packing',
+          text: 'Pick up souvenirs — dried mangoes (the Philippines produces the world\'s best), local coffee, woven textiles, and handcrafted goods from social enterprises that support Filipino artisan communities. Kultura at SM Mall of Asia and Tesoro\'s in Makati have curated selections of Filipino products. For more authentic finds, browse the market stalls around Intramuros or the craft vendors in Binondo. Philippine-made leather goods, coconut products, and pili nut treats all make excellent gifts.',
+          tip: 'SM Mall of Asia near the airport is convenient for last-minute shopping and has everything from souvenirs to electronics. The waterfront area behind the mall has decent restaurants for a final meal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Filipino Dinner & Departure',
+          text: 'End your Manila journey with a final Filipino feast. Choose a restaurant that captures the breadth of Philippine cuisine — sinigang, adobo, lechon (roast suckling pig), kare-kare, and laing (taro leaves in coconut milk) represent just a fraction of the country\'s regional dishes. Manila is not a conventional tourist city — it is raw, chaotic, and exhausting — but it rewards curiosity with extraordinary food, genuine warmth, and a depth of history and culture that reveals itself to those who give it time.',
+          tip: 'Manila airport traffic is notoriously unpredictable — allow at least 2–3 hours for the transfer during peak times. Grab is the most reliable transport option to NAIA.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Use Grab for transport', text: 'The Grab app is the safest and most transparent way to get around Manila. Prices are fixed, air-conditioned, and avoid the negotiation and potential scams of street taxis. GrabShare is even cheaper for solo travellers.' },
+  { title: 'Eat where locals eat', text: 'Carinderia (local canteens) serve turo-turo (point-and-choose) meals for 60–100 PHP ($1–2). The food is freshly cooked, authentic, and often better than restaurant versions. Look for the places with the most customers.' },
+  { title: 'Take jeepneys for short trips', text: 'Jeepneys cost just 13 PHP per ride and cover most major routes. They are safe during the day and an authentic Manila experience. Routes are written on the side of the vehicle.' },
+  { title: 'Visit free museums', text: 'The National Museum complex (Fine Arts, Anthropology, Natural History) is entirely free and world-class. Rizal Park is free. Many churches are free. Manila\'s best cultural attractions cost nothing.' },
+  { title: 'Stay in Makati or Ermita', text: 'Budget hotels and hostels in Makati and Ermita start at 500–800 PHP ($9–14) per night. Both areas are central, well-connected, and have the widest range of affordable food options.' },
+  { title: 'Eat at Dampa seafood markets', text: 'Choose fresh seafood at market prices and have it cooked at adjacent restaurants. A seafood feast at Dampa costs 500–1,000 PHP per person — the same meal at a restaurant would be 3–5 times more.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$9–18', midrange: '$25–60', splurge: '$80+', notes: 'Hostels → budget hotels → business hotels' },
+  { category: 'Food', budget: '$5–12', midrange: '$15–30', splurge: '$40+', notes: 'Street food → local restaurants → fine dining' },
+  { category: 'Transport', budget: '$3–8', midrange: '$10–25', splurge: '$35+', notes: 'Jeepneys → Grab → private car' },
+  { category: 'Activities', budget: '$0–10', midrange: '$10–25', splurge: '$40+', notes: 'Free museums → guided tours → premium experiences' },
+  { category: 'Entry Fees', budget: '$0–5', midrange: '$5–15', splurge: '$15–25', notes: 'Most major museums are free' },
+  { category: 'Daily Total', budget: '$17–53', midrange: '$65–155', splurge: '$210+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities receive visa-free entry for 30 days, extendable at immigration offices',
+      'NAIA (Ninoy Aquino International Airport) has 4 terminals — confirm which terminal your airline uses before arriving',
+      'Keep a digital and physical copy of your passport, return ticket, and travel insurance at all times',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Travel insurance is essential. Manila has excellent private hospitals (Makati Medical Center, St. Luke\'s) but costs are high',
+      'Tap water is not safe to drink — use bottled water. Street food is generally safe at busy stalls with high turnover',
+      'Manila is a major city — exercise normal urban caution, especially at night in unfamiliar areas. Petty theft is the main risk',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Grab (ride-hailing app) is the safest and most convenient transport. Download and set up before arriving',
+      'MRT/LRT trains are cheap and efficient for north-south travel but extremely crowded during rush hours',
+      'Manila traffic is severe — allow 2–3 times the expected travel time during rush hours (7–9am, 5–8pm)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Globe or Smart SIM card at the airport for affordable 4G data — eSIMs also work well in Manila',
+      'WiFi is available at most accommodation, malls, and cafes. Speeds are generally good in urban areas',
+      'The Grab app, Google Maps, and Google Translate are the three most useful apps for Manila navigation',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: PHP (Philippine Peso). Cards accepted at malls, hotels, and restaurants. Cash needed for markets, jeepneys, and street food',
+      'ATMs are widely available. Visa and Mastercard are most accepted. Notify your bank before travelling',
+      'Tipping is appreciated — 10% at restaurants, 20 PHP for hotel porters, round up for taxi/Grab rides',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Lightweight, breathable clothing for hot and humid conditions. A light rain jacket for sudden downpours',
+      'Comfortable walking shoes — Manila sidewalks are uneven and you will walk more than expected',
+      'A portable fan, sunscreen, and a refillable water bottle are essential for all-day exploration in the heat',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Filipino Hospitality', text: 'Filipinos are among the most welcoming people in Asia. A smile goes a long way. Use po and opo (polite particles) when speaking to elders. Accept offered food and drink graciously — refusing can be perceived as rude.' },
+  { icon: '🌍', title: 'Respect Religious Sites', text: 'The Philippines is predominantly Catholic. Dress modestly when visiting churches — cover shoulders and knees. Photography inside churches may be restricted during services. Remove hats before entering.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Filipinos are generally happy to be photographed but always ask first, especially in markets and residential areas. Avoid photographing poverty or hardship — it is disrespectful and reduces people to spectacles.' },
+  { icon: '🗣', title: 'Language & Communication', text: 'English is widely spoken — the Philippines has one of the highest English proficiency rates in Asia. Learning basic Tagalog (kamusta — hello, salamat — thank you, magkano — how much) is appreciated and earns warm responses.' },
+  { icon: '🤝', title: 'Support Local Communities', text: 'Choose locally-owned restaurants over international chains. Buy from market vendors and artisan shops. Tip generously by local standards — 50–100 PHP means more to a local worker than it costs you.' },
+  { icon: '🕐', title: 'Filipino Time & Patience', text: 'Manila runs on its own clock — traffic delays, long waits, and flexible scheduling are normal. Build buffer time into every plan and embrace the pace. Getting frustrated with Manila\'s chaos misses the point — the city reveals its rewards to patient visitors.' },
+];
+---
+
+<CityGuideLayout
+  title="Manila Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Manila guide for young travelers. Intramuros, Binondo food tours, and Poblacion nightlife with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/manila-hero.webp"
+  heroFlag="🇵🇭"
+  heroCountry="Philippines"
+  heroRegion="Southeast Asia"
+  heroCity="Manila"
+  heroSubtitle="A chaotic, historic, food-obsessed megacity — Spanish colonial walled cities, the world's oldest Chinatown, and rooftop bars above the neon skyline."
+  heroPills={["City & Culture","Foodie","Dec – Feb Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Manila is one of Asia's most affordable major cities — these ranges cover the spectrum from budget backpacker to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Manila rewards curiosity and patience — look beyond the chaos and you will discover a city with extraordinary depth, warmth, and one of the most exciting food scenes in Southeast Asia."
+  ctaCity="Manila"
+  ctaText="Find travel companions to explore Manila together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

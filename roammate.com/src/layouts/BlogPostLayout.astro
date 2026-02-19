@@ -1,0 +1,557 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface BlogPostSection {
+  heading: string;
+  content: string | string[];
+  image?: string;
+  imageAlt?: string;
+  kicker?: string;
+  quote?: string;
+}
+
+interface RelatedGuide {
+  slug: string;
+  name: string;
+  country: string;
+  flag: string;
+}
+
+interface RelatedPost {
+  slug: string;
+  title: string;
+  description: string;
+  heroImage: string;
+  category?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  heroImage: string;
+  heroImageAlt?: string;
+  category?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  author?: string;
+  readingTime?: string;
+  intro?: string;
+  sections: BlogPostSection[];
+  relatedGuides?: RelatedGuide[];
+  relatedPosts?: RelatedPost[];
+}
+
+const {
+  title,
+  description,
+  heroImage,
+  heroImageAlt = title,
+  category,
+  publishedAt,
+  updatedAt,
+  author,
+  readingTime,
+  intro,
+  sections,
+  relatedGuides = [],
+  relatedPosts = [],
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const toISODate = (value?: string) => {
+  if (!value) return undefined;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return undefined;
+  return date.toISOString();
+};
+
+const isoPublishedAt = toISODate(publishedAt);
+const isoUpdatedAt = toISODate(updatedAt);
+
+const formatDate = (value?: string) => {
+  if (!value) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  return new Intl.DateTimeFormat('en', { dateStyle: 'medium' }).format(date);
+};
+
+const publishedLabel = formatDate(publishedAt);
+const updatedLabel = formatDate(updatedAt);
+
+const toParagraphs = (content: string | string[]) => {
+  if (Array.isArray(content)) return content.filter(Boolean);
+  return content
+    .split('\n')
+    .map((item) => item.trim())
+    .filter(Boolean);
+};
+---
+
+<BaseLayout title={`${title} | roammate Blog`} description={description} ogImage={heroImage}>
+  <Fragment slot="head">
+    <link rel="preload" as="image" type="image/webp" href={heroImage}>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": title,
+      "description": description,
+      "image": [new URL(heroImage, Astro.site).href],
+      "author": author ? {
+        "@type": "Person",
+        "name": author,
+      } : {
+        "@type": "Organization",
+        "name": "roammate",
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "roammate",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://roammate.com/images/rm-full.svg",
+        },
+      },
+      "datePublished": isoPublishedAt,
+      "dateModified": isoUpdatedAt || isoPublishedAt,
+      "mainEntityOfPage": canonical,
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://roammate.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonical },
+      ],
+    })} />
+  </Fragment>
+
+  <article>
+    <section class="blog-post-hero" aria-label={heroImageAlt}>
+      <div class="blog-post-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${heroImage}');`} />
+      <div class="blog-post-hero-content">
+        <div class="blog-post-breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/blog">Blog</a>
+        </div>
+        {category && <p class="blog-post-category">{category}</p>}
+        <h1>{title}</h1>
+        <p class="blog-post-subtitle">{description}</p>
+        <div class="blog-post-meta">
+          {publishedLabel && <span>{publishedLabel}</span>}
+          {readingTime && <span>{readingTime}</span>}
+          {author && <span>By {author}</span>}
+          {updatedLabel && <span>Updated {updatedLabel}</span>}
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-post-body">
+      <div class="blog-post-intro reveal">
+        {intro && <p>{intro}</p>}
+      </div>
+
+      <div class="blog-post-sections">
+        {sections.map((section, index) => {
+          const sectionParagraphs = toParagraphs(section.content);
+          return (
+            <section class={`blog-post-section reveal ${index % 2 === 1 ? 'is-reversed' : ''}`}>
+              <div class="blog-post-section-copy">
+                {section.kicker && <p class="blog-post-section-kicker">{section.kicker}</p>}
+                <h2>{section.heading}</h2>
+                {sectionParagraphs.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+                {section.quote && <blockquote>{section.quote}</blockquote>}
+              </div>
+              {section.image && (
+                <figure class="blog-post-section-media">
+                  <img src={section.image} alt={section.imageAlt || section.heading} loading="lazy" width="1200" height="800" />
+                </figure>
+              )}
+            </section>
+          );
+        })}
+      </div>
+    </section>
+
+    {(relatedGuides.length > 0 || relatedPosts.length > 0) && (
+      <section class="blog-post-related">
+        <div class="blog-post-related-inner">
+          {relatedGuides.length > 0 && (
+            <div class="blog-post-related-group reveal">
+              <div class="section-label">Keep Exploring</div>
+              <h2 class="section-heading">Related <em>guides</em></h2>
+              <div class="blog-related-guides-grid">
+                {relatedGuides.map((guide) => (
+                  <a href={`/guides/${guide.slug}/`} class="blog-related-guide-card">
+                    <span class="blog-related-guide-flag">{guide.flag}</span>
+                    <div>
+                      <h3>{guide.name}</h3>
+                      <p>{guide.country}</p>
+                    </div>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {relatedPosts.length > 0 && (
+            <div class="blog-post-related-group reveal">
+              <div class="section-label">From The Blog</div>
+              <h2 class="section-heading">Related <em>posts</em></h2>
+              <div class="blog-related-posts-grid">
+                {relatedPosts.map((post) => (
+                  <a href={`/blog/${post.slug}/`} class="blog-related-post-card">
+                    <img src={post.heroImage} alt={post.title} loading="lazy" width="1200" height="800" />
+                    <div>
+                      {post.category && <p class="blog-related-post-category">{post.category}</p>}
+                      <h3>{post.title}</h3>
+                      <p>{post.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-post-hero {
+    position: relative;
+    min-height: 88vh;
+    padding: 0 40px 64px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .blog-post-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.08);
+    animation: heroZoom 9s var(--ease-out-expo) forwards;
+  }
+
+  .blog-post-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+    color: #f5f1eb;
+  }
+
+  .blog-post-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid rgba(245, 241, 235, 0.24);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    margin-bottom: 26px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .blog-post-breadcrumb a {
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .blog-post-breadcrumb a:hover {
+    color: #fff;
+  }
+
+  .blog-post-category {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #f8b66a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .blog-post-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(46px, 9vw, 92px);
+    line-height: 0.98;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .blog-post-subtitle {
+    font-size: clamp(18px, 2.4vw, 25px);
+    color: rgba(245, 241, 235, 0.92);
+    max-width: 740px;
+    margin-bottom: 24px;
+    line-height: 1.45;
+  }
+
+  .blog-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(245, 241, 235, 0.8);
+  }
+
+  .blog-post-meta span {
+    padding: 8px 12px;
+    border: 1px solid rgba(245, 241, 235, 0.2);
+    border-radius: 999px;
+    backdrop-filter: blur(3px);
+  }
+
+  .blog-post-body {
+    padding: 96px 40px;
+  }
+
+  .blog-post-intro {
+    max-width: 760px;
+    margin: 0 auto 44px;
+  }
+
+  .blog-post-intro p {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 4vw, 40px);
+    line-height: 1.25;
+    color: var(--color-cream);
+  }
+
+  .blog-post-sections {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 64px;
+  }
+
+  .blog-post-section {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 36px;
+    align-items: start;
+    padding: 36px;
+    border-radius: 26px;
+    background: #f7f2ea;
+    border: 1px solid rgba(196, 86, 42, 0.12);
+  }
+
+  .blog-post-section.is-reversed {
+    grid-template-columns: 1fr 1.05fr;
+  }
+
+  .blog-post-section.is-reversed .blog-post-section-copy {
+    order: 2;
+  }
+
+  .blog-post-section.is-reversed .blog-post-section-media {
+    order: 1;
+  }
+
+  .blog-post-section-kicker {
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-terracotta);
+    margin-bottom: 10px;
+  }
+
+  .blog-post-section-copy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.6vw, 44px);
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 20px;
+  }
+
+  .blog-post-section-copy p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 14px;
+  }
+
+  .blog-post-section-copy blockquote {
+    margin-top: 20px;
+    border-left: 3px solid var(--color-terracotta);
+    padding: 8px 0 8px 18px;
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.35;
+    color: var(--color-cream);
+  }
+
+  .blog-post-section-media img {
+    width: 100%;
+    border-radius: 18px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(26, 23, 20, 0.14);
+  }
+
+  .blog-post-related {
+    padding: 24px 40px 96px;
+  }
+
+  .blog-post-related-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 64px;
+  }
+
+  .blog-related-guides-grid,
+  .blog-related-posts-grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .blog-related-guide-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: #fff;
+    border: 1px solid rgba(196, 86, 42, 0.12);
+    border-radius: 16px;
+    transition: transform 0.3s var(--ease-out-expo), border-color 0.3s ease;
+  }
+
+  .blog-related-guide-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(196, 86, 42, 0.32);
+  }
+
+  .blog-related-guide-flag {
+    font-size: 22px;
+  }
+
+  .blog-related-guide-card h3,
+  .blog-related-post-card h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--color-cream);
+  }
+
+  .blog-related-guide-card p,
+  .blog-related-post-card p {
+    margin-top: 6px;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+  }
+
+  .blog-related-guide-card > span[aria-hidden="true"] {
+    margin-left: auto;
+    color: var(--color-terracotta);
+  }
+
+  .blog-related-post-card {
+    background: #fff;
+    border: 1px solid rgba(196, 86, 42, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s var(--ease-out-expo), border-color 0.3s ease;
+  }
+
+  .blog-related-post-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(196, 86, 42, 0.32);
+  }
+
+  .blog-related-post-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .blog-related-post-card > div {
+    padding: 16px;
+  }
+
+  .blog-related-post-category {
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 11px;
+    color: var(--color-terracotta);
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-post-hero {
+      padding: 0 24px 52px;
+      min-height: 80vh;
+    }
+
+    .blog-post-body,
+    .blog-post-related {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .blog-post-section,
+    .blog-post-section.is-reversed {
+      grid-template-columns: 1fr;
+      padding: 24px;
+    }
+
+    .blog-post-section.is-reversed .blog-post-section-copy,
+    .blog-post-section.is-reversed .blog-post-section-media {
+      order: initial;
+    }
+
+    .blog-related-guides-grid,
+    .blog-related-posts-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blog-post-hero {
+      padding: 0 20px 36px;
+      min-height: 72vh;
+    }
+
+    .blog-post-meta {
+      gap: 8px;
+    }
+
+    .blog-post-body,
+    .blog-post-related {
+      padding: 60px 20px;
+    }
+
+    .blog-post-sections {
+      gap: 36px;
+    }
+
+    .blog-post-section {
+      padding: 18px;
+      border-radius: 18px;
+      gap: 18px;
+    }
+
+    .blog-related-guides-grid,
+    .blog-related-posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

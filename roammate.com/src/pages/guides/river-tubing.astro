@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'LAK (Kip)', detail: '1 USD ≈ 20,800 LAK' },
+  { icon: '🗣', label: 'Language', value: 'Lao / English', detail: 'English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: 'Dry season, warm and calm' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$15–30 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on arrival', detail: '30-day visa on arrival for most nationalities (~$35)' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Nam Song River Tubing — Vang Vieng',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tube Rental & Launch',
+          text: 'Head to the tubing rental offices in central Vang Vieng by 10am — the main operator near the old market charges around 60,000 LAK ($3) for the tube rental plus a 60,000 LAK refundable deposit. A tuk-tuk takes you 4km upstream to the launch point for 10,000–20,000 LAK per person. The Nam Song River is calm and wide in dry season, flanked by towering limestone karsts draped in jungle. Life jackets are provided and mandatory. Push off into the current and let the river carry you — no paddling required.',
+          tip: 'Start by 10–11am at the latest. The river takes 2–3 hours to float and you must return the tube before 6pm or lose your deposit. Starting late means rushing the best part.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Riverside Bars & Blue Lagoon',
+          text: 'As you drift downstream, riverside bars appear on the banks with rope swings, slides, and platforms to jump from. Stop at one or two — beers and fruit shakes cost 15,000–30,000 LAK. The atmosphere is relaxed and social, with backpackers from every country floating past. About halfway down, the Blue Lagoon (Tham Phu Kham) is a short walk from the riverbank — a stunning turquoise pool at the base of a limestone cave. Entry is 10,000 LAK. Swing from the tree into the crystal-clear water.',
+          tip: 'Put your phone, cash, and valuables in a waterproof dry bag — they are essential on the river. Cheap dry bags are sold at every shop in Vang Vieng for 30,000–50,000 LAK.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Sunset in Vang Vieng',
+          text: 'The river drops you back in Vang Vieng town by mid-afternoon. Return your tube to the rental office to reclaim your deposit. The sunset over the karst mountains from the riverside restaurants is spectacular — grab a table at one of the open-air spots along the river and order laap (Lao minced meat salad), sticky rice, and a cold BeerLao for under 80,000 LAK total. The town comes alive in the evening with a small night market and laid-back bar scene.',
+          tip: 'BeerLao is one of the best beers in Southeast Asia and costs just 10,000–15,000 LAK at local restaurants. Order the dark version if you can find it — it is excellent.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Nam Song River Tubing — The Main Event',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tubing Launch & River Float',
+          text: 'Pick up your tube from the rental office in town (60,000 LAK rental + 60,000 LAK deposit), catch a tuk-tuk upstream to the launch point, and push off into the Nam Song River. The first section of the float is the most peaceful — the river winds through rice paddies and past small villages with limestone karst towers rising on both sides. The current is gentle in dry season and you can simply lie back, trail your fingers in the warm water, and watch the landscape drift past. Bring a waterproof speaker if you want music.',
+          tip: 'Apply waterproof sunscreen before launching — you are exposed to direct sun for 2–3 hours on the river with no shade. A hat with a chin strap and a rash vest help prevent burns.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Riverside Bars, Rope Swings & Blue Lagoon',
+          text: 'The riverside bars are the social heart of the tubing experience. Pull over at the wooden platforms, grab a BeerLao or fruit shake, and launch yourself off the rope swings and slides into the river. The atmosphere is friendly and communal — you will meet backpackers from everywhere. Continue downstream and stop at the Blue Lagoon (Tham Phu Kham) — a turquoise pool fed by a cave spring. The water is cold and impossibly blue. A tree swing launches you into the deep end. The cave behind the lagoon is worth a quick explore with a headlamp.',
+          tip: 'The rope swings are fun but injuries do happen. Check the water depth before jumping and never dive headfirst. If the river is high after rain, ask locals if the swings are safe.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Vang Vieng Town & Night Market',
+          text: 'Return your tube by 6pm and wander into Vang Vieng town for dinner. The main strip along the river has dozens of restaurants serving Lao food — laap, tam mak hoong (papaya salad), grilled fish wrapped in banana leaves, and endless sticky rice. A full meal with BeerLao costs 60,000–100,000 LAK. The small night market near the bus station sells grilled meats on sticks, fried spring rolls, and coconut pancakes. Vang Vieng\'s bar scene is relaxed — nothing like the old party days.',
+          tip: 'Try khao piak sen — Lao rice noodle soup. It is the national comfort food and costs just 20,000–30,000 LAK at market stalls. Perfect after a day on the river.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Kayaking, Caves & Rock Climbing',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Nam Song River Kayaking',
+          text: 'Kayaking the Nam Song offers a different perspective from tubing — you cover more of the river and can explore side channels and quiet stretches that tubers float past. Half-day kayak tours depart from Vang Vieng at 9am for around 150,000–200,000 LAK per person, including guide, kayak, paddle, and life jacket. The route passes through the same stunning karst scenery but with more control — you can stop at hidden beaches, photograph birds, and paddle into calm backwaters. No experience needed.',
+          tip: 'Ask your tour operator about the current river conditions. After heavy rain the Nam Song can run fast and muddy — in these conditions, reschedule to another day.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tham Chang Cave & Rock Climbing',
+          text: 'Tham Chang Cave is a large limestone cave on the hillside just south of Vang Vieng — a 10-minute walk from town with stairs carved into the rock. Entry is 15,000 LAK. Inside, the cave opens into vast chambers with stalactites and a spring-fed pool at the back. The views from the cave entrance over the Nam Song valley are stunning. For something more adventurous, Green Discovery and other operators run half-day rock climbing sessions on the limestone cliffs for 200,000–350,000 LAK — beginner-friendly with bolted routes from 5a to 7a.',
+          tip: 'Bring a headlamp for the deeper parts of Tham Chang — the lighting only covers the first chambers. Wear shoes with grip for the cave floor, which is wet and slippery.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Dinner & Stargazing',
+          text: 'The riverside restaurants on the east bank of the Nam Song are the best spots for dinner — tables right at the water\'s edge with the karst mountains silhouetted against the sunset. Order a Lao barbecue (sin dat, a tabletop grill with meats, vegetables, and broth) for 80,000–120,000 LAK per person — it is a communal, social meal perfect for groups. After dark, Vang Vieng\'s minimal light pollution means the stars are incredible — walk to the bridge south of town for the best views.',
+          tip: 'Sin dat (Lao BBQ) is best shared with 2–4 people. Ask the restaurant for the set menu — it includes a huge spread of meats, seafood, vegetables, and dipping sauces.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Hot Air Balloon, Lagoons & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hot Air Balloon Over the Karsts',
+          text: 'Vang Vieng is one of the cheapest places in the world to fly in a hot air balloon — tethered balloon rides cost around 150,000–200,000 LAK for a 15-minute flight, while full free-flying balloon experiences run 400,000–600,000 LAK. The balloon launches from a field south of town at sunrise when the air is calm. From 200m up, the panorama of karst mountains, rice paddies, and the winding Nam Song River is breathtaking. This is the single best view in Vang Vieng and worth every kip.',
+          tip: 'Book the balloon ride for your first clear morning — flights cancel in rain, wind, or heavy cloud. The tethered balloon runs more regularly but the free-flight experience is unforgettable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Blue Lagoon 3 & Local Exploration',
+          text: 'Vang Vieng has multiple blue lagoons — Blue Lagoon 3 (Tham Nam, 10,000 LAK entry) is the least crowded and most scenic, reached by a 7km drive south of town. The lagoon is a deep turquoise pool surrounded by jungle with a cave you can swim into. Afterwards, explore the small villages around Vang Vieng by scooter (80,000–100,000 LAK/day) — the roads wind through rice fields with farmers at work and water buffalo in the paddies. Stop at a roadside stall for grilled chicken and sticky rice.',
+          tip: 'Blue Lagoon 1 (the most famous) is often overcrowded by midday. Lagoon 3 is quieter and just as beautiful — worth the extra 10 minutes of driving.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Meal & Onward Travel',
+          text: 'Wrap up your Vang Vieng trip with a final riverside dinner. If you are heading to Luang Prabang, the VIP bus departs daily at 9am and takes 5–6 hours through spectacular mountain scenery (150,000–200,000 LAK). For Vientiane, buses run throughout the day and take 3–4 hours (80,000–100,000 LAK). The new Laos-China Railway also stops at Vang Vieng station — trains to Luang Prabang take just 1.5 hours for around 100,000 LAK and are the fastest, most comfortable option.',
+          tip: 'The Laos-China Railway is a game-changer for travel in Laos. Book tickets at the station or online — the trains are modern, air-conditioned, and significantly faster than buses.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat sticky rice and laap', text: 'Lao food is among the cheapest in Southeast Asia. A plate of laap with sticky rice costs 20,000–30,000 LAK ($1–1.50) at local restaurants. Tourist restaurants on the main strip charge double for the same food.' },
+  { title: 'Share a tuk-tuk', text: 'Tuk-tuks to the tubing launch point charge per vehicle, not per person. Share with other travellers to split the cost — 4 people paying 5,000 LAK each beats one person paying 20,000 LAK.' },
+  { title: 'Bring your own dry bag', text: 'Dry bags sold in Vang Vieng cost 30,000–50,000 LAK for a basic one. If you already have one from a previous stop in Southeast Asia, you will save the cost. They are essential for tubing.' },
+  { title: 'Negotiate guesthouse rates', text: 'In low season (May–Oct), guesthouses in Vang Vieng will negotiate 20–30% off listed prices. Ask at the desk — walk-in rates are almost always cheaper than online booking platforms.' },
+  { title: 'Take the train', text: 'The Laos-China Railway is cheaper and faster than VIP buses for trips to Luang Prabang or Vientiane. Trains cost less, take half the time, and are air-conditioned.' },
+  { title: 'Drink BeerLao at local shops', text: 'BeerLao costs 10,000 LAK at a local shop or market stall, but 25,000–40,000 LAK at tourist bars. Buy from shops and drink by the river for the same view at a third of the price.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$4–10', midrange: '$15–30', splurge: '$40+', notes: 'Dorm bed → guesthouse → riverside boutique' },
+  { category: 'Food', budget: '$3–8', midrange: '$8–18', splurge: '$25+', notes: 'Market stalls → local restaurants → riverside dining' },
+  { category: 'Transport', budget: '$2–5', midrange: '$5–15', splurge: '$20+', notes: 'Shared tuk-tuk → scooter rental → private transfer' },
+  { category: 'Activities', budget: '$5–10', midrange: '$10–25', splurge: '$35+', notes: 'Tubing → kayaking → hot air balloon' },
+  { category: 'Drinks', budget: '$2–5', midrange: '$5–10', splurge: '$15+', notes: 'Shop BeerLao → bar drinks → cocktails' },
+  { category: 'Daily Total', budget: '$15–38', midrange: '$43–98', splurge: '$135+', notes: 'Budget backpacker → comfortable → splurge' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities get 30-day visa on arrival at all Lao border crossings and airports (~$35 USD, bring passport photos)',
+      'Vang Vieng is halfway between Vientiane (3–4 hrs) and Luang Prabang (5–6 hrs by bus, 1.5 hrs by train)',
+      'The Laos-China Railway has made Vang Vieng much more accessible — direct trains from Vientiane and Luang Prabang',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Life jackets are provided for tubing and are mandatory — wear yours at all times on the river',
+      'The river is calm in dry season (Nov–Mar) but can be dangerous in wet season when water levels rise and currents strengthen',
+      'Travel insurance with medical evacuation is essential — the nearest hospital is in Vientiane',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Vang Vieng town is walkable — everything is within 15 minutes on foot',
+      'Scooter rental costs 80,000–100,000 LAK/day for exploring lagoons and caves outside town',
+      'Tuk-tuks and songthaews connect all nearby attractions for 10,000–30,000 LAK per person',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Lao SIM card (Unitel or Lao Telecom) at the bus station or any phone shop for 20,000–50,000 LAK with data',
+      'WiFi is available at most guesthouses and cafes but can be slow — download offline maps before arriving',
+      'Mobile signal is decent in Vang Vieng town but drops quickly outside the main area',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: LAK (Lao Kip). 1 USD ≈ 20,800 LAK. Thai Baht and USD are also widely accepted',
+      'ATMs are available in Vang Vieng — BCEL and JDB banks are the most reliable for foreign cards',
+      'Carry cash for tubing, market food, and tuk-tuks. Card payments are limited to larger restaurants and hotels',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Waterproof dry bag is essential for tubing — protect your phone, cash, and camera from the river',
+      'Water shoes or sandals with straps for the river — flip-flops will float away',
+      'Quick-dry clothes, reef-safe sunscreen, and a hat with chin strap for sun protection on the water',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect Lao Culture', text: 'Laos is a deeply Buddhist country. Remove shoes before entering temples, dress modestly away from the river, and avoid loud behaviour near monasteries. Monks collect alms at dawn in Vang Vieng — observe quietly and do not photograph without permission.' },
+  { icon: '🌍', title: 'Leave No Trace', text: 'The Nam Song River and its lagoons are natural treasures. Do not leave rubbish on the riverbanks, in the water, or at the lagoons. Carry a small bag for your waste and take it back to town. The beauty of Vang Vieng depends on visitors treating it with care.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Ask permission before photographing locals, especially in villages outside town. Children will often pose happily but always check with parents first. Monks should generally not be photographed without asking.' },
+  { icon: '🗣', title: 'Language Basics', text: 'Learn basic Lao — sabaidee (hello), khop jai (thank you), bor pen nyang (no problem). Lao and Thai are closely related, so Thai speakers can communicate easily. English is spoken in tourist areas but limited elsewhere.' },
+  { icon: '🤝', title: 'Support Local Communities', text: 'Choose locally-owned guesthouses and restaurants over international chains. Buy snacks and drinks from local shops rather than tourist minimarkets. The tubing industry employs many local families — your spending supports the community directly.' },
+  { icon: '🕐', title: 'Embrace the Pace', text: 'Laos is called the land of a million elephants — everything moves slowly and that is the point. Do not rush, do not complain about delays, and let the river set your pace. The best experiences in Vang Vieng come from slowing down.' },
+];
+---
+
+<CityGuideLayout
+  title="River Tubing Vang Vieng Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Vang Vieng river tubing guide for young travelers. Nam Song River, Blue Lagoon, karst scenery with 1 and 3-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/river-tubing-hero.webp"
+  heroFlag="🇱🇦"
+  heroCountry="Laos"
+  heroRegion="Southeast Asia"
+  heroCity="River Tubing"
+  heroSubtitle="Float down the Nam Song River through towering limestone karsts — rope swings, turquoise lagoons, and cold BeerLao in the backpacker capital of Laos."
+  heroPills={["River Tubing","Adventure","Nov – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Vang Vieng is one of the cheapest adventure destinations in Southeast Asia — your money goes a long way here. These ranges cover budget backpackers to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Vang Vieng has transformed from its wild party days into a responsible adventure destination. Enjoy the tubing, respect the river, and support the local community that makes it possible."
+  ctaCity="Vang Vieng"
+  ctaText="Find travel companions for river tubing in Vang Vieng on roammate — share tuk-tuks, split costs, and float down the Nam Song together."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'THB (Baht)', detail: '1 USD ≈ ฿35' },
+  { icon: '🗣', label: 'Language', value: 'Thai / English', detail: 'English widely spoken at the party' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Year-round (monthly)', detail: 'Busiest Dec/Jan/Mar' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$30–60 USD', detail: 'Higher on party night' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 60 days', detail: 'Check requirements for your nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Full Moon Party — Haad Rin Beach',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Pre-Party Prep & Beach Day',
+          text: 'Spend the day at Haad Rin Beach soaking up the sun before the main event. The beach fills with backpackers from late morning — grab a spot, swim in the warm Gulf of Thailand, and fuel up with a proper meal from one of the beachfront restaurants. Pad thai, fried rice, and fresh fruit shakes for under 150 THB will keep you going. Stock up on water and electrolytes — you will need them later. Most hostels and guesthouses sell neon body paint and UV accessories from around 50 THB.',
+          tip: 'Eat a big meal before the party starts. Food stalls on Haad Rin close or get impossibly crowded after midnight — having a full stomach before you start drinking is essential.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Neon Paint, Sunset & Early Arrivals',
+          text: 'From late afternoon, the energy shifts. Body paint stations line the street behind Haad Rin — get covered in neon and UV-reactive paint (100–200 THB for a full design). The beach bars start pumping music by 5pm and the first bucket drinks appear — whiskey, vodka, or rum buckets run 200–300 THB each. Watch the sunset from the beach as the crowd builds. By 8pm the sand is packed and the fire show performers begin warming up along the shoreline.',
+          tip: 'Leave your passport, bank cards, and anything you cannot afford to lose locked at your accommodation. Bring only cash (1,000–2,000 THB is plenty), your phone in a waterproof pouch, and your room key.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'The Party — Fire Shows, Music Zones & Sunrise',
+          text: 'The Full Moon Party runs from around 9pm until sunrise. Haad Rin Beach splits into distinct music zones — house and techno at one end, drum and bass in the middle, reggae and hip-hop at the other. Fire dancers perform along the beach with flaming skipping ropes, fire limbo, and spinning poi. The energy peaks between midnight and 3am when the beach holds 10,000–30,000 people. As the crowd thins toward dawn, the hardcore survivors gather at the southern end of the beach to watch the sunrise over the Gulf of Thailand — one of the most iconic moments in backpacker culture.',
+          tip: 'Wear shoes — broken glass is a real hazard on the sand. Do not swim drunk, even if others are. Stay in groups, watch your drinks, and agree on a meeting point with friends in case you get separated.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Pre-Party Beach Day — Koh Phangan Explored',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bottle Beach — Hidden Paradise',
+          text: 'Bottle Beach (Haad Khuat) on the north coast of Koh Phangan is one of the most beautiful beaches in the Gulf of Thailand — accessible only by longtail boat from Chaloklum village (150–200 THB, 15 minutes) or a steep jungle hike. The beach is a crescent of soft white sand backed by jungle with just a handful of bungalow operations. Snorkelling off the rocks at the eastern end reveals coral and tropical fish. Arrive early to grab a prime spot before the day-trippers show up around 11am.',
+          tip: 'The longtail boats from Chaloklum leave when they have enough passengers — go before 10am for the most reliable departures. Bring water and snacks as the beach restaurants charge tourist prices.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Than Sadet Waterfall & Island Viewpoints',
+          text: 'Than Sadet waterfall in the northeast of Koh Phangan is a series of cascading pools carved into granite boulders — a favourite of the Thai royal family, whose initials are carved into the rocks. The main falls are a 15-minute walk from the road. After the waterfall, rent a scooter (200–300 THB/day) and ride to Amstel Viewpoint or the Domesila Viewpoint for panoramic views across the island and out to Koh Samui and Ang Thong Marine Park. The roads are steep and winding — ride carefully.',
+          tip: 'The waterfalls flow best after rain — in dry season (Feb–Apr) they can be reduced to a trickle. Check recent conditions before making the trip.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Thong Sala Night Market & Early Night',
+          text: 'Thong Sala, the main town and ferry port, hosts a walking street night market on Saturday evenings with grilled seafood, pad thai, rotis, and fresh coconut ice cream — all under 100 THB. Even on non-Saturday nights the Pantip food market near the pier is excellent and cheap. This is your last proper meal before the party tomorrow — eat well, hydrate, and get an early night. Your body will thank you at 4am on the beach.',
+          tip: 'Buy your party supplies tonight — neon paint, glow sticks, and a waterproof phone pouch are all cheaper in Thong Sala than on Haad Rin where prices double on party day.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Full Moon Party Night — Haad Rin Beach',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sleep In & Haad Rin Arrival',
+          text: 'Sleep in and recharge — the night ahead is long. If you are staying outside Haad Rin, catch a songthaew (shared taxi truck, 100–200 THB) to the peninsula in the early afternoon. Haad Rin has two beaches — Haad Rin Nok (Sunrise Beach) is where the party happens, while Haad Rin Nai (Sunset Beach) is quieter for swimming and relaxing during the day. Grab lunch at one of the restaurants on the main strip and explore the party zone before it fills up.',
+          tip: 'If you are not staying in Haad Rin, confirm your return transport in advance. Songthaews run all night during Full Moon but prices triple after midnight — negotiate before you get in.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Body Paint, Pre-Drinks & Beach Bars',
+          text: 'The pre-party ritual starts around 4pm. Body paint artists set up along Haad Rin\'s main street — full-body UV designs run 200–500 THB depending on complexity. Most hostels and guesthouses throw pre-party events with cheap buckets and music from 5pm. The beach bars — Cactus, Drop In, Mellow Mountain — start their sound systems and the energy builds through sunset. A bucket of Thai whiskey with Red Bull and Coke costs 200–300 THB and is the standard party fuel.',
+          tip: 'Pace yourself on the buckets — they are stronger than they taste. Alternate alcoholic drinks with water bottles (20 THB from beach vendors) throughout the night.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'The Main Event — Midnight to Sunrise',
+          text: 'By 10pm Haad Rin Beach transforms into the largest beach party in the world. Different stretches of the 700m beach blast different genres — techno, trance, drum and bass, reggae, and Thai pop. Fire show performers work the crowd with flaming jump ropes and fire poi. The energy peaks between midnight and 3am. As dawn approaches, the crowd migrates to the rocks at the southern end of the beach for the iconic Full Moon sunrise. It is loud, chaotic, sweaty, sandy, and unforgettable.',
+          tip: 'Wear closed shoes you do not mind getting ruined — the sand is littered with broken glass and spilled drinks. Reef shoes or old trainers work perfectly.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Recovery Day — Slow Down & Recharge',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Late Start & Recovery Brunch',
+          text: 'You will not be waking up early today. Most of Haad Rin sleeps until noon after the Full Moon Party. When you surface, head to one of the brunch spots on the main strip for a recovery meal — big Western breakfasts, fresh fruit smoothies, and strong coffee. Rehydrate aggressively with water and coconut water (30–50 THB from any shop). If you can manage it, a dip in the sea at the quieter Haad Rin Nai beach will help revive you.',
+          tip: 'Check your body for cuts and scrapes from the beach — clean any wounds with antiseptic. Minor foot cuts from glass are extremely common. Pharmacies on the main strip sell antiseptic and plasters.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Srithanu or Zen Beach — Chill Side of the Island',
+          text: 'If you have energy, escape Haad Rin and head to the west coast. Srithanu is Koh Phangan\'s wellness village — yoga studios, vegan cafes, and crystal shops line the quiet road behind the beach. Zen Beach, just south, is a beautiful sandy cove perfect for a quiet swim. A Thai massage on the beach (300–400 THB for an hour) is the perfect antidote to a night of dancing on sand. Songthaews from Haad Rin to Srithanu cost around 200 THB.',
+          tip: 'The west coast sunset from Srithanu is spectacular — if you time your visit right, you can watch the sun drop into the sea from one of the beach bars.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Dinner & Departure Planning',
+          text: 'Wrap up your Koh Phangan trip with dinner at a beachfront restaurant — grilled fish, green curry, and a cold Singha beer while watching the last sunset. If you are heading to Koh Tao, Koh Samui, or the mainland, book your ferry ticket at any travel agent on the island or online through Lomprayah or Raja Ferry. Morning ferries depart from Thong Sala pier, with connections to all major Gulf of Thailand destinations.',
+          tip: 'Book your ferry the day before departure in peak season (Dec–Mar) — boats sell out and you do not want to be stranded. The Lomprayah high-speed catamaran is the most reliable service.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Buy buckets from beach vendors', text: 'Beach bars charge 300–400 THB for buckets. Walking vendors on the sand sell the same thing for 200–250 THB. The further from the main stage, the cheaper the drinks.' },
+  { title: 'Stay outside Haad Rin', text: 'Accommodation in Haad Rin triples in price around Full Moon. Stay in Baan Tai or Thong Sala and take a songthaew (100–200 THB) — you will save significantly on rooms.' },
+  { title: 'Book accommodation weeks ahead', text: 'Every bed on Koh Phangan fills up for Full Moon Party. Book at least 2–3 weeks in advance, especially for December/January. Last-minute arrivals pay premium prices or sleep on the beach.' },
+  { title: 'Eat at Pantip Market in Thong Sala', text: 'The night food market near Thong Sala pier serves full Thai meals for 60–100 THB — a fraction of Haad Rin restaurant prices. Stock up before heading to the party.' },
+  { title: 'Buy neon paint in Thong Sala', text: 'Body paint and glow accessories cost double on Haad Rin on party day. Buy supplies in Thong Sala the day before and apply yourself to save 100–200 THB.' },
+  { title: 'Use shared songthaews', text: 'Shared pickup trucks run all over the island for 100–200 THB. Private taxis can cost 500–1,000 THB for the same journey. Wait for a shared ride unless you are in a group.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$8–20', midrange: '$25–50', splurge: '$70+', notes: 'Dorm bed → bungalow → beachfront resort' },
+  { category: 'Food', budget: '$5–12', midrange: '$12–25', splurge: '$35+', notes: 'Street food → restaurants → beachfront dining' },
+  { category: 'Transport', budget: '$3–8', midrange: '$10–20', splurge: '$30+', notes: 'Songthaew → scooter rental → private taxi' },
+  { category: 'Drinks (Party)', budget: '$8–15', midrange: '$15–30', splurge: '$40+', notes: 'Beach vendor buckets → bar buckets → cocktails' },
+  { category: 'Activities', budget: '$5–15', midrange: '$15–40', splurge: '$60+', notes: 'Beach day → boat trips → diving' },
+  { category: 'Daily Total', budget: '$30–70', midrange: '$75–165', splurge: '$235+', notes: 'Budget backpacker → comfortable → splurge' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Thailand offers visa-free entry for 60 days for most nationalities',
+      'Koh Phangan is reached by ferry from Koh Samui (30 min) or Surat Thani (2.5 hrs)',
+      'Full Moon Party dates follow the lunar calendar — check exact dates online before booking',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Wear shoes on the beach — broken glass is the number one injury at Full Moon Party',
+      'Do not swim while intoxicated — drownings occur every year at Haad Rin',
+      'Stay in groups and agree on a meeting point — phone signal is unreliable during the party',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Songthaews (shared pickup trucks) run between all towns and beaches for 100–200 THB',
+      'Scooter rental costs 200–300 THB/day but roads are steep and accidents are common',
+      'Walking is the only option within Haad Rin on party night — all roads close to vehicles',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Thai SIM card at the airport or any 7-Eleven for cheap data — AIS and DTAC have the best island coverage',
+      'Phone signal on Haad Rin drops during the party when 20,000+ people overwhelm the cell towers',
+      'Agree on a physical meeting point with friends — do not rely on being able to call or message during the party',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: THB (Baht). 1 USD ≈ ฿35. Carry cash — most beach vendors and bucket sellers are cash only',
+      'ATMs are available in Haad Rin and Thong Sala but charge 220 THB per withdrawal for foreign cards',
+      'Budget 1,000–2,000 THB cash for party night — that covers drinks, food, and transport home',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Old clothes and shoes you do not mind ruining — neon paint, sand, and spilled drinks will destroy them',
+      'Waterproof phone pouch (50–100 THB on the island) to protect your phone from splashes and rain',
+      'Leave valuables, passport, and cards locked at your accommodation — bring only cash and room key',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect the Island', text: 'Koh Phangan is home to Thai communities, temples, and families — the Full Moon Party is one beach on one night. Be respectful in town, cover up away from the beach, and remove shoes at temples. The island is more than the party.' },
+  { icon: '🌍', title: 'Leave No Trace', text: 'The beach is cleaned up the morning after the party, but the environmental impact is significant. Use reusable cups where possible, do not leave rubbish on the sand, and avoid single-use plastics. Respect the marine environment — never throw anything into the sea.' },
+  { icon: '📸', title: 'Photography & Privacy', text: 'People at the party are often in vulnerable states. Ask before photographing strangers, especially up close. Do not post photos of others without consent. What happens at Full Moon stays at Full Moon.' },
+  { icon: '🗣', title: 'Language Basics', text: 'Learn basic Thai greetings — sawadee krap/ka (hello), khop khun krap/ka (thank you). Thai people appreciate the effort and it makes interactions smoother. English is widely spoken in tourist areas.' },
+  { icon: '🤝', title: 'Look After Each Other', text: 'The backpacker community at Full Moon Party is generally friendly and helpful. Look out for people who seem lost, unwell, or in trouble. If someone needs help, alert the volunteer medics stationed along the beach or call the tourist police (1155).' },
+  { icon: '🕐', title: 'Pace Yourself', text: 'The party runs for 8+ hours from dusk until dawn. Start slow, hydrate between drinks, and take breaks away from the loudest zones. The best part of the night is often the sunrise — you need to still be standing to see it.' },
+];
+---
+
+<CityGuideLayout
+  title="Full Moon Party Guide 2026 — Koh Phangan for Young Travelers | roammate"
+  description="The ultimate Full Moon Party guide for young travelers. Haad Rin Beach, neon paint, fire shows, bucket drinks with 1 and 3-day itineraries. Budget tips and safety advice."
+  heroImage="/images/guides/full-moon-party-hero.webp"
+  heroFlag="🇹🇭"
+  heroCountry="Thailand"
+  heroRegion="Southeast Asia"
+  heroCity="Full Moon Party"
+  heroSubtitle="The world's most legendary beach party — 10,000 backpackers, neon body paint, fire dancers, and sunrise on Haad Rin Beach, Koh Phangan."
+  heroPills={["Monthly Event","Beach Party","Year-Round"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Full Moon Party costs spike on the night itself — bucket drinks, transport, and accommodation all increase around the event. These ranges cover budget backpackers to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="The Full Moon Party is an unforgettable experience — but Koh Phangan is a real community with its own culture. Party hard, stay safe, and treat the island with respect."
+  ctaCity="Full Moon Party"
+  ctaText="Find travel companions for the Full Moon Party on roammate — split costs, stay safe in groups, and share the sunrise with new friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'GHS (Cedi)', detail: 'Cards accepted at hotels, cash elsewhere' },
+  { icon: '🗣', label: 'Language', value: 'English / Akan', detail: 'English is the official language' },
+  { icon: '🕐', label: 'Timezone', value: 'GMT (UTC+0)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: 'Dry harmattan season, warm and sunny' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–55 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa required', detail: 'E-visa available for most nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Accra City Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jamestown & Lighthouse',
+          text: 'Start your day in Jamestown, Accra\'s oldest neighbourhood and the historical heart of the city. The streets are narrow and lively — colonial-era buildings in faded pastel colours line the lanes, and the neighbourhood buzzes with fishing activity, street vendors, and children playing. Climb the 19th-century Jamestown Lighthouse for a panoramic view over the rooftops, the fishing harbour, and the Atlantic coast stretching east and west. The harbour below is packed with colourful wooden fishing boats and the morning catch is sorted and sold right on the beach.',
+          tip: 'A small fee (about 10 GHS) is charged to climb the lighthouse. Go early in the morning when the light is best and the fishing harbour is at its busiest.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kwame Nkrumah Mausoleum & Arts Centre',
+          text: 'Visit the Kwame Nkrumah Memorial Park — a peaceful garden and mausoleum dedicated to Ghana\'s founding father who led the country to independence in 1957. The park contains a museum with photographs, personal effects, and documents from the independence struggle. Then walk to the nearby Arts Centre (Centre for National Culture) — a large covered market where hundreds of artisans sell woodcarvings, kente cloth, beaded jewellery, leather goods, and Ashanti gold-weight replicas. Bargaining is expected and part of the experience.',
+          tip: 'Bargaining at the Arts Centre is essential — start at about 40% of the asking price and negotiate from there. Prices are flexible but fair once you find the right level.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Osu Oxford Street & Jollof Rice',
+          text: 'Head to Osu, Accra\'s vibrant commercial and nightlife district, centred on Oxford Street. The street is lined with restaurants, bars, shops, and street food vendors. This is the place to try Ghanaian jollof rice — the spicy, tomato-based rice dish that is the subject of fierce friendly rivalry between Ghana and Nigeria over who makes it best. Pair it with grilled tilapia, kelewele (spicy fried plantain), and a cold Star or Club beer. After dinner, Osu\'s rooftop bars and live music venues come alive.',
+          tip: 'Jollof rice from street vendors is often better and far cheaper than restaurant versions — look for stalls with long queues of locals. That is always the quality indicator.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Jamestown, Independence & Osu',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Jamestown Walking Tour',
+          text: 'Begin in Jamestown, Accra\'s oldest quarter built around the 17th-century British colonial fort. The neighbourhood is raw, colourful, and endlessly photogenic — crumbling colonial buildings painted in faded blues, greens, and yellows sit beside active fishing operations and bustling market stalls. Climb the Jamestown Lighthouse for a sweeping view of the harbour, the rooftops, and the Atlantic. Walk down to the fishing harbour where brightly painted wooden boats are hauled up on the sand and women smoke fish over open fires. A local guide from the community is the best way to experience Jamestown respectfully.',
+          tip: 'Hire a local Jamestown guide — community guides know the neighbourhood intimately, ensure you are welcome, and your fee supports the local economy. Around 50–100 GHS for a 2-hour walk.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Independence Square & Nkrumah Mausoleum',
+          text: 'Walk east along the coast to Independence Square (Black Star Square) — the vast ceremonial plaza where Ghana\'s independence was declared on 6 March 1957. The Independence Arch, modelled after the Arc de Triomphe, stands at the centre with a large black star on top — the symbol of African liberation. Continue to the Kwame Nkrumah Memorial Park nearby, where the mausoleum, museum, and gardens pay tribute to the man who made Ghana the first sub-Saharan African country to gain independence from colonial rule. The museum is small but powerful.',
+          tip: 'Entry to the Nkrumah Mausoleum and museum is about 20 GHS. The gardens are peaceful and provide welcome shade from the midday heat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Osu Nightlife & Street Food',
+          text: 'Head to Osu for dinner and nightlife. Oxford Street is Accra\'s busiest commercial strip — restaurants, bars, galleries, and street food line the road. Start with kelewele (spiced fried plantain cubes) from a street vendor, then sit down for banku and tilapia (fermented corn dough with grilled fish) or waakye (rice and beans with spicy shito pepper sauce). Osu\'s rooftop bars serve cocktails with views over the city, and live music venues host highlife, afrobeats, and hiplife acts most weekends.',
+          tip: 'Osu is safe and lively at night but use ride-hailing apps (Bolt or Uber) for transport rather than flagging taxis on the street — it is safer and the fare is fixed.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Makola Market, W.E.B. Du Bois & Labadi Beach',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Makola Market — Accra\'s Commercial Heart',
+          text: 'Dive into Makola Market, the largest and most chaotic market in Accra. Spread over several city blocks in the centre of town, Makola sells everything — fabric by the yard, kitchen utensils, electronics, imported goods, traditional medicine, cosmetics, and an overwhelming array of food. The market is a sensory experience unlike anything in Europe or the Americas — the energy, noise, colour, and density of people and goods is extraordinary. Kayayei (female head porters) carry enormous loads through the narrow lanes on their heads with remarkable balance and strength.',
+          tip: 'Leave valuables at your hotel and carry only the cash you need — Makola is crowded and pickpockets operate. Go early before the midday heat makes the narrow lanes uncomfortable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'W.E.B. Du Bois Centre & Labadi Beach',
+          text: 'Visit the W.E.B. Du Bois Memorial Centre for Pan African Culture in the Cantonments district. The American civil rights leader and intellectual spent his final years in Ghana at the invitation of Nkrumah and is buried in the garden of this house-turned-museum. The centre documents the Pan-African movement and Du Bois\'s vision of African unity. Afterwards, take a tro-tro (shared minibus) or Bolt to Labadi Beach — Accra\'s most popular public beach. On weekends, Labadi transforms into a massive beach party with live music, drumming circles, food vendors, and football games on the sand.',
+          tip: 'Labadi Beach charges a small entry fee (5–10 GHS). Weekends are lively and social; weekdays are quieter for swimming. Keep belongings secure on the beach.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Chop Bar Dinner & Live Highlife Music',
+          text: 'Experience an authentic Ghanaian chop bar — a local no-frills restaurant serving traditional dishes. Try fufu (pounded cassava and plantain) with light soup or groundnut soup — you tear off small pieces of the stretchy fufu and dip them in the rich, peppery broth. Wash it down with fresh coconut water or sobolo (hibiscus drink). After dinner, find a venue playing live highlife music — Ghana\'s signature genre that blends West African rhythms with jazz influences. The Republic Bar & Grill in Osu or +233 Jazz Bar & Grill are reliable options.',
+          tip: 'Fufu etiquette: use your right hand only, do not chew the fufu (swallow it with the soup), and do not put your left hand in the communal bowl. Ask your server to demonstrate if unsure.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Arts Centre, Aburi Gardens & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arts Centre & Craft Shopping',
+          text: 'Spend the morning at the Arts Centre (Centre for National Culture) near the National Theatre. This is Accra\'s largest craft market — hundreds of stalls sell woodcarvings, traditional masks, kente cloth, Adinkra-stamped fabrics, brass castings, beaded jewellery, and leather sandals. The quality varies widely so examine items carefully, but skilled artisans produce genuinely beautiful work here. The carvers, weavers, and bead-makers often work on-site, so you can watch the craft being made before buying.',
+          tip: 'Kente cloth and Adinkra prints make excellent souvenirs — ask vendors to explain the symbolic meaning of the patterns. Authentic hand-woven kente is more expensive but far superior to machine-printed versions.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Aburi Botanical Gardens (Day Trip)',
+          text: 'If time allows, take a tro-tro or shared taxi 30km north to the Aburi Botanical Gardens in the Akuapem Hills. Established by the British in 1890, the gardens sit at 450m elevation and are significantly cooler than sea-level Accra. Walk beneath enormous tropical trees — mahogany, kapok, palms — and through well-maintained flower gardens. The views back down to the Accra plains and the coast are expansive on clear days. The gardens are popular with Ghanaian families on weekends and have a peaceful, shaded atmosphere perfect for escaping the city heat.',
+          tip: 'Combine the Aburi trip with lunch at one of the hillside restaurants near the gardens — the cooler elevation and views make for a refreshing break from Accra\'s heat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Jollof & Departure',
+          text: 'Return to Accra for a final evening. Seek out one last plate of Ghanaian jollof rice — every local has an opinion on who makes the best, so ask your hotel staff or driver for their recommendation. The best jollof is smoky from being cooked in a large pot over charcoal, with the prized burned bottom layer (the \"jollof check\") served as a crispy treat. Round off with a cold malta or Star beer at a rooftop bar with views over the city lights before heading to Kotoka International Airport.',
+          tip: 'Kotoka International Airport is efficient and modern — arrive 3 hours before international flights. The airport has good food and duty-free shopping for last-minute souvenirs.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Jamestown Heritage',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival in Accra',
+          text: 'Arrive at Kotoka International Airport and transfer to your accommodation. Accra is a sprawling, energetic city — choose a base in Osu, Cantonments, or East Legon for the best mix of accessibility, restaurants, and safety. Settle in, exchange money (or withdraw cedis from an ATM), and grab a quick breakfast of freshly baked bread and coffee from a local bakery. Accra hits you immediately with its energy — traffic, music, street vendors, and the warm Atlantic air.',
+          tip: 'Use Bolt or Uber from the airport — taxis overcharge tourists significantly. A ride to Osu should cost about 30–50 GHS via app versus 100+ by negotiating with airport taxis.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jamestown Heritage Walk',
+          text: 'Head to Jamestown for an afternoon walking tour of Accra\'s oldest district. The neighbourhood was built around the 17th-century British James Fort and the area retains much of its colonial-era architecture, now weathered and painted in faded pastels. The streets are narrow, lively, and full of character — fishmongers, mechanics, tailors, and children share the lanes. Climb the Jamestown Lighthouse for panoramic views over the harbour, then walk down to the fishing beach where the daily catch is landed and women smoke fish over low fires.',
+          tip: 'A community guide is essential in Jamestown — they introduce you to locals, ensure you are welcome, and provide context that you would miss on your own. About 50–100 GHS for 2 hours.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Street Food Introduction',
+          text: 'Begin your Accra food journey at a busy street food corner. Try red-red (fried plantain with bean stew), kelewele (spiced fried plantain cubes), and waakye (rice and beans) with shito (hot pepper sauce). Ghanaian street food is flavourful, cheap, and served in generous portions. Wash it down with fresh coconut water — vendors hack open the top with a machete right in front of you. The evening atmosphere in Accra\'s commercial districts is warm and buzzing.',
+          tip: 'Choose street food stalls with lots of customers — high turnover means the food is fresh. Avoid any food that has been sitting in the open for a long time in the heat.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Independence History & Makola Market',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Independence Square & National Museum',
+          text: 'Walk along the coastal road to Independence Square (Black Star Square), the vast ceremonial plaza where Kwame Nkrumah declared Ghana\'s independence on 6 March 1957. The Independence Arch stands at the centre, topped with a large black star — the symbol that also appears on Ghana\'s flag. Continue to the National Museum of Ghana on Barnes Road, which houses a collection of archaeological artefacts, historical documents, and traditional Akan and Ashanti art including gold-weights, stools, and regalia.',
+          tip: 'The National Museum is small but informative — allow about an hour. Entry is 20 GHS. The collection provides essential context for understanding Ashanti and Ghanaian culture.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Makola Market Immersion',
+          text: 'Spend the afternoon exploring Makola Market, Accra\'s commercial heartbeat. The market sprawls across several blocks and overflows into surrounding streets — thousands of vendors sell fabric, food, electronics, tools, clothing, and household goods. The density and energy are overwhelming in the best way. Navigate the narrow lanes between towering stacks of merchandise, dodging kayayei (head porters) carrying impossible loads. The fabric section is particularly impressive — bolts of wax-print cloth in every colour and pattern imaginable line the stalls.',
+          tip: 'Carry only the cash you need and keep it in a front pocket or money belt. Leave your passport and cards at the hotel. Makola is generally safe but crowded and distracting.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Chop Bar & Evening Stroll',
+          text: 'Visit a traditional chop bar for dinner — these no-frills local eateries serve the most authentic Ghanaian food. Try banku (fermented corn and cassava dough) with grilled tilapia and pepper sauce, or fufu with light soup. The food is hearty, flavourful, and incredibly good value. After dinner, stroll through Osu\'s bustling streets and enjoy the warm evening atmosphere — music spills from bars, street vendors grill suya (spiced meat skewers), and the city feels alive and welcoming.',
+          tip: 'At chop bars, point at what you want if you cannot read the menu — the staff are used to visitors. Portions are large and cheap — 10–20 GHS for a full meal.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Nkrumah Mausoleum, W.E.B. Du Bois & Arts',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kwame Nkrumah Memorial Park',
+          text: 'Visit the Kwame Nkrumah Memorial Park — a beautifully maintained garden and mausoleum dedicated to Ghana\'s first president and leading figure in the Pan-African movement. The marble mausoleum is surrounded by fountains, and the museum inside contains photographs, letters, personal effects, and documents from the independence struggle. Nkrumah\'s legacy is complex and contested, but his role in ending British colonial rule and inspiring independence movements across Africa is undeniable. The park is peaceful and reflective.',
+          tip: 'Allow at least an hour for the museum — the documents and photographs provide powerful context for Ghana\'s independence story. Entry is about 20 GHS.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'W.E.B. Du Bois Centre',
+          text: 'Take a short taxi ride to the W.E.B. Du Bois Memorial Centre for Pan African Culture in Cantonments. The American scholar, activist, and civil rights pioneer spent his final years in Accra, invited by Nkrumah to lead the creation of an Encyclopedia Africana. Du Bois is buried in the garden of this colonial-era house, now a museum documenting his life, the Pan-African movement, and the connections between African Americans and the African continent. The centre is small but deeply moving.',
+          tip: 'The Du Bois Centre is open Monday to Friday — check hours before visiting. The garden is a quiet and contemplative space. Entry is about 15 GHS.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Live Music & Nightlife',
+          text: 'Accra has one of West Africa\'s best live music scenes. Highlife — Ghana\'s signature genre blending West African rhythms, jazz, and guitar — was born here, and contemporary artists continue to innovate with afrobeats and hiplife. Check listings for live performances at venues like +233 Jazz Bar & Grill, The Republic Bar, or the Alliance Francaise. On weekends, Accra\'s nightlife runs late — rooftop bars, dance clubs, and outdoor concerts keep the city moving well past midnight.',
+          tip: 'Friday and Saturday nights are the best for live music in Accra. Cover charges are usually 20–50 GHS. Dress smart-casual for the more upscale venues.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Day Trip to Cape Coast & Kakum',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Cape Coast Castle',
+          text: 'Depart early for Cape Coast, about 3 hours west of Accra on the coastal road. Cape Coast Castle is a UNESCO World Heritage Site — a whitewashed fortress built by the Swedish and later controlled by the British, which served as one of the largest slave-trading posts in West Africa. The guided tour through the dungeons where enslaved people were held before being shipped across the Atlantic is one of the most powerful and harrowing historical experiences on the continent. The Door of No Return, the final exit point, opens directly onto the Atlantic.',
+          tip: 'The Cape Coast Castle tour is emotionally intense — allow time afterwards to process. Photography is permitted but be respectful. Entry and guided tour is about 40 GHS.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kakum National Park Canopy Walk',
+          text: 'Drive 30 minutes north from Cape Coast to Kakum National Park for the famous canopy walkway — a series of suspension bridges strung between the tops of giant tropical trees at 40 metres above the forest floor. The walkway sways gently as you cross seven bridges, looking down into the rainforest canopy and out over the treetops. Kakum protects one of the last remaining patches of tropical rainforest in Ghana and is home to forest elephants, monkeys, and over 300 bird species, though the dense canopy makes wildlife sightings from the walkway rare.',
+          tip: 'The canopy walk is most enjoyable in the morning before the heat builds — if combining with Cape Coast, reverse the order and visit Kakum first if possible.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Accra',
+          text: 'Drive back to Accra along the coastal road, stopping at roadside stalls for fresh coconuts, pineapple, or grilled corn. The drive passes through fishing towns, palm oil plantations, and small villages. Arrive back in Accra for a late dinner at one of Osu\'s restaurants — grilled kebabs, fried yam and pepper sauce, or a final plate of jollof rice. The day trip to Cape Coast and Kakum is one of the most important cultural and natural experiences in Ghana and should not be missed.',
+          tip: 'The return drive can take 4+ hours in traffic — leave Cape Coast by 4pm to avoid arriving in Accra too late. Consider staying overnight in Cape Coast if you prefer a relaxed pace.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Labadi Beach, Coffin Art & Teshie',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Labadi Beach Morning',
+          text: 'Spend a relaxed morning at Labadi Beach (La Pleasure Beach), Accra\'s most popular stretch of sand. The beach is wide, sandy, and backed by palm trees and beach bars. In the morning it is relatively quiet — perfect for a swim in the warm Atlantic, a beach walk, or simply relaxing on a sun lounger with a fresh fruit juice. Horse rides along the sand are available, and local vendors sell freshly cut pineapple, coconut water, and grilled corn.',
+          tip: 'Labadi charges a small entry fee (5–10 GHS). Rent a beach chair and umbrella for about 20 GHS. The sea has a mild undertow — swim in the designated areas.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Fantasy Coffin Workshop — Teshie',
+          text: 'Visit one of the famous fantasy coffin workshops in Teshie, a fishing town just east of Accra. The Ga people of Greater Accra are renowned for their custom-made coffins shaped as objects representing the deceased\'s life — a fisherman might be buried in a giant fish, a taxi driver in a Mercedes, a farmer in a cocoa pod. The workshops are open to visitors and the carpenters are proud to show their latest commissions. The coffins have become internationally celebrated as art pieces and are exhibited in galleries worldwide.',
+          tip: 'Paa Joe\'s workshop in Teshie is the most famous — call ahead or just turn up. Small coffin replicas make unique souvenirs (200–500 GHS). Photography is welcome.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Teshie Fish Market & Sunset',
+          text: 'Walk to the Teshie fishing harbour to watch the afternoon catch come in. The colourful wooden canoes return through the surf, hauled up the beach by teams of fishermen, and the catch is immediately sorted and sold on the sand. Women carry basins of fish on their heads to the smokehouses nearby. The scene is raw, energetic, and photogenic. Stay for sunset over the harbour — the sky turns orange and the silhouettes of the boats against the water are beautiful. Return to Osu for a late dinner.',
+          tip: 'Teshie is a working fishing community — be respectful when photographing and ask permission. A small tip to fishermen who pose for photos is appreciated.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Aburi Gardens & Akuapem Hills',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Aburi Botanical Gardens',
+          text: 'Take a tro-tro or shared taxi 30km north into the Akuapem Hills to the Aburi Botanical Gardens. Established by the British in 1890 at 450m elevation, the gardens are significantly cooler than Accra and filled with towering tropical trees — mahogany, kapok, palms, and flowering species. The wide lawns and shaded pathways are popular with Ghanaian families on weekends. A peaceful walk through the gardens offers a complete contrast to the intensity of Accra, with views back down to the plains and the coast on clear days.',
+          tip: 'The tro-tro to Aburi departs from Tudu station in central Accra — the journey takes about an hour. Bring a light layer as the hill station is noticeably cooler than the coast.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Akuapem Ridge & Bead-Making',
+          text: 'Continue along the Akuapem Ridge through small hillside towns. The ridge is home to the Krobo people, who are famous for their handmade recycled glass beads — one of Ghana\'s most distinctive crafts. Visit a bead-making workshop in Koforidua or Somanya to see how powdered glass is heated in clay moulds over open fires and hand-painted into intricate patterns. The beads are sold as necklaces, bracelets, and loose strands. Buying directly from the makers ensures the best prices and supports the artisans.',
+          tip: 'Krobo beads make excellent gifts — each bead is unique and handmade. Buying at the workshop is 50–70% cheaper than buying the same beads in Accra\'s craft markets.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Accra & Rooftop Bar',
+          text: 'Return to Accra in the late afternoon and freshen up at your hotel. Spend the evening at one of Accra\'s rooftop bars — Skybar 25 at the Villagio Vista or the rooftop at Kempinski Hotel offer views over the city lights and a more upscale atmosphere. Sip a cocktail or local craft beer while watching the sun set over Accra\'s sprawling skyline. The contrast between the traditional hill towns and modern Accra is one of the pleasures of this city.',
+          tip: 'Rooftop bars in Accra charge international prices — a cocktail runs 40–80 GHS. For a more local experience, join the crowd at Osu\'s street bars where drinks are 5–15 GHS.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Shopping & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arts Centre & Final Shopping',
+          text: 'Spend your final morning at the Arts Centre for last-minute souvenirs. Now that you have spent a week in Ghana, your eye is better trained — you can spot quality kente cloth, well-carved masks, and authentic Adinkra prints. The Adinkra symbols each have specific meanings (sankofa means \"return and get it\" — learn from the past; Gye Nyame means \"except God\" — the supremacy of God) and make meaningful gifts. Woodcarvings, leather bags, and brass castings are also widely available.',
+          tip: 'Final-day bargaining is often the most successful — vendors prefer to make a sale at a lower price than have you leave empty-handed. Be fair but firm.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Oxford Street Lunch & Farewell Walk',
+          text: 'Have a final lunch on Oxford Street in Osu — choose from Ghanaian, Lebanese, Indian, or Chinese restaurants that line the busy road. Then take a farewell walk through Accra\'s streets, soaking in the energy, colour, and warmth that make this city unique. Accra is not a city of grand monuments or manicured tourist attractions — it is a city of people, food, music, and irrepressible energy. The memories you take home will be of encounters and flavours rather than postcard views.',
+          tip: 'Pack your souvenirs carefully for the flight — wrap fragile items in clothing and check baggage allowances for your airline. Kente cloth is light and packs easily.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Departure from Kotoka Airport',
+          text: 'Transfer to Kotoka International Airport for your departure flight. The airport is modern and efficient, with good food options and duty-free shopping if you need last-minute items. Ghana has a way of getting under your skin — the warmth of the people, the richness of the culture, the quality of the food, and the depth of the history combine to create an experience that is far more profound than many travellers expect. You will almost certainly want to return.',
+          tip: 'Allow 3 hours before international flights. Traffic to the airport can be heavy — use Google Maps or Bolt to check real-time conditions and leave with plenty of buffer time.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat at chop bars', text: 'Traditional chop bars serve generous portions of authentic Ghanaian food for 10–25 GHS ($1–3). Restaurant prices in Osu and Cantonments are 5–10x higher for similar dishes.' },
+  { title: 'Use tro-tros for transport', text: 'Tro-tros (shared minibuses) cost 2–5 GHS for journeys across Accra. Bolt/Uber rides are 15–30 GHS for the same routes. Tro-tros are slower but much cheaper and an authentic experience.' },
+  { title: 'Stay in guesthouses', text: 'Accra has excellent budget guesthouses in Osu and Adabraka for $15–30/night. International hotels charge $100+ for the same area. Ask for fan rooms instead of A/C to save more.' },
+  { title: 'Bargain at markets', text: 'Prices at Makola and the Arts Centre are always negotiable — start at 30–40% of the asking price. Walk away politely if the price does not come down — the vendor will often call you back.' },
+  { title: 'Drink sachets and tap beer', text: 'Pure Water sachets cost 0.50 GHS versus 5+ GHS for bottled water. Draft beer at local spots is 5–10 GHS versus 20+ GHS at tourist bars.' },
+  { title: 'Book day trips locally', text: 'Arrange Cape Coast and Kakum trips through local operators in Accra rather than international tour companies — the same experience costs 50–70% less.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–25', midrange: '$30–70', splurge: '$100+', notes: 'Hostels → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '$5–12', midrange: '$15–30', splurge: '$40+', notes: 'Street food → chop bars → restaurants' },
+  { category: 'Transport', budget: '$3–8', midrange: '$10–20', splurge: '$30+', notes: 'Tro-tros → Bolt/Uber → private car' },
+  { category: 'Activities', budget: '$5–15', midrange: '$15–40', splurge: '$50+', notes: 'Self-guided → group tours → private guides' },
+  { category: 'Entry Fees', budget: '$2–5', midrange: '$5–10', splurge: '$10–15', notes: 'Museums and sites have modest fees' },
+  { category: 'Daily Total', budget: '$25–65', midrange: '$75–170', splurge: '$230+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities require a visa — e-visa available online before travel',
+      'Keep a digital and physical copy of your passport, visa, and travel insurance at all times',
+      'Yellow fever vaccination certificate is required for entry into Ghana',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Malaria prophylaxis is recommended — consult your doctor before travel',
+      'Travel insurance with medical evacuation coverage is essential',
+      'Drink bottled or sachet water only — avoid tap water and ice in local restaurants',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Tro-tros (shared minibuses) are the cheapest transport — routes cover all of Accra',
+      'Bolt and Uber operate in Accra and are safer and more convenient than street taxis',
+      'Traffic in Accra is heavy, especially during morning and evening rush hours — allow extra time',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a MTN or Vodafone SIM card at the airport for affordable data — registration requires your passport',
+      'WiFi is available at most hotels and cafes in Accra but speeds vary',
+      'Mobile money (MoMo) is widely used in Ghana — you can load credit onto your SIM for cashless payments',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: GHS (Ghana Cedi). ATMs are widely available in Accra. Visa and Mastercard accepted',
+      'Carry cash for markets, tro-tros, and small vendors — cards are only accepted at hotels and larger restaurants',
+      'Tip 10% at restaurants. Guides and drivers appreciate tips — budget 20–50 GHS per day',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, breathable clothing — Accra is hot and humid year-round (28–33°C)',
+      'Comfortable walking shoes for market and city walking, plus sandals for the beach',
+      'A reusable water bottle, sunscreen, insect repellent, and a small daypack are essential',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Greetings Matter', text: 'Ghanaians greet each other warmly before any conversation — always say hello before asking a question or making a request. A handshake and smile go a long way. Older people are addressed with respect.' },
+  { icon: '🌍', title: 'Photography Respect', text: 'Ask before photographing people, especially in markets and fishing villages. Most Ghanaians are happy to be photographed but appreciate being asked first. Show the photo on your screen afterwards — it often starts a conversation.' },
+  { icon: '📸', title: 'Dress Modestly', text: 'Ghana is a relatively conservative country — dress modestly when visiting cultural sites, markets, and neighbourhoods. Beachwear is fine on the beach but not appropriate in town. Cover shoulders and knees at religious sites.' },
+  { icon: '🗣', title: 'Language & Communication', text: 'English is widely spoken in Ghana, making communication easy for English-speaking travellers. Learning a few Twi phrases — Akwaaba (welcome), Medaase (thank you) — earns big smiles.' },
+  { icon: '🤝', title: 'Support Local Economy', text: 'Choose locally-owned guesthouses, eat at chop bars, and buy from artisans directly. Your spending has the most impact when it stays in the community. Avoid international chain hotels where possible.' },
+  { icon: '🕐', title: 'Ghana Time', text: 'Things move at their own pace in Ghana — transport leaves when full, appointments are approximate, and patience is a virtue. Relax into the rhythm and you will enjoy the experience far more.' },
+];
+---
+
+<CityGuideLayout
+  title="Accra Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Accra guide for young travelers. History, culture, markets, beaches with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/accra-hero.webp"
+  heroFlag="🇬🇭"
+  heroCountry="Ghana"
+  heroRegion="Africa"
+  heroCity="Accra"
+  heroSubtitle="Ghana's vibrant capital — Jamestown heritage, buzzing markets, jollof rice rivalries, and the beating heart of West African culture."
+  heroPills={["3-Day City & Culture","Urban","Nov – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Accra is affordable for budget travellers but has a growing upscale scene — these ranges cover the spectrum from street food and tro-tros to boutique hotels and fine dining."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Ghana is known as one of the friendliest countries in West Africa — approach with warmth and openness, and you will be welcomed with genuine hospitality and unforgettable experiences."
+  ctaCity="Accra"
+  ctaText="Find travel companions to explore Accra together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

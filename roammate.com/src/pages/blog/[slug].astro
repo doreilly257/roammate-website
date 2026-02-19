@@ -1,0 +1,106 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import * as blogData from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+interface BlogPostSection {
+  heading: string;
+  content: string | string[];
+  image?: string;
+  imageAlt?: string;
+  kicker?: string;
+  quote?: string;
+}
+
+interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  heroImage: string;
+  heroImageAlt?: string;
+  category?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  author?: string;
+  readingTime?: string;
+  intro?: string;
+  tags?: string[];
+  sections: BlogPostSection[];
+  relatedGuideSlugs?: string[];
+  relatedPostSlugs?: string[];
+}
+
+interface RelatedGuide {
+  slug: string;
+  name: string;
+  country: string;
+  flag: string;
+}
+
+export function getStaticPaths() {
+  const source = blogData as {
+    allBlogPosts?: BlogPost[];
+    blogPosts?: BlogPost[];
+  };
+  const allPosts = source.allBlogPosts ?? source.blogPosts ?? [];
+  return allPosts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const source = blogData as {
+  allBlogPosts?: BlogPost[];
+  blogPosts?: BlogPost[];
+};
+const blogPosts: BlogPost[] = source.allBlogPosts ?? source.blogPosts ?? [];
+
+const { slug } = Astro.params;
+const post = blogPosts.find((entry) => entry.slug === slug);
+if (!post) {
+  throw new Error(`Blog post not found for slug: ${slug}`);
+}
+
+const relatedGuides: RelatedGuide[] = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter((guide): guide is RelatedGuide => Boolean(guide));
+
+const relatedPosts = (() => {
+  if (post.relatedPostSlugs?.length) {
+    return post.relatedPostSlugs
+      .map((relatedSlug) => blogPosts.find((entry) => entry.slug === relatedSlug))
+      .filter((entry): entry is BlogPost => Boolean(entry))
+      .slice(0, 3);
+  }
+
+  const relatedByTopic = blogPosts.filter((entry) => {
+    if (entry.slug === post.slug) return false;
+    if (post.category && entry.category && entry.category === post.category) return true;
+    if (!post.tags?.length || !entry.tags?.length) return false;
+    return entry.tags.some((tag) => post.tags?.includes(tag));
+  });
+
+  return relatedByTopic.slice(0, 3);
+})();
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  heroImageAlt={post.heroImageAlt}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts.map((entry) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }))}
+/>

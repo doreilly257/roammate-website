@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'UGX (Ugandan Shilling)', detail: 'USD accepted at lodges' },
+  { icon: '🗣', label: 'Language', value: 'English / Rukiga', detail: 'English at lodges, Rukiga locally' },
+  { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Aug, Dec – Feb', detail: 'Dry seasons, clearest skies' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$15–40 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'eVisa required', detail: '$50 USD — apply online before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Lake Bunyonyi Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Canoe Across the Lake',
+          text: 'Wake to the sound of birdsong and mist rising from the lake — Bunyonyi means "place of many little birds" in Rukiga, and the name is earned. After breakfast, take a dugout canoe (ekigarahe) across the lake. Paddling between the 29 islands in a traditional wooden canoe is the quintessential Bunyonyi experience. The terraced green hillsides rise steeply from the water, and the lake surface is mirror-calm in the morning. Your guide paddles you between islands, pointing out weaver bird colonies, kingfishers, herons, and the occasional fish eagle soaring overhead.',
+          tip: 'Canoe trips cost 30,000–50,000 UGX per hour. The morning is calmest and most atmospheric, with mist on the water and the best birdlife. Bring sunscreen — the reflected sun off the water is intense.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Island Hopping & Punishment Island',
+          text: 'Continue your canoe trip to visit several of the lake\'s islands. Punishment Island (Akampene) is the most historically significant — a tiny island where, according to local history, unmarried pregnant girls were left to die as punishment for bringing shame on their families. The practice ended in the early colonial period, and today the island is uninhabited — a small, sobering patch of land with a heavy history. Other islands are inhabited by fishing communities, and some have been developed with lodges and backpacker camps.',
+          tip: 'The Punishment Island story is told by local guides with nuance and sensitivity. Listen respectfully. The island is tiny — you can see it in a few minutes, but the story stays with you.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Sunset & Relaxation',
+          text: 'Return to shore and find a viewpoint for the sunset — the terraced hillsides turn golden in the evening light, and the lake reflects the colours of the sky. Bunyonyi sunsets are among the most peaceful in Uganda. Dinner at your lakeside lodge — fresh tilapia from the lake, matooke, and vegetables — followed by an evening of total quiet. The lake has no bilharzia (one of very few in Africa), so swimming is safe and the water is refreshingly cool at 1,962m elevation.',
+          tip: 'Lake Bunyonyi is one of the few bilharzia-free lakes in Africa — swimming is safe. The water is cool (around 20°C) at altitude but refreshing. Jump in from the lodge dock.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Canoe Trip, Island Hopping & Sunset',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Dugout Canoe & Island Exploration',
+          text: 'Start your Bunyonyi experience with a traditional dugout canoe trip across the lake. The morning mist lifts to reveal 29 islands scattered across the deep, narrow lake — surrounded by steeply terraced hillsides that drop straight into the water. Bunyonyi sits at 1,962m elevation in the Kigezi Highlands, making it refreshingly cool compared to the lowlands. The birding is exceptional from the canoe — weaverbirds, kingfishers, herons, cormorants, and fish eagles are all common. Paddle to the nearest inhabited islands where fishing families live in simple homes surrounded by banana plantations.',
+          tip: 'Canoe trips cost 30,000–50,000 UGX per hour. The traditional dugout canoes are stable but sit low in the water — keep your centre of gravity low and don\'t lean over the side.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Punishment Island & Swimming',
+          text: 'Paddle to Punishment Island (Akampene) — a tiny uninhabited island with a dark history as the place where unmarried pregnant girls were abandoned to die. The practice ended over a century ago, but the island stands as a powerful reminder of the treatment of women in traditional society. After the sobering visit, cool off with a swim in the lake — Bunyonyi is bilharzia-free, making it one of the safest lakes for swimming in Africa. The water is cool and clean at altitude.',
+          tip: 'The lake is safe for swimming but deep (maximum 900m — one of Africa\'s deepest lakes). Stay near the shore or your canoe. The water temperature is around 20°C — refreshing but not cold.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Sunset & Fire',
+          text: 'Watch the sunset paint the terraced hillsides golden from your lakeside lodge. The stillness of Bunyonyi in the evening is profound — no traffic noise, no city sounds, just birdsong fading into the crickets and frogs of the night. Many lodges have campfires in the evening where travellers gather. Dinner is typically fresh lake tilapia, matooke, and beans. The altitude means the nights are cool — bring a warm layer for after dark.',
+          tip: 'The evenings at Bunyonyi are cool (12–16°C). Bring a fleece or warm layer. The campfire is the social hub — a great place to meet other travellers.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Community Walk & Terraced Hillsides',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Community Walk — Kigezi Village Life',
+          text: 'Join a guided community walk through the villages on the hillsides above the lake. The Bakiga people of the Kigezi Highlands are resourceful farmers who have terraced the impossibly steep hillsides into productive agricultural land — the terracing is reminiscent of Southeast Asian rice terraces but grows beans, sorghum, Irish potatoes, and sweet potatoes. Visit a family homestead, see the terracing up close, and learn about daily life in one of Africa\'s most densely populated rural regions. The views from the hilltops over the lake are breathtaking.',
+          tip: 'Community walks cost $10–20 per person. The terrain is steep — wear sturdy shoes. The walks are led by local guides and fees support community projects including schools and water points.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kayaking & Lake Exploration',
+          text: 'Rent a kayak and explore the lake at your own pace. Kayaks give you more speed and independence than the dugout canoes — paddle into the narrow bays between islands, explore the quieter northern end of the lake, and stop at island lodges for a drink. The lake is surrounded by steep, green hillsides with no roads visible from the water — it feels remarkably remote for its proximity to Kabale town.',
+          tip: 'Kayaks are available from most lakeside lodges for 20,000–40,000 UGX per hour. The lake is calm but the afternoon sun is strong — bring a hat and water.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cooking Class & Local Food',
+          text: 'Some lodges offer cooking classes or community dinners where you prepare traditional Kigezi food: matooke (steamed banana), bean stew, groundnut sauce, and locally grown Irish potatoes (a legacy of the British colonial era). The food is simple, hearty, and satisfying — perfect after a day of walking and paddling. Share the meal with your hosts and other travellers around the communal table.',
+          tip: 'Cooking classes cost $10–15 per person and are a wonderful way to connect with local culture. The Kigezi diet is hearty and vegetable-heavy — excellent for vegetarian travellers.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Birding, Swimming & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Early Morning Birding',
+          text: 'Wake before dawn and sit on the lakeside — the first hour of daylight is the best for birdwatching. Bunyonyi\'s name ("place of many little birds") is well earned: over 200 species have been recorded around the lake, including grey crowned cranes (Uganda\'s national bird), various kingfisher species, African fish eagles, and colonies of colourful weaverbirds building their hanging nests in the waterside vegetation. A local birding guide can identify species you would miss on your own.',
+          tip: 'The early morning (6–7:30am) is peak birding time. Bring binoculars. A local guide costs $10–15 and dramatically increases the number of species you identify.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Swim & Lodge Time',
+          text: 'Take a final swim in the cool, clean waters of Bunyonyi. The lake is one of those rare places where the activity of doing nothing is perfectly satisfying — read a book on the dock, watch the canoes pass, listen to the birds, and absorb the tranquility. Bunyonyi is the ideal recovery stop after the physical intensity of gorilla trekking or safari, and many travellers find it the highlight of their Uganda trip precisely because it asks nothing of you except to be present.',
+          tip: 'If you have time, arrange a final canoe trip to an island you missed. Each island has its own character and the lake always looks different depending on the light.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Departure or Final Night',
+          text: 'If departing, take the road to Kabale (30 minutes) for onward transport to Kampala, Kigali (Rwanda), or Bwindi Impenetrable Forest. If staying one more night, enjoy a final lakeside sunset — the Kigezi Highlands produce some of East Africa\'s most stunning evening skies, and the reflection on the lake doubles the beauty. Lake Bunyonyi is a place that stays with people long after they leave.',
+          tip: 'The drive to Kabale is short and well-paved. From Kabale, buses to Kampala take 6–8 hours, and the Katuna/Gatuna border crossing to Rwanda is 45 minutes south. Kigali is 3–4 hours from Kabale.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & First Canoe Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival at Lake Bunyonyi',
+          text: 'Arrive at Lake Bunyonyi from Kabale (30 minutes) or Bwindi (1.5–3 hours depending on sector). The first glimpse of the lake — deep blue water surrounded by impossibly steep, terraced green hillsides — is stunning. Check into your lakeside lodge and settle into the rhythm of the lake. The air is cool and fresh at 1,962m elevation.',
+          tip: 'Most lodges are accessed by boat from the lakeside road. Your accommodation should arrange a pickup. Some lodges are on islands, adding to the remoteness.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'First Canoe Paddle',
+          text: 'Take your first dugout canoe trip across the lake. Paddle between the islands, watching weaverbirds and kingfishers, and get oriented to the lake\'s geography. The 29 islands range from tiny uninhabited rocks to large settled communities. The water is calm, the terraced hills rise steeply, and the birdsong is constant.',
+          tip: 'Canoe trips cost 30,000–50,000 UGX per hour. The traditional dugouts are stable but sit low — keep your weight centred. Morning and late afternoon are the best times.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Sunset & Welcome Dinner',
+          text: 'Watch your first Bunyonyi sunset from the lodge dock or terrace. The evening light on the terraced hillsides is extraordinary — golden, warm, and reflected perfectly in the still water. Dinner is fresh lake tilapia with local vegetables. The nights are cool and quiet — no traffic, no noise, just the sounds of the lake.',
+          tip: 'Bunyonyi evenings are cool (12–16°C). Bring warm layers. The silence at night is remarkable after the noise of Kampala or the trail.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Island Hopping & Punishment Island',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Island Hopping by Canoe',
+          text: 'Spend the morning paddling between the lake\'s inhabited islands. Visit fishing communities, banana plantations, and small schools on the islands. The children are curious and welcoming. Each island has its own character — some are lush and forested, others are cultivated to every square metre.',
+          tip: 'Bring small gifts for island school visits — exercise books and pens are always appreciated. Ask your guide what is most needed.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Punishment Island History',
+          text: 'Visit Punishment Island (Akampene) — where unmarried pregnant girls were abandoned to die. The practice ended in the colonial era but the tiny island\'s story is a powerful commentary on the treatment of women in traditional society. Some local men would rescue the abandoned women and marry them (avoiding bride price), adding another layer to the complex history.',
+          tip: 'Listen to the local guide\'s telling of the history with respect. The story has evolved into a broader conversation about women\'s rights in the Kigezi region.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Swimming & Campfire',
+          text: 'Swim in the bilharzia-free lake — one of the safest places for freshwater swimming in Africa. The water is cool and clean at altitude. Dry off and gather around the lodge campfire with other travellers. The social atmosphere at Bunyonyi lodges is relaxed and friendly.',
+          tip: 'The lake is deep (up to 900m) but the shore areas are safe. Stay near the dock or designated swimming areas. The water temperature is around 20°C.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Community Walk & Terracing',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hillside Community Walk',
+          text: 'Join a guided walk through the villages on the terraced hillsides above the lake. The Bakiga people have farmed these steep slopes for generations, creating terraces that rival those of Southeast Asia. Visit homesteads, see traditional farming techniques, and understand the challenges of life in one of Africa\'s most densely populated rural regions.',
+          tip: 'Community walks cost $10–20 per person. The terrain is steep — wear sturdy shoes. Fees support local schools and water projects.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Traditional Crafts & Basket Weaving',
+          text: 'Visit a women\'s craft cooperative that produces traditional Bakiga baskets and handicrafts. The woven baskets are both functional (used for carrying produce) and decorative — intricate geometric patterns in natural dyes. You can try your hand at weaving under the guidance of the women artisans. The cooperatives provide important income for women in the community.',
+          tip: 'Baskets make excellent souvenirs — lightweight, beautiful, and the money goes directly to the women who made them. Prices are fair and fixed.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Cooking Class & Local Dinner',
+          text: 'Participate in a cooking class preparing traditional Kigezi food — matooke, bean stew, groundnut sauce, and Irish potatoes. The cooking is done on charcoal stoves in the open air, and the result is a communal meal shared with your hosts. Simple, hearty, and delicious.',
+          tip: 'Cooking classes cost $10–15 per person. The Kigezi diet is perfect for vegetarians — beans, potatoes, and banana dishes are the staples.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Kayaking & Birding Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Dawn Birding Walk',
+          text: 'Wake before dawn for a birding walk along the lakeshore and surrounding bush. Over 200 species are recorded at Bunyonyi including grey crowned cranes, various kingfishers, fish eagles, and enormous weaver colonies. A local birding guide identifies species by call and sight that you would never spot alone.',
+          tip: 'Dawn (6–7:30am) is peak birding time. A local guide costs $10–15 and is highly recommended. Bring binoculars and a field guide.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kayak Exploration',
+          text: 'Spend the afternoon kayaking to the lake\'s quieter northern end. The narrow bays between islands and the steep hillsides create intimate waterways with excellent birdwatching. Stop at an island lodge for a drink and a rest before paddling back. Kayaking gives you more speed and independence than the dugout canoes.',
+          tip: 'Kayaks cost 20,000–40,000 UGX per hour. Bring a hat and sunscreen — the reflected sun on the water is strong. The lake is calm but the afternoon can bring light winds.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Stargazing & Quiet Night',
+          text: 'The minimal light pollution at Bunyonyi makes for excellent stargazing. The Southern Cross, Milky Way, and constellations are clearly visible on clear nights. Lie on the dock or a grassy bank and watch the sky. The silence and the stars are a powerful combination after days in the African bush.',
+          tip: 'The clearest skies are during the dry season (Jun–Aug, Dec–Feb). A warm sleeping bag or blanket and a hot drink make stargazing more comfortable at altitude.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Rest Day — Do Nothing',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sleep In & Slow Morning',
+          text: 'After days of gorilla trekking, safari, and activity, Bunyonyi is the place to do nothing. Sleep in, have a late breakfast on the lakeside terrace, and watch the canoes drift past. Read a book, write in your journal, or simply sit and watch the light change on the water. The art of doing nothing is Bunyonyi\'s greatest gift.',
+          tip: 'Resist the urge to fill every hour. Bunyonyi is best experienced slowly. The lodge hammock is your friend.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Swimming & Reading',
+          text: 'Swim in the lake, float on your back looking up at the terraced hillsides, and then dry off on the dock with a book. Some lodges have board games, volleyball nets, or card decks for lazy afternoon entertainment. The social atmosphere means you will naturally connect with other travellers without needing to organise anything.',
+          tip: 'Most lodges have small libraries or book exchanges. The combination of swimming, reading, and hammock time is surprisingly satisfying after weeks of travel activity.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Campfire Stories & Early Night',
+          text: 'Gather around the campfire for the evening. The conversations at Bunyonyi tend to be reflective — travellers share their Uganda experiences, gorilla stories, and future plans. The quiet of the lake encourages thoughtfulness. Turn in early and sleep deeply to the sounds of frogs and crickets.',
+          tip: 'If you have been travelling for weeks, Bunyonyi is the reset button. Two to three days of rest here makes the next leg of your journey significantly more enjoyable.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Kabale Market & Echuya Forest',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kabale Town Market',
+          text: 'Take a boda-boda or taxi to Kabale town (30 minutes from the lake). Kabale\'s market is a lively highland market selling fresh produce from the Kigezi region — Irish potatoes, beans, sorghum, avocados, and tropical fruits. The town has a frontier feel — it is the last major Ugandan town before the Rwandan border. Browse the market, stock up on supplies, and explore the small but energetic town centre.',
+          tip: 'Kabale market is busiest on market days (typically Monday and Thursday). The town has ATMs (Stanbic, Barclays) — withdraw cash here if needed. It is the nearest reliable banking to Bunyonyi.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Echuya Central Forest Reserve',
+          text: 'Drive south to the Echuya Central Forest Reserve — a high-altitude bamboo and montane forest near the Rwandan border. The forest sits at 2,270–2,570m and is one of the best birding sites in western Uganda, with Albertine Rift endemics including the handsome francolin, Ruwenzori turaco, and various sunbird species. The bamboo forest is atmospheric — dense, cool, and eerily quiet between bird calls. Batwa communities live near the forest edge.',
+          tip: 'Echuya is about 1.5 hours from Bunyonyi. A birding guide is essential for spotting the endemics. The forest is cool and damp at altitude — bring a warm waterproof layer.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Lakeside Evening',
+          text: 'Return to the lake for your final evening. Take a sunset canoe paddle, swim one last time, and watch the light fade over the terraced hills. Bunyonyi has a way of slowing time — the days feel longer and fuller here than anywhere else in Uganda. The combination of natural beauty, cool climate, friendly people, and total tranquility makes it one of East Africa\'s most special places.',
+          tip: 'Take a final photograph from the best viewpoint near your lodge. The sunset light on the terraced hills reflected in the lake is genuinely one of Uganda\'s most beautiful scenes.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Departure & Onward Travel',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Morning Canoe & Goodbye',
+          text: 'Take a final early morning canoe trip — the mist on the lake at dawn is the most atmospheric time of day. Say goodbye to the birdlife, the islands, and the peaceful rhythm that Bunyonyi creates. Pack up and prepare for departure, carrying the tranquility of the lake with you.',
+          tip: 'Even 30 minutes on the water at dawn is worth the early wake-up. The morning mist burns off by 8am, so go early.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Onward Travel',
+          text: 'Depart Lake Bunyonyi for your next destination. Options include: Kabale to Kampala by bus (6–8 hours), Kabale to Kigali (Rwanda) via Katuna border (3–4 hours total), Bwindi Impenetrable Forest (1.5–3 hours depending on sector), or Kisoro for access to the Virunga volcano region and gorilla trekking in Rwanda or DRC.',
+          tip: 'The Kabale-Kampala road is well-paved and scenic. If crossing to Rwanda, the Katuna/Gatuna border is straightforward. Have your visa sorted in advance.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Arrival at Next Destination',
+          text: 'Settle into your next destination — whether it is the bustle of Kampala, the forests of Bwindi, or the hills of Kigali. Lake Bunyonyi will stay with you as the place where Uganda\'s hectic travel pace slowed down and the beauty of the Kigezi Highlands had time to sink in. Many travellers name it as the unexpected highlight of their East Africa trip.',
+          tip: 'If heading to Rwanda, the contrast between Uganda and Rwanda is fascinating — same region, very different countries. The journey from Bunyonyi to Kigali is one of East Africa\'s most scenic drives.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Stay at backpacker camps', text: 'Dorm beds and camping at lakeside backpacker spots cost $5–15 per night. The settings are beautiful and the social atmosphere is the best on the lake. Budget accommodation here competes with expensive lodges on views.' },
+  { title: 'Canoe instead of motorboat', text: 'Traditional dugout canoes are cheaper than motorboat transfers (30,000 UGX vs 100,000+ UGX per trip). They are also quieter, more atmospheric, and better for birdwatching. The paddlers are skilled and the pace is perfect.' },
+  { title: 'Eat at your lodge or cook', text: 'Most lakeside lodges serve simple, affordable meals ($3–8). Some backpacker places have communal kitchens for self-catering. Fresh tilapia from the lake is cheap and delicious everywhere.' },
+  { title: 'Walk instead of boat', text: 'Many viewpoints and villages are accessible on foot from the lakeside road. Walking the terraced hillsides is free and gives you closer contact with local life than any paid tour.' },
+  { title: 'Combine with Bwindi', text: 'Lake Bunyonyi is 1.5–3 hours from Bwindi — make it your pre- or post-gorilla recovery stop. The combination of gorilla trekking intensity and lakeside relaxation is the perfect Uganda itinerary.' },
+  { title: 'Withdraw cash in Kabale', text: 'There are no ATMs at the lake. Withdraw enough UGX in Kabale (30 minutes away) for your entire stay. Most lakeside lodges accept cash only.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$5–15', midrange: '$20–50', splurge: '$80+', notes: 'Camping/dorms → guesthouses → island lodges' },
+  { category: 'Food', budget: '$3–8', midrange: '$8–20', splurge: '$25+', notes: 'Self-catering → lodge meals → upscale dining' },
+  { category: 'Transport', budget: '$2–5', midrange: '$5–15', splurge: '$20+', notes: 'Dugout canoe → boda-boda → motorboat transfer' },
+  { category: 'Activities', budget: '$5–15', midrange: '$15–30', splurge: '$40+', notes: 'Free swimming → canoe trips → guided tours' },
+  { category: 'Entry Fees', budget: '$0–5', midrange: '$5–10', splurge: '$10–15', notes: 'Most lakeside activities have minimal fees' },
+  { category: 'Daily Total', budget: '$15–40', midrange: '$50–120', splurge: '$175+', notes: 'Budget backpacker → comfortable mid → island luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Access',
+    items: [
+      'Lake Bunyonyi is not a national park — no park entry fees. Access is free',
+      'Most lodges are reached by boat from the lakeside road near Bufuka or by road to shore-based accommodation',
+      'From Kabale: 30 minutes by road. From Bwindi: 1.5–3 hours depending on sector',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Lake Bunyonyi is bilharzia-free — safe for swimming (one of very few lakes in Africa)',
+      'The lake is extremely deep (up to 900m) — swim near shore and in designated areas',
+      'Malaria risk is lower at altitude but still present. Continue antimalarials and use repellent',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting There',
+    items: [
+      'From Kabale: 30 minutes by boda-boda or taxi. Kabale is connected to Kampala by regular buses (6–8 hours)',
+      'From Bwindi: 1.5–3 hours depending on your sector (Buhoma, Ruhija, Rushaga, or Nkuringo)',
+      'From Rwanda (Kigali): 4–5 hours via the Katuna/Gatuna border crossing and Kabale',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'MTN has reasonable coverage around the lake but signal drops in some valleys and on some islands',
+      'WiFi at lodges is slow and intermittent. Download everything you need before arriving',
+      'Embrace the disconnection — limited connectivity is part of Bunyonyi\'s appeal',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'No ATMs at the lake — withdraw sufficient UGX in Kabale before arriving',
+      'Most lodges are cash only. Some upscale places accept USD',
+      'Tipping: 5,000–10,000 UGX for canoe guides and community walk leaders',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Warm layers — Bunyonyi is at 1,962m elevation and nights drop to 10–14°C',
+      'Swimwear for the bilharzia-free lake. Sunscreen for reflected sun on the water',
+      'A good book — Bunyonyi is built for downtime. The lodge hammock and a paperback are essential equipment',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect Local Communities', text: 'The communities around Lake Bunyonyi are genuine — not tourist attractions. Ask before photographing people, respect private spaces, and engage with curiosity rather than voyeurism. The Bakiga people are warm and welcoming when approached with respect.' },
+  { icon: '🌍', title: 'Leave No Trace', text: 'Lake Bunyonyi\'s beauty depends on keeping it clean. Pack out all rubbish, do not throw anything in the lake, and encourage your lodge to manage waste responsibly. The lake has no outflow — pollution stays.' },
+  { icon: '📸', title: 'Photography', text: 'Ask permission before photographing people, especially children. Many families are happy to be photographed but expect the courtesy of being asked. Offering to show them the photo on your screen is always appreciated.' },
+  { icon: '🗣', title: 'Learn Rukiga Greetings', text: 'The local language is Rukiga. "Agandi" (hello/how are you?), "Nimarungi" (I am fine), and "Webare" (thank you) will earn warm smiles. English is spoken at lodges but locals appreciate the effort of greeting in their own language.' },
+  { icon: '🤝', title: 'Support Community Projects', text: 'Community walks, craft cooperatives, and local guides channel tourism money directly into education, healthcare, and water projects. Choose activities that benefit the community rather than only the lodge owners.' },
+  { icon: '🕐', title: 'Slow Down', text: 'Bunyonyi runs on its own time. The canoe paddlers, the fishermen, and the farmers all move at a pace that matches the lake. Resist rushing. The tranquility is the experience. If you find yourself checking your watch, you are doing it wrong.' },
+];
+---
+
+<CityGuideLayout
+  title="Lake Bunyonyi Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Lake Bunyonyi guide for young travelers. Canoe trips, island hopping, swimming, community walks with 1, 3 and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/lake-bunyonyi-hero.webp"
+  heroFlag="🇺🇬"
+  heroCountry="Uganda"
+  heroRegion="Africa"
+  heroCity="Lake Bunyonyi"
+  heroSubtitle="The 'place of many little birds' — a stunningly beautiful highland lake with 29 islands, terraced hillsides, bilharzia-free swimming, and the most peaceful atmosphere in East Africa."
+  heroPills={["3-Day Relaxation","Lake","Jun – Aug Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Lake Bunyonyi is one of Uganda's most affordable destinations — backpacker camps and local food cost very little, and the best experiences (swimming, canoeing, walking) are almost free."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Lake Bunyonyi asks nothing of you except to slow down, be present, and respect the beauty of this extraordinary place. The birdsong, the terraced hills, and the still water do the rest."
+  ctaCity="Lake Bunyonyi"
+  ctaText="Find travel companions at Lake Bunyonyi on roammate — share canoe trips, split lodge costs, and make lifelong friends in one of Africa's most beautiful settings."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

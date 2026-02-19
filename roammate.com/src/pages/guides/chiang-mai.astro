@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'THB (฿ Baht)', detail: '1 USD ≈ ฿35' },
+  { icon: '🗣', label: 'Language', value: 'Thai', detail: 'English widely spoken in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Feb', detail: '18–30°C, cool & dry with clear skies' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–40 USD', detail: '฿700–1,400 budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 60 days', detail: 'Most nationalities — no advance application' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Best of Chiang Mai in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old City Temples',
+          text: 'Start at Wat Chedi Luang, the 600-year-old partially ruined temple in the heart of the Old City whose massive brick chedi once stood 82 metres tall before an earthquake in 1545 toppled the upper section. The remaining structure is still enormous and deeply atmospheric, surrounded by ancient trees and smaller chapels. Walk five minutes north to Wat Phra Singh, home to the revered Phra Singh Buddha image and exquisite Lanna-style architecture with gilded wooden carvings and murals depicting daily life centuries ago. Both temples are free to enter (donation appreciated) and relatively quiet before 10am.',
+          tip: 'Visit temples before 9am to beat tour groups and the midday heat. Remove shoes before entering any building. Cover shoulders and knees — bring a scarf or sarong in your bag.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Nimman & Cafe Culture',
+          text: 'Head west to the Nimmanhaemin area (locals call it Nimman), Chiang Mai\'s trendy neighbourhood packed with independent cafes, boutique shops, and art galleries. The side streets (sois) are the best part — each one has a different character. Soi 9 has specialty coffee roasters, Soi 11 has concept stores and ceramics, and Soi 17 has vintage clothing. Lunch at one of the dozens of excellent cafes: try khao soi (northern Thai coconut curry noodle soup, ฿60–80) at a local shop before it sells out. The One Nimman complex has restaurants, co-working spaces, and an indoor market.',
+          tip: 'Nimman is walkable but spread out — a Grab bike (฿30–50) between sois saves time. The specialty coffee scene is world-class — Ristr8to, Akha Ama, and Graph are worth visiting.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunday Walking Street',
+          text: 'If you are visiting on a Sunday, the Tha Pae Walking Street is unmissable — the entire Ratchadamnoen Road from Tha Pae Gate to Wat Phra Singh transforms into one of Thailand\'s best night markets. Hundreds of stalls sell handmade crafts, hill tribe textiles, wood carvings, and paintings alongside food vendors serving sai oua (northern Thai spiced sausage, ฿30), khao kha moo (braised pork leg on rice, ฿50), grilled sticky rice, and mango smoothies. Live music, street performers, and temple courtyards serving food make this a full evening. Other nights, try the Night Bazaar on Chang Khlan Road for shopping and food stalls.',
+          tip: 'Sunday Walking Street opens at 4pm but the best atmosphere is from 6–9pm. Bring cash — most vendors do not take cards. Start from the Tha Pae Gate end and work west.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Old City Temples & Walking Street',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wat Chedi Luang & Wat Phra Singh',
+          text: 'Begin at Wat Chedi Luang — the enormous partially ruined chedi in the centre of the Old City is one of the most atmospheric sights in northern Thailand. Built in 1391, the original structure stood 82 metres tall before an earthquake in 1545 brought down the upper section. The remaining brick pyramid is still immense and deeply impressive, surrounded by mature trees and smaller chapels with Buddha images. Walk north to Wat Phra Singh, the most important temple in Chiang Mai, housing the revered Phra Singh Buddha image in a stunning Lanna-style chapel adorned with gilded wood, intricate murals, and mother-of-pearl inlay.',
+          tip: 'Arrive before 9am. Monks at Wat Chedi Luang hold English-language Monk Chat sessions most afternoons — a rare chance to speak with ordained monks about Buddhism and Thai life.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Nimman Cafes & Street Food',
+          text: 'Explore the Nimmanhaemin neighbourhood — Chiang Mai\'s creative hub filled with specialty coffee roasters, design shops, art galleries, and some of the best food in the city. Lunch on khao soi at Khao Soi Mae Sai (฿50) or Khao Soi Khun Yai (฿60) — the rich coconut curry noodle soup with crispy egg noodles on top is Chiang Mai\'s signature dish. Spend the afternoon cafe-hopping: Ristr8to for award-winning latte art, Akha Ama for ethically sourced hill tribe coffee, and Graph for minimalist design and excellent espresso.',
+          tip: 'Khao soi shops sell out by 1–2pm. Eat lunch early. The best cafes are hidden in the side sois off the main Nimmanhaemin Road — explore sois 9, 11, and 17.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunday Walking Street or Night Bazaar',
+          text: 'On Sundays, the Ratchadamnoen Road Walking Street is the highlight of the week — hundreds of vendors selling handicrafts, textiles, and food from Tha Pae Gate to Wat Phra Singh. Must-eats: sai oua (spiced Chiang Mai sausage, ฿30), nam prik ong with sticky rice (฿40), and coconut ice cream (฿20). Temple courtyards along the route serve their own food stalls. On other evenings, head to the Chang Khlan Night Bazaar for similar shopping, or the Saturday Walking Street on Wualai Road for silver jewellery and crafts.',
+          tip: 'Sunday Walking Street gets extremely crowded by 7pm — arrive early at 5pm for the best experience. The temple courtyard food stalls are less crowded and excellent.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Doi Suthep & Cooking Class',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wat Phra That Doi Suthep',
+          text: 'Take a songthaew (฿40/person one way from the zoo gate) or Grab up the winding mountain road to Wat Phra That Doi Suthep, the golden hilltop temple that overlooks the entire city from 1,055 metres elevation. Climb the 309-step naga staircase (or take the funicular, ฿50) to the glittering golden chedi that houses a relic of the Buddha. The temple terrace offers panoramic views over Chiang Mai and the surrounding valley — on clear mornings you can see all the way to the rice plains. The temple is one of the most sacred in northern Thailand and is busy with Thai pilgrims.',
+          tip: 'Go early (before 9am) for clear views — haze and cloud build through the day. The songthaew wait at the main road near the zoo. Entry to the temple is ฿30 for foreigners.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Thai Cooking Class',
+          text: 'Join a half-day cooking class — Chiang Mai is the cooking class capital of Thailand with dozens of excellent schools. Most afternoon classes start with a guided tour of a local market to select ingredients (lemongrass, galangal, kaffir lime leaves, fresh chillies), then head to a countryside kitchen to cook 4–5 dishes: pad thai, green or red curry from scratch, tom yum soup, papaya salad, and mango sticky rice. You eat everything you cook for dinner. Classes cost ฿800–1,200 per person and are universally excellent.',
+          tip: 'Book a day ahead in high season. Popular schools include Thai Farm Cooking School, Mama Noi, and Pantawan. Afternoon classes are cooler than morning sessions.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Night Bazaar & Khao Soi',
+          text: 'Explore the Chang Khlan Road Night Bazaar — a nightly market with clothing, souvenirs, handicrafts, and food stalls. The Ploen Ruedee Night Market nearby is more modern with live music, craft beer, and container-style food stalls. For dinner, hunt down one more bowl of khao soi — Huen Phen on Rachamanka Road is a favourite that serves excellent northern Thai food in a dining room decorated with antiques and Lanna artefacts.',
+          tip: 'The Night Bazaar is open nightly but quality varies — the fixed shops inside the covered buildings have better quality than the street stalls. Bargain gently.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Elephant Nature Park & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Elephant Nature Park',
+          text: 'Spend the morning at Elephant Nature Park (฿2,500 for a full day), the most ethical elephant sanctuary in Thailand. Founded by Lek Chailert, the park rescues elephants from logging and tourism camps and gives them space to roam, bathe, and socialise in a natural valley setting. You will walk alongside elephants, prepare their food (they eat 200kg per day), and watch them bathe in the river. No riding, no hooks, no chains. The experience is emotional and educational — you will learn about the elephant tourism industry and why ethical encounters matter.',
+          tip: 'Book 1–2 weeks ahead as the park fills up fast. Transport from Chiang Mai is included. Wear clothes you do not mind getting dirty — you will be close to elephants and mud.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Warorot Market & Old City Wander',
+          text: 'Visit Warorot Market (Kad Luang), Chiang Mai\'s biggest and oldest market on the bank of the Ping River. Three floors of local life: dried fruits, northern Thai sausages, hill tribe clothing, kitchen supplies, flowers, and cheap meals. The surrounding Chinatown streets have traditional shophouses, Chinese temples, and food stalls. Walk back through the Old City along the quiet lanes between the moat and the main streets — hidden temples appear every few hundred metres, each with unique architecture and fewer tourists than the famous ones.',
+          tip: 'Warorot Market is best visited in the morning but stays busy until 5pm. The food court on the ground floor has excellent cheap meals. Bring a bag for souvenirs — dried mango and longan are great gifts.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner at Huen Phen',
+          text: 'Final dinner at Huen Phen or SP Chicken (famous roast chicken at ฿40 per piece) — both are northern Thai institutions. Try dishes you have not had yet: nam prik num (green chilli dip with vegetables), gaeng hang lay (Burmese-influenced pork curry), and laab muang (northern-style spiced pork salad). Finish with a walk along the moat at sunset, where the old walls and gates are lit up and locals gather to exercise, sit, and socialise.',
+          tip: 'Huen Phen has two sections — the cheap lunchtime shop at the front and the atmospheric antique-filled dining room at the back for dinner. Both serve the same food.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Old City Temples',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wat Chedi Luang & Wat Phra Singh',
+          text: 'Begin your Chiang Mai week at Wat Chedi Luang, the partially ruined 600-year-old temple in the heart of the Old City. The massive brick chedi once stood 82 metres tall before an earthquake in 1545 toppled the upper section — the remaining structure is still enormous and deeply atmospheric. Walk north to Wat Phra Singh, the city\'s most revered temple, housing the Phra Singh Buddha image in an exquisite Lanna-style chapel with gilded wood carvings and murals. Both temples are free (donation appreciated) and best visited before 10am.',
+          tip: 'Monks at Wat Chedi Luang hold English-language Monk Chat sessions most afternoons — a chance to ask questions about Buddhist life and Thai culture.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old City Exploration & Somphet Market',
+          text: 'Explore the Old City on foot — the square moated area is compact and walkable. Visit Wat Chiang Man (the city\'s oldest temple, dating to 1296) with its elephant-buttressed chedi, and the smaller Wat Lok Moli near the north gate. For lunch, head to Somphet Market — a small local market near the north-east corner of the Old City where vendors sell fresh fruit, grilled meats, som tam, and noodle soups at local prices (฿30–60 per dish). The surrounding streets have excellent small restaurants and cafes.',
+          tip: 'The Old City is roughly 1.5km square — you can walk the entire perimeter along the moat in 45 minutes. Use the ancient gates as navigation landmarks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tha Pae Gate & Night Market',
+          text: 'Walk to Tha Pae Gate — the restored eastern gate of the Old City and Chiang Mai\'s most recognisable landmark. In the evening the square in front fills with people, street performers, and food carts. Head south to the Chang Khlan Night Bazaar for shopping and food, or east along Tha Pae Road to find bars and restaurants. For dinner, try khao soi at Khao Soi Khun Yai (฿60) — Chiang Mai\'s signature coconut curry noodle soup with crispy egg noodles and pickled mustard greens on the side.',
+          tip: 'The Chang Khlan Night Bazaar is open every night. For better quality and atmosphere, time your visit for the Saturday or Sunday Walking Streets instead.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Doi Suthep & Nimman',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wat Phra That Doi Suthep',
+          text: 'Take a songthaew (฿40/person from the zoo gate) up the winding mountain road to Doi Suthep, Chiang Mai\'s most sacred temple at 1,055 metres elevation. Climb the 309-step naga staircase to the golden chedi that houses a relic of the Buddha. The temple terrace offers panoramic views over the city and surrounding valley. Thai pilgrims circle the golden chedi clockwise with lotus flowers and incense — the devotion and setting are moving. On clear mornings you can see across the entire Chiang Mai valley to the rice plains beyond.',
+          tip: 'Arrive before 9am for the clearest views. The songthaew drivers wait at the main road near the zoo — ฿40 up, ฿40 down, or negotiate a round trip with waiting time.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Nimman Cafe Crawl',
+          text: 'Spend the afternoon in the Nimmanhaemin neighbourhood exploring Chiang Mai\'s famous cafe scene. Ristr8to serves award-winning latte art and excellent espresso. Akha Ama sources beans from a hill tribe village in the mountains north of Chiang Mai — the coffee is outstanding and the story behind it is inspiring. Graph serves minimalist flat whites in a concrete-and-glass space. Between cafes, browse the boutique shops, art galleries, and concept stores in the side sois. Lunch at any of the small Thai restaurants — mains are ฿50–80.',
+          tip: 'Chiang Mai\'s specialty coffee scene is genuinely world-class and remarkably cheap — ฿60–90 for a flat white that would cost $6 in Melbourne or London.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'One Nimman & Craft Beer',
+          text: 'Dinner at One Nimman — a modern complex with restaurants, food courts, and shops. Try Tong Tem Toh for northern Thai food popular with locals (expect a queue), or explore the MAYA mall food court across the road for cheap and excellent Thai food (฿50–80 per dish). For craft beer, head to The Beer Lab or Nimman Social for local brews. Chiang Mai has a growing craft beer scene, with small breweries producing IPAs, wheat beers, and Thai-inspired flavours using local ingredients.',
+          tip: 'Tong Tem Toh does not take reservations — arrive by 5:30pm or after 8pm to avoid the worst queues. The gaeng hang lay and sai oua are essential orders.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Cooking Class & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Market Tour & Cooking Class',
+          text: 'Join a full-day cooking class that starts with a guided tour of a local market — typically Somphet or Thanin market. Your instructor will walk you through the ingredients that make Thai food sing: fresh lemongrass, galangal, kaffir lime leaves, Thai basil, shrimp paste, and dozens of chilli varieties. Learn to smell, taste, and select the freshest produce. Then head to the school\'s countryside kitchen surrounded by rice fields and herb gardens to cook 4–5 dishes from scratch: pad thai, green or red curry paste (pounded by mortar and pestle), tom kha gai, som tam, and mango sticky rice.',
+          tip: 'Choose a school with a market tour — the ingredient education is as valuable as the cooking itself. Thai Farm Cooking School, Mama Noi, and Pantawan are all excellent.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cooking & Eating',
+          text: 'The cooking class continues through the afternoon — you will make your curry paste from scratch (arm workout included), stir-fry in a proper wok over fierce gas flames, and learn the balance of salty, sweet, sour, and spicy that defines Thai cooking. You eat everything you make, and most schools provide recipe cards to take home. Classes cost ฿800–1,200 and are excellent value for 5–6 hours of instruction, a market tour, and a full meal. You will leave able to make Thai green curry from memory.',
+          tip: 'Full-day classes are better value than half-day. Most schools accommodate vegetarian, vegan, and allergy requirements — mention when booking.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Warorot Market & Riverside',
+          text: 'Visit Warorot Market (Kad Luang) — Chiang Mai\'s biggest and oldest market on the Ping River. Three floors of dried fruits, northern sausages, textiles, hill tribe clothing, and kitchenware. The adjacent Ton Lamyai flower market is fragrant and photogenic. Walk along the Ping River at sunset — the east bank has a developing bar and restaurant scene with riverside seating. Dinner at Deck 1 or The Riverside for Thai food with river views and occasional live music.',
+          tip: 'Warorot\'s dried longan, mango, and northern Thai sausages make excellent souvenirs. The flower market next door is most photogenic in the early morning but stays open all day.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Elephant Nature Park',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Elephant Nature Park Visit',
+          text: 'Full-day visit to Elephant Nature Park (฿2,500, transport included from Chiang Mai). The park, founded by Lek Chailert, rescues elephants from logging and tourism camps and provides them with a natural valley to roam freely. You will walk alongside elephants, learn their individual stories, prepare their food baskets (they eat 200kg per day each), and watch them bathe and socialise in the river. No riding, no hooks, no performances — just elephants being elephants in a setting that respects their intelligence and social nature.',
+          tip: 'Book 1–2 weeks ahead — the park fills up fast, especially December–February. Pickup from your hotel is included. Wear old clothes and shoes you do not mind getting muddy.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Elephant Bathing & Education',
+          text: 'The afternoon at the park continues with elephant bathing — watching the herd wade into the river and splash each other is joyful. The park staff explain each elephant\'s rescue story, the injuries many carry from years of work or tourist camps, and the ongoing challenges of elephant conservation in Thailand. You will also meet rescued dogs, cats, and buffalo at the sanctuary. The experience is emotional, educational, and deeply rewarding. Lunch is included — a vegetarian Thai buffet.',
+          tip: 'Waterproof your phone — the elephants spray water enthusiastically during bath time. A dry bag or ziplock is essential for electronics.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Gate Markets & Street Food',
+          text: 'Back in Chiang Mai, explore the evening street food scene at the Old City gate markets. The Chang Phuak Gate market (north gate) is famous for its grilled pork, sticky rice, and cheap Thai dishes — cowboy hat lady\'s braised pork leg on rice (฿40) has a permanent queue for good reason. The South Gate market has excellent grilled meats and som tam. These gate markets are where locals eat — cheaper and more authentic than the Night Bazaar. Dinner for two with drinks will cost ฿200–300.',
+          tip: 'Chang Phuak Gate market is busiest from 5–8pm. The braised pork leg stall (look for the cowboy hat) is the most famous food stall in Chiang Mai — worth the short queue.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Chiang Rai White Temple Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Chiang Rai',
+          text: 'Take a day trip to Chiang Rai (3 hours north by bus ฿150–250, or join a group tour ฿800–1,500 all inclusive). The first stop is Wat Rong Khun (the White Temple) — artist Chalermchai Kositpipat\'s extraordinary contemporary temple that combines traditional Buddhist imagery with surreal modern elements. The all-white exterior glitters with mirrors and the interior features unexpected pop-culture murals alongside Buddhist scenes. It is unlike any temple you have ever seen — part sacred site, part art installation, part fever dream.',
+          tip: 'Group day trips from Chiang Mai include transport, guide, and lunch — convenient and good value. Or take the ฿150 bus from Arcade Bus Station and explore independently.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Blue Temple & Black House',
+          text: 'Visit Wat Rong Suea Ten (the Blue Temple) — a striking electric-blue temple with an enormous white Buddha inside. It is less famous than the White Temple but equally photogenic and less crowded. Then head to Baan Dam (the Black House) — the late artist Thawan Duchanee\'s sprawling complex of dark wooden buildings filled with animal bones, pelts, carved furniture, and spiritual art. The contrast between the white, blue, and black attractions makes for a fascinating day exploring art, spirituality, and Thai creativity.',
+          tip: 'The Black House closes at 5pm. If time is tight, prioritise the White Temple and Blue Temple — they are closer together and the most visually striking.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Saturday Walking Street',
+          text: 'Return to Chiang Mai by evening. If it is Saturday, head to the Wualai Road Walking Street — specialising in silver jewellery, handmade crafts, and artisan goods. The silverwork here is made by local artisans and you can watch them working at some stalls. The food stalls are excellent and less crowded than Sunday\'s Ratchadamnoen Walking Street. On other nights, explore the food stalls along Huay Kaew Road near the university, where students eat cheaply and well.',
+          tip: 'Saturday Walking Street on Wualai Road is smaller and less overwhelming than Sunday — better for silver jewellery and handmade crafts specifically.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Doi Inthanon & Lanna Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Doi Inthanon National Park',
+          text: 'Day trip to Doi Inthanon (90km southwest, join a group tour ฿1,000–1,500 or rent a scooter). At 2,565 metres, it is the highest peak in Thailand. The summit has a cool-climate forest with moss-covered trees, ferns, and a nature trail boardwalk. The twin royal pagodas (Phra Mahathat Naphamethinidon and Naphaphonphumisiri) sit at the edge of a cliff with stunning views over the valley and surrounding mountains. When the clouds part, the panorama extends endlessly. The temperature at the top can be 10–15°C cooler than Chiang Mai.',
+          tip: 'Bring a warm jacket — the summit can drop to 5°C in December/January. The entrance fee is ฿300 for foreigners. Start early to see the twin pagodas before clouds build.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Waterfalls & Lanna Folklife Museum',
+          text: 'On the way down from Doi Inthanon, stop at Wachirathan Waterfall — a powerful 80-metre cascade surrounded by tropical forest. The spray creates a permanent mist that keeps the area cool even in the hottest months. Back in Chiang Mai, visit the Lanna Folklife Museum inside the beautifully restored old provincial court building. The museum covers the history, art, and daily life of the Lanna kingdom through well-curated interactive exhibits. Entry is ฿90 and it is one of the best small museums in Thailand.',
+          tip: 'The Lanna Folklife Museum is in the same area as the Chiang Mai Historical Centre and the Chiang Mai City Arts & Cultural Centre — all three share a ฿180 combo ticket.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Muay Thai & Street Food',
+          text: 'Watch a muay Thai bout at Thapae Boxing Stadium or Kawila Boxing Stadium (฿400–600 for ringside seats). Fights happen several nights a week and the atmosphere is electric — the traditional music, ritual dance (wai kru), and intensity of the bouts are thrilling whether you know the sport or not. Many gyms also offer beginner muay Thai classes (฿300–500 per session) if you want to try it yourself. Dinner at the street food stalls around the stadium or back at the gate markets.',
+          tip: 'Check fight schedules locally — they change weekly. Ringside seats are worth the extra cost. If you want to train, Lanna Muay Thai and Hongthong Gym are well-regarded.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'More Temples, Shopping & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wat Umong & Quiet Temples',
+          text: 'Visit Wat Umong — a 700-year-old forest temple on the western edge of the city that is unlike any other in Chiang Mai. The temple features ancient tunnels (umong) beneath the chedi where faded murals still cling to the walls and the atmosphere is cool and meditative. Above ground, the forested grounds include a lake, wandering monks, philosophy trees (trees with Buddhist teachings nailed to them), and a talking tree project. It is a working meditation temple — the peaceful atmosphere is genuine and a welcome contrast to the busier tourist temples.',
+          tip: 'Wat Umong is a meditation centre — keep voices low, dress modestly, and respect the contemplative atmosphere. The tunnels are short but atmospheric. Free entry.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenir Shopping & Last Cafes',
+          text: 'Final afternoon for shopping and revisiting favourite spots. The Old City has excellent shops for handmade goods: HQ Paper Maker for mulberry paper products, Sop Moei Arts for hill tribe textiles, and Mengrai Kilns for traditional celadon ceramics. The Baan Tawai handicraft village (30 minutes south of the city) has wood carvings, lacquerware, and silk at factory prices. Squeeze in one more cafe visit — the specialty coffee here is too good to take for granted at home.',
+          tip: 'Baan Tawai is worth the trip if you are buying larger items — they arrange international shipping. The celadon pottery from Mengrai Kilns makes beautiful, packable souvenirs.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Northern Thai Dinner',
+          text: 'Final dinner at a khantoke restaurant for the traditional Lanna dining experience — you sit on the floor around a low circular tray (khantoke) laden with northern Thai dishes: gaeng hang lay (Burmese pork curry), sai oua (spiced sausage), nam prik ong (tomato chilli dip), crispy pork rinds, and sticky rice. Huen Phen or The House by Ginger both serve excellent khantoke meals in atmospheric settings. End with a walk along the lit-up moat, watching the Old City walls glow against the night sky.',
+          tip: 'A khantoke dinner is the quintessential Chiang Mai culinary experience — try it at least once. Order sticky rice and eat with your hands for the full northern Thai experience.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Songthaew for transport', text: 'Red songthaews (shared pickup trucks) run fixed routes around the Old City for ฿20–30 per person. Flag one down and tell the driver your destination — they will nod yes or wave you off. For longer trips, negotiate a flat fare before getting in.' },
+  { title: 'Gate markets for cheap eats', text: 'The Old City gate markets (Chang Phuak, South Gate) serve authentic Thai food at local prices: braised pork on rice ฿40, grilled chicken ฿30, som tam ฿30. Cheaper and better than the Night Bazaar tourist restaurants.' },
+  { title: 'Grab for convenience', text: 'Grab works well in Chiang Mai — bikes ฿20–50 within the city, cars ฿60–100. Much cheaper than tuk-tuks. Download the app and link a card before arriving. Use Grab Food for delivery from local restaurants.' },
+  { title: 'Guesthouse accommodation', text: 'Old City guesthouses start at ฿250/night for a fan room. Air-con from ฿400. Nimman area costs more (฿500–800) but is closer to cafes and nightlife. Book direct at the guesthouse for the best rates in low season.' },
+  { title: 'Free temple visits', text: 'Most temples are free to enter (donation appreciated). Only Doi Suthep charges an entry fee (฿30). Walking the Old City and visiting temples is the best free activity in Chiang Mai — dozens of beautiful temples within a 15-minute walk.' },
+  { title: 'Digital nomad deals', text: 'Chiang Mai is a top digital nomad destination. Co-working spaces (Punspace, CAMP at MAYA) offer day passes from ฿150. Monthly passes from ฿2,500. Most cafes have fast WiFi and welcome laptop workers for the price of a coffee.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '฿250–500', midrange: '฿800–2,000', splurge: '฿3,500+', notes: 'Guesthouses → boutique hotels → luxury resorts' },
+  { category: 'Food', budget: '฿150–300', midrange: '฿400–800', splurge: '฿1,500+', notes: 'Gate markets → restaurants → fine dining' },
+  { category: 'Transport', budget: '฿50–150', midrange: '฿200–400', splurge: '฿800+', notes: 'Songthaew → Grab → private driver' },
+  { category: 'Activities', budget: '฿0–300', midrange: '฿500–1,500', splurge: '฿2,500+', notes: 'Free temples → cooking class → elephant park' },
+  { category: 'Drinks', budget: '฿60–150', midrange: '฿200–500', splurge: '฿800+', notes: 'Cafe coffee → craft beer → cocktail bars' },
+  { category: 'Daily Total', budget: '฿510–1,400', midrange: '฿2,100–5,200', splurge: '฿9,100+', notes: '$15–40 → $60–149 → $260+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities get 60 days visa-free on arrival in Thailand — no advance application needed',
+      'Chiang Mai International Airport (CNX) has direct flights from Bangkok (1hr, ฿800–2,000), Kuala Lumpur, Singapore, and other Asian cities',
+      'Overnight trains and buses from Bangkok take 10–12 hours — the train is scenic and comfortable in second-class sleeper (฿800)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Chiang Mai is very safe — petty theft is rare and violent crime against tourists almost unheard of. Use normal precautions',
+      'Burning season (Feb–Apr) causes severe air pollution from crop fires — check AQI before visiting. A PM2.5 mask is essential during haze',
+      'Excellent private hospitals (Chiang Mai Ram, Lanna Hospital) with English-speaking doctors. Medical tourism is common here',
+    ],
+  },
+  {
+    icon: '🛵',
+    title: 'Getting Around',
+    items: [
+      'The Old City is compact and walkable — most temples are within 10 minutes of each other on foot',
+      'Red songthaews (shared pickup trucks) are the local bus — ฿20–30 per person for trips around the city. Wave one down and state your destination',
+      'Grab (Southeast Asia\'s Uber) works well for bikes (฿20–50) and cars (฿60–100). Much cheaper and more reliable than tuk-tuks',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Fast 4G/5G coverage across the city — AIS, DTAC, and TrueMove all have good coverage. Tourist SIM cards at the airport from ฿200',
+      'WiFi in virtually every cafe, restaurant, and guesthouse. Chiang Mai is a digital nomad hub — connectivity is excellent',
+      'Co-working spaces everywhere: Punspace, CAMP at MAYA (free with any purchase), Yellow, and dozens more. Day passes from ฿150',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Cash is king at markets, street food stalls, and small restaurants. Cards accepted at malls, upmarket restaurants, and hotels',
+      'ATMs everywhere — ฿220 withdrawal fee per transaction. Withdraw ฿10,000+ at a time to minimise fees. Bangkok Bank and Kasikorn are reliable',
+      'Chiang Mai is cheap — ฿700–1,400/day ($20–40) covers accommodation, food, transport, and activities comfortably for a budget traveler',
+    ],
+  },
+  {
+    icon: '🍜',
+    title: 'Best Street Food Areas',
+    items: [
+      'Somphet Market (Old City) — local market with fresh fruit, grilled meats, and noodle soups at ฿30–50 per dish',
+      'Chang Phuak Gate — the famous cowboy hat lady\'s braised pork leg and other local street food stalls open nightly',
+      'South Gate & Chiang Mai Gate market — som tam, grilled chicken, and khao kha moo at local prices from late afternoon',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'The Wai Greeting', text: 'Thais greet with a wai — pressing palms together at chest height with a slight bow. Return a wai when greeted. The higher the hands, the more respect shown. You do not need to wai service staff, but always return one from elders or monks.' },
+  { icon: '🛕', title: 'Temple Etiquette', text: 'Remove shoes before entering any temple building. Cover shoulders and knees — most temples will lend wraps but bring your own. Never climb on Buddha statues, point feet at sacred images, or sit higher than a monk. Women must not touch monks or hand them objects directly.' },
+  { icon: '👘', title: 'Dress Modestly', text: 'Chiang Mai is more conservative than the beach towns. Cover shoulders and knees when visiting temples. In general, modest clothing is appreciated in the Old City. Swimwear is for swimming only — not for walking around town.' },
+  { icon: '🧘', title: 'Respect Monks', text: 'Monks are deeply respected in Thai society. Give way to monks on footpaths, do not sit next to them on public transport, and never touch a monk or their belongings. Early morning alms-giving is a sacred practice — observe respectfully and do not obstruct or photograph intrusively.' },
+  { icon: '🏔', title: 'Hill Tribe Awareness', text: 'Chiang Mai is surrounded by hill tribe communities (Karen, Hmong, Lahu, Akha, Lisu). If visiting villages, go with a reputable guide, ask before photographing people, and buy handicrafts directly from artisans at fair prices. Avoid exploitative tourist experiences.' },
+  { icon: '🌿', title: 'Slow Down', text: 'Chiang Mai runs at a gentler pace than Bangkok. Services take longer, people are unhurried, and the culture values mai pen rai (no worries). Embrace the slower rhythm — rushing defeats the purpose. The cafe culture exists because sitting and savouring is the point.' },
+];
+---
+
+<CityGuideLayout
+  title="Chiang Mai Travel Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Chiang Mai guide for young travelers. Temples, street food, mountains with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/chiang-mai-hero.webp"
+  heroFlag="🇹🇭"
+  heroCountry="Thailand"
+  heroRegion="Southeast Asia"
+  heroCity="Chiang Mai"
+  heroSubtitle="An ancient walled city where golden temples rise above leafy lanes, street food sizzles at every gate, and mountain culture infuses everything."
+  heroPills={['3-Day Culture', 'Foodie', 'Nov – Feb Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in THB (฿). Chiang Mai is one of Southeast Asia's best value cities — excellent food, affordable guesthouses, and many free temples keep budgets low."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Chiang Mai is the cultural capital of northern Thailand with deep Buddhist traditions, Lanna heritage, and diverse hill tribe communities. Slow down, show respect, and the city opens up."
+  ctaCity="Chiang Mai"
+  ctaText="Find travel companions to share temple walks, cooking classes, and night market food crawls in Chiang Mai on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

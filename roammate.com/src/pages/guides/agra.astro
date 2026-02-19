@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'INR (Indian Rupee)', detail: 'Cash preferred at local shops' },
+  { icon: '🗣', label: 'Language', value: 'Hindi / English', detail: 'English at tourist sites' },
+  { icon: '🕐', label: 'Timezone', value: 'IST (UTC+5:30)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Mar', detail: 'Cool, clear skies for Taj views' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$15–40 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'e-Visa available', detail: 'Most nationalities eligible' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Taj Mahal, Agra Fort & Sunset',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Taj Mahal at Sunrise',
+          text: 'Enter the Taj Mahal through the South Gate as it opens at sunrise for the most magical experience of this Mughal masterpiece. The white marble shifts from soft pink to gold as the sun climbs over the Yamuna River, and the reflecting pools mirror the mausoleum in perfect symmetry. Walk around the plinth to see the intricate pietra dura inlay work — semi-precious stones set into the marble in floral patterns of astonishing precision. The interior tomb chamber holds the cenotaphs of Shah Jahan and Mumtaz Mahal, illuminated by light filtering through carved marble screens.',
+          tip: 'Book tickets online the day before on the ASI website to skip the queue. Arrive 30 minutes before sunrise — the gates open at first light and the crowd builds rapidly by 7am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Agra Fort & Itimad-ud-Daulah',
+          text: 'Walk 2km west to Agra Fort, a massive red sandstone fortress that served as the Mughal imperial residence for generations. The Diwan-i-Am (Hall of Public Audience), the mirrored Sheesh Mahal, and the marble Musamman Burj — where Shah Jahan was imprisoned and spent his final years gazing at the Taj Mahal across the river — are highlights. Afterwards, take an auto-rickshaw north to the Tomb of Itimad-ud-Daulah, often called the Baby Taj, a delicate white marble tomb with some of the finest pietra dura inlay work in India. It predates the Taj Mahal by 20 years and is considered its architectural precursor.',
+          tip: 'Hire a licensed guide at Agra Fort — the Mughal history is complex and a good guide brings the palaces and power struggles to life. Negotiate the price before starting.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mehtab Bagh Sunset & Street Food',
+          text: 'Cross to the north bank of the Yamuna to Mehtab Bagh (Moonlight Garden) for the classic sunset view of the Taj Mahal framed by the river. This Mughal garden was designed specifically as a viewing point and offers an unobstructed panorama without the crowds of the main complex. After sunset, head to the narrow lanes around Kinari Bazaar near Jama Masjid for Agra street food — try petha (translucent pumpkin sweet unique to Agra), bedai with spicy potato curry, and chaat from the vendors along the main bazaar road. The evening bustle of the old city is an experience in itself.',
+          tip: 'Mehtab Bagh closes at sunset — arrive at least 45 minutes before to secure a good spot. The light on the Taj is most dramatic in the final 20 minutes before the sun drops.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Taj Mahal & Mehtab Bagh Sunset',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Taj Mahal at Sunrise',
+          text: 'Enter through the East Gate at dawn to experience the Taj Mahal in its most ethereal state. The white Makrana marble absorbs the first light and shifts through pink, gold, and finally brilliant white as the sun rises over the Yamuna. Take your time walking the formal Mughal char bagh gardens — the four quadrants divided by water channels represent the Islamic concept of paradise. The reflecting pool on the central axis creates the iconic symmetrical image. Study the calligraphy panels flanking the main arch — Quranic verses inlaid in black marble that increase in size as they rise to appear uniform from ground level.',
+          tip: 'The Taj is closed on Fridays. Sunrise entry is quietest — by 8am tour groups arrive in force. Keep your ticket for same-day discounts at Agra Fort and Itimad-ud-Daulah.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tomb of Itimad-ud-Daulah',
+          text: 'Take an auto-rickshaw to the Tomb of Itimad-ud-Daulah on the east bank of the Yamuna, a jewel-box Mughal mausoleum built by Empress Nur Jahan for her father. Known as the Baby Taj, it features the first extensive use of pietra dura inlay in Mughal architecture — wine flasks, cypress trees, and geometric patterns rendered in carnelian, jasper, lapis lazuli, and onyx set into white marble. The latticed marble screens (jali work) are carved from single slabs and filter soft light into the interior chambers. The surrounding gardens are peaceful and rarely crowded compared to the main Taj complex.',
+          tip: 'Visit between 2pm and 4pm when tour groups are at other sites. The afternoon light warms the marble beautifully and the gardens are nearly empty.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mehtab Bagh Sunset & Petha Tasting',
+          text: 'Cross to the north bank for sunset at Mehtab Bagh, the Mughal pleasure garden built by Emperor Babur directly opposite the Taj Mahal. The crumbling garden walls frame the Taj across the wide bend of the Yamuna, and in the golden hour the marble dome turns amber against the darkening sky. After sunset, head into the old city to try Agra petha — Panchhi Petha near Sadar Bazaar has been making this translucent crystallised gourd sweet since 1950, in dozens of flavours from classic plain to angoori and coconut.',
+          tip: 'Combine Mehtab Bagh with a walk along the riverbank path — you can see the Taj from several angles and the north bank is far less developed than the south.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Agra Fort, Bazaars & Mughal Cuisine',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Agra Fort — Mughal Power & Tragedy',
+          text: 'Spend a full morning inside Agra Fort, the 94-acre red sandstone citadel that was the seat of Mughal power for three emperors. Enter through the Amar Singh Gate and work your way through the public halls (Diwan-i-Am), the private palaces (Diwan-i-Khas with its legendary Peacock Throne platform), the Jahangiri Mahal with Hindu-Mughal fusion architecture, and the marble Musamman Burj tower where Shah Jahan was imprisoned by his son Aurangzeb. From the tower balcony, the Taj Mahal is visible 2km downstream — Shah Jahan reportedly spent his final eight years gazing at the tomb he built for his wife.',
+          tip: 'A licensed ASI guide costs 500-800 INR and transforms the fort visit. The Mughal dynastic story — love, betrayal, imprisonment — is one of history\'s great dramas.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kinari Bazaar & Marble Workshops',
+          text: 'Dive into the lanes of Kinari Bazaar behind Jama Masjid — Agra\'s oldest market selling wedding accessories, embroidered fabrics, marble handicrafts, and spices in a riot of colour and noise. Watch marble inlay artisans in the workshops along Gwalior Road demonstrate the same pietra dura technique used on the Taj Mahal — cutting and setting semi-precious stones into marble by hand, a craft passed down through families for 400 years. Lunch at a thali restaurant in the bazaar area for an authentic Agra meal — try bedai-kachori with aloo sabzi, a local breakfast staple served all day.',
+          tip: 'Marble inlay prices vary wildly — the workshops near the Taj are tourist-priced. The Gwalior Road artisan workshops offer better quality and fair prices. Ask to see the raw stones.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mughal Cuisine & Rooftop Views',
+          text: 'Agra\'s culinary heritage reflects centuries of Mughal influence. Find a rooftop restaurant with Taj Mahal views — several along Taj East Gate Road offer the iconic backdrop. Order Mughlai dishes: seekh kebab, mutton biryani slow-cooked in a sealed pot (dum style), paneer tikka, and dal makhani finished with cream and butter. For dessert, try kulfi falooda — dense frozen milk ice cream with vermicelli noodles and rose syrup. The illuminated Taj Mahal glowing white against the dark sky from a rooftop is an unforgettable dinner setting.',
+          tip: 'Pinch of Spice and Bon Barbecue near Taj East Gate are reliable mid-range options. For budget eats, the dhabas on Fatehabad Road serve excellent thalis for under 200 INR.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Fatehpur Sikri Day Trip & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Fatehpur Sikri — Akbar\'s Ghost City',
+          text: 'Take a day trip 37km west to Fatehpur Sikri, Emperor Akbar\'s magnificent sandstone capital city built in 1571 and mysteriously abandoned just 14 years later, possibly due to water scarcity. The Buland Darwaza (Gate of Magnificence) at 54 metres is the tallest gateway in Asia. Inside, the Panch Mahal — a five-storey palace of 176 columns — the Diwan-i-Khas with its single central pillar supporting a throne platform, and the stunning Tomb of Salim Chisti with its marble lattice screens are architectural masterworks. The complex is remarkably well preserved because it was never modified after abandonment.',
+          tip: 'Hire a shared taxi or take a UP Roadways bus from Agra Idgah bus stand — the journey takes 45 minutes. Go early to explore before the midday heat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Sikandra & Akbar\'s Tomb',
+          text: 'On the return from Fatehpur Sikri, stop at Sikandra, 10km northwest of Agra, to visit Akbar\'s Tomb — the grand mausoleum that Akbar designed himself before his death in 1605. The four-tiered structure blends Hindu, Islamic, Buddhist, and Jain motifs reflecting Akbar\'s syncretic religious philosophy. The surrounding Mughal gardens are home to langur monkeys and spotted deer that wander freely among the pathways. The main gate features the first known use of coloured marble inlay in Mughal architecture, predating even the Taj Mahal. The rooftop terrace holds the actual grave, open to the sky as per Akbar\'s wishes.',
+          tip: 'Sikandra receives far fewer visitors than the Taj or Fort. The gardens are a peaceful place to walk and the langur monkeys are entertaining but keep food hidden.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sadar Bazaar & Farewell Chaat',
+          text: 'Spend your final evening in Agra exploring Sadar Bazaar, the city\'s main commercial market where locals shop for everyday goods. The energy is completely different from the tourist areas — fabric shops, spice sellers, sweet shops, and electronics stalls line narrow lanes buzzing with rickshaws and motorcycles. Sample Agra\'s famous chaat — dahi bhalla (lentil dumplings in yoghurt), pani puri (crispy shells filled with spiced water), and aloo tikki from the street vendors near the central crossing. Pick up boxes of petha and Agra ka dalmoth (spiced lentil mix) as gifts.',
+          tip: 'Sadar Bazaar is busiest and most atmospheric between 5pm and 8pm. Prices here are local rates — no need to bargain as aggressively as in tourist markets.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Taj Mahal Full Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Taj Mahal at Sunrise',
+          text: 'Arrive at the East Gate before dawn for the definitive Taj Mahal experience. As the gates open and the first visitors walk through the arched gateway, the mausoleum materialises through the morning mist in a scene that has been described as otherworldly for four centuries. Walk the full perimeter of the plinth to study the pietra dura panels, the carved marble flowers, and the Quranic calligraphy. The mosque on the west side and the jawab (mirror building) on the east provide symmetry and quieter vantage points. Spend at least two hours here — rushing the Taj Mahal defeats the purpose.',
+          tip: 'Sunrise entry is the most popular slot. Arrive 30 minutes early to queue, and head straight to the plinth rather than stopping at the reflecting pool — you can photograph the pool later when it\'s emptier.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Taj Museum & South Gate Area',
+          text: 'Visit the small Taj Museum inside the complex — it houses original architectural drawings, Mughal miniature paintings, and jade and celadon vessels from the imperial kitchens. After exiting, explore the area around the South Gate where local artisans sell marble inlay pieces and Mughal-style miniature paintings. Lunch at a nearby restaurant — try Mughlai paratha (stuffed flatbread) with raita. The afternoon heat in Agra can be intense, so this is a good time to rest at your hotel before the evening excursion.',
+          tip: 'The Taj Museum is included in your entry ticket but most visitors miss it. It\'s in the western building and contains fascinating original Mughal artefacts.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mehtab Bagh Sunset',
+          text: 'Cross to the north bank of the Yamuna for your first sunset at Mehtab Bagh. The garden offers an unobstructed view of the Taj Mahal across the river, and the changing light from golden hour through sunset transforms the marble dome through a spectrum of amber, pink, and violet. Photographers line the riverbank wall for the classic shot. After sunset, explore the quiet lanes of the north bank neighbourhood — a world away from the tourist bustle of the south side, with small chai stalls and local life unaffected by tourism.',
+          tip: 'Mehtab Bagh entry is 50 INR for foreign tourists — one of the best-value viewpoints in India. Bring a tripod if you want sharp low-light photos of the Taj.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Agra Fort & Mughal Heritage',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Agra Fort Deep Dive',
+          text: 'Dedicate a full morning to Agra Fort, entering at opening time to explore the complex without crowds. Start at the Jahangiri Mahal — the oldest structure in the fort with its Hindu-Mughal architectural fusion of carved brackets, ornate balconies, and sandstone jharokha windows. Move to the white marble Khas Mahal and Musamman Burj, Shah Jahan\'s exquisite additions that contrast sharply with the earlier red sandstone buildings. The Nagina Masjid (Gem Mosque), a tiny private mosque for the royal women built entirely of white marble, is one of the fort\'s hidden treasures.',
+          tip: 'The fort is enormous — budget 3 hours minimum. A guide (500-800 INR) is essential for understanding the layered history from Akbar through Shah Jahan to Aurangzeb.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jama Masjid & Kinari Bazaar',
+          text: 'Walk from the fort to Jama Masjid, Agra\'s largest mosque built by Shah Jahan\'s daughter Jahanara. The courtyard holds thousands of worshippers during Friday prayers and offers a striking red sandstone contrast to the white marble Mughal tombs. From here, plunge into the labyrinthine lanes of Kinari Bazaar — the wedding market where shops overflow with sequined fabrics, tinsel decorations, brass vessels, and marble souvenirs. The sensory overload of colour, sound, and smell is quintessential North Indian bazaar culture.',
+          tip: 'Kinari Bazaar is busiest in the evening but most atmospheric in the late afternoon when the light slants through the narrow lanes. Keep valuables secure in the crowded alleys.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mughlai Dinner & Rooftop Taj View',
+          text: 'Find a rooftop restaurant along Taj East Gate Road for dinner with the illuminated Taj Mahal as your backdrop. Agra\'s Mughlai cuisine is rich and aromatic — order galouti kebab (melt-in-the-mouth spiced mince), dum biryani sealed with dough, and shahi paneer in a cashew-cream sauce. Finish with phirni (ground rice pudding set in clay cups) or rabri (thickened sweetened milk). The illuminated Taj against the night sky, visible from your dinner table, is one of India\'s most atmospheric dining experiences.',
+          tip: 'Oberoi Amarvilas has the most famous Taj view restaurant but is expensive. For budget-friendly rooftop views, try Saniya Palace Hotel or Shankara Vegis near Taj East Gate.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Itimad-ud-Daulah & Chini Ka Rauza',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Itimad-ud-Daulah — The Baby Taj',
+          text: 'Visit the Tomb of Itimad-ud-Daulah in the soft morning light when the white marble glows warmly and the gardens are almost empty. This jewel-box mausoleum built by Empress Nur Jahan between 1622 and 1628 pioneered many features later perfected at the Taj Mahal — pietra dura inlay, white marble construction, and char bagh garden layout. The interior features carved marble lattice screens of extraordinary delicacy, each panel a different geometric pattern. The detailed inlay work on the exterior walls depicting wine carafes and flower vases reflects the Persian-influenced aesthetic of Nur Jahan\'s court.',
+          tip: 'Itimad-ud-Daulah receives a fraction of the Taj Mahal\'s visitors. The craftsmanship is arguably more refined at close range — bring a camera with a macro lens to capture the inlay details.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chini Ka Rauza & Ram Bagh',
+          text: 'Walk 1km north along the Yamuna riverbank to Chini Ka Rauza, the glazed tile tomb of Afzal Khan, a Persian poet and prime minister under Shah Jahan. The exterior was originally covered entirely in Persian-style blue and green glazed tiles — fragments still cling to the walls and give a haunting impression of its former brilliance. Continue to Ram Bagh (Garden of Relaxation), believed to be the oldest Mughal garden in India, laid out by Emperor Babur in 1528. The terraced garden with its pavilions and water channels is now a quiet park popular with local families.',
+          tip: 'These two sites are free or nearly free to enter and are completely off the tourist trail. The riverbank walk between them passes local fishing boats and offers quiet Yamuna views.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Agra Street Food Trail',
+          text: 'Spend the evening on a self-guided street food crawl through Agra\'s old city. Start at the chaat vendors near Mankameshwar Temple for dahi puri and pani puri, then walk to the bedai-kachori shops on Ghatia Gali where deep-fried lentil breads are served with spiced potato curry. Move to the petha shops on Noori Gate Road — try the angoori variety (tiny grape-sized crystallised gourd balls) and the paan-flavoured version. End at a kulfi stall for dense frozen milk ice cream scraped from metal moulds and served on a leaf plate.',
+          tip: 'Eat where locals queue — the busiest stalls have the freshest food and fastest turnover. Carry hand sanitiser and start slowly if your stomach isn\'t accustomed to street food.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Fatehpur Sikri Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Fatehpur Sikri — Akbar\'s Abandoned Capital',
+          text: 'Take a taxi or bus 37km west to Fatehpur Sikri, the sandstone ghost city that Emperor Akbar built as his capital in 1571. Enter through the Buland Darwaza — at 54 metres, the tallest gateway in Asia — and explore the imperial complex: the Panch Mahal with its 176 columns arranged in diminishing tiers, the Diwan-i-Khas with its legendary central pillar and throne platform, and the Anup Talao ornamental pool where court musicians performed on a central platform. The city was abandoned after just 14 years, possibly due to water scarcity, and its preservation is remarkable precisely because it was never modified.',
+          tip: 'Arrive when the complex opens at sunrise to have the courtyards largely to yourself. The red sandstone photographs dramatically in warm morning light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tomb of Salim Chisti & Jama Masjid',
+          text: 'Within Fatehpur Sikri\'s Jama Masjid complex stands the Tomb of Salim Chisti, a Sufi saint who predicted the birth of Akbar\'s heir. The tomb is one of India\'s finest examples of marble lattice work — the jali screens are carved from single marble slabs into intricate geometric patterns that filter light into a luminous interior. Pilgrims tie threads to the screens and make wishes, giving the tomb a living spiritual energy. The surrounding Jama Masjid is one of India\'s largest mosques, its red sandstone courtyard offering sweeping views over the plains below the ridge where the city sits.',
+          tip: 'Remove shoes before entering the tomb — the marble floor can be burning hot at midday, so visit in the morning or carry socks. The thread-tying tradition is beautiful to watch.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sikandra — Akbar\'s Tomb',
+          text: 'Stop at Sikandra on the drive back to Agra to visit Akbar\'s Tomb, the mausoleum the emperor designed for himself in a style that reflects his syncretic philosophy — blending Islamic, Hindu, Buddhist, Christian, and Jain architectural elements. The four-tiered red sandstone and marble structure sits in a walled garden where spotted deer and langur monkeys roam freely among the pathways. The actual grave on the open-air rooftop level, unadorned and exposed to the sky, is strikingly modest for one of history\'s most powerful rulers. The main gateway\'s white marble minarets prefigure the Taj Mahal\'s design.',
+          tip: 'Sikandra is at its most atmospheric in the late afternoon when the warm light catches the red sandstone and the garden animals are most active.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Yamuna Riverbank & Artisan Workshops',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Yamuna Riverbank Walk',
+          text: 'Take a sunrise walk along the Yamuna riverbank from Mehtab Bagh downstream past local fishing villages and the dhobi ghats where laundry is washed in the river. The Taj Mahal is visible from multiple angles along the north bank, each perspective offering a different framing against the sky and river. Local fishermen cast nets from wooden boats in the early morning, and the riverbank path passes through agricultural land and small settlements that feel completely removed from the tourist circuit. This quiet morning walk reveals a side of Agra most visitors never see.',
+          tip: 'The riverbank can be muddy — wear sturdy shoes. Start from Mehtab Bagh area and walk east for the best morning light on the Taj.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Marble Inlay & Zardozi Workshops',
+          text: 'Visit the marble inlay workshops on Gwalior Road where artisan families continue the pietra dura craft used on the Taj Mahal four centuries ago. Watch craftsmen cut thin slices of malachite, lapis lazuli, and mother-of-pearl and set them into grooves carved in white marble tabletops and decorative plates. Nearby, zardozi embroidery workshops demonstrate the Mughal-era technique of gold and silver thread work on fabric — used historically for royal garments and now for wedding attire and decorative panels. These artisans represent living cultural heritage directly linked to the Mughal court workshops.',
+          tip: 'The best workshops welcome visitors without obligation to buy. Ask your hotel to recommend a genuine artisan workshop rather than a tourist commission shop.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Moonlit Taj Mahal Viewing',
+          text: 'On full moon nights and the two nights either side, the Taj Mahal opens for special moonlight viewing sessions between 8:30pm and 12:30am. Limited to 400 visitors per night in batched 30-minute slots, the experience of seeing the Taj bathed in moonlight with its marble glowing silver-white is profoundly different from the daytime visit. The silence, the shadows cast by the minarets, and the reflection in the pools create an atmosphere of extraordinary beauty. If your dates don\'t align with the full moon, the Taj East Gate Road rooftops offer moonlit views year-round.',
+          tip: 'Moonlight viewing tickets must be booked 24 hours in advance through ASI. Slots fill fast on full moon nights — book as early as possible. Photography is restricted during moonlight visits.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Mughal Gardens & Cooking Class',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Soami Bagh & Dayalbagh',
+          text: 'Visit the Soami Bagh Samadh in Dayalbagh, 10km north of Agra — a breathtaking white marble mausoleum under construction since 1904 and still being carved by hand using traditional techniques. The level of detail in the marble carving here surpasses even the Taj Mahal — flowers, fruits, birds, and animals rendered in three-dimensional relief with astonishing realism. The artisans working on-site are happy to explain their craft, and watching them carve is mesmerising. The nearby Dayalbagh settlement is a utopian community founded in the early 20th century with immaculate gardens and a self-sufficient economy.',
+          tip: 'Soami Bagh is free to enter and photography is allowed. Visit in the morning when the carvers are actively working on the exterior panels.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mughlai Cooking Class',
+          text: 'Join a Mughlai cooking class offered by several guesthouses and culinary tours in Agra. Learn to prepare classic dishes from the Mughal kitchen — grinding spice pastes by hand, making galouti kebab (the famously tender minced meat patty said to have been invented for a toothless Nawab), rolling out naan dough, and slow-cooking dum biryani sealed with dough. The hands-on session typically covers 4-5 dishes over 3 hours and ends with eating everything you\'ve cooked. Understanding the layering of spices and techniques behind Mughlai cuisine adds depth to every meal you eat for the rest of your India trip.',
+          tip: 'Book cooking classes through your hotel or on platforms like Airbnb Experiences. Classes typically cost 1500-2500 INR including all ingredients and the meal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sadar Bazaar Evening Stroll',
+          text: 'Spend the evening wandering Sadar Bazaar, Agra\'s main commercial district where locals shop for everything from spices and sweets to fabrics and electronics. The energy peaks between 6pm and 9pm when the lanes are packed with shoppers, street vendors, and chai stalls. Try the dalmoth (a spiced lentil and nut snack mix unique to Agra) from the established shops, and sample jalebi (crispy pretzel-shaped sweets soaked in sugar syrup) fresh from the oil at a sweet shop. The bazaar\'s human theatre — barbers, flower sellers, bicycle mechanics — is endlessly fascinating.',
+          tip: 'Sadar Bazaar prices are local rates and significantly cheaper than tourist markets. Buy packaged petha and dalmoth here as gifts — the quality is the same at a fraction of the tourist-area price.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Second Taj Visit & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Return to the Taj Mahal',
+          text: 'A second visit to the Taj Mahal with fresh eyes is profoundly rewarding. Details you missed on the first visit — the subtle colour variations in the inlay stones, the acoustic properties of the dome chamber, the way the four minarets lean slightly outward to protect the main structure in an earthquake — become apparent when you\'re not overwhelmed by the initial spectacle. Walk slowly and spend time sitting on the marble benches flanking the reflecting pool, simply absorbing the proportions and serenity of the space. Many travellers say their second Taj visit is more moving than the first.',
+          tip: 'Use your time strategically — visit areas you rushed through before. The mosque interior on the west side and the garden quadrants closest to the river wall are usually the emptiest spots.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Agra Cantt & Last Shopping',
+          text: 'Head to the Agra Cantonment area for last-minute shopping at Subhash Emporium or the Uttar Pradesh State Emporium (fixed prices, no bargaining needed) for quality marble inlay pieces, leather goods, and Mughal miniature paintings. The cantonment area is Agra\'s most orderly neighbourhood with tree-lined streets, colonial-era buildings, and good cafes for a final relaxed lunch. If time permits, visit St. John\'s Church, a colonial-era Anglican church built in 1858, or the quirky Agra Bear Rescue Facility run by Wildlife SOS on the outskirts of the city.',
+          tip: 'Government emporiums charge fixed prices — useful as a benchmark before bargaining in bazaars. The quality is reliable and items come with authenticity certificates.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Departure',
+          text: 'End your Agra week with a farewell dinner at one of the city\'s best restaurants. Esphahan at the Oberoi Amarvilas offers world-class Mughlai cuisine with uninterrupted Taj Mahal views — a splurge-worthy final meal. For a more casual farewell, the rooftop restaurants near Taj East Gate serve excellent kebabs and biryani at a fraction of the price with the same illuminated Taj backdrop. Reflect on a week spent immersed in Mughal grandeur — from the Taj Mahal\'s marble poetry to the ghost city of Fatehpur Sikri to the living artisan traditions that connect modern Agra to its imperial past.',
+          tip: 'If departing by train, Agra Cantt is the main station for Delhi-bound Shatabdi and Gatimaan Express trains. Book tickets on IRCTC well in advance — popular trains sell out days ahead.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Composite tickets save money', text: 'ASI offers composite tickets covering the Taj Mahal, Agra Fort, Fatehpur Sikri, Itimad-ud-Daulah, and Akbar\'s Tomb. Buying the composite ticket saves significantly over individual entries and is valid for the same day.' },
+  { title: 'Use auto-rickshaws with meters', text: 'Insist on metered auto-rickshaws or agree on a price before getting in. For full-day sightseeing, hire an auto for the day — 800-1200 INR covers all major sites and saves on individual fares.' },
+  { title: 'Eat at local dhabas', text: 'Roadside dhabas and bazaar food stalls serve authentic food at local prices — a filling thali costs 100-150 INR compared to 500-800 INR at tourist restaurants. The food is often better too.' },
+  { title: 'Stay in Taj Ganj for budget', text: 'The Taj Ganj neighbourhood behind the Taj Mahal has the cheapest guesthouses and rooftop cafes. Rooms start at 500 INR per night and many have Taj views from the roof.' },
+  { title: 'Visit on Friday for free mosques', text: 'The Taj Mahal is closed on Fridays, but Jama Masjid and other mosques are free to enter. Use Friday for bazaar exploration, workshops, and mosque visits.' },
+  { title: 'Train from Delhi is cheapest', text: 'The Gatimaan Express takes 100 minutes from Delhi and costs as little as 750 INR for chair car. Far cheaper and faster than hiring a private car and driver.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$5–15', midrange: '$20–50', splurge: '$80+', notes: 'Hostels/guesthouses → mid-range hotels → heritage hotels' },
+  { category: 'Food', budget: '$3–8', midrange: '$10–20', splurge: '$30+', notes: 'Street food/dhabas → restaurants → fine dining' },
+  { category: 'Transport', budget: '$2–5', midrange: '$5–15', splurge: '$25+', notes: 'Auto-rickshaws → taxis → private car with driver' },
+  { category: 'Activities', budget: '$5–10', midrange: '$10–25', splurge: '$40+', notes: 'Self-guided → group tours → private guides' },
+  { category: 'Entry Fees', budget: '$8–15', midrange: '$15–25', splurge: '$25–35', notes: 'Composite ASI ticket saves money' },
+  { category: 'Daily Total', budget: '$15–40', midrange: '$50–120', splurge: '$180+', notes: 'Budget backpacker → comfortable mid → luxury heritage' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'e-Visa available for most nationalities — apply online before arrival',
+      'Keep a digital and physical copy of your passport, visa, and travel insurance at all times',
+      'Foreign tourist prices at ASI monuments are significantly higher than Indian citizen prices — budget accordingly',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Drink only bottled or filtered water — avoid ice at street stalls',
+      'Travel insurance with medical coverage is essential for India',
+      'Sun protection is critical Oct–Mar; heat precautions essential Apr–Jun with temperatures exceeding 45°C',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Auto-rickshaws are the primary local transport — negotiate fares or insist on meters',
+      'Agra is a popular day trip from Delhi via Gatimaan Express (100 min) or Shatabdi Express (2 hrs)',
+      'Download offline maps — mobile data can be patchy in old city areas',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a local SIM (Airtel or Jio) at the airport — requires passport photo and biometric verification',
+      'WiFi available at most hotels but can be slow — a local SIM with 4G data is more reliable',
+      'Share your itinerary with someone at home and check in daily',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: INR (Indian Rupee). ATMs widely available but carry cash for street vendors and auto-rickshaws',
+      'UPI payments (Google Pay, PhonePe) are ubiquitous in India — consider setting up an Indian payment app if staying long',
+      'Tipping 10% at restaurants is standard. Guides and drivers appreciate 200-500 INR per day',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Comfortable walking shoes, modest clothing covering shoulders and knees for mosque visits',
+      'A reusable water bottle with filter, sunscreen, and portable phone charger are essential',
+      'Carry a scarf or shawl — useful for sun protection, mosque visits, and cool evenings',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect Local Customs', text: 'Remove shoes before entering mosques and tombs. Dress modestly — shoulders and knees covered — at religious sites. The greeting "Namaste" with palms together is always appreciated and shows respect for Indian culture.' },
+  { icon: '🌍', title: 'Protect Heritage Sites', text: 'Do not touch, lean on, or scratch the marble at the Taj Mahal and other monuments. Flash photography is prohibited inside tomb chambers. These sites have survived centuries — every visitor has a responsibility to leave them undiminished for the next generation.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Ask permission before photographing people, especially at religious sites and in the bazaars. Tripods are restricted at the Taj Mahal. Drone flying is strictly prohibited near all ASI monuments and can result in equipment confiscation and fines.' },
+  { icon: '🗣', title: 'Language & Communication', text: 'Learn basic Hindi greetings — Namaste (hello), Dhanyavaad (thank you), Kitna (how much). English is widely understood at tourist sites but a few Hindi words open doors and earn warmth from local people.' },
+  { icon: '🤝', title: 'Support Local Communities', text: 'Buy directly from artisan workshops rather than commission-based tourist shops. Eat at local dhabas and bazaar stalls. Hire licensed local guides — your spending supports families who have lived in Agra for generations and carry deep knowledge of Mughal heritage.' },
+  { icon: '🕐', title: 'Pace & Patience', text: 'Agra runs on Indian time — expect queues, delays, and a pace that resists rushing. The touts and hawkers near tourist sites can be persistent but a firm "no thank you" works. The rewards of patience in India are immense — slow down and the city reveals itself.' },
+];
+---
+
+<CityGuideLayout
+  title="Agra Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Agra guide for young travelers. Taj Mahal, Mughal heritage, and street food with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/agra-hero.webp"
+  heroFlag="🇮🇳"
+  heroCountry="India"
+  heroRegion="South Asia"
+  heroCity="Agra"
+  heroSubtitle="Home of the Taj Mahal — a city steeped in Mughal grandeur with marble masterworks, red sandstone forts, and legendary street food along the banks of the Yamuna."
+  heroPills={["3-Day Heritage", "Mughal History", "Oct – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Agra is one of India's most affordable tourist destinations — even on a tight budget you can experience world-class Mughal heritage and incredible street food."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Agra is a city of profound historical and spiritual significance — approach its monuments and people with curiosity and respect, and you will find warmth and wonder at every turn."
+  ctaCity="Agra"
+  ctaText="Find travel companions to explore Agra together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

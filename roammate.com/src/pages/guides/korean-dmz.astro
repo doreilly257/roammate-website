@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'KRW (Won)', detail: '1 USD ≈ ₩1,350' },
+  { icon: '🗣', label: 'Language', value: 'Korean / English', detail: 'Tour guides speak English' },
+  { icon: '🕐', label: 'Timezone', value: 'KST (UTC+9)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Year-round', detail: 'Winter is cold but dramatic' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$50–80 USD', detail: 'Tour cost is main expense' },
+  { icon: '🛂', label: 'Visa', value: 'K-ETA or visa-free', detail: 'Check requirements for your nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Full DMZ Tour from Seoul',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Seoul Pickup & Journey to the DMZ',
+          text: 'DMZ tours depart from central Seoul between 7:00–8:00am — most operators pick up from Myeongdong, Hongdae, or major hotels. The drive north takes approximately 1 hour through increasingly militarised countryside. Your guide will brief the group on the history of the Korean War, the 1953 Armistice Agreement, and the current status of the DMZ — a 250km-long, 4km-wide strip that has become one of the most heavily fortified borders on Earth, yet also an accidental nature reserve where endangered species thrive undisturbed.',
+          tip: 'Book your tour at least 72 hours in advance — passport details are required for military clearance. Passport (original, not a copy) is mandatory on the day. Tour prices range from ₩50,000–70,000 depending on whether JSA access is included.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'JSA, Tunnels & Dorasan Observatory',
+          text: 'The Joint Security Area (JSA) at Panmunjom is the most intense part of the tour — the blue UN conference buildings straddle the Military Demarcation Line, and you can step into the North Korean side of the room while UN soldiers stand guard. The Third Infiltration Tunnel, discovered in 1978, descends 73m underground — a narrow, damp tunnel dug by North Korea that could have moved 30,000 troops per hour into Seoul. Dorasan Observatory offers binocular views into North Korea — the propaganda village of Kijong-dong and the 160m flagpole are visible on clear days. Dorasan Station, the last station before North Korea, sits unused but maintained in hope of future reunification.',
+          tip: 'Dress code is enforced at the JSA — no shorts, sandals, ripped jeans, or military-style clothing. No pointing or gesturing towards the North Korean side. Photography is permitted in most areas but guides will specify restricted zones.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Imjingak Park & Return to Seoul',
+          text: 'The tour concludes at Imjingak Park, the closest point to the DMZ accessible without military escort. Freedom Bridge, where prisoners of war were exchanged after the Armistice, is draped with ribbons and messages left by families separated by the division. The park has a small museum, memorial altars where South Koreans pray towards their ancestral homes in the North, and the rusted remains of a war-era steam locomotive riddled with bullet holes. Return to Seoul by late afternoon, arriving back in the city centre by 5–6pm.',
+          tip: 'The gift shop at Imjingak sells North Korean currency, stamps, and propaganda posters — unique souvenirs. The JSA portion of tours is occasionally suspended due to political tensions — check availability when booking.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'DMZ Tour — The Most Fortified Border on Earth',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Seoul Pickup & DMZ Briefing',
+          text: 'Depart Seoul at 7:00–8:00am for the DMZ. Tour operators like Koridoor, VIP Travel, and the USO (for JSA-specific tours) pick up from central locations. The drive north passes through Paju, a city whose northern suburbs abut the DMZ. Your guide — typically a Korean history specialist — will cover the 1950–53 war, the Armistice (technically the war never ended), and the current political dynamics. The DMZ is 4km wide and 250km long, stretching coast to coast across the Korean Peninsula.',
+          tip: 'The USO tour is the most reliable option for JSA access but books out weeks ahead — reserve as early as possible. Bring your passport (mandatory) and dress appropriately for the JSA dress code.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'JSA, Infiltration Tunnels & Observations',
+          text: 'At the Joint Security Area, UN Command soldiers brief you before entering the blue conference room that sits on the Military Demarcation Line. Inside, you cross into North Korean territory — the table in the middle is split by the border. Outside, North Korean soldiers may be visible across the concrete slab demarcation. The Third Infiltration Tunnel descends steeply via a long sloped corridor to 73m below ground — the granite walls still show dynamite blast marks from the North Korean excavation. At Dorasan Observatory, powerful binoculars (₩500 per use) give views of Kaesong city and the surrounding North Korean landscape.',
+          tip: 'Cameras are allowed in most areas but your guide will clearly indicate no-photo zones. Smartphones are fine — DSLRs with large telephoto lenses may attract extra scrutiny at JSA checkpoints.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Imjingak & Freedom Bridge',
+          text: 'End the DMZ tour at Imjingak Peace Park. Walk across Freedom Bridge and read the thousands of prayer ribbons tied to the fence — messages from families who have been separated since the 1950s. The emotional weight of this place is immense. The park also contains the Peace Bell, war memorials, and a restored steam locomotive from the war. Return to Seoul by late afternoon. For dinner, head to Gwangjang Market — Seoul\'s oldest market — for bindaetteok (mung bean pancakes), yukhoe (Korean beef tartare), and makgeolli (rice wine) at communal tables.',
+          tip: 'Gwangjang Market is a 5-minute walk from Jongno 5-ga Station. The pojangmacha (covered stall) vendors in the central aisle are the most atmospheric — point at what looks good and sit down. Most dishes cost ₩5,000–10,000.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Korean War History & Gyeongbokgung Palace',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'War Memorial of Korea',
+          text: 'The War Memorial of Korea in Yongsan is one of the most comprehensive military museums in Asia — and it is free. The outdoor exhibition features tanks, fighter jets, submarines, and a full-size replica of a turtle ship (the iron-clad warship used by Admiral Yi Sun-sin in the 16th century). Inside, the Korean War exhibition hall takes you through the conflict with maps, personal artefacts, recreated battle scenes, and video testimonies from veterans. The memorial is respectfully done — it honours soldiers from all UN nations that fought in the war, with individual memorials for each country.',
+          tip: 'Allow 2–3 hours for the War Memorial — it is much larger than expected. The Korean War gallery on the second floor is the most important section. Audio guides are available in English for free.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gyeongbokgung Palace & Hanbok Experience',
+          text: 'Gyeongbokgung Palace, the largest of Seoul\'s Five Grand Palaces, was originally built in 1395 and served as the main royal palace of the Joseon dynasty. Entry costs ₩3,000, but wearing hanbok (traditional Korean clothing) grants you free entry. Hanbok rental shops line the streets around the palace — ₩15,000–25,000 for a full outfit for 4 hours. The Changing of the Guard ceremony at the Gwanghwamun Gate happens at 10am and 2pm daily (except Tuesdays). Inside, the Geunjeongjeon throne hall and Gyeonghoeru Pavilion on its artificial lake are architectural highlights.',
+          tip: 'Visit on a weekday to avoid crowds. The National Palace Museum (free, inside the palace grounds) and the National Folk Museum (also free) are both excellent and often overlooked.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Itaewon & Korean BBQ',
+          text: 'Head to Itaewon or Mapo-gu for Korean BBQ — the quintessential Seoul dining experience. Samgyeopsal (pork belly) restaurants let you grill thick slices of meat at your table over charcoal, wrapping them in lettuce leaves with ssamjang (fermented bean paste), raw garlic, and kimchi. A full meal with side dishes and soju (rice spirit) costs around ₩15,000–25,000 per person. The neighbourhood around Hongdae (Hongik University) has the best nightlife — live music bars, indie clubs, and street performers line the pedestrianised streets.',
+          tip: 'Korean BBQ restaurants that locals queue for are almost always better than tourist-oriented ones. Look for places with Korean-only menus and queues outside — Google Translate\'s camera mode reads Korean menus instantly.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Northern Seoul — Bukchon & City Views',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bukchon Hanok Village',
+          text: 'Bukchon Hanok Village is a residential neighbourhood of over 900 traditional hanok (Korean wooden houses) nestled between Gyeongbokgung and Changdeokgung palaces. The narrow alleys climb hillsides with views across traditional tiled rooftops to the mountains beyond. Bukchon 8-gyeol (the 8 scenic views) are the most photographed spots — pick up a map from the Bukchon Traditional Culture Center. This is a living neighbourhood, not a museum — residents live here, so keep voices low and respect the quiet residential signs posted throughout.',
+          tip: 'Visit before 9am when the alleys are empty and the light is soft. The area around Gahoe-dong has the densest concentration of hanok and the best elevated viewpoints. Wear comfortable shoes — the streets are steep and uneven.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Changdeokgung Palace & Secret Garden',
+          text: 'Changdeokgung Palace (₩3,000 entry, free with hanbok) is a UNESCO World Heritage Site and considered the best-preserved of Seoul\'s palaces. The real treasure is the Huwon (Secret Garden) — a 78-acre landscaped garden accessible only by guided tour (₩5,000, limited places). The tour takes 90 minutes through forested paths, lotus ponds, centuries-old trees, and secluded pavilions used by Joseon kings for rest and study. The garden is stunning in every season — cherry blossom in spring, lush green in summer, fiery maple in autumn, snow-covered in winter.',
+          tip: 'Book the Secret Garden tour online at the Changdeokgung website — English tours run 2–3 times daily and sell out quickly, especially in autumn. The 10:30am tour usually has the best light in the garden.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Namsan Tower & Farewell Seoul',
+          text: 'Take the Namsan Cable Car (₩12,000 return) or hike the forested trail (30 minutes from the base) to N Seoul Tower on Namsan Mountain for sunset views over the entire city. The observation deck (₩16,000) offers 360-degree panoramas — Seoul stretching to the horizon in every direction, the Han River curving through the centre, and on clear days the mountains of the DMZ visible to the north. The famous love lock fence on the rooftop terrace is covered in thousands of padlocks left by couples. Descend for a final meal in Myeongdong — the street food stalls sell tteokbokki (spicy rice cakes), hotteok (sweet pancakes), and tornado potatoes.',
+          tip: 'Arrive 30 minutes before sunset for the best light. The Namsan hiking trail from Myeongdong is a pleasant walk through forested parkland and avoids the cable car queue. Bring a jacket — the summit is windy.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Book DMZ tours in advance', text: 'DMZ/JSA tours must be booked at least 72 hours ahead for military clearance. Prices range from ₩50,000–70,000 depending on JSA access. The USO tour (JSA focus) and Koridoor (full DMZ) are the most reputable operators.' },
+  { title: 'Free palaces with hanbok', text: 'Wearing hanbok (traditional Korean clothing, ₩15,000–25,000 rental) grants free entry to all major Seoul palaces — Gyeongbokgung, Changdeokgung, and others. The rental pays for itself after two palaces and makes for memorable photos.' },
+  { title: 'T-money card for transport', text: 'Buy a T-money card (₩2,500) at any convenience store and load it with credit. Tap on all Seoul metro, buses, and taxis. Each metro ride is around ₩1,350 — Seoul\'s public transport is excellent and very affordable.' },
+  { title: 'Eat at markets and local joints', text: 'Gwangjang Market, Namdaemun Market, and Myeongdong street food stalls offer full meals for ₩5,000–10,000. Kimbap shops (Korean rice rolls) are everywhere and serve a full kimbap set for around ₩4,000.' },
+  { title: 'Free museums and culture', text: 'Many of Seoul\'s best museums are free — War Memorial of Korea, National Museum of Korea (the largest in Asia), and the National Museum of Modern and Contemporary Art. Temple stays (₩40,000–60,000) include meals and meditation.' },
+  { title: 'Budget accommodation in Hongdae', text: 'Hongdae and Mapo-gu have the best-value hostels and guesthouses in Seoul — dormitory beds from ₩15,000–25,000 per night in a lively, central neighbourhood. Jjimjilbang (Korean saunas/spas) offer overnight stays for around ₩12,000.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$12–20', midrange: '$40–80', splurge: '$120+', notes: 'Hostels/jjimjilbang → hotels → hanok stays' },
+  { category: 'Food', budget: '$10–20', midrange: '$20–40', splurge: '$60+', notes: 'Market food → BBQ restaurants → fine dining' },
+  { category: 'Transport', budget: '$5–10', midrange: '$10–25', splurge: '$40+', notes: 'T-money metro → taxi → private car' },
+  { category: 'Activities', budget: '$5–15', midrange: '$30–60', splurge: '$80+', notes: 'Free museums → DMZ tour → private tours' },
+  { category: 'Entry Fees', budget: '$2–8', midrange: '$8–20', splurge: '$30+', notes: 'Palaces ₩3,000, tower ₩16,000' },
+  { category: 'Daily Total', budget: '$34–73', midrange: '$108–225', splurge: '$330+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'K-ETA (Korea Electronic Travel Authorization) required for many nationalities — apply online before travel',
+      'Passport is mandatory for DMZ/JSA tours — original passport, not a photocopy',
+      'DMZ tours require booking 72 hours in advance for military security clearance',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Seoul is one of the safest major cities in the world — petty crime is rare',
+      'Tap water is technically safe but most Koreans drink filtered water — bottled water is cheap and widely available',
+      'Pharmacies are well-stocked and pharmacists can recommend over-the-counter medication',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Seoul Metro is world-class — clean, cheap, and covers the entire city. All signs and announcements are in English',
+      'T-money card works on metro, buses, and taxis. Available at all convenience stores',
+      'DMZ tours include transport from Seoul — you cannot visit the DMZ or JSA independently',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Free WiFi is widespread in Seoul — metro stations, cafes, and most public spaces have strong signals',
+      'Pocket WiFi or eSIM available at Incheon Airport arrivals for around ₩5,000–8,000/day',
+      'Naver Maps works better than Google Maps in South Korea for local navigation and transit directions',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: KRW (Won). South Korea is increasingly cashless — credit cards and Samsung/Apple Pay accepted almost everywhere',
+      'ATMs at convenience stores (CU, GS25, 7-Eleven) accept international cards',
+      'Tipping is not customary in South Korea — service charge is included in restaurant prices',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'DMZ dress code: no shorts, sandals, ripped jeans, or military-style clothing (enforced at JSA)',
+      'Winter visits (Dec–Feb) require warm layers — temperatures in Seoul drop to -10°C and the DMZ is colder and windier',
+      'Comfortable walking shoes for palace visits and Bukchon\'s steep alleyways',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'DMZ Etiquette', text: 'The DMZ and JSA are active military zones — follow your guide\'s instructions exactly. Do not point, wave, or make gestures towards the North Korean side. Do not attempt to communicate with North Korean soldiers. Stay with your group at all times.' },
+  { icon: '🌍', title: 'Respect the Gravity', text: 'The DMZ is not a theme park. Families were separated by the division and many South Koreans have living relatives in the North they have never met. Approach Imjingak and the prayer ribbons on Freedom Bridge with appropriate solemnity.' },
+  { icon: '📸', title: 'Photography Rules', text: 'Photography is allowed in most DMZ areas but your guide will specify restricted zones — particularly at the JSA. Do not take photos when told not to. At Bukchon Hanok Village, respect residents\' privacy — do not photograph into private homes or block narrow alleys.' },
+  { icon: '🗣', title: 'Language & Communication', text: 'Learn basic Korean: annyeonghaseyo (hello), kamsahamnida (thank you), juseyo (please give me). English is widely understood by younger Koreans but less so by older generations. Translation apps bridge any gaps — Papago (by Naver) is better than Google Translate for Korean.' },
+  { icon: '🤝', title: 'Dining Customs', text: 'Korean meals come with multiple banchan (side dishes) that are refilled for free. Pour drinks for others before yourself (hold the bottle with two hands). Do not stick chopsticks upright in rice — this resembles funeral rites. It is polite to wait for the eldest person to eat first.' },
+  { icon: '🕐', title: 'Shoes Off Indoors', text: 'Remove shoes when entering Korean homes, many traditional restaurants (those with floor seating), temples, and hanok guesthouses. Socks should be clean and hole-free. Many restaurants provide slippers at the entrance.' },
+];
+---
+
+<CityGuideLayout
+  title="Korean DMZ Guide 2026 — DMZ Tour Itinerary from Seoul | roammate"
+  description="The ultimate guide to visiting the Korean DMZ and JSA from Seoul. Tour booking, JSA rules, infiltration tunnels, and Seoul itinerary. 1 and 3-day plans with budget tips."
+  heroImage="/images/guides/korean-dmz-hero.webp"
+  heroFlag="🇰🇷"
+  heroCountry="South Korea"
+  heroRegion="East Asia"
+  heroCity="Korean DMZ"
+  heroSubtitle="Stand on the most heavily fortified border on Earth — where the Korean War never officially ended and two vastly different worlds face each other across a concrete line."
+  heroPills={["DMZ Tour from Seoul","JSA Access","Year-round"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. The DMZ tour is the main expense on Day 1 — Seoul itself is very affordable with excellent public transport, free museums, and cheap street food."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="The DMZ is a place of profound historical weight. Approach with respect, follow the rules carefully, and you will come away with a deeper understanding of one of the world's most extraordinary geopolitical situations."
+  ctaCity="Seoul"
+  ctaText="Find travel companions to visit the Korean DMZ together on roammate — share the experience, explore Seoul, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

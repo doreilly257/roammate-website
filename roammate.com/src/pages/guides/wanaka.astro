@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'NZD (New Zealand Dollar)', detail: 'Cards accepted almost everywhere' },
+  { icon: '🗣', label: 'Language', value: 'English / Te Reo Māori', detail: 'English universally spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'NZST (UTC+12)', detail: 'NZDT (UTC+13) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'Dec – Mar', detail: 'Warm, long days for hiking' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$45–90 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'NZeTA or visa-free', detail: 'Check requirements for your nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Wanaka Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'That Wanaka Tree & Lakefront',
+          text: 'Start at That Wanaka Tree — the lone willow growing in the shallows of Lake Wanaka that has become one of the most photographed trees in New Zealand. The tree is at its most photogenic in the soft morning light with the mountains reflected in the still lake water behind it. Walk along the lakefront promenade from the tree towards Roys Bay — the path passes through parkland with views across the lake to the Buchanan Peaks and Mount Aspiring in the distance. The lakefront is Wanaka\'s social centre in summer, with locals swimming, paddleboarding, and picnicking on the grass.',
+          tip: 'Arrive at That Wanaka Tree before 8am for the best light and fewer people. The tree is small and easily crowded. Sunrise is the optimal time for photography.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Puzzling World',
+          text: 'Visit Stuart Landsborough\'s Puzzling World — a quirky Wanaka institution since 1973. The tilting rooms play tricks on your sense of gravity, the hologram gallery is surprisingly impressive, and the 1.5km outdoor maze is genuinely challenging. Puzzling World is unapologetically eccentric and one of Wanaka\'s most entertaining attractions. After Puzzling World, drive or cycle along the lake road to Glendhu Bay — a beautiful sheltered bay 10km from town with views back across the lake to the surrounding mountains.',
+          tip: 'Allow 2 hours for Puzzling World — the maze alone takes 30-45 minutes if you attempt to find all four corner towers. It\'s fun for all ages.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Sunset & Dinner',
+          text: 'Return to the Wanaka lakefront for sunset — the mountains across the lake turn pink and gold as the sun drops behind Mount Aspiring National Park. For dinner, Wanaka has a surprisingly good food scene for a small town: Federal Diner for upscale comfort food, Kika for wood-fired Mediterranean cuisine, or Big Fig for burgers and craft beer. The town is compact and everything is within walking distance of the lakefront.',
+          tip: 'Wanaka sunsets are best viewed from the lakefront near Pembroke Park. Bring a picnic blanket and a bottle of Central Otago pinot noir for the full experience.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Wanaka Tree, Lake & Town',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'That Wanaka Tree at Sunrise',
+          text: 'Wake before dawn and walk to That Wanaka Tree — the lone willow growing in the shallows of Lake Wanaka. At sunrise, the Buchanan Peaks and Mount Alta catch the first light while the lake surface is perfectly still, creating a mirror reflection around the tree. This is New Zealand\'s most photographed tree and the image that defines Wanaka. The tree is small and the viewing area is limited, so arriving at first light gives you the best chance of an unobstructed photograph. After the shoot, walk the full lakefront promenade through Roys Bay.',
+          tip: 'Check the sunrise time the night before and arrive 20 minutes early. The tree is GPS-tagged on Google Maps. In calm conditions the reflection is near-perfect.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Puzzling World & Glendhu Bay',
+          text: 'Spend two hours at Stuart Landsborough\'s Puzzling World — the tilting rooms, hologram gallery, and outdoor maze are genuinely entertaining. The maze is more challenging than it looks — finding all four corner towers takes most people 45 minutes. After Puzzling World, drive or cycle 10km along the lake road to Glendhu Bay — a sheltered bay backed by farmland with a DOC campground and views across the lake to the surrounding peaks. The road hugs the lakeshore and is one of Wanaka\'s most pleasant drives.',
+          tip: 'Puzzling World is open daily and doesn\'t need booking. Glendhu Bay has a swimming beach that\'s warmer than the main lakefront in late summer.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Wanaka Dining & Sunset',
+          text: 'Watch the sunset from the lakefront — the mountains turn pink and gold as the sun drops behind Mount Aspiring National Park to the west. Wanaka\'s food scene punches above its weight for a town of 8,000 people. Kika serves wood-fired Mediterranean dishes, Federal Diner does creative New Zealand cuisine, and Big Fig has the best burgers in town. For drinks, Rhyme & Reason Brewery on the industrial estate brews excellent craft beers on-site.',
+          tip: 'Book Kika in advance — it\'s Wanaka\'s most popular restaurant and small enough to fill quickly, especially in summer.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Roys Peak Sunrise Hike',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Roys Peak Track',
+          text: 'Roys Peak is Wanaka\'s signature hike — a 16km return track climbing 1,234 metres to the summit at 1,578 metres with arguably the most photographed viewpoint in New Zealand. The trail is a relentless uphill zigzag through tussock grassland with views expanding at every turn — Lake Wanaka appears below, then the Matukituki Valley, then Mount Aspiring and its glaciers. The famous ridgeline viewpoint (not the actual summit) is where most people take the iconic photograph — a narrow ridge extending into the void with the lake and mountains spread below. The summit is 20 minutes further and gives a 360-degree panorama.',
+          tip: 'Start at 4am or earlier for a sunrise summit. The track is closed for lambing from 1 October to 10 November. Bring warm layers — the summit is significantly colder and windier than the base.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Recovery & Lake Swimming',
+          text: 'After descending Roys Peak (allow 3-4 hours down), recover at the lakefront. Swim in Lake Wanaka from the Roys Bay beach — the glacial water is refreshing after a hot hike. Rent a paddleboard or kayak and explore the lake from the water. The Clutha River outlet at the southern end of the lake is a pleasant flat walk from town.',
+          tip: 'Lake Wanaka is glacier-fed and cold even in summer (15-18°C). The shallow edges at Roys Bay warm up on sunny afternoons.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Craft Beer & Relaxation',
+          text: 'Visit Rhyme & Reason Brewery on the Wanaka industrial estate for locally brewed craft beers — their hazy IPA and pilsner are standouts. The taproom has a relaxed, industrial feel with food trucks outside. Alternatively, Wanaka Beerworks on Brownston Street is a smaller brewery with rotating taps. For dinner, Francesca\'s Italian Kitchen is a local favourite for wood-fired pizza.',
+          tip: 'Rhyme & Reason is open from 2pm most days. The industrial estate area has several food and drink options — it\'s Wanaka\'s emerging social precinct.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Rob Roy Glacier & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rob Roy Glacier Track',
+          text: 'Drive 50 minutes up the Matukituki Valley to the Rob Roy Glacier Track trailhead — one of the most rewarding half-day hikes in New Zealand. The 10km return track follows the Rob Roy Stream through ancient beech forest, crossing a dramatic swing bridge, before emerging into a glacial amphitheatre surrounded by hanging glaciers, waterfalls, and 2,000-metre peaks. The Rob Roy Glacier clings to the headwall above, calving ice into the valley. The sense of scale is overwhelming — this is Mount Aspiring National Park at its most dramatic and accessible.',
+          tip: 'The Matukituki Valley road is unsealed and can be rough — allow 50 minutes from Wanaka. A 4WD is ideal but 2WD cars make it in dry conditions. Start early to avoid afternoon cloud.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Matukituki Valley & Lavender Farm',
+          text: 'Drive back through the Matukituki Valley — one of the most beautiful glacial valleys in New Zealand, with braided rivers, beech forest, and Mount Aspiring (Tititea) visible on clear days. On the way back to Wanaka, stop at the Wanaka Lavender Farm (open November to March) — 4 hectares of lavender rows with the mountain backdrop. The farm shop sells lavender products and the cafe serves lavender-infused scones and ice cream.',
+          tip: 'The Lavender Farm is best visited December to February when the lavender is in full bloom. The purple rows against the mountain backdrop are very photogenic.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Lakefront Sunset',
+          text: 'End your Wanaka visit at the lakefront for a final sunset. The evening light on the mountains across the lake is the image that brings most people back to Wanaka. Pick up fish and chips from Erik\'s and sit on the grass by the lake, or have a farewell dinner at Bistro Gentil for French-New Zealand cuisine in a charming cottage setting.',
+          tip: 'Bistro Gentil is Wanaka\'s best fine-dining option — small, intimate, and worth booking a day ahead.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Lake Orientation',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'That Wanaka Tree & Lakefront',
+          text: 'Start at That Wanaka Tree at sunrise for the iconic photograph, then walk the full lakefront promenade through Roys Bay. The morning light on the mountains and the still lake surface is Wanaka at its most beautiful.',
+          tip: 'Arrive before 8am for the best light and fewest people at the tree.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Puzzling World',
+          text: 'Spend two hours at Puzzling World — the tilting rooms, hologram gallery, and outdoor maze are genuinely fun. The maze is more challenging than expected. Afterwards, swim or paddleboard at the lakefront.',
+          tip: 'Allow at least 45 minutes for the maze if you want to find all four corner towers.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakefront Sunset & Dinner',
+          text: 'Watch the sunset from the lakefront, then walk to Kika for wood-fired Mediterranean dinner or Big Fig for burgers and local craft beer.',
+          tip: 'Book Kika in advance — it\'s small and popular.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Roys Peak Sunrise',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Roys Peak Summit at Dawn',
+          text: 'Start at 4am for the 16km return hike up Roys Peak. Climb 1,234 metres through tussock grassland to the famous ridgeline viewpoint and summit for a 360-degree panorama over Lake Wanaka, Mount Aspiring, and the Matukituki Valley. This is the most iconic viewpoint in Wanaka.',
+          tip: 'Bring warm layers, a headtorch, and plenty of water. The track is closed October-November for lambing.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Recovery & Lake Swimming',
+          text: 'Recover from the hike with a swim in Lake Wanaka at Roys Bay beach. The glacier-fed water is cold but refreshing. Rent a paddleboard and explore the lake from the water.',
+          tip: 'The shallow edges at Roys Bay warm up on sunny afternoons — aim for late afternoon swimming.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Rhyme & Reason Brewery',
+          text: 'Visit Rhyme & Reason Brewery for locally brewed craft beers in a relaxed industrial taproom. Their hazy IPA is excellent. Food trucks provide dinner options.',
+          tip: 'The taproom opens from 2pm most days. The industrial estate is Wanaka\'s emerging social district.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Rob Roy Glacier Track',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rob Roy Glacier Hike',
+          text: 'Drive 50 minutes up the Matukituki Valley to the Rob Roy Glacier Track. The 10km return hike through beech forest leads to a glacial amphitheatre with hanging glaciers, waterfalls, and 2,000-metre peaks. One of the most rewarding half-day hikes in New Zealand.',
+          tip: 'Start early to beat afternoon cloud. The access road is unsealed — a 4WD is ideal.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Matukituki Valley Drive',
+          text: 'Drive back through the stunning Matukituki Valley — braided rivers, beech forest, and views of Mount Aspiring (Tititea). Stop at the Wanaka Lavender Farm if visiting between November and March.',
+          tip: 'The lavender is in full bloom December to February. The farm cafe serves lavender scones and ice cream.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pizza & Wine',
+          text: 'Dinner at Francesca\'s Italian Kitchen for wood-fired pizza, or Federal Diner for creative New Zealand cuisine. Pair with a Central Otago pinot noir — the region produces some of the best in the world.',
+          tip: 'Central Otago pinot noir is world-class. Ask your server for a local recommendation — Burn Cottage and Felton Road are standout producers.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Glendhu Bay & Iron Mountain',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Iron Mountain Track',
+          text: 'Hike the Iron Mountain Track — a 3-4 hour loop that climbs through farmland and bush to an exposed ridgeline with panoramic views over Lake Wanaka, Lake Hawea, and the surrounding mountain ranges. Less crowded than Roys Peak and almost as spectacular.',
+          tip: 'Start from the Roys Bay trailhead. The track is well-marked but exposed on the ridge — bring sun protection.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Glendhu Bay & Swimming',
+          text: 'Drive to Glendhu Bay — a sheltered bay 10km from town with calm swimming water, a DOC campground, and views across the lake. The road hugs the lakeshore and is one of the prettiest drives in the area. Swim, picnic, or simply relax on the shore.',
+          tip: 'Glendhu Bay has a slightly warmer swimming area than the main lakefront — the shallow bay warms faster in afternoon sun.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Wanaka Beerworks',
+          text: 'Visit Wanaka Beerworks on Brownston Street for a smaller, more intimate craft beer experience. Rotating taps feature seasonal brews. Walk to Bistro Gentil for a French-New Zealand fine dining experience in a cottage setting.',
+          tip: 'Bistro Gentil is worth booking a day ahead — it\'s Wanaka\'s best upscale restaurant.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Lake Hawea & Blue Pools',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lake Hawea Drive',
+          text: 'Drive 15 minutes to Lake Hawea — Wanaka\'s quieter neighbour, a deep blue lake surrounded by tussock-covered mountains. The Lake Hawea Lookout on the road between the two lakes gives a sweeping view. The Hawea township is tiny and peaceful with a lakefront picnic area. Continue north along Highway 6 through the Haast Pass road.',
+          tip: 'Lake Hawea is less visited than Lake Wanaka and feels more remote. The lookout between the two lakes is a must-stop.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Blue Pools Track',
+          text: 'Drive an hour north on Highway 6 to the Blue Pools Track — a 30-minute return walk through moss-draped beech forest to a swing bridge over the Makarora River, where the water is an impossible shade of blue-green. The pools are crystal clear and you can see trout swimming on the bottom. On warm days, brave swimmers jump from the bridge into the freezing glacial water.',
+          tip: 'The Blue Pools are glacier-fed and extremely cold even in summer. The walk is flat and easy — suitable for everyone.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dinner & Stargazing',
+          text: 'Return to Wanaka for dinner at Amigos Mexican for casual fare, or The Stoaker Room for barbecue. After dinner, drive 10 minutes out of town for stargazing — Wanaka has minimal light pollution and the Milky Way is spectacular on clear nights.',
+          tip: 'For the best stargazing, drive to the Lake Hawea road or the Cardrona Valley road — minimal light pollution and wide-open skies.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Cardrona & Crown Range',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Crown Range Drive',
+          text: 'Drive the Crown Range Road — New Zealand\'s highest sealed road, crossing a 1,076-metre alpine pass between Wanaka and Queenstown. The road climbs through farmland into tussock-covered alpine terrain with expansive views of the Cardrona Valley and the Southern Alps. Stop at the Crown Range summit lookout for photographs.',
+          tip: 'The Crown Range Road has tight switchbacks — drive carefully. In winter it may be closed or require chains.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Historic Cardrona',
+          text: 'Stop at the Cardrona Hotel — a photogenic 1863 gold-rush era building that is one of New Zealand\'s oldest surviving hotels. The corrugated iron facade and historic bar are instantly recognisable. In winter, the Cardrona Alpine Resort ski field is nearby. The Cardrona Distillery produces excellent gin and single malt whisky — tours and tastings available.',
+          tip: 'The Cardrona Distillery tour is worth booking if you enjoy spirits — their single malt is exceptional and the tasting includes several expressions.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Evening in Wanaka',
+          text: 'Return to Wanaka for your penultimate evening. Visit a new restaurant or revisit a favourite. The lakefront at dusk is always worth a walk — the mountains reflected in the still water are the lasting image of Wanaka.',
+          tip: 'The lakefront is most beautiful in the 30 minutes after sunset — the alpenglow on the mountains creates soft pink and purple tones.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Farewell & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise at the Lake',
+          text: 'Return to That Wanaka Tree for a final sunrise photograph or walk around the peninsula track at Eely Point — a flat 30-minute loop through native bush along the lakeshore with views back to town and across the lake.',
+          tip: 'Eely Point is peaceful and rarely crowded — a perfect final walk before departure.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Farmers Market & Last Swim',
+          text: 'If leaving on a Thursday, visit the Wanaka Farmers Market (8am-12pm) for fresh produce, artisan goods, and coffee. Otherwise, browse the shops on Brownston Street and Helwick Street, then take a final swim at Roys Bay.',
+          tip: 'The Wanaka Farmers Market runs Thursdays during summer. The coffee and baked goods are excellent.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'For your final Wanaka meal, Kika for Mediterranean or Bistro Gentil for French cuisine are both excellent choices. Wanaka is a town that stays with you — the lake, the mountains, and the unhurried pace of life make it one of New Zealand\'s most lovable places.',
+          tip: 'Wanaka is well-positioned for onward travel to Queenstown (1 hour), Mount Cook (2.5 hours), or the West Coast (3.5 hours).',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free hikes are the highlight', text: 'Roys Peak, Rob Roy Glacier, Iron Mountain, and the lakefront walks are all free. The best experiences in Wanaka don\'t cost anything — just time and effort.' },
+  { title: 'Self-cater from New World', text: 'Wanaka restaurants are good but not cheap. The New World supermarket has everything you need for self-catering. Pack lunches for hike days to save $20-30 NZD per day.' },
+  { title: 'Free camping nearby', text: 'DOC (Department of Conservation) freedom camping sites near Wanaka are free or $6-15 NZD per night. Albert Town, Glendhu Bay, and Lake Hawea all have options.' },
+  { title: 'Cycle instead of drive', text: 'Wanaka is flat and bikeable. Rent a bike to explore the lakefront, Glendhu Bay, and the town — cheaper than petrol and parking, and more enjoyable.' },
+  { title: 'Happy hour deals', text: 'Rhyme & Reason and other bars offer happy hour specials. Craft beer in Wanaka is $10-14 NZD a pint at full price — happy hours bring it to $8-10 NZD.' },
+  { title: 'BYO wine at restaurants', text: 'Several Wanaka restaurants are BYO (bring your own wine) — buy a bottle of Central Otago pinot noir from the supermarket for $15-20 NZD instead of paying $50-70 NZD at the restaurant.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$20–45', midrange: '$55–110', splurge: '$150+', notes: 'Camping/hostels → B&Bs → lakeside lodges' },
+  { category: 'Food', budget: '$12–25', midrange: '$30–50', splurge: '$60+', notes: 'Self-catering → cafes → fine dining' },
+  { category: 'Transport', budget: '$0–10', midrange: '$15–30', splurge: '$40+', notes: 'Cycling → rental car → scenic flights' },
+  { category: 'Activities', budget: '$0–10', midrange: '$15–40', splurge: '$60+', notes: 'Free hikes → Puzzling World → scenic flights' },
+  { category: 'Coffee & Beer', budget: '$5–10', midrange: '$10–20', splurge: '$25+', notes: 'Good coffee and craft beer are Wanaka essentials' },
+  { category: 'Daily Total', budget: '$45–110', midrange: '$125–250', splurge: '$335+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities need an NZeTA (New Zealand Electronic Travel Authority) — apply online before travel',
+      'An International Visitor Conservation and Tourism Levy (IVL) of $35 NZD applies',
+      'Wanaka is accessed via Queenstown Airport (1 hour drive) or Wanaka Airport (small regional flights)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Travel insurance with hiking and outdoor activity cover is essential',
+      'Mountain weather changes rapidly — check MetService forecasts before hikes and carry warm layers and waterproofs',
+      'Wanaka has a medical centre but serious emergencies require helicopter evacuation to Dunedin or Christchurch',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'A rental car is essential for exploring the Matukituki Valley, Lake Hawea, Blue Pools, and the Crown Range',
+      'The town centre is compact and walkable — most restaurants, shops, and the lakefront are within 10 minutes on foot',
+      'No regular public transport to trailheads — rental car, hitchhiking, or shuttle services are the main options',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'WiFi available at most accommodation and cafes in town',
+      'Mobile coverage drops on the Matukituki Valley road, Crown Range, and Blue Pools — download offline maps',
+      'The DOC app and NZ Topo maps app are essential for hiking in the backcountry',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: NZD. Contactless payment accepted everywhere in town',
+      'ATMs available on Ardmore Street in the town centre',
+      'Tipping is not expected in New Zealand but appreciated for exceptional service',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Sturdy hiking boots essential for Roys Peak, Rob Roy Glacier, and Iron Mountain',
+      'Layers for mountain weather — temperatures can drop 15°C between town and summit',
+      'Sunscreen, sunglasses, and a wide-brimmed hat — UV is intense at altitude and reflected off water and snow',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Te Reo Māori', text: 'Wanaka is in Ngāi Tahu tribal territory. Learn to pronounce local place names correctly — Wānaka, Hāwea, Tititea (Mount Aspiring). Showing respect for Māori names earns genuine goodwill.' },
+  { icon: '🌍', title: 'Leave No Trace', text: 'Wanaka\'s landscape is its greatest asset. Pack out all rubbish on hikes, stay on marked tracks, and don\'t disturb wildlife. The Rob Roy Glacier and Roys Peak environments are fragile — tread carefully.' },
+  { icon: '📸', title: 'Photography Respect', text: 'That Wanaka Tree is iconic but fragile — do not climb on it, hang from it, or damage it for photographs. The tree has been vandalised in the past. Respect the natural environment that makes Wanaka special.' },
+  { icon: '🗣', title: 'Small-Town Character', text: 'Wanaka is a small town of 8,000 people with a tight-knit community. Respect the local pace of life — the unhurried, friendly character is what makes Wanaka different from Queenstown.' },
+  { icon: '🤝', title: 'Support Local Business', text: 'Choose locally owned cafes, restaurants, and operators over chains. Wanaka\'s character comes from its independent businesses — Federal Diner, Kika, Rhyme & Reason are all local originals.' },
+  { icon: '🕐', title: 'Weather Flexibility', text: 'Mountain weather changes rapidly. If Roys Peak is clouded in, do Rob Roy instead (lower altitude, forest-sheltered). Build flexibility into your hiking schedule and always check forecasts.' },
+];
+---
+
+<CityGuideLayout
+  title="Wanaka Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Wanaka guide for young travelers. Roys Peak, Rob Roy Glacier, That Wanaka Tree with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/wanaka-hero.webp"
+  heroFlag="🇳🇿"
+  heroCountry="New Zealand"
+  heroRegion="Oceania"
+  heroCity="Wanaka"
+  heroSubtitle="A turquoise glacial lake, snow-capped peaks, and New Zealand's most iconic sunrise hike — Wanaka is the South Island's laid-back adventure base."
+  heroPills={["3-Day Hiking","Lakes & Mountains","Dec – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Wanaka is affordable by New Zealand standards — the best experiences (hiking, lake swimming, scenic drives) are free."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Wanaka is a small town surrounded by extraordinary landscapes. Approach the mountains and lake with respect, tread lightly, and you will find one of the most beautiful places in New Zealand."
+  ctaCity="Wanaka"
+  ctaText="Find travel companions to explore Wanaka together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

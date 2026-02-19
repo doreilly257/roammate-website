@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'USD / KHR (៛ Riel)', detail: 'USD widely accepted, riel for change' },
+  { icon: '🗣', label: 'Language', value: 'Khmer', detail: 'English in tourist areas & hotels' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Feb', detail: '25–32°C, dry season with cooler evenings' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–35 USD', detail: 'Budget backpacker range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on arrival $30', detail: 'e-Visa available — bring passport photo' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Phnom Penh Essentials',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Royal Palace & Silver Pagoda',
+          text: 'Start at the Royal Palace ($10) — Cambodia\'s most important landmark and the official residence of King Sihamoni. The Throne Hall\'s soaring golden spire dominates the skyline, and the Khemarin Palace gardens are manicured to perfection. Adjacent is the Silver Pagoda (included in the ticket), its floor paved with over 5,000 silver tiles weighing 1kg each. Inside sits the Emerald Buddha and a life-size gold Maitreya Buddha encrusted with 9,584 diamonds. The compound\'s murals of the Reamker (Khmer Ramayana) line the gallery walls.',
+          tip: 'Arrive at 8am opening — tours start at 9:30am and the courtyard becomes very hot by midday. Dress code strict: cover shoulders and knees, no hats inside.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tuol Sleng & Killing Fields',
+          text: 'Visit Tuol Sleng Genocide Museum ($5, audio guide $3) — a former high school converted into S-21 prison where the Khmer Rouge tortured and killed an estimated 20,000 people between 1975–79. Then tuk-tuk 15km south to the Choeung Ek Killing Fields ($6, audio guide included) where prisoners were executed and buried in mass graves. The memorial stupa filled with skulls is devastating. These visits are emotionally draining but essential to understanding modern Cambodia.',
+          tip: 'Visit Tuol Sleng first, then the Killing Fields — the chronological order helps the history make sense. Allow 1.5 hours for each site. The audio guides are essential.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Promenade & Night Food',
+          text: 'Walk the Sisowath Quay riverside promenade as the sun sets over the Tonle Sap River. Locals come out for exercise, socialising, and street food. Cross to the night market area near the Royal Palace for cheap Khmer food: bai sach chrouk (pork and rice, $1.50), num banh chok (rice noodles with fish curry, $1), and Khmer red curry ($2). The riverside bars serve cold Angkor beer for $1 with views of the river and the distant Japanese Friendship Bridge.',
+          tip: 'The riverside is most atmospheric from 5–7pm when locals gather and the light is golden. Avoid the overpriced tourist restaurants directly on the quay — walk one block inland for better value.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Royal Palace, History & Riverside',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Royal Palace & Silver Pagoda',
+          text: 'Begin at the Royal Palace ($10), the seat of Cambodian monarchy since 1866. The Throne Hall\'s golden tiered roof gleams in the morning sun, and the surrounding Khemarin Palace gardens are impeccably maintained. The Silver Pagoda next door has 5,329 silver floor tiles, a life-size gold Buddha studded with 9,584 diamonds, and the Emerald Buddha of Cambodia. Walk the gallery for the Reamker murals — 604 metres of the Khmer Ramayana depicted in fading but beautiful painted panels.',
+          tip: 'Arrive at 8am to beat the heat and tours. The Silver Pagoda floor tiles are mostly covered with carpet to protect them — you can see exposed sections near the entrance.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Museum & Wat Phnom',
+          text: 'Walk to the National Museum ($10) — a beautiful terracotta building housing the world\'s finest collection of Khmer sculpture. The Angkor-era pieces include a massive reclining Vishnu from the West Mebon temple and rows of apsara figures. The central courtyard garden is peaceful. Then tuk-tuk to Wat Phnom ($1), the founding temple of the city on a small hill — legend says a woman named Penh found four Buddha statues washed up in the river and built the hill to house them, giving the city its name.',
+          tip: 'The National Museum allows no photography inside, but the courtyard is photographable and beautiful. The sculpture labels are excellent — no guide needed.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Sunset & Street Food',
+          text: 'Walk Sisowath Quay at sunset as the Tonle Sap River reflects the fading sky. The riverside comes alive with joggers, couples, and food vendors. For dinner, head one block inland to Street 136 — the "Golden Mile" of restaurants and bars. Try bai sach chrouk (pork and rice, $1.50), fried morning glory with garlic ($2), and fresh spring rolls ($1.50). FCC (Foreign Correspondents Club) has rooftop river views and $3 cocktails during happy hour.',
+          tip: 'Street 136 and Street 172 have the best concentration of restaurants and bars for backpackers. The riverside restaurants are overpriced — eat inland.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Genocide History & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tuol Sleng Genocide Museum',
+          text: 'Visit Tuol Sleng ($5, audio guide $3) — the former Tuol Svay Prey high school converted into Security Prison 21 by the Khmer Rouge. Between 1975–79, an estimated 20,000 people were tortured and processed here before being sent to the Killing Fields. The classrooms-turned-cells, shackle beds, and thousands of prisoner photographs are deeply harrowing. Two known survivors of S-21 still occasionally visit the museum and sell autobiographies at the entrance.',
+          tip: 'Allow 1.5–2 hours. The audio guide ($3) is essential — it includes survivor testimonies that give personal context to the statistics. Prepare yourself emotionally.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Choeung Ek Killing Fields',
+          text: 'Tuk-tuk 15km south to Choeung Ek ($6, audio guide included) — the most notorious of Cambodia\'s estimated 300 killing fields. An audio tour guides you through the mass graves, the killing tree, and the memorial stupa containing over 8,000 skulls arranged by the method of execution. Bone fragments and clothing still surface after heavy rains. The experience is devastating but necessary — understanding this history is a responsibility that comes with visiting Cambodia.',
+          tip: 'The audio guide is excellent and lasts about 90 minutes. Clothing fragments and bone pieces visible in the soil must never be touched or removed. Be respectful and quiet.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Russian Market & Bassac Lane',
+          text: 'Decompress with shopping at Toul Tom Poung Market (Russian Market) — a chaotic covered market selling silk, silverwork, carved stone, factory-second clothing brands, and Cambodian handicrafts. Bargain hard — start at 40% of the asking price. Dinner at Bassac Lane — a revitalised alleyway near the riverfront with craft cocktail bars, live music venues, and excellent small restaurants. Try Lot 369 for cocktails and atmosphere. The lane is Phnom Penh\'s hipster quarter.',
+          tip: 'The Russian Market closes at 5pm. The silk and silver sections are in the centre — wade through the clothing stalls to find them. Quality varies — inspect carefully.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Central Market, Islands & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Central Market & Street Coffee',
+          text: 'Start at Phsar Thmei (Central Market), an Art Deco masterpiece built by the French in 1937 with a distinctive yellow dome. The four wings radiate outward filled with gold and gemstone dealers, watch repairers, and fabric sellers. The surrounding outdoor stalls sell everything from electronics to dried fish. Grab a Cambodian iced coffee from a street cart ($0.50) — condensed milk and strong coffee over ice, served in a plastic bag with a straw.',
+          tip: 'Central Market is best before 10am when it is less crowded and cooler under the dome. The gold section has genuine dealers — buy at your own expertise level.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Koh Pich & Mekong River',
+          text: 'Walk or tuk-tuk to Koh Pich (Diamond Island) — a reclaimed island at the confluence of the Mekong and Tonle Sap rivers where locals gather in the evenings. The island has parks, riverside cafes, and views across to rural Koh Dach (Silk Island) where traditional silk weavers still work on wooden looms under their stilted houses. A ferry to Koh Dach costs $1 and the village experience is genuine — buy silk directly from the weavers at fair prices.',
+          tip: 'Koh Dach silk weavers work mornings and early afternoons. Take the small ferry from the pier near the Japanese Bridge — $1 return. Scarves from $10–30.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Night Views',
+          text: 'Final dinner at Romdeng — a social enterprise restaurant (like sister restaurant Friends/Mith Samlanh) run by former street youth, serving traditional Cambodian cuisine including brave options like tarantula and red tree ant dishes alongside excellent fish amok and green mango salad ($4–8 mains). End with drinks at Eclipse Sky Bar on the 23rd floor of the Phnom Penh Tower for panoramic night views of the river junction and city lights.',
+          tip: 'Romdeng requires reservations in high season. The tarantula is optional — the regular Khmer menu is outstanding. Book through their website or call ahead.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Royal Palace & Riverside',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Royal Palace & Silver Pagoda',
+          text: 'Start at the Royal Palace ($10), Cambodia\'s most important landmark. The Throne Hall\'s golden spire towers over manicured gardens, and the Silver Pagoda contains 5,329 silver floor tiles, a diamond-studded gold Buddha, and the Emerald Buddha. The gallery murals depict the Reamker across 604 metres of painted panels. Take your time — the compound is beautifully maintained and there is more detail than most visitors notice.',
+          tip: 'Arrive at 8am opening to beat the heat. Cover shoulders and knees strictly enforced. No hats inside buildings.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Museum',
+          text: 'Walk to the National Museum ($10) — a beautiful terracotta building with the world\'s finest collection of Khmer sculpture. The reclining Vishnu from the West Mebon, rows of apsara figures, and Angkor-era bronze work are outstanding. The central courtyard with its lotus pond is a peaceful retreat. The museum provides essential context for the Angkor temples if you are heading to Siem Reap, or deepens your understanding if you have already been.',
+          tip: 'No photography inside the galleries. The sculpture labels are thorough and well-written — budget 90 minutes for the full collection.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sisowath Quay Sunset',
+          text: 'Walk the riverside promenade at sunset as Phnom Penh comes alive. Locals exercise, socialise, and gather at the food stalls lining the quay. Dinner one block inland on Street 136 — bai sach chrouk (pork rice, $1.50), Khmer curry ($2), and fresh spring rolls ($1.50). Happy hour at FCC rooftop for river views and $3 cocktails, or try the riverside beer gardens for $1 Angkor draught.',
+          tip: 'Sisowath Quay restaurants are tourist-priced. Walk one block inland to Streets 136, 172, or 240 for the same food at half the cost.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Genocide History',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tuol Sleng Genocide Museum',
+          text: 'Visit Tuol Sleng ($5, audio guide $3) — the former high school that became the Khmer Rouge\'s S-21 interrogation centre. Between 1975–79, up to 20,000 people were tortured in the classrooms-turned-cells before being sent to their deaths. The prisoner photographs, shackle beds, and survivor testimonies on the audio guide are harrowing. Two known S-21 survivors occasionally visit the grounds and share their stories.',
+          tip: 'Allow 2 hours with the audio guide. The survivor testimonies give crucial personal context. Visit before the Killing Fields — the chronological order matters.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Choeung Ek Killing Fields',
+          text: 'Tuk-tuk 15km south to Choeung Ek ($6, audio guide included). The memorial stupa containing over 8,000 skulls is the centrepiece, but the mass graves, the killing tree, and the bone fragments still surfacing from the soil are what make this site so devastating. The audio guide lasts 90 minutes and is the most important historical narrative you will hear in Cambodia. Take the full tour — do not rush this experience.',
+          tip: 'The experience is emotionally exhausting — plan a quiet afternoon afterwards. Many visitors find the Killing Fields more affecting than Tuol Sleng.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Quiet Evening & Reflection',
+          text: 'After the weight of the day, a quiet evening is appropriate. Dinner at Friends (Mith Samlanh) — a restaurant and social enterprise supporting former street children, serving excellent tapas-style Khmer dishes ($3–6 per plate) in a cheerful garden setting. The contrast between the horror of the past and the resilience of Cambodians today is stark and moving. A good book, a cold drink, and an early night prepare you for lighter days ahead.',
+          tip: 'Friends restaurant does not take reservations — arrive before 7pm for a table. The fruit shakes and tapas plates are excellent value.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Markets & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Central Market (Phsar Thmei)',
+          text: 'Explore Phsar Thmei — the Art Deco central market with its distinctive yellow dome built in 1937. The four wings house gold dealers, gemstone sellers, watch repairers, and fabric merchants. The surrounding outdoor stalls sell dried fish, fresh produce, and electronics. Grab a Cambodian iced coffee from a cart ($0.50) — strong coffee with sweetened condensed milk over ice, served in a plastic bag. The market architecture alone is worth the visit.',
+          tip: 'Visit before 10am when it is cooler and less crowded. The gold and gemstone sections are in the central dome — fascinating to browse even without buying.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Russian Market Shopping',
+          text: 'Tuk-tuk to Toul Tom Poung (Russian Market) — Phnom Penh\'s best market for shopping. Silk scarves, silverwork, stone carvings, factory-second brand clothing, and Cambodian handicrafts fill the covered stalls. Bargaining is expected — start at 40% of the asking price and settle around 60%. The food court inside has excellent Khmer noodle soup ($1) and iced coffee ($0.50). The surrounding streets have growing numbers of cafes and boutiques.',
+          tip: 'The silk and silver sections are buried in the centre of the market — ask for directions. Quality varies widely — inspect stitching and material carefully.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bassac Lane & Nightlife',
+          text: 'Explore Bassac Lane — a revitalised alleyway that has become Phnom Penh\'s creative nightlife hub. Craft cocktail bars, live music venues, and intimate restaurants line the narrow lane. Lot 369 does excellent cocktails in a moody setting. Bong Bong has live bands on weekends. For cheap eats, the night food stalls on Street 19 near the riverfront serve Khmer BBQ — pick your own meat and grill it tableside with rice and dipping sauces ($3–5 per person).',
+          tip: 'Bassac Lane is a 5-minute walk from the riverfront. Most bars open from 5pm and peak around 9–10pm. Phnom Penh nightlife is surprisingly varied and creative.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Koh Dach & River Islands',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Koh Dach (Silk Island)',
+          text: 'Take the small ferry ($1 return) to Koh Dach — an island in the Mekong where traditional silk weavers work on wooden looms beneath their stilted houses. The village is genuine and uncommercialised — weavers demonstrate the full process from silkworm to finished fabric and sell scarves and cloth directly at fair prices ($10–30). Rent a bicycle on the island ($2) and ride through the mango orchards, rice paddies, and quiet village lanes.',
+          tip: 'Weavers work mornings and early afternoons. The ferry departs from the pier near the Japanese Friendship Bridge. Bring small bills for purchases.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wat Phnom & Independence Monument',
+          text: 'Visit Wat Phnom ($1) — the founding temple of Phnom Penh on a 27-metre hill. Legend says Lady Penh found four Buddha images in a floating tree trunk and built this hill to enshrine them, giving the city its name. Walk south past the Independence Monument — a lotus-shaped stupa commemorating Cambodia\'s 1953 independence from France, beautifully lit at night. Continue to Wat Langka, one of the city\'s five original pagodas, where monks practise English conversation with visitors.',
+          tip: 'Wat Langka monks hold English conversation sessions in the afternoon — a wonderful way to learn about Buddhism and Cambodian life directly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Khmer BBQ & Night Market',
+          text: 'Experience Cambodian BBQ (Phnom Penh BBQ) — a dome-shaped grill surrounded by a moat of broth where you simultaneously grill meat on top and cook noodles and vegetables in the soup below ($5–8 per person for all-you-can-eat). The night food stalls along Sisowath Quay and near the Night Market sell grilled corn, fried insects, and num pang (Cambodian baguette sandwiches, $1). Browse the Night Market for souvenirs.',
+          tip: 'Cambodian BBQ restaurants cluster on Street 136 and near the riverfront. The dome grill is unique to Cambodia — great fun with a group. Bring wet wipes.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'COPE, Temples & Coffee Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Wat Ounalom & Morning Alms',
+          text: 'Rise early and visit Wat Ounalom — the seat of Cambodian Buddhism and the country\'s most important active pagoda. The temple survived Khmer Rouge damage and has been carefully restored. Monks in saffron robes move through the grounds for morning rituals. Walk the surrounding streets of the old quarter near the Royal Palace — colonial-era shophouses, street food vendors serving rice porridge ($0.75), and the quiet early-morning life of the city before the traffic and heat arrive.',
+          tip: 'Wat Ounalom is most atmospheric at dawn during morning prayers. Remove shoes, dress modestly, and keep a respectful distance during ceremonies.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Boeung Kak & Coffee District',
+          text: 'Explore the Boeung Kak lake area — once a backpacker haven, now transforming with street art, indie cafes, and creative spaces. The surrounding streets have Phnom Penh\'s best specialty coffee shops: Brown Coffee, Connects, and Artillery all serve excellent Cambodian single-origin beans. The Cambodian coffee scene is growing rapidly — the Robusta-Arabica blends from Mondulkiri and Ratanakiri provinces are gaining international recognition.',
+          tip: 'Cambodian iced coffee (traditional style with condensed milk) costs $0.50–1 at street carts. Specialty cafes charge $2–3 but the quality is genuinely excellent.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset Cruise & Street 308',
+          text: 'Take a sunset cruise on the Mekong ($5–8 per person, 1 hour) departing from the riverfront near the Royal Palace. The boat cruises past the four-river junction (Mekong, Tonle Sap, Bassac, and Tonle Sap Lake) while the sky turns orange over the city skyline. Return for dinner on Street 308 (BKK1 area) — the expat dining strip with excellent Khmer, Japanese, and Western restaurants. Meta House cultural centre often screens films or hosts exhibitions.',
+          tip: 'Sunset cruise boats depart from multiple points along the quay — compare prices. The small wooden boats ($5) are more atmospheric than the large tourist vessels.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Day Trip — Oudong & Countryside',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Oudong — Former Royal Capital',
+          text: 'Drive 40km north to Oudong, Cambodia\'s royal capital from 1618–1866 before the court moved to Phnom Penh. Two hills hold the remains of former temples and royal tombs — climb the 509 steps to the main ridge for views over the flatland plains of rural Cambodia stretching to the horizon. The temples are modest but the historical significance is immense, and the hilltop breezes are a welcome change from the city heat.',
+          tip: 'Start early to climb before the midday heat. Bring water and snacks — there are basic food stalls at the base but nothing on top. The round trip takes 3–4 hours.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rural Cambodia & Silver Smiths',
+          text: 'On the return from Oudong, stop at the silversmith village of Kompong Luong where artisans hand-hammer traditional Khmer silver bowls, jewellery, and decorative pieces using techniques passed down through generations. The prices are fair and you can watch the entire crafting process. Continue through the rice paddies and sugar palm-lined roads of rural Cambodia — a world away from Phnom Penh despite being less than an hour from the city.',
+          tip: 'The silversmith village is on the main road back from Oudong — ask your driver to stop. Prices are fixed and fair — no bargaining needed here.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Romdeng & Craft Cocktails',
+          text: 'Dinner at Romdeng — a social enterprise restaurant in a beautiful colonial villa, supporting former street youth. The menu features traditional Cambodian cuisine including adventurous options like fried tarantula and red tree ant dishes alongside excellent fish amok, green mango salad, and Khmer curries ($4–8 mains). Follow with craft cocktails at Juniper Gin Bar or Alchemy on Street 172 — Phnom Penh\'s cocktail scene has matured significantly.',
+          tip: 'Romdeng requires reservations in high season. The colonial villa setting is beautiful — request a garden table. The tarantula is optional but surprisingly good.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Exploration & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Morning Market & Last Coffee',
+          text: 'Visit Orussey Market — a local market that tourists rarely find, where Phnom Penh families buy their daily groceries. The ground floor has fresh produce, spices, and the best selection of Kampot pepper in the city (buy a bag, $3–5). Upstairs has fabric and clothing. Grab a final Cambodian iced coffee from a street cart and walk through the old colonial streets between the market and the riverfront — the shophouses, temple gates, and morning bustle are Phnom Penh at its most authentic.',
+          tip: 'Orussey Market is on Street 182 near Monivong Boulevard. No tourist markup here — prices are genuinely local. The ground-floor food section is fascinating.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tuol Sleng Revisit or Leisure',
+          text: 'If the genocide history has settled, a second visit to Tuol Sleng can be more absorbing — details you missed the first time and a calmer emotional state allow deeper engagement. Alternatively, spend the afternoon at a riverside cafe, get a massage ($7–10 at shops along Sisowath Quay), or visit the small but excellent Bophana Audiovisual Resource Centre (free) which preserves Cambodian film, photographs, and oral histories from before, during, and after the Khmer Rouge.',
+          tip: 'The Bophana Centre on Street 200 is a hidden gem — the archive of pre-genocide Cambodian film footage is extraordinary and rarely visited by tourists.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Phnom Penh',
+          text: 'Final dinner at your favourite discovery of the week. Walk the riverside one last time as the lights reflect on the Tonle Sap. Phnom Penh is a city that stays with you — the weight of its history, the warmth of its people, and the energy of its resurrection. Whether heading to Siem Reap (bus: $12, 6hrs), Kampot (bus: $8, 3hrs), or the airport ($12 tuk-tuk), Cambodia has more layers than most travelers expect.',
+          tip: 'The airport is 10km from the city centre — a tuk-tuk costs $9–12, Grab is cheaper at $7–8. Allow 40 minutes for traffic, more during rush hour.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: '$1.50 street meals', text: 'Bai sach chrouk (pork rice): $1.50. Num banh chok (noodles): $1. Khmer curry rice: $2. Iced coffee: $0.50. Cambodia\'s street food is delicious and incredibly cheap — budget $5–8/day eating entirely from stalls and markets.' },
+  { title: 'Tuk-tuk pricing', text: 'In-town trips: $1–3. Airport: $9–12. Killing Fields round-trip: $12–15 (including wait time). Always agree the price before getting in. PassApp ride-hailing gives fixed prices and is usually cheaper.' },
+  { title: 'Social enterprise dining', text: 'Friends, Romdeng, Haven, and Marum serve excellent food ($4–8 mains) while supporting at-risk youth. Better food than tourist restaurants at similar prices, and your money directly funds education and training programs.' },
+  { title: 'USD is king', text: 'Bring crisp US dollars — Cambodia runs on USD with riel for sub-dollar change. Torn or marked bills are rejected. ATMs charge $4–5 per withdrawal and dispense dollars. ABA Bank has the most ATMs and lowest fees.' },
+  { title: '$0.50 iced coffee', text: 'Cambodian iced coffee from street carts is $0.50 — condensed milk, strong coffee, and ice in a plastic bag. It is delicious and costs 1/10th of a Western cafe. The specialty coffee shops ($2–3) are excellent but the street version has more character.' },
+  { title: 'Bus connections are cheap', text: 'Siem Reap: $12–15 (6hrs). Kampot: $8 (3hrs). Sihanoukville: $10 (4hrs). Giant Ibis and Mekong Express are the best bus companies — comfortable, on-time, and safe. Book online or at guesthouses.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$4–10', midrange: '$15–40', splurge: '$60+', notes: 'Dorms → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '$5–8', midrange: '$10–20', splurge: '$30+', notes: 'Street food → restaurants → fine dining' },
+  { category: 'Transport', budget: '$3–6', midrange: '$8–15', splurge: '$25+', notes: 'PassApp & tuk-tuk → day hire → private car' },
+  { category: 'Activities', budget: '$5–10', midrange: '$15–30', splurge: '$50+', notes: 'Museums → cooking class & cruise → private guide' },
+  { category: 'Drinks', budget: '$1–3', midrange: '$4–8', splurge: '$15+', notes: 'Street coffee & beer → bars → craft cocktails' },
+  { category: 'Daily Total', budget: '$18–37', midrange: '$52–113', splurge: '$180+', notes: 'Budget backpacker → comfortable → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Tourist visa on arrival: $30 + one passport photo. e-Visa available online ($36) — faster than queueing at the airport',
+      'Valid for 30 days, extendable once for $45 at the immigration office near the airport',
+      'Bring crisp US dollar bills — torn, old, or marked notes are rejected. $1 and $5 bills are most useful for daily transactions',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Hepatitis A, typhoid, and tetanus recommended. Tap water unsafe — bottled water $0.25. Ice in tourist restaurants is factory-made and safe',
+      'Petty theft occurs — watch bags on tuk-tuks and do not flash expensive phones. Bag-snatching from passing motos happens on the riverside',
+      'Pharmacies sell most medications cheaply. Calmette Hospital and Royal Phnom Penh Hospital handle emergencies. Get travel insurance.',
+    ],
+  },
+  {
+    icon: '🛺',
+    title: 'Getting Around',
+    items: [
+      'Tuk-tuks are the main transport. PassApp ride-hailing gives fixed prices. In-town trips: $1–3 by tuk-tuk or $0.75 by moto-taxi',
+      'Phnom Penh is flat and increasingly cycleable. Some guesthouses offer free bicycle loans. The riverside area is best explored on foot',
+      'Giant Ibis and Mekong Express buses connect to Siem Reap (6hrs), Kampot (3hrs), and Sihanoukville (4hrs). Book at guesthouses or online',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Tourist SIM: Cellcard or Smart from $3 for 7 days data. Buy at the airport or any phone shop. Coverage is good throughout the city',
+      'WiFi available at most cafes, hotels, and restaurants. Speeds vary but are generally adequate for messaging and maps',
+      'All apps work unrestricted. PassApp (Cambodia\'s Grab equivalent) is essential. Google Maps is accurate for the city',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'USD is the primary currency. Riel (4,000 KHR = $1) used for change under $1. Market stall prices are often in riel',
+      'ATMs dispense USD. ABA Bank has the widest network and lowest fees ($4 per withdrawal). Withdraw $200+ to minimise fees',
+      'Credit cards accepted at hotels and upmarket restaurants only. Cash is essential for everything else — carry $20–30 daily',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, breathable clothing. Modest dress for temples and the Royal Palace — cover shoulders and knees',
+      'Wet wipes and hand sanitiser for street food markets. A reusable water bottle saves money and plastic',
+      'A small padlock for hostel lockers. A cross-body bag that is harder to snatch than a shoulder bag. Photocopy your passport.',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Sampeah Greeting', text: 'The sampeah — hands pressed together with a slight bow — is the traditional Khmer greeting. Return it when received. The higher the hands and deeper the bow, the more respect shown. Use it with monks and elders.' },
+  { icon: '📚', title: 'Khmer Rouge Sensitivity', text: 'The genocide killed nearly 2 million people — a quarter of Cambodia\'s population. Many survivors are still alive. Never make jokes about the Khmer Rouge, Pol Pot, or the killing fields. Treat this history with the gravity it deserves.' },
+  { icon: '👶', title: 'Children & Begging', text: 'Do not give money to begging children — it funds exploitation and keeps kids out of school. Instead, donate to established organisations like Friends International, Phare, or the Cambodian Children\'s Fund that provide education and support.' },
+  { icon: '🛕', title: 'Buddhist Respect', text: 'Cambodia is 95% Theravada Buddhist. Remove shoes in temples, dress modestly, and never touch monks. Women must not hand items directly to monks — place them on a surface for the monk to pick up.' },
+  { icon: '😊', title: 'Resilience & Warmth', text: 'Cambodians are among the warmest, most resilient people in Southeast Asia. A smile, patience, and genuine interest in their culture and lives will open doors. Learning "sua sdei" (hello) and "aw kun" (thank you) is deeply appreciated.' },
+  { icon: '💚', title: 'Responsible Tourism', text: 'Choose social enterprises, locally-owned businesses, and community tourism operators. Do not visit orphanages — many are scams that exploit children. Support education and sustainable development through reputable NGOs instead.' },
+];
+---
+
+<CityGuideLayout
+  title="Phnom Penh Travel Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Phnom Penh guide for young travelers. Royal Palace, Tuol Sleng, Killing Fields with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/phnom-penh-hero.webp"
+  heroFlag="🇰🇭"
+  heroCountry="Cambodia"
+  heroRegion="Southeast Asia"
+  heroCity="Phnom Penh"
+  heroSubtitle="Cambodia's resilient capital — where royal palaces, genocide memorials, and bustling riverside markets tell a story of devastation and renewal."
+  heroPills={['3-Day Cultural', 'History', 'Nov – Feb Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in USD. Phnom Penh is very affordable — street food, tuk-tuks, and social enterprise restaurants keep daily budgets low while supporting local communities."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Phnom Penh carries the weight of Cambodia's tragic history and the energy of its hopeful future. Approach with sensitivity, warmth, and genuine respect."
+  ctaCity="Phnom Penh"
+  ctaText="Find travel companions to share tuk-tuk costs, explore markets, and navigate Cambodia's powerful history together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -27,24 +27,28 @@ const countries = [
         duration: '5–7 days',
         description: 'Start at the Opera House and walk across the Harbour Bridge (free, or climb it for A$174–398). Bondi to Coogee coastal walk (6km, free) is a Sydney essential. Take the ferry to Manly Beach (A$7.70 with Opal card). Eat fish and chips on the harbour for A$15–20, or save money at Chinatown (A$10–12 meals). The Rocks Markets on Saturday are great for people-watching. Hostels in Kings Cross/Surry Hills: A$25–40/night dorm. Day trip to the Blue Mountains (A$5.40 train, 2 hrs) for the Three Sisters lookout and bushwalks.',
         tip: 'Get an Opal card immediately — A$16.80 daily cap on public transport, and Sunday is A$2.90 all-day. Sydney is expensive but transport is capped.',
+        guides: ['sydney', 'blue-mountains'],
       },
       {
         title: 'Melbourne & Great Ocean Road',
         duration: '7–10 days',
         description: 'Fly or drive from Sydney (flights A$50–100 on Jetstar; drive the coastal route in 2–3 days). Melbourne is Australia\'s cultural capital — free trams in the CBD, world-class street art in Hosier Lane, and the best coffee scene outside of Italy. Explore the laneways for A$4–5 flat whites, eat at Queen Victoria Market (A$8–12 lunches), and catch live music in Fitzroy and Collingwood. The Great Ocean Road (243km) is a must — rent a car from A$40/day split between 3–4 people. The Twelve Apostles at sunset, Loch Ard Gorge, and wild koalas at Kennett River.',
         tip: 'Melbourne is cheaper than Sydney for food and accommodation. Stay in St Kilda or Fitzroy for the best hostel vibes (A$25–35/night).',
+        guides: ['melbourne', 'great-ocean-road'],
       },
       {
         title: 'The East Coast',
         duration: '14–21 days',
         description: 'The classic backpacker trail runs from Melbourne or Sydney north to Cairns. Greyhound bus pass (Hop On Hop Off from A$249) or buy a campervan (A$3,000–5,000, sell at the end). Key stops: Byron Bay (surf, lighthouses, markets), Fraser Island 4WD tour (A$350–450, 2–3 days), Whitsunday Islands sailing trip (A$400–600, 2 days including Whitehaven Beach), and Cairns for the Great Barrier Reef (A$200–250 day trip including snorkel/dive). Magnetic Island for free-roaming koalas and cheap hostels (A$20–30). Fruit picking in Bundaberg or Bowen earns A$20–25/hr and satisfies WHV farm work requirements.',
         tip: 'Buy a campervan in Sydney, sell it in Cairns — the "backpacker car market" at Kings Cross operates informally. Check roadworthy certificate before buying.',
+        guides: ['byron-bay', 'cairns', 'great-barrier-reef', 'whitsunday-islands', 'magnetic-island', 'kgari'],
       },
       {
         title: 'The Outback (Optional)',
         duration: '5–7 days',
         description: 'Fly from Cairns to Alice Springs or Uluru (A$100–200 on Bonza/Jetstar). Uluru at sunrise and sunset (A$38 park pass, 3 days) is spiritually powerful — the colour shifts are mesmerising. Walk the base loop (10km, 3.5 hrs). Kata Tjuta\'s Valley of the Winds hike is equally stunning and less crowded. Alice Springs is a gateway to Kings Canyon (rim walk 6km, 3.5 hrs) and the West MacDonnell Ranges. Organised tours from A$300–600 for 3 days including camping, meals, and transport. The outback is hot, vast, and empty — carry water and respect the distances.',
         tip: 'If you\'re flying between cities, check Bonza and Rex airlines for outback routes — often cheaper than Qantas. Book early.',
+        guides: ['uluru'],
       },
     ],
   },
@@ -68,24 +72,28 @@ const countries = [
         duration: '10–14 days',
         description: 'Fly from Australia to Auckland (A$200–350). Auckland is a launching pad — climb the Sky Tower (NZ$33) or bungee off it (NZ$225), take the ferry to Waiheke Island (NZ$42 return) for vineyards and beaches, and explore Ponsonby for food. Rent a campervan (NZ$40–80/day split) or take InterCity buses (FlexiPass from NZ$127). Drive to the Coromandel Peninsula — Cathedral Cove (1.5 hr walk, free) and Hot Water Beach (dig your own hot pool, free). Continue to Rotorua for Māori cultural experiences (Te Puia NZ$70), geothermal wonderland (Wai-O-Tapu NZ$40), and mountain biking in the Redwoods (free trails).',
         tip: 'Buy a campervan — it\'s the best way to see NZ and saves on accommodation. Wicked Campers and Jucy start from NZ$30–50/day for basic vans.',
+        guides: ['auckland', 'coromandel', 'rotorua'],
       },
       {
         title: 'North Island: Tongariro & Wellington',
         duration: '5–7 days',
         description: 'Drive south to Tongariro National Park for the Tongariro Alpine Crossing — widely considered the best one-day hike in the world (19.4km, 6–8 hrs, shuttle NZ$40 return). The volcanic landscape is otherworldly — Emerald Lakes, Red Crater, and Mount Doom from Lord of the Rings. Continue to Wellington, NZ\'s compact and walkable capital. Te Papa Museum is free and excellent. Cuba Street has the best cafe scene. Take the cable car (NZ$10 return) for views of the harbour. The Interislander ferry to Picton (NZ$75–135, 3.5 hrs) crosses the Cook Strait — one of the world\'s great ferry rides.',
         tip: 'Book the Tongariro Crossing shuttle the day before and check weather — the track closes in bad weather. Start early (6–7am) to avoid crowds.',
+        guides: ['tongariro', 'wellington'],
       },
       {
         title: 'South Island: Queenstown & Fjords',
         duration: '10–14 days',
         description: 'From Picton, drive through Marlborough wine country and over Arthur\'s Pass to the West Coast. Franz Josef and Fox Glaciers offer helicopter heli-hikes (NZ$450–500 — expensive but walking ON a glacier is surreal). Continue south to Queenstown — the adventure capital. Bungee at Kawarau Bridge (NZ$205, the original), jet boat Shotover Canyon (NZ$159), or just enjoy the free lakefront views and Fergburger (NZ$14–19, the world\'s most famous burger joint). Milford Sound day trip (NZ$130–200 for cruise + bus) or the Routeburn Track (3 days, Great Walk — book DOC huts NZ$65/night).',
         tip: 'Queenstown activities are pricey — look for combo deals and off-peak discounts. The Queenstown i-SITE can bundle 3–4 activities for 20–30% off.',
+        guides: ['queenstown', 'milford-sound'],
       },
       {
         title: 'South Island: Wanaka to Christchurch',
         duration: '6–8 days',
         description: 'Wanaka is Queenstown\'s chilled-out neighbour — Roys Peak hike (16km return, 5–6 hrs, free) is one of NZ\'s most Instagrammed trails. Lake Wanaka\'s "That Wanaka Tree" is iconic. Drive to Mount Cook for the Hooker Valley Track (10km return, 3 hrs, free — icebergs floating in a glacial lake). Stop at Lake Tekapo for the Church of the Good Shepherd and the darkest skies in the southern hemisphere (stargazing tours NZ$90–150). End in Christchurch — the "Garden City" is rebuilding beautifully after the earthquakes. Explore the Cardboard Cathedral, street art, and the riverside farmers\' market.',
         tip: 'Freedom camping (sleeping in your van for free) is legal in NZ in designated areas — download the CamperMate app for legal spots with toilets.',
+        guides: ['wanaka', 'lake-tekapo', 'christchurch'],
       },
     ],
   },
@@ -186,6 +194,6 @@ const practicalInfo = [
   ctaRegion="Australia & New Zealand"
   ctaText="Find travel companions for reef dives, Great Walk hikes, and campervan road trips with fellow backpackers on roammate."
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
-  featuredGuides={['sydney', 'melbourne', 'abel-tasman', 'milford-sound', 'tongariro', 'great-barrier-reef', 'uluru', 'whitsunday-islands', 'blue-mountains']}
+  featuredGuides={['sydney', 'melbourne', 'cairns', 'great-barrier-reef', 'uluru', 'whitsunday-islands', 'blue-mountains', 'byron-bay', 'great-ocean-road', 'magnetic-island', 'kgari', 'auckland', 'coromandel', 'rotorua', 'tongariro', 'wellington', 'queenstown', 'milford-sound', 'wanaka', 'lake-tekapo', 'christchurch']}
   accentColor="#c4562a"
 />

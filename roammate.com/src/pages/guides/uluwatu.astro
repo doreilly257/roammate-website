@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'IDR (Rupiah)', detail: 'Cash and cards in tourist areas' },
+  { icon: '🗣', label: 'Language', value: 'Indonesian', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'WITA (UTC+8)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: 'Dry season, best surf & sunsets' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$30–65 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'VOA available', detail: 'Visa on Arrival for many nationalities ($35)' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Uluwatu Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Padang Padang Beach & Cliff Walk',
+          text: 'Start early at Padang Padang Beach, a small crescent of white sand reached through a narrow gap in the limestone cliffs. The beach is sheltered, the water turquoise, and the surrounding rock formations create a natural amphitheatre. After swimming, walk the cliffside paths that connect Uluwatu\'s beaches — the views from the clifftops down to the breaking waves and hidden coves are spectacular.',
+          tip: 'Arrive before 10am — Padang Padang is small and gets crowded quickly. The cave entrance to the beach is narrow. Entry is 15,000 IDR. Bring reef shoes for the rocky areas.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Uluwatu Temple',
+          text: 'Visit Pura Luhur Uluwatu, one of Bali\'s six most important directional temples, perched on the edge of a 70-metre cliff overlooking the Indian Ocean. The temple dates to the 11th century and guards the island from evil sea spirits. Walk the clifftop path through the temple grounds — the views down the sheer limestone walls to the crashing waves below are breathtaking. Cheeky long-tailed macaques inhabit the grounds and will grab anything shiny.',
+          tip: 'Entry is 50,000 IDR. Sarong required (provided at entrance). Remove sunglasses, earrings, and anything dangling — the monkeys are skilled thieves. Keep bags zipped and held close.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kecak Fire Dance at Sunset',
+          text: 'Stay at Uluwatu Temple for the daily Kecak fire dance performance — an open-air amphitheatre on the cliff edge hosts this mesmerising Balinese performance at sunset. Over 70 bare-chested men chant "cak-cak-cak" in interlocking rhythms while dancers enact scenes from the Ramayana epic. As the sun drops into the ocean behind the performers, the fire dance section lights up the dusk. This is Bali\'s most atmospheric cultural performance.',
+          tip: 'The Kecak starts at 6pm — arrive by 5pm to secure front-row seats. Tickets are 150,000 IDR and sell at the amphitheatre entrance. The performance lasts about 70 minutes.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Uluwatu Temple, Kecak & Cliffs',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cliff Walk & Blue Point Beach',
+          text: 'Start with a morning walk along Uluwatu\'s dramatic limestone cliffs. The Bukit Peninsula\'s clifftops offer views down to hidden beaches, surf breaks, and turquoise coves far below. Walk to Blue Point (Suluban) Beach, accessed via a winding staircase through limestone caves. The beach sits in a dramatic cove between towering cliff walls, with the famous Uluwatu surf break rolling in from the reef offshore. Even non-surfers find the cave-framed beach spectacular.',
+          tip: 'Blue Point is best at low to mid tide — at high tide the beach can disappear. The staircase is steep. Several cliff-edge cafes offer views of the surf break below.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Uluwatu Temple Exploration',
+          text: 'Visit Pura Luhur Uluwatu, the ancient sea temple perched on the cliff edge. The temple was founded in the 11th century and is one of Bali\'s six directional temples protecting the island from evil spirits. Walk the full clifftop path through the temple grounds — the 70-metre sheer drops, the ocean stretching to the horizon, and the ancient stonework covered in tropical vegetation create an unforgettable setting. The resident macaque monkeys are entertaining but mischievous.',
+          tip: 'Guard your belongings from the monkeys — they are notorious for snatching sunglasses, phones, hats, and water bottles. Temple staff can sometimes recover items in exchange for fruit.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kecak Fire Dance & Cliffside Dinner',
+          text: 'The sunset Kecak fire dance at Uluwatu Temple is Bali\'s most iconic cultural performance — 70+ men chanting in hypnotic rhythm while dancers perform the Ramayana on the cliff edge as the sun sets into the Indian Ocean. After the performance, drive to one of Uluwatu\'s cliffside restaurants — Ulu Cliffhouse, Single Fin, or El Kabron — for dinner overlooking the darkening ocean with the sound of waves crashing below.',
+          tip: 'Book cliffside restaurant tables in advance for sunset — they fill fast. Single Fin has the most laid-back vibe, El Kabron the most upscale. Both have spectacular views.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Beaches, Surf & Beach Clubs',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Padang Padang Beach',
+          text: 'Start early at Padang Padang Beach — a pocket-sized paradise reached through a gap in the cliffs. The sheltered cove has calm, clear water for swimming and a strip of white sand framed by dramatic limestone rock formations. The beach was featured in the film Eat, Pray, Love and draws photographers for its photogenic setting. Beyond the main beach, rock pools and smaller hidden coves reward exploration at low tide.',
+          tip: 'Padang Padang is tiny — arrive before 9am for the best experience. The entrance fee is 15,000 IDR. At low tide, explore the rock pools to the left of the main beach.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Surf at Suluban (Blue Point)',
+          text: 'Watch or surf the famous Uluwatu reef breaks at Suluban. The left-hander here is one of the most famous waves in Indonesia — long, powerful barrels that attract surfers from around the world. If you are an experienced surfer, this is world-class. For beginners, watching from the cliff-edge cafes is exciting — the waves break along the reef below and the surfers are clearly visible from above. The inside section offers gentler reform waves for intermediate surfers.',
+          tip: 'Uluwatu surf is for intermediate-advanced surfers only — sharp reef, powerful currents, and cave-entry paddle-out. Beginners should watch from the cafes and surf at Padang Padang rights instead.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Single Fin Sunset',
+          text: 'Spend the evening at Single Fin, Uluwatu\'s most famous cliff-edge bar. Perched above the surf break, Single Fin offers panoramic sunset views, cold drinks, live music, and a relaxed surfer atmosphere. Watch the sunset paint the ocean gold while surfers catch their last waves below. Sunday sessions at Single Fin are legendary, with live bands and a party atmosphere that runs well into the night.',
+          tip: 'Single Fin Sunday is Uluwatu\'s biggest social event — arrive by 4pm for a good spot. Weekday evenings are more relaxed. The cocktail menu and food are decent but it is really about the view.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Nyang Nyang Beach & Hidden Gems',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Nyang Nyang Beach — Bali\'s Hidden Beach',
+          text: 'Make the steep descent to Nyang Nyang Beach — one of Bali\'s most secluded and beautiful stretches of sand. The 500-step staircase drops through jungle to a vast white-sand beach backed by cliffs, with almost no other visitors. A rusting shipwreck on the sand adds a photogenic quality. The water is turquoise and mostly calm for swimming. This is the Uluwatu that existed before the beach clubs and development — raw, wild, and beautiful.',
+          tip: 'Bring water, snacks, and sun protection — there are no facilities on the beach. The climb back up is strenuous (30-40 minutes). Wear good shoes for the stairs. Go early to avoid the heat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cliffside Cafes & Melasti Beach',
+          text: 'Drive to Melasti Beach on the eastern side of the Bukit Peninsula — a dramatic approach road descends through towering limestone cliffs to a white-sand beach with calm, turquoise water. Melasti is wider and more accessible than Uluwatu\'s pocket beaches, with sun-lounger rental and beachside cafes. The limestone amphitheatre surrounding the beach is spectacular and relatively recent as a tourist discovery.',
+          tip: 'Melasti Beach entry is 10,000 IDR for the beach area. The drive down through the cliffs is worth doing slowly — the limestone walls are dramatic. Sun-loungers cost 50,000-100,000 IDR.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Cliff Views',
+          text: 'End your Uluwatu stay with dinner at one of the clifftop restaurants that have made the area famous. Ulu Cliffhouse, Omnia, and The Edge offer world-class dining with Indian Ocean views from impossibly dramatic cliff-edge settings. The infinity pools appear to merge with the ocean, and the sunset from these venues is the most exclusive on the island. Alternatively, eat at a warung in Pecatu village for authentic Balinese food at a fraction of the price.',
+          tip: 'The high-end cliff venues charge premium prices (500,000-1,000,000 IDR per person for food and minimum spend). For budget travelers, the Pecatu village warungs serve the same sunset, just from ground level.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Uluwatu Temple',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival & Bukit Peninsula',
+          text: 'Arrive from the airport (30-40 minutes) or from Canggu/Seminyak (90 minutes) and check into accommodation in the Uluwatu area. The Bukit Peninsula is dramatically different from the rest of Bali — dry limestone cliffs, hidden beaches, and sparse development replace the lush rice paddies of the north. Rent a scooter (essential for exploring the scattered beaches) and familiarise yourself with the area.',
+          tip: 'Stay in Pecatu or Bingin for the best access to beaches and restaurants. A scooter is essential — the area is spread out and taxis are limited. The roads are steep but well-surfaced.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Uluwatu Temple Clifftop Walk',
+          text: 'Visit Pura Luhur Uluwatu, the spectacular sea temple perched on 70-metre cliffs. Walk the full clifftop path through the temple grounds, enjoying views along the peninsula\'s dramatic coastline. The ancient temple has guarded Bali\'s southwestern tip since the 11th century. The combination of sacred architecture, sheer cliff drops, and endless ocean creates one of Bali\'s most powerful landscapes.',
+          tip: 'Arrive by 3pm to explore the temple thoroughly before the Kecak crowd arrives. The clifftop path extends in both directions — the southern section is less crowded.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kecak Fire Dance at Sunset',
+          text: 'Attend the sunset Kecak fire dance at the clifftop amphitheatre. The 70-minute performance of chanting, dance, and fire with the setting sun as a backdrop is Bali\'s most memorable cultural experience. Afterward, dine at a nearby restaurant — the energy after the performance carries into the evening.',
+          tip: 'Arrive by 5pm for good seats. Tickets are 150,000 IDR. The amphitheatre is open-air — bring a light layer as it cools after sunset.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Padang Padang & Bingin Beaches',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Padang Padang Beach',
+          text: 'Arrive early at Padang Padang Beach, entering through the atmospheric gap in the limestone cliffs. The small crescent of white sand, clear turquoise water, and dramatic rock formations make this one of Bali\'s most photogenic beaches. Swim, snorkel around the rocks, and explore the cave formations at the base of the cliffs.',
+          tip: 'The beach is small — morning is essential for a good spot. Bring snorkel gear to explore the rocks on the left side. A small cafe at the entrance sells drinks and snacks.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Bingin Beach & Cliff Warungs',
+          text: 'Walk or ride to Bingin Beach — accessed via a steep staircase down the cliff, Bingin has a backpacker vibe with small guesthouses and warungs clinging to the cliff face. The beach is narrow and rocky, but the atmosphere is laid-back and friendly. The cliff-side warungs serve cheap food and cold Bintang with views over the surf break. This is the old-school Uluwatu experience before the luxury development arrived.',
+          tip: 'The stairs to Bingin are steep and narrow — wear proper shoes. The cliff-edge guesthouses have the best views in Uluwatu and are surprisingly affordable (200,000-400,000 IDR per night).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bingin Cliff Sunset',
+          text: 'Watch the sunset from Bingin\'s cliff-edge warungs — perched above the ocean with the sun dropping directly in front of you. The view from the warungs at Bingin is as good as any of the luxury venues but at a fraction of the cost. A Bintang and nasi goreng on the cliff edge as the sky turns colours is one of Uluwatu\'s finest budget experiences.',
+          tip: 'The Cashew Tree and Kelly\'s Warung on the Bingin cliff are popular sunset spots. Arrive by 5pm for a good table. Cash only at most warungs.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Surf & Blue Point',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Suluban Surf or Watch',
+          text: 'Head to Suluban (Blue Point) for the morning surf. The approach winds through limestone caves to a rocky cove where the famous left-hand reef break peels along the cliff. For experienced surfers, paddle out through the cave for world-class barrels. For everyone else, the cliff-edge cafes above offer front-row spectating with breakfast and coffee. The sight of surfers threading barrels beneath the cliffs is mesmerising.',
+          tip: 'Suluban is an advanced surf break — reef, currents, and power make it dangerous for beginners. Board rental is available at the beach. The paddle-out timing through the cave requires local knowledge.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Thomas Beach & Relaxation',
+          text: 'Drive to Thomas Beach (also called Pantai Thomas) — a wider, less crowded beach between Padang Padang and Uluwatu. The beach has sun-loungers for rent, a couple of warungs, and good swimming conditions. The surrounding cliffs create a sheltered feel and the afternoon light is warm and golden. This is a good beach for relaxing after an active morning.',
+          tip: 'Thomas Beach is reached via a steep staircase from the parking area. Sun-lounger rental is 50,000 IDR. The beach faces west — afternoon sun is direct and strong.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Single Fin Sunday Session',
+          text: 'If it is Sunday, head to Single Fin for the legendary weekly session — live bands, DJs, cocktails, and Uluwatu\'s biggest social gathering on the cliff edge above the surf break. The atmosphere is electric as the sun sets and the music picks up. If it is not Sunday, Single Fin is still an excellent sunset spot any evening with a more relaxed vibe.',
+          tip: 'Single Fin Sunday starts in the afternoon and runs late. Arrive by 4pm for the best spots. The minimum spend is reasonable. Grab is the safest way home after dark on scooter-free roads.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Nyang Nyang Beach & South Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Nyang Nyang Beach Expedition',
+          text: 'Descend the 500 steps to Nyang Nyang Beach, Uluwatu\'s most secluded stretch of sand. The vast white-sand beach is backed by jungle-covered cliffs and is often completely empty. A rusting shipwreck sits half-buried in the sand, adding a romantic, wild atmosphere. Swim in the clear water, explore the beach\'s full length, and enjoy the feeling of having an entire beach to yourself.',
+          tip: 'Pack everything you need — there is nothing on the beach. The climb back is serious (30-40 minutes of stairs). Go early, swim, and return before the midday heat makes the ascent brutal.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Green Bowl Beach',
+          text: 'Drive to Green Bowl Beach on the eastern side of the Bukit — another hidden beach accessed by a steep staircase (300 steps). The beach gets its name from the green algae covering the rocks during certain tides. Two caves at the back of the beach provide shade, and the snorkelling is excellent along the reef. The beach is quieter than the western beaches and feels genuinely remote.',
+          tip: 'Green Bowl is best at low tide when the beach is widest and the snorkelling reef is most accessible. Bring all supplies — no vendors on the beach. The stairs are intense.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset from Karang Boma Cliff',
+          text: 'For a truly dramatic sunset, ride to the Karang Boma cliff viewpoint near Uluwatu Temple — a sheer cliff that drops hundreds of metres to the ocean, with views stretching along the entire southern coastline of Bali. This is one of the most dramatic viewpoints on the island and far less crowded than the temple area. Watch the sunset paint the limestone cliffs gold and orange.',
+          tip: 'The cliff has no barriers — stay well back from the edge. The viewpoint is a short walk from the parking area. Arrive 30 minutes before sunset for the best light on the cliffs.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Melasti Beach & Eastern Bukit',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Melasti Beach',
+          text: 'Drive to Melasti Beach on the eastern Bukit — the approach road descends between towering limestone cliff walls, creating a dramatic canyon entrance to a wide white-sand beach with calm turquoise water. Melasti is more spacious than Uluwatu\'s pocket beaches and has good facilities — sun-loungers, cafes, and water sports. The limestone amphitheatre surrounding the beach is geologically stunning.',
+          tip: 'Melasti entry is 10,000 IDR. The beach is wide enough to absorb crowds. Sun-loungers cost 50,000-100,000 IDR. The water is calm and good for swimming — a nice change from the wave-battered west coast.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pandawa Beach',
+          text: 'Continue to Pandawa Beach, another eastern Bukit beach carved from limestone cliffs. The road to the beach passes through a cliff-cut corridor with enormous carved Pandava warrior statues (from Hindu mythology) set into the rock face. The beach itself is long and wide with clear water and good snorkelling. The area has developed rapidly but retains a spectacular setting.',
+          tip: 'Pandawa entry is 15,000 IDR. The beach has kayak and SUP rental. The carved cliff statues along the entrance road are impressive and worth stopping to photograph.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ayana Rock Bar',
+          text: 'For a special evening, visit Ayana Resort\'s Rock Bar — a bar literally built on the rocks at the base of a cliff, accessed by a cable car from the resort above. The setting is extraordinary — you drink surrounded by waves crashing on the rocks with the Indian Ocean stretching to the horizon. The bar is famous worldwide and the sunset is spectacular.',
+          tip: 'Rock Bar has a minimum spend and can have long queues. Arrive by 4pm on weekdays, earlier on weekends. Smart casual dress code. Book online if possible.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Culture, Food & Slow Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Morning Ceremony at a Village Temple',
+          text: 'Ask your accommodation host about nearby temple ceremonies — Balinese Hindu ceremonies happen daily and are often open to respectful visitors. The morning offerings (canang sari), temple prayers, and community gatherings give insight into the spiritual life that underpins everything on the island. Dress modestly and observe quietly unless invited to participate.',
+          tip: 'If attending a ceremony, wear a sarong and sash, remove shoes, and do not stand higher than the priest. Accept any holy water or offerings given to you. Photography may not be appropriate — ask first.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Warung Crawl & Local Food',
+          text: 'Spend the afternoon on a warung crawl through Pecatu and the villages of the Bukit Peninsula. The local warungs serve authentic Balinese food that is worlds away from the tourist restaurant menus — babi guling (suckling pig), lawar (mixed chopped meat with spices and coconut), sate lilit (fish satay), and nasi jinggo (small rice portions with sambal and side dishes). Each warung has its speciality.',
+          tip: 'Warung meals cost 15,000-30,000 IDR ($1-2). Look for warungs with the most motorbikes parked outside — the local crowd knows where the best food is.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Villa Evening & Rest',
+          text: 'After a week of beaches and cliffs, enjoy a quiet evening at your accommodation. Many Uluwatu villas and guesthouses have small pools and garden areas. Order a Grab delivery for dinner, or cook if your accommodation has a kitchen. Bali\'s night sky is clear from the southern Bukit — look for the Southern Cross and the Milky Way from areas away from the resort lighting.',
+          tip: 'If staying in a villa, ask about private BBQ options — many can arrange fresh seafood grilled at your accommodation for a reasonable price.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Sunrise Surf & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Dawn Session',
+          text: 'Rise before dawn for a final surf, swim, or cliff walk. The Uluwatu coastline in the first light of day is ethereal — the limestone glows warm yellow, the ocean is glass-smooth, and the beaches are empty. Whether you paddle out for one last wave or simply sit on the cliff edge watching the sun rise over the Bukit, this is the Uluwatu you will remember.',
+          tip: 'If you have surfed all week and want one final wave, the early morning before the wind picks up offers the cleanest conditions at all the breaks.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Beach Visit & Packing',
+          text: 'Visit your favourite beach one last time, pick up any souvenirs from the local shops, and pack for departure. Return your scooter and settle any outstanding bills. The Uluwatu area has some good boutiques selling sustainable surf wear, handmade jewellery, and Balinese crafts.',
+          tip: 'Return scooters with a full tank to avoid fuel charges. Check your accommodation for any lost items — it is easy to leave things in multiple rooms when moving between beaches.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Departure or Onward Bali Travel',
+          text: 'Drive to the airport (30-40 minutes) for departure, or continue your Bali journey. Canggu (surf and nightlife) is 90 minutes north, Ubud (rice terraces and culture) is 90 minutes northeast, and the Nusa Islands (snorkelling and cliffs) are reachable by fast boat from Sanur. Uluwatu is just one piece of Bali, and the island rewards weeks of exploration.',
+          tip: 'The airport is relatively close to Uluwatu — allow 60 minutes including traffic. For Nusa Penida, book fast boats from Sanur harbour (30-45 minutes).',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat at warungs in Pecatu', text: 'The warungs in Pecatu village and along the Bukit roads serve excellent local food for 15,000-30,000 IDR — a fraction of the cliffside restaurant prices. Nasi campur and nasi goreng are filling and delicious.' },
+  { title: 'Skip the beach clubs for sunset', text: 'The public cliffs and beaches offer the same sunset as the luxury venues. Karang Boma cliff viewpoint, Bingin beach warungs, and the Uluwatu Temple area are all free or very cheap alternatives to 500,000+ IDR minimum spends.' },
+  { title: 'Rent a scooter', text: 'A scooter (50,000-80,000 IDR/day) is essential in Uluwatu — the area is spread out along the peninsula with limited public transport. Without a scooter, you will spend a fortune on Grab rides.' },
+  { title: 'Stay in cliff guesthouses', text: 'Bingin and Balangan cliff guesthouses cost 200,000-400,000 IDR per night with some of the best views in Bali. The access stairs are steep but the ocean views from your room are priceless.' },
+  { title: 'Bring your own gear', text: 'Pack reef shoes, snorkel gear, and a rash guard. Rental on the beaches is inflated — 100,000-200,000 IDR for items you could bring from home or buy cheaply at a surf shop in Kuta.' },
+  { title: 'Buy Kecak tickets on arrival', text: 'Kecak tickets at the temple amphitheatre cost 150,000 IDR — do not overpay through tour operators. Buy directly at the venue entrance. Combine with temple entry for a single afternoon.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–25', midrange: '$35–80', splurge: '$120+', notes: 'Dorm → cliff guesthouse → luxury villa' },
+  { category: 'Food', budget: '$5–12', midrange: '$15–35', splurge: '$50+', notes: 'Warungs → restaurants → cliffside dining' },
+  { category: 'Transport', budget: '$3–5', midrange: '$5–12', splurge: '$25+', notes: 'Scooter → Grab → private driver' },
+  { category: 'Activities', budget: '$5–10', midrange: '$15–30', splurge: '$50+', notes: 'Beach (free) → temple & Kecak → surf lessons' },
+  { category: 'Beach Clubs', budget: '$0', midrange: '$15–30', splurge: '$50+', notes: 'Skip → one visit → multiple days' },
+  { category: 'Daily Total', budget: '$30–65', midrange: '$85–180', splurge: '$300+', notes: 'Budget backpacker → comfortable mid → luxury cliff' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Visa on Arrival (VOA) for many nationalities — $35 USD for 30 days, extendable once',
+      'Some nationalities qualify for free 30-day visa (not extendable)',
+      'Passport must have 6+ months validity and at least 2 blank pages',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Travel insurance essential — the cliffs and beaches can be dangerous, and reef injuries are common',
+      'Carry a basic first aid kit with antiseptic and reef-safe wound treatment — coral cuts infect easily in the tropics',
+      'The sun on the Bukit is intense — apply SPF 50+ frequently, especially on cliff walks and at the beach',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Scooter rental is essential — 50,000-80,000 IDR per day. The area is spread along the peninsula with no public transport',
+      'Roads are steep and winding but well-surfaced. Drive carefully, especially after rain',
+      'Grab ride-hailing works but drivers are scarce in remote areas — scooter is more reliable',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile signal is good across the Bukit Peninsula — Telkomsel has the best coverage',
+      'WiFi available at most accommodation and cafes but can be slow at remote cliff guesthouses',
+      'Download offline maps — some beach access roads are not well-marked on online maps',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: IDR (Indonesian Rupiah). Cards accepted at larger venues — carry cash for warungs, small shops, and beach entrances',
+      'ATMs in Pecatu and near the main road — limited on the cliff side. Withdraw enough for a few days',
+      'Beach entrance fees range from 10,000-15,000 IDR. Temple entry is 50,000 IDR. Kecak dance is 150,000 IDR',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Reef shoes are essential — rocky beaches and reef cuts are the most common injury in Uluwatu',
+      'Light clothing for the heat, a sarong for temple visits, and a light jacket for evening cliff winds',
+      'A dry bag for taking electronics to the beach — sand and sea spray damage phones quickly',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Temple Respect', text: 'Uluwatu Temple is an active place of worship, not just a tourist attraction. Wear a sarong and sash (provided), do not point your feet at shrines, and maintain respectful silence near prayer areas. Women who are menstruating are traditionally asked not to enter Balinese temples.' },
+  { icon: '🌍', title: 'Protect the Cliffs & Reefs', text: 'Do not take rocks, coral, or shells from the beaches. Stay on marked paths on the cliffs — erosion is a serious problem. Use reef-safe sunscreen to protect the marine ecosystem that sustains the surf breaks and snorkelling.' },
+  { icon: '📸', title: 'Monkey Awareness', text: 'The Uluwatu Temple monkeys are wild animals, not pets. Do not feed them, tease them, or try to take selfies. Secure all belongings — they will snatch sunglasses, phones, hats, earrings, and water bottles. If a monkey takes something, temple staff can often recover it by offering fruit.' },
+  { icon: '🗣', title: 'Language', text: 'English is widely spoken in tourist areas. Basic Indonesian — terima kasih (thank you), berapa (how much), and tolong (please) — is appreciated. Balinese people are among the friendliest in Southeast Asia and even minimal effort with the language is warmly received.' },
+  { icon: '🤝', title: 'Support Local Businesses', text: 'Choose cliff warungs over international chains. Hire local surf instructors. Buy from Balinese artisans. The Bukit Peninsula\'s development has displaced some fishing communities — spending money locally helps maintain the traditional village economy.' },
+  { icon: '🕐', title: 'Surf Etiquette', text: 'Respect the lineup at Uluwatu\'s breaks. Do not drop in on other surfers, wait your turn, and yield to locals. The reef breaks are powerful and the local surfers know the waves intimately. A respectful attitude in the water earns respect and better waves.' },
+];
+---
+
+<CityGuideLayout
+  title="Uluwatu Guide 2026 — Bali Itinerary for Young Travelers | roammate"
+  description="The ultimate Uluwatu guide for young travelers. Clifftop temple, Kecak fire dance, world-class surf with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/uluwatu-hero.webp"
+  heroFlag="🇮🇩"
+  heroCountry="Indonesia"
+  heroRegion="Southeast Asia"
+  heroCity="Uluwatu"
+  heroSubtitle="Bali's dramatic southern tip — where ancient temples perch on sheer limestone cliffs, world-class surf breaks peel along the reef, and sunset Kecak fire dances mesmerise."
+  heroPills={["3-Day Cliff & Surf", "Cultural", "May – Sep Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Uluwatu ranges from very affordable (cliff warungs, budget guesthouses) to high-end (luxury cliff clubs and villas). The natural beauty is free."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Uluwatu is where Bali's spiritual heritage meets the raw power of the Indian Ocean. The temple, the Kecak dance, and the cliff-edge lifestyle create an experience that is uniquely Balinese."
+  ctaCity="Uluwatu"
+  ctaText="Find travel companions to explore Uluwatu together on roammate — share villa costs, surf together, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

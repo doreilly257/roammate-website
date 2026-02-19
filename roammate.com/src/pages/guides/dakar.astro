@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'XOF (CFA Franc)', detail: 'Cash preferred, cards at upscale venues' },
+  { icon: '🗣', label: 'Language', value: 'French / Wolof', detail: 'French is official, Wolof spoken everywhere' },
+  { icon: '🕐', label: 'Timezone', value: 'GMT (UTC+0)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Apr', detail: 'Dry season, cooler temperatures' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–55 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Varies by nationality', detail: 'Check requirements — some nationalities visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Dakar Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Île de Gorée',
+          text: 'Take the 20-minute ferry from the Dakar port to Île de Gorée — a UNESCO World Heritage Site and one of the most historically significant islands in West Africa. The car-free island is a quiet, bougainvillea-draped contrast to the intensity of Dakar. Visit the House of Slaves (Maison des Esclaves), a museum and memorial to the Atlantic slave trade, where the "Door of No Return" opens to the sea. The colonial architecture — pastel-coloured French and Portuguese houses — lines narrow sandy lanes. Art galleries, small museums, and a peaceful atmosphere make Gorée deeply moving and beautiful.',
+          tip: 'Ferries to Gorée leave from the Gare Maritime in central Dakar every 1–2 hours. Return tickets cost 5,200 XOF for foreigners. The island gets busy after 10am — take the first ferry for a quieter experience.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'African Renaissance Monument & Plateau',
+          text: 'Return to Dakar and visit the African Renaissance Monument — a 49-metre bronze statue on the Collines des Mamelles, taller than the Statue of Liberty. Completed in 2010, it depicts a family emerging from a volcano, symbolising Africa rising from oppression. The observation deck inside the figure offers panoramic views across Dakar and the Atlantic. Afterwards, explore the Plateau district — Dakar\'s colonial-era administrative centre with Art Deco buildings, the Presidential Palace, and the bustling Independence Square.',
+          tip: 'Entry to the monument is 5,000 XOF. The internal stairs to the observation deck are steep and the interior can be hot — visit in the morning or late afternoon.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Thiéboudienne & Dakar Nightlife',
+          text: 'Dinner should feature thiéboudienne — Senegal\'s national dish and one of West Africa\'s great culinary achievements. The elaborate rice and fish dish combines broken rice, marinated fish (usually thiof grouper), tamarind, tomato, and a variety of vegetables, slow-cooked together. Every family has their own recipe, and debates about the best version are passionate. Afterwards, experience Dakar\'s legendary nightlife — the city is West Africa\'s cultural capital, and the mbalax music scene (Senegalese dance music rooted in sabar drumming) fills clubs and venues across the city.',
+          tip: 'Dakar nightlife starts late — clubs do not fill until midnight and parties continue until dawn. The Almadies and Ngor districts have the highest concentration of clubs and live music venues.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Île de Gorée & Colonial History',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Île de Gorée Ferry & House of Slaves',
+          text: 'Take the first ferry to Île de Gorée from the Gare Maritime. The 20-minute crossing lands you on a car-free island of sandy lanes, bougainvillea-covered colonial houses, and a profound historical weight. Visit the Maison des Esclaves (House of Slaves), built in 1776, where the "Door of No Return" opens to the Atlantic — a symbolic memorial to the millions of Africans forced into the transatlantic slave trade from West African shores. The museum\'s exhibits are simple but devastating. The island itself is beautiful — pastel houses, art galleries, a small beach, and a fort on the highest point.',
+          tip: 'Take the 7:15am or 8:30am ferry to have the island largely to yourself before the later crowds. Return ferry tickets: 5,200 XOF for foreigners, 1,500 XOF for Senegalese.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gorée Island Art Galleries & Fort',
+          text: 'Explore the island beyond the House of Slaves. The IFAN Historical Museum in the old fort covers the broader history of Senegal. Small art galleries line the sandy lanes — many feature contemporary Senegalese artists working in vibrant colours and mixed media. Climb to the Castel fort on the island\'s summit for views across the harbour to Dakar\'s skyline. The island has a small beach, a handful of restaurants, and an atmosphere of tranquil beauty that contrasts sharply with the historical horrors it memorialises.',
+          tip: 'Gorée\'s art galleries often sell directly from artists at fair prices. Paintings start from 10,000 XOF. The quality is excellent and supports the island\'s creative community.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Plateau Evening & Thiéboudienne',
+          text: 'Return to Dakar and explore the Plateau district in the cooler evening hours. The colonial-era buildings of Independence Square and the surrounding streets are atmospheric after dark. Find a local restaurant (gargottes are the simplest and cheapest) and order thiéboudienne — the Senegalese national dish of rice and marinated fish with vegetables and tamarind. The dish is served communally from a large platter, eaten with the right hand or a spoon, and is satisfying beyond its humble description.',
+          tip: 'Gargottes (local eateries) serve thiéboudienne at lunch for 1,000–2,000 XOF per plate. Restaurant versions cost more but the gargotte experience is more authentic.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Monument, IFAN Museum & Markets',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'African Renaissance Monument',
+          text: 'Visit the African Renaissance Monument on the Collines des Mamelles — a 49-metre bronze statue symbolising Africa\'s emergence from centuries of oppression. The sculpture depicts a man, woman, and child in dynamic motion, and the scale is overwhelming up close. The observation deck inside the torso offers panoramic views across the Cap-Vert peninsula, the Almadies coastline, and the Atlantic Ocean. The monument was controversial when completed in 2010, but it has become an iconic symbol of modern Dakar.',
+          tip: 'Visit in the morning when the monument is front-lit by the sun. Entry: 5,000 XOF. The internal elevator is sometimes out of service — expect to climb stairs.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'IFAN Museum & Sandaga Market',
+          text: 'Visit the IFAN Museum of African Arts (Musée Théodore Monod) on Place Soweto — Senegal\'s finest museum of West African art and ethnography. The collection includes masks, textiles, musical instruments, and ceremonial objects from across the region. Afterwards, walk to the Sandaga Market — Dakar\'s largest and most chaotic market, a sensory overload of fabric, clothing, electronics, food, and noise. The energy is intense — hawkers, taxis, and shoppers create a human current that sweeps you through the lanes.',
+          tip: 'Sandaga Market is not for the faint-hearted — it is loud, crowded, and pickpockets operate. Keep valuables secure and go with a local friend or guide for the best experience.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mbalax Music Night',
+          text: 'Dakar is the capital of mbalax — the Senegalese music genre that fuses traditional sabar drumming with modern pop, rock, and jazz. Clubs in the Almadies, Ngor, and Plateau districts feature live bands and DJs most nights. The energy of a Dakar mbalax night is extraordinary — the sabar drum rhythms are complex and propulsive, and the dancing is virtuosic. Dinner before the clubs: yassa poulet (chicken in onion and lemon sauce) or mafé (peanut stew) with rice.',
+          tip: 'Clubs open at 10pm but do not get busy until midnight. Cover charges range from 3,000–10,000 XOF depending on the venue and night. Just Fabi Dakar and Thiossane are legendary mbalax venues.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Lac Rose, Ngor Island & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lac Rose (Lac Retba)',
+          text: 'Take a taxi or arranged transport 35km northeast of Dakar to Lac Rose (Lac Retba) — a shallow lake that turns vivid pink due to Dunaliella salga algae, especially during the dry season (November–June). The pink colour is most intense in the late morning sun. The lake was the finish line for the Dakar Rally for decades. Watch salt harvesters wade into the hypersaline water (10 times saltier than the ocean), coated in shea butter to protect their skin, filling boats with salt from the lake bed — backbreaking work that has sustained communities here for generations.',
+          tip: 'The pink colour varies with weather, season, and time of day — dry season mornings offer the most vivid pink. Confirm current conditions with your hotel before going. Round-trip taxi: 15,000–20,000 XOF.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ngor Island & Beach',
+          text: 'Return to Dakar and take a pirogue (traditional wooden boat, 1,000 XOF return) from Ngor village to Ngor Island — a tiny island just offshore with a beautiful sandy beach, a few simple restaurants, and a laid-back atmosphere. Swim in the clear water, eat grilled fish on the beach, and watch the surfers riding the break off the island\'s north shore (Ngor Right is one of West Africa\'s most famous surf spots). The island feels worlds away from the city visible across the water.',
+          tip: 'Pirogues to Ngor Island run continuously from the Ngor village beach. The crossing takes 5 minutes. The island beach can get crowded on weekends — visit on a weekday for more space.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Almadies Sunset & Farewell Dinner',
+          text: 'Drive to the Pointe des Almadies — the westernmost point of mainland Africa. Watch the sunset from this symbolic geographical extremity, where the African continent meets the Atlantic Ocean. Farewell dinner at a seafood restaurant in the Almadies district: grilled lobster, thiéboudienne, or dibi (grilled lamb) with attaya (Senegalese green tea ceremony, three rounds of increasingly sweet tea). Dakar is a city of enormous energy, deep history, and vibrant culture — it leaves a powerful impression.',
+          tip: 'Pointe des Almadies has several upscale restaurants and a more relaxed atmosphere than central Dakar. Sunset dinners on the cliffs are spectacular but book ahead for waterfront tables.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Plateau Discovery',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival & Plateau Orientation',
+          text: 'Arrive in Dakar and check into your accommodation. The Plateau district is the colonial-era centre — tree-lined boulevards, Art Deco buildings, the Presidential Palace, and Independence Square. Take an orientation walk through the Plateau to acclimatise to the heat, the traffic, the vibrant street life, and the energy of West Africa\'s most dynamic city. Dakar is loud, colourful, and relentlessly alive — embrace the intensity from the first moment.',
+          tip: 'Dakar traffic is notorious. Use taxis (negotiate the price before entering — no meters) or ride-hailing apps (Yango works well). Expect 1,500–3,000 XOF for most city journeys.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'IFAN Museum & Cathedral',
+          text: 'Visit the IFAN Museum of African Arts (2,000 XOF) for an introduction to West African cultural heritage — masks, textiles, musical instruments, and ceremonial objects from across the region. The museum is a crash course in Senegalese and broader West African art history. Nearby, the Dakar Cathedral (built 1929) is an unexpected sight — a twin-towered neo-Romanesque church in a predominantly Muslim city, reflecting Senegal\'s tradition of religious tolerance and coexistence.',
+          tip: 'The IFAN Museum is small but excellent. Allow 1–2 hours. The air conditioning inside is a welcome break from the midday heat.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'First Thiéboudienne & City Atmosphere',
+          text: 'Find a gargotte (local eatery) for your first thiéboudienne — the Senegalese national dish that will accompany you throughout the week. The communal platter of marinated fish, rice, tamarind, and vegetables is satisfying, flavourful, and remarkably cheap (1,000–2,000 XOF). Walk the evening streets of the Plateau as the heat subsides and the city shifts into its social gear — cafes fill, street vendors set up, and the energy of Dakar in the evening is infectious.',
+          tip: 'Gargottes are the cheapest and most authentic eating option. Point at what you want and sit down — no menu, no fuss. Lunch is the main meal; dinner service starts later.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Île de Gorée Full Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Early Ferry to Gorée',
+          text: 'Take the first ferry to Île de Gorée and spend the full morning on the island. Visit the Maison des Esclaves with its Door of No Return — the symbolic memorial to the transatlantic slave trade. The museum is small but its power comes from the location itself: standing in the doorway where captives were loaded onto ships, looking out at the open Atlantic. The silence of the museum contrasts with the horror it represents. Take time to sit and reflect.',
+          tip: 'Visit the House of Slaves early when it opens — the emotional impact is strongest when the rooms are quiet and you can absorb the space without crowds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gorée Art, Beach & Fort',
+          text: 'Explore the rest of the island: the IFAN Historical Museum in the old fort, the art galleries lining the sandy lanes, the small beach on the east side, and the fortified summit with views back to Dakar. The colonial architecture is beautiful — pastel-painted stone houses with wooden shutters, bougainvillea cascading over walls, and narrow lanes fragrant with frangipani. Artists work in open studios and sell directly — the island has a genuine creative community.',
+          tip: 'Lunch on Gorée at one of the island restaurants — grilled fish with rice and sauce costs 3,000–5,000 XOF. The seafood is fresh and the setting is beautiful.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Evening Reflection',
+          text: 'Take a late afternoon ferry back to Dakar. The return crossing offers a view of the Dakar skyline from the water — the modern city that grew from the colonial port whose history Gorée represents. Dinner in the Plateau: yassa poulet (chicken in onion and lemon sauce) is the perfect comfort food after an emotionally powerful day.',
+          tip: 'The last ferry from Gorée departs around 6pm (confirm the schedule). Do not miss it — there are limited options if you are stranded on the island.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'African Renaissance Monument & Almadies',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'African Renaissance Monument',
+          text: 'Visit the African Renaissance Monument on the Collines des Mamelles. The 49-metre bronze statue is a powerful symbol of modern African identity — depicting a family emerging triumphantly from the earth. The observation deck inside the torso provides panoramic views of the entire Cap-Vert peninsula. The monument\'s design and construction (by North Korean sculptors, a controversial choice) sparked debate about African self-representation and neo-colonialism that continues to enrich discussions about the statue\'s meaning.',
+          tip: 'Combine the monument visit with a walk around the Mamelles lighthouse area for additional views of the coastline.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Almadies Coastline & Surfing',
+          text: 'Explore the Almadies district — Dakar\'s upscale western peninsula and the westernmost point of mainland Africa. The Pointe des Almadies is a symbolic spot: the furthest west you can stand on the African continent. The coastline has beaches, surf breaks, and cliffside restaurants. Surfing is popular here — board rentals and lessons are available at several beach spots (10,000–15,000 XOF for a lesson). The surf break at Ngor Right, visible from the Almadies, is one of the most famous in West Africa.',
+          tip: 'The Almadies is Dakar\'s most modern and expensive district. Restaurant prices are higher but the coastal setting and sunset views are worth it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Almadies Sunset Dinner',
+          text: 'Dine at a cliffside restaurant in the Almadies as the sun sets over the Atlantic — the sky turns vivid orange and pink, and the fishing pirogues return to shore in silhouette. The seafood here is excellent: grilled lobster, prawn thiéboudienne, and fresh oysters from the Petite Côte are specialities. The sunset from the westernmost point of Africa has a symbolic grandeur that matches the visual spectacle.',
+          tip: 'Book a waterfront table in advance at restaurants like Lagon 1 or La Cabane du Surfeur. Weekend sunset tables fill quickly.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Markets, Crafts & Local Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sandaga Market & HLM Fabric Market',
+          text: 'Plunge into Sandaga Market — Dakar\'s largest, noisiest, and most overwhelming market experience. Electronics, clothing, food, household goods, and everything else imaginable packed into a labyrinth of stalls and lanes. The energy is intense and the bargaining spirited. From Sandaga, walk or taxi to the HLM Fabric Market — a paradise for textile lovers, with African wax prints, bazin cloth, and tailoring services. Choose a fabric and have a garment made to measure in 24 hours.',
+          tip: 'Keep valuables secure at Sandaga — pickpockets operate in crowded areas. Go with a local guide or friend for the best experience and safest navigation.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Village des Arts & Soumbédioune Market',
+          text: 'Visit the Village des Arts — a complex of artist studios and galleries where Senegalese painters, sculptors, and mixed-media artists work and exhibit. The standard is high and prices are fair. Continue to the Marché Artisanal de Soumbédioune — a large craft market near the sea where woodcarvers, jewellers, leather workers, and textile artisans sell directly. Bargaining is expected — start at 40% and work toward 60%. The quality of Senegalese handicrafts is excellent.',
+          tip: 'Soumbédioune is more tourist-oriented than Sandaga but less overwhelming. It is the best place in Dakar to buy quality souvenirs at reasonable prices.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sabar Drumming & Street Life',
+          text: 'On weekend evenings, spontaneous sabar drumming sessions happen in neighbourhoods across Dakar. These are social events — not performances for tourists — where communities gather around a circle of drummers and dancers display virtuosic moves to complex rhythms. If you hear drumming, follow the sound. Otherwise, walk the evening streets of the Médina or Plateau and absorb the social life: men gathered around attaya tea, women braiding hair, children playing football, music pouring from every doorway.',
+          tip: 'Sabar sessions are most common on Saturday evenings in residential neighbourhoods. Ask locals or your hotel for current events — they are informal and not advertised.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Lac Rose & Northern Dakar',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lac Rose (Lac Retba)',
+          text: 'Arrange transport to Lac Rose, 35km northeast of Dakar. The shallow saline lake turns vivid pink from Dunaliella salga algae — most intensely during the dry season (November–June) in bright midday sun. Watch the salt harvesters at work: men and women wading into the hypersaline water (salinity up to 40%), coated in protective shea butter, scraping salt from the lake bed into pirogues. It is backbreaking labour that has sustained local communities for generations. Float in the water — the salt content makes you impossibly buoyant.',
+          tip: 'The pink colour is not always visible — it depends on algae concentration, weather, and sunlight. Dry season midday offers the best chances. Confirm conditions before going.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lac Rose Activities & Return',
+          text: 'Explore the Lac Rose area: quad biking on the surrounding sand dunes (10,000 XOF per hour), horse riding along the shore, or simply swimming (floating) in the extraordinary salt water. The surrounding landscape of white sand dunes and sparse vegetation feels like another world from urban Dakar. Small restaurants near the lake serve grilled fish and thiéboudienne. Return to Dakar in the afternoon.',
+          tip: 'Bring sunscreen, a hat, and plenty of water. The lake area has minimal shade and the reflected light from the water and white sand is intense.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mbalax Club Night',
+          text: 'Dedicate the evening to Dakar\'s legendary mbalax music scene. The genre, pioneered by Youssou N\'Dour and evolved by generations of Senegalese musicians, fuses sabar drumming with pop, rock, and jazz. Live bands perform at clubs in the Almadies, Ngor, and Plateau districts most nights. The dancing is as impressive as the music — professional dancers often join the crowd, and the energy builds until the early hours. This is Dakar\'s soul, and experiencing it in person is unforgettable.',
+          tip: 'Mbalax nights peak between 1am and 4am. Pace yourself and stay hydrated. Cover charges are usually 3,000–10,000 XOF including a drink.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Ngor Island & Médina Neighbourhood',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ngor Island Beach Day',
+          text: 'Take a pirogue from Ngor village to Ngor Island — a 5-minute crossing to a tiny island with a beautiful beach, simple restaurants, and a complete absence of traffic. Swim in the clear water, eat grilled fish with your feet in the sand, and watch the surfers riding Ngor Right — one of West Africa\'s premier surf breaks. The island is small enough to walk around in 30 minutes, but the relaxed atmosphere encourages you to stay all morning.',
+          tip: 'Pirogue return tickets cost 1,000 XOF. Boats run continuously throughout the day. Bring reef shoes — the beach can be rocky in places.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Médina Neighbourhood Walk',
+          text: 'Explore Dakar\'s Médina neighbourhood — the densely populated district built in the early 20th century that remains the heart of local Dakar life. The narrow streets are alive with commerce: tailors sewing on the sidewalk, food vendors, barber shops, and the constant soundtrack of radio, conversation, and traffic. This is not a tourist area — it is Dakar as Dakarois experience it daily. The energy, colour, and humanity are overwhelming in the best sense.',
+          tip: 'The Médina is safe during the day but busy and confusing. Keep valuables secure and accept that you may get lost — the neighbourhood rewards wandering.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Attaya Tea Ceremony & Farewell',
+          text: 'Experience the Senegalese attaya tea ceremony. This ritual preparation of green tea, brewed three rounds in a small pot and poured between glasses to create a thick froth, is the social glue of Senegalese life. Men gather on sidewalks in the evening to share attaya, discuss football, politics, and life, while the tea grows sweeter with each round (three rounds represent the stages of life). Accept every invitation to sit and share — this is the purest expression of Senegalese teranga (hospitality).',
+          tip: 'Attaya takes 30–60 minutes for the full three rounds. Do not rush it — the ceremony is the socialising, not the tea itself.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Day & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Morning Corniche Walk',
+          text: 'Walk the Corniche — the coastal road that follows Dakar\'s western shoreline from the Plateau south to the Almadies. The morning light on the Atlantic is beautiful, joggers and fishermen share the promenade, and the views of the rocky coastline, surf breaks, and fishing pirogues are quintessentially Dakar. Stop at one of the coastal cafes for café Touba — Senegal\'s spiced coffee flavoured with djar (selim pepper) and sugar, utterly addictive.',
+          tip: 'Café Touba is available from street vendors for 100–200 XOF per cup. The distinctive pepper-sugar-coffee flavour is unique to Senegal and one of the great tastes of West Africa.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Shopping & Soumbédioune',
+          text: 'Use the morning for final shopping at Soumbédioune craft market or the HLM fabric market. Pick up a tailored garment if you ordered fabric earlier in the week. Buy last-minute souvenirs: Senegalese glass paintings (souwer), wooden masks, leather goods, and wax print fabrics make excellent gifts. The quality of Senegalese handicrafts is consistently high.',
+          tip: 'Glass paintings (souwer) are a distinctive Senegalese art form — vivid scenes painted on the reverse side of glass. Originals start from 5,000 XOF from market artists.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Departure from Dakar',
+          text: 'Depart Dakar — a city of enormous vitality, deep history, and cultural richness that challenges and rewards in equal measure. The teranga (hospitality), the mbalax music, the thiéboudienne, and the human energy of West Africa\'s most dynamic city leave a lasting impression. Dakar is not an easy city — it is hot, loud, and chaotic — but it is unforgettable, and the connections made with Senegalese people are among the warmest in all of Africa.',
+          tip: 'Allow 2+ hours to reach Blaise Diagne International Airport (AIBD) from central Dakar — the airport is 47km south and traffic can be severe. The Dakar Dem Dikk airport bus is the cheapest option.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat at gargottes', text: 'Local eateries (gargottes) serve thiéboudienne, yassa, and mafé for 1,000–2,500 XOF per plate ($1.50–4). This is the cheapest and most authentic way to eat in Dakar.' },
+  { title: 'Use Yango for transport', text: 'The Yango ride-hailing app works well in Dakar and is often cheaper than negotiating with taxi drivers. Most city rides cost 1,500–3,000 XOF ($2.50–5).' },
+  { title: 'Stay in the Plateau or Médina', text: 'Budget accommodation in the Plateau or near Sandaga starts from 10,000–20,000 XOF per night ($15–30). The Almadies district is more expensive but quieter.' },
+  { title: 'Ferry to Gorée early', text: 'The first ferry to Gorée is the quietest. Return tickets cost 5,200 XOF for foreigners — there is no way to reduce this, but the island is worth every franc.' },
+  { title: 'Share taxis to Lac Rose', text: 'A private taxi to Lac Rose costs 15,000–20,000 XOF return. Share with other travellers or join a group tour for 5,000–8,000 XOF per person including transport and guide.' },
+  { title: 'Drink café Touba', text: 'Street vendors sell café Touba for 100–200 XOF per cup — cheaper than any cafe and delicious. This spiced coffee is Senegal\'s national drink and the best value caffeine in West Africa.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–20', midrange: '$25–60', splurge: '$80+', notes: 'Hostel → guesthouse → boutique hotel' },
+  { category: 'Food', budget: '$5–10', midrange: '$10–25', splurge: '$35+', notes: 'Gargotte → local restaurant → upscale dining' },
+  { category: 'Transport', budget: '$3–8', midrange: '$8–15', splurge: '$20+', notes: 'Shared taxi → Yango → private car' },
+  { category: 'Activities', budget: '$3–10', midrange: '$10–25', splurge: '$40+', notes: 'Self-guided → group tours → private guides' },
+  { category: 'Entry Fees', budget: '$2–5', midrange: '$5–10', splurge: '$10–15', notes: 'Gorée ferry, monument, museums' },
+  { category: 'Daily Total', budget: '$25–55', midrange: '$60–135', splurge: '$185+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Many nationalities are visa-free for Senegal (including EU and US). Some require a visa — check before travel',
+      'A yellow fever vaccination certificate may be required for entry',
+      'Keep a copy of your passport and visa at all times — police checkpoints are common',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Malaria risk exists in Senegal — consult your doctor about prophylaxis before travel',
+      'Drink bottled water only. Avoid ice in drinks from street vendors',
+      'Dakar is generally safe but petty theft and pickpocketing occur in crowded areas like Sandaga Market',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Taxis are the primary transport — negotiate the price before entering. No meters are used',
+      'Yango ride-hailing app works reliably and shows prices upfront',
+      'Car rapides (colourful minibuses) are the cheapest option but crowded and confusing for first-time visitors',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy an Orange or Free Senegal SIM card at the airport for affordable data — 2,000 XOF for 2GB',
+      'WiFi is available at hotels and cafes but speeds vary. Download offline maps and translation apps',
+      'French is the official language but Wolof is spoken everywhere — a translation app is very useful',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: XOF (CFA Franc). Fixed exchange rate with the Euro (1 EUR = 655.957 XOF)',
+      'Cash is preferred for most transactions. ATMs available in the Plateau and Almadies districts',
+      'Tip 5–10% at restaurants. Guides expect 2,000–5,000 XOF per day. Round up taxi fares',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Lightweight, breathable clothing — Dakar is hot and humid year-round. Modest dress is appreciated',
+      'Comfortable walking shoes for market exploration and a day pack for essentials',
+      'Mosquito repellent (DEET-based), sunscreen, and a hat. A portable phone charger for long days out',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Teranga (Hospitality)', text: 'Senegal is famous for teranga — a deep cultural value of hospitality and generosity. Accept invitations to share tea, food, and conversation. Reciprocate generosity when you can. The warmth of Senegalese people is genuine and transformative.' },
+  { icon: '🌍', title: 'Religious Respect', text: 'Senegal is approximately 95% Muslim with a strong Sufi tradition. Dress modestly, especially in residential areas and near mosques. Senegal is known for exceptional religious tolerance — Christians and Muslims coexist harmoniously.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Always ask before photographing people. Many Senegalese are happy to pose but some are not — respect a refusal immediately. The House of Slaves on Gorée is a memorial — photograph with sensitivity and respect.' },
+  { icon: '🗣', title: 'Greetings Matter', text: 'Greetings in Senegal are elaborate and important. "Salaam alaikum" (Arabic) or "Nanga def?" (Wolof for "How are you?") followed by an extended exchange about family and health is expected. Rushing past greetings is considered rude.' },
+  { icon: '🤝', title: 'Support Local Economy', text: 'Buy from artisans at Soumbédioune market, eat at gargottes, use local guides, and tip fairly. Tourism is an important income source, and your spending goes furthest when it reaches local businesses directly.' },
+  { icon: '🕐', title: 'Senegalese Time', text: 'Life in Dakar operates on a flexible schedule. Appointments, transport, and events rarely start on time. Embrace the pace — frustration accomplishes nothing, and patience opens doors to deeper experiences.' },
+];
+---
+
+<CityGuideLayout
+  title="Dakar Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Dakar guide for young travelers. Île de Gorée, mbalax music, Lac Rose, and Senegalese culture with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/dakar-hero.webp"
+  heroFlag="🇸🇳"
+  heroCountry="Senegal"
+  heroRegion="Africa"
+  heroCity="Dakar"
+  heroSubtitle="West Africa's most vibrant capital — where Atlantic waves meet mbalax rhythms, teranga hospitality, and the profound history of Île de Gorée."
+  heroPills={["3-Day City","Cultural","Nov – Apr Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Dakar offers excellent value for budget travellers — these ranges cover backpackers through comfortable mid-range visitors."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Dakar is a city of deep teranga (hospitality) and rich cultural heritage — approach with openness, respect, and a willingness to be transformed by West Africa's most dynamic capital."
+  ctaCity="Dakar"
+  ctaText="Find travel companions to explore Dakar together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

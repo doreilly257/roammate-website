@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PHP (Peso)', detail: '1 USD ≈ ₱56' },
+  { icon: '🗣', label: 'Language', value: 'Filipino / English', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'PHT (UTC+8)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Year-round (Mar – Jun best)', detail: 'Calmest seas and best visibility' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–70 USD', detail: 'Including diving' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 30 days', detail: 'Extendable to 59 days at immigration' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Thresher Shark Dawn Dive & Beach Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Monad Shoal — Thresher Shark Encounter',
+          text: 'Wake at 4am for a 4:30am boat departure to Monad Shoal — a submerged island 8km off Malapascua where thresher sharks rise from the deep to visit cleaning stations at dawn. This is one of the only places in the world where you can reliably see these extraordinary animals, with their scythe-like tails that can be longer than their bodies. The cleaning station sits at 20–30m on a sandy plateau where cleaner wrasse remove parasites from the sharks. Dives cost ₱3,500–5,000 including equipment.',
+          tip: 'Be at the cleaning station before sunrise — the sharks arrive with the first light and leave within 60–90 minutes. Stay still on the sandy bottom and control your breathing to avoid scaring them away with bubbles.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lighthouse Island Snorkelling',
+          text: 'After the adrenaline of the dawn dive, spend the afternoon snorkelling around Lighthouse Island — a tiny islet just south of Malapascua accessible by a 10-minute boat ride or a 30-minute swim from the main beach. The shallow reef is alive with clownfish in anemones, blue-spotted stingrays on the sand, and triggerfish darting between coral heads. Snorkel gear rents for ₱200–300/day. The beach on Malapascua itself is postcard-perfect white sand.',
+          tip: 'The current around Lighthouse Island can be surprisingly strong — stay close to the reef edge and do not swim beyond the point if the water is pulling. Fins are essential.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Seafood Dinner on Bounty Beach',
+          text: 'Bounty Beach is Malapascua\'s main strip — a curve of white sand lined with dive shops, guesthouses, and restaurants. Fresh grilled fish with garlic rice costs ₱200–350 at beachfront restaurants. The sunset view from Bounty Beach faces west with a clear horizon. After dinner, most divers swap thresher shark stories over San Miguel beer (₱60–80) at the beach bars. The island is small enough to walk end-to-end in 20 minutes.',
+          tip: 'Order the catch of the day — the fish is pulled from the water that morning. Avoid seafood that has been on ice too long; ask the kitchen what is freshest.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Thresher Sharks & Lighthouse Island',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Monad Shoal — Dawn Thresher Encounter',
+          text: 'The 4:30am boat to Monad Shoal is non-negotiable — this is the dive that draws people from around the world to Malapascua. Descend to the cleaning station at 22–28m and wait. Thresher sharks — solitary, graceful, with impossibly long crescent tails — glide in from the deep blue as dawn breaks. Sightings are near-guaranteed year-round, with March through June offering the best visibility and the calmest seas. Your dive guide will position the group on the sandy slope with the cleaning station uphill.',
+          tip: 'Advanced Open Water certification is strongly recommended — the cleaning station sits at 25m and you need excellent buoyancy to stay motionless on the sand without disturbing the sharks or kicking up silt.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lighthouse Island & Reef Dive',
+          text: 'After lunch and a surface interval, join an afternoon dive at one of Malapascua\'s shallower reef sites. The coral gardens around Lighthouse Island at 8–15m are home to nudibranchs, frogfish, seahorses, and juvenile reef sharks. Alternatively, snorkel the reef from the surface — the visibility is excellent and the reef starts in knee-deep water. The dive shops on Bounty Beach charge ₱2,500–3,500 per dive including equipment.',
+          tip: 'Ask your dive guide to point out the macro life — frogfish and seahorses are masters of camouflage and nearly invisible to untrained eyes. Bring an underwater camera with a macro lens if possible.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Island Walk & Sunset',
+          text: 'Walk to the north end of Malapascua — past the fishing village where locals dry fish on bamboo racks and children play basketball on the concrete court. The north coast has a rugged shoreline with rock pools and a quiet beach that few tourists visit. Return to Bounty Beach for sunset, fresh mango shakes (₱80), and a dinner of adobo chicken with rice (₱150–250) at one of the family-run eateries behind the main strip.',
+          tip: 'The fishing village is a working community — photograph respectfully and buy a snack from one of the small sari-sari stores to support the local economy.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Gato Island Cave Dive & Mandarin Fish',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Gato Island — Swim-Through Cave & Sharks',
+          text: 'Gato Island, 45 minutes by boat north of Malapascua, features a dramatic swim-through cave that cuts beneath the island — a 30m tunnel at 8–12m depth with light filtering through gaps in the rock above. Inside, whitetip reef sharks rest on the sandy bottom and banded sea kraits coil in crevices. The cave is wide enough to swim through comfortably but a torch is essential. Outside the cave, the walls are covered in soft corals, sea fans, and bamboo sharks. Two dives at Gato cost ₱4,000–5,500.',
+          tip: 'Bring a powerful dive torch — the cave interior is dark and the most interesting creatures (sea kraits, resting sharks) are tucked into shadows. Stay with your guide and do not touch the ceiling or walls.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rest & Snorkelling',
+          text: 'After two morning dives, spend the afternoon resting. Malapascua has a relaxed, island pace — hammocks in guesthouse gardens, cold coconuts from beach vendors (₱40), and warm shallow water for floating. If you have energy, rent a kayak (₱300/hour) and paddle south along the coast to explore small coves and rocky headlands. The house reef in front of Bounty Beach has resident turtles visible while snorkelling.',
+          tip: 'Respect your surface interval — the Gato cave dive and a deep morning dive require adequate off-gassing time. Relax, hydrate, and do not dive again for at least 3–4 hours.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mandarin Fish Sunset Dive',
+          text: 'The mandarin fish sunset dive at Lighthouse Island is one of Malapascua\'s hidden highlights. As the sun sets, tiny psychedelic-coloured mandarin fish emerge from the rubble coral to perform their mating dance — the males display iridescent blue and orange patterns to attract females. The dive starts at dusk in 3–5m of water and requires a slow, patient approach with red-filtered torches to avoid disturbing them. This is a macro photographer\'s dream dive. Cost around ₱2,500–3,000.',
+          tip: 'Use a red filter on your torch — white light scares mandarin fish back into the coral. Move extremely slowly and let the dive guide position you. These fish are tiny — about 6cm long.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Second Thresher Attempt & Kalanggaman Sandbar',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Monad Shoal — Second Dawn Dive',
+          text: 'A second dawn dive at Monad Shoal gives you another chance to observe the thresher sharks, often in different conditions. No two shark dives are the same — sometimes a single shark cruises past at close range, other mornings you might see three or four circling the cleaning station simultaneously. With two days of experience, your buoyancy will be better and you will be calmer on the bottom, which means closer encounters. The second dive also lets you focus on photography if the first was pure awe.',
+          tip: 'If you saw threshers on day one, ask your guide to position you differently — perhaps further from the group or at a different angle to the cleaning station for better photo opportunities.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kalanggaman Island Sandbar Day Trip',
+          text: 'Kalanggaman Island is a 1.5-hour boat ride from Malapascua — a pristine sandbar stretching into turquoise water with zero development except a ranger station. The sand is blindingly white and the snorkelling on the reef drop-off is excellent — turtles, reef fish, and occasional reef sharks. Day trips cost around ₱1,500 including the boat, lunch, and environmental fee. Bring your own snorkel gear for the best experience. The sandbar is one of the most photographed locations in the Visayas.',
+          tip: 'There is no shade on the sandbar — bring a hat, sunscreen, and a long-sleeved rash vest. The sun reflecting off white sand is brutally intense. Bring enough water for the full day.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Night & Departure Planning',
+          text: 'Spend your last evening on Bounty Beach with a farewell seafood dinner — whole grilled fish, garlic butter prawns, and cold San Miguel. Boats back to Maya port on Cebu depart from 7am (₱100, 30 minutes). From Maya, buses and vans run to Cebu City (₱200–300, 4 hours) for onward flights. Book your departure boat the evening before as early morning boats fill up. Alternatively, some dive shops arrange direct transfers to Cebu City.',
+          tip: 'Do not fly within 18 hours of your last dive — this is a strict safety rule to prevent decompression sickness. Plan your final dive day accordingly and use the surface interval for Kalanggaman.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Stay on Malapascua, not mainland', text: 'Guesthouses on Malapascua start at ₱500–800/night for a fan room. Staying on the island eliminates daily boat transfers and lets you make the 4:30am dive boat without a pre-dawn commute from Maya port.' },
+  { title: 'Book dives as a package', text: 'Most dive shops offer discounts for 4+ dives booked together. A 6-dive package can save ₱1,000–2,000 compared to individual dive pricing. Ask about student or backpacker discounts.' },
+  { title: 'Eat behind the beach', text: 'Restaurants directly on Bounty Beach charge tourist prices. Walk one street back to find family-run eateries where adobo, sinigang, and rice cost ₱100–180 — less than half the beachfront price.' },
+  { title: 'Bring your own snorkel gear', text: 'Rental gear on Malapascua is expensive and often poor quality. A decent mask and snorkel costs ₱500–800 in Cebu City and pays for itself in two days of use.' },
+  { title: 'Share boat transfers', text: 'Private boats to Kalanggaman or Gato Island are expensive. Join group tours organised by dive shops or share a boat with other travellers from your guesthouse to split costs.' },
+  { title: 'Travel by local bus from Cebu', text: 'The Ceres bus from Cebu North Bus Terminal to Maya port costs ₱200–250 and takes 4 hours. Air-con vans cost ₱300–400 and take 3.5 hours. Both are vastly cheaper than private transfers.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–18', midrange: '$25–50', splurge: '$70+', notes: 'Fan room → AC guesthouse → beachfront resort' },
+  { category: 'Food', budget: '$5–12', midrange: '$12–25', splurge: '$30+', notes: 'Local eateries → beachfront restaurants → seafood feasts' },
+  { category: 'Diving (per dive)', budget: '$60–70', midrange: '$70–90', splurge: '$100+', notes: 'Group dives → guided dives → private guide' },
+  { category: 'Transport', budget: '$2–5', midrange: '$5–15', splurge: '$25+', notes: 'Public boat → shared transfer → private boat' },
+  { category: 'Day Trips', budget: '$25–30', midrange: '$30–50', splurge: '$60+', notes: 'Group Kalanggaman → private snorkel trip → charter' },
+  { category: 'Daily Total', budget: '$40–70', midrange: '$70–130', splurge: '$180+', notes: 'Budget diver → comfortable → luxury diving' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Visa-free 30 days for most nationalities — extendable to 59 days at any Bureau of Immigration office',
+      'Fly into Cebu Mactan International Airport, then bus or van to Maya port (4 hours), then boat to Malapascua (30 minutes)',
+      'Keep ₱1,700 departure tax in cash for some domestic airports',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Travel insurance with diving cover to 30m+ is essential — standard travel insurance excludes scuba diving',
+      'The nearest hospital is in Daanbantayan on Cebu mainland (1 hour by boat) — the nearest recompression chamber is in Cebu City',
+      'Bring reef-safe sunscreen, insect repellent, and basic first aid supplies — the island pharmacy is limited',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Malapascua is tiny — everything is within 20 minutes\' walk from Bounty Beach',
+      'Boats to Maya port run from 7am to 5pm (₱100, 30 minutes). The last boat back fills up — do not miss it',
+      'Motorcycle rentals available (₱400–500/day) but the island is small enough to walk everywhere',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Globe or Smart SIM card at Cebu airport — data coverage on Malapascua is usable but slow',
+      'WiFi at guesthouses and dive shops is unreliable — download offline maps and entertainment before arriving',
+      'Share your dive plan with someone not diving — standard safety practice for any dive trip',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: PHP (Peso). 1 USD ≈ ₱56. There is no ATM on Malapascua — bring enough cash from Cebu',
+      'Dive shops accept cash and sometimes cards (with surcharge). All other businesses are cash only',
+      'Budget ₱150–250 for tips per dive day — guides and boat crew appreciate it',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Underwater camera or GoPro with red filter — you will want to photograph thresher sharks',
+      'A powerful dive torch for the Gato Island cave and mandarin fish sunset dive',
+      'Reef-safe sunscreen, dry bag for electronics, and a rash vest for sun protection between dives',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🦈', title: 'Respect the Sharks', text: 'Thresher sharks are shy and easily disturbed. Stay motionless on the sandy bottom, control your breathing, and never chase or reach towards a shark. Flash photography is prohibited at the cleaning station — it drives the sharks away for hours.' },
+  { icon: '🌍', title: 'Marine Conservation', text: 'Malapascua\'s reefs were damaged by Typhoon Haiyan in 2013 and are still recovering. Never touch coral, anchor on sand not reef, and support dive shops that contribute to reef restoration programmes. The Thresher Shark Divers foundation runs conservation projects.' },
+  { icon: '🙏', title: 'Respect the Community', text: 'Malapascua is a fishing village first and a dive destination second. Dress modestly when walking through the village, do not photograph children without parents\' permission, and buy from local sari-sari stores to keep money in the community.' },
+  { icon: '🗣', title: 'Language', text: 'Filipino (Tagalog) and Cebuano are the local languages. English is widely understood, especially at dive shops. Learning Salamat (thank you) and Magandang umaga (good morning) earns genuine smiles.' },
+  { icon: '🤝', title: 'Support Local Dive Guides', text: 'Many dive guides are local Malapascuenos who grew up on the island. Choosing locally-staffed dive shops keeps tourism revenue on the island. Tip your guide and boat crew — they work long hours starting before dawn.' },
+  { icon: '🚯', title: 'Leave No Trace', text: 'Waste management on small Philippine islands is limited. Bring a reusable water bottle, avoid single-use plastics, and take your rubbish back to the mainland. Some dive shops organise underwater clean-up dives — join one if you have time.' },
+];
+---
+
+<CityGuideLayout
+  title="Thresher Sharks Malapascua Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate guide to thresher shark diving at Malapascua Island, Philippines. Dawn dives, cave dives, mandarin fish with 1 and 3-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/thresher-sharks-hero.webp"
+  heroFlag="🇵🇭"
+  heroCountry="Philippines"
+  heroRegion="Southeast Asia"
+  heroCity="Thresher Sharks"
+  heroSubtitle="One of the only places on earth to see thresher sharks reliably — dawn dives at a cleaning station off a tiny Philippine island in the Visayas."
+  heroPills={["Dawn Shark Dives","Cave Diving","Year-round"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Malapascua costs are driven primarily by diving — accommodation and food are affordable. These ranges cover budget backpacker to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Malapascua is a fragile island ecosystem with a tight-knit fishing community — approach with respect for both the marine life and the people who call this island home."
+  ctaCity="Malapascua"
+  ctaText="Find dive buddies to explore Malapascua together on roammate — share dawn alarms, split boat costs, and witness thresher sharks side by side."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

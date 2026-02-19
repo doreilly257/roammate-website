@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'UGX (Ugandan Shilling)', detail: 'USD accepted for tours and hotels' },
+  { icon: '🗣', label: 'Language', value: 'English / Luganda', detail: 'English is official, Luganda widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Aug, Dec – Feb', detail: 'Dry seasons, pleasant temperatures' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–45 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'eVisa required', detail: '$50 USD — apply online before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Kampala Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kasubi Tombs & Uganda Museum',
+          text: 'Start your day at the Kasubi Tombs — a UNESCO World Heritage Site and the burial ground of four Kabakas (kings) of the Buganda Kingdom. The massive thatched Muzibu Azaala Mpanga building is one of Africa\'s most important examples of organic architecture, built entirely from bark cloth and palm leaves. Guides explain the Buganda Kingdom\'s complex political structure and the significance of each tomb. Afterwards, head to the Uganda Museum on Kira Road — the country\'s oldest museum with exhibits on traditional musical instruments, archaeological finds, and ethnographic displays from Uganda\'s many kingdoms.',
+          tip: 'The Kasubi Tombs are a sacred site — remove shoes before entering the main building and follow your guide\'s instructions. Photography restrictions apply inside the tomb structures.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Owino Market & Rolex Street Food',
+          text: 'Plunge into Owino Market (St. Balikuddembe Market) — Kampala\'s largest and most chaotic market, sprawling across several city blocks near the old taxi park. Everything is sold here: secondhand clothes (mitumba), fresh produce, electronics, fabrics, and traditional medicine. The energy is overwhelming and entirely authentic. For lunch, find a street vendor making a rolex — Uganda\'s iconic street food: a chapati rolled around a fried egg omelette with vegetables. The name comes from "rolled eggs" — simple, cheap, and delicious.',
+          tip: 'Owino Market is intense — go with a local guide or friend if possible. Keep valuables secure and hidden. The market is safe but extremely crowded and disorienting for first-time visitors.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Boda-Boda Ride & Kampala Nightlife',
+          text: 'Experience Kampala from the back of a boda-boda (motorcycle taxi) — the city\'s ubiquitous and thrilling mode of transport. Take a ride from the city centre up to Kololo Hill for views over the city as the sun sets. Kampala has one of East Africa\'s most vibrant nightlife scenes — start with drinks at a rooftop bar in Kololo or Bugolobi, then move to a club for live music or DJ sets. Ugandan dancehall, afrobeats, and kadongo kamu (traditional folk) fill the dance floors.',
+          tip: 'Boda-bodas are cheap (2,000–5,000 UGX for short trips) but Kampala traffic is intense. Use SafeBoda or Uber apps for vetted drivers with helmets. Agree on the price before riding.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Kasubi Tombs, Uganda Museum & Rolex Street Food',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kasubi Tombs — Royal Burial Ground',
+          text: 'Start at the Kasubi Tombs — a UNESCO World Heritage Site and the burial ground of four Kabakas (kings) of the Buganda Kingdom. The massive thatched Muzibu Azaala Mpanga building is one of Africa\'s most important examples of organic architecture, built entirely from bark cloth, reeds, and palm leaves. Guides explain the Buganda Kingdom\'s complex clan system, the role of the Kabaka, and the spiritual significance of each tomb. The site was partially destroyed by fire in 2010 and has been painstakingly reconstructed using traditional methods.',
+          tip: 'The Kasubi Tombs are sacred — remove shoes before entering the main building. Photography restrictions apply inside. Entry is around 15,000 UGX. Guides are included and expect a small tip.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Uganda Museum & Street Food Lunch',
+          text: 'Head to the Uganda Museum on Kira Road — the country\'s oldest and most comprehensive museum. The ethnographic collection includes traditional musical instruments (the enormous Buganda royal drums), bark cloth displays, hunting tools, and models of traditional homesteads from Uganda\'s various kingdoms. The archaeological section has Stone Age tools and Iron Age pottery. After the museum, walk to any busy roadside stall for a rolex — Uganda\'s beloved street food of a chapati rolled around a fried egg omelette with onions, tomatoes, and cabbage.',
+          tip: 'The Uganda Museum is underfunded but genuinely interesting. Entry is around 10,000 UGX. Combine with a rolex from a nearby street vendor for a classic Kampala morning.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kololo Hill Sunset & Rooftop Drinks',
+          text: 'Take a boda-boda or taxi up to Kololo Hill — one of Kampala\'s seven hills and home to the city\'s upscale neighbourhood. The views from the hilltop stretch across the city\'s sprawling, chaotic rooftops and green hills in every direction. Find a rooftop bar for sunset drinks — the Acacia Mall rooftop or Cayenne bar in Bukoto are popular spots. Kampala\'s evenings are warm and sociable, and the city comes alive after dark.',
+          tip: 'Use SafeBoda or Uber for boda-boda rides — they provide helmets and GPS-tracked routes. Kampala\'s nightlife starts late; most bars fill up from 9pm.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Owino Market, Kabaka\'s Palace & Ndere Centre',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Owino Market — Kampala\'s Beating Heart',
+          text: 'Dedicate a morning to Owino Market (St. Balikuddembe Market) — Kampala\'s largest and most overwhelming market. Several city blocks of tightly packed stalls sell everything: mitumba (secondhand clothes from Europe and America), tropical fruits, live chickens, electronics, traditional herbs, and fabrics. The old taxi park adjacent to the market is a vast, chaotic bus terminal with matatus (minibuses) departing to every corner of Uganda. Breakfast on a rolex and a cup of Ugandan chai from a market vendor.',
+          tip: 'Go early (before 9am) when vendors are setting up and the atmosphere is less frantic. A local guide or new Ugandan friend makes the experience richer and safer.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kabaka\'s Palace & Mengo Hill',
+          text: 'Visit the Kabaka\'s Palace (Lubiri Palace) on Mengo Hill — the official residence of the King of Buganda. The guided tour covers the palace grounds, the Idi Amin-era underground torture chambers (a sobering reminder of Uganda\'s turbulent history), and the ceremonial courtyard. The palace provides essential context for understanding the relationship between traditional kingdoms and the modern Ugandan state. The Bulange parliament building of the Buganda Kingdom is nearby on the same hill.',
+          tip: 'Guided tours of the Kabaka\'s Palace run throughout the day and cost around 20,000 UGX. The underground chambers are not for the faint-hearted but are historically important.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ndere Cultural Centre — Traditional Dance',
+          text: 'Head to the Ndere Cultural Centre in Ntinda for an evening of traditional Ugandan music and dance. The centre hosts performances every Wednesday, Friday, and Sunday featuring dances from different Ugandan ethnic groups — the energetic Acholi larakaraka, the graceful Baganda bakisimba, and the athletic Karamojong warrior dances. A buffet dinner of Ugandan food (matooke, groundnut sauce, posho, roasted meat) is served before the show. It is the best cultural performance in Kampala.',
+          tip: 'Book Ndere Centre tickets in advance (around 60,000 UGX including dinner). Shows start at 7pm. Arrive early for the best seats — the front rows are most immersive.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Namugongo Martyrs, Crafts & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Namugongo Martyrs Shrine',
+          text: 'Take a matatu or taxi northeast to the Namugongo Martyrs Shrine — a major Catholic pilgrimage site commemorating 22 Ugandan converts who were burned alive in 1886 on the orders of Kabaka Mwanga II for refusing to renounce Christianity. The modern basilica, built on the execution site, is architecturally striking with its conical roof echoing traditional Buganda building styles. A small museum tells the story of the martyrs and early Christianity in Uganda. The Anglican Martyrs Shrine is nearby.',
+          tip: 'Namugongo is about 12km from the city centre. The shrine is free to visit and is a peaceful, contemplative place. The annual pilgrimage on June 3rd draws millions.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Buganda Road Crafts & Café Culture',
+          text: 'Browse the craft shops along Buganda Road and in the Exposure Africa gallery — Ugandan crafts include bark cloth products, Ankole cow horn jewellery, basket weaving, and recycled material art. The National Theatre on DeWinton Road hosts occasional afternoon performances and has a craft market in its grounds. Find a café in Kisementi or Kololo for coffee — Uganda grows some of the world\'s best Robusta coffee, and the local café scene is growing rapidly.',
+          tip: 'Ugandan coffee is exceptional — try a flat white or drip coffee at Endiro Coffee or 1000 Cups. Buy beans to take home from the Uganda Coffee Development Authority shop.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kabalagala Nightlife & Farewell Dinner',
+          text: 'End your Kampala trip in Kabalagala — the city\'s most famous nightlife strip. The street is lined with bars, clubs, and restaurants ranging from local joints to expat hangouts. Start with dinner at a Ugandan restaurant — try luwombo (meat or groundnut stew steamed in banana leaves), matooke (steamed green banana), and a Nile Special beer. Then join the dance floor — Kampala\'s nightlife is legendary in East Africa for its energy and warmth.',
+          tip: 'Kabalagala is busiest Thursday to Saturday nights. The area is safe and walkable but take a boda-boda or Uber home. Clubs stay open until 4–5am.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Kasubi Tombs, City Centre & Kololo Hill',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kasubi Tombs — UNESCO Heritage',
+          text: 'Begin your Kampala week at the Kasubi Tombs — the UNESCO-listed burial ground of the Buganda kings. The massive thatched building is built entirely from organic materials using traditional Buganda techniques. Guides explain the kingdom\'s political history, clan system, and the significance of the royal burial traditions that continue to this day.',
+          tip: 'Remove shoes before entering. Photography restrictions apply inside. Entry around 15,000 UGX with guide included.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'City Centre Walking Tour',
+          text: 'Walk through Kampala\'s chaotic but fascinating city centre. See the Gaddafi National Mosque (formerly the Uganda National Mosque) on Old Kampala Hill — climb the minaret for panoramic views. Continue through the old Indian quarter with its colonial-era buildings, past the bustling taxi parks, and down to the railway station area.',
+          tip: 'The Gaddafi Mosque minaret climb costs around 10,000 UGX and offers the best 360-degree views of Kampala. Dress modestly — cover shoulders and knees.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kololo Sunset & First Night Out',
+          text: 'Head up Kololo Hill for sunset views over the city. Find a rooftop bar for drinks and your first Ugandan dinner — try a rolex from a street vendor on the way, then settle into a restaurant for matooke, luwombo, and a cold Nile Special.',
+          tip: 'Kololo and Acacia Mall area have several good rooftop bars. Kampala evenings are warm year-round — shorts and a t-shirt are fine.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Uganda Museum & Owino Market',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Uganda Museum',
+          text: 'Spend the morning at the Uganda Museum on Kira Road. The ethnographic collection covers traditional instruments (the massive Buganda royal drums), bark cloth production, hunting tools, and homestead models from Uganda\'s many kingdoms. The archaeological section features Stone Age and Iron Age artefacts from across the country.',
+          tip: 'Entry around 10,000 UGX. The museum is underfunded but genuinely interesting. Allow 1.5–2 hours for a thorough visit.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Owino Market Deep Dive',
+          text: 'Plunge into Owino Market for an afternoon of sensory overload. Navigate the packed lanes of mitumba clothing, fresh produce, electronics, and traditional medicine. Find the fabric section for colourful kitenge and gomesi materials. Lunch on rolex and chapati from the market vendors.',
+          tip: 'Go with a local guide or friend if possible. Keep valuables hidden. The market is safe but very crowded.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Street Food Crawl',
+          text: 'Explore Kampala\'s street food scene. Try rolex (rolled egg chapati), kikomando (chapati with beans), samosas, grilled pork (muchomo), and roasted plantain. End with a fresh passionfruit or mango juice from a roadside vendor. The best street food is found around the taxi parks and market areas.',
+          tip: 'Street food is incredibly cheap — a full meal costs 3,000–5,000 UGX ($1). Eat where the locals eat and choose busy stalls with high turnover.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Kabaka\'s Palace & Ndere Cultural Centre',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kabaka\'s Palace — Mengo Hill',
+          text: 'Visit the Kabaka\'s Palace (Lubiri) on Mengo Hill — the Buganda King\'s official residence. The guided tour covers the grounds, the Idi Amin-era underground torture chambers, and the ceremonial spaces. The palace provides essential context for understanding Uganda\'s complex political history.',
+          tip: 'Tours cost around 20,000 UGX. The underground chambers are sobering but historically important. Allow 1.5 hours.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Bulange Parliament & Mengo Neighbourhood',
+          text: 'Walk from the palace to the Bulange — the Buganda Kingdom\'s parliament building on the same hill. The surrounding Mengo neighbourhood is one of Kampala\'s oldest and most characterful areas, with narrow streets, small shops, and a strong sense of Buganda identity. Find a local restaurant for a plate of Ugandan food.',
+          tip: 'Mengo is a great area to wander without a plan — the neighbourhood is friendly and welcoming to visitors.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ndere Cultural Centre',
+          text: 'Head to the Ndere Cultural Centre in Ntinda for traditional Ugandan dance and music. Performances feature dances from different ethnic groups — Acholi, Baganda, Karamojong, and more. A Ugandan buffet dinner is included. This is Kampala\'s best cultural experience.',
+          tip: 'Performances run Wednesday, Friday, and Sunday. Book ahead — around 60,000 UGX including dinner. Shows start at 7pm.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Namugongo, Bahai Temple & Coffee',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Namugongo Martyrs Shrine',
+          text: 'Take a matatu northeast to the Namugongo Martyrs Shrine — commemorating 22 Ugandan Christians burned alive in 1886. The modern basilica is architecturally striking with its conical roof echoing traditional Buganda design. A small museum tells the story of early Christianity in Uganda.',
+          tip: 'About 12km from the centre. Free to visit. A peaceful, contemplative site far from the city noise.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Bahai Temple & Kikaaya Hill',
+          text: 'Visit the Bahai Temple on Kikaaya Hill — the only Bahai House of Worship in Africa and one of only eight worldwide. The striking domed structure is set in beautifully maintained gardens with views over Kampala. The building is open to all faiths and the gardens are a haven of peace. Afterwards, explore the surrounding neighbourhood of Kawempe.',
+          tip: 'The Bahai Temple is free to enter. The gardens are peaceful and perfect for a quiet afternoon. Photography is welcome in the grounds.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ugandan Coffee & Café Scene',
+          text: 'Explore Kampala\'s growing café culture. Uganda produces some of the world\'s best Robusta coffee, and artisan cafés are opening across the city. Try Endiro Coffee, 1000 Cups, or Cafe Javas for excellent local brews. Buy beans to take home — Ugandan coffee is seriously underrated.',
+          tip: 'Ugandan Robusta is different from Ethiopian Arabica — fuller body, chocolatey, and lower acidity. Ask baristas about single-origin Ugandan beans.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Entebbe Day Trip — Botanical Gardens & Lake Victoria',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Entebbe Botanical Gardens',
+          text: 'Take a matatu or taxi 37km south to Entebbe on the shores of Lake Victoria. Start at the Entebbe Botanical Gardens — 40 hectares of mature tropical forest on a peninsula jutting into the lake. Walking trails wind through enormous fig trees, palms, and flowering plants. The gardens are home to vervet monkeys, monitor lizards, and over 100 bird species including the iconic African fish eagle.',
+          tip: 'Entry is around 15,000 UGX. The gardens are peaceful and shaded — a welcome break from Kampala\'s heat and noise. Scenes from the film "The Last King of Scotland" were filmed here.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Victoria Beaches & Ngamba Island',
+          text: 'Explore Entebbe\'s Lake Victoria shoreline — the beaches are modest but the sheer scale of Africa\'s largest lake is impressive. If time allows, take a boat to Ngamba Island Chimpanzee Sanctuary (45 minutes offshore) — a rescue centre for orphaned chimps where you can observe feeding time from a viewing platform. The boat trip across the lake is scenic.',
+          tip: 'Ngamba Island trips must be booked in advance and cost around $85 USD. Even without the island, Entebbe\'s lakeside is a pleasant half-day outing.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Entebbe Sunset & Lakeside Dinner',
+          text: 'Watch the sun set over Lake Victoria from one of Entebbe\'s waterfront restaurants — the lake stretches to the horizon like an inland sea. Grill fish (tilapia or Nile perch) with chips and a cold beer as the sky turns orange. Return to Kampala in the evening by matatu or taxi.',
+          tip: 'The Entebbe-Kampala road has heavy evening traffic. Allow 1–1.5 hours for the return journey. Matatus run until late.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Crafts, National Theatre & Kabalagala',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Craft Shopping & Buganda Road',
+          text: 'Browse Kampala\'s craft shops — Buganda Road and the National Theatre craft market sell bark cloth products, Ankole cow horn jewellery, woven baskets, beaded sandals, and recycled material art. The Exposure Africa gallery in Bugolobi has high-quality contemporary Ugandan art. Support local artists by buying directly.',
+          tip: 'Bark cloth — made from the inner bark of the mutuba tree — is a uniquely Ugandan craft and UNESCO-recognised. Products range from bags to wall hangings.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'National Theatre & Independence Monument',
+          text: 'Visit the National Theatre on DeWinton Road — check for afternoon performances or exhibitions. Walk to the Independence Monument nearby, then through the government quarter with its mix of colonial and modern buildings. The area around Parliament is architecturally interesting and gives a sense of Kampala\'s evolution as a capital city.',
+          tip: 'The National Theatre occasionally has free afternoon events — check the noticeboard at the entrance.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kabalagala Nightlife',
+          text: 'Experience Kampala\'s legendary nightlife on the Kabalagala strip. Start with dinner at a local restaurant — try luwombo (meat stew steamed in banana leaves) or muchomo (grilled pork on sticks) with a Nile Special. Then join the bars and clubs — Kampala\'s nightlife is among the best in East Africa, with live music, DJs, and a warm, inclusive energy.',
+          tip: 'Kabalagala is busiest Thursday to Saturday. The area is safe and walkable. Clubs stay open until 4–5am. Take a boda-boda or Uber home.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Mpanga Forest & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mpanga Central Forest Reserve',
+          text: 'Take an early taxi 37km west to Mpanga Central Forest Reserve — a small but species-rich tropical forest with walking trails through the canopy. The forest is home to red-tailed monkeys, grey-cheeked mangabeys, and over 200 bird species. The butterfly diversity is exceptional. Guided nature walks take 1–2 hours through the ancient forest floor.',
+          tip: 'Mpanga is managed by the National Forestry Authority. Entry is around 20,000 UGX. Guides are knowledgeable about birds and primates. Bring binoculars.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Kampala Exploration',
+          text: 'Return to Kampala for final exploration. Revisit favourite spots, pick up last-minute souvenirs, or simply wander through neighbourhoods you missed. Have a final rolex from your favourite street vendor and a cup of Ugandan coffee.',
+          tip: 'Use your last afternoon for the experiences you wanted to repeat — the best travel memories are often the unplanned moments.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'End your Kampala week with a special dinner. Choose between an upscale restaurant in Kololo, a local Ugandan feast in Mengo, or a final street food crawl through the city centre. Kampala is a city that grows on you — chaotic, warm, and bursting with life. Most visitors arrive planning to pass through and end up staying longer than expected.',
+          tip: 'If flying out from Entebbe Airport, allow 1.5–2 hours for the drive. Book your airport transfer in advance — evening traffic can be heavy.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Use boda-bodas wisely', text: 'Motorcycle taxis (boda-bodas) are Kampala\'s cheapest transport — 2,000–5,000 UGX for short trips. Use SafeBoda or Uber apps for transparent pricing and helmets. Always agree on the fare before riding.' },
+  { title: 'Eat rolex and local food', text: 'A rolex (rolled egg chapati) costs 1,500–3,000 UGX ($0.50–1). Local restaurants serve full plates of matooke, beans, rice, and meat for 5,000–10,000 UGX. Eat where Ugandans eat for the best value.' },
+  { title: 'Take matatus for longer trips', text: 'Matatus (shared minibuses) connect Kampala to all major towns cheaply. Entebbe costs around 5,000 UGX, Jinja around 15,000 UGX. Departures from the old or new taxi parks.' },
+  { title: 'Stay in Kisementi or Ntinda', text: 'Mid-range guesthouses in Kisementi, Ntinda, or Bukoto offer clean rooms from $15–30 per night. These neighbourhoods are safer and more pleasant than the very centre.' },
+  { title: 'Book Ndere Centre early', text: 'The Ndere Cultural Centre is the best cultural experience in Kampala and costs around 60,000 UGX including dinner. Book directly to avoid markup from tour operators.' },
+  { title: 'Bargain at markets', text: 'Market prices are not fixed. Bargain respectfully but firmly — start at roughly half the asking price and meet somewhere in the middle. The process should be fun, not adversarial.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$8–20', midrange: '$25–60', splurge: '$80+', notes: 'Hostels → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '$3–8', midrange: '$10–25', splurge: '$30+', notes: 'Street food → local restaurants → upscale dining' },
+  { category: 'Transport', budget: '$2–5', midrange: '$5–15', splurge: '$20+', notes: 'Boda-bodas → Uber/Bolt → private hire' },
+  { category: 'Activities', budget: '$3–10', midrange: '$10–30', splurge: '$50+', notes: 'Self-guided → cultural centres → private tours' },
+  { category: 'Entry Fees', budget: '$2–5', midrange: '$5–15', splurge: '$15–25', notes: 'Museums and cultural sites are affordable' },
+  { category: 'Daily Total', budget: '$20–45', midrange: '$55–145', splurge: '$195+', notes: 'Budget backpacker → comfortable mid → upscale' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'eVisa required for most nationalities — $50 USD, apply online at visas.immigration.go.ug before travel',
+      'East Africa Tourist Visa ($100) covers Uganda, Kenya, and Rwanda for 90 days — excellent value if visiting multiple countries',
+      'Yellow fever vaccination certificate is mandatory for entry into Uganda',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Malaria is present — take antimalarials and use DEET-based repellent, especially in the evening',
+      'Drink bottled or filtered water only. Avoid ice from unknown sources',
+      'Travel insurance with medical evacuation coverage is essential — Kampala has decent hospitals but complex cases may require evacuation to Nairobi',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Boda-bodas (motorcycle taxis) are ubiquitous — use SafeBoda or Uber apps for safer rides with helmets',
+      'Matatus (shared minibuses) connect to all major destinations cheaply from the old and new taxi parks',
+      'Kampala traffic is legendarily bad — allow extra time for all journeys, especially rush hours (7–9am, 5–8pm)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a local SIM card (MTN, Airtel) at the airport or any phone shop — data is cheap and 4G coverage is good in Kampala',
+      'WiFi is available at most hotels, cafés, and restaurants. Download offline maps before exploring the city',
+      'Mobile money (MTN Mobile Money, Airtel Money) is widely used — essential for many transactions in Uganda',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: UGX (Ugandan Shilling). USD accepted for hotels, tours, and larger purchases',
+      'ATMs are common in Kampala — Stanbic, Barclays, and Standard Chartered are most reliable. Visa and Mastercard accepted',
+      'Tipping: 10% at restaurants. Guides and drivers appreciate tips of 10,000–20,000 UGX per day',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light layers — Kampala sits at 1,190m elevation so evenings are cooler than the coast. Temperatures range 20–28°C year-round',
+      'Modest clothing is appreciated — Uganda is socially conservative. Cover shoulders and knees when visiting religious sites',
+      'Insect repellent, sunscreen, and a rain jacket are essential. Rain can come suddenly even in dry season',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Greetings Are Everything', text: 'Ugandans greet each other extensively. A simple "How are you?" exchange is expected before any conversation or transaction. "Oli otya?" (How are you? in Luganda) and "Gyendi" (I\'m fine) will earn smiles everywhere.' },
+  { icon: '🌍', title: 'Respect for Elders', text: 'Ugandan society places great emphasis on respect for elders. Use titles, shake hands gently (younger people may kneel slightly when greeting elders), and defer in conversation. This respect extends to the traditional kingdoms and their leaders.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Always ask permission before photographing people. Most Ugandans are happy to be photographed but expect to be asked. Never photograph military installations, police, or government buildings. Be especially respectful at sacred sites like the Kasubi Tombs.' },
+  { icon: '🗣', title: 'Language', text: 'English is the official language and widely spoken. Luganda is the local language in Kampala. Learning a few Luganda phrases — "Webale" (thank you), "Nze ___" (I am ___) — shows respect and opens doors.' },
+  { icon: '🤝', title: 'Support Local', text: 'Choose locally-owned guesthouses, eat at local restaurants, and buy crafts directly from artisans. Tourism money has the most impact when it flows directly into Ugandan communities rather than through international operators.' },
+  { icon: '🕐', title: 'Ugandan Time', text: 'Things move at their own pace in Uganda. Be patient with transport, meals, and meetings — "African time" is real and resisting it will only frustrate you. Relax, enjoy the wait, and you will have a better experience.' },
+];
+---
+
+<CityGuideLayout
+  title="Kampala Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Kampala guide for young travelers. Culture, markets, nightlife and street food with 1, 3 and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/kampala-hero.webp"
+  heroFlag="🇺🇬"
+  heroCountry="Uganda"
+  heroRegion="Africa"
+  heroCity="Kampala"
+  heroSubtitle="Uganda's chaotic, vibrant capital — built on seven hills with legendary nightlife, rich Buganda heritage, the best street food in East Africa, and the warmest people you'll meet anywhere."
+  heroPills={["3-Day City","Cultural","Jun – Aug Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Kampala is very affordable — street food and boda-bodas cost almost nothing, while cultural experiences and nightlife offer excellent value."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Kampala is the heart of Uganda — a city of kingdoms, markets, music, and extraordinary warmth. Approach with openness and respect, and Ugandans will welcome you like family."
+  ctaCity="Kampala"
+  ctaText="Find travel companions to explore Kampala together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

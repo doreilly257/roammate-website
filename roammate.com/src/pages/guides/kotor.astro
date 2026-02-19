@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EUR (Euro)', detail: 'Cards accepted in most places' },
+  { icon: '🗣', label: 'Language', value: 'Montenegrin', detail: 'English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Jun, Sep – Oct', detail: 'Warm, fewer crowds' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$30–60 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Not in Schengen', detail: 'Many nationalities visa-free 90 days' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Kotor Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'San Giovanni Fortress Climb',
+          text: 'Start early with the climb to the San Giovanni (St. John\'s) fortress — 1,350 stone steps zigzagging up the mountain behind the Old Town to a ruined fortress at 280m above the bay. The climb takes 60–90 minutes and is steep, but the reward is one of the most dramatic viewpoints in the Balkans — the entire Bay of Kotor spread out below, the Old Town a cluster of terracotta rooftops at your feet, and the mountains rising on every side. The fortress walls continue along the ridge above, built by the Venetians to defend the bay.',
+          tip: 'Start before 8am to climb in shade and avoid the heat. Bring at least 1.5 litres of water — there is no shade or water on the route. The steps are uneven; wear sturdy shoes.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old Town Exploration',
+          text: 'Descend and explore the Old Town — a compact medieval maze of piazzas, churches, and stone palaces behind massive 12th-century walls. The Cathedral of St. Tryphon (1166) is the centrepiece, with its twin bell towers and a treasury of gold and silver reliquaries. Wander the labyrinth of lanes — every turn reveals a tiny square with a well, a café, or a sleeping cat. Kotor is famous for its cats; they are everywhere, and there is even a Cat Museum dedicated to the city\'s feline residents.',
+          tip: 'The Old Town is small — you can walk every lane in two hours. The Cat Museum and maritime museums are charming small stops between the main sights.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Waterfront Dinner & Bay Views',
+          text: 'Walk outside the walls to the waterfront and find a restaurant with bay views. The still water of the fjord reflects the mountains in the evening light — an extraordinary setting for dinner. Eat Montenegrin specialities: njeguški steak (stuffed with prosciutto and cheese), black risotto, or fresh grilled fish. The local Nikšić beer and Vranac red wine are both excellent and cheap.',
+          tip: 'Restaurants outside the Old Town walls are significantly cheaper than those inside — walk 5 minutes along the waterfront for the best value with the same views.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Fortress Climb, Old Town & Cats',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'San Giovanni Fortress — 1,350 Steps',
+          text: 'Begin at dawn with the fortress climb. The stone steps zigzag up through the old defensive walls, past the Church of Our Lady of Remedy (a good rest stop at the halfway point), and continue to the fortress at 280m. The final approach along the crumbling walls to the summit is exhilarating — the Bay of Kotor opens up in every direction, with cruise ships tiny below and the mountains of the Orjen range towering above. This is the defining Kotor experience and should not be missed.',
+          tip: 'Start before 8am — the steps face east and become extremely hot by mid-morning. Bring 1.5+ litres of water, sunscreen, and sturdy shoes. The entry fee is collected at the gate.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old Town & Cat Culture',
+          text: 'Explore the Old Town through its three main squares — the Arms Square (Trg od Oružja), the Flour Square (Trg od Brašna), and St. Tryphon Square. The Cathedral of St. Tryphon dates to 1166, making it one of the oldest churches on the Adriatic. The Maritime Museum tells the story of Kotor\'s seafaring history. Between the piazzas, the lanes are filled with cats — Kotor is one of Europe\'s great cat cities, and the Cat Museum and Cats of Kotor organisation celebrate and care for the population.',
+          tip: 'The Old Town has free entry — you can wander the lanes and squares without paying. The cathedral, maritime museum, and fortress are the only paid attractions.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bay Waterfront & Local Food',
+          text: 'Walk along the waterfront promenade as the bay reflects the mountains in the still evening light. Eat njeguški steak (ham and cheese-stuffed veal), grilled squid, or fresh mussels from the bay at a waterfront restaurant. Montenegrin wine — particularly Vranac red — is excellent and remarkably affordable. End the evening at a bar inside the Old Town walls as the fortress lights up on the mountain above.',
+          tip: 'The waterfront restaurants between the Old Town and the marina offer the best value — same view, lower prices than inside the walls.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Perast, Our Lady of the Rocks & Bay Cruise',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bus to Perast',
+          text: 'Take the local bus (15 minutes) along the bay to Perast — a tiny Baroque town of 350 people with 16 churches and 17 palazzos strung along the waterfront. Once the wealthiest town in the Bay of Kotor, Perast\'s Venetian architecture is magnificently preserved. The bell tower of St. Nicholas Church offers the best view of the two island churches offshore. Walk the single waterfront street past stone palaces slowly crumbling with faded elegance.',
+          tip: 'The bus from Kotor to Perast costs about 1 euro and runs frequently. Perast is best in the morning before the tour groups arrive from Kotor.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Our Lady of the Rocks',
+          text: 'Take a taxi boat (5 minutes) from Perast harbour to the island of Our Lady of the Rocks — an artificial island built over centuries by local sailors dropping rocks into the bay around a sacred image of the Virgin Mary. The church on the island is filled with silver votive plaques from sailors, paintings including a Titian-attributed altarpiece, and 2,500 silver plates lining the walls. The story of the island — each stone placed by hand over generations as an act of faith — is one of the most remarkable in the Mediterranean.',
+          tip: 'Taxi boats cost 5 euros return and depart constantly from Perast harbour. The island visit takes about 30 minutes including the church and small museum.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bay of Kotor Sunset',
+          text: 'Return to Kotor by bus and walk to the harbour for the sunset. The inner bay — Europe\'s southernmost fjord — reflects the surrounding mountains in the still water as the light fades. The fortress walls on the mountain above glow orange, and the Old Town becomes atmospheric and quiet as the cruise ships depart. Eat at a konoba in the lanes and savour the most beautiful natural harbour you are ever likely to see.',
+          tip: 'The best sunset view is from the waterfront near the Sea Gate — position yourself 30 minutes before sunset for the full colour show.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Lovćen National Park & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lovćen National Park',
+          text: 'Take a tour or rent a car to Lovćen National Park — the sacred mountain of Montenegro, rising from the bay to 1,749m. The serpentine road from Kotor climbs 25 hairpin bends with vertiginous views back down to the bay. At the summit, the Njegoš Mausoleum is built into the rock — a dramatic black granite and gold-mosaic chapel dedicated to Montenegro\'s greatest poet and ruler. The final 461 steps through a tunnel to the mausoleum entrance are theatrical.',
+          tip: 'The drive from Kotor to Lovćen takes about an hour on narrow, winding mountain roads. The views from the serpentine bends above the bay are some of the most dramatic road views in Europe.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cetinje — Royal Capital',
+          text: 'Descend from Lovćen to Cetinje — the former royal capital of Montenegro, a small town of palaces, embassies, and museums at 670m altitude. The Cetinje Monastery houses what is claimed to be the right hand of John the Baptist and a fragment of the True Cross. The National Museum of Montenegro tells the story of this tiny mountain kingdom\'s fierce independence. The contrast between grand Cetinje and the tiny nation it governed is fascinating.',
+          tip: 'Cetinje is cool and pleasant even in summer — a refreshing change from the coastal heat. The monastery is free to visit; dress modestly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Kotor & Farewell',
+          text: 'Drive back to Kotor via the bay road. Walk the Old Town lanes one final time in the evening quiet — the cats, the stone, the mountain above. Have a farewell drink on the Arms Square and a final plate of fresh mussels from the bay. Kotor\'s bus station connects to Dubrovnik, Budva, and Podgorica; the nearest airports are Tivat (8km) and Podgorica (90km).',
+          tip: 'Tivat Airport is just 8km from Kotor — one of the shortest and most scenic airport transfers in Europe.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Fortress Climb & Old Town',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'San Giovanni Fortress — 1,350 Steps',
+          text: 'Climb to the fortress at dawn — 1,350 steps to 280m above the bay. Pass the Church of Our Lady of Remedy halfway, then push to the summit for the Bay of Kotor panorama. The Venetian walls continue along the ridge above for those with extra energy.',
+          tip: 'Start before 8am for shade and fewer people. Bring 1.5+ litres of water and sturdy shoes.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Old Town Exploration',
+          text: 'Explore the medieval Old Town — Cathedral of St. Tryphon, Maritime Museum, the Cat Museum, and the labyrinth of stone lanes. Every square has a café, a church, and a handful of cats.',
+          tip: 'The Old Town is free to walk. Only the cathedral, museum, and fortress charge admission.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Waterfront Dinner',
+          text: 'Eat njeguški steak and fresh mussels at a waterfront restaurant. The still bay reflects the mountains in the evening light. Order Vranac red wine — Montenegro\'s signature grape — for less than you would pay for a glass in Western Europe.',
+          tip: 'Restaurants outside the walls along the waterfront have the best value and the same bay views.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Perast & Our Lady of the Rocks',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Perast Baroque Town',
+          text: 'Bus to Perast (15 minutes) — a Baroque waterfront town of 350 people with 16 churches and 17 palazzos. Climb the St. Nicholas bell tower for views of the two island churches offshore. Walk the single waterfront street past crumbling Venetian palaces.',
+          tip: 'Arrive before 10am to enjoy Perast before the tour groups. The bus costs about 1 euro.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Our Lady of the Rocks Island',
+          text: 'Taxi boat to the artificial island built by sailors dropping rocks around a sacred image. The church has 2,500 silver votive plates, maritime paintings, and the remarkable story of centuries of devotion.',
+          tip: 'Taxi boats cost 5 euros return. The island visit takes about 30 minutes.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Perast Waterfront Dinner',
+          text: 'Eat at a Perast waterfront restaurant — the food is excellent and cheaper than Kotor. The tiny town is magical at sunset when the day-trippers have left and the bay turns golden. Take the last bus back to Kotor.',
+          tip: 'Check the last bus time from Perast — they end earlier than you might expect.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Lovćen & Cetinje',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lovćen Serpentine Drive',
+          text: 'Rent a car or join a tour to Lovćen. The serpentine road from Kotor has 25 hairpin bends with vertiginous views. At the summit, the Njegoš Mausoleum — black granite and gold mosaic — is reached through a tunnel of 461 steps.',
+          tip: 'The mountain roads are narrow and winding — drive carefully. The views from the switchbacks are extraordinary.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cetinje Royal Capital',
+          text: 'Descend to Cetinje — Montenegro\'s former royal capital at 670m. Visit the monastery (claimed relic of John the Baptist\'s hand), the National Museum, and the faded grandeur of a tiny kingdom\'s capital.',
+          tip: 'Cetinje is cool even in summer. The monastery is free; dress modestly to enter.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return via Bay Road',
+          text: 'Drive back to Kotor along the bay. Stop at viewpoints on the descent for the blue-hour panorama of the bay and Old Town. Dinner in the Old Town lanes.',
+          tip: 'The return drive takes about an hour. The bay road is more scenic than the tunnel shortcut.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Bay of Kotor Kayaking & Swimming',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bay Kayaking',
+          text: 'Join a morning kayaking tour on the Bay of Kotor — paddle from the Old Town along the base of the city walls, past the maritime gateway, and across the still water towards the inner bay. The perspective from sea level — looking up at the mountains rising vertically from the water — makes the fjord feel even more dramatic than from above.',
+          tip: 'Book a half-day kayaking tour for the morning when the water is calmest. No experience needed — guides provide instruction and equipment.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dobrota Swimming & Beaches',
+          text: 'Walk or bus along the bay to Dobrota — a village of stone captain\'s houses strung along the waterfront north of Kotor. Swim from the concrete platforms and small pebble beaches that line the waterfront. The water in the bay is warm, calm, and clean — perfect for a relaxed afternoon swim with mountain views.',
+          tip: 'Dobrota has no sandy beaches — bring a towel for the concrete platforms and water shoes for the pebbled entries.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Old Town Jazz & Cocktails',
+          text: 'The Old Town has a growing bar scene with jazz nights and cocktail bars in medieval stone buildings. The contrast of modern mixology inside 800-year-old walls is part of Kotor\'s charm. Try the bars around the Arms Square and the lanes behind the cathedral.',
+          tip: 'Kotor\'s nightlife is concentrated in a small area — you can visit every bar in the Old Town in one evening walk.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Budva & Sveti Stefan Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bus to Budva',
+          text: 'Take the bus (30 minutes) to Budva — Montenegro\'s main beach town with a compact old town on a peninsula, long sandy beaches, and a lively atmosphere. The Budva Stari Grad (Old Town) is similar to Kotor\'s but smaller and more beachy, with city walls you can walk, tiny churches, and lanes opening onto the sea.',
+          tip: 'Buses from Kotor to Budva run every 30 minutes. The old town is small — an hour is enough before heading to the beaches.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Sveti Stefan Viewpoint & Beaches',
+          text: 'Continue by bus or taxi to Sveti Stefan — the iconic island village connected to the mainland by a narrow isthmus. The island itself is a luxury hotel (Aman resort) and not accessible to non-guests, but the view from the mainland is one of the most photographed in the Mediterranean. Swim at the free public beach on the north side of the isthmus or the longer Miločer beach nearby.',
+          tip: 'The public beach at Sveti Stefan is free and has excellent swimming. The south beach charges a steep entry fee and is not worth it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Budva Nightlife & Return',
+          text: 'Return to Budva for the evening — it has the best nightlife on the Montenegrin coast with beach bars, clubs, and the Top Hill open-air club on the hill above the city. Alternatively, take the early evening bus back to Kotor for a quieter night in the Old Town.',
+          tip: 'Top Hill is one of the largest open-air clubs in the Balkans — it operates in summer only. Check the lineup online.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Luštica Peninsula & Blue Cave',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Boat to Blue Cave',
+          text: 'Take a boat tour from Kotor or Herceg Novi to the Blue Cave (Plava Špilja) on the outer bay — a sea cave where the light refracts through the underwater entrance to turn the water an electric blue. Swimming inside the cave surrounded by the blue glow is a surreal experience. The boat trip follows the dramatic coastline of the outer bay.',
+          tip: 'The Blue Cave tour takes about 2–3 hours. Book with a small local operator rather than a large tour boat for a more intimate experience.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Luštica Peninsula Beaches',
+          text: 'Continue around the Luštica Peninsula to the beaches of Žanjice and Mirišta — pebble beaches with crystal-clear water backed by olive groves. These are some of the best swimming spots in the bay area, less crowded than Budva\'s beaches and more beautiful. A seafood lunch at a beachside restaurant rounds out the afternoon.',
+          tip: 'Žanjice has lounger rentals and a restaurant. Bring a towel for the free section of the beach.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Herceg Novi & Return',
+          text: 'If time allows, stop in Herceg Novi at the bay\'s entrance — a town of fortresses, monasteries, and steps (known as the "city of stairs and sunshine"). The Kanli Tower fortress and the waterfront Šetalište promenade are worth a brief visit. Take the ferry across the bay narrows and bus back to Kotor.',
+          tip: 'The car ferry across the Verige strait saves time on the return journey — buses also use this route.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Markets, Cats & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Morning Market & Cat Walk',
+          text: 'Visit the small green market outside the Old Town walls for fresh produce, local cheese, honey, and rakija (fruit brandy). Walk the Old Town lanes one final time to say goodbye to the cats — they congregate at specific feeding points and are well cared for by the Cats of Kotor organisation. Buy a cat-themed souvenir from one of the old town shops.',
+          tip: 'The Cats of Kotor organisation accepts donations — contributing helps care for the city\'s famous feline population.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Fortress Views',
+          text: 'If you did not climb to the fortress on Day 1, this is your last chance — the view is unmissable. If you have already been, walk along the waterfront to the town of Prčanj for a quieter perspective of the bay and mountains from across the water.',
+          tip: 'Prčanj is a 30-minute walk along the bay from Kotor — a peaceful stroll with mountain reflections in the water.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Bay Dinner & Departure',
+          text: 'End your Kotor week with dinner overlooking the bay — fresh mussels, njeguški prosciutto, and Vranac wine. The Old Town at night, with the fortress glowing on the mountain above, is an image that stays with every visitor. Tivat Airport is just 8km away; buses connect to Dubrovnik, Podgorica, and Sarajevo.',
+          tip: 'Tivat Airport is the closest — 15 minutes by taxi. Podgorica Airport is 90 minutes but has more flight options.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Montenegro is excellent value', text: 'Despite using the Euro, Montenegro is significantly cheaper than Croatia or Greece. Meals, accommodation, and activities cost 30–50% less than neighbouring Dubrovnik.' },
+  { title: 'Eat outside the walls', text: 'Restaurants inside Kotor Old Town charge a tourist premium. Walk 5 minutes to the waterfront or nearby Dobrota for the same quality at lower prices.' },
+  { title: 'Use local buses', text: 'The bus network connects Kotor to Perast, Budva, Tivat, and Herceg Novi for 1–3 euros. Far cheaper than taxis or organised tours.' },
+  { title: 'Climb free, swim free', text: 'The fortress climb (with entry fee) and swimming in the bay are Kotor\'s best experiences and cost almost nothing. The Old Town lanes are free to wander.' },
+  { title: 'Visit in shoulder season', text: 'May–June and September–October have warm weather and a fraction of the summer cruise-ship crowds. July–August brings large ships and crowded lanes.' },
+  { title: 'Self-cater from markets', text: 'The green market outside the walls sells local cheese, bread, prosciutto, and fruit at very low prices. Pack picnic lunches to save on restaurant meals.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$12–30', midrange: '$35–70', splurge: '$90+', notes: 'Hostels → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '$8–18', midrange: '$18–40', splurge: '$50+', notes: 'Market food → konobas → fine dining' },
+  { category: 'Transport', budget: '$2–8', midrange: '$10–25', splurge: '$40+', notes: 'Local bus → taxi → rental car' },
+  { category: 'Activities', budget: '$3–12', midrange: '$15–40', splurge: '$60+', notes: 'Fortress + swim → kayaking → boat tours' },
+  { category: 'Entry Fees', budget: '$3–8', midrange: '$8–15', splurge: '$20+', notes: 'Fortress and cathedral are the main fees' },
+  { category: 'Daily Total', budget: '$30–60', midrange: '$85–190', splurge: '$260+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Montenegro is not in the EU or Schengen — but most nationalities can enter visa-free for 90 days',
+      'Bring your passport — even for day trips from Croatia. Border crossings can take 30–60 minutes in summer',
+      'Keep a photocopy of your passport separately in case of loss',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Tap water is safe in Kotor — refill bottles freely',
+      'The fortress climb is physically demanding — bring water, sun protection, and know your limits',
+      'Kotor is very safe. Petty theft is rare but keep valuables secure in crowded cruise-ship hours',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Kotor Old Town is tiny and entirely pedestrian — everything is a 5-minute walk',
+      'Local buses to Perast (15 min), Tivat (15 min), Budva (30 min), and Herceg Novi (45 min) are frequent and cheap',
+      'Renting a car is useful for Lovćen and the bay road, but parking in Kotor is very limited',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'EU roaming does NOT apply in Montenegro — check with your provider before arrival. Buy a local SIM at the airport or any kiosk for cheap data',
+      'Free WiFi at most cafés and accommodation in the Old Town',
+      'Mobile coverage is good around the bay but patchy in the mountains',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: EUR (Euro) — Montenegro uses the Euro unilaterally despite not being in the EU',
+      'Cards accepted at most restaurants and shops. Carry cash for buses, small konobas, and the green market',
+      'ATMs are available in the Old Town and Kotor town. Tipping 10% or rounding up is standard',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Sturdy shoes are essential for the fortress climb — the stone steps are uneven and steep',
+      'Swimsuit and a quick-dry towel — the bay has swimming spots everywhere',
+      'Layers for mountain day trips — Lovćen summit can be 15°C cooler than the bay',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect Sacred Sites', text: 'The Cathedral of St. Tryphon and Cetinje Monastery are active religious sites — dress modestly and speak quietly. Photography restrictions apply inside most churches.' },
+  { icon: '🌍', title: 'Appreciate the Cats', text: 'Kotor\'s cats are a genuine cultural feature, not a tourist gimmick. The Cats of Kotor organisation cares for them year-round. Do not feed them inappropriate food — donations to the organisation are more helpful.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'The Old Town and bay are extraordinarily photogenic. Ask permission before photographing locals. Drones are restricted in the Old Town and national parks.' },
+  { icon: '🗣', title: 'Learn Basic Montenegrin', text: 'Dobar dan (good day), hvala (thank you), molim (please), and živjeli (cheers). The language is nearly identical to Croatian and Serbian — locals appreciate any effort.' },
+  { icon: '🤝', title: 'Support Local Economy', text: 'Buy cheese, honey, and olive oil directly from market vendors. Eat at family konobas rather than international-menu tourist restaurants. Your spending has far more impact locally.' },
+  { icon: '🕐', title: 'Cruise Ship Timing', text: 'Large cruise ships dock in Kotor bay and flood the Old Town from 9am–5pm in summer. Visit the lanes early morning or evening for a completely different, more genuine experience.' },
+];
+---
+
+<CityGuideLayout
+  title="Kotor Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Kotor guide for young travelers. Bay of Kotor, fortress climb, Perast, Lovćen with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/kotor-hero.webp"
+  heroFlag="🇲🇪"
+  heroCountry="Montenegro"
+  heroRegion="Europe"
+  heroCity="Kotor"
+  heroSubtitle="A medieval walled town at the head of Europe's southernmost fjord — 1,350 steps to a fortress with one of the Balkans' most dramatic views."
+  heroPills={["3-Day City","Coastal","May – Jun Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Montenegro offers exceptional value — the Euro currency keeps things simple while prices remain well below Western European levels."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Kotor is a city of cats, mountains, and still water — approach its medieval lanes and bay panoramas with patience and you will discover one of Europe's most atmospheric corners."
+  ctaCity="Kotor"
+  ctaText="Find travel companions to explore Kotor together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

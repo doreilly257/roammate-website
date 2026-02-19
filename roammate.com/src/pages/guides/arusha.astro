@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'TZS (Tanzanian Shilling)', detail: 'USD widely accepted for tours and lodges' },
+  { icon: '🗣', label: 'Language', value: 'Swahili / English', detail: 'English common in tourism areas' },
+  { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Oct, Dec – Feb', detail: 'Dry seasons for best safari and trekking' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–55 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on arrival / e-Visa', detail: 'Apply at visa.immigration.go.tz' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Arusha City Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arusha Central Market & Clock Tower',
+          text: 'Start at the Arusha Clock Tower — a modest roundabout monument that marks the halfway point between Cairo and Cape Town on the old Cape-to-Cairo road. From here, walk to the bustling Arusha Central Market where Maasai women sell beaded jewellery alongside stalls piled with tropical fruit, spices, second-hand clothing, and household goods. The market is the beating heart of Arusha and a window into daily Tanzanian life far from the safari circuit. Try roasted maize and fresh sugarcane juice from the street vendors.',
+          tip: 'The central market is busiest in the morning. Keep valuables secure and be prepared for friendly but persistent vendors. "Hapana asante" (no thank you) is polite and effective.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cultural Heritage Centre',
+          text: 'Visit the Cultural Heritage Centre on the road towards Arusha National Park — one of East Africa\'s largest art and craft complexes. The centre houses galleries of Makonde wood carvings, Tingatinga paintings, Maasai beadwork, and contemporary Tanzanian art across multiple buildings. The Tanzanite Experience museum within the complex explains the geology and mining of tanzanite — a gemstone found nowhere else on earth, mined exclusively in the Merelani Hills near Arusha. Even if you are not buying, the quality and range of art on display is exceptional.',
+          tip: 'The Cultural Heritage Centre is a fixed-price gallery, so there is no haggling — the quality reflects the price. The Tanzanite Experience museum is free and genuinely educational.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Maasai Market & Local Breweries',
+          text: 'Explore the Maasai market near the stadium for more affordable crafts and souvenirs — prices here are negotiable and the atmosphere is lively. Maasai elders sell traditional medicines, warriors demonstrate beadwork techniques, and children sell roasted cashew nuts from roadside stalls. Afterwards, head to one of Arusha\'s growing number of local breweries and bars — the Arusha Brewing Company serves craft beer brewed on-site with views of Mount Meru, while local bars serve Safari Lager and Kilimanjaro Premium alongside grilled mishkaki (meat skewers) and chips mayai (omelette with chips).',
+          tip: 'Chips mayai — a hearty omelette filled with chips — is Tanzania\'s unofficial national street food. Find it at any roadside stall for under 3,000 TZS ($1.20). It is filling, cheap, and surprisingly delicious.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Arusha National Park',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arusha National Park — Walking Safari',
+          text: 'Enter Arusha National Park at dawn — one of Tanzania\'s smallest but most diverse parks, set on the slopes of Mount Meru just 25 minutes from the city centre. Unlike most Tanzanian parks, Arusha allows guided walking safaris, giving you the extraordinary experience of approaching wildlife on foot. Walk through montane forest inhabited by black-and-white colobus monkeys, blue monkeys, and bushbuck, then emerge onto open grassland where giraffes, buffalo, warthogs, and zebras graze with the snow-dusted peak of Mount Meru (4,566m) rising behind them.',
+          tip: 'Book a walking safari through TANAPA (Tanzania National Parks Authority) at the gate — an armed ranger accompanies all walking groups. The experience of approaching giraffes on foot is profoundly different from vehicle-based safaris.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Momella Lakes — Flamingos & Waterfowl',
+          text: 'Drive or walk to the Momella Lakes — a series of seven shallow alkaline lakes within the park, each a different colour due to varying mineral content and algae populations. The lakes attract flamingos (both lesser and greater), pelicans, Egyptian geese, and dozens of other waterbird species. The backdrop of Mount Meru reflected in the still water with flamingos wading in the shallows is one of northern Tanzania\'s most photogenic scenes. Hippos wallow in the deeper sections and the surrounding grassland supports a healthy population of giraffes and waterbuck.',
+          tip: 'Each Momella Lake has a different colour — from deep green to milky blue — depending on mineral content. Drive slowly between them and stop at each viewpoint for the full effect.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Coffee Plantation Dinner',
+          text: 'Arusha sits at the heart of Tanzania\'s premier coffee-growing region — the volcanic soils of Mount Meru produce some of East Africa\'s finest arabica beans. Several local plantations offer evening tours and farm-to-cup experiences where you can see the entire coffee process from cherry to cup. Some combine the tour with a farm dinner served under the stars — local dishes paired with freshly roasted coffee. The Arusha Coffee Lodge and Burka Coffee Estate are both excellent options for an atmospheric evening.',
+          tip: 'Tanzania\'s coffee is world-class but most of it is exported. Buy directly from a plantation for the freshest beans at the best prices — a fraction of what you would pay in a European coffee shop.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Coffee Plantations & Maasai Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Coffee Plantation Tour',
+          text: 'Join a morning coffee plantation tour on the slopes of Mount Meru. The fertile volcanic soil and altitude (1,400-1,700m) create perfect growing conditions for arabica coffee. Guides walk you through the plantation explaining the growing cycle, hand-picking process, and traditional washing and drying methods. You will roast green beans over a charcoal fire, grind them by hand with a wooden mortar, and brew the freshest cup of coffee you have ever tasted. Many tours include visits to banana beer brewing and local homesteads.',
+          tip: 'The Kahawa Shamba community coffee tour is run by local women\'s cooperatives and is one of the most authentic and impactful tours in the Arusha area. Book directly to ensure the money reaches the community.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Maasai Village Visit',
+          text: 'Visit a Maasai boma (village) in the areas around Arusha for an introduction to one of Africa\'s most iconic pastoral cultures. The Maasai maintain a semi-nomadic lifestyle centred on cattle herding across the East African savanna. In the boma, elders explain the circular homestead layout, warriors demonstrate the famous jumping dance (adumu), women display their intricate beadwork, and children sing traditional songs. While some village visits are overly commercial, community-run programmes offer genuine cultural exchange and direct economic benefit to the village.',
+          tip: 'Choose a community-run Maasai village experience rather than a roadside tourist stop. Ask your accommodation or a local guide to recommend an authentic visit where your fee supports the community directly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Arusha Brewing Company & Street Food',
+          text: 'Head to the Arusha Brewing Company for locally crafted beers and a social atmosphere popular with both travellers and resident expats. The brewery produces a rotating selection of ales and lagers using Tanzanian ingredients — the coffee stout made with local beans is a standout. For dinner, explore the street food scene around the central market area — mishkaki (marinated meat skewers grilled over charcoal), chips mayai, roasted plantain, and fresh fruit juices from blenders set up on the pavement. The energy of Arusha\'s evening food scene is infectious.',
+          tip: 'The area around the Arusha Brewing Company and nearby Via Via restaurant is the social hub for travellers. It is an excellent place to meet people planning safari trips and find travel companions.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Mount Meru Foothills & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mount Meru Foothills Hike',
+          text: 'Take a morning hike into the foothills of Mount Meru — Africa\'s fifth-highest peak at 4,566m and a spectacular stratovolcano that dominates Arusha\'s western skyline. While a full summit climb takes 3-4 days, the lower foothills offer excellent half-day walks through farming communities, montane forest, and waterfalls. The Tululusia Waterfall hike (3-4 hours return) passes through coffee plantations, banana groves, and indigenous forest before reaching a series of cascading waterfalls. The views back towards Arusha and across to Kilimanjaro on clear mornings are extraordinary.',
+          tip: 'Hire a local guide for the foothills hike — they know the trails, can introduce you to farming families along the way, and the fee supports the local community directly. Expect to pay $20-30 for a half-day guide.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Arusha Natural History Museum',
+          text: 'Visit the Arusha Declaration Museum (also called the Natural History Museum) on Boma Road — a colonial-era German boma (fortification) that now houses exhibits on Tanzanian natural history, the independence movement, and the famous Arusha Declaration of 1967 when President Nyerere outlined Tanzania\'s socialist Ujamaa policy. The museum also displays casts of the Laetoli footprints — 3.6-million-year-old hominid footprints preserved in volcanic ash, discovered by Mary Leakey near Ngorongoro. The building itself is one of Arusha\'s few surviving colonial-era structures.',
+          tip: 'The museum is small but the Laetoli footprint casts and Arusha Declaration exhibits are genuinely fascinating. Allow 1-1.5 hours. Entry is around 10,000 TZS ($4).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Evening & Safari Preparations',
+          text: 'Spend your final evening in Arusha preparing for your next adventure. Most travellers use Arusha as the gateway to the Northern Safari Circuit — the Serengeti, Ngorongoro Crater, Tarangire, and Lake Manyara are all within a day\'s drive. The town is full of safari operators and your accommodation can help arrange a safari departure. For a farewell dinner, try the Stigma Restaurant on the Old Moshi Road for excellent Tanzanian food in a garden setting, or head to George\'s Tavern for live music and a lively local atmosphere.',
+          tip: 'If booking a safari from Arusha, compare at least 3 operators and negotiate firmly. The industry is competitive and prices vary widely for identical itineraries. Read recent reviews and verify TATO (Tanzania Association of Tour Operators) membership.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arusha City Orientation',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Clock Tower & Central Market',
+          text: 'Begin your Arusha week at the Clock Tower roundabout — the symbolic midpoint of Africa between Cairo and Cape Town. Walk through the chaotic, colourful Central Market where vendors sell everything from tropical fruit and spices to Maasai medicine and second-hand mobile phones. The market is arranged in rough sections — produce, meat, fabric, hardware — and the energy is intoxicating. Try fresh sugarcane juice pressed on the spot, roasted cassava chips, and vitumbua (sweet coconut rice cakes) from the breakfast stalls.',
+          tip: 'Visit the market between 7-9am when it is busiest and the produce is freshest. Watch your belongings in the crowded aisles and bring small notes — vendors rarely have change for large bills.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Arusha Declaration Museum',
+          text: 'Explore the Arusha Declaration Museum — a colonial German boma on Boma Road housing exhibits on Tanzania\'s natural history, independence struggle, and the Arusha Declaration of 1967 that shaped the nation\'s socialist path. The museum displays casts of the 3.6-million-year-old Laetoli footprints — among the oldest direct evidence of bipedal human ancestors — alongside colonial-era artefacts, traditional weaponry, and photographs of Tanzania\'s first president Julius Nyerere. The building itself is a whitewashed fortress from the German colonial period and one of Arusha\'s oldest surviving structures.',
+          tip: 'The museum is an excellent first stop — it provides essential context for understanding Tanzania\'s culture, history, and politics before you explore further afield.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Via Via Restaurant & Traveller Scene',
+          text: 'Head to Via Via — Arusha\'s most famous traveller hangout and cultural centre. The restaurant-bar occupies the grounds of the old German boma and serves Tanzanian food, European dishes, and cold drinks in a garden setting decorated with local art. More importantly, Via Via is where the traveller community congregates — safari-goers looking for vehicle-mates, Kilimanjaro climbers sharing tips, and long-term Africa overland travellers swapping stories. The notice board is worth checking for shared safari spots, gear for sale, and local events. Live music and cultural performances happen regularly.',
+          tip: 'Via Via is the single best place in Arusha to meet other travellers and find safari companions. Even if you have plans, spend an evening here — the connections you make can transform your Tanzania trip.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Arusha National Park',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Walking Safari — Montane Forest',
+          text: 'Enter Arusha National Park at 6:30am for a guided walking safari through the montane forest zone on the lower slopes of Mount Meru. The forest is dense and atmospheric — towering fig trees, ancient podocarpus, and Cape chestnuts draped in old man\'s beard moss create a cathedral-like canopy. Troops of black-and-white colobus monkeys crash through the branches above while blue monkeys watch cautiously from mid-canopy. On the forest floor, bushbuck and red duiker slip between the undergrowth. An armed ranger leads the walk and the experience of hearing every twig crack is electrifying.',
+          tip: 'Walking safaris start at 6:30am from Momella Gate. Wear dark, neutral clothing and closed shoes. Move slowly and quietly — the forest reveals its wildlife to those who listen.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Momella Lakes & Ngurdoto Crater',
+          text: 'Drive to the Momella Lakes for flamingos and waterbirds, then continue to the Ngurdoto Crater — a miniature version of Ngorongoro that you view from the forested rim. The crater floor (3km across) is a restricted zone with no vehicle access, so the wildlife below — buffalo herds, warthogs, baboons, and occasionally elephants — exists in a pristine, undisturbed state. The rim trail passes through dense forest with excellent birdwatching — Hartlaub\'s turaco, silvery-cheeked hornbill, and African crowned eagle are all present.',
+          tip: 'Ngurdoto Crater is sometimes called "Little Ngorongoro" — while smaller, the fact that you cannot drive into it means the wildlife is wilder and the experience is more contemplative.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sundowner with Mount Meru Views',
+          text: 'Exit the park in the late afternoon and find a viewpoint or bar with views of Mount Meru\'s dramatic summit catching the last golden light. The mountain\'s horseshoe-shaped crater rim and ash cone are most visible in the evening when clouds clear from the peak. Mount Meru is often overshadowed by nearby Kilimanjaro, but its 4,566m summit is a serious and beautiful climb in its own right — and the views of Kilimanjaro from Meru\'s summit are legendary. Dinner at one of the lodges on the Moshi Road with Meru views completes the day.',
+          tip: 'Mount Meru is clearest in the late afternoon and early morning. The mountain creates its own weather and is often clouded by midday — time your viewing accordingly.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Coffee Country & Waterfalls',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Coffee Plantation Immersion',
+          text: 'Spend the morning on a comprehensive coffee plantation tour on the fertile slopes of Mount Meru. Tanzania is Africa\'s fourth-largest coffee producer and the Arusha region grows some of the continent\'s finest arabica beans. The tour follows the entire journey from cherry to cup — picking ripe red cherries from the bushes, removing the outer fruit through wet processing, sun-drying the beans on raised beds, roasting over charcoal in a clay pot, grinding by hand, and finally brewing and tasting. The freshness of coffee brewed minutes after roasting is a revelation.',
+          tip: 'The Kahawa Shamba women\'s cooperative tour is one of the most authentic — entirely community-run with proceeds going directly to the women who grow and process the coffee.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tululusia Waterfall Hike',
+          text: 'Continue into the Mount Meru foothills for the Tululusia Waterfall hike — a 3-4 hour return trail that passes through farming communities, coffee and banana plantations, and indigenous montane forest before reaching a series of cascading waterfalls. The trail is well-maintained and moderately challenging, with some steep sections requiring good footwear. The waterfalls tumble through lush vegetation into clear pools where you can swim if the water level permits. The altitude (1,600-1,900m) keeps temperatures comfortable even at midday.',
+          tip: 'Hire a local guide at the trailhead village — they know the route, can explain the farming practices, and the fee supports families directly. Carry water, snacks, and rain gear as mountain weather changes quickly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farm-to-Table Dinner',
+          text: 'Return to Arusha for a farm-to-table dinner at one of the restaurants championing local Tanzanian ingredients. The Arusha Coffee Lodge restaurant serves dishes made from ingredients sourced within 50km — grilled tilapia from Lake Victoria, organic vegetables from Mount Meru\'s slopes, and coffee-infused desserts. For a more casual option, the street food stalls near the stadium serve excellent nyama choma, mishkaki, and pilau (spiced rice with meat) — the same food local families eat, at local prices.',
+          tip: 'Pilau — Tanzanian spiced rice cooked with meat, cardamom, cinnamon, and cloves — is the country\'s celebration dish. Find it at local restaurants on Fridays when it is traditionally prepared for the communal Friday meal.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Maasai Cultural Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Maasai Village Immersion',
+          text: 'Spend the morning at a community-run Maasai boma for a deeper cultural experience than a typical tourist stop. The Maasai are East Africa\'s most recognised pastoral people — tall, proud warriors in red shuka blankets who have maintained their cattle-herding culture for centuries despite modern pressures. In the boma, learn about traditional governance, age-set systems, cattle as currency, and the transition from warrior to elder. Women demonstrate the intricate beadwork that communicates social status, age, and marital status through colour and pattern. Participate in a traditional blessing ceremony.',
+          tip: 'Community-run Maasai experiences cost more than roadside tourist stops but the authenticity and cultural depth are incomparably greater. Ask for programmes run by the village itself rather than external tour operators.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Maasai Market & Craft Shopping',
+          text: 'Return to Arusha for an afternoon at the Maasai market — a sprawling open-air market where Maasai and other craftspeople sell beaded jewellery, carved ebony figures, sisal baskets, batik fabric, and recycled tin sculptures. The market is one of the best in East Africa for crafts and the bargaining process is part of the cultural experience — start at 40% of the asking price and negotiate with humour and patience. The quality varies enormously so take your time to examine items carefully before committing.',
+          tip: 'Maasai beadwork is the most authentic and portable souvenir — lightweight, culturally significant, and directly supporting women artisans. Earrings and bracelets start at 5,000-10,000 TZS ($2-4).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Local Brewery Night & Live Music',
+          text: 'Experience Arusha\'s nightlife at a local brewery or live music venue. The Arusha Brewing Company crafts beers using local ingredients — Tanzanian coffee, honey, and tropical fruit — while George\'s Tavern hosts live bands playing Tanzanian bongo flava, taarab coastal music, and international covers. The bar scene in Arusha is sociable and diverse — local Tanzanians, resident expats, and safari-bound travellers mix easily. For a quieter evening, the rooftop bars along Boma Road offer views of the city lights with Mount Meru silhouetted against the stars.',
+          tip: 'Bongo flava is Tanzania\'s dominant music genre — a fusion of hip-hop, R&B, and traditional Tanzanian rhythms. Ask a local to explain the lyrics — they are often witty social commentary.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Lake Duluti & Arusha Surrounds',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lake Duluti Crater Walk',
+          text: 'Walk the forest trail around Lake Duluti — a volcanic crater lake 12km east of Arusha surrounded by dense montane forest. The 3km circuit trail follows the crater rim through a canopy alive with birdlife — silvery-cheeked hornbills, African paradise flycatchers, and the spectacular Ross\'s turaco with its crimson flight feathers. The lake itself is home to hippos, monitor lizards, and large catfish. The forest is cool and shaded, and the trail is flat enough for all fitness levels. Canoe trips on the lake are available for closer views of the birdlife.',
+          tip: 'Lake Duluti is managed as a community forest reserve. Hire a guide at the entrance for the best birdwatching experience — they know every tree where hornbills nest and where the turaco feeds.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Meserani Snake Park & Cultural Museum',
+          text: 'Drive 25 minutes west to the Meserani Snake Park — a reptile sanctuary and Maasai cultural museum that provides employment and education for the local Maasai community. The snake park houses over 100 species of East African snakes, lizards, tortoises, and crocodiles in well-maintained enclosures. Handlers demonstrate live snake identification (essential knowledge for safari-goers) and you can hold some of the non-venomous species. The adjacent Maasai museum explains the cultural significance of cattle, beadwork, and age-set systems through well-curated displays.',
+          tip: 'The Meserani Snake Park is a genuinely useful pre-safari stop — understanding which snakes are dangerous (black mamba, puff adder) and which are harmless improves your confidence in the bush.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset from Mount Meru Hotel',
+          text: 'End the day with sundowner drinks at a hotel with views of Mount Meru — the Arusha Serena Hotel or Gran Melia Arusha both have terraces facing the mountain. As the sun sets, the mountain\'s rugged summit catches the last orange light while the Arusha lowlands below fade into blue shadow. This is the classic Arusha view — the volcanic peak rising abruptly from the surrounding farmland, its horseshoe crater and ash cone etched against the evening sky. For dinner, try Onsea House for upscale Tanzanian-Belgian fusion in a colonial hilltop villa.',
+          tip: 'Arusha sunsets are best viewed from the western side of the city where buildings do not obstruct the Mount Meru view. The mountain is clearest on dry season evenings (June-October).',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Mount Meru Foothills & Adventure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mount Meru Lower Slopes Trek',
+          text: 'For a more adventurous hiking day, trek into the lower slopes of Mount Meru through Arusha National Park to the Miriakamba Hut (2,514m) — the first overnight stop on the full summit climb. The 4-5 hour ascent passes through lush montane forest alive with colobus monkeys, blue monkeys, and an incredible diversity of birdlife, before emerging into giant heather and moorland with panoramic views. Even if you are not climbing to the summit, the Miriakamba trail offers an authentic mountain trekking experience and views of both Kilimanjaro and the Arusha plains far below.',
+          tip: 'A TANAPA ranger guide is mandatory for all treks above the park gate. Register at Momella Gate by 7am. Carry at least 2 litres of water, warm layers, and rain gear — mountain weather is unpredictable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Fig Tree Arch & Forest Exploration',
+          text: 'On the descent, take the alternative trail via the Fig Tree Arch — a giant strangler fig that has grown around and consumed its host tree, leaving a hollow archway large enough to walk through. The forest on the lower slopes is among the most pristine montane forest in East Africa, with ancient podocarpus and juniper trees reaching 30m or more. Buffalo and elephant tracks cross the trail — your ranger guide reads the signs and ensures safe passage. The forest floor is carpeted in ferns and the air is cool and oxygen-rich after the altitude above.',
+          tip: 'Buffalo are the most dangerous animal in the montane forest — they are well-camouflaged and unpredictable. Stay with your ranger guide at all times and move quietly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Recovery Dinner & Campfire Stories',
+          text: 'After a day in the mountains, you will have earned a hearty meal. Head to Stigma Restaurant for local Tanzanian food — their ugali with slow-cooked beef stew is comfort food at its best. If your accommodation has a campfire or outdoor seating area, spend the evening sharing the day\'s stories with fellow travellers. The trekking community in Arusha is tight-knit and the stories of Mount Meru and Kilimanjaro climbs flow as freely as the Safari Lager. If you caught a clear view of Kilimanjaro from Meru\'s slopes, it will stay with you long after you leave.',
+          tip: 'If the Meru foothills trek has inspired you, the full summit climb takes 3-4 days and costs $500-700 including guide, porter, accommodation, and park fees. It is excellent preparation for Kilimanjaro.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Explorations & Safari Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tanzanite Mining Museum & Gem Shopping',
+          text: 'Visit the Tanzanite Experience museum at the Cultural Heritage Centre for a final deep dive into the story of tanzanite — a blue-violet gemstone discovered in 1967 and found exclusively within a 4km mining area in the Merelani Hills near Arusha. The museum explains the geology, mining process, grading system, and cultural significance of a stone rarer than diamonds. If you are interested in buying, reputable dealers at the Cultural Heritage Centre and on India Street can help — but educate yourself on grading (the 4Cs: colour, cut, clarity, carat) before purchasing.',
+          tip: 'Be extremely cautious buying tanzanite from street sellers or unverified shops — fake and treated stones are common. Purchase only from certified dealers who provide a grading certificate.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Market Run & Packing',
+          text: 'Use the afternoon for final souvenir shopping, packing, and safari preparations. Pick up last-minute items at the Shoprite or Nakumatt supermarket — snacks, water, sunscreen, and any supplies you need for your onward journey. If heading on safari, your operator will brief you on pickup times, luggage limits, and what to expect. The Central Market is worth a final visit for fresh spices (cloves, vanilla, and Zanzibar pepper) that make excellent lightweight gifts.',
+          tip: 'Most safari vehicles have strict luggage limits — soft bags rather than hard suitcases are required, and weight limits of 15-20kg are enforced on fly-in safaris. Repack accordingly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Safari Eve',
+          text: 'Spend your last Arusha evening at a restaurant with Mount Meru views — the mountain that has been your constant companion all week. Arusha is more than just a safari gateway — it is a dynamic, culturally rich African city with its own identity, history, and energy. The coffee, the Maasai culture, the mountain foothills, and the buzzing markets deserve the time you have given them. Tomorrow the Serengeti, Ngorongoro, or Kilimanjaro awaits — but tonight, raise a glass of banana beer to Arusha, the unsung heart of northern Tanzania.',
+          tip: 'If heading to the Serengeti or Ngorongoro, your safari vehicle will typically depart Arusha by 6-7am. Pack the night before and confirm your pickup time with your operator.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Book safaris in Arusha', text: 'Safari prices quoted in Arusha are 30-50% cheaper than those booked through international agents. Compare at least 3 operators, negotiate firmly, and check TATO membership. Competition is fierce and prices are flexible, especially in low season.' },
+  { title: 'Eat street food like a local', text: 'Chips mayai (omelette with chips), mishkaki (meat skewers), and pilau rice cost 2,000-5,000 TZS ($0.80-2) at street stalls. Tourist restaurants charge 10x more for the same food. Follow the crowds to the busiest stalls for the freshest food.' },
+  { title: 'Share transport', text: 'Dalla-dalla minibuses around Arusha cost 500-1,000 TZS ($0.20-0.40). For day trips, share a taxi with other travellers from your hostel. The Via Via notice board is the best place to find safari and transport companions.' },
+  { title: 'Negotiate everything', text: 'Prices for taxis, market goods, and tours in Arusha are always negotiable. Start at 40-50% of the asking price and settle around 60-70%. Bargaining is expected, enjoyable, and part of the cultural experience.' },
+  { title: 'Use USD for big purchases', text: 'Safari companies, park fees, and upmarket hotels quote in USD and accept dollar cash — often at a better rate than paying in TZS. Carry clean, recent (post-2013) US dollar bills in $50 and $100 denominations.' },
+  { title: 'Stay in local guesthouses', text: 'Arusha has excellent budget guesthouses for $10-25 per night that are cleaner and friendlier than many hostels. Ask fellow travellers for recommendations — the best places fill through word of mouth rather than booking platforms.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$8–20', midrange: '$30–80', splurge: '$150+', notes: 'Guesthouses → mid-range hotels → lodges' },
+  { category: 'Food', budget: '$5–12', midrange: '$12–30', splurge: '$40+', notes: 'Street food → local restaurants → fine dining' },
+  { category: 'Transport', budget: '$2–8', midrange: '$10–25', splurge: '$40+', notes: 'Dalla-dalla → shared taxi → private hire' },
+  { category: 'Activities', budget: '$5–20', midrange: '$25–60', splurge: '$100+', notes: 'Markets → coffee tours → national park' },
+  { category: 'Entry Fees', budget: '$5–15', midrange: '$15–50', splurge: '$50+', notes: 'Museums → national park ($50/day)' },
+  { category: 'Daily Total', budget: '$25–75', midrange: '$92–245', splurge: '$380+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Visa on arrival ($50 USD) or e-Visa — apply at visa.immigration.go.tz before departure for faster entry',
+      'Keep a digital and physical copy of your passport, visa, and travel insurance at all times',
+      'Yellow fever vaccination certificate required if arriving from an endemic country',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Malaria risk exists in Arusha — take prophylaxis and use insect repellent, especially during evening hours',
+      'Travel insurance with medical evacuation coverage is essential — Arusha has decent private clinics but complex cases require evacuation',
+      'Altitude sickness can affect visitors — Arusha sits at 1,400m and day trips go higher. Stay hydrated and acclimatise gradually',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Dalla-dalla minibuses are the cheapest transport around the city — routes are not well signed so ask locals for help',
+      'Taxis and boda-bodas (motorbike taxis) are available everywhere — negotiate the price before departure',
+      'For national park visits and day trips, hire a vehicle with driver through your accommodation or a local operator',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Vodacom or Airtel SIM at the airport for affordable data — 4G coverage is good in Arusha and along main roads',
+      'WiFi is available at most accommodation and cafes but speeds can be slow — download offline maps before heading to parks',
+      'Mobile money (M-Pesa on Vodacom) is increasingly useful for payments — register when buying your SIM',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: TZS (Tanzanian Shilling). USD cash is widely accepted for safari bookings and park fees',
+      'ATMs are available in central Arusha — CRDB and NMB banks accept international Visa and Mastercard',
+      'Tip 10% at restaurants. Safari guides and camp staff appreciate tips of $10-20 per day per group',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Arusha is at altitude (1,400m) — evenings are cool (12-18°C). Bring a warm fleece or jacket for morning game drives and mountain hikes',
+      'Neutral-coloured clothing for safari visits. A good pair of binoculars transforms wildlife viewing',
+      'Comfortable walking shoes for market exploring and hiking. A daypack, reusable water bottle, and sunscreen are daily essentials',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Greetings Are Everything', text: 'Tanzanians value greetings above almost everything else. Learn "Habari" (how are you?), "Nzuri" (good/fine), "Asante sana" (thank you very much), and "Karibu" (welcome). A proper greeting before any interaction shows respect and opens doors everywhere.' },
+  { icon: '🌍', title: 'Respect Maasai Culture', text: 'The Maasai are not a tourist attraction — they are a living culture with deep traditions. Ask permission before photographing, pay agreed fees for cultural visits, and avoid condescending attitudes. Show genuine curiosity and respect, and cultural exchange becomes meaningful for both sides.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Always ask before photographing people. Many Tanzanians will happily pose but others may decline — respect this. Never photograph military or government buildings. In Maasai communities, agree on photography terms before your visit begins.' },
+  { icon: '🗣', title: 'Learn Swahili Basics', text: 'Swahili is Tanzania\'s national language and a source of deep pride. Even basic greetings transform interactions from transactional to warm. "Mambo" (what\'s up — casual), "Pole pole" (slowly slowly), and "Hakuna matata" (no worries) are used constantly.' },
+  { icon: '🤝', title: 'Support Local Economy', text: 'Choose locally-owned guesthouses, restaurants, and safari operators over international chains. Buy coffee directly from cooperatives, crafts from artisans, and food from local markets. Tourism is Arusha\'s economic engine — ensure your spending reaches the people who need it most.' },
+  { icon: '🕐', title: 'Swahili Time', text: 'Tanzania uses Swahili time — 6 hours offset from Western time (7am Western time is "1 o\'clock" in Swahili time because it is 1 hour after sunrise). This can cause confusion — always clarify whether times are in "Swahili time" or "English time" when making arrangements.' },
+];
+---
+
+<CityGuideLayout
+  title="Arusha Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Arusha guide for young travelers. Safari gateway, coffee plantations, Maasai culture with 1, 3 and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/arusha-hero.webp"
+  heroFlag="🇹🇿"
+  heroCountry="Tanzania"
+  heroRegion="Africa"
+  heroCity="Arusha"
+  heroSubtitle="Gateway to the Serengeti and Kilimanjaro — a vibrant Tanzanian city at the foot of Mount Meru with world-class coffee, Maasai culture, and walking safaris."
+  heroPills={["7-Day Safari Gateway","Culture","Jun – Oct Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Arusha is affordable for day-to-day living — local food and transport are cheap. Safari costs (which most visitors book from Arusha) are a separate and significant budget item."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Arusha is the cultural crossroads of northern Tanzania — Maasai pastoralists, Meru farmers, and a cosmopolitan mix of traders and travellers create a city that rewards curiosity and respect in equal measure."
+  ctaCity="Arusha"
+  ctaText="Find travel companions to explore Arusha together on roammate — split safari costs, share coffee tours, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

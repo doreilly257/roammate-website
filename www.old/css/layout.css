@@ -1,0 +1,952 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');*/
+
+@font-face {
+    font-family: 'Arvo-Bold';
+    src: url('../fonts/Arvo-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Arvo-Bold.woff') format('woff'), url('../fonts/Arvo-Bold.ttf') format('truetype'), url('../fonts/Arvo-Bold.svg#Arvo-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo-BoldItalic';
+    src: url('../fonts/Arvo-BoldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/Arvo-BoldItalic.woff') format('woff'), url('../fonts/Arvo-BoldItalic.ttf') format('truetype'), url('../fonts/Arvo-BoldItalic.svg#Arvo-BoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo-Italic';
+    src: url('../fonts/Arvo-Italic.eot?#iefix') format('embedded-opentype'), url('../fonts/Arvo-Italic.woff') format('woff'), url('../fonts/Arvo-Italic.ttf') format('truetype'), url('../fonts/Arvo-Italic.svg#Arvo-Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('../fonts/Arvo.eot?#iefix') format('embedded-opentype'), url('../fonts/Arvo.woff') format('woff'), url('../fonts/Arvo.ttf') format('truetype'), url('../fonts/Arvo.svg#Arvo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Bold.woff') format('woff'), url('../fonts/OpenSans-Bold.ttf') format('truetype'), url('../fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('../fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Light.woff') format('woff'), url('../fonts/OpenSans-Light.ttf') format('truetype'), url('../fonts/OpenSans-Light.svg#OpenSans-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../OpenSans.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans.woff') format('woff'), url('../fonts/OpenSans.ttf') format('truetype'), url('../fonts/OpenSans.svg#OpenSans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans-Semibold';
+    src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Semibold.woff') format('woff'), url('../fonts/OpenSans-Semibold.ttf') format('truetype'), url('../fonts/OpenSans-Semibold.svg#OpenSans-Semibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* 1. Reset
+***************************************************************/
+
+* {
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+fieldset,
+{
+    margin: 0px auto;
+    padding: 0px;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+}
+
+a,
+img a {
+    text-decoration: none;
+    border: 0;
+    outline: 0 !important;
+    transition: all ease-in .3s;
+    -moz-transition: all ease-in .3s;
+    -ms-transition: all ease-in .3s;
+    -o-transition: all ease-in .3s;
+    -webkit-transition: all ease-in .3s;
+}
+
+a,
+button,
+input {
+    transition: all ease-in .3s;
+    -moz-transition: all ease-in .3s;
+    -ms-transition: all ease-in .3s;
+    -o-transition: all ease-in .3s;
+    -webkit-transition: all ease-in .3s;
+}
+
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+}
+
+:focus {
+    outline: 0px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+ol,
+ul,
+li {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.p-xxxs {
+    padding: 0 !important;
+}
+.p-t-m {
+    padding-top: 30px !important;
+}
+
+.p-t-lg {
+    padding-top: 60px !important;
+}
+
+
+/* 2. Clearing Floats
+**************************/
+
+.clear {
+    clear: both;
+}
+
+
+/*------- main css-------*/
+
+body {
+    position: relative;
+    min-height: 100%;
+    color: #000000;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+.header {
+    display: table;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:transparent;
+    z-index: 999;
+	padding:10px 0;
+	-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;  
+}
+
+body.stickyActive .header {
+   background: rgba(0, 0, 0, 0.54);
+	padding: 0;
+}
+.header .logo {
+    position: absolute;
+    padding: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+.header .right-nav {
+    float: right;
+    padding: 0 20px 0 0;
+}
+
+.right-nav li {
+    display: inline-block;
+    padding: 8px 8px 8px 8px;
+}
+
+.right-nav li>a {
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    display: block;
+    padding: 22px 18px;
+    letter-spacing: 1.5px;
+    font-family: 'OpenSans-bold';
+}
+
+.right-nav li>a.bgimg {
+    background: url(../images/Pasted-2.png);
+    background-repeat: no-repeat;
+    width: 148px;
+    padding: 22px 0;
+}
+
+.right-nav li>a.bgimg img {
+    position: relative;
+    top: -3px;
+    padding: 0 0 0 8px;
+}
+
+
+/*<!----- toggle---->*/
+
+.toggle-nav {
+    position: relative;
+    display: none;
+}
+
+.toggle-nav span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    height: 4px;
+    width: 30px;
+    border-radius: 12px;
+}
+
+.toggle-nav span:before,
+.toggle-nav span:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background: #fff;
+    height: 4px;
+    width: 30px;
+    border-radius: 12px;
+}
+
+.toggle-nav span:before {
+    top: 10px;
+}
+
+.toggle-nav span:after {
+    top: 20px;
+}
+
+
+/*---- toggle btn---*/
+
+.banner-wraper {
+    padding: 98px 0 0 0;
+    position: relative;
+    height: 100%;
+}
+
+.banner {
+    height: 100%;
+    position: relative;
+}
+
+.banner-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.banner-image img.join {
+   width: 420px;
+    max-width: 100%;
+}
+
+.download.top {
+    top: -50px;
+}
+
+.download {
+    position: relative;
+}
+
+.download a {
+    display: inline-block;
+    padding: 0 8px;
+}
+
+.download img {
+    width: 220px;
+}
+
+
+/*-----------mobile banner------*/
+
+.banner-mobile {
+    background: #ffffff;
+}
+
+.banner-mobile .content {
+    padding: 60px 40px 40px;
+    text-align: center;
+}
+
+.banner-mobile h1 {
+    font-size: 30px;
+    font-family: 'Arvo';
+}
+
+.banner-mobile h1 span {
+    position: relative;
+    top: 10px;
+    padding: 0 10px 0 0;
+}
+
+.banner-mobile p {
+    font-size: 25px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Arvo';
+}
+
+.devider img {
+    width: 100%;
+}
+
+.mobile-sec {
+    position: absolute;
+    top: -140px;
+    right: 0;
+}
+
+/*-----------secimage-banner------*/
+
+
+.secimage-banner .image-list li {
+    float: left;
+    width: 25%;
+    position: relative;
+}
+
+.secimage-banner .image-list li img {
+    width: 100%;
+}
+
+.secimage-banner .top-onimage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    padding: 30px;
+}
+
+.secimage-banner .top-onimage h1 {
+    margin: 0;
+    font-size: 24px;
+    padding: 0 0 10px 0;
+    text-transform: capitalize;
+    font-family: 'Arvo';
+}
+
+.secimage-banner .top-onimage span {
+    font-size: 12px;
+    font-family: 'OpenSans-Bold';
+}
+
+.secimage-banner .top-onimage p {
+    font-size: 17px;
+    font-family: 'OpenSans';
+    padding: 20px 0;
+}
+
+.secimage-banner .image-listicon li label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 10px 0 0 0;
+    font-family: 'OpenSans-semibold';
+    letter-spacing: 1.5px;
+}
+
+.secimage-banner .image-listicon {
+    display: table;
+    width: 100%;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+}
+
+.secimage-banner .image-listicon li {
+    width: 33% !important;
+	min-width: initial;
+	float: left;
+	text-align: center;
+}
+
+.secimage-banner .image-listicon li img {
+    width: auto;
+    display: inherit;
+    margin: 0 auto;
+}
+
+.secimage-banner .top-onimage.gray-bg h1,
+.secimage-banner .top-onimage.dark-bg h1 {
+    color: #000000;
+}
+
+.secimage-banner .top-onimage.gray-bg span,
+.secimage-banner .top-onimage.gray-bg p,
+.secimage-banner .gray-bg .image-listicon li label {
+    color: #b4b8bb;
+}
+
+.secimage-banner .top-onimage.yellow-bg h1,
+.secimage-banner .top-onimage.yellow-bg span,
+.secimage-banner .top-onimage.yellow-bg p,
+.secimage-banner .yellow-bg .image-listicon li label {
+    color: #ffffff;
+}
+
+.secimage-banner .top-onimage.dark-bg {
+    text-align: right;
+}
+
+.secimage-banner .top-onimage.dark-bg span,
+.secimage-banner .top-onimage.dark-bg p,
+.secimage-banner .dark-bg .image-listicon li label {
+    color: #9fa2a7;
+}
+
+.secimage-banner .top-onimage.black-bg {
+    text-align: right;
+}
+
+.secimage-banner .top-onimage.black-bg span,
+.secimage-banner .top-onimage.black-bg p {
+    color: #a7a7a9;
+}
+
+.secimage-banner .top-onimage.black-bg h1,
+.secimage-banner .black-bg .image-listicon li label {
+    color: #ffffff;
+}
+
+
+/*-----------simple content banner------*/
+
+.simple-banner {
+    text-align: center;
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.simple-banner h1 {
+    margin: 0;
+    font-size: 55px;
+    color: rgba(0, 0, 0, 0.85);
+    padding: 25px 0;
+    line-height: 1.0;
+    font-family: 'Arvo';
+}
+
+.simple-banner p {
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 18px;
+    font-family: 'OpenSans-semibold';
+}
+
+
+/*-----------content banner------*/
+
+.banner-content {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.banner-content h1 {
+    margin: 0 auto;
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.81);
+    line-height: 1.5;
+    padding: 25px 190px;
+    font-family: 'Arvo';
+}
+
+
+/*-----------footer banner------*/
+
+.footer-banner {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer-banner h1 {
+    margin: 0;
+    padding: 50px 0;
+    font-size: 42px;
+    color: #f7f7f7;
+    font-family: 'Arvo';
+}
+
+.footer-nav {
+    border-top: solid 1px rgba(236, 235, 235, 0.3);
+    margin: 50px 0 0 0;
+    padding: 10px 0;
+}
+
+.footer-nav ul {
+    padding: 5px 0 15px 0;
+}
+.footer-nav ul.menu {
+    padding: 20px 0 0 0;
+}
+.footer-logo{
+	padding: 22px 18px;	
+}
+.footer-nav ul.menu {
+    padding: 17px 0 0 0;
+    text-align: left;
+}
+
+.footer-nav ul.logo-sccial {
+    text-align: right;
+}
+
+.footer-nav li {
+    display: inline-block;
+}
+
+.footer-nav li a {
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    padding: 22px 18px;
+    letter-spacing: 1.5px;
+    font-family: 'OpenSans-semibold';
+}
+
+.footer-nav li.social a {
+    padding: 0 8px;
+    display: inline-block;
+}
+.footer-nav li.social i.fa {
+    font-size: 18px;
+}
+.footer-nav li.social {
+    padding: 22px;
+}
+.footer-nav li img.logo {
+    position: relative;
+    top: -8px;
+}
+.footer-logo span {
+    font-family: 'OpenSans-semibold';
+    color: #fff;
+    font-size: 17px;
+}
+.footer-copyright {
+    color: #f1f1f1;
+    letter-spacing: 0.5px;
+    font-family: 'OpenSans-Light';
+}
+.simpleowl-banner .owl-carousel .owl-nav [class*=owl-] {
+    background: rgba(0, 0, 0, 0.21);
+    color: #f76107;
+    font-size: 20px;
+    width: 40px;
+    height: 80px;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.simpleowl-banner .owl-carousel .owl-prev,
+.simpleowl-banner .owl-carousel .owl-next {
+    position: absolute;
+    height: 30px;
+    top: 50%;
+    margin: auto !important;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+}
+
+.simpleowl-banner .owl-carousel .owl-prev {
+    left: 0;
+    border-radius: 0 2px 2px 0;
+}
+
+.simpleowl-banner .owl-carousel .owl-next {
+    right: 0;
+    border-radius: 2px 0 0 2px;
+}
+
+
+/*---------- banner-animation -------------*/
+
+.banner-animation {
+    padding: 130px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+/*.banner-animation .container {
+    width: 1170px;
+}
+*/
+
+.banner-animation .wraper-curve {
+    background: url(../images/Pasted-19.png);
+    background-repeat: no-repeat;
+    background-position-y: 46em;
+    background-position-x: 250px;
+    background-size: 480px;
+}
+
+.single-image img {
+    width: 700px;
+    max-width: 100%;
+}
+
+.single-image.clearfix {
+    padding: 75px 0 0 0;
+}
+
+.banner-animation p.more-pd {
+    padding: 0 70px 90px;
+}
+
+.banner-animation p {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'Arvo';
+    padding: 20px 0;
+}
+
+.multi-user .mobile {
+    width: 250px;
+    float: right;
+}
+
+.multi-user .user {
+    position: relative;
+    top: -80px;
+    float: left;
+}
+
+.multi-user .user img {
+    width: 100%;
+}
+
+.top-userimage .left {
+    position: absolute;
+    top: -220px;
+    width: 100%;
+}
+
+.top-userimage .right {
+    position: relative;
+    z-index: 99;
+}
+
+.aling-image {
+    position: relative;
+}
+
+.aling-image li {
+    display: inline-block;
+}
+
+.aling-image li:first-child {
+    position: relative;
+    top: -300px;
+    padding: 0 15px 0 0;
+}
+
+.aling-image li:first-child img {
+    width: auto;
+}
+
+.aling-image li:nth-child(2) img {
+    width: auto;
+}
+
+.aling-image li:nth-child(3) img {
+    width: auto;
+}
+
+.aling-image li:nth-child(4) img {
+    width: auto;
+}
+
+.aling-image li:nth-child(5) img {
+    width: auto;
+}
+
+.aling-image li:nth-child(2) {
+    position: relative;
+    top: -170px;
+}
+
+.aling-image li:nth-child(3) {
+    position: relative;
+    top: -90px;
+    right: 50px;
+    z-index: 1;
+}
+
+.aling-image li:nth-child(4) {
+    position: absolute;
+    left: 164px;
+    top: 65px;
+    z-index: -1;
+}
+
+.aling-image li:nth-child(5) {
+    position: relative;
+    top: -120px;
+    right: -130px;
+}
+
+.half-curve img {
+    width: 550px;
+}
+
+
+/* Mozilla based browsers */
+
+.banner-mobile .content p::-moz-selection {
+    background-color: #f7fd51;
+}
+
+
+/* Works in Safari */
+
+.banner-mobile .content p::selection {
+    background-color: #f7fd51;
+}
+
+.main50-owlpart {
+    width: 50%;
+    float: left;
+}
+
+.inner-50-owl {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+.image-list img {
+    width: 100%;
+}
+
+.relative-wrap {
+    position: relative;
+}
+
+.abs-author {
+    font-size: 28px;
+    font-family: 'Arvo';
+    font-style: italic;
+    color: #9fa3a7;
+    position: absolute;
+    top: 66px;
+    right: 67px;
+}
+
+#multiple-imageslider .owl-nav [class*=owl-] {
+    background: rgba(0, 0, 0, 0.21);
+    color: #f76107;
+    font-size: 20px;
+    width: 40px;
+    height: 80px;
+    text-align: center;
+    padding: 25px 0;
+}
+
+div#multiple-imageslider .owl-prev {
+    left: 0;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+div#multiple-imageslider .owl-next {
+    right: 0;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+/*-------------- content- all inner pages-------*/
+.banner-wraper.bg{    
+    background: #f1f1f1;
+}
+.header.innerbgcolor{
+	background-color:rgba(0, 0, 0, 0.22);	
+}
+.content-wraper {
+    background: #f1f1f1;
+}
+.content-wraper .border {
+    padding: 50px;
+    box-shadow: 0px 0 5px 0px rgba(0, 0, 0, 0.19);
+    background: #ffffff;
+}
+.content-wraper h1 {
+    font-family: 'Arvo';
+    font-size: 26px;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding: 0 0 20px 0;
+}
+.content-wraper h1:before {
+    position: absolute;
+    background: #d65837;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 3px;
+}
+.content-wraper h2.ques {
+    font-family: 'OpenSans-semibold';
+    font-size: 16px;
+    margin: 0;
+    padding: 15px 0 15px 0;
+}
+.content-wraper p.ans {
+    font-family: 'OpenSans';
+    font-size: 14px;
+}
+.content-wraper p.ans a{
+	color:#000;
+}
+::selection {
+    background-color: #f7fd51;
+}
+.content-wraper .listing, .content-wraper .number-list{
+   padding: 0 15px 0;
+}
+.content-wraper .number-list li{
+	 list-style-type: decimal;	
+	 padding: 6px 10px;
+}
+.content-wraper .listing li {
+    padding: 6px 10px;
+    list-style-type: disc;
+}
+.overlay-bg{
+	position:relative;
+	transition: all ease-in .3s;
+    -moz-transition: all ease-in .3s;
+    -ms-transition: all ease-in .3s;
+    -o-transition: all ease-in .3s;
+    -webkit-transition: all ease-in .3s;
+}
+.overlay-bg::before {
+    background: rgba(0, 0, 0, 0.37);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    z-index: 999;
+	transition: all ease-in .3s;
+    -moz-transition: all ease-in .3s;
+    -ms-transition: all ease-in .3s;
+    -o-transition: all ease-in .3s;
+    -webkit-transition: all ease-in .3s;
+}

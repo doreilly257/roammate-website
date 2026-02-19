@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'LAK (Kip)', detail: '1 USD ≈ 20,800 LAK' },
+  { icon: '🗣', label: 'Language', value: 'Lao / English', detail: 'Limited English outside tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Apr', detail: 'Dry season, safe navigation' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–35 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on arrival', detail: '30-day visa on arrival for most nationalities (~$35)' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Mekong Slow Boat — Overview',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Day 1 — Luang Prabang to Pak Beng',
+          text: 'The slow boat departs from the navigation office pier in Luang Prabang between 8–9am. Buy your ticket the day before at the office near the pier for 200,000–250,000 LAK ($10–12). The boat is a long wooden vessel with bench seats and a small snack shop at the back selling instant noodles, fruit, and BeerLao. The first day covers roughly 7 hours downstream, winding through jungle-covered mountains, past small fishing villages, and alongside dramatic limestone cliffs. The Mekong is wide and brown, and the pace is hypnotically slow.',
+          tip: 'Arrive at the pier by 7:30am to get a good seat — the front of the boat and port (left) side have the best views. Seats fill up and late arrivals end up in the noisy engine section.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'River Life & Pak Ou Caves Stop',
+          text: 'Many boats stop at Pak Ou Caves — a pair of limestone caves at the confluence of the Mekong and Nam Ou rivers, filled with thousands of Buddha statues left by pilgrims over centuries. Entry is 20,000 LAK. The lower cave (Tham Ting) is the more impressive, with Buddha figures crammed into every alcove and ledge. Back on the boat, the afternoon stretches on as villages appear and disappear along the banks — children waving, fishermen casting nets, water buffalo bathing. Bring a book, music, or just watch the world float past.',
+          tip: 'Bring your own cushion or travel pillow — the wooden bench seats become uncomfortable after several hours. A sarong folded as a seat pad works perfectly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Overnight in Pak Beng',
+          text: 'The boat arrives in Pak Beng around 5–6pm. This small riverside town exists almost entirely for slow boat passengers — a single main street lined with guesthouses, restaurants, and minimarkets. Rooms cost 80,000–150,000 LAK ($4–7) for a basic double with fan, or 200,000–300,000 LAK for air conditioning. Grab dinner at one of the riverside restaurants — Lao food with views over the Mekong at sunset. The electricity in Pak Beng can be unreliable, so charge your devices when you can.',
+          tip: 'Book a guesthouse as you walk up from the pier — the touts at the dock are pushy but you can negotiate. Check the room before paying and ask for a river-view room.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Luang Prabang Departure & Pak Ou Caves',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Boarding the Slow Boat',
+          text: 'Head to the navigation office pier in Luang Prabang by 7:30am. Tickets cost 200,000–250,000 LAK ($10–12) — buy them the day before at the office to guarantee a spot, or from any travel agent in town for a small markup. The slow boat is a traditional long wooden vessel — think narrow, covered, with rows of bench seats facing forward. There is no reserved seating, so early birds get the best spots. The front section has the widest views and least engine noise. The boat departs between 8–9am and heads upstream (northwest) toward the Thai border.',
+          tip: 'Stock up on snacks, water, and lunch before boarding. The boat has a basic shop selling instant noodles and drinks at inflated prices. The market near the pier in Luang Prabang sells baguette sandwiches (a French colonial legacy) for 15,000–20,000 LAK — perfect boat food.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pak Ou Caves & Mekong Scenery',
+          text: 'Two hours upstream from Luang Prabang, the boat stops at Pak Ou Caves — a sacred site at the confluence of the Mekong and Nam Ou rivers. Two limestone caves are packed with thousands of Buddha statues in every size and style, left by pilgrims over centuries. Tham Ting (the lower cave) is the main attraction — sunlight streams in through the entrance illuminating rows of golden Buddhas. Entry is 20,000 LAK. After Pak Ou, the journey continues through increasingly remote and beautiful scenery — the Mekong narrows between forested mountains, passing villages accessible only by river.',
+          tip: 'The upper cave (Tham Phum) requires a torch and a climb but is quieter and more atmospheric than the crowded lower cave. Bring a headlamp.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Overnight in Pak Beng',
+          text: 'The boat docks in Pak Beng around 5–6pm after roughly 7–8 hours on the water. Pak Beng is a one-street town that exists to serve slow boat passengers — guesthouses, restaurants, and a couple of minimarkets line the hill from the pier to the main road. Rooms range from 80,000 LAK ($4) for a fan room to 300,000 LAK ($15) for air conditioning with hot water. Walk up the main street, check a few rooms, and negotiate. Dinner at a riverside restaurant — grilled fish, laap, sticky rice, and BeerLao overlooking the Mekong — is the perfect end to day one.',
+          tip: 'Do not accept the first guesthouse tout at the pier — walk up the hill and you will find better options at lower prices. The guesthouses at the top of the street are quieter and often newer.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Pak Beng to Huay Xai & Thailand Border',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Day 2 — Second Leg to Huay Xai',
+          text: 'The slow boat departs Pak Beng at 8–9am for the second and final leg to Huay Xai. Day two is slightly shorter (5–6 hours) but equally beautiful. The Mekong widens as you approach the Thai border, with the Lao mountains on one side and Thai hills on the other. The scenery shifts from deep jungle gorges to broader river valleys with more villages and agricultural activity. Fishermen in narrow wooden boats cast nets in the shallows, and children play on sandy riverbanks. The rhythm of the boat becomes meditative.',
+          tip: 'Day two seats fill up with new passengers from Pak Beng. Get to the pier early again for a good seat. The left side of the boat faces Thailand and has the more varied views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Arrival in Huay Xai',
+          text: 'The boat arrives in Huay Xai (also spelled Houayxay) between 2–4pm. Huay Xai is the Lao border town directly across the Mekong from Chiang Khong, Thailand. If you are crossing to Thailand the same day, head straight to the Lao immigration office near the Friendship Bridge (30,000 LAK exit fee), then take the shuttle bus across the bridge (20,000 LAK) to Thai immigration in Chiang Khong. The process takes about an hour. If staying in Huay Xai overnight, guesthouses near the pier cost 100,000–200,000 LAK.',
+          tip: 'Lao immigration closes at 4pm and Thai immigration closes at 5pm — if your boat arrives late, you may need to stay overnight in Huay Xai and cross the next morning.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Chiang Khong, Thailand',
+          text: 'If you cross to Thailand in time, Chiang Khong is a pleasant, quiet riverside town on the Thai side of the Mekong. Guesthouses cost 300–500 THB ($9–14) for a clean room. The town has a small night market along the riverfront with Thai food — pad thai, som tam, and grilled meats for 40–80 THB each. The atmosphere is a dramatic contrast to the remote Lao wilderness you have just spent two days floating through. You are now in northern Thailand with easy connections to Chiang Rai and Chiang Mai.',
+          tip: 'Thailand grants visa-free entry for 60 days for most nationalities. Have your passport, departure card, and accommodation address ready for Thai immigration — it is straightforward but queues can be long.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Chiang Khong & Chiang Rai Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Chiang Khong Morning Market',
+          text: 'Start the day at Chiang Khong\'s morning market near the Mekong riverfront — a local Thai market where traders sell fresh produce, grilled meats, sticky rice in banana leaves, and strong Thai coffee for 20–30 THB. This is authentic northern Thai life with almost no tourists. Walk along the river promenade for views across the Mekong to Laos — the country you floated through for two days is just a few hundred metres away. If you want to linger, Chiang Khong has a few temples worth visiting, including Wat Luang with its ancient Lanna-style chedi.',
+          tip: 'The morning market is best before 8am when the selection is fullest. Try khanom jeen nam ngiao — a northern Thai rice noodle soup with pork ribs in a rich tomato broth.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chiang Rai — White Temple & Blue Temple',
+          text: 'Catch a bus from Chiang Khong to Chiang Rai (2 hours, 65–80 THB) and spend the afternoon exploring Thailand\'s northernmost city. Wat Rong Khun (the White Temple) is a contemporary masterpiece — an all-white, mirror-encrusted Buddhist temple designed by artist Chalermchai Kositpipat. Entry is 100 THB. Nearby, Wat Rong Suea Ten (the Blue Temple) is equally striking with its vivid blue interior and massive white Buddha. Both temples are unlike anything else in Thailand — part religious site, part art installation.',
+          tip: 'The White Temple is best visited in the morning light when the mirrors catch the sun, but afternoon works if you are coming from Chiang Khong. The Blue Temple has no entry fee.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Chiang Rai Night Bazaar',
+          text: 'Chiang Rai\'s Night Bazaar is one of northern Thailand\'s best — a sprawling market in the city centre with hill tribe handicrafts, clothing, art, and an enormous food court. The food court in the centre of the bazaar has a stage with live music and traditional dance performances while you eat — pad kra pao, khao soi (northern Thai coconut curry noodles), and mango sticky rice all under 60 THB. BeerLao becomes Chang and Singha here, and a cold one costs 40–60 THB. This is the perfect final evening after your Mekong journey.',
+          tip: 'Khao soi is the signature dish of northern Thailand — a coconut curry noodle soup topped with crispy fried noodles. Chiang Rai does it better (and cheaper) than Chiang Mai.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Buy boat tickets at the pier', text: 'The navigation office in Luang Prabang sells slow boat tickets at the official price (200,000–250,000 LAK). Travel agents in town charge a 50,000–100,000 LAK markup. Walk to the pier the day before and buy direct.' },
+  { title: 'Bring your own food and water', text: 'The boat shop sells instant noodles and snacks at double the town price. Stock up at the morning market in Luang Prabang — baguette sandwiches, fruit, water, and snacks for the full day cost under 50,000 LAK.' },
+  { title: 'Negotiate in Pak Beng', text: 'Every guesthouse in Pak Beng is competing for slow boat passengers. Walk past the touts at the pier, check multiple rooms, and negotiate — prices drop significantly if you ask, especially in low season.' },
+  { title: 'Cross to Thailand the same day', text: 'If you reach Huay Xai before 3pm, you can cross to Thailand and save a night\'s accommodation in Laos. Chiang Khong has cheaper guesthouses and better food options than Huay Xai.' },
+  { title: 'Take the bus from Chiang Khong', text: 'Local buses from Chiang Khong to Chiang Rai cost 65–80 THB. Minivans cost 150–200 THB. Private taxis charge 1,500+ THB. The bus is comfortable and direct — no need to overspend on transport.' },
+  { title: 'Avoid the speedboat', text: 'Speedboats cover the Luang Prabang to Huay Xai route in 6 hours instead of two days — but they are uncomfortable, deafeningly loud, and genuinely dangerous. Several fatal accidents have occurred. The slow boat is the only sensible option.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$4–8', midrange: '$10–20', splurge: '$30+', notes: 'Fan room → AC room → riverside boutique' },
+  { category: 'Food', budget: '$3–8', midrange: '$8–15', splurge: '$20+', notes: 'Market food → local restaurants → riverside dining' },
+  { category: 'Transport', budget: '$10–12', midrange: '$12–18', splurge: '$25+', notes: 'Slow boat ticket → agent markup → private boat' },
+  { category: 'Activities', budget: '$1–3', midrange: '$3–10', splurge: '$15+', notes: 'Pak Ou entry → temples → guided tours' },
+  { category: 'Border Fees', budget: '$2–5', midrange: '$2–5', splurge: '$2–5', notes: 'Lao exit fee + bridge shuttle' },
+  { category: 'Daily Total', budget: '$20–36', midrange: '$35–68', splurge: '$92+', notes: 'Budget backpacker → comfortable → splurge' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Lao visa on arrival at all borders (~$35, bring passport photos). Thai visa-free entry for 60 days for most nationalities',
+      'The Friendship Bridge between Huay Xai and Chiang Khong has immigration offices on both sides — process takes about 1 hour',
+      'Lao exit fee is 30,000 LAK. Bridge shuttle bus costs 20,000 LAK on the Lao side or 25 THB on the Thai side',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Travel insurance with medical evacuation is essential — there are no hospitals between Luang Prabang and Huay Xai',
+      'Bring basic medication (painkillers, anti-diarrhoea, rehydration salts) for the two-day journey',
+      'The slow boat is safe in dry season. In wet season (Jun–Sep) the river is high and fast — check conditions before travelling',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'The slow boat is the transport — no stops besides Pak Ou Caves and Pak Beng overnight',
+      'In Pak Beng, everything is on one main street walkable from the pier in 10 minutes',
+      'From Huay Xai, shuttle bus crosses the Friendship Bridge to Chiang Khong. Buses connect to Chiang Rai (2 hrs) and Chiang Mai (5 hrs)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'There is no mobile signal for most of the boat journey — embrace the disconnection',
+      'Pak Beng guesthouses have WiFi but it is slow and unreliable. Download entertainment before Luang Prabang',
+      'Thai SIM cards are available in Chiang Khong from any 7-Eleven for 200–300 THB with data',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: LAK (Lao Kip). 1 USD ≈ 20,800 LAK. Carry enough LAK for the full 2-day journey — there are no ATMs between Luang Prabang and Huay Xai',
+      'Pak Beng has one or two ATMs but they are unreliable. Bring cash from Luang Prabang for guesthouse, food, and boat ticket',
+      'In Chiang Khong, ATMs dispense Thai Baht. Exchange remaining LAK before crossing as Thai banks do not accept Lao Kip',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Cushion or travel pillow — the wooden bench seats are hard after 7 hours. A folded sarong also works as padding',
+      'Snacks, water, a book, and downloaded music or podcasts — there is no entertainment on board besides the scenery',
+      'Warm layer for the morning departure — the river is cold at 8am, especially in the bow where wind cuts through',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect the Journey', text: 'The Mekong slow boat is not just transport — it is one of the great river journeys in the world. Put your phone away for stretches, watch the villages pass, and appreciate the pace. This is how people have travelled the Mekong for centuries.' },
+  { icon: '🌍', title: 'Leave No Trace', text: 'The Mekong is a lifeline for millions of people — do not throw anything into the river. Keep your rubbish and dispose of it in Pak Beng or Huay Xai. The river provides drinking water, fish, and irrigation for every village you pass.' },
+  { icon: '📸', title: 'Village Photography', text: 'The boat passes close to riverside villages where children often wave. Wave back, but be thoughtful with cameras — these are people\'s homes, not attractions. If the boat stops at a village, ask before photographing anyone.' },
+  { icon: '🗣', title: 'Language Basics', text: 'Learn basic Lao before the journey — sabaidee (hello), khop jai (thank you), bor pen nyang (no problem). English is very limited in Pak Beng and along the river. A phrasebook or translation app is invaluable.' },
+  { icon: '🤝', title: 'Fellow Travellers', text: 'The slow boat is a social experience — you are sharing two days with the same group of backpackers. Bring a deck of cards, share snacks, and make friends. Some of the best travel friendships are forged on this boat.' },
+  { icon: '🕐', title: 'Embrace Slow Travel', text: 'The whole point of the slow boat is being slow. There is nowhere to be, nothing to rush to, no schedule to keep. If you cannot sit still for 7 hours and watch a river flow, this journey is not for you — and that is fine. But if you can, it will be one of the most peaceful experiences of your travels.' },
+];
+---
+
+<CityGuideLayout
+  title="Mekong Slow Boat Guide 2026 — Luang Prabang to Thailand | roammate"
+  description="The ultimate Mekong slow boat guide for young travelers. Two-day river journey from Luang Prabang to the Thai border with 1 and 3-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/mekong-slow-boat-hero.webp"
+  heroFlag="🇱🇦"
+  heroCountry="Laos"
+  heroRegion="Southeast Asia"
+  heroCity="Mekong Slow Boat"
+  heroSubtitle="Two days on a wooden boat drifting down the Mekong — jungle-covered mountains, riverside villages, Pak Ou Caves, and the Thai border at journey's end."
+  heroPills={["2-Day Journey","River Travel","Oct – Apr Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. The Mekong slow boat is one of the cheapest ways to travel in Southeast Asia — the journey itself costs under $15 and everything along the way is budget-friendly."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="The Mekong slow boat is one of the last great river journeys in Southeast Asia. Approach it with patience, curiosity, and respect for the river and the communities that depend on it."
+  ctaCity="Mekong Slow Boat"
+  ctaText="Find travel companions for the Mekong slow boat on roammate — share the journey, split guesthouse costs in Pak Beng, and cross into Thailand together."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

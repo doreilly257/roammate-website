@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'THB (Thai Baht)', detail: 'Cards in Ao Nang, cash elsewhere' },
+  { icon: '🗣', label: 'Language', value: 'Thai', detail: 'English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: 'Dry season, calm seas, best climbing' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–60 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: '30-day visa-free for many', detail: 'Check requirements for your nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Krabi Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Railay Beach & Climbing Cliffs',
+          text: 'Take a longtail boat from Ao Nang to Railay Beach — a stunning peninsula cut off from the mainland by sheer limestone cliffs, accessible only by water. Railay West is the main beach with fine white sand and dramatic karst towers rising from the jungle behind. Walk the short path through the jungle to Phra Nang Beach on the south side, where a sacred cave shrine sits at the base of a towering cliff and the water is an improbable shade of turquoise. Rock climbers will want to check out the bolted routes on the Thaiwand Wall — Railay is one of the world\'s top climbing destinations with over 700 routes.',
+          tip: 'Longtail boats from Ao Nang to Railay cost 100 baht each way and take 15 minutes. The last boat back runs at 6pm — confirm timing with the boatman.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Railay Lagoon & Viewpoint Hike',
+          text: 'After lunch at a beachside restaurant, tackle the Railay Viewpoint hike — a steep, muddy scramble up the cliff using ropes and tree roots that takes about 30-45 minutes each way. The reward at the top is a panoramic view over the entire peninsula with both beaches visible below and the Andaman Sea stretching to the offshore islands. Descend the other side to the hidden lagoon — a surreal sinkhole surrounded by vertical limestone walls. The route down is challenging and slippery, so take your time and wear shoes with grip. Return to Railay West for a swim to cool off.',
+          tip: 'The viewpoint hike is not for the faint-hearted — the rope sections are steep and muddy. Wear proper shoes, not flip-flops. Bring water and leave valuables on the beach.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ao Nang Sunset & Seafood',
+          text: 'Return to Ao Nang by longtail boat in time for sunset over the Andaman Sea. The main beach promenade fills with vendors selling fresh fruit shakes, grilled corn, and Thai street food as the sky turns orange behind the offshore limestone islands. Walk along the beachfront to one of the seafood restaurants where fish, prawns, squid, and crab are displayed on ice — pick your selection and choose how you want it cooked. A whole grilled sea bass with garlic, chilli, and lime runs about 350 baht. End the evening at one of the open-air bars along the main strip for a cheap cocktail.',
+          tip: 'Ao Nang\'s best sunsets are from the rocks at the south end of the beach. The seafood restaurants closest to the pier tend to be more expensive — walk further along the strip for better value.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Railay Beach & Rock Climbing',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Railay Beach & Phra Nang Cave',
+          text: 'Catch a longtail boat from Ao Nang pier to Railay Beach — the journey takes 15 minutes across calm water framed by dramatic limestone cliffs. Railay West is the postcard beach with white sand and towering karst towers, but walk through to Phra Nang Beach on the south side for the real showstopper. The beach sits below a massive overhanging cliff where a sacred cave shrine is decorated with carved wooden phalluses — offerings to the spirit of a princess said to protect fishermen. The turquoise water here is warm and calm, ideal for a long swim.',
+          tip: 'Phra Nang Beach gets busy by 11am — arrive early for the best experience. Bring a water bottle and snacks as beachside prices are inflated.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rock Climbing on Thaiwand Wall',
+          text: 'Railay is one of the world\'s premier rock climbing destinations with over 700 bolted sport routes across multiple crags. Even if you have never climbed before, half-day introductory courses are available from operators like Basecamp Tonsai and King Climbers. A beginner session runs about 1,500 baht and includes gear, instruction, and three to four routes on the Thaiwand Wall — the main crag facing Railay East with routes graded from 5a to 8b. Experienced climbers can hire gear and climb independently. The limestone is sharp and pocketed, offering incredible features and natural tufa formations unique to this geology.',
+          tip: 'Climbing is best in the morning or late afternoon when the rock is cooler. Afternoon sessions start around 2pm to avoid the midday heat. Long trousers protect against abrasive limestone.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tonsai Beach Bars & Fire Shows',
+          text: 'Walk around the headland at low tide (or take a longtail at high tide) to Tonsai Beach — Railay\'s scruffier, cheaper, and more bohemian neighbour. Tonsai is where the climbing community hangs out and the atmosphere is laid-back and social. The beach bars have cheap beer, reggae music, and nightly fire shows from about 9pm. Food is basic but good — Thai curries, banana pancakes, and fruit shakes from simple kitchen huts. The crowd is a mix of dreadlocked climbers, long-term travellers, and digital nomads. It is the anti-resort and many people end up staying longer than planned.',
+          tip: 'The path from Railay to Tonsai is only passable at low tide — check tide times or take a longtail (50 baht). If staying at Tonsai, book basic bungalows in advance during high season.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Four Islands Tour & Emerald Pool',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Four Islands Longtail Tour',
+          text: 'Join the classic Four Islands tour departing from Ao Nang at 9am — a full-day longtail boat trip visiting Koh Poda, Chicken Island (Koh Gai), Tup Island, and Phra Nang Cave Beach. Koh Poda is a small island with a pristine white sand beach and excellent snorkelling on the reef to the south — expect to see parrotfish, angel fish, and giant clams. Chicken Island is named for its unmistakable chicken-head-shaped rock formation, and at low tide a sandbar connects it to Tup Island, creating a spectacular walkway between two islands surrounded by crystal clear water.',
+          tip: 'The Four Islands tour costs 1,000-1,500 baht per person including lunch and snorkelling gear. Private longtail charters for 4-6 people offer more flexibility for around 3,000-4,000 baht total.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Emerald Pool & Hot Springs',
+          text: 'Return to the mainland and hire a car or join a tour inland to the Emerald Pool (Sa Morakot) in Khao Phra Bang Khram Nature Reserve — a natural spring-fed pool in the lowland jungle where the water is an astonishing bright emerald green from dissolved minerals. You can swim in the pool and the water is a constant cool temperature year-round. Continue through the forest boardwalk to the Blue Pool — a smaller, deeper pool with an even more intense turquoise colour (swimming not permitted). On the way back, stop at the Klong Thom Hot Springs where thermal water heated by underground volcanic activity flows into rock-lined pools at a comfortable 40°C.',
+          tip: 'Visit the Emerald Pool before 11am or after 2pm to avoid tour bus crowds. Entry is 200 baht. Wear swimwear under your clothes as there are no changing facilities.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Krabi Town Night Market',
+          text: 'Drive to Krabi Town — the provincial capital, 30 minutes from Ao Nang — for the weekend Walking Street Night Market on Soi Maharaj. Running every Friday, Saturday, and Sunday evening, the market stretches along the riverside with hundreds of stalls selling southern Thai street food, handmade crafts, and live music. Try the local specialities: khao mok gai (southern Thai chicken biryani), roti with curry, grilled squid on a stick, and khanom jeen (rice noodles with spicy fish curry). Prices are genuine Thai prices — much cheaper than Ao Nang. A full meal costs 60-100 baht.',
+          tip: 'The night market runs Friday to Sunday only. If visiting on a weekday, the permanent food stalls along the Krabi River waterfront offer similar food at good prices.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Tiger Cave Temple & Hong Islands',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tiger Cave Temple — 1,260 Steps',
+          text: 'Rise early and drive to Wat Tham Suea (Tiger Cave Temple) — one of southern Thailand\'s most important Buddhist temples, built into a limestone cave complex 8km north of Krabi Town. The main attraction is the 1,260-step staircase carved into the sheer cliff face, climbing 600 metres to a golden Buddha and a 360-degree panoramic viewpoint at the summit. The climb takes 45-60 minutes and is brutally steep in places with no shade — but the view from the top over the Krabi river valley, limestone karsts, and Andaman coast is genuinely spectacular. At the base, explore the cave temple where monks meditate among stalactites.',
+          tip: 'Start climbing before 8am to beat the heat — by mid-morning the exposed staircase is punishingly hot. Bring 1.5 litres of water per person. Dress modestly (cover shoulders and knees).',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Hong Islands Kayaking & Snorkelling',
+          text: 'Join an afternoon speedboat or longtail tour to the Hong Islands (Koh Hong) — a small archipelago 30 minutes northwest of Ao Nang. The centrepiece is a hidden lagoon completely enclosed by towering limestone cliffs — you enter through a narrow sea cave opening and emerge into a perfectly still, jade-green pool surrounded by vertical rock walls covered in tropical vegetation. Kayak through the entrance at low tide for a surreal experience. The surrounding reefs offer excellent snorkelling with healthy coral and abundant marine life including reef sharks and sea turtles.',
+          tip: 'Hong Islands entry costs 300 baht per person (national park fee). The lagoon is only accessible at certain tides — tours are timed accordingly. Book through a local operator for 1,500-2,500 baht.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ao Nang Sunset & Farewell Dinner',
+          text: 'Return to Ao Nang for your final evening in Krabi. Grab a sundowner at The Hilltop — a bar perched on the hillside above Ao Nang with sweeping views over the bay and the offshore islands as the sun sets. The cocktails are reasonably priced and the sunset views are the best in the area. Walk down to the main strip for a farewell dinner — Ao Nang has excellent Thai food ranging from 60-baht pad thai at street carts to more refined southern Thai cuisine at restaurants like Jenna\'s Bistro. End the night at one of the beachfront bars where live music and fire shows run nightly.',
+          tip: 'The Hilltop bar gets busy at sunset — arrive by 5pm for the best tables. It is a short walk uphill from the main Ao Nang road, signposted near the Vogue Resort.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Ao Nang Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive & Settle In',
+          text: 'Arrive at Krabi International Airport and take a shared minivan or private transfer to Ao Nang — the main tourist hub, 35 minutes from the airport. Check into your accommodation and rent a scooter (250-350 baht per day) for flexibility. Ao Nang is a long beachfront strip with restaurants, dive shops, travel agents, and longtail boats lining the shore. Walk the entire promenade to get your bearings and pick up a local SIM card from a 7-Eleven for navigation.',
+          tip: 'Shared airport minivans cost 150 baht per person to Ao Nang. Private taxis cost 500-600 baht. Grab is not widely used in Krabi — negotiate taxi prices before getting in.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ao Nang Beach & Shell Fossil Cemetery',
+          text: 'Spend the afternoon at Ao Nang Beach to acclimatise — the main beach is sandy and swimmable with views of the limestone islands offshore. For something more interesting, ride 20 minutes east to the Susan Hoi Shell Fossil Beach — a geological site where 75-million-year-old freshwater snail fossils have been compressed into flat limestone slabs jutting from the shoreline. It is one of only three shell fossil cemeteries in the world and entry is free. The rocky coastline around the site is atmospheric and photogenic at low tide.',
+          tip: 'Susan Hoi is best visited at low tide when more of the fossil beds are exposed. It is well signposted from the main road east of Ao Nang. Free entry.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ao Nang Seafood & Night Out',
+          text: 'Ao Nang\'s main street comes alive at dusk with restaurants setting up fresh seafood displays and street vendors grilling satay and corn on the cob. Walk the strip and pick a restaurant with a good-looking fish display — point at what you want and tell them how to cook it. Grilled prawns with garlic, steamed sea bass with lime, or stir-fried squid with basil are all excellent. A seafood dinner with beer runs 300-500 baht. After dinner, the bars along the main strip offer live music, pool tables, and cheap cocktails.',
+          tip: 'Restaurants further from the main pier tend to be cheaper with similar quality. Ask for the Thai price menu if you see one — some places have separate tourist pricing.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Railay Beach & Rock Climbing',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Railay West & Phra Nang Cave Beach',
+          text: 'Catch the first longtail boat from Ao Nang pier to Railay Beach at 8am. Walk across the narrow peninsula from Railay West to Phra Nang Beach on the south side — widely considered one of Thailand\'s most beautiful beaches. The sand is flour-fine, the water is ridiculously clear, and a massive limestone overhang shelters a cave shrine decorated with carved wooden phalluses left as offerings to the local sea goddess. Snorkel around the rocks at either end of the beach where small reef fish congregate in the shallows.',
+          tip: 'Railay longtail boats cost 100 baht each way from Ao Nang and run continuously throughout the day. Boats leave when they have 8-10 passengers.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Beginner Rock Climbing Session',
+          text: 'Railay has over 700 bolted sport climbing routes on stunning overhanging limestone cliffs. Even complete beginners can try it — half-day courses from operators like Real Rocks and Basecamp include gear rental, instruction, and three to four routes on beginner-friendly crags. The Thaiwand Wall and 123 Wall are the main spots for novices, with routes graded from French 5a (easy) upwards. The limestone is incredibly featured with natural pockets, tufas, and stalactites that make the climbing varied and engaging. Experienced climbers will find world-class routes up to 8c.',
+          tip: 'Half-day climbing courses cost 1,500-2,000 baht. Afternoon sessions (2-6pm) are cooler than mornings. Wear long trousers and closed shoes — the rock is sharp.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tonsai Beach & Climbing Community',
+          text: 'Walk around the headland to Tonsai Beach at low tide — the spiritual home of the Krabi climbing community. Tonsai is rougher and cheaper than Railay, with basic bungalows, hammock bars, and a transient population of climbers, yogis, and long-term travellers. The beachfront bars serve cheap beer and Thai food while fire twirlers perform on the sand after dark. The conversation is easy and social — climbers swap route recommendations and travel stories over Singha beers. This is one of the last pockets of genuine backpacker culture in an increasingly resort-dominated Thailand.',
+          tip: 'The headland path between Railay and Tonsai floods at high tide. Check the tide chart or take a longtail boat (50 baht). Tonsai has limited ATMs — bring cash.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Four Islands & Ao Nang',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Four Islands Boat Tour',
+          text: 'Depart Ao Nang at 9am for the classic Four Islands tour by longtail boat. The first stop is Koh Poda — a small island with a beautiful white sand beach and good snorkelling on the southern reef. At low tide, a natural sandbar emerges connecting Chicken Island (named for its rock formation shaped like a chicken head) with Tup Island — walk between the two surrounded by knee-deep turquoise water. The final stop is Phra Nang Cave Beach for more swimming. Lunch is included and usually served on the boat or on one of the island beaches.',
+          tip: 'The Four Islands tour costs 1,000-1,500 baht including lunch, snorkel gear, and national park fees. Private charters for small groups offer more flexibility — negotiate at the pier.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ao Nang Beach & Massage',
+          text: 'Return to Ao Nang and spend a relaxed afternoon recovering from the morning on the water. Thai massage parlours line every street in Ao Nang — a traditional Thai massage costs 300-400 baht for one hour and is an excellent way to work out the aches from climbing and boat trips. For something more upmarket, several spas offer oil massages, herbal compresses, and foot reflexology in air-conditioned rooms. Afterwards, pick up supplies at the local minimarket and relax at your accommodation during the hottest part of the day.',
+          tip: 'The small massage shops on the side streets offer the same quality as the beachfront ones at half the price. Look for places where locals go — usually a good indicator of quality and value.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset at The Hilltop Bar',
+          text: 'Head to The Hilltop — a bar perched on the hillside above Ao Nang with panoramic views over the bay, the limestone islands, and the Andaman sunset. Arrive by 5.30pm to secure a table and order a cold beer or cocktail as the sky turns orange and pink. The setting is genuinely spectacular and the drinks are reasonably priced for the location. After sunset, walk down to the main strip for dinner — try the southern Thai speciality Massaman curry, which originated in this part of Thailand, at one of the local restaurants.',
+          tip: 'The Hilltop is signposted near the Vogue Resort on the main Ao Nang road. It gets packed at sunset so arrive early. Cash only.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Tiger Cave Temple & Emerald Pool',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tiger Cave Temple Sunrise Climb',
+          text: 'Rise before dawn and drive to Wat Tham Suea (Tiger Cave Temple) to climb the 1,260 steps to the summit before the heat becomes unbearable. The staircase is carved into a sheer limestone cliff and ascends 600 metres through jungle canopy to a golden Buddha statue at the top. The 360-degree view from the summit encompasses the entire Krabi river valley, the distant Phi Phi islands, and endless jungle-covered limestone karsts fading into the horizon. At the base, explore the cave temple complex where monks live and meditate among ancient stalactites.',
+          tip: 'Start climbing by 7am at the latest — by 9am the exposed staircase is dangerously hot. Bring at least 1.5 litres of water. Monkeys at the base can be aggressive — do not show food.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Emerald Pool & Blue Pool',
+          text: 'Drive 50 minutes southeast to the Emerald Pool (Sa Morakot) in Khao Phra Bang Khram Nature Reserve. A 1.4km boardwalk through lowland jungle leads to the pool — a natural spring where dissolved minerals turn the water an incredible bright emerald green. Swimming is allowed and the water is cool and refreshing. Continue along the trail to the Blue Pool — a smaller, deeper pool with an even more intense turquoise colour caused by different mineral concentrations. Swimming is not permitted in the Blue Pool but the colour alone makes the walk worthwhile.',
+          tip: 'Entry costs 200 baht. Visit outside of the 10am-2pm tour bus window for a quieter experience. The trail is flat and easy — suitable for all fitness levels.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Klong Thom Hot Springs',
+          text: 'On the drive back from the Emerald Pool, stop at the Klong Thom Hot Springs — a series of natural pools in the forest where geothermally heated water flows at 40-42°C into rock-lined basins surrounded by tropical trees. The hot water is believed to have therapeutic mineral properties and soaking in the steaming pools as daylight fades through the forest canopy is deeply relaxing. The springs are less touristic than the Emerald Pool and attract a mix of locals and travellers. Entry is 90 baht and there are basic changing facilities on site.',
+          tip: 'The hot springs are best visited in the late afternoon when the air cools and the hot water is most enjoyable. Bring a towel — they are not provided.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Hong Islands & Kayaking',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hong Islands — Hidden Lagoon',
+          text: 'Join a morning speedboat or longtail tour to the Hong Islands archipelago, 30 minutes northwest of Ao Nang. The centrepiece is the Hong Lagoon on Koh Hong — a concealed saltwater lake completely enclosed by vertical limestone walls, accessible only through a narrow sea cave entrance. Kayak into the lagoon at low tide and float in the perfectly still jade-green water as kingfishers dart between the cliff faces above. The lagoon is one of Krabi\'s most extraordinary natural features. Outside the lagoon, snorkel the fringing reef where blacktip reef sharks, sea turtles, and vast schools of tropical fish patrol the shallow coral gardens.',
+          tip: 'National park entry is 300 baht. Tours cost 1,500-2,500 baht. The lagoon entrance is only navigable at certain tides — tours are scheduled accordingly.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kayaking Ao Thalane Mangroves',
+          text: 'After the Hong Islands, take a separate half-day kayaking tour through the Ao Thalane mangrove channels on the mainland coast east of Ao Nang. Paddle through narrow channels between towering limestone karsts draped in tropical vegetation, passing through sea caves and tidal lagoons teeming with wildlife. Keep your eyes open for crab-eating macaques, monitor lizards, mudskippers, and white-bellied sea eagles soaring above the cliffs. The mangrove ecosystem is a critical nursery for fish and crustaceans and the biodiversity is remarkable.',
+          tip: 'Mangrove kayaking tours run 1,000-1,500 baht for a half day including guide and equipment. Afternoon departures (1-5pm) are usually available. Bring insect repellent and sun protection.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Krabi Town Walking Street Market',
+          text: 'Drive to Krabi Town for the weekend Walking Street Market on Soi Maharaj — one of southern Thailand\'s best night markets. Hundreds of stalls line the riverside promenade selling southern Thai street food at genuine local prices. The khanom jeen (rice noodles with spicy fish curry) is a Krabi speciality, along with roti mataba (stuffed roti with curry), grilled whole squid, and khao mok gai (Thai chicken biryani). Buy a bag of fresh mangosteen or rambutan from the fruit vendors for dessert. Live music and buskers add to the festive atmosphere.',
+          tip: 'The Walking Street runs Friday to Sunday evenings only. For weekday visits, the permanent food court along the Krabi River offers similar southern Thai dishes at local prices.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Phi Phi Islands Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Speedboat to Phi Phi Islands',
+          text: 'Depart Ao Nang at 8am on a speedboat tour to the Phi Phi Islands — the limestone archipelago 40 minutes offshore that featured in the movie The Beach. The first stop is Pileh Lagoon on Koh Phi Phi Leh — a breathtaking enclosed bay with sheer 100-metre cliffs dropping into impossibly turquoise water. Swim in the lagoon (one of Thailand\'s most photographed locations) before the boat moves to Viking Cave, where dangerous bamboo scaffolding reaches up to the cave ceiling where edible birds\' nests are harvested — a Thai delicacy worth more per kilo than gold.',
+          tip: 'Phi Phi tours cost 1,800-3,000 baht. Premium tours offer smaller groups and earlier departure times to beat the crowds at Pileh Lagoon — worth the extra cost.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Maya Bay & Monkey Beach',
+          text: 'After years of closure for ecological recovery, Maya Bay has reopened with visitor limits — the stunning enclosed beach made famous by Leonardo DiCaprio\'s The Beach movie. The sand is blindingly white, the water is crystal clear, and the towering cliffs create a natural amphitheatre. Swimming is restricted to designated areas to protect the reef recovery. After Maya Bay, stop at Monkey Beach on Koh Phi Phi Don where long-tailed macaques play on the sand and swim in the shallows. The snorkelling at Bamboo Island, the tour\'s final stop, features intact coral gardens and abundant marine life.',
+          tip: 'Maya Bay has strict time limits (one hour max) and visitor caps. Respect the roped-off areas — the coral and blacktip reef shark nursery are recovering well.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Ao Nang Dinner',
+          text: 'The speedboat returns to Ao Nang by late afternoon. After a long day on the water, a relaxing dinner is in order. Head to one of the restaurants set back from the main beachfront strip — places like Carnivore, Lae Lay Grill, or Ton Ma Yom offer Thai and international cuisine at moderate prices with less tourist markup than the beachfront spots. Try a green curry with roti, or go for the set seafood platter if you want to splash out. Cool down with a Thai iced tea or a fresh coconut before heading back to rest.',
+          tip: 'The Phi Phi day trip is physically tiring — plan a quieter evening. Many restaurants offer early evening happy hour deals on cocktails between 5-7pm.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Khao Khanab Nam & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Khao Khanab Nam Twin Peaks',
+          text: 'Start your final morning with a longtail boat trip on the Krabi River to Khao Khanab Nam — the iconic twin limestone peaks that guard the entrance to Krabi Town and appear on every piece of tourist literature for the province. The boat takes you inside the caves at the base of the cliffs where stalactites and ancient human skeletons have been discovered. The river trip passes through mangrove forests where you may spot monitor lizards, macaques, and sea eagles. It is a peaceful and scenic way to spend a morning and see a different side of Krabi away from the beach tourism.',
+          tip: 'Boat trips to Khao Khanab Nam depart from the Krabi Town pier and cost 400-600 baht for 1-2 hours. Combine it with a visit to the Krabi town morning market for a full cultural morning.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Beach Time at Tubkaek',
+          text: 'For your final afternoon, escape the Ao Nang crowds and ride 20 minutes north to Tubkaek Beach — a long, quiet stretch of sand with views directly across to the Hong Islands. Tubkaek has a fraction of the visitors of Ao Nang and Railay but equally beautiful scenery — the sand is soft, the water is clean, and the backdrop of jungle-covered limestone mountains is spectacular. There are a few beachside restaurants serving fresh seafood at reasonable prices. This is the Krabi that existed before mass tourism arrived, and it is a lovely way to end your trip.',
+          tip: 'Tubkaek is also called Klong Muang Beach in some guidebooks. The road is well-paved and easy to reach by scooter. Bring your own snorkel gear — there are no rental shops.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Departure',
+          text: 'Return to Ao Nang for a final seafood dinner at one of the beachfront restaurants as the sun sets over the Andaman Sea for the last time. Krabi is a place that gets under your skin — the combination of world-class beaches, extraordinary karst landscapes, excellent food, and genuine Thai hospitality makes it one of the most rewarding destinations in the country. Pick up any last-minute souvenirs from the night market stalls that line the main strip, then make your way to the airport or onwards to your next destination.',
+          tip: 'Krabi Airport is 35 minutes from Ao Nang. Allow extra time during high season as the single-lane roads can get congested. Shared minivans run regularly from Ao Nang travel agents.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Stay in Ao Nang, not Railay', text: 'Railay accommodation is limited and pricey. Staying in Ao Nang and taking the 100-baht longtail to Railay daily saves significant money while giving you access to more food and nightlife options.' },
+  { title: 'Book island tours locally', text: 'Online booking platforms charge 30-50% markups on island tours. Walk into any travel agent on Ao Nang\'s main strip and negotiate — prices are competitive and you can often combine multiple trips for a discount.' },
+  { title: 'Eat at Krabi Town markets', text: 'The Walking Street and riverside food stalls in Krabi Town offer genuine Thai prices — 60-100 baht for a full meal versus 150-300 baht for the same dish in Ao Nang. A 30-minute scooter ride saves a fortune on food.' },
+  { title: 'Rent a scooter for inland trips', text: 'Scooter rental costs 250-350 baht per day and is essential for reaching Tiger Cave Temple, the Emerald Pool, and Hot Springs independently — far cheaper than joining organised tours.' },
+  { title: 'Climb with a group', text: 'Group climbing courses are significantly cheaper per person than private sessions. Most operators run scheduled group courses every morning and afternoon — join one to save 40-50% on climbing costs.' },
+  { title: 'Visit in shoulder season', text: 'November and April offer good weather with lower prices than the December to March peak. Some island tours are curtailed during monsoon (May-Oct) but mainland activities remain open.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$8–15', midrange: '$25–60', splurge: '$100+', notes: 'Dorm beds → guesthouses → beachfront resorts' },
+  { category: 'Food', budget: '$5–10', midrange: '$10–25', splurge: '$30+', notes: 'Street food → restaurants → fine dining' },
+  { category: 'Transport', budget: '$3–8', midrange: '$10–20', splurge: '$30+', notes: 'Songthaew → scooter → private taxi' },
+  { category: 'Activities', budget: '$10–20', midrange: '$30–60', splurge: '$80+', notes: 'Self-guided → group tours → private boat' },
+  { category: 'Island Tours', budget: '$15–25', midrange: '$30–50', splurge: '$80+', notes: 'Group longtail → speedboat → private charter' },
+  { category: 'Daily Total', budget: '$25–60', midrange: '$80–180', splurge: '$300+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities get 30-day visa-free entry to Thailand — extendable for 30 days at Krabi immigration office for 1,900 baht',
+      'Keep a digital and physical copy of your passport — some hotels require it for check-in',
+      'Krabi International Airport has direct flights from Bangkok, Kuala Lumpur, and Singapore',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Jellyfish can be present during monsoon season (May-Oct) — check locally before swimming',
+      'Mosquitoes carry dengue fever year-round — use repellent, especially at dawn and dusk',
+      'Travel insurance with medical evacuation is essential — the nearest major hospital is in Krabi Town',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Longtail boats are the main transport to Railay and offshore islands — prices are fixed and displayed at piers',
+      'Scooter rental (250-350 baht/day) is essential for inland sights. Songthaews run between Ao Nang, Krabi Town, and the airport',
+      'Grab is not widely available in Krabi — negotiate taxi prices in advance or use hotel-arranged transport',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Thai SIM card at the airport or any 7-Eleven — AIS and TrueMove tourist packages offer good data coverage',
+      'WiFi is available at most accommodation and cafes in Ao Nang — coverage on islands and inland sights is patchy',
+      'Download offline maps before heading to remote beaches and jungle trails where signal drops out',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: THB (Thai Baht). Cash is essential for longtail boats, street food, and smaller businesses',
+      'ATMs in Ao Nang and Krabi Town charge 220 baht per withdrawal for foreign cards — withdraw larger amounts less often',
+      'Tipping is not expected but appreciated — rounding up or leaving 20-50 baht at restaurants is generous',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Reef-safe sunscreen is essential — Krabi\'s coral reefs are under pressure from chemical sunscreens',
+      'Pack climbing-appropriate clothing if you plan to climb — long trousers and closed shoes protect against sharp limestone',
+      'A dry bag is invaluable for longtail boat trips — spray from waves soaks everything in the front of the boat',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Temple Etiquette', text: 'Krabi province is deeply Buddhist. When visiting Tiger Cave Temple or other wats, dress modestly — cover shoulders and knees. Remove shoes before entering temple buildings. Do not touch Buddha images or turn your back on them for photos. Women should not touch or hand objects directly to monks.' },
+  { icon: '🌍', title: 'Marine Conservation', text: 'Krabi\'s marine ecosystems are fragile and under pressure from tourism. Use reef-safe sunscreen, do not touch or stand on coral, and never feed fish. Respect the restoration zones at Maya Bay and other protected areas. Take all rubbish with you — especially from islands and beaches.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Ask permission before photographing monks, temple ceremonies, or Muslim communities (Krabi has a significant Muslim population). Drone flying is restricted over national parks and military areas — check regulations before flying.' },
+  { icon: '🗣', title: 'Language & Communication', text: 'Basic Thai phrases go a long way — sawadee khrap/ka (hello), khop khun (thank you), and aroy (delicious) will earn smiles. Southern Thailand has its own dialect that differs from Bangkok Thai, but standard Thai is understood everywhere.' },
+  { icon: '🤝', title: 'Support Local Communities', text: 'Choose locally-owned guesthouses, restaurants, and tour operators over international chains. Buy from local market vendors and artisans. Krabi\'s economy depends heavily on tourism — directing your spending to local businesses maximises positive impact.' },
+  { icon: '🕐', title: 'Weather & Flexibility', text: 'Krabi\'s weather can change quickly — boat tours may be cancelled during rough seas. Build flexibility into your itinerary and have backup plans for rainy days. The wet season (May-Oct) has fewer tourists and dramatic scenery but some islands are inaccessible.' },
+];
+---
+
+<CityGuideLayout
+  title="Krabi Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Krabi guide for young travelers. Railay Beach, rock climbing, island tours with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/krabi-hero.webp"
+  heroFlag="🇹🇭"
+  heroCountry="Thailand"
+  heroRegion="Southeast Asia"
+  heroCity="Krabi"
+  heroSubtitle="Dramatic limestone cliffs, world-class rock climbing, and turquoise island-hopping — Thailand's Andaman coast at its most spectacular."
+  heroPills={["3-Day Coastal","Adventure","Nov – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Krabi offers excellent value — budget travellers can explore comfortably on $25-50 per day, while mid-range spending opens up premium island tours and climbing courses."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Krabi province blends Buddhist and Muslim communities in a spectacular natural setting — approach with curiosity and respect, and the warmth of the local people will enhance every part of your trip."
+  ctaCity="Krabi"
+  ctaText="Find travel companions to explore Krabi together on roammate — share climbing courses, split boat tours, and make lifelong friends on the beach."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

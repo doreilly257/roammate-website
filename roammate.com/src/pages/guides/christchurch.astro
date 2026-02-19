@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'NZD (New Zealand Dollar)', detail: 'Cards widely accepted, contactless common' },
+  { icon: '🗣', label: 'Language', value: 'English & Te Reo Māori', detail: 'Both official languages' },
+  { icon: '🕐', label: 'Timezone', value: 'NZST (UTC+12)', detail: 'NZDT (UTC+13) Oct–Apr' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: 'Warm, dry summer — ideal for outdoor activities' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$45–160 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'NZeTA or visa-free for some', detail: 'Check requirements for your nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Christchurch City Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cardboard Cathedral & City Centre',
+          text: 'Start at the Transitional Cathedral — known globally as the Cardboard Cathedral — designed by Japanese architect Shigeru Ban after the 2011 earthquake destroyed the original ChristChurch Cathedral. The A-frame structure uses 98 cardboard tubes as its primary structural material, proving that temporary can be beautiful. Walk through Cathedral Square to see the original cathedral\'s ongoing restoration, then explore the city centre on foot. The rebuild has transformed Christchurch into an open-air showcase of contemporary architecture, street art, and innovative urban design born from necessity.',
+          tip: 'The Cardboard Cathedral is free to enter and usually quiet before 10am. Walk east from Cathedral Square along the tram route to see the best concentration of rebuild architecture and murals.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Botanic Gardens & Punting on the Avon',
+          text: 'Spend the afternoon in the Christchurch Botanic Gardens — 21 hectares of curated gardens and native bush in the heart of the city, founded in 1863 and untouched by the earthquakes. The heritage rose garden, the native plant section, and the conservatories housing tropical and alpine species are all free to explore. Afterwards, take a flat-bottomed punt along the Avon River that winds through the gardens and the city — a punter in Edwardian dress poles you along the willow-lined river while narrating the history of the city. It is quintessentially Christchurch and genuinely relaxing.',
+          tip: 'Punting departs from the Antigua Boat Sheds on Rolleston Avenue. Trips run every 30 minutes and last about 30 minutes. No booking needed outside of peak summer weekends.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Market & Street Art Walk',
+          text: 'End the day at the Riverside Market on the banks of the Avon — a modern food hall with over 30 vendors selling everything from wood-fired pizza and craft beer to dumplings and Canterbury lamb. The building itself is a symbol of the rebuild, designed with the river flowing through its ground floor. After dinner, walk through the surrounding streets to see Christchurch\'s street art — large-scale murals painted on earthquake-damaged buildings and blank rebuild walls. The Canterbury Museum and Arts Centre precinct are beautifully lit after dark.',
+          tip: 'The Riverside Market is busiest at weekend lunchtimes. Weekday evenings are quieter with the same food options. The street art is best seen on foot — pick up a free map from the i-SITE visitor centre.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Cardboard Cathedral, Botanic Gardens & Avon River',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cathedral Square & Rebuild Walking Tour',
+          text: 'Begin at Cathedral Square, the historical heart of Christchurch and ground zero for the city\'s post-earthquake transformation. The original ChristChurch Cathedral — a Gothic Revival landmark from 1881 — is being painstakingly restored after near-total destruction. Walk to the nearby Cardboard Cathedral, Shigeru Ban\'s celebrated transitional structure built from 98 cardboard tubes and shipping containers. Then join a rebuild walking tour (free, tip-based) that explains how the earthquakes reshaped the city — from the container shopping mall Re:START to the innovative new buildings that replaced entire demolished blocks.',
+          tip: 'Free rebuild walking tours depart from Cathedral Square at 10am daily. The guides are locals who lived through the earthquakes — their firsthand stories add a depth that no guidebook can provide.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Botanic Gardens & Punting the Avon',
+          text: 'Cross into Hagley Park and the adjoining Botanic Gardens — 21 hectares of mature trees, formal gardens, and native bush that survived the earthquakes untouched. The herbaceous border, the water garden, and the New Zealand native plant collection are highlights. Walk along the Avon River to the Antigua Boat Sheds (the oldest surviving commercial building in Christchurch, dating to 1882) and take a punt along the river. The flat-bottomed boat glides past weeping willows, stone bridges, and ducks while your punter narrates the city\'s story from colonial settlement to modern rebuild.',
+          tip: 'The Botanic Gardens are free and open from dawn to dusk. Punting costs around NZ$35 per adult and runs year-round — the autumn colours along the Avon in March and April are spectacular.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Market & Craft Beer Scene',
+          text: 'Dinner at the Riverside Market — the Avon River runs through the ground floor of this contemporary food hall where over 30 vendors serve Christchurch\'s most diverse food. Canterbury cheeses, locally smoked salmon, South Island venison, and Asian fusion all share the same space. After eating, walk to one of Christchurch\'s post-earthquake craft breweries — Cassels & Sons in the Tannery, or Two Thumb Brewing on Manchester Street — where the rebuild energy has fuelled a creative brewing scene. The city comes alive in the evenings around the Terrace and Victoria Street precincts.',
+          tip: 'Cassels & Sons brews on-site in a restored tannery building in Woolston — their milk stout and fresh hop IPA are standouts. The Tannery complex itself is an interesting evening destination with boutique shops and a cinema.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Port Hills, Lyttelton & Street Art',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Port Hills — Bridle Path & Summit Views',
+          text: 'Drive or bus to the Port Hills, the volcanic ridge that separates Christchurch from the harbour town of Lyttelton. The Bridle Path is the historic walking track that the first Canterbury settlers climbed in 1850 when they arrived by ship — a steady 1-hour ascent from Heathcote Valley to the summit with progressively expanding views over the Canterbury Plains, the Southern Alps, and Banks Peninsula. At the top, the panorama stretches from the snow-capped mountains to the Pacific Ocean. The Gondola Summit Station nearby offers the same views with a cafe and heritage time-tunnel exhibit.',
+          tip: 'Start the Bridle Path early to catch the morning light on the Alps. The track is well-formed but steep in sections — wear proper shoes and bring water. The gondola runs one-way rides if you want to walk up and ride down.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lyttelton Harbour & Farmers Market',
+          text: 'Descend from the Port Hills into Lyttelton, Christchurch\'s port town tucked inside the crater of an extinct volcano. Lyttelton was badly damaged in the 2011 earthquake but has rebuilt with fierce community spirit — the main street is now a vibrant strip of independent cafes, galleries, vintage shops, and the famous Lyttelton Farmers Market (Saturday mornings). Walk along the harbour past the historic tugboat and the container port to Diamond Harbour or take the small ferry across the water. Lunch at one of the waterfront cafes with views across the harbour to the volcanic hills.',
+          tip: 'The Lyttelton Farmers Market runs every Saturday 10am–1pm year-round and is one of the best in the South Island. Even on non-market days, the main street cafes and Eruption Brewing are worth the visit.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Christchurch Street Art Trail',
+          text: 'Return to central Christchurch for a self-guided street art walk. The 2011 earthquakes left blank walls and empty lots across the city centre, and local and international artists have transformed them into one of Australasia\'s most impressive outdoor galleries. Key works include the large-scale photorealistic murals on Manchester and Colombo Streets, the colourful geometric designs on Cashel Street, and the politically-charged pieces referencing the earthquake recovery. New works appear regularly — the street art is a living record of the city\'s resilience and creative energy.',
+          tip: 'Download the free Watch This Space app or grab a street art map from the i-SITE — there are over 80 major murals spread across the city centre. The light is best for photography in the golden hour before sunset.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Akaroa Day Trip & Antarctic Centre',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Akaroa — Banks Peninsula',
+          text: 'Drive 80km southeast from Christchurch over the volcanic hills of Banks Peninsula to Akaroa, a tiny harbour town founded by French settlers in 1840 — the only French colonial settlement in New Zealand. The drive itself is spectacular: winding roads over the crater rim of an ancient volcano with views down to hidden bays and farmland. Akaroa\'s main street retains its French character with street names like Rue Lavaud and Rue Jolie, a French cemetery, and bakeries selling pain au chocolat alongside New Zealand flat whites. Walk the waterfront past the colourful boat sheds and the 1876 Langlois-Éteveneaux Cottage.',
+          tip: 'The drive from Christchurch to Akaroa takes 90 minutes via the Summit Road — leave by 8am to have the full morning in the village. The inland scenic route over the hilltops is longer but offers panoramic views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Akaroa Harbour Cruise & Dolphins',
+          text: 'Take an afternoon harbour cruise from Akaroa wharf into the volcanic harbour — one of only two places in the world where the endangered Hector\'s dolphin lives. These are the smallest and rarest marine dolphins, growing to just 1.4 metres, and they frequently ride the bow wave of the cruise boat. The harbour is also home to blue penguins, fur seals hauled out on rocky outcrops, and occasionally white-flippered penguins found nowhere else. The volcanic cliffs of the harbour entrance — the eroded remnant of the original eruption — are dramatic from the water. Swimming-with-dolphins tours are also available.',
+          tip: 'Black Cat Cruises runs harbour wildlife cruises daily year-round. Hector\'s dolphins are seen on over 95% of trips. Book in advance during December–February. Bring binoculars and a warm jacket — it\'s cooler on the water.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'International Antarctic Centre',
+          text: 'Return to Christchurch and visit the International Antarctic Centre near the airport — Christchurch has been the gateway city for Antarctic expeditions since the era of Scott and Shackleton, and this interactive museum brings the frozen continent to life. Experience a simulated Antarctic storm at -18°C with wind chill, ride a Hägglund all-terrain vehicle over a replica ice field, and meet the resident little blue penguins in the on-site penguin encounter. The centre tells the story of Antarctic exploration from the heroic age to modern climate science, with a strong focus on New Zealand\'s ongoing role in Antarctic research.',
+          tip: 'The Antarctic Centre is open until 5:30pm — visit in the late afternoon after returning from Akaroa. The penguin feeding sessions at 10:30am and 3:30pm are the most interactive times. Allow 2–3 hours.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free attractions abound', text: 'The Botanic Gardens, Hagley Park, Canterbury Museum, Christchurch Art Gallery, Quake City earthquake exhibit, and the street art trail are all free. You can fill an entire day with world-class experiences without spending a cent on entry fees.' },
+  { title: 'Cook at your hostel', text: 'Christchurch hostels have excellent kitchens. Pak\'nSave and New World supermarkets are significantly cheaper than eating out — self-catering for breakfasts and dinners can save NZ$40–60 per day.' },
+  { title: 'Use the public bus network', text: 'Metro buses cover the city and surrounding suburbs for NZ$2–4 per trip with a Metrocard. The Purple Line runs to Lyttelton, and the 29 route connects to the airport. Much cheaper than taxis or ride-shares.' },
+  { title: 'Visit in shoulder season', text: 'March–April and October–November have pleasant weather with fewer tourists and lower accommodation prices. The Botanic Gardens autumn colours in March are actually a highlight — timing your visit outside peak summer saves money and enhances the experience.' },
+  { title: 'Rent a car to share costs', text: 'For the Akaroa day trip and Port Hills, a rental car split between 3–4 travellers is cheaper than organised tours. Christchurch has competitive car rental rates from NZ$35 per day — fuel costs are modest for day trips.' },
+  { title: 'Free camping nearby', text: 'Freedom camping is permitted at designated sites around Banks Peninsula and Canterbury. A certified self-contained vehicle opens up free overnight spots within easy reach of the city — check the CamperMate app for current locations and rules.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$18–40', midrange: '$55–120', splurge: '$160+', notes: 'Hostels & holiday parks → boutique hotels → luxury lodges' },
+  { category: 'Food', budget: '$12–25', midrange: '$30–50', splurge: '$65+', notes: 'Self-catering → cafes & markets → fine dining' },
+  { category: 'Transport', budget: '$4–12', midrange: '$15–35', splurge: '$50+', notes: 'Metro bus → rental car share → private transfers' },
+  { category: 'Activities', budget: '$0–20', midrange: '$25–60', splurge: '$80+', notes: 'Free museums → cruises & tours → helicopter flights' },
+  { category: 'Entry Fees', budget: '$0–10', midrange: '$15–35', splurge: '$40–70', notes: 'Many top attractions are free' },
+  { category: 'Daily Total', budget: '$45–120', midrange: '$150–310', splurge: '$400+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities need an NZeTA (New Zealand Electronic Travel Authority) — apply online before departure',
+      'An International Visitor Conservation and Tourism Levy (IVL) of NZ$100 is required alongside the NZeTA',
+      'Keep a digital and physical copy of your passport, visa, and travel insurance at all times',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Christchurch is very safe for travellers. Standard urban awareness applies — secure valuables and be aware of your surroundings after dark',
+      'UV levels in New Zealand are extremely high even on cloudy days due to the thin ozone layer — apply SPF 50+ sunscreen regularly',
+      'The Port Hills and Banks Peninsula have exposed walking tracks — bring layers, water, and sun protection even for short walks',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'The city centre is flat and very walkable. The free heritage tram loops through the main attractions and shopping areas',
+      'Metro buses cover the urban area and Lyttelton. For Akaroa and Banks Peninsula, a rental car is essential',
+      'Christchurch is an excellent cycling city — flat terrain and dedicated cycle lanes. Bike rentals available from multiple operators',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a prepaid SIM from Spark, Vodafone, or 2degrees at the airport or any supermarket — data packages start around NZ$30 for 4GB',
+      'Free WiFi is available at the central library, Riverside Market, and most cafes. Accommodation WiFi is standard',
+      'Mobile coverage is excellent in the city but can drop on rural Banks Peninsula roads — download offline maps for the Akaroa drive',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: NZD (New Zealand Dollar). Contactless card payments accepted almost everywhere — New Zealand is nearly cashless',
+      'ATMs are widely available. Visa and Mastercard are universally accepted. Some small market stalls may prefer cash',
+      'Tipping is not customary in New Zealand — service charges are included in prices. A small tip for exceptional service is welcome but never expected',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Layers are essential — Christchurch weather is changeable and the nor\'wester wind can shift temperatures dramatically. A windproof jacket is invaluable',
+      'Comfortable walking shoes for the city, and proper hiking shoes if you plan to walk the Port Hills or Banks Peninsula tracks',
+      'A reusable water bottle, sunhat, and sunglasses are year-round essentials. Pack a swimsuit for the hot pools at Hanmer Springs (90 minutes north)',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect the Rebuild Story', text: 'Christchurch\'s earthquake story is deeply personal for locals. Many lost homes, businesses, and loved ones. Ask questions with genuine interest — residents are proud of the rebuild and willing to share, but be sensitive to the fact that the earthquakes remain a defining life event for many.' },
+  { icon: '🌍', title: 'Protect the Peninsula', text: 'Banks Peninsula is home to endangered Hector\'s dolphins, rare penguins, and fragile coastal ecosystems. Follow marine mammal viewing guidelines — keep your distance, do not feed wildlife, and take all rubbish with you from beaches and walking tracks.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'The street art, rebuild architecture, and earthquake remnants are powerful photographic subjects. Be mindful that some damaged buildings are still painful reminders for locals. The earthquake memorial on the Avon River is a place of reflection — photograph respectfully.' },
+  { icon: '🗣', title: 'Learn Some Te Reo Māori', text: 'Christchurch is Ōtautahi in Te Reo Māori. Basic greetings — Kia ora (hello), Ka pai (good), Ngā mihi (thank you/regards) — are warmly received. Many place names around Canterbury and Banks Peninsula are in Te Reo, and learning pronunciations enriches the experience.' },
+  { icon: '🤝', title: 'Support Local Businesses', text: 'The rebuild created space for independent businesses — choose locally-owned cafes, galleries, and tour operators over chains. The Riverside Market, Lyttelton shops, and Akaroa artisans all represent communities that rebuilt from scratch. Your spending makes a real difference.' },
+  { icon: '🕐', title: 'Take Time to Understand', text: 'Christchurch is not just a pretty city — it is a city that was broken and rebuilt itself with extraordinary resilience. Take time to visit the earthquake memorial, read the stories on the memorial wall, and understand what happened here. The city is more meaningful when you know its recent history.' },
+];
+---
+
+<CityGuideLayout
+  title="Christchurch Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Christchurch guide for young travelers. Rebuild architecture, Akaroa dolphins, Port Hills, and street art with 1 and 3-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/christchurch-hero.webp"
+  heroFlag="🇳🇿"
+  heroCountry="New Zealand"
+  heroRegion="Oceania"
+  heroCity="Christchurch"
+  heroSubtitle="A city reborn from earthquake rubble — innovative architecture, world-class street art, and the volcanic harbour of Banks Peninsula at its doorstep."
+  heroPills={["3-Day City & Nature","Cultural","Nov – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Christchurch is one of New Zealand's most affordable cities — many top attractions are free, and self-catering keeps costs low."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Christchurch is a city defined by resilience — its people rebuilt from devastating earthquakes with creativity and community spirit. Approach with curiosity about the story behind the city you see today."
+  ctaCity="Christchurch"
+  ctaText="Find travel companions to explore Christchurch together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

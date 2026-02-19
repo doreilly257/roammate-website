@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'NPR (Nepalese Rupee)', detail: 'Cash preferred, cards in Lakeside' },
+  { icon: '🗣', label: 'Language', value: 'Nepali', detail: 'English spoken in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'NPT (UTC+5:45)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Nov, Mar – Apr', detail: 'Clear Annapurna views, warm days' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$15–35 USD', detail: 'Budget backpacker range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on Arrival', detail: '15/30/90 day options at airport' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Pokhara Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sarangkot Sunrise over the Annapurnas',
+          text: 'Wake before dawn and drive or hike to Sarangkot viewpoint (1,592m) for one of Nepal\'s most iconic sunrise experiences. As first light breaks, the entire Annapurna massif — Annapurna I (8,091m), Machapuchare (Fishtail Peak), Annapurna II, III, and IV — glows pink then gold against a deep blue sky. The panorama stretches from Dhaulagiri in the west to Manaslu in the east. On clear mornings, the reflection of the peaks in Phewa Lake below creates a double mountain spectacle.',
+          tip: 'Hire a taxi the night before (1500-2000 NPR round trip) and leave by 4:30am. October and November mornings offer the clearest views. Bring warm layers — it is cold before sunrise.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Phewa Lake & Lakeside',
+          text: 'Return to Lakeside and rent a colourful wooden boat on Phewa Lake (500-700 NPR per hour). Row across the calm turquoise water to the Tal Barahi Temple on a small island in the lake\'s centre — a pagoda-style Hindu temple surrounded by water with the Annapurna range as a backdrop. The reflection of Machapuchare in the still morning water is one of Nepal\'s most photographed scenes. After boating, stroll along the Lakeside promenade browsing shops, cafes, and restaurants.',
+          tip: 'Rent a boat early before the wind picks up — mornings on Phewa Lake are calm and the mountain reflections are clearest. Life jackets are provided.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Bars & Live Music',
+          text: 'Pokhara\'s Lakeside strip comes alive in the evening with a relaxed, bohemian atmosphere very different from Kathmandu\'s frantic energy. Backpacker bars line the lake road with live music, open-air seating, and cold beer at sunset. Try local Nepali food — dal bhat, momos, or grilled fish from the lake — at one of the rooftop restaurants with views across Phewa Lake to the mountains beyond. The vibe is laid-back and social, perfect for meeting fellow travellers.',
+          tip: 'Busy Bee Cafe and Moondance Restaurant are Lakeside institutions for live music and atmosphere. Happy hour deals on cocktails and beer run 4-7pm at most bars.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Sarangkot Sunrise, Phewa Lake & Lakeside',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sarangkot Sunrise Panorama',
+          text: 'Start your Pokhara experience with the unmissable Sarangkot sunrise. Drive or hike to the viewpoint at 1,592m before dawn and watch the Annapurna massif — Machapuchare\'s perfect fishtail peak, Annapurna I at 8,091m, and the sweeping snow wall from Dhaulagiri to Manaslu — catch the first light. The peaks turn from deep purple to pink to blazing gold in a 30-minute spectacle that defines the Himalayan experience. Below, Pokhara and Phewa Lake emerge from the valley mist.',
+          tip: 'Book a taxi the evening before (1500-2000 NPR round trip). Arrive 30 minutes before sunrise. Bring a warm jacket — temperatures at Sarangkot can be 10°C lower than Lakeside.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Phewa Lake Boating & Tal Barahi Temple',
+          text: 'After breakfast in Lakeside, rent a brightly painted wooden rowing boat on Phewa Lake. Paddle across the calm water to Tal Barahi Temple — a small pagoda-style Hindu temple on an island in the lake\'s centre. The two-storey temple is surrounded by water and framed by the Annapurna range. Rowing on the lake with the mountains reflected in the surface is one of Nepal\'s most peaceful experiences. Return to shore and explore the Lakeside promenade — the commercial heart of tourist Pokhara with gear shops, bakeries, and handicraft stalls.',
+          tip: 'Boats cost 500-700 NPR per hour without a boatman, or 1000 NPR with a boatman who rows for you. Mornings are calmest — wind picks up after noon.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Dining & Sunset',
+          text: 'Watch the sunset paint Phewa Lake from a Lakeside rooftop restaurant. The evening light on the water with the dark silhouettes of the Annapurna range is spectacular. Pokhara\'s food scene is surprisingly diverse — excellent Nepali thali, wood-fired pizza, Korean BBQ, and Israeli falafel all cater to the international trekking crowd. After dinner, the Lakeside bars fill with travellers sharing stories from the Annapurna Circuit, Everest Base Camp, and beyond.',
+          tip: 'The Old Mike\'s Restaurant (Nepali-Italian) and Godfather\'s Pizzeria are Lakeside classics. For authentic Nepali food, head to the side streets away from the lake where prices drop significantly.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'World Peace Pagoda, Davis Falls & Caves',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'World Peace Pagoda Hike',
+          text: 'Cross Phewa Lake by boat to the southern shore and hike 45 minutes uphill through forest to the World Peace Pagoda (Shanti Stupa) — a gleaming white Japanese-built Buddhist stupa on a forested ridge at 1,113m. The view from the summit is arguably the finest in Pokhara: the entire lake spread below with the full Annapurna range reflected in its surface. The pagoda contains golden Buddha statues from Japan, Sri Lanka, Thailand, and Nepal representing different Buddhist traditions. The forested trail is peaceful and shaded.',
+          tip: 'Take the boat from Lakeside to the south shore (200 NPR) and hike up — it is steeper but more scenic than the road approach. Bring water and start early to beat the heat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Davis Falls & Gupteshwor Cave',
+          text: 'Visit Davis Falls (Devi\'s Falls), where the Pardi Khola stream plunges into a narrow underground channel and disappears into a deep limestone chasm. The waterfall is most impressive during and just after monsoon season (July-October) when the volume of water is dramatic. Directly opposite, descend into Gupteshwor Mahadev Cave — a long limestone cave containing a sacred Shiva shrine deep inside, where the waterfall from Davis Falls re-emerges as a subterranean cascade visible from inside the cave. The combination of the two sites takes about 2 hours.',
+          tip: 'Entry to Davis Falls is 50 NPR and Gupteshwor Cave is 100 NPR. The cave requires ducking through low passages — bring a headlamp or use your phone light.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Old Bazaar & Local Culture',
+          text: 'Head to Pokhara\'s Old Bazaar — the original town centre before Lakeside became the tourist hub. The narrow streets are lined with traditional shops selling spices, brass utensils, fabric, and Gurung and Magar handicrafts. The Bindhyabasini Temple at the top of the bazaar is a significant Hindu temple with views across the old town. Eat at a local Nepali restaurant in the bazaar for authentic dal bhat at half the Lakeside price, then return to Lakeside for evening drinks.',
+          tip: 'The Old Bazaar is a 20-minute walk from Lakeside and offers a completely different perspective on Pokhara — real local life without the tourist veneer.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Paragliding, Museums & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Paragliding over Phewa Lake',
+          text: 'Pokhara is one of the world\'s premier paragliding destinations — the combination of reliable thermals, stunning scenery, and tandem flights makes it accessible to complete beginners. Launch from Sarangkot at 1,592m and soar over Phewa Lake with the Annapurna range as your backdrop. Tandem flights last 20-30 minutes (or longer with good thermals) and include a gentle spiralling descent to the lakeside landing zone. The bird\'s-eye view of the lake, the city, and the mountains is absolutely spectacular.',
+          tip: 'Book with a reputable operator (Sunrise Paragliding, Blue Sky) — prices are $65-85 USD for a tandem flight including photos and video. Morning flights (9-11am) have the best thermals and clearest views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'International Mountain Museum',
+          text: 'Visit the International Mountain Museum on the southern edge of Pokhara — a well-curated museum dedicated to the Himalaya, its peoples, geology, and mountaineering history. Exhibits cover the first ascents of all 8,000m peaks (including original equipment from the 1953 Everest expedition), the geology of the Himalayan collision zone, and the diverse ethnic cultures of Nepal\'s mountain communities. The museum grounds include a replica of a mountaineering base camp and a small botanical garden with Himalayan species.',
+          tip: 'Entry is 500 NPR. Allow 1.5-2 hours for a thorough visit. The mountaineering history section is fascinating even if you are not a climber.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Lakeside Sunset',
+          text: 'Spend your final Pokhara evening watching the sunset from the lake shore. Rent a kayak for an hour and paddle to the middle of Phewa Lake as the sky turns orange and the mountains fade to silhouette. Back on shore, have a farewell dinner at one of Lakeside\'s best restaurants — the combination of good food, mountain views, and the relaxed traveller atmosphere makes Pokhara one of the most pleasant places to spend time in all of Asia.',
+          tip: 'Kayak rental is 300-500 NPR per hour from Lakeside operators. Evening paddles are magical but bring a headlamp — the lake gets dark quickly after sunset.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Lakeside Orientation',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival in Pokhara',
+          text: 'Arrive in Pokhara by tourist bus from Kathmandu (7-8 hours, $10-15) or by domestic flight (25 minutes, $100-130). Check into your Lakeside guesthouse and take in the first views of Phewa Lake with the Annapurna range rising behind it. Pokhara\'s pace is immediately slower and more relaxed than Kathmandu — the clean air, wide streets, and lakeside setting feel like a different country.',
+          tip: 'The tourist bus to Pokhara leaves Kathmandu at 7am from Sorakhutte. Book through your guesthouse. Window seats on the left side offer the best mountain views on the descent into the Pokhara Valley.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lakeside Stroll & Phewa Lake',
+          text: 'Walk the length of Lakeside from Dam Side in the south to the quieter northern end. The promenade runs along the lake shore past restaurants, gear shops, bakeries, and travel agencies. Rent a colourful wooden boat and paddle on Phewa Lake — the calm water reflects the mountains and the surrounding green hills. Visit the small Tal Barahi Temple on the lake island. Lakeside is Pokhara\'s tourist hub and the staging ground for treks, adventures, and lazy lake days.',
+          tip: 'The northern end of Lakeside is quieter and cheaper than the central strip. Guesthouses here offer better value and a more peaceful stay.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Welcome Dinner by the Lake',
+          text: 'Settle into Pokhara\'s relaxed evening rhythm. The lakeside restaurants serve everything from Nepali thali to wood-fired pizza to Korean bibimbap — a reflection of the international trekking crowd. Grab a cold Nepal Ice beer and watch the sunset light fade over the lake. The backpacker bar scene in Lakeside is friendly and social without being overwhelming.',
+          tip: 'Happy hour runs 4-7pm at most Lakeside bars with buy-one-get-one deals on cocktails and beer. Prices in Pokhara are lower than Kathmandu across the board.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Sarangkot Sunrise & Paragliding',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sarangkot Sunrise',
+          text: 'Leave Lakeside before dawn for the 30-minute taxi ride to Sarangkot viewpoint at 1,592m. The sunrise panorama over the Annapurna range is one of Nepal\'s defining experiences — Machapuchare\'s sharp fishtail summit, the massive wall of Annapurna I (8,091m), and the snow peaks stretching east to Manaslu and west to Dhaulagiri emerge from darkness into pink, gold, and white brilliance. Below, Phewa Lake and the Pokhara Valley are carpeted in mist. There is a small viewing tower and several cafes at the summit.',
+          tip: 'The walk up from the road takes 20 minutes — arrive before the tour buses for the most peaceful experience. Hot tea is available at the summit cafes.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tandem Paragliding',
+          text: 'Launch from Sarangkot for a tandem paragliding flight over Phewa Lake — Pokhara is consistently rated among the world\'s top three paragliding destinations. Strap in with your pilot and run off the hillside into the thermal-rich air. You will soar at 1,500m with the Annapurna range at eye level and the lake glittering below. Flights last 20-30 minutes with skilled pilots performing gentle spirals and acrobatic manoeuvres if you request them. Landing is on the Lakeside strip beside the water.',
+          tip: 'Morning flights (9-11am) have the strongest thermals and clearest mountain views. Reputable operators include Sunrise Paragliding and Blue Sky — prices are $65-85 USD including GoPro photos and video.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Evening & Photo Review',
+          text: 'Collect your paragliding photos and videos over dinner at a Lakeside restaurant. Share the experience with fellow travellers — paragliding stories are currency in Pokhara\'s social scene. Try momos at a local restaurant (the Thakali Kitchen does excellent steamed and fried varieties) and plan your next day\'s activities over cold beer.',
+          tip: 'Your paragliding operator will usually email or share photos within a few hours. Check the footage while the experience is fresh — the videos make excellent social media content.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'World Peace Pagoda & Davis Falls',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'World Peace Pagoda Hike',
+          text: 'Take a boat across Phewa Lake to the southern shore (200 NPR) and hike 45 minutes through forest to the World Peace Pagoda at 1,113m. This gleaming white Japanese-built Buddhist stupa sits on a ridge with a panoramic view over the entire lake and the Annapurna range. The setting is utterly peaceful — prayer flags flutter in the breeze, golden Buddha statues face the four cardinal directions, and the morning silence is broken only by birdsong. The hike through subtropical forest is shaded and beautiful.',
+          tip: 'Start by 7am for the coolest hiking conditions and the clearest mountain views. The trail is well-marked but steep in places — good footwear and water are essential.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Davis Falls & Gupteshwor Cave',
+          text: 'Visit Davis Falls where a stream plunges into a deep underground channel and disappears into the earth. The waterfall is dramatic during and after the monsoon season. Cross the road to Gupteshwor Mahadev Cave — descend into a long limestone cave system that houses a sacred Shiva shrine. Deep inside, the waterfall from Davis Falls re-emerges as a subterranean cascade visible from a viewing platform. The cave is cool, dripping, and atmospheric, with stalactites and the sound of rushing water echoing off the walls.',
+          tip: 'Davis Falls entry is 50 NPR, Gupteshwor Cave is 100 NPR. The cave floor is wet and slippery — wear shoes with grip, not flip-flops.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Old Bazaar Exploration',
+          text: 'Walk or taxi to Pokhara\'s Old Bazaar — the original town before tourism created Lakeside. The narrow lanes sell spices, fabric, brass utensils, and Gurung handicrafts. The Bindhyabasini Temple commands a hilltop view. Eat dal bhat at a local restaurant in the bazaar for half the Lakeside price and experience the authentic non-tourist side of Pokhara.',
+          tip: 'The Old Bazaar is most lively in the morning but an evening walk gives a quieter, more intimate experience of local Pokhara life.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Australian Camp Day Hike',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hike to Australian Camp',
+          text: 'Take a taxi to Kande (30 minutes from Lakeside) and begin the easy 2-hour hike to Australian Camp at 2,060m — one of the most rewarding short treks accessible from Pokhara. The trail climbs through rhododendron forest and terraced farmland to a wide ridge with a panoramic view of the Annapurna range, Machapuchare, Lamjung Himal, and the Pokhara Valley far below. Australian Camp is a collection of simple lodges on a grassy hilltop, named for the Australian volunteers who first established the viewpoint.',
+          tip: 'No trekking permits are required for Australian Camp. Start early (7am departure from Pokhara) for the clearest mountain views — clouds typically build by noon.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Dhampus Village & Ridge Walk',
+          text: 'Walk the ridge trail from Australian Camp to the Gurung village of Dhampus (1,650m) — a 1.5-hour walk through forest with continuous mountain views. Dhampus is a traditional Gurung settlement where stone houses cluster around a central square and daily life revolves around farming and livestock. Have lunch at a teahouse in the village — dal bhat with mountain views — and soak up the peaceful rural atmosphere that stands in stark contrast to Lakeside.',
+          tip: 'The ridge trail between Australian Camp and Dhampus is gentle and scenic — this is the perfect introduction to trekking in Nepal without the commitment of a multi-day route.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Pokhara',
+          text: 'Descend from Dhampus to Phedi (45 minutes downhill) and take a local bus or taxi back to Lakeside. The return journey takes about an hour. Treat yourself to a well-earned meal and cold beer at one of Lakeside\'s restaurants. The day hike gives a genuine taste of the Annapurna trekking experience without the logistics of a multi-day trek.',
+          tip: 'Arrange a taxi pick-up from Phedi in advance or flag down a passing bus on the Pokhara-Baglung highway. The last buses pass around 5pm.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Begnas Lake & Rupa Lake',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Begnas Lake — The Quiet Alternative',
+          text: 'Escape the Lakeside crowds and taxi 15km east to Begnas Lake — Pokhara\'s second lake and a world away from the tourist bustle. Begnas is larger and quieter than Phewa, with minimal development along its shores and the same spectacular Annapurna views reflected in its still waters. Rent a wooden boat and paddle across the lake in near-silence — you may be the only tourist on the water. The surrounding hills are covered in forest and terraced farmland.',
+          tip: 'Begnas Lake is best visited on a clear morning when the mountain reflections are perfect. Boats cost 300-500 NPR per hour from the south shore landing.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Rupa Lake & Panchase Trail',
+          text: 'Walk the trail between Begnas and Rupa Lake (30 minutes through forest) — Rupa Lake is even less visited and completely undeveloped. The water is clear and the surrounding hills are thick with subtropical vegetation. For a longer excursion, the Panchase Trek begins near here — a 2-day ridge walk to a 2,500m viewpoint with some of the finest Annapurna panoramas in the region. Even a few hours on the lower trails give a taste of the solitude.',
+          tip: 'Pack a picnic for Rupa Lake — there are no restaurants or facilities. The peaceful shore is perfect for a quiet lunch with mountain views.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Evening Activities',
+          text: 'Return to Lakeside for an evening of activities — join a free yoga class (many studios offer free intro sessions), browse the Tibetan refugee handicraft shops, or catch a Nepali cultural show at one of the hotels. Pokhara\'s evening scene is mellow and social, with travellers gathering at lakeside restaurants to plan treks, share routes, and enjoy the mountain atmosphere.',
+          tip: 'Check notice boards at Lakeside cafes for free yoga sessions, meditation classes, and cultural events. The traveller community in Pokhara is generous with information and recommendations.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Adventure Day — Zip Line, Bungee or Ultralight',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'ZipFlyer or Bungee Jump',
+          text: 'Pokhara is the adventure capital of Nepal. Choose your adrenaline: the ZipFlyer (one of the world\'s longest and steepest zip lines, 1.8km at speeds up to 140km/h with Annapurna views) or a bungee jump from a specially designed tower. Both activities operate from the Sarangkot area and take 2-3 hours including transport from Lakeside. The zip line in particular is an unforgettable rush — screaming across a river valley with snow-capped 8,000m peaks filling your vision.',
+          tip: 'The ZipFlyer costs $50-70 USD and includes pick-up from Lakeside. Book the day before through any travel agency. Morning slots are best for clear mountain views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ultralight Flight over Annapurna',
+          text: 'For a once-in-a-lifetime experience, take an ultralight aircraft flight from Pokhara airport over the Annapurna range. The small open-cockpit planes fly at 3,000-4,000m with staggering views of Machapuchare, Annapurna, and the surrounding peaks from a perspective you cannot get any other way. Flights last 15-60 minutes depending on the package, and the pilot takes you close enough to the mountains to see glaciers, ice falls, and snow plumes in extraordinary detail.',
+          tip: 'Ultralight flights cost $100-250 USD depending on duration. Avia Club Nepal is the main operator. Book well in advance and hope for clear weather — flights are cancelled in poor visibility.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lakeside Celebration Dinner',
+          text: 'Celebrate a day of adventure with a special dinner at one of Pokhara\'s best restaurants. The Harbour Restaurant on the lake shore serves excellent Continental and Nepali fusion cuisine with sunset views. Alternatively, find a rooftop bar and share adventure stories with fellow adrenaline seekers over cold Gorkha beer and Nepali rum.',
+          tip: 'If you plan to have a big night out, Lakeside\'s bars stay open until midnight or later. The nightlife is friendly and safe compared to Kathmandu\'s Thamel.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Tibetan Settlement & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tibetan Refugee Settlement',
+          text: 'Visit the Tashi Ling or Paljorling Tibetan refugee settlements on the outskirts of Pokhara. These communities have maintained Tibetan culture and traditions since the 1959 exodus from Tibet. The small monasteries, carpet-weaving workshops, and handicraft centres offer insight into the resilience and artistry of the Tibetan exile community. Handmade carpets, thangka paintings, and silver jewellery are available directly from the artisans at fair prices.',
+          tip: 'The Tibetan settlements welcome visitors. Buying directly from the workshops supports refugee families. The carpets are genuine hand-knotted wool and much cheaper than in Western shops.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'International Mountain Museum',
+          text: 'Spend the afternoon at the International Mountain Museum — a comprehensive museum covering Himalayan geology, mountaineering history, and the diverse ethnic cultures of Nepal\'s mountain peoples. Exhibits include original equipment from historic Everest expeditions, geological displays explaining the Himalayan tectonic collision, and ethnographic galleries on the Sherpa, Gurung, Magar, and Tamang peoples who call the mountains home.',
+          tip: 'Entry is 500 NPR. The mountaineering gallery alone is worth the visit — original ice axes, oxygen bottles, and clothing from first ascents of 8,000m peaks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Sunset & Farewell',
+          text: 'Return to Lakeside for a final sunset paddle on Phewa Lake. Watch the mountains fade to silhouette as the sky turns orange and pink. Have a farewell dinner and reflect on a week spent in one of the most beautiful and adventure-rich places on Earth. Pokhara\'s combination of mountains, lake, culture, and adrenaline is unique — most travellers leave planning their return.',
+          tip: 'If departing by tourist bus to Kathmandu the next morning, book your ticket the evening before through your guesthouse. The 7am departure is standard and buses fill quickly in peak season.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat dal bhat for unlimited refills', text: 'Nepali dal bhat sets come with unlimited rice and lentil refills at local restaurants for 300-500 NPR. This is the cheapest and most filling meal option and what most Nepali people eat twice daily.' },
+  { title: 'Walk instead of taxi', text: 'Most of Lakeside is walkable end to end in 30 minutes. Save taxi fares for Sarangkot sunrise and out-of-town trips. Bicycle rental is also available at 300-500 NPR per day.' },
+  { title: 'Book direct for paragliding', text: 'Walk-in prices at paragliding offices in Lakeside are often $10-15 cheaper than booking through your hotel or an agency. Compare prices at 2-3 operators before committing.' },
+  { title: 'Stay at the north end of Lakeside', text: 'Guesthouses at the quieter northern end of Lakeside are 30-50% cheaper than the central strip. The walk to restaurants and bars is just 10-15 minutes along the lake.' },
+  { title: 'Eat at local restaurants, not tourist ones', text: 'Restaurants on the side streets away from the lakefront serve the same food at 40-60% lower prices. Look for where Nepali staff and locals eat — quality is usually better too.' },
+  { title: 'Rent, don\'t buy gear', text: 'Trekking gear (boots, sleeping bags, poles, jackets) can be rented in Lakeside for a fraction of the purchase price. This is especially sensible for one-time use items on short treks.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$4–8', midrange: '$15–30', splurge: '$50+', notes: 'Dormitory → guesthouse → lakeside resort' },
+  { category: 'Food', budget: '$5–10', midrange: '$10–20', splurge: '$25+', notes: 'Dal bhat → Lakeside restaurants → fine dining' },
+  { category: 'Transport', budget: '$1–3', midrange: '$5–15', splurge: '$20+', notes: 'Local bus → shared taxi → private car' },
+  { category: 'Activities', budget: '$5–15', midrange: '$30–70', splurge: '$100+', notes: 'Boating → paragliding → ultralight flight' },
+  { category: 'Entry Fees', budget: '$1–3', midrange: '$3–8', splurge: '$8–15', notes: 'Museums and waterfalls are cheap' },
+  { category: 'Daily Total', budget: '$15–35', midrange: '$60–140', splurge: '$200+', notes: 'Budget backpacker → comfortable mid → adventure luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Same visa as Kathmandu — Nepal Visa on Arrival at Tribhuvan Airport or land borders',
+      'If flying domestically from Kathmandu, no additional visa needed for Pokhara',
+      'Keep passport photocopies accessible — some guesthouses require them for check-in',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Pokhara is at 800m altitude — no acclimatisation needed. Drink bottled or filtered water only',
+      'Travel insurance with adventure sports coverage is essential if you plan to paraglide, zip-line, or trek',
+      'Lakeside is very safe for tourists but watch for pickpockets in crowded areas and negotiate taxi fares before riding',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Lakeside is walkable — most sites are within 30 minutes on foot along the lake road',
+      'Taxis do not use meters. Standard fares: Lakeside to airport 500 NPR, Lakeside to Sarangkot 1500 NPR',
+      'Bicycle and scooter rental is available in Lakeside (300-500 NPR and 800-1500 NPR per day respectively)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'WiFi is available at most Lakeside guesthouses and cafes — speeds are generally better than Kathmandu',
+      'Ncell 4G coverage is good in Pokhara and on lower trekking routes. Signal drops at higher altitudes',
+      'Download offline maps of the Pokhara Valley and any trekking routes before heading out',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs are plentiful on Lakeside strip. Nabil Bank and Standard Chartered have the most reliable international ATMs',
+      'Cash is needed for boats, local transport, and smaller restaurants. Many tourist restaurants accept cards',
+      'Prices in Pokhara are 10-20% lower than Kathmandu for accommodation and food',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Sunscreen and sunglasses are essential — the lake reflects UV strongly and sunburn happens fast',
+      'A light rain jacket is useful year-round — afternoon showers are common even outside monsoon season',
+      'Bring swimwear for Phewa Lake — some areas are swimmable, though the water is not crystal clear',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Gurung & Magar Heritage', text: 'Pokhara\'s surrounding hills are home to Gurung and Magar communities — the ethnic groups from which the famous Gurkha soldiers are drawn. Their culture is distinct from Kathmandu\'s Newari traditions. Show respect for local customs, especially in villages outside Lakeside.' },
+  { icon: '🌍', title: 'Respect the Lake', text: 'Phewa Lake is sacred to locals and provides water and livelihoods. Do not litter on or around the lake, and dispose of waste properly. Support community clean-up efforts that maintain the lake\'s beauty for everyone.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Ask permission before photographing locals, especially in villages and at religious sites. The Tibetan refugee communities welcome visitors but ask that you respect their privacy and do not photograph children without parental consent.' },
+  { icon: '🗣', title: 'Learn Basic Nepali', text: 'Even in tourist-friendly Pokhara, a few Nepali words go far: "namaste" (hello), "dhanyabad" (thank you), "ramro" (beautiful), "mitho" (delicious). Nepalis respond warmly to any effort to speak their language.' },
+  { icon: '🤝', title: 'Support Local Operators', text: 'Choose locally-owned trekking agencies, paragliding operators, and guesthouses. Ask about their safety records and community contributions. Many local operators fund school and trail maintenance projects from tourism revenue.' },
+  { icon: '🕐', title: 'Embrace the Pace', text: 'Pokhara moves at its own rhythm. Buses leave when full, weather dictates adventure schedules, and the best moments come from unplanned encounters. Relax into the pace and let the lake and mountains set your tempo.' },
+];
+---
+
+<CityGuideLayout
+  title="Pokhara Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Pokhara guide for young travelers. Annapurna views, paragliding, lake life with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/pokhara-hero.webp"
+  heroFlag="🇳🇵"
+  heroCountry="Nepal"
+  heroRegion="South Asia"
+  heroCity="Pokhara"
+  heroSubtitle="Lakeside paradise beneath the Annapurna massif — where tandem paragliding, Himalayan sunrises, and laid-back backpacker culture meet at 800 metres."
+  heroPills={["3-Day Adventure","Lakeside","Oct – Nov Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Pokhara is slightly cheaper than Kathmandu and offers excellent value for adventure activities — these ranges cover budget backpacker to adventure-luxury."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Pokhara is Nepal's adventure gateway and lake retreat — approach the mountains and communities with respect, and the rewards are extraordinary."
+  ctaCity="Pokhara"
+  ctaText="Find travel companions to explore Pokhara together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

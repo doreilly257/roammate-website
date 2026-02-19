@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'LAK (Lao Kip)', detail: 'THB and USD also accepted' },
+  { icon: '🗣', label: 'Language', value: 'Lao', detail: 'Basic English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: 'Dry season, lower water, waterfalls accessible' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$15–40 USD', detail: 'Budget backpacker paradise' },
+  { icon: '🛂', label: 'Visa', value: 'eVisa or visa on arrival', detail: '$30–42 depending on nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: '4000 Islands Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Don Det Island Exploration',
+          text: 'Arrive at Don Det — the backpacker hub of the 4000 Islands — by boat from Nakasang on the mainland. The island is tiny, flat, and car-free, with a sandy path circling its perimeter through coconut groves and rice paddies. Rent a bicycle from your guesthouse (10,000 kip per day) and ride the full loop in about an hour, passing riverside bungalows, hammock-filled cafes, and the rusting remains of the old French colonial railway bridge that once connected Don Det to Don Khon. Stop for a fresh fruit shake at a riverside cafe and watch the Mekong flow past — wide, brown, and impossibly slow.',
+          tip: 'Don Det has two sides: the sunrise side (east) is quieter and cheaper, the sunset side (west) has more bars and restaurants. Choose based on your vibe.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Don Khon & Li Phi Falls',
+          text: 'Cross the old French railway bridge on foot or bicycle to Don Khon — the larger, more traditional island connected to Don Det by this colonial relic. Ride south through the village to Li Phi Falls (Somphamit Falls) — a powerful and dramatic series of rapids where the Mekong crashes through a maze of rock channels with tremendous force. The falls are particularly impressive during the transitional months when water levels are changing. A viewing platform overlooks the main cascade and the sound is thunderous. The surrounding forest is lush and shady, providing relief from the midday heat.',
+          tip: 'Entry to Li Phi Falls costs 35,000 kip. The rocks around the falls are slippery — stay behind the barriers. The walk from the bridge takes about 20 minutes by bike.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset & Hammock Life',
+          text: 'Return to Don Det\'s sunset side for the evening ritual that defines the 4000 Islands experience — watching the sun set over the Mekong from a hammock at a riverside bar. The sky turns from gold to orange to deep pink as the river reflects the colours back. Order a cold BeerLao (the national beer and one of Southeast Asia\'s best) and a plate of laap (spicy minced meat salad) or sticky rice with grilled fish. The pace of life here is legendarily slow — nothing happens in a hurry and nobody minds. This is the place where backpackers come to decompress completely.',
+          tip: 'BeerLao costs about 10,000-15,000 kip ($0.50-0.75) at riverside bars. The sunset side bars set up cushions right on the riverbank — arrive by 5pm for the best spot.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Don Det, Don Khon & Waterfalls',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive & Cycle Don Det',
+          text: 'Arrive at Don Det by boat from Nakasang (the journey takes about 15 minutes across a channel of the Mekong). The island is small, flat, and entirely car-free — the only transport is bicycles and your own feet. Rent a bicycle from your guesthouse for 10,000 kip per day and ride the perimeter loop, passing through rice paddies, coconut groves, and clusters of riverside bungalows. Don Det has a wonderful laid-back atmosphere — hammocks hang from every tree, reggae drifts from open-air cafes, and cats sleep in the middle of the path. This is one of the slowest, most peaceful places in all of Southeast Asia.',
+          tip: 'Guesthouses on the sunrise side (east) are quieter and cheaper ($3-8 per night). The sunset side (west) is more social with bars and restaurants facing the Mekong.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'French Railway Bridge & Li Phi Falls',
+          text: 'Cycle across the old French railway bridge connecting Don Det to Don Khon — a rusting colonial relic from the 1920s when the French built a railway to bypass the Mekong rapids and transport goods between Laos and Cambodia. The bridge has been converted for pedestrian and bicycle use and the views from the middle are beautiful. Continue south through Don Khon village to Li Phi Falls (Somphamit Falls) — a thundering series of cascades where the Mekong forces its way through narrow rock channels with enormous power. The spray creates permanent rainbows in the sunlight and the roar is audible from several hundred metres away.',
+          tip: 'Li Phi Falls entry costs 35,000 kip. Visit in the late afternoon when the light is best for photography. The rocks are extremely slippery — stay behind the safety barriers.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mekong Sunset & BeerLao',
+          text: 'Return to Don Det for sunset on the western riverbank — the defining daily ritual of the 4000 Islands. Find a hammock at one of the riverside bars, order a cold BeerLao (10,000-15,000 kip), and watch the sky turn gold over the Mekong. Dinner is simple but satisfying — grilled fish with sticky rice, laap (spicy minced meat salad), or tam mak hoong (Lao papaya salad) from any of the riverside restaurants. The food is cheap, fresh, and authentically Lao. After dinner, the bars play music and the conversation is easy — this is the kind of place where strangers become friends over a shared table.',
+          tip: 'Try the BeerLao Dark — a surprisingly good dark lager that most tourists overlook. A large bottle costs 15,000-20,000 kip and is perfect with spicy Lao food.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Irrawaddy Dolphins & Khone Phapheng',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Irrawaddy Dolphin Spotting',
+          text: 'Take a morning boat trip from the southern tip of Don Khon to see the critically endangered Irrawaddy dolphins — a population of fewer than 100 freshwater dolphins that live in a deep pool of the Mekong near the Lao-Cambodian border. The boatman cuts the engine and you drift in silence, scanning the brown water for the distinctive rounded grey heads breaking the surface. Sightings are not guaranteed but experienced boatmen know the dolphins\' favourite spots and patience is usually rewarded. Watching these rare creatures surface in the wide Mekong, surrounded by palm trees and rice paddies, is a profoundly moving wildlife experience.',
+          tip: 'Dolphin trips cost 60,000-80,000 kip per person and last about 1-2 hours. Early morning (7-9am) offers the best chance of sightings. The dry season (Dec-May) is when dolphins concentrate in the deep pools.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Khone Phapheng Falls',
+          text: 'Take a tuk-tuk from Nakasang on the mainland to Khone Phapheng Falls — the largest waterfall in Southeast Asia by volume and the reason the Mekong is not navigable between Laos and Cambodia. The falls stretch over 10 kilometres of the river, with the main cascade dropping through a chaotic maze of rock channels and islands with deafening force. A viewing platform and walkway follow the riverbank, giving you several perspectives on the massive curtain of white water. The falls are most impressive during and just after the wet season when the volume is at its peak, but they are dramatic year-round.',
+          tip: 'Khone Phapheng entry costs 55,000 kip. The falls are on the mainland, not the islands — arrange a tuk-tuk from Nakasang (around 100,000 kip return with waiting time).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tubing the Mekong',
+          text: 'Return to Don Det for an afternoon of tubing — floating down the Mekong in a rubber inner tube with a cold beer in hand. Several guesthouses rent tubes for 10,000-20,000 kip and the standard route runs along the sunset side of Don Det, drifting past riverside bars where you can grab a drink without leaving the water. The current is gentle (but respect the river — stay away from deeper channels) and the experience of floating on the world\'s 12th longest river as the sun drops behind palm trees is pure bliss. End the evening at one of the island bars — the social scene is relaxed and welcoming.',
+          tip: 'Tubing is safe in the dry season when the current is slow. Do not tube in the wet season when water levels are high and currents are strong. Life jackets are available — use one.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Kayaking, Village Life & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kayaking Between the Islands',
+          text: 'Rent a kayak from Don Det and paddle through the channels between the islands of Si Phan Don. The Mekong at this point splits into a vast network of channels, sandbars, and forested islets — the "4000 Islands" that give the area its name. During the dry season many of these channels are shallow and navigable by kayak, allowing you to explore tiny uninhabited islands, discover hidden sandbars, and paddle past traditional Lao fishing communities. The water is calm and the kayaking is easy — the views of the river stretching to the horizon with palm trees and rice paddies on every side are quintessentially Lao.',
+          tip: 'Kayak rental costs 30,000-50,000 kip per half day. The morning is best when the water is calmest. Bring water, sunscreen, and a hat — there is no shade on the river.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Don Khon Village & Temple',
+          text: 'Spend your final afternoon exploring Don Khon village on foot — a traditional Lao community that moves at a pace even slower than Don Det. The village has a beautiful Buddhist temple with ornate wooden carvings and a peaceful courtyard where monks meditate in the shade. Walk along the eastern riverbank past family homes with vegetable gardens, chickens, and children playing in the dust. The old French colonial locomotive — a rusting engine from the railway era — sits under a shelter near the bridge as a monument to the colonial past. The village is a reminder that the 4000 Islands are home to real communities, not just backpacker bars.',
+          tip: 'Dress modestly when visiting the temple — cover shoulders and knees. Remove shoes before entering. Monks are friendly but women should not touch or hand objects directly to them.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Sunset & Onwards',
+          text: 'Watch one last sunset from your favourite riverside hammock on Don Det. The 4000 Islands is the kind of place that is almost impossible to leave — the combination of natural beauty, absurd cheapness, and total absence of urgency makes it one of the most addictive stops on the Southeast Asia trail. Many backpackers plan to stay two nights and end up staying two weeks. When you finally tear yourself away, boats run from Don Det to Nakasang, from where buses connect to Pakse (3 hours), the Bolaven Plateau, or the Cambodian border crossing at Dong Kalor.',
+          tip: 'Minibuses to Pakse depart from Nakasang in the morning — book through your guesthouse. The Cambodian border is 15km south — international buses run direct but check visa requirements.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Don Det Discovery',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive at Don Det',
+          text: 'Arrive by bus from Pakse or the Cambodian border to Nakasang, then take the short boat crossing to Don Det island. The boat drops you at the northern tip where most of the guesthouses and restaurants are concentrated. Choose a riverside bungalow — wooden huts on stilts overlooking the Mekong start at around 40,000-80,000 kip ($2-4) per night. Rent a bicycle from your guesthouse and get your bearings with a gentle ride along the sunset side of the island, stopping at cafes and hammock bars.',
+          tip: 'Book your bungalow upon arrival — simply walk along the riverside path and check a few places. The cheapest rooms are on the sunrise side, the best sunset views are on the west.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Island Circuit by Bicycle',
+          text: 'Cycle the full perimeter of Don Det — a flat, easy ride of about 8 kilometres on sandy paths through rice paddies, palm groves, and clusters of traditional Lao homes. The southern end of the island is quieter and more rural, with water buffalo grazing in the fields and fishermen casting nets from the riverbank. The path passes through thick stands of bamboo that create shady tunnels over the trail. Stop at the French railway bridge at the south end — a rusting iron span from the 1920s connecting Don Det to neighbouring Don Khon.',
+          tip: 'The paths flood slightly during wet season — ride carefully on muddy sections. The circuit takes about 1-2 hours at a leisurely pace with plenty of photo stops.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset, BeerLao & River Life',
+          text: 'Claim a hammock on the sunset side of Don Det and settle in for the evening. The Mekong here is wide and slow, and the sunset turns the entire western sky into a canvas of gold, orange, and purple reflected on the water\'s surface. Order a cold BeerLao ($0.75) and a plate of sticky rice with grilled river fish — the simplest and most satisfying meal in Laos. As darkness falls, the river becomes a mirror of stars and the only sounds are crickets, distant music, and the gentle lapping of water against the riverbank.',
+          tip: 'The riverside bar Mama Tanon near the bridge junction is a popular sunset spot with reliably good Lao food and the cheapest BeerLao on the island.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Don Khon & Li Phi Falls',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'French Railway Bridge & Don Khon',
+          text: 'Cycle across the French railway bridge to Don Khon — the larger and more traditional of the two connected islands. The bridge was built in the 1920s as part of a short railway line designed to bypass the Mekong rapids, allowing French colonial traders to transport goods between southern Laos and Cambodia. Today the iron bridge carries bicycles and pedestrians, and the views from the middle — the Mekong splitting into channels around tiny palm-covered islands — perfectly capture the landscape of Si Phan Don. On the Don Khon side, a rusting French locomotive sits preserved under a shelter as a reminder of the colonial era.',
+          tip: 'The bridge toll is usually included in the Li Phi Falls entry ticket. Ride slowly and enjoy the view — the bridge is narrow and can be slippery.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Li Phi Falls & Swimming Pools',
+          text: 'Continue south on Don Khon to Li Phi Falls (Somphamit Falls) — where the Mekong squeezes through a labyrinth of rock channels and cascades with tremendous force. The falls are particularly dramatic because they are not a single drop but a complex series of rapids spread across hundreds of metres. A walking trail follows the riverbank with several viewpoints offering different perspectives on the churning white water. Downstream from the main cascades, calm pools form where you can swim safely — ask a local to point out the safe swimming spots as the current can be deceptively strong closer to the falls.',
+          tip: 'Entry to Li Phi Falls is 35,000 kip. The rocks are extremely slippery near the water — wear proper shoes. Swimming is only safe in designated calm pools downstream.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Don Khon Village Evening',
+          text: 'Rather than rushing back to Don Det, spend the early evening exploring Don Khon village at a walking pace. The village is a genuine Lao community — monks walk their evening rounds past wooden houses on stilts, children play in the dusty lanes, and families prepare dinner over charcoal fires. Visit the small Buddhist temple with its ornate painted facade and quiet courtyard. The village has a handful of simple restaurants serving authentic Lao food — or laap (spicy meat salad), tam mak hoong (papaya salad), and ping gai (grilled chicken). Cycle back to Don Det as the stars come out.',
+          tip: 'Don Khon village is more traditional than the tourist area on Don Det — dress modestly and be respectful when walking through residential areas. A smile and a sabaidee (hello) go a long way.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Irrawaddy Dolphins',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Dolphin Spotting on the Mekong',
+          text: 'Ride to the southern tip of Don Khon and board a small wooden boat for a morning dolphin-watching trip. The Irrawaddy dolphins of the Mekong are one of the rarest freshwater cetacean populations in the world — fewer than 100 individuals survive in this stretch of river near the Lao-Cambodian border. The boatman cuts the engine and you drift in the wide river, scanning the surface for the distinctive rounded grey heads breaking through. When one surfaces — a slow exhale, a curved back, a brief flash of grey — the effect is electrifying. These are prehistoric creatures in an ancient river, and the silence of the surrounding landscape makes the encounter deeply moving.',
+          tip: 'Dolphin trips cost 60,000-80,000 kip per person. Early morning (7-8am) is the best time. The dry season concentrates dolphins in deeper pools, improving sighting odds significantly.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Southern Islands Exploration',
+          text: 'After the dolphin trip, explore the southern channels and islands of Si Phan Don by bicycle and boat. The landscape here is wide-open Mekong — vast expanses of river, sandbars exposed in the dry season, and tiny forested islands that emerge from the water like green jewels. Some of these islands are inhabited by single families who farm and fish in isolation. The boatman can drop you on a sandbar in the middle of the river for a surreal experience — standing on a strip of sand with the Mekong flowing past on both sides and palm-lined islands all around you.',
+          tip: 'Ask your boatman to include a sandbar stop on the return from the dolphin trip — most will agree for a small extra charge. Bring drinking water and sun protection.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Cooking & Stargazing',
+          text: 'Back on Don Det, find a riverside restaurant and order a Lao feast — sticky rice, laap, tam mak hoong, grilled fish, and a cold BeerLao. The total will run about 100,000-150,000 kip ($5-7) for two people — absurdly cheap for an excellent meal. After dinner, walk to the quieter southern end of the island away from the bar lights and look up. The 4000 Islands have almost no light pollution and the night sky is extraordinary — the Milky Way stretches across the full sky and shooting stars are common. Lie on the riverbank and stargaze while listening to the Mekong gurgle past.',
+          tip: 'The southern tip of Don Det has the least light pollution and the best stargazing. Bring a torch for walking back — the paths are unlit.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Khone Phapheng & Mainland',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Khone Phapheng Falls',
+          text: 'Take a boat from Don Det to Nakasang on the mainland and arrange a tuk-tuk to Khone Phapheng Falls — the largest waterfall in Southeast Asia by volume. The Mekong drops through a massive series of cascades stretching over 10 kilometres, with the main viewpoint overlooking a thundering curtain of whitewater crashing over and between enormous boulders. The sound is deafening and the spray creates permanent mist and rainbows above the falls. A walking trail follows the riverbank through tropical forest with several viewpoints and a restaurant overlooking the main cascade.',
+          tip: 'Entry costs 55,000 kip. Allow 1-2 hours. A return tuk-tuk from Nakasang costs about 100,000-150,000 kip including waiting time. Visit in the morning for the best light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Nakasang Market & Local Life',
+          text: 'Before returning to the island, explore Nakasang town — the small mainland gateway to the 4000 Islands. The morning market (still active into the afternoon) is a window into rural Lao life: piles of fresh vegetables, live fish in plastic tubs, baskets of sticky rice, and fermented fish paste (padaek) in enormous jars. The atmosphere is friendly and unhurried — vendors will smile and offer you samples. Walk along the riverfront where boats of all sizes are tied up and fishermen repair their nets. Pick up any supplies you need as Nakasang has more shops than the islands.',
+          tip: 'Nakasang market is best in the morning (6-10am). The meat and fish sections are intense — follow the smoke to find the best grilled chicken and fish vendors.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tubing & Sunset Session',
+          text: 'Return to Don Det and spend the afternoon tubing the Mekong — floating in a rubber inner tube along the sunset side of the island with the slow current. Tubes cost 10,000-20,000 kip to rent and the float takes about 30-60 minutes depending on water levels and how many bar stops you make along the way. Several riverside bars are set up specifically for tubers — you can float up, grab a drink, and continue downstream. End the tube float in time for the sunset, then settle into a hammock for the evening ritual of BeerLao, river views, and the complete absence of hurry.',
+          tip: 'Only tube in the dry season when the current is gentle. Wear a life jacket and stay in the shallow channel along the island edge — the main river channel has stronger currents.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Kayaking & Hidden Channels',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kayaking the Mekong Channels',
+          text: 'Rent a kayak from Don Det and spend the morning exploring the intricate network of channels, sandbars, and tiny islands that make up Si Phan Don. During the dry season, the Mekong drops dramatically, exposing sandbars and creating shallow channels that are perfect for kayak exploration. Paddle between small islands covered in palm trees and wild vegetation, pass through narrow channels where the river narrows to just a few metres wide, and discover hidden beaches on uninhabited islets. The birdlife is excellent — herons, kingfishers, cormorants, and eagles are all common along the waterways.',
+          tip: 'Kayak rental costs 30,000-50,000 kip for a half day. The morning is calmest. Bring a hat, sunscreen, and plenty of water — there is no shade on the open river.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Fishing with Locals',
+          text: 'Ask at your guesthouse about joining a local fisherman for an afternoon on the river. Fishing is the primary livelihood for the communities of Si Phan Don and the techniques are fascinating — cast nets thrown from narrow wooden boats, bamboo fish traps set in rapids, and handlines dropped into deep pools. Even if you catch nothing, the experience of sitting in a wooden boat on the Mekong with a Lao fisherman — communicating through gestures and smiles — is memorable. Some guesthouses can arrange this for 50,000-100,000 kip, with anything you catch cooked for dinner.',
+          tip: 'Fishing trips are informal and depend on willing fishermen — ask around the day before. Even if a formal trip is not available, walking the riverbank at dawn reveals the fishing routines beautifully.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Night Market & Island Social',
+          text: 'Don Det has a small evening food scene — several restaurants set up outdoor tables along the river path and serve Lao and international food at backpacker prices. Try the lao-lao (local rice whisky) at one of the bars — it is rough but authentic, and features in every gathering on the islands. The social scene is intimate and communal — at any given time you might be sharing a table with a German couple, an Australian solo traveller, and a Lao family. Everyone is relaxed, no one is in a rush, and the conversation flows as easily as the river.',
+          tip: 'Lao-lao is potent — start with small amounts mixed with soda water and lime. Happy shakes (containing marijuana) are still offered on some menus — be aware that drugs are illegal in Laos despite the relaxed atmosphere.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Don Khon Deep Dive & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise on the Mekong',
+          text: 'Wake before dawn and walk to the eastern (sunrise) side of Don Det to watch the sun rise over the Mekong. The river at dawn is glassy and still, reflecting the orange sky in a perfect mirror. Fishermen are already out in their wooden boats, silhouetted against the rising sun as they cast their nets. It is one of the most peaceful and photogenic scenes in all of Southeast Asia. After sunrise, ride to Don Khon for a deeper exploration of the island — today you will go beyond the tourist trail to see the quieter southern reaches.',
+          tip: 'Sunrise is around 6-6.30am depending on the season. The best viewing spot is from the riverside path on the eastern side, near the bridge to Don Khon.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Don Khon South & Waterfall Trail',
+          text: 'Cycle to the far southern end of Don Khon, past the main tourist path to Li Phi Falls, and explore the quieter trails that follow the river south. Here you will find small fishing communities, riverside temples, and viewpoints looking south towards Cambodia. The landscape is flat, open, and quintessentially Lao — rice paddies, palm trees, and the endless brown river. If you have time, the trail system east of Li Phi Falls leads to additional rapids and smaller cascades that receive almost no visitors. The cycling is easy and flat, and you will have the paths largely to yourself.',
+          tip: 'The trails south of Li Phi Falls are not well-marked — ask at the entrance for directions. Bring water and snacks as there are no shops or restaurants beyond the main tourist area.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset Meditation & Farewell Feast',
+          text: 'Return to Don Det for one of your last sunsets over the Mekong. The 4000 Islands has a way of resetting your internal clock — after nearly a week you will notice that you have stopped checking the time, stopped scrolling your phone, and started actually seeing the world around you. Order a farewell feast at a riverside restaurant — laap, sticky rice, tam mak hoong, grilled Mekong fish, and a large BeerLao. The total will be less than $10 for two people. Sit in a hammock, listen to the river, and appreciate how rare it is to find a place this beautiful, this peaceful, and this cheap.',
+          tip: 'The restaurant Mama Leuah on the sunset side serves some of the best authentic Lao food on the island — the laap and grilled fish are particularly good.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Morning & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Sunrise & River Swim',
+          text: 'Wake early for your last sunrise over the Mekong from Don Det\'s eastern shore. After a week on the islands, this routine — the golden light, the fishermen, the absolute stillness of the river at dawn — will feel like a meditation. Take a final swim in the Mekong from one of the safe swimming spots near the guesthouse area. The water is warm, the current is gentle close to shore, and there is something profoundly satisfying about swimming in one of the world\'s great rivers as the day begins. Pack your bags slowly — there is no need to rush.',
+          tip: 'Swim only in areas recommended by locals and guesthouses — the river has strong currents in deeper channels. The areas directly in front of the guesthouse strip are safe.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Boat to Nakasang & Onward Travel',
+          text: 'Take the boat from Don Det back to Nakasang on the mainland. The 4000 Islands is one of the hardest places in Southeast Asia to leave — the combination of natural beauty, rock-bottom prices, and total absence of stress creates a gravity that keeps pulling you back to the hammock. From Nakasang, minibuses run to Pakse (3 hours, 50,000-80,000 kip) for connections to Vientiane, Savannakhet, or the Bolaven Plateau. Alternatively, international buses cross the Cambodian border at Dong Kalor, continuing to Stung Treng and Phnom Penh.',
+          tip: 'Book your onward transport through your guesthouse the evening before — morning minibuses fill up. The Cambodian border crossing is straightforward but bring a passport photo and $30 USD for the visa.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pakse or Onward Destination',
+          text: 'If continuing to Pakse, arrive by mid-afternoon and explore this pleasant Mekong city — the gateway to the Bolaven Plateau coffee region, Wat Phu temple, and the 4000 Islands. The Dao Heuang Night Market along the river serves excellent local food and the French colonial architecture adds character. If crossing to Cambodia, the journey to Stung Treng takes about 3 hours and from there it is another 5-6 hours by bus to Phnom Penh. Wherever you go next, the pace will feel faster and louder — carry the 4000 Islands calm with you.',
+          tip: 'Pakse has ATMs, pharmacies, and international restaurants — restock on supplies and cash before heading to your next remote destination.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Riverside bungalows are dirt cheap', text: 'Wooden bungalows on stilts overlooking the Mekong cost 40,000-100,000 kip ($2-5) per night on Don Det. You are literally sleeping over the river for less than a coffee in Europe.' },
+  { title: 'Eat Lao, not Western', text: 'A plate of sticky rice with laap or grilled fish costs 20,000-40,000 kip ($1-2). Western food (pancakes, burgers) costs three times as much and is never as good. Eat like a local and save.' },
+  { title: 'Bicycle is king', text: 'Rent a bicycle for 10,000 kip per day ($0.50) — it is the only transport you need on the flat, car-free islands. Boat taxis between islands are the only other expense.' },
+  { title: 'Bring cash from Pakse', text: 'Don Det has no ATMs and only a few places accept cards. Withdraw enough kip and USD in Pakse to cover your entire island stay — budget 300,000-500,000 kip ($15-25) per day.' },
+  { title: 'Combine activities yourself', text: 'Guesthouse-arranged tours are convenient but marked up. Arrange dolphin boat trips directly with boatmen at the Don Khon southern dock and tuk-tuks to Khone Phapheng at Nakasang for significantly less.' },
+  { title: 'Stay longer, spend less', text: 'Guesthouses offer discounts for multi-night stays — ask for a weekly rate. The longer you stay, the lower your daily average, and the 4000 Islands rewards extended visits more than almost anywhere.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$2–5', midrange: '$8–20', splurge: '$30+', notes: 'River bungalows → fan rooms → AC guesthouses' },
+  { category: 'Food', budget: '$3–6', midrange: '$6–12', splurge: '$15+', notes: 'Street food → restaurants → resort dining' },
+  { category: 'Transport', budget: '$0.50–2', midrange: '$3–5', splurge: '$8+', notes: 'Bicycle → boat taxi → private boat' },
+  { category: 'Activities', budget: '$3–5', midrange: '$5–10', splurge: '$15+', notes: 'Self-guided cycling → dolphin trip → kayak tour' },
+  { category: 'Drinks', budget: '$1–3', midrange: '$3–5', splurge: '$8+', notes: 'BeerLao → cocktails → imported spirits' },
+  { category: 'Daily Total', budget: '$15–40', midrange: '$40–80', splurge: '$100+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Laos tourist visa: $30-42 on arrival depending on nationality — 30 days, extendable in Vientiane',
+      'Bring a passport photo for visa on arrival — buying one at the border costs extra and causes delays',
+      'The 4000 Islands are reached via Pakse by road (3 hours) or from Cambodia via the Dong Kalor border crossing',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'The islands have no hospital — serious injuries require transfer to Pakse (3 hours). Travel insurance with medical evacuation is essential',
+      'Mosquitoes carry dengue and malaria — use repellent and sleep under a mosquito net. Most bungalows provide nets',
+      'The Mekong has strong undercurrents — swim only in areas recommended by locals. Drownings occur when swimmers venture into the main channel',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Don Det and Don Khon are car-free — transport is by bicycle (10,000 kip/day) and walking',
+      'Boat taxis connect the islands to Nakasang on the mainland (15,000-20,000 kip per person per trip)',
+      'Tuk-tuks on the mainland connect Nakasang to Khone Phapheng Falls and the bus station',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile signal is available on Don Det but patchy elsewhere — Unitel has the best Lao coverage',
+      'WiFi exists at some guesthouses and cafes but is very slow — do not expect to work remotely',
+      'Embrace the disconnection — the 4000 Islands are at their best when you put your phone away',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: LAK (Lao Kip). Thai baht and USD are widely accepted. Bring small denominations',
+      'There are no ATMs on the islands — bring all the cash you need from Pakse. Budget 300,000-500,000 kip per day',
+      'Tipping is not expected but appreciated — rounding up at restaurants is generous by local standards',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Pack light — you will carry your bag onto and off boats. A small backpack is better than a large case',
+      'Essential items: mosquito repellent, sunscreen, headlamp (power cuts are common), and a reusable water bottle',
+      'Bring a light rain jacket even in the dry season — brief showers are possible year-round',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Buddhist Etiquette', text: 'Laos is a deeply Buddhist country. Remove shoes before entering temples and homes. Dress modestly (cover shoulders and knees) in villages and temple grounds. Women should never touch a monk or hand objects directly to them — place items on a cloth or table instead.' },
+  { icon: '🌍', title: 'Protect the River Ecosystem', text: 'The Mekong and its islands are a fragile ecosystem supporting endangered dolphins and diverse wildlife. Do not litter — take all rubbish with you. Avoid using plastic bags and bottles where possible. The river is the lifeline for every community here.' },
+  { icon: '📸', title: 'Photography Respect', text: 'Ask permission before photographing local people, especially monks, children, and fishing families. In Sok San and Don Khon villages, be discreet with cameras — these are real homes, not tourist attractions. A sabaidee (hello) and a smile before the camera always helps.' },
+  { icon: '🗣', title: 'Language & Communication', text: 'Basic Lao goes a long way — sabaidee (hello), khop chai (thank you), and bor pen nyang (no problem) will earn genuine smiles. English is limited outside tourist areas — a phrasebook or translation app is helpful.' },
+  { icon: '🤝', title: 'Support Island Communities', text: 'Choose locally-owned bungalows and restaurants over foreign-owned businesses. Buy from local vendors at Nakasang market. The fishing and farming families of Si Phan Don depend on both the river and increasingly on tourism — directing your spending locally maximises positive impact.' },
+  { icon: '🕐', title: 'Embrace the Pace', text: 'The 4000 Islands run on Lao time — which is to say, no time at all. Boats leave when they are full, food arrives when it is ready, and nothing happens according to a schedule. Fighting this rhythm guarantees frustration. Surrendering to it guarantees one of the best travel experiences of your life.' },
+];
+---
+
+<CityGuideLayout
+  title="4000 Islands Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate 4000 Islands (Si Phan Don) guide for young travelers. Mekong river life, dolphins, waterfalls with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/four-thousand-islands-hero.webp"
+  heroFlag="🇱🇦"
+  heroCountry="Laos"
+  heroRegion="Southeast Asia"
+  heroCity="4000 Islands"
+  heroSubtitle="The Mekong at its most magical — hammock life, rare dolphins, thundering waterfalls, and the slowest pace in Southeast Asia on Laos' legendary river islands."
+  heroPills={["3-Day River Islands","Backpacker","Nov – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. The 4000 Islands is one of Southeast Asia's cheapest destinations — budget backpackers can live on $15-25 per day, making it a paradise for long-term travellers."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="The 4000 Islands are home to traditional Lao communities who have lived on the Mekong for generations — approach with respect and patience, and the warmth of the local people will define your experience."
+  ctaCity="4000 Islands"
+  ctaText="Find travel companions to explore the 4000 Islands together on roammate — share boat trips, split tubing adventures, and make lifelong friends on the Mekong."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

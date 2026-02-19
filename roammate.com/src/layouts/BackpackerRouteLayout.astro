@@ -24,7 +24,7 @@ interface Props {
     color: string;
     intro: string;
     quickFacts: { icon: string; label: string; value: string; detail: string }[];
-    phases: { title: string; duration: string; description: string; tip: string }[];
+    phases: { title: string; duration: string; description: string; tip: string; guides?: string[] }[];
   }[];
   /* budget */
   budgetIntro: string;
@@ -59,10 +59,11 @@ const routeGuides = getBySlug(featuredGuides);
 const routeCityGuides = routeGuides.filter(g => cityGuideSlugs.has(g.slug));
 const routePlaceGuides = routeGuides.filter(g => !cityGuideSlugs.has(g.slug));
 
-function phasePills(phaseTitle: string) {
+function phasePills(phaseTitle: string, guideSlugs?: string[]) {
   const t = phaseTitle.toLowerCase();
-  const cities = routeCityGuides.filter(g => t.includes(g.name.toLowerCase()));
-  const places = routePlaceGuides.filter(g => t.includes(g.name.toLowerCase()));
+  const slugSet = new Set(guideSlugs ?? []);
+  const cities = routeCityGuides.filter(g => t.includes(g.name.toLowerCase()) || slugSet.has(g.slug));
+  const places = routePlaceGuides.filter(g => t.includes(g.name.toLowerCase()) || slugSet.has(g.slug));
   return { cities, places };
 }
 ---
@@ -170,14 +171,14 @@ function phasePills(phaseTitle: string) {
 
       <div class="route-phases">
         {country.phases.map((phase) => {
-          const { cities, places } = phasePills(phase.title);
+          const { cities, places } = phasePills(phase.title, phase.guides);
           return (
             <div class="route-phase reveal">
               <div class="route-phase-header">
                 <div class="route-phase-title-row">
                   <h3 class="route-phase-title">{phase.title}</h3>
                   {cities.map(g => (
-                    <a href={`/guides/${g.slug}/`} class="route-guide-pill">More →</a>
+                    <a href={`/guides/${g.slug}/`} class="route-guide-pill">{g.name} Guide →</a>
                   ))}
                   {places.map(g => (
                     <a href={`/guides/${g.slug}/`} class="route-place-pill">{g.name}</a>
@@ -680,14 +681,14 @@ function phasePills(phaseTitle: string) {
   }
 
   .route-guide-pill {
-    background: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(26,23,20,0.06);
+    color: var(--color-cream-muted, #5a524a);
+    border: 1px solid rgba(26,23,20,0.12);
   }
 
   .route-guide-pill:hover {
-    background: rgba(255,255,255,0.18);
-    color: #fff;
+    background: rgba(26,23,20,0.1);
+    color: var(--color-cream, #1a1714);
   }
 
   .route-place-pill {

@@ -9,13 +9,12 @@ export DISABLE_AUTOUPDATER=true
 export FORCE_AUTOUPDATE_PLUGINS=true
 export AUGMENT_API_TOKEN=_464e4f35a427ef638f799e698d41cf1f
 export AUGMENT_API_URL=https://d16.api.augmentcode.com
+export CONTEXT7_API_KEY=ctx7sk-efe01c2c-53d7-432c-8b9c-e48b45c154f9
 echo - Setting up MCP                                                                   -
 echo ------------------------------------------------------------------------------------
-npm install -g @augmentcode/auggie@latest
-auggie login
-claude mcp add-json auggie --scope user '{"type":"stdio","command":"auggie","args":["--mcp","--mcp-auto-workspace"],"env":{"AUGMENT_API_TOKEN":"your-access-token","AUGMENT_API_URL":"your-tenant-url"}}'
-claude mcp add context7 -- npx -y @upstash/context7-mcp
-#claude mcp add memorygraph -- memorygraph
+#claude mcp add context7 -- npx -y @upstash/context7-mcp
+claude mcp add --header "CONTEXT7_API_KEY: $CONTEXT7_API_KEY" --transport http context7 https://mcp.context7.com/mcp
+claude mcp add memorygraph -- memorygraph
 echo ------------------------------------------------------------------------------------
 claude mcp list
 echo ------------------------------------------------------------------------------------
@@ -23,7 +22,7 @@ echo - Set up claude plugin marketplaces                                        
 echo ------------------------------------------------------------------------------------
 claude plugin marketplace add anthropics/claude-code
 claude plugin marketplace add anthropics/claude-plugins-official
-claude plugin marketplace add affaan-m/everything-claude-code
+#claude plugin marketplace add affaan-m/everything-claude-code
 echo ------------------------------------------------------------------------------------
 echo - Reinstall baseline plugins required                                            -
 echo ------------------------------------------------------------------------------------
@@ -43,12 +42,20 @@ claude plugin install commit-commands
 claude plugin enable commit-commands
 claude plugin install ralph-wiggum
 claude plugin enable ralph-wiggum
-claude plugin install explanatory-output-style
-claude plugin enable explanatory-output-style
-claude plugin install learning-output-style
-claude plugin enable learning-output-style
-claude plugin install everything-claude-code
-claude plugin enable everything-claude-code
+claude plugin install code-review
+claude plugin enable code-review
+claude plugin install feature-dev
+claude plugin enable feature-dev
+claude plugin install frontend-design
+claude plugin enable frontend-design
+claude plugin install security-guidance
+claude plugin enable security-guidance
+#claude plugin install explanatory-output-style
+#claude plugin enable explanatory-output-style
+#claude plugin install learning-output-style
+#claude plugin enable learning-output-style
+#claude plugin install everything-claude-code
+#claude plugin enable everything-claude-code
 echo ------------------------------------------------------------------------------------
 echo - Start claude with all the doodads setup correctly                                -
 echo ------------------------------------------------------------------------------------

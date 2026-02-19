@@ -27,18 +27,21 @@ const countries = [
         duration: '10–12 days',
         description: 'Fly into Ngurah Rai (DPS). Start in Ubud — the cultural heart of Bali. Walk the Tegallalang Rice Terraces (Rp 15,000), explore the Sacred Monkey Forest (Rp 80,000), and take a cooking class (Rp 250,000–400,000). Yoga studios everywhere (Rp 100,000–150,000 per class). The Ubud market is great for handicrafts (bargain hard). Scooter to Canggu (Rp 30,000 fuel, 1.5 hrs) — Bali\'s surf and digital nomad hub. Surf at Batu Bolong (board rental Rp 50,000/day, lessons Rp 250,000). Beach clubs, açai bowls, and sunset at La Brisa. Day trip to Uluwatu for the clifftop temple (Rp 50,000) and the Kecak fire dance at sunset (Rp 100,000). Hostels: Rp 100,000–200,000/night.',
         tip: 'Rent a scooter in Bali — Rp 60,000–80,000/day, essential for getting around. International license technically required but rarely checked. Drive carefully — Bali traffic is chaotic.',
+        guides: ['ubud-rice-terraces', 'canggu', 'uluwatu'],
       },
       {
         title: 'Nusa Penida & Gili Islands',
         duration: '8–10 days',
         description: 'Fast boat from Sanur to Nusa Penida (Rp 150,000–200,000, 45 mins). Nusa Penida is Bali\'s wild, less-developed neighbour — dramatic cliffs, the iconic Kelingking Beach (the "T-Rex" cliff), Angel\'s Billabong, and Broken Beach. Rent a scooter (Rp 75,000/day) — the roads are rough but the views are insane. Snorkel with manta rays at Manta Point (Rp 250,000 boat trip). Stay 2–3 nights (Rp 150,000–300,000/night). Fast boat to Gili Trawangan (Rp 300,000–500,000, 1.5 hrs). The Gilis have no motorised vehicles — just bikes and horse carts. Gili T is the party island, Gili Air is chill, Gili Meno is honeymooner quiet. Snorkel with sea turtles straight from the beach (free). Dive sites are world-class (Rp 500,000–800,000 per dive).',
         tip: 'Gili T party scene: Monday is Jiggy Boat Party, Wednesday is Sama Sama reggae night. The nightlife rotates venues — ask your hostel. Gili Air is better for sleep.',
+        guides: ['nusa-penida', 'gili-islands', 'scuba-diving-gili'],
       },
       {
         title: 'Lombok, Flores & Komodo',
         duration: '10–14 days',
         description: 'Boat from Gili to Lombok (Rp 100,000, 30 mins). Kuta Lombok (not Bali\'s Kuta) has stunning empty beaches — Tanjung Aan and Mawun Beach are postcard-perfect. Surf Gerupuk Bay (Rp 150,000 boat + board rental). The trek to Mount Rinjani summit (3,726m, 2–3 days, Rp 2,500,000–3,500,000 with guide and porter) is one of Indonesia\'s greatest hikes — a volcanic crater lake at the top. Fly from Lombok to Labuan Bajo, Flores (Rp 400,000–800,000). Komodo National Park boat trip (2–3 days, Rp 2,000,000–4,000,000 liveaboard including meals, snorkelling, and Komodo dragon trekking at Rinca/Komodo Island). The dragons are 3m long and genuinely prehistoric.',
         tip: 'The Komodo liveaboard trip is a highlight — book in Labuan Bajo where prices are 30–50% cheaper than booking from Bali. 3-day trips are best value.',
+        guides: ['lombok', 'flores', 'labuan-bajo', 'komodo-national-park', 'komodo-dragons'],
       },
     ],
   },
@@ -62,18 +65,21 @@ const countries = [
         duration: '10–12 days',
         description: 'Fly from Bali to Manila (₱3,000–8,000), then to El Nido (₱2,500–5,000 on AirSwift direct, or fly Puerto Princesa + 5-hr van ₱600). El Nido is paradise — limestone karst islands rising from turquoise water. Island-hopping Tour A (₱1,200 — Big Lagoon, Small Lagoon, Shimizu Island, Secret Lagoon) and Tour C (₱1,400 — Hidden Beach, Matinloc Shrine, Secret Beach) are the must-dos. Nacpan Beach (₱50 trike, 45 mins) is a 4km stretch of golden sand. Kayak the lagoons independently for ₱500/day. Take the El Nido–Coron expedition ferry (₱1,800, 3.5 hrs). Coron has WWII Japanese shipwreck diving (₱3,500–5,000 for 2 dives) and Kayangan Lake (₱300 — the clearest lake in Asia).',
         tip: 'El Nido tours get crowded midday — book Tour A and ask for an early 8am departure. The lagoons are magical when you\'re first in. Bring reef-safe sunscreen (required by local ordinance).',
+        guides: ['manila', 'el-nido', 'coron', 'coron-houseboat'],
       },
       {
         title: 'Cebu & Bohol',
         duration: '7–10 days',
         description: 'Fly from Coron or Manila to Cebu (₱1,500–4,000). Cebu City is the jump-off point — explore Magellan\'s Cross and the street food scene. Head south to Moalboal (bus ₱150, 3 hrs) for the sardine run — millions of sardines swirling in a tornado just metres from shore (free snorkelling from the beach). Kawasan Falls (₱45 entry) — 3 tiers of turquoise falls with canyoneering day trips (₱1,500–2,500 for the full course including jumps and rappels). Ferry to Bohol (₱500–800, 2 hrs). The Chocolate Hills (₱60 viewing deck) — 1,268 grass-covered hills that turn brown in dry season. Philippine tarsier sanctuary (₱100) to see the world\'s smallest primate. Scooter around Panglao Island\'s beaches.',
         tip: 'The Moalboal sardine run is free — just swim out from Panagsama Beach with a mask and snorkel. It\'s 10 metres from shore. Also look for sea turtles on the same reef.',
+        guides: ['cebu', 'moalboal', 'bohol', 'thresher-sharks'],
       },
       {
         title: 'Siargao',
         duration: '6–8 days',
         description: 'Fly from Cebu to Siargao (₱2,000–4,000, 1.5 hrs). Siargao is the Philippines\' surfing capital — Cloud 9 is a world-famous barrel wave (watch from the boardwalk tower, ₱50, or take lessons ₱500 for beginners at Jacking Horse or Quicksilver). Rent a scooter (₱350–500/day) and explore the island — Sugba Lagoon (₱300 entrance + ₱100 paddleboard) for paddleboarding on crystal-clear water, Magpupungko Rock Pools (₱50 — natural tidal pools, only visible at low tide), and Sohoton Cove (₱1,500 island-hop boat trip). The nightlife is relaxed — Bravo Beach Resort and Harana have live music. Stay in fan rooms or nipa huts from ₱500–1,200/night.',
         tip: 'Siargao is remote and ATMs run out of cash — bring pesos from Cebu. Island-hopping tours are best arranged through your hostel the evening before.',
+        guides: ['siargao'],
       },
     ],
   },
@@ -174,6 +180,6 @@ const practicalInfo = [
   ctaRegion="Island Paradise"
   ctaText="Find travel companions for island-hopping adventures, split liveaboard tours, and share sunset sessions with fellow backpackers on roammate."
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
-  featuredGuides={['denpasar', 'el-nido', 'siargao', 'borobudur', 'komodo-national-park', 'ubud-rice-terraces', 'batu-caves', 'mount-kinabalu']}
+  featuredGuides={['denpasar', 'el-nido', 'siargao', 'borobudur', 'komodo-national-park', 'ubud-rice-terraces', 'canggu', 'uluwatu', 'nusa-penida', 'gili-islands', 'lombok', 'flores', 'labuan-bajo', 'manila', 'coron', 'cebu', 'moalboal', 'bohol', 'scuba-diving-gili', 'thresher-sharks', 'komodo-dragons', 'coron-houseboat']}
   accentColor="#2e6d79"
 />

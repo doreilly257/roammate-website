@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'IDR (Rupiah)', detail: '1 USD ≈ Rp 15,800' },
+  { icon: '🗣', label: 'Language', value: 'Indonesian / English', detail: 'English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'WITA (UTC+8)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Dec', detail: 'Dry season, calm seas' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–80 USD', detail: 'Liveaboard is main cost' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on Arrival 30 days', detail: 'Rp 500,000 — extendable once' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Day Trip — Dragons, Pink Beach & Mantas',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rinca Island — Komodo Dragon Trek',
+          text: 'Depart Labuan Bajo harbour by 6am on a shared day trip boat (Rp 400,000–700,000 per person including lunch). After 2 hours of sailing through island-studded waters, arrive at Rinca Island — the more accessible of the two dragon islands and the place where sightings are most reliable. A mandatory park ranger guide leads your group along jungle trails where Komodo dragons bask in clearings, water buffalo drink at waterholes, and wild deer scatter through the undergrowth. These are the world\'s largest living lizards — up to 3m long and genuinely dangerous.',
+          tip: 'Stay behind your ranger at all times and maintain a 3m distance from dragons. They can sprint at 20km/h in short bursts. Do not bring food, and menstruating women should inform the ranger as dragons detect blood from kilometres away.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pink Beach & Manta Point Snorkelling',
+          text: 'After the dragon trek, the boat continues to Pink Beach — one of only seven pink-sand beaches in the world, coloured by crushed red coral mixed with white sand. The snorkelling directly off the beach is extraordinary — hard coral gardens in 2–5m of water teeming with parrotfish, clownfish, and blue-spotted rays. After Pink Beach, the boat heads to Manta Point where oceanic manta rays with 3–5m wingspans feed on plankton in the channel between islands. Snorkelling with mantas is a once-in-a-lifetime experience.',
+          tip: 'At Manta Point, enter the water quietly and float on the surface — do not dive down towards the mantas or splash. They are curious and will often swim directly beneath you if you stay calm.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset at Labuan Bajo',
+          text: 'Return to Labuan Bajo by 5pm. The harbour waterfront comes alive at sunset — fishing boats silhouetted against the orange sky over Flores Sea. Head to one of the hilltop restaurants on the road above town for panoramic sunset views over the harbour and islands. Dinner at a local warung in town — grilled fish with sambal and rice for Rp 35,000–50,000. The night market near the waterfront serves fresh seafood chosen from ice displays.',
+          tip: 'Book your day trip the afternoon before by walking the harbour and comparing boats. Prices vary by Rp 200,000+ and boat quality ranges from leaky wooden boats to comfortable speedboats. Check that life jackets and snorkel gear are included.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Rinca Island Dragons & Komodo Village',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rinca Island — Dragon Encounter',
+          text: 'The liveaboard departs Labuan Bajo at 6am and reaches Rinca Island by 8am. Rinca is closer to Labuan Bajo than Komodo Island and has the highest density of dragons — around 1,300 individuals. The ranger-guided trek takes 1.5–2 hours through savanna grassland and monsoon forest. You will almost certainly see multiple dragons, including females guarding nest mounds and juveniles in trees (they are arboreal when young to avoid being eaten by adults). The landscape is dramatic — dry hills dotted with lontar palms overlooking the blue strait.',
+          tip: 'The short trek loop (1 hour) is sufficient for dragon sightings. The long trek (2 hours) goes to a viewpoint but is hot and exposed. Early morning is best — dragons are more active before the midday heat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Komodo Village & Snorkelling',
+          text: 'Sail to Komodo Village on Komodo Island — a settlement of around 2,000 people who have lived alongside dragons for generations. The village has a small market selling carved wooden dragons and woven ikat textiles. Snorkel the reef off the village — the coral here is pristine and the fish life is dense because these waters are well-protected. Look for Napoleon wrasse, giant trevally, and hawksbill turtles on the reef slope. The liveaboard serves lunch on deck between stops.',
+          tip: 'If buying souvenirs at Komodo Village, bargain gently — these are some of the most remote communities in Indonesia and tourism income is vital. Rp 50,000–100,000 is fair for a hand-carved dragon.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Overnight Anchor & Stargazing',
+          text: 'The liveaboard anchors in a sheltered bay between islands for the night. With zero light pollution, the star display from the deck is astonishing — the Milky Way is clearly visible and shooting stars are common. Dinner is served on deck — rice, grilled fish, tempeh, sambal, and fresh fruit. The crew prepares the boat for an early departure to Padar Island. The sound of water lapping against the hull and the absence of engine noise makes this one of the most peaceful nights of any trip.',
+          tip: 'Bring a light sleeping bag or sarong — sleeping on deck under the stars is more comfortable than the cabins on budget liveaboards. A head torch is essential for moving around the boat at night.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Komodo Island, Padar Viewpoint & Manta Point',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Padar Island — The Iconic Viewpoint',
+          text: 'Wake before dawn for the hike to Padar Island\'s summit viewpoint — the most photographed location in Komodo National Park. The 30-minute climb up a steep trail rewards you with a panorama of three crescent bays, each a different colour of sand (white, pink, and black), surrounded by turquoise water and jagged peaks. This is the image you see on every Indonesian tourism poster. Arrive at the summit for sunrise when the light paints the bays golden. The hike is hot and exposed — bring water.',
+          tip: 'Start the hike by 5:30am — by 8am the heat makes it miserable and the viewpoint is crowded with late-arriving day trippers. The trail is steep but short. Wear sturdy shoes, not flip-flops.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Komodo Island Dragons & Manta Point',
+          text: 'Sail to Komodo Island itself — the larger of the two dragon islands with around 1,700 individuals. The ranger-led trek here passes through denser forest and the dragons tend to be larger. After the trek, the boat heads to Manta Point — a channel where nutrient-rich upwellings attract oceanic manta rays. Snorkelling in the current, you float above mantas as they barrel-roll through plankton clouds. On a good day, 5–10 mantas may be feeding simultaneously. This is world-class marine encounters.',
+          tip: 'The current at Manta Point can be strong — wear fins and stay with the group. If the current pulls you, float on your back and signal the boat. Do not fight the current. A rashvest provides warmth in the thermocline.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pink Beach Sunset & Night Snorkel',
+          text: 'Anchor at Pink Beach for sunset — the pink sand glows amber in the golden hour light. If your liveaboard offers a night snorkel (some do), the reef transforms after dark — octopus, cuttlefish, Spanish dancers, and bioluminescent plankton that spark blue-green as you swim through them. Dinner on deck again with the crew\'s cooking. Many travellers say the liveaboard nights in Komodo are among the best travel experiences of their lives.',
+          tip: 'For night snorkelling, use a torch to spot reef creatures but turn it off periodically to see the bioluminescence — wave your hand through the water and watch it glow. Magical.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Kanawa Island, Snorkelling & Return',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kanawa Island — Pristine Reef',
+          text: 'Kanawa Island is a tiny private island with some of the healthiest coral in the park. The house reef starts in ankle-deep water and drops to a vibrant wall of hard and soft corals at 5–15m — schools of fusiliers, anthias clouds, turtles, and reef sharks patrolling the edge. The island has a small eco-lodge and a beach bar but most liveaboard guests just snorkel the reef. The water clarity here often exceeds 25m. Spend 2–3 hours exploring different sections of the reef.',
+          tip: 'Kanawa\'s reef is shallow enough for free-diving — if you can hold your breath for 30 seconds, duck-dive to 3–5m for eye-level views of the coral. Equalise your ears as you descend.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Snorkel & Sail Back',
+          text: 'One last snorkel stop at a site chosen by the captain based on conditions — potentially Batu Bolong, a pinnacle rising from the deep covered in coral and surrounded by massive schools of fish. The current-swept pinnacle attracts everything from reef sharks to Napoleon wrasse to giant trevally hunting in packs. The sail back to Labuan Bajo takes 2–3 hours and passes through stunning island scenery. Arrive by 4pm.',
+          tip: 'Batu Bolong has serious current — only enter the water if the crew says conditions are suitable. When the current is running, the fish life is extraordinary but the swimming can be challenging.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Labuan Bajo Farewell Dinner',
+          text: 'Back on land in Labuan Bajo, celebrate three days of dragons and ocean with a seafood dinner at the waterfront. The Made in Italy restaurant on the main road does surprisingly good pizza alongside Indonesian classics. For something local, the fish market grills your chosen fish for the cost of the fish plus Rp 10,000–15,000 for cooking. Cold Bintang beers (Rp 30,000) while reviewing your underwater photos is the perfect end.',
+          tip: 'Sort your photos and back them up while the memories are fresh — after three days of snorkelling and dragon treks, you will have hundreds of images. A portable hard drive or cloud upload is worth the effort.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Book liveaboards in Labuan Bajo', text: 'Walk the harbour the day before and compare liveaboard prices in person. Rp 2,000,000–4,000,000 for 3 days all-inclusive is normal. Online bookings from Bali or Jakarta charge double for the same boats. Negotiate.' },
+  { title: 'Join a shared day trip', text: 'If you only have one day, shared boats from the harbour cost Rp 400,000–700,000 per person including lunch, snorkel gear, and park fees. Private charters start at Rp 3,000,000 — only worth it for groups of 6+.' },
+  { title: 'Stay in Labuan Bajo, not a resort', text: 'Guesthouses in Labuan Bajo town cost Rp 150,000–300,000/night. The luxury resorts on nearby islands charge $200+ per night and you still need to boat into the park.' },
+  { title: 'Bring your own snorkel gear', text: 'Quality snorkel gear on liveaboards is not guaranteed. A good mask and snorkel costs Rp 200,000–400,000 in town and makes every water stop significantly better.' },
+  { title: 'Fly into Labuan Bajo direct', text: 'Flights from Bali to Labuan Bajo on Citilink or Lion Air cost Rp 500,000–1,200,000 one way. Overland from Bali via ferries takes 3–4 days but costs only Rp 200,000–400,000.' },
+  { title: 'Park fees are separate', text: 'Komodo National Park entry is Rp 150,000 per day for foreigners plus Rp 50,000 per activity (trekking, snorkelling). Some boats include this; others do not. Clarify before booking.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–20', midrange: '$25–50', splurge: '$80+', notes: 'Dorm → guesthouse → harbour hotel' },
+  { category: 'Food', budget: '$5–10', midrange: '$10–25', splurge: '$30+', notes: 'Warungs → waterfront restaurants → resort dining' },
+  { category: 'Liveaboard (per day)', budget: '$40–55', midrange: '$60–100', splurge: '$150+', notes: 'Budget shared → mid-range → luxury phinisi' },
+  { category: 'Day Trip', budget: '$25–45', midrange: '$45–80', splurge: '$100+', notes: 'Shared boat → small group → private charter' },
+  { category: 'Park Fees', budget: '$10–15', midrange: '$10–15', splurge: '$10–15', notes: 'Same for all visitors — Rp 150,000/day + activities' },
+  { category: 'Daily Total', budget: '$40–80', midrange: '$80–160', splurge: '$200+', notes: 'Budget backpacker → comfortable → luxury phinisi' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Visa on Arrival 30 days — Rp 500,000 at immigration, extendable once',
+      'Fly into Labuan Bajo (Komodo Airport, LBJ) from Bali, Jakarta, or Surabaya',
+      'Komodo National Park entry fees: Rp 150,000/day for foreigners plus Rp 50,000 per activity',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Komodo dragons are genuinely dangerous — never approach without a ranger and maintain 3m+ distance at all times',
+      'Travel insurance is essential — the nearest hospital is in Labuan Bajo, which has limited facilities. Serious injuries require evacuation to Bali',
+      'Bring reef-safe sunscreen, insect repellent, and motion sickness tablets for boat travel',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Labuan Bajo is small enough to walk — harbour, restaurants, and guesthouses are within 15 minutes\' walk',
+      'All park visits require a boat — there is no independent access to the islands',
+      'Scooter rentals (Rp 70,000–100,000/day) are useful for exploring the hills around Labuan Bajo',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile data in Labuan Bajo is usable but slow. Telkomsel has the best coverage in the region',
+      'There is no mobile signal inside Komodo National Park — download offline maps and content before departure',
+      'WiFi at guesthouses and cafes is available but speeds vary significantly',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: IDR (Rupiah). 1 USD ≈ Rp 15,800. ATMs available in Labuan Bajo but sometimes run out of cash',
+      'Bring sufficient cash from Bali — liveaboards, rangers, and island vendors are cash only',
+      'Tip your boat crew and ranger — Rp 50,000–100,000 per day is appreciated for good service',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Sturdy walking shoes for dragon treks — the trails are rocky and uneven, not flip-flop terrain',
+      'Dry bags are essential for boat trips — spray and splashes are constant on open boats',
+      'Underwater camera, reef-safe sunscreen, a hat, and at least 2 litres of water per day on the boat',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🦎', title: 'Respect the Dragons', text: 'Komodo dragons are wild predators, not tourist attractions. Follow your ranger\'s instructions exactly, do not make sudden movements, and never turn your back on a dragon. Their bite delivers venom that prevents blood clotting — any bite is a medical emergency.' },
+  { icon: '🌍', title: 'Marine Conservation', text: 'Komodo National Park is a UNESCO World Heritage Site and one of the world\'s most biodiverse marine environments. Never touch or stand on coral, do not feed fish, and take all rubbish back to the boat. The park\'s health depends on every visitor treating it with respect.' },
+  { icon: '🙏', title: 'Local Communities', text: 'Komodo Village and other settlements in the park are home to communities who have lived alongside dragons for centuries. Photograph respectfully, ask before entering homes, and buy local handicrafts to support the community.' },
+  { icon: '🗣', title: 'Language', text: 'Bahasa Indonesia is the national language. English is understood at dive shops and tourist businesses in Labuan Bajo. Terima kasih (thank you), Berapa? (how much?), and Bagus (good/beautiful) cover most interactions.' },
+  { icon: '🤝', title: 'Support Local Operators', text: 'Choose locally-owned liveaboards and tour operators over international booking platforms. Local crews know the waters, the weather, and the best spots — and your money stays in the Flores community rather than going to Jakarta or overseas.' },
+  { icon: '🚯', title: 'Plastic-Free Travel', text: 'Labuan Bajo and the surrounding waters have a growing plastic waste problem. Bring a reusable water bottle, refuse plastic bags, and take all rubbish back from island stops. Some liveaboards provide refillable water — ask when booking.' },
+];
+---
+
+<CityGuideLayout
+  title="Komodo Dragons Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate guide to seeing Komodo dragons in Komodo National Park. Dragon treks, manta rays, Pink Beach with 1 and 3-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/komodo-dragons-hero.webp"
+  heroFlag="🇮🇩"
+  heroCountry="Indonesia"
+  heroRegion="Southeast Asia"
+  heroCity="Komodo Dragons"
+  heroSubtitle="The world's largest living lizards on volcanic islands surrounded by manta rays, pink-sand beaches, and some of the richest coral reefs on earth."
+  heroPills={["Komodo Dragon Trek","Manta Rays","Apr – Dec Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Komodo costs centre around boat trips and liveaboards — food and accommodation in Labuan Bajo are budget-friendly. These ranges cover backpacker to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Komodo National Park is a UNESCO World Heritage Site with wild predators and fragile reefs — approach with genuine respect for the animals, the ocean, and the communities who have lived here for centuries."
+  ctaCity="Komodo"
+  ctaText="Find travel companions to explore Komodo National Park together on roammate — split liveaboard costs, share dragon encounters, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

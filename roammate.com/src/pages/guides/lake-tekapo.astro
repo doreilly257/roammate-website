@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'NZD (New Zealand Dollar)', detail: 'Cards accepted in town; limited options' },
+  { icon: '🗣', label: 'Language', value: 'English / Te Reo Māori', detail: 'English universally spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'NZST (UTC+12)', detail: 'NZDT (UTC+13) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: 'Lupins Nov–Dec, stargazing year-round' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$45–90 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'NZeTA or visa-free', detail: 'Check requirements for your nationality' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Lake Tekapo Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Church of the Good Shepherd & Lakefront',
+          text: 'Start at the Church of the Good Shepherd — a tiny stone church built in 1935 on the shore of Lake Tekapo that frames the turquoise lake and Southern Alps through its altar window. It is one of the most photographed buildings in New Zealand. The lake\'s remarkable blue-turquoise colour comes from glacial flour — microscopic rock particles ground by the glaciers of the Southern Alps and suspended in the meltwater. Walk along the lakeshore to the Sheepdog Memorial statue, then continue on the lakefront path. The morning light on the lake is softest and the water colour is most vivid before midday.',
+          tip: 'Arrive at the church before 9am to photograph it without crowds. The altar window view is the iconic shot — try to time it with the sun behind you for the best lake colour.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mount John Summit Walk',
+          text: 'Walk or drive to the summit of Mount John — a 2-hour return walk from the lakefront (or 10-minute drive) to the highest easily accessible viewpoint in the Mackenzie Country. The 360-degree panorama from the summit takes in Lake Tekapo, Lake Alexandrina, the Mackenzie Basin, and the Southern Alps including Aoraki/Mount Cook on clear days. The Mount John Observatory sits on the summit — home to the University of Canterbury\'s astronomy research telescopes and part of the Aoraki Mackenzie International Dark Sky Reserve. The Astro Cafe at the top serves coffee with arguably the best view of any cafe in New Zealand.',
+          tip: 'The Astro Cafe on Mount John summit is open daily and serves excellent coffee with panoramic lake and mountain views. Drive up if you\'re short on time, but the walk is rewarding.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Stargazing in the Dark Sky Reserve',
+          text: 'Lake Tekapo sits within the Aoraki Mackenzie International Dark Sky Reserve — one of the largest dark sky reserves in the world. On clear nights, the Milky Way arches overhead with a brilliance rarely seen anywhere on Earth. The Southern Cross, Magellanic Clouds, and thousands of stars are visible to the naked eye. Join a guided stargazing tour at the Mount John Observatory (Dark Sky Project) for telescope viewing, or simply walk to the lake edge away from town lights and look up. The absence of light pollution makes this one of the premier stargazing locations on the planet.',
+          tip: 'Book the Dark Sky Project observatory tour in advance — they sell out, especially in summer. New moon phases give the darkest skies. Dress warmly — temperatures drop sharply after sunset, even in summer.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Church, Lake & Stargazing',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Church of the Good Shepherd',
+          text: 'Begin at the Church of the Good Shepherd on the lakefront — the 1935 stone chapel frames the turquoise lake and the Southern Alps through its altar window, creating one of New Zealand\'s most recognisable images. The lake\'s extraordinary blue-turquoise colour comes from glacial flour suspended in the glacial meltwater — fine rock particles ground from the mountains by the Godley and Cass glaciers at the lake\'s northern end. Walk along the lakeshore past the Sheepdog Memorial and continue on the lakefront track. In November and December, the lake margins erupt with wild Russell lupins — purple, pink, and blue flower spikes against the turquoise water, creating an almost surreal colour palette.',
+          tip: 'For lupin photographs, visit in late November to mid-December. The best lupin patches are along the lake edge between the church and the boat ramp.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mount John Observatory Walk',
+          text: 'Walk the Mount John Summit Track — a 2-hour return hike climbing 300 metres through tussock grassland to the summit observatory. The panorama from the top encompasses Lake Tekapo below, Lake Alexandrina to the south, the vast golden-brown Mackenzie Basin stretching west, and the full spine of the Southern Alps including Aoraki/Mount Cook (3,724m) — New Zealand\'s highest peak. The Astro Cafe on the summit serves coffee and food with the most spectacular cafe view in the country. The observatory domes house research telescopes that take advantage of the area\'s exceptionally clear, dark skies.',
+          tip: 'The Astro Cafe is open daily. The Mount John walk starts from the lake edge and is well-marked. Bring layers — the summit is exposed and can be windy.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dark Sky Reserve Stargazing',
+          text: 'Lake Tekapo is the heart of the Aoraki Mackenzie International Dark Sky Reserve. On clear nights, the Milky Way is visible as a dense, bright band stretching across the sky — far more vivid than in any city. Join the Dark Sky Project guided tour at Mount John Observatory for expert-led telescope viewing, or walk 10 minutes from town to the lake edge for unguided naked-eye stargazing. The Southern Cross, Magellanic Clouds, and the Jewel Box star cluster are visible to the naked eye. In winter, the aurora australis (southern lights) occasionally paints the southern horizon green.',
+          tip: 'Book the Dark Sky Project tour well in advance — sessions are limited and sell out. New moon nights are darkest. Dress in your warmest clothes — summit temperatures drop below freezing even in summer.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Hot Pools, Lupins & Lake Walks',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tekapo Springs Hot Pools',
+          text: 'Start the morning at Tekapo Springs — outdoor hot pools with views of the turquoise lake and mountains. The heated pools range from warm to hot and include an ice-cold plunge pool. In winter, steam rises from the pools against a backdrop of snow-covered peaks. The complex also includes a sauna and an optional ice skating rink in winter. It is the most relaxing way to start a day in Tekapo, particularly after a cold night of stargazing.',
+          tip: 'Visit the hot pools first thing in the morning (opens 10am) when they are quietest. Evening sessions are popular — morning gives you more space and better mountain views.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Alexandrina & Lupins',
+          text: 'Drive 10 minutes south to Lake Alexandrina — a smaller, quieter lake surrounded by tussock grassland with excellent trout fishing and birdwatching. Walk the Lake Alexandrina Track (1 hour return) along the lake edge through native bush. Return to Lake Tekapo and walk the eastern lakeshore trail towards the outlet — in November and December, the wild lupins along the lake edge create some of the most colourful landscapes in New Zealand. The combination of purple-blue-pink lupins, turquoise glacial water, and snow-capped mountains is genuinely unforgettable.',
+          tip: 'Lupins bloom from late November to mid-December. The best patches shift each year — walk the lakeshore and you will find them. They are considered invasive weeds but are undeniably photogenic.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dinner & Night Sky',
+          text: 'Lake Tekapo is a small village with limited dining options, but Kohan Japanese Restaurant serves surprisingly excellent Japanese food — the salmon sashimi and lakeside terrace are a highlight. The Run 77 cafe does good burgers and pizzas. After dinner, walk to the lake edge for a second night of stargazing — every clear night in Tekapo reveals a different portion of the sky as the Earth rotates, so the view is never quite the same twice.',
+          tip: 'Kohan is Tekapo\'s best restaurant — book ahead, especially in summer. Sit on the terrace for lake views.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Mackenzie Country & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cowans Hill Track',
+          text: 'Walk the Cowans Hill Track — a 1-hour return walk that climbs a hill behind the village to a viewpoint overlooking Lake Tekapo, the village, and the Mackenzie Basin. The track passes through tussock grassland and offers a different perspective from Mount John — lower altitude but a more intimate view of the lake and its stunning colour from directly above. On clear mornings, the lake surface is perfectly still and the mountain reflections are mirror-sharp.',
+          tip: 'Cowans Hill is a shorter, easier alternative to Mount John — good for a morning walk before departure.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Drive the Mackenzie Country',
+          text: 'If heading towards Aoraki/Mount Cook, the 1.5-hour drive north through the Mackenzie Country is one of New Zealand\'s most scenic routes. The road passes Lake Pukaki — another turquoise glacial lake even more vivid than Tekapo — with Aoraki/Mount Cook visible at its head. The Peter\'s Lookout above Lake Pukaki is a must-stop for photographs. The Mackenzie Basin\'s golden-brown tussock, turquoise lakes, and snow-capped mountains form a landscape unlike anywhere else in New Zealand.',
+          tip: 'Peter\'s Lookout above Lake Pukaki is the single best viewpoint in the Mackenzie Country — stop here for the iconic shot of the lake with Mount Cook behind it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Night or Onward Journey',
+          text: 'If staying a final night, revisit the lakefront at sunset — the mountains turn pink and gold in the alpenglow. If moving on, Lake Tekapo is well-positioned for onward travel to Aoraki/Mount Cook (1.5 hours), Christchurch (3 hours), or Queenstown (3 hours). The turquoise lake, the stone church, and the stars overhead make Tekapo one of the most memorable stops on any New Zealand road trip.',
+          tip: 'Fill up with petrol in Tekapo — there are long stretches with no fuel stations between here and Mount Cook or the West Coast.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Lakefront Orientation',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Church of the Good Shepherd',
+          text: 'Start at the iconic stone church on the lakefront — the altar window frames the turquoise lake and Southern Alps. Walk the lakeshore past the Sheepdog Memorial and continue along the lakefront path. The morning light shows the lake\'s glacial blue at its most vivid.',
+          tip: 'Arrive before 9am for the best light and fewest visitors at the church.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lakefront Walk & Swimming',
+          text: 'Walk the full length of the lakefront path. If visiting November-December, the wild lupins along the lake edge create extraordinary colour combinations. In summer, swim from the pebble beach — the glacial water is cold but refreshing.',
+          tip: 'The lake is glacier-fed and cold even in summer. Lupins bloom late November to mid-December.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'First Night Stargazing',
+          text: 'Walk to the lake edge away from town lights for your first night of stargazing in the Dark Sky Reserve. The Milky Way is visible as a dense, bright band on clear nights. Download a stargazing app to identify constellations.',
+          tip: 'Give your eyes 20 minutes to adjust to the darkness for the best naked-eye experience.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Mount John & Observatory',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mount John Summit Walk',
+          text: 'Walk the 2-hour return track to Mount John summit for 360-degree views over Lake Tekapo, Lake Alexandrina, the Mackenzie Basin, and Aoraki/Mount Cook. The observatory domes on the summit house research telescopes. Coffee at the Astro Cafe is mandatory.',
+          tip: 'Start early for the clearest views. The summit can be windy — bring layers.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Alexandrina',
+          text: 'Drive to Lake Alexandrina — a quieter, smaller lake 10 minutes south. Walk the hour-long track along the lakeshore through native bush. The lake is popular for trout fishing and birdwatching.',
+          tip: 'Lake Alexandrina is much quieter than Lake Tekapo and feels more remote.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dark Sky Project Tour',
+          text: 'Join the Dark Sky Project guided stargazing tour at Mount John Observatory. Expert guides use powerful telescopes to show you the Southern Cross, Magellanic Clouds, star clusters, and planets. The tour is the highlight of a Tekapo visit.',
+          tip: 'Book well in advance. Dress in your warmest clothes — the observatory is 300 metres above the lake and temperatures drop below freezing.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Hot Pools & Lupins',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tekapo Springs Hot Pools',
+          text: 'Soak in the outdoor hot pools at Tekapo Springs with views of the turquoise lake and mountains. The complex includes multiple temperature pools, a cold plunge, and a sauna. Steam rises from the pools on cold mornings.',
+          tip: 'Morning sessions are quietest. The contrast of hot water and cold mountain air is perfect.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lupin Walk or Lake Kayaking',
+          text: 'In lupin season (November-December), walk the eastern lakeshore trail to find the best wildflower patches against the turquoise water. Outside lupin season, rent a kayak from the lakefront and paddle out onto the turquoise water for a different perspective of the mountains.',
+          tip: 'Lupins are considered an invasive species but are undeniably beautiful. The best patches shift year to year.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kohan Japanese Restaurant',
+          text: 'Dinner at Kohan — Tekapo\'s best restaurant, serving excellent Japanese cuisine with a lakeside terrace. The salmon sashimi is outstanding. Book ahead in summer.',
+          tip: 'Kohan is small and popular. Book for 6-7pm to get a terrace table with lake views.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Aoraki/Mount Cook Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Aoraki/Mount Cook',
+          text: 'Drive 1.5 hours north through the Mackenzie Country to Aoraki/Mount Cook National Park. The road follows the shore of Lake Pukaki — even more vivid turquoise than Tekapo — with New Zealand\'s highest peak (3,724m) growing larger on the horizon. Stop at Peter\'s Lookout for the iconic photograph.',
+          tip: 'Peter\'s Lookout above Lake Pukaki is the best single viewpoint in the Mackenzie Country.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Hooker Valley Track',
+          text: 'Walk the Hooker Valley Track from the Mount Cook Village — a 3-hour return walk across three swing bridges to the Hooker Glacier terminal lake. The track is flat and accessible, with views of Mount Cook and the Mueller and Hooker glaciers. Icebergs float in the terminal lake. This is one of the most popular day walks in New Zealand.',
+          tip: 'Start the Hooker Valley Track by 10am for the best mountain views before afternoon cloud builds.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Tekapo',
+          text: 'Drive back to Tekapo through the golden evening light of the Mackenzie Basin. The return drive along Lake Pukaki in the late afternoon is beautiful. Stop for dinner in Tekapo at Run 77 or Kohan.',
+          tip: 'The evening light on the Mackenzie Basin tussocklands is warm and golden — stop for photographs on the way back.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Cowans Hill & Relaxation',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cowans Hill Track',
+          text: 'Walk the 1-hour Cowans Hill Track for a viewpoint overlooking the village, lake, and mountains from a different angle than Mount John. The track passes through tussock grassland and is less crowded.',
+          tip: 'Cowans Hill is an easier, shorter walk than Mount John — good for a relaxed morning.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Relaxation & Reading',
+          text: 'Take a slow afternoon — swim in the lake, read a book on the shore, or revisit the hot pools. Tekapo is a place for slowing down and absorbing the landscape. The pace of life here is deliberate.',
+          tip: 'Tekapo rewards stillness. Sit by the lake and watch the light change on the mountains throughout the afternoon.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Second Stargazing Night',
+          text: 'Return to the lake edge for another night of stargazing. Each clear night reveals different objects as the Earth rotates. Try photographing the Milky Way reflected in the lake — long exposure, wide-angle lens, tripod essential.',
+          tip: 'For Milky Way photography: 15-25 second exposure, ISO 3200-6400, widest aperture. A tripod is essential.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Cycling & Twizel',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Alps 2 Ocean Cycle Trail',
+          text: 'Ride a section of the Alps 2 Ocean Cycle Trail — a 300km trail from Mount Cook to Oamaru. The Lake Tekapo to Twizel section (55km) passes through the Mackenzie Basin with views of turquoise canals, golden tussock, and mountains. Bike hire available in Tekapo.',
+          tip: 'The trail is mostly flat between Tekapo and Twizel, following hydro canal roads. E-bikes make it very achievable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Twizel & Ohau Canal',
+          text: 'Explore Twizel — a small Mackenzie Country town with salmon farms where you can watch salmon in the clear blue canals. The Ohau Canal is strikingly blue and worth photographing. High Country Salmon sells fresh salmon and sashimi directly from the farm.',
+          tip: 'High Country Salmon is worth the stop — the freshest salmon sashimi you\'ll find anywhere, eaten beside the canal.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Final Stargazing',
+          text: 'Return to Tekapo for a final evening of stargazing. After multiple nights, you will have learned the southern sky constellations. The memory of Tekapo\'s stars is one that stays with travellers long after they leave.',
+          tip: 'Take a final photograph of the Milky Way over the Church of the Good Shepherd — the iconic Tekapo night sky shot.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Sunrise & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise at the Lake',
+          text: 'Wake early for a final sunrise at the lakefront. The mountains catch the first pink light while the lake surface is perfectly still. This is the moment when Tekapo\'s colour is most vivid and the landscape feels most pristine.',
+          tip: 'Sunrise at the church is the most popular shot, but the view from the boat ramp looking north is equally beautiful.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Last Walk & Departure',
+          text: 'Take a final lakefront walk, revisit the church, and buy souvenirs from the small shops in the village. Lake Tekapo is well-positioned for onward travel to Christchurch (3 hours), Queenstown (3 hours), or Mount Cook (1.5 hours).',
+          tip: 'Fill up with petrol in Tekapo — there are long stretches without fuel stations in every direction.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Onward Journey',
+          text: 'Lake Tekapo is one of those places that changes how you see the night sky. The turquoise water, the stone church, and the Milky Way overhead create an experience that is unique to this tiny Mackenzie Country village. Wherever you go next, you will carry Tekapo\'s stars with you.',
+          tip: 'If driving to Christchurch, take Highway 79 through Fairlie and Geraldine — a scenic route through farming country.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Free stargazing', text: 'The Dark Sky Reserve is free to enjoy with the naked eye — just walk to the lake edge away from town lights. The paid observatory tours are excellent but not essential for an incredible stargazing experience.' },
+  { title: 'Self-catering essential', text: 'Tekapo has very limited restaurant options and prices are high. Stay in accommodation with a kitchen and buy supplies from the Four Square store or stock up in Christchurch or Queenstown before arriving.' },
+  { title: 'Free walks and viewpoints', text: 'Mount John, Cowans Hill, and the lakefront walks are all free. The best views don\'t cost anything. Even the Astro Cafe only charges for coffee — the view is free.' },
+  { title: 'Budget accommodation', text: 'The YHA Lake Tekapo hostel is well-run and affordable. For camping, the DOC Lakeside camping area is basic but the location — right on the turquoise lake — is unbeatable.' },
+  { title: 'Visit in shoulder season', text: 'December and January are peak season with highest prices. November and March offer similar weather with lower accommodation costs and fewer crowds.' },
+  { title: 'Pack food for day trips', text: 'There are no food options on the road to Mount Cook or the cycling trails. Pack sandwiches, snacks, and water before heading out.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$20–45', midrange: '$60–120', splurge: '$150+', notes: 'Camping/hostels → B&Bs → lodges' },
+  { category: 'Food', budget: '$12–25', midrange: '$25–50', splurge: '$60+', notes: 'Self-catering → Run 77 → Kohan' },
+  { category: 'Transport', budget: '$0–10', midrange: '$15–30', splurge: '$50+', notes: 'Walking → rental car → scenic flights' },
+  { category: 'Activities', budget: '$0–10', midrange: '$30–60', splurge: '$80+', notes: 'Free walks → hot pools → Dark Sky tour' },
+  { category: 'Stargazing Tour', budget: '$0', midrange: '$70–100', splurge: '$150+', notes: 'Naked eye → guided tour → private session' },
+  { category: 'Daily Total', budget: '$45–110', midrange: '$130–290', splurge: '$390+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities need an NZeTA (New Zealand Electronic Travel Authority) — apply online before travel',
+      'Lake Tekapo is 3 hours from Christchurch Airport by car — no direct public transport',
+      'InterCity buses connect Tekapo to Christchurch and Queenstown but services are limited',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Tekapo is remote — the nearest hospital is in Timaru (1.5 hours). Travel insurance is essential',
+      'Temperatures can drop below freezing year-round at night — dress warmly for stargazing',
+      'UV is extremely high at this altitude — wear SPF 50+ sunscreen even on cloudy days',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'A rental car is essential for day trips to Mount Cook, Lake Pukaki, and Lake Alexandrina',
+      'The village is walkable — everything is within 15 minutes on foot',
+      'The road to Mount Cook (SH8/SH80) is sealed and well-maintained year-round',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'WiFi available at most accommodation. Mobile coverage is adequate in town',
+      'Coverage drops outside the village — download offline maps for driving and hiking',
+      'Limited shops and services — Tekapo is a very small village, not a town',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: NZD. Cards accepted at most businesses in the village',
+      'One ATM in the village — don\'t rely on it. Bring cash as backup',
+      'Tipping not expected in New Zealand — round up or leave 5-10% for exceptional service',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Warm layers are essential for stargazing — gloves, beanie, and a down jacket even in summer',
+      'Sunglasses and sunscreen for the intense UV at altitude and glare off the lake',
+      'A tripod for astrophotography — the dark skies are too good to miss without one',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect the Dark Sky', text: 'The Aoraki Mackenzie Dark Sky Reserve depends on minimising light pollution. Use red-filtered torches at night, turn off vehicle headlights when parked for stargazing, and respect the reserve\'s purpose.' },
+  { icon: '🌍', title: 'Leave No Trace', text: 'The Mackenzie Country landscape is fragile. Stay on marked tracks, take all rubbish with you, and don\'t pick the lupins — they are considered invasive weeds but removing them disrupts the ecosystem.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'The Church of the Good Shepherd is a working church — respect services and weddings. Do not use flash photography inside. The church closes to visitors during services.' },
+  { icon: '🗣', title: 'Small Village Life', text: 'Tekapo has a permanent population of around 400 people. Respect the village atmosphere — keep noise down at night, especially near accommodation, and treat the community with courtesy.' },
+  { icon: '🤝', title: 'Support Local', text: 'Tekapo\'s businesses are small and locally owned. Choose local restaurants and operators to ensure your spending benefits the community directly.' },
+  { icon: '🕐', title: 'Weather Patience', text: 'Stargazing depends on clear skies — cloud cover can obscure the view entirely. Build multiple nights into your Tekapo visit to maximise your chances of a clear sky.' },
+];
+---
+
+<CityGuideLayout
+  title="Lake Tekapo Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Lake Tekapo guide for young travelers. Stargazing, glacial lake, Church of Good Shepherd with 1, 3, and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/lake-tekapo-hero.webp"
+  heroFlag="🇳🇿"
+  heroCountry="New Zealand"
+  heroRegion="Oceania"
+  heroCity="Lake Tekapo"
+  heroSubtitle="A turquoise glacier lake beneath the Southern Alps and one of the darkest night skies on Earth — where stars feel close enough to touch."
+  heroPills={["3-Day Stargazing","Nature & Scenery","Nov – Mar Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Lake Tekapo is affordable — the main attractions (lake, stars, walks) are free. Accommodation and dining options are limited, so self-catering helps."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Lake Tekapo is a small village in a vast, quiet landscape. Approach with respect for the dark sky reserve, the fragile environment, and the tiny community that calls this extraordinary place home."
+  ctaCity="Lake Tekapo"
+  ctaText="Find travel companions to explore Lake Tekapo together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'ALL (Albanian Lek)', detail: 'Cash preferred outside Tirana' },
+  { icon: '🗣', label: 'Language', value: 'Albanian', detail: 'Some English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'CET (UTC+1)', detail: 'CEST (UTC+2) in summer' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Jun, Sep – Oct', detail: 'Warm days, fewer crowds' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$30–80 USD', detail: 'Very affordable destination' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free for many', detail: 'Up to 90 days for EU/US/UK citizens' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Berat Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Berat Castle & Onufri Museum',
+          text: 'Start your day early with a walk up to Berat Castle (Kalaja), one of the largest inhabited fortresses in the Balkans. The citadel sits 214 metres above the Osum River and has been continuously inhabited for over 2,400 years. Inside the castle walls, visit the Onufri Museum housed in the Church of the Dormition of St Mary — it displays a remarkable collection of 16th-century icons by the master painter Onufri, renowned for his unique shade of red pigment whose formula remains a mystery. Wander the cobblestone lanes past Byzantine churches and Ottoman-era houses still occupied by local families.',
+          tip: 'Arrive at the castle before 9am to avoid the midday heat on the steep climb. The ascent takes about 20 minutes from the Mangalem quarter — wear sturdy shoes on the cobblestones.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mangalem & Gorica Quarters',
+          text: 'Descend into the Mangalem quarter on the castle-facing hillside — the famous view of stacked white Ottoman houses with their large symmetrical windows gives Berat its UNESCO title "City of a Thousand Windows." Cross the 18th-century Gorica Bridge over the Osum River to the Gorica quarter on the opposite bank for the classic postcard view back across to Mangalem. Explore the narrow lanes, stop for a traditional qofte lunch at a family-run restaurant, and visit the small Ethnographic Museum to understand daily Ottoman-era life in the city.',
+          tip: 'The best photographs of the "Thousand Windows" are taken from the Gorica side of the river in the afternoon when the sun lights up the Mangalem facades directly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Walk & Raki Tasting',
+          text: 'Stroll the tree-lined boulevard along the Osum River as the city cools down. Berat comes alive in the evening with locals filling the riverside cafes and promenades — the xhiro (evening walk) is a cherished Albanian tradition. Find a terrace restaurant for dinner: try tavë kosi (lamb baked in yoghurt), fergese (peppers and cheese baked in a clay pot), and local raki. Watch the castle illuminate above as the city settles into its gentle evening rhythm.',
+          tip: 'Raki (grape brandy) is offered as a welcome drink at most traditional restaurants — it is customary to accept. Local wine from the Berat region is excellent and very affordable.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Castle, Museums & Old Town',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Berat Castle & Byzantine Churches',
+          text: 'Begin your exploration with an early climb to Berat Castle, entering through the fortified gateway that has guarded the hilltop since Illyrian times. The castle precinct contains over a dozen Byzantine churches — several still have original frescoes. The Church of the Holy Trinity, perched on the cliff edge, offers a dramatic view down to the Osum River gorge. Walk the full circuit of the castle walls for panoramic views across the Tomorr Mountain massif to the east and the Myzeqe Plain stretching west towards the Adriatic.',
+          tip: 'The castle precinct is large — allow 2–3 hours to explore properly. Bring water and snacks as there is only one small cafe inside the walls.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Onufri Museum & Mangalem Quarter',
+          text: 'Visit the Onufri Museum to study the extraordinary icon collection, then descend through the Mangalem quarter. Stop at the Lead Mosque (Xhamia e Plumbit), one of the oldest Ottoman mosques in Albania, built in 1555. Continue to the King Mosque with its elegant minaret and carved wooden interior. The Mangalem lanes are steep and winding — each turn reveals another classic view of layered white houses climbing the hillside beneath the castle walls. The National Ethnographic Museum in a restored Ottoman house shows how Berat families lived across centuries.',
+          tip: 'The Ethnographic Museum closes early — check opening hours before visiting. It is housed in one of the finest 18th-century Ottoman houses in the city.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Gorica Quarter & River Promenade',
+          text: 'Cross the Gorica Bridge to the quieter Gorica neighbourhood on the south bank. The Church of St Spyridon and the smaller residential lanes here feel untouched by tourism. Walk back across the bridge at dusk for the iconic Berat view — the thousand windows glowing amber as the castle lights switch on above. Dinner along the river boulevard: try byrek (flaky pastry filled with cheese or spinach), followed by grilled meat and a carafe of local Shesh i Bardhë white wine.',
+          tip: 'Berat is extremely affordable — a full dinner with wine for two rarely exceeds $20 USD. Tipping 10% is appreciated but not expected.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Osumi Canyon & Tomorr Mountain',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Osumi Canyon Adventure',
+          text: 'Take an early morning excursion to Osumi Canyon, 30km south of Berat — Albania\'s answer to the Grand Canyon. The canyon stretches 26km with walls reaching 80 metres high, carved by the Osum River over millennia. Depending on the season and water levels, you can hike along the canyon rim trail for dramatic overlook points or join a rafting trip through the narrows (best in spring when water levels are higher). The canyon is framed by wild fig trees, eagles circling above, and dramatic rock formations shaped by erosion.',
+          tip: 'Osumi Canyon rafting runs from April to June when water levels are suitable. Outside this period, the rim hike is still spectacular. Book through a Berat-based tour operator the day before.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tomorr Mountain National Park',
+          text: 'Drive east to Tomorr Mountain (2,416m), the sacred peak that dominates Berat\'s eastern skyline. The mountain has been revered since Illyrian times and is home to the Bektashi shrine of Abbas Ali near the summit, an important pilgrimage site. The lower slopes are covered in pine and beech forest with hiking trails through alpine meadows. Even without reaching the summit, the viewpoint at the Bektashi tekke offers a sweeping vista across central Albania. The mountain\'s dramatic limestone ridgeline is visible from almost everywhere in Berat.',
+          tip: 'The road to Tomorr is unpaved and steep — a 4x4 or organised tour is recommended. The summit hike takes 3–4 hours from the parking area and is only suitable in dry conditions.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Traditional Albanian Dinner',
+          text: 'Return to Berat for a traditional evening meal. Seek out a family-run restaurant in the Mangalem quarter where the cooking is done by hand using recipes passed through generations. Try pace koke (sheep\'s head soup — a local delicacy), or the simpler but equally satisfying tavë elbasani (meat and egg casserole with yoghurt). Albanian hospitality is legendary — expect generous portions, complimentary raki, and warmth from your hosts that defines the Balkan travel experience.',
+          tip: 'Many of the best restaurants in Mangalem do not have signs — ask locals or your accommodation for recommendations. The food is uniformly excellent and cheap.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Bogova Waterfall, Wine & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bogova Waterfall Hike',
+          text: 'Drive 15km northeast to Bogova Waterfall, hidden in a forested gorge on the flanks of Tomorr Mountain. The 30-metre cascade drops into a clear turquoise pool surrounded by moss-covered rocks and ancient beech trees. The trail to the falls takes about 45 minutes each way through shaded forest — a refreshing morning walk. In summer, the pool is deep enough for a cold plunge. The path crosses wooden bridges and follows the stream uphill, getting progressively more scenic as you approach the falls.',
+          tip: 'The trail to Bogova Waterfall is well-marked but can be slippery after rain. Bring water shoes if you plan to swim in the pool — the rocks are smooth but the water is very cold.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Berat Wine Region & Cobo Winery',
+          text: 'Berat sits in the heart of Albania\'s oldest wine-producing region. Visit Cobo Winery or Nurellari Winery on the hillsides above the city for a tasting of indigenous Albanian grape varieties — Shesh i Bardhë (white) and Shesh i Zi (red) are the signature varieties, producing wines with a character distinct from anything in neighbouring Greece or Italy. The terraced vineyards overlook the Osum valley with Tomorr Mountain behind — it is one of the most scenic wine-tasting settings in the Balkans.',
+          tip: 'Wine tastings in Berat cost $5–15 per person including 4–6 wines and often cheese and olive accompaniments. Bottles can be purchased directly from the winery for $3–8.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Sunset from the Castle',
+          text: 'Make the climb back up to Berat Castle one final time for a sunset view that few visitors experience — by late afternoon, the tour groups have departed and you may have the castle walls to yourself. Watch the golden light spread across the valley, illuminating the thousand windows below and turning Tomorr Mountain pink and orange. Descend through the quiet Mangalem lanes for a farewell dinner of grilled trout from the Osum River, the house salad, and one last glass of Berat raki.',
+          tip: 'The castle stays open until sunset in summer — check closing times in winter as they vary. The descent after dark is manageable but bring a phone torch for the cobblestones.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Albania is incredibly affordable', text: 'Berat is one of Europe\'s cheapest destinations. A full meal costs $3–8, accommodation $10–30, and local transport is minimal. Your money stretches further here than almost anywhere in the continent.' },
+  { title: 'Carry cash in Albanian Lek', text: 'Many restaurants, guesthouses, and transport providers in Berat only accept cash. ATMs are available in the town centre but not at the castle or in rural areas. Withdraw enough Lek for each day.' },
+  { title: 'Visit in shoulder season', text: 'April–May and September–October offer warm weather, fewer visitors, and the best prices. July–August brings heat and domestic tourists but the city never feels overcrowded compared to Greek or Croatian alternatives.' },
+  { title: 'Stay in a traditional guesthouse', text: 'Berat\'s Ottoman-era houses have been converted into charming guesthouses at backpacker prices. A private room in a restored stone house costs $15–30 per night and includes breakfast — far more character than a hostel.' },
+  { title: 'Walk everywhere in town', text: 'Berat\'s old town is entirely walkable. The castle, both quarters, museums, and river promenade are all within 20 minutes of each other on foot. Save transport costs for day trips to Osumi Canyon and Tomorr.' },
+  { title: 'Eat where locals eat', text: 'The best food in Berat is in the unmarked family-run restaurants in the old quarters. Avoid the few tourist-facing places on the main boulevard — walk into the lanes for better food at half the price.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–25', midrange: '$30–60', splurge: '$80+', notes: 'Hostels → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '$8–15', midrange: '$15–30', splurge: '$40+', notes: 'Street byrek → local restaurants → fine dining' },
+  { category: 'Transport', budget: '$2–8', midrange: '$10–25', splurge: '$40+', notes: 'Local buses → shared furgon → private car' },
+  { category: 'Activities', budget: '$3–10', midrange: '$15–35', splurge: '$50+', notes: 'Self-guided → group tours → private guides' },
+  { category: 'Entry Fees', budget: '$2–5', midrange: '$5–10', splurge: '$10–20', notes: 'Museums and castle entry very affordable' },
+  { category: 'Daily Total', budget: '$25–65', midrange: '$75–160', splurge: '$220+', notes: 'Budget backpacker → comfortable mid → luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'EU, US, UK, Canadian, and Australian citizens can enter Albania visa-free for up to 90 days',
+      'Keep a digital and physical copy of your passport — you may be asked for ID at guesthouses',
+      'No Schengen Zone restrictions apply — Albania has its own entry requirements',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Berat is very safe for tourists — petty crime is rare and locals are exceptionally hospitable',
+      'Tap water is not reliably safe to drink — buy bottled water or use a purification bottle',
+      'Sun protection is essential in summer — temperatures regularly exceed 35°C from June to August',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Berat is 2 hours by bus from Tirana (departures every 1–2 hours, ~$5 USD)',
+      'Local furgon minibuses connect Berat to nearby towns and trailheads — ask at the bus station',
+      'Rent a car for day trips to Osumi Canyon and Tomorr Mountain — roads are paved but winding',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy an Albanian SIM card (Vodafone or ONE) at the airport or any phone shop for cheap data',
+      'WiFi is available at most guesthouses and cafes but speeds can be slow — download offline maps',
+      'Mobile coverage is good in town but patchy in the mountains and canyon areas',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: ALL (Albanian Lek). 1 USD ≈ 100 ALL approximately — easy mental conversion',
+      'ATMs in the town centre accept international cards. Visa and Mastercard widely accepted in hotels',
+      'Tipping is not expected but rounding up the bill or leaving 5–10% is appreciated',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Sturdy walking shoes are essential — the castle climb and old town cobblestones are steep and uneven',
+      'Bring layers for temperature swings between the river valley and mountain excursions',
+      'A reusable water bottle, sun hat, and portable charger cover the essentials for a Berat visit',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect Religious Sites', text: 'Berat has mosques, Orthodox churches, and Bektashi shrines side by side — a reflection of Albania\'s religious harmony. Dress modestly when entering any place of worship and ask before photographing interiors.' },
+  { icon: '🌍', title: 'Protect the UNESCO Site', text: 'Berat\'s UNESCO status protects its Ottoman architecture. Do not touch or climb on historic structures. Stay on marked paths in the castle precinct and canyon areas. Take only photos, leave only footprints.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Locals are generally happy to be photographed but always ask first, especially older residents in the castle quarter. The castle and old town are public spaces but respect private homes and gardens.' },
+  { icon: '🗣', title: 'Learn Basic Albanian', text: 'A few words in Albanian go a long way: "Përshëndetje" (hello), "Faleminderit" (thank you), "Sa kushton?" (how much?). English is spoken by younger Albanians but less common among older generations.' },
+  { icon: '🤝', title: 'Albanian Hospitality', text: 'Albanians are famously hospitable — you may be invited for coffee or raki by strangers. Accept graciously. Choose family-run guesthouses and restaurants to keep your money in the local community.' },
+  { icon: '🕐', title: 'Embrace the Pace', text: 'Berat moves slowly and that is its charm. The xhiro (evening promenade), long lunches, and cafe culture are central to Albanian life. Rushing through misses the point — slow down and absorb the atmosphere.' },
+];
+---
+
+<CityGuideLayout
+  title="Berat Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Berat guide for young travelers. UNESCO City of a Thousand Windows, Berat Castle, Osumi Canyon with 1 and 3-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/berat-hero.webp"
+  heroFlag="🇦🇱"
+  heroCountry="Albania"
+  heroRegion="Europe"
+  heroCity="Berat"
+  heroSubtitle="UNESCO's City of a Thousand Windows — Ottoman houses stacked beneath a 2,400-year-old castle on the banks of the Osum River."
+  heroPills={["3-Day City","Historic","Apr – Jun Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Berat is one of Europe's most affordable destinations — these ranges cover the spectrum from budget backpacker to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Berat is a living museum of Ottoman and Byzantine heritage — approach with curiosity and respect, and the city's warmth and history will reward you deeply."
+  ctaCity="Berat"
+  ctaText="Find travel companions to explore Berat together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

@@ -3,17 +3,18 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <nav class="nav" id="nav">
-  <a href={`${base}`}>
+  <a href={`${base}`} class="nav-logo-link">
     <img src={`${base}images/rm-full-hz.svg`} alt="roammate" class="nav-logo" width="155" height="120">
   </a>
   <button class="nav-toggle" id="navToggle" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="navLinks">
+    <li class="nav-close-li"><button class="nav-close" id="navClose" aria-label="Close menu">&times;</button></li>
     <li><a href={`${base}faq`}>FAQ</a></li>
     <li><a href="/#how">How It Works</a></li>
     <li><a href={`${base}guides`}>Guides</a></li>
-    <li><a href="/#community">Community</a></li>
+    <li><a href={`${base}blog`}>Blog</a></li>
     <li class="nav-downloads">
       <a href="#" class="nav-download-btn" aria-label="Download on App Store">
         <img src={`${base}images/app-store-badge.svg`} alt="Download on App Store" class="nav-badge" width="120" height="40">
@@ -42,6 +43,12 @@ const base = import.meta.env.BASE_URL;
   toggle?.addEventListener('click', () => {
     toggle.classList.toggle('active');
     links?.classList.toggle('open');
+  });
+
+  const closeBtn = document.getElementById('navClose');
+  closeBtn?.addEventListener('click', () => {
+    toggle?.classList.remove('active');
+    links?.classList.remove('open');
   });
 
   links?.querySelectorAll('a').forEach((a) => {
@@ -79,15 +86,21 @@ const base = import.meta.env.BASE_URL;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   }
 
-  .nav a:has(.nav-logo) {
-    border: none;
-    outline: none;
+  .nav-logo-link {
     display: block;
     line-height: 0;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .nav a:has(.nav-logo):focus {
-    outline: none;
+  .nav-logo-link:focus,
+  .nav-logo-link:focus-visible,
+  .nav-logo-link:active {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .nav-logo {
@@ -196,26 +209,51 @@ const base = import.meta.env.BASE_URL;
     transform: translateY(-8px) rotate(-45deg);
   }
 
+  .nav-close-li { display: none; }
+
   @media (max-width: 1024px) {
     .nav { padding: 20px 24px; }
     .nav.scrolled { padding: 14px 24px; }
     .nav-toggle { display: flex; }
 
+    .nav-close-li {
+      display: block;
+      position: absolute;
+      top: 24px;
+      left: 24px;
+    }
+
+    .nav-close {
+      background: none;
+      border: none;
+      font-size: 40px;
+      line-height: 1;
+      color: var(--color-cream);
+      cursor: pointer;
+      padding: 8px;
+    }
+
     .nav-links {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
       background: rgba(250, 248, 245, 0.97);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       flex-direction: column;
       justify-content: center;
       gap: 32px;
-      transform: translateX(100%);
-      transition: transform 0.5s var(--ease-out-expo);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s, visibility 0.4s;
     }
 
     .nav-links.open {
-      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
     }
 
     .nav-links a {

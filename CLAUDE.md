@@ -20,3 +20,16 @@
 - When changing URL paths or page slugs
 
 All pages must include a canonical link tag (handled automatically by `BaseLayout.astro`).
+
+## RSS Feed
+
+- RSS feed is generated at build time via `@astrojs/rss` at `src/pages/rss.xml.ts`
+- Available at `https://roammate.com/rss.xml`
+- Includes all city guides, place guides, backpacker routes, and static pages
+- Dates are deterministically generated from slug hashes (consistent across builds)
+- **Must be kept in sync**: When adding new guides or routes, update the RSS endpoint if the data source changes (currently auto-reads from `guides.ts`)
+- The `robots.txt` should reference the RSS feed URL
+
+## Agent Workflow
+
+**Always spawn subagents** (via the Task tool) for creating, updating, or modifying guide pages and other content. The main conversation thread should remain available as a supervisor — delegating work to subagents and coordinating results. Never block the main thread with long-running file creation tasks.

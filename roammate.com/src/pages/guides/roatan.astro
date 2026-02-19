@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'HNL (Lempira)', detail: '1 USD ≈ L25' },
+  { icon: '🗣', label: 'Language', value: 'Spanish / English', detail: 'English widely spoken on the island' },
+  { icon: '🕐', label: 'Timezone', value: 'CST (UTC-6)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Feb – Sep', detail: 'Calm seas, best diving visibility' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$35–60 USD', detail: 'L875–1,500 budget traveler' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 90 days', detail: 'CA-4 agreement with Guatemala, El Salvador, Nicaragua' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Best of Roatán in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'West Bay Beach',
+          text: 'Head straight to West Bay Beach — consistently rated one of the best beaches in Central America. A 2km stretch of white sand curves along a turquoise bay with the Mesoamerican Barrier Reef starting just 50 metres from shore. Walk into the water up to your chest and you are already swimming above coral heads with parrotfish, sergeant majors, and occasionally a nurse shark cruising below. No boat trip needed — the reef is right there. The beach is lined with palms and backed by lush green hills.',
+          tip: 'Arrive before 10am to claim a spot before cruise ship passengers arrive (cruise days are busiest). The north end of West Bay is less crowded. Snorkel gear rents for L200–300 on the beach.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Reef Snorkelling from Shore',
+          text: 'The reef at West Bay Beach is accessible directly from shore — swim out 50 metres past the sandy bottom and the coral begins. The Mesoamerican Barrier Reef is the second largest in the world, and Roatán sits on one of its healthiest sections. Snorkel along the reef wall where the shallow coral shelf drops away into deep blue water — eagle rays, barracuda, and sea turtles are commonly spotted along this edge. The water is warm (27–29°C year-round) and visibility typically exceeds 20 metres.',
+          tip: 'The reef edge has a gentle current — start your snorkel at the north end and drift south. Reef-safe sunscreen only. Do not touch or stand on coral — fines apply.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'West End Sunset & Dinner',
+          text: 'Walk or water-taxi (L50) from West Bay to West End — a colourful, walkable strip of restaurants, dive shops, and bars strung along a single road at the island\'s western tip. The sunset over the Caribbean from any of the waterfront restaurants is spectacular. Dinner at a local eatery: baleadas (flour tortillas stuffed with beans, cheese, and cream, L30–50), fried fish with plantain and coconut rice (L150–200), or fresh ceviche (L100). The dive bars and beach bars stay lively until midnight.',
+          tip: 'Sundowners at The Lighthouse restaurant for the best sunset view. Baleadas from the street carts in West End are the island\'s cheapest and most authentic meal — L30 for a filling dinner.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'West Bay Beach & Shore Snorkelling',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'West Bay Beach — Paradise Found',
+          text: 'Start your Roatán experience at West Bay Beach. Arrive early before the cruise ship crowds and claim a stretch of white sand with the barrier reef visible as a dark line 50 metres offshore. The palm-lined beach is postcard-perfect — turquoise water, white sand, and lush green hills rising behind. Swim, float, and acclimatise to island time. Rent snorkel gear from the beach vendors (L200–300) or bring your own.',
+          tip: 'The south end of West Bay near the Infinity Bay resort has the shallowest reef entry — easiest for less confident snorkellers. No beach chairs are needed — the sand is soft and the shade under the palms is free.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Reef Snorkel Circuit',
+          text: 'Snorkel the West Bay reef from shore — the coral starts in waist-deep water and extends along the entire beach. Follow the reef edge where the shelf drops from 3 metres to 30 metres of deep blue — this is where the big fish patrol. Look for: queen angelfish, blue tang (Dory), stoplight parrotfish, spotted eagle rays, and hawksbill turtles. The reef is in excellent health and Roatán\'s marine park fees (L250 per visitor) fund ongoing protection. Spend 2–3 hours in the water — the warm temperature makes extended snorkelling comfortable.',
+          tip: 'The marine park fee is sometimes collected on the beach, sometimes included in tours. Ask if you have paid it already before paying again. Keep the receipt.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'West End Dinner & Bars',
+          text: 'Head to West End village — a 20-minute walk along the beach from West Bay, or a quick water taxi ride (L50). The main road is lined with restaurants, dive shops, and bars built over the water on wooden docks. Dinner at a local spot: baleadas stuffed with chicken, beans, and avocado (L50), fresh grilled fish with coconut rice and plantain (L180), or lobster in garlic butter (L350–500 when in season). The dive bar scene is social — meet other travelers and plan tomorrow\'s underwater adventures.',
+          tip: 'Sundowners Bar lives up to its name. For budget food, the baleada carts near the main intersection are open until 10pm. Salva Vida and Port Royal are the local beers — L30–50.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Diving the Barrier Reef',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Two-Tank Morning Dive',
+          text: 'Roatán is one of the cheapest places in the world to dive — a two-tank morning dive costs $50–70 at the many dive shops in West End. Dive sites include Mary\'s Place (a dramatic vertical crack in the reef wall), Blue Channel (a coral-lined canyon), and Half Moon Bay Wall (a steep drop-off teeming with marine life). The reef wall drops from 5 metres to beyond 40 metres, with sea fans, barrel sponges, and tube sponges growing to enormous sizes. Visibility regularly exceeds 30 metres.',
+          tip: 'West End\'s dive shops are competitive — walk along the strip and compare prices. Open Water certification courses start at $280 for a 3-day PADI course. Bring your cert card if already certified.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gumbalimba Park & Carambola Gardens',
+          text: 'Visit Gumbalimba Park (L500) — a nature reserve with botanical gardens, a butterfly house, hanging bridges through the canopy, a beach, and resident monkeys and macaws. The park is touristy but the botanical gardens are genuinely interesting with tropical flowers, medicinal plants, and ancient trees. Alternatively, visit Carambola Botanical Gardens (L250) on the hillside above Sandy Bay — quieter, with nature trails through tropical forest and a viewpoint overlooking the island and reef.',
+          tip: 'Gumbalimba is popular with cruise ship visitors — go after 2pm when the groups leave. Carambola is always quiet and the trails are self-guided with information boards.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Iguana Farm & Night Out',
+          text: 'Stop at the Arch\'s Iguana and Marine Park near French Harbour (L100) — home to hundreds of iguanas from hatchlings to 1.5-metre adults that roam freely and climb all over visitors. It is an unexpectedly entertaining experience. Return to West End for evening — eat at Café Escondido for Italian-Honduran fusion or RoaTaco for street-style tacos (L80–120). The bars get lively on weekends — Blue Marlin, Eagle Ray\'s, and Sundowners all have live music or DJ nights.',
+          tip: 'The iguana farm is best visited late afternoon when the iguanas are most active after basking. They are harmless but their claws are sharp — wear a shirt with some coverage.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'East End & Island Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'East End Drive & Fishing Villages',
+          text: 'Rent a scooter (L600–800/day) or car (L1,500+/day) and drive the main road east across the island. The road passes through Coxen Hole (the main town — functional, not pretty), French Harbour (fishing port with cheap seafood restaurants), and continues to Oak Ridge — a fishing village built entirely on stilts over the water. Take a water taxi around Oak Ridge\'s canals (L50) and see the colourful wooden houses, fishermen\'s boats, and the working waterfront that is a world away from the tourist west end.',
+          tip: 'The road east is paved but narrow with blind corners — drive carefully, especially on a scooter. Petrol stations are in Coxen Hole and French Harbour. Fill up before heading east.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Punta Gorda & Garifuna Culture',
+          text: 'Continue to Punta Gorda at the eastern end — a Garifuna community and the oldest settlement on Roatán. The Garifuna are an Afro-indigenous people with their own language, music (punta), and cuisine. Walk the village, visit the small cultural centre, and try Garifuna food: machuca (mashed plantain with coconut seafood soup), hudut (fish in coconut milk), or cassava bread. The beach here is quiet and local — no tourist infrastructure, just sand and water.',
+          tip: 'Ask respectfully before photographing people or homes in Punta Gorda. The community is welcoming but tourism is less developed here than in West End. Buy food and drinks locally to support the community.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell West End',
+          text: 'Return to West End for a final evening. One last sunset from the dock with a Salva Vida beer, one last plate of baleadas, and one last walk along the torch-lit waterfront. The dive shops, restaurants, and bars that make West End special all glow against the dark Caribbean water. Roatán connects easily to the mainland — the ferry to La Ceiba departs from the Coxen Hole dock (L700, 1.5hrs) and flights to Tegucigalpa and San Pedro Sula are daily.',
+          tip: 'The Galaxy Wave ferry to La Ceiba departs at 7am and 2pm — book online the day before. From La Ceiba, buses connect to San Pedro Sula (3hrs) and Tegucigalpa (7hrs). Utila is also reachable from La Ceiba.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival, West Bay & First Sunset',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive on Roatán',
+          text: 'Fly into Juan Manuel Gálvez International Airport (RTB) or take the Galaxy Wave ferry from La Ceiba (L700, 1.5hrs). Taxis from the airport to West End cost L400–500, or arrange a hostel pickup. Drop your bags at a hostel or guesthouse (dorms from L300/night, private rooms from L800) and head straight to the beach. West End\'s main road runs along the waterfront — restaurants, dive shops, and bars line both sides.',
+          tip: 'Book accommodation in West End for the best combination of price, nightlife, and dive shop access. West Bay is more upscale and resort-oriented. Both are on the island\'s west coast.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'West Bay Beach First Swim',
+          text: 'Walk or water-taxi (L50) from West End to West Bay Beach — the island\'s finest beach. White sand, palm trees, and the barrier reef visible as a dark line just offshore. Swim into the warm turquoise water and within 50 metres you are floating above coral heads alive with tropical fish. No ticket, no boat, no guide — just walk in and start snorkelling one of the best reefs in the Caribbean. The water temperature is 27–29°C year-round.',
+          tip: 'Rent snorkel gear from the beach (L200–300) or buy a set in West End. If you plan to snorkel daily, buying is cheaper by day three. Underwater cameras rent for L200/day.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'West End Welcome Dinner',
+          text: 'First evening in West End — walk the strip and choose your dinner spot. Baleadas from the street carts (L30–50) are essential. The restaurants over the water serve grilled fish, shrimp, and lobster at prices that seem impossible for Caribbean island dining (mains L150–350). Grab a Salva Vida beer (L30) at a waterfront bar and watch the sunset turn the sky orange over the Caribbean. The dive bars start filling up by 8pm — this is where you will meet your diving and snorkelling partners for the week.',
+          tip: 'Walk the entire West End strip on your first night to scout restaurants, compare dive shop prices, and find the bars that suit your vibe. It takes 15 minutes end to end.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Diving the Barrier Reef — Day 1',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Two-Tank Morning Dive',
+          text: 'Book a two-tank morning dive ($50–70) from a West End dive shop. Typical first-day sites include Half Moon Bay Wall and Bear\'s Den — gentle sloping reef walls perfect for getting comfortable in Roatán\'s warm, clear water. The reef is alive with sponges, sea fans, and coral in every colour. Expect to see parrotfish, trumpetfish, moray eels peering from crevices, and cleaning stations where small wrasse pick parasites off larger fish. Visibility is 20–30+ metres.',
+          tip: 'If you are not yet certified, sign up for PADI Open Water — Roatán is one of the cheapest places in the world to learn ($280–350 for the full course). Classes start daily at most shops.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Half Moon Bay Snorkel',
+          text: 'Half Moon Bay, a short walk east of West End, is arguably the best snorkelling spot on the island — a protected bay with shallow coral starting in knee-deep water. The bay is sheltered from current and waves, making it perfect for extended snorkelling. The coral diversity here is outstanding: brain coral, staghorn coral, fire coral (do not touch), and massive barrel sponges. Seahorses are occasionally spotted among the seagrass at the bay\'s edges.',
+          tip: 'Half Moon Bay has no entrance fee. Enter from the small beach at the west end of the bay. The reef extends across the entire mouth of the bay — hours of snorkelling without repeating.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dive Log & Social Night',
+          text: 'After your first dive day, fill in your dive log over dinner. The dive shop community in West End is social — evening briefings, logbook reviews, and shared meals at the dive shop restaurants are common. Eat at Earth Mama\'s for healthy bowls and smoothies, or RoaTaco for Mexican-Honduran fusion tacos (L80–120). The bars get going around 9pm — Sundowners, Blue Marlin, and Eagle Ray\'s are the main spots.',
+          tip: 'Keep your dive log updated daily — logged dives count towards your Advanced certification. Ask your divemaster to sign off your log after each dive.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Diving the Barrier Reef — Day 2',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mary\'s Place & Blue Channel Dives',
+          text: 'Day two opens up the more dramatic dive sites. Mary\'s Place is a deep crack in the reef wall — you descend between two coral walls narrowing to arm\'s width, with tube sponges and sea fans growing from both sides. Blue Channel is an underwater canyon that funnels you through a coral-lined passage to the reef wall. Both sites are wall dives where you hover over deep blue water with the reef at your back — a thrilling sensation of weightless flight.',
+          tip: 'Mary\'s Place can have mild current — your divemaster will assess conditions. Buoyancy control is important in the narrow sections. Breathe slowly and move with the flow.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'West Bay Beach & Relaxation',
+          text: 'Afternoon at West Bay Beach for recovery between dive days. Float in the warm Caribbean water, read in a hammock, and snorkel the reef at a leisurely pace. The shore reef at West Bay is excellent for slow, contemplative snorkelling — following a single parrotfish for 10 minutes as it munches coral, watching a cleaning station operate, or spotting a camouflaged trumpetfish pretending to be a sea fan. The beach bar serves rum punch (L100) and cold beers.',
+          tip: 'Surface interval between dives should be at least 12 hours before the next morning\'s dives. Drink water — dehydration contributes to decompression sickness. Skip the alcohol if diving tomorrow morning.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lobster Night',
+          text: 'During lobster season (July–February), treat yourself to grilled lobster tail at one of the West End restaurants — L350–500 for a full dinner with sides. The lobster is caught that morning by local fishermen and grilled over charcoal with garlic butter. Outside season, the grilled fish and shrimp are equally excellent. The bars have happy hour from 5–7pm at most places — L20 Salva Vida, L60 rum cocktails.',
+          tip: 'Ask which restaurants source lobster from licensed fishermen — sustainable lobster fishing supports the marine economy. Undersized lobster should not be served — check that the tail is at least 14cm.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Gumbalimba, Gardens & East Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Gumbalimba Park',
+          text: 'Visit Gumbalimba Park (L500 entry) — a nature and adventure park with canopy ziplines, hanging bridges, a butterfly garden, and a beach with snorkelling. The park\'s resident capuchin monkeys and scarlet macaws are the main draw — they are friendly (sometimes too friendly) and photogenic. The botanical gardens section has tropical flowers, medicinal plants, and informative guides. The zipline course runs above the jungle canopy with sea views.',
+          tip: 'Go early to avoid cruise ship groups. The monkeys will grab anything loose — secure sunglasses, hats, and phones. The zipline is included in the entry fee but book your slot on arrival.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Carambola Gardens & Sandy Bay',
+          text: 'Drive or taxi to Carambola Botanical Gardens (L250) on the hillside above Sandy Bay. The self-guided nature trails wind through tropical forest with orchids, bromeliads, ferns, and ancient trees. The hilltop viewpoint overlooks the island and the reef below — on clear days you can see the mainland mountains across the channel. Sandy Bay village below has a quieter, more local atmosphere than West End with small restaurants serving Honduran home cooking at local prices.',
+          tip: 'Carambola\'s trails are steep in places — wear proper shoes. The gardens are rarely crowded. Allow 1.5 hours for the full trail. The hilltop café sells juice and snacks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Quiet Night in West End',
+          text: 'After a day out of the water, return to West End for a mellow evening. Try a restaurant you have not visited yet — Café Escondido for wood-fired pizza (L150–200), Creole\'s for traditional Honduran food, or Tong\'s for Thai food (L120–180). A massage at one of the small spas along the strip (L500–800 for an hour) is a good mid-week treat. Early to bed if diving tomorrow.',
+          tip: 'The mid-week is the quietest time in West End — restaurants have better service and bars are more intimate. A perfect night for conversation with new friends over a slow dinner.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Utila Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ferry to Utila',
+          text: 'Take an early ferry to Utila, Roatán\'s smaller sister island (L600 return, 1 hour from Dixon Cove or La Ceiba). Utila is the backpacker capital of the Bay Islands — smaller, cheaper, and with an even more laid-back atmosphere than Roatán. The island is famous as the cheapest place in the world to get PADI certified and for whale shark sightings from March to May and September to December. Arrive and walk the single main road through town.',
+          tip: 'Check the ferry schedule carefully — some services require a connection through La Ceiba. Direct Utila–Roatán ferries run but not daily. Book in advance during peak season.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Utila Town & Snorkelling',
+          text: 'Explore Utila\'s tiny town — one main street, a handful of dive shops, budget hostels, and restaurants serving fish burritos and baleadas. Walk to the airport beach or Chepes Beach on the island\'s south side for snorkelling — the reef here is as healthy as Roatán\'s but with fewer visitors. The town has a distinctive Bayisland character — wooden houses on stilts, hammocks on every porch, and a community of expat divers who came for a week and stayed for years.',
+          tip: 'If you have time and are certified, book a single dive in Utila ($25–35) — the dive sites here are different from Roatán\'s with volcanic formations and swimthroughs.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Roatán',
+          text: 'Take the afternoon ferry back to Roatán and return to West End for dinner. The contrast between Utila\'s raw backpacker energy and Roatán\'s slightly more polished waterfront is noticeable. Both islands sit on the same reef and share the same warm water, but each has its own personality. Dinner at your West End favourite, a beer at the bar, and stories from Utila to share with other travelers.',
+          tip: 'If the direct ferry is not running, the alternative is Utila to La Ceiba (1hr) and then La Ceiba to Roatán (1.5hrs) — long but doable in a day. Check schedules the day before.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'East End, Fishing Villages & Garifuna Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Oak Ridge',
+          text: 'Rent a scooter (L600–800/day) and drive east along the main road. Pass through Coxen Hole (the island capital — skip it) and French Harbour (working fishing port — stop for cheap seafood at a local restaurant, mains L100–150). Continue to Oak Ridge — a waterfront fishing village built on stilts over a mangrove inlet. Take a water taxi tour through the canals (L50–100) to see the colourful stilt houses, fishing boats, and the mangrove-lined waterways that make this one of Honduras\'s most photogenic communities.',
+          tip: 'French Harbour\'s fish market has the cheapest seafood on the island — fried fish and plantain for L80. Oak Ridge water taxi tours are informal — ask at the dock and negotiate a price.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Punta Gorda — Garifuna Heritage',
+          text: 'Continue to Punta Gorda, the oldest settlement on Roatán and home to a Garifuna community. The Garifuna are descendants of West Africans and Carib/Arawak indigenous peoples — their culture, language, music, and cuisine are UNESCO-recognised. Walk the village, visit the cultural centre if open, and eat Garifuna food: machuca (mashed green plantain with coconut fish soup) or hudut (fish in coconut milk with cassava bread). The beach is quiet and undeveloped.',
+          tip: 'Approach Punta Gorda with cultural respect — this is a living community, not a tourist attraction. Ask before photographing people. Buy directly from local vendors. A small spending goes a long way here.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Camp Bay Beach Sunset',
+          text: 'If the road allows (check locally — it can be rough), continue to Camp Bay Beach at the far eastern end of the island — a pristine, nearly empty stretch of sand with turquoise water and no development. The sunset from here, with the island behind you and the open Caribbean ahead, is as remote and beautiful as Roatán gets. Return to West End for a final evening meal.',
+          tip: 'Camp Bay Beach has no facilities — bring water, snacks, and your own shade. The road past Punta Gorda can be unpaved and muddy in rainy season. Check conditions before going.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Last Dive, Last Beach & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Morning Dive',
+          text: 'One last two-tank dive on the Roatán reef. Ask your dive shop to take you to their favourite "secret" site — every shop has a few lesser-known sites they save for experienced regulars. The final dive is always bittersweet — descending into the warm, clear water one more time, floating over the coral wall, watching the marine life that has become familiar over the week. Log your dives, return your gear, and thank the divemasters who showed you this underwater world.',
+          tip: 'Wait 18–24 hours after your last dive before flying. If flying this evening, skip the morning dive and snorkel instead. No exceptions to this rule — decompression sickness is serious.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'West Bay Beach Farewell',
+          text: 'Final afternoon at West Bay Beach. One more snorkel along the reef, one more swim in the turquoise water, one more hour in a hammock with the Caribbean breeze. Pick up souvenirs — hand-carved wooden fish, Honduran coffee, or a dive log book from the shops in West End. The water taxi between West Bay and West End (L50) runs until sunset.',
+          tip: 'For souvenirs, Honduran coffee from the mainland highlands is excellent and inexpensive (L100–150 per bag). The wood carvings made by local artisans in West End are unique to the Bay Islands.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Roatán',
+          text: 'Final sunset from the West End dock — the sky turns gold and pink over the reef. Last baleadas from the street cart, last Salva Vida at the bar, and the satisfied feeling of a week spent in, on, and under the Caribbean Sea. Roatán connects to the mainland by ferry (Galaxy Wave to La Ceiba, L700, 1.5hrs) or direct flights to San Pedro Sula, Tegucigalpa, and international destinations. The reef will be here when you come back — and you will come back.',
+          tip: 'The 7am ferry to La Ceiba connects to afternoon buses across Honduras. For Guatemala, bus to San Pedro Sula then on to Copán Ruinas. For Nicaragua, fly to Managua via San Pedro Sula.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Diving is cheap on Roatán', text: 'Two-tank dives cost $50–70 and PADI Open Water certification is $280–350 — among the cheapest in the Caribbean. Fun dives get cheaper with multi-day packages. Walk the strip and negotiate.' },
+  { title: 'Baleadas are your budget friend', text: 'A baleada (bean, cheese, and cream tortilla) costs L30–50 and is the ultimate Honduran street food. Add chicken or avocado for L10 more. Three baleadas a day costs under $5 and keeps you fuelled.' },
+  { title: 'Snorkelling is free from shore', text: 'The reef at West Bay Beach and Half Moon Bay is accessible from shore — no boat trip or tour needed. Bring your own snorkel gear or buy a set in West End (L400–600) to avoid daily rental fees.' },
+  { title: 'Stay in West End, not West Bay', text: 'West End has the budget hostels (dorms L300/night), cheapest food, and dive shop competition. West Bay is resort territory — prices jump 3–4x for the same reef access.' },
+  { title: 'Water taxi beats road taxi', text: 'The water taxi between West End and West Bay costs L50 (2 minutes). A road taxi costs L200. The water taxi runs frequently and drops you on the beach — it is better in every way.' },
+  { title: 'Cook at your hostel', text: 'Several West End hostels have kitchens. The small supermarket on the main road sells basics — rice, beans, eggs, bread, and fruit at mainland prices. Cooking dinner saves L100–200 per meal.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'L300–600', midrange: 'L800–2,500', splurge: 'L4,000+', notes: 'Hostel dorm → guesthouse → beachfront resort' },
+  { category: 'Food', budget: 'L100–250', midrange: 'L300–700', splurge: 'L1,200+', notes: 'Baleadas & street food → restaurants → seafood dining' },
+  { category: 'Transport', budget: 'L0–100', midrange: 'L200–500', splurge: 'L800+', notes: 'Walking & water taxi → scooter → car rental' },
+  { category: 'Activities', budget: 'L0–300', midrange: 'L600–1,500', splurge: 'L2,500+', notes: 'Shore snorkel → boat dive → multi-day dive packages' },
+  { category: 'Drinks', budget: 'L50–150', midrange: 'L200–500', splurge: 'L800+', notes: 'Salva Vida beer → rum cocktails → craft drinks' },
+  { category: 'Daily Total', budget: 'L450–1,400', midrange: 'L2,100–5,700', splurge: 'L9,300+', notes: '$35–60 → $85–230 → $370+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities get 90 days visa-free under the CA-4 agreement (Honduras, Guatemala, El Salvador, Nicaragua)',
+      'Roatán has its own airport (RTB) with direct flights from Houston, Miami, Atlanta, and Central American cities. Domestic flights from Tegucigalpa and San Pedro Sula',
+      'Galaxy Wave ferry connects Roatán to La Ceiba on the mainland (L700, 1.5hrs, twice daily). Book online in peak season',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Sun and reef injuries are the main risks. Wear reef-safe sunscreen, a rash vest for snorkelling, and reef shoes for rocky entries',
+      'West End and West Bay are safe areas. Use normal precautions in Coxen Hole and French Harbour. Avoid walking alone on unlit roads at night',
+      'Dive insurance (DAN or similar) is strongly recommended if doing multiple dives. Standard travel insurance often excludes scuba — check your policy',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'West End is walkable. Water taxis to West Bay run frequently (L50, 2 minutes). Road taxis between towns cost L200–500',
+      'Scooter rental (L600–800/day) is the best way to explore the island. The main road runs the full length of Roatán. Drive carefully — the road is narrow with blind corners',
+      'Colectivo minibuses run along the main road (L25–50) but schedules are informal. Wave one down from the roadside',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'WiFi available in most hostels, restaurants, and dive shops in West End. Speeds are moderate — fine for messaging, slow for large uploads',
+      'Tigo and Claro SIM cards available in Coxen Hole for L100–200 with data packages. Coverage is good on the west end, patchy on the east end',
+      'Mobile data works for navigation and messaging. Download offline maps before exploring the east end of the island',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs available in West End (BAC, Ficohsa) and Coxen Hole. US dollars accepted at most businesses but change is given in lempiras',
+      'Dive shops quote in USD. Restaurants and street food vendors use lempiras. Carry both currencies for convenience',
+      'Cash is essential for baleada carts, water taxis, and small vendors. Cards accepted at dive shops, larger restaurants, and hotels',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Reef-safe sunscreen is mandatory — the marine park strictly enforces this. Bring enough for your stay as island prices are higher',
+      'A rash vest or UV shirt for snorkelling and diving. You will spend hours in the water daily and back sunburn is the most common tourist complaint',
+      'Underwater camera or waterproof phone case, reef shoes for rocky entries, a quick-dry towel, and a dry bag for boat trips',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🌊', title: 'Reef Respect', text: 'The Mesoamerican Barrier Reef is a living wonder and Roatán\'s greatest asset. Do not touch coral, stand on the reef, chase fish, or take anything from the water. A single fin kick can destroy years of coral growth. Dive and snorkel with care.' },
+  { icon: '🏘', title: 'Bay Island Culture', text: 'Roatán has a unique culture blending Bayislander English Creole, Garifuna, Mestizo, and expat communities. The island\'s identity is distinct from mainland Honduras. Learn some local greetings and respect the diverse heritage.' },
+  { icon: '🥁', title: 'Garifuna Heritage', text: 'The Garifuna of Punta Gorda have a UNESCO-recognised culture — their language, music (punta), and cuisine are living traditions. Visit with respect, buy food locally, and appreciate that you are a guest in their community.' },
+  { icon: '🐠', title: 'Marine Conservation', text: 'Roatán\'s marine park fee (L250 per visitor) directly funds reef protection. Support local conservation by diving with responsible operators, using reef-safe sunscreen, and reporting any illegal fishing or reef damage you witness.' },
+  { icon: '🤝', title: 'Local Economy', text: 'Eat at local comedores and baleada carts, hire local guides, and stay at locally-owned guesthouses. The tourism economy on Roatán benefits most when money reaches the islanders rather than international resort chains.' },
+  { icon: '🏝', title: 'Island Pace', text: 'Roatán moves slowly. Services may not run exactly on time, menus may be limited to what was caught today, and plans may change with the weather. Relax into it — the island rewards flexibility and patience.' },
+];
+---
+
+<CityGuideLayout
+  title="Roatán Travel Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Roatán guide for young travelers. World-class barrier reef diving, white sand beaches, and island life with 1, 3, and 7-day itineraries."
+  heroImage="/images/guides/roatan-hero.webp"
+  heroFlag="🇭🇳"
+  heroCountry="Honduras"
+  heroRegion="Central America"
+  heroCity="Roatán"
+  heroSubtitle="A Caribbean island perched on the second-largest barrier reef on Earth — world-class diving for pocket change, white sand beaches, and baleadas at sunset."
+  heroPills={['7-Day Dive Trip', 'Beach & Dive', 'Feb – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in HNL (L). Roatán is pricier than mainland Honduras but cheap by Caribbean island standards — baleada street food, hostel dorms, and some of the world's most affordable diving keep budgets manageable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Roatán is a Caribbean island with its own distinct culture, sitting on one of the world's most important reef systems. Dive responsibly, eat locally, and respect the island community that makes this place special."
+  ctaCity="Roatán"
+  ctaText="Find travel companions to share dive trips, split boat costs, and explore the Bay Islands together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

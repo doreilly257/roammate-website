@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'JPY (Yen)', detail: 'Cash preferred at many ryokan and small shops' },
+  { icon: '🗣', label: 'Language', value: 'Japanese', detail: 'Limited English — translation app helpful' },
+  { icon: '🕐', label: 'Timezone', value: 'JST (UTC+9)', detail: 'No daylight saving time' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – May, Oct – Nov', detail: 'Cherry blossom or autumn leaves with Fuji views' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$50–180 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free for many nationalities', detail: 'Up to 90 days for most Western passports' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Hakone Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hakone Open-Air Museum & Ropeway',
+          text: 'Start your day at Hakone-Yumoto Station and take the Hakone Tozan Railway up the mountain to the Hakone Open-Air Museum — an extraordinary outdoor sculpture park set against the Hakone mountains with works by Picasso, Moore, and Japanese masters. The museum blends art with nature across rolling green hills. From there, continue by switchback train and cable car to Sounzan, then board the Hakone Ropeway for dramatic aerial views over the volcanic landscape towards Owakudani.',
+          tip: 'Buy the Hakone Free Pass at Odawara or Shinjuku — it covers all transport in the Hakone loop (trains, ropeway, pirate ship, buses) and saves significant money over individual tickets.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Owakudani Valley & Lake Ashi Cruise',
+          text: 'Ride the ropeway down into the Owakudani volcanic valley — an active geothermal zone with sulphurous steam vents, bubbling pools, and the smell of rotten eggs hanging in the air. Try the famous kuro-tamago (black eggs) boiled in the volcanic hot springs, said to add seven years to your life. Continue by ropeway to Togendai on the shore of Lake Ashi, then board the distinctive pirate ship cruise across the lake. On clear days, Mt Fuji rises perfectly above the lake — one of Japan\'s most iconic views.',
+          tip: 'Mt Fuji visibility is best in the early morning or on crisp autumn and winter days. Summer haze often obscures the mountain — check the Fuji visibility forecast before planning your visit.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Hakone Shrine & Onsen Soak',
+          text: 'Disembark at Moto-Hakone and walk the cedar-lined avenue to Hakone Shrine, famous for its vermillion torii gate standing in Lake Ashi. The shrine is atmospheric in the late afternoon light filtering through the ancient cryptomeria trees. End your day with a soak in one of Hakone\'s many onsen (hot spring baths) — Hakone-Yumoto has several day-use facilities where you can relax in naturally heated mineral water after a full day of sightseeing.',
+          tip: 'Most traditional onsen require you to bathe nude and wash thoroughly before entering the communal bath. Tattoos may be restricted at some facilities — check ahead or look for tattoo-friendly onsen.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Hakone Loop — Ropeway, Owakudani & Lake Ashi',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hakone Tozan Railway & Ropeway',
+          text: 'Arrive at Hakone-Yumoto and begin the classic Hakone Loop. Take the Hakone Tozan Railway — Japan\'s steepest mountain railway — as it switchbacks up through forested valleys, crossing bridges over rushing streams. In June, the trackside hydrangeas are in full bloom. Transfer to the Hakone Tozan Cable Car at Gora, then continue to Sounzan where the Hakone Ropeway begins its dramatic 4km aerial journey over the volcanic landscape. The views from the gondola over the barren, steam-venting terrain are otherworldly.',
+          tip: 'Start the Hakone Loop early — the ropeway and pirate ship get crowded by mid-morning on weekends. Weekday visits are significantly quieter.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Owakudani Volcanic Valley & Lake Ashi',
+          text: 'Stop at Owakudani Station and walk the volcanic nature trail through active sulphur vents and bubbling mud pools. The landscape is stark and lunar — grey rock, yellow sulphur deposits, and wisps of steam rising from the earth. Buy the iconic black eggs at the summit kiosk. Continue by ropeway down to Lake Ashi at Togendai and board the pirate ship replica for the scenic cruise to Moto-Hakone. The lake is surrounded by dense forest with the Hakone mountains reflected in the still water.',
+          tip: 'The Owakudani walking trail closes during periods of high volcanic activity — check the Hakone Geopark website before your visit. The ropeway may also be suspended.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Hakone Shrine & Lakeside Dinner',
+          text: 'Walk from Moto-Hakone pier along the ancient cedar avenue to Hakone Shrine, nestled deep in the forest at the lake\'s edge. The red torii gate standing in the water is one of Japan\'s most photographed scenes — visit in the late afternoon when the crowds thin and the light turns golden. Afterwards, dine at a lakeside restaurant on local Hakone specialities: yuba (tofu skin), soba noodles, and seasonal vegetables. Take the bus back to Hakone-Yumoto for the night.',
+          tip: 'Hakone Shrine\'s lakeside torii is best photographed early morning or late afternoon. The path through the forest is magical in autumn when the maple trees turn crimson.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Art, Gardens & Hot Springs',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Hakone Open-Air Museum',
+          text: 'Spend the morning at the Hakone Open-Air Museum, Japan\'s first outdoor sculpture park. Over 120 works are arranged across seven hectares of manicured grounds with mountain views in every direction. The Picasso Pavilion houses over 300 works spanning the artist\'s career. The Symphonic Sculpture — a spiralling tower of stained glass you can climb from inside — is extraordinary. Children and adults alike are drawn to the interactive installations and the foot bath where you can soak tired feet in naturally heated onsen water while admiring the art.',
+          tip: 'The museum\'s free audio guide is excellent and available in English. Allow at least two hours — the grounds are extensive and the views from different angles change with the light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pola Museum of Art & Gora Park',
+          text: 'Take the bus to the Pola Museum of Art, hidden deep in the Hakone forest. The stunning glass-and-steel building houses an impressive collection of Impressionist and Japanese art — Monet, Renoir, and Picasso alongside traditional Japanese ceramics and glasswork. The museum\'s forest setting makes it feel like a gallery within nature. Afterwards, walk to Gora Park — a French-style landscaped garden with a tropical greenhouse, craft workshops, and another onsen foot bath. In spring, the roses and rhododendrons are spectacular.',
+          tip: 'The Pola Museum is a 10-minute bus ride from Gora — the Hakone Free Pass covers this route. The museum café serves excellent cake sets with forest views.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Traditional Ryokan & Onsen Experience',
+          text: 'Check into a traditional ryokan (Japanese inn) in the Hakone-Yumoto or Tonosawa area for the quintessential Japanese overnight experience. Wear the provided yukata (cotton robe) and geta (wooden sandals), soak in the private or communal onsen baths fed by natural volcanic springs, and sit down to a multi-course kaiseki dinner — an elaborate traditional Japanese meal served on lacquerware with seasonal ingredients. The combination of hot springs, tatami rooms, and kaiseki is one of Japan\'s great cultural experiences.',
+          tip: 'Budget ryokan start around 15,000 yen per person including dinner and breakfast. Book well ahead for weekends and autumn foliage season — popular ryokan sell out months in advance.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Old Tokaido Road, Amazake Chaya & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Old Tokaido Highway Hike',
+          text: 'Walk a section of the Old Tokaido Road — the historic highway that connected Edo (Tokyo) to Kyoto during the feudal period. The stone-paved path through dense cedar forest between Moto-Hakone and Hakone-Yumoto follows the original route that samurai, merchants, and pilgrims walked for centuries. The 400-year-old cedar trees tower overhead, their roots interlocking with the ancient stone pavement. You\'ll pass the Hakone Checkpoint (Sekisho) — a reconstructed Edo-period border gate where travellers were inspected.',
+          tip: 'The Old Tokaido path is mostly downhill from Moto-Hakone to Hakone-Yumoto (about 90 minutes). Wear shoes with grip — the stone pavement can be slippery after rain.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Amazake Chaya & Hakone Checkpoint Museum',
+          text: 'Stop at Amazake Chaya, a thatched-roof teahouse that has served travellers on the Tokaido Road for over 400 years. Sit on the wooden veranda and drink amazake (sweet fermented rice drink) and eat mochi (rice cakes) grilled over charcoal — exactly as Edo-period travellers did. Visit the Hakone Checkpoint Museum nearby to understand how the Tokugawa shogunate controlled movement between provinces. The reconstructed gate, guard towers, and exhibition bring the feudal period to life.',
+          tip: 'Amazake Chaya is cash only and closes at 5pm. The amazake is non-alcoholic despite the name — it\'s a warm, sweet rice drink perfect after the forest walk.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Onsen & Return to Tokyo',
+          text: 'Before departing, squeeze in one last onsen visit at Hakone-Yumoto — the town has several excellent day-use facilities including Kappa Tengoku (an affordable open-air riverside bath) and Hakone Yuryo (a modern premium facility with forest views). The mineral-rich waters are the perfect way to end your Hakone trip. Take the Romancecar limited express train directly from Hakone-Yumoto to Shinjuku in 85 minutes — the observation seats at the front of the train offer panoramic mountain views as you descend back towards Tokyo.',
+          tip: 'Book the Romancecar observation seats well in advance — they sell out quickly, especially on weekends. The regular reserved seats are also comfortable and offer good views.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Hakone Free Pass', text: 'The Hakone Free Pass (2 or 3 days) covers all loop transport — trains, ropeway, pirate ship, and buses — plus discounts at museums and onsen. It pays for itself in a single day of sightseeing.' },
+  { title: 'Visit midweek', text: 'Hakone is a popular weekend escape from Tokyo. Midweek visits mean lower accommodation prices, shorter queues at the ropeway, and a more peaceful experience at shrines and museums.' },
+  { title: 'Pack a bento lunch', text: 'Buy an ekiben (station bento box) at Odawara or Shinjuku before departing — beautifully prepared and much cheaper than restaurant meals in the Hakone tourist area. Convenience stores also sell excellent onigiri and sandwiches.' },
+  { title: 'Day-use onsen over ryokan', text: 'A full ryokan stay with kaiseki dinner is expensive. Day-use onsen from 500–1,500 yen give you the hot spring experience for a fraction of the cost. Kappa Tengoku in Hakone-Yumoto is just 800 yen.' },
+  { title: 'Shoulder season savings', text: 'April cherry blossom and November foliage are peak times with premium prices. Late May, June, and early December offer similar experiences at significantly lower accommodation rates.' },
+  { title: 'Bring your own towel', text: 'Most day-use onsen charge 200–500 yen extra for towel rental. Bringing a small quick-dry towel saves money across multiple onsen visits during your stay.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$30–60', midrange: '$80–150', splurge: '$200+', notes: 'Hostels → business hotels → traditional ryokan' },
+  { category: 'Food', budget: '$15–25', midrange: '$30–60', splurge: '$80+', notes: 'Convenience stores → soba shops → kaiseki dinner' },
+  { category: 'Transport', budget: '$15–25', midrange: '$25–40', splurge: '$50+', notes: 'Free Pass → Romancecar → private taxi' },
+  { category: 'Activities', budget: '$5–15', midrange: '$20–50', splurge: '$60+', notes: 'Shrine visits → museum entry → private onsen' },
+  { category: 'Entry Fees', budget: '$5–10', midrange: '$15–30', splurge: '$30–50', notes: 'Free Pass discounts save on most entries' },
+  { category: 'Daily Total', budget: '$70–135', midrange: '$170–330', splurge: '$420+', notes: 'Budget backpacker → comfortable mid → luxury ryokan' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Visa-free entry for most Western nationalities (up to 90 days)',
+      'Keep your passport on you at all times — random ID checks are rare but legal',
+      'Japan requires completing a Visit Japan Web form before arrival for immigration and customs',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Japan is extremely safe — crime rates are among the lowest in the world',
+      'Onsen water can be very hot (40–44°C) — enter slowly and stay hydrated. Avoid if you have heart conditions',
+      'Volcanic gas warnings at Owakudani are serious — follow all posted restrictions and leave immediately if instructed',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'The Hakone Free Pass covers trains, cable cars, ropeway, pirate ship, and buses in a complete loop',
+      'From Tokyo: Odakyu Romancecar from Shinjuku (85 min) or JR Tokaido line to Odawara then Hakone Tozan Railway',
+      'Roads are narrow and parking limited — public transport is faster and easier than driving in Hakone',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Rent a pocket WiFi or buy an eSIM at the airport — much cheaper than international roaming',
+      'WiFi is available at stations, museums, and most accommodation but coverage is patchy on mountain trails',
+      'Download offline maps of the Hakone area — GPS works but data connectivity can drop on the ropeway and forest paths',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: JPY (Yen). Japan is still heavily cash-based — carry yen for small shops, buses, and onsen',
+      '7-Eleven and Post Office ATMs reliably accept foreign cards. Other ATMs often do not',
+      'Tipping is not customary in Japan and can cause confusion — simply say thank you instead',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Comfortable walking shoes for uneven stone paths and forest trails. Bring a small towel for onsen visits',
+      'Layers are essential — Hakone is cooler than Tokyo due to elevation, especially in morning and evening',
+      'A packable rain jacket is vital — Hakone receives significantly more rainfall than coastal areas',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Onsen Etiquette', text: 'Wash thoroughly at the shower stations before entering the communal bath. Never put your towel in the water. Enter and exit quietly — onsen are places of calm and relaxation, not socialising.' },
+  { icon: '🌍', title: 'Shrine Respect', text: 'At Hakone Shrine, bow before passing through the torii gate. Purify your hands at the temizu basin before approaching the main hall. Toss a coin, bow twice, clap twice, make a wish, and bow once more.' },
+  { icon: '📸', title: 'Photography Etiquette', text: 'Photography is welcome at most outdoor sites but restricted inside some museum galleries and shrine inner halls. Check signage before shooting. The lakeside torii is fair game — shoot freely.' },
+  { icon: '🗣', title: 'Language & Communication', text: 'Learn basic Japanese greetings: sumimasen (excuse me), arigatou gozaimasu (thank you), and konnichiwa (hello). Most signs in Hakone have English translations. Google Translate\'s camera mode reads Japanese signs in real time.' },
+  { icon: '🤝', title: 'Quiet & Consideration', text: 'Japanese culture values quiet in shared spaces. Speak softly on trains and in onsen. Do not eat while walking. Queue patiently and wait for others to exit before boarding. These small courtesies matter deeply.' },
+  { icon: '🕐', title: 'Punctuality Matters', text: 'Japanese transport runs to the second — if the timetable says 10:23, the train leaves at 10:23. Arrive at platforms 5 minutes early. The Romancecar and ropeway will not wait for late passengers.' },
+];
+---
+
+<CityGuideLayout
+  title="Hakone Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Hakone guide for young travelers. Mt Fuji views, hot springs, volcanic valleys with 1 and 3-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/hakone-hero.webp"
+  heroFlag="🇯🇵"
+  heroCountry="Japan"
+  heroRegion="East Asia"
+  heroCity="Hakone"
+  heroSubtitle="Steaming volcanic valleys and serene lake waters with Mt Fuji towering above — Japan's most beloved hot spring escape from Tokyo."
+  heroPills={["3-Day Escape","Hot Springs","Apr – May Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Hakone costs depend on season, accommodation type, and whether you stay in a traditional ryokan — these ranges cover the spectrum from budget backpacker to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Hakone is a place of natural beauty and deep cultural tradition — approach onsen, shrines, and the mountain landscape with quiet respect, and you will experience Japan at its most authentic."
+  ctaCity="Hakone"
+  ctaText="Find travel companions to explore Hakone together on roammate — split ryokan costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

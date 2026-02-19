@@ -1,0 +1,426 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'UGX (Ugandan Shilling)', detail: 'USD accepted for adventure activities' },
+  { icon: '🗣', label: 'Language', value: 'English / Lusoga', detail: 'English widely spoken in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Sep, Dec – Feb', detail: 'Dry seasons, best for water activities' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–60 USD', detail: 'Budget to mid-range (excl. rafting)' },
+  { icon: '🛂', label: 'Visa', value: 'eVisa required', detail: '$50 USD — apply online before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Jinja Adventure Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Source of the Nile',
+          text: 'Start your day at the Source of the Nile — the point where Lake Victoria funnels into the White Nile to begin its 6,695km journey north to the Mediterranean Sea. A boat takes you to the exact spot marked by a monument in the middle of the river where the water visibly accelerates as it leaves the lake. The surrounding area is peaceful and green, with birdlife along the papyrus-lined banks. It is a quietly powerful experience to stand at the beginning of the world\'s longest river.',
+          tip: 'Boat trips to the source cost around 30,000–50,000 UGX per person. Go early morning for the best light and calmest water. The boatmen are knowledgeable guides.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'White-Water Rafting the Nile',
+          text: 'The main event — white-water rafting on the Nile. Jinja is one of the world\'s best rafting destinations, with Grade 3–5 rapids through a lush tropical gorge. The full-day trip covers approximately 25km of river with multiple rapids (names like "Bujagali," "Overtime," and "The Bad Place" give you an idea), interspersed with calm stretches where you can swim in the warm Nile water. Professional safety kayakers accompany each trip. No experience is required — just a willingness to get thrown from the raft repeatedly.',
+          tip: 'Book rafting with Nalubale Rafting or Nile River Explorers — both are professional and well-established. Full-day trips cost $125–150 USD including lunch and transport. Waterproof cameras recommended.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Drinks & Backpacker Scene',
+          text: 'After the adrenaline of the rapids, collapse into a riverside bar at one of Jinja\'s backpacker lodges. The Nile Special beer lives up to its name when you\'re drinking it beside the actual Nile. Jinja has a relaxed, social backpacker scene — shared stories of the day\'s wipeouts are the evening\'s entertainment. Several lodges have riverside restaurants serving grilled tilapia and chips with the sound of the rapids as background.',
+          tip: 'Nile River Camp and Explorers Backpackers are the most popular riverside spots. Book accommodation with your rafting operator for the best package deals.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Source of the Nile & Jinja Town',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Source of the Nile — Where It All Begins',
+          text: 'Start your Jinja adventure at the Source of the Nile — the point where Lake Victoria pours into the White Nile for its 6,695km journey to the Mediterranean. Take a boat to the monument marking the exact source point — the water visibly accelerates as it leaves the lake, and the surrounding banks are lined with papyrus and vibrant birdlife. John Hanning Speke identified this as the Nile\'s source in 1862, settling one of geography\'s greatest debates. The Owen Falls Dam upstream has altered the natural flow, but the significance of the site remains.',
+          tip: 'Boat trips cost 30,000–50,000 UGX per person from the Speke Memorial. Go early for the best light. Some operators offer longer trips upstream into the lake.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jinja Town & Craft Breweries',
+          text: 'Explore Jinja town — Uganda\'s second-largest city, though it feels more like a large, leafy town. The main street has colonial-era Indian trading buildings, a bustling market, and a relaxed atmosphere very different from Kampala\'s chaos. Jinja has developed a small but excellent craft brewery scene — visit the Nile Brewers or a local craft spot for Ugandan-brewed IPAs and lagers. The town\'s Indian heritage (many buildings date from the early 1900s) adds an architectural layer that\'s unique in Uganda.',
+          tip: 'Jinja is walkable and flat — you can cover the town centre on foot in an afternoon. The Indian-influenced architecture on Main Street is worth a slow walk.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset Nile Cruise',
+          text: 'Take a sunset boat cruise on the Nile upstream from the source towards Lake Victoria. The river widens and calms as it approaches the lake, and the banks are rich with birdlife — kingfishers, herons, fish eagles, and cormorants. As the sun drops, the water turns golden and the surrounding hills silhouette against an East African sunset. Cold drinks and snacks are usually provided on board. It is a magical way to end your first day.',
+          tip: 'Sunset cruises cost around $30–50 USD per person. Book through your accommodation or a local tour operator. The boats depart around 4:30–5pm depending on the season.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'White-Water Rafting & Bujagali Falls',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'White-Water Rafting — Grade 5 Rapids',
+          text: 'The highlight of any Jinja visit — a full day of white-water rafting on the Nile. Launch from the riverbank downstream from the source and spend the day battling Grade 3–5 rapids through a tropical gorge lined with jungle vegetation. The rapids have evocative names — "Bujagali," "Overtime," "The Bad Place," "Itanda" — and the flips are frequent and spectacular. Between rapids, float in the warm Nile water and watch kingfishers darting above. Professional safety kayakers accompany each group.',
+          tip: 'Book with Nalubale Rafting or Nile River Explorers — both have excellent safety records. Full-day trips cost $125–150 USD including lunch and transport. No experience needed.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Continuing the Rapids',
+          text: 'The rafting trip continues through the afternoon with increasingly dramatic rapids and calm recovery pools between them. Lunch is served on a riverbank — grilled chicken, fruit, and cold drinks — before you tackle the final set of rapids. The total distance is approximately 25km of river. By the end, your raft crew will feel like old friends bonded by shared wipeouts and the exhilaration of running Africa\'s mightiest river.',
+          tip: 'Wear a swimsuit and shoes that won\'t come off (sports sandals or water shoes). Everything else is provided. Secure your waterproof camera with a strap.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bujagali Falls Area & Recovery',
+          text: 'The rafting trip ends in the Bujagali Falls area — now partially submerged by the Bujagali hydroelectric dam but still scenic. Return to your riverside accommodation for a well-earned rest, a cold Nile Special, and dinner by the river. The backpacker lodges in this area have a communal, social atmosphere — swap stories with other travellers and compare raft-flip counts over grilled tilapia.',
+          tip: 'Many lodges offer package deals combining accommodation with rafting. Nile River Camp and Explorers Backpackers are the most established.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Kayaking, Bungee & Adventure Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kayaking on the Nile',
+          text: 'Try a half-day kayaking session on the Nile — guided trips run through the same dramatic rapids as the rafting but in a smaller, more intimate craft. Beginners can take calmer sections while experienced paddlers tackle the bigger water. Kayak instruction is included, and the guides are expert paddlers who know every eddy and wave. The Nile\'s warm water (around 25°C year-round) makes capsizing almost enjoyable.',
+          tip: 'Kayaking sessions cost $40–80 USD depending on duration and difficulty level. Half-day beginner trips are the best introduction. Full-day advanced trips cover more challenging rapids.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Bungee Jumping Over the Nile',
+          text: 'For the ultimate adrenaline rush, bungee jump from a 44-metre tower over the Nile River. The Adrift bungee operation is one of Africa\'s most dramatic — you freefall towards the churning water with the tropical gorge walls rising on either side. The jump includes a full-body dip in the river at the bottom of the arc. If bungee isn\'t your thing, the same site offers a high-rope course and zip lines across the river.',
+          tip: 'Bungee costs around $115 USD. The experience lasts about 2 hours including safety briefing, climb, and jump. Videos and photos are available for purchase. Book on the day.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Riverside Farewell & Local Food',
+          text: 'Spend your final evening at a riverside restaurant or your lodge\'s terrace. The sound of the Nile rapids provides the soundtrack as you reflect on a few days of genuine adventure. Try a plate of Nile perch — the enormous freshwater fish native to Lake Victoria — grilled with lemon and served with matoke or chips. Jinja has a way of turning short visits into long stays — many travellers arrive for one day and leave after a week.',
+          tip: 'The Jinja Sailing Club on the banks of the Nile is a pleasant spot for a final sunset drink with views upstream towards the source.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Source of the Nile & Jinja Town',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Source of the Nile',
+          text: 'Begin your week at the Source of the Nile — where Lake Victoria becomes the White Nile. A boat takes you to the monument marking the exact source point. The water accelerates visibly as it begins its 6,695km journey north. Papyrus-lined banks and birdlife surround the site.',
+          tip: 'Boat trips cost 30,000–50,000 UGX per person. Go early for the best light and a peaceful experience before other tourists arrive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jinja Town Walking Tour',
+          text: 'Explore Jinja town on foot — the colonial-era Indian trading buildings on Main Street, the bustling central market, and the relaxed streets that feel like a different country from Kampala. Visit the Jinja Sailing Club on the riverbank and browse the small craft shops in town.',
+          tip: 'Jinja is flat and walkable. The Indian-influenced architecture is unique in Uganda — look for the ornate balconies and shop fronts on Main Street.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset Nile Cruise',
+          text: 'Take a sunset boat cruise upstream towards Lake Victoria. The river widens and the banks fill with birdlife — fish eagles, kingfishers, herons, and cormorants. Watch the sun set over the lake as the water turns gold. Drinks and snacks are served on board.',
+          tip: 'Sunset cruises cost $30–50 USD. Book through your accommodation. Departures around 4:30–5pm.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'White-Water Rafting — Full Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rafting Launch & First Rapids',
+          text: 'Launch your raft downstream from the source for a full day of Grade 3–5 white-water rafting. The morning covers the first set of rapids through a lush tropical gorge. Professional safety kayakers accompany each group. Expect to be thrown from the raft — repeatedly.',
+          tip: 'Book with Nalubale Rafting or Nile River Explorers — $125–150 USD for the full day including lunch. No experience required.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Big Rapids & Riverside Lunch',
+          text: 'The afternoon brings the biggest rapids. Lunch is served on a riverbank — grilled chicken, fruit, and cold drinks — before the final set. The total run covers approximately 25km of river. By the end, your crew are bonded by shared wipeouts and exhilaration.',
+          tip: 'Wear sports sandals or water shoes that won\'t come off. Secure your waterproof camera with a strap. Everything else is provided.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Post-Rafting Recovery',
+          text: 'Collapse into a riverside bar at your lodge for a cold Nile Special and grilled tilapia. The backpacker community around the Bujagali area is social and welcoming — swap stories and compare bruises with fellow travellers.',
+          tip: 'Most lodges offer rafting-accommodation packages. Book together for the best value.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Kayaking & Nile Swimming',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Half-Day Kayaking',
+          text: 'Try a guided kayaking session on the Nile — paddling through rapids in a smaller craft is a completely different experience from rafting. Beginners take calmer sections while experienced paddlers tackle bigger water. The Nile\'s warm water makes capsizing almost enjoyable.',
+          tip: 'Half-day sessions cost $40–80 USD. Instruction is included. The guides are expert paddlers who know every eddy.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Nile Swimming & Tubing',
+          text: 'Spend the afternoon floating the Nile on inflatable tubes — a gentler alternative to rafting that lets you drift through the calm sections of the river with minimal effort and maximum relaxation. Swimming in the warm Nile water between the riverside rocks is one of Jinja\'s most underrated experiences.',
+          tip: 'Tubing costs around $20–30 USD through most lodges. The current does the work — just relax and float. Sunscreen is essential.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Craft Beer & Riverside Dinner',
+          text: 'Explore Jinja\'s growing craft beer scene. Several local breweries produce quality ales and lagers. Pair your beer with grilled Nile perch or a plate of roasted chicken at a riverside restaurant. The sound of the rapids provides the soundtrack.',
+          tip: 'Ask your accommodation for craft beer recommendations — new spots open regularly. The Jinja food scene is improving rapidly.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Bungee, Zip Lines & Adventure Sports',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bungee Jumping Over the Nile',
+          text: 'Freefall from a 44-metre tower over the Nile River. The Adrift bungee operation is one of Africa\'s most dramatic — you plunge towards the churning water with the gorge walls rising on either side. The jump includes a full-body water dip at the bottom of the arc.',
+          tip: 'Bungee costs around $115 USD. Book on the day — no advance reservation needed. Videos and photos are available for purchase.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'High Ropes & Zip Lines',
+          text: 'The same site offers a high-rope course through the treetops above the Nile gorge and zip lines across the river. The combination of height, speed, and the dramatic gorge setting makes these among the most scenic adventure activities in East Africa. Suitable for all fitness levels.',
+          tip: 'Combination packages (bungee + zip line + high ropes) offer better value than individual activities. Allow half a day for the full experience.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Quiet Evening by the River',
+          text: 'After a day of adrenaline, take a quiet evening by the river. Read a book in a hammock, watch the sunset from your lodge terrace, and enjoy a simple dinner. Jinja\'s rhythm is about balancing adventure with relaxation — the river provides both.',
+          tip: 'Most riverside lodges have hammocks, book exchanges, and communal areas. The social atmosphere makes it easy to meet other travellers.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Stand-Up Paddleboarding & Village Walk',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Stand-Up Paddleboarding',
+          text: 'Try stand-up paddleboarding (SUP) on the calmer stretches of the Nile. The gentle current and warm water make it ideal for beginners, while the birdlife along the papyrus banks keeps the experience interesting. Guided sessions include instruction and equipment. Paddle upstream and float back — a peaceful contrast to the previous days\' adrenaline.',
+          tip: 'SUP sessions cost $30–50 USD for 2–3 hours. The morning is calmest and best for paddleboarding. Beginners welcome — the warm water makes falling in painless.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Community Village Walk',
+          text: 'Join a guided community walk through the villages near the river. Visit local homes, schools, and workshops to understand daily life in rural eastern Uganda. Community walks are run by local guides and the fees go directly to village development projects — education, clean water, and healthcare. The walks are genuine and eye-opening, not performative.',
+          tip: 'Community walks cost $15–25 USD per person. Book through your accommodation. Bring a small donation for the school if you visit — exercise books and pens are always needed.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Nile Perch Dinner & Stargazing',
+          text: 'Enjoy a grilled Nile perch dinner at a riverside restaurant — the enormous freshwater fish native to Lake Victoria is Jinja\'s signature dish. After dinner, the minimal light pollution around the river lodges makes for excellent stargazing. The Southern Cross and Milky Way are visible on clear nights.',
+          tip: 'Nile perch is best grilled simply with lemon and salt. The fish is white, flaky, and mild — quite different from ocean fish. Ask for it at any riverside restaurant.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Ssezibwa Falls & Mabira Forest',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ssezibwa Falls',
+          text: 'Drive 30km west to Ssezibwa Falls — a sacred waterfall in Buganda tradition, believed to be the birthplace of twin spirits. The falls are modest in size but beautiful, surrounded by tropical vegetation and traditional shrines decorated with bark cloth offerings. A walking trail follows the river through the forest with good birdwatching. The cultural significance adds depth beyond the scenery.',
+          tip: 'Entry is around 10,000 UGX. A local guide explains the spiritual significance of the falls. The site is peaceful and rarely crowded.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mabira Forest Canopy Walk',
+          text: 'Continue to Mabira Central Forest Reserve — one of Uganda\'s largest surviving tropical rainforests, straddling the Kampala-Jinja highway. The forest has walking trails through the canopy, zip lines through the treetops, and excellent birding. The canopy walkway gives you a bird\'s-eye view of the forest floor below. Grey-cheeked mangabeys, red-tailed monkeys, and over 300 bird species live in the forest.',
+          tip: 'Mabira is managed by the National Forestry Authority. Entry around 20,000 UGX. Guided walks and the canopy walkway are extra. Bring binoculars for birdwatching.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Jinja & Local Food',
+          text: 'Return to Jinja in the late afternoon and spend the evening exploring the town\'s food scene. Try a local restaurant for Ugandan staples — matooke (steamed green banana), groundnut sauce, posho (maize meal), and roasted chicken. The town\'s restaurants are simple but the food is hearty and genuine.',
+          tip: 'Local restaurants in Jinja town are much cheaper than the riverside lodges. A full plate of Ugandan food costs 5,000–10,000 UGX ($1.50–3).',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Horseback Riding & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Horseback Riding Along the Nile',
+          text: 'End your week with a horseback ride along the banks of the Nile. Several operators offer guided rides through the villages and farmland along the river — suitable for beginners and experienced riders. The pace is relaxed, the scenery is beautiful, and the perspective from horseback reveals details of rural life you miss on foot or in a vehicle.',
+          tip: 'Horse rides cost $40–70 USD for 2–3 hours. Rides are available for all experience levels. Early morning is the best time — cooler and better light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Final Swim & Packing',
+          text: 'Take a final swim in the Nile — the warm water and the knowledge that you\'re swimming in Africa\'s mightiest river never gets old. Return to your lodge for packing and a leisurely lunch. Pick up any last souvenirs from the riverside craft shops.',
+          tip: 'The calm swimming spots near the lodges are safe and monitored. Always check with staff about current conditions before swimming.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Riverside Sunset',
+          text: 'End your Jinja week with a final sunset by the river. Jinja is one of those rare places where adventure and tranquility coexist perfectly — you can raft Grade 5 rapids in the morning and watch kingfishers from a hammock in the afternoon. Most travellers arrive planning a day or two and end up staying a week. The Nile has that effect.',
+          tip: 'If heading to Kampala for a flight, the matatu takes about 2–3 hours. Shared taxis are more comfortable. Allow extra time for Kampala traffic.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Book activity packages', text: 'Most lodges offer discounted packages combining rafting, kayaking, and accommodation. Booking together saves 10–20% compared to individual bookings. Ask about multi-activity deals.' },
+  { title: 'Stay at backpacker lodges', text: 'Riverside backpacker lodges (Nile River Camp, Explorers) offer dorm beds from $10–15 and camping from $5. The riverside setting and social atmosphere are worth more than their price.' },
+  { title: 'Eat at local restaurants', text: 'Lodge restaurants charge tourist prices. Jinja town has local restaurants serving full Ugandan meals for 5,000–10,000 UGX ($1.50–3). Walk or ride into town for meals to save significantly.' },
+  { title: 'Share rafting costs', text: 'Rafting trips run with fixed group sizes. If you\'re travelling solo, join a group booking to split any supplement costs. Most lodges organise group trips daily during high season.' },
+  { title: 'Take matatus to Jinja', text: 'Matatus from Kampala to Jinja cost around 15,000 UGX ($4) and take 2–3 hours. Much cheaper than private taxi or tour transfers which charge $50–100.' },
+  { title: 'Free river swimming', text: 'Swimming in the Nile at the designated spots near lodges is free and one of Jinja\'s best experiences. The warm, clear water and dramatic scenery cost nothing.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$5–15', midrange: '$25–60', splurge: '$80+', notes: 'Camping → dorms → private rooms → lodges' },
+  { category: 'Food', budget: '$3–8', midrange: '$10–25', splurge: '$30+', notes: 'Local restaurants → lodge restaurants → fine dining' },
+  { category: 'Transport', budget: '$4–8', midrange: '$10–20', splurge: '$30+', notes: 'Matatus → shared taxis → private hire' },
+  { category: 'Activities', budget: '$20–40', midrange: '$50–125', splurge: '$150+', notes: 'Swimming/tubing → kayaking → rafting/bungee' },
+  { category: 'Entry Fees', budget: '$2–5', midrange: '$5–15', splurge: '$15–30', notes: 'Source of the Nile boat, forest reserves' },
+  { category: 'Daily Total', budget: '$25–60', midrange: '$100–245', splurge: '$305+', notes: 'Budget backpacker → active mid → full adventure' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'eVisa required for most nationalities — $50 USD, apply online at visas.immigration.go.ug',
+      'East Africa Tourist Visa ($100) covers Uganda, Kenya, and Rwanda for 90 days',
+      'Yellow fever vaccination certificate is mandatory for entry into Uganda',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Malaria is present in the Jinja area — take antimalarials and use DEET-based repellent',
+      'Adventure activities (rafting, bungee) are run by professional operators with good safety records, but always check equipment and listen to safety briefings',
+      'Bilharzia (schistosomiasis) is present in Lake Victoria — avoid swimming in the lake itself. The fast-flowing Nile below the source is generally considered safer',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Jinja town is walkable. Boda-bodas connect to riverside lodges for 3,000–5,000 UGX',
+      'Matatus run regularly between Kampala and Jinja (2–3 hours, 15,000 UGX)',
+      'Most activity operators provide transport between lodges and activity sites',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'MTN and Airtel have coverage in Jinja town but signal weakens near the river gorge',
+      'WiFi available at most lodges but speed varies. Download offline maps before exploring',
+      'Charge devices before rafting or adventure days — there may not be power points on the river',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: UGX. Adventure activities are usually priced and payable in USD',
+      'ATMs are available in Jinja town — withdraw enough before heading to riverside lodges',
+      'Tipping: 10,000–20,000 UGX for guides and raft guides. Rafting tips are split among the crew',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Sports sandals or water shoes that strap on securely — essential for rafting and river activities',
+      'Quick-dry clothing, swimwear, and a waterproof phone case or camera',
+      'Sunscreen (waterproof SPF 50+) and insect repellent — you will need both every day',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Respect the River', text: 'The Nile is deeply significant to local communities — it provides water, fish, transport, and spiritual meaning. Treat the river and its surroundings with respect. Do not leave litter on the riverbank or in the water.' },
+  { icon: '🌍', title: 'Support Community Tourism', text: 'Community village walks channel tourism money directly into local education, water, and healthcare projects. Choose operators that have genuine community partnerships rather than performative visits.' },
+  { icon: '📸', title: 'Ask Before Photographing', text: 'Ask permission before photographing local people, especially in villages. Most people are happy to be photographed but expect the courtesy of being asked. Show them the photo on your screen.' },
+  { icon: '🗣', title: 'Learn Some Lusoga', text: 'Jinja is in Busoga territory — Lusoga is the local language. "Mbuuka otya" (good morning) and "Weebale" (thank you) go a long way. English is widely spoken in tourist areas but local language efforts are appreciated.' },
+  { icon: '🤝', title: 'Fair Negotiation', text: 'Bargain fairly in markets and with boda-boda drivers. Remember that a few thousand shillings means more to a local vendor than to you. Paying a fair price rather than the absolute minimum supports the community.' },
+  { icon: '🕐', title: 'River Safety', text: 'Always follow safety instructions from rafting guides, kayak instructors, and boat operators. The Nile is powerful and conditions change. Never swim in unfamiliar areas without checking with locals first.' },
+];
+---
+
+<CityGuideLayout
+  title="Jinja Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Jinja guide for young travelers. White-water rafting, Source of the Nile, bungee jumping with 1, 3 and 7-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/jinja-hero.webp"
+  heroFlag="🇺🇬"
+  heroCountry="Uganda"
+  heroRegion="Africa"
+  heroCity="Jinja"
+  heroSubtitle="The adventure capital of East Africa — white-water rafting on the Nile, the source of the world's longest river, bungee jumping, and a laid-back backpacker scene on the riverbank."
+  heroPills={["3-Day Adventure","River","Jun – Sep Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Jinja is affordable for accommodation and food, but adventure activities (rafting, bungee, kayaking) are priced at international rates. Budget travellers can save by mixing paid activities with free river swimming and local exploration."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Jinja is where East Africa's greatest river begins its journey — approach with respect for the Nile, the communities that live along it, and the extraordinary natural environment that makes this place special."
+  ctaCity="Jinja"
+  ctaText="Find travel companions to raft the Nile together on roammate — split costs, share adventures, and make lifelong friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

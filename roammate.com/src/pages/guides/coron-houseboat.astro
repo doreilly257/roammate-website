@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PHP (Peso)', detail: '1 USD ≈ ₱56' },
+  { icon: '🗣', label: 'Language', value: 'Filipino / English', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'PHT (UTC+8)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Dec – May', detail: 'Dry season, calm waters' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$35–60 USD', detail: 'Including island tours' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 30 days', detail: 'Extendable to 59 days at immigration' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Coron Ultimate Island Tour',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kayangan Lake & Twin Lagoon',
+          text: 'The Coron Ultimate Tour departs from the town pier at 8am by outrigger bangka boat (₱1,500–2,000 per person including lunch). First stop is Kayangan Lake — regularly cited as the clearest lake in Asia. Climb 160 steep steps to the viewpoint for the iconic photograph of emerald water framed by limestone cliffs, then descend to the lake itself. The water is a mix of fresh and saltwater, so clear you can see the rocky bottom at 10m depth. Snorkelling here feels like floating in liquid glass. Next, Twin Lagoon — swim through a narrow gap in the limestone cliff (or climb a ladder at high tide) to reach a hidden second lagoon surrounded by towering karst walls.',
+          tip: 'Arrive at Kayangan Lake as early as possible — by 10am the steps and lake are packed with tour groups. The viewpoint is the classic photo spot, but the lake itself is the real highlight.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Barracuda Lake & Skeleton Wreck',
+          text: 'Barracuda Lake is unlike any other body of water — a volcanic lake enclosed by limestone cliffs where the water temperature shifts dramatically as you descend. Near the surface it is warm, then cold at 5m, then scalding hot at 15m+ where a thermocline of geothermally heated saltwater sits beneath fresh water. Snorkelling here is surreal. From there, the boat takes you to the Skeleton Wreck — a small Japanese shipwreck from WWII sitting in 5–8m of clear water, perfectly visible while snorkelling from the surface. Coral and fish have colonised every surface.',
+          tip: 'At Barracuda Lake, duck-dive to 3–5m to feel the temperature change — it is genuinely startling. The visibility is 20m+ and the underwater landscape of rocky shelves and overhangs is eerie and beautiful.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'CYC Beach & Coron Town Market',
+          text: 'The final stop is CYC Beach — a small sandbar island with shallow turquoise water ideal for swimming and lounging. The boat returns to Coron town by 4–5pm. For dinner, head to the Coron town public market where local vendors grill fresh seafood — tuna steaks, squid, and prawns chosen from ice displays and cooked to order for ₱150–300 per person. The market atmosphere is lively and the food is the best value in town. Wash it down with fresh calamansi juice (₱30).',
+          tip: 'At the public market, choose the vendor with the longest queue — they have the freshest fish. Point at what you want, agree on the price, and they grill it with garlic butter. Incredible value.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Coron Island Tour — Lakes, Lagoons & Wrecks',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kayangan Lake & Twin Lagoon',
+          text: 'Day one follows the classic Coron Island tour. The bangka boat departs the pier at 7:30am and heads for Kayangan Lake. The 160 steps up to the viewpoint are worth every drop of sweat — the emerald lake below, framed by razor-sharp karst limestone, is the defining image of Coron. Descend to the lake and snorkel in water so clear the bottom is visible at any depth. Kayangan\'s water is a mix of freshwater from rainfall and saltwater seeping through the limestone, creating a unique mineral clarity. The entry fee is ₱300. Next stop Twin Lagoon — the swim-through gap between the two enclosed lagoons is magical.',
+          tip: 'Bring a waterproof camera — Kayangan Lake\'s underwater clarity is extraordinary and the rock formations below the surface look otherworldly. GoPro with a red filter produces the best colours.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Barracuda Lake & Skeleton Wreck',
+          text: 'Barracuda Lake\'s thermocline experience is unique to Coron — the temperature layering effect between volcanic hot saltwater and cooler freshwater creates visible shimmer lines underwater. Free-diving here is popular with experienced breath-hold divers who explore the underwater cliffs and shelves at 10–20m. For snorkellers, the surface layer is warm and the visibility is supernatural. The Skeleton Wreck — a small WWII Japanese supply ship — sits upright in shallow water where you can snorkel directly above the deck and see fish swimming through the hull.',
+          tip: 'The Skeleton Wreck is the perfect introduction to wreck snorkelling — the entire ship is visible from the surface and you can free-dive down to touch the deck. Visibility is usually 15–20m.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mount Tapyas Sunset & Night Market',
+          text: 'Back in Coron town, climb the 724 steps to the top of Mount Tapyas for the best sunset viewpoint — the panorama covers Coron town, the harbour, and dozens of islands stretching to the horizon. The climb takes 20–25 minutes and is well worth the effort for the golden-hour light over the karst landscape. Descend to the public market for grilled seafood dinner. Alternatively, try Sea Dive Resort\'s rooftop bar for cocktails (₱150–250) with harbour views.',
+          tip: 'Start the Mount Tapyas climb by 4:30pm to reach the summit well before sunset at 5:30–6pm. Bring water — the steps are exposed and hot in the late afternoon. The view is the best free experience in Coron.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'WWII Japanese Shipwreck Diving',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Irako & Akitsushima — Deep Wrecks',
+          text: 'Coron Bay holds 12 Japanese warships sunk by American dive bombers on 24 September 1944 — now forming one of the world\'s greatest wreck diving destinations. A two-dive morning trip costs ₱3,500–5,000 including equipment. The Irako, a 147m refrigeration ship sitting at 28–42m, is the most intact — you can penetrate the cargo holds and engine room with a guide. The Akitsushima, a seaplane tender at 20–38m, still has its crane on deck and a massive propeller. These are serious dives — Advanced Open Water certification and wreck orientation are recommended.',
+          tip: 'Wreck penetration is not for beginners — silt-outs can reduce visibility to zero inside the hull. Only penetrate with a qualified wreck guide and carry a torch. If you are Open Water certified, the exterior swim-arounds are still spectacular.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Olympia Maru — Reef-Covered Battleship',
+          text: 'After a surface interval with lunch on the boat, dive the Olympia Maru — a supply vessel sitting on its side at 18–25m that has been colonised by spectacular hard and soft coral growth. Scorpionfish, lionfish, giant grouper, and schools of batfish inhabit the hull. The ship\'s structure creates swim-throughs and overhangs that frame underwater photographs beautifully. This wreck is accessible to Open Water divers with a guide and is considered the most photogenic of Coron\'s wrecks.',
+          tip: 'The Olympia Maru\'s exterior is covered in coral — swim slowly along the hull and look into every opening. Scorpionfish camouflage perfectly against the coral-encrusted metal; your guide will point them out.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Hot Springs & Dinner',
+          text: 'Maquinit Hot Spring, 30 minutes by tricycle from Coron town (₱150 one way), is a natural saltwater hot spring at the edge of the sea. The water sits at 38–40°C and the spring feeds into a mangrove-lined pool where you can soak while watching the sunset over the water. Entry is ₱200. After a day of deep wreck diving, the hot water eases tired muscles and the setting is beautiful. Return to town for dinner — try the Brujita restaurant for Filipino-Spanish fusion or the public market for budget grilled fish.',
+          tip: 'Visit Maquinit at 5pm for sunset — the combination of hot water, cool evening breeze, and pink sky over the mangroves is perfect. Bring your own towel and flip-flops; the changing facilities are basic.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Island-Hopping — Malcapuya, Banana & Bulog Dos',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Malcapuya Island — White Sand Paradise',
+          text: 'The island-hopping tour departs at 7:30am heading south to islands rarely visited by the Coron Island tour crowds. Malcapuya Island is a long curve of white sand with palm trees, crystal water, and very few people — this is what a tropical island looks like in your imagination. The snorkelling off the beach is excellent — the reef starts in shallow water and drops to a colourful wall with turtles and reef fish. The tour costs ₱1,800 per person including lunch, snorkel gear, and all island fees. Pack a picnic for the beach.',
+          tip: 'Malcapuya is the highlight of this tour — ask your boat captain to spend the most time here. The south end of the beach has the best snorkelling and the fewest people.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Banana Island & Bulog Dos Sandbar',
+          text: 'Banana Island has a picturesque beach backed by coconut palms and a basic restaurant serving fresh fish. The snorkelling here is good but the real draw is Bulog Dos — a horseshoe-shaped sandbar that appears at low tide, creating a natural swimming pool of shallow turquoise water. Walk the sandbar, swim in the lagoon, and photograph the extraordinary colour of the water against the white sand. The boat crew prepares a grilled fish lunch on one of the islands — eaten on the beach with rice, vegetables, and fresh fruit.',
+          tip: 'Bulog Dos is best at low tide when the full sandbar is exposed. Check tide times with your tour operator and request an afternoon visit if low tide falls in the afternoon.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Sunset & Departure Planning',
+          text: 'Return to Coron town by 4pm. Watch the sunset from the pier or climb Mount Tapyas one final time. For your last dinner, splurge at La Sirenetta on the waterfront for Filipino dishes with a view (₱300–500 per person) or return to the trusty public market for one more grilled tuna feast. Flights depart Coron Busuanga Airport for Manila and Cebu — the airport is 30 minutes from town by van (₱150). Book a van transfer through your guesthouse the night before.',
+          tip: 'Coron Busuanga Airport is tiny — arrive 1 hour before domestic flights. The road to the airport is sealed but bumpy. Philippine Airlines and Cebu Pacific fly the Coron–Manila route daily.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Join group tours, not private', text: 'Group island-hopping tours cost ₱1,500–2,000 per person including lunch and snorkel gear. Private boat charter starts at ₱5,000–8,000 for the same route. Groups of 6–10 people share a bangka comfortably.' },
+  { title: 'Stay in Coron town centre', text: 'Guesthouses on the main road cost ₱500–1,000/night for a fan room. Beachfront resorts on nearby islands charge ₱3,000–8,000+. The town centre puts you within walking distance of the pier, market, and dive shops.' },
+  { title: 'Eat at the public market', text: 'The Coron public market is the best-value food in Palawan — choose your seafood from the ice display and have it grilled for ₱150–300 per person. Beachfront restaurants charge double for smaller portions.' },
+  { title: 'Bring your own snorkel gear', text: 'Tour boats provide basic snorkel gear, but it is often scratched and ill-fitting. Buying a decent mask and snorkel in Manila or Cebu (₱500–800) dramatically improves every stop on the tour.' },
+  { title: 'Book diving packages', text: 'WWII wreck dives are cheaper when booked as a package of 4+ dives. Ask dive shops for multi-dive discounts — savings of ₱1,000–2,000 over individual dive pricing are common.' },
+  { title: 'Fly from Manila on Cebu Pacific', text: 'Budget airline Cebu Pacific flies Manila–Coron for ₱1,500–4,000 one way if booked 2–4 weeks ahead. The flight is 1 hour versus 12+ hours by ferry. Seat sales drop prices even further.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–18', midrange: '$25–50', splurge: '$70+', notes: 'Fan room → AC guesthouse → waterfront resort' },
+  { category: 'Food', budget: '$5–10', midrange: '$10–25', splurge: '$30+', notes: 'Market seafood → restaurants → resort dining' },
+  { category: 'Island Tour', budget: '$25–35', midrange: '$35–55', splurge: '$80+', notes: 'Group bangka → small group → private charter' },
+  { category: 'Wreck Diving (2 dives)', budget: '$60–70', midrange: '$70–90', splurge: '$100+', notes: 'Group dives → guided → private guide' },
+  { category: 'Transport', budget: '$3–5', midrange: '$5–10', splurge: '$15+', notes: 'Tricycle → van → private transfer' },
+  { category: 'Daily Total', budget: '$35–60', midrange: '$60–120', splurge: '$150+', notes: 'Budget explorer → comfortable → luxury island' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Visa-free 30 days for most nationalities — extendable to 59 days at Bureau of Immigration',
+      'Fly into Coron Busuanga Airport (USU) from Manila or Cebu, or take the overnight ferry from Manila (12 hours)',
+      'Kayangan Lake entry: ₱300. Environmental fees apply at most island stops.',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Travel insurance with diving cover is essential if doing wreck dives — standard policies exclude scuba',
+      'The nearest hospital is in Coron town but facilities are basic — serious injuries require evacuation to Manila',
+      'Bring insect repellent for evenings, reef-safe sunscreen, and motion sickness tablets for boat days',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Coron town is walkable — pier, market, dive shops, and guesthouses are within 15 minutes\' walk',
+      'Tricycles are the main transport in town — ₱10–20 per person for short trips, ₱150 to Maquinit Hot Spring',
+      'Airport transfers by van cost ₱150 per person (30 minutes) — book through your guesthouse',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Globe or Smart SIM card at Manila or Cebu airport before flying to Coron — data coverage in Coron town is usable',
+      'WiFi at guesthouses is slow but functional — do not rely on it for video calls or large uploads',
+      'No signal during island-hopping tours — download offline maps and entertainment before heading out',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: PHP (Peso). 1 USD ≈ ₱56. ATMs in Coron town (BDO, Landbank) but they sometimes run out',
+      'Bring sufficient cash from Manila — tour operators, market vendors, and small businesses are cash only',
+      'Dive shops accept cards but charge a 3–5% surcharge. Budget ₱500–1,000 cash per day beyond pre-booked tours',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Underwater camera is essential — Coron\'s clarity and wrecks produce some of the best underwater photos in Asia',
+      'Reef shoes for rocky island entries, dry bag for electronics, and snorkel gear if you have your own',
+      'Light rain jacket for unexpected showers — the weather in Palawan can change quickly, even in dry season',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏝', title: 'Respect the Islands', text: 'Many islands in Coron are ancestral domain of the Tagbanwa indigenous people — Coron Island itself is Tagbanwa land. Follow all rules, pay entry fees, and do not enter restricted areas. The fees fund community programmes.' },
+  { icon: '🌍', title: 'Marine Conservation', text: 'Coron\'s reefs and wrecks are protected — never remove coral, shells, or artefacts from the water. The WWII wrecks are war graves and removing items is illegal under Philippine and international law.' },
+  { icon: '🙏', title: 'Local Etiquette', text: 'Filipinos are famously friendly and hospitable. Return the warmth — say "Salamat" (thank you) and "Magandang umaga" (good morning). Accept food offerings graciously. Tipping is appreciated but not expected.' },
+  { icon: '📸', title: 'Photography', text: 'Ask permission before photographing locals and their children. At Kayangan Lake and other popular spots, be patient and share the viewpoint — do not hog the photo spot. Drone regulations require permits in the national park.' },
+  { icon: '🤝', title: 'Support Local Operators', text: 'Choose locally-owned tour operators and guesthouses over international booking platforms. Many bangka boat captains are independent operators — booking directly puts more money in their hands than through middlemen.' },
+  { icon: '🚯', title: 'Reduce Plastic Waste', text: 'Bring a reusable water bottle and refuse single-use plastics. Waste management in remote Philippine islands is limited — take your rubbish back to Coron town where it can be disposed of properly.' },
+];
+---
+
+<CityGuideLayout
+  title="Coron Island Hopping Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate guide to Coron island-hopping in Palawan. Kayangan Lake, WWII wrecks, Twin Lagoon with 1 and 3-day itineraries. Budget tips and practical info."
+  heroImage="/images/guides/coron-houseboat-hero.webp"
+  heroFlag="🇵🇭"
+  heroCountry="Philippines"
+  heroRegion="Southeast Asia"
+  heroCity="Coron Island Hopping"
+  heroSubtitle="Crystal-clear volcanic lakes, WWII Japanese shipwrecks, and hidden lagoons between limestone karst cliffs — Palawan's adventure capital."
+  heroPills={["Kayangan Lake","WWII Wrecks","Dec – May Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Coron costs are driven by island tours and dive trips — accommodation and food in town are very affordable. These ranges cover budget backpacker to comfortable mid-range."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Coron is Tagbanwa ancestral land surrounded by WWII history and fragile marine ecosystems — approach with respect for the indigenous community, the ocean, and the heritage beneath the waves."
+  ctaCity="Coron"
+  ctaText="Find travel companions to explore Coron together on roammate — split boat tours, share wreck dive costs, and discover Palawan's islands together."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>
