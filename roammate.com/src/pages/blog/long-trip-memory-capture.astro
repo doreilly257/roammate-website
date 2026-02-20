@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "long-trip-memory-capture",
+  title: "Capturing Memories on Long Trips",
+  description: "Preserve long-trip memories that don't blur together using a daily capture system, photo organization, and the journaling method that sticks.",
+  category: "Creator",
+  readMinutes: 2,
+  heroImage: "/images/blog/long-trip-memory-capture-hero.webp",
+  intro: "Six months after a year-long trip, you look at 12,000 photos on your phone and can't remember which temple was in Bagan and which was in Luang Prabang. The meals blur together, the hostel names disappear, and entire weeks exist only as vague feelings. Long-trip memories fade fast unless you build a lightweight capture system that runs in the background while you're actually living the experience.",
+  sections: [
+    {
+      heading: "The Two-Minute Daily Capture That Preserves Everything",
+      content: "Every night before sleep, write three things in your phone's notes app: the best thing that happened today, something you ate, and one specific sensory detail (a sound, a smell, a texture). That's it. This takes 90 seconds and creates an anchor that recovers the entire day when you reread it months later. \"Best: the motorcycle ride through rice paddies outside Ubud at golden hour. Ate: nasi campur from the warung next to the temple, the sambal was insanely spicy. Detail: the sound of gamelan music drifting from a ceremony we could hear but couldn't see.\" Six months later, reading that entry brings back the entire day in high definition — the wind, the rice fields, the specific intersection where the warung was. Without it, that day is just another Bali day lost in the blur. Use a dedicated note or app (Day One journal works perfectly) with a daily reminder alarm at 9pm. The alarm is crucial because you will stop doing this after three days without one. Consistency matters more than detail — a single sentence beats a skipped day.",
+      image: "/images/blog/long-trip-memory-capture-inline-1.webp",
+    },
+    {
+      heading: "Photo Organization That Makes 10,000 Images Navigable",
+      content: "Take one establishing photo at the start of each new day or location: a wide shot showing where you are, with the location name visible if possible (a street sign, a hostel entrance, a bus station name). This single image becomes the chapter divider in your photo library, making it possible to scroll through thousands of photos and immediately identify when and where each batch was taken. Every Sunday, spend 15 minutes deleting duplicates, blurry shots, and the photos that looked good on a 6-inch phone screen but are objectively terrible. Ruthless culling while memories are fresh is 10 times faster than sorting 15,000 images after the trip. Use Google Photos' album feature to create one album per city or destination as you go — drag photos into albums during your Sunday session. Name them \"Chiang Mai Nov 2025\" not \"Thailand 3\" so they're searchable years later. Back up to cloud storage weekly over wifi — losing your phone on day 180 without backups means losing six months of irreplaceable documentation. Hotels and coworking spaces in Canggu, Medellin, and Lisbon have fast enough upload speeds to back up 10GB in under an hour.",
+      image: "/images/blog/long-trip-memory-capture-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["creator-workflow-while-traveling","remote-work-backpacking-rhythm","weekend-reset-for-digital-nomads","travel-workspace-setup-kit"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

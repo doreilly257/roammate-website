@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "altitude-acclimatization-itinerary",
+  title: "Altitude Acclimatization Itinerary That Works",
+  description: "Acclimatize to altitude safely with a step-by-step itinerary covering elevation gain limits, hydration, and the signs to descend immediately.",
+  category: "Health",
+  readMinutes: 2,
+  heroImage: "/images/blog/altitude-acclimatization-itinerary-hero.webp",
+  intro: "Flying directly from sea-level Lima to Cusco at 3,400 meters and heading straight to Machu Picchu is the most common mistake in South American travel. Half the travelers on that flight will feel nauseous within six hours, a quarter will have splitting headaches for two days, and a few will end up in a Cusco clinic on supplemental oxygen. Altitude sickness is entirely preventable with a three-day adjustment protocol.",
+  sections: [
+    {
+      heading: "The Step-Up Approach: Building Elevation Gradually",
+      content: "Instead of flying directly to high-altitude destinations, build elevation in stages. For Cusco, fly into Lima (sea level), then bus to Huacachina or Nazca (around 500 meters) for one night, continue to Arequipa (2,335 meters) for two nights, then proceed to Cusco (3,400 meters). Each step gives your body 24-48 hours to increase red blood cell production at that elevation before climbing higher. For the Annapurna Circuit in Nepal, spend two nights in Kathmandu (1,400 meters) before starting, and follow the trekking rule of never sleeping more than 500 meters higher than the previous night once above 3,000 meters. In Bolivia, arriving at La Paz (3,640 meters) by bus from Puno (3,827 meters) is gentler than flying from sea-level Santa Cruz. Drink 3-4 liters of water daily starting 24 hours before you gain elevation — dehydration dramatically increases altitude sickness risk, and the dry mountain air dehydrates you faster than you realize.",
+      image: "/images/blog/altitude-acclimatization-itinerary-inline-1.webp",
+    },
+    {
+      heading: "Reading Your Body's Warning Signals Accurately",
+      content: "Mild headache and slight breathlessness above 2,500 meters is normal and resolves with hydration, rest, and time. These are not reasons to panic or descend. But three specific symptoms demand immediate action. First, a headache that doesn't respond to 1,000mg of paracetamol and an hour of rest at the same elevation means you should not ascend further that day. Second, loss of coordination or stumbling (called ataxia) is a medical red flag — descend at least 500 meters immediately, even if it means backtracking on a trek. Third, wet coughing or gurgling sounds when breathing indicates high-altitude pulmonary edema, which can become fatal within hours if you stay at elevation. Carry acetazolamide (Diamox) as a preventative — 125mg twice daily starting 24 hours before ascent is the standard dosing used by Everest Base Camp trekkers and recommended by the Wilderness Medical Society. You can buy it over the counter in Cusco, Kathmandu, and La Paz pharmacies for $2-5 per strip. It makes carbonated drinks taste metallic and increases urination, but it genuinely reduces symptoms by 50% or more.",
+      image: "/images/blog/altitude-acclimatization-itinerary-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["long-haul-recovery-protocol","backpacker-gym-alternatives","social-energy-management-abroad","burnout-signals-on-the-road"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

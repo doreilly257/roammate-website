@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "region-hopping-without-exhaustion",
+  title: "Region Hopping Without the Exhaustion",
+  description: "Hop between travel regions without burning out by spacing transitions, managing culture shock, and building recovery days into every move.",
+  category: "Planning",
+  readMinutes: 2,
+  heroImage: "/images/blog/region-hopping-without-exhaustion-hero.webp",
+  intro: "Southeast Asia to Europe to South America in eight months sounds epic on paper. In practice, each regional transition hits you with a triple dose of jet lag, culture shock, and logistical chaos that can wipe out your first week in a new continent. The travelers who successfully span multiple regions on a single trip build deliberate transition protocols that smooth the landing in each new zone.",
+  sections: [
+    {
+      heading: "The Decompression City Strategy Between Regions",
+      content: "Never fly directly from the deep end of one region to the deep end of another. Instead, use a \"decompression city\" — a culturally familiar waypoint that eases the transition. After three months in rural Southeast Asia, don't fly straight to rural Bolivia. Route through Bangkok or Kuala Lumpur first, spending 3-4 nights in a comfortable hotel with reliable wifi, doing laundry, restocking supplies, and mentally closing the chapter on one region before opening the next. Between Southeast Asia and Europe, Istanbul works brilliantly as a decompression city — it's geographically and culturally intermediate, flights from Bangkok average $250-350 on Turkish Airlines, and a few days there recalibrates your expectations for European pricing before the sticker shock of Lisbon or Barcelona hits. Between Europe and South America, a 3-night stop in Mexico City eases you into Spanish, Latin American meal rhythms, and the price levels you'll encounter further south. These decompression stops add 3-4 days to each transition but save the entire first week that would otherwise be lost to disorientation.",
+      image: "/images/blog/region-hopping-without-exhaustion-inline-1.webp",
+    },
+    {
+      heading: "Budgeting Energy Across Continents, Not Just Days",
+      content: "Each new region demands a different energy output. Southeast Asia is physically easy (flat terrain, cheap transport, established backpacker infrastructure) but mentally taxing from constant price negotiation and sensory overload. South America reverses this — the infrastructure is more straightforward but the altitude, longer distances, and language barrier drain physical energy. Europe is logistically smooth but financially stressful if you're on a backpacker budget. Plan your continental sequence to alternate between physically demanding and mentally demanding regions. A strong sequence: Southeast Asia (3-4 months, mentally demanding but physically easy), followed by Central America (2-3 months, moderate on both fronts), followed by the Andes region of South America (2-3 months, physically demanding). Drop your daily activity expectations by 40% during the first week in any new region — schedule one activity per day maximum while your body and brain recalibrate. Budget an extra 20% in daily spending for your first week in each new region to cover the \"newcomer tax\" of not yet knowing local prices, transport hacks, and cheap eating spots.",
+      image: "/images/blog/region-hopping-without-exhaustion-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["city-base-vs-fast-hopping","slow-travel-momentum-system","first-month-southeast-asia","three-day-city-sprint-template"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

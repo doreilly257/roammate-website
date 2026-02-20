@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "adventure-day-risk-matrix",
+  title: "The Adventure Day Risk Matrix",
+  description: "Assess adventure activity risks while traveling using a practical matrix that balances thrill-seeking with smart safety decisions abroad.",
+  category: "Safety",
+  readMinutes: 2,
+  heroImage: "/images/blog/adventure-day-risk-matrix-hero.webp",
+  intro: "The bungee jump in Vang Vieng looks amazing on Instagram. The operator has no visible safety certifications, the cord looks sun-bleached, and the platform is a wooden scaffold over the Nam Song River. Some adventure activities abroad are genuinely safe operations run by professionals. Others are death traps monetizing tourist adrenaline. Here's how to tell the difference in under ten minutes.",
+  sections: [
+    {
+      heading: "The Operator Assessment You Do Before Signing Anything",
+      content: "Before paying for any adventure activity — scuba, bungee, paragliding, canyoning, white water rafting — check three things. First, ask to see their insurance certificate. Legitimate operators in Queenstown, Interlaken, and even Pokhara display these prominently. If they can't produce one, walk away. Second, inspect the equipment yourself. Scuba BCDs should have current service stickers (check the date tag), climbing harnesses shouldn't have frayed stitching, and helmets should have intact foam lining. Third, observe how they conduct the safety briefing. A 30-second \"hold on and enjoy\" speech before white water rafting on the Pacuare River in Costa Rica is a red flag. A proper briefing covers specific commands, what to do if you fall out, and the rapid classification of each section. In Bali, choose operators certified by PADI for diving and SSI for snorkeling excursions. In Nepal, only trek with operators registered with the Nepal Tourism Board who carry satellite phones and first aid kits on every trek above 3,000 meters.",
+      image: "/images/blog/adventure-day-risk-matrix-inline-1.webp",
+    },
+    {
+      heading: "Calibrating Your Personal Risk Threshold Honestly",
+      content: "Your risk tolerance changes abroad, and not always in healthy ways. After three weeks of budget travel, the $25 \"extreme\" quad bike tour through Bali's rice paddies feels like a bargain adventure. At home, you'd never ride a quad bike without insurance on unfamiliar terrain. Alcohol amplifies this effect — the majority of serious backpacker injuries in Thailand happen within 4 hours of drinking, often involving motorbikes or spontaneous cliff jumping. Build a personal pre-commitment rule before your trip: no motorized adventure activities within 12 hours of your last drink, and no activities that your travel insurance explicitly excludes (check the fine print for motorbike engine size limits — many policies cap at 125cc). Rate each potential activity on a simple two-axis grid: how much you genuinely want to do it (not just peer pressure) versus how much control you have over the outcome. Scuba with a certified operator scores high desire, high control. Riding pillion on a stranger's motorbike in Vietnam scores low on both.",
+      image: "/images/blog/adventure-day-risk-matrix-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["travel-insurance-claim-proofing","solo-female-travel-operations","visa-run-risk-reduction","border-crossing-document-pack"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

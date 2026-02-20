@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "hiking-rotation-for-multi-country-trips",
+  title: "Hiking Rotation for Multi-Country Trips",
+  description: "Build a hiking rotation across multiple countries that balances intensity, recovery, and the best trails without burning out your knees.",
+  category: "Adventure",
+  readMinutes: 2,
+  heroImage: "/images/blog/hiking-rotation-for-multi-country-trips-hero.webp",
+  intro: "Back-to-back multi-day treks in Nepal, followed by a Peru circuit the next month, followed by Patagonia — this is how backpackers destroy their knees and burn out on the thing they love most. A smarter approach rotates hiking intensity across countries so your body recovers while you travel and each trek feels fresh rather than like the fifth in an exhausting series.",
+  sections: [
+    {
+      heading: "The Hard-Medium-Easy Rotation Across Countries",
+      content: "Structure your multi-country trip so demanding treks are separated by at least three weeks of lighter activity. If you're doing the Annapurna Circuit in Nepal (12-18 days, high altitude, serious physical demand), follow it with three weeks in lowland Thailand or Vietnam where your hiking consists of easy day walks — the Hai Van Pass coastal walk near Da Nang, or the rice paddy trails around Sapa at modest elevations. Then build back up with a medium-intensity trek like the Cameron Highlands in Malaysia (3-4 hour jungle walks at 1,500 meters) before tackling your next big one. For a South American rotation: start with the Inca Trail (4 days, hard) or Huayhuash Circuit (8-12 days, very hard), recover for a month exploring coastal Peru and Ecuador at sea level, then tackle the moderate Quilotoa Loop in Ecuador (3-4 days, medium) before finishing with Torres del Paine (5-8 days, hard) in Patagonia. This sequencing gives your joints and cardiovascular system genuine recovery time between peaks of demand.",
+      image: "/images/blog/hiking-rotation-for-multi-country-trips-inline-1.webp",
+    },
+    {
+      heading: "Packing One Kit That Handles Every Terrain",
+      content: "Multi-country hiking demands versatile gear rather than specialized equipment. One pair of trail runners (Salomon Speedcross or Hoka Speedgoat) handles everything from Himalayan tea-house treks to Patagonian ridgelines better than heavy hiking boots — they dry faster, weigh 500 grams less per pair, and provide enough ankle support for loaded pack travel on maintained trails. Carry a pair of trekking poles that collapse to 35cm (Black Diamond Distance Carbon, 290 grams per pair) for steep descents that hammer your knees. Your rain layer should be a lightweight shell under 300 grams that packs into its own pocket — the Outdoor Research Helium works well. For cold-weather treks at altitude, add a 100-weight fleece mid-layer (200 grams) and your Uniqlo Ultra Light Down jacket. This entire hiking addition to your regular backpacking kit weighs under 1.5kg and covers you from tropical jungle walks in Borneo to windswept mountain passes in the Andes. The key is resisting the urge to buy location-specific gear at each destination, which adds weight you'll carry for months.",
+      image: "/images/blog/hiking-rotation-for-multi-country-trips-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["scuba-snorkel-trip-integration","first-month-southeast-asia","three-day-city-sprint-template","coastal-route-planning-framework"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

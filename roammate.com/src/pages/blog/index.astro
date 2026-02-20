@@ -26,6 +26,9 @@ const blogPosts = (source.allBlogPosts ?? source.blogPosts ?? [])
   });
 
 const featuredPost = blogPosts[0];
+const blogHeroImages = blogPosts
+  .map((post) => post.heroImage)
+  .filter((image): image is string => Boolean(image));
 
 const formatDate = (value?: string) => {
   if (!value) return null;
@@ -60,7 +63,7 @@ const formatDate = (value?: string) => {
   </Fragment>
 
   <section class="blog-hero">
-    <div class="blog-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${featuredPost?.heroImage || '/images/guides/tokyo-hero.webp'}');`}></div>
+    <div class="blog-hero-bg" id="blogHeroBackground" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${featuredPost?.heroImage || '/images/guides/tokyo-hero.webp'}');`}></div>
     <div class="blog-hero-content">
       <div class="blog-hero-breadcrumb">
         <a href="/">Home</a>
@@ -109,6 +112,14 @@ const formatDate = (value?: string) => {
     </div>
   </section>
 </BaseLayout>
+
+<script define:vars={{ blogHeroImages }}>
+  const blogHeroBackground = document.getElementById('blogHeroBackground');
+  if (blogHeroBackground && blogHeroImages.length > 0) {
+    const heroImage = blogHeroImages[Math.floor(Math.random() * blogHeroImages.length)];
+    blogHeroBackground.style.backgroundImage = `linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${heroImage}')`;
+  }
+</script>
 
 <style>
   .blog-hero {

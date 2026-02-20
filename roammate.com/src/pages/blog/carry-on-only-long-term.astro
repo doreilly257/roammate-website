@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "carry-on-only-long-term",
+  title: "Carry-On Only for Long-Term Travel",
+  description: "Pack carry-on only for months of travel with a tested gear list, layering strategy, and laundry system that keeps your bag under 7kg.",
+  category: "Packing",
+  readMinutes: 2,
+  heroImage: "/images/blog/carry-on-only-long-term-hero.webp",
+  intro: "Nine months across Southeast Asia, Eastern Europe, and South America — all from a 40-liter Osprey Farpoint that never left the overhead bin. No checked bag fees, no carousel waits, no lost luggage anxiety at Bogota airport. The secret isn't minimalism for its own sake. It's building a capsule system where every item earns its space by serving at least two purposes.",
+  sections: [
+    {
+      heading: "The Six-Outfit Rotation That Covers Every Climate",
+      content: "You need exactly six bottom-layer outfits and one layering system. Three quick-dry t-shirts in neutral colors (black, grey, navy), two pairs of convertible pants that zip into shorts, one pair of lightweight linen pants for temples and nicer dinners, and three sets of merino wool underwear that you can wear twice before washing. Your layering system is a single Uniqlo Ultra Light Down jacket (packs to the size of a water bottle) plus a lightweight rain shell. This combination handles 5-degree Cusco mornings and 35-degree Bangkok afternoons. For footwear, one pair of trail runners like Merrell Vapor Gloves doubles as hiking shoes and everyday walkers, plus a pair of flip-flops for hostels and beaches. Total clothing weight: under 3kg. The merino wool pieces are the keystone — they resist odor for days and dry in four hours on a hostel balcony.",
+      image: "/images/blog/carry-on-only-long-term-inline-1.webp",
+    },
+    {
+      heading: "The Laundry Cycle That Keeps You Fresh",
+      content: "Wash every three days without exception, regardless of whether the clothes look dirty. In Southeast Asia, sweat and humidity breed bacteria fast, and by day four your fellow dorm-mates will notice before you do. Most hostels in Thailand and Vietnam have washing machines for 40-60 baht per load, but dryers are rare and expensive. Hand-wash your merino pieces in the sink with a thumbnail-sized dab of Dr. Bronner's soap (a 60ml bottle lasts two months). Wring clothes in a quick-dry towel to extract moisture, then hang them on a 2-meter clothesline with carabiners — the Sea to Summit Lite Line weighs 38 grams and clips to any balcony railing. In humid climates like Bali or Colombo, position clothes in front of your room's air conditioning vent. Everything dries overnight, and you start each cycle with a completely clean set.",
+      image: "/images/blog/carry-on-only-long-term-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["packing-cubes-real-usage","rain-heat-humidity-gear-guide","airport-day-efficiency-system","travel-day-mistakes-checklist"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

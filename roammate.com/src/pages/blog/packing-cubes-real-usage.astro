@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "packing-cubes-real-usage",
+  title: "Packing Cubes: How They Actually Get Used",
+  description: "See how packing cubes actually get used on long-term trips, with real organization systems that survive months of hostels and buses.",
+  category: "Packing",
+  readMinutes: 2,
+  heroImage: "/images/blog/packing-cubes-real-usage-hero.webp",
+  intro: "Everyone says packing cubes are life-changing. Then you buy a set, stuff them randomly, and wonder why your bag is the same chaotic mess but now with extra zippers. Packing cubes only work with a system — a deliberate assignment of what goes where that stays consistent for the entire trip so you can find anything in your bag in under 10 seconds, even at 3am in a dark hostel dorm.",
+  sections: [
+    {
+      heading: "The Color-Coded System That Survives Real Travel",
+      content: "Assign each cube a category by color and never deviate. A medium blue cube holds all tops — t-shirts, long sleeves, one button-down shirt rolled tightly. A medium green cube holds bottoms — pants, shorts, a swimsuit. A small red cube holds underwear and socks. A small grey cube is your electronics pouch — cables, adapters, earbuds, power bank. A slim compression cube (the Eagle Creek Specter works well) holds your single set of \"nice\" clothes for visa offices, temple visits, or that one decent restaurant date. When you unpack at each new hostel, pull out only the cubes you need. Staying one night? The blue and red cubes come out for a change of clothes and nothing else. Staying a week? Everything comes out and the empty cubes become drawer organizers in your hostel locker. The compression cubes from Peak Design or Eagle Creek shave about 30% volume compared to standard cubes, which matters when your entire life fits in a 40-liter pack.",
+      image: "/images/blog/packing-cubes-real-usage-inline-1.webp",
+    },
+    {
+      heading: "The Clean-Dirty Separation That Changes Everything",
+      content: "The rookie packing cube mistake is mixing clean and dirty clothes in the same cube after day one. Dedicate a lightweight stuff sack (Sea to Summit's Ultra-Sil bags weigh 11 grams) as your dirty laundry bag, and never put worn clothes back in a cube. This sounds obvious but breaks down fast when you're repacking at 6am for a bus and everything's getting shoved in together. A better system: fold clean clothes into cubes with the opening facing up, and when you wear something, it goes directly into the laundry sack at the bottom of your pack. When it's laundry day, grab the whole sack, wash everything, and repack fresh into the cubes. In Southeast Asia, most hostels and laundries charge per kilo (40-60 baht per kg in Thailand, 20,000-30,000 dong per kg in Vietnam), so the full sack goes straight on the scale. Between the color system and the clean-dirty separation, your 40-liter pack functions like a well-organized closet rather than a bottomless pit where everything gravitates to wherever gravity puts it.",
+      image: "/images/blog/packing-cubes-real-usage-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["carry-on-only-long-term","rain-heat-humidity-gear-guide","airport-day-efficiency-system","travel-day-mistakes-checklist"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

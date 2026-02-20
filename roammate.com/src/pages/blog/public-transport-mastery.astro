@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "public-transport-mastery",
+  title: "Public Transport Mastery in Foreign Cities",
+  description: "Master public transport in any foreign city within hours using map reading, fare systems, and the routes that connect backpacker essentials.",
+  category: "Transit",
+  readMinutes: 2,
+  heroImage: "/images/blog/public-transport-mastery-hero.webp",
+  intro: "Taking a $15 Grab ride across Bangkok when the BTS Skytrain covers the same distance in 8 minutes for 44 baht — that's $180 per month in unnecessary spending. Public transport in foreign cities looks intimidating for about 48 hours. After that, it becomes the single biggest money saver and time saver in your travel toolkit. The key is a systematic approach to cracking any city's system fast.",
+  sections: [
+    {
+      heading: "The First-Day Transit Hack for Any City",
+      content: "Within your first three hours in a new city, take one ride on the main transit line from end to end. In Mexico City, ride Line 1 of the Metro from Observatorio to Pantitlan for 5 pesos. In Istanbul, take the T1 tram from Kabatas to Bagcilar. In Tokyo, ride the Yamanote Line's full loop. This single ride teaches you more about the city's geography, the payment system, the crowding patterns, and the station layout than any guidebook. Download the city's transit app before arrival — Moovit works in most cities globally, but local apps are better where they exist: Citymapper for London and major European cities, Kakao Maps for Seoul, Yandex Maps for Istanbul and Tbilisi. Screenshot your three most-used routes (accommodation to city center, accommodation to coworking space, accommodation to the main market or food area) so they're accessible offline. Buy a rechargeable transit card on day one rather than fumbling with exact change — Bangkok's Rabbit card, Istanbul's Istanbulkart, and Taipei's EasyCard all offer cheaper fares than single tickets.",
+      image: "/images/blog/public-transport-mastery-inline-1.webp",
+    },
+    {
+      heading: "When to Bus, When to Train, When to Walk",
+      content: "Trains and metros are predictable but inflexible — they go where the tracks go. Buses reach neighborhoods that rail can't, but figuring out bus routes in a new city is harder. The rule of thumb: use rail for any journey over 3km or crossing major districts, use buses for the last-mile connection from the station to your actual destination, and walk anything under 1.5km because the time spent waiting for a bus over short distances rarely saves you anything. In cities with both systems, like Kuala Lumpur, the LRT and MRT handle the big moves while the free Go KL buses connect the gaps between stations in the city center. In cities with only buses, like most of Central America, identify the two or three routes that connect your neighborhood to the city center and memorize them — in Antigua Guatemala, the chicken buses to Guatemala City leave from the main market on 4a Calle, and the red buses circling town cost 1 quetzal flat. The most common tourist transport mistake is defaulting to taxis for every trip because the bus system feels confusing. Force yourself to take public transport for the first five journeys and the system clicks permanently.",
+      image: "/images/blog/public-transport-mastery-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["night-bus-survival-guide","overnight-train-productivity","airport-day-efficiency-system","travel-day-mistakes-checklist"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

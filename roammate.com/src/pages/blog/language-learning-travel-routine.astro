@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "language-learning-travel-routine",
+  title: "A Language Learning Routine That Travels",
+  description: "Build a language learning routine that fits travel life, using daily micro-sessions, real conversations, and destination-specific vocabulary.",
+  category: "Learning",
+  readMinutes: 2,
+  heroImage: "/images/blog/language-learning-travel-routine-hero.webp",
+  intro: "You've been in Colombia for three months and can still only say \"una cerveza, por favor.\" Meanwhile, the German backpacker who arrived two weeks ago is cracking jokes with the hostel staff in Spanish. The difference isn't talent — it's a daily routine of deliberate, structured practice that takes 30 minutes and fits seamlessly into travel days.",
+  sections: [
+    {
+      heading: "The 30-Minute Stack That Builds Real Fluency",
+      content: "Split your daily language practice into three 10-minute blocks tied to activities you already do. First block: Anki flashcard review with breakfast. Load a pre-built deck for your target language (the \"Spanish 5000\" or \"Thai Basics\" decks are excellent starting points) and review 20 new cards plus all due reviews while eating your morning fruit and coffee. This takes exactly 8-12 minutes. Second block: Pimsleur or LanguageTransfer audio lesson during your commute to the coworking space or while walking to lunch. These audio courses are designed for 10-minute sessions and train your ear and pronunciation simultaneously. Third block: one real-world conversation practice before dinner. In Medellin, order your entire meal in Spanish including asking about ingredients. In Chiang Mai, learn the Thai numbers 1-10 and use them when paying at 7-Eleven. In Lisbon, ask for directions in Portuguese even when you know the way. The real-world block is non-negotiable — it cements what the morning study taught and builds confidence that app-only learners never develop.",
+      image: "/images/blog/language-learning-travel-routine-inline-1.webp",
+    },
+    {
+      heading: "Destination-Specific Vocabulary That Earns Respect",
+      content: "Forget textbook vocabulary lists. In your first week in any new country, learn exactly 50 words that cover 80% of daily interactions: greetings (4 words), numbers 1-10, \"how much,\" \"thank you,\" \"sorry,\" \"yes,\" \"no,\" \"delicious,\" \"beautiful,\" the words for water, rice, chicken, coffee, beer, bathroom, left, right, near, far, today, tomorrow, and \"I don't understand.\" This tourist survival kit takes two days to memorize and transforms every interaction. Vendors in Marrakech visibly warm when you negotiate in Darija rather than French. Street food sellers in Bangkok give you bigger portions when you order in Thai. In Japan, simply saying \"sumimasen\" before asking a question in English changes the entire interaction. After the first 50 words, focus on food vocabulary for the region — knowing the names of 20 local dishes in the local language means you can read menus that tourists can't, finding dishes at half the price. In Vietnam, learning the difference between pho bo and bun cha on a menu saves you from pointing-and-hoping at every meal.",
+      image: "/images/blog/language-learning-travel-routine-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["cultural-site-day-planning","remote-work-backpacking-rhythm","weekend-reset-for-digital-nomads","travel-workspace-setup-kit"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

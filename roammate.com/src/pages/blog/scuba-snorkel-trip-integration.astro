@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "scuba-snorkel-trip-integration",
+  title: "Integrating Scuba and Snorkeling Into Your Trip",
+  description: "Weave scuba diving and snorkeling into a backpacking itinerary with cost comparisons, certification timing, and the best value dive sites.",
+  category: "Adventure",
+  readMinutes: 2,
+  heroImage: "/images/blog/scuba-snorkel-trip-integration-hero.webp",
+  intro: "Getting your PADI Open Water certification on Koh Tao costs $280 over three days and opens up dive sites across the globe for the rest of your life. But timing it wrong — doing it mid-trip when you should be moving, or skipping it because you didn't budget for it — means either disrupting your flow or missing one of travel's most transformative experiences. Here's how to fit diving into a backpacking trip without breaking your schedule or budget.",
+  sections: [
+    {
+      heading: "Where and When to Get Certified for Maximum Value",
+      content: "Koh Tao in Thailand is the cheapest place on earth to get PADI certified thanks to fierce competition among 70+ dive schools on one small island — expect $250-300 for the full Open Water course including all gear, four open-water dives, and pool sessions. Utila in Honduras runs a close second at $280-320 and includes Caribbean reef diving that rivals sites costing double elsewhere. Gili Trawangan in Indonesia charges $350-400 but throws in manta ray and turtle encounters that are practically guaranteed. Schedule your certification at the beginning of a beach phase in your itinerary rather than the middle, because the 3-day course locks you in one place and you'll want free days afterward to do fun dives at the same location using your new certification. After certification, fun dives cost $25-35 per dive in Southeast Asia, $40-60 in the Caribbean, and $60-90 in the Red Sea. Budget two fun dives per week during any coastal phase and you'll accumulate enough logged dives to attempt Advanced Open Water within a few months.",
+      image: "/images/blog/scuba-snorkel-trip-integration-inline-1.webp",
+    },
+    {
+      heading: "Snorkeling as the Zero-Commitment Alternative",
+      content: "Not everyone wants to invest three days and $300 in scuba certification, and that's perfectly fine because some of the world's best underwater experiences are snorkel-accessible. The Gili Islands in Indonesia offer shore snorkeling with sea turtles — just walk into the water from the east coast of Gili Meno and swim out 50 meters. Koh Lipe's Sunrise Beach has coral 20 meters from shore in knee-deep water. Amed in Bali has a Japanese shipwreck visible from the surface in 5 meters of water. These spots require nothing but a $10 mask-and-snorkel set from any beachside shop (or $3-5 rental per day). For multi-stop snorkeling day trips, join boat tours rather than renting your own equipment — a four-island snorkeling tour from Koh Lanta costs 700-900 baht and covers reefs you couldn't reach from shore. In the Red Sea, Dahab's Blue Hole and Three Pools are world-class snorkeling sites with no boat required. The key planning insight is that dedicated snorkeling doesn't require separate travel days like scuba does — you can snorkel for two hours in the morning and still have a full day of exploring ahead of you.",
+      image: "/images/blog/scuba-snorkel-trip-integration-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["hiking-rotation-for-multi-country-trips","first-month-southeast-asia","three-day-city-sprint-template","coastal-route-planning-framework"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "travel-insurance-claim-proofing",
+  title: "Travel Insurance Claim-Proofing Guide",
+  description: "Claim-proof your travel insurance before something goes wrong with documentation habits, photo evidence, and filing strategies that actually pay out.",
+  category: "Safety",
+  readMinutes: 2,
+  heroImage: "/images/blog/travel-insurance-claim-proofing-hero.webp",
+  intro: "A stolen laptop in Medellin. A fractured wrist in Bali. A cancelled flight in Istanbul. These aren't hypotheticals — they're the three most common claims backpackers file, and roughly 30% get denied for insufficient documentation. The travelers who get paid aren't luckier. They've built simple documentation habits that take five minutes a day and save thousands when things go sideways.",
+  sections: [
+    {
+      heading: "The Evidence Trail You Build Before Anything Happens",
+      content: "On day one of your trip, photograph every piece of electronics with its serial number visible — flip your laptop over, screenshot your phone's IMEI (dial *#06#), and photograph your camera body's serial plate. Email these photos to yourself so they're timestamped and cloud-stored. Photograph your bag's contents laid out on a bed at least once per month, creating a visual inventory that insurers accept as proof of possession. Keep every medical receipt in a dedicated folder on Google Drive, even for minor pharmacy purchases — a $3 receipt for stomach medication in Bangkok establishes a timeline if that stomach issue escalates to a hospital visit three days later. World Nomads and SafetyWing both require police reports filed within 24 hours for theft claims, so know the nearest police station in every city you visit. In many Southeast Asian countries, tourist police stations process reports in English and are separate from regular stations.",
+      image: "/images/blog/travel-insurance-claim-proofing-inline-1.webp",
+    },
+    {
+      heading: "Filing a Claim That Doesn't Get Bounced",
+      content: "Start your claim from the hospital bed or police station — don't wait until you're home. Most policies have a 30-day filing window that begins from the date of incident, and missing it is an automatic denial regardless of merit. When describing what happened, use specific times, locations, and circumstances: \"Laptop stolen from locked hostel locker at Mad Monkey Hostel, Siem Reap, between 2pm and 6pm on March 14th\" beats \"my laptop was stolen from my hostel.\" Include the police report number, the hostel's address, and photographs of the broken locker if applicable. For medical claims, get an itemized bill from the hospital rather than a lump sum receipt — Bumrungrad Hospital in Bangkok and Siloam in Bali both provide English-language itemized invoices on request. If your initial claim gets denied, reply within 14 days citing the specific policy clause that covers your situation. Roughly 40% of initially denied claims succeed on the first appeal.",
+      image: "/images/blog/travel-insurance-claim-proofing-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["adventure-day-risk-matrix","solo-female-travel-operations","visa-run-risk-reduction","border-crossing-document-pack"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

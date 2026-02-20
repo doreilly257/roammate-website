@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "three-day-city-sprint-template",
+  title: "The Three-Day City Sprint Template",
+  description: "Cover any city in three days with a sprint template that balances must-see sights, local neighborhoods, and genuine downtime.",
+  category: "Itineraries",
+  readMinutes: 2,
+  heroImage: "/images/blog/three-day-city-sprint-template-hero.webp",
+  intro: "Three days in a new city is the magic number — long enough to get beneath the surface, short enough that you don't lose momentum on a longer trip. But most travelers waste day one on orientation, pack too much into day two, and spend day three exhausted in their hostel. A simple three-act structure eliminates this pattern and works in any city from Porto to Phnom Penh.",
+  sections: [
+    {
+      heading: "Day One: The Orientation Walk That Does Double Duty",
+      content: "Arrive by noon if possible and drop your bag. Then walk — not ride, walk — from your accommodation to the city's most central landmark. In Prague, that's Old Town Square. In Buenos Aires, it's Plaza de Mayo. In Hanoi, it's Hoan Kiem Lake. This 30-60 minute walk calibrates your internal map and reveals the texture of neighborhoods you'd miss from a taxi. Along the way, note three things: a place to eat dinner tonight, a cafe that looks good for morning coffee, and the nearest metro or transit stop. Eat dinner early at that first spot you found — you're jet-lagged or travel-tired, so aim for 6:30pm. Spend the evening on a low-key activity: a sunset viewpoint, a riverside walk, or just sitting in a public square watching locals. Do not go on a pub crawl on night one. Your body needs to calibrate to the new timezone, and you'll thank yourself on day two when you wake up fresh at 7am rather than hungover at noon.",
+      image: "/images/blog/three-day-city-sprint-template-inline-1.webp",
+    },
+    {
+      heading: "Day Two and Three: Intensity Then Depth",
+      content: "Day two is your big-ticket day. Hit the headline attractions between 8am and 1pm when energy and crowds are both manageable — Angkor Wat, the Alhambra, the Grand Bazaar, whatever anchors the city. Eat lunch in the tourist zone without guilt (you'll eat local tonight), then spend the afternoon in a neighborhood that isn't in the top-10 lists. In Bangkok, skip Khao San and walk through Talat Noi's street art alleys. In Lisbon, bypass Alfama for Mouraria. In Mexico City, wander Coyoacan instead of Centro Historico. Day three flips the script entirely: no museums, no landmarks. Instead, do one thing deeply. Take a cooking class in Oaxaca ($35-50 for four hours including market tour), join a morning yoga class at a local studio, rent a bicycle and ride along the Danube in Budapest, or spend the morning in a single market like Chatuchak or San Telmo. This final day creates the specific memories that define a city visit years later.",
+      image: "/images/blog/three-day-city-sprint-template-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["first-month-southeast-asia","coastal-route-planning-framework","city-base-vs-fast-hopping","slow-travel-momentum-system"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

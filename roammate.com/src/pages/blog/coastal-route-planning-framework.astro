@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "coastal-route-planning-framework",
+  title: "Coastal Route Planning Framework",
+  description: "Plan a multi-stop coastal route with a framework covering tidal timing, beach-hop logistics, and the season windows that make or break it.",
+  category: "Itineraries",
+  readMinutes: 2,
+  heroImage: "/images/blog/coastal-route-planning-framework-hero.webp",
+  intro: "Stringing together beach towns on a map looks effortless until you discover that the ferry only runs three days a week, the coast road floods during monsoon, and the best snorkeling beach has zero accommodation because it's a marine reserve. Coastal routes require different planning than inland itineraries because tides, weather windows, and boat schedules dictate everything.",
+  sections: [
+    {
+      heading: "Building the Route Around Transport Realities",
+      content: "Coastal transport is the constraint that shapes your entire route. In Thailand, ferries between Koh Samui, Koh Phangan, and Koh Tao run reliably from December through April but become irregular and sometimes dangerous from May through October. The Lomprayah catamaran is the most reliable operator, departing Surat Thani at 6am and hitting all three islands by noon (combo ticket around 1,100 baht). In Croatia, the Jadrolinija ferry network connects Split to Hvar, Brac, and Korcula on fixed schedules that thin out dramatically after September. In Portugal's Algarve, there are no ferries between coastal towns — everything moves by bus or car, with the EVA bus company running the Lagos-to-Faro coastal route hourly for 5-8 euros. Research the transport links first, then build your stops around what's actually reachable. The best coastal routes create a natural flow: one direction along the coast, hitting a new town every 2-4 days, with a flight or long bus back to your starting point at the end rather than retracing your steps.",
+      image: "/images/blog/coastal-route-planning-framework-inline-1.webp",
+    },
+    {
+      heading: "Timing Your Coast Trip to Avoid the Shoulder Squeeze",
+      content: "Coastal destinations have the most dramatic peak-vs-off-season price swings of any travel type. A beachfront guesthouse in Koh Lanta costs 500 baht per night in June and 2,000 baht in January. Hostels in Hvar charge 15 euros in May and 45 euros in August. The sweet spot is the two-week shoulder window at each end of peak season: late October to mid-November and mid-March to early April in Southeast Asia, late May to mid-June and mid-September to early October in the Mediterranean. During these windows, you get 70-80% of peak-season weather at 40-50% of peak-season prices, plus the beaches aren't packed. For multi-week coastal routes, stagger your timing north to south or south to north to chase the best weather. In Southeast Asia, start in Vietnam's central coast (Da Nang, Hoi An) in October when it's still warm, then move south to the Thai islands by November when their best season begins. In Europe, start in Portugal's Algarve in late May, move east through Spain's Costa Brava in June, then finish in Croatia or Montenegro in early July before August peak hits.",
+      image: "/images/blog/coastal-route-planning-framework-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-01-15T10:00:00Z",
+  updatedAt: "2025-01-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["first-month-southeast-asia","three-day-city-sprint-template","city-base-vs-fast-hopping","slow-travel-momentum-system"],
+  relatedGuideSlugs: [] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>
