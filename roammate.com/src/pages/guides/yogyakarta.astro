@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'IDR (Rupiah)', detail: '1 USD ≈ 15,800 IDR' },
+  { icon: '🗣', label: 'Language', value: 'Bahasa Indonesia', detail: 'Javanese widely spoken, some English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'WIB (UTC+7)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Oct', detail: 'Dry season with clear skies for temple visits' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$15–30 USD', detail: 'Rp240,000–475,000 per day' },
+  { icon: '🛂', label: 'Visa', value: 'VOA 30 days', detail: 'Visa on arrival Rp500,000 ($32), extendable once' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Borobudur Sunrise, Kraton & Malioboro in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Borobudur Sunrise',
+          text: 'Wake at 3:30am for the iconic Borobudur sunrise experience. Book a tour the night before through your hostel (Rp350,000–450,000 including transport and entry) or arrange a private driver (Rp200,000 return) plus entry ticket (Rp375,000 for foreigners). Arrive by 4:30am and climb the nine platforms of the world\'s largest Buddhist temple in darkness. As dawn breaks over the Kedu Plain and Mount Merapi emerges from the mist, 72 bell-shaped stupas glow golden. The sheer scale — 2,672 relief panels, 504 Buddha statues — is overwhelming. Spend two hours exploring before the heat and crowds arrive.',
+          tip: 'Borobudur sunrise tickets sell out — book 2–3 days ahead at borobudurpark.com. Bring a headlamp and wear layers as it\'s cold at 4am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kraton & Taman Sari Water Castle',
+          text: 'Return to Yogya by 10am and head to the Kraton (Sultan\'s Palace), the still-functioning royal court of the Yogyakarta Sultanate. Entry is Rp15,000 and includes access to ornate pavilions, gamelan instruments, and royal heirlooms. The current Sultan (Hamengkubuwono X) is also the governor of the province — a unique fusion of monarchy and democracy. Walk 10 minutes south to Taman Sari Water Castle (Rp15,000), an 18th-century royal bathing complex with underground tunnels, pools, and a mosque. The surrounding kampung (neighbourhood) is a maze of narrow lanes with batik workshops.',
+          tip: 'Kraton closes at 2pm and is closed on Sundays. Arrive before noon for the traditional gamelan or wayang kulit performance schedule.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Malioboro Street & Gudeg Dinner',
+          text: 'Walk Malioboro Street — Yogya\'s famous shopping boulevard lined with batik vendors, silver jewellery stalls, and souvenir shops. Bargain hard — start at 30% of the asking price. At dusk, the lesehan food stalls set up along the sidewalk — low tables on mats where you sit cross-legged and eat. Order gudeg (Rp15,000), Yogya\'s signature dish of young jackfruit stewed in coconut milk with chicken and egg. Add nasi kucing (Rp5,000) — tiny portions of rice with sambal and dried fish, meant to be ordered in multiples. Cold Es Teh Manis (iced sweet tea, Rp5,000) completes the experience.',
+          tip: 'Malioboro\'s lesehan stalls appear after 6pm along the east sidewalk. Prices are fixed at most — look for laminated menus to avoid tourist markups.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Borobudur & Ancient Javanese Temples',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Borobudur Sunrise',
+          text: 'The 3:30am wake-up is non-negotiable — Borobudur at sunrise is one of Southeast Asia\'s defining moments. Book through your accommodation (Rp350,000–450,000 with transport) or hire a private driver from Jalan Sosrowijayan for Rp200,000 return plus entry (Rp375,000 foreigners). The 40-minute drive through sleeping Javanese villages is atmospheric. Climb the temple\'s nine stacked platforms in torchlight, reaching the top before the first light hits. As mist lifts from the Kedu Plain and Merapi volcano glows pink, 72 stupas cast long shadows across 2,672 carved relief panels. This 9th-century Mahayana Buddhist monument is staggering in scale and spiritual weight.',
+          tip: 'Wear layers — it\'s genuinely cold at 4am at altitude. Bring a headlamp, water, and snacks. The on-site cafe doesn\'t open until 7am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Prambanan Temple Complex',
+          text: 'After Borobudur, most drivers will offer a stop at Prambanan (Rp375,000 foreigners, combo ticket with Borobudur available for Rp575,000). This 9th-century Hindu temple complex is Borobudur\'s counterpart — 240 temples dedicated to Shiva, Vishnu, and Brahma. The central Shiva temple towers 47 metres with intricate carvings of the Ramayana epic. The lesser-visited Sewu Temple (included in ticket) sits 800 metres north — 249 smaller temples in a serene setting with far fewer tourists. Lunch at the complex\'s Prambanan Restaurant (nasi goreng Rp35,000) or the cheaper warungs outside the main gate.',
+          tip: 'Buy the Borobudur-Prambanan combo ticket — it saves Rp175,000 per person. Use it within two days of purchase.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ramayana Ballet at Prambanan',
+          text: 'If visiting May through October, the open-air Ramayana Ballet at Prambanan (Rp150,000–350,000) is unmissable. Over 200 dancers perform the Hindu epic against the floodlit temple backdrop — gamelan orchestras, elaborate costumes, and fire effects create a spectacle that has run since 1961. The show starts at 7:30pm and runs two hours. If the outdoor season has ended, a condensed indoor version runs year-round at the Trimurti Theatre nearby. After the show, grab a late dinner at Warung Bu Ageng on Jalan Prambanan for soto ayam (chicken soup, Rp15,000) — a Javanese comfort food classic.',
+          tip: 'Book Ramayana Ballet tickets at ramayanaballet.com — VIP seats (Rp350,000) in the centre front are worth it for photography.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Kraton, Batik & Javanese Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Kraton & Taman Sari Water Castle',
+          text: 'Start at the Kraton (Sultan\'s Palace) by 8:30am when it opens. Entry is Rp15,000 and the complex is the living heart of Javanese royal culture — gamelan instruments, keris daggers, royal batik, and the pendopo (open pavilion) where the Sultan holds court. Check the schedule for morning performances. Walk south to Taman Sari Water Castle (Rp15,000), built in 1758 as the Sultan\'s pleasure garden — underground tunnels connect bathing pools, a mosque, and meditation chambers. The surrounding kampung neighbourhood has been built into the ruins, with families living among 18th-century walls.',
+          tip: 'Hire an official Kraton guide (Rp50,000) at the entrance — they provide fascinating context about living royal traditions that signs don\'t cover.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Batik Workshops & Kotagede Silver Village',
+          text: 'Yogya is the batik capital of Java. Head to Batik Winotosastro on Jalan Tirtodipuran for a hands-on workshop (Rp75,000–150,000 for 2–3 hours) where you learn the wax-resist dyeing technique and create your own batik cloth to keep. The intricate patterns — parang, kawung, truntum — each carry philosophical meaning in Javanese culture. Then grab a Grab bike (Rp10,000) to Kotagede, the ancient capital of the Mataram Sultanate, now famous for its silver workshops. Watch artisans hand-hammer intricate filigree jewellery at Tom\'s Silver and buy directly — rings from Rp50,000, bracelets from Rp150,000.',
+          tip: 'Book the batik workshop a day ahead. Morning sessions are cooler — the wax and dye process involves hot materials and no air conditioning.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Malioboro Street & Lesehan Dining',
+          text: 'Malioboro Street at night is Yogya at its most vibrant. The 2-kilometre boulevard fills with street vendors selling batik sarongs (bargain from Rp50,000), leather puppets (Rp30,000–100,000), and wooden crafts. The real draw starts after 6pm when lesehan stalls line the sidewalks — low mats and cushions where you sit cross-legged under the stars. Order gudeg Bu Tjitro (Rp20,000), ayam goreng kremes (crispy fried chicken, Rp25,000), and nasi kucing parcels (Rp5,000 each). Live buskers play Javanese pop songs. The atmosphere is communal, relaxed, and utterly charming.',
+          tip: 'Malioboro\'s batik prices vary wildly. Check fixed-price shops like Batik Mirota first to understand fair pricing before bargaining at street stalls.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Mount Merapi, Jomblang Cave & Hidden Yogya',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mount Merapi Jeep Tour',
+          text: 'Book a Merapi Lava Tour jeep through your hostel (Rp450,000 per jeep for 4 people, roughly Rp115,000 each). Open-top jeeps depart at 7am from Kaliurang village (30 minutes from Yogya centre) and bounce through the volcanic landscape devastated by the 2010 eruption. Visit the destroyed village of Kinahrejo — the former house of the volcano\'s spiritual gatekeeper, buried under 3 metres of ash — and the Alien Stone formation. The jeep ride is wild, dusty, and exhilarating. Views of Merapi\'s smoking crater from the bunkers (now a small museum, Rp10,000) are humbling.',
+          tip: 'Share a jeep with other travellers to split costs — hostels on Jalan Sosrowijayan arrange group bookings. Morning tours avoid afternoon cloud cover.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jomblang Cave Light Beam',
+          text: 'Drive 90 minutes southeast to Jomblang Cave (Rp500,000 including guide and equipment), one of Indonesia\'s most spectacular natural sights. You rappel 60 metres down into a collapsed sinkhole, then walk through a dark underground river passage for 300 metres to reach Grubug Cave chamber. Between 10am and noon (book the late-morning slot), a beam of sunlight pierces through the ceiling opening, illuminating the cave in an ethereal golden shaft of light — the "Heaven\'s Light" phenomenon. The experience is physically demanding but utterly unforgettable. Book at least 3 days ahead.',
+          tip: 'Jomblang accepts only 100 visitors per day. Book at cavingjomblang.com well in advance. Wear clothes you don\'t mind getting muddy.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Prawirotaman Street Food & Live Music',
+          text: 'Skip Malioboro tonight and head to Prawirotaman (Jalan Prawirotaman I), Yogya\'s artsy backpacker neighbourhood south of the Kraton. The street is lined with independent cafes, vintage shops, and small galleries. Dinner at Via Via Cafe (mains Rp35,000–55,000) — a Belgian-Javanese restaurant that\'s been a traveller institution for decades, serving fusion dishes and supporting local community projects. Then catch live music at Retrorica Bar or cheap cocktails at Xtro Kopi. The vibe here is more international and bohemian than Malioboro, with a loyal expat and young-traveller crowd.',
+          tip: 'Prawirotaman\'s cafes stay open until midnight. Via Via\'s Tuesday and Saturday cultural nights feature traditional Javanese dance and music — free with dinner.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Warung eating', text: 'Local warungs (family-run eateries) serve nasi campur, soto, and fried rice for Rp10,000–20,000. Look for the ones packed with locals — nasi gudeg warung stalls near the Kraton are legendary and dirt cheap.' },
+  { title: 'Share jeep tours', text: 'Merapi lava tours, Jomblang Cave, and temple transport are priced per vehicle, not per person. Share with fellow travellers from your hostel to split costs — a 4-person jeep at Rp450,000 becomes Rp115,000 each.' },
+  { title: 'Combo temple tickets', text: 'The Borobudur + Prambanan combo ticket (Rp575,000) saves Rp175,000 over buying separately. Student discounts with valid ISIC card can halve the price at both sites.' },
+  { title: 'Grab bikes everywhere', text: 'GrabBike (motorcycle taxi) rides cost Rp5,000–15,000 across the city. Faster than cars in Yogya\'s traffic and half the price. Always wear the provided helmet and hold on tight.' },
+  { title: 'Budget hostels', text: 'Jalan Sosrowijayan (near the train station) has dorm beds from Rp60,000/night ($4). Prawirotaman has more character — private rooms from Rp100,000–150,000. Both areas are walkable to main sights.' },
+  { title: 'Batik direct from makers', text: 'Skip Malioboro souvenir markup — buy batik directly from workshops in Taman Sari kampung or at Pasar Beringharjo market. Hand-stamped batik starts at Rp25,000, hand-drawn (tulis) from Rp100,000.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'Rp60,000–150,000', midrange: 'Rp250,000–500,000', splurge: 'Rp800,000+', notes: 'Hostel dorm → boutique guesthouse → heritage hotel' },
+  { category: 'Food', budget: 'Rp30,000–60,000', midrange: 'Rp80,000–150,000', splurge: 'Rp300,000+', notes: 'Warung & street food → restaurants → fine dining' },
+  { category: 'Transport', budget: 'Rp15,000–30,000', midrange: 'Rp50,000–100,000', splurge: 'Rp250,000+', notes: 'GrabBike → Grab car → private driver' },
+  { category: 'Activities', budget: 'Rp50,000–375,000', midrange: 'Rp375,000–600,000', splurge: 'Rp1,000,000+', notes: 'Kraton & markets → temples → cave + private tours' },
+  { category: 'Drinks', budget: 'Rp10,000–20,000', midrange: 'Rp30,000–60,000', splurge: 'Rp100,000+', notes: 'Street tea → cafe coffee → cocktail bars' },
+  { category: 'Daily Total', budget: 'Rp165,000–635,000', midrange: 'Rp785,000–1,410,000', splurge: 'Rp2,450,000+', notes: '$10–40 → $50–89 → $155+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🚌',
+    title: 'Getting Around',
+    items: [
+      'GrabBike (motorcycle taxi) is the fastest and cheapest way around — Rp5,000–15,000 for most city rides. Download the Grab app before arrival',
+      'TransJogja buses run fixed routes for Rp3,500 flat fare. Route 1A covers Malioboro to Prambanan. Buses are air-conditioned but infrequent',
+      'For temple day trips, hire a private driver through your hostel (Rp350,000–500,000 per day). Cheaper than multiple Grabs and they wait for you',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Telkomsel or XL SIM at the airport or any phone shop — Rp50,000–100,000 for 10–30GB data. Telkomsel has the best coverage around temple sites',
+      'WiFi is available at most cafes and hostels in Prawirotaman and Sosrowijayan. Speeds vary — don\'t rely on it for video calls',
+      'eSIMs from Airalo work but Telkomsel physical SIMs are cheaper and more reliable for the Indonesia network outside cities',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs are everywhere — BCA and Mandiri ATMs accept international cards with lower fees. Withdraw Rp1,000,000–2,500,000 at a time',
+      'Cash is essential for warungs, markets, and local transport. Temple tickets can be paid by card. Carry Rp200,000–500,000 in small denominations',
+      'Tipping is not expected but appreciated — round up at restaurants or tip Rp10,000–20,000 for exceptional guide service',
+    ],
+  },
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Visa on Arrival (VOA) costs Rp500,000 ($32) for 30 days, extendable once for another 30 days at immigration. Pay in Rupiah or USD at the counter',
+      'Adisucipto Airport (JOG) has flights from Jakarta (1hr), Bali (1.5hrs), KL, and Singapore. Domestic flights are cheap — Rp300,000–600,000 one-way',
+      'Alternatively, take the scenic 7-hour train from Jakarta (Rp150,000–350,000) or overnight from Surabaya on the way to/from East Java',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Yogya is very safe — petty crime is rare and locals are genuinely friendly. Solo female travellers report feeling comfortable here',
+      'Don\'t drink tap water — bottled water (Rp3,000) is everywhere. Ice in restaurants is generally factory-made and safe',
+      'Dengue prevention: use repellent at dawn/dusk. Pharmacies stock basic medicines. For anything serious, Siloam Hospital has English-speaking doctors',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Lightweight, breathable clothing for tropical heat (28–34°C). Bring a warm layer for Borobudur sunrise and Merapi morning tours — it gets cool at altitude',
+      'Modest dress for temple visits — knees and shoulders covered. Sarongs are provided at Borobudur and Prambanan but bringing your own is more comfortable',
+      'Sturdy shoes for Jomblang Cave and Merapi. Flip-flops for city wandering. A dry bag protects electronics during cave visits and rainy season downpours',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Javanese Politeness', text: 'Javanese culture values halus (refinement and subtlety). Speak softly, avoid confrontation, and use the slight bow when greeting elders. When handing or receiving anything, use your right hand or both hands together.' },
+  { icon: '🎭', title: 'Sultan & Respect', text: 'The Sultan of Yogyakarta is both a cultural and political leader — deeply respected locally. Don\'t make jokes about the monarchy. The Kraton is a living royal court, not just a museum. Dress modestly and behave respectfully inside.' },
+  { icon: '🕌', title: 'Islamic Customs', text: 'Yogya is predominantly Muslim. During Ramadan (dates shift yearly), avoid eating in public during daylight hours out of respect. Friday afternoon prayer time means some shops close 11:30am–1pm. Alcohol is available but less visible than in Bali.' },
+  { icon: '👗', title: 'Dress Modestly', text: 'While Yogya is more conservative than Bali, it\'s tolerant of tourists. Covering shoulders and knees shows respect, especially near the Kraton and mosques. Swimwear is only for hotel pools — not appropriate at public waterfalls or rivers.' },
+  { icon: '📸', title: 'Photo Etiquette', text: 'Javanese people are generally happy to be photographed but always ask first — "Boleh foto?" (May I take a photo?). At the Kraton and ceremonies, follow guide instructions. Never photograph military installations or government buildings.' },
+  { icon: '🎵', title: 'Gamelan & Arts', text: 'Yogya is the cultural heart of Java — gamelan orchestras, wayang kulit shadow puppets, and classical Javanese dance are living traditions, not tourist shows. If invited to a local performance, stay for the full show. Leaving early is considered disrespectful.' },
+];
+---
+
+<CityGuideLayout
+  title="Yogyakarta Travel Guide 2026 — Borobudur, Prambanan & Javanese Culture | roammate"
+  description="The ultimate Yogyakarta guide for young travelers. 3-day itinerary covering Borobudur sunrise, Prambanan temples, batik workshops, Mount Merapi, and street food. Plan your trip with roammate."
+  heroImage="/images/guides/yogyakarta-hero.webp"
+  heroFlag="🇮🇩"
+  heroCountry="Indonesia"
+  heroRegion="Southeast Asia"
+  heroCity="Yogyakarta"
+  heroSubtitle="Java's cultural soul — where ancient temples emerge from volcanic mist, gamelan echoes through palace walls, and batik artists keep centuries-old traditions alive."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'May – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in IDR. Yogyakarta is one of Indonesia's cheapest cities — temple entry is the biggest expense, while food and transport are remarkably affordable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Yogyakarta is the cultural heart of Java — deeply traditional, proudly artistic, and warmly welcoming. Understanding Javanese etiquette enriches every interaction."
+  ctaCity="Yogyakarta"
+  ctaText="Find travel companions for Borobudur sunrise tours, split jeep costs at Merapi, and explore hidden temples together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

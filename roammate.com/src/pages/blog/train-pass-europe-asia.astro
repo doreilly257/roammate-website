@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "train-pass-europe-asia",
+  title: "Train Passes: Europe, Japan, and Beyond",
+  description: "Do the math on Eurail passes, Japan Rail Passes, and India train classes — with booking windows, seat reservations, and when point-to-point is cheaper.",
+  category: "Transport",
+  readMinutes: 2,
+  heroImage: "/images/blog/train-pass-europe-asia-hero.webp",
+  intro: "The Eurail pass looks like a magic ticket until you do the math and realize three point-to-point bookings would have saved you $120. Train passes can be incredible deals or expensive tourist traps depending on your route, pace, and booking timing. Here's the honest calculation for the three most popular rail pass systems, plus the countries where passes don't exist but trains are absurdly cheap anyway.",
+  sections: [
+    {
+      heading: "Eurail Pass Math: When It Saves Money and When It Doesn't",
+      content: "A Eurail Global Pass (4 travel days in 1 month) costs around $260. That's worth it if you're taking 4+ long-distance journeys like Paris to Barcelona ($80-120 point-to-point), Munich to Vienna ($60-90), or Rome to Florence ($45-60). But many popular routes — particularly in France, Spain, and Italy — require mandatory seat reservations on top of the pass, adding $10-35 per train. A Paris-Barcelona TGV reservation is $32 extra, turning your 'free' ride into a $32 ride that might not beat an advance-purchase ticket at $39. The pass shines in countries with no reservation requirements: Germany, Austria, Switzerland, Benelux, and Scandinavia. Hop on any regional train, flash your pass, sit down. For a two-week sprint through Germany and Austria alone, the pass saves $150-200 over individual tickets. Book the pass through the official Eurail app, which now includes mobile pass activation and real-time train schedules. The key mistake travelers make: buying a Global Pass for a trip that stays in one country. A single-country Eurail pass is always cheaper, and advance-purchase point-to-point tickets on Trainline or the national rail site beat both if you book 4-8 weeks ahead.",
+      image: "/images/blog/train-pass-europe-asia-inline-1.webp",
+    },
+    {
+      heading: "Japan Rail Pass, India Trains, and Southeast Asia by Rail",
+      content: "The Japan Rail Pass changed in 2023: a 7-day pass now costs around $200 (up from $140), making the math tighter. A Tokyo-Kyoto Shinkansen roundtrip costs $260 at full price, so the pass still saves money if you're making that trip plus even one more day trip to Hiroshima or Hakone. But if you're staying in one region, the regional JR passes — JR West Kansai ($50 for 4 days), JR East Tohoku ($160 for 5 days) — are better value. Reserve Shinkansen seats free through the JR app or at station kiosks. India's train system has no pass worth buying. Instead, book individual tickets on IRCTC.co.in or the Ixigo app 60-120 days in advance. Sleeper class (SL) costs $3-8 for overnight journeys; AC 3-tier (3A) is $8-18 with air conditioning and marginally cleaner bedding. The Delhi-Varanasi overnight in 3A costs about $12 and saves a hotel night. Tatkal (last-minute) tickets release at 10am the day before travel and sell out in seconds — use a browser autofill extension to beat the rush. In Southeast Asia, Thailand's overnight trains from Bangkok to Chiang Mai ($15-35 depending on class) and Vietnam's Reunification Express from Hanoi to Ho Chi Minh City ($30-60 for the full 30-hour journey) are iconic experiences. Book through 12Go.Asia, which handles English-language reservations for most Asian rail networks.",
+      image: "/images/blog/train-pass-europe-asia-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-04-16T10:00:00Z",
+  updatedAt: "2025-04-16T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["public-transport-mastery","overnight-train-productivity","overland-vs-flying-comparison","budget-travel-cashflow-playbook"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

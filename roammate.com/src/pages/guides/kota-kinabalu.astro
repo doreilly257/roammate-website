@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'MYR (Ringgit)', detail: '1 USD ≈ 4.5 MYR. Cards widely accepted' },
+  { icon: '🗣', label: 'Language', value: 'Malay / English', detail: 'English widely spoken in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'MYT (UTC+8)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Jan – May', detail: 'Driest season, clearest skies for Kinabalu' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–40 USD', detail: 'Affordable for Southeast Asia' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free for many', detail: '90-day visa-free for most Western nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'KK City & Islands in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tunku Abdul Rahman Marine Park Islands',
+          text: 'Head to Jesselton Point ferry terminal by 8am and catch a speedboat to one of the five islands in Tunku Abdul Rahman Marine Park — Sapi and Manukan are the most popular and best equipped. Return boats cost 25–35 MYR per person depending on the island. The water is warm, turquoise, and teeming with tropical fish. Snorkelling gear rents for 15–30 MYR at stalls on the beach, and the coral reefs just offshore are alive with clownfish, parrotfish, and sea urchins. The islands have basic facilities — changing rooms, toilets, and small food stalls. A marine park conservation fee of 10 MYR applies for foreigners.',
+          tip: 'Arrive at Jesselton Point by 8am to catch the first boats and have the beaches largely to yourself. Bring reef-safe sunscreen and water — island prices are marked up. Sapi has the best snorkelling close to shore.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Signal Hill & City Mosque',
+          text: 'Return to the mainland and take a Grab car (8–12 MYR) to Signal Hill Observatory Platform for panoramic views over the city, the islands, and Mount Kinabalu rising 4,095m in the distance on clear days. The platform is free and provides an excellent orientation to the city\'s layout. Descend and visit the Kota Kinabalu City Mosque (Masjid Bandaraya) — a stunning white and blue structure that appears to float on a lagoon. Non-Muslims can enter outside prayer times with modest dress — women must wear a headscarf and long sleeves (loaners available at the entrance for free). The reflection of the mosque on the water is one of KK\'s most photographed scenes.',
+          tip: 'Visit the City Mosque between 9am–12pm or 2pm–4pm when it is open to non-Muslim visitors. Dress modestly or borrow a robe at the entrance. Photography is permitted in the grounds and interior.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Night Market Seafood Feast',
+          text: 'Head to the Filipino Market and night market area along the waterfront as the sun sets. The night market is the beating heart of KK\'s food scene — rows of stalls sell fresh seafood displayed on ice. Choose your fish, prawns, crab, or squid and the vendor will grill, steam, or fry it to order. A generous seafood meal with rice, vegetables, and a drink costs 15–30 MYR per person — extraordinary value for the quality. Try the grilled stingray, butter prawns, and chilli crab. The Filipino Market next door sells pearls, handicrafts, and Sabahan souvenirs. The waterfront buzzes with locals and travellers late into the evening.',
+          tip: 'Arrive at the night market by 5:30pm for the best selection of seafood. Point at what you want — the vendors are used to tourists. Prices are posted but slight bargaining is possible for large orders.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Islands, City & Night Market',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tunku Abdul Rahman Marine Park',
+          text: 'Start your KK adventure with a speedboat ride from Jesselton Point terminal to the Tunku Abdul Rahman Marine Park islands — a cluster of five tropical islands just 15–20 minutes offshore. Sapi Island has the best snorkelling with coral reefs accessible directly from the beach, while Manukan offers the best facilities including a resort restaurant. Return boats cost 25–35 MYR per island. The water visibility is excellent from January to May, and you can expect to see anemonefish, damselfish, moray eels, and possibly reef sharks in the deeper areas. Island-hopping packages covering two islands cost 40–55 MYR.',
+          tip: 'Book a two-island hopping package at Jesselton Point — you get more time and variety. Bring your own snorkel mask for hygiene and fit. The marine park fee is 10 MYR for foreigners, 3 MYR for Malaysians.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Signal Hill & Atkinson Clock Tower',
+          text: 'Return to KK and grab lunch at a kopitiam (traditional coffee shop) — try a plate of Sabahan chicken rice or laksa for 8–12 MYR. After lunch, walk to the Atkinson Clock Tower, one of the few structures in KK to survive World War II bombing. The wooden tower dates to 1905 and sits at the base of Signal Hill. Climb the short road to the Signal Hill Observatory Platform for sweeping views over the city centre, the Tunku Abdul Rahman islands, and on clear days, the imposing bulk of Mount Kinabalu rising above the clouds to the northeast. The Sabah Museum (15 MYR entry) nearby is worth a visit for its ethnographic displays on Borneo\'s indigenous cultures.',
+          tip: 'Signal Hill is best visited in the late afternoon when the light is warm and haze has usually cleared. Bring a zoom lens for photos of Mount Kinabalu from the viewing platform.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Waterfront Night Market & Seafood',
+          text: 'KK\'s night market along the waterfront is one of the best in Borneo. The market stretches several blocks and is divided into sections — the seafood grill area is the main attraction, where vendors display the day\'s catch on ice. Point at your selection and it will be cooked to order while you wait. Grilled stingray with sambal (8–12 MYR), butter prawns (15–25 MYR), and chilli crab (30–50 MYR depending on size) are the standout dishes. Pair with fresh coconut water (3 MYR) or a cold Tiger beer (8–12 MYR). The atmosphere is lively and informal — shared tables under fluorescent lights, the smell of charcoal and chilli, and the chatter of a dozen languages.',
+          tip: 'The night market operates daily from about 5pm until late. Arrive early for the best seafood selection. The Filipino Market section sells affordable pearls and handicrafts — bargain for better prices.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Kinabalu National Park Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Kinabalu National Park',
+          text: 'Depart KK at 7am for the 2-hour drive to Kinabalu National Park, a UNESCO World Heritage Site and home to Southeast Asia\'s highest peak at 4,095m. The drive itself is scenic — winding through rainforest-covered hills, past Kadazan-Dusun villages, and through fruit stalls selling tropical produce. At the park headquarters (entry fee 15 MYR for foreigners), explore the Mountain Garden (5 MYR) which showcases the park\'s extraordinary botanical diversity including orchids, pitcher plants, and the famous Rafflesia — the world\'s largest flower that blooms unpredictably. The park is home to over 5,000 plant species in an area smaller than Singapore.',
+          tip: 'Book a day trip through a KK tour operator (120–180 MYR per person including transport and lunch) or rent a car for more flexibility. Bring warm layers — the park headquarters sits at 1,500m and temperatures drop to 15–20°C.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Poring Hot Springs & Canopy Walkway',
+          text: 'Continue to Poring Hot Springs, 40km from the park headquarters on the eastern slope. The highlight is the canopy walkway — a series of suspension bridges strung 40 metres above the rainforest floor between giant dipterocarp trees. The walkway sways gently as you cross, offering a bird\'s-eye view into the forest canopy where hornbills, gibbons, and flying squirrels live. After the walkway, soak in the sulphur-rich hot spring pools (included in park entry) — natural thermal water piped into open-air tubs surrounded by tropical forest. The combination of adrenaline and relaxation makes this a perfect afternoon.',
+          tip: 'The canopy walkway is open 9am–4pm and closes in heavy rain. Go before midday when it is quieter. The hot springs can be crowded on weekends — weekday visits are more peaceful.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to KK & Sunset at Tanjung Aru',
+          text: 'Drive back to KK and head directly to Tanjung Aru Beach for one of Borneo\'s most famous sunsets. The beach faces directly west, and as the sun drops below the South China Sea, the sky erupts in oranges, pinks, and purples — silhouetting the offshore islands and any fishing boats on the water. The beach is popular with local families in the evening, and hawker stalls along the waterfront sell satay, grilled corn, and cold drinks. Grab a coconut (3 MYR), find a spot on the sand, and watch the show. After sunset, head to the nearby Tanjung Aru night food stalls for a casual dinner of nasi goreng (8 MYR) or mee goreng before returning to your hotel.',
+          tip: 'Tanjung Aru Beach is best reached by Grab (10–15 MYR from the city centre). Sunsets are most dramatic during dry season (Jan–May). Arrive 30 minutes before sunset to secure a good spot.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'City Mosque, Markets & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'City Mosque & Gaya Street Sunday Market',
+          text: 'If it is Sunday, start at the Gaya Street Market — KK\'s most famous weekly market that runs from 6:30am to midday along the main street of the old town. Hundreds of vendors sell everything from jungle produce, traditional medicines, and orchids to Sabahan crafts, handmade soaps, and freshly grilled satay. It is the best place to mingle with locals and try unusual snacks like hinava (raw fish salad) and tuhau (wild ginger pickle). On other days, visit the floating City Mosque early — the reflection on the lagoon is best in morning light. The mosque\'s blue and white domes are striking, and the serene setting feels worlds apart from the busy city.',
+          tip: 'Gaya Street Market is Sunday only — arrive by 7:30am before the heat builds. The mosque is open to non-Muslim visitors 9am–12pm and 2pm–4pm on weekdays. Modest dress required at both.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mari Mari Cultural Village',
+          text: 'Take a half-day tour (150–200 MYR) to the Mari Mari Cultural Village, a living museum 25 minutes from KK city that recreates the traditional longhouses and lifestyles of Sabah\'s five main indigenous groups — the Dusun, Rungus, Lundayeh, Bajau, and Murut. Guides in traditional dress demonstrate rice wine brewing, fire-starting with bamboo, tattooing techniques, and blowpipe hunting. You can taste traditional foods including lihing (rice wine) and try your hand at the blowpipe. The village is beautifully set in a river valley surrounded by rainforest, and the experience offers genuine insight into Borneo\'s indigenous heritage beyond what museums can provide.',
+          tip: 'Book through the official Mari Mari website or your hotel — the village operates set tour times and walk-ins are not always possible. Morning sessions are less crowded than afternoon ones.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Laksa & Waterfront Stroll',
+          text: 'Spend your final evening strolling KK\'s compact waterfront. Start with a bowl of Sabah laksa — the local version is curry-based with thick rice noodles, prawns, and hard-boiled egg, available at kopitiams across the city for 7–10 MYR. Walk through the Handicraft Market for last-minute souvenirs — cultured pearls from Sabah\'s pearl farms are excellent quality and significantly cheaper than elsewhere in Asia. Finish at one of the waterfront bars along the Esplanade with a cold beer and watch the fishing boats come in. KK\'s international airport is just 8km from the city centre — a Grab to the airport costs 15–20 MYR and takes 15 minutes.',
+          tip: 'Sabah cultured pearls are a genuine bargain — a quality strand costs 100–300 MYR versus 500+ in Kuala Lumpur. Buy from established shops in the Handicraft Market for authenticity guarantees.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat at kopitiams', text: 'Traditional coffee shops serve excellent noodles, rice dishes, and laksa for 6–12 MYR ($1.50–3). Tourist restaurants in the waterfront area charge 2–3x more for similar quality food.' },
+  { title: 'Use Grab for transport', text: 'Grab rides across KK city cost 6–15 MYR. Regular taxis charge double and rarely use meters. The city is also walkable — most attractions are within 2km of the waterfront.' },
+  { title: 'Stay in hostels or Airbnbs', text: 'KK has excellent hostels from 30–50 MYR/night ($7–12) and Airbnb apartments from 80–120 MYR. Budget hotels near the waterfront cost 60–100 MYR and are clean and comfortable.' },
+  { title: 'Snorkel off Sapi Island', text: 'A return boat to Sapi with snorkelling gear rental costs under 60 MYR total — far cheaper than organised snorkel tours at 120–200 MYR. The reef is accessible directly from the beach so you do not need a guide.' },
+  { title: 'Night market over restaurants', text: 'A full seafood dinner at the night market costs 15–30 MYR versus 60–100 MYR at waterfront restaurants. The quality and freshness are often better at the market because of the high turnover.' },
+  { title: 'Book Kinabalu trips locally', text: 'Day trips to Kinabalu National Park booked through local operators at Jesselton Point or Gaya Street cost 120–180 MYR — international booking sites charge 250+ MYR for the same itinerary.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$7–15', midrange: '$20–50', splurge: '$70+', notes: 'Hostels → budget hotels → resorts' },
+  { category: 'Food', budget: '$5–10', midrange: '$12–25', splurge: '$35+', notes: 'Kopitiams → night market → seafood restaurants' },
+  { category: 'Transport', budget: '$3–6', midrange: '$8–15', splurge: '$25+', notes: 'Walking/bus → Grab → private car' },
+  { category: 'Activities', budget: '$5–12', midrange: '$15–40', splurge: '$50+', notes: 'Beach/snorkel → day trips → diving' },
+  { category: 'Island Fees', budget: '$2–8', midrange: '$10–15', splurge: '$20+', notes: 'Marine park fee + boat transfer' },
+  { category: 'Daily Total', budget: '$25–40', midrange: '$60–120', splurge: '$180+', notes: 'Backpacker → comfortable → resort luxury' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most Western nationalities get 90-day visa-free entry to Malaysia — passport stamped on arrival',
+      'Sabah has separate immigration from Peninsular Malaysia — your passport is stamped again on arrival in Borneo',
+      'Keep your passport accessible — hotels are required to scan it at check-in',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'KK is safe for travellers — petty theft exists but violent crime is rare. Use normal precautions',
+      'Dengue fever is present — use insect repellent, especially at dawn and dusk. No malaria risk in KK city',
+      'Tap water is not recommended for drinking — bottled water is cheap (1–2 MYR) and available everywhere',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Grab is the main transport app — reliable, metered, and cheap. Most city rides cost 6–15 MYR',
+      'Jesselton Point terminal is the hub for island boats. Minibuses run to Kinabalu Park from Inanam terminal',
+      'KK International Airport (BKI) is 8km from the city centre — Grab costs 15–20 MYR, takes 15 minutes',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Celcom, Digi, or Hotlink SIM at the airport for 15–30 MYR with generous data. Registration requires passport',
+      'WiFi is reliable at hotels, cafes, and malls in KK. Coverage drops in national parks and rural areas',
+      'Download offline maps of Kinabalu National Park and islands — mobile signal is weak in remote areas',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: MYR (Malaysian Ringgit). ATMs are plentiful in KK — Maybank and CIMB have the best rates',
+      'Credit cards accepted at hotels, malls, and larger restaurants. Cash needed for markets, boats, and small vendors',
+      'Tipping is not expected in Malaysia but rounding up is appreciated. Tour guides appreciate 10–20 MYR tips',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, quick-dry clothing for the tropical heat. A long-sleeved layer for Kinabalu Park where it is cooler',
+      'Reef shoes or water sandals for island hopping — coral can cut bare feet. Bring reef-safe sunscreen',
+      'Rain jacket or compact umbrella — afternoon showers are common year-round even in dry season',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Mosque Etiquette', text: 'KK\'s City Mosque is open to visitors outside prayer times. Cover arms and legs, remove shoes, and women must wear a headscarf — free loaners are available at the entrance. Speak quietly and do not walk in front of anyone praying.' },
+  { icon: '🌍', title: 'Indigenous Cultures', text: 'Sabah is home to over 30 indigenous ethnic groups with distinct languages and traditions. The Kadazan-Dusun are the largest group. Show genuine interest and respect when visiting cultural villages — these are living traditions, not performances.' },
+  { icon: '📸', title: 'Photography & Privacy', text: 'Ask permission before photographing people, especially in markets and indigenous communities. Most Sabahans are friendly and happy to pose, but some may decline — always respect their wishes. Never photograph military or government buildings.' },
+  { icon: '🗣', title: 'Language Tips', text: 'Bahasa Malay is the official language but English is widely spoken in KK. A few Malay phrases earn smiles — Terima kasih (thank you), Berapa harga? (how much?), and Sedap! (delicious!) go a long way.' },
+  { icon: '🤝', title: 'Ramadan Awareness', text: 'If visiting during Ramadan, be respectful — do not eat, drink, or smoke in public during daylight hours. Restaurants remain open for non-Muslims but be discreet. The Ramadan night markets are spectacular and worth experiencing.' },
+  { icon: '🐢', title: 'Wildlife Respect', text: 'Borneo\'s wildlife is precious and endangered. Never touch or feed wild animals, maintain distance from orangutans and proboscis monkeys, and choose ethical wildlife tours that prioritise animal welfare over tourist entertainment.' },
+];
+---
+
+<CityGuideLayout
+  title="Kota Kinabalu Travel Guide 2026 — 3-Day Itinerary | roammate"
+  description="Complete Kota Kinabalu travel guide with 1 and 3-day itineraries. Island hopping, Mount Kinabalu, night market seafood, Borneo wildlife. Budget tips for Malaysia's adventure gateway."
+  heroImage="/images/guides/kota-kinabalu-hero.webp"
+  heroFlag="🇲🇾"
+  heroCountry="Malaysia"
+  heroRegion="Southeast Asia"
+  heroCity="Kota Kinabalu"
+  heroSubtitle="Borneo's adventure gateway — tropical islands, Southeast Asia's highest peak, night market seafood feasts, and orangutans in the wild."
+  heroPills={["3-Day Island & Nature","Adventure","Jan – May Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Kota Kinabalu offers excellent value — seafood dinners for a few dollars, affordable island transport, and budget accommodation that punches above its price point."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Sabah is one of Malaysia's most culturally diverse states — a mosaic of indigenous traditions, Malay heritage, and Chinese-Filipino influences. Approach with curiosity and respect for a rich cultural experience."
+  ctaCity="Kota Kinabalu"
+  ctaText="Find travel companions to explore Kota Kinabalu together on roammate — share island trips, split Kinabalu trek costs, and discover Borneo with new friends."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

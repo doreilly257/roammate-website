@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "off-season-travel-advantages",
+  title: "Off-Season Travel Advantages",
+  description: "Save 30-50% on accommodation and skip the crowds by traveling off-season with destination-specific timing, weather trade-offs, and shoulder season sweet spots.",
+  category: "Planning",
+  readMinutes: 2,
+  heroImage: "/images/blog/off-season-travel-advantages-hero.webp",
+  intro: "Angkor Wat in December: 10,000 visitors per day, USD 45 hostels, and a sunrise photo with 400 other tripods. Angkor Wat in September: 2,000 visitors, USD 12 hostels, and a sunrise where you can hear birds instead of shutters. Off-season travel is the single most effective way to improve both your budget and your experience. The trade-offs are real but consistently overblown.",
+  sections: [
+    {
+      heading: "The Real Weather Trade-Offs and Shoulder Season Sweet Spots",
+      content: "Off-season usually means rain, but rain in the tropics is not what Northern Europeans imagine. In Thailand's June-October wet season, a typical day delivers 6 hours of sunshine, a 90-minute afternoon downpour, then clear skies by evening. You lose maybe two hours of sightseeing and gain 40% cheaper hotels. The shoulder seasons are where the real value lives. Southeast Asia's sweet spots are October-November (rains ending, crowds not yet arrived) and April-May (hot but empty). Europe peaks July-August, but May and October deliver warm weather at 30-40% lower prices across Portugal, Greece, Croatia, and Spain. September in Italy is arguably the best month: summer heat fades, tourists leave, and grape harvest season starts. For South America, April-June hits the sweet spot in Peru (dry season starts, trekkers have not yet flooded the Inca Trail) and Colombia (second dry season in many regions). The destinations with the least weather downside in off-season include Bali (green season May-September is technically dry season's neighbor with occasional rain but 35% fewer visitors than July-August peak), Morocco (summer is hot but Fez and Marrakech drop to USD 8 hostels versus USD 22 in March), and Japan (November's autumn colors rival spring cherry blossoms at one-third the accommodation cost).",
+      image: "/images/blog/off-season-travel-advantages-inline-1.webp",
+    },
+    {
+      heading: "Budget Impact and Booking Flexibility in Low Season",
+      content: "The numbers are consistent across regions. Accommodation drops 30-50% off-season. A private room at a Lisbon hostel costs EUR 65 in August and EUR 28 in February. Flights to Bangkok from London run GBP 380 return in January (peak) versus GBP 240 in June. Internal flights in Indonesia drop from USD 80-120 to USD 35-55 when Australian school holidays end. The compounding effect matters: saving 35% on accommodation, 25% on flights, and 20% on activities over a three-month trip adds up to USD 2,000-4,000 in extra travel time. Off-season also unlocks same-day booking flexibility that peak season eliminates. You can arrive in a town with no reservation and walk into three hostels comparing prices and vibes before choosing. Tour operators with empty seats offer 20-40% walk-in discounts. Dive shops on Koh Tao drop their Open Water course from 9,800 baht in December to 7,500 baht in June because they need to fill boats. The only genuine off-season obstacles are reduced transport frequency (some Greek island ferries stop November-March, Thailand's Koh Lipe closes May-October) and occasional business closures in heavily seasonal towns. Check Hostelworld availability before committing to a destination: if fewer than five hostels show available, the infrastructure may not support comfortable budget travel during that period.",
+      image: "/images/blog/off-season-travel-advantages-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-10-29T10:00:00Z",
+  updatedAt: "2025-10-29T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["rainy-season-travel-advantage","flexible-booking-strategy","island-hopping-route-planning","first-month-southeast-asia"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

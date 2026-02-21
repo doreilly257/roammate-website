@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'NAD / ZAR', detail: 'Namibian Dollar pegged 1:1 to ZAR' },
+  { icon: '🗣', label: 'Language', value: 'English', detail: 'Afrikaans, German also spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'CAT (UTC+2)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Oct', detail: '15–25°C, dry, clear skies' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–60 USD', detail: 'Self-drive overlanding budget' },
+  { icon: '🛂', label: 'Visa', value: 'Free on arrival', detail: '90 days for most nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Skeleton Coast — Seals, Shipwrecks & Desert',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cape Cross Seal Colony',
+          text: "Drive north from Swakopmund along the salt road to Cape Cross, home to one of the largest Cape fur seal colonies on earth — up to 200,000 seals packed onto the rocky shoreline in a spectacle of noise, smell, and raw wildlife that overwhelms every sense. The boardwalk takes you within metres of the colony where bulls weighing 350kg bellow territorial disputes, pups nurse and play in tidal pools, and jackals patrol the edges looking for opportunities. The smell is powerful — an honest, primal wall of ammonia and fish — but your brain adjusts after ten minutes and the behaviour of these animals is endlessly fascinating. The Portuguese navigator Diego Cao erected a stone cross here in 1486 — a replica marks the spot.",
+          tip: 'Arrive before 9am for the best light and fewer tourists. The seal colony entrance fee is 80 NAD ($4.50). A bandana over your nose helps with the initial smell shock. Stay on the boardwalk — bull seals are aggressive and surprisingly fast on land.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Skeleton Coast Drive',
+          text: "Continue north past Cape Cross into the Skeleton Coast proper — the name given by the indigenous Bushmen who called it The Land God Made in Anger. The coast is a graveyard of ships where cold Benguela Current fog, unpredictable currents, and featureless shoreline conspired to wreck hundreds of vessels over centuries. Drive the C34 salt road with the Atlantic crashing on your left and the Namib Desert rising on your right — this narrow strip where ocean meets desert is one of the most desolate and beautiful landscapes on earth. Stop at marked shipwreck sites where rusting hulls emerge from the sand, slowly being consumed by wind and salt. The fog rolls in and out unpredictably, transforming the landscape from sun-bleached to ghostly in minutes.",
+          tip: 'The salt road is well-maintained but the surface changes — reduce tyre pressure to 1.6 bar for the sandy sections. Carry extra water and fuel. There are no services between Cape Cross and Terrace Bay (200km). A 4x4 is not essential but recommended.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Desert Camp & Stargazing',
+          text: "Set up camp at one of the designated camping spots along the coast or drive to Terrace Bay, the only accommodation in the northern Skeleton Coast (a government rest camp with basic rooms and a fuel station). If wild camping, the experience of sleeping between the roaring Atlantic and the silent desert is extraordinary — the fog lifts at sunset to reveal a sky so dense with stars it seems fake. The Milky Way stretches from horizon to horizon and the absence of any light pollution for hundreds of kilometres makes this one of the best stargazing locations in Africa. The sound of the ocean and the occasional bark of a jackal are the only company. Return to Swakopmund or continue north depending on your route.",
+          tip: 'Wild camping is permitted at designated sites only — check regulations at the park gate. Bring all water, food, and firewood. Night temperatures drop to 5-10°C even in summer due to the cold Benguela Current. A warm sleeping bag is essential.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Swakopmund — Gateway to the Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Swakopmund Town & Waterfront',
+          text: "Start your Skeleton Coast journey in Swakopmund — a surreal German colonial town sitting between the Namib Desert and the Atlantic Ocean where art nouveau architecture, German bakeries, and palm-lined streets feel transported from Bavaria to the African coast. Walk the Mole (the old jetty and sea wall) for views of the crashing Atlantic. Visit the Swakopmund Museum in the old customs house for context on the coastal environment and the indigenous cultures — the Topnaar and San peoples who have lived in this harsh landscape for millennia. The museum's natural history section explains the Benguela Current that creates the fog, the cold water, and the upwelling that sustains the extraordinary marine life along this coast.",
+          tip: 'Swakopmund is cold even in summer — the Benguela Current keeps temperatures around 15-20°C year-round. Bring a jacket. The German bakeries on the main street serve excellent pastries and strong coffee that fuel your desert adventures.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Desert Activities from Swakopmund',
+          text: "Swakopmund is Namibia's adventure capital. Choose from sandboarding on the massive dunes of the Namib ($40-60), quad biking through the desert ($50-80), skydiving over the dune sea ($200), or a scenic flight over the Skeleton Coast ($150-250). For a quieter option, join a Living Desert Tour — a guided walk through the gravel plains where an expert guide reveals the extraordinary desert-adapted creatures hiding in plain sight: the translucent Palmato gecko, the dancing Namaqua chameleon, the sidewinding Peringuey's adder, and the fog-basking darkling beetle that drinks condensation from the morning mist by standing on its head. This tour redefines your understanding of what desert means.",
+          tip: 'The Living Desert Tour (350-500 NAD / $20-28) is the most educational activity in Swakopmund and the best introduction to Namib ecology. Book for early morning when the creatures are most active and the light is beautiful for photography.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Seafood Dinner & Sunset',
+          text: "Swakopmund has the best dining scene in Namibia. The Tug restaurant, built into a beached tugboat on the waterfront, serves outstanding fresh oysters (from nearby Walvis Bay farms), grilled kingklip, and Namibian beef steaks. Watch the sun drop into the Atlantic from the restaurant deck — the cold Benguela Current creates spectacular fog banks that turn the sunset into a diffused golden glow unlike anything in the tropics. After dinner, walk the quiet streets where German colonial mansions sit beside modern galleries and the sound of the ocean carries through the fog. Namibia's excellent lager beers — Windhoek and Tafel — cost 20-30 NAD ($1.10-1.70) at local bars.",
+          tip: 'Book The Tug restaurant in advance — it fills up, especially at sunset. Walvis Bay oysters are world-class and cost 80-120 NAD ($4.50-6.70) per dozen. For cheaper eats, the Village Cafe and Brewer & Butcher are excellent.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Cape Cross & Northern Skeleton Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cape Cross Seal Colony',
+          text: "Drive 120km north from Swakopmund on the C34 salt road to Cape Cross — the largest Cape fur seal colony in the world with up to 200,000 animals congregated on a narrow strip of rocky coastline. The scale is staggering — a writhing, barking, fighting, nursing mass of marine mammals stretching as far as you can see in both directions. The boardwalk puts you within arm's length of bulls the size of small bears, mothers calling to pups with unique identifying cries, and adolescents body-surfing the shore break. Jackals, hyenas, and brown hyenas patrol the colony edges. The smell is legendary and the noise is constant. This is wildlife at its most raw, unfiltered, and unforgettable.",
+          tip: 'Visit between November and January for peak breeding season when pups are everywhere. The seals are most active in early morning. Keep a respectful distance from bulls near the boardwalk — they can move fast and bite hard.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Skeleton Coast Shipwrecks & Desert',
+          text: "Continue north beyond Cape Cross into the Skeleton Coast National Park (permit required, purchased at the Ugabmund gate for 80 NAD). The coastline here earned its name from the whale and seal bones that once littered the shore, joined over centuries by the skeletons of ships that foundered in the fog and treacherous currents. Drive the salt road scanning for shipwreck remains emerging from the sand — the most photogenic are rusting hulls half-buried in the beach with the Atlantic crashing through their holds. The landscape is stark and haunting — desert dunes running directly into the ocean, fog banks materialising from nothing, and a complete absence of human presence. Pull over at marked viewpoints and walk to the shore where the roar of the cold Atlantic is the only sound.",
+          tip: 'The Skeleton Coast park gate closes at 3pm for entry — time your arrival accordingly. The permit is valid for the day only. Carry a full tank of fuel, 10+ litres of extra water, and food. There are zero facilities between the gate and Terrace Bay (200km north).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Terrace Bay Rest Camp',
+          text: "Arrive at Terrace Bay — the only rest camp on the northern Skeleton Coast, operated by Namibia Wildlife Resorts. The camp is basic but atmospheric — a handful of bungalows and a restaurant on the edge of the Atlantic surrounded by desert in every other direction. The isolation is total. Walk the beach at sunset where the fog glows orange and shapes that might be rocks or might be shipwrecks appear and disappear in the mist. The restaurant serves surprisingly good grilled fish and steak. After dinner, step outside into the darkest sky you have ever seen — the Milky Way is so bright it casts shadows on the sand and shooting stars streak across the sky every few minutes.",
+          tip: 'Book Terrace Bay well in advance through NWR (Namibia Wildlife Resorts) — there are very limited beds. Alternatively, camp at designated sites south of Terrace Bay. The rest camp has a fuel pump (cash only) — fill up for the return journey.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Desert Elephants & Return South',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Desert-Adapted Elephants in the Hoanib',
+          text: "Drive inland from the coast to the dry riverbeds of the Hoanib or Hoarusib river systems where Namibia's famous desert-adapted elephants survive in one of the harshest environments any elephant population has ever colonised. These are not a separate species but African elephants that have adapted over generations to walk up to 70km between water sources, surviving on the sparse vegetation of dry riverbeds. Finding them requires patience and a good guide — scan the dry riverbed for tracks in the sand and follow them. When you find the herd, the sight of elephants walking through a landscape of rock and sand with no tree larger than a shrub is profoundly moving. These animals represent one of conservation's greatest survival stories.",
+          tip: 'A local guide is essential for finding the desert elephants — Elephant Human Relations Aid (EHRA) and local community conservancies run guided trips. Keep 100m minimum distance. The elephants are wild and can be aggressive, especially cows with calves.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Damaraland Rock Art & Landscapes',
+          text: "Drive south through Damaraland — a region of dramatic volcanic landscapes, tabletop mountains, and ancient riverbeds that support surprising wildlife including springbok, oryx, and giraffe. Stop at Twyfelfontein, a UNESCO World Heritage Site with over 2,500 rock engravings made by San hunter-gatherers between 2,000 and 6,000 years ago. The engravings depict animals — elephants, rhinos, giraffes, and lions — that once roamed this landscape in abundance. A guide leads you through the sandstone amphitheatre explaining the significance of each panel. The Organ Pipes — a geological formation of dolerite columns resembling a church organ — are a short detour worth the stop.",
+          tip: 'Twyfelfontein entry costs 80 NAD and a guided tour is included. The site has no shade — visit before 11am or after 3pm. The Damara Living Museum nearby offers cultural insight into the Damara people for an additional 100 NAD.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Desert Camp Under the Stars',
+          text: "Camp at one of the community campsites in Damaraland — Madisa Camp, Hoada Campsite, or Palmwag campsite offer spectacular settings with basic facilities (braai pit, long-drop toilet, sometimes a shower). Build a fire as the desert cools rapidly after sunset — temperatures can swing 20 degrees between day and night. Braai (barbecue) whatever you have — Namibian boerewors sausage and braai meat from Swakopmund butcheries are excellent. The Milky Way appears in extraordinary detail as darkness falls and the silence of the Damaraland desert, broken only by the pop of the fire and the distant call of a jackal, is the perfect ending to your Skeleton Coast adventure.",
+          tip: 'Stock up on braai supplies (meat, charcoal, fire starters) in Swakopmund before heading north — there are no shops beyond Henties Bay. Bring enough firewood or charcoal for two nights. The campsites are community-run and your fees support local conservation.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Self-drive to save massively', text: 'Guided Skeleton Coast tours cost $300-500 per day. A self-drive 4x4 rental costs $50-80 per day (book from Windhoek with Namibia2Go or Advanced Car Hire) and you control your route and pace. The C34 salt road is accessible to 2WD vehicles in dry conditions but a 4x4 is recommended for detours and sand.' },
+  { title: 'Camp instead of lodges', text: 'Namibia has an outstanding camping culture. Designated campsites cost 100-300 NAD ($5.50-17) per person per night vs. $150-500+ for lodges. NWR campsites at major parks include fire pits and basic ablution blocks. Bring your own tent, cooking gear, and supplies — the camping experience in Namibia is world-class.' },
+  { title: 'Buy supplies in Swakopmund', text: 'Swakopmund has the last proper supermarkets (Pick n Pay, Spar) before the Skeleton Coast. Stock up on water (2L bottles), non-perishable food, braai supplies, and snacks. Fuel up here and at Henties Bay — there is nothing between Henties Bay and Terrace Bay except empty desert.' },
+  { title: 'Cook your own braai meals', text: 'Namibians braai (barbecue) everything and the quality of meat is excellent. Buy boerewors, steaks, and braai packs at Swakopmund butcheries for 50-120 NAD ($2.80-6.70) per meal vs. 150-300 NAD ($8.50-17) at a restaurant. A gas stove and basic cooking gear from camping shops cost 300-500 NAD and pay for themselves in two days.' },
+  { title: 'Walvis Bay oysters are cheap', text: 'Namibia farms some of the world\'s finest oysters in Walvis Bay lagoon. Buy a dozen at the Raft restaurant or directly from the farms for 80-120 NAD ($4.50-6.70) — the same oysters cost triple in South African restaurants. Pair with a Windhoek lager for one of Africa\'s best budget meals.' },
+  { title: 'Share fuel costs', text: 'The Skeleton Coast route covers 400-600km of driving. At current fuel prices, the return trip from Swakopmund costs 600-1,000 NAD ($34-56). Find overlanding partners to split fuel and vehicle rental costs. Hostels in Swakopmund and Windhoek have ride-share notice boards for travelers heading north.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$6–15', midrange: '$40–100', splurge: '$200+', notes: 'Camping → rest camps → luxury lodges' },
+  { category: 'Food', budget: '$8–15', midrange: '$20–35', splurge: '$60+', notes: 'Self-catering/braai → restaurants → lodge dining' },
+  { category: 'Transport', budget: '$15–25', midrange: '$35–60', splurge: '$100+', notes: '2WD rental split → 4x4 → guided safari' },
+  { category: 'Activities', budget: '$5–15', midrange: '$25–60', splurge: '$150+', notes: 'Park fees → guided tours → scenic flights' },
+  { category: 'Fuel & Supplies', budget: '$10–15', midrange: '$15–25', splurge: '$25+', notes: 'Fuel, water, supplies for remote driving' },
+  { category: 'Daily Total', budget: '$40–60', midrange: '$130–280', splurge: '$535+', notes: 'Self-drive camping is the sweet spot' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities receive a free 90-day tourist stamp on arrival in Namibia. No visa required for EU, US, UK, Australian, Canadian, and most Commonwealth citizens',
+      'Nearest airports: Windhoek Hosea Kutako (WDH) is the main international gateway — 4-5 hour drive to Swakopmund. Walvis Bay airport (WVB) has flights from Johannesburg and Cape Town, only 30 minutes from Swakopmund',
+      'Skeleton Coast National Park requires a permit (80 NAD per person plus 10 NAD per vehicle per day) purchased at the Ugabmund gate. The gate opens at sunrise and closes at 3pm for entry',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No mandatory vaccinations for Namibia. Hepatitis A, typhoid, and tetanus recommended. Malaria risk is low on the coast but present in northern Namibia — consult a travel doctor',
+      'The main risks are vehicle-related — long drives on gravel roads, sand crossings, and wildlife on the road. Drive at sensible speeds (80km/h on gravel), avoid night driving, and carry a spare tyre and basic tools',
+      'Dehydration is a serious risk in the desert — carry minimum 2 litres per person per day plus 20 litres emergency water in the vehicle. The cold coast creates a false sense of security — the desert interior is extremely hot and dry',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'A rental vehicle is essential — there is no public transport along the Skeleton Coast. 4x4 recommended but not required for the main C34 salt road. Book from Windhoek for the best rates and widest selection',
+      'The C34 coast road from Swakopmund to Terrace Bay is well-maintained salt/gravel. Reduce tyre pressure on sandy sections. Carry a tyre repair kit, pump, and extra fuel (jerry can). Fuel available in Swakopmund, Henties Bay, and Terrace Bay only',
+      'Distances are vast — Swakopmund to Cape Cross is 120km, Cape Cross to Terrace Bay is 200km. Plan driving carefully around fuel stops and park gate closing times (3pm entry deadline)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'MTC (Namibia\'s main network) has coverage in Swakopmund and Henties Bay but drops to nothing north of Cape Cross. There is no cell signal on most of the Skeleton Coast — plan accordingly',
+      'Download offline maps (Maps.me has excellent Namibia coverage) and all information before leaving Swakopmund. GPS coordinates of campsites, fuel stops, and key points of interest should be saved offline',
+      'Terrace Bay rest camp has no WiFi and no cell signal. Embrace the digital detox — this is one of the most remote coastlines accessible by road in the world. A satellite communicator (InReach) is recommended for safety',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs in Swakopmund and Windhoek dispense NAD. Bring enough cash for the entire Skeleton Coast trip — there are no ATMs north of Henties Bay. South African Rand (ZAR) is accepted everywhere at 1:1 exchange',
+      'Terrace Bay rest camp accepts cash only. Fuel at Terrace Bay is cash only. Camping fees at NWR sites are cash only. Carry 2,000-3,000 NAD ($110-170) in cash for the northern coast trip',
+      'Credit cards accepted in Swakopmund hotels, restaurants, and shops. Visa and Mastercard work reliably. Amex is rarely accepted outside upmarket lodges. Foreign exchange bureaus in Swakopmund offer fair rates',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'The Skeleton Coast is cold — the Benguela Current keeps temperatures at 10-20°C year-round with strong wind chill. Pack warm layers, a windproof jacket, and a beanie. Fog is constant and keeps everything damp',
+      'For overlanding: tent, sleeping bag rated to 0°C, cooking stove and gas, pots and utensils, cooler box for perishables, headlamp, camp chairs, and a table. Camping shops in Windhoek and Swakopmund rent full kits for 200-400 NAD per day',
+      'Binoculars for wildlife spotting (seals, desert elephants, sea eagles). Camera with zoom lens for Cape Cross. Sun protection for inland detours where temperatures can hit 35°C. A bandana for the seal colony smell. Sand-proof bags for electronics',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏜', title: 'Respect the Desert', text: "The Skeleton Coast is one of the most fragile environments on earth. Stay on designated roads and tracks — driving off-road damages the desert surface which can take centuries to recover. Lichens on rocks are living organisms that grow less than 1mm per year. Do not collect anything — shells, bones, rocks, and artefacts are all protected. Pack out all rubbish with zero exceptions." },
+  { icon: '🐘', title: 'Desert Elephant Etiquette', text: "Namibia's desert-adapted elephants are a critically small population navigating an increasingly pressured environment. Maintain minimum 100m distance at all times. Never position your vehicle between elephants and water. If an elephant shows signs of agitation (ears flared, trunk raised, mock charges), back away slowly. Support community conservancies that protect these animals by paying guide fees and camping fees." },
+  { icon: '🏘', title: 'Community Conservancies', text: "Many campsites and guide services along the Skeleton Coast route are run by community conservancies — local indigenous communities who manage wildlife and tourism on communal lands. Your fees directly fund conservation and community development. Ask about conservancy projects, engage respectfully with local people, and understand that tourism is their primary income source in an otherwise unforgiving landscape." },
+  { icon: '⚓', title: 'Shipwreck Heritage', text: "The shipwrecks along the Skeleton Coast are heritage sites — do not climb on, remove pieces from, or damage any wreck. Many are protected under Namibian heritage law. The wrecks are actively deteriorating and human contact accelerates their destruction. Photograph from a respectful distance and appreciate that each rusting hull represents sailors who likely did not survive this coast." },
+  { icon: '🔥', title: 'Braai & Social Culture', text: "The braai (barbecue) is the social heart of Namibian camping culture. If camping near other overlanders, the evening braai is a natural gathering point — share food, stories, and route information. Namibians are warm and hospitable people who will often invite strangers to join their fire. Bring extra meat to share and accept invitations generously." },
+  { icon: '🌊', title: 'Ocean Safety', text: "The Atlantic along the Skeleton Coast is extremely dangerous — cold water (12-16°C), powerful undertow, unpredictable currents, and large waves make swimming potentially fatal. This coast earned its name from the ships and sailors it has claimed. Do not swim anywhere along the Skeleton Coast. Even wading in the shallows carries risk. Admire the ocean from the shore and respect the same force that created this extraordinary landscape." },
+];
+---
+
+<CityGuideLayout
+  title="Skeleton Coast Travel Guide 2026 | roammate"
+  description="Complete guide to Namibia's Skeleton Coast. Cape Cross seal colony, shipwrecks in the fog, desert elephants, overlanding tips, budget breakdown, and everything you need for this remote Atlantic wilderness."
+  heroImage="/images/guides/skeleton-coast-hero.webp"
+  heroFlag="\ud83c\uddf3\ud83c\udde6"
+  heroCountry="Namibia"
+  heroRegion="Africa"
+  heroCity="Skeleton Coast"
+  heroSubtitle="Shipwrecks in the fog, 200,000 seals on the shore, and desert elephants in the dunes — where the Namib Desert meets the Atlantic in desolate, haunting beauty."
+  heroPills={['1 & 3 Day Itinerary', 'Overlanding', 'May – Oct Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in USD. Self-drive overlanding with camping is the sweet spot for the Skeleton Coast — affordable, authentic, and the only way to properly experience this remote wilderness."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="The Skeleton Coast demands respect — for the desert, the ocean, the wildlife, and the indigenous communities who call this unforgiving landscape home. Travel responsibly and leave nothing behind."
+  ctaCity="Skeleton Coast"
+  ctaText="Find overlanding companions, share 4x4 rental costs, and explore Namibia's wildest coastline together with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

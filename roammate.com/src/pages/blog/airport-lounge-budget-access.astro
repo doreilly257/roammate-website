@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "airport-lounge-budget-access",
+  title: "Airport Lounge Access on a Budget",
+  description: "Access airport lounges without business class tickets. Priority Pass deals, credit card perks, day passes, and when lounge access actually saves backpackers money.",
+  category: "Budget",
+  readMinutes: 2,
+  heroImage: "/images/blog/airport-lounge-budget-access-hero.webp",
+  intro: "Airport lounges offer free meals, drinks, showers, and comfortable seating, luxuries that backpackers usually skip. But with the right strategy, lounge access costs less than buying a sandwich and coffee at the gate. Priority Pass memberships, credit card perks, and day passes make lounges surprisingly accessible on a budget. For long layovers and red-eye flights, a lounge visit can replace a hotel night entirely.",
+  sections: [
+    {
+      heading: "Priority Pass, Credit Cards, and Day Passes",
+      content: "Priority Pass Standard membership costs $99 per year with each visit at $35, but the Standard Plus plan ($329/year) includes 10 free visits, dropping the per-visit cost to $32.90. The real hack is credit cards with bundled access: the Chase Sapphire Reserve (US), Amex Platinum, and HSBC Premier all include unlimited Priority Pass visits. In the UK, the Revolut Metal plan ($17/month) includes one free lounge visit per month. For occasional travelers, LoungeBuddy and the Priority Pass app sell day passes for $30-45 depending on the airport. Some lounges sell walk-in access directly: Plaza Premium charges $40-58 for three hours across 80 airports. The math works when you factor in what you would spend anyway. A meal ($15), two drinks ($12), and Wi-Fi ($8) at the gate costs $35 before you add the stress of crowded seating. A lounge delivers all of that plus power outlets, quiet space, and sometimes shower facilities.",
+      image: "/images/blog/airport-lounge-budget-access-inline-1.webp",
+    },
+    {
+      heading: "Best Lounges by Region and Red-Eye Strategy",
+      content: "Southeast Asia has the best value lounges. Bangkok Suvarnabhumi Miracle Lounges offer full buffet meals and beer for $28 walk-in. Singapore Changi lounges provide free showers and sleeping pods. Istanbul Airport has the massive IGA Lounge with 5,500 square meters of space. In Europe, Helsinki Aspire and Lisbon ANA lounges consistently rank high for food quality. For red-eye flights, arrive at the airport three hours early and head straight to the lounge. Shower, eat a full dinner, charge all your devices, and doze in a recliner. You board the flight clean, fed, and rested, saving the $60-100 you might have spent on a transit hotel. Download the LoungeBuddy app to read reviews and check real-time availability. Some lounges hit capacity during peak hours (5-8pm at major hubs), so arriving early matters. Many Priority Pass lounges also offer $28 credit at airport restaurants as an alternative if the lounge is full.",
+      image: "/images/blog/airport-lounge-budget-access-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-12-31T10:00:00Z",
+  updatedAt: "2025-12-31T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["budget-travel-cashflow-playbook", "travel-finance-automation", "overnight-train-productivity", "public-transport-mastery"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

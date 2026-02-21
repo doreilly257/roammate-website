@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'KGS (Som)', detail: '1 USD ≈ 89 KGS' },
+  { icon: '🗣', label: 'Language', value: 'Kyrgyz & Russian', detail: 'Limited English outside hostels' },
+  { icon: '🕐', label: 'Timezone', value: 'KGT (UTC+6)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Sep', detail: '25–35°C, dry & clear' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–35 USD', detail: '1,780–3,100 KGS budget' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 60 days', detail: '60+ nationalities visa-free' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Bishkek in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ala-Too Square & Osh Bazaar',
+          text: 'Start at Ala-Too Square, the vast Soviet-era central plaza flanked by the State History Museum and the imposing Manas statue — the legendary Kyrgyz hero. Watch the flag-lowering ceremony if your timing is right, then walk south past oak-lined boulevards to Osh Bazaar, Central Asia\'s most vibrant market. Wander the stalls selling kurut (dried yoghurt balls, 50 KGS), sacks of spices, felt hats (kalpaks), and heaps of dried fruits and nuts. Breakfast at one of the bazaar canteens — laghman noodle soup (120 KGS) and lepyoshka bread fresh from a tandoor oven. The atmosphere is electric and overwhelmingly friendly.',
+          tip: 'Osh Bazaar is busiest before noon — arrive early for the full sensory experience and the best selection of fresh produce.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Soviet Architecture & Panfilov Park',
+          text: 'Walk the leafy boulevards exploring Bishkek\'s unique Soviet architectural heritage. Start at the ornate Kyrgyz National Opera and Ballet Theatre on Abdrakhmanov Street, then head to Panfilov Park where locals play chess under the trees and children ride Soviet-era amusement rides (50–100 KGS). Visit the Frunze House Museum (100 KGS) — a traditional wooden house preserved inside a Soviet concrete shell, commemorating the Bolshevik general born here. Lunch at Navat restaurant for authentic Kyrgyz cuisine — try beshbarmak (boiled meat on noodles, 350 KGS) and kumys (fermented mare\'s milk, 80 KGS). The tree-canopied streets give Bishkek a surprisingly green, walkable character.',
+          tip: 'Kumys is an acquired taste — try a small glass first. It is mildly alcoholic, tangy, and deeply traditional to Kyrgyz culture.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Craft Beer & Nightlife on Kievskaya',
+          text: 'Bishkek has a surprisingly lively nightlife scene. Start with dinner at Supara Ethno Complex (₺400–600 for two), a restaurant decorated like a traditional yurt village serving regional specialties. Then walk to Save the Ales brewpub on Kievskaya Street for locally brewed craft beer (200–300 KGS per pint) — their IPA and wheat beer are excellent. The bar district around Chuy Avenue and Kievskaya comes alive after 9pm. Metro Pub and Promzona are popular with young locals and expats, with live music on weekends. Entry is usually free, and cocktails cost 300–500 KGS.',
+          tip: 'Thursday and Friday nights are the liveliest. Bishkek nightlife is safe and welcoming — locals are curious and friendly toward visitors.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Bishkek City — Soviet Past & Kyrgyz Soul',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Ala-Too Square & History Museum',
+          text: 'Begin at Ala-Too Square, the political and ceremonial heart of Kyrgyzstan. The vast Soviet-planned plaza is dominated by the State History Museum — enter (200 KGS) to see the excellent collection spanning nomadic culture, Silk Road artefacts, and Soviet-era propaganda art. The top-floor yurt exhibition explains the engineering and symbolism behind these portable homes that defined Kyrgyz life for millennia. Outside, the towering Manas statue represents the legendary hero of the Kyrgyz national epic. Walk the oak-lined boulevards radiating from the square — Bishkek feels more like a garden city than a capital.',
+          tip: 'The History Museum\'s Soviet-era section on the top floor is the highlight — propaganda posters and socialist realism paintings are fascinating.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Osh Bazaar & Local Lunch',
+          text: 'Walk or take a marshrutka (minibus, 10 KGS) to Osh Bazaar — a sprawling market that feels like the commercial engine of Central Asia. Mountains of dried fruits, pyramids of spices, entire sections devoted to felt crafts, leather goods, and kalpak hats. The food section is extraordinary — piles of kurt (dried yoghurt), fresh tandoor bread (30 KGS), and samsa (meat pastries, 50 KGS) straight from clay ovens. Have lunch at one of the bazaar canteens — a plate of plov (rice pilaf with lamb, 150 KGS) or laghman (hand-pulled noodle soup, 120 KGS) is filling and delicious. Vendors are friendly and will offer samples of everything.',
+          tip: 'Buy a kalpak (traditional white felt hat) as a souvenir — they cost 500–1,500 KGS at the bazaar and are iconic to Kyrgyz culture.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Soviet Architecture Walk & Dinner',
+          text: 'Take a self-guided walk through Bishkek\'s Soviet architectural highlights. Start at the wedding-cake-style Kyrgyz National Opera and Ballet Theatre, continue past the brutalist apartment blocks along Chuy Avenue, and find the quirky mosaic murals on residential buildings — remnants of Soviet decorative art. End at Panfilov Park for an evening stroll under the elms. Dinner at Navat restaurant — an ornate traditional dining hall with carved wood interiors. Order beshbarmak (350 KGS), the national dish of boiled lamb on flat noodles served with a rich onion broth. Follow with honey-soaked baursak doughnuts (150 KGS) and green tea.',
+          tip: 'Beshbarmak means "five fingers" — traditionally eaten by hand. Use bread to scoop the meat, though forks are provided for visitors.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Ala Archa National Park — Mountain Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Ala Archa',
+          text: 'Arrange a taxi (800–1,200 KGS one way) or join a shared excursion (500 KGS per person) to Ala Archa National Park, just 40km south of Bishkek. The park entrance fee is 80 KGS for foreigners. The drive takes 45 minutes as you climb from the flat Chuy Valley into the dramatic Tien Shan foothills. Start with the Ak-Sai Waterfall trail — a well-marked 4km hike (2 hours one way) through alpine meadows and juniper forests with views of snow-capped peaks reaching 4,800m. The waterfall tumbles from a glacier into a rocky gorge. Bring a packed breakfast from the city — there are no shops in the park.',
+          tip: 'Start hiking by 9am — afternoon clouds often obscure the mountain views. Bring layers as temperatures drop significantly with altitude.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Alpine Meadows & Peak Views',
+          text: 'Continue higher if fitness allows — the trail beyond the waterfall climbs to the Ak-Sai Glacier viewpoint at 3,400m, offering staggering panoramas of the Kyrgyz Tien Shan range. The alpine meadows are carpeted with wildflowers in June and July — edelweiss, gentians, and wild tulips. Golden eagles and griffon vultures circle the ridgelines. If the glacier trail is too ambitious, the lower Spartak trail (2km, easy grade) follows the river through pine forests with mountain views throughout. Pack a picnic lunch — bread, cheese, tomatoes, and kurt from Osh Bazaar makes a perfect mountain meal for under 200 KGS.',
+          tip: 'The altitude above 3,000m is noticeable — go slowly, drink water, and turn back if you feel dizzy. It is not a race.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Ashlan-Fu & Craft Beer Night',
+          text: 'Return to Bishkek and refuel with ashlan-fu — a cold spicy noodle soup that is the unofficial street food of Kyrgyzstan. Try it at Jalalabad Ashlan-Fu near Osh Bazaar (80 KGS) — tangy, spicy, and surprisingly refreshing after a day of hiking. Then head to Save the Ales or Bochka brewpub for craft beer (200–350 KGS per pint) brewed with Tien Shan spring water. The bar scene along Kievskaya Street fills up after 8pm. Order shashlik (grilled meat skewers, 150 KGS each) at any street-side mangal grill — the charcoal-grilled lamb with raw onion and vinegar is a Central Asian classic.',
+          tip: 'Ashlan-fu stalls look basic but the dish is brilliant — cold noodles in a vinegar-chilli broth with starch jelly. Do not skip it.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Burana Tower, Culture & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Burana Tower Day Trip',
+          text: 'Hire a taxi (2,500–3,500 KGS return with waiting time) or join a guided tour (1,500 KGS per person) to Burana Tower, 80km east of Bishkek in the Chuy Valley. This 11th-century Karakhanid minaret — once 45m tall, now 25m after earthquakes — is one of the oldest structures in Central Asia. Climb the narrow interior stairs for views across the vast Chuy Valley to the Tien Shan mountains. Around the tower, a field of balbals (ancient Turkic stone carvings of warriors and leaders, 6th–10th century) and petroglyphs stretches across the grassland. Entry is 200 KGS. The small on-site museum explains the Silk Road history of the region.',
+          tip: 'The balbals field behind the tower is easy to miss — ask the caretaker to point you in the right direction. The carved faces are remarkable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenir Shopping & Kyrgyz Culture',
+          text: 'Return to Bishkek and visit the Central Asian Craft Centre (Tumar Art Salon) on Tynystanov Street for high-quality shyrdak felt rugs (3,000–15,000 KGS), hand-stitched leather goods, and traditional jewellery made by local artisans. These are fair-trade cooperatives supporting rural women. Nearby, the TSUM department store on Chuy Avenue is a Soviet-era relic worth entering just for the architecture and atmosphere. For a cultural immersion, book a traditional felt-making workshop (2,000 KGS, 2 hours) through a local tour operator — you will roll and press wool into a small shyrdak to take home.',
+          tip: 'Shyrdak felt rugs are the signature Kyrgyz craft — each one takes weeks to make by hand. They last decades and travel well in a suitcase.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Plov & Kyrgyz Night',
+          text: 'For your final evening, eat at Faiza restaurant — Bishkek\'s most famous plov house. Plov (Central Asian rice pilaf with lamb, carrots, chickpeas, and garlic) is cooked in enormous cast-iron kazan pots over open flames and served on communal platters (200 KGS per portion). The restaurant is always packed with locals, which is the best endorsement. Follow with green tea and halva at a chaikhana (tea house). If it is summer, end the evening at one of the open-air beer gardens along Erkindik Boulevard — the warm evenings, cheap beer (100–200 KGS), and friendly locals make Bishkek surprisingly hard to leave.',
+          tip: 'Faiza gets busiest at lunch — go for an early dinner (5–6pm) to avoid queuing. The plov sells out, so earlier is better.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Bazaar canteens', text: 'Eat at the canteens inside Osh Bazaar — plov (150 KGS), laghman (120 KGS), and samsa (50 KGS). A full meal costs under 250 KGS ($2.80). These are where locals eat and the food is fresh and excellent.' },
+  { title: 'Marshrutka buses', text: 'Shared minibuses (marshrutka) cost 10 KGS per ride anywhere in the city. They run fixed routes — ask your hostel to write your destination in Russian to show the driver.' },
+  { title: 'Shared taxis', text: 'For day trips to Ala Archa or Burana Tower, share a taxi with other hostel guests to split the cost. A return taxi to Ala Archa split four ways costs 250 KGS each — cheaper than most organised tours.' },
+  { title: 'Hostel meal deals', text: 'Many Bishkek hostels offer home-cooked communal dinners for 300–500 KGS — great food and a chance to meet other travelers planning onward routes through Kyrgyzstan.' },
+  { title: 'Free walking tours', text: 'Free walking tours depart from Ala-Too Square daily in summer (tip-based). They cover Soviet architecture, Kyrgyz history, and insider food recommendations — a perfect first-morning activity.' },
+  { title: 'Local SIM cards', text: 'Beeline and MegaCom SIMs cost 200–300 KGS for 10GB at Osh Bazaar phone stalls — far cheaper than buying at the airport. Bring your passport for registration.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '500–900 KGS', midrange: '1,500–3,500 KGS', splurge: '7,000+ KGS', notes: 'Hostel dorms → guesthouses → boutique hotels' },
+  { category: 'Food', budget: '300–600 KGS', midrange: '800–1,500 KGS', splurge: '3,000+ KGS', notes: 'Bazaar canteens → local restaurants → fine dining' },
+  { category: 'Transport', budget: '30–100 KGS', midrange: '200–500 KGS', splurge: '1,500+ KGS', notes: 'Marshrutka → shared taxi → private driver' },
+  { category: 'Activities', budget: '100–300 KGS', midrange: '500–2,000 KGS', splurge: '5,000+ KGS', notes: 'Parks & bazaars → day trips → guided treks' },
+  { category: 'Drinks', budget: '50–150 KGS', midrange: '300–600 KGS', splurge: '1,000+ KGS', notes: 'Tea & kumys → beer & cocktails → craft brewpubs' },
+  { category: 'Daily Total', budget: '980–2,050 KGS', midrange: '3,300–8,100 KGS', splurge: '17,500+ KGS', notes: '$11–23 → $37–91 → $196+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Over 60 nationalities enter Kyrgyzstan visa-free for 60 days, including EU, UK, US, Canada, and Australia. No visa paperwork required — just turn up',
+      'Manas International Airport (FRU) is 25km from the city centre. Official airport taxis cost 600–800 KGS to central Bishkek. Marshrutka 380 runs to Osh Bazaar (40 KGS)',
+      'Register at OVIR if staying more than 60 days. Hotels and hostels handle registration automatically for shorter stays',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required. Consider Hepatitis A and typhoid for rural travel. Tap water in Bishkek is drinkable but bottled (25 KGS) is safer for sensitive stomachs',
+      'Bishkek is generally safe. Watch for pickpockets at Osh Bazaar and avoid unlit areas late at night. Traffic is chaotic — cross streets carefully',
+      'Altitude sickness is possible on day trips above 3,000m in Ala Archa. Ascend slowly, hydrate, and descend if symptoms appear',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Marshrutka minibuses (10 KGS) cover the city on numbered routes. Bus 100 runs the length of Chuy Avenue. Ask your hostel for the route numbers you need',
+      'Yandex Go is the local ride-hailing app — works like Uber and is cheaper than street taxis. Always use the app rather than hailing taxis on the street',
+      'For day trips, negotiate taxi prices in advance or use the CBT (Community Based Tourism) network to arrange shared transport to mountain destinations',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Beeline, MegaCom, and O! sell tourist SIMs for 200–400 KGS with 10–20GB data. Buy at Osh Bazaar phone stalls or official shops on Chuy Avenue',
+      'WiFi is available in most cafes, hostels, and restaurants in Bishkek. Connectivity is unreliable outside the capital — download offline maps before day trips',
+      'WhatsApp and Telegram are the primary messaging apps. Instagram and Facebook work without restrictions. Google services work normally',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Kyrgyz Som (KGS) only — bring clean, undamaged USD or EUR bills to exchange at bazaar money changers. Rates are better than banks or the airport',
+      'ATMs are common in Bishkek (Optima Bank, Demir Bank) but rare outside the city. Withdraw enough cash before mountain trips. Cards accepted at larger restaurants',
+      'Tipping is not expected but appreciated — round up at restaurants. Tour guides and drivers appreciate 500–1,000 KGS tips for full-day excursions',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Layers are essential — Bishkek can be 35°C but Ala Archa drops to 5°C at altitude. Pack a fleece, windbreaker, and a warm hat for mountain excursions',
+      'Sturdy hiking boots for Ala Archa and any mountain day trips. Comfortable walking shoes for the flat city streets and bazaar exploration',
+      'Sunscreen (SPF 50+), sunglasses, and a sun hat — the Central Asian sun at altitude is intense. A headtorch is useful for mountain huts and yurt stays',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🍞', title: 'Bread Etiquette', text: 'Bread (nan/lepyoshka) is sacred in Kyrgyz culture. Never place it upside down, throw it away, or step over it. Place leftover bread on a high surface rather than in the bin.' },
+  { icon: '🏠', title: 'Guest Hospitality', text: 'Kyrgyz hospitality is legendary — if invited to a home or yurt, accept. Remove shoes at the door, accept all food and drink offered, and bring a small gift (sweets or fruit from the bazaar).' },
+  { icon: '🍵', title: 'Tea Traditions', text: 'Tea is offered constantly and refusing is impolite. The host will pour your tea — when your cup is full, it means they want you to drink quickly and leave. A half-full cup means they want you to stay.' },
+  { icon: '🐴', title: 'Nomadic Heritage', text: 'Kyrgyz identity is deeply tied to nomadic traditions — horses, yurts, and mountain pastures. Show genuine interest in this culture and you will unlock extraordinary hospitality and stories.' },
+  { icon: '📷', title: 'Photography', text: 'Always ask permission before photographing people, especially women and elders. Most Kyrgyz people are happy to be photographed but asking first shows respect.' },
+  { icon: '🗣', title: 'Language Basics', text: 'Learn "Rahmat" (thank you), "Salam" (hello), and "Kechirirsiz" (excuse me) in Kyrgyz. Russian "Spasibo" (thank you) works everywhere. A few words earn enormous goodwill.' },
+];
+---
+
+<CityGuideLayout
+  title="Bishkek Travel Guide 2026 — 3-Day Itinerary | roammate"
+  description="The ultimate Bishkek guide for adventurous travelers. 3-day itinerary with Ala Archa mountains, Osh Bazaar, Soviet architecture, and Central Asian culture on a backpacker budget."
+  heroImage="/images/guides/bishkek-hero.webp"
+  heroFlag="🇰🇬"
+  heroCountry="Kyrgyzstan"
+  heroRegion="Central Asia"
+  heroCity="Bishkek"
+  heroSubtitle="A Soviet-era capital at the foot of snow-capped Tien Shan peaks, gateway to Central Asia's wildest mountains and most generous hospitality."
+  heroPills={['3-Day Itinerary', 'Ultra Budget', 'Jun – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Kyrgyz Som (KGS). Bishkek is one of the cheapest capital cities in Asia — exceptional value for adventurous travelers."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Kyrgyzstan is a secular, Muslim-majority country with deep nomadic traditions. The culture is warm, generous, and deeply tied to the mountains and horses."
+  ctaCity="Bishkek"
+  ctaText="Find trekking partners, share taxi costs to Ala Archa, and connect with fellow Central Asia explorers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

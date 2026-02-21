@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "travel-tattoo-culture-guide",
+  title: "Travel Tattoo Culture Around the World",
+  description: "Explore tattoo traditions from Thai Sak Yant to Polynesian tatau. Hygiene standards to check, cultural significance, price expectations, and healing tips while traveling.",
+  category: "Culture",
+  readMinutes: 2,
+  heroImage: "/images/blog/travel-tattoo-culture-guide-hero.webp",
+  intro: "Tattoos have been travel souvenirs for centuries, from sailors returning with Pacific Island ink to modern backpackers getting Sak Yant in Thai temples. Every culture has its own tattooing tradition, technique, and meaning. Getting inked abroad can be a profound cultural exchange or a regrettable impulse depending on your research. Understanding the traditions, checking hygiene standards, and respecting cultural significance separates a meaningful experience from a tourist cliche.",
+  sections: [
+    {
+      heading: "Major Tattoo Traditions and Cultural Respect",
+      content: "Sak Yant in Thailand involves a Buddhist monk or ajarn hand-poking sacred geometric designs using a steel or bamboo rod. Wat Bang Phra near Bangkok is the most famous temple, offering tattoos by donation ($20-50 is respectful). The designs carry spiritual meaning and come with behavioral rules (the five precepts). Japanese irezumi is a full-body art form taking years to complete, traditionally done by tebori (hand-poking). A single session in Tokyo costs $200-500 per hour with masters like Horikitsune or artists in Asakusa. Polynesian tatau from Samoa, Tonga, and New Zealand represents genealogy, status, and identity. Getting a traditional Polynesian design without Pacific Island heritage raises legitimate appropriation concerns. Many Maori artists in Rotorua (New Zealand) will create kirituhi, a Polynesian-inspired design for non-Maori, rather than ta moko, which is reserved for those with whakapapa (Maori lineage). Berber henna in Morocco is temporary and widely shared with visitors, making it a low-commitment cultural experience ($5-15 in Marrakech or Fez medinas). Always ask about meaning before requesting specific cultural designs.",
+      image: "/images/blog/travel-tattoo-culture-guide-inline-1.webp",
+    },
+    {
+      heading: "Hygiene Standards and Healing While Traveling",
+      content: "Hygiene is non-negotiable regardless of location. Check for single-use needles opened from sealed packaging in front of you. Ink should be poured into disposable caps, not used from shared pots. The artist should wear gloves and the workspace should have an autoclave for sterilizing reusable equipment. In Southeast Asia, ask to see the sterilization setup. Avoid street-side tattoo shops in tourist strips like Khao San Road (Bangkok) or Kuta (Bali) where speed and volume replace care. Instead, research studios on Instagram or ask expat communities for recommendations. Prices vary wildly: a palm-sized black design costs $30-80 in Thailand, $80-200 in Bali, $150-400 in Japan, and $200-500 in Europe. Healing while traveling requires extra attention. Keep the tattoo clean with fragrance-free soap (carry a small bottle), apply a thin layer of coconut oil or unscented moisturizer twice daily, and avoid swimming, direct sun, and heavy sweating for two weeks. Wear loose, breathable clothing over the area. Avoid getting tattooed right before a beach or diving portion of your trip. Plan it for a city phase where you can stay clean and dry. Infected tattoos abroad mean foreign emergency rooms, so prevention is everything.",
+      image: "/images/blog/travel-tattoo-culture-guide-inline-2.webp",
+    },
+  ],
+  publishedAt: "2026-02-18T10:00:00Z",
+  updatedAt: "2026-02-18T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["cultural-site-day-planning", "temple-mosque-etiquette-guide", "photography-walk-planning", "first-month-southeast-asia"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

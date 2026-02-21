@@ -1,0 +1,294 @@
+---
+import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+
+const routeOverview = [
+  { country: 'Turkey', flag: '🇹🇷', weeks: '1–4', color: '#e8734a', stops: ['Istanbul', 'Cappadocia', 'Antalya', 'Fethiye', 'Pamukkale'] },
+  { country: 'Jordan', flag: '🇯🇴', weeks: '5–7', color: '#c9a84c', stops: ['Amman', 'Petra', 'Wadi Rum', 'Aqaba', 'Dead Sea'] },
+  { country: 'Egypt', flag: '🇪🇬', weeks: '8–10', color: '#2e6d79', stops: ['Cairo', 'Luxor', 'Aswan', 'Dahab'] },
+  { country: 'Oman', flag: '🇴🇲', weeks: '11–12', color: '#8b5e3c', stops: ['Muscat', 'Nizwa', 'Jebel Shams', 'Wadi Shab', 'Sur'] },
+];
+
+const countries = [
+  {
+    name: 'Turkey',
+    flag: '🇹🇷',
+    weeks: 'Weeks 1–4',
+    color: '#e8734a',
+    intro: 'Where East meets West in the most literal sense. Turkey is a backpacker powerhouse — jaw-dropping landscapes from Cappadocia\'s fairy chimneys to the turquoise Mediterranean coast, street food that rivals any cuisine on Earth, and a warmth from locals that makes you feel instantly welcome. The weak lira means your budget stretches further every month.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$30–50', detail: 'Budget–comfortable range' },
+      { icon: '💵', label: 'Currency', value: 'TRY (Lira)', detail: '1 USD ≈ 36 TRY' },
+      { icon: '🛂', label: 'Visa', value: 'e-Visa $50', detail: 'Most nationalities, 90 days' },
+      { icon: '🗣', label: 'Language', value: 'Turkish', detail: 'English in tourist areas' },
+      { icon: '🕐', label: 'Timezone', value: 'TRT (UTC+3)', detail: 'No daylight saving' },
+      { icon: '☀️', label: 'Best Months', value: 'Sep – Nov', detail: 'Warm, fewer crowds' },
+    ],
+    phases: [
+      {
+        title: 'Istanbul',
+        duration: '5–7 days',
+        description: 'Istanbul is the kind of city that could swallow your entire trip if you let it. Start in Sultanahmet — the Blue Mosque and Hagia Sophia (₺750/$21 entry) are side by side, and the Basilica Cistern (₺450/$12.50) is hauntingly beautiful underground. Cross the Galata Bridge on foot into Beyoglu for the vibrant Istiklal Avenue and climb Galata Tower (₺200/$5.50) for panoramic views. Take the ferry across the Bosphorus to the Asian side — Kadikoy\'s food market is where locals actually eat, and the ferry itself (₺17/$0.50 with Istanbulkart) is one of the best cheap thrills in travel. Eat your way through the Grand Bazaar — simit (sesame bread rings, ₺15/$0.40) and fresh-squeezed pomegranate juice (₺50/$1.40). For dinner, find a lokanta (family-run restaurant) in Fatih where a full plate of rice, stew, and salad runs ₺120–180 ($3.50–5). The street cats are everywhere and well-fed — this city genuinely loves them. Stay in Sultanahmet or Beyoglu hostels (₺400–700/$11–19/night for a dorm bed).',
+        tip: 'Get an Istanbulkart (transit card) immediately at any metro station — ₺70 for the card plus credit. It works on ferries, trams, buses, and metro, and saves you roughly 50% versus single tickets.',
+        guides: ['istanbul'],
+      },
+      {
+        title: 'Cappadocia',
+        duration: '4–5 days',
+        description: 'Overnight bus from Istanbul to Goreme (10–12 hours, ₺500–800/$14–22 on Metro or Suha Turizm — book at the otogar or online). Cappadocia is otherworldly — volcanic fairy chimneys, cave churches with 1,000-year-old frescoes, and underground cities carved eight storeys deep. Base yourself in Goreme, where many hostels are actual cave rooms (₺400–600/$11–17/night). The hot air balloon ride at sunrise is iconic but expensive (€150–250) — if your budget allows, it\'s worth every cent. The free alternative: wake at 5am and watch hundreds of balloons rise from Sunset Point or Love Valley viewpoint. Hike the Rose Valley trail (free, 2–3 hours, stunning pink-hued rock formations) and the Pigeon Valley to Uchisar Castle (₺100/$2.80). Rent a scooter (₺250–350/$7–10/day) to reach Derinkuyu Underground City (₺200/$5.50) — eight levels deep, used by early Christians hiding from persecution. The Goreme Open-Air Museum (₺450/$12.50) has remarkable Byzantine cave churches.',
+        tip: 'Book your balloon ride directly with a reputable company (Butterfly Balloons, Royal Balloons) rather than through your hostel — you\'ll pay the same or less and get a better experience with smaller baskets.',
+        guides: ['cappadocia'],
+      },
+      {
+        title: 'Mediterranean Coast',
+        duration: '7–10 days',
+        description: 'Bus from Goreme to Antalya (8–9 hours, ₺400–600/$11–17). The Turkish Riviera is backpacker paradise — ancient ruins tumbling into turquoise water, and everything is cheap. Antalya\'s Old Town (Kaleici) is gorgeous for a day or two — wander the Roman-era harbour, visit Hadrian\'s Gate, and swim at Konyaalti Beach. Take a dolmus (shared minibus, ₺40–80/$1–2) down the coast to Olympos — stay in treehouse hostels (₺350–500/$10–14/night) built in the forest, explore the ancient Lycian ruins on the beach (free), and hike up to the Chimaera eternal flames at night (₺60/$1.70 entry). Continue to Fethiye by bus (₺150–250/$4–7, 3 hours) for the Blue Lagoon at Oludeniz — paragliding from Babadag Mountain (₺3,500–5,000/$97–139) is one of the world\'s best tandem flights, 30 minutes soaring 1,900m above the lagoon. The Lycian Way hiking trail passes through here if you want to walk a section. Take a boat trip to Butterfly Valley (₺100/$2.80 return) for a secluded beach hemmed by 350m cliffs.',
+        tip: 'The dolmus system along the coast is brilliant and cheap — just flag one down from the roadside. They run frequently between all the coastal towns and cost a fraction of private buses.',
+        guides: ['antalya', 'fethiye'],
+      },
+      {
+        title: 'Pamukkale & Departure',
+        duration: '2–3 days',
+        description: 'Bus from Fethiye to Denizli/Pamukkale (3–4 hours, ₺200–350/$5.50–10). Pamukkale\'s white travertine terraces look like something from another planet — cascading pools of warm, mineral-rich water flowing down a hillside. The combined Pamukkale terraces and Hierapolis ancient city ticket is ₺700 ($19.50). Walk barefoot across the terraces (shoes must be removed) and swim in the ancient pool at Hierapolis where Roman columns lie submerged in warm thermal water (extra ₺200/$5.50). The ruins of Hierapolis are extensive — a 12,000-seat amphitheatre, necropolis, and colonnaded streets. Stay in Pamukkale village where pensions run ₺350–500 ($10–14) and many have their own thermal pools. Budget guesthouses will often include breakfast. From Denizli, you can fly or bus to your next destination — budget flights to Amman, Jordan via Istanbul are ₺1,500–3,000 ($42–83) on Pegasus Airlines if booked early.',
+        tip: 'Visit the terraces late afternoon (after 4pm) when day-trip tour groups have left and the sunset light on the white calcium is incredible. Bring a plastic bag for your shoes.',
+        guides: ['pamukkale'],
+      },
+    ],
+  },
+  {
+    name: 'Jordan',
+    flag: '🇯🇴',
+    weeks: 'Weeks 5–7',
+    color: '#c9a84c',
+    intro: 'Small country, massive impact. Jordan packs Petra, Wadi Rum, the Dead Sea, and the Red Sea into an area the size of Indiana. It\'s pricier than its neighbours but the Jordan Pass bundles visa and entry fees, making it manageable on a backpacker budget. Jordanian hospitality is legendary — expect to be invited for tea by strangers multiple times a day.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$35–55', detail: 'Jordan Pass saves money' },
+      { icon: '💵', label: 'Currency', value: 'JOD (Dinar)', detail: '1 USD ≈ 0.71 JOD' },
+      { icon: '🛂', label: 'Visa', value: 'Jordan Pass', detail: 'JD70–80 inc. visa + sites' },
+      { icon: '🗣', label: 'Language', value: 'Arabic', detail: 'Good English in tourism' },
+      { icon: '🕐', label: 'Timezone', value: 'EET (UTC+2/+3)', detail: 'DST in summer' },
+      { icon: '☀️', label: 'Best Months', value: 'Mar – May, Sep – Nov', detail: 'Mild temps, clear skies' },
+    ],
+    phases: [
+      {
+        title: 'Amman',
+        duration: '3–4 days',
+        description: 'Fly from Istanbul to Queen Alia International Airport (budget airlines from $50–120 one-way). Buy the Jordan Pass (JD70/$99 for Petra Wanderer — includes visa fee, Petra entry, and 40+ sites) BEFORE arrival to skip the visa queue. Amman is chaotic, authentic, and deeply underrated. Start at the Citadel (included in Jordan Pass) for panoramic views over the city\'s white limestone buildings cascading across seven hills. Walk down to the Roman Theatre (also on the Pass), still used for events, seating 6,000. Downtown Amman is where the magic happens — Rainbow Street for cafes and nightlife, Al-Balad for the souks. Eat mansaf (lamb in fermented yoghurt over rice — Jordan\'s national dish) at a local restaurant for JD3–5 ($4.25–7). Shawarma from street carts is JD0.50–1 ($0.70–1.40). Stay at hostels in Jabal Amman or downtown (JD8–14/$11–20 for dorms). Day trip to Jerash (JD1 bus, 1 hour) — one of the best-preserved Roman cities outside Rome, remarkably intact colonnaded streets and temples.',
+        tip: 'The Jordan Pass pays for itself immediately — Petra alone costs JD50 without it, plus the JD40 visa fee. Buy the "Petra Wanderer" version online before your flight lands.',
+        guides: ['amman'],
+      },
+      {
+        title: 'Petra & Dana',
+        duration: '3–4 days',
+        description: 'JETT bus from Amman to Wadi Musa/Petra (3.5 hours, JD11/$15.50, departs 6:30am daily). Petra is the reason most people come to Jordan, and it absolutely lives up to the hype. The Treasury (Al-Khazneh) at the end of the narrow Siq canyon is breathtaking, but Petra is enormous — most tourists only see 10% of it. Day 1: Walk the Siq to the Treasury, explore the Street of Facades and Royal Tombs. Day 2: Hike to the Monastery (Ad-Deir) via 800 steps — fewer crowds and arguably more impressive than the Treasury. Day 3: The back trail to the High Place of Sacrifice for sunrise views. Budget accommodation in Wadi Musa starts at JD8–12 ($11–17) for hostel dorms. Eat at the local restaurants on the main road — a full falafel plate is JD1.50–2 ($2.10–2.80). On your way south, stop at Dana Nature Reserve (JD8 entry or free with Jordan Pass) — hike the Wadi Dana trail through dramatic canyon scenery, one of the most underrated spots in Jordan.',
+        tip: 'Enter Petra at 6am when gates open — you\'ll have the Siq and Treasury almost to yourself for the first hour before the tour groups arrive. Bring at least 3 litres of water.',
+        guides: ['petra'],
+      },
+      {
+        title: 'Wadi Rum & Aqaba',
+        duration: '3–4 days',
+        description: 'Minibus from Wadi Musa to Wadi Rum village (1.5–2 hours, JD7–10/$10–14). Wadi Rum is Mars on Earth — vast red desert with sandstone arches, ancient Nabataean inscriptions, and silence so deep it rings in your ears. Book a Bedouin camp overnight (JD25–40/$35–56 including dinner, sunrise, and a 4x4 tour). Sleep under a blanket of stars in a Bedouin tent or opt for a bivouac (sleeping outdoors) for the full experience. The 4x4 tour hits Lawrence\'s Spring, Khazali Canyon rock art, natural rock bridges, and towering sand dunes. For the adventurous, a 2-day camel trek through the desert is unforgettable (JD50–70/$70–99). Continue to Aqaba (1 hour minibus, JD5/$7) on the Red Sea — snorkelling and diving here is world-class and far cheaper than Egypt\'s Red Sea resorts. A PADI Open Water course runs JD200–280 ($280–395). The south beach public area has free snorkelling with coral reefs metres from shore.',
+        tip: 'Book your Wadi Rum camp directly with Bedouin operators in the village rather than through booking websites — you\'ll pay 30–40% less and more money goes to the local community.',
+        guides: ['wadi-rum', 'aqaba'],
+      },
+      {
+        title: 'Dead Sea & Departure',
+        duration: '1–2 days',
+        description: 'From Aqaba, take the JETT bus north to Amman (4 hours, JD10/$14) and arrange a day trip to the Dead Sea. The Dead Sea is the lowest point on Earth (430m below sea level) and floating in its hyper-saline water is a bucket-list experience. The public beach at Amman Beach (JD20/$28 entry, includes pools and showers) is the most accessible option for backpackers — the resort beaches charge JD50+. Slather yourself in the mineral-rich black mud (provided free at the beach) and float effortlessly in water so salty nothing can sink. The sensation is surreal. Don\'t shave the morning you go — you\'ll regret it. Bring flip-flops as the salt crystals on the shore are sharp. From Amman, fly to Cairo, Egypt — budget flights on Ryanair, Air Cairo, or EgyptAir start from JD50–100 ($70–140) one-way.',
+        tip: 'Do NOT put your face in the Dead Sea water or get it in your eyes — the salt concentration is brutal. If you do, freshwater showers are right on the beach. Also avoid if you have any open cuts.',
+        guides: ['dead-sea'],
+      },
+    ],
+  },
+  {
+    name: 'Egypt',
+    flag: '🇪🇬',
+    weeks: 'Weeks 8–10',
+    color: '#2e6d79',
+    intro: 'Five thousand years of civilization and it\'s dirt cheap. Egypt is sensory overload in the best way — the Pyramids really are that impressive in person, the Nile Valley temples make your jaw drop, and Cairo\'s chaos is addictive once you find your rhythm. Budget backpackers can live well here on $20–30 a day.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$20–40', detail: 'Very budget-friendly' },
+      { icon: '💵', label: 'Currency', value: 'EGP (Pound)', detail: '1 USD ≈ 50 EGP' },
+      { icon: '🛂', label: 'Visa', value: '$25 on arrival', detail: 'Most nationalities, 30 days' },
+      { icon: '🗣', label: 'Language', value: 'Arabic', detail: 'English in tourist areas' },
+      { icon: '🕐', label: 'Timezone', value: 'EET (UTC+2)', detail: 'No daylight saving' },
+      { icon: '☀️', label: 'Best Months', value: 'Oct – Apr', detail: 'Cooler, 20–28°C' },
+    ],
+    phases: [
+      {
+        title: 'Cairo & Giza',
+        duration: '4–5 days',
+        description: 'Arrive at Cairo International Airport. Get your visa on arrival ($25 USD cash, get the sticker at the bank booth before passport control). Cairo is 20 million people and none of them are in a hurry except when driving. The Pyramids of Giza (EGP540/$10.80 entry) are visible from the city — take the metro to Giza then a shared microbus or walk. The Great Pyramid interior costs extra (EGP440/$8.80) and is claustrophobic but unforgettable. The Sphinx is included. The Grand Egyptian Museum (opened 2024, EGP600/$12) near the pyramids now houses Tutankhamun\'s treasures and is world-class. In Islamic Cairo, wander Khan el-Khalili bazaar — haggle for everything, starting at 30% of the asking price. Eat koshari (Egypt\'s national dish — lentils, rice, pasta, and tomato sauce) for EGP25–40 ($0.50–0.80) at Abou Tarek, the famous koshari institution. Al-Azhar Park is a peaceful escape from the chaos with stunning views of the old city. Hostel dorms in Downtown or Zamalek run EGP300–600 ($6–12).',
+        tip: 'Ignore the "guides" who approach you at the Pyramids claiming you need them — you don\'t. If someone says "the entrance is closed, come this way," keep walking to the main gate. Also, use Uber/Careem instead of hailing taxis to avoid fare arguments.',
+        guides: ['cairo', 'pyramids-of-giza'],
+      },
+      {
+        title: 'Luxor & Valley of the Kings',
+        duration: '3–4 days',
+        description: 'Overnight sleeper train from Cairo to Luxor (EGP1,000–1,600/$20–32 for foreigners on the tourist train, 10 hours — or take the regular sitting train for EGP200/$4 if you\'re brave). Luxor is an open-air museum. The East Bank has Karnak Temple (EGP450/$9, the largest ancient religious complex ever built — the Hypostyle Hall with 134 massive columns will silence you) and Luxor Temple (EGP360/$7.20, stunning when lit up at night). The West Bank is where the real magic is: Valley of the Kings (EGP600/$12, includes 3 tombs — Tutankhamun\'s tomb is an extra EGP500/$10), Hatshepsut Temple (EGP360/$7.20) carved into the cliff face, and the Colossi of Memnon (free). Rent a bicycle on the West Bank (EGP100–150/$2–3/day) to reach the temples independently rather than paying for a guided tour. Stay on the East Bank in hostels (EGP250–500/$5–10) and take the local ferry across the Nile (EGP5/$0.10).',
+        tip: 'Start on the West Bank at sunrise when the Valley of the Kings opens — the tombs heat up fast and the colours in the wall paintings are most vivid in the cooler morning light.',
+        guides: [],
+      },
+      {
+        title: 'Aswan & Abu Simbel',
+        duration: '3–4 days',
+        description: 'Train from Luxor to Aswan (3–4 hours, EGP80–200/$1.60–4). Aswan is Egypt\'s most relaxed city — the Nile here is dotted with felucca sailboats and granite islands. Take a felucca ride at sunset (EGP200–300/$4–6/hour for the whole boat — split with other travellers). Visit Philae Temple (EGP450/$9, boat to the island included) — an island temple dedicated to Isis, beautifully illuminated at the sound and light show. The Nubian villages on Elephantine Island are colourful and welcoming — take a public ferry (EGP5) and wander through painted alleys. The big day trip is Abu Simbel (EGP625/$12.50 entry), 280km south — the convoy minibuses depart at 4am and cost EGP400–600 ($8–12) return. The four colossal statues of Ramses II, relocated piece by piece to avoid flooding from the Aswan Dam, are staggering. Consider the overnight felucca trip from Aswan back towards Edfu/Kom Ombo temples (EGP600–800/$12–16 per person for 2 days including food).',
+        tip: 'The felucca trip from Aswan is one of Egypt\'s best experiences — sleeping on the boat deck under the stars with the Nile lapping against the hull. Bring a sleeping bag and mosquito repellent.',
+        guides: [],
+      },
+      {
+        title: 'Dahab & Red Sea',
+        duration: '4–5 days',
+        description: 'Bus from Aswan to Hurghada (approximately 6–8 hours, EGP350–500/$7–10) or fly from Aswan to Sharm el-Sheikh (EGP1,500–3,000/$30–60 on domestic carriers). Then take the East Delta bus to Dahab (1.5 hours, EGP50–80/$1–1.60). Dahab is Egypt\'s backpacker mecca — a former Bedouin fishing village on the Gulf of Aqaba with some of the best diving in the world. The Blue Hole is a world-famous freediving and scuba site right in town (shore dive EGP350/$7 with gear rental). Get PADI certified here for far less than most places globally (EGP5,000–7,000/$100–140 for Open Water). When you\'re not underwater, Dahab is pure relaxation — beachfront restaurants with cushions on the sand, EGP100–200 ($2–4) for a full fish meal. Snorkelling from shore at the Lighthouse reef is free and incredible. Rent a quad bike (EGP500–800/$10–16) for a desert sunset trip. Stay in beachfront hostels and camps (EGP200–400/$4–8/night). From Dahab, the Taba border crossing to Eilat (Israel) or the ferry from Nuweiba to Aqaba (Jordan) connects to your next destination.',
+        tip: 'Dahab is where backpackers accidentally extend their trips by weeks. The combination of cheap living, world-class diving, and total relaxation is hard to leave. Budget extra time here.',
+        guides: [],
+      },
+    ],
+  },
+  {
+    name: 'Oman',
+    flag: '🇴🇲',
+    weeks: 'Weeks 11–12',
+    color: '#8b5e3c',
+    intro: 'The Middle East\'s best-kept secret. Oman is jaw-droppingly beautiful — dramatic wadis with emerald pools, vast golden deserts, and a coastline that rivals anything in the Mediterranean. It\'s the safest country in the region, the people are extraordinarily welcoming, and it hasn\'t been overrun by tourism. More expensive than Egypt but absolutely worth it.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$40–60', detail: 'Pricier but worth it' },
+      { icon: '💵', label: 'Currency', value: 'OMR (Rial)', detail: '1 USD ≈ 0.385 OMR' },
+      { icon: '🛂', label: 'Visa', value: 'e-Visa OMR20', detail: '10-day or 30-day available' },
+      { icon: '🗣', label: 'Language', value: 'Arabic', detail: 'Good English widely spoken' },
+      { icon: '🕐', label: 'Timezone', value: 'GST (UTC+4)', detail: 'No daylight saving' },
+      { icon: '☀️', label: 'Best Months', value: 'Oct – Mar', detail: 'Cooler, 20–30°C' },
+    ],
+    phases: [
+      {
+        title: 'Muscat',
+        duration: '3–4 days',
+        description: 'Fly from Cairo or Dahab (via Sharm el-Sheikh) to Muscat — SalamAir and Oman Air offer routes from $80–180 one-way, or connect via Amman/Dubai. Apply for your Oman e-visa online before arrival (OMR20/$52 for 30 days). Muscat is unlike any other Middle Eastern capital — clean, calm, and wedged between dramatic mountains and the sea. The Sultan Qaboos Grand Mosque (free, closed Fridays, dress modestly) is spectacular, with the world\'s second-largest hand-woven carpet. Mutrah Souq is one of the oldest marketplaces in the Arabian Peninsula — buy frankincense (Oman\'s signature product, OMR1–3/$2.60–7.80) and Omani halwa (a sticky sweet, free samples everywhere). Walk the Mutrah Corniche at sunset for stunning harbour views. The Royal Opera House offers occasional free tours. For food, Omani shuwa (slow-cooked spiced lamb) at a local restaurant runs OMR2–4 ($5.20–10.40), and biryani at the Indian restaurants in Ruwi is OMR1–2 ($2.60–5.20). Budget accommodation is trickier in Oman — hostels in Mutrah area run OMR8–15 ($21–39) for dorms.',
+        tip: 'Oman is expensive for accommodation compared to the rest of this route. Consider Couchsurfing, camping (wild camping is legal and common), or mixing hostel nights with camping to keep costs down.',
+        guides: [],
+      },
+      {
+        title: 'Nizwa & Jebel Shams',
+        duration: '3–4 days',
+        description: 'Rent a car from Muscat — this is the one country on this route where having wheels makes a massive difference. Shared rentals through your hostel or with other travellers can bring costs to OMR5–8 ($13–21) per person per day. Drive to Nizwa (1.5 hours), the ancient capital and gateway to the interior. Visit the Nizwa Fort (OMR5/$13) with its enormous round tower, and time your visit for the Friday livestock market (free, early morning, surreal experience — camels, goats, and spirited haggling). Continue to Jebel Shams, Oman\'s highest peak at 3,009m. The Balcony Walk (W6 trail) along Oman\'s Grand Canyon is one of the most dramatic hikes in the Middle East — a 6km trail carved into cliff faces above a 1,000m drop with views that rival the American Grand Canyon. Wild camp at the rim for a sunset and sunrise you\'ll never forget. The drive from Nizwa through the mountain villages of Misfat Al Abriyyin and Al Hamra is stunning — traditional mudbrick houses perched on terraced mountain oases. Misfat has a heritage walk through date palm groves and ancient falaj (irrigation channels).',
+        tip: 'The petrol in Oman is incredibly cheap (OMR0.224/litre, about $0.58) — one of the few things that\'s a bargain. Fill up whenever you can as stations are sparse in the mountains.',
+        guides: [],
+      },
+      {
+        title: 'Wadis & Sur',
+        duration: '3–4 days',
+        description: 'From the Nizwa area, drive east to the wadis — Oman\'s defining natural feature. Wadi Shab (OMR1/$2.60 parking, free entry) is the star attraction — hike 45 minutes along the canyon, then swim through turquoise pools between towering cliff walls to reach a hidden cave waterfall. You\'ll need a dry bag for your belongings as the final stretch requires swimming. Wadi Bani Khalid (free entry) is wider and easier to access, with deep natural swimming pools surrounded by palm trees — popular with locals on weekends. Continue to Sur (2 hours), a quiet coastal town famous for traditional dhow building. Watch craftsmen hand-build wooden boats at the dhow yard (free) using techniques unchanged for centuries. At Ras al-Jinz Turtle Reserve (OMR5/$13 entry, book ahead), watch endangered green sea turtles nest on the beach at night (season June–November). Camp on the beaches south of Sur — empty white sand stretching for miles. The drive along the coast through Fins Beach and Bimmah Sinkhole (free, a dramatic limestone hole with turquoise water perfect for swimming) is spectacular.',
+        tip: 'At Wadi Shab, the best part is beyond where most people stop. Keep swimming past the main pool, through the narrow gap in the rock — the hidden cave with the waterfall is the reward. Waterproof phone case essential.',
+        guides: ['wadi-shab'],
+      },
+      {
+        title: 'Musandam & Departure',
+        duration: '2–3 days',
+        description: 'Return to Muscat and fly or drive to the Musandam Peninsula (flights OMR25–40/$65–104 on Oman Air, or drive 4–5 hours via the UAE border). Musandam is Oman\'s dramatic northern exclave — often called the "Norway of Arabia" for its deep fjords (khors) cutting into sheer limestone cliffs. Take a traditional dhow boat cruise through the Khor ash-Sham fjord from Khasab (OMR8–15/$21–39 for a half-day) — dolphins are almost guaranteed, and the scenery of desert mountains plunging into turquoise water is surreal. Snorkelling stops along the way reveal healthy coral and tropical fish. Telegraph Island, an abandoned British telegraph station in the middle of the fjord, is a popular swimming stop. The Jebel Harim mountain road offers vertiginous views of the fjords below. From Muscat, fly home or continue onwards — Oman connects easily to the UAE (Dubai is 4 hours by bus, OMR5–8/$13–21), making it a natural endpoint or springboard for further travels.',
+        tip: 'If driving to Musandam, you\'ll pass through the UAE — make sure your rental car insurance covers UAE and you have the right visas. Alternatively, the short SalamAir flight from Muscat to Khasab is affordable and spectacular from the window seat.',
+        guides: ['musandam'],
+      },
+    ],
+  },
+];
+
+const budgetColumns = [
+  { flag: '🇹🇷', label: 'Turkey' },
+  { flag: '🇯🇴', label: 'Jordan' },
+  { flag: '🇪🇬', label: 'Egypt' },
+  { flag: '🇴🇲', label: 'Oman' },
+];
+
+const budgetRows = [
+  { category: 'Accommodation', values: ['$10–19', '$11–20', '$5–12', '$15–30'], notes: 'Hostels, guesthouses, camping' },
+  { category: 'Food', values: ['$5–12', '$5–12', '$3–8', '$8–15'], notes: 'Street food + local restaurants' },
+  { category: 'Transport', values: ['$5–10', '$5–10', '$3–8', '$8–15'], notes: 'Buses, trains, shared taxis' },
+  { category: 'Activities', values: ['$5–10', '$8–15', '$5–10', '$8–12'], notes: 'Sites, tours, diving' },
+  { category: 'Drinks/Social', values: ['$3–6', '$3–5', '$2–4', '$3–5'], notes: 'Tea, coffee, juice, shisha' },
+  { category: 'Daily Total', values: ['$30–50', '$35–55', '$20–40', '$40–60'], notes: 'Budget–comfortable range' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visas',
+    items: [
+      'Turkey: e-Visa ($50) for most nationalities, valid 90 days within 180-day period — apply online before travel',
+      'Jordan: Buy the Jordan Pass (JD70–80) online before arrival — includes visa, Petra, and 40+ archaeological sites',
+      'Egypt: Visa on arrival ($25 USD cash) at the airport for most nationalities, 30 days',
+      'Oman: e-Visa (OMR20) required for most — apply online 1–2 weeks before, 10 or 30-day options',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health',
+    items: [
+      'Recommended: Hep A/B, Typhoid, Tetanus. Rabies if planning extensive outdoor/cave activities',
+      'Egypt: Don\'t drink tap water. Stick to bottled water and avoid ice in drinks outside tourist restaurants',
+      'Sun protection is critical everywhere — SPF 50, hat, and reusable water bottle. Dehydration sneaks up fast in desert climates',
+    ],
+  },
+  {
+    icon: '🚌',
+    title: 'Border Crossings',
+    items: [
+      'Turkey → Jordan: Fly Istanbul to Amman (budget airlines from $50–120). No overland route without Syria transit',
+      'Jordan → Egypt: Fly Amman to Cairo ($70–140) or ferry Aqaba to Nuweiba/Taba ($60–80, 1 hour)',
+      'Egypt → Oman: Fly Cairo/Sharm to Muscat via Amman or Dubai ($100–200 on budget carriers)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Turkey: Turkcell or Vodafone SIM (₺200–350 for 20GB, 30 days) — buy at the airport',
+      'Jordan: Zain or Orange SIM (JD5–10 for 10–30GB). Egypt: Vodafone or Orange (EGP200–400 for 15–30GB)',
+      'Oman: Ooredoo or Omantel SIM (OMR5–8 for 10–20GB). WiFi reliable in hostels across all four countries',
+    ],
+  },
+  {
+    icon: '🌦️',
+    title: 'Best Time',
+    items: [
+      'September–November: Ideal across all four countries — warm but not brutal, post-summer crowds',
+      'March–May: Also excellent. Shoulder season means fewer tourists and pleasant 20–30°C temperatures',
+      'Avoid June–August: Temperatures hit 40–50°C in Jordan, Egypt, and Oman. Turkey is manageable but crowded',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Essentials',
+    items: [
+      'Modest clothing that covers shoulders and knees — essential for mosques and conservative areas. Women: carry a headscarf',
+      'Sturdy hiking shoes (Petra, Jebel Shams, wadis), reef shoes for wadi swimming, and sunglasses',
+      'Dry bag (essential for wadis), sleeping bag for desert/mountain camping, universal adapter (Type C/F in Turkey, Type G in Jordan/Oman, Type C in Egypt)',
+    ],
+  },
+];
+---
+
+<BackpackerRouteLayout
+  title="Middle East & Turkey Backpacker Route — 12-Week Itinerary | roammate"
+  description="12-week backpacker route through Turkey, Jordan, Egypt, and Oman. Week-by-week itinerary with budget breakdowns, border crossings, and insider tips for the ancient lands trail."
+  heroImages={[
+    { src: '/images/guides/met-cappadocia.webp', alt: 'Hot air balloons over Cappadocia at sunrise' },
+    { src: '/images/guides/met-petra.webp', alt: 'The Treasury at Petra carved into red sandstone' },
+    { src: '/images/guides/met-pyramids.webp', alt: 'Great Pyramids of Giza at sunset' },
+    { src: '/images/guides/met-wadi.webp', alt: 'Wadi Rum desert with red sand dunes' },
+  ]}
+  heroFlags="🇹🇷 🇯🇴 🇪🇬 🇴🇲"
+  heroRegion="Middle East & Turkey"
+  heroTitle="The Ancient<br>Lands Trail"
+  heroSubtitle="Four countries, twelve weeks, five millennia of history. From Istanbul's minarets to Oman's fjords — through lost cities, sacred deserts, and the cradle of civilisation."
+  heroPills={['12-Week Route', '$25–50/day', 'Sep – Nov Best', '4 Countries']}
+  routeOverview={routeOverview}
+  countries={countries}
+  budgetIntro="Daily costs per person in USD. Total 12-week budget: approximately $2,500–4,500 depending on your style. Jordan and Oman push the average up, but Egypt and Turkey bring it right back down."
+  budgetColumns={budgetColumns}
+  budgetRows={budgetRows}
+  practicalInfo={practicalInfo}
+  ctaRegion="the Middle East"
+  ctaText="Find travel companions for Petra sunrise hikes, split car rental costs in Oman, and share desert camp nights in Wadi Rum with fellow backpackers on roammate."
+  ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+  featuredGuides={['istanbul', 'cappadocia', 'antalya', 'pamukkale', 'petra', 'wadi-rum', 'dead-sea', 'cairo', 'pyramids-of-giza', 'wadi-shab', 'jebel-jais', 'musandam']}
+  accentColor="#c9a84c"
+/>

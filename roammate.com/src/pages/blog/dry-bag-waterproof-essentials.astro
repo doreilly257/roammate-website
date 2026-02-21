@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "dry-bag-waterproof-essentials",
+  title: "Dry Bags and Waterproof Essentials",
+  description: "Choose the right dry bag sizes, waterproof phone pouches, and rain protection for island hopping, monsoon travel, and protecting electronics on the road.",
+  category: "Gear",
+  readMinutes: 2,
+  heroImage: "/images/blog/dry-bag-waterproof-essentials-hero.webp",
+  intro: "The longtail boat from Ao Nang to Railay Beach doesn't dock — it runs up on the sand and you wade through knee-deep water with your bag over your head. Without a dry bag, your passport, phone, and laptop are one rogue wave from an insurance claim. Waterproofing isn't paranoia; it's basic gear prep for anywhere with boats, monsoons, or tropical downpours.",
+  sections: [
+    {
+      heading: "Dry Bag Sizes: What Goes Where",
+      content: "A 5-liter dry bag ($10-15, weighs 40g) is your electronics emergency kit — phone, passport, cash, and a power bank fit perfectly. Clip it to the inside of your daypack or keep it in your lap on boat transfers. The Sea to Summit Ultra-Sil is the packable gold standard. A 10-liter bag ($15-20) holds a full change of clothes for boat days — stuff a dry outfit, underwear, and a quick-dry towel in there so you have something clean when you arrive soaked. A 20-liter dry bag ($20-30) serves as a dedicated beach and snorkeling daypack, big enough for a towel, sunscreen, snorkel gear, water bottle, and snacks. For serious island hopping — Komodo, the Philippine island chains, Croatia's Dalmatian coast — carry both a 5L and a 20L. The small one lives permanently in your main pack for sudden downpours and tuk-tuk splashes, while the big one comes out for water activity days. The brand hierarchy is Sea to Summit (best quality, highest price), Earth Pak (solid mid-range), and generic roll-top bags from Decathlon (functional, half the price).",
+      image: "/images/blog/dry-bag-waterproof-essentials-inline-1.webp",
+    },
+    {
+      heading: "Phone Pouches, Rain Covers, and Monsoon Survival",
+      content: "A waterproof phone pouch is non-negotiable in tropical Asia. The Mpow Universal Pouch ($8, IPX8 rated) lets you use your touchscreen through the plastic for underwater photos and GPS navigation in the rain. Test it before your trip: seal the pouch with a tissue inside, submerge it in your sink for 30 minutes, and check if the tissue stays dry. Cheap pouches fail this test half the time. For your main backpack, a dedicated rain cover like the Osprey UltraLight Raincover ($30, 85g for the medium size) pulls over your pack in seconds. It won't help if your bag is submerged, but it handles monsoon downpours, roof rack transport in the rain, and the spray from open-top songthaews in northern Thailand. Pack a few large ziplock bags (1-gallon size) as backup waterproofing for individual items — they weigh nothing and save electronics when your dry bag is already full. During monsoon season in Southeast Asia (June through October), waterproof your gear daily before leaving your accommodation. The rain doesn't announce itself — it goes from blue sky to horizontal sheets in about four minutes, and you'll be caught in it at least twice a week.",
+      image: "/images/blog/dry-bag-waterproof-essentials-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-03-26T10:00:00Z",
+  updatedAt: "2025-03-26T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["rain-heat-humidity-gear-guide","island-hopping-route-planning","scuba-snorkel-trip-integration","travel-camera-phone-photography"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

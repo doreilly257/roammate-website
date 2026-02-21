@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'VND (Dong)', detail: '1 USD ≈ 25,500 VND' },
+  { icon: '🗣', label: 'Language', value: 'Vietnamese', detail: 'Some English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Feb – Sep', detail: '28–33°C, dry season' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$18–35 USD', detail: '460K–900K VND budget' },
+  { icon: '🛂', label: 'Visa', value: 'E-visa or visa-free', detail: '45-day e-visa available online' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'The Best of Nha Trang in 24 Hours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Nha Trang Beach & Local Breakfast',
+          text: 'Start with a bowl of bun ca (fish noodle soup) at a street-side stall near Tran Phu Beach — Nha Trang\'s signature breakfast dish costs just 30,000–40,000 VND and is packed with fresh fish, herbs, and rice noodles. Walk along the 7km Tran Phu beachfront promenade as the city wakes up — locals practise tai chi on the sand, fishermen haul in their morning catch, and the turquoise South China Sea sparkles in the early light. Rent a sunbed (50,000 VND) or spread a towel on the free public beach. The water is warm (26–30°C) and calm in the morning before afternoon winds pick up.',
+          tip: 'The best bun ca stalls are on Phan Boi Chau Street near Dam Market — look for the ones crowded with locals at 7am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Po Nagar Cham Towers',
+          text: 'Take a taxi (30,000 VND) or walk 2km north to the Po Nagar Cham Towers — a stunning 8th-century Hindu temple complex built by the ancient Cham civilization on a hill overlooking the Cai River. Entry is 22,000 VND. Four brick towers remain, dedicated to the goddess Yang Ino Po Nagar. The carvings are beautifully preserved and the hilltop views over Nha Trang and the fishing harbour are spectacular. Incense smoke drifts through the towers as local worshippers still use this as an active temple. Allow 45 minutes to explore. Afterwards, cross the bridge for lunch at Lanterns Vietnamese restaurant — pho and spring rolls for 80,000–120,000 VND.',
+          tip: 'Cover your shoulders and knees at Po Nagar — free robes are provided at the entrance. Visit before 11am to avoid tour groups.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mud Baths & Seafood Dinner',
+          text: 'Head to Thap Ba Hot Springs (taxi 40,000 VND from the centre) for a mineral mud bath — one of Nha Trang\'s most unique experiences. A private mud bath for two costs 400,000–600,000 VND and includes a hot mineral pool, herbal bath, and waterfall pool. The warm volcanic mud is genuinely relaxing after a day of walking. Return to the beachfront for dinner at Nha Trang Xua on Tran Phu — an open-air seafood restaurant where you choose your fish, lobster, or prawns from the live tanks. A full seafood spread costs 200,000–400,000 VND per person. The beachfront bars along Tran Phu come alive after 9pm.',
+          tip: 'Book Thap Ba for late afternoon (4–5pm) to avoid crowds and arrive perfectly relaxed for dinner. The VIP mud bath is worth the upgrade.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Beach, Temples & Nha Trang Flavours',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Beachfront & Dam Market',
+          text: 'Start with a stroll along the Tran Phu beachfront — Nha Trang\'s 7km sweep of golden sand facing the South China Sea. The warm water (26–30°C) is calm in the morning and perfect for a swim. Rent a sunbed (50,000 VND) on the public beach. Then walk to Dam Market (Cho Dam) — a bustling indoor market with vendors selling fresh seafood, tropical fruits, dried squid, coffee beans, and Vietnamese souvenirs. Breakfast at one of the market food stalls — banh mi (20,000 VND) and Vietnamese iced coffee (ca phe sua da, 15,000–25,000 VND). The circular building is packed with colour, noise, and authentic local energy.',
+          tip: 'Dam Market is best visited before 10am when produce is freshest. The upper floor has cheaper souvenirs than tourist shops on Tran Phu.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Po Nagar Cham Towers & Long Son Pagoda',
+          text: 'Visit the Po Nagar Cham Towers (22,000 VND entry) — an 8th-century Hindu temple complex on a hilltop overlooking the Cai River. The four remaining brick towers are remarkably well preserved and still used as an active place of worship. The carvings, lintels, and incense-filled interiors are atmospheric. Walk 2km south to Long Son Pagoda — a Buddhist temple complex with a giant 14m white Buddha statue perched on the hilltop behind. Climb the 152 steps for panoramic city views. The pagoda is free to enter and active monks may invite you for tea. Lunch at Lac Canh on Nguyen Binh Khiem — famous for DIY barbecue beef and prawns on tabletop grills (100,000–150,000 VND per person).',
+          tip: 'At Lac Canh, order the bo nuong (grilled beef) and tom nuong (grilled prawns) — cook them yourself on the charcoal grill at your table.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Seafood Dinner & Tran Phu Nightlife',
+          text: 'Head to the seafood restaurants along the beach road. Nha Trang is famous for its fresh, cheap seafood — choose from live tanks at restaurants like Nha Trang Xua or Thien Thanh 2. A feast of grilled squid, garlic butter prawns, steamed crab, and beer costs 200,000–400,000 VND per person. The Vietnamese dipping sauces (nuoc cham) make everything better. After dinner, walk the lit-up beachfront promenade — the night market near the old bus station sells snacks, clothes, and souvenirs. Sailing Club on Tran Phu is the main nightlife spot — beachfront dancing, international DJs, and cocktails from 80,000 VND.',
+          tip: 'Nha Trang seafood restaurants price by weight — always confirm the price per kilo before ordering to avoid surprises on the bill.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Island Hopping & Snorkelling',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Four Islands Boat Trip',
+          text: 'Join the famous Four Islands boat trip departing from Cau Da port at 8:30am (250,000–400,000 VND including lunch, snorkelling gear, and fruit). The wooden boat heads to Hon Mun Island first — a protected marine area with Nha Trang\'s best coral reefs and snorkelling. The visibility reaches 15–20m on clear days, and you will see colourful reef fish, sea urchins, and soft corals. Some operators offer sea walking (walking on the ocean floor with a diving helmet, 600,000 VND extra) and parasailing (400,000 VND). The atmosphere on the boats is social and fun — backpackers from every country sharing snorkelling gear and sunscreen.',
+          tip: 'Book with a reputable operator — Funky Monkey or Nha Trang Day Tours get consistently good reviews. Avoid the cheapest tours that pack 80+ people on one boat.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Island Beach & Floating Bar',
+          text: 'The boat continues to Hon Tam or Hon Mot island for beach time — swim in the sheltered bays, lounge on the sand, and eat the included lunch of Vietnamese dishes served on the boat or at an island restaurant. Some tours stop at a floating bar in the bay — a pontoon with music, drinks, and swimming. Beer is 20,000–30,000 VND and the atmosphere is like a pool party in the middle of the ocean. The final stop is usually Hon Mieu island to visit the Tri Nguyen Aquarium (50,000 VND) — a basic but charming outdoor aquarium built into a natural rock pool. Return to Cau Da port by 4–5pm.',
+          tip: 'Bring a waterproof phone case and reef-safe sunscreen. The island snorkelling stops have no shade — reapply sunscreen after every swim.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Thap Ba Mud Baths',
+          text: 'After a day at sea, reward yourself with Nha Trang\'s famous mineral mud baths. Thap Ba Hot Springs (taxi 40,000 VND from the centre) offers individual or shared mud baths from 300,000–600,000 VND. You soak in warm volcanic mud for 20 minutes, rinse off, then move through hot mineral pools, herbal baths, and waterfall showers. The mud is rich in minerals and leaves your skin incredibly soft. Book the sunset time slot for a magical atmosphere. Dinner afterwards at Yen\'s Restaurant on Tran Quang Khai — home-style Vietnamese cooking with excellent bun bo Hue (spicy beef noodle soup, 50,000 VND) and fresh spring rolls (40,000 VND).',
+          tip: 'The VIP section at Thap Ba (600,000 VND) gives you a private mud bath and pool with far fewer people — worth the extra on a busy day.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Vinpearl, Diving & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Vinpearl Island',
+          text: 'Take the spectacular 3,320m cable car (the longest over-sea cable car in the world when built) to Vinpearl Land on Hon Tre island. The all-inclusive ticket (880,000 VND) covers the cable car, water park, amusement park, aquarium, and beach. The views from the cable car over Nha Trang Bay are breathtaking — the city, islands, and turquoise water spread below. The water park has slides, a wave pool, and a lazy river. The aquarium has an underwater tunnel with sharks and rays. Even if theme parks aren\'t your thing, the cable car ride and island beach alone justify the visit.',
+          tip: 'Arrive when Vinpearl opens at 8:30am to ride the major attractions before tour groups arrive at 10am. The cable car has no queue early morning.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Scuba Diving or Beach Time',
+          text: 'For certified divers, Nha Trang offers some of Vietnam\'s best diving. Book a two-dive trip to Madonna Rock or Moray Beach (1,200,000–1,600,000 VND) with operators like Vietnam Active, Rainbow Divers, or Angel Dive. Visibility ranges from 10–25m depending on season, with hard and soft corals, nudibranchs, moray eels, and occasional reef sharks. Discovery dives for beginners cost 1,400,000–1,800,000 VND including pool training. If diving isn\'t your thing, spend the afternoon at the quieter Bai Dai beach, 20km south — a long, uncrowded stretch of sand accessible by taxi (150,000 VND one way).',
+          tip: 'Diving visibility is best from April to August. Rainbow Divers has been operating since 1996 and maintains high safety standards.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell BBQ & Night Market',
+          text: 'For your final evening, head to the local BBQ street food area on Nguyen Thi Minh Khai near the night market. Small plastic-stool restaurants serve banh xeo (crispy Vietnamese pancakes, 25,000 VND), bo la lot (grilled beef wrapped in betel leaves, 40,000 VND), and nem nuong (grilled pork sausage, 35,000 VND). The flavours are extraordinary and the prices are backpacker-friendly. Walk through the night market for last-minute souvenirs — Vietnamese coffee, conical hats, silk lanterns, and printed t-shirts. End the night at Louisiane Brewhouse on the beach — a beachfront bar with its own pool, live music, and house-brewed beer (55,000 VND per glass).',
+          tip: 'Bo la lot is one of Vietnam\'s best dishes — fragrant beef wrapped in wild betel leaves and grilled over charcoal. Order several and share.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Street food meals', text: 'Nha Trang street food is incredible and cheap — banh mi (20,000 VND), pho (35,000 VND), bun ca (30,000 VND), and com tam (broken rice, 35,000 VND). Eat where locals eat for the best food at the lowest prices.' },
+  { title: 'Grab app', text: 'Grab (Vietnam\'s Uber) is the cheapest transport — motorbike rides cost 15,000–30,000 VND for most city trips. GrabCar is also cheaper than street taxis. Always use the app to avoid tourist pricing.' },
+  { title: 'Happy hours', text: 'Most beachfront bars offer happy hour from 4–7pm with beers at 15,000–25,000 VND and cocktails at 50,000 VND. Sailing Club and Louisiane Brewhouse have the best deals.' },
+  { title: 'Budget boat trips', text: 'Four Islands boat trips cost as little as 250,000 VND including lunch and snorkelling gear. Book through your hostel — they negotiate group rates. Pay a bit more for smaller group tours.' },
+  { title: 'Vietnamese coffee', text: 'Skip Western cafes and drink ca phe sua da (iced coffee with condensed milk) at local stalls for 15,000–25,000 VND — it is stronger, tastier, and 5x cheaper than tourist cafe versions.' },
+  { title: 'Night market food', text: 'The night market food stalls serve grilled seafood — prawns, squid, and scallops — from 30,000–80,000 VND per plate. Far cheaper than the beachfront restaurants for the same fresh catches.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '120K–250K VND', midrange: '400K–900K VND', splurge: '2,000K+ VND', notes: 'Hostel dorms → boutique hotels → beachfront resorts' },
+  { category: 'Food', budget: '100K–200K VND', midrange: '300K–600K VND', splurge: '1,200K+ VND', notes: 'Street food & markets → restaurants → fine seafood dining' },
+  { category: 'Transport', budget: '30K–60K VND', midrange: '100K–250K VND', splurge: '500K+ VND', notes: 'Grab bike → Grab car & taxi → private driver' },
+  { category: 'Activities', budget: '50K–250K VND', midrange: '400K–900K VND', splurge: '1,800K+ VND', notes: 'Beach & temples → boat trips → diving & Vinpearl' },
+  { category: 'Drinks', budget: '30K–60K VND', midrange: '80K–200K VND', splurge: '500K+ VND', notes: 'Local beer & coffee → cocktails → rooftop bars' },
+  { category: 'Daily Total', budget: '330K–820K VND', midrange: '1,280K–2,850K VND', splurge: '6,000K+ VND', notes: '$13–32 → $50–112 → $235+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'E-visa available online (25 USD, 45 days) at evisa.xuatnhapcanh.gov.vn. Many nationalities qualify for 45-day visa-free entry — check before booking',
+      'Cam Ranh International Airport (CXR) is 35km south of Nha Trang. Airport bus 18 (60,000 VND) or taxi (350,000–450,000 VND). Pre-booked shuttle is cheapest at 100,000 VND',
+      'Passport must be valid for 6+ months. Keep a printed copy of your e-visa — airline staff check it before boarding',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No vaccinations required but Hepatitis A and typhoid are recommended. Tap water is not drinkable — use bottled (5,000–10,000 VND) or filtered water',
+      'Nha Trang is generally safe for tourists. Watch for motorbike bag snatchers on busy streets — wear bags across your body. Avoid walking the beach alone late at night',
+      'Jellyfish can appear October–December. Check with lifeguards before swimming. The summer sun is intense — wear SPF 50+ and reapply after swimming',
+    ],
+  },
+  {
+    icon: '🚇',
+    title: 'Getting Around',
+    items: [
+      'Grab motorbike is the cheapest way to get around — 15,000–30,000 VND for most city rides. Grab car for longer distances. Download the app before arrival',
+      'Motorbike rental is 100,000–150,000 VND per day from hostels and rental shops. International driving licence required. Traffic is hectic — only rent if experienced',
+      'Walking is feasible along the beachfront and city centre. The Tran Phu promenade connects most tourist sights in a 4km stretch',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Viettel, Mobifone, and Vinaphone SIMs cost 100,000–200,000 VND for 30GB at the airport or phone shops on Tran Phu. Passport required for registration',
+      'Free WiFi in virtually all cafes, restaurants, and hostels. Speed is good — Vietnam has surprisingly fast internet for Southeast Asia',
+      'All major apps work without restrictions. Facebook, Instagram, WhatsApp, and Google all function normally. Grab is the essential app for transport',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Vietnamese Dong (VND) — ATMs everywhere. Vietcombank and BIDV have lowest fees. Withdraw in large amounts (2,000,000–5,000,000 VND) to minimise transaction fees',
+      'Cash is king for street food, markets, and small restaurants. Cards accepted at hotels, larger restaurants, and tourist activities. USD accepted at some travel agencies',
+      'No tipping culture in Vietnam — it is appreciated but never expected. Rounding up at restaurants is polite. Tour guides appreciate 50,000–100,000 VND tips',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light, breathable clothing. Quick-dry swimwear for boat trips and beach days. A rain jacket if visiting during wet season (Oct–Dec)',
+      'Reef-safe sunscreen, a waterproof phone case, and a snorkel mask if you plan to snorkel — rental gear quality varies. Water shoes for rocky beaches',
+      'A small day bag for island trips and markets. Mosquito repellent for evening dining outdoors. Comfortable sandals — you will remove shoes frequently',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏛️', title: 'Temple Etiquette', text: 'Remove shoes before entering temples and pagodas. Cover shoulders and knees. Do not touch Buddha statues. At Po Nagar, free robes are provided if needed.' },
+  { icon: '🍜', title: 'Dining Customs', text: 'Vietnamese meals are communal — dishes go in the centre and everyone shares. Wait for the eldest to start eating. Saying "xin moi" (please eat) before starting shows respect.' },
+  { icon: '🤝', title: 'Bargaining', text: 'Bargaining is expected at markets and street vendors — start at 40–50% of asking price. Never haggle aggressively or for food prices. Smile throughout and walk away if the price doesn\'t drop.' },
+  { icon: '👢', title: 'Shoes Off', text: 'Remove shoes when entering homes, temples, and some shops. Look for shoes piled at the door as your cue. Carry easy-on/off sandals or flip-flops for convenience.' },
+  { icon: '📷', title: 'Photography', text: 'Ask permission before photographing people, especially ethnic minorities and monks. Most Vietnamese are happy to be photographed and will pose enthusiastically.' },
+  { icon: '🗣', title: 'Basic Vietnamese', text: 'Learn "Xin chao" (hello), "Cam on" (thank you), and "Bao nhieu?" (how much?). Vietnamese is tonal — pronunciation is tricky but locals appreciate any attempt.' },
+];
+---
+
+<CityGuideLayout
+  title="Nha Trang Travel Guide 2026 — 3-Day Itinerary | roammate"
+  description="The ultimate Nha Trang guide for travelers. 3-day itinerary with island hopping, diving, mud baths, Cham temples, street food, and budget tips for Vietnam's beach paradise."
+  heroImage="/images/guides/nha-trang-hero.webp"
+  heroFlag="🇻🇳"
+  heroCountry="Vietnam"
+  heroRegion="Southeast Asia"
+  heroCity="Nha Trang"
+  heroSubtitle="Turquoise bays dotted with islands, ancient Cham towers on hilltops, and some of the best seafood in Vietnam — all on a backpacker budget."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Feb – Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Vietnamese Dong (VND). Nha Trang is excellent value — beaches, islands, and world-class seafood at Southeast Asian prices."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Vietnam has rich cultural traditions rooted in Confucian and Buddhist values. Nha Trang is a relaxed beach town, but showing respect for local customs will enrich your experience."
+  ctaCity="Nha Trang"
+  ctaText="Find diving buddies, share boat trip costs, and connect with fellow beach travelers exploring Vietnam on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

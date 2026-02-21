@@ -1,0 +1,259 @@
+---
+import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+
+const routeOverview = [
+  { country: 'South Africa', flag: '🇿🇦', weeks: '1–4', color: '#2e6d79', stops: ['Cape Town', 'Garden Route', 'Durban', 'Drakensberg', 'Johannesburg'] },
+  { country: 'Namibia', flag: '🇳🇦', weeks: '5–7', color: '#e8734a', stops: ['Windhoek', 'Sossusvlei', 'Swakopmund', 'Etosha', 'Skeleton Coast'] },
+  { country: 'Botswana', flag: '🇧🇼', weeks: '8–9', color: '#c9a84c', stops: ['Maun', 'Okavango Delta', 'Chobe National Park'] },
+  { country: 'Zambia', flag: '🇿🇲', weeks: '10', color: '#8b5e3c', stops: ['Livingstone', 'Victoria Falls'] },
+];
+
+const countries = [
+  {
+    name: 'South Africa',
+    flag: '🇿🇦',
+    weeks: 'Weeks 1–4',
+    color: '#2e6d79',
+    intro: 'Africa\'s most accessible country for backpackers. South Africa packs in staggering natural beauty, vibrant cities, and world-class wildlife — all at a fraction of what you\'d pay in Europe or Australia. Cape Town alone could fill a month, but the diversity from coast to mountains to bushveld makes the overland journey extraordinary.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$35–60', detail: 'R600–R1,000 per day' },
+      { icon: '💵', label: 'Currency', value: 'ZAR (Rand)', detail: '1 USD ≈ 18 ZAR' },
+      { icon: '🛂', label: 'Visa', value: '90 days free', detail: 'Most Western passports' },
+      { icon: '🗣', label: 'Language', value: '11 official', detail: 'English widely spoken' },
+      { icon: '🕐', label: 'Timezone', value: 'SAST (UTC+2)', detail: 'No daylight saving' },
+      { icon: '☀️', label: 'Best Months', value: 'Mar–May, Sep–Nov', detail: 'Shoulder seasons ideal' },
+    ],
+    phases: [
+      {
+        title: 'Cape Town',
+        duration: '7–10 days',
+        description: 'Fly into Cape Town and you\'ll immediately understand why backpackers never want to leave. Start with Table Mountain — take the cableway up (R400 return) or hike the Platteklip Gorge route (free, 2–3 hours, steep but manageable). The views from the top are otherworldly. Spend a day exploring the Cape Peninsula: Chapman\'s Peak Drive, Boulders Beach for the African penguins (R176 entry), and Cape Point Nature Reserve (R376). The V&A Waterfront is touristy but has free live music and people-watching. Bo-Kaap\'s colourful houses are a must-see — walk through in the morning light. Long Street is the backpacker hub with hostels from R200–350/night, but the real action is in Woodstock and Observatory for craft beer and local food. The MyCiti bus system (R20–40 per trip) is efficient and safe for getting around. Spend an afternoon at Kirstenbosch Botanical Gardens (R220) — the tree canopy walkway at sunset is magical. Day trip to Stellenbosch wine country for tastings from R50–100 per estate, or join a hostel wine tour (R500–700 for a full day with transport).',
+        tip: 'Don\'t walk alone at night in the city centre or around Long Street after dark. Use Uber (cheap and reliable in Cape Town, R30–60 for most trips) instead of metered taxis. Keep your phone hidden on the street.',
+        guides: ['cape-town', 'table-mountain'],
+      },
+      {
+        title: 'Garden Route',
+        duration: '5–7 days',
+        description: 'The Garden Route is one of the world\'s great road trips, stretching 300km along the coast from Mossel Bay to Storms River. Rent a car from Cape Town (R300–500/day split between 2–3 people, or join a Baz Bus hop-on hop-off backpacker shuttle, R2,500 for a flex pass). First stop: Wilderness for paragliding over the lagoon (R1,400) and the Garden Route Trail boardwalks. Knysna is the foodie hub — grab fresh oysters at the Knysna Waterfront (R80–120 per dozen) and kayak through the lagoon. Plettenberg Bay has incredible whale watching from shore (June–November) and the Robberg Nature Reserve hike (R60, 4-hour loop along dramatic cliffs). End at Tsitsikamma National Park for the suspension bridge over Storms River Mouth (R248 conservation fee) and the world\'s highest commercial bungee jump at Bloukrans Bridge (R1,590, 216 metres — terrifying and unforgettable). Backpacker hostels dot the entire route at R200–400/night.',
+        tip: 'If you\'re driving, petrol is about R23/litre and the roads are excellent. Start early to catch golden-hour light on the coast. The Baz Bus only runs on set days, so plan your stops around the schedule.',
+        guides: ['garden-route'],
+      },
+      {
+        title: 'Durban & Drakensberg',
+        duration: '7–10 days',
+        description: 'Fly from George or Port Elizabeth to Durban (R600–1,200 on FlySafair, book 2–3 weeks ahead). Durban has the best Indian food outside of India — head to the Victoria Street Market for bunny chow (a hollowed-out bread loaf filled with curry, R40–60) and walk along the Golden Mile beachfront promenade. The surf is warmer than Cape Town and boards rent for R100–150/hour. Spend 2–3 days in Durban, then head inland to the Drakensberg Mountains. The uKhahlamba-Drakensberg Park is a UNESCO World Heritage site with jaw-dropping hiking. The Tugela Falls hike in Royal Natal National Park leads to the second-highest waterfall in the world (8–10 hours return, R60 entry). Cathedral Peak and Giant\'s Castle have easier day trails and San rock art sites dating back thousands of years. Stay at backpacker lodges on the escarpment from R250–400/night, or camp for R150. The night skies here, far from city lights, are unforgettable.',
+        tip: 'The Drakensberg gets cold at altitude, especially May–August. Pack layers and a warm sleeping bag if camping. Afternoon thunderstorms in summer (Oct–Mar) are dramatic — start hikes early and be off exposed ridges by midday.',
+        guides: ['durban', 'drakensberg'],
+      },
+      {
+        title: 'Johannesburg',
+        duration: '2–3 days',
+        description: 'Johannesburg is the transit hub for heading north into Namibia and beyond, but it deserves more than just an airport layover. The Apartheid Museum (R130) is essential — allow 3–4 hours and it will reshape your understanding of South Africa. Take a guided walking tour of Maboneng Precinct (R100–200), Joburg\'s regenerated creative district with street art, rooftop bars, and the Arts on Main complex. Neighbourtown has fantastic food markets on weekends. Don\'t miss Constitution Hill (R100), the former prison complex that now houses South Africa\'s Constitutional Court — Nelson Mandela and Mahatma Gandhi were both imprisoned here. Braamfontein on a Saturday buzzes with the Neighbourgoods Market (free entry, food stalls R40–80). Backpacker hostels in Melville and Maboneng run R200–350/night. For your onward journey, Intercape buses depart from Park Station to Windhoek (18–20 hours, R550–850, departing around 3pm).',
+        tip: 'Johannesburg requires street smarts. Don\'t walk between neighbourhoods — Uber everywhere (R20–50 per trip). Avoid Hillbrow and Berea entirely. The city is genuinely rewarding with a local guide or organized tour, but it\'s not a place to wander aimlessly.',
+        guides: [],
+      },
+    ],
+  },
+  {
+    name: 'Namibia',
+    flag: '🇳🇦',
+    weeks: 'Weeks 5–7',
+    color: '#e8734a',
+    intro: 'Namibia is the most visually dramatic country on this route — rust-red sand dunes towering 300 metres high, lunar landscapes, and wildlife roaming across vast open spaces. It\'s more expensive than South Africa and built around self-driving, but the otherworldly landscapes make every dollar worthwhile. This is Africa\'s adventure playground.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$30–55', detail: 'N$500–N$900 per day' },
+      { icon: '💵', label: 'Currency', value: 'NAD (Dollar)', detail: '1 USD ≈ 18 NAD (pegged to ZAR)' },
+      { icon: '🛂', label: 'Visa', value: '90 days free', detail: 'Most Western passports' },
+      { icon: '🗣', label: 'Language', value: 'English', detail: 'Afrikaans & German also common' },
+      { icon: '🕐', label: 'Timezone', value: 'CAT (UTC+2)', detail: 'Same as South Africa' },
+      { icon: '☀️', label: 'Best Months', value: 'Apr–Oct', detail: 'Dry season, cooler temps' },
+    ],
+    phases: [
+      {
+        title: 'Windhoek',
+        duration: '1–2 days',
+        description: 'Arrive from Johannesburg by Intercape bus (18–20 hours) or fly into Hosea Kutako International Airport (R800–1,500 from Joburg on FlySafair). Windhoek is a small, walkable capital — more of a large town than a city. Pick up your rental car here (essential for Namibia — budget R400–700/day for a 2WD or R700–1,200 for a 4x4, split between travellers). Explore Independence Avenue, the Christuskirche (German colonial-era church), and the craft market at the old brewery for souvenirs. Joe\'s Beerhouse is a Windhoek institution — massive portions of game meat (oryx, kudu, springbok) from N$120–200. Stock up on supplies at Checkers or Pick n Pay before heading into the desert — there\'s limited shopping outside Windhoek. Backpacker lodges run N$250–400/night.',
+        tip: 'Rent your car in Windhoek and drop it off in Windhoek — one-way drops to other cities cost a fortune. Budget for fuel carefully: distances are enormous and petrol stations can be 200–300km apart on some routes.',
+        guides: ['windhoek'],
+      },
+      {
+        title: 'Sossusvlei & Sesriem',
+        duration: '3–4 days',
+        description: 'Drive south from Windhoek to Sesriem (4–5 hours, 350km on good tar roads). The Sossusvlei area is the reason most people come to Namibia — the world\'s tallest sand dunes rising from white clay pans in every shade of orange and red. Enter the park gate at dawn (N$80 per person + N$10 per vehicle) and drive the 65km to the Sossusvlei parking area. Climb Dune 45 for sunrise — it\'s 170 metres high and takes 30–45 minutes, but the view of shadows creeping across the dune sea is one of Africa\'s most iconic sights. Dead Vlei is a surreal white clay pan dotted with 900-year-old blackened camelthorn trees against a backdrop of massive red dunes — it looks like a painting. The Sesriem Canyon (2km long, 30 metres deep) is a short walk from the campsite and beautiful at sunset. Camp at NWR Sesriem (N$350 per site for 2 people) or stay at budget-friendly Sossus Oasis Campsite (N$200 per person).',
+        tip: 'The park gate opens at sunrise and closes at sunset. Arrive before the gate opens (cars queue from 5am) to get the best light on Dune 45. Bring 3–4 litres of water per person per day — the desert heat is serious.',
+        guides: ['sossusvlei'],
+      },
+      {
+        title: 'Swakopmund & Skeleton Coast',
+        duration: '4–5 days',
+        description: 'Drive west from Sesriem to Swakopmund (5–6 hours via the Gaub and Kuiseb passes — stunning canyon scenery). Swakopmund is the adventure capital of Namibia, a surreal German colonial town where the Namib Desert meets the Atlantic Ocean. Go sandboarding down the massive dunes on the outskirts (N$700 for a half day — stand-up or lie-down), skydive over the desert-meets-ocean landscape (N$3,000 for tandem), or try quad biking in the dunes (N$800). The town itself has German bakeries (apfelstrudel and good coffee), a waterfront promenade, and craft markets. Kayak with seals and dolphins at Pelican Point in Walvis Bay (N$750 for a half day). Day trip north along the Skeleton Coast — the name comes from the whale bones and shipwrecks scattered along this foggy, wild stretch of coastline. Cape Cross Seal Colony (N$80 entry) has over 200,000 fur seals — the noise and smell are overwhelming but the sight is incredible. Backpacker hostels in Swakopmund from N$200–350/night.',
+        tip: 'Swakopmund is cold and foggy year-round (the Benguela Current keeps temperatures at 15–20°C even in summer). Pack a jacket and don\'t expect beach weather. The sandboarding is best in the morning before wind picks up.',
+        guides: ['swakopmund', 'skeleton-coast'],
+      },
+      {
+        title: 'Etosha National Park',
+        duration: '3–4 days',
+        description: 'Drive north from Swakopmund to Etosha (5–6 hours via Usakos and Outjo). Etosha is Southern Africa\'s most accessible self-drive safari park — you don\'t need a guide or 4x4, just patience and binoculars. The park centres around a massive salt pan visible from space, and the waterholes along its edge draw incredible concentrations of wildlife. Enter at Anderson\'s Gate and drive slowly between waterholes — Okaukuejo\'s floodlit waterhole is legendary for black rhino sightings at night (sit at the camp wall after dinner and wait). Halali camp has another excellent lit waterhole. You\'ll see elephants, lions, giraffes, zebras, springbok, oryx, and with luck, leopards and cheetahs. Park entry is N$80 per person per day plus N$10 per vehicle. Camp inside the park at Okaukuejo, Halali, or Namutoni (N$350–500 per campsite for 2 people, book through NWR well in advance). The camp shops sell basic food and firewood but bring most supplies from Outjo.',
+        tip: 'Three days in Etosha is ideal — one night at each of the three main camps (Okaukuejo, Halali, Namutoni) moving west to east. Start driving at sunrise when animals are most active and find a waterhole to sit at during the midday heat.',
+        guides: ['etosha-national-park'],
+      },
+    ],
+  },
+  {
+    name: 'Botswana',
+    flag: '🇧🇼',
+    weeks: 'Weeks 8–9',
+    color: '#c9a84c',
+    intro: 'Botswana is Africa\'s premier wildlife destination, but its high-end tourism model makes it the most expensive stop on this route. The trick for backpackers is knowing the budget workarounds — self-drive into Chobe, budget mokoro trips into the Okavango, and camping instead of luxury lodges. The wildlife here is simply on another level.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$40–80', detail: 'P300–P600 per day' },
+      { icon: '💵', label: 'Currency', value: 'BWP (Pula)', detail: '1 USD ≈ 14 BWP' },
+      { icon: '🛂', label: 'Visa', value: '90 days free', detail: 'Most Western passports' },
+      { icon: '🗣', label: 'Language', value: 'English & Setswana', detail: 'English widely spoken' },
+      { icon: '🕐', label: 'Timezone', value: 'CAT (UTC+2)', detail: 'Same as South Africa' },
+      { icon: '☀️', label: 'Best Months', value: 'May–Oct', detail: 'Dry season, wildlife concentrates' },
+    ],
+    phases: [
+      {
+        title: 'Maun & Okavango Delta',
+        duration: '5–7 days',
+        description: 'Drive from Etosha through the Caprivi Strip to Maun (long drive, 10–12 hours, or break it up with an overnight at Rundu or Divundu). Maun is the gateway to the Okavango Delta — the world\'s largest inland delta, a UNESCO World Heritage site where the Okavango River fans out across the Kalahari in a maze of channels, lagoons, and islands. The budget way to experience it is a mokoro trip from the eastern delta villages (Boro or Eastern Delta polers). A 2-night/3-day mokoro trip with a local poler costs P800–1,500 per person including camping on islands, meals, and a guided bush walk. Gliding silently through the papyrus-lined channels in a traditional dugout canoe while hippos grunt in the distance is one of Africa\'s truly unforgettable experiences. You\'ll camp on islands under the stars with elephants sometimes wandering through camp at night. Book through Old Bridge Backpackers in Maun (the backpacker hub, P120–200/night for dorms) or Audi Camp. Day trips into the delta by mokoro are also available from P400–600 if time is tight.',
+        tip: 'The Okavango is seasonal — peak flooding is June to August when the delta is at its most photogenic. Bring a waterproof bag for everything. Tsetse flies are vicious in some areas — wear long sleeves and light colours.',
+        guides: ['maun', 'okavango-delta'],
+      },
+      {
+        title: 'Chobe National Park',
+        duration: '3–4 days',
+        description: 'Drive from Maun to Kasane (6–7 hours on good tar via Nata). Chobe National Park has the highest concentration of elephants in Africa — an estimated 120,000. The Chobe Riverfront is where the action is: massive herds of elephants come down to drink and bathe in the late afternoon, while hippos, crocodiles, and buffalo share the water. A boat cruise on the Chobe River at sunset (P200–350 for 3 hours) is the best way to see the wildlife — you\'ll get incredibly close to elephants swimming across the river and pods of hippos. Self-drive game drives in the Chobe Riverfront area are possible with a 4x4 (the sand tracks are deep) — park entry is P120 per person per day plus P50 per vehicle. The Savuti area deeper in the park is legendary for lion-elephant interactions but requires serious 4x4 experience. Stay at budget lodges in Kasane (P300–500/night) or camp at Ihaha Campsite inside the park (P350 per site, no fences — elephants walk through camp regularly).',
+        tip: 'Chobe is day-trippable from Kasane without camping inside the park. The afternoon boat cruise is the highlight — book for 3pm departure to catch the golden-hour light on the elephants. Bring a good zoom lens.',
+        guides: ['chobe-national-park'],
+      },
+    ],
+  },
+  {
+    name: 'Zambia',
+    flag: '🇿🇲',
+    weeks: 'Week 10',
+    color: '#8b5e3c',
+    intro: 'The grand finale. Zambia\'s Livingstone is the adrenaline capital of Southern Africa, and Victoria Falls — one of the Seven Natural Wonders of the World — is the perfect place to end an overland journey through four countries. The Zambian side offers better views, better value, and better vibes than the Zimbabwe side.',
+    quickFacts: [
+      { icon: '💰', label: 'Daily Budget', value: '$30–55', detail: 'Budget with splurge activities' },
+      { icon: '💵', label: 'Currency', value: 'ZMW (Kwacha)', detail: '1 USD ≈ 27 ZMW' },
+      { icon: '🛂', label: 'Visa', value: '$50 on arrival', detail: 'Or $80 KAZA UniVisa (Zam+Zim)' },
+      { icon: '🗣', label: 'Language', value: 'English', detail: 'Official language' },
+      { icon: '🕐', label: 'Timezone', value: 'CAT (UTC+2)', detail: 'Same as Botswana' },
+      { icon: '☀️', label: 'Best Months', value: 'Apr–Aug', detail: 'Peak water flow, cooler temps' },
+    ],
+    phases: [
+      {
+        title: 'Livingstone & Victoria Falls',
+        duration: '4–6 days',
+        description: 'Cross from Kasane (Botswana) to Livingstone at the Kazungula border — it\'s only 80km and takes 1–2 hours including immigration. Livingstone is a relaxed town that serves as base camp for Victoria Falls, just 10km south. The falls themselves are 1.7km wide and 108 metres high — the spray can be seen from 30km away and the roar is deafening. Enter Mosi-oa-Tunya National Park from the Zambian side ($20 entry) and walk the network of viewpoints along the gorge edge — you will get absolutely drenched from the spray during high water (April–July), so bring a waterproof bag for your camera or phone. The Knife-Edge Bridge is the most dramatic viewpoint. For the adrenaline seekers, Livingstone offers some of the best adventure activities on the continent: bungee jumping off Victoria Falls Bridge (112 metres, $160), white water rafting on the Zambezi (Grade 5 rapids, $150 for a full day — one of the world\'s best rafting experiences), zip-lining across the gorge ($60), and the Devil\'s Pool swim right at the edge of the falls (September–December only when water is lower, $100). The Royal Livingstone Hotel allows non-guests to have sundowners on the terrace overlooking the falls ($15–20 for a cocktail — absolute bargain for the setting). Stay at Jolly Boys Backpackers or Fawlty Towers in Livingstone ($12–20/night for dorms), both with pools and excellent travel desks for booking activities.',
+        tip: 'Visit the falls in the morning for the best light and fewer people. The KAZA UniVisa ($80) lets you cross freely between Zambia and Zimbabwe if you want to see the falls from both sides — it\'s worth it for the Zimbabwe side\'s different angle.',
+        guides: ['livingstone', 'victoria-falls'],
+      },
+    ],
+  },
+];
+
+const budgetColumns = [
+  { flag: '🇿🇦', label: 'South Africa' },
+  { flag: '🇳🇦', label: 'Namibia' },
+  { flag: '🇧🇼', label: 'Botswana' },
+  { flag: '🇿🇲', label: 'Zambia' },
+];
+
+const budgetRows = [
+  { category: 'Accommodation', values: ['$12–25', '$12–25', '$15–35', '$12–20'], notes: 'Hostels, campsites, guesthouses' },
+  { category: 'Food', values: ['$8–15', '$6–12', '$8–15', '$6–12'], notes: 'Street food + local restaurants' },
+  { category: 'Transport', values: ['$5–12', '$8–15', '$8–15', '$3–8'], notes: 'Car rental split, buses, fuel' },
+  { category: 'Activities', values: ['$5–15', '$5–20', '$10–25', '$10–30'], notes: 'Parks, safaris, adventures' },
+  { category: 'Drinks/Social', values: ['$3–6', '$3–5', '$3–6', '$3–5'], notes: 'Beer, coffee, socialising' },
+  { category: 'Daily Total', values: ['$35–60', '$30–55', '$40–80', '$30–55'], notes: 'Budget–comfortable range' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visas',
+    items: [
+      'South Africa: 90 days visa-free for most Western passports. Must show proof of onward travel',
+      'Namibia: 90 days visa-free for most nationalities. Free entry stamp at the border',
+      'Botswana: 90 days visa-free. One of the easiest border crossings in Africa',
+      'Zambia: $50 single-entry visa on arrival, or $80 KAZA UniVisa for both Zambia and Zimbabwe',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health',
+    items: [
+      'Yellow fever certificate required if arriving from an endemic country. Recommended: Hep A/B, Typhoid, Tetanus',
+      'Malaria risk in northern Namibia (Etosha), Okavango Delta, Chobe, and Zambia — take prophylaxis and use DEET',
+      'South Africa\'s coastal cities and Cape Town are malaria-free. Tap water is safe in SA and Namibia, boil elsewhere',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Transport',
+    items: [
+      'Self-driving is the best way to see Namibia and Botswana — rent from Windhoek, 4x4 recommended for Chobe/Okavango',
+      'South Africa: Intercape and Greyhound buses, plus Baz Bus for the backpacker route. FlySafair for cheap domestic flights',
+      'Border crossings: Joburg to Windhoek (Intercape bus, 18hrs), Kasane to Livingstone (80km, easy taxi or shuttle)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'South Africa: Vodacom or MTN SIM (R50–100 for 5–10GB). Excellent 4G coverage in cities',
+      'Namibia: MTC SIM (N$50–100). Coverage in towns but spotty in the desert and on remote roads',
+      'Botswana/Zambia: Mascom or Airtel SIMs ($5–10). WiFi at lodges and camps is generally slow',
+    ],
+  },
+  {
+    icon: '🌦️',
+    title: 'Best Time',
+    items: [
+      'April–October (dry/winter): Best for wildlife viewing as animals gather at waterholes. Cooler temps, clear skies',
+      'June–August: Peak safari season. Cold mornings in the desert (near freezing). Victoria Falls at maximum flow',
+      'November–March (wet/summer): Green landscapes, baby animals, but roads can flood and malaria risk increases',
+    ],
+  },
+  {
+    icon: '🔒',
+    title: 'Safety',
+    items: [
+      'South Africa requires the most caution: don\'t walk alone at night in cities, use Uber not taxis, keep valuables hidden',
+      'Namibia and Botswana are among Africa\'s safest countries — crime rates are very low outside Windhoek',
+      'Wildlife safety: never leave your vehicle in national parks (except designated areas), keep distance from elephants and hippos',
+    ],
+  },
+];
+---
+
+<BackpackerRouteLayout
+  title="Southern Africa Backpacker Route — 10-Week Itinerary | roammate"
+  description="The ultimate 10-week Southern Africa backpacker route. Week-by-week overland itinerary through South Africa, Namibia, Botswana, and Zambia with safari tips, budget breakdowns, and Victoria Falls."
+  heroImages={[
+    { src: '/images/guides/saf-cape.webp', alt: 'Cape Town waterfront with Table Mountain' },
+    { src: '/images/guides/saf-dunes.webp', alt: 'Sossusvlei red sand dunes at sunrise' },
+    { src: '/images/guides/saf-elephant.webp', alt: 'Elephant herd at Chobe waterhole' },
+    { src: '/images/guides/saf-falls.webp', alt: 'Victoria Falls from the Zambia side' },
+  ]}
+  heroFlags="🇿🇦 🇳🇦 🇧🇼 🇿🇲"
+  heroRegion="Southern Africa"
+  heroTitle="The Safari<br>& Dunes Trail"
+  heroSubtitle="Four countries, ten weeks, one unforgettable overland journey. From Table Mountain's summit to Victoria Falls' thundering edge — the route through Africa's wild south."
+  heroPills={['10-Week Route', '$30–60/day', 'Apr – Oct Best', '4 Countries']}
+  routeOverview={routeOverview}
+  countries={countries}
+  budgetIntro="Daily costs per person in USD. Total 10-week budget: approximately $2,800–5,000 depending on your style. Namibia and Botswana are pricier — car rental and safari costs add up — but South Africa and Zambia bring the average down."
+  budgetColumns={budgetColumns}
+  budgetRows={budgetRows}
+  practicalInfo={practicalInfo}
+  ctaRegion="Southern Africa"
+  ctaText="Find travel companions for overland drives across Namibia, split safari costs in Botswana, and share the adrenaline at Victoria Falls with fellow backpackers on roammate."
+  ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+  featuredGuides={['cape-town', 'table-mountain', 'garden-route', 'durban', 'drakensberg', 'windhoek', 'sossusvlei', 'swakopmund', 'etosha-national-park', 'skeleton-coast', 'fish-river-canyon', 'maun', 'okavango-delta', 'chobe-national-park', 'livingstone', 'victoria-falls']}
+  accentColor="#2e6d79"
+/>

@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "sustainable-backpacking-practices",
+  title: "Sustainable Backpacking Practices",
+  description: "Reduce your travel footprint with practical sustainable backpacking habits from reusable gear to eco-accommodation choices to supporting local economies.",
+  category: "Sustainability",
+  readMinutes: 2,
+  heroImage: "/images/blog/sustainable-backpacking-practices-hero.webp",
+  intro: "A single long-haul flight from London to Bangkok produces roughly 2.5 tonnes of CO2 per passenger — more than the average person in Cambodia generates in an entire year. Backpackers like to think of themselves as low-impact travelers, but the math tells a different story. The flight is the biggest single decision, and once you are on the ground, the daily choices around plastic, accommodation, transport, and spending add up across months of travel. Sustainability on the road is not about perfection. It is about a handful of systems that reduce harm without ruining the experience.",
+  sections: [
+    {
+      heading: "Reducing Plastic and Carbon on the Ground",
+      content: "Southeast Asia's plastic waste crisis is visually obvious — canals choked with bottles in Bangkok, beach cleanups pulling thousands of single-use cups from Bali's shores every week. Your contribution starts with three items: a refillable water bottle with a built-in filter (Grayl GeoPress, $90, filters viruses and bacteria in 8 seconds — eliminating 2-3 plastic bottles per day), a set of bamboo utensils ($8) that replace the styrofoam-packaged plastic fork-and-spoon you get with every takeaway meal, and a lightweight reusable shopping bag for market visits. Over six months of travel, these three items prevent roughly 500 plastic bottles and 350 sets of disposable cutlery from entering waste streams that have no recycling infrastructure. For transport between cities, overland travel by bus or train produces 80-90% less carbon than flying the same route. The Hanoi-to-Ho-Chi-Minh sleeper train, the Bangkok-to-Chiang-Mai overnight bus, and the Lima-to-Cusco route are all better experiences overland anyway. When you do fly, direct flights produce 30-40% less carbon than connections because takeoff and landing burn the most fuel. Carbon offset programs through Gold Standard or Atmosfair cost $15-25 per long-haul flight — not perfect, but better than nothing.",
+      image: "/images/blog/sustainable-backpacking-practices-inline-1.webp",
+    },
+    {
+      heading: "Accommodation, Spending, and Reef-Safe Sunscreen",
+      content: "Choose locally owned guesthouses over international hostel chains. A $12 night at a family-run guesthouse in Hoi An keeps that money in the local economy, pays for school supplies for the owner's children, and usually comes with better local knowledge than a Selina or Generator property where profits flow to overseas investors. Look for eco-certification from programs like Green Key, Travelife, or local equivalents — in Costa Rica, the CST (Certificacion para la Sostenibilidad Turistica) rating is rigorous and trustworthy. Eat at street stalls and family restaurants rather than tourist-oriented restaurants with English menus — not just for budget, but because supply chains for local eateries source from nearby farms and markets rather than imported ingredients. For sunscreen, conventional formulas containing oxybenzone and octinoxate are toxic to coral reefs at concentrations as low as 62 parts per trillion. Hawaii, Palau, Bonaire, and parts of Mexico have banned these chemicals entirely. Use mineral-based zinc oxide sunscreen from brands like Sun Bum Mineral ($15) or Raw Elements ($18) when snorkeling or swimming anywhere near reef systems. Apply it 15 minutes before entering the water and reapply after swimming — mineral sunscreens wash off faster than chemical ones. This single switch protects reef ecosystems that support the marine biodiversity you traveled to see in the first place.",
+      image: "/images/blog/sustainable-backpacking-practices-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-06-25T10:00:00Z",
+  updatedAt: "2025-06-25T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["eco-lodge-vs-hostel-comparison","ethical-wildlife-encounters","volunteer-travel-ethics","budget-travel-cashflow-playbook"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'INR (Rupee)', detail: '1 USD ≈ 83 INR' },
+  { icon: '🗣', label: 'Language', value: 'Hindi / Mewari', detail: 'English understood in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'IST (UTC+5:30)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Mar', detail: 'Cool and dry, perfect for sightseeing' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$15–30 USD', detail: '₹1,250–2,500 per day' },
+  { icon: '🛂', label: 'Visa', value: 'e-Visa required', detail: '30-day e-tourist visa $25 USD online' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'City Palace, Lake Pichola & Rooftop Sunset',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'City Palace & Royal Heritage',
+          text: 'Start at the City Palace by 9am when it opens — Udaipur\'s crown jewel and Rajasthan\'s largest palace complex. Entry is ₹300 for foreigners and the ticket covers the museum section. Built over 400 years by successive Mewar rulers, the palace is a labyrinth of courtyards, towers, balconies, and rooms adorned with mirror work, painted tiles, and stained glass. The Mor Chowk (Peacock Courtyard) has exquisite glass mosaic peacocks. The view from Amar Vilas terrace over Lake Pichola, with the Lake Palace hotel floating in the middle, is one of India\'s most iconic vistas. Allow 2–3 hours to explore properly.',
+          tip: 'Hire a guide at the entrance (₹500–800 for 90 minutes) — the palace\'s history spanning 22 generations of the Mewar dynasty is rich and the signage is limited.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jagdish Temple & Old City Bazaars',
+          text: 'Walk downhill from the City Palace to Jagdish Temple, a 17th-century Indo-Aryan temple dedicated to Vishnu with intricate carvings covering every surface. The 79-foot shikhara (tower) dominates the old city skyline. Temple entry is free and the evening aarti (prayer ceremony) at 7pm is beautiful. Then weave through the old city bazaars — Hathi Pol (Elephant Gate) market for Rajasthani textiles, miniature paintings (from ₹200 for prints, ₹2,000+ for hand-painted originals), lac bangles, and leather mojari slippers (₹300–800). Lunch at Natraj Dining Hall (thali ₹150–200) — unlimited Rajasthani thali on a steel plate, refilled endlessly.',
+          tip: 'Miniature paintings sold as "antique" are almost always modern reproductions. Buy for beauty, not investment. Check quality by examining brush detail on faces.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lake Pichola Boat Ride & Rooftop Dinner',
+          text: 'Take the municipal boat ride on Lake Pichola (₹400, 1 hour) from Rameshwar Ghat near the City Palace. The boat circles Jag Mandir island (you can hop off for 30 minutes to explore the palace and gardens) and passes the iconic Lake Palace hotel — a white marble fantasy floating on the water. The sunset from the lake, with the City Palace glowing amber and the Aravalli Hills behind, is transcendent. After docking, walk up to one of Udaipur\'s famous rooftop restaurants — Ambrai (mains ₹300–600) has the best lake view, or Upre by 1559 AD for a splurge (mains ₹500–900). Order laal maas (fiery red Rajasthani mutton curry) with garlic naan.',
+          tip: 'The sunset boat ride fills up fast — buy tickets at the Rameshwar Ghat counter by 4pm. The 5pm departure catches the best golden light.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'City Palace, Lake Pichola & Old City Heritage',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'City Palace Complex',
+          text: 'Arrive at the City Palace by 9am to beat the midday heat and tour groups. Entry is ₹300 for foreigners and covers the palace museum. This is Rajasthan\'s largest palace complex — 400 years of construction by 22 generations of Mewar rulers created a maze of courtyards, balconies, and rooms decorated with mirror work, miniature paintings, and coloured glass. Key highlights include Mor Chowk (glass peacock mosaics), Manak Mahal (ruby palace), and the Amar Vilas terrace with its breathtaking panorama over Lake Pichola and the floating Lake Palace hotel. The Crystal Gallery (₹500 extra) houses an incredible collection of crystal furniture ordered from England in 1877.',
+          tip: 'The palace is enormous — hire an official guide (₹500–800) at the main entrance. Audio guides (₹200) are available but less engaging.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jagdish Temple & Old City Walk',
+          text: 'Descend from the palace to Jagdish Temple (free entry), a stunning 17th-century Vishnu temple with carved elephants, horsemen, and musicians covering its towering facade. The interior houses a black stone Vishnu idol and the atmosphere during aarti ceremonies is electric. Continue into the old city lanes — narrow, chaotic, and alive with colour. Walk through Bada Bazaar and Hathi Pol for Rajasthani textiles (block-printed fabrics from ₹200/metre), silver jewellery (₹500–2,000), and miniature paintings. Lunch at Natraj Dining Hall near the clock tower (unlimited Rajasthani thali ₹150–200) — a conveyor belt of dal, sabzi, roti, rice, and chaas (buttermilk) served on a steel plate.',
+          tip: 'Natraj Dining Hall is Udaipur\'s best-value lunch — unlimited refills of 8+ dishes for ₹150. Arrive by 12:30pm before the queue builds.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lake Pichola Sunset Boat & Rooftop Dining',
+          text: 'Buy tickets for the municipal Lake Pichola boat (₹400, 1 hour) at Rameshwar Ghat by 4pm — the sunset departure is the most popular. The boat cruises past the Lake Palace hotel (shimmering white marble on the water), around Jag Mandir island (30-minute stop to explore the palace gardens and stone elephants), and returns as the City Palace and ghats glow amber in the fading light. Back on shore, climb to a rooftop restaurant — Ambrai at Amet Haveli (mains ₹300–600) has Udaipur\'s most celebrated lake view. Order laal maas (red mutton curry, ₹450), dal bati churma (₹250), and a cold Kingfisher beer (₹250) as the palace lights up across the water.',
+          tip: 'Ambrai doesn\'t take reservations — arrive by 6:30pm to secure a lakeside table. The food is good but you\'re really paying for the view.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Monsoon Palace, Temples & Rajasthani Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Saheliyon Ki Bari & Fateh Sagar Lake',
+          text: 'Start at Saheliyon Ki Bari (Garden of the Maidens, ₹50 entry), built in the 18th century for 48 royal ladies sent as dowry. The gardens feature lotus pools, marble elephants, delicate fountains that work without electricity (gravity-fed from Fateh Sagar Lake), and kiosk pavilions surrounded by bougainvillea. It\'s a peaceful escape from the busier sights. Walk 10 minutes to Fateh Sagar Lake and take a pedal boat (₹200 for 30 minutes) or motorboat (₹400) to Nehru Island — a small garden island with views across to the Aravalli Hills. Breakfast at Cafe Edelweiss (₹200–400) on Fateh Sagar\'s bank — Austrian-run with excellent strudel and espresso.',
+          tip: 'Fateh Sagar Lake is at its fullest and most beautiful after the monsoon season (October–November). Mornings are cooler and less hazy for photography.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Eklingji Temple & Shilpgram Craft Village',
+          text: 'Hire an auto-rickshaw for the afternoon (₹500–700 for 4 hours) and drive 22km north to Eklingji Temple complex — 108 temples surrounding a carved marble Shiva temple that has been the Mewar dynasty\'s patron deity for over 1,500 years. The main temple houses a four-faced black marble Shiva idol and the surrounding complex is remarkably peaceful. Open limited hours (10:30am–1:30pm, 4:30–7:30pm). On the way back, stop at Shilpgram (₹80 entry), a living craft village with artisan demonstrations — pottery, weaving, block printing, and puppet making. Artisans sell directly at fair prices. The open-air amphitheatre hosts cultural performances during festivals.',
+          tip: 'Eklingji Temple has strict timing — photography inside is forbidden and modest dress is essential. The drive through rural Rajasthan is scenic and worth the trip.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Monsoon Palace Sunset & Lal Ghat Evening',
+          text: 'Drive to Sajjangarh (Monsoon Palace, ₹200 entry plus ₹80 for vehicle) perched at 944 metres on the Aravalli ridge above Udaipur. Built in the 19th century as a monsoon retreat and astronomical observatory, the hilltop palace offers 360-degree views — Fateh Sagar Lake, Lake Pichola, the city sprawl, and the Aravalli range stretching to the horizon. The sunset from here is Udaipur\'s best. Return to Lal Ghat for dinner at Millets of Mewar (mains ₹200–350) — a health-conscious restaurant using traditional Rajasthani millet grains. Then walk the atmospheric ghats along the lake as musicians play and temple bells ring.',
+          tip: 'Monsoon Palace closes at sunset — arrive by 5pm for the best light. The road up is steep and narrow. Auto-rickshaws can make it but taxis are more comfortable.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Cooking Class, Crafts & Hidden Udaipur',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Rajasthani Cooking Class',
+          text: 'Book a home cooking class through Shashi Cooking Class (₹1,500–2,000 per person, 3–4 hours) — Shashi is a local legend who teaches from her home kitchen near Gangaur Ghat. You\'ll visit the local vegetable market together, then learn to make dal bati churma (Rajasthani baked bread balls with lentils), gatte ki sabzi (chickpea flour dumplings in yoghurt gravy), and chapati from scratch. The class includes chai breaks, stories about Rajasthani food culture, and you eat everything you cook for lunch. Alternative: Cooking classes at Spice Box (₹1,800, includes market visit) near Jagdish Temple offer similar depth with a beautiful haveli setting.',
+          tip: 'Book Shashi\'s class via WhatsApp at least 2 days ahead — she takes only 4–6 students per session. Morning classes start at 9am and include lunch.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Vintage Car Museum & Bagore Ki Haveli',
+          text: 'Visit the Vintage and Classic Car Collection (₹250 entry) at the Garden Hotel — a remarkable private collection of royal vehicles including a 1934 Rolls-Royce used in the Bond film Octopussy (which was filmed partly in Udaipur). Then walk to Bagore Ki Haveli (₹100 entry), a restored 18th-century aristocratic mansion on Gangaur Ghat with 138 rooms filled with royal artefacts, costumes, and the world\'s largest turban on display. The haveli hosts a nightly cultural performance at 7pm (₹150) — Rajasthani folk dance including the mesmerising fire dance, puppet show, and traditional music that brings the courtyard alive.',
+          tip: 'Bagore Ki Haveli\'s evening cultural show (7pm) is Udaipur\'s best live performance — arrive by 6:45pm for front-row seating on the floor cushions.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Gangaur Ghat Sunset & Farewell Dinner',
+          text: 'Walk along Gangaur Ghat as the sun sets — this is Udaipur\'s most photogenic lakefront stretch, with whitewashed buildings reflected in Lake Pichola, women washing clothes on the steps, and priests performing small aarti ceremonies at waterside temples. The light here at golden hour is extraordinary. For your farewell dinner, climb to Raas Leela restaurant at the Raas Hotel (mains ₹600–1,200) — modern Rajasthani cuisine in a restored haveli with courtyard dining and lake glimpses. Or keep it local at Jheel Guesthouse rooftop (mains ₹200–400) — simple but honest food with front-row lake panoramas and no pretence. Order a masala chai and watch the city lights reflect on the water.',
+          tip: 'Gangaur Ghat is most atmospheric from 5–6:30pm when locals gather, boats return, and temple bells ring across the water. Bring a camera.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Thali lunches', text: 'Unlimited Rajasthani thali at local restaurants costs ₹150–200 — dal, sabzi, roti, rice, pickle, and chaas refilled until you stop them. Natraj Dining Hall and Bawarchi are the best-value options in the old city.' },
+  { title: 'Auto-rickshaw negotiation', text: 'Always agree on price before getting in an auto-rickshaw. ₹30–50 for short hops in the old city, ₹100–200 for longer rides. Use Ola or Uber apps for fixed-price rides when available to avoid haggling.' },
+  { title: 'Budget guesthouses', text: 'Lal Ghat and Gangaur Ghat areas have budget guesthouses from ₹400–800/night with lake views. Zostel Udaipur has dorm beds from ₹500. Many guesthouses have stunning rooftop terraces that rival expensive hotels.' },
+  { title: 'Free temples & ghats', text: 'Jagdish Temple, the lakefront ghats, Bagore Ki Haveli exterior, and walking the old city lanes are all free. The City Palace museum (₹300) and boat rides (₹400) are the only significant entry fees.' },
+  { title: 'Street food circuit', text: 'Udaipur\'s street food is exceptional and cheap — kachori with sabzi (₹30), mirchi vada (₹20), kulfi (₹40), and lassi at Hathi Pol (₹30). The evening stalls near the clock tower are the best grazing ground.' },
+  { title: 'Train travel', text: 'Trains to/from Udaipur connect to Delhi (12hrs, ₹400–1,500), Jaipur (6hrs, ₹300–900), and Ahmedabad (5hrs, ₹250–700). Book on irctc.co.in 2–4 weeks ahead for best fares. Sleeper class is comfortable and social.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '₹400–800', midrange: '₹1,500–4,000', splurge: '₹8,000+', notes: 'Guesthouse/hostel → heritage hotel → luxury lakeside palace' },
+  { category: 'Food', budget: '₹300–500', midrange: '₹800–1,500', splurge: '₹3,000+', notes: 'Thali & street food → rooftop restaurants → fine dining' },
+  { category: 'Transport', budget: '₹100–200', midrange: '₹300–700', splurge: '₹1,500+', notes: 'Walking & auto-rickshaw → taxi/Ola → private car & driver' },
+  { category: 'Activities', budget: '₹300–500', midrange: '₹800–2,000', splurge: '₹5,000+', notes: 'Palace & boat ride → cooking class & shows → private tours' },
+  { category: 'Drinks', budget: '₹50–150', midrange: '₹200–500', splurge: '₹1,000+', notes: 'Chai & lassi → rooftop beer → cocktail bars' },
+  { category: 'Daily Total', budget: '₹1,150–2,150', midrange: '₹3,600–8,700', splurge: '₹18,500+', notes: '$14–26 → $43–105 → $223+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛺',
+    title: 'Getting Around',
+    items: [
+      'Auto-rickshaws are the primary transport — ₹30–50 for short hops, ₹100–200 across town. Always negotiate before boarding. Ola app works in Udaipur for fixed-price rides',
+      'The old city is compact and best explored on foot — Lal Ghat to City Palace is a 5-minute walk. Streets are narrow, hilly, and not suited for vehicles',
+      'For day trips (Eklingji, Ranakpur, Kumbhalgarh), hire a car and driver through your hotel — ₹1,500–2,500 per day. Cheaper than multiple auto rides and more comfortable',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Jio or Airtel SIM at the airport or any phone shop — ₹200–500 for 1–2GB daily data for 28 days. Jio has the best 4G coverage. Registration requires passport and photo',
+      'WiFi is available at most guesthouses, cafes, and restaurants. Quality varies — rooftop cafes near the lake tend to have the strongest connections',
+      'eSIMs from Airalo work in India. Physical SIMs are cheaper but require in-person activation. Some travellers report 24–48 hour activation delays for foreign SIMs',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs are plentiful — SBI, HDFC, and ICICI have the most reliable machines for foreign cards. Withdraw ₹10,000–20,000 at a time. Some ATMs charge ₹200 per international withdrawal',
+      'Cash is essential for street food, auto-rickshaws, and small shops. UPI (Google Pay/PhonePe) is everywhere for Indians but hard for tourists to set up without an Indian bank account',
+      'Tipping is appreciated but not obligatory — ₹50–100 at restaurants, ₹200–500 for guides, ₹100 for hotel porters. Round up auto-rickshaw fares',
+    ],
+  },
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Apply for an e-Tourist visa at indianvisaonline.gov.in — 30-day visa costs $25 USD, 1-year visa $40 USD. Apply at least 4 days before travel. Multiple entry allowed',
+      'Maharana Pratap Airport (UDR) has direct flights from Delhi (1.5hrs), Mumbai (1.5hrs), and Jaipur (45min). Airlines: IndiGo, SpiceJet, Air India — book on ixigo.com for best prices',
+      'Trains from Delhi (Mewar Express, 12hrs overnight), Jaipur (Udaipur Express, 6hrs), and Mumbai (via Ahmedabad) are scenic and comfortable. Book on irctc.co.in',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Udaipur is one of India\'s safest tourist cities. Touts and auto-rickshaw drivers can be persistent but crime against tourists is very rare. Solo female travellers report feeling comfortable',
+      'Don\'t drink tap water — buy bottled water (₹20) or use a LifeStraw/SteriPen. Avoid raw salads and cut fruit from street stalls. Cooked street food is generally safe if it\'s served hot',
+      'Carry hand sanitiser and basic medications (Imodium, rehydration salts). Pharmacies are everywhere and sell most medications without prescription at low prices',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Light cotton clothing for daytime heat (25–38°C depending on season). Bring a warm layer for October–February evenings when temperatures drop to 10–15°C at night',
+      'Modest clothing for temple visits — cover shoulders and knees. A cotton scarf is versatile for temples, sun protection, and dust. Remove shoes at all temples',
+      'Comfortable walking shoes for uneven old city lanes and palace staircases. A daypack, sunscreen, sunglasses, and a reusable water bottle are essentials',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🙏', title: 'Namaste Greeting', text: 'Greet people with "Namaste" and a slight bow with palms pressed together. This is universally appreciated. Handshakes are common with men but avoid initiating physical contact with women unless they offer first.' },
+  { icon: '🐄', title: 'Sacred Cows', text: 'Cows roam freely and are sacred in Hindu culture. Never touch, push, or honk aggressively at cows. Walk around them. Many Rajasthani restaurants are vegetarian — respect this by not bringing non-veg food into vegetarian establishments.' },
+  { icon: '👟', title: 'Shoes & Left Hand', text: 'Remove shoes before entering temples, homes, and many guesthouses — look for piles of footwear at the entrance. Use your right hand for giving, receiving, and eating. The left hand is considered impure.' },
+  { icon: '📸', title: 'Photography Permissions', text: 'Always ask before photographing people, especially women and religious ceremonies. Some temples and palace rooms prohibit photography — respect the signs. Tripods often require separate permission at heritage sites.' },
+  { icon: '🛍️', title: 'Bargaining Culture', text: 'Haggling is expected at markets and with auto-rickshaw drivers. Start at 40–50% of the asking price and settle around 60–70%. Fixed-price shops (emporiums) don\'t bargain. Never bargain aggressively — keep it friendly and smile.' },
+  { icon: '🕉️', title: 'Temple Etiquette', text: 'Dress modestly, remove shoes, and walk clockwise around shrines. Don\'t point your feet at deities or sit with soles facing the altar. Accept prasad (blessed food) with your right hand. Small donations (₹10–50) at temple donation boxes are appreciated.' },
+];
+---
+
+<CityGuideLayout
+  title="Udaipur Travel Guide 2026 — City of Lakes, Palaces & Rajasthani Culture | roammate"
+  description="The ultimate Udaipur guide for young travelers. 3-day itinerary covering City Palace, Lake Pichola boat rides, rooftop dining, cooking classes, and Rajasthani heritage. Plan your trip with roammate."
+  heroImage="/images/guides/udaipur-hero.webp"
+  heroFlag="🇮🇳"
+  heroCountry="India"
+  heroRegion="South Asia"
+  heroCity="Udaipur"
+  heroSubtitle="The City of Lakes — where white marble palaces float on still waters, rooftop restaurants glow at sunset, and Rajasthani royalty meets backpacker charm."
+  heroPills={['3-Day Itinerary', 'Budget-Friendly', 'Oct – Mar Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in INR. Udaipur is remarkably affordable — palace-view rooftop dining and heritage guesthouses cost a fraction of what you'd pay anywhere else in the world."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Udaipur blends Rajput royal heritage with warm Rajasthani hospitality. Simple gestures of respect — at temples, in markets, and with locals — open doors to genuine connection."
+  ctaCity="Udaipur"
+  ctaText="Find travel companions for lake boat trips, split driver costs to Kumbhalgarh, and share rooftop dinners overlooking the palace on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

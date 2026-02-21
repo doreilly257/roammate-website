@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "travel-daypack-selection",
+  title: "Choosing the Right Travel Daypack",
+  description: "Compare packable, structured, and anti-theft daypacks from 15L to 25L to find the right one for city days, hikes, and transit.",
+  category: "Gear",
+  readMinutes: 2,
+  heroImage: "/images/blog/travel-daypack-selection-hero.webp",
+  intro: "Your main backpack stays at the hostel. The daypack is what you actually live out of — carrying water, camera, sunscreen, rain layer, and snacks through twelve-hour days across temples, markets, and trails. Choosing wrong means either a flimsy packable bag that digs into your shoulders by noon, or a rigid 25-liter pack that is overkill for a city walk. The right daypack sits in a surprisingly narrow sweet spot.",
+  sections: [
+    {
+      heading: "Packable vs Structured: When Each Makes Sense",
+      content: "Packable daypacks like the Matador Freerain24 2.0 ($65, 170g) and the Sea to Summit Ultra-Sil Day Pack ($35, 72g) fold into their own pocket and take up zero space in your main bag. They are ideal if you are moving every two to three days and need to minimize total pack volume — think island-hopping in the Philippines or bus circuits through Central America. But they sacrifice back ventilation, hip belt support, and organization. After four hours with a water bottle, guidebook, and camera, the straps cut into your shoulders. Structured daypacks like the Osprey Daylite Plus (20L, $65, 520g) and Pacsafe Venturesafe X22 (22L, $120, 680g) have padded back panels, sternum straps, and multiple compartments. Choose structured if you are basing yourself in one city for a week or more, doing day hikes, or carrying a laptop to coworking spaces. The extra 500 grams pays for itself by preventing shoulder fatigue on 15,000-step city days in places like Lisbon, Tokyo, or Mexico City.",
+      image: "/images/blog/travel-daypack-selection-inline-1.webp",
+    },
+    {
+      heading: "Size, Security, and the Water Bottle Pocket Test",
+      content: "For pure city use — wallet, phone, rain jacket, water, snack — a 15L pack is plenty. For day hikes or carrying a laptop, step up to 20-22L. Anything over 25L becomes an awkward secondary backpack that tempts you to overpack. The single most underrated feature is an external water bottle pocket that fits a 1-liter Nalgene without it falling out when you bend over. Test this in the store before buying — the Osprey Daylite nails it, while many packable bags fail here entirely. For anti-theft, the Pacsafe Venturesafe series ($90-$120) integrates slash-proof fabric, lockable YKK zippers, and an RFID-blocking pocket. These matter in crowded markets in Marrakech, on the Bangkok BTS during rush hour, or in Barcelona's La Rambla. A simpler approach: choose any daypack with zippers that face your back when worn, and add a $3 combination lock through the zipper pulls. Keep your phone in a front pant pocket, never the daypack's exterior mesh. Real security is about zipper orientation and awareness, not bulletproof fabric.",
+      image: "/images/blog/travel-daypack-selection-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-04-30T10:00:00Z",
+  updatedAt: "2025-04-30T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["best-backpack-sizes-compared","carry-on-only-long-term","rain-heat-humidity-gear-guide","packing-cubes-real-usage"],
+  relatedGuideSlugs: ["manila", "indonesia-philippines", "central-america"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

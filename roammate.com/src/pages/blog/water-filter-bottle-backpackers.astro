@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "water-filter-bottle-backpackers",
+  title: "Water Filter Bottles for Backpackers",
+  description: "Compare LifeStraw, Grayl, and SteriPen for backpacking — with cost savings, filtration needs by region, and the sustainability case for ditching bottled water.",
+  category: "Gear",
+  readMinutes: 2,
+  heroImage: "/images/blog/water-filter-bottle-backpackers-hero.webp",
+  intro: "In six months across Southeast Asia, you'll spend $300-500 on plastic water bottles. That's 600+ single-use bottles adding to the waste piles already choking rivers in Bali and beaches in the Philippines. A $60-90 filter bottle pays for itself in three weeks and means you never have to hunt for a 7-Eleven at midnight because you forgot to stock up. Here's which one actually works.",
+  sections: [
+    {
+      heading: "Grayl vs LifeStraw vs SteriPen: The Real Differences",
+      content: "The Grayl GeoPress ($90, 450g filled) is the gold standard for travel. Press-style filtration removes viruses, bacteria, protozoa, and heavy metals in 8 seconds — no sucking through a straw, no waiting for UV treatment. Fill it from a tap in Kathmandu or a stream in rural Guatemala and drink immediately. The filter cartridge lasts 250 liters (about 2 months of daily use) and replacements cost $25. The LifeStraw Go ($40, 300g) is lighter and cheaper but only filters bacteria and protozoa — it won't catch viruses, which matters in parts of India, Nepal, and rural Africa where waterborne viruses like hepatitis A are a real risk. The SteriPen Ultra ($80, 140g) uses UV light and kills everything including viruses, but it only works in clear water — muddy river water or silty taps will block the UV. It also needs USB charging every 50 treatments. For most backpackers hitting Southeast Asia, South America, or the Indian subcontinent, the Grayl is worth the extra weight and cost because it handles every water source without conditions.",
+      image: "/images/blog/water-filter-bottle-backpackers-inline-1.webp",
+    },
+    {
+      heading: "Where You Actually Need Filtration (and Where You Don't)",
+      content: "Not every country requires a filter bottle. Tap water is safe to drink in Japan, South Korea, Singapore, most of Western Europe, Australia, New Zealand, and Costa Rica. In these places, a regular reusable bottle and refill stations are all you need. You definitely need filtration in India, Nepal, Cambodia, Laos, Myanmar, most of Africa, Bolivia, Peru (outside Lima), Egypt, and Indonesia. Thailand and Vietnam sit in a gray zone — urban tap water is technically treated but old pipes add contaminants, so locals boil or filter it. Most hostels and guesthouses in Thailand provide free filtered water stations, so you might only need your Grayl for rural areas and travel days. The cost math is compelling: at 20 baht ($0.55) per 1.5L bottle bought twice daily in Thailand, that's $33/month or $200 over six months. A Grayl plus two replacement cartridges costs $140 total and produces zero plastic waste. Refill at any tap, river, or questionable hostel water cooler and never think about it again.",
+      image: "/images/blog/water-filter-bottle-backpackers-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-02-26T10:00:00Z",
+  updatedAt: "2025-02-26T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["food-safety-street-markets","staying-healthy-long-term-travel","travel-first-aid-kit-guide","budget-travel-cashflow-playbook"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

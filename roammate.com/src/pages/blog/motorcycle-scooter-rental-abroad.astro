@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "motorcycle-scooter-rental-abroad",
+  title: "Motorcycle and Scooter Rental Abroad",
+  description: "Navigate motorcycle and scooter rentals in Bali, Vietnam, and Thailand with insurance advice, license requirements, scam avoidance, and safety essentials.",
+  category: "Transport",
+  readMinutes: 2,
+  heroImage: "/images/blog/motorcycle-scooter-rental-abroad-hero.webp",
+  intro: "Renting a scooter in Bali for $5 a day or a motorcycle in Vietnam for $10 gives you freedom no bus or taxi can match. It also exposes you to the highest injury risk of any activity in Southeast Asian travel. Hospital bills from motorbike accidents are the single largest travel insurance claim category in the region. Understanding license requirements, insurance gaps, and common rental scams is the difference between an incredible experience and a trip-ending disaster.",
+  sections: [
+    {
+      heading: "Licenses, Insurance, and Country-Specific Rules",
+      content: "An International Driving Permit (IDP) costs $20 from your home country's automobile association and takes five minutes to obtain with a passport photo — get one before you leave home. Thailand legally requires an IDP or Thai license to ride any motorbike, and police checkpoints on Phuket, Koh Samui, and Chiang Mai's Doi Suthep road fine riders 500 baht ($14) on the spot for riding without one. Bali police also run checkpoints but enforcement is inconsistent; however, riding without a valid license invalidates your travel insurance entirely. Vietnam requires a Vietnamese motorcycle license for bikes over 50cc — the international driving permit is not recognized for motorcycles, though enforcement is rare outside major cities. Here's the critical insurance gap: most travel insurance policies exclude motorbike injuries if you lack a valid license for that country, and many exclude motorbikes over 125cc regardless of your license status. Read your policy's motorsport/vehicle exclusion clause before you rent. World Nomads' Explorer plan covers scooters under 125cc with a valid license. SafetyWing excludes motorbikes entirely unless you add their motorcycle rider upgrade. If your insurance won't cover you, the cost of a medevac flight from rural Thailand to Bangkok's Bumrungrad Hospital ($5,000-15,000) will make you wish you had taken the bus.",
+      image: "/images/blog/motorcycle-scooter-rental-abroad-inline-1.webp",
+    },
+    {
+      heading: "Rental Scams, Safety Checks, and Fuel Costs",
+      content: "The most common scooter scam works like this: the rental shop photographs pre-existing scratches on the bike before you take it, then claims you caused them on return and demands $200-500 in repair fees while holding your passport as security. Counter this by never leaving your passport — offer a photocopy or cash deposit instead, and some shops accept it. Take a detailed video of every scratch, dent, and mark on the bike with the shop owner present before riding away, including the odometer reading and fuel level. Email the video to yourself immediately so you have a timestamped record. Check the brakes, tire tread, lights, and horn before accepting any rental. Bald tires on wet Bali roads during rainy season are genuinely life-threatening. Reject any bike with soft brake feel or tires showing the wear indicators. Quality helmets save lives — the $0.50 plastic bowls most shops provide won't protect you in a crash at any speed. Bring your own certified helmet if you're planning weeks of riding, or buy a decent one locally for $25-40 at a proper motorcycle shop rather than accepting the rental's freebie. Fuel costs are minimal across Southeast Asia: gasoline runs $1.00-1.30 per liter in Thailand and Vietnam, and a Honda Wave 110cc averages 50km per liter. A full day of riding costs $2-4 in fuel. Fill up at branded stations rather than roadside bottles, which often mix in lower-grade fuel.",
+      image: "/images/blog/motorcycle-scooter-rental-abroad-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-09-17T10:00:00Z",
+  updatedAt: "2025-09-17T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["travel-insurance-claim-proofing","adventure-day-risk-matrix","public-transport-mastery","overland-vs-flying-comparison"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

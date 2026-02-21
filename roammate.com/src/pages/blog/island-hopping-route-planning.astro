@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "island-hopping-route-planning",
+  title: "Island Hopping Route Planning",
+  description: "Plan efficient island-hopping routes across Thailand, Philippines, Indonesia, and Greece with ferry schedules, monsoon timing, and per-island budgets.",
+  category: "Planning",
+  readMinutes: 2,
+  heroImage: "/images/blog/island-hopping-route-planning-hero.webp",
+  intro: "Island hopping sounds romantic until you miss a ferry that only runs twice a week and spend three unplanned nights on an island with one ATM and no pharmacy. The difference between a magical archipelago trip and a logistics nightmare is route sequencing. Get the order right, align with monsoon windows, and pre-book the bottleneck ferries while leaving the rest flexible.",
+  sections: [
+    {
+      heading: "Route Sequencing by Region and Season",
+      content: "Thailand's Gulf islands (Koh Tao, Koh Phangan, Koh Samui) are best November through March when the Andaman side gets calm too, letting you connect to Koh Lanta and Koh Lipe via the Tigerline ferry network. The Lomprayah catamaran from Koh Tao to Koh Phangan costs 600 baht and runs three times daily, but the cross-coast connection from Surat Thani to Krabi only operates once daily at 7am. In the Philippines, the El Nido to Coron ferry via Montenegro Lines takes 3-4 hours and costs 1,760 PHP one-way but sells out 2-3 days ahead in peak season (December-February). From Coron, fly Cebu Pacific to Siargao via Cebu for 2,500-4,000 PHP if booked a month ahead. Indonesia's route from Bali to Gili Trawangan uses the Bluewater Express fast boat (350,000 IDR, 90 minutes), then the public boat to Lombok (15,000 IDR, 25 minutes), and onward to Flores via Labuan Bajo using PELNI ferries or a 650,000 IDR flight. Greece connects Santorini, Naxos, Paros, and Milos via Blue Star and SeaJets ferries running April through October, with the Santorini-Naxos route costing EUR 35-55 depending on speed and taking 1-3 hours.",
+      image: "/images/blog/island-hopping-route-planning-inline-1.webp",
+    },
+    {
+      heading: "Booking Strategy and Budget Per Island",
+      content: "Book only the bottleneck ferries in advance: El Nido-Coron, any Indonesia fast boat in July-August, and Greek island ferries on summer weekends. Everything else can be booked 1-2 days ahead at local travel agencies, which often include transfers that online portals miss. Budget varies dramatically by island: Koh Tao runs USD 25-35 per day with a dorm and local food, while Santorini pushes USD 80-120 even in budget mode. Gili Trawangan averages USD 20-30 daily, but neighboring Gili Air costs 15% more for the quieter atmosphere. Siargao is a bargain at USD 18-25 per day with motorbike rental at 350 PHP included. The key money-saver is staying 4-7 nights per island instead of 2 — you amortize ferry costs, negotiate weekly dorm rates (typically 15-20% off), and avoid the constant repacking tax on your energy. Use 12Go.asia for Southeast Asian ferry schedules and Ferryhopper for Greek routes. Both show actual departure times and allow date comparison, though always confirm locally because weather cancellations happen weekly during shoulder seasons.",
+      image: "/images/blog/island-hopping-route-planning-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-09-24T10:00:00Z",
+  updatedAt: "2025-09-24T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["flexible-booking-strategy","coastal-route-planning-framework","first-month-southeast-asia","rainy-season-travel-advantage"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

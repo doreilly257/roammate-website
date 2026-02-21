@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'BZD (BZ$)', detail: '1 USD = 2 BZD (fixed rate)' },
+  { icon: '🗣', label: 'Language', value: 'English (official)', detail: 'Creole & Spanish also spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'CST (UTC-6)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – May', detail: 'Dry season; best visibility for diving' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$60–100 USD', detail: 'Island base with dive day trip' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 30 days', detail: 'For US, EU, UK, Canada & many others' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Great Blue Hole Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Departure & Journey to the Blue Hole',
+          text: 'Your Blue Hole day trip begins with a 5:30–6am departure from Caye Caulker or San Pedro on Ambergris Caye. The boat ride takes approximately 2.5 hours across the open Caribbean, passing over the turquoise shallows of the Belize Barrier Reef before reaching Lighthouse Reef atoll — one of only four atolls in the Western Hemisphere. The Great Blue Hole appears as a dark circle in the reef, its deep cobalt blue contrasting dramatically with the surrounding pale turquoise waters. From the surface, the perfect circular shape (318 metres across) is mesmerising. For certified divers, the descent begins — dropping to 40 metres past massive stalactites formed during the last ice age when this was a dry limestone cave. Reef sharks patrol below in the crystal-clear water.',
+          tip: 'The Blue Hole dive requires Advanced Open Water certification (or equivalent) — the maximum depth is 40 metres. Book your trip at least 2 days in advance as boats have limited capacity. Take motion sickness medication if prone — the open water crossing can be rough.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Half Moon Caye & Wall Diving',
+          text: 'After the Blue Hole dive or snorkel, the boat continues to Half Moon Caye — a protected island within the Lighthouse Reef system and home to a colony of 4,000 red-footed boobies nesting in the trees. Walk the short trail through the bird sanctuary where these striking white birds with bright red feet perch at eye level, completely unafraid of visitors. The second dive of the day is at Half Moon Caye Wall — widely considered one of the top wall dives in the world. The reef drops vertically from 10 metres to over 1,000 metres into the abyss. Eagle rays, groupers, barracuda, and the occasional hammerhead shark cruise along the wall. Snorkellers can explore the vibrant shallow reef above.',
+          tip: 'Bring a waterproof camera — the booby colony and wall dive are incredibly photogenic. Half Moon Caye has composting toilets and a small beach for lunch. Snorkellers get equally spectacular reef at the surface.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Caye Caulker & Sunset',
+          text: 'The boat returns to Caye Caulker or San Pedro by late afternoon after a full day on the water. The third stop on most trips is Long Caye for a final snorkel or dive over a pristine patch reef teeming with tropical fish, nurse sharks, and Southern stingrays. Back on Caye Caulker, head straight to the Split — a narrow channel dividing the island where locals and travelers gather to swim, drink rum punch, and watch the sunset over the reef. Celebrate your Blue Hole achievement with a lobster dinner at a beachfront restaurant ($15–25 BZD for a whole grilled lobster in season) and a Belikin beer. The island motto is "Go Slow" — tonight, you will genuinely feel it.',
+          tip: 'The Split is the social hub of Caye Caulker — free to swim, cheap drinks at the bar, and the best sunset view on the island. Lobster season runs June 15 to February 14 — outside this period, conch is the local seafood of choice.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Caye Caulker — Island Arrival & Reef Snorkelling',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival on Caye Caulker',
+          text: 'Take the water taxi from Belize City to Caye Caulker — a 45-minute ride across the turquoise Caribbean (BZ$24 one way with Caye Caulker Water Taxi). The island reveals itself gradually — a low strip of sand, palm trees, and colourful wooden buildings surrounded by reef-protected shallows. Check into your accommodation — budget guesthouses from BZ$50/night, hostels from BZ$30. The island has no cars — just sandy paths, bicycles, and golf carts. Walk the main street (Front Street) past dive shops, fruit stands, and reggae bars to get oriented. The pace is immediately different from the mainland — this is Caribbean island life at its most relaxed.',
+          tip: 'Book the first water taxi from Belize City (8am) to maximise your first day. Alternatively, fly from Belize City on Maya Island Air (15 min, BZ$150). The south end of the island is quieter and cheaper than the north.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Hol Chan Marine Reserve & Shark Ray Alley',
+          text: 'Book a half-day snorkelling tour to Hol Chan Marine Reserve and Shark Ray Alley (BZ$80–120 per person including gear). Hol Chan is a cut in the barrier reef where ocean water flows over the reef creating a concentration of marine life that is staggering — enormous groupers, schools of tarpon and snapper, moray eels poking from crevices, and green sea turtles grazing on seagrass. Then the boat moves to Shark Ray Alley where nurse sharks and Southern stingrays gather in shallow water. Your guide will have you swimming alongside 2-metre nurse sharks — harmless but thrilling — while stingrays glide beneath you like underwater birds. The visibility is typically 20–30 metres.',
+          tip: 'Hol Chan is the most popular snorkelling site in Belize — go with a small-group operator (6–8 people max) for a better experience. Nurse sharks are docile but do not touch them. Waterproof cameras capture extraordinary footage here.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'The Split & Island Evening',
+          text: 'Walk to the Split — the channel that divides Caye Caulker into north and south islands, created by Hurricane Hattie in 1961. The calm waters here are perfect for swimming and the bar serves cold Belikin beers (BZ$5) and rum punches (BZ$8) while you watch the sun set over the reef. The Split is the social centre of the island where backpackers, locals, and dive instructors mingle. For dinner, walk to the street food vendors on Middle Street — fried jacks with beans (BZ$3), garnaches (fried tortillas with beans and cheese, BZ$1 each), and stew chicken with rice and beans (BZ$12). The island has a handful of restaurants but street food is where the flavour and value are.',
+          tip: 'Happy hour at the Split runs roughly 4–6pm with discounted drinks. Bring mosquito repellent for the evening — sand flies (no-see-ums) are fierce at dawn and dusk, especially when the wind drops.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Great Blue Hole Day Trip',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Blue Hole Departure & Dive',
+          text: 'The big day. Depart Caye Caulker at 5:30am on the dive boat heading for Lighthouse Reef — 2.5 hours across the open Caribbean. The Great Blue Hole is a giant marine sinkhole 318 metres across and 125 metres deep — visible from space and one of the most famous dive sites on earth. Originally a limestone cave system, the ceiling collapsed when sea levels rose after the last ice age, creating a perfect circle of dark blue water surrounded by shallow reef. Certified divers descend to 40 metres past enormous stalactites hanging from the underwater cliff face — some over 3 metres long — while Caribbean reef sharks circle below. The water clarity is extraordinary and the geological formations are unlike anything else underwater.',
+          tip: 'Advanced Open Water certification is mandatory. The dive is deep (40m) and short (25 minutes) — air consumption is high at depth. If you are not dive-certified, most operators offer a snorkelling option at the Blue Hole rim and reef.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Half Moon Caye & Long Caye Dives',
+          text: 'After the Blue Hole, the boat anchors at Half Moon Caye for the second dive and island exploration. Walk the nature trail through the red-footed booby sanctuary — 4,000 nesting seabirds perched at arm\'s length, with magnificent frigatebirds soaring overhead. The Half Moon Caye Wall dive is exceptional — the reef drops from 10 metres to a vertical abyss exceeding 1,000 metres. Schools of horse-eye jacks swirl like silver tornadoes while eagle rays glide past and groupers the size of small cars hover motionless in the current. Lunch is served on the island — usually rice and beans with chicken, fresh fruit, and unlimited water. The third stop is Long Caye for a relaxed reef dive or snorkel over pristine coral gardens.',
+          tip: 'Three dives in one day is physically demanding — stay hydrated and eat well at lunch. Surface intervals at Half Moon Caye are spent exploring the island and bird colony. Nitrox is available from some operators for a surcharge.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return & Celebration',
+          text: 'Arrive back at Caye Caulker by late afternoon, tired, sunburnt, and exhilarated. The Blue Hole is one of those rare travel experiences that genuinely lives up to the hype. Head to the Split for sunset and swap stories with other travelers who made the trip. For a celebratory dinner, try one of the island\'s restaurants — grilled whole snapper with coconut rice (BZ$25), lobster when in season (BZ$30–40), or conch fritters (BZ$10). The Lazy Lizard bar at the Split is the classic post-dive gathering spot. Several bars have live music on different nights — ask around for what is happening tonight. Island nightlife is relaxed but social.',
+          tip: 'Tip your dive guide and boat crew BZ$20–40 per person — they worked a 14-hour day to make this trip happen. Log your Blue Hole dive immediately while you remember the details — it is a memorable addition to any logbook.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Reef Diving & Island Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Local Reef Diving or Snorkelling',
+          text: 'Caye Caulker has excellent reef diving right off the island — no need for a long boat ride. Book a 2-tank morning dive (BZ$160–200) to sites along the Belize Barrier Reef — the second-largest barrier reef system in the world after Australia\'s. The Caye Caulker Marine Reserve features coral gardens, sponge-encrusted walls, and an abundance of marine life. Spotted eagle rays, hawksbill turtles, and Caribbean reef sharks are regular sightings. For non-divers, the snorkelling directly off the island is surprisingly good — wade out from the public dock on the east side and you are snorkelling over live coral within minutes. Visibility routinely exceeds 20 metres.',
+          tip: 'If you want to learn to dive, Caye Caulker is one of the cheapest places in the world for PADI Open Water certification — BZ$600–800 ($300–400) for the 3–4 day course including all reef dives.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kayak & Manatee Channel',
+          text: 'Rent a kayak (BZ$30–50 for half day) and paddle through the mangrove channels on the west side of the island. The shallow waters between the mangrove roots are a nursery for juvenile fish, baby barracuda, and small rays. Continue to the manatee watching area near the north end of the island — West Indian manatees inhabit these waters year-round and sightings from kayaks are common, especially in early morning and late afternoon. The gentle giants surface to breathe every few minutes, revealing their grey backs and paddle-shaped tails. Paddling through the mangroves in silence with only the sound of water and birds is deeply peaceful.',
+          tip: 'Manatees are protected — maintain at least 15 metres distance and do not attempt to touch or feed them. Early morning kayaking has the calmest water and best manatee sighting chances. Bring water and sunscreen.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell & Onward Travel',
+          text: 'Spend your final hours at the Split or strolling the sandy streets of this tiny island that punches far above its weight for marine adventure. Pick up local hot sauce and Belizean chocolate as souvenirs from the gift shops. The afternoon water taxi back to Belize City departs at 3pm and 5pm (BZ$24, 45 minutes). From Belize City, buses run to Guatemala (Flores for Tikal), Mexico (Chetumal), and throughout Belize. Maya Island Air flights connect Caye Caulker to Belize City for onward international flights. Belize is a small country — you can reach the jungle, mountains, or Mayan ruins within a few hours of leaving the reef.',
+          tip: 'Book your return water taxi in advance during peak season (Dec–Apr) — boats fill up. If heading to Guatemala, the San Pedro Belize Express runs a direct boat from Caye Caulker to Chetumal, Mexico (BZ$100, 2 hours).',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Compare Blue Hole trip operators', text: 'Blue Hole day trips cost BZ$350–550 ($175–275) depending on the operator, boat quality, and whether you dive or snorkel. Compare at least 3 operators on the island — prices vary. Frenchie\'s, Raggamuffin Tours, and Caveman Snorkeling are well-reviewed. Book at least 2 days ahead.' },
+  { title: 'Eat street food on Middle Street', text: 'Restaurant meals on Caye Caulker cost BZ$20–50 ($10–25). Street food vendors on Middle Street serve garnaches for BZ$1 each, stew chicken with rice and beans for BZ$12, and fried jacks with cheese for BZ$3. The food is excellent and the savings are enormous over a week.' },
+  { title: 'USD is accepted everywhere', text: 'The Belize dollar is fixed at BZ$2 = US$1. US dollars are accepted everywhere and you receive change in Belizean dollars. No need to exchange currency — just divide BZD prices by 2 for the USD equivalent. ATMs dispense BZD.' },
+  { title: 'Stay in budget guesthouses', text: 'Hostel dorms cost BZ$30–40/night ($15–20). Budget guesthouses with private rooms and fans cost BZ$50–80 ($25–40). Air conditioning adds BZ$20–40 to the price. The sea breeze keeps many budget rooms comfortable without AC — test before paying extra.' },
+  { title: 'Snorkel instead of diving to save', text: 'Diving is expensive — BZ$160–200 per 2-tank dive, BZ$350–550 for the Blue Hole trip. Snorkelling tours to Hol Chan and Shark Ray Alley cost BZ$80–100 ($40–50). You can snorkel directly off the island for free. Bring your own gear to save BZ$20 on rentals.' },
+  { title: 'Cook at your guesthouse', text: 'Most budget guesthouses have shared kitchens. The island has a couple of small grocery stores with basic supplies. Buy rice, beans, tortillas, and fresh fish from the co-op — cook your own meals for a fraction of restaurant prices. Stock up on essentials in Belize City before the water taxi.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'BZ$30–50', midrange: 'BZ$100–200', splurge: 'BZ$400+', notes: 'Hostel dorm → guesthouse → boutique resort' },
+  { category: 'Food', budget: 'BZ$20–40', midrange: 'BZ$50–100', splurge: 'BZ$150+', notes: 'Street food & self-catered → restaurants → seafood dining' },
+  { category: 'Activities', budget: 'BZ$80–120', midrange: 'BZ$200–350', splurge: 'BZ$550+', notes: 'Snorkelling → reef diving → Blue Hole dive trip' },
+  { category: 'Transport', budget: 'BZ$0–10', midrange: 'BZ$20–40', splurge: 'BZ$100+', notes: 'Walking → bike rental → golf cart rental' },
+  { category: 'Drinks', budget: 'BZ$10–20', midrange: 'BZ$30–60', splurge: 'BZ$80+', notes: 'Belikin beer → rum cocktails → craft bar' },
+  { category: 'Daily Total', budget: 'BZ$140–240', midrange: 'BZ$400–750', splurge: 'BZ$1,280+', notes: '~$70–120 / $200–375 / $640+ USD' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities (US, EU, UK, Canada, Australia) enter visa-free for 30 days. Extensions available at immigration offices for BZ$100 per month up to 6 months. Passport must be valid for 6+ months',
+      'Philip Goldson International Airport (BZE) near Belize City is the main entry point. From the airport, taxi to the water taxi terminal (BZ$50) then boat to Caye Caulker (BZ$24, 45 min) or San Pedro (BZ$30, 75 min)',
+      'Maya Island Air and Tropic Air fly from Belize City to Caye Caulker and San Pedro (15 min, BZ$150 one way). Book in advance during high season. Direct boats also run from Chetumal, Mexico to Caye Caulker',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No mandatory vaccinations. Hepatitis A recommended. Tap water on the islands is generally safe but most visitors drink bottled or purified water. Sunburn is the biggest health risk — tropical sun is intense on the water all day',
+      'Caye Caulker is very safe — it is a tiny island where everyone knows everyone. Lock valuables in your room. The main risks are sun exposure, dehydration, and dive-related incidents. Carry reef-safe sunscreen',
+      'The nearest hospital is in Belize City — serious medical issues require water taxi or air evacuation. Bring comprehensive travel insurance covering diving (standard policies often exclude it). A small clinic operates on the island for minor issues',
+    ],
+  },
+  {
+    icon: '🚤',
+    title: 'Getting Around',
+    items: [
+      'Caye Caulker is tiny — 8km long and 1.6km wide at its widest. Walking is the primary transport. The entire settled area can be crossed in 15 minutes on foot',
+      'Bicycle rental costs BZ$20–30/day. Golf carts are available (BZ$120–200/day) but unnecessary for most visitors. There are no cars on the island — just sandy paths',
+      'Water taxis to Belize City depart 7am–5pm roughly every 2 hours (BZ$24, 45 min). Boats to San Pedro (Ambergris Caye) run frequently (BZ$16, 20 min). All dive and snorkel trips include boat transport from the island dock',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Digi or Smart SIM cards available from shops on Front Street — BZ$25–40 with data. Coverage is good on the island and spotty on the open ocean. WiFi at most hotels and restaurants but speeds are slow by mainland standards',
+      'All international apps work normally in Belize. WhatsApp is the primary communication tool — dive shops, restaurants, and water taxis all use WhatsApp for bookings',
+      'Download offline maps of Belize before arriving. Mobile signal is available on the island but can drop on the boat to the Blue Hole. Waterproof phone cases are essential for all water activities',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Belize dollar is pegged to USD at 2:1. US dollars are universally accepted — no need to exchange. Pay in either currency. Credit cards accepted at dive shops and larger restaurants with a 3–5% surcharge',
+      'Atlantic Bank ATM on Front Street dispenses BZD. Withdraw in Belize City if possible — the island ATM sometimes runs out of cash during peak season. Bring USD cash as backup',
+      'Tipping is appreciated — 10–15% at restaurants, BZ$10–20 per person for snorkel guides, BZ$20–40 for dive guides. The Blue Hole trip crew work an extremely long day and tips are a significant part of their income',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Reef-safe sunscreen (mandatory in marine reserves), rash guard or lycra top for sun protection, polarised sunglasses, and a wide-brimmed hat. You will be on the water for hours — sun protection is critical',
+      'Dive certification card (if diving), snorkel gear if you own it, waterproof phone case, dry bag for the boat, and motion sickness medication for the Blue Hole crossing',
+      'Light, quick-dry clothing, sandals or reef shoes, a light rain jacket, insect repellent (sand flies are vicious at dusk), and a headlamp for the unlit sandy paths at night',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏝️', title: 'Go Slow Culture', text: 'Caye Caulker\'s official motto is "Go Slow" — and it is not just marketing. Island life moves at its own pace. Service is unhurried, conversations are long, and rushing is considered rude. Embrace the rhythm. If you are stressed about time, you have not been on the island long enough. Slow down and you will have a much better experience.' },
+  { icon: '🇧🇿', title: 'Creole Culture', text: 'Belize is uniquely English-speaking in Central America — a legacy of British colonialism. The Creole population (Kriol) speak Belizean Creole, a vibrant English-based language with African, Spanish, and indigenous influences. "Weh di go ahn?" (What is going on?) is a common greeting. Belizeans are friendly, direct, and proud of their multicultural identity.' },
+  { icon: '🦈', title: 'Marine Conservation', text: 'The Belize Barrier Reef is a UNESCO World Heritage Site and the lifeblood of the economy. Do not touch coral, stand on reefs, feed fish, or buy coral or shell souvenirs. Follow all marine park rules — they exist because the reef is under real threat from climate change, runoff, and tourism pressure. Your dive fees help fund conservation.' },
+  { icon: '🥥', title: 'Local Food & Drink', text: 'Belizean cuisine blends Creole, Mayan, Garifuna, and mestizo influences. Rice and beans (cooked in coconut milk) is the national dish. Stew chicken, fry jacks (fried dough), and garnaches are street food staples. Belikin is the national beer. Rum is cheap and mixed into everything. Try seaweed punch — a local drink made from dried seaweed blended with milk and spices.' },
+  { icon: '🐊', title: 'Wildlife Respect', text: 'Belize is one of the most biodiverse countries in Central America. Manatees, crocodiles, toucans, howler monkeys, and whale sharks all inhabit this small nation. Do not feed wildlife, maintain respectful distances, and choose ethical tour operators. The American crocodile is present on Caye Caulker — they are generally shy but do not swim in channels at night.' },
+  { icon: '🌍', title: 'Responsible Tourism', text: 'Caye Caulker is a small island with limited freshwater and waste management. Conserve water, minimise plastic waste, and dispose of rubbish responsibly. Support locally-owned businesses over chain operations. Buy locally-made hot sauce, chocolate, and crafts. Tourism is the primary income source — spend your money where it benefits the community directly.' },
+];
+---
+
+<CityGuideLayout
+  title="Great Blue Hole Travel Guide 2026 | roammate"
+  description="Complete Great Blue Hole and Caye Caulker guide for 2026. Diving, snorkelling, reef sharks, and island life in Belize. Budget tips, itineraries, and practical info for young travelers."
+  heroImage="/images/guides/blue-hole-belize-hero.webp"
+  heroFlag="🇧🇿"
+  heroCountry="Belize"
+  heroRegion="Central America"
+  heroCity="Great Blue Hole"
+  heroSubtitle="A giant marine sinkhole in the Caribbean — stalactites, reef sharks, and one of the world's most iconic dives."
+  heroPills={['World-Class Diving', 'Barrier Reef', 'Nov – May Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs in Belize Dollars (BZD) and USD. The BZD is pegged at 2:1 to USD — just divide by 2. The Blue Hole day trip is the big expense; island life is surprisingly affordable."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Belize is Central America's only English-speaking country — a laid-back Caribbean nation with Creole culture, Mayan heritage, and world-class reef. Go slow and respect the ocean."
+  ctaCity="Great Blue Hole"
+  ctaText="Find dive buddies, share Blue Hole trip costs, and explore Belize's reef together with fellow adventurers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

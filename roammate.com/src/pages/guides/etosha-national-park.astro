@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'NAD (Dollar)', detail: 'Pegged 1:1 with ZAR, both accepted' },
+  { icon: '🗣', label: 'Language', value: 'English / Afrikaans', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'CAT (UTC+2)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Jul – Oct', detail: 'Dry season, animals at waterholes' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–70 USD', detail: 'Budget self-drive safari' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free many', detail: '90 days for EU/UK/US/Aus/NZ' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Etosha Waterhole Safari',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise Game Drive — Okaukuejo Circuit',
+          text: 'Enter Etosha through the Anderson Gate at sunrise and begin a self-drive game loop around the waterholes south of the Etosha Pan. The early morning is prime wildlife viewing time — animals congregate at waterholes before the heat drives them into shade. Drive slowly (40km/h limit) along the gravel roads, stopping at each waterhole to scan for activity. Okondeka, Gemsbokvlakte, and Olifantsbad are reliable spots for gemsbok, zebra, springbok, and giraffe. In dry season, elephant herds gather at waterholes in groups of 20–50, jostling for position at the water\'s edge. Lions often lurk nearby, waiting for prey to let their guard down.',
+          tip: 'Bring binoculars and a telephoto lens if you have one. Drive with windows down in safe areas for better photos. A field guide book (Roberts or Sasol) helps with identification — Etosha has over 340 bird species.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Etosha Pan & Halali Waterholes',
+          text: 'Drive northeast toward the vast Etosha Pan — a 5,000 sq km salt flat that shimmers white in the dry season and fills with shallow water in summer, attracting thousands of flamingos. The pan is otherworldly — a flat white expanse stretching to the horizon with heat mirages making distant animals appear to float above the surface. Continue to the waterholes around Halali Camp in the centre of the park. Moringa Waterhole near Halali is a reliable midday stop where rhinos, elephants, and lions are regularly spotted. Black rhinos are more common in Etosha than almost anywhere else in Africa — the park has one of the largest populations on the continent.',
+          tip: 'Etosha entry fee is N$150 per person plus N$50 per vehicle per day. Keep your receipt — you may be asked to show it at camps and gates. Gates close at sunset — plan your route to arrive at camp before closing time.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Okaukuejo Floodlit Waterhole',
+          text: 'Return to Okaukuejo Camp for the park\'s most iconic experience — the floodlit waterhole. Okaukuejo\'s waterhole is illuminated at night and surrounded by a stone amphitheatre where visitors sit in silence watching whatever appears from the darkness. Black rhinos are the stars — they visit almost every night, their massive silhouettes emerging from the dark to drink just metres away. Elephants, lions, hyenas, and jackals also appear regularly. The waterhole is free for camp guests and operates all night — bring a warm jacket, a drink, and patience. Some of the best sightings happen after midnight when the park is at its quietest.',
+          tip: 'Camping at Okaukuejo costs N$300–400 per site (2 people). Book through NWR (Namibia Wildlife Resorts) well in advance for dry season stays. Bring a camp chair for the waterhole — the stone benches get hard after hours of sitting.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Anderson Gate to Okaukuejo',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Enter Etosha & First Game Drive',
+          text: 'Arrive at Anderson Gate on the southern boundary as it opens at sunrise and pay your park fees (N$150/person, N$50/vehicle). Begin your self-drive safari heading northeast toward Okaukuejo Camp. The first stretch passes through dry savanna dotted with mopane scrub and flat-topped acacias — classic African bush. Stop at every waterhole you pass — Aus, Olifantsbad, and Gemsbokvlakte are productive in the dry season. Expect large herds of springbok, gemsbok (oryx), zebra, and blue wildebeest, with giraffes browsing above the treeline. Elephants are common from late morning onward as they trek to water.',
+          tip: 'Fill up fuel at the camp petrol stations — there are only three fuel stops in the park (Okaukuejo, Halali, Namutoni). Do not let your tank drop below half. Drive with enough water and snacks for the day.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Okaukuejo Area Waterholes',
+          text: 'Base yourself at Okaukuejo Camp and spend the afternoon driving the western waterhole circuit. Nebrowni Waterhole is a favourite — a large, permanent waterhole surrounded by open ground that allows excellent visibility. Lions frequently stake out this waterhole, lying in the shade of nearby bushes while herds of zebra and wildebeest approach nervously. Patience is the key to safari — park your car, turn off the engine, and wait. The drama unfolds on its own schedule. Other productive afternoon stops include Okondeka (good for lions and cheetah in the surrounding grassland) and Ombika (elephants).',
+          tip: 'Stay at each waterhole for at least 20–30 minutes. Animals come and go in waves — what looks empty can transform into a busy scene within minutes. The midday heat suppresses activity but waterholes always deliver.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Okaukuejo Floodlit Waterhole',
+          text: 'Settle into Okaukuejo Camp and head to the legendary floodlit waterhole after dinner. The stone amphitheatre seating overlooks the water, lit by subtle floodlights that allow close observation without disturbing the animals. Black rhinos are the star attraction — Okaukuejo\'s waterhole is one of the most reliable places in Africa to see these critically endangered animals. They arrive quietly from the darkness, drink for several minutes, and disappear again. Elephants, lions, spotted hyenas, jackals, and honey badgers also appear. The atmosphere is hushed and reverent — everyone watches in near silence.',
+          tip: 'The best waterhole action often happens between 10pm and midnight. Bring a headlamp with a red filter for walking back to your tent. Regular white light disturbs the animals — red preserves your night vision and theirs.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Etosha Pan & Halali',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive East Along the Pan Edge',
+          text: 'Depart Okaukuejo at sunrise and drive east along the southern edge of the Etosha Pan. The pan itself is a vast, blindingly white salt flat — 130km long and up to 50km wide — that dominates the centre of the park. In dry season it is a shimmering mirage; in summer rains it fills with shallow water, attracting huge flocks of greater and lesser flamingos. Stop at the Etosha Lookout point for views across the pan — the flat, white emptiness stretching to the horizon is surreal. Continue to the waterholes between Okaukuejo and Halali — Charitsaub, Rietfontein, and Sueda are reliable spots for elephant, giraffe, and plains game.',
+          tip: 'Do not drive onto the pan surface — it looks solid but vehicles sink into the salt crust. Stick to marked roads. The pan edge offers the best photography opportunities with animals silhouetted against the white backdrop.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Halali Camp & Moringa Waterhole',
+          text: 'Arrive at Halali Camp, centrally located in the park between Okaukuejo and Namutoni. Check in and drive to nearby Moringa Waterhole — set in a rocky, wooded area that attracts different species to the open grassland waterholes. Black rhinos are regularly seen here in the late afternoon, along with kudu, eland, and warthogs. Leopards are occasionally spotted in the dense bush around Moringa but they are elusive. Halali also has its own floodlit waterhole, smaller and more intimate than Okaukuejo\'s, set among dolomite rocks with excellent close-up viewing. Raptors perch in the dead trees around the waterhole — look for martial eagles and bateleurs.',
+          tip: 'Halali\'s waterhole is less famous than Okaukuejo\'s but often produces closer and more intimate sightings. The rocky setting means animals approach from different angles — position yourself with the light behind you for photography.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Night Waterhole Vigil',
+          text: 'After dinner at Halali\'s restaurant (mains N$120–180) or a self-cooked meal at the campsite braai, spend the evening at Halali\'s floodlit waterhole. The raised stone seating platform overlooks the waterhole from just 15 metres away — when a black rhino appears, you can hear it breathing. Elephants visit in family groups, the calves jostling and playing while adults drink solemnly. Spotted hyenas skulk around the edges, their eyes catching the floodlight in bright yellow reflections. The Namibian night sky above is spectacular — Etosha is far from any city and the stars are overwhelming.',
+          tip: 'Camping at Halali costs N$250–350 per site. The camp shop sells basic supplies, cold drinks, and firewood. Pre-cooked meals are available at the restaurant if you do not feel like cooking.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Namutoni & Eastern Etosha',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Eastern Waterhole Loop',
+          text: 'Drive east from Halali toward Namutoni Camp, stopping at the chain of waterholes that line the pan edge. Klein Namutoni, Kalkheuwel, and Chudop are excellent morning stops — the eastern section of the park has denser vegetation and attracts different species. Look for greater kudu with their magnificent spiral horns, red hartebeest, and the rare black-faced impala found only in northern Namibia. Cheetahs prefer the open grasslands in this area and are sometimes spotted on termite mounds scanning for prey. The birdlife is outstanding — pale chanting goshawks, lilac-breasted rollers, kori bustards, and secretary birds are all common.',
+          tip: 'Drive slowly and scan the bushes beside the road — not all game is at the waterholes. Kudu and steenbok often stand motionless in dappled shade just metres from the road, perfectly camouflaged.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Fischer\'s Pan & Namutoni Fort',
+          text: 'Detour to Fischer\'s Pan — a smaller seasonal pan south of the main Etosha Pan that fills with water in the rains and attracts enormous concentrations of flamingos, pelicans, and wading birds. In dry season it is a white salt flat offering excellent photography opportunities. Continue to Namutoni Camp, built around a whitewashed German colonial fort dating from 1903. Climb the fort tower for panoramic views over the surrounding bush and the eastern pan. Namutoni feels different from the other camps — more manicured and historical, with the fort lending it a distinctive atmosphere. The King Nehale Gate on the northern boundary is 30 minutes from Namutoni and offers an alternative exit.',
+          tip: 'Namutoni is the quietest of Etosha\'s three main camps and often has availability when Okaukuejo is full. The fort is photogenic at sunset when the white walls glow gold against the darkening sky.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Waterhole & Departure',
+          text: 'Spend your last evening in Etosha at Namutoni\'s waterhole or, if you prefer, drive back to Okaukuejo for one final night at the famous floodlit waterhole. Etosha has a way of saving its best for last — many visitors report their most memorable sighting on their final evening. A leopard appearing from the dark, a pride of lions drinking in formation, or the simple sight of a black rhino mother with a calf standing just metres away in the floodlight. Pack up camp the following morning and exit through Anderson Gate (south) or King Nehale Gate (north), depending on your onward route.',
+          tip: 'If heading north toward the Caprivi Strip or Chobe (Botswana), exit via King Nehale Gate. For Windhoek or the coast, use Anderson Gate. Both routes have fuel available within 50km of the gates.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Self-drive safari', text: 'Etosha is one of Africa\'s best self-drive parks — you do not need a guide or a tour. A standard 2WD rental car is fine for all main roads. Renting a car from Windhoek costs N$500–800/day, split between travellers. Far cheaper than guided safaris at N$3,000+/day.' },
+  { title: 'Camp inside the park', text: 'NWR campsites at Okaukuejo, Halali, and Namutoni cost N$250–400 per site for two people with ablution blocks, braai stands, and access to the floodlit waterholes. Bring your own tent and gear — far cheaper than chalets at N$1,500+/night.' },
+  { title: 'Self-cater everything', text: 'Buy supplies in Windhoek or Tsumeb before entering the park — camp shops sell basics at inflated prices. A self-catered braai dinner costs N$60–80 per person versus N$200+ at the camp restaurants.' },
+  { title: 'Book NWR early', text: 'NWR campsites in dry season fill months in advance. Book online at nwr.com.na as early as possible — availability is first-come, first-served and cancellations are rare. Midweek stays are easier to get than weekends.' },
+  { title: 'Share fuel costs', text: 'Game drives in Etosha cover 100–200km per day on gravel roads. Split fuel costs with travel companions — a full tank costs N$800–1,000 and lasts 2–3 days of driving. Park roads are well-maintained gravel, gentle on fuel consumption.' },
+  { title: 'Stay multiple nights', text: 'The N$150 daily park fee adds up — but more nights mean more waterhole time and better chances of big sightings. Three nights (two full days of driving) is the sweet spot for budget and wildlife coverage.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–20', midrange: '$30–70', splurge: '$120+', notes: 'Camping → NWR chalets → private lodges' },
+  { category: 'Food', budget: '$8–15', midrange: '$18–35', splurge: '$50+', notes: 'Self-catering → camp restaurant → lodge dining' },
+  { category: 'Transport', budget: '$12–20', midrange: '$25–40', splurge: '$60+', notes: 'Shared rental → private car → guided safari vehicle' },
+  { category: 'Park Fees', budget: '$8–10', midrange: '$8–10', splurge: '$8–10', notes: 'N$150/person + N$50/vehicle per day' },
+  { category: 'Activities', budget: '$0–5', midrange: '$10–25', splurge: '$40+', notes: 'Self-drive → night drives → guided walks' },
+  { category: 'Daily Total', budget: '$40–70', midrange: '$90–180', splurge: '$280+', notes: 'Budget camper → mid-range → luxury lodge' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🚗',
+    title: 'Getting There & Around',
+    items: [
+      'Etosha is 440km north of Windhoek (4.5 hours) via Tsumeb or Outjo on tarred roads',
+      'A 2WD rental car is sufficient for all main park roads — 4x4 is not required',
+      'Three gates: Anderson (south/west), Von Lindequist (east), King Nehale (north). Gates open at sunrise, close at sunset',
+    ],
+  },
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Most nationalities get visa-free entry to Namibia for 90 days on arrival',
+      'Park fees: N$150 per person + N$50 per vehicle per day — pay at the gate in cash or card',
+      'Keep your permit receipt — you will need it for camp check-in and gate exits',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Etosha is in a low-risk malaria area — prophylaxis recommended during summer (Nov–Apr)',
+      'Stay in your vehicle at all times except at designated rest areas and camps',
+      'Lions, elephants, and rhinos are wild and dangerous — maintain safe distances. Never leave your car near a predator',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'MTC SIM cards offer the best Namibian coverage — buy at Windhoek airport or in town',
+      'Cell signal exists at the three main camps but is absent on game drive roads',
+      'WiFi is available at camp reception areas but is slow and unreliable',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'Currency: NAD (Namibian Dollar), pegged 1:1 with South African Rand (ZAR). Both accepted everywhere',
+      'No ATMs inside the park — withdraw cash in Windhoek, Tsumeb, or Outjo before entering',
+      'Camp shops and restaurants accept cards but cash is useful for tips and small purchases',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Binoculars are essential — most wildlife viewing is at a distance across open grassland',
+      'Neutral-coloured clothing (khaki, olive, brown) is best. Avoid bright white which startles animals',
+      'A warm fleece or jacket for early morning drives and evening waterhole sits — desert nights are cold even in summer',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🦏', title: 'Respect the Wildlife', text: 'Etosha is home to critically endangered black rhinos. Never approach animals closer than the park-mandated distances, never honk your horn or rev your engine to get a reaction, and never feed wildlife. Your patience will be rewarded with natural behaviour far more impressive than a startled reaction.' },
+  { icon: '🤫', title: 'Waterhole Etiquette', text: 'At floodlit waterholes, keep noise to an absolute minimum. Whisper, turn off phone sounds, and avoid flash photography. These waterholes are lifelines for animals in the dry season — your quiet respect ensures they continue to visit. Loud groups ruin the experience for everyone.' },
+  { icon: '🌍', title: 'Namibian Communities', text: 'Etosha borders the homelands of the Owambo, Herero, and San peoples. When stopping in towns outside the park, engage with local culture respectfully. Craft stalls at the gates sell Owambo baskets and woodcarvings — buying directly supports the communities.' },
+  { icon: '🚯', title: 'Leave No Trace', text: 'Etosha is pristine because visitors respect the rules. Take all rubbish with you, do not drive off designated roads, and do not collect rocks, plants, or animal remains. The ecosystem is fragile — vehicle tracks in the salt pan take decades to heal.' },
+  { icon: '📸', title: 'Photography Ethics', text: 'Wildlife photography requires patience and respect. Do not block waterholes for other visitors to get a shot. Share space, take turns at prime viewpoints, and never put an animal under stress for a photograph. The best shots come from calm, patient observation.' },
+  { icon: '🕐', title: 'Gate Times Are Strict', text: 'Etosha gate times are enforced — gates open at sunrise and close at sunset. Being caught outside your camp after dark results in a fine. Plan your daily route to arrive at your camp with at least 30 minutes of daylight to spare.' },
+];
+---
+
+<CityGuideLayout
+  title="Etosha National Park Travel Guide 2026 | roammate"
+  description="The ultimate Etosha guide for budget travellers. Self-drive safari, floodlit waterholes, black rhinos, elephants, and the vast salt pan. 1 and 3-day itineraries with budget tips."
+  heroImage="/images/guides/etosha-national-park-hero.webp"
+  heroFlag="🇳🇦"
+  heroCountry="Namibia"
+  heroRegion="Africa"
+  heroCity="Etosha National Park"
+  heroSubtitle="Africa's greatest self-drive safari — floodlit waterholes, black rhinos at midnight, vast salt pans, and budget camping under Namibian stars."
+  heroPills={["1–3 Day Safari","Wildlife & Desert","Jul – Oct Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Etosha is one of Africa's most affordable safari destinations — self-drive and self-cater for a fraction of what guided safaris cost elsewhere on the continent."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Etosha is a place of raw, wild beauty where human visitors are guests in an ancient animal kingdom. Respect for wildlife, fellow visitors, and the fragile desert ecosystem makes the experience extraordinary for everyone."
+  ctaCity="Etosha"
+  ctaText="Find safari companions for Etosha on roammate — split car rental, share camping gear, and experience Africa's best waterholes together."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

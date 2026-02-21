@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'MXN ($ Peso)', detail: '1 USD ≈ 17.5 MXN' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'English widely spoken in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'EST (UTC-5)', detail: 'Quintana Roo uses Eastern Time' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Apr', detail: 'Dry season; 25–30°C; less humidity' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$30–50 USD', detail: 'Budget traveler with cenotes & ruins' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 180 days', detail: 'For US, EU, UK, Canada & many others' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Ruins, Cenotes & Caribbean Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tulum Archaeological Zone at Dawn',
+          text: 'Arrive at the Tulum ruins entrance by 8am when the gates open — this is the only way to experience the site without overwhelming crowds. The entrance fee is just 100 MXN ($6) and the ruins sit dramatically on a 12-metre cliff overlooking the turquoise Caribbean. Tulum was a major Mayan port city from the 13th to 15th centuries and the only known Mayan city built on a coast. The Castillo (main pyramid) stands sentinel above the white sand beach below, while the Temple of the Frescoes retains traces of original murals depicting Mayan deities. Wander the compact walled site taking in the iconic view where ancient stone meets Caribbean blue — one of the most photographed archaeological scenes in the Americas.',
+          tip: 'The ruins close at 4pm. Morning visits (8–10am) have the best light for photos and smaller crowds. The beach below the ruins is swimmable but accessed from inside the site only. Bring sunscreen and water — there is minimal shade.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gran Cenote & Swimming in Sacred Waters',
+          text: 'Cycle or taxi 4km west from Tulum town to Gran Cenote (400 MXN / $23 entry) — the most famous cenote in the Riviera Maya. Descend wooden stairs into a vast limestone cavern where crystal-clear freshwater pools shimmer in shafts of light piercing through the collapsed cave ceiling. Snorkel over submerged stalactites, swim through partially submerged caverns, and float in water so clear you can see every detail of the rocky bottom 5 metres below. Turtles often glide beneath you in the open sections. The cenotes were sacred to the ancient Maya — portals to the underworld — and swimming in one feels genuinely spiritual. Bring your own snorkel gear to save on rental.',
+          tip: 'Apply biodegradable sunscreen only — chemical sunscreens are banned at cenotes to protect the fragile ecosystem. Arrive before 11am to beat tour bus crowds. Cenote Calavera nearby is cheaper (250 MXN) and less crowded.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tulum Beach Road & Sunset',
+          text: 'Head to the Tulum beach road (Zona Hotelera) — a sandy track lined with bohemian beach clubs, jungle restaurants, and eco-hotels draped in fairy lights. Walk or cycle south to the public beach access points — Playa Paraiso is the most popular, with powdery white sand and shallow turquoise water. Watch the sunset from the beach as pelicans dive and the sky turns pink above the palm trees. Dinner at a taco stand in Tulum town is the budget move — tacos al pastor for 20–30 MXN each ($1.50) at the taco row on Avenida Tulum. Or splurge on a beachfront dinner at one of the boho-chic restaurants on the beach road.',
+          tip: 'Tulum beach road restaurants are expensive ($15–30 per meal). Tulum town (pueblo) is where locals eat — tacos, tortas, and aguas frescas for a fraction of beach road prices. Rent a bicycle ($5/day) to get between town and beach.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Tulum Ruins & Beach Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tulum Archaeological Zone',
+          text: 'Be at the entrance when the gates open at 8am. The Tulum ruins are compact — you can explore the entire walled city in 2 hours — but the setting is unrivalled in the Mayan world. Built as a trading port between the 13th and 15th centuries, Tulum (meaning "wall" in Mayan) was one of the last cities inhabited when the Spanish arrived. The Castillo pyramid crowns the cliff edge with the Caribbean stretching to the horizon behind it. The Temple of the Frescoes shows traces of blue, red, and black murals depicting the diving god Ah Muzen Cab. The Temple of the Wind God sits on a rounded base designed to whistle when hurricanes approach — ancient early warning engineering.',
+          tip: 'Entry is 100 MXN ($6). Bring cash — card machines are unreliable. The walk from the car park to the ruins is 1km — take the shuttle (20 MXN) or walk through the vendors. Wear comfortable shoes as the ground is uneven limestone.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Playa Paraiso & Beach Relaxation',
+          text: 'Walk down the cliff stairs from inside the ruins to the stunning beach below — a crescent of white sand framed by the ancient walls above. Swim in the warm Caribbean waters and take in the surreal view of Mayan pyramids towering over your beach blanket. After, head south along the beach road to Playa Paraiso — consistently rated among the best beaches in Mexico. The water is shallow and turquoise for 50 metres out, perfect for swimming and snorkelling. Beach clubs offer loungers and food service (minimum spend $15–20) or you can spread a towel on the public sections for free. The relaxed atmosphere is quintessential Caribbean.',
+          tip: 'The beach below the ruins gets crowded by 11am. Free public beach access points exist every 200–300m along the beach road — look for "acceso publico" signs. The undertow can be strong — swim where others are swimming.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Tulum Town & Taco Night',
+          text: 'Cycle into Tulum town (pueblo) for an authentic Mexican evening. The town centre along Avenida Tulum has restaurants, bars, and the famous taco row where street vendors serve tacos al pastor, cochinita pibil, and carne asada from 20 MXN ($1.20) each. Try salbutes (fried tortillas with shredded turkey, onion, and avocado) — a Yucatecan specialty you will not find elsewhere. Wash it down with a michelada (beer with lime, chilli, and salt) or a fresh agua de horchata. The town has a relaxed backpacker vibe with live music at several bars. The contrast between budget-friendly pueblo and expensive beach road is stark — eat in town.',
+          tip: 'Taco stands on Avenida Tulum near the main intersection are the best value in Tulum. Try the green and red salsas at every stand — heat varies wildly. A full taco dinner with drinks costs $5–8 per person.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Cenotes & Underground Rivers',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Gran Cenote — Crystal Cave Swimming',
+          text: 'Cycle to Gran Cenote (4km west of town) early to arrive at opening time (8:15am). Entry is 400 MXN ($23) but the experience justifies every peso. Descend into a vast partially-collapsed limestone cave where transparent freshwater pools glow electric blue in the shafts of light from above. Snorkel over submerged stalactites and stalagmites formed over millennia, swim through cave passages where the ceiling drops just above the water, and watch turtles glide through the crystalline depths below you. The cenote connects to an underground river system stretching hundreds of kilometres beneath the Yucatan Peninsula — the longest underwater cave system on earth.',
+          tip: 'Bring your own snorkel and mask to save 100 MXN on rental. Arrive by 8:30am — by 10am, tour groups from Cancun and Playa del Carmen dominate. The water is 24°C year-round — refreshing but not cold.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Cenote Calavera & Cenote Carwash',
+          text: 'Explore multiple cenotes in a single day — they are clustered along the road west from Tulum. Cenote Calavera (250 MXN) is a dramatic open-pit cenote where you jump through skull-shaped holes in the limestone ceiling into the pool below — the three openings resemble a skull, giving it the name. For the adventurous, the 5-metre cliff jump into clear water is unforgettable. Continue to Cenote Carwash (Cenote Aktun-Ha, 250 MXN) — an open-air cenote surrounded by jungle with lily pads floating on the surface and remarkable underwater visibility. This cenote is popular with scuba divers exploring the cave systems but is equally spectacular for snorkellers.',
+          tip: 'A bicycle makes cenote-hopping easy and free — the road west is flat. Bring biodegradable sunscreen (regular sunscreen is confiscated at entry). Lockers cost 30–50 MXN — bring a small padlock.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset at the Beach & Nightlife',
+          text: 'Return to the beach road for sunset — the west-facing coast makes for spectacular pink and orange skies over the jungle behind you while the Caribbean turns golden. Several beach clubs host DJ sets and live music at sunset — Papaya Playa Project has a famous Friday night party. In Tulum town, bars along the main strip offer mezcal tastings, live music, and a backpacker social scene. Try a mezcal flight ($8–12) to taste the smoky agave spirit that the Yucatan is embracing. The nightlife in Tulum ranges from chilled beach bars to full-scale jungle parties — there is something for every energy level.',
+          tip: 'Papaya Playa Project parties are legendary but pricey (cover 500+ MXN). For budget nightlife, the bars in Tulum town have no cover and cheaper drinks. Cycle back with a headlamp — the beach road has no street lights.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Sian Ka\'an Biosphere & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sian Ka\'an Biosphere Reserve',
+          text: 'Join a tour to Sian Ka\'an Biosphere Reserve (UNESCO World Heritage Site) — a 5,280 square kilometre protected area of tropical forest, mangroves, marshes, and barrier reef beginning just south of Tulum. Tours ($80–120 including transport and lunch) take you through the reserve by boat, floating down an ancient Mayan canal system built over 1,000 years ago. The crystal-clear channel winds through mangrove tunnels where you float on your back carried by a gentle current — a surreal and peaceful experience. Spot crocodiles, manatees, sea turtles, dolphins, and over 300 bird species. The reef section offers excellent snorkelling over pristine coral.',
+          tip: 'Book a small-group tour (max 8 people) from Tulum for the best experience. Community Tours Sian Ka\'an is a reputable local operator. Bring binoculars for birdwatching and a waterproof camera. Apply biodegradable bug repellent.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mayan Village & Coba Ruins',
+          text: 'If time allows, drive or cycle to Coba — a sprawling Mayan city 47km northwest of Tulum, buried deep in the jungle. Unlike Tulum\'s compact coastal site, Coba was an inland metropolis connected by sacbe (raised stone roads) stretching across the Yucatan. The Nohoch Mul pyramid at 42 metres is the tallest in the Yucatan Peninsula and you can still climb to the top for sweeping jungle views in every direction — one of the last climbable pyramids in Mexico. Rent a bicycle at the entrance (50 MXN) to cover the distances between ruins scattered through the forest. Howler monkeys and toucans inhabit the canopy.',
+          tip: 'Coba entry is 100 MXN. Arrive by 8am when it opens for the coolest temperatures and emptiest trails. The bicycle is essential — the site is spread over several square kilometres. Climbing Nohoch Mul is steep — use the rope rail.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner & Onward Travel',
+          text: 'Return to Tulum for a final evening. Treat yourself to a meal at one of the beach road\'s better restaurants — fresh ceviche, grilled octopus, and handmade tortillas with a Caribbean view. Or keep it real with a final round of street tacos and a horchata in the pueblo. From Tulum, ADO buses run frequently to Cancun airport (2 hours, 300 MXN), Playa del Carmen (1 hour, 80 MXN), and Merida (4 hours, 450 MXN). Colectivos (shared vans) to Playa del Carmen cost just 45 MXN and leave every 15 minutes from Avenida Tulum. Tulum is a perfect base for exploring the entire Riviera Maya.',
+          tip: 'ADO buses to Cancun airport should be booked online at ado.com.mx — they sell out during peak season. Colectivos are cheaper but stop at every town. Allow 3+ hours from Tulum to Cancun airport for check-in.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Stay in Tulum town, not the beach road', text: 'Beach road eco-hotels cost $100–300/night. Tulum town hostels cost $10–20/night and are a 10-minute bike ride from the beach. The town has all the cheap food, nightlife, and services — the beach road is for Instagram and splurging.' },
+  { title: 'Rent a bicycle for everything', text: 'Bicycle rental costs 100–150 MXN ($6–9) per day from shops in town. Tulum is flat and bikeable — ride to the ruins (4km), cenotes (4–8km west), and the beach (3km). Taxis from town to the beach charge 50–100 MXN each way. A bike pays for itself in a single day.' },
+  { title: 'Eat in the pueblo', text: 'Tulum town has incredible street food for a fraction of beach road prices. Tacos: 20–30 MXN each. Tortas: 40–60 MXN. Full meals at local restaurants: 80–150 MXN ($5–9). The beach road charges 3–5x more for the same food with a sea view.' },
+  { title: 'Visit cheaper cenotes', text: 'Gran Cenote (400 MXN) is the most famous but not necessarily the best. Cenote Calavera (250 MXN), Cenote Zacil-Ha (150 MXN), and Cenote Cristal (250 MXN) are equally beautiful and less crowded. Some smaller cenotes charge just 100 MXN.' },
+  { title: 'Colectivos beat taxis every time', text: 'Shared colectivo vans run constantly along the main highway. Tulum to Playa del Carmen: 45 MXN ($2.60). Tulum to Cancun: 200 MXN. Flag them down on the highway. Taxis charge 5–10x more for the same journey.' },
+  { title: 'Bring your own snorkel gear', text: 'Snorkel mask and dry snorkel cost $15–20 to buy. Cenote rentals cost 100 MXN ($6) per visit — after 2–3 cenotes, owning your own has paid for itself. The Riviera Maya has world-class snorkelling everywhere.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–20', midrange: '$40–80', splurge: '$150+', notes: 'Hostel dorm → boutique hotel → beach eco-resort' },
+  { category: 'Food', budget: '$8–15', midrange: '$20–40', splurge: '$60+', notes: 'Street tacos & market → restaurants → beach dining' },
+  { category: 'Transport', budget: '$3–8', midrange: '$10–20', splurge: '$40+', notes: 'Bicycle & colectivo → taxi → rental car' },
+  { category: 'Activities', budget: '$10–20', midrange: '$30–60', splurge: '$100+', notes: 'Ruins & 1 cenote → multiple cenotes → diving & tours' },
+  { category: 'Drinks', budget: '$3–5', midrange: '$8–15', splurge: '$25+', notes: 'Beer & aguas frescas → cocktails → mezcal tastings' },
+  { category: 'Daily Total', budget: '$34–68', midrange: '$108–215', splurge: '$375+', notes: 'Tulum is budget-friendly compared to Cancun' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities (US, EU, UK, Canada, Australia) get visa-free entry for up to 180 days. You receive a tourist card (FMM) on arrival — keep it safe as you need it when leaving Mexico',
+      'Cancun International Airport (CUN) is 130km north — the main entry point. ADO buses to Tulum take 2 hours (300 MXN). Colectivos are cheaper but slower with multiple stops',
+      'The tourist tax (visitax) of 224 MXN must be paid before departure from Mexico. Register and pay at visitax.gob.mx. Airlines may collect it but check — failure to pay can cause departure issues',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'No mandatory vaccinations. Hepatitis A and typhoid recommended. Tap water is not safe to drink — buy purified water (garrafones) from any shop. Ice in restaurants is usually purified but confirm by asking',
+      'Tulum is generally safe but petty theft occurs — lock your bicycle and use hostel lockers. Avoid poorly lit areas of the beach road at night. Seaweed (sargassum) season (May–Aug) can affect beach quality significantly',
+      'Mosquitoes are present, especially near cenotes and in the jungle — bring repellent with DEET. Dengue fever occurs in the Yucatan. Pharmacies (farmacias) are plentiful and sell most medications over the counter',
+    ],
+  },
+  {
+    icon: '🚲',
+    title: 'Getting Around',
+    items: [
+      'Bicycle is the best transport in Tulum — flat terrain, short distances, and bike-friendly roads. Rental from town shops costs 100–150 MXN/day. Negotiate weekly rates for longer stays',
+      'Colectivos (shared vans) run north-south along Highway 307 constantly — flag them down anywhere. Tulum to Playa del Carmen: 45 MXN (1 hour). ADO buses are more comfortable for longer distances',
+      'Taxis in Tulum use fixed rates (no meters) — agree on the price before getting in. Town to beach road: 50–100 MXN. Town to ruins: 70 MXN. Town to Gran Cenote: 100 MXN one way',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Telcel has the best coverage in the Yucatan. Buy a SIM at the Cancun airport or any Telcel shop — tourist plans with 10GB data cost 200–300 MXN ($12–17). eSIMs from Airalo or Holafly also work well',
+      'WiFi is available at most hostels, cafes, and restaurants. Beach road establishments have variable quality. Download offline maps of the Tulum area and cenote locations before heading out',
+      'All international apps work normally in Mexico. WhatsApp is the primary communication app — restaurants and tour operators often use WhatsApp for bookings. Uber does not work in Tulum but inDrive does',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs in Tulum town dispense Mexican pesos. Use bank ATMs (Santander, HSBC, Banorte) inside buildings to avoid skimming devices. Withdraw 5,000–10,000 MXN at a time to minimize fees',
+      'US dollars are accepted at many tourist businesses but the exchange rate is poor — always pay in pesos for better value. Credit cards work at hotels and larger restaurants but street food and cenotes are cash only',
+      'Tipping is customary — 10–15% at restaurants, 20 MXN for bag handling, 50–100 MXN for tour guides. Many restaurants add a suggested tip to the bill — check before adding more',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Biodegradable sunscreen is mandatory at cenotes and many beaches — chemical sunscreens are confiscated at entry. Buy reef-safe brands before arrival or at pharmacies in town',
+      'Swimsuit, quick-dry towel, water shoes (cenote floors are rocky), snorkel gear, insect repellent, and a light rain jacket (afternoon showers are common May–Nov)',
+      'Modest clothing for visiting ruins (shorts and t-shirt are fine). A reusable water bottle saves money and plastic — refill stations exist at hostels and some shops. Bring a bike lock if renting a bicycle',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏛️', title: 'Mayan Heritage', text: 'The Tulum ruins represent just one site in the vast Mayan civilisation that flourished for 3,000 years across Mexico, Guatemala, Belize, and Honduras. Treat the ruins with respect — do not climb on structures or remove stones. The cenotes were sacred to the Maya as entrances to Xibalba, the underworld.' },
+  { icon: '🌮', title: 'Food Culture', text: 'Yucatecan cuisine is distinct from the rest of Mexico — cochinita pibil (slow-roasted pork), papadzules (egg-filled tortillas in pumpkin seed sauce), and salbutes are regional specialties. Street food is safe to eat from busy vendors with high turnover. Eating with your hands is perfectly normal for tacos — use the tortilla as your utensil.' },
+  { icon: '🗣️', title: 'Spanish Goes Far', text: 'Learn basic Spanish — por favor (please), gracias (thank you), la cuenta (the bill), cuanto cuesta (how much). Locals deeply appreciate any effort to speak Spanish. In Tulum town, English is less common than on the beach road. Google Translate with the Spanish offline pack is invaluable.' },
+  { icon: '🌿', title: 'Cenote Conservation', text: 'Cenotes are fragile freshwater ecosystems connected to the longest underwater cave system on earth. Do not use chemical sunscreen, touch formations, feed fish, or leave litter. The Yucatan\'s drinking water comes from this underground river system — contamination affects millions of people. Respect the rules at every cenote.' },
+  { icon: '💃', title: 'Mexican Social Culture', text: 'Mexicans are warm and generous. Greetings often include a cheek kiss among women and between men and women. Tipping is important — service workers depend on tips as wages are low. Bargaining is acceptable at markets but not at shops or restaurants. Being friendly opens every door in Mexico.' },
+  { icon: '🐢', title: 'Sea Turtle Season', text: 'Sea turtles nest on Tulum beaches from May to October. If you see a nesting turtle, do not approach or use flash photography. Turtle hatchling releases are organised by conservation groups — an extraordinary experience. Beach clubs are required to turn off lights during nesting season. Support turtle conservation by following all beach rules.' },
+];
+---
+
+<CityGuideLayout
+  title="Tulum Ruins Travel Guide 2026 | roammate"
+  description="Complete Tulum ruins and cenotes guide for 2026. Beachside Mayan ruins, cenote swimming, Caribbean beaches, and budget tips for young travelers in Mexico's Riviera Maya."
+  heroImage="/images/guides/tulum-ruins-hero.webp"
+  heroFlag="🇲🇽"
+  heroCountry="Mexico"
+  heroRegion="Central America"
+  heroCity="Tulum Ruins"
+  heroSubtitle="Ancient Mayan temples perched on Caribbean cliffs — where centuries of history meet turquoise waters and sacred cenotes."
+  heroPills={['Mayan Ruins', 'Cenote Swimming', 'Nov – Apr Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs in Mexican Pesos (MXN) and USD. Tulum is one of the best-value destinations in the Caribbean — eat in town, cycle everywhere, and swim in cenotes for less than you would spend in most US cities."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Tulum sits on ancient Mayan land in a region where indigenous culture, Mexican traditions, and Caribbean life blend into something unique. Respect the history, the cenotes, and the people."
+  ctaCity="Tulum Ruins"
+  ctaText="Find travel partners, share colectivo rides, and explore the Riviera Maya together with fellow adventurers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

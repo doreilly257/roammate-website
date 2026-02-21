@@ -1,0 +1,235 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PEN (Sol)', detail: '1 USD ≈ 3.7 PEN' },
+  { icon: '🗣', label: 'Language', value: 'Spanish / Quechua', detail: 'Basic English at tourist sites' },
+  { icon: '🕐', label: 'Timezone', value: 'PET (UTC-5)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Apr – Nov', detail: 'Dry season, clear skies for condors' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$25–40 USD', detail: 'Budget traveler with transport' },
+  { icon: '🛂', label: 'Visa', value: 'Free on arrival', detail: '90 days for most nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Colca Canyon — Condors & Hot Springs',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise at Cruz del Condor',
+          text: "Depart Chivay at 5am for the 90-minute drive to Cruz del Condor, the canyon's most famous viewpoint where Andean condors ride the morning thermals rising from the canyon floor 1,200 metres below. Arrive by 6:30am and claim a spot at the railing — the condors begin their ascent between 7-9am, soaring within metres of the viewing platform on wingspans reaching 3.2 metres. The canyon itself is twice the depth of the Grand Canyon at its deepest point and the scale is staggering. On clear mornings, the snow-capped volcanoes Ampato and Sabancaya frame the background.",
+          tip: 'Arrive before 7am for the best viewing position and fewer crowds. The condors are most active between 8-9am when thermals are strongest. Bring binoculars and a telephoto lens — morning light is perfect for photography.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Canyon Viewpoints & Yanque Village',
+          text: "Drive the canyon rim road stopping at Antahuilque and Choquetico viewpoints for different perspectives of the terraced canyon walls — the agricultural terraces here predate the Inca, built by the Collagua and Cabana peoples over 1,400 years ago and still farmed today. Continue to Yanque village, one of the most picturesque settlements in the valley, where women in traditional embroidered dresses and distinctive white hats gather at the colonial church plaza. Visit the Yanque church built in 1690 with its ornately carved stone facade. Lunch at a local restaurant in Yanque — try chupe de camarones (river shrimp soup) or alpaca steak.",
+          tip: 'The Boleto Turistico ($70 PEN / ~$19) is required to enter the canyon zone and covers all viewpoints. Buy it in Chivay before driving to Cruz del Condor or your tour includes it.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'La Calera Hot Springs',
+          text: "End your canyon day at La Calera hot springs, 4km outside Chivay — natural thermal pools fed by volcanic geothermal water reaching 38-40°C. After a day at altitude (3,600m+) and a pre-dawn start, sinking into the steaming mineral water with the Andes rising on all sides is deeply restorative. The facility has five pools at different temperatures plus changing rooms and lockers. The setting sun turns the surrounding cliffs amber and gold while you soak. Return to Chivay for dinner — try rocoto relleno (stuffed hot pepper) and a Cusquena beer at one of the plaza restaurants.",
+          tip: 'Entry to La Calera costs 20 PEN (~$5.50). Go between 5-7pm when day-trippers have left and the pools are less crowded. Bring a towel and flip-flops — rental towels cost 5 PEN.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Arequipa to Chivay — The High Road',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Departure from Arequipa',
+          text: "Leave Arequipa at 6am for the 3.5-hour drive through some of the most dramatic high-altitude scenery in South America. The road climbs from 2,300m to the Patapampa pass at 4,910m — the highest point on the journey where you stop to see cairns (stone piles called apachetas) left as offerings to the mountain spirits. On clear days, the views stretch across the altiplano to distant volcanoes. Watch for herds of wild vicuna, the smallest camelid, grazing on the sparse golden ichu grass of the puna. The Reserva Nacional Salinas y Aguada Blanca surrounds the road with raw Andean wilderness.",
+          tip: 'Take altitude seriously — chew coca leaves or drink coca tea offered at stops. The pass at 4,910m can cause headache and breathlessness. Stay hydrated and move slowly. Spend a day in Arequipa (2,300m) to acclimatise before the drive.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Chivay Town & Market',
+          text: "Arrive in Chivay (3,635m), the gateway town to Colca Canyon and the valley's largest settlement. Check into your hotel and let your body adjust to the altitude with a slow exploration of town. The central market is a colourful window into daily Andean life — women in embroidered skirts and distinctive flat hats sell produce, dried herbs, fresh cheese, and enormous ears of choclo corn. Walk to the main plaza and the Chivay church. The town has a functional charm rather than postcard beauty, but the surrounding valley views of terraced hillsides and snow-capped peaks are beautiful.",
+          tip: 'Stay at least two nights in Chivay to acclimatise and explore properly. Budget hostels cost 30-50 PEN ($8-14). Pocobanba and Killawasi are good mid-range options with canyon views.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'La Calera Hot Springs Soak',
+          text: "Walk or take a colectivo 4km to La Calera hot springs — five thermal pools at different temperatures fed by volcanic geothermal water reaching 40°C. After a day at altitude, the hot mineral water eases headaches and muscle tension. The pools sit in a rocky gorge with the Colca River rushing below and the Andes towering above. As the sun sets, the surrounding cliffs glow orange and the temperature drops sharply — stepping from steaming water into cold mountain air is invigorating. Return to Chivay for dinner at a plaza restaurant serving sopa de quinoa and trucha (trout) from local rivers.",
+          tip: 'The hot springs open at 5am for early risers and stay open until 7pm. Evening visits (5-7pm) are least crowded. Entry is 20 PEN. Bring flip-flops — the stone paths between pools are rough.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Cruz del Condor & Canyon Rim',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Condor Watching at Cruz del Condor',
+          text: "Leave Chivay at 5:30am for the 90-minute drive to Cruz del Condor. By 7am you are standing on the canyon rim watching for the first Andean condors to rise from the depths on morning thermals. The condors appear suddenly — enormous black silhouettes rising from the canyon floor on wingspans over three metres, passing within 20 metres of the viewing platform. On a good morning, six to twelve condors circle the thermals simultaneously. The canyon drops 1,200 metres below your feet and the scale is almost impossible to comprehend. These are among the last remaining wild condor populations and seeing them fly at eye level is a privilege.",
+          tip: 'Stay until at least 9:30am — the condors become more active as thermals strengthen. Cloudy mornings can delay the condors by an hour. June to September offers the best and most reliable viewing.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Canyon Viewpoints & Maca Village',
+          text: "Continue along the canyon rim road to a series of viewpoints offering different perspectives on the terraced walls and the winding river far below. Stop at Maca village — partially destroyed by a 1991 earthquake and rebuilt, its colonial church has been beautifully restored. Women in traditional Collagua dress pose with baby alpacas and eagles for photos (tip expected). Continue to Antahuilque viewpoint where the full depth and scale of the canyon becomes apparent — looking down at the oasis settlements 1,200m below where palm trees and swimming pools create a surreal green patch in the arid canyon floor. Lunch in a canyon-rim restaurant with views.",
+          tip: 'The women in traditional dress asking for photo tips rely on this income — a fair tip is 2-3 PEN per photo. Do not take photos without permission and payment. Maca church is worth entering for its earthquake damage and restoration story.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Stargazing & Traditional Dinner',
+          text: "The Colca Valley at 3,600m with minimal light pollution offers extraordinary stargazing. After sunset, the Milky Way arcs across the sky with an intensity impossible in lower-altitude, light-polluted locations. The Southern Cross, visible from the Southern Hemisphere, is easy to spot. Some hotels and tour operators offer guided stargazing sessions with telescopes. Dinner in Chivay — try cuy (guinea pig), the traditional Andean delicacy roasted whole on a spit. It tastes like rich, gamey chicken. Pair with a pisco sour, Peru's national cocktail, mixed with local lime juice.",
+          tip: 'For stargazing, move away from Chivay town lights towards La Calera road. A red-light headlamp preserves night vision. July-September offers the clearest and darkest skies in dry season.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Canyon Trek to the Oasis',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Descent into the Canyon',
+          text: "Begin the iconic trek from Cabanaconde (3,287m) down to the Sangalle Oasis at the canyon floor — a 1,200m descent over roughly 3 hours on a zigzagging switchback trail through arid terrain. The path is well-marked but steep and dusty with loose stones underfoot. As you descend, the vegetation changes from sparse puna grassland to cactus and eventually to the lush palm-fringed oasis at the bottom. The perspective shifts dramatically — from looking down at condors from the rim, you now look up at the sheer canyon walls towering on all sides. The Colca River rushes through the canyon floor, cold and fast.",
+          tip: 'Start by 6am to avoid midday heat — the canyon traps heat and temperatures at the bottom can reach 35°C by noon. Bring at least 3 litres of water, sunscreen, hat, and snacks. Trekking poles are essential for the steep descent.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'The Sangalle Oasis',
+          text: "Arrive at the Sangalle Oasis — a surreal cluster of basic lodges with swimming pools, palm trees, and gardens at the canyon floor surrounded by thousand-metre walls on all sides. Check into a bamboo bungalow (20-30 PEN / $5-8) and spend the afternoon swimming in the pool, reading in a hammock, and absorbing the absolute silence broken only by the river and birdsong. The contrast between the harsh descent and this hidden paradise is extraordinary. Some trekkers stay two nights to fully decompress. The night sky from the canyon floor — framed by canyon walls and free from any light pollution — is one of the best in South America.",
+          tip: 'The oasis lodges are basic — bring a sleeping bag liner, head torch, and snacks. There is no electricity or hot water in some lodges. Prices include a simple dinner and breakfast. Book is unnecessary — just show up.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Canyon Floor Sunset & Rest',
+          text: "Watch the sunset paint the canyon walls in layers of amber, orange, and deep red as the light retreats upward and the canyon floor falls into cool shadow. The geological layers — volcanic ash, limestone, and ancient sediments — become visible as distinct colour bands in the evening light. Share stories with other trekkers over a simple dinner of rice, soup, and tea at the lodge. If you are returning to Cabanaconde the next day, set an alarm for 4:30am — the ascent of 1,200m takes 3-4 hours and you want to climb in the cool pre-dawn darkness before the sun hits the exposed trail.",
+          tip: 'The next-day ascent is brutal — 1,200m vertical gain on a steep, exposed trail. Most trekkers start at 4:30-5am with head torches. Mules can be hired at the oasis for 70-90 PEN if your legs cannot face the climb.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Take local colectivos, not tours', text: 'Shared minivans (colectivos) run daily from Arequipa to Chivay for 15-20 PEN ($4-5.50) vs. $20-30 for a tour bus. In Chivay, colectivos to Cruz del Condor cost 10 PEN. Independent travel is half the cost of organised tours and gives you more flexibility.' },
+  { title: 'Buy the Boleto Turistico wisely', text: 'The 70 PEN ($19) tourist ticket is mandatory for the canyon zone and checked at Cruz del Condor. It covers all viewpoints for the duration of your stay. Buy it at the Chivay control point or tourist office — not from touts who may overcharge.' },
+  { title: 'Eat at the market, not the plaza', text: 'Chivay market has lunch stalls serving a set menu (soup + main + drink) for 5-8 PEN ($1.50-2.20). Plaza restaurants charge 15-25 PEN for similar food. Market food is fresher and more authentic — point at what the locals are eating and you will not go wrong.' },
+  { title: 'Trek independently to save', text: 'The Oasis trek from Cabanaconde does not require a guide — the trail is well-marked and straightforward. A guided 2-day trek costs $50-80 while doing it independently with an oasis bungalow costs 60-80 PEN ($16-22) total including food and accommodation.' },
+  { title: 'Hot springs after 5pm', text: 'La Calera hot springs entry is 20 PEN ($5.50) but the experience is best in the late afternoon when crowds thin out. Walking from Chivay saves the 5 PEN taxi fare and the 4km road has beautiful valley views. Bring your own towel to save the 5 PEN rental fee.' },
+  { title: 'Sleep in Cabanaconde for treks', text: 'Cabanaconde is cheaper than Chivay with hostels from 20-30 PEN ($5.50-8) and is the starting point for the canyon trek. Staying here eliminates the need for an early-morning taxi from Chivay and puts you closer to the Oasis trailhead and Cruz del Condor.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$5–10', midrange: '$20–50', splurge: '$80+', notes: 'Hostels → canyon-view hotels → lodges' },
+  { category: 'Food', budget: '$5–8', midrange: '$12–20', splurge: '$30+', notes: 'Market menus → restaurants → hotel dining' },
+  { category: 'Transport', budget: '$4–8', midrange: '$10–20', splurge: '$40+', notes: 'Colectivos → shared tours → private car' },
+  { category: 'Activities', budget: '$6–10', midrange: '$15–25', splurge: '$50+', notes: 'Self-guided → group tours → private guide' },
+  { category: 'Boleto Turistico', budget: '$19', midrange: '$19', splurge: '$19', notes: 'Mandatory canyon entry ticket (70 PEN)' },
+  { category: 'Daily Total', budget: '$25–40', midrange: '$60–115', splurge: '$200+', notes: 'Budget trekkers can go lower' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Most nationalities receive a free 90-day tourist stamp on arrival in Peru. No visa required for EU, US, UK, Australia, Canada, and most South American citizens',
+      'Nearest airport is Arequipa (AQP) — 3.5 hours by road from Chivay. Flights from Lima (1.5hrs), Cusco (30min), and other Peruvian cities. Cruz del Sur buses run Lima to Arequipa (15hrs, $15-30)',
+      'The Boleto Turistico (70 PEN) is mandatory for entering the Colca Canyon zone and is checked at multiple viewpoints. Buy at Chivay or the control point en route',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'Altitude sickness is the primary health concern — Chivay sits at 3,635m and the Patapampa pass reaches 4,910m. Spend at least one day acclimatising in Arequipa (2,300m) before heading to the canyon',
+      'Coca tea (mate de coca) is freely available and genuinely helps with altitude symptoms. Stay hydrated — drink 3-4 litres per day. Diamox can be prescribed by a doctor for prevention',
+      'No mandatory vaccinations. Hepatitis A and typhoid recommended. Sun protection is critical at altitude — UV radiation is extreme above 3,500m. Apply SPF 50+ every 2 hours',
+    ],
+  },
+  {
+    icon: '🚌',
+    title: 'Getting Around',
+    items: [
+      'Colectivos (shared minivans) connect Arequipa to Chivay (15-20 PEN, 3.5hrs) departing from Terminal Terrestre. In the canyon, colectivos run between villages for 3-10 PEN',
+      'Organised tours from Arequipa run 1-day ($20-30) and 2-day ($40-60) trips to the canyon. These are convenient but rushed — independent travel allows more time at each stop',
+      'Within Chivay, everything is walkable. Taxis to La Calera hot springs cost 5 PEN. For the canyon trek, a colectivo from Chivay to Cabanaconde costs 10 PEN (2hrs)',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile coverage (Claro, Movistar) works in Chivay and main villages but drops on the canyon rim road and at the canyon floor. Download offline maps before leaving Arequipa',
+      'WiFi in most Chivay hotels and hostels but speeds are slow. At the Oasis lodges there is no WiFi and no electricity in some — bring a power bank and embrace the disconnection',
+      'Download Maps.me for offline navigation of the canyon trails — it has better trail detail than Google Maps for the trekking routes',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs in Chivay (BCP bank on the plaza) dispense soles. Bring cash from Arequipa as backup — the single ATM sometimes runs out. There are no ATMs in Cabanaconde or at the Oasis',
+      'Soles are the only accepted currency. Small denominations (10 and 20 PEN notes) are essential — market vendors and colectivos cannot break 100 PEN notes',
+      'Credit cards accepted at some Chivay hotels but nowhere else in the canyon. The Oasis lodges, hot springs, and markets are cash only',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Layers for altitude temperature swings — warm fleece for mornings at Cruz del Condor (near freezing at dawn) and light clothes for the canyon floor (up to 35°C at the Oasis)',
+      'Sturdy hiking boots for the canyon trek — the descent and ascent are steep with loose stones. Trekking poles make a significant difference on the 1,200m ascent from the Oasis',
+      'Headlamp for the pre-dawn ascent from the Oasis, sleeping bag liner for basic lodges, refillable water bottle, and high-SPF sunscreen. A buff or scarf protects from dust on the trails',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🦅', title: 'Condor Reverence', text: 'The Andean condor is sacred in Andean culture — it represents the Hanan Pacha (upper world) in the Andean cosmovision and is considered a messenger between the living and the gods. Watching the condors in respectful silence is appropriate. Do not throw objects or make excessive noise to attract them.' },
+  { icon: '🏔', title: 'Pachamama & the Mountains', text: "The Colca Valley communities maintain deep Andean spiritual traditions. Pachamama (Mother Earth) and the Apus (mountain spirits) are revered. The stone cairns (apachetas) on mountain passes are offerings — add a stone if you wish, never take one. Pouring a drop of your drink on the earth before drinking (ch'alla) honours Pachamama." },
+  { icon: '👗', title: 'Traditional Dress', text: 'Women in the Colca Valley wear distinct traditional dress — elaborately embroidered skirts and hats that identify their village. Collagua women wear cylindrical straw hats while Cabana women wear flat, embroidered hats. This dress is daily wear, not costume. Ask permission before photographing and offer a small tip (2-3 PEN) when requested.' },
+  { icon: '🌾', title: 'Ancient Terraces', text: 'The agricultural terraces lining the canyon walls were built over 1,400 years ago by pre-Inca cultures and are still actively farmed today — growing quinoa, corn, potatoes, and kiwicha. Do not walk on or damage the terrace walls. The engineering that creates microclimates at different altitudes is an extraordinary living heritage.' },
+  { icon: '🍽', title: 'Try Local Specialities', text: 'Accepting local food is a sign of respect. Cuy (guinea pig) is a traditional Andean staple, not a novelty — try it respectfully. Alpaca meat is lean and delicious. Chicha de jora (fermented corn drink) is offered at celebrations. Coca tea is cultural, legal, and medicinal — refusing it when offered can seem impolite.' },
+  { icon: '🤝', title: 'Community Tourism', text: 'Several Colca Valley communities operate community-based tourism projects where proceeds go directly to local families. Staying in family-run guesthouses in Yanque, Coporaque, or Cabanaconde supports the local economy more than Chivay hotels. Engage genuinely, learn a few Quechua words (sulpayki means thank you), and respect that you are a guest in their home.' },
+];
+---
+
+<CityGuideLayout
+  title="Colca Canyon Travel Guide 2026 | roammate"
+  description="Complete guide to Colca Canyon, Peru. Andean condors at Cruz del Condor, Oasis trek, Chivay hot springs, budget tips, and practical info for one of the world's deepest canyons."
+  heroImage="/images/guides/colca-canyon-hero.webp"
+  heroFlag="\ud83c\uddf5\ud83c\uddea"
+  heroCountry="Peru"
+  heroRegion="South America"
+  heroCity="Colca Canyon"
+  heroSubtitle="One of the world's deepest canyons where Andean condors soar on morning thermals above terraced walls built before the Inca."
+  heroPills={['1 & 3 Day Itinerary', 'Canyon Trek', 'Apr – Nov Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in USD. The Colca Valley is very affordable for South America — the biggest expense is transport from Arequipa and the mandatory Boleto Turistico."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="The Colca Valley is home to indigenous Collagua and Cabana communities who have maintained their traditions for over a thousand years. Respect for local culture, the mountains, and the environment is essential."
+  ctaCity="Colca Canyon"
+  ctaText="Find trekking partners, share transport from Arequipa, and explore the canyon together with fellow travelers on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

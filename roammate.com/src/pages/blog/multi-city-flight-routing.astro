@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "multi-city-flight-routing",
+  title: "Multi-City Flight Routing Strategies",
+  description: "Master multi-city flight booking with open-jaw tickets, RTW fares, hub city strategies, and virtual interlining to cut international airfare costs.",
+  category: "Planning",
+  readMinutes: 2,
+  heroImage: "/images/blog/multi-city-flight-routing-hero.webp",
+  intro: "Booking multi-city flights as separate one-way tickets almost always costs more than using the right fare structures. Open-jaw tickets, round-the-world passes, and strategic hub routing can cut your total airfare by 30-50% on trips spanning three or more cities. The trick is understanding which tools work for which trip shapes and booking each segment through the right channel.",
+  sections: [
+    {
+      heading: "Open-Jaw Tickets and Round-the-World Fares",
+      content: "An open-jaw ticket flies you into one city and out of another — London to Bangkok, then Ho Chi Minh City to London — without requiring you to backtrack. Most major airlines and OTAs support open-jaw routing through their multi-city search, and it typically costs only 10-20% more than a standard return to either city. This saves you the internal flight or overland cost of repositioning back to your arrival airport. For trips spanning three or more continents, round-the-world fares from Star Alliance (starting around $3,500) and Oneworld (Explorer fare from $3,200) offer up to 16 segments with unlimited distance in one direction. The rules require continuous east or west travel — no backtracking across the same ocean — so plan your route on a map first. These fares lock in all segments at booking, giving price certainty but limited flexibility. An alternative approach is the Kiwi.com Nomad tool, which lets you input a list of cities and finds the cheapest ordering and connection routing. Kiwi uses virtual interlining to connect flights from different airlines that don't have formal code-share agreements, often cutting costs by routing through budget carrier hubs.",
+      image: "/images/blog/multi-city-flight-routing-inline-1.webp",
+    },
+    {
+      heading: "Hub Cities and Layover Optimization",
+      content: "Certain cities serve as natural price anchors where flights converge cheaply. Kuala Lumpur is the budget hub for all of Asia — AirAsia's home base means flights to Bangkok, Bali, Tokyo, and Sydney all route through KL at rock-bottom prices. Istanbul serves the same role between Europe and Central/South Asia thanks to Turkish Airlines' aggressive pricing and the airport's geographic position. Bogota connects all of South America cheaply through Avianca and LATAM hubs. Instead of fighting these hubs, build your itinerary around them: fly London to KL, base there for a few days, then fan out to your Southeast Asian destinations using AirAsia before flying KL to your next continent. Extended layovers of 12-24 hours are free stopovers in disguise — Icelandair formally offers free Iceland stopovers on transatlantic routes, and Turkish Airlines' Touristanbul program provides complimentary hotel stays and city tours on connections over 20 hours. When booking, use Google Flights' explore feature with flexible dates to see which hub connections offer the cheapest total routing for your city list, then book each segment separately if the savings outweigh the convenience of a single PNR.",
+      image: "/images/blog/multi-city-flight-routing-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-08-13T10:00:00Z",
+  updatedAt: "2025-08-13T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["budget-flight-search-tactics","flexible-booking-strategy","train-pass-europe-asia","island-hopping-route-planning"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

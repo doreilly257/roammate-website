@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "first-backpacking-trip-checklist",
+  title: "Your First Backpacking Trip Checklist",
+  description: "Complete pre-departure checklist for first-time backpackers covering insurance, vaccinations, bank setup, packing essentials, and first-week survival tips.",
+  category: "Planning",
+  readMinutes: 2,
+  heroImage: "/images/blog/first-backpacking-trip-checklist-hero.webp",
+  intro: "Your first backpacking trip has a hundred decisions and you do not know which ones matter yet. After helping thousands of first-timers plan their trips, the pattern is clear: people over-pack, under-insure, forget to notify their bank, and panic about things that never become problems. This checklist covers every pre-departure task, the actual packing essentials, and what to expect in your first week on the road.",
+  sections: [
+    {
+      heading: "Pre-Departure Essentials: Insurance, Health, and Banking",
+      content: "Get travel insurance before booking anything else. World Nomads covers backpackers for USD 2-4 per day with adventure activity coverage. SafetyWing runs USD 42 per month for digital nomads and long-term travelers. Both cover medical evacuation, which alone can cost USD 50,000-100,000 from remote areas. Check vaccination requirements 6-8 weeks before departure because some vaccines need multiple doses. Southeast Asia typically requires Hepatitis A and B, typhoid, and Japanese encephalitis. Yellow fever vaccination is mandatory for entry into many African and South American countries. Malaria prophylaxis (doxycycline at USD 0.20 per day is cheapest) is worth discussing with a travel clinic for rural Southeast Asia, sub-Saharan Africa, and Amazonian regions. Notify your bank of your travel dates and countries. Set up a Wise (formerly TransferWise) multi-currency account for the best exchange rates and a Charles Schwab checking account for unlimited ATM fee rebates worldwide. Carry two cards from different networks (one Visa, one Mastercard) because single-network acceptance varies. Make two photocopies of your passport: one in your daypack and one in your main bag. Store digital scans in your email and cloud drive. Best beginner destinations based on infrastructure, safety, and hostel density: Thailand (cheapest, easiest logistics), Portugal (safest, best European starting point), and Colombia (best value in the Americas with a strong backpacker community).",
+      image: "/images/blog/first-backpacking-trip-checklist-inline-1.webp",
+    },
+    {
+      heading: "Packing Essentials and First-Week Survival Tips",
+      content: "Pack for one week regardless of trip length. You will do laundry. A 40-50 liter backpack (Osprey Farpoint 40 or Deuter Travel Pack, USD 130-180) handles everything without airline carry-on issues. Essential clothing: 3 t-shirts, 2 shorts or pants, 5 underwear, 3 pairs of socks, one lightweight long-sleeve, one rain jacket, and flip-flops. Bring a quick-dry travel towel (USD 15), universal power adapter (USD 12), headlamp (USD 20), combination padlock for hostel lockers (USD 8), and a dry bag (USD 10) for beach days and monsoon protection. Skip the sleeping bag unless trekking. Skip the travel pillow. Skip anything you can buy cheaper at your destination. Your first week will feel overwhelming and that is completely normal. Book your first two nights in advance at a highly-rated social hostel so you have a guaranteed landing pad and instant access to other travelers who can share tips. Do not plan more than one activity per day in week one. Jet lag, sensory overload, and navigation anxiety are real energy drains. Walk the neighborhood around your hostel on day one: find the nearest ATM, pharmacy, convenience store, and transit stop. Common first-timer mistakes include changing money at the airport (worst rates everywhere), booking too many internal flights instead of overnight buses (which save both money and a night of accommodation), and packing formal clothes you never wear.",
+      image: "/images/blog/first-backpacking-trip-checklist-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-11-19T10:00:00Z",
+  updatedAt: "2025-11-19T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["best-backpack-sizes-compared","travel-insurance-claim-proofing","first-month-southeast-asia","lost-passport-emergency-plan"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

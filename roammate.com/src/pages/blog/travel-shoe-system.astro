@@ -1,0 +1,64 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "travel-shoe-system",
+  title: "The Travel Shoe System for Every Terrain",
+  description: "Build a 2-3 shoe travel system that handles jungle treks, city walks, and beach bars without wrecking your feet or your pack weight.",
+  category: "Gear",
+  readMinutes: 2,
+  heroImage: "/images/blog/travel-shoe-system-hero.webp",
+  intro: "Shoes are the heaviest, bulkiest items in any backpack — and the ones most travelers get wrong. Three pairs of chunky boots plus dress shoes means 4kg of footwear alone. The experienced approach is a precise 2-3 shoe system where each pair covers multiple terrain types, and you never carry more than what's on your feet plus one pair clipped to your pack.",
+  sections: [
+    {
+      heading: "The Core Pair: Trail Runners That Do Everything",
+      content: "Your primary shoe should be a lightweight trail runner — not hiking boots, not sneakers. Trail runners like the Salomon X Ultra 4 (310g per shoe), Merrell MQM 3 (340g), or Altra Lone Peak 7 (310g) give you grippy Vibram or Contagrip soles for rocky trails, enough cushioning for 20km city days on cobblestones, and they dry overnight after a monsoon soaking. Hiking boots are overkill for 95% of travel scenarios and take three days to dry in tropical humidity. Break your trail runners in for at least 80km before your trip — do your grocery runs, commute walks, and a couple of day hikes in them. New trail runners on Cinque Terre trails or Chiang Mai temple stairs means blisters by lunch. If you run a half-size up from your street shoe size, your feet will thank you on long descent days when toes swell. Budget around $100-160 for a pair that'll last 800-1000km of mixed terrain.",
+      image: "/images/blog/travel-shoe-system-inline-1.webp",
+    },
+    {
+      heading: "The Support Cast: Flip-Flops and the Optional Third Shoe",
+      content: "Your second pair is non-negotiable: a durable flip-flop or sport sandal. Hostel showers in Southeast Asia are a fungal playground, and you'll need something waterproof for beach days, boat transfers, and quick runs to the corner shop. The Havaianas Brasil (150g per pair, under $15) are the backpacker standard, but Teva Hurricanes ($50-70) give you ankle straps for water activities and light hiking. The third shoe is optional and depends on your trip style. If you're doing any coworking, dating, or upscale dining, a pair of minimalist canvas shoes like Allbirds Tree Loungers (210g) or simple white leather sneakers fold flat and weigh almost nothing. For Southeast Asia or Central America backpacking, skip the third shoe entirely — nobody cares if you show up to dinner in clean trail runners. Wear your heaviest shoes on travel days and clip the flip-flops to your pack with a carabiner. Total footwear weight for the two-shoe system: under 900g.",
+      image: "/images/blog/travel-shoe-system-inline-2.webp",
+    },
+  ],
+  publishedAt: "2025-02-12T10:00:00Z",
+  updatedAt: "2025-02-12T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "2 min read",
+  relatedPostSlugs: ["carry-on-only-long-term","rain-heat-humidity-gear-guide","best-backpack-sizes-compared","first-backpacking-trip-checklist"],
+  relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>
