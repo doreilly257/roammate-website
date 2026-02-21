@@ -1,19 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { allGuides, cityGuideSlugs } from '../../data/guides';
+import { allGuides, cityGuideSlugs, backpackerRoutes as routeData } from '../../data/guides';
 
-const backpackerRoutes = [
-  { slug: 'southeast-asia', title: 'Southeast Asia', flags: '🇹🇭🇻🇳🇰🇭🇱🇦', duration: '4–8 weeks', tagline: 'Temples, street food & tropical islands' },
-  { slug: 'europe', title: 'Europe', flags: '🇫🇷🇮🇹🇪🇸🇬🇷', duration: '6–10 weeks', tagline: 'History, culture & Mediterranean coasts' },
-  { slug: 'south-america', title: 'South America', flags: '🇵🇪🇧🇴🇧🇷🇦🇷', duration: '6–12 weeks', tagline: 'Andes, Amazon & ancient ruins' },
-  { slug: 'central-america', title: 'Central America', flags: '🇲🇽🇬🇹🇨🇷🇵🇦', duration: '4–8 weeks', tagline: 'Volcanoes, jungles & Caribbean vibes' },
-  { slug: 'india', title: 'India', flags: '🇮🇳', duration: '4–8 weeks', tagline: 'Chaos, colour & spiritual journeys' },
-  { slug: 'east-africa', title: 'East Africa', flags: '🇰🇪🇹🇿🇺🇬🇷🇼', duration: '4–8 weeks', tagline: 'Safari, mountains & spice islands' },
-  { slug: 'japan-south-korea', title: 'Japan & South Korea', flags: '🇯🇵🇰🇷', duration: '3–6 weeks', tagline: 'Neon cities, ancient temples & ramen' },
-  { slug: 'australia-new-zealand', title: 'Australia & New Zealand', flags: '🇦🇺🇳🇿', duration: '4–8 weeks', tagline: 'Outback, reef & adventure sports' },
-  { slug: 'indonesia-philippines', title: 'Indonesia & Philippines', flags: '🇮🇩🇵🇭', duration: '4–8 weeks', tagline: 'Volcanoes, dive sites & rice terraces' },
-  { slug: 'morocco-west-africa', title: 'Morocco & West Africa', flags: '🇲🇦🇸🇳🇬🇭', duration: '4–6 weeks', tagline: 'Medinas, Sahara & vibrant markets' },
-];
+const backpackerRoutes = routeData.map((r) => ({
+  slug: r.slug,
+  title: r.name,
+  flags: r.flags,
+  duration: r.duration,
+  tagline: r.tagline,
+}));
 
 const cityGuides = allGuides
   .filter((guide) => cityGuideSlugs.has(guide.slug))

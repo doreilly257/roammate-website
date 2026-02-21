@@ -2779,40 +2779,98 @@ export const allGuides: GuideEntry[] = [...sortedCityGuides, ...placeGuides];
 export const cityGuideSlugs = new Set(sortedCityGuides.map((g) => g.slug));
 
 // ─── Backpacker Routes ───────────────────────────────────────────────────────
-export type RouteEntry = { slug: string; name: string; flags: string };
+export type RouteEntry = {
+  slug: string;
+  name: string;
+  flags: string;
+  duration: string;
+  tagline: string;
+};
 
-const backpackerRoutes: RouteEntry[] = [
-  { slug: "southeast-asia", name: "Southeast Asia", flags: "🇹🇭🇻🇳🇰🇭🇱🇦" },
-  { slug: "europe", name: "Europe", flags: "🇫🇷🇮🇹🇪🇸🇬🇷" },
-  { slug: "south-america", name: "South America", flags: "🇵🇪🇧🇴🇧🇷🇦🇷" },
-  { slug: "central-america", name: "Central America", flags: "🇲🇽🇬🇹🇨🇷🇵🇦" },
-  { slug: "india", name: "India", flags: "🇮🇳" },
-  { slug: "east-africa", name: "East Africa", flags: "🇰🇪🇹🇿🇺🇬🇷🇼" },
-  { slug: "japan-south-korea", name: "Japan & South Korea", flags: "🇯🇵🇰🇷" },
+export const backpackerRoutes: RouteEntry[] = [
+  {
+    slug: "southeast-asia",
+    name: "Southeast Asia",
+    flags: "🇹🇭🇻🇳🇰🇭🇱🇦",
+    duration: "4–8 weeks",
+    tagline: "Temples, street food & tropical islands",
+  },
+  {
+    slug: "europe",
+    name: "Europe",
+    flags: "🇫🇷🇮🇹🇪🇸🇬🇷",
+    duration: "6–10 weeks",
+    tagline: "History, culture & Mediterranean coasts",
+  },
+  {
+    slug: "south-america",
+    name: "South America",
+    flags: "🇵🇪🇧🇴🇧🇷🇦🇷",
+    duration: "6–12 weeks",
+    tagline: "Andes, Amazon & ancient ruins",
+  },
+  {
+    slug: "central-america",
+    name: "Central America",
+    flags: "🇲🇽🇬🇹🇨🇷🇵🇦",
+    duration: "4–8 weeks",
+    tagline: "Volcanoes, jungles & Caribbean vibes",
+  },
+  {
+    slug: "india",
+    name: "India",
+    flags: "🇮🇳",
+    duration: "4–8 weeks",
+    tagline: "Chaos, colour & spiritual journeys",
+  },
+  {
+    slug: "east-africa",
+    name: "East Africa",
+    flags: "🇰🇪🇹🇿🇺🇬🇷🇼",
+    duration: "4–8 weeks",
+    tagline: "Safari, mountains & spice islands",
+  },
+  {
+    slug: "japan-south-korea",
+    name: "Japan & South Korea",
+    flags: "🇯🇵🇰🇷",
+    duration: "3–6 weeks",
+    tagline: "Neon cities, ancient temples & ramen",
+  },
   {
     slug: "australia-new-zealand",
     name: "Australia & New Zealand",
     flags: "🇦🇺🇳🇿",
+    duration: "4–8 weeks",
+    tagline: "Outback, reef & adventure sports",
   },
   {
     slug: "indonesia-philippines",
     name: "Indonesia & Philippines",
     flags: "🇮🇩🇵🇭",
+    duration: "4–8 weeks",
+    tagline: "Volcanoes, dive sites & rice terraces",
   },
   {
     slug: "morocco-west-africa",
     name: "Morocco & West Africa",
     flags: "🇲🇦🇸🇳🇬🇭",
+    duration: "4–6 weeks",
+    tagline: "Medinas, Sahara & vibrant markets",
   },
   {
     slug: "middle-east-turkey",
     name: "Middle East & Turkey",
     flags: "🇹🇷🇯🇴🇪🇬🇴🇲",
+    duration: "8–12 weeks",
+    tagline: "Ancient ruins, deserts & bazaars",
   },
   {
     slug: "southern-africa",
     name: "Southern Africa",
     flags: "🇿🇦🇳🇦🇧🇼🇿🇲",
+    duration: "8–10 weeks",
+    tagline: "Safari, dunes & Victoria Falls",
   },
 ];
 
