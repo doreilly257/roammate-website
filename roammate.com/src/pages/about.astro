@@ -1,0 +1,629 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About roammate — The Travel Companion App"
+  description="roammate was built to make solo travel more social, affordable, and safe — connecting like-minded travelers in real time so the best moments don't happen by accident."
+  ogImage="/images/rm-full.svg"
+>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About roammate",
+      "url": "https://roammate.com/about/",
+      "description": "roammate was built to make solo travel more social, affordable, and safe — connecting like-minded travelers in real time.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "roammate",
+        "url": "https://roammate.com/",
+        "logo": "https://roammate.com/images/rm-full.svg"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://roammate.com/about/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="about-hero-bg"></div>
+    <div class="about-hero-content">
+      <div class="about-hero-breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>About</span>
+      </div>
+      <div class="about-hero-logo-wrap">
+        <img src="/images/rm-notext-cropped.svg" alt="roammate logo mark" class="about-hero-logo" width="72" height="72" />
+      </div>
+      <h1 class="about-hero-title">
+        We built roammate because solo travel<br />
+        shouldn't mean traveling <em>alone</em>.
+      </h1>
+      <p class="about-hero-subtitle">
+        The best moments on the road happen when strangers become companions.<br class="break-desktop" />
+        We made that intentional.
+      </p>
+    </div>
+    <div class="about-hero-scroll">
+      <span>Our story</span>
+      <div class="about-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Stat Bar -->
+  <div class="about-stat-bar reveal">
+    <div class="about-stat-bar-inner">
+      <div class="about-stat">
+        <span class="about-stat-number">50+</span>
+        <span class="about-stat-label">Countries</span>
+      </div>
+      <div class="about-stat-divider"></div>
+      <div class="about-stat">
+        <span class="about-stat-number">1</span>
+        <span class="about-stat-label">Mission</span>
+      </div>
+      <div class="about-stat-divider"></div>
+      <div class="about-stat">
+        <span class="about-stat-number">Soon</span>
+        <span class="about-stat-label">Launching</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Story -->
+  <section class="about-section reveal">
+    <div class="about-section-inner">
+      <div class="section-label">Our Origin</div>
+      <h2 class="about-section-heading">The <em>story</em></h2>
+      <p class="about-section-body">
+        It started in a hostel common room in Hanoi. One of our founders had been on the road for three weeks —
+        visiting temples alone, eating at tables for one, watching sunsets without anyone to share them with.
+        Not because they didn't want company. Because finding it felt like luck.
+      </p>
+      <p class="about-section-body">
+        Then a stranger asked if they wanted to rent motorbikes and head north. That impromptu trip — two days
+        through rice terraces with someone they'd known for forty minutes — became the highlight of the whole journey.
+        Not a guided tour. Not a planned meetup. Just the right person, at the right moment, asking the right question.
+      </p>
+      <p class="about-section-body">
+        We kept asking: why does that still feel like an accident? Why isn't there a better way to find your people
+        when you're already out there? That question became roammate.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Mission -->
+  <section class="about-section about-section--alt reveal">
+    <div class="about-section-inner">
+      <div class="section-label">Why We Exist</div>
+      <h2 class="about-section-heading">The <em>mission</em></h2>
+      <p class="about-section-body">
+        Solo travel is one of the most transformative things a person can do. It forces you out of comfort zones,
+        builds confidence, and exposes you to perspectives that reshape how you see the world. But it shouldn't
+        require you to be alone the whole time.
+      </p>
+      <p class="about-section-body">
+        Our mission is to make travel more social, more affordable, and safer — by connecting like-minded travelers
+        in real time. Not curated group tours. Not a dating app with a passport filter. A genuine tool for people
+        who want to share a meal, split a taxi, find a hiking partner, or simply not eat alone on their birthday
+        in a foreign city.
+      </p>
+      <p class="about-section-body">
+        We believe the best travel stories involve other people. We're building the infrastructure for those stories
+        to happen more often.
+      </p>
+    </div>
+  </section>
+
+  <!-- What We're Building -->
+  <section class="about-section reveal">
+    <div class="about-section-inner">
+      <div class="section-label">The Product</div>
+      <h2 class="about-section-heading">What we're <em>building</em></h2>
+      <p class="about-section-body">
+        roammate is a travel companion app — designed from the ground up for the way younger travelers actually move.
+        Here's what's coming:
+      </p>
+      <ul class="about-feature-list">
+        <li class="about-feature reveal reveal-delay-1">
+          <div class="about-feature-icon">&#9632;</div>
+          <div>
+            <h3>Real-time traveler discovery</h3>
+            <p>See who else is in your city, hostel, or region right now. Filter by travel style, language, and interests — not just proximity.</p>
+          </div>
+        </li>
+        <li class="about-feature reveal reveal-delay-2">
+          <div class="about-feature-icon">&#9632;</div>
+          <div>
+            <h3>In-app messaging</h3>
+            <p>Reach out, coordinate, and make plans without handing over your phone number to someone you just met.</p>
+          </div>
+        </li>
+        <li class="about-feature reveal reveal-delay-3">
+          <div class="about-feature-icon">&#9632;</div>
+          <div>
+            <h3>Cost splitting</h3>
+            <p>Taxis, day trips, accommodation, food runs — split costs with travel companions simply and transparently, no awkward IOUs.</p>
+          </div>
+        </li>
+        <li class="about-feature reveal reveal-delay-4">
+          <div class="about-feature-icon">&#9632;</div>
+          <div>
+            <h3>Verified profiles</h3>
+            <p>Travel with confidence. Profile verification and traveler reviews mean you know who you're meeting before you meet them.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="about-section-body about-section-body--spaced">
+        The app is in development. We're building it carefully — because the people who will use it are trusting us
+        with their safety in unfamiliar places.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Team -->
+  <section class="about-section about-section--alt reveal">
+    <div class="about-section-inner">
+      <div class="section-label">The People</div>
+      <h2 class="about-section-heading">The <em>team</em></h2>
+      <p class="about-section-body">
+        We're a small team — a handful of people who between us have traveled through more than fifty countries,
+        slept in dorm beds and overnight buses, eaten street food that turned out to be extraordinary and some
+        that definitely wasn't, and accumulated a lot of opinions about what solo travel actually needs.
+      </p>
+      <p class="about-section-body">
+        We're building from experience, not assumption. Every feature we design, we've wished existed when we
+        were out there ourselves. We know what it's like to feel isolated in a crowd, and we know what it's like
+        to meet one person who changes the whole shape of a trip.
+      </p>
+      <p class="about-section-body">
+        We're remote-first, passport-obsessed, and deeply allergic to building something generic.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta reveal">
+    <div class="about-cta-inner">
+      <div class="about-cta-logo">
+        <img src="/images/rm-notext-cropped.svg" alt="" width="48" height="48" aria-hidden="true" />
+      </div>
+      <h2 class="about-cta-heading">Be first when we <em>launch</em></h2>
+      <p class="about-cta-body">
+        We're putting the finishing touches on roammate. Join the waitlist and we'll let you know
+        the moment it's ready — plus early access when we open up.
+      </p>
+      <a href="/#waitlist" class="about-cta-btn" data-ph-event="cta_click" data-ph-label="About CTA — Join Waitlist">
+        Join the Waitlist
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ========================
+     HERO
+     ======================== */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.01% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  @keyframes logoPulse {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.04); }
+  }
+
+  .about-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 40px 100px;
+    overflow: hidden;
+    background: #0f0e0d;
+  }
+
+  .about-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse at 20% 60%, rgba(196, 86, 42, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, rgba(232, 115, 74, 0.06) 0%, transparent 50%),
+      linear-gradient(160deg, #1a1714 0%, #0f0e0d 50%, #14120f 100%);
+  }
+
+  .about-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+
+  .about-hero-breadcrumb {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.9s var(--ease-out-expo) 0.2s forwards;
+  }
+
+  .about-hero-breadcrumb a {
+    color: rgba(245, 240, 232, 0.55);
+    transition: color 0.3s;
+  }
+
+  .about-hero-breadcrumb a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .about-hero-breadcrumb span {
+    margin: 0 10px;
+  }
+
+  .about-hero-logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.4s forwards;
+  }
+
+  .about-hero-logo {
+    width: 72px;
+    height: 72px;
+    animation: logoPulse 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(196, 86, 42, 0.4));
+  }
+
+  .about-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5.5vw, 66px);
+    font-weight: 900;
+    line-height: 1.12;
+    color: #f5f0e8;
+    margin-bottom: 28px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s var(--ease-out-expo) 0.6s forwards;
+  }
+
+  .about-hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .about-hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.6);
+    max-width: 580px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.9s forwards;
+  }
+
+  .break-desktop {
+    display: none;
+  }
+
+  .about-hero-scroll {
+    position: absolute;
+    bottom: 44px;
+    right: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 1.3s forwards;
+  }
+
+  .about-hero-scroll span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+    writing-mode: vertical-rl;
+  }
+
+  .about-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: rgba(245, 240, 232, 0.18);
+    animation: scrollLine 2.5s ease-in-out 1.5s infinite;
+  }
+
+  /* ========================
+     STAT BAR
+     ======================== */
+  .about-stat-bar {
+    background: #1a1714;
+    padding: 0 40px;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.06);
+  }
+
+  .about-stat-bar-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .about-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 44px 20px;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .about-stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 900;
+    color: #f5f0e8;
+    line-height: 1;
+  }
+
+  .about-stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+
+  .about-stat-divider {
+    width: 1px;
+    background: rgba(245, 240, 232, 0.1);
+    flex-shrink: 0;
+    margin: 24px 0;
+  }
+
+  /* ========================
+     CONTENT SECTIONS
+     ======================== */
+  .about-section {
+    padding: 100px 40px;
+    background: var(--color-bg);
+  }
+
+  .about-section--alt {
+    background: var(--color-bg-warm);
+  }
+
+  .about-section-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .about-section .section-label {
+    justify-content: flex-start;
+  }
+
+  .about-section-heading {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.5vw, 54px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 36px;
+  }
+
+  .about-section-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta);
+  }
+
+  .about-section-body {
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+  }
+
+  .about-section-body:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-section-body--spaced {
+    margin-top: 12px;
+  }
+
+  /* ========================
+     FEATURE LIST
+     ======================== */
+  .about-feature-list {
+    list-style: none;
+    margin: 40px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .about-feature {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .about-feature-icon {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    margin-top: 7px;
+    font-size: 8px;
+    color: var(--color-terracotta);
+    line-height: 1;
+  }
+
+  .about-feature h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .about-feature p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* ========================
+     CTA
+     ======================== */
+  .about-cta {
+    background: #0f0e0d;
+    padding: 120px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 100%, rgba(196, 86, 42, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 0%, rgba(232, 115, 74, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .about-cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-cta-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+    opacity: 0.7;
+  }
+
+  .about-cta-logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .about-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #f5f0e8;
+    margin-bottom: 20px;
+  }
+
+  .about-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .about-cta-body {
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.6);
+    margin-bottom: 44px;
+  }
+
+  .about-cta-btn {
+    display: inline-block;
+    padding: 18px 48px;
+    background: var(--color-terracotta);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+  }
+
+  .about-cta-btn:hover {
+    background: var(--color-terracotta-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(196, 86, 42, 0.35);
+  }
+
+  /* ========================
+     RESPONSIVE
+     ======================== */
+  @media (min-width: 960px) {
+    .break-desktop { display: inline; }
+  }
+
+  @media (max-width: 1024px) {
+    .about-hero { padding: 120px 24px 80px; }
+    .about-stat-bar { padding: 0 24px; }
+    .about-section { padding: 80px 24px; }
+    .about-cta { padding: 100px 24px; }
+    .about-hero-scroll { right: 24px; }
+  }
+
+  @media (max-width: 640px) {
+    .about-hero {
+      padding: 100px 20px 80px;
+      min-height: 90vh;
+      align-items: flex-end;
+    }
+    .about-hero-title { font-size: clamp(30px, 9vw, 48px); }
+    .about-hero-scroll { display: none; }
+    .about-stat-bar { padding: 0 20px; }
+    .about-stat { padding: 36px 12px; }
+    .about-stat-number { font-size: 38px; }
+    .about-section { padding: 64px 20px; }
+    .about-cta { padding: 80px 20px; }
+    .about-feature-list { gap: 28px; }
+  }
+</style>

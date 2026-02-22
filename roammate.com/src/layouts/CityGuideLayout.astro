@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { getRelated, getRoutes } from '../data/guides';
+import { blogByGuide } from '../data/blogByGuide';
 const base = import.meta.env.BASE_URL;
 
 interface Props {
@@ -45,6 +46,7 @@ const defaultDaysStr = String(defaultDays);
 const currentSlug = Astro.url.pathname.replace(/^\/guides\//, '').replace(/\/$/, '');
 const relatedGuides = getRelated(currentSlug, heroRegion, 6);
 const relatedRoutes = getRoutes(currentSlug);
+const relatedPosts = (blogByGuide[currentSlug] ?? []).slice(0, 3);
 
 const escapeCssUrl = (url: string) =>
   url.replace(/['"()\\]/g, '\\$&');
@@ -55,7 +57,7 @@ const escapeCssUrl = (url: string) =>
     <link rel="preload" as="image" type="image/webp" href={heroImage}>
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "TouristAttraction",
+      "@type": ["TouristDestination", "Place"],
       "name": heroCity,
       "description": description,
       "image": new URL(heroImage, Astro.site).href,
@@ -63,7 +65,16 @@ const escapeCssUrl = (url: string) =>
       "address": {
         "@type": "PostalAddress",
         "addressCountry": heroCountry
-      }
+      },
+      "touristType": "Backpacker, Young Traveler"
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "TravelGuide",
+      "name": title,
+      "url": new URL(Astro.url.pathname, Astro.site).href,
+      "description": description,
+      "inLanguage": "en"
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -294,6 +305,31 @@ const escapeCssUrl = (url: string) =>
             <span class="guide-route-flags">{r.flags}</span>
             <span class="guide-route-name">{r.name} Backpacker Route</span>
             <span class="guide-route-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- From the Blog -->
+  {relatedPosts.length > 0 && (
+    <section class="guide-blog-posts reveal">
+      <div class="guide-section-header">
+        <div class="section-label">From the Blog</div>
+        <h2 class="section-heading">Reading for <em>{heroCity}</em></h2>
+      </div>
+      <div class="guide-blog-grid">
+        {relatedPosts.map((post) => (
+          <a href={`/blog/${post.slug}/`} class="guide-blog-card">
+            <div class="guide-blog-card-img-wrap">
+              <img src={post.heroImage} alt={post.title} class="guide-blog-card-img" width="400" height="260" loading="lazy" />
+            </div>
+            <div class="guide-blog-card-body">
+              <span class="guide-blog-card-category">{post.category}</span>
+              <h3 class="guide-blog-card-title">{post.title}</h3>
+              <p class="guide-blog-card-desc">{post.description}</p>
+              <span class="guide-blog-card-link">Read article →</span>
+            </div>
           </a>
         ))}
       </div>
@@ -1151,6 +1187,98 @@ const escapeCssUrl = (url: string) =>
   }
 
   /* ========================
+     FROM THE BLOG
+     ======================== */
+  .guide-blog-posts {
+    padding: 120px 40px;
+  }
+
+  .guide-blog-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .guide-blog-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-warm);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+  }
+
+  .guide-blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  }
+
+  .guide-blog-card-img-wrap {
+    width: 100%;
+    aspect-ratio: 400 / 260;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .guide-blog-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s var(--ease-out-expo);
+  }
+
+  .guide-blog-card:hover .guide-blog-card-img {
+    transform: scale(1.04);
+  }
+
+  .guide-blog-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .guide-blog-card-category {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+
+  .guide-blog-card-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: 1.3;
+  }
+
+  .guide-blog-card-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .guide-blog-card-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-terracotta);
+    transition: color 0.2s;
+  }
+
+  .guide-blog-card:hover .guide-blog-card-link {
+    color: var(--color-terracotta-light);
+  }
+
+  /* ========================
      RESPONSIVE
      ======================== */
   @media (max-width: 1024px) {
@@ -1168,6 +1296,8 @@ const escapeCssUrl = (url: string) =>
     .guide-culture-grid { grid-template-columns: repeat(2, 1fr); }
     .guide-related { padding: 80px 24px; }
     .guide-related-grid { grid-template-columns: repeat(2, 1fr); }
+    .guide-blog-posts { padding: 80px 24px; }
+    .guide-blog-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 640px) {
@@ -1196,6 +1326,8 @@ const escapeCssUrl = (url: string) =>
     .guide-culture-grid { grid-template-columns: 1fr; }
     .guide-related { padding: 60px 20px; }
     .guide-related-grid { grid-template-columns: 1fr; }
+    .guide-blog-posts { padding: 60px 20px; }
+    .guide-blog-grid { grid-template-columns: 1fr; }
     .guide-cta { padding: 80px 20px; }
     .guide-cta-downloads { flex-direction: column; }
     .guide-section-header { margin-bottom: 40px; }

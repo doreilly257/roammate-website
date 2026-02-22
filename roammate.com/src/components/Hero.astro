@@ -4,7 +4,15 @@ const base = import.meta.env.BASE_URL;
 
 <section class="hero">
   <div class="hero-bg">
-    <img src={`${base}images/hero-travelers-on-bus.webp`} alt="Travelers exploring together" width="1440" height="810" fetchpriority="high">
+    <img
+      src={`${base}images/hero-travelers-on-bus.webp`}
+      srcset={`${base}images/hero-travelers-on-bus-720w.webp 720w, ${base}images/hero-travelers-on-bus.webp 1440w`}
+      sizes="100vw"
+      alt="Travelers exploring together"
+      width="1440"
+      height="810"
+      fetchpriority="high"
+    >
   </div>
   <div class="hero-content">
     <div class="hero-tag">Travel Companion App</div>

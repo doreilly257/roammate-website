@@ -73,6 +73,20 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     {ogImage && <link rel="preload" as="image" type="image/webp" href={ogImage}>}
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": heroTitle.replace(/<[^>]+>/g, ''),
+      "description": description,
+      "image": ogImage ? new URL(ogImage, Astro.site).href : undefined,
+      "url": new URL(Astro.url.pathname, Astro.site).href,
+      "touristType": "Backpacker, Young Traveler",
+      "itinerary": routeOverview.map(stop => ({
+        "@type": "City",
+        "name": stop.country,
+        "description": `${stop.weeks} — ${stop.stops.join(', ')}`
+      }))
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
