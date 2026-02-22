@@ -10,7 +10,7 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description = 'Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.jpg' } = Astro.props;
+const { title, description = 'Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.webp' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 const isHome = Astro.url.pathname === '/';

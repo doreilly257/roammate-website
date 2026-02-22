@@ -102,7 +102,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
         <span class="route-hero-flags">{heroFlags}</span>
         <span>{heroRegion}</span>
       </div>
-      <h1 class="route-hero-title" set:html={heroTitle} />
+      <h1 class="route-hero-title" set:html={heroTitle.replace(/<(?!br\s*\/?>)[^>]+>/gi, '')} />
       <p class="route-hero-subtitle">{heroSubtitle}</p>
       <div class="route-hero-meta">
         {heroPills.map((pill) => (

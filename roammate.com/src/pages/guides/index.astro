@@ -63,6 +63,14 @@ const destinationCount = cityGuideCount + placeGuideCount;
     <link rel="preload" as="image" type="image/webp" href="/images/guides/tokyo-hero.webp">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": `Travel Guides — ${cityGuideCount} City & ${placeGuideCount} Place Itineraries`,
+      "url": "https://roammate.com/guides/",
+      "description": `Free travel guides for ${cityGuideCount} cities, ${placeGuideCount} bucket-list places, and ${backpackerRoutes.length} backpacker routes.`,
+      "numberOfItems": destinationCount + backpackerRoutes.length,
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
