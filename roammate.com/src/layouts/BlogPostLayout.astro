@@ -95,6 +95,9 @@ const escapeHtml = (value: string) =>
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
 
+const escapeCssUrl = (url: string) =>
+  url.replace(/['"()\\]/g, '\\$&');
+
 const sanitizeHref = (value: string) => {
   const href = value.trim();
   if (!href) return '#';
@@ -178,12 +181,12 @@ const renderInlineLinks = (text: string) => {
 
   <article>
     <section class="blog-post-hero" aria-label={heroImageAlt}>
-      <div class="blog-post-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${heroImage}');`} />
+      <div class="blog-post-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${escapeCssUrl(heroImage)}');`} />
       <div class="blog-post-hero-content">
         <div class="blog-post-breadcrumb">
           <a href="/">Home</a>
           <span>/</span>
-          <a href="/blog">Blog</a>
+          <a href="/blog/">Blog</a>
         </div>
         {category && <p class="blog-post-category">{category}</p>}
         <h1>{title}</h1>
@@ -217,7 +220,7 @@ const renderInlineLinks = (text: string) => {
               </div>
               {section.image && (
                 <figure class="blog-post-section-media">
-                  <img src={section.image} alt={section.imageAlt || section.heading} loading="lazy" width="1200" height="800" />
+                  <img src={section.image} alt={section.imageAlt || `Illustration for ${section.heading}`} loading="lazy" width="1200" height="800" />
                 </figure>
               )}
             </section>

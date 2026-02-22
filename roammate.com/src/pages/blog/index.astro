@@ -128,7 +128,8 @@ const formatDate = (value?: string) => {
   const blogHeroBackground = document.getElementById('blogHeroBackground');
   if (blogHeroBackground && blogHeroImages.length > 0) {
     const heroImage = blogHeroImages[Math.floor(Math.random() * blogHeroImages.length)];
-    blogHeroBackground.style.backgroundImage = `linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${heroImage}')`;
+    const safeUrl = heroImage.replace(/['"()\\]/g, '');
+    blogHeroBackground.style.backgroundImage = `linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${safeUrl}')`;
   }
 </script>
 

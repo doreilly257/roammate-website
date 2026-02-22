@@ -1,0 +1,464 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { allGuides, cityGuideSlugs } from '../../../data/guides';
+
+const cityGuides = allGuides
+  .filter((guide) => cityGuideSlugs.has(guide.slug))
+  .map((guide) => ({
+    slug: guide.slug,
+    city: guide.name,
+    country: guide.country,
+    flag: guide.flag,
+    region: guide.region,
+  }));
+
+const cityGuideSortOptions: Intl.CollatorOptions = { sensitivity: 'base' };
+const sortedCityGuides = [...cityGuides].sort((a, b) => {
+  const countrySort = a.country.localeCompare(b.country, undefined, cityGuideSortOptions);
+  if (countrySort !== 0) return countrySort;
+  return a.city.localeCompare(b.city, undefined, cityGuideSortOptions);
+});
+
+const cityGuideCount = cityGuides.length;
+---
+
+<BaseLayout
+  title={`City Guides — ${cityGuideCount} Day-by-Day Itineraries | roammate`}
+  description={`Free city guides for ${cityGuideCount} destinations worldwide. 1, 3, and 7-day itineraries with budget tips, cultural insights, and practical information for young travelers.`}
+  ogImage="/images/guides/paris-hero.webp"
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" type="image/webp" href="/images/guides/paris-hero.webp">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": `City Guides — ${cityGuideCount} Day-by-Day Itineraries`,
+      "url": "https://roammate.com/guides/cities/",
+      "description": `Free city guides for ${cityGuideCount} destinations worldwide. 1, 3, and 7-day itineraries with budget tips, cultural insights, and practical information.`,
+      "numberOfItems": cityGuideCount,
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://roammate.com/guides/" },
+        { "@type": "ListItem", "position": 3, "name": "Cities", "item": "https://roammate.com/guides/cities/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="guides-hero">
+    <div class="guides-hero-bg" id="heroBackground" style="background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('/images/guides/paris-hero.webp');"></div>
+    <div class="guides-hero-content">
+      <div class="guides-hero-breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/guides/">Guides</a>
+        <span>/</span>
+        <span>Cities</span>
+      </div>
+      <div class="guides-hero-tag">
+        <span>🏙️</span>
+        <span>{cityGuideCount} Cities</span>
+      </div>
+      <h1 class="guides-hero-title">City <em>Guides</em></h1>
+      <p class="guides-hero-subtitle">1, 3, and 7-day itineraries with morning-to-evening plans, budget tips, cultural insights, and practical information.</p>
+      <div class="guides-hero-meta">
+        <a href="/guides/" class="guides-meta-pill">All Guides</a>
+        <a href="#cities" class="guides-meta-pill">Browse Cities</a>
+      </div>
+    </div>
+    <div class="guides-hero-scroll">
+      <span>Explore</span>
+      <div class="guides-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- City Guides -->
+  <section class="guides-section guides-section--alt" id="cities">
+    <div class="guides-section-inner">
+      <div class="guide-section-header reveal">
+        <div class="section-label">City Guides</div>
+        <h2 class="section-heading">{cityGuideCount} <em>Cities</em></h2>
+        <p class="guides-section-intro">1, 3, and 7-day itineraries with morning-to-evening plans, budget tips, cultural insights, and practical information.</p>
+      </div>
+      <div class="guides-sort-controls reveal" role="group" aria-label="Sort city guides alphabetically">
+        <span class="guides-sort-label">Alphabetical</span>
+        <button class="guides-sort-option" type="button" data-sort-group="cities" data-sort-mode="city">City</button>
+        <button class="guides-sort-option is-active" type="button" data-sort-group="cities" data-sort-mode="country-city">Country + City</button>
+      </div>
+      <div class="guides-cities-grid" id="guidesCitiesGrid">
+        {sortedCityGuides.map((guide, i) => (
+          <a href={`/guides/${guide.slug}/`} class={`guides-city-card reveal reveal-delay-${(i % 4) + 1}`} data-city={guide.city} data-country={guide.country}>
+            <span class="guides-city-flag">{guide.flag}</span>
+            <div>
+              <h3 class="guides-city-name">{guide.city}</h3>
+              <span class="guides-city-region">{guide.country} · {guide.region}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const heroImages = [
+    'paris','london','barcelona','rome','amsterdam','berlin','madrid','lisbon','prague','vienna',
+    'dublin','milan','florence','venice','bologna','verona','munich','frankfurt','copenhagen','stockholm',
+    'oslo','helsinki','athens','zurich','budapest','edinburgh','brussels','nice','seville','valencia',
+    'palma-de-mallorca','warsaw','krakow','porto','rhodes','heraklion','thessaloniki','tallinn','vilnius','tbilisi',
+    'istanbul','antalya','tokyo','seoul','osaka','kyoto','taipei','hong-kong','shanghai','beijing',
+    'fukuoka','sapporo','busan','macau','guangzhou','shenzhen','zhuhai','singapore','bangkok','kuala-lumpur',
+    'pattaya-chonburi','phuket','ho-chi-minh-city','hanoi','denpasar','johor-bahru','delhi','dubai','abu-dhabi','sharjah',
+    'doha','riyadh','medina','mecca','tel-aviv','jerusalem','cairo','marrakech','sydney','melbourne',
+    'new-york-city','los-angeles','las-vegas','orlando','miami','san-francisco','washington-dc','honolulu','toronto','vancouver',
+    'montreal','mexico-city','cancun','sao-paulo','rio-de-janeiro','buenos-aires','lima','santiago','punta-cana','marne-la-vallee',
+  ];
+  const slug = heroImages[Math.floor(Math.random() * heroImages.length)];
+  const bg = document.getElementById('heroBackground');
+  if (bg) {
+    const safeSlug = slug.replace(/[^a-z0-9-]/g, '');
+    bg.style.backgroundImage = `linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('/images/guides/${safeSlug}-hero.webp')`;
+  }
+
+  const collator = new Intl.Collator(undefined, { sensitivity: 'base' });
+
+  const sortGridItems = (gridId: string, primaryField: string, fallbackField: string) => {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+
+    const cards = Array.from(grid.children) as HTMLElement[];
+    cards.sort((a, b) => {
+      const primaryA = a.getAttribute(`data-${primaryField}`) || '';
+      const primaryB = b.getAttribute(`data-${primaryField}`) || '';
+      const primarySort = collator.compare(primaryA, primaryB);
+      if (primarySort !== 0) return primarySort;
+
+      const fallbackA = a.getAttribute(`data-${fallbackField}`) || '';
+      const fallbackB = b.getAttribute(`data-${fallbackField}`) || '';
+      return collator.compare(fallbackA, fallbackB);
+    });
+
+    cards.forEach((card) => grid.appendChild(card));
+  };
+
+  document.querySelectorAll('.guides-sort-option').forEach((button) => {
+    button.addEventListener('click', () => {
+      const group = button.getAttribute('data-sort-group');
+      const mode = button.getAttribute('data-sort-mode');
+      if (!group || !mode) return;
+
+      document.querySelectorAll(`.guides-sort-option[data-sort-group="${group}"]`).forEach((option) => {
+        option.classList.toggle('is-active', option === button);
+      });
+
+      if (group === 'cities') {
+        sortGridItems('guidesCitiesGrid', mode === 'city' ? 'city' : 'country', mode === 'city' ? 'country' : 'city');
+      }
+    });
+  });
+</script>
+
+<style>
+  /* ========================
+     HERO (matches CityGuideLayout)
+     ======================== */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.01% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  .guides-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 40px 80px;
+    overflow: hidden;
+  }
+
+  .guides-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, #1a1714 0%, #2a2520 40%, #1a1714 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.6s ease;
+  }
+
+  .guides-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .guides-hero-breadcrumb {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.3s forwards;
+  }
+
+  .guides-hero-breadcrumb a {
+    color: rgba(245, 240, 232, 0.6);
+    transition: color 0.3s;
+  }
+
+  .guides-hero-breadcrumb a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .guides-hero-breadcrumb span {
+    margin: 0 8px;
+  }
+
+  .guides-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-terracotta-light);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.5s forwards;
+  }
+
+  .guides-hero-tag span:first-child {
+    font-size: 24px;
+  }
+
+  .guides-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(64px, 12vw, 140px);
+    font-weight: 900;
+    line-height: 0.9;
+    color: #f5f0e8;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s var(--ease-out-expo) 0.7s forwards;
+  }
+
+  .guides-hero-title em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .guides-hero-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.7);
+    max-width: 500px;
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.9s forwards;
+  }
+
+  .guides-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 1.1s forwards;
+  }
+
+  .guides-meta-pill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.8);
+    padding: 8px 16px;
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    border-radius: 100px;
+    transition: all 0.3s var(--ease-out-expo);
+    text-decoration: none;
+  }
+
+  .guides-meta-pill:hover {
+    color: var(--color-terracotta-light);
+    border-color: var(--color-terracotta-light);
+  }
+
+  .guides-hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
+  }
+
+  .guides-hero-scroll span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    writing-mode: vertical-rl;
+  }
+
+  .guides-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: rgba(245, 240, 232, 0.2);
+    animation: scrollLine 2.5s ease-in-out infinite;
+  }
+
+  /* ========================
+     SECTIONS
+     ======================== */
+  .guides-section {
+    padding: 100px 40px;
+  }
+
+  .guides-section--alt {
+    background: var(--color-bg-warm);
+  }
+
+  .guides-section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .guides-section-intro {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .guide-section-header {
+    margin-bottom: 56px;
+  }
+
+  .guides-sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: -28px 0 28px;
+  }
+
+  .guides-sort-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .guides-sort-option {
+    border: 1px solid rgba(120, 90, 70, 0.22);
+    background: transparent;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out-expo);
+  }
+
+  .guides-sort-option:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-cream);
+  }
+
+  .guides-sort-option.is-active {
+    border-color: var(--color-terracotta);
+    background: rgba(177, 92, 60, 0.14);
+    color: var(--color-cream);
+  }
+
+  /* ========================
+     CITY GUIDES GRID
+     ======================== */
+  .guides-cities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .guides-city-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    background: var(--color-bg);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+    text-decoration: none;
+  }
+
+  .guides-city-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+
+  .guides-city-flag {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  .guides-city-name {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: 1.3;
+  }
+
+  .guides-city-region {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 300;
+  }
+
+  /* ========================
+     RESPONSIVE
+     ======================== */
+  @media (max-width: 1024px) {
+    .guides-hero { padding: 0 24px 60px; }
+    .guides-section { padding: 80px 24px; }
+    .guides-cities-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .guides-hero { padding: 0 20px 40px; min-height: 90vh; }
+    .guides-hero-title { font-size: clamp(56px, 18vw, 100px); }
+    .guides-hero-scroll { display: none; }
+    .guides-section { padding: 60px 20px; }
+    .guides-cities-grid { grid-template-columns: repeat(2, 1fr); }
+    .guide-section-header { margin-bottom: 40px; }
+    .guides-sort-controls {
+      flex-wrap: wrap;
+      margin: -20px 0 24px;
+    }
+  }
+</style>

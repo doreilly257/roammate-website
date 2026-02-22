@@ -45,6 +45,9 @@ const defaultDaysStr = String(defaultDays);
 const currentSlug = Astro.url.pathname.replace(/^\/guides\//, '').replace(/\/$/, '');
 const relatedGuides = getRelated(currentSlug, heroRegion, 6);
 const relatedRoutes = getRoutes(currentSlug);
+
+const escapeCssUrl = (url: string) =>
+  url.replace(/['"()\\]/g, '\\$&');
 ---
 
 <BaseLayout title={title} description={description} ogImage={heroImage}>
@@ -75,7 +78,7 @@ const relatedRoutes = getRoutes(currentSlug);
 
   <!-- Hero -->
   <section class="guide-hero">
-    <div class="guide-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${heroImage}');`}></div>
+    <div class="guide-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${escapeCssUrl(heroImage)}');`}></div>
     <div class="guide-hero-content">
       <div class="guide-hero-breadcrumb">
         <a href="/guides">Guides</a>

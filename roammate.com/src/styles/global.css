@@ -1,4 +1,26 @@
 /* ============================================
+   SKIP TO CONTENT (accessibility)
+   ============================================ */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 10000;
+  padding: 12px 24px;
+  background: var(--color-terracotta);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ============================================
    CSS CUSTOM PROPERTIES
    ============================================ */
 :root {
@@ -194,4 +216,65 @@ body::after {
   width: 80px;
   height: 80px;
   animation: loaderPulse 1.2s ease-in-out infinite;
+}
+
+/* Cookie consent banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(26, 23, 20, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 13px;
+  color: rgba(245, 241, 235, 0.85);
+}
+
+.cookie-banner p { margin: 0; }
+.cookie-banner a { color: var(--color-terracotta-light); }
+
+.cookie-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.cookie-btn:hover { opacity: 0.85; }
+
+.cookie-accept {
+  background: var(--color-terracotta);
+  color: #fff;
+}
+
+.cookie-decline {
+  background: transparent;
+  border: 1px solid rgba(245, 241, 235, 0.25);
+  color: rgba(245, 241, 235, 0.7);
+}
+
+@media (max-width: 640px) {
+  .cookie-banner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 20px;
+  }
 }

@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { backpackerRoutes as routeData } from '../../../data/guides';
+
+const backpackerRoutes = routeData.map((r) => ({
+  slug: r.slug,
+  title: r.name,
+  flags: r.flags,
+  duration: r.duration,
+  tagline: r.tagline,
+}));
+---
+
+<BaseLayout
+  title={`${backpackerRoutes.length} Backpacker Routes — Multi-Country Travel Itineraries | roammate`}
+  description={`${backpackerRoutes.length} backpacker routes through Southeast Asia, Europe, South America, and beyond. Week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.`}
+  ogImage="/images/guides/southeast-asia-hero-1.webp"
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" type="image/webp" href="/images/guides/southeast-asia-hero-1.webp">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": `${backpackerRoutes.length} Backpacker Routes — Multi-Country Travel Itineraries`,
+      "url": "https://roammate.com/guides/routes/",
+      "description": `${backpackerRoutes.length} backpacker routes with week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.`,
+      "numberOfItems": backpackerRoutes.length,
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://roammate.com/guides/" },
+        { "@type": "ListItem", "position": 3, "name": "Routes", "item": "https://roammate.com/guides/routes/" }
+      ]
+    })} />
+  </Fragment>
+
+  <!-- Hero -->
+  <section class="guides-hero">
+    <div class="guides-hero-bg" style="background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('/images/guides/southeast-asia-hero-1.webp');"></div>
+    <div class="guides-hero-content">
+      <div class="guides-hero-breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/guides/">Guides</a>
+        <span>/</span>
+        <span>Routes</span>
+      </div>
+      <div class="guides-hero-tag">
+        <span>🌍</span>
+        <span>{backpackerRoutes.length} Routes</span>
+      </div>
+      <h1 class="guides-hero-title">Backpacker <em>Routes</em></h1>
+      <p class="guides-hero-subtitle">Long-stay routes through entire regions — week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.</p>
+      <div class="guides-hero-meta">
+        <a href="/guides/" class="guides-meta-pill">All Guides</a>
+        <a href="#routes" class="guides-meta-pill">Browse Routes</a>
+      </div>
+    </div>
+    <div class="guides-hero-scroll">
+      <span>Explore</span>
+      <div class="guides-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Backpacker Routes -->
+  <section class="guides-section" id="routes">
+    <div class="guides-section-inner">
+      <div class="guide-section-header reveal">
+        <div class="section-label">Multi-Country</div>
+        <h2 class="section-heading">Backpacker <em>Routes</em></h2>
+        <p class="guides-section-intro">Long-stay routes through entire regions — week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.</p>
+      </div>
+      <div class="guides-routes-grid">
+        {backpackerRoutes.map((route, i) => (
+          <a href={`/guides/${route.slug}/`} class={`guides-route-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <div class="guides-route-flags">{route.flags}</div>
+            <h3 class="guides-route-title">{route.title}</h3>
+            <p class="guides-route-tagline">{route.tagline}</p>
+            <span class="guides-route-duration">{route.duration}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ========================
+     HERO (matches guides index)
+     ======================== */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    50.01% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  .guides-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 40px 80px;
+    overflow: hidden;
+  }
+
+  .guides-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, #1a1714 0%, #2a2520 40%, #1a1714 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .guides-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .guides-hero-breadcrumb {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.3s forwards;
+  }
+
+  .guides-hero-breadcrumb a {
+    color: rgba(245, 240, 232, 0.6);
+    transition: color 0.3s;
+  }
+
+  .guides-hero-breadcrumb a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .guides-hero-breadcrumb span {
+    margin: 0 8px;
+  }
+
+  .guides-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-terracotta-light);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.5s forwards;
+  }
+
+  .guides-hero-tag span:first-child {
+    font-size: 24px;
+  }
+
+  .guides-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(64px, 12vw, 140px);
+    font-weight: 900;
+    line-height: 0.9;
+    color: #f5f0e8;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s var(--ease-out-expo) 0.7s forwards;
+  }
+
+  .guides-hero-title em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .guides-hero-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.7);
+    max-width: 500px;
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 0.9s forwards;
+  }
+
+  .guides-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s var(--ease-out-expo) 1.1s forwards;
+  }
+
+  .guides-meta-pill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.8);
+    padding: 8px 16px;
+    border: 1px solid rgba(245, 240, 232, 0.15);
+    border-radius: 100px;
+    transition: all 0.3s var(--ease-out-expo);
+    text-decoration: none;
+  }
+
+  .guides-meta-pill:hover {
+    color: var(--color-terracotta-light);
+    border-color: var(--color-terracotta-light);
+  }
+
+  .guides-hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
+  }
+
+  .guides-hero-scroll span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.4);
+    writing-mode: vertical-rl;
+  }
+
+  .guides-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: rgba(245, 240, 232, 0.2);
+    animation: scrollLine 2.5s ease-in-out infinite;
+  }
+
+  /* ========================
+     SECTIONS
+     ======================== */
+  .guides-section {
+    padding: 100px 40px;
+  }
+
+  .guides-section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .guides-section-intro {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .guide-section-header {
+    margin-bottom: 56px;
+  }
+
+  /* ========================
+     BACKPACKER ROUTES GRID
+     ======================== */
+  .guides-routes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .guides-route-card {
+    display: block;
+    padding: 32px;
+    background: var(--color-bg-warm);
+    border-radius: 8px;
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+    text-decoration: none;
+  }
+
+  .guides-route-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+  }
+
+  .guides-route-flags {
+    font-size: 24px;
+    margin-bottom: 16px;
+    letter-spacing: 4px;
+  }
+
+  .guides-route-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 8px;
+  }
+
+  .guides-route-tagline {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .guides-route-duration {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+
+  /* ========================
+     RESPONSIVE
+     ======================== */
+  @media (max-width: 1024px) {
+    .guides-hero { padding: 0 24px 60px; }
+    .guides-section { padding: 80px 24px; }
+    .guides-routes-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .guides-hero { padding: 0 20px 40px; min-height: 90vh; }
+    .guides-hero-title { font-size: clamp(56px, 18vw, 100px); }
+    .guides-hero-scroll { display: none; }
+    .guides-section { padding: 60px 20px; }
+    .guides-routes-grid { grid-template-columns: 1fr; }
+    .guide-section-header { margin-bottom: 40px; }
+  }
+</style>

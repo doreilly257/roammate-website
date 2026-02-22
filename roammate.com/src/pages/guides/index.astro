@@ -2,61 +2,27 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allGuides, cityGuideSlugs, backpackerRoutes as routeData } from '../../data/guides';
 
-const backpackerRoutes = routeData.map((r) => ({
-  slug: r.slug,
-  title: r.name,
-  flags: r.flags,
-  duration: r.duration,
-  tagline: r.tagline,
-}));
-
-const cityGuides = allGuides
-  .filter((guide) => cityGuideSlugs.has(guide.slug))
-  .map((guide) => ({
-    slug: guide.slug,
-    city: guide.name,
-    country: guide.country,
-    flag: guide.flag,
-    region: guide.region,
-  }));
-
-const cityGuideSortOptions: Intl.CollatorOptions = { sensitivity: 'base' };
-const sortedCityGuides = [...cityGuides].sort((a, b) => {
-  const countrySort = a.country.localeCompare(b.country, undefined, cityGuideSortOptions);
-  if (countrySort !== 0) return countrySort;
-  return a.city.localeCompare(b.city, undefined, cityGuideSortOptions);
-});
-
-const placeGuides = allGuides
-  .filter((guide) => !cityGuideSlugs.has(guide.slug))
-  .map((guide) => ({
-    slug: guide.slug,
-    place: guide.name,
-    country: guide.country,
-    flag: guide.flag,
-    region: guide.region,
-    type: 'Guide',
-  }));
-
-const placeGuideSortOptions: Intl.CollatorOptions = { sensitivity: 'base' };
-const sortedPlaceGuides = [...placeGuides].sort((a, b) => {
-  const countrySort = a.country.localeCompare(b.country, undefined, placeGuideSortOptions);
-  if (countrySort !== 0) return countrySort;
-  return a.place.localeCompare(b.place, undefined, placeGuideSortOptions);
-});
-
-const typeIcons: Record<string, string> = {
-  Guide: '📍',
-};
-
-const cityGuideCount = cityGuides.length;
-const placeGuideCount = placeGuides.length;
+const cityGuideCount = allGuides.filter((g) => cityGuideSlugs.has(g.slug)).length;
+const placeGuideCount = allGuides.filter((g) => !cityGuideSlugs.has(g.slug)).length;
+const routeCount = routeData.length;
 const destinationCount = cityGuideCount + placeGuideCount;
+
+const topCities = allGuides
+  .filter((g) => cityGuideSlugs.has(g.slug))
+  .slice(0, 8)
+  .map((g) => ({ slug: g.slug, name: g.name, flag: g.flag, country: g.country }));
+
+const topPlaces = allGuides
+  .filter((g) => !cityGuideSlugs.has(g.slug))
+  .slice(0, 8)
+  .map((g) => ({ slug: g.slug, name: g.name, flag: g.flag, country: g.country }));
+
+const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name, flags: r.flags, tagline: r.tagline, duration: r.duration }));
 ---
 
 <BaseLayout
   title={`Travel Guides — ${cityGuideCount} City & ${placeGuideCount} Place Itineraries | roammate`}
-  description={`Free travel guides for ${cityGuideCount} cities, ${placeGuideCount} bucket-list places, and ${backpackerRoutes.length} backpacker routes. Budget tips, day-by-day itineraries, and local recommendations for young travelers.`}
+  description={`Free travel guides for ${cityGuideCount} cities, ${placeGuideCount} bucket-list places, and ${routeCount} backpacker routes. Budget tips, day-by-day itineraries, and local recommendations for young travelers.`}
   ogImage="/images/guides/tokyo-hero.webp"
 >
   <Fragment slot="head">
@@ -66,8 +32,8 @@ const destinationCount = cityGuideCount + placeGuideCount;
       "@type": "CollectionPage",
       "name": `Travel Guides — ${cityGuideCount} City & ${placeGuideCount} Place Itineraries`,
       "url": "https://roammate.com/guides/",
-      "description": `Free travel guides for ${cityGuideCount} cities, ${placeGuideCount} bucket-list places, and ${backpackerRoutes.length} backpacker routes.`,
-      "numberOfItems": destinationCount + backpackerRoutes.length,
+      "description": `Free travel guides for ${cityGuideCount} cities, ${placeGuideCount} bucket-list places, and ${routeCount} backpacker routes.`,
+      "numberOfItems": destinationCount + routeCount,
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -95,9 +61,9 @@ const destinationCount = cityGuideCount + placeGuideCount;
       <h1 class="guides-hero-title">Travel <em>Guides</em></h1>
       <p class="guides-hero-subtitle">Day-by-day itineraries with budget breakdowns and local tips — curated for younger travelers.</p>
       <div class="guides-hero-meta">
-        <a href="#routes" class="guides-meta-pill">Backpacker Routes</a>
-        <a href="#cities" class="guides-meta-pill">City Guides</a>
-        <a href="#places" class="guides-meta-pill">Places & Landmarks</a>
+        <a href="/guides/routes/" class="guides-meta-pill">Backpacker Routes</a>
+        <a href="/guides/cities/" class="guides-meta-pill">City Guides</a>
+        <a href="/guides/places/" class="guides-meta-pill">Places & Landmarks</a>
       </div>
     </div>
     <div class="guides-hero-scroll">
@@ -106,163 +72,94 @@ const destinationCount = cityGuideCount + placeGuideCount;
     </div>
   </section>
 
-  <!-- Backpacker Routes -->
-  <section class="guides-section" id="routes">
-    <div class="guides-section-inner">
-      <div class="guide-section-header reveal">
-        <div class="section-label">Multi-Country</div>
-        <h2 class="section-heading">Backpacker <em>Routes</em></h2>
-        <p class="guides-section-intro">Long-stay routes through entire regions — week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.</p>
-      </div>
-      <div class="guides-routes-grid">
-        {backpackerRoutes.map((route, i) => (
-          <a href={`/guides/${route.slug}/`} class={`guides-route-card reveal reveal-delay-${(i % 4) + 1}`}>
-            <div class="guides-route-flags">{route.flags}</div>
-            <h3 class="guides-route-title">{route.title}</h3>
-            <p class="guides-route-tagline">{route.tagline}</p>
-            <span class="guides-route-duration">{route.duration}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- Category Cards -->
+  <section class="guides-categories">
+    <div class="guides-categories-inner">
 
-  <!-- City Guides -->
-  <section class="guides-section guides-section--alt" id="cities">
-    <div class="guides-section-inner">
-      <div class="guide-section-header reveal">
-        <div class="section-label">City Guides</div>
-        <h2 class="section-heading">{cityGuideCount} <em>Cities</em></h2>
-        <p class="guides-section-intro">1, 3, and 7-day itineraries with morning-to-evening plans, budget tips, cultural insights, and practical information.</p>
+      <!-- Backpacker Routes -->
+      <div class="category-block reveal">
+        <div class="category-header">
+          <div class="section-label">Multi-Country</div>
+          <h2 class="section-heading">Backpacker <em>Routes</em></h2>
+          <p class="category-intro">Long-stay routes through entire regions — week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.</p>
+        </div>
+        <div class="routes-preview">
+          {topRoutes.map((route, i) => (
+            <a href={`/guides/${route.slug}/`} class={`route-preview-card reveal reveal-delay-${(i % 4) + 1}`}>
+              <div class="route-preview-flags">{route.flags}</div>
+              <h3>{route.name}</h3>
+              <p>{route.tagline}</p>
+              <span class="route-preview-duration">{route.duration}</span>
+            </a>
+          ))}
+        </div>
+        <a href="/guides/routes/" class="category-view-all">View all {routeCount} routes →</a>
       </div>
-      <div class="guides-sort-controls reveal" role="group" aria-label="Sort city guides alphabetically">
-        <span class="guides-sort-label">Alphabetical</span>
-        <button class="guides-sort-option" type="button" data-sort-group="cities" data-sort-mode="city">City</button>
-        <button class="guides-sort-option is-active" type="button" data-sort-group="cities" data-sort-mode="country-city">Country + City</button>
-      </div>
-      <div class="guides-cities-grid" id="guidesCitiesGrid">
-        {sortedCityGuides.map((guide, i) => (
-          <a href={`/guides/${guide.slug}/`} class={`guides-city-card reveal reveal-delay-${(i % 4) + 1}`} data-city={guide.city} data-country={guide.country}>
-            <span class="guides-city-flag">{guide.flag}</span>
-            <div>
-              <h3 class="guides-city-name">{guide.city}</h3>
-              <span class="guides-city-region">{guide.country} · {guide.region}</span>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <!-- Places & Landmarks -->
-  <section class="guides-section" id="places">
-    <div class="guides-section-inner">
-      <div class="guide-section-header reveal">
-        <div class="section-label">Bucket List</div>
-        <h2 class="section-heading">{placeGuideCount} <em>Places</em></h2>
-        <p class="guides-section-intro">National parks, UNESCO sites, bucket-list landmarks, epic treks, and island paradises — with 1 and 3-day itineraries.</p>
+      <!-- City Guides -->
+      <div class="category-block category-block--alt reveal">
+        <div class="category-header">
+          <div class="section-label">City Guides</div>
+          <h2 class="section-heading">{cityGuideCount} <em>Cities</em></h2>
+          <p class="category-intro">1, 3, and 7-day itineraries with morning-to-evening plans, budget tips, cultural insights, and practical information.</p>
+        </div>
+        <div class="cities-preview">
+          {topCities.map((city, i) => (
+            <a href={`/guides/${city.slug}/`} class={`city-preview-card reveal reveal-delay-${(i % 4) + 1}`}>
+              <span class="city-preview-flag">{city.flag}</span>
+              <div>
+                <h3>{city.name}</h3>
+                <span>{city.country}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        <a href="/guides/cities/" class="category-view-all">View all {cityGuideCount} city guides →</a>
       </div>
-      <div class="guides-sort-controls reveal" role="group" aria-label="Sort place guides alphabetically">
-        <span class="guides-sort-label">Alphabetical</span>
-        <button class="guides-sort-option" type="button" data-sort-group="places" data-sort-mode="place">Place</button>
-        <button class="guides-sort-option is-active" type="button" data-sort-group="places" data-sort-mode="country-place">Country + Place</button>
+
+      <!-- Places & Landmarks -->
+      <div class="category-block reveal">
+        <div class="category-header">
+          <div class="section-label">Bucket List</div>
+          <h2 class="section-heading">{placeGuideCount} <em>Places</em></h2>
+          <p class="category-intro">National parks, UNESCO sites, bucket-list landmarks, epic treks, and island paradises — with 1 and 3-day itineraries.</p>
+        </div>
+        <div class="places-preview">
+          {topPlaces.map((place, i) => (
+            <a href={`/guides/${place.slug}/`} class={`place-preview-card reveal reveal-delay-${(i % 4) + 1}`}>
+              <span class="place-preview-flag">{place.flag}</span>
+              <div>
+                <h3>{place.name}</h3>
+                <span>{place.country}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        <a href="/guides/places/" class="category-view-all">View all {placeGuideCount} place guides →</a>
       </div>
-      <div class="guides-places-grid" id="guidesPlacesGrid">
-        {sortedPlaceGuides.map((guide, i) => (
-          <a href={`/guides/${guide.slug}/`} class={`guides-place-card reveal reveal-delay-${(i % 4) + 1}`} data-place={guide.place} data-country={guide.country}>
-            <span class="guides-place-flag">{guide.flag}</span>
-            <div class="guides-place-info">
-              <h3 class="guides-place-name">{guide.place}</h3>
-              <span class="guides-place-region">{guide.country}</span>
-            </div>
-            <span class="guides-place-type">{typeIcons[guide.type] || '📍'} {guide.type}</span>
-          </a>
-        ))}
-      </div>
+
     </div>
   </section>
 
 </BaseLayout>
 
 <script>
-  const heroImages = [
-    // Cities
-    'paris','london','barcelona','rome','amsterdam','berlin','madrid','lisbon','prague','vienna',
-    'dublin','milan','florence','venice','bologna','verona','munich','frankfurt','copenhagen','stockholm',
-    'oslo','helsinki','athens','zurich','budapest','edinburgh','brussels','nice','seville','valencia',
-    'palma-de-mallorca','warsaw','krakow','porto','rhodes','heraklion','thessaloniki','tallinn','vilnius','tbilisi',
-    'istanbul','antalya','tokyo','seoul','osaka','kyoto','taipei','hong-kong','shanghai','beijing',
-    'fukuoka','sapporo','busan','macau','guangzhou','shenzhen','zhuhai','singapore','bangkok','kuala-lumpur',
-    'pattaya-chonburi','phuket','ho-chi-minh-city','hanoi','denpasar','johor-bahru','delhi','dubai','abu-dhabi','sharjah',
-    'doha','riyadh','medina','mecca','tel-aviv','jerusalem','cairo','marrakech','sydney','melbourne',
-    'new-york-city','los-angeles','las-vegas','orlando','miami','san-francisco','washington-dc','honolulu','toronto','vancouver',
-    'montreal','mexico-city','cancun','sao-paulo','rio-de-janeiro','buenos-aires','lima','santiago','punta-cana','marne-la-vallee',
-    // Places
-    'kruger-national-park','serengeti','maasai-mara','victoria-falls','okavango-delta','sossusvlei','table-mountain',
-    'blyde-river-canyon','mount-kilimanjaro','zanzibar','atlas-mountains','pyramids-of-giza','petra','wadi-rum','dead-sea',
-    'wadi-shab','musandam','jebel-jais','cappadocia','pamukkale','golden-circle-iceland','jokulsarlon','geirangerfjord',
-    'lofoten','scottish-highlands','giants-causeway','cliffs-of-moher','cinque-terre','amalfi-coast','dolomites',
-    'lake-bled','plitvice-lakes','bay-of-kotor','meteora','santorini','lauterbrunnen','mont-blanc','calanques',
-    'alhambra','sagrada-familia','camino-de-santiago','neuschwanstein','taj-mahal','amber-fort','varanasi-ghats','goa',
-    'pangong-lake','annapurna-circuit','everest-base-camp','sigiriya','ella','maldives-local-islands','registan-samarkand',
-    'issyk-kul','ha-long-bay','hoi-an','angkor-wat','kuang-si-falls','chiang-mai-temples','koh-tao','mount-kinabalu',
-    'batu-caves','ubud-rice-terraces','komodo-national-park','borobudur','el-nido','siargao','mount-fuji','fushimi-inari',
-    'great-wall','great-barrier-reef','whitsunday-islands','kgari','uluru','blue-mountains','milford-sound','tongariro',
-    'abel-tasman','yasawa-islands','bora-bora','banff','icefields-parkway','zion','grand-canyon','yosemite','yellowstone',
-    'na-pali-coast','chichen-itza','riviera-maya-cenotes','monteverde','machu-picchu','sacred-valley','salar-de-uyuni',
-    'atacama-desert','torres-del-paine','perito-moreno','iguazu-falls','sugarloaf-mountain','cocora-valley','galapagos',
+  const heroSlugs = [
+    'paris','tokyo','barcelona','rome','amsterdam','london','berlin','sydney','new-york-city',
+    'machu-picchu','santorini','great-barrier-reef','kruger-national-park','banff','angkor-wat',
+    'cinque-terre','grand-canyon','milford-sound','victoria-falls','petra',
   ];
-  const slug = heroImages[Math.floor(Math.random() * heroImages.length)];
+  const slug = heroSlugs[Math.floor(Math.random() * heroSlugs.length)];
   const bg = document.getElementById('heroBackground');
   if (bg) {
-    bg.style.backgroundImage = `linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('/images/guides/${slug}-hero.webp')`;
+    const safeSlug = slug.replace(/[^a-z0-9-]/g, '');
+    bg.style.backgroundImage = `linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('/images/guides/${safeSlug}-hero.webp')`;
   }
-
-  const collator = new Intl.Collator(undefined, { sensitivity: 'base' });
-
-  const sortGridItems = (gridId, primaryField, fallbackField) => {
-    const grid = document.getElementById(gridId);
-    if (!grid) return;
-
-    const cards = Array.from(grid.children);
-    cards.sort((a, b) => {
-      const primaryA = a.getAttribute(`data-${primaryField}`) || '';
-      const primaryB = b.getAttribute(`data-${primaryField}`) || '';
-      const primarySort = collator.compare(primaryA, primaryB);
-      if (primarySort !== 0) return primarySort;
-
-      const fallbackA = a.getAttribute(`data-${fallbackField}`) || '';
-      const fallbackB = b.getAttribute(`data-${fallbackField}`) || '';
-      return collator.compare(fallbackA, fallbackB);
-    });
-
-    cards.forEach((card) => grid.appendChild(card));
-  };
-
-  document.querySelectorAll('.guides-sort-option').forEach((button) => {
-    button.addEventListener('click', () => {
-      const group = button.getAttribute('data-sort-group');
-      const mode = button.getAttribute('data-sort-mode');
-      if (!group || !mode) return;
-
-      document.querySelectorAll(`.guides-sort-option[data-sort-group="${group}"]`).forEach((option) => {
-        option.classList.toggle('is-active', option === button);
-      });
-
-      if (group === 'cities') {
-        sortGridItems('guidesCitiesGrid', mode === 'city' ? 'city' : 'country', mode === 'city' ? 'country' : 'city');
-      }
-
-      if (group === 'places') {
-        sortGridItems('guidesPlacesGrid', mode === 'place' ? 'place' : 'country', mode === 'place' ? 'country' : 'place');
-      }
-    });
-  });
 </script>
 
 <style>
   /* ========================
-     HERO (matches CityGuideLayout)
+     HERO
      ======================== */
   @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
@@ -427,22 +324,30 @@ const destinationCount = cityGuideCount + placeGuideCount;
   }
 
   /* ========================
-     SECTIONS
+     CATEGORIES
      ======================== */
-  .guides-section {
+  .guides-categories {
+    padding: 0;
+  }
+
+  .guides-categories-inner {
+    max-width: 100%;
+  }
+
+  .category-block {
     padding: 100px 40px;
   }
 
-  .guides-section--alt {
+  .category-block--alt {
     background: var(--color-bg-warm);
   }
 
-  .guides-section-inner {
+  .category-header {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
   }
 
-  .guides-section-intro {
+  .category-intro {
     font-size: 17px;
     line-height: 1.8;
     color: var(--color-cream-muted);
@@ -450,59 +355,32 @@ const destinationCount = cityGuideCount + placeGuideCount;
     max-width: 600px;
   }
 
-  .guide-section-header {
-    margin-bottom: 56px;
-  }
-
-  .guides-sort-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: -28px 0 28px;
-  }
-
-  .guides-sort-label {
-    font-size: 11px;
+  .category-view-all {
+    display: block;
+    max-width: 1200px;
+    margin: 32px auto 0;
+    font-size: 14px;
     font-weight: 600;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-terracotta);
+    transition: color 0.3s;
   }
 
-  .guides-sort-option {
-    border: 1px solid rgba(120, 90, 70, 0.22);
-    background: transparent;
-    border-radius: 999px;
-    padding: 6px 12px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    transition: all 0.25s var(--ease-out-expo);
-  }
-
-  .guides-sort-option:hover {
-    border-color: var(--color-terracotta);
-    color: var(--color-cream);
-  }
-
-  .guides-sort-option.is-active {
-    border-color: var(--color-terracotta);
-    background: rgba(177, 92, 60, 0.14);
-    color: var(--color-cream);
+  .category-view-all:hover {
+    color: var(--color-terracotta-light);
   }
 
   /* ========================
-     BACKPACKER ROUTES GRID
+     ROUTES PREVIEW
      ======================== */
-  .guides-routes-grid {
+  .routes-preview {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .guides-route-card {
+  .route-preview-card {
     display: block;
     padding: 32px;
     background: var(--color-bg-warm);
@@ -511,18 +389,18 @@ const destinationCount = cityGuideCount + placeGuideCount;
     text-decoration: none;
   }
 
-  .guides-route-card:hover {
+  .route-preview-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.04);
   }
 
-  .guides-route-flags {
+  .route-preview-flags {
     font-size: 24px;
     margin-bottom: 16px;
     letter-spacing: 4px;
   }
 
-  .guides-route-title {
+  .route-preview-card h3 {
     font-family: var(--font-display);
     font-size: 22px;
     font-weight: 700;
@@ -530,7 +408,7 @@ const destinationCount = cityGuideCount + placeGuideCount;
     margin-bottom: 8px;
   }
 
-  .guides-route-tagline {
+  .route-preview-card p {
     font-size: 14px;
     line-height: 1.6;
     color: var(--color-cream-muted);
@@ -538,7 +416,7 @@ const destinationCount = cityGuideCount + placeGuideCount;
     margin-bottom: 16px;
   }
 
-  .guides-route-duration {
+  .route-preview-duration {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -547,15 +425,17 @@ const destinationCount = cityGuideCount + placeGuideCount;
   }
 
   /* ========================
-     CITY GUIDES GRID
+     CITIES PREVIEW
      ======================== */
-  .guides-cities-grid {
+  .cities-preview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .guides-city-card {
+  .city-preview-card {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -566,17 +446,17 @@ const destinationCount = cityGuideCount + placeGuideCount;
     text-decoration: none;
   }
 
-  .guides-city-card:hover {
+  .city-preview-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.04);
   }
 
-  .guides-city-flag {
+  .city-preview-flag {
     font-size: 28px;
     flex-shrink: 0;
   }
 
-  .guides-city-name {
+  .city-preview-card h3 {
     font-family: var(--font-display);
     font-size: 16px;
     font-weight: 700;
@@ -584,22 +464,24 @@ const destinationCount = cityGuideCount + placeGuideCount;
     line-height: 1.3;
   }
 
-  .guides-city-region {
+  .city-preview-card span {
     font-size: 12px;
     color: var(--color-text-muted);
     font-weight: 300;
   }
 
   /* ========================
-     PLACES GRID
+     PLACES PREVIEW
      ======================== */
-  .guides-places-grid {
+  .places-preview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .guides-place-card {
+  .place-preview-card {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -610,22 +492,17 @@ const destinationCount = cityGuideCount + placeGuideCount;
     text-decoration: none;
   }
 
-  .guides-place-card:hover {
+  .place-preview-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.04);
   }
 
-  .guides-place-flag {
+  .place-preview-flag {
     font-size: 24px;
     flex-shrink: 0;
   }
 
-  .guides-place-info {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .guides-place-name {
+  .place-preview-card h3 {
     font-family: var(--font-display);
     font-size: 15px;
     font-weight: 700;
@@ -633,20 +510,10 @@ const destinationCount = cityGuideCount + placeGuideCount;
     line-height: 1.3;
   }
 
-  .guides-place-region {
+  .place-preview-card span {
     font-size: 12px;
     color: var(--color-text-muted);
     font-weight: 300;
-  }
-
-  .guides-place-type {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--color-terracotta);
-    white-space: nowrap;
-    flex-shrink: 0;
   }
 
   /* ========================
@@ -654,24 +521,19 @@ const destinationCount = cityGuideCount + placeGuideCount;
      ======================== */
   @media (max-width: 1024px) {
     .guides-hero { padding: 0 24px 60px; }
-    .guides-section { padding: 80px 24px; }
-    .guides-routes-grid { grid-template-columns: repeat(2, 1fr); }
-    .guides-cities-grid { grid-template-columns: repeat(3, 1fr); }
-    .guides-places-grid { grid-template-columns: repeat(3, 1fr); }
+    .category-block { padding: 80px 24px; }
+    .routes-preview { grid-template-columns: repeat(2, 1fr); }
+    .cities-preview { grid-template-columns: repeat(3, 1fr); }
+    .places-preview { grid-template-columns: repeat(3, 1fr); }
   }
 
   @media (max-width: 640px) {
     .guides-hero { padding: 0 20px 40px; min-height: 90vh; }
     .guides-hero-title { font-size: clamp(56px, 18vw, 100px); }
     .guides-hero-scroll { display: none; }
-    .guides-section { padding: 60px 20px; }
-    .guides-routes-grid { grid-template-columns: 1fr; }
-    .guides-cities-grid { grid-template-columns: repeat(2, 1fr); }
-    .guides-places-grid { grid-template-columns: repeat(2, 1fr); }
-    .guide-section-header { margin-bottom: 40px; }
-    .guides-sort-controls {
-      flex-wrap: wrap;
-      margin: -20px 0 24px;
-    }
+    .category-block { padding: 60px 20px; }
+    .routes-preview { grid-template-columns: 1fr; }
+    .cities-preview { grid-template-columns: repeat(2, 1fr); }
+    .places-preview { grid-template-columns: repeat(2, 1fr); }
   }
 </style>

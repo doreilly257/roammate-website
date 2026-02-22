@@ -1,29 +1,23 @@
 ---
 const base = import.meta.env.BASE_URL;
 const images = [
-  { file: '01.jpg', alt: 'Backpackers trekking through a lush mountain trail at sunrise' },
-  { file: '02.jpg', alt: 'Group of travelers sharing a meal at a bustling street food market' },
-  { file: '03.jpg', alt: 'Friends watching the sunset from a coastal viewpoint' },
-  { file: '04.jpg', alt: 'Adventurers exploring a vibrant local neighborhood together' },
-  { file: '05.jpg', alt: 'Travel companions navigating a scenic lakeside path' },
-  { file: '06.jpg', alt: 'Solo traveler meeting new friends at a rooftop gathering' },
+  { file: '01.webp', alt: 'Backpackers trekking through a lush mountain trail at sunrise' },
+  { file: '02.webp', alt: 'Group of travelers sharing a meal at a bustling street food market' },
+  { file: '03.webp', alt: 'Friends watching the sunset from a coastal viewpoint' },
+  { file: '04.webp', alt: 'Adventurers exploring a vibrant local neighborhood together' },
+  { file: '05.webp', alt: 'Travel companions navigating a scenic lakeside path' },
+  { file: '06.webp', alt: 'Solo traveler meeting new friends at a rooftop gathering' },
 ];
 ---
 
 <section class="gallery">
   <div class="gallery-track">
     {images.map((img) => (
-      <picture>
-        <source srcset={`${base}images/carousel/${img.file.replace('.jpg', '.webp')}`} type="image/webp">
-        <img src={`${base}images/carousel/${img.file}`} alt={img.alt} loading="lazy" width="1080" height="712">
-      </picture>
+      <img src={`${base}images/carousel/${img.file}`} alt={img.alt} loading="lazy" width="1080" height="712">
     ))}
     {/* Duplicate for seamless loop */}
     {images.map((img) => (
-      <picture>
-        <source srcset={`${base}images/carousel/${img.file.replace('.jpg', '.webp')}`} type="image/webp">
-        <img src={`${base}images/carousel/${img.file}`} alt={img.alt} loading="lazy" width="1080" height="712">
-      </picture>
+      <img src={`${base}images/carousel/${img.file}`} alt={img.alt} loading="lazy" width="1080" height="712">
     ))}
   </div>
 </section>

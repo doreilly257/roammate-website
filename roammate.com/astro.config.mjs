@@ -8,5 +8,5 @@ export default defineConfig({
   base: '/',
   devToolbar: { enabled: false },
   compressHTML: true,
-  integrations: [sitemap(), critters()],
+  integrations: [sitemap(), critters({ pruneSource: true, preload: 'swap' })],
 });

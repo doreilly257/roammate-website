@@ -5,28 +5,28 @@ const travelers = [
   {
     name: 'Ashley, 25',
     origin: 'USA',
-    image: 'traveler-ashley-kuala-lumpur.jpg',
+    image: 'traveler-ashley-kuala-lumpur.webp',
     alt: 'Woman in a floral dress on a rooftop with the Petronas Towers lit up behind her',
     quote: "I heard there's a helipad bar with an incredible view of KL. Anyone down for drinks tonight?",
   },
   {
     name: 'Lela, 29',
     origin: 'Singapore',
-    image: 'traveler-lela-brooklyn-bridge.jpg',
+    image: 'traveler-lela-brooklyn-bridge.webp',
     alt: 'Woman with a pink scarf smiling on the Brooklyn Bridge walkway',
     quote: 'Traveling NYC with a friend. Looking for more people to share sightseeing and cab rides tomorrow!',
   },
   {
     name: 'Alex, 25',
     origin: 'United Kingdom',
-    image: 'traveler-alex-vietnam-motorbike.jpg',
+    image: 'traveler-alex-vietnam-motorbike.webp',
     alt: 'Man riding a motorbike along a muddy trail through the Vietnamese highlands',
     quote: 'Rented a motorbike, seeing Vietnam north to south. Looking for company and laughs on the way.',
   },
   {
     name: 'John, 31',
     origin: 'South Africa',
-    image: 'traveler-john-blyde-canyon.jpg',
+    image: 'traveler-john-blyde-canyon.webp',
     alt: 'Man sitting on a cliff edge overlooking Blyde River Canyon and its turquoise reservoir',
     quote: "Heading to Blyde River Canyon this weekend. We rented a car but there's room for one more!",
   },
@@ -44,10 +44,7 @@ const travelers = [
   <div class="travelers">
     {travelers.map((t, i) => (
       <div class={`traveler-card reveal reveal-delay-${i + 1}`}>
-        <picture>
-          <source srcset={`${base}images/${t.image.replace(/\.\w+$/, '.webp')}`} type="image/webp">
-          <img src={`${base}images/${t.image}`} alt={t.alt} loading="lazy">
-        </picture>
+        <img src={`${base}images/${t.image}`} alt={t.alt} loading="lazy">
         <div class="traveler-overlay">
           <div class="traveler-name">{t.name}</div>
           <div class="traveler-origin">{t.origin}</div>
