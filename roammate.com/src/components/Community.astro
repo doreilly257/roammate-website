@@ -44,7 +44,7 @@ const travelers = [
   <div class="travelers">
     {travelers.map((t, i) => (
       <div class={`traveler-card reveal reveal-delay-${i + 1}`}>
-        <img src={`${base}images/${t.image}`} alt={t.alt} loading="lazy">
+        <img src={`${base}images/${t.image}`} alt={t.alt} loading="lazy" width="600" height="800">
         <div class="traveler-overlay">
           <div class="traveler-name">{t.name}</div>
           <div class="traveler-origin">{t.origin}</div>

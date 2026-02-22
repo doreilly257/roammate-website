@@ -65,7 +65,7 @@ const base = import.meta.env.BASE_URL;
     const email = new FormData(footerForm).get('email');
     if (!email) return;
     if (window.posthog && typeof window.posthog.capture === 'function') {
-      window.posthog.capture('waitlist_signup', { email, source: 'footer' });
+      window.posthog.capture('waitlist_signup', { source: 'footer' });
     }
     try {
       await fetch('https://api.roammate.com/v1/waitlist', {

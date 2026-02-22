@@ -36,9 +36,9 @@ const base = import.meta.env.BASE_URL;
     const email = new FormData(form).get('email');
     if (!email) return;
 
-    // Track in PostHog
+    // Track in PostHog (no PII — email stays server-side)
     if (window.posthog && typeof window.posthog.capture === 'function') {
-      window.posthog.capture('waitlist_signup', { email, source: 'cta' });
+      window.posthog.capture('waitlist_signup', { source: 'cta' });
     }
 
     // Submit to API (gracefully handle if endpoint doesn't exist yet)

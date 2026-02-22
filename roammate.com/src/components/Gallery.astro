@@ -15,9 +15,9 @@ const images = [
     {images.map((img) => (
       <img src={`${base}images/carousel/${img.file}`} alt={img.alt} loading="lazy" width="1080" height="712">
     ))}
-    {/* Duplicate for seamless loop */}
+    {/* Duplicate for seamless loop — hidden from screen readers */}
     {images.map((img) => (
-      <img src={`${base}images/carousel/${img.file}`} alt={img.alt} loading="lazy" width="1080" height="712">
+      <img src={`${base}images/carousel/${img.file}`} alt="" aria-hidden="true" loading="lazy" width="1080" height="712">
     ))}
   </div>
 </section>

@@ -140,7 +140,7 @@ const renderInlineLinks = (text: string) => {
 };
 ---
 
-<BaseLayout title={`${title} | roammate Blog`} description={description} ogImage={heroImage}>
+<BaseLayout title={`${title} | roammate Blog`} description={description} ogImage={heroImage} ogType="article">
   <Fragment slot="head">
     <link rel="preload" as="image" type="image/webp" href={heroImage}>
     <script type="application/ld+json" set:html={JSON.stringify({

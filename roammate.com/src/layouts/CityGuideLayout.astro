@@ -70,14 +70,6 @@ const escapeCssUrl = (url: string) =>
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "TravelGuide",
-      "name": title,
-      "url": new URL(Astro.url.pathname, Astro.site).href,
-      "description": description,
-      "inLanguage": "en"
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
@@ -92,7 +84,7 @@ const escapeCssUrl = (url: string) =>
     <div class="guide-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${escapeCssUrl(heroImage)}');`}></div>
     <div class="guide-hero-content">
       <div class="guide-hero-breadcrumb">
-        <a href="/guides">Guides</a>
+        <a href="/guides/">Guides</a>
         <span>/</span>
         <span>{heroRegion}</span>
       </div>
@@ -210,24 +202,36 @@ const escapeCssUrl = (url: string) =>
       <h2 class="section-heading">Budget <em>breakdown</em></h2>
       {budgetIntro && <p class="guide-section-intro">{budgetIntro}</p>}
     </div>
-    <div class="guide-breakdown-table reveal">
-      <div class="guide-breakdown-header-row">
-        <div class="guide-breakdown-cell guide-breakdown-label"></div>
-        <div class="guide-breakdown-cell guide-breakdown-tier">🎒 Budget</div>
-        <div class="guide-breakdown-cell guide-breakdown-tier">✨ Mid-Range</div>
-        <div class="guide-breakdown-cell guide-breakdown-tier">💎 Splurge</div>
-      </div>
-      {budgetBreakdown.map((row) => (
-        <div class={`guide-breakdown-row ${row.category === 'Daily Total' ? 'guide-breakdown-total' : ''}`}>
-          <div class="guide-breakdown-cell guide-breakdown-label">
-            {row.category}
-            <span class="guide-breakdown-notes">{row.notes}</span>
-          </div>
-          <div class="guide-breakdown-cell">{row.budget}</div>
-          <div class="guide-breakdown-cell">{row.midrange}</div>
-          <div class="guide-breakdown-cell">{row.splurge}</div>
-        </div>
-      ))}
+    <div class="guide-breakdown-wrap reveal">
+      <table class="guide-breakdown-table">
+        <colgroup>
+          <col class="guide-breakdown-col-label">
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col" class="guide-breakdown-cell guide-breakdown-tier-header"></th>
+            <th scope="col" class="guide-breakdown-cell guide-breakdown-tier">🎒 Budget</th>
+            <th scope="col" class="guide-breakdown-cell guide-breakdown-tier">✨ Mid-Range</th>
+            <th scope="col" class="guide-breakdown-cell guide-breakdown-tier">💎 Splurge</th>
+          </tr>
+        </thead>
+        <tbody>
+          {budgetBreakdown.map((row) => (
+            <tr class={row.category === 'Daily Total' ? 'guide-breakdown-total' : ''}>
+              <th scope="row" class="guide-breakdown-cell guide-breakdown-label">
+                {row.category}
+                <span class="guide-breakdown-notes">{row.notes}</span>
+              </th>
+              <td class="guide-breakdown-cell">{row.budget}</td>
+              <td class="guide-breakdown-cell">{row.midrange}</td>
+              <td class="guide-breakdown-cell">{row.splurge}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -342,8 +346,8 @@ const escapeCssUrl = (url: string) =>
       <h2 class="guide-cta-heading">Heading to <em>{ctaCity}</em>?</h2>
       <p class="guide-cta-text">{ctaText}</p>
       <div class="guide-cta-downloads">
-        <a href="#" class="badge-link"><img src={`${base}images/app-store-badge.svg`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
-        <a href="#" class="badge-link"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="646" height="250" loading="lazy"></a>
+        <a href="/#waitlist" class="badge-link"><img src={`${base}images/app-store-badge.svg`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
+        <a href="/#waitlist" class="badge-link"><img src={`${base}images/google-play-badge.svg`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy"></a>
       </div>
       <p class="guide-cta-customise">{ctaCustomise}</p>
     </div>
@@ -795,7 +799,7 @@ const escapeCssUrl = (url: string) =>
     padding: 120px 40px;
   }
 
-  .guide-breakdown-table {
+  .guide-breakdown-wrap {
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 8px;
@@ -803,20 +807,26 @@ const escapeCssUrl = (url: string) =>
     background: var(--color-bg-warm);
   }
 
-  .guide-breakdown-header-row {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  .guide-breakdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .guide-breakdown-col-label {
+    width: 33%;
+  }
+
+  .guide-breakdown-table thead tr {
     background: var(--color-cream);
     color: var(--color-bg);
   }
 
-  .guide-breakdown-row {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  .guide-breakdown-table tbody tr {
     border-bottom: 1px solid rgba(0,0,0,0.04);
   }
 
-  .guide-breakdown-row:last-child {
+  .guide-breakdown-table tbody tr:last-child {
     border-bottom: none;
   }
 
@@ -838,6 +848,7 @@ const escapeCssUrl = (url: string) =>
     padding: 16px 20px;
     font-size: 14px;
     color: var(--color-cream-muted);
+    text-align: left;
   }
 
   .guide-breakdown-label {
@@ -1033,12 +1044,6 @@ const escapeCssUrl = (url: string) =>
   .store-badge {
     height: 52px;
     width: auto;
-  }
-
-  /* Google Play PNG has built-in padding — scale it up to match App Store visually */
-  img[alt*="Google Play"].store-badge {
-    height: 76px;
-    margin: -12px 0;
   }
 
   .guide-cta-customise {
@@ -1315,8 +1320,6 @@ const escapeCssUrl = (url: string) =>
     .guide-budget { padding: 60px 20px; }
     .guide-budget-grid { grid-template-columns: 1fr; }
     .guide-breakdown { padding: 60px 20px; }
-    .guide-breakdown-header-row,
-    .guide-breakdown-row { grid-template-columns: 1.2fr 1fr 1fr 1fr; }
     .guide-breakdown-cell { padding: 12px 10px; font-size: 12px; }
     .guide-breakdown-tier { font-size: 11px; padding: 12px 10px; }
     .guide-breakdown-notes { display: none; }

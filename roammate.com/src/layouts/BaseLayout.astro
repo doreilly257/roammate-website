@@ -8,9 +8,10 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  ogType?: string;
 }
 
-const { title, description = 'Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.webp' } = Astro.props;
+const { title, description = 'Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.webp', ogType = 'website' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 const isHome = Astro.url.pathname === '/';
@@ -31,12 +32,14 @@ const isHome = Astro.url.pathname === '/';
   <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Open Graph -->
-  <meta property="og:type" content={isHome ? 'website' : 'article'}>
+  <meta property="og:type" content={ogType}>
   <meta property="og:url" content={canonicalURL}>
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:image" content={ogImageURL}>
+  <meta property="og:image:alt" content={title}>
   <meta property="og:site_name" content="roammate">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -44,6 +47,7 @@ const isHome = Astro.url.pathname === '/';
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={ogImageURL}>
+  <meta name="twitter:image:alt" content={title}>
   <!-- Preconnect for analytics -->
   <link rel="preconnect" href="https://us.i.posthog.com">
   <link rel="dns-prefetch" href="https://us-assets.i.posthog.com">
@@ -85,9 +89,9 @@ const isHome = Astro.url.pathname === '/';
   )}
 
   <script>
-    // Analytics consent — only load PostHog if user has not declined
+    // Analytics consent — only load PostHog after explicit user grant (GDPR/CCPA)
     function hasAnalyticsConsent() {
-      return localStorage.getItem('analytics_consent') !== 'denied';
+      return localStorage.getItem('analytics_consent') === 'granted';
     }
     function loadPostHog() {
       if (!hasAnalyticsConsent()) return;
@@ -115,7 +119,7 @@ const isHome = Astro.url.pathname === '/';
 
   <Footer />
 
-  <div id="cookieBanner" class="cookie-banner" style="display:none;">
+  <div id="cookieBanner" class="cookie-banner" role="alertdialog" aria-label="Cookie consent" aria-live="polite" style="display:none;">
     <p>We use cookies for anonymous analytics to improve your experience. <a href="/privacy/">Learn more</a></p>
     <div class="cookie-actions">
       <button id="cookieAccept" class="cookie-btn cookie-accept">Accept</button>
@@ -186,7 +190,9 @@ const isHome = Astro.url.pathname === '/';
       var milestones = [25, 50, 75, 100];
       var fired = {};
       window.addEventListener('scroll', function() {
-        var scrollPct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        var scrollHeight = document.body.scrollHeight - window.innerHeight;
+        if (scrollHeight <= 0) return;
+        var scrollPct = Math.round((window.scrollY / scrollHeight) * 100);
         milestones.forEach(function(m) {
           if (scrollPct >= m && !fired[m]) {
             fired[m] = true;

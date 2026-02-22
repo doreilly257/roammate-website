@@ -59,6 +59,16 @@ const backpackerRoutes = [
     name: "Morocco & West Africa Backpacker Route",
     desc: "Medinas, desert treks, and coastal adventures through Morocco, Senegal, and Ghana.",
   },
+  {
+    slug: "middle-east-turkey",
+    name: "Middle East & Turkey Backpacker Route",
+    desc: "Ancient cities, desert landscapes, and cultural contrasts through Turkey, Jordan, and beyond.",
+  },
+  {
+    slug: "southern-africa",
+    name: "Southern Africa Backpacker Route",
+    desc: "Safari, Victoria Falls, and coastal adventures through South Africa, Botswana, Zimbabwe, and Mozambique.",
+  },
 ];
 
 const staticPages = [
@@ -94,11 +104,7 @@ function hashToUnit(slug: string): number {
   for (let i = 0; i < slug.length; i += 1) {
     hash ^= slug.charCodeAt(i);
     hash +=
-      (hash << 1) +
-      (hash << 4) +
-      (hash << 7) +
-      (hash << 8) +
-      (hash << 24);
+      (hash << 1) + (hash << 4) + (hash << 7) + (hash << 8) + (hash << 24);
   }
   return (hash >>> 0) / 0xffffffff;
 }

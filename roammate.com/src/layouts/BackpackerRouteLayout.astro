@@ -53,7 +53,6 @@ const {
   accentColor = '#2e6d79',
 } = Astro.props;
 
-const colCount = budgetColumns.length + 1; // +1 for the label column
 const ogImage = heroImages[0]?.src;
 const routeGuides = getBySlug(featuredGuides);
 const routeCityGuides = routeGuides.filter(g => cityGuideSlugs.has(g.slug));
@@ -108,7 +107,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     </div>
     <div class="route-hero-content">
       <div class="route-hero-breadcrumb">
-        <a href="/guides">Guides</a>
+        <a href="/guides/">Guides</a>
         <span>/</span>
         <span>Backpacker Routes</span>
       </div>
@@ -212,30 +211,40 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
   ))}
 
   <!-- Budget Breakdown -->
-  <section class="route-budget" id="budget" style={`--budget-cols: ${colCount};`}>
+  <section class="route-budget" id="budget">
     <div class="route-section-header reveal">
       <div class="section-label">Money</div>
       <h2 class="section-heading">Budget <em>breakdown</em></h2>
       <p class="route-section-intro">{budgetIntro}</p>
     </div>
-    <div class="route-budget-table reveal">
-      <div class="route-budget-header-row">
-        <div class="route-budget-cell route-budget-label"></div>
-        {budgetColumns.map((col) => (
-          <div class="route-budget-cell route-budget-flag">{col.flag} {col.label}</div>
-        ))}
-      </div>
-      {budgetRows.map((row) => (
-        <div class={`route-budget-row ${row.category === 'Daily Total' ? 'route-budget-total' : ''}`}>
-          <div class="route-budget-cell route-budget-label">
-            {row.category}
-            <span class="route-budget-notes">{row.notes}</span>
-          </div>
-          {row.values.map((val) => (
-            <div class="route-budget-cell">{val}</div>
+    <div class="route-budget-wrap reveal">
+      <table class="route-budget-table">
+        <colgroup>
+          <col class="route-budget-col-label">
+          {budgetColumns.map(() => <col>)}
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col" class="route-budget-cell route-budget-label"></th>
+            {budgetColumns.map((col) => (
+              <th scope="col" class="route-budget-cell route-budget-flag">{col.flag} {col.label}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {budgetRows.map((row) => (
+            <tr class={row.category === 'Daily Total' ? 'route-budget-total' : ''}>
+              <th scope="row" class="route-budget-cell route-budget-label">
+                {row.category}
+                <span class="route-budget-notes">{row.notes}</span>
+              </th>
+              {row.values.map((val) => (
+                <td class="route-budget-cell">{val}</td>
+              ))}
+            </tr>
           ))}
-        </div>
-      ))}
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -266,8 +275,8 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
       <h2 class="route-cta-heading">Ready for <em>{ctaRegion}</em>?</h2>
       <p class="route-cta-text">{ctaText}</p>
       <div class="route-cta-downloads">
-        <a href="#" class="badge-link"><img src={`${base}images/app-store-badge.svg`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
-        <a href="#" class="badge-link"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="646" height="250" loading="lazy"></a>
+        <a href="/#waitlist" class="badge-link"><img src={`${base}images/app-store-badge.svg`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
+        <a href="/#waitlist" class="badge-link"><img src={`${base}images/google-play-badge.svg`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy"></a>
       </div>
       <p class="route-cta-customise">{ctaCustomise}</p>
     </div>
@@ -771,7 +780,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     max-width: 600px;
   }
 
-  .route-budget-table {
+  .route-budget-wrap {
     max-width: 900px;
     margin: 0 auto;
     border-radius: 8px;
@@ -779,20 +788,26 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     background: var(--color-bg);
   }
 
-  .route-budget-header-row {
-    display: grid;
-    grid-template-columns: 1.5fr repeat(calc(var(--budget-cols) - 1), 1fr);
+  .route-budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .route-budget-col-label {
+    width: 33%;
+  }
+
+  .route-budget-table thead tr {
     background: var(--color-cream);
     color: var(--color-bg);
   }
 
-  .route-budget-row {
-    display: grid;
-    grid-template-columns: 1.5fr repeat(calc(var(--budget-cols) - 1), 1fr);
+  .route-budget-table tbody tr {
     border-bottom: 1px solid rgba(0,0,0,0.04);
   }
 
-  .route-budget-row:last-child {
+  .route-budget-table tbody tr:last-child {
     border-bottom: none;
   }
 
@@ -815,6 +830,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     padding: 16px 20px;
     font-size: 14px;
     color: var(--color-cream-muted);
+    text-align: left;
   }
 
   .route-budget-label {
@@ -1046,12 +1062,6 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     width: auto;
   }
 
-  /* Google Play PNG has built-in padding — scale it up to match App Store visually */
-  img[alt*="Google Play"].store-badge {
-    height: 76px;
-    margin: -12px 0;
-  }
-
   .route-cta-customise {
     font-size: 14px;
     line-height: 1.7;
@@ -1086,8 +1096,6 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     .route-phase { padding: 24px; }
     .route-phase-header { flex-direction: column; align-items: flex-start; gap: 8px; }
     .route-budget { padding: 60px 20px; }
-    .route-budget-header-row,
-    .route-budget-row { grid-template-columns: 1.2fr repeat(calc(var(--budget-cols) - 1), 1fr); }
     .route-budget-cell { padding: 12px 10px; font-size: 12px; }
     .route-budget-flag { font-size: 11px; padding: 12px 10px; }
     .route-budget-notes { display: none; }
