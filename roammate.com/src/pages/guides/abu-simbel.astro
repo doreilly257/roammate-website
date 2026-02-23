@@ -1,0 +1,423 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EGP (Pound)', detail: '1 USD ≈ 48 EGP' },
+  { icon: '🗣', label: 'Language', value: 'Arabic / Nubian', detail: 'Some English at temples' },
+  { icon: '🕐', label: 'Timezone', value: 'EET (UTC+2)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Mar', detail: '22–30°C, avoid summer heat' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–80 USD', detail: 'Includes transport from Aswan' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on arrival', detail: '$25 USD for most nationalities' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Abu Simbel — Ramesses II\'s Colossal Temples',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'The Great Temple of Ramesses II',
+          text: 'Arrive from Aswan via the 3:30am convoy (280km, 3–3.5 hours through the Sahara) or the 35-minute EgyptAir flight. The four colossal seated statues of Ramesses II — each 20 metres tall — carved directly from the cliff face are overwhelming in scale. Enter the temple to find eight Osirid pillars in the main hall and vivid wall reliefs depicting the Battle of Kadesh against the Hittites. The innermost sanctuary holds four seated gods — twice a year (Feb 22 and Oct 22) sunlight penetrates 60 metres to illuminate three of them.',
+          tip: 'Arrive as early as possible — the morning light on the facade is magnificent. The solar alignment dates (Feb 22 and Oct 22) draw huge crowds; visit the day before or after for similar light without the masses.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Temple of Nefertari & the UNESCO Story',
+          text: 'The smaller Temple of Nefertari next door is one of only two temples in ancient Egypt dedicated to a queen — a remarkable statement of her importance. Six standing figures (four of Ramesses, two of Nefertari) each 10 metres tall flank the entrance. Inside, Nefertari is crowned by Isis and Hathor in vivid colour. Visit the UNESCO museum behind the temples — in the 1960s, the temples were cut into 20,000 blocks and reassembled 65 metres higher to save them from Lake Nasser. The engineering is astonishing.',
+          tip: 'The UNESCO relocation museum is free and tells one of the greatest preservation stories in history. The artificial hill concealing the temple structure is visible from behind.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lake Nasser Sunset & Return',
+          text: 'If staying overnight, walk along the Lake Nasser shore at sunset — the vast turquoise lake stretching towards Sudan, with the temple silhouettes against the fading sky, is magnificent. The Abu Simbel village has a handful of simple restaurants — Eskaleh Nubian Ecolodge serves Nubian cuisine with lake views (E£100–200). Most visitors return to Aswan the same day (convoy departs around 1–2pm). The drive back through the Sahara at sunset has its own stark beauty.',
+          tip: 'Staying overnight lets you see the Sound and Light Show (E£400) and experience the temples at sunrise without the convoy crowds. Eskaleh Ecolodge and Nefertari Hotel are the best options.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Arrival & First Temple Visit',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Journey Through the Sahara',
+          text: 'Depart Aswan at 3:30–4:00am in the convoy for the 280km drive south through the Eastern Sahara. The road passes through utterly empty desert — flat, featureless, and vast. The sunrise over the Sahara from the vehicle is spectacular. Alternatively, fly EgyptAir from Aswan (35 minutes, $100–150 return) for a dramatic aerial view of Lake Nasser and the temples. Arrive at Abu Simbel by 7–8am.',
+          tip: 'The drive is long but scenic at dawn. Bring snacks, water, and entertainment. The flight is worth the extra cost if budget allows — the aerial views are extraordinary.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'The Great Temple of Ramesses II',
+          text: 'Enter the Great Temple (E£500 combined ticket for both temples). The four seated colossi of Ramesses II — each 20 metres from base to crown — are carved from the living rock. Between the legs, smaller figures represent his queen Nefertari and their children. Inside, eight Osirid pillars support the ceiling in the main hall. The wall reliefs of the Battle of Kadesh are the longest battle narrative in Egyptian art. The innermost sanctuary holds four seated figures in permanent darkness.',
+          tip: 'The temple interior is dimly lit — let your eyes adjust. The battle reliefs in the main hall are incredibly detailed. Spend at least 45 minutes inside to appreciate the scale.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sound and Light Show',
+          text: 'Abu Simbel\'s Sound and Light Show (E£400) illuminates the colossal facade with coloured projections while narrating the temple\'s history from Ramesses II to the UNESCO rescue. The show is more intimate than Karnak or the Pyramids — fewer visitors and a more dramatic setting on the shores of Lake Nasser. Check in to your hotel — Eskaleh Nubian Ecolodge for charm (E£800–1,200) or Nefertari Hotel Abu Simbel for comfort (E£1,500–2,500).',
+          tip: 'The Sound and Light Show runs in multiple languages. The English show is usually at 7pm. Book at the ticket office next to the temples. It\'s worth staying overnight specifically for this.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Temples at Sunrise & Lake Nasser',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise at the Temples',
+          text: 'The advantage of staying overnight — watch sunrise light sweep across the four colossi as the temple emerges from shadow. Without the convoy crowds (who arrive at 8–9am), you may have the temples nearly to yourself for the first hour. Re-enter both temples in the soft morning light when the atmosphere is meditative rather than touristic. The sunrise on the facade recreates the experience the ancient Egyptians intended — the temple was oriented east to catch the dawn light.',
+          tip: 'Be at the temples at sunrise (6–6:30am) for the most magical experience. The guard will let you in before official opening if you ask nicely.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Nasser & UNESCO Story',
+          text: 'Walk behind the temples to the artificial mountain that conceals the relocated structure — the engineered dome inside (invisible from the temple) is a marvel. The UNESCO museum details how an international campaign in the 1960s cut the temples into 1,035 blocks and reassembled them 65 metres higher and 200 metres back from the original site. Walk the Lake Nasser shore — the vast lake (550km long) flooded ancient Nubia and displaced 100,000 people.',
+          tip: 'The walk along Lake Nasser to the south of the temples gives the best perspective on the scale of both the ancient and modern engineering achievements.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Nubian Village Life',
+          text: 'Abu Simbel village is a small, quiet Nubian community. Walk through the painted houses — the same vivid colours as Aswan\'s Nubian villages but even more remote and authentic. Locals are friendly and may invite you for tea. Dinner at Eskaleh — the ecolodge restaurant serves excellent Nubian cuisine (tagen stew, fresh bread, grilled fish) with views over the lake (E£100–200). The stars above Abu Simbel — deep in the Sahara with zero light pollution — are extraordinary.',
+          tip: 'Abu Simbel at night has some of the darkest skies in Egypt. If you have a stargazing app, the Milky Way is clearly visible from October to March.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Final Visit & Return to Aswan',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Temple of Nefertari — Detailed Visit',
+          text: 'Return to the Temple of Nefertari for a focused visit. The six standing facade figures are unique — Nefertari is depicted the same height as Ramesses, signifying extraordinary status. Inside, the reliefs show Nefertari being crowned by Hathor and Isis in scenes of vivid colour. The inner sanctuary has a damaged but recognisable image of Hathor as a cow goddess. The temple is smaller and more intimate than the Great Temple — the artistry is arguably finer.',
+          tip: 'Nefertari\'s temple is often rushed by day-trippers. With an overnight stay, you can appreciate the relief detail — the crowning scenes are some of the finest carved art in Egypt.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Nasser Viewpoint & Departure',
+          text: 'Walk south along the Lake Nasser shore for panoramic views of the temples from a distance — the facade emerging from the cliff with the vast lake behind is the iconic Abu Simbel photograph. The turquoise water stretching towards Sudan is mesmerising. Depart Abu Simbel by the afternoon convoy (1–2pm) for the 3.5-hour return to Aswan, or catch the EgyptAir flight (schedule varies, usually mid-afternoon).',
+          tip: 'The viewpoint south of the temples gives the classic postcard shot. Early afternoon light is best for photography from this angle with the lake behind.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Aswan',
+          text: 'Arrive back in Aswan by late afternoon or evening. The drive through the Sahara at sunset is scenic — the flat desert landscape turns golden then purple. Dinner in Aswan at Makka for grilled Nile fish (E£100–200) or The Nubian House for traditional Nubian cuisine (E£100–250). From Aswan, continue to Luxor (train 3 hours), Cairo (flight 1.5 hours or sleeper train 13 hours), or Hurghada (bus 5 hours for Red Sea diving).',
+          tip: 'If continuing to Luxor, the 3-hour train follows the Nile through sugar cane fields and ancient villages — one of the most scenic rail journeys in Egypt.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Journey to Abu Simbel',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Departure from Aswan',
+          text: 'Depart Aswan at 3:30–4:00am in the convoy. The 280km drive south through the Eastern Sahara takes 3–3.5 hours. The road is flat and straight — the landscape is vast, empty desert dotted with occasional sand dunes and rocky outcrops. Sunrise from the vehicle transforms the flat desert into a canvas of pink, orange, and gold. Arrive at Abu Simbel by 7–8am. Check into your hotel — the village is tiny and walkable.',
+          tip: 'Bring snacks, water, and a pillow for the pre-dawn start. The first glimpse of Lake Nasser after 3 hours of desert is spectacular.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'First View of the Temples',
+          text: 'Walk to the temple complex for your first encounter with the four colossal statues of Ramesses II. The scale is incomprehensible until you stand at the base — each face alone is 4 metres tall. Take time to absorb the setting: the cliff face, the lake, the desert. The second colossus from the left lost its upper half in an earthquake in antiquity — the fallen head lies at the base. Enter the Great Temple to see the Osirid pillars and wall reliefs.',
+          tip: 'Don\'t rush your first visit — the emotional impact of seeing the colossi for the first time is something to savour. The afternoon light on the facade is warm and golden.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Lake Nasser Sunset',
+          text: 'Walk along the Lake Nasser shore south of the temples for sunset views. The lake — one of the world\'s largest artificial reservoirs — stretches to the horizon in every direction. The silence is profound. Dinner at Eskaleh Nubian Ecolodge — a beautifully designed lodge using traditional Nubian architecture and serving authentic Nubian cuisine (E£100–200). The rooftop has lake views and star-gazing potential.',
+          tip: 'Sunset from the lake shore with the temple silhouettes is the most photogenic moment at Abu Simbel. Bring a tripod if you have one.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'The Great Temple in Depth',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise & the Great Temple Interior',
+          text: 'Watch sunrise illuminate the facade — the colossi emerge from shadow as the first rays hit the rock. Enter the Great Temple before the day-trip crowds arrive. The main hall has eight Osirid pillars — Ramesses as the god Osiris, arms crossed holding crook and flail. The wall reliefs depict the Battle of Kadesh (1274 BCE) — the pharaoh in his chariot charging the Hittites. The side chambers stored temple treasures. The innermost sanctuary holds four seated figures — Ramesses among the gods.',
+          tip: 'The sunrise illumination is what the ancient architects intended — the temple was precisely oriented east. The first 30 minutes are the most atmospheric.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'UNESCO Relocation Engineering',
+          text: 'Explore the UNESCO relocation story in depth. Walk behind the temples to see the artificial cliff created to replicate the original setting — inside is a massive concrete dome supporting the reassembled rock. The museum (free) documents the international rescue: 50 countries contributed, the temples were sawn into 1,035 blocks (each weighing up to 30 tonnes), and reassembled 65 metres higher over 4 years (1964–1968). The precision required to maintain the solar alignment is staggering.',
+          tip: 'The concrete dome behind the temple is visible if you walk up the hillside path. The engineering cross-section diagrams in the museum show just how extraordinary the relocation was.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sound and Light Show',
+          text: 'Attend the Abu Simbel Sound and Light Show (E£400) — the most intimate of Egypt\'s sound-and-light experiences. Coloured projections animate the colossal facade while a narrated history covers Ramesses II\'s reign, the temple\'s purpose, and the UNESCO rescue. The small audience and Lake Nasser setting make it atmospheric. Dinner afterwards at the Nefertari Hotel restaurant (E£150–300) or a local café in the village.',
+          tip: 'Check the language schedule — English shows are usually at 7pm or 8pm. The show is more impressive than most Sound and Light shows in Egypt.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Temple of Nefertari & Village Life',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Temple of Nefertari',
+          text: 'Visit the Temple of Nefertari early. The facade is unique in Egyptian architecture — six standing figures, with Nefertari depicted the same size as Ramesses (queens were usually shown much smaller). Inside, the reliefs are among the finest in Egypt: Nefertari being crowned by Isis and Hathor, making offerings to the gods, and participating in rituals normally reserved for pharaohs. The inner sanctuary has Hathor as a cow goddess emerging from a papyrus marsh.',
+          tip: 'The relief quality in Nefertari\'s temple is finer than the Great Temple. The crowning scenes on the side walls are masterpieces of Egyptian art — spend time with them.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Abu Simbel Village & Nubian Culture',
+          text: 'Explore the tiny Abu Simbel village — a Nubian community of painted houses, small shops, and friendly residents who live in the shadow of the temples. The village has a school, a mosque, and a handful of family-run restaurants. Walk through the residential streets — houses painted in turquoise and gold with Nubian symbols. Visit the small market for Nubian handicrafts — beaded jewellery, woven baskets, and embroidered textiles made by local women.',
+          tip: 'Abu Simbel village is genuinely off the tourist trail — the day-trippers never see it. Walking through the village gives a glimpse of remote Nubian life.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Stargazing in the Sahara',
+          text: 'Abu Simbel is deep in the Sahara with almost zero light pollution — the night sky is extraordinary. Walk to the lake shore or the open desert beyond the village for unobstructed views. The Milky Way is clearly visible with the naked eye. Constellations that are washed out in cities blaze overhead. Bring a blanket and lie on the warm sand. Dinner at a village restaurant — simple grilled meat and rice (E£60–100).',
+          tip: 'October to March offers the best stargazing — clear skies and cooler temperatures. A stargazing app on your phone makes identification easy. The silence is almost total.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Lake Nasser Exploration',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lake Nasser Shore Walk',
+          text: 'Walk south along the Lake Nasser shore from the temples. The vast turquoise lake — created by the High Dam and stretching 550km to Sudan — drowned ancient Nubia and displaced 100,000 people. The shore is rocky and deserted — you may see desert foxes, migratory birds, and Nile perch jumping. The temple facades from a distance, framed by desert and water, give the most dramatic perspective on the ancient site.',
+          tip: 'The walk south along the lake is easy and flat — 2–3km gives excellent temple views. Bring water and sun protection. Early morning is best for wildlife and light.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lake Nasser Fishing',
+          text: 'Arrange a fishing trip on Lake Nasser through your hotel or a local guide (E£500–1,000 for a boat and guide, 3–4 hours). Lake Nasser is one of the best freshwater fishing locations in Africa — Nile perch (up to 100kg), tilapia, and tiger fish are all caught here. The lake\'s remote bays and inlets are pristine. Even if you don\'t fish, the boat trip through the turquoise water with desert cliffs rising on both sides is spectacular.',
+          tip: 'Nile perch is the prize catch — they can exceed 100kg. Fishing is best early morning or late afternoon. Bring a hat and sunscreen — there\'s no shade on the lake.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Temple Visit at Sunset',
+          text: 'Return to the temples in the late afternoon for a final sunset visit. The western light turns the sandstone facade from amber to deep orange to purple. The fallen head of the second colossus casts long shadows. With multiple days here, you can appreciate details missed on first visits — the small figures between the colossi\'s legs, the graffiti left by 19th-century explorers, and the subtle differences between the four statues.',
+          tip: 'The temple closes at 5pm in winter, 6pm in summer. The last hour before closing is the quietest and most atmospheric time to visit.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Qasr Ibrim Viewpoint & Desert Hiking',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Desert Hike to the Viewpoints',
+          text: 'Hike into the desert behind Abu Simbel for elevated views over the temples and Lake Nasser. The low desert hills behind the village give a bird\'s-eye perspective — the temple facade, the artificial cliff, and the lake stretching south. The desert terrain is rocky and flat, with occasional wadis (dry river beds). The silence and the scale of the landscape are humbling. Return to the village by late morning before the heat intensifies.',
+          tip: 'Start early (6–7am) before the sun gets fierce. Bring 2+ litres of water, sun protection, and wear closed shoes. Tell your hotel where you\'re going.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Nubian Cooking & Crafts',
+          text: 'Arrange a Nubian cooking experience through Eskaleh ecolodge or a local family (E£200–400). Learn to prepare tagen — a slow-cooked stew of meat, vegetables, and Nubian spices in a clay pot — Nubian bread baked in a traditional oven, and karkade (hibiscus tea). Nubian women also teach henna painting (E£50–100) and basket weaving. These hands-on experiences connect you to a culture with 5,000 years of Nile history.',
+          tip: 'Nubian cooking classes are informal and social — expect lots of tea, conversation, and laughter. The food is simple but deeply flavourful. A genuine cultural highlight.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Nubian Music Night',
+          text: 'If you\'re lucky, your hotel or the village may host a Nubian music evening — hand drums (tar), clapping, and call-and-response singing that blends African and Arabic traditions. The music is distinctly different from Egyptian music and deeply connected to the Nubian identity. Even without a performance, the village evenings are peaceful — tea with locals, stargazing, and the quiet lap of Lake Nasser.',
+          tip: 'Ask at Eskaleh or your hotel if any music events are planned. Nubian gatherings are informal — if you hear drums, follow the sound and you\'ll be welcomed.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Solar Alignment & Photography Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Temple Photography Session',
+          text: 'Use the morning light for a focused photography session. The sunrise illumination of the facade from 6–8am is the most dramatic light. The Great Temple faces due east — the alignment was precise enough that twice a year (Feb 22 and Oct 22), sunlight penetrates 60 metres to the innermost sanctuary, illuminating three of the four seated gods. The sun god Ptah (god of darkness) remains in shadow. If visiting near these dates, the solar alignment event draws crowds but is unforgettable.',
+          tip: 'For the best facade photographs, position yourself directly in front at sunrise. For dramatic perspective shots, shoot from the far right or left side to emphasise the colossi\'s depth.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Temple Details & Inscriptions',
+          text: 'Return to the temples for a slow, detailed exploration. Study the hieroglyphic inscriptions — Ramesses II\'s cartouches appear hundreds of times. The Kadesh battle reliefs in the Great Temple are the most detailed military narrative in Egyptian art — chariots, archers, and the Orontes River are all depicted. The facade graffiti includes inscriptions by Giovanni Belzoni (who first entered the temple in 1817) and other 19th-century explorers.',
+          tip: 'The 19th-century graffiti on the facade and inside the temple tells its own story of European exploration. Belzoni\'s inscription is on the second colossus from the left.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Lake Nasser',
+          text: 'Final sunset on the Lake Nasser shore. The temples silhouetted against the fading sky, the vast lake, and the desert beyond are the lasting image of Abu Simbel. Dinner at Eskaleh — order the full Nubian feast (E£200–300) with tagen, grilled fish, Nubian bread, salads, and karkade. The rooftop after dinner offers the last stargazing opportunity before departure.',
+          tip: 'The farewell sunset from the lake shore south of the temples is the most photogenic moment. The temple facades are oriented east so the western light creates dramatic shadows on the colossi.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Return to Aswan',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Final Sunrise at the Temples',
+          text: 'One last sunrise visit to the temples. After multiple days, the details become familiar — the slight smile on the leftmost colossus, the fallen queen at the feet of the second statue, the hieroglyphic bands running up the facade. Abu Simbel rewards extended time in a way that a 2-hour day trip cannot capture. The emotional weight of standing before 3,200 years of history in the Sahara is cumulative.',
+          tip: 'Use the final morning for any photographs you missed. The guards are friendlier and more relaxed when they recognise you from previous days.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Return Journey to Aswan',
+          text: 'Depart Abu Simbel by the afternoon convoy (1–2pm) for the 3.5-hour return to Aswan. The drive through the Sahara in daylight reveals more detail than the pre-dawn outbound journey — sand dunes, rocky outcrops, and the occasional mirage. Alternatively, fly EgyptAir (35 minutes) for a final aerial view of the temples and Lake Nasser from above. Arrive in Aswan by late afternoon.',
+          tip: 'The return drive in daylight is more scenic than the outbound pre-dawn trip. Sit on the left side for the best views of the desert landscape.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Onward Travel',
+          text: 'Arrive back in Aswan and continue your Egyptian journey. Trains to Luxor (3 hours, E£40–100) depart regularly. The overnight sleeper to Cairo (13 hours, $60–90) departs around 5pm. EgyptAir flies to Cairo (1.5 hours). For the Red Sea, buses run to Hurghada (5 hours) and Marsa Alam (4 hours). Farewell dinner on the Aswan Corniche at Makka (E£100–200) or a final felucca sunset on the Nile.',
+          tip: 'If heading to Luxor, the afternoon train gives you a scenic 3-hour journey along the Nile through sugar cane fields and rural Upper Egypt.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Shared convoy from Aswan', text: 'The shared minibus convoy from Aswan to Abu Simbel costs E£600–1,000 per person including temple entry. Private cars are E£3,000–5,000. Ask your hotel to group you with other travelers.' },
+  { title: 'Stay overnight for value', text: 'Overnight stays at Abu Simbel are surprisingly affordable (E£800–1,500) and let you see the temples at sunrise without crowds and the Sound and Light Show — far more rewarding than the rushed 2-hour day trip.' },
+  { title: 'EgyptAir off-season flights', text: 'EgyptAir flies Aswan to Abu Simbel (35 minutes) for $100–150 return. Off-season prices can drop to $80. The aerial views of Lake Nasser alone are worth the ticket and you save 7 hours of driving.' },
+  { title: 'Eat in the village', text: 'Abu Simbel village has simple restaurants serving grilled meat, rice, and vegetables for E£60–100. Eskaleh ecolodge has the best food but is pricier (E£100–200). Bring snacks from Aswan for between meals.' },
+  { title: 'Combined temple ticket', text: 'The combined ticket for both temples is E£500 — there\'s no separate ticket option. This is good value considering the quality. Student cards get 50% off.' },
+  { title: 'Skip the Sound and Light if short on cash', text: 'The Sound and Light Show (E£400) is good but optional. The temples at sunrise and sunset are free with your entry ticket and equally atmospheric. Prioritise the overnight stay over the show.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'E£400–800', midrange: 'E£800–1,500', splurge: 'E£2,500+', notes: 'Basic guesthouse → Eskaleh ecolodge → Nefertari Hotel' },
+  { category: 'Food', budget: 'E£60–150', midrange: 'E£150–300', splurge: 'E£500+', notes: 'Village restaurants → ecolodge dining → hotel restaurant' },
+  { category: 'Transport (from Aswan)', budget: 'E£600–1,000', midrange: 'E£1,500–3,000', splurge: 'E£5,000+', notes: 'Shared convoy → private car → EgyptAir flight' },
+  { category: 'Activities', budget: 'E£500', midrange: 'E£900', splurge: 'E£1,500+', notes: 'Temple entry → + Sound & Light → + fishing trip' },
+  { category: 'Daily Total', budget: 'E£1,560–2,450', midrange: 'E£3,350–5,700', splurge: 'E£9,500+', notes: '$33–51 → $70–119 → $198+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '✈️',
+    title: 'Getting There',
+    items: [
+      'Most visitors come from Aswan (280km). The convoy departs at 3:30–4:00am, arriving 7–8am. Return convoy departs 1–2pm. Book through your Aswan hotel',
+      'EgyptAir flies Aswan to Abu Simbel (35 minutes) — schedule varies by season. Check egyptair.com. The aerial views of Lake Nasser and the temples are extraordinary',
+      'Lake Nasser cruise ships (3–4 nights, Aswan to Abu Simbel) stop at Wadi es-Sebua, Amada, and Kasr Ibrim en route. The most scenic way to arrive but expensive ($400–800+ per person)',
+    ],
+  },
+  {
+    icon: '🏨',
+    title: 'Staying Overnight',
+    items: [
+      'Most visitors do a day trip from Aswan, but staying overnight is strongly recommended. Sunrise at the temples without crowds and the Sound and Light Show are worth the extra night',
+      'Eskaleh Nubian Ecolodge: the best option — traditional Nubian design, lake views, excellent food, friendly staff (E£800–1,200). Book ahead in high season',
+      'Nefertari Hotel: more conventional hotel with pool and lake views (E£1,500–2,500). Seti Abu Simbel Hotel: mid-range with basic comfort (E£1,000–1,800)',
+    ],
+  },
+  {
+    icon: '☀️',
+    title: 'Climate & Timing',
+    items: [
+      'Abu Simbel is in the Sahara — summer temperatures exceed 45°C. Visit October to March for comfortable weather (22–32°C). Avoid June–August entirely',
+      'The solar alignment (Feb 22 and Oct 22) draws large crowds. The dates shifted slightly from the original (Feb 21 and Oct 21) due to the temple relocation. Arrive the day before for a quieter experience',
+      'Winter mornings can be cool (15°C) — bring a jacket for early temple visits and the pre-dawn convoy ride. Afternoon heat peaks at 1–3pm even in winter',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money & Supplies',
+    items: [
+      'There is no ATM in Abu Simbel — bring all the cash you need from Aswan. Hotels and Eskaleh may accept cards but don\'t rely on it',
+      'The village has a couple of small shops for basics (water, snacks, SIM top-ups). Bring sunscreen, any medicines, and specific supplies from Aswan',
+      'Tipping is expected at a lower level than the cities — E£10–20 for hotel staff, E£5–10 for small services. Temple guards appreciate E£10–20',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile signal is available in Abu Simbel village (Vodafone and Orange). WiFi at hotels is basic — don\'t expect fast speeds. Download maps and content before arriving',
+      'No signal for most of the Aswan–Abu Simbel desert drive — the 3.5-hour journey is a dead zone. Bring offline entertainment for the car ride',
+      'The village has no internet cafés or public WiFi. Your hotel WiFi is likely the only option. Plan for limited connectivity during your stay',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Sun protection is critical — hat, SPF 50+, sunglasses, and long sleeves. The desert sun at Abu Simbel is more intense than Cairo or even Aswan',
+      'Comfortable walking shoes for the temple area and desert walks. Sandals for the village. A warm layer for the pre-dawn convoy and winter mornings',
+      'Bring 2+ litres of water per day, snacks, a headlamp (village lighting is dim), and a camera with good low-light capability for temple interiors and stargazing',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏛️', title: 'Temple Respect', text: 'Don\'t touch the ancient reliefs or statues — oils from hands cause damage over millennia. No flash photography inside the temples. Stay on designated paths. These temples survived 3,200 years and a massive relocation — help them survive the next century.' },
+  { icon: '🏠', title: 'Village Courtesy', text: 'Abu Simbel village is a real community, not a tourist attraction. Ask before photographing residents. If invited for tea, accept — it\'s genuine Nubian hospitality. Buy crafts to support the local economy directly.' },
+  { icon: '🌍', title: 'UNESCO Heritage Awareness', text: 'Abu Simbel\'s rescue was a landmark moment in international cultural preservation — 50 countries cooperated to save these temples. The story is as remarkable as the ancient monuments themselves. Visit the museum to understand what was achieved.' },
+  { icon: '🌙', title: 'Night Sky Etiquette', text: 'Abu Simbel has exceptional dark skies — avoid using bright flashlights or phone screens near others who are stargazing. Red filters on torches preserve night vision. The desert silence is part of the experience — keep voices low after dark.' },
+];
+---
+
+<CityGuideLayout
+  title="Abu Simbel Travel Guide 2026 — Ramesses II's Colossal Temples | roammate"
+  description="The ultimate Abu Simbel guide. Ramesses II's colossal temples on Lake Nasser, the UNESCO relocation story, solar alignment, and practical tips for visiting from Aswan. Plan your trip with roammate."
+  heroImage="/images/guides/petra-hero.webp"
+  heroFlag="🇪🇬"
+  heroCountry="Egypt"
+  heroRegion="Middle East"
+  heroCity="Abu Simbel"
+  heroSubtitle="Ramesses II's colossal rock-cut temples on the shores of Lake Nasser — ancient Egypt's greatest monument, rescued from the rising waters by the world."
+  heroPills={['Day Trip from Aswan', 'UNESCO Heritage', 'Oct–Mar Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Abu Simbel's main cost is getting there from Aswan. The temples themselves are one combined ticket. Staying overnight adds accommodation but transforms the experience."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Abu Simbel is remote, ancient, and profoundly moving. The scale of Ramesses II's ambition and the 20th-century rescue make it one of humanity's most remarkable places."
+  ctaCity="Abu Simbel"
+  ctaText="Find travel companions to share the Abu Simbel convoy from Aswan on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app."
+/>

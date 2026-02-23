@@ -1,0 +1,424 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'CLP (Peso)', detail: '1 USD ≈ 950 CLP' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'English at tour agencies only' },
+  { icon: '🕐', label: 'Timezone', value: 'CLT (UTC−4)', detail: 'UTC−3 in summer (DST)' },
+  { icon: '☀️', label: 'Best Months', value: 'Mar – May, Sep – Nov', detail: 'Mild days, clear skies' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$50–100 USD', detail: 'CLP 47,000–95,000' },
+  { icon: '🛂', label: 'Visa', value: 'Visa-free 90 days', detail: 'US/EU/UK/AU citizens' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Desert Highlights in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Valle de la Luna',
+          text: 'Start early with a bike ride or tour to Valle de la Luna (CLP 3,000 entry) — an otherworldly landscape of wind-carved salt formations, sand dunes, and canyons 13km west of town. The Tres Marías rock formations and the Great Dune offer panoramic views across the Atacama salt flat to distant volcanoes. Rent bikes in town (CLP 5,000–8,000 for a half day) or join a guided tour (CLP 15,000–20,000).',
+          tip: 'Go in the afternoon for the famous sunset from the Great Dune — but mornings are less crowded and cooler. Bring water, sunscreen, and a windbreaker.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Town & Atacama Salt Flat',
+          text: 'Return to town for lunch at Adobe (CLP 6,000–10,000 for llama steak or quinoa dishes) on the main Caracoles street. Browse the artisan market for Atacameño textiles and lapis lazuli jewellery. In the afternoon, drive or tour to the Salar de Atacama — South America\'s largest salt flat — to see the flamingo-filled Laguna Chaxa (CLP 2,500 entry). Three species of flamingo feed in the shallow saline lagoons against a backdrop of the Andes.',
+          tip: 'Laguna Chaxa is best visited in the late afternoon when flamingos are most active and the light on the salt flat turns golden.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Stargazing in the Desert',
+          text: 'San Pedro sits at 2,400m in the driest desert on Earth — the night sky here is among the clearest on the planet. Book a stargazing tour (CLP 20,000–30,000) with SPACE or similar operators for telescope viewing of nebulae, star clusters, and the Milky Way. Dinner beforehand at Baltinache (CLP 7,000–12,000) for Atacameño-inspired cuisine with pisco sours (CLP 4,000–5,000).',
+          tip: 'Tours run around 9pm–midnight and include telescopes plus astronomer guides. New moon nights offer the darkest skies. Book a day ahead in peak season.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Geysers & Altiplano',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'El Tatio Geysers at Dawn',
+          text: 'Wake at 4am for the iconic Geysers del Tatio tour (CLP 25,000–35,000 including breakfast). At 4,320m altitude, over 80 geysers erupt at sunrise when the freezing air meets boiling steam — columns of vapour rise against the pink dawn sky. The geyser field is the third largest in the world. Most tours include a stop to soak in a thermal pool (bring swimwear) surrounded by high-altitude desert.',
+          tip: 'It drops below -10°C at El Tatio before dawn. Layer up with thermal underwear, fleece, and windproof jacket. Altitude can cause headaches — drink coca tea beforehand.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Machuca Village & Rest',
+          text: 'Tours stop at Machuca — a tiny Atacameño hamlet where villagers sell empanadas de queso (CLP 1,000–2,000) grilled over charcoal, served with fresh pebre sauce. Back in San Pedro, rest from the early start. Walk to the R.P. Gustavo Le Paige Archaeological Museum (CLP 5,000) for pre-Columbian artifacts from the Atacama region — ceramics, textiles, and mummies from the Atacameño civilization.',
+          tip: 'The museum is small but excellent. It contextualizes everything you see in the landscape — the people who thrived here for thousands of years.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Caracoles Street & Dinner',
+          text: 'Stroll Calle Caracoles — San Pedro\'s main drag of restaurants, bars, and agencies. Dinner at La Casona (CLP 6,000–11,000) for traditional Chilean dishes with altiplano ingredients, or Café Export for pizza and beer (CLP 5,000–8,000). Try a Terremoto — Chile\'s sweet white wine and pineapple ice cream cocktail (CLP 3,000–4,000). Browse the evening artisan stalls for hand-woven textiles.',
+          tip: 'Book tomorrow\'s tours tonight — popular trips like Valle de la Luna sunset and flamingo lagoons fill up fast, especially June–September.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Salt Flats & Flamingos',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Laguna Cejar & Tebinquinche',
+          text: 'Tour to the hidden lagoons of the Salar de Atacama. Laguna Cejar (CLP 15,000 entry) is a turquoise lake with salt concentration higher than the Dead Sea — you float effortlessly. Laguna Tebinquinche mirrors the surrounding volcanoes perfectly on still mornings. The landscape is stark white salt crust against deep blue water and brown volcanic peaks.',
+          tip: 'Bring a towel and water shoes for floating at Cejar. The salt stings any cuts. Shower facilities are basic — rinse off as soon as you can.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Salar de Atacama & Flamingos',
+          text: 'Continue to Laguna Chaxa (CLP 2,500) inside the Salar de Atacama — South America\'s largest salt flat stretching to the horizon. Three species of flamingo — Andean, Chilean, and James\'s — feed in the shallow lagoons. The reflected salt flat at sunset is one of the most photographed scenes in Chile. Return via Toconao village — an oasis with a 1745 bell tower and artisan stalls selling carved volcanic stone.',
+          tip: 'Late afternoon light at Chaxa is magical. The flamingos turn pink against the white salt and orange sky. Bring a zoom lens if you have one.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Pisco & Stars',
+          text: 'Dinner at CkunA (CLP 7,000–13,000) — one of San Pedro\'s best restaurants with Atacameño-fusion cuisine using quinoa, llama, and local herbs. Try cactus fruit pisco sour (CLP 4,500). Afterward, walk 10 minutes out of town where the streetlights fade — the Milky Way arches overhead in one of the darkest skies on Earth. No telescope needed to see thousands of stars.',
+          tip: 'Bring a jacket for evening walks — desert temperatures drop rapidly after sunset, often 20°C+ swing from day to night.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Valle de la Luna & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Valle de la Muerte by Bike',
+          text: 'Rent a bike (CLP 5,000–8,000) and ride to Valle de la Muerte (Death Valley) — 3km from town through a canyon of sculpted red rock and golden sand dunes. The landscape looks genuinely Martian. Walk the canyon floor between towering rock walls, then climb the sand dunes for views over the entire valley. Less visited than Valle de la Luna and equally stunning.',
+          tip: 'Valle de la Muerte sand dunes are popular for sandboarding — some bike shops rent boards for CLP 3,000. The steep face is thrilling but the walk back up is brutal.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Valle de la Luna Sunset',
+          text: 'The essential Atacama experience. Enter Valle de la Luna (CLP 3,000) for a loop through salt caves, wind-carved amphitheatres, and the Tres Marías rock pillars. Time your visit to summit the Great Dune for sunset — the valley below turns from orange to red to purple as the sun drops behind the cordillera. The Licancabur volcano glows pink on the horizon.',
+          tip: 'Arrive by 4pm for the sunset hike. The Great Dune gets crowded — walk further along the ridge for more space and better angles.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dinner',
+          text: 'Last dinner at Baltinache for Atacameño cuisine — try the llama loin with quinoa (CLP 9,000–12,000) and a pisco sour. Walk through the quiet adobe streets one last time. The sky above San Pedro is so clear you can see the Magellanic Clouds (dwarf galaxies) with the naked eye — a fitting farewell to one of Earth\'s most extraordinary landscapes.',
+          tip: 'If heading south to Santiago, the overnight bus (TurBus or Pullman, CLP 25,000–35,000) departs from Calama 1.5 hours away — pre-book transfer.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & First Desert Taste',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive & Acclimatize',
+          text: 'Fly into Calama airport (CJC) and transfer to San Pedro de Atacama (1.5 hours, CLP 12,000–15,000 shared shuttle or CLP 40,000 private). Check into your hostel — Hostal Campo Base (CLP 12,000–18,000 dorm) or Hostal Mamatierra (CLP 25,000–35,000 private) are backpacker favorites. Walk the dusty adobe streets. San Pedro sits at 2,400m — take it slow today to acclimatize before high-altitude tours.',
+          tip: 'Drink plenty of water and coca tea (available free at most hostels) to help with altitude. Avoid alcohol and heavy exercise on day one.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Town & Museum',
+          text: 'Explore San Pedro\'s compact center — adobe buildings, the 1577 Iglesia de San Pedro (one of Chile\'s oldest churches) with a cactus-wood roof, and Calle Caracoles lined with restaurants and tour agencies. Visit the R.P. Gustavo Le Paige Archaeological Museum (CLP 5,000) for Atacameño ceramics, textiles, and pre-Columbian artifacts. Compare tour prices at 3–4 agencies — prices vary significantly.',
+          tip: 'Book El Tatio geysers for day 2 tonight. Multiple agencies run the tour — CLP 25,000–35,000 is the range. Ask if breakfast is included.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'First Desert Dinner',
+          text: 'Dinner on Caracoles — Adobe (CLP 6,000–10,000) for llama steak and Atacameño dishes, or La Casona for Chilean comfort food. Try your first pisco sour (CLP 3,500–5,000) — Chile and Peru both claim it, and the Atacama version is dry and crisp. Walk to the edge of town after dinner — even with San Pedro\'s modest lights, the Milky Way is already spectacular.',
+          tip: 'San Pedro is expensive by Chilean standards — it is a remote desert town. Budget travelers should stock up on snacks and water at the small supermarkets.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'El Tatio Geysers',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Geysers del Tatio at Sunrise',
+          text: 'The alarm rings at 4am. The 1.5-hour drive climbs to 4,320m through the dark altiplano. At dawn, over 80 geysers erupt — columns of steam rise 10m into the freezing air against the pink sunrise sky. The geyser field is the highest and third largest in the world. Walk the boardwalks between fumaroles, boiling mud pools, and bubbling craters. Most tours include a thermal pool stop — bring swimwear to soak in warm water at 4,000m.',
+          tip: 'Temperatures hit -15°C before dawn. Wear thermals, fleece, hat, and gloves. The cold is serious. Hot chocolate provided by most tours is a lifesaver.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Machuca & Recovery',
+          text: 'Stop at Machuca village — a hamlet of 20 adobe houses where Atacameño families sell empanadas de queso (CLP 1,000–2,000) grilled over fire. The landscape around Machuca features vicuñas (wild relatives of llamas) grazing on the altiplano. Back in San Pedro by noon — rest, rehydrate, and recover from the 4am start. Lunch at Franchuteria for crêpes (CLP 3,500–6,000) or Roots for healthy bowls.',
+          tip: 'Use the free afternoon to do laundry (hostels charge CLP 4,000–6,000 per load) and restock water. Rest is essential at altitude.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Stargazing Tour',
+          text: 'Book a professional stargazing tour (CLP 20,000–30,000 with SPACE, Alarkapin, or similar). Astronomers guide you through the southern sky — the Southern Cross, Magellanic Clouds, Carina Nebula, and Omega Centauri star cluster through powerful telescopes. The Atacama is home to the world\'s most advanced observatories (ALMA, VLT) for a reason — this sky is extraordinary.',
+          tip: 'New moon dates offer the darkest skies. Tours run 9pm–midnight and include hot drinks. SPACE Obs has the best telescopes — book 2+ days ahead.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Salt Flat & Flamingos',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Laguna Cejar Float',
+          text: 'Morning tour to the hidden lagoons. Laguna Cejar (CLP 15,000 entry) has salt concentration so high you float like a cork — the water is vivid turquoise against white salt crusts and brown volcanoes. Float weightlessly in silence. Continue to Laguna Tebinquinche, whose mirror surface reflects the Andes perfectly. The Ojos del Salar (Eyes of the Salt Flat) are two perfectly circular sinkholes of deep blue water.',
+          tip: 'Do not submerge your head at Cejar — the salt concentration burns eyes and skin badly. Bring water shoes and a towel. Rinse immediately after.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Salar de Atacama & Toconao',
+          text: 'Drive to Laguna Chaxa (CLP 2,500) inside the vast Salar de Atacama. Three flamingo species — Andean, Chilean, and James\'s — feed in the shallow brine. The salt flat stretches to the horizon, white and cracked, with volcanoes rising behind. Stop at Toconao — a charming oasis village with a white volcanic stone church (1745), an ancient bell tower, and artisans carving liparite stone.',
+          tip: 'Toconao\'s Quebrada de Jere is a hidden green canyon with fruit trees and a stream — a 20-minute walk from the village plaza. Refreshing after the salt flats.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Altiplano Dinner',
+          text: 'Dinner at CkunA — San Pedro\'s finest restaurant (CLP 8,000–14,000). Atacameño-fusion menu uses local quinoa, llama, river shrimp, and cactus fruits. The cactus fruit pisco sour (CLP 4,500) is outstanding. Or try Pueblo Viejo for Chilean classics at lower prices (CLP 5,000–9,000). The unpaved streets glow under string lights — San Pedro is atmospheric even after a long day.',
+          tip: 'Restaurant reservations are not usually needed but CkunA fills up in July–August (Chilean holidays). Walk in by 7:30pm or book ahead.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Valle de la Luna & Muerte',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Valle de la Muerte by Bike',
+          text: 'Rent bikes (CLP 5,000–8,000 half day) and ride 3km to Valle de la Muerte — a canyon of sculpted red rock and towering sand dunes. The original name was "Valle de Marte" (Mars Valley) but a Belgian priest\'s accent turned it into "Muerte" (Death). Walk the canyon floor between sheer walls, then climb the main dune for panoramic desert views. Sandboarding down the steep face is a popular option (board rental CLP 3,000).',
+          tip: 'Start the bike ride before 10am — afternoon winds blow sand hard enough to sting. The ride back is mostly uphill so save energy.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Valle de la Luna Exploration',
+          text: 'Enter Valle de la Luna (CLP 3,000) for the full circuit. Explore the salt caves — caverns with walls encrusted in salt crystals. Walk through the Amphitheatre — a natural circular canyon with incredible acoustics. See the Tres Marías — three sentinel rock pillars eroded into human-like forms. The landscape is genuinely alien — NASA has tested Mars rovers here because of its similarity to the Red Planet.',
+          tip: 'The salt caves can be dark and narrow — bring a phone flashlight. Some passages require crouching. Not recommended for claustrophobic visitors.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Great Dune Sunset',
+          text: 'Time the Valle de la Luna visit to reach the Great Dune by 5pm (summer) or 4pm (winter). The sunset here is legendary — the valley floor turns from gold to deep orange to violet, while Volcán Licancabur glows pink on the eastern horizon. Hundreds gather but the atmosphere is reverent. Return to town for dinner at Baltinache (CLP 7,000–12,000) and a well-earned pisco sour.',
+          tip: 'Walk past the first group of sunset watchers along the dune ridge for more space. Bring a warm layer — temperature drops fast once the sun disappears.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'High Altiplano Lagoons',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lagunas Altiplánicas',
+          text: 'Full-day tour to the high-altitude lagoons (CLP 30,000–45,000). Drive through the altiplano climbing to 4,200m to reach Lagunas Miscanti and Miñiques — twin volcanic lakes of impossible blue-green colour ringed by snow-capped peaks. Vicuñas graze on the ichu grass. The air is thin and cold but the scenery is among the most spectacular in South America.',
+          tip: 'Altitude sickness is real at 4,200m. Drink coca tea before the trip. Move slowly. The views are worth any mild discomfort.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Socaire & Atacameño Culture',
+          text: 'Stop in Socaire — an Atacameño village at 3,500m where the community maintains traditional terraced agriculture dating back centuries. Some tours include lunch here (CLP 5,000–8,000) with local dishes like cazuela de llama. The pre-Inca irrigation channels still function. Continue through landscapes of volcanic cones, salt deposits, and empty desert that seems to stretch to infinity.',
+          tip: 'Socaire villagers sell hand-knit alpaca goods at fair prices — better value than San Pedro shops and directly supporting the community.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Rest & Recharge',
+          text: 'Return to San Pedro tired from altitude. Light dinner at Roots for quinoa bowls and fresh juice (CLP 4,000–7,000) or grab empanadas from street vendors (CLP 1,500–2,500). The town plaza comes alive in the evening — locals and travelers mix under the desert sky. An early night prepares you for another early morning tomorrow.',
+          tip: 'Hydrate aggressively after a high-altitude day. Electrolyte packets from the pharmacy (CLP 1,000) help more than plain water.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Rainbow Valley & Hot Springs',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Valle del Arcoíris',
+          text: 'Tour to Valle del Arcoíris (Rainbow Valley, CLP 20,000–25,000) — 90km northwest of San Pedro. Mineral deposits paint the landscape in stripes of red, green, yellow, purple, and white. Walk through the Yerbas Buenas petroglyphs — pre-Columbian rock art depicting llamas, humans, and hunting scenes carved over 10,000 years ago. Less touristy than the big-name sites.',
+          tip: 'Morning light brings out the colours best. Bring binoculars for the petroglyphs — some are on hard-to-reach cliff faces.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Puritama Hot Springs',
+          text: 'Soak in the Puritama Hot Springs (CLP 15,000) — eight terraced thermal pools of 28–35°C water cascading through a narrow desert canyon. The setting is extraordinary — red rock walls rising above warm turquoise pools connected by wooden walkways. Located 30km from San Pedro, easily reached by bike (ambitious but doable) or colectivo. Bring a towel and swimwear.',
+          tip: 'Visit before noon or after 3pm to avoid the midday crowds from tour groups. The highest pool is the quietest and warmest.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Last Desert Night',
+          text: 'Farewell dinner at Adobe for one last llama steak and pisco sour under the stars. Walk to the outskirts where the town lights fade — the Southern Cross hangs low on the horizon while the Milky Way blazes overhead. San Pedro is one of those rare places where you feel genuinely small under the universe. Soak it in before tomorrow\'s departure.',
+          tip: 'Download a stargazing app (SkyView or Stellarium) — it makes identifying constellations and planets simple even without a tour.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Departure Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise Walk & Markets',
+          text: 'Wake early for a last desert sunrise — walk east along the dirt roads where the volcanoes turn pink with first light. Breakfast at Franchuteria for crepes and coffee (CLP 3,500–5,500). Browse the morning artisan market for last-minute souvenirs — lapis lazuli jewellery (CLP 5,000–15,000), hand-woven textiles (CLP 8,000–25,000), and Atacameño ceramics.',
+          tip: 'Lapis lazuli is mined in Chile and sold for a fraction of international prices. Ensure you buy from market vendors, not shops, for the best price.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Transfer to Calama',
+          text: 'Shared transfer to Calama airport (CLP 12,000–15,000, 1.5 hours) or bus station. If heading to Bolivia, the border crossing at Hito Cajón leads to the Uyuni salt flats — many agencies run 3-day tours from San Pedro to Uyuni through some of the most extraordinary landscapes on the planet (CLP 100,000–150,000).',
+          tip: 'The San Pedro to Uyuni crossing is one of South America\'s great overland journeys. Book through a reputable agency — the altiplano at 4,500m+ is no place for corners to be cut.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Onward Journey',
+          text: 'Flights from Calama connect to Santiago (2 hours) and other Chilean cities. If continuing south, overnight buses to Santiago (22 hours, CLP 30,000–45,000 semi-cama) or to La Serena (12 hours) depart from Calama. The Atacama Desert stays with you — the silence, the stars, and the vast emptiness are hard to forget.',
+          tip: 'Book semi-cama or salón-cama bus seats — fully reclining seats make overnight journeys comfortable. Chilean long-distance buses are among the best in South America.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Bike Valle de la Luna', text: 'Rent a bike for CLP 5,000–8,000 (half day) and ride to Valle de la Luna and Valle de la Muerte yourself instead of paying CLP 15,000–20,000 for a tour. The roads are flat and well-marked.' },
+  { title: 'Self-cater basics', text: 'San Pedro restaurants are pricey. Buy bread, cheese, and fruit from the small supermarkets (CLP 3,000–5,000 per day). Cook at hostel kitchens. Save restaurant budgets for one special dinner at CkunA or Baltinache.' },
+  { title: 'Compare agency prices', text: 'Tour prices vary 20–40% between agencies on Caracoles. Walk into 3–4 and compare. Last-minute deals appear for next-morning tours when vans have empty seats.' },
+  { title: 'Free stargazing', text: 'Walk 10 minutes out of town and the sky is world-class for free. Download Stellarium app to identify constellations. Professional tours are great but not essential for the Atacama night sky.' },
+  { title: 'Multi-tour discounts', text: 'Book 3+ tours with the same agency and negotiate 10–15% off. Bundle El Tatio, salt flat, and lagoon tours together. Pay in cash for an additional small discount at some agencies.' },
+  { title: 'Bring supplies from Calama', text: 'Everything in San Pedro costs 30–50% more than in Calama. Stock up on water, snacks, sunscreen, and toiletries before the bus to San Pedro. The savings add up fast.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'CLP 12,000–20,000', midrange: 'CLP 35,000–70,000', splurge: 'CLP 120,000+', notes: 'Hostel dorm → private room → boutique hotel' },
+  { category: 'Food', budget: 'CLP 8,000–15,000', midrange: 'CLP 20,000–35,000', splurge: 'CLP 50,000+', notes: 'Self-catering & empanadas → restaurants → CkunA' },
+  { category: 'Transport', budget: 'CLP 5,000–8,000', midrange: 'CLP 12,000–15,000', splurge: 'CLP 40,000+', notes: 'Bike rental → shared shuttle → private transfer' },
+  { category: 'Activities', budget: 'CLP 3,000–15,000', midrange: 'CLP 25,000–45,000', splurge: 'CLP 80,000+', notes: 'Self-guided + entry fees → group tours → private tours' },
+  { category: 'Daily Total', budget: 'CLP 28,000–58,000', midrange: 'CLP 92,000–165,000', splurge: 'CLP 290,000+', notes: '$30–61 → $97–174 → $305+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Getting There',
+    items: [
+      'Fly to Calama (CJC) from Santiago (2 hours). Transfer to San Pedro by shared shuttle (CLP 12,000–15,000, 1.5 hours) or private transfer',
+      'Overnight buses from Santiago (22 hours, CLP 30,000–45,000) arrive in Calama. Some direct services to San Pedro exist',
+      'From Bolivia: cross at Hito Cajón from Uyuni. From Argentina: bus from Salta via Paso de Jama (12 hours)',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Altitude',
+    items: [
+      'San Pedro sits at 2,400m — mild altitude effects possible. Tours reach 4,300m+ where altitude sickness is common. Acclimatize 1–2 days before high tours',
+      'Coca tea helps with altitude. Drink 3+ litres of water daily. The desert air is extremely dry — lips crack and skin dries fast. Bring lip balm and moisturizer',
+      'Nearest hospital is in Calama (1.5 hours). San Pedro has a basic clinic. Travel insurance with evacuation coverage is essential',
+    ],
+  },
+  {
+    icon: '🚌',
+    title: 'Getting Around',
+    items: [
+      'San Pedro is walkable in 15 minutes end to end. Bikes are the best local transport (CLP 5,000–8,000 half day)',
+      'All attractions require tours or rented vehicles. No public transport to geysers, lagoons, or valleys',
+      'Most tour agencies include hotel pickup. Group tours run 10–15 people in minibuses. Private tours cost 2–3x but offer flexibility',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'WiFi at hostels and cafes is slow and unreliable — this is a remote desert town. Do not depend on internet here',
+      'Entel has the best mobile coverage. Buy a SIM in Calama (CLP 5,000–10,000 for 5GB). Signal drops at high-altitude sites',
+      'Download offline maps (Google Maps or Maps.me) and any stargazing apps before arriving. Cash is more reliable than card machines',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'One ATM in town (BancoEstado) — it frequently runs out of cash. Bring enough from Calama or Santiago. Cards accepted at restaurants and agencies',
+      'Tour agencies often give 5% discount for cash payment. Market vendors are cash only',
+      'Budget CLP 50,000–100,000 per day depending on tours. Multi-day visitors spend most on tours (CLP 25,000–45,000 each)',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Essentials',
+    items: [
+      'Sunscreen SPF 50+ and wide-brim hat — UV at 2,400m+ is brutal. Sunglasses essential on the salt flats (snow blindness risk)',
+      'Layers: thermal base for El Tatio pre-dawn (-15°C), T-shirt for midday (+25°C). The temperature swing is 30–40°C in a day',
+      'Swimwear for Puritama hot springs and Laguna Cejar. A headlamp for stargazing walks. Water bottle (refill at hostels)',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏜', title: 'Atacameño Heritage', text: 'San Pedro is on ancestral Atacameño (Lickan Antay) land — one of the oldest cultures in the Americas with 10,000+ years of history. The museum, villages like Socaire and Machuca, and the adobe architecture reflect a living indigenous culture.' },
+  { icon: '🌿', title: 'Coca Leaf Tradition', text: 'Coca tea (mate de coca) is legal and widely offered at hostels. It is a mild stimulant that helps with altitude. Chewing coca leaves is traditional across the Andes. Not related to cocaine in any practical sense.' },
+  { icon: '💧', title: 'Water Respect', text: 'Water is precious in the driest desert on Earth. The Atacameño people have managed scarce water for millennia. Conserve water at hostels. Some tours visit traditional irrigation systems still in use.' },
+  { icon: '🌌', title: 'Dark Sky Etiquette', text: 'San Pedro has invested in reducing light pollution to protect its world-class night sky. Use red-light mode on phones when stargazing. The community takes dark sky preservation seriously — respect it.' },
+  { icon: '🦙', title: 'Wildlife Distance', text: 'Flamingos, vicuñas, and viscachas are wild and sensitive to disturbance. Keep distance at lagoons and altiplano sites. Do not feed animals. The ecosystem is fragile and slow to recover at these altitudes.' },
+];
+---
+
+<CityGuideLayout
+  title="San Pedro de Atacama Guide 2026 — Desert Itinerary for Young Travelers | roammate"
+  description="The ultimate San Pedro de Atacama guide. Geysers at dawn, flamingo lagoons, Valle de la Luna sunsets, and the world's best stargazing. Budget tips and itineraries."
+  heroImage="/images/guides/atacama-desert-hero.webp"
+  heroFlag="🇨🇱"
+  heroCountry="Chile"
+  heroRegion="South America"
+  heroCity="San Pedro de Atacama"
+  heroSubtitle="An adobe oasis in the world's driest desert, where geysers erupt at dawn and the Milky Way blazes like nowhere else on Earth."
+  heroPills={['3-Day Adventure', 'Stargazing Capital', 'Mar – May Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs in Chilean pesos. San Pedro is pricey for Chile — a remote desert town where everything is trucked in. Self-catering and biking save significantly."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="San Pedro de Atacama sits on 10,000 years of Atacameño heritage in the driest desert on Earth. Respect the water, the dark skies, and the ancient culture that thrives here."
+  ctaCity="San Pedro de Atacama"
+  ctaText="Find travel companions to share geysers at dawn, flamingo lagoons, and stargazing in the Atacama on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app."
+/>

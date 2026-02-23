@@ -1,0 +1,424 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'IDR (Rupiah)', detail: '1 USD ≈ 15,800 IDR' },
+  { icon: '🗣', label: 'Language', value: 'Indonesian / Sasak', detail: 'Basic English in tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'WITA (UTC+8)', detail: 'Central Indonesian Time' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Sep', detail: 'Dry season, best surf and visibility' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–50 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on Arrival', detail: '30 days, 500,000 IDR, extendable once' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Kuta Lombok in a Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tanjung Aan & Selong Belanak',
+          text: 'Start early at Tanjung Aan, 5km east of Kuta — a double bay of pure white sand with unusually round, pepper-grain-shaped sand grains found nowhere else in Indonesia. The bay is sheltered and the water turquoise and calm, ideal for a morning swim. Then ride 15 minutes west to Selong Belanak, a long crescent of soft sand with gentle surf that makes it the best beginner surfing beach in Lombok. Board rental is 50,000 IDR/hour and local instructors offer lessons for 200,000 IDR.',
+          tip: 'Tanjung Aan is best before 10am — the sand is almost blindingly white in full sun. Park your scooter at the eastern end where parking is free (the western end charges 10,000 IDR).',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kuta Town & Merese Hill',
+          text: 'Explore Kuta village — a small, still-developing town that feels like Bali 30 years ago. Walk the main street with its surf shops, warungs (small restaurants), and yoga studios. After lunch (nasi campur for 25,000 IDR at a local warung), ride to Merese Hill east of Tanjung Aan. A short hike up the grassy headland rewards you with a sweeping 360-degree panorama — Tanjung Aan\'s turquoise bays to the west, the wild south coast stretching east, and the open Indian Ocean to the south.',
+          tip: 'Merese Hill is free to access but locals may ask for a small donation (10,000–20,000 IDR) at the base. The sunset view from here is spectacular — consider returning in the evening.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset & Seafood',
+          text: 'Watch the sunset from Kuta Beach itself — the main beach right in town faces south-southwest and catches golden evening light. Afterwards, eat at one of the beachside warungs where fresh grilled fish, squid, and prawns are served with sambal matah (raw shallot and lemongrass sambal) and steamed rice for 40,000–70,000 IDR. El Bazar is a popular spot for travellers with excellent smoothie bowls, while Warung Bule serves authentic Sasak food at local prices.',
+          tip: 'Wednesday evenings see a small night market in Kuta village with local Sasak food, satay, and fresh juices — the best value eating of the week.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Beaches East & West of Kuta',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tanjung Aan Beach',
+          text: 'Ride 5km east to Tanjung Aan, widely regarded as one of the most beautiful beaches in Indonesia. Two bays of pure white sand separated by a rocky headland, with turquoise water so clear you can see fish from the beach. The eastern bay has unusual pepper-grain sand found nowhere else. Swim in the sheltered western bay, walk between the two bays over the headland, and watch local boys surfing the small waves off the point.',
+          tip: 'Bring your own snorkelling gear — the rocky headland between the two bays has coral and reef fish in the shallows. There is no rental equipment at Tanjung Aan.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Selong Belanak Surf',
+          text: 'Head west to Selong Belanak, a 1km crescent beach with gentle, rolling whitewater waves perfect for learning to surf. Local surf schools line the beach — a 2-hour lesson with board costs 200,000–300,000 IDR and most instructors are patient and experienced with beginners. Even non-surfers will love this beach: the sand is soft, the water warm, and the backdrop of green hills makes it feel like a tropical paradise that hasn\'t been discovered yet. Lunch at one of the beachside warungs (nasi goreng, 25,000 IDR).',
+          tip: 'If you catch the surf bug, Selong Belanak\'s inside section is forgiving enough to progress quickly. Rent a board for the day (100,000 IDR) and practice between lessons.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Merese Hill Sunset',
+          text: 'Return east to Merese Hill for sunset — a grassy headland above Tanjung Aan with unobstructed views of the south coast. The hike takes 15 minutes and the reward is a panorama that rivals anything in Bali. Watch the sun drop into the Indian Ocean while cows graze on the hillside around you. Back in Kuta, eat at Milk Espresso for excellent Western-style food, or Warung Bule for authentic nasi campur and Sasak dishes at local prices (30,000–50,000 IDR).',
+          tip: 'Merese Hill has no lights or barriers — bring a phone torch for the descent after dark. The view west towards the beaches is best for sunset.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Hidden Beaches & Surf',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mawun Beach',
+          text: 'Ride 10 minutes west of Kuta to Mawun Beach, enclosed between two green headlands. The horseshoe bay has calm, waveless water on most days, making it ideal for swimming and floating in warm turquoise water. The beach is less visited than Tanjung Aan and Selong Belanak, so early morning visits often feel private. A few local vendors sell coconuts (15,000 IDR) and simple snacks. The surrounding hills are covered in dry tropical forest that turns vivid green during the wet season.',
+          tip: 'Parking at Mawun is 5,000 IDR per scooter. The road down to the beach is steep — ride cautiously. Bring your own water and snacks as vendor availability is inconsistent.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Gerupuk Bay Surf',
+          text: 'Head to Gerupuk, a fishing village 8km east of Kuta, where local fishermen run boat trips to offshore reef breaks. The boat drops you at one of five surf breaks in the bay (Inside Gerupuk for beginners, Outside and Don Don for intermediates) and waits while you surf. A boat with guide costs 150,000–200,000 IDR per person for 2–3 hours. The waves are consistent, uncrowded, and the setting — surfing with fishing boats and green hills behind you — is uniquely Lombok.',
+          tip: 'Gerupuk\'s reef breaks are over shallow coral — booties are recommended for reef protection and your feet. The boat captains know the breaks well and will match you to the right wave.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kuta Town & Night Life',
+          text: 'Kuta Lombok\'s nightlife is low-key — this is not Bali. A handful of bars on the main strip play music and stay open until midnight. Bus Bar and Kenza Sunset Lounge are popular with the surf and backpacker crowd. For dinner, try ayam taliwang (spicy grilled chicken — a Lombok speciality) at a local warung for 30,000 IDR, or fresh fish at the beachside grills. The scene is sociable but relaxed — perfect for early-rising surfers.',
+          tip: 'Bintang beer is 30,000–40,000 IDR at local warungs, double that at tourist bars. Buy from the minimarket and drink on the beach for the best value.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Culture, Weaving & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sade & Sukarara Weaving Villages',
+          text: 'Ride 30 minutes north of Kuta to the traditional Sasak villages of Sade and Sukarara. Sade is a preserved traditional village where thatched-roof houses are built in the ancestral Sasak style using cow dung floors (maintained and polished weekly). Villagers give informal tours explaining Sasak traditions, marriage customs, and daily life. Sukarara is famous for hand-weaving — women produce intricate ikat and songket textiles on wooden backstrap looms. Watch the weaving process and purchase direct from the weavers.',
+          tip: 'Sade and Sukarara are real communities, not tourist attractions — visit respectfully. Donations are appreciated at Sade. At Sukarara, buying a textile directly supports the weaver and her family.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'One Last Beach',
+          text: 'Return south for a final beach session. If you haven\'t visited Tampah Beach, the empty stretch east of Gerupuk is worth the short ride — wild, windswept, and almost always deserted. The black sand contrasts with the white beaches to the west. Alternatively, return to your favourite beach for a last swim. Pack up and prepare for your onward journey — ferries to Bali, flights from Lombok International Airport, or boats to the Gili Islands all depart from different points.',
+          tip: 'Lombok International Airport (LOP) is 30 minutes from Kuta by taxi (150,000 IDR). The Bangsal harbour for Gili boats is 2 hours north — book a shuttle from Kuta (100,000 IDR).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Onward Travel',
+          text: 'Options from Kuta Lombok: flights to Bali (25 minutes, from 300,000 IDR), public boats to Gili Trawangan/Air/Meno (shuttle to Bangsal 2 hours, boat 30 minutes, total ~200,000 IDR), or fast boat direct to Gili from Senggigi or Teluk Nare. For Bali, the Lembar–Padang Bai ferry (4 hours, 50,000 IDR for foot passengers) is the cheapest option. Book fast boats online a day ahead as they sell out in peak season.',
+          tip: 'The direct fast boats from south Lombok to the Gili Islands run only in high season and are weather-dependent. The Bangsal public boat route operates year-round and is the most reliable.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Kuta Beaches',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrival in Kuta',
+          text: 'Arrive in Kuta Lombok from Lombok Airport (30 minutes by taxi, 150,000 IDR) or via ferry from Bali. Check into a guesthouse — basic rooms start at 150,000 IDR/night, air-con bungalows from 300,000 IDR. Rent a scooter (60,000–80,000 IDR/day) — essential for exploring the coastal roads. Kuta Lombok feels like Bali before the development: quiet, authentic, and stunningly beautiful. The south coast has over a dozen beaches within a 30-minute ride.',
+          tip: 'Negotiate a weekly scooter rate of 350,000–400,000 IDR. Check brakes and tyres before renting — the coastal roads are steep and curving. An international driving permit is technically required.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Kuta Beach & Town',
+          text: 'Walk Kuta Beach, the main town beach — a wide sweep of sand facing south towards the Indian Ocean. The beach is good for swimming on calm days but can have strong undertow when the surf is up. Explore the small town: a single main road with surf shops, cafes, yoga studios, and minimarkets. The Sunday market at the central intersection is the best place to buy fruit, vegetables, and local snacks at Sasak prices.',
+          tip: 'The Sunday morning market (6–10am) is a local gathering — arrive early for the best selection. Tropical fruits like manggis (mangosteen), rambutan, and salak cost a fraction of Bali prices.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'First Sunset & Warung Dinner',
+          text: 'Watch sunset from Kuta Beach or ride 5 minutes to the cliff above Tanjung Aan for a wider vista. Dinner at a local warung: nasi campur (mixed rice plate) for 25,000 IDR, ayam taliwang (spicy grilled chicken, a Lombok speciality) for 35,000 IDR, and es kelapa muda (young coconut) for 10,000 IDR. Kuta\'s restaurant scene has improved rapidly — El Bazar, Ashtari, and Milk Espresso cater to travellers with healthy bowls, good coffee, and Sasak-fusion food.',
+          tip: 'Eat at warungs for at least one meal a day — the food is fresher, more authentic, and a third of the price of tourist restaurants.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Tanjung Aan & Merese Hill',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tanjung Aan Beach',
+          text: 'Ride to Tanjung Aan before the heat builds. The twin bays are separated by a rocky headland — the western bay has waves and surfers, the eastern bay is calm and sheltered with unusual pepper-grain sand. Snorkel off the headland rocks where small reef fish and sea urchins hide in the shallows. The water clarity here is exceptional on calm mornings. Local vendors sell coconuts and basic snacks from bamboo shelters on the beach.',
+          tip: 'The eastern bay\'s sand has a unique, almost spherical grain texture — scientists believe it\'s formed by a specific type of coral breakdown found only in this bay.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Merese Hill Hike',
+          text: 'Hike up Merese Hill, the grassy headland above Tanjung Aan\'s eastern bay. The 15-minute climb leads to a broad, flat summit with 360-degree views: the white sand bays below, the rugged south coast stretching east, green hills of the interior, and the open Indian Ocean. Cows and water buffalo graze on the hillside. The hill is particularly photogenic in the late afternoon when the light is warm and the shadows long across the grass.',
+          tip: 'The hill is exposed with no shade — wear a hat and bring water. The view is equally stunning at sunrise if you\'re an early riser.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Merese Sunset & Grilled Seafood',
+          text: 'Stay on Merese Hill for sunset — the western view across the bays with the sun dropping into the sea is one of Lombok\'s defining moments. Descend carefully in the fading light and ride back to Kuta for dinner. Hit the beachside fish grills near the main intersection: choose your fish from the ice display, and it\'s grilled over coconut husks with sambal matah and steamed rice. A full seafood dinner for two with drinks costs 150,000–250,000 IDR.',
+          tip: 'The beachside grills are busiest on weekends when domestic tourists visit from Mataram. Weekday evenings are quieter and service is faster.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Selong Belanak & Surf Lessons',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Selong Belanak Surf',
+          text: 'Head to Selong Belanak for a morning surf session. The beach\'s gentle, rolling whitewater waves are perfect for beginners — you can stand up on your first session. A 2-hour lesson with a local instructor and board costs 200,000–300,000 IDR. The instructors are friendly and encouraging, and the warm water means no wetsuit needed. Between waves, float in the shallows and enjoy the crescent bay backed by lush green hills.',
+          tip: 'Go early — the morning session (7–10am) has the best conditions before the onshore wind picks up. Afternoons are often choppier and less beginner-friendly.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mawun Beach',
+          text: 'Ride 10 minutes east to Mawun Beach, a horseshoe bay between two headlands with calm, sheltered water. Mawun is less visited than the big-name beaches and often feels private, especially midweek. The water is clear enough to snorkel off the rocky sides, though coral coverage is limited. Bring a book, shade under a palm tree, and enjoy the quiet — this is the south Lombok experience at its most undisturbed.',
+          tip: 'The road to Mawun involves a steep, winding descent — ride slowly on the scooter. There are few vendors; bring water and snacks from Kuta.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Yoga & Dinner',
+          text: 'Kuta Lombok has become a yoga hub — Ashtari Yoga, Mana Yoga, and several smaller studios offer daily classes (100,000–150,000 IDR per session). A late-afternoon yoga class with views over the hills is a great way to stretch out after surfing. For dinner, try Ashtari restaurant — perched on a hilltop above Kuta with panoramic views, excellent Indonesian food, and a relaxed atmosphere. The nasi goreng special and fresh juices are standout.',
+          tip: 'Ashtari restaurant is a 5-minute ride uphill from Kuta centre — the sunset views from the terrace make it worth the trip even if you don\'t do yoga.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Gerupuk Surf & East Coast',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Gerupuk Bay Boat Surf',
+          text: 'Ride to Gerupuk village and hire a local fisherman to boat you to the offshore reef breaks. Inside Gerupuk is mellow and suitable for intermediates; Outside and Don Don offer more challenging waves. The boat drops you at the break and waits — you surf, they watch, and when you\'re done, they pick you up. A 2–3 hour session costs 150,000–200,000 IDR per person. The lineup is rarely crowded — nothing like Bali\'s packed surf spots.',
+          tip: 'Reef shoes or booties protect your feet from the sharp coral bottom at Gerupuk. Bring your own wax — the fishermen don\'t carry surf supplies.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ekas Bay & Bumbang Beach',
+          text: 'Continue east along the coast to Ekas Bay, a large, sheltered bay popular with kitesurfers (May–September). The drive takes you through dry, rural countryside dotted with Sasak villages and tobacco farms. Bumbang Beach at Ekas is a long, empty stretch of sand with a few basic warungs and homestays. The area feels genuinely remote — a stark contrast to anything on Bali. If the wind is up, watch the kitesurfers carving across the flat water.',
+          tip: 'The road to Ekas is rough in places — ride slowly and carefully on a scooter. Allow 45 minutes each way from Kuta. Fill up on petrol in Kuta — no stations en route.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Local Warung Experience',
+          text: 'Return to Kuta and eat at a strictly local warung — no English menu, just point-and-choose from the dishes in the glass display case. Nasi campur (mixed rice) with ayam bakar (grilled chicken), tempe goreng (fried tempeh), sayur plecing (spicy water spinach), and sambal costs 20,000–30,000 IDR. These warungs are where Sasak families eat — the food is freshly made, delicious, and almost absurdly cheap.',
+          tip: 'If you\'re unsure what to order at a warung, just say "nasi campur" and the cook will plate a selection of everything available. Point at extras you want.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Sasak Villages & Culture',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sade Traditional Village',
+          text: 'Ride 30 minutes north to Sade, a preserved Sasak village where families still live in traditional thatched-roof houses with polished cow-dung floors. Villagers give informal walking tours (donation-based, 20,000–50,000 IDR) explaining Sasak architecture, marriage traditions (including the famous "kawin culik" elopement custom), farming practices, and daily life. The village is photogenic — low thatched houses arranged on a hillside with rice paddies below.',
+          tip: 'Sade is a living village, not a tourist set. Dress modestly, ask before photographing people, and buy handicrafts from residents if you want to support the community directly.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Sukarara Weaving Village',
+          text: 'Continue to Sukarara, where Sasak women weave intricate textiles using traditional backstrap looms. The weaving technique produces ikat (resist-dyed) and songket (gold or silver thread brocade) patterns unique to Lombok. Women demonstrate the process — from spinning cotton to dyeing with natural colours to the complex weaving itself. A quality songket cloth takes weeks to complete. Scarves start at 100,000 IDR; large cloths run 500,000+ IDR.',
+          tip: 'Learn to distinguish hand-woven from machine-made textiles — hand-woven pieces have slight irregularities and the back is almost as neat as the front. Support the weavers by buying directly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Kuta Evening',
+          text: 'Return to Kuta for a quiet evening. Browse the small boutiques on the main road selling surf gear, handmade jewellery, and Sasak crafts. For dinner, try plecing kangkung (water spinach in spicy tomato sambal) — Lombok\'s signature vegetable dish — alongside grilled fish at any local warung. The stars over Kuta are brilliant with minimal light pollution — walk to the beach after dinner for southern hemisphere constellations.',
+          tip: 'Kuta has a few massage parlours offering Balinese massage for 80,000–120,000 IDR per hour — excellent value after days of surfing and scootering.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Waterfalls & Interior',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Benang Stokel & Benang Kelambu Waterfalls',
+          text: 'Take a half-day trip north into Lombok\'s mountainous interior to Benang Stokel and Benang Kelambu waterfalls (1.5 hours from Kuta by scooter). Benang Kelambu is the more spectacular — a curtain of water cascading through moss and ferns from multiple streams, creating a natural shower you can walk behind. The setting is lush rainforest on the slopes of Mount Rinjani. Entry is 10,000 IDR and a short walk from the parking area leads to both falls.',
+          tip: 'The road north passes through beautiful countryside but is winding and steep in sections. Start early (7am) to arrive before midday heat and tour groups. Bring a waterproof case for your phone.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Tetebatu Rice Terraces',
+          text: 'From the waterfalls, continue to Tetebatu — a highland village surrounded by terraced rice paddies with Mount Rinjani looming behind. Walk through the paddies (a local guide costs 50,000 IDR for a 1–2 hour walk) and observe traditional rice farming. The air is cooler at this altitude and the scenery is beautiful — stepped green paddies, coconut palms, and volcanic peaks. Lunch at a local warung in Tetebatu (nasi ayam, 20,000 IDR) with mountain views.',
+          tip: 'Tetebatu is a refreshing change from the coastal heat. The rice terraces are most photogenic when newly planted (glistening water) or near harvest (golden stalks) — timing varies by season.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Kuta',
+          text: 'Ride back to the south coast through the interior, passing through rural Sasak villages and tobacco country. The descent from the highlands to the coast reveals sweeping views of the south coast and the ocean beyond. Arrive in Kuta for a well-earned dinner and early night. The interior day trip provides essential context — Lombok is much more than its beaches.',
+          tip: 'The interior roads have very few petrol stations — fill up in Kuta before departing and again in Praya. Carry a rain jacket — mountain weather changes quickly.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Beach Day & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Favourite Beach Return',
+          text: 'Return to your favourite beach for a final morning session. Whether it\'s surfing at Selong Belanak, swimming at Tanjung Aan, or floating at Mawun, give yourself a proper farewell to the south coast. Kuta Lombok rewards repeat visits to the same beaches — the conditions, light, and tide create a different experience every time.',
+          tip: 'Spend the first hour of daylight on Tanjung Aan for the calmest water and most vivid colours — the low morning sun makes the turquoise water almost luminous.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Pack Up & Last Meal',
+          text: 'Return your scooter, settle any bills, and have a final lunch in Kuta. Try something you haven\'t eaten yet — sate pusut (Sasak minced fish satay on lemongrass sticks), beberuk terong (spicy eggplant salad), or pelecing ayam (grilled chicken with tomato-chilli sambal). These Sasak dishes are specific to Lombok and hard to find elsewhere in Indonesia.',
+          tip: 'Photograph your scooter at drop-off and check for pre-existing damage claims. Most rental shops in Kuta are honest, but documentation prevents disputes.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Departure',
+          text: 'Lombok International Airport (LOP) is 30 minutes south of Kuta by taxi (150,000 IDR). Flights connect to Bali (25 min), Jakarta (2 hours), and Kuala Lumpur (3.5 hours). For Gili Islands, book a shuttle from Kuta to Bangsal harbour (100,000 IDR, 2 hours) for public boats, or a fast boat from Teluk Nare. The Lembar–Padang Bai ferry to Bali takes 4 hours and costs 50,000 IDR for walk-on passengers.',
+          tip: 'Fast boats to the Gilis occasionally cancel in rough weather — have a backup plan. The public boat from Bangsal is slower but runs in most conditions.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Scooter Is Essential', text: 'A scooter (60,000–80,000 IDR/day) is the only practical way to reach the south coast beaches. Negotiate a weekly rate of 350,000–400,000 IDR. Fill up in Kuta — petrol stations are scarce on the coastal roads.' },
+  { title: 'Eat at Warungs', text: 'Local warungs serve full meals for 20,000–35,000 IDR. The tourist restaurants charge 3–5x more for similar quality. Eat at least one meal daily at a warung — nasi campur is the best value plate in Indonesia.' },
+  { title: 'Surf Cheap', text: 'Selong Belanak has the cheapest surf lessons in Indonesia — 200,000 IDR for 2 hours with board. At Gerupuk, boat-to-reef sessions are 150,000 IDR. Compare this to 500,000+ IDR for the same in Bali.' },
+  { title: 'Negotiate Everything', text: 'Accommodation, scooter rental, boat trips, and even some food prices are negotiable outside peak season (July–August). Politely asking for a discount ("boleh kurang?") usually works.' },
+  { title: 'Bring Cash', text: 'Kuta has a few ATMs (BRI, Mandiri) but they run out of cash on weekends. Bring a reserve of IDR from Bali or the airport. Card acceptance is limited to a few upscale restaurants.' },
+  { title: 'Free Is Best', text: 'Most beaches are free to access. Sunsets are free. The hill hikes are free. Kuta Lombok\'s best experiences cost nothing — budget for food, accommodation, and a scooter, and the rest takes care of itself.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '100,000–200,000 IDR', midrange: '300,000–600,000 IDR', splurge: '800,000+ IDR', notes: 'Basic fan room to villa' },
+  { category: 'Food', budget: '60,000–100,000 IDR', midrange: '150,000–300,000 IDR', splurge: '400,000+ IDR', notes: 'Warungs to tourist restaurants' },
+  { category: 'Transport', budget: '60,000–80,000 IDR', midrange: '80,000–150,000 IDR', splurge: '300,000+ IDR', notes: 'Scooter to private driver' },
+  { category: 'Activities', budget: '0–150,000 IDR', midrange: '200,000–400,000 IDR', splurge: '500,000+ IDR', notes: 'Free beaches to surf lessons' },
+  { category: 'Daily Total', budget: '220,000–530,000 IDR', midrange: '730,000–1,450,000 IDR', splurge: '2,000,000+ IDR', notes: '$14–34 / $46–92 / $127+ USD' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Visas',
+    items: [
+      'Indonesia offers Visa on Arrival (VOA) for most nationalities — 500,000 IDR (about $32) for 30 days, extendable once for another 30 days at immigration',
+      'Kuta Lombok is 30 minutes from Lombok International Airport (LOP) by taxi. Direct flights from Bali (25 min), Jakarta (2 hours), and Kuala Lumpur (3.5 hours)',
+      'From Bali, the Padang Bai–Lembar ferry runs several times daily (4 hours, 50,000 IDR walk-on). Fast boats from Sanur to Lombok run in high season',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health & Safety',
+    items: [
+      'The nearest hospital is in Praya (20 minutes) for basic treatment. Serious injuries require Mataram (1.5 hours) or medical evacuation to Bali — travel insurance is essential',
+      'Mosquitoes carry dengue — use DEET repellent, especially at dawn and dusk. Tap water is not drinkable; buy bottled water or use refill stations (5,000 IDR per litre)',
+      'Scooter accidents are the biggest safety risk. Wear a helmet, ride cautiously on steep coastal roads, and never ride at night on unlit rural roads',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Scooter rental is essential (60,000–80,000 IDR/day). The south coast has no public transport and distances between beaches are 5–15km on winding roads',
+      'Ojek (motorcycle taxi) can be arranged informally in Kuta — negotiate the fare before departing. Grab and Gojek ride-hailing apps have limited coverage',
+      'For airport transfers or day trips, private drivers with car cost 500,000–700,000 IDR/day. Arrange through your accommodation or a Kuta travel agent',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Buy a Telkomsel or XL SIM card in Kuta (50,000 IDR for a card with 10GB data). Coverage is good in Kuta and on main roads but drops at remote beaches',
+      'Wi-Fi is available at most accommodations and cafes but speeds vary. Download maps and content over Wi-Fi — mobile data is more reliable than public Wi-Fi',
+      'Kuta has improved rapidly but remains less connected than Bali. Don\'t rely on mobile internet for critical travel bookings — confirm in person when possible',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs (BRI, Mandiri, BNI) in Kuta centre charge 25,000–50,000 IDR per withdrawal. They can run out of cash on weekends and holidays — carry reserve cash',
+      'Cash is king in Kuta Lombok. Most warungs, surf instructors, boat operators, and small shops are cash-only. Only upscale restaurants and hotels accept cards',
+      'The nearest reliable money exchange is at the airport. Kuta exchanges exist but rates are poor — withdraw IDR from ATMs for the best rate',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Pack light, quick-dry clothing. Kuta is hot year-round (28–33°C). A rash guard doubles as sun protection for surfing and snorkelling — reef-safe sunscreen is essential',
+      'Reef shoes or water sandals protect against sharp coral at Gerupuk and rocky beach entries. Flip-flops are fine for town but inadequate for water activities',
+      'Bring a dry bag for boat trips and scooter riding in rain. A small first-aid kit with reef wound treatment (betadine, bandages) is wise — coral cuts infect easily in tropical water',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🕌', title: 'Islamic Culture', text: 'Lombok\'s Sasak population is predominantly Muslim. Dress modestly when visiting villages — cover shoulders and knees. During Ramadan (dates shift yearly), be respectful of fasting locals by not eating conspicuously in public during daylight hours.' },
+  { icon: '🙏', title: 'Sasak Traditions', text: 'The Sasak people have a unique culture blending Islam with ancestral beliefs (Wetu Telu). Traditional villages like Sade maintain customs that predate Islam. Ask permission before photographing people and respect village boundaries.' },
+  { icon: '🌊', title: 'Ocean Respect', text: 'The south coast has powerful currents and reef breaks. Never surf or swim alone at unfamiliar beaches. Ask local fishermen about conditions — they know the water intimately and their advice could save your life.' },
+  { icon: '💚', title: 'Environmental Awareness', text: 'Lombok\'s beaches are under pressure from plastic waste. Carry a reusable water bottle, refuse single-use plastic bags, and pick up rubbish when you see it. Several Kuta-based organisations run beach cleanups — join one.' },
+  { icon: '🤝', title: 'Respectful Tourism', text: 'Kuta Lombok is developing fast. Support local businesses — eat at warungs, hire local guides, and buy crafts from artisans. The money you spend locally has a much bigger impact here than in Bali\'s established tourist economy.' },
+];
+---
+
+<CityGuideLayout
+  title="Kuta Lombok Guide 2026 — Itinerary for Young Travelers | roammate"
+  description="The ultimate Kuta Lombok guide for young travelers. Pristine beaches, beginner surfing, Sasak culture, and Indonesia's most underrated coast with 1, 3, and 7-day itineraries."
+  heroImage="/images/guides/lombok-hero.webp"
+  heroFlag="🇮🇩"
+  heroCountry="Indonesia"
+  heroRegion="Southeast Asia"
+  heroCity="Kuta Lombok"
+  heroSubtitle="Bali's quieter neighbour — turquoise bays, empty surf breaks, and a south coast that feels like Indonesia before the crowds arrived."
+  heroPills={['7-Day Beach & Surf', 'Budget-Friendly', 'May–Sep Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Kuta Lombok is one of Indonesia's cheapest beach destinations — accommodation, food, and surf lessons cost a fraction of Bali's prices."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Lombok's Sasak culture is distinct from Bali's Hindu traditions. Understanding local customs makes your visit richer and more respectful."
+  ctaCity="Kuta Lombok"
+  ctaText="Find travel companions for Lombok's empty beaches and surf breaks on roammate — split costs, share the waves."
+  ctaCustomise="To customise this itinerary to your travel style — download the roammate app."
+/>

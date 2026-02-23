@@ -1,0 +1,424 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'OMR (Rial)', detail: '1 USD ≈ 0.385 OMR' },
+  { icon: '🗣', label: 'Language', value: 'Arabic', detail: 'Basic English at camps' },
+  { icon: '🕐', label: 'Timezone', value: 'GST (UTC+4)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – Apr', detail: '15–28°C, clear skies' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$35–65 USD', detail: 'OMR 13–25 budget range' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on arrival', detail: 'Most nationalities 30 days, OMR 20' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Jebel Shams in One Day',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise at the Canyon Rim',
+          text: 'Drive up from Nizwa (90 minutes) or wake at your mountain camp to catch sunrise over Wadi Ghul — Oman\'s "Grand Canyon." The 1,000m-deep gorge turns from black to gold to pink as the sun rises. From the main viewpoint near the camping area, the sheer scale of the canyon is staggering. Start the Balcony Walk (W6 trail) early while the air is cool.',
+          tip: 'If driving up from Nizwa, leave by 5am to catch sunrise. The road is paved but the final 2km is rough gravel.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'The Balcony Walk',
+          text: 'The W6 Balcony Walk is Oman\'s most famous hike — a 6km out-and-back trail carved into the cliff face with 1,000m drops to the wadi below. The path passes through the abandoned village of As Sab, where stone houses cling to the cliff and terraced gardens hang over the void. The trail ends at a seasonal waterfall. Allow 3–4 hours round trip with photo stops.',
+          tip: 'Not for vertigo sufferers. The trail is well-trodden but exposed — stay on the path. Bring 2+ litres of water and snacks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Canyon Sunset & Stargazing',
+          text: 'Return to the canyon rim for sunset — the gorge transforms into deep purples and oranges. If camping, set up near the viewpoint area (free, no facilities). The night sky at 2,000m+ with zero light pollution is extraordinary — the Milky Way stretches across the entire sky. If not camping, start the 90-minute drive back to Nizwa.',
+          tip: 'Wild camping at the rim is free and popular. Bring everything you need — there are no shops or water sources on the mountain.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Arrival & Canyon Views',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Jebel Shams',
+          text: 'Drive 90 minutes from Nizwa up to Jebel Shams — Oman\'s highest peak at 3,009m. The road climbs through Al Hamra town and into the Al Hajar mountains, passing through increasingly dramatic terrain. Stop at the abandoned village of Ghul overlooking Wadi Ghul — the "Grand Canyon of Arabia" with sheer 1,000m drops.',
+          tip: '4x4 recommended. The paved road is fine but the final stretch to the viewpoint is rough gravel.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Canyon Rim Exploration',
+          text: 'Explore the canyon rim viewpoints — each offers a different angle on the 1,000m-deep gorge. Walk along the rim to the east for views of the abandoned village below. The scale is hard to comprehend until you spot a bird circling hundreds of metres below you. Set up camp at the flat area near the main viewpoint, or check into Jebel Shams Resort (from OMR 40).',
+          tip: 'The free camping area near the viewpoint is flat with a stone wall windbreak. Arrive early on weekends — it gets busy with Omani families.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Canyon Sunset & Stars',
+          text: 'Sunset at the canyon rim is the highlight — the gorge turns gold, then crimson, then deep purple as light fades from the walls. Cook dinner over a camp stove (bring all supplies) or eat at the resort restaurant. After dark, the stargazing at 2,000m+ is world-class — zero light pollution, the Milky Way overhead, and shooting stars.',
+          tip: 'Temperatures drop sharply after sunset — even in October, night temps hit 5–10°C. Bring a warm sleeping bag.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'The Balcony Walk',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise & Trail Start',
+          text: 'Wake for sunrise over the canyon — worth every early alarm. After breakfast, start the W6 Balcony Walk — Oman\'s most famous hike. The trail begins near the viewpoint parking area and follows a path carved into the cliff face, with 1,000m drops to Wadi Ghul below. The first section crosses open rock with painted markers.',
+          tip: 'Start by 7am in warmer months — the trail has no shade and the cliff face reflects heat. Carry 2+ litres of water.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'As Sab Village & Waterfall',
+          text: 'At the 2km mark, reach the abandoned village of As Sab — stone houses perched impossibly on the cliff face, with terraced gardens that once grew dates and pomegranates. The farmers lived here until the 1980s, accessing the village via the same narrow path you\'re walking. Continue to the trail\'s end at a seasonal waterfall (flowing after rain). Return the same way. Total: 6km, 3–4 hours.',
+          tip: 'The village ruins are safe to explore but watch your footing — some walls are unstable.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Camp Rest & Night Sky',
+          text: 'Return to camp and rest. If you brought supplies, make a camp dinner. The Jebel Shams Resort has a restaurant (mains OMR 3–5) and a small shop with basics. Spend the evening stargazing — at this altitude with no light pollution, you can see satellites crossing the sky, and the Milky Way is a thick band overhead.',
+          tip: 'Bring a star chart app like SkyView — at this altitude you\'ll see constellations you\'ve never noticed before.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Al Hamra, Ghul Village & Return',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Last Sunrise & Ghul Village',
+          text: 'Final sunrise at the canyon rim. Then drive down to the abandoned village of Ghul — a cluster of stone ruins perched above Wadi Ghul that date back 400+ years. The village was abandoned when modern roads made mountain-top living unnecessary. Walk through the roofless houses and imagine the isolated life here.',
+          tip: 'Ghul is a 10-minute walk from the road. The ruins are unprotected — tread carefully and respect the site.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Al Hamra & Misfat Al Abriyyin',
+          text: 'Descend to Al Hamra (45 minutes) — one of Oman\'s oldest continuously inhabited settlements with a beautifully preserved mud-brick old town. Visit Bait Al Safah living museum (OMR 1) where women demonstrate traditional skills. Then drive 15 minutes to Misfat Al Abriyyin — a stunning mountain village of stone houses cascading down a cliff above terraced gardens and a natural spring pool.',
+          tip: 'Misfat is tiny but extraordinary. Have lunch on the guesthouse terrace overlooking the valley (OMR 3–5).',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Nizwa',
+          text: 'Drive back to Nizwa (1 hour from Al Hamra) in time for a final dinner. Stop at a roadside date seller for khalas dates. In Nizwa, the fort is illuminated at night and the souq stays open until 9pm for last-minute frankincense and silver shopping.',
+          tip: 'The road from Al Hamra to Nizwa passes through dramatic gorges — beautiful in the late afternoon light.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Nizwa Base & Preparation',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive in Nizwa',
+          text: 'Base yourself in Nizwa (1.5 hours from Muscat airport). Explore Nizwa Fort — the largest in the Arabian Peninsula, with a massive drum tower and free entry. If it\'s Friday, catch the Livestock Market (6–9am) where traders haggle over goats.',
+          tip: 'Plan your week so that Friday falls in Nizwa — the goat market is unmissable.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Nizwa Souq & Supplies',
+          text: 'Stock up at Nizwa Souq and supermarkets for mountain camping supplies. The souq has dates, nuts, and dried fruit for trail snacks. Pick up water (buy 10+ litres for camping), a gas canister, and food supplies. Rent a 4x4 if you haven\'t already.',
+          tip: 'Lulu Hypermarket on the main road has everything you need for camping at good prices.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Birkat Al Mouz Sunset',
+          text: 'Drive to Birkat Al Mouz — a terraced settlement at the foot of Jebel Akhdar with falaj channels, palm groves, and a crumbling mud-brick village. Walk the oasis path at sunset. Dinner at Bin Ateeq in Nizwa — Omani home-cooking for OMR 3–5.',
+          tip: 'Birkat Al Mouz is free and uncrowded. Perfect for an easy first evening.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Jebel Akhdar — Green Mountain',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Drive to Jebel Akhdar',
+          text: 'Drive up the winding road to Jebel Akhdar (2,000m). Police checkpoint requires 4x4. Stop at Diana\'s Point for a vertigo-inducing 1,000m canyon view. Explore the hanging villages of Al Ayn and Al Aqr.',
+          tip: 'Basic 4x4 rental is OMR 25–35/day. Cannot pass checkpoint without one.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Terraced Villages & Rose Water',
+          text: 'Walk between villages on cliff-edge paths. Stone houses perch above terraced gardens of pomegranates, walnuts, and damask roses. In March–April, families distill rose water in copper pots. Buy a bottle (OMR 2–5).',
+          tip: 'Rose harvest is late March to mid-April. The villages are beautiful year-round.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Mountain Sunset',
+          text: 'Watch sunset from the canyon viewpoints near Anantara resort. Dinner at a Sayq guesthouse (OMR 5–8) or camp on the mountain. Return to Nizwa if not staying overnight.',
+          tip: 'Jebel Akhdar drops to 5–10°C at night in winter. Bring warm layers.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Drive to Jebel Shams',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Al Hamra & Bait Al Safah',
+          text: 'Drive to Al Hamra (45 minutes from Nizwa) — one of Oman\'s oldest settlements with a preserved mud-brick old town. Visit Bait Al Safah living museum (OMR 1) for traditional bread-making and coffee-roasting demonstrations.',
+          tip: 'Al Hamra\'s old town glows golden in morning light. Best visited before 10am.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ascent to Jebel Shams',
+          text: 'Drive from Al Hamra up to Jebel Shams (45 minutes). The road climbs through dramatic mountain passes. Stop at the abandoned village of Ghul overlooking the Grand Canyon — 400-year-old ruins above a 1,000m gorge. Set up camp near the canyon rim viewpoint.',
+          tip: 'Arrive before 3pm to secure a good camping spot near the viewpoint — flat ground with stone windbreaks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'First Canyon Sunset',
+          text: 'Watch your first Jebel Shams sunset — the canyon walls shift from gold to crimson to purple. Cook dinner over a camp stove. After dark, the stargazing at 2,000m+ with zero light pollution is extraordinary.',
+          tip: 'Temperatures drop fast after sunset. Have your warm gear accessible, not buried in the car.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'The Balcony Walk',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise & Trail Start',
+          text: 'Wake for sunrise over the canyon. After breakfast, start the W6 Balcony Walk — a 6km out-and-back trail carved into the cliff face with 1,000m drops. Follow the painted markers across open rock and along narrow ledges.',
+          tip: 'Start by 7am in warmer months — the cliff reflects heat. Carry 2+ litres of water.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'As Sab Village & Waterfall',
+          text: 'Reach the abandoned village of As Sab — stone houses perched on the cliff face with terraced gardens over the void. Farmers lived here until the 1980s. Continue to the seasonal waterfall at the trail\'s end. Return the same way. Total: 3–4 hours.',
+          tip: 'The village ruins are atmospheric but some walls are unstable — explore carefully.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Rest & Stargazing',
+          text: 'Return to camp and rest. Visit Jebel Shams Resort restaurant if you want a cooked meal (mains OMR 3–5). Spend the evening stargazing — satellites, shooting stars, and the Milky Way as a thick band overhead.',
+          tip: 'Download a star chart app — you\'ll see constellations invisible from lower altitudes.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'W4 Summit Trail',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'W4 Trail to the Summit Area',
+          text: 'For a more challenging hike, try the W4 trail — a steeper path climbing through rocky terrain toward the summit area of Jebel Shams. The trail is less defined than the Balcony Walk and requires basic navigation skills. The landscape changes from desert rock to sparse mountain scrub. Allow 4–5 hours round trip.',
+          tip: 'The W4 is unmarked in places. Bring GPS/offline maps and don\'t hike alone. Start early for the coolest conditions.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wadi Ghul Viewpoints',
+          text: 'Explore the eastern rim viewpoints — different angles on the canyon that most visitors miss. Walk along the cliff edge (carefully) for perspectives of the gorge bending through the mountains. The scale is immense — birds circling hundreds of metres below you.',
+          tip: 'The eastern rim is less visited. Bring binoculars — you may spot ibex on the cliff faces.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Night on the Mountain',
+          text: 'Last sunset from the canyon rim. Make it special — find a secluded viewpoint and watch the light fade. The silence at Jebel Shams after dark is profound — no traffic, no planes, just wind and stars.',
+          tip: 'If you hear rustling at night, it\'s likely an Arabian tahr (mountain goat) — they\'re curious but harmless.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Misfat Al Abriyyin & Wadis',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Descend to Misfat Al Abriyyin',
+          text: 'Pack up camp and drive down to Misfat Al Abriyyin (1 hour) — a stunning mountain village of stone houses cascading down a cliff above terraced gardens. Walk the winding alleys and falaj channels. Swim in the spring-fed pool at the base of the village.',
+          tip: 'Misfat is tiny but photogenic. Lunch on the guesthouse terrace (OMR 3–5).',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Wadi Bani Awf',
+          text: 'Drive the dramatic Wadi Bani Awf road (4x4 essential) — one of Oman\'s most scenic drives through narrow gorges, past waterfalls, and abandoned villages. The road connects the mountains to the coast. Stop at Snake Canyon (Wadi Bani Awf) for a swim in the pools.',
+          tip: 'Wadi Bani Awf road is an adventure — narrow, unpaved, and spectacular. Not for nervous drivers.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Return to Nizwa',
+          text: 'Drive back to Nizwa via the main highway. Celebrate the end of the mountain adventure with dinner at a Nizwa restaurant. Try mashuai (spit-roasted kingfish with lemon rice) or a lamb shuwa platter.',
+          tip: 'Fuel up in the mountains if possible — the Wadi Bani Awf route has no stations.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Bahla, Jabrin & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Bahla Fort & Pottery',
+          text: 'Visit Bahla Fort (UNESCO, free) — a vast mud-brick fortress with 12km of walls. Bahla is also known for pottery — watch artisans at work in workshops near the fort. The old town has a reputation as Oman\'s "magic town" with rich folklore.',
+          tip: 'The pottery workshops are genuine — buy a handmade piece directly from the artisan.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Jabrin Castle',
+          text: 'Drive to Jabrin Castle (OMR 0.5) — the most refined fort in Oman with painted ceilings, sun and moon rooms, and a falaj through the interior. It served as both fortress and centre of Islamic learning. Allow 1.5 hours.',
+          tip: 'The painted ceilings in the upper rooms are exceptional — bring a phone flashlight for details.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Departure',
+          text: 'Return to Nizwa for final souq shopping — frankincense, silver, halwa, and dates. Drive to Muscat airport (1.5 hours) or spend a final night in Nizwa.',
+          tip: 'Hojari grade frankincense (pale, translucent pieces) is the finest. Available at Nizwa Souq.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Camp for free', text: 'Wild camping at the Jebel Shams rim is free and legal. Flat camping areas with stone windbreaks near the viewpoints. Bring all your own water, food, and gear — nothing is available on the mountain.' },
+  { title: 'Share the 4x4', text: '4x4 rental is OMR 25–35/day. Split with 2–3 travelers and the cost per person drops to OMR 8–12/day. Hostels in Nizwa often arrange shared mountain trips.' },
+  { title: 'Cook at camp', text: 'A camp stove and supplies from Nizwa\'s supermarket are far cheaper than the resort restaurant. Stock up on bread, hummus, tinned fish, and fruit for mountain meals.' },
+  { title: 'Free everything', text: 'The canyon viewpoints, Balcony Walk, Ghul village, and stargazing are all free. Jebel Shams is one of Oman\'s best experiences at zero entrance cost.' },
+  { title: 'Water strategy', text: 'Buy 10+ litres in Nizwa (OMR 0.5–1 total). There are no water sources on Jebel Shams. Freeze some bottles the night before — they\'ll melt through the day and stay cold.' },
+  { title: 'Budget accommodation', text: 'If not camping, Jebel Shams Resort basic rooms start at OMR 40. Or stay in Nizwa (OMR 5–15 at hostels/guesthouses) and do Jebel Shams as a long day trip.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'OMR 0', midrange: 'OMR 15–30', splurge: 'OMR 40+', notes: 'Wild camping (free) → Nizwa hostel → Jebel Shams Resort' },
+  { category: 'Food', budget: 'OMR 3–5', midrange: 'OMR 6–10', splurge: 'OMR 15+', notes: 'Camp cooking → resort restaurant → catered camping' },
+  { category: 'Transport', budget: 'OMR 8–12', midrange: 'OMR 25–35', splurge: 'OMR 60+', notes: 'Shared 4x4 → own 4x4 rental → private driver' },
+  { category: 'Activities', budget: 'OMR 0', midrange: 'OMR 0–5', splurge: 'OMR 20+', notes: 'Free hikes & views → guided hike → via ferrata/canyoning' },
+  { category: 'Daily Total', budget: 'OMR 11–17', midrange: 'OMR 46–80', splurge: 'OMR 135+', notes: '$29–44 → $120–208 → $351+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '✈️',
+    title: 'Getting There',
+    items: [
+      'Jebel Shams is 2.5 hours from Muscat and 90 minutes from Nizwa by car. No public transport — you need your own vehicle',
+      '4x4 recommended. The main road is paved but the final stretch to the viewpoint is rough gravel',
+      'Base yourself in Nizwa for supplies and comfortable accommodation between mountain days',
+    ],
+  },
+  {
+    icon: '⛺',
+    title: 'Camping',
+    items: [
+      'Wild camping at the rim is free, legal, and popular. Flat areas with stone windbreaks near the viewpoints',
+      'Bring everything: tent, sleeping bag (rated to 0°C for winter), stove, water (10L minimum), food, headlamp',
+      'No facilities on the mountain — no toilets, water, or shops. Pack out all rubbish. Leave no trace',
+    ],
+  },
+  {
+    icon: '🥾',
+    title: 'Hiking Safety',
+    items: [
+      'The Balcony Walk (W6) is exposed with 1,000m drops — not suitable for children, vertigo sufferers, or in wet/windy conditions',
+      'Carry 2+ litres of water per person, sun protection, and snacks. There is no shade on the trail',
+      'Start early (before 8am) in warmer months. The cliff face reflects heat and temperatures can reach 35°C+ on the trail',
+    ],
+  },
+  {
+    icon: '🌡️',
+    title: 'Weather',
+    items: [
+      'Oct–Mar: perfect hiking weather (15–28°C days, 5–10°C nights). Clear skies for stargazing',
+      'Apr–May: warm but manageable. Start hikes at dawn. Carry extra water',
+      'Jun–Sep: too hot for hiking (35°C+). Only early morning and evening are comfortable. Not recommended',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'No ATMs on Jebel Shams. Withdraw cash in Nizwa before ascending',
+      'Jebel Shams Resort accepts cards. Everything else (fuel, roadside stalls) is cash only',
+      'Budget OMR 25–35/day for 4x4 rental — the main expense. Split with travelers to save',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Mobile signal is patchy on Jebel Shams — some spots on the rim have coverage, most of the trail does not',
+      'Download offline maps (Maps.me) before ascending. Essential for trail navigation',
+      'Tell someone your plans before hiking. There\'s no mountain rescue service — self-reliance is key',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '⛺', title: 'Camping Etiquette', text: 'Wild camping is legal but respect the mountain. Pack out all rubbish, don\'t disturb wildlife, and keep noise down after dark. Omani families camp here on weekends — be a good neighbour.' },
+  { icon: '📸', title: 'Photography', text: 'The canyon and trails are fair game, but ask before photographing any Omanis you meet. Shepherds and their families live in the mountains — respect their privacy.' },
+  { icon: '👗', title: 'Dress Code', text: 'Hiking gear is fine on the trails, but cover up when passing through villages. Long trousers and covered shoulders are appropriate when interacting with locals.' },
+  { icon: '🤝', title: 'Local Hospitality', text: 'Mountain Omanis may offer you coffee or dates. Accepting is a sign of respect. If you pass a shepherd or local, greet them with "As-salaam alaikum" — you\'ll get a warm response.' },
+  { icon: '🐐', title: 'Wildlife Respect', text: 'Arabian tahr (mountain goats) and ibex live on these cliffs. Do not feed, chase, or disturb them. Keep food secured at camp — they\'re curious and will investigate.' },
+];
+---
+
+<CityGuideLayout
+  title="Jebel Shams Guide 2026 — Oman's Grand Canyon for Young Travelers | roammate"
+  description="The ultimate Jebel Shams guide. Balcony Walk trail, Grand Canyon of Arabia, wild camping, stargazing, and mountain adventure in Oman. Plan your trip with roammate."
+  heroImage="/images/guides/wadi-rum-hero.webp"
+  heroFlag="🇴🇲"
+  heroCountry="Oman"
+  heroRegion="Middle East"
+  heroCity="Jebel Shams"
+  heroSubtitle="Oman's Grand Canyon — thousand-metre gorges, cliff-edge hiking trails, and a night sky so clear it feels unreal."
+  heroPills={['3-Day Adventure', 'Hiking & Camping', 'Oct – Apr Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in Omani Rial. Jebel Shams is extremely budget-friendly — free camping, free hikes, and the only real cost is the 4x4."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Jebel Shams is wild and remote. Come prepared, respect the mountain, and you'll have one of Oman's most unforgettable experiences."
+  ctaCity="Jebel Shams"
+  ctaText="Find hiking companions to share the Balcony Walk, split 4x4 costs, and camp under the stars together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app."
+/>

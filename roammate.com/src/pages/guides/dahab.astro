@@ -1,0 +1,424 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'EGP (Pound)', detail: '1 USD ≈ 48 EGP' },
+  { icon: '🗣', label: 'Language', value: 'Arabic', detail: 'English widely spoken' },
+  { icon: '🕐', label: 'Timezone', value: 'EET (UTC+2)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Oct – May', detail: '22–32°C, warm & dry' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–45 USD', detail: 'E£1,000–2,200 budget range' },
+  { icon: '🛂', label: 'Visa', value: 'Sinai permit or full visa', detail: 'Free 15-day Sinai stamp at Sharm airport' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Dahab in One Day — Dive, Eat, Chill',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Snorkelling at the Blue Hole',
+          text: 'Taxi (E£100–150) or minibus (E£20) 8km north to the Blue Hole — the world\'s most famous dive site and a giant sinkhole dropping 100+ metres straight down. Snorkelling around the rim (free with your own gear, E£50–100 rental) reveals extraordinary coral walls and reef fish in crystal-clear water. The Blue Hole is breathtakingly beautiful from the surface — the deep blue circle surrounded by shallow turquoise reef is mesmerising. Don\'t attempt to freedive the arch at 56 metres — it has killed over 200 people.',
+          tip: 'Snorkel the reef rim, not the hole itself — the coral gardens around the edge are spectacular. Morning has the calmest water and best visibility. Bring reef-safe sunscreen.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lighthouse Reef & Waterfront',
+          text: 'Return to town and snorkel or dive the Lighthouse reef (free shore entry) — Dahab\'s best all-round site with coral gardens, a sandy slope, and abundant marine life including moray eels, octopus, lionfish, and Napoleon wrasse. The entry point is marked by the old lighthouse. After snorkelling, walk the Dahab waterfront promenade — a string of laid-back restaurants, dive shops, and shisha cafes facing the Gulf of Aqaba with Saudi Arabia visible across the water.',
+          tip: 'The Lighthouse reef is excellent for both beginners and experienced divers. The coral starts in waist-deep water. Afternoon light is best for underwater photography.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Seafood Dinner on the Waterfront',
+          text: 'Dinner at one of Dahab\'s waterfront restaurants — the freshest seafood in Egypt served on cushions at low tables right on the beach. Ali Baba for grilled fish and shisha (E£100–200), Shark Restaurant for Red Sea seafood (E£150–300), or Friends Restaurant for budget traveler fare (E£60–120). The waterfront comes alive after dark — backpackers, divers, and Bedouin locals mixing over mint tea and shisha. The vibe is the most relaxed in Egypt.',
+          tip: 'Waterfront restaurants display the day\'s catch on ice — point at what you want and they grill it fresh. Prices are by weight. Fish, salad, rice, and drinks for E£150–200 is typical.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Blue Hole & Dahab Diving',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Blue Hole Snorkelling',
+          text: 'Head 8km north to the Blue Hole — a 100-metre-deep sinkhole in the reef shelf that\'s both the world\'s most famous dive site and its deadliest (the "freediver\'s arch" at 56 metres has claimed over 200 lives — don\'t attempt it). For snorkellers and divers, the rim is spectacular: vertical coral walls dropping into the abyss, reef sharks patrolling below, and crystal visibility. The Bedouin-run cafes along the rim serve tea and simple food with extraordinary views.',
+          tip: 'The Blue Hole Bedouin cafes serve the freshest fish in the Sinai — grilled on the spot for E£80–150. Eat on the cushions overlooking the reef between snorkelling sessions.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Intro Dive or Canyon Snorkel',
+          text: 'Book an introductory dive (E£1,500–2,500 including equipment) if you\'re not certified — Dahab is one of the world\'s best and cheapest places to try diving. Experienced divers should hit the Canyon — a narrow underwater fissure that drops to 30 metres with cathedral-like light shafts and coral-encrusted walls. Snorkellers can enjoy the Canyon\'s shallow sections. Dahab\'s shore-entry diving (no boat needed) keeps costs low.',
+          tip: 'Dahab PADI Open Water certification costs E£7,000–10,000 ($150–210) — among the cheapest in the world and the Red Sea\'s coral reefs make it world-class. Consider a 3-4 day course.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Waterfront Chill & Shisha',
+          text: 'The Dahab evening ritual: pick a waterfront restaurant, order fish, settle into the cushions, and watch the sun set over Saudi Arabia across the Gulf of Aqaba. The waterfront is Dahab\'s living room — everyone passes through. Ralph\'s German Bakery for sunset drinks, Everyday restaurant for budget meals (E£50–100), or Tota for upscale seafood (E£200–400). Shisha is E£30–50 everywhere. The stars come out over the gulf.',
+          tip: 'The waterfront strip from the Lighthouse to the bridge is where everything happens. Walk the full length to find your vibe — each restaurant has a different character.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Sinai Mountains & Blue Lagoon',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Blue Lagoon & Ras Abu Galum',
+          text: 'Take a camel (E£300–500 return, 1.5 hours) or hike (1 hour along the coast) from the Blue Hole to Ras Abu Galum — a protected coastal zone with the Blue Lagoon, a shallow turquoise bay with pristine coral and the most remote snorkelling in the Sinai. The camel trek follows the coast past rocky headlands with spectacular views. Ras Abu Galum has basic Bedouin shelters and serves fresh tea. Snorkel the reef — fewer fish than the Blue Hole but stunning coral and absolute peace.',
+          tip: 'The camel trek to Ras Abu Galum is a highlight of any Dahab trip. Bring snorkel gear, water, and sun protection. The Bedouins at the lagoon can arrange overnight stays in simple shelters (E£100–200).',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Coloured Canyon',
+          text: 'Book a jeep excursion (E£400–600 per person) to the Coloured Canyon — a narrow sandstone gorge 30km inland with naturally striped walls in red, orange, yellow, and purple created by mineral deposits over millennia. The canyon walk involves scrambling through narrow passages and squeezing between rock faces — it\'s adventurous and visually stunning. The Sinai desert landscape en route — rugged mountains and wadis — is dramatic.',
+          tip: 'The Coloured Canyon requires moderate fitness — some scrambling and a few tight squeezes. Wear closed shoes with grip. The canyon is best in the afternoon when the light penetrates deepest.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bedouin Dinner in the Desert',
+          text: 'Many jeep tours include a Bedouin dinner in the desert — bread baked in sand, grilled meat, tea brewed over fire, and stories under the stars. The Sinai Bedouins are welcoming and proud of their culture. If your tour doesn\'t include dinner, arrange a Bedouin evening through your hotel (E£200–300). Alternatively, return to Dahab for waterfront dining. The Red Sea stargazing from the Sinai interior is extraordinary.',
+          tip: 'A Bedouin dinner in the desert is one of the most authentic cultural experiences in Egypt. The bread baked in hot sand (fateer) is surprisingly delicious.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Dive, Windsurf or Hike',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Lighthouse Reef Diving',
+          text: 'Dive or snorkel the Lighthouse reef — Dahab\'s signature site and one of the Red Sea\'s best shore dives. The gentle sandy slope drops from the shallows past coral gardens, bommies, and a wall to 30+ metres. Marine life includes Napoleon wrasse, blue-spotted stingrays, scorpionfish, morays, and occasional reef sharks. The entry point is easy — wade in from the shore. Two dives with equipment rental costs E£1,000–1,500.',
+          tip: 'The Lighthouse morning dive (8–10am) has the best light and least current. The deeper wall section beyond 18 metres has larger pelagic fish and sea turtles.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Windsurfing, Kitesurfing, or Rest',
+          text: 'Dahab is a world-class wind sports destination — consistent thermal winds blow through the Gulf of Aqaba most afternoons. Windsurfing lessons start at E£600–1,000 for 2 hours. Kitesurfing intro sessions E£1,500–2,500. Harry Nass windsurf centre is the most established. Or simply rest — Dahab\'s backpacker vibe encourages hammock time, reading, and doing nothing at all. The waterfront cafes welcome all-day lingerers.',
+          tip: 'Wind is strongest March–June and September–November. Beginners should start in the protected lagoon area south of the main beach. Equipment rental is much cheaper than Sharm el-Sheikh.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dahab Sunset',
+          text: 'Final sunset from the waterfront — the Gulf of Aqaba turns gold, then the mountains of Saudi Arabia across the water silhouette against the sky. Farewell dinner at your favourite waterfront spot. Ralph\'s German Bakery has excellent cakes and cocktails for a last-night treat. Dahab is the kind of place people come for 3 days and stay for 3 weeks — the combination of world-class diving, Sinai mountains, Bedouin culture, and backpacker ease is addictive.',
+          tip: 'If you\'re not ready to leave, Dahab is one of the cheapest places in the world for PADI certification. Many travelers extend their stay for a diving course.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & First Snorkel',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive & Settle In',
+          text: 'Arrive in Dahab from Sharm el-Sheikh airport (1 hour, transfer E£200–400) or by bus from Cairo (8–9 hours, E£200–350). Check into your hotel or camp — Dahab has everything from E£150/night camps to E£2,000+ resorts. Walk the waterfront to orient yourself — the main strip runs along the coast from the Lighthouse to the bridge. The vibe is immediately apparent: flip-flops, dive shops, and shisha everywhere.',
+          tip: 'Book a hotel on or near the waterfront — the Masbat area (Lighthouse end) is the backpacker centre. Penguin Village, Bishbishi, and Seven Heaven are popular budget options.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lighthouse Reef Snorkelling',
+          text: 'Start with the Lighthouse reef — Dahab\'s signature site and accessible right from the waterfront. Wade into the warm, clear water from the sandy entry point and you\'re immediately over coral gardens teeming with reef fish. The gentle slope makes it perfect for first-time snorkellers. Expect to see butterflyfish, parrotfish, moray eels, and blue-spotted stingrays within metres of shore. Snorkel rental from any dive shop E£50–100/day.',
+          tip: 'The Lighthouse entry is sandy and easy — no sharp coral to navigate. Snorkel south along the reef edge for the best coral. Don\'t touch anything — fire coral stings badly.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Waterfront Introduction',
+          text: 'Dinner on the waterfront — Dahab\'s social hub. Restaurants line the coast with cushioned seating right on the beach. Ali Baba is a backpacker institution with good fish and endless shisha (E£80–150). Everyday restaurant has the cheapest meals (E£40–80). The waterfront is where you meet other travelers, plan dives, and hear stories. Saudi Arabia\'s mountains are visible across the gulf in the fading light.',
+          tip: 'Walk the entire waterfront before choosing a restaurant — each has a different vibe. The restaurants closer to the bridge tend to be quieter and cheaper.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Blue Hole & Canyon Diving',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Blue Hole',
+          text: 'Head to the Blue Hole (8km north, taxi E£100 or minibus E£20). The 100-metre-deep sinkhole is visually stunning even from the surface — a dark blue circle in the turquoise reef shelf. Snorkel around the rim over spectacular vertical coral walls. Certified divers can explore the Bell (a chimney at 30 metres opening to the reef wall) — one of the most exhilarating dives in the world. The Bedouin cafes on the rim serve grilled fish and tea with unbeatable views.',
+          tip: 'The Bell exit dive is for experienced divers only (Advanced Open Water minimum). The snorkelling around the rim is world-class and accessible to everyone. Morning is calmest.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Canyon Dive Site',
+          text: 'Drive 15 minutes north of Dahab to the Canyon — a narrow underwater fissure that drops from a shallow coral garden to 30 metres. Divers descend through the narrow canyon with cathedral-like light filtering from above. At the bottom, a sandy garden opens with coral bommies and large fish. Snorkellers can enjoy the shallow coral gardens at the top. Two-dive trips with equipment E£1,000–1,500.',
+          tip: 'The Canyon\'s narrow walls create a unique underwater experience — the light effects are best in the morning. The swim-through at 18 metres is thrilling for divers.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Dahab Nightlife',
+          text: 'Dahab nightlife is low-key but social. The waterfront restaurants turn into bars after 10pm — Tota and Funny Mummy have the liveliest scenes. Shisha and drinks are cheap (beer E£40–60, cocktails E£80–120). Some places have live music or DJs on weekends. The vibe is international and relaxed — divers comparing their day\'s encounters, backpackers planning onward routes, and Bedouins sharing stories.',
+          tip: 'Dahab runs on "Egyptian time" — nightlife starts late and goes later. The waterfront is safe for walking at any hour. Alcohol is available everywhere despite the conservative region.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'PADI Course or Ras Abu Galum',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'PADI Open Water Day 1 (or Ras Abu Galum)',
+          text: 'Start a PADI Open Water certification course (E£7,000–10,000 for 3–4 days) — Dahab is one of the cheapest and best places in the world to learn. Day 1 covers theory and confined water skills. If already certified, take a camel trek (E£300–500, 1.5 hours) along the coast to Ras Abu Galum — a protected marine zone with the Blue Lagoon. The trek passes rocky headlands with Red Sea views. Snorkel the pristine lagoon in complete peace.',
+          tip: 'For PADI courses, shop around dive centres — prices and group sizes vary. H2O Divers, Lighthouse Dive Centre, and Scuba Seekers are well-reviewed. Courses include equipment.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Lagoon Snorkelling or Course Work',
+          text: 'PADI students continue with pool sessions and theory. Everyone else should snorkel the Ras Abu Galum lagoon — shallow turquoise water over white sand and coral, with fish life that includes pufferfish, parrotfish, and occasional turtles. The isolation (no roads, no buildings beyond basic Bedouin shelters) makes the snorkelling feel wild and pristine. The Bedouin tea service on the beach is simple perfection.',
+          tip: 'Ras Abu Galum is one of the most untouched marine environments in the Red Sea. Bring all your own food, water, and sun protection — there are only basic Bedouin shelters.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Bedouin Tea & Stars',
+          text: 'If staying at Ras Abu Galum overnight (basic Bedouin shelter E£100–200, sleeping bags provided), the evening is magical — no electricity, no noise, just the stars and the sea. The Milky Way over the Gulf of Aqaba is extraordinary. If returning to Dahab, walk or camel back and enjoy the waterfront. Dinner at Shark Restaurant for the best seafood on the strip (E£150–300).',
+          tip: 'An overnight at Ras Abu Galum is one of the most memorable experiences in the Sinai. It\'s basic — no toilet, no shower — but the setting is incomparable.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Coloured Canyon & Sinai Interior',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Coloured Canyon Jeep Trip',
+          text: 'Book a jeep excursion (E£400–600 per person) to the Coloured Canyon — a narrow sandstone gorge 30km inland. The canyon walls display natural striations in red, orange, yellow, and purple from millennia of mineral deposits. Walking through involves scrambling, squeezing through narrow gaps, and climbing down rock faces — moderately adventurous and visually extraordinary. The drive through the Sinai desert landscape is dramatic — rugged mountains and dry wadis.',
+          tip: 'Wear closed shoes with good grip — the canyon has smooth rock scrambles. Bring water and snacks. The guide will help with the technical sections. Not suitable for anyone with claustrophobia.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Bedouin Lunch & Wadi Walk',
+          text: 'Most canyon trips include a Bedouin lunch in a wadi — bread, hummus, grilled vegetables, and sweet tea prepared over fire. The Sinai Bedouins (Muzeina tribe in the Dahab area) are semi-nomadic people with deep knowledge of the desert landscape. Some tours include a walk through Wadi Gnai or Wadi Khudra (the "Green Wadi" — a desert oasis with pools of fresh water surrounded by palm trees). The contrast with the bare desert is surreal.',
+          tip: 'Wadi Khudra is the highlight for many — fresh water pools in the desert surrounded by green palms. If your tour doesn\'t include it, ask if it can be added.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Desert Stargazing',
+          text: 'Some jeep tours end with a Bedouin dinner in the desert under the stars. The Sinai interior has zero light pollution — the night sky is extraordinary. Bread baked in hot sand (fateer), grilled meat, and fire-brewed tea under the Milky Way. If returning to Dahab for the evening, the waterfront restaurants welcome you back with fresh fish and cold drinks after a dusty desert day.',
+          tip: 'The desert temperature drops significantly after sunset — bring a warm layer even in summer. A clear night in the Sinai interior reveals more stars than most people have ever seen.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Mount Sinai Sunrise Trek',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Mount Sinai Sunrise',
+          text: 'Depart Dahab at midnight (jeep or minibus, E£300–500, 2.5 hours) for the Mount Sinai trek. Begin the 2–3 hour climb at 2–3am by headlamp — the camel path is a gentle incline for most of the route, with a final 750-step "Steps of Repentance" to the summit (2,285 metres). Watch the sunrise from the top — the Sinai mountains spread below in every direction, turning from black to purple to gold. The tradition says Moses received the Ten Commandments here.',
+          tip: 'Bring warm layers — it\'s genuinely cold at the summit before sunrise, even in summer. The camel path is easier than the steps. Camels can carry you partway (E£100–200).',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'St. Catherine\'s Monastery',
+          text: 'Descend and visit St. Catherine\'s Monastery (free, open 9am–12pm, closed Fridays and Sundays) — one of the oldest continuously operating Christian monasteries in the world, built in the 6th century by Justinian. The Burning Bush (tradition says it\'s the original), the skull room (charnel house), and the library (second only to the Vatican in ancient manuscripts) are remarkable. The monastery sits in a dramatic desert valley below Mount Sinai.',
+          tip: 'The monastery has strict dress code — cover shoulders and knees. It\'s only open mornings (9am–12pm) so time your descent accordingly. The Burning Bush is in the courtyard.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Recovery & Waterfront Dinner',
+          text: 'Return to Dahab by early afternoon (2.5-hour drive). You\'ll be exhausted — take a nap, then reward yourself with a long waterfront dinner. Tota restaurant for celebratory seafood (E£200–400) or Friends for a budget but satisfying meal (E£60–120). The sunset over the gulf after a sunrise on Mount Sinai makes for a perfect bookend day. Shisha and cold drinks have never tasted better.',
+          tip: 'The Mount Sinai trip is physically demanding — plan for a rest day or easy activity the following day. Book the trip through your hotel for the best group rates.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Rest, Dive & Wind Sports',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Moray Garden Dive or Rest',
+          text: 'If you\'re still diving, try Moray Garden — a site south of the Lighthouse with sandy clearings surrounded by coral where moray eels peer from every crevice. The site also has excellent hard coral and large fish. If yesterday\'s Mount Sinai trek left you tired, sleep in and have breakfast at Ralph\'s German Bakery — the best pastries and coffee in Dahab (E£60–100). The backpacker pace of Dahab encourages lazy mornings.',
+          tip: 'Moray Garden is a gentler dive than the Canyon or Blue Hole — good for a relaxed morning in the water. The eels are curious and will pose for photos.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Windsurfing or Kitesurfing',
+          text: 'Try windsurfing or kitesurfing — Dahab\'s afternoon thermal winds are consistent and strong. Harry Nass is the most established windsurf centre (lessons E£600–1,000/2 hours). Kitesurfing lessons start at E£1,500. The flat water of the lagoon area south of town is ideal for beginners. Or rent a SUP (stand-up paddleboard, E£100–200/hour) for a gentler water experience. The views from the water — Sinai mountains on one side, Saudi Arabia on the other — are spectacular.',
+          tip: 'Afternoon wind picks up from 1–2pm and stays strong until sunset. Wind sports are best March–June and September–November but possible year-round.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Yoga & Sunset',
+          text: 'Dahab has a growing yoga scene — several hotels and studios offer drop-in classes (E£100–200). Sunset yoga on the waterfront is offered at various locations. Or simply watch the sunset from a waterfront cushion with mint tea and shisha. Dinner at Lakhbatita for Bedouin-Egyptian fusion food in a garden setting (E£100–200) or El Fanar for upscale beachfront dining (E£250–500).',
+          tip: 'Dahab\'s backpacker-yoga-diving triangle attracts a specific type of traveler — laid-back, adventurous, and social. It\'s easy to make friends here.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Dives & Farewell',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Last Blue Hole Visit',
+          text: 'Return to the Blue Hole for a final morning session. Whether you\'re snorkelling the rim or diving the Bell, the Blue Hole rewards repeat visits — you\'ll see different fish, different light, and notice details missed the first time. The Bedouin cafes on the rim serve a perfect last breakfast — eggs, flatbread, and tea overlooking the impossibly blue water. Say goodbye to the reef that draws divers from around the world.',
+          tip: 'The Blue Hole in early morning is at its most peaceful — the water is glassy, the colours vivid, and the reef fish active. A fitting farewell to Dahab.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Souvenir Shopping & Last Swim',
+          text: 'Browse Dahab\'s shops for souvenirs — Bedouin jewellery (silver and turquoise), hand-woven rugs, and Sinai-specific crafts. The shops behind the waterfront have better prices than the seafront stalls. Take a last swim at the Lighthouse or your favourite beach spot. Dahab\'s warm, clear water is something you\'ll miss. Pack your bags — Sharm el-Sheikh airport is 1 hour south.',
+          tip: 'Bedouin silver jewellery is Dahab\'s best souvenir — unique to the Sinai and handmade. Check for hallmarks on silver pieces. Woven Bedouin rugs are beautiful but heavy to carry.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Farewell Dahab',
+          text: 'Final waterfront dinner at your favourite spot — the fish that was swimming in the Red Sea this morning, grilled and served on cushions facing the gulf as the sun sets behind the Sinai mountains. Dahab is the kind of place that changes plans — many travelers arrive for 2 days and stay for 2 weeks. Transfer to Sharm el-Sheikh airport (E£200–400, 1 hour) for flights, or bus to Cairo (8–9 hours, E£200–350) for onward travel.',
+          tip: 'Dahab to Sharm el-Sheikh airport takes 1 hour. Book a transfer through your hotel or use the East Delta Bus Co. buses. Evening flights are well-timed for a last Dahab sunset.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Cheapest PADI in the world', text: 'PADI Open Water certification in Dahab costs E£7,000–10,000 ($150–210) — a fraction of prices in Thailand or Australia, and the Red Sea reefs are world-class. A 3-4 day investment that transforms your travel.' },
+  { title: 'Shore diving saves money', text: 'Dahab\'s dive sites are all shore entry — no expensive boat trips needed. Two guided shore dives with equipment cost E£1,000–1,500 vs E£2,500+ for Sharm el-Sheikh boat dives. The sites are just as good or better.' },
+  { title: 'Eat on the waterfront strip', text: 'Waterfront restaurants are surprisingly affordable — a grilled fish dinner with salad and drinks costs E£100–200. The further from the Lighthouse you go, the cheaper it gets. Everyday and Friends are budget champions.' },
+  { title: 'Minibus to the Blue Hole', text: 'Taxis to the Blue Hole charge E£100–150. The shared minibus from the main road costs E£20. Runs throughout the day — just flag one down heading north.' },
+  { title: 'Camp accommodation', text: 'Dahab camps offer basic bamboo huts from E£150–300/night. Penguin Village, Alaska Camp, and Bishbishi are backpacker favourites. Add E£50–100 for a room with private bathroom. Camping in Dahab is a social experience, not just a budget one.' },
+  { title: 'Own snorkel gear pays for itself', text: 'Snorkel rental costs E£50–100/day. A decent mask and snorkel costs E£200–400 from Dahab dive shops. If staying 3+ days, buying is cheaper and more hygienic. Reef shoes (E£50–100) protect against sea urchins.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: 'E£150–400', midrange: 'E£500–1,200', splurge: 'E£2,000+', notes: 'Camps/hostels → boutique hotels → resort' },
+  { category: 'Food', budget: 'E£80–150', midrange: 'E£200–400', splurge: 'E£600+', notes: 'Budget waterfront → seafood dinners → El Fanar' },
+  { category: 'Transport', budget: 'E£20–50', midrange: 'E£100–200', splurge: 'E£300+', notes: 'Walking & minibus → taxi → private transfers' },
+  { category: 'Activities', budget: 'E£200–500', midrange: 'E£800–1,500', splurge: 'E£3,000+', notes: 'Snorkelling → 2 dives → PADI course + excursions' },
+  { category: 'Daily Total', budget: 'E£450–1,100', midrange: 'E£1,600–3,300', splurge: 'E£5,900+', notes: '$9–23 → $33–69 → $123+' },
+];
+
+const practicalInfo = [
+  {
+    icon: '✈️',
+    title: 'Getting There',
+    items: [
+      'Fly to Sharm el-Sheikh airport (SSH) — 1 hour south of Dahab. International flights from Europe and domestic from Cairo. Transfer to Dahab E£200–400 by taxi or E£50–80 by shared minibus',
+      'Bus from Cairo (East Delta Bus Co., 8–9 hours, E£200–350) via the Suez Canal tunnel. Buses arrive at Dahab bus station — a 5-minute taxi from the waterfront',
+      'Free Sinai-only visa stamp at Sharm airport — valid for 15 days and covers Dahab, Mount Sinai, and Ras Abu Galum. For onward travel beyond Sinai, get the full $25 visa on arrival',
+    ],
+  },
+  {
+    icon: '🤿',
+    title: 'Diving & Snorkelling',
+    items: [
+      'Dahab has 15+ dive sites, all shore entry. The Blue Hole, Canyon, Lighthouse, and Moray Garden are the highlights. Two guided dives with equipment E£1,000–1,500. Night dives available E£800–1,200',
+      'PADI Open Water certification E£7,000–10,000 (3–4 days). Advanced Open Water E£5,000–8,000 (2 days). Dahab is one of the cheapest certification locations worldwide with world-class reefs',
+      'Snorkelling requires no booking — walk to the Lighthouse or any entry point with a mask. Equipment rental E£50–100/day. The Red Sea has 1,200+ fish species and 250+ coral species',
+    ],
+  },
+  {
+    icon: '🚕',
+    title: 'Getting Around',
+    items: [
+      'Dahab is walkable — the main waterfront strip is 1km. Everything from dive shops to restaurants to hotels is within walking distance along the coast',
+      'Taxis in town E£20–50. To the Blue Hole E£100–150. Shared minibuses run along the coast for E£10–20. Bicycle rental E£50–100/day for exploring further',
+      'Jeep excursions to Coloured Canyon, Mount Sinai, and desert wadis are booked through hotels or tour agencies on the waterfront. Group trips are cheaper',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity',
+    items: [
+      'Vodafone and Orange have coverage in Dahab town. Signal drops at the Blue Hole and disappears at Ras Abu Galum and in the Sinai interior. Download offline maps',
+      'WiFi at most hotels and waterfront restaurants — speeds vary from decent to frustrating. Don\'t expect to stream video reliably',
+      'WhatsApp works fine in town. International dive booking and tour booking often happens via WhatsApp with local operators',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money',
+    items: [
+      'ATMs in Dahab town centre — Banque Misr and CIB. Cash is essential for most restaurants, dive shops, and activities. Some larger hotels accept cards',
+      'Dahab is extremely affordable — daily budget of E£450–1,100 ($9–23) is achievable. The main expense is diving and excursions, not food or accommodation',
+      'Tipping is expected but amounts are smaller than Cairo. E£10–20 for boat captains and dive guides. E£5–10 for restaurant service. Bedouin guides appreciate E£50–100',
+    ],
+  },
+  {
+    icon: '🎒',
+    title: 'Packing Tips',
+    items: [
+      'Reef-safe sunscreen (SPF 50+), rashguard or UV shirt for snorkelling, and reef shoes are essential. Regular sunscreen chemicals damage the coral you came to see',
+      'Lightweight, casual clothing — Dahab is the most relaxed dress code in Egypt. Swimwear is fine at the beach but cover up in town. Warm layer for Mount Sinai and desert nights',
+      'Bring a waterproof phone case for underwater photos. A GoPro or underwater camera makes Dahab\'s reefs shine. Quick-dry towel for beach hopping',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏜️', title: 'Bedouin Respect', text: 'The Sinai Bedouins are the indigenous people of this landscape. Treat guides and hosts with respect. Accept tea when offered — it\'s a cultural greeting, not a sales tactic. Learn a few Arabic or Bedouin phrases — it goes a long way.' },
+  { icon: '🌊', title: 'Blue Hole Safety', text: 'The Blue Hole has killed over 200 divers attempting the arch at 56 metres. Memorials line the shore. Never attempt depth records, freedive the arch, or exceed your certification. Stick to recreational limits and enjoy the spectacular rim safely.' },
+  { icon: '🐠', title: 'Reef Conservation', text: 'Don\'t touch, stand on, or take anything from the reef. Coral takes decades to grow inches. Use reef-safe sunscreen. Report any boats anchoring on coral. Dahab\'s reefs are healthy because divers respect them — be part of that tradition.' },
+  { icon: '👗', title: 'Dress Code Balance', text: 'Dahab is relaxed by Egyptian standards but still conservative compared to Western beach towns. Swimwear is fine at dive sites and the beach. Cover shoulders and knees when walking in town, visiting shops, or at restaurants away from the waterfront.' },
+  { icon: '🍺', title: 'Alcohol Awareness', text: 'Alcohol is widely available in Dahab despite being in the Sinai — beer, wine, and cocktails at most waterfront restaurants. Drink responsibly and respect that many locals don\'t drink for religious reasons. Never drink and dive.' },
+];
+---
+
+<CityGuideLayout
+  title="Dahab Travel Guide 2026 — Red Sea Diving for Young Travelers | roammate"
+  description="The ultimate Dahab guide for young travelers. Blue Hole diving, Red Sea snorkelling, Sinai trekking, Bedouin culture, and the most chilled backpacker town in Egypt. Budget tips and 1-7 day itineraries."
+  heroImage="/images/guides/aqaba-hero.webp"
+  heroFlag="🇪🇬"
+  heroCountry="Egypt"
+  heroRegion="Middle East"
+  heroCity="Dahab"
+  heroSubtitle="The Red Sea's backpacker diving paradise, where the Blue Hole plunges into the deep, Sinai mountains rise behind, and the pace of life slows to a felucca drift."
+  heroPills={['3-Day Diving', 'Ultra Budget', 'Oct–May Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Dahab is one of the cheapest backpacker destinations in the world. Budget accommodation, affordable seafood, and shore-entry diving keep costs remarkably low."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Dahab blends Red Sea diving culture, Sinai Bedouin traditions, and international backpacker vibes into something uniquely laid-back and addictive."
+  ctaCity="Dahab"
+  ctaText="Find dive buddies to share the Blue Hole, split excursion costs, and explore the Sinai together on roammate."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app."
+/>

@@ -1,0 +1,377 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'TZS (Tanzanian Shilling)', detail: '1 USD ≈ 2,500 TZS. USD accepted for park fees' },
+  { icon: '🗣', label: 'Language', value: 'Swahili / English', detail: 'Guides speak excellent English' },
+  { icon: '🕐', label: 'Timezone', value: 'EAT (UTC+3)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Jun – Oct', detail: 'Dry season — animals concentrate along the river' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$100–250 USD', detail: 'Park fees + safari vehicle costs' },
+  { icon: '🛂', label: 'Visa', value: 'eVisa required', detail: '$50 USD, apply online before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Tarangire Day Safari — Elephants & Baobabs',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Elephant Herds at the Tarangire River',
+          text: 'Enter the park at dawn and head directly to the Tarangire River — the lifeline that gives the park its name. During the dry season, this shrinking river is the only permanent water source for miles, drawing extraordinary concentrations of wildlife. Herds of 50–100 elephants gather along the banks, drinking, bathing, and spraying themselves with mud. Tarangire has the largest elephant concentration in northern Tanzania — over 3,000 individuals — and seeing family groups interacting at the river is mesmerising. Buffalo herds, zebra, wildebeest, and warthogs share the riverbanks in a scene of concentrated African wildlife.',
+          tip: 'The bridge near the park entrance offers an elevated viewpoint over the river — an excellent first stop for photography. Early morning light on elephants at the water is spectacular.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Ancient Baobab Woodland & Predators',
+          text: 'Drive south through Tarangire\'s signature landscape — ancient baobab trees rising like sentinels from the golden savanna. Some of these baobabs are over 1,000 years old, with trunks so massive that elephants have hollowed out some for water storage. The open woodland supports exceptional predator populations — lion prides hunt the plains between baobabs, leopards rest in sausage trees, and cheetahs scan from termite mounds. Tree-climbing pythons coil in the baobab branches. The landscape feels like a wildlife painting — the twisted, surreal shapes of the baobabs against the dry savanna create scenes found nowhere else in East Africa.',
+          tip: 'Ask your guide to take the Lemiyon and Matete loop roads — these pass through the densest baobab woodland with excellent predator sighting potential.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset on the Tarangire Plains',
+          text: 'Time your final drive for the golden hour as the sun drops over the Tarangire plains. The dry-season landscape glows amber and gold, and herds of elephants silhouetted against the sunset create iconic African imagery. Return towards the gate via the river route, where hippos begin their nightly emergence from the water, grunting and splashing. The park closes at 6:00 PM, but the drive from the gate to the main road passes through a wildlife corridor where animals cross between the park and surrounding communal lands — elephants on the road are common at dusk.',
+          tip: 'Allow extra time for the drive out — elephants on the access road can cause delays at dusk. This is a feature, not a bug. Enjoy the close encounters.',
+        },
+      ],
+    },
+  ],
+  3: [
+    {
+      num: 1,
+      title: 'Tarangire River & Elephant Country',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Dawn Game Drive Along the River',
+          text: 'Enter the park at 6:00 AM and drive the northern circuit along the Tarangire River. The morning light illuminates one of Africa\'s great wildlife spectacles — hundreds of elephants, buffalo, zebra, and wildebeest converging on the riverbanks. During the dry season (June–October), the river shrinks to pools and channels, concentrating animals into a narrow corridor of green in an otherwise parched landscape. Elephant families wade into the water, calves splashing playfully while matriarchs keep watch. Giraffes spread their legs to drink at shallow crossings. The density of large mammals along the river rivals the Serengeti.',
+          tip: 'The first 10km from the main gate follow the river closely — this stretch has the highest wildlife density. Drive slowly and stop frequently.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Baobab Woodland & Lion Prides',
+          text: 'Push deeper into the park through the baobab woodland zone. Tarangire\'s baobabs are among the most impressive in Africa — massive, twisted trunks rising 20 metres from the savanna, some with hollows large enough to shelter inside. The open woodland between baobabs is prime lion territory — prides rest in the shade during the heat, cubs tumbling over each other while adults doze. Leopards favour the larger trees, and you may spot one draped across a horizontal branch. Fringe-eared oryx, gerenuk (the long-necked antelope that stands on hind legs to browse), and lesser kudu inhabit the drier sections — species rare elsewhere in northern Tanzania.',
+          tip: 'Fringe-eared oryx and gerenuk are Tarangire specialities — ask your guide to search the drier eastern sections where these semi-arid species thrive.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sundowners at Camp',
+          text: 'Check into your accommodation — Tarangire offers everything from budget public campsites ($30/person) to mid-range tented camps ($200–400/person) and luxury lodges ($500+). The public campsites at Tarangire are unfenced — elephants walk through camp at night, hyenas investigate cooler boxes, and the night sounds are thrilling and slightly terrifying. Mid-range tented camps offer comfortable beds, bush showers, and three-course dinners under the stars. Many camps arrange sundowner drinks on a rocky outcrop overlooking the river — cold gin and tonics as the sun sets over the baobab-studded plain.',
+          tip: 'Budget camping at Tarangire public campsites is one of the wildest experiences in Tanzania — but store all food securely. Elephants are curious and persistent.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Southern Tarangire & Swamps',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Silale Swamp — Birding Paradise',
+          text: 'Drive south to the Silale Swamp — a vast seasonal wetland in the heart of the park that attracts extraordinary birdlife and large concentrations of buffalo and elephant. During the wet season, the swamp fills with water and thousands of migrating birds arrive — kori bustards (the world\'s heaviest flying bird), saddle-billed storks, martial eagles, and enormous flocks of red-billed quelea that move like smoke across the sky. Even in the dry season, the swamp\'s moisture supports green grass that draws grazers from across the park. Over 550 bird species have been recorded in Tarangire — more than almost any park in East Africa.',
+          tip: 'Silale Swamp is 30km south of the main gate — allow 1.5 hours to reach it. Birders should bring a scope and field guide. The kori bustard is commonly seen here.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Python Country & Termite Mounds',
+          text: 'The southern sections of Tarangire are wilder, less visited, and thick with wildlife. Drive through forests of sausage trees where African rock pythons — reaching 5–6 metres long — coil in the branches. The flat plains are studded with enormous termite mounds, some over 3 metres tall, built over decades by millions of termites. Cheetahs use these mounds as observation platforms, scanning the grasslands for prey. Dwarf mongooses colonise abandoned mounds, their tiny heads poking out to watch your vehicle pass. The landscape has a primordial quality — baobabs, termite cathedrals, python-draped trees, and vast herds moving across a timeless savanna.',
+          tip: 'The southern loop roads are rougher — a 4x4 is essential and some tracks may be impassable in the wet season. Check road conditions at the gate.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Night in the Bush',
+          text: 'Return to camp as the light fades and the bush comes alive with nocturnal sounds. Tarangire at night is extraordinary — the unfenced campsites mean wildlife moves freely through the camp. Lions roar from disconcertingly close range, elephants rip branches from trees around your tent, and hyena eyes glow in your torch beam. For a safer but still immersive experience, the tented camps have staff who escort you to and from your tent after dark. Dinner under the stars — many camps serve by candlelight in open-air bomas surrounded by the sounds of the African night.',
+          tip: 'Never walk around camp after dark without a torch and a staff escort if available. Keep your tent zipped — baboons and honey badgers will investigate any opening.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Final Drive & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise at the Tarangire River',
+          text: 'Wake before dawn for a final sunrise game drive along the Tarangire River. The early morning is when the bush is most alive — elephants emerge from the woodland to drink, lions return from night hunts to rest in the shade, and hundreds of birds greet the dawn in a cacophony of calls. The sunrise light through the baobab woodland creates extraordinary photography conditions — long shadows, warm golden tones, and animals backlit against the rising sun. Spend the full morning driving the river circuit one last time, savouring the concentrated wildlife that makes Tarangire unforgettable.',
+          tip: 'The 6:00–9:00 AM window is the most productive for game viewing and photography. Tell your guide you want to focus on the river for maximum elephant encounters.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Boundary Hill & Park Exit',
+          text: 'Before leaving, drive to Boundary Hill — an elevated viewpoint near the park entrance that offers panoramic views across the Tarangire ecosystem. From here, the river curves through a sea of baobabs, herds of elephant and buffalo are visible as dark shapes on the golden plains, and the Maasai Steppe stretches east towards Kilimanjaro (visible on clear days). It is a fitting final perspective on one of Tanzania\'s most underrated parks. Exit through the main gate and head to the main road — Arusha is 2 hours east, Lake Manyara 2 hours west, and Ngorongoro 3.5 hours northwest.',
+          tip: 'Boundary Hill is just 1km from the main gate — easy to fit in before exiting. The views are best in the morning before haze builds.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Onward Safari Circuit',
+          text: 'Tarangire is often combined with Lake Manyara (2 hours west) and the Ngorongoro–Serengeti circuit for a comprehensive northern Tanzania safari. Alternatively, head south to Dodoma or the less-visited Ruaha National Park for even more remote wilderness. If returning to Arusha, the 2-hour drive passes through Maasai rangeland — watch for herds of cattle tended by warriors in red shukas and the occasional giraffe browsing beside the road. Arusha has international flight connections from Kilimanjaro Airport (JRO) and is the hub for all northern circuit safaris.',
+          tip: 'If you have time to add one more park, Lake Manyara offers a completely different habitat — forest, flamingos, and an alkaline lake — as a perfect contrast to Tarangire\'s open savanna.',
+        },
+      ],
+    },
+  ],
+  7: [
+    {
+      num: 1,
+      title: 'Arrival & Arusha Gateway',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive in Arusha',
+          text: 'Fly into Kilimanjaro International Airport (JRO) and transfer to Arusha (1.5 hours). Arusha is the safari capital of northern Tanzania — the jumping-off point for Serengeti, Ngorongoro, Tarangire, and Kilimanjaro. Check into a guesthouse or hotel and meet your safari operator to confirm your itinerary. Budget accommodations start at $15–30/night in the town centre, while pleasant mid-range lodges on the outskirts run $50–100. Use the afternoon to acclimatise and prepare gear.',
+          tip: 'Arrive a day early if possible to recover from jet lag. Arusha is at 1,400 metres — mild and pleasant. The town has good supermarkets for stocking up on snacks and water.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Safari Briefing & Gear Prep',
+          text: 'Meet your safari guide and go over the Tarangire itinerary. Good operators provide a pre-safari briefing covering wildlife expectations, photography tips, and park rules. Use the afternoon to stock up on essentials — bottled water (500 TZS per litre), sunscreen, insect repellent, and snacks from the Shoppers Supermarket on Old Moshi Road. Charge all camera batteries and download offline maps. If you need binoculars, several shops near the Clock Tower rent them for the safari duration.',
+          tip: 'Ask your operator about the current wildlife situation in Tarangire — guides communicate daily by radio and know where the big herds are concentrated.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Arusha Evening',
+          text: 'Explore Arusha\'s restaurant scene — the town has surprisingly good dining for a safari gateway. Fifi\'s Restaurant serves excellent Tanzanian and Indian cuisine ($8–15 for mains), while the Blue Heron offers international dishes in a garden setting. For local flavour, visit the street food stalls near the central market for mishkaki (meat skewers, 2,000 TZS), chips mayai (omelette with chips, 4,000 TZS), and fresh tropical fruit juice (1,000 TZS). Get an early night — your safari starts at dawn tomorrow.',
+          tip: 'Arusha is safe by East African standards but take normal precautions after dark — use a taxi for longer distances and keep valuables secure.',
+        },
+      ],
+    },
+    {
+      num: 2,
+      title: 'Tarangire — River & Elephants',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'First Game Drive — Tarangire River',
+          text: 'Depart Arusha at dawn for the 2-hour drive to Tarangire National Park. The road passes through Maasai rangeland dotted with bomas and cattle before the landscape opens to the savanna surrounding the park. Enter through the main gate and your first game drive begins immediately. The northern section follows the Tarangire River — during the dry season, this is where the magic happens. Herds of 50–100 elephants line the riverbanks, drinking, bathing, and playing. Giraffes, zebra, wildebeest, and buffalo share the water in a concentrated wildlife spectacle.',
+          tip: 'The two-hour drive from Arusha is scenic and often includes wildlife outside the park — giraffes and zebra roam freely in the Maasai conservancies along the road.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Baobab Circuit & Big Cats',
+          text: 'After a packed lunch by the river, drive the baobab circuit through the park\'s central section. These ancient trees — some over 1,000 years old — create a surreal landscape unique to Tarangire. The open woodland between baobabs is prime lion country — prides rest in the shade with cubs tumbling over sleeping adults. Leopards occasionally drape themselves across sausage tree branches. Lesser kudu, a shy antelope with striking white stripes, hide in the thicker bush. The diversity of landscapes within a single drive — river, woodland, open plains, baobab forest — is what makes Tarangire special.',
+          tip: 'The Lemiyon area has some of the largest baobabs and most reliable lion sightings. Ask your guide to check by radio for current predator locations.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Camp Setup & Bush Dinner',
+          text: 'Check into your camp and settle in for your first night in the Tarangire bush. Budget campers pitch at the public campsites ($30/person) — unfenced, basic, and thrillingly wild. Mid-range tented camps ($200–400) offer comfortable beds, en-suite bush showers, and three-course dinners. The evening ritual is the same at every price point — sundowners watching the last light fade over the baobab-studded plains, dinner under a canopy of stars, and the growing chorus of nocturnal sounds. Lions roar, hyenas whoop, and elephants rumble in the darkness around your camp.',
+          tip: 'At public campsites, store all food in your vehicle — elephants, baboons, and honey badgers will investigate anything accessible. Hang a torch in your tent for emergency use.',
+        },
+      ],
+    },
+    {
+      num: 3,
+      title: 'Southern Swamps & Deep Bush',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Silale & Gurusi Swamps',
+          text: 'Drive south to the seasonal swamps that form the heart of Tarangire\'s ecosystem. The Silale and Gurusi swamps fill with water during the rains, creating vast wetlands that attract millions of birds and massive herds of buffalo. Even in the dry season, residual moisture supports green vegetation that draws elephants, zebra, and wildebeest from across the park. Birdlife is extraordinary — martial eagles, secretary birds, kori bustards, saddle-billed storks, and clouds of red-billed quelea. The southern section is quieter than the river area, with fewer vehicles and a more remote, wild atmosphere.',
+          tip: 'The southern swamps are a 1.5-hour drive from the main gate — plan a full day here to justify the driving time. Pack lunch and plenty of water.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Termite Cathedral Plains',
+          text: 'Explore the open plains studded with enormous termite mounds — some over 3 metres tall and decades in construction. These mounds are miniature ecosystems — dwarf mongooses colonise the interiors, cheetahs use them as lookout platforms, and monitor lizards excavate chambers to lay eggs. The flat terrain offers wide-open views in every direction — herds of wildebeest and zebra move across the plains in long lines, exactly as they have for millennia. African rock pythons, some reaching 5 metres, hide in the trees and mounds. The landscape feels ancient and primal — baobabs, termite cathedrals, and vast herds under an enormous sky.',
+          tip: 'Cheetahs on termite mounds make spectacular photographs — the elevated vantage point and open background create clean compositions. Be patient and keep your distance.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Campfire Stories',
+          text: 'Return to camp as the light fades. The drive back north along the river in the late afternoon often produces the best sightings — animals are active after the heat of the day, and the low-angle light is magnificent. At camp, gather around the fire for dinner and swap stories with other travellers. Safari camps foster a unique camaraderie — the shared experience of close wildlife encounters creates immediate bonds. Your guide will share knowledge of animal behaviour, Maasai traditions, and the ecology of the Tarangire ecosystem that deepens your understanding of what you have witnessed.',
+          tip: 'Bring a head torch to every campfire — you will need it to navigate back to your tent. Watch where you step — scorpions and spiders are active at night.',
+        },
+      ],
+    },
+    {
+      num: 4,
+      title: 'Walking Safari & Maasai Steppe',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Walking Safari in the Buffer Zone',
+          text: 'Join a ranger-guided walking safari ($20–30 per person) in the community wildlife areas bordering the park. On foot, the African bush is a completely different experience — you notice elephant tracks pressed into dried mud, dung beetles rolling their prizes, tiny lilac-breasted rollers perched on acacia thorns, and the complex scent layers of the bush. The ranger reads tracks and signs like a book, explaining which animals passed, when, and in which direction. Walking brings an alertness and connection to the landscape that vehicle safaris cannot replicate. The buffer zones support significant wildlife including elephants, giraffes, and occasionally predators.',
+          tip: 'Walking safaris operate at dawn (6–8 AM) before the heat builds. Wear neutral colours, walk quietly, and follow the ranger\'s instructions exactly. No bright clothing or perfume.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Maasai Village & Cultural Exchange',
+          text: 'Visit a Maasai village on the park boundary — the Maasai have coexisted with Tarangire\'s wildlife for centuries, and their pastoral lifestyle continues alongside the safari industry. The visit includes a tour of the boma (homestead), demonstrations of fire-making and cattle herding, explanations of the age-set social system, and the chance to purchase beadwork and crafts directly from the women who make them. Photography fees are agreed in advance (typically 10,000–20,000 TZS per group). The Maasai warriors\' jumping dance is performed with genuine enthusiasm and athletic impressiveness.',
+          tip: 'Ask your operator to arrange a visit through an established community tourism program — the fees go directly to the village rather than a middleman.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Sunset from Boundary Hill',
+          text: 'Drive to Boundary Hill near the park entrance for a sunset panorama across the entire Tarangire ecosystem. From this elevated viewpoint, the river curves through baobab woodland, herds of elephants are visible as dark shapes on the golden plains, and the Maasai Steppe stretches east to distant mountains. On exceptionally clear days, the snow cap of Kilimanjaro appears on the horizon. The sunset turns the baobab silhouettes into dramatic shapes against the orange sky. Bring sundowner drinks and savour one of the finest views in northern Tanzania.',
+          tip: 'Boundary Hill is just 1km from the gate — arrive 45 minutes before sunset for the best light. The hill has a few flat rocks perfect for sitting.',
+        },
+      ],
+    },
+    {
+      num: 5,
+      title: 'Tarangire River Deep Dive',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'River Crossing Points',
+          text: 'Spend the morning at the river crossing points where animals wade through shallow water to move between riverbank woodlands. These crossings produce intimate wildlife encounters — elephants crossing in family groups with calves sheltered between adults, zebra herds splashing through at speed, and giraffes cautiously picking their way across. Crocodiles lurk in deeper pools, and monitor lizards patrol the banks. The river narrows in places to just a few metres, putting you within touching distance of crossing animals (though you must stay in your vehicle). The concentration of life along this narrow water corridor in the dry season is remarkable.',
+          tip: 'Position your vehicle at a crossing point and wait — animals come to the water throughout the morning. Patience produces encounters that driving cannot.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Birding the River & Woodland',
+          text: 'Tarangire is one of East Africa\'s premier birding destinations with over 550 recorded species. The river corridor supports speciality species that attract birders from around the world — the yellow-collared lovebird (a Tarangire endemic), ashy starling, Tanzanian red-billed hornbill, and the spectacular lilac-breasted roller. Raptors are abundant — bateleur eagles, tawny eagles, martial eagles, and huge lappet-faced vultures soaring on thermals above the river. In the woodland, hornbills, barbets, and sunbirds add colour to the baobab branches. Even non-birders are struck by the sheer variety and beauty of Tarangire\'s avian life.',
+          tip: 'The yellow-collared lovebird is found nowhere else in the world except the Tarangire-Manyara ecosystem — a small, vibrant green and yellow parrot often seen in noisy flocks.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Night Sounds & Stargazing',
+          text: 'Return to camp for a relaxed evening. Tarangire\'s remote location means virtually zero light pollution — the night sky is spectacular. The Milky Way arches overhead in extraordinary detail, and the Southern Cross, Scorpius, and the Magellanic Clouds are all visible. The soundscape at night is equally impressive — lions roaring, hyenas whooping in chorus, elephants rumbling, nightjars churring, and the occasional shriek of a bushbaby. Each night in the bush teaches you to identify sounds — by your fifth night, you will recognise individual calls and know what is moving in the darkness.',
+          tip: 'Download a stargazing app like Stellarium before arriving — the southern hemisphere constellations may be unfamiliar if you are from the north.',
+        },
+      ],
+    },
+    {
+      num: 6,
+      title: 'Eastern Wilderness & Kopjes',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Eastern Sector — Kitibong Hill',
+          text: 'Explore the less-visited eastern sector of the park around Kitibong Hill. This area features rocky kopjes (granite outcrops) that provide den sites for leopards and resting spots for lions. The vegetation is drier and more open than the riverine areas, supporting different species — Grant\'s and Thomson\'s gazelles, eland (Africa\'s largest antelope), and hartebeest. The kopjes themselves are fascinating miniature ecosystems — rock hyraxes, agama lizards, and klipspringer antelope cling to the boulders, while raptors nest on the cliff faces. The eastern horizon stretches endlessly across the Maasai Steppe.',
+          tip: 'The eastern tracks are less maintained — check with park staff about current road conditions. A morning here followed by an afternoon on the river gives the best variety.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Elephant Matriarch Groups',
+          text: 'Return to the river for a final afternoon watching Tarangire\'s legendary elephants. With over 3,000 individuals, the park supports some of the largest family groups in Africa — herds of 50–100 led by experienced matriarchs who remember water sources, danger areas, and seasonal routes from decades of experience. Watching an elephant matriarch lead her family to water — calves, juveniles, and other adults following in her footsteps — is witnessing a social intelligence and family bond that resonates deeply. Elephant researchers have been studying Tarangire\'s population for decades, and some matriarchs are individually known and named.',
+          tip: 'If your guide knows the research teams, they may be able to identify individual matriarchs by name. The elephants near the main bridge are among the most studied in Africa.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Final Campfire',
+          text: 'Your last evening in the Tarangire bush. The camp routine that felt novel on the first night is now comforting — sundowners at the viewpoint, dinner under the stars, and the familiar chorus of night sounds. The darkness beyond the campfire feels less alien and more like home. This is the gift of spending multiple days in the bush — the shift from tourist to participant, from observer to someone who understands the rhythms of the landscape. Pack your bags for an early departure, but leave time to sit by the fire and absorb the silence and sounds of the African night.',
+          tip: 'Ask your guide for their highlight of the trip — they often notice things you missed and their favourite moments are revealing.',
+        },
+      ],
+    },
+    {
+      num: 7,
+      title: 'Final Dawn Drive & Departure',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Sunrise Farewell Drive',
+          text: 'One final sunrise game drive along the Tarangire River. The early morning light filters through baobab branches onto the golden savanna, elephants emerge from the woodland mist, and the river glows silver in the low angle sun. Seven days in Tarangire has given you an intimate knowledge of this landscape — you recognise the baobab where the leopard sleeps, the crossing point where the elephant family drinks, and the termite mound the cheetah uses as a lookout. This depth of familiarity with an African wilderness is rare and precious. Exit the park by 9:00 AM for the drive to your next destination.',
+          tip: 'The final morning drive is bittersweet — take mental photographs as well as real ones. The memories of Tarangire\'s elephants and baobabs will stay with you forever.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Transfer to Arusha or Next Park',
+          text: 'The drive back to Arusha takes 2 hours on good tarmac. Most visitors continue their northern circuit — Lake Manyara (2 hours west) for forest and flamingos, Ngorongoro Crater (3.5 hours) for the world\'s largest intact caldera, or Serengeti (6 hours via Ngorongoro) for the Great Migration. Alternatively, fly from Arusha to Zanzibar for beach time after the bush. If your trip is ending, Kilimanjaro International Airport (JRO) is 1.5 hours from Arusha with international connections.',
+          tip: 'If heading to the Serengeti, the most scenic route passes through Ngorongoro Conservation Area — pack your Ngorongoro crater descent permit in advance.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Reflecting on Tarangire',
+          text: 'Whether continuing your safari or heading home, Tarangire will stay with you as one of Africa\'s most underrated wilderness areas. The image of 100 elephants at the river beneath 1,000-year-old baobabs is uniquely Tarangire — no other park offers this combination. The lack of crowds compared to the Serengeti means your experience felt personal and intimate. The baobab woodland, the dry-season wildlife concentration, the walking safaris, and the unfenced camps where elephants wander past your tent at 2 AM — these are experiences that define what East African safari is at its most authentic.',
+          tip: 'Tell other travellers about Tarangire — it is one of northern Tanzania\'s best-kept secrets and deserves more recognition alongside its famous neighbours.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Join a group safari from Arusha', text: 'Solo vehicle and guide costs are $200–300/day fixed. A group of 4–6 splits this to $40–60/person/day. Arusha operators run weekly group departures — check SafariBookings.com for scheduled trips.' },
+  { title: 'Camp at public campsites', text: 'Tarangire\'s unfenced public campsites cost $30/person/night — you will hear lions roar and elephants will walk past your tent. This is the most authentic bush experience for the lowest price.' },
+  { title: 'Combine with Manyara', text: 'A 3-day safari combining Tarangire and Lake Manyara costs $500–800/person in a group, significantly cheaper than visiting each park separately. Most Arusha operators offer this combination.' },
+  { title: 'Pack your own food', text: 'Bring snacks, water, and packed lunch supplies from Arusha supermarkets. There are no shops or restaurants inside the park. A well-stocked cooler saves significant money over camp-provided meals.' },
+  { title: 'Visit in shoulder season', text: 'November and March–May are quieter with fewer tourists and lower prices. Wildlife is more dispersed after rains, but the landscape is lush and green — a different but equally beautiful experience.' },
+  { title: 'Stay outside the park', text: 'Budget lodges and campsites near the park gate on the main road cost $15–30/night versus $30+ for campsites inside. You pay park fees only for the days you enter.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$10–30', midrange: '$50–120', splurge: '$200–600', notes: 'Outside camping → in-park campsite → tented camp → luxury lodge' },
+  { category: 'Food', budget: '$5–10', midrange: '$15–35', splurge: '$50–100', notes: 'Self-catered → camp meals → lodge all-inclusive' },
+  { category: 'Transport', budget: '$40–60', midrange: '$60–100', splurge: '$150–300', notes: 'Group safari share → private vehicle → fly-in charter' },
+  { category: 'Park Fees', budget: '$45–60', midrange: '$45–60', splurge: '$45–60', notes: '$45–60 per adult per 24 hours (varies by season)' },
+  { category: 'Activities', budget: '$0', midrange: '$20–30', splurge: '$50–100', notes: 'Game drives included → walking safari → balloon safari' },
+  { category: 'Daily Total', budget: '$100–160', midrange: '$190–345', splurge: '$495–1,160', notes: 'Per person — group sharing is the single biggest cost saver' },
+];
+
+const practicalInfo = [
+  { icon: '✈️', title: 'Getting There', items: ['Fly to Kilimanjaro Airport (JRO), 1.5 hours transfer to Arusha, then 2 hours to Tarangire', 'Drive from Arusha: 2 hours south on tarmac A104 road to main gate', 'The park is 120km southwest of Arusha — most visitors arrive by safari vehicle'] },
+  { icon: '🎟️', title: 'Entry & Permits', items: ['Park entry: $45–60 per adult per 24 hours depending on season', 'Vehicle fee: $40 per foreign-registered vehicle per entry', 'Walking safari supplement: $20–30 per person in the buffer zone areas'] },
+  { icon: '💊', title: 'Health & Safety', items: ['Malaria prophylaxis essential — Tarangire is in a high-risk malaria zone', 'Tsetse flies are present — wear long sleeves and neutral colours in woodland areas', 'Camps are unfenced — follow staff instructions about moving around camp after dark'] },
+  { icon: '📱', title: 'Connectivity', items: ['Limited cell signal inside the park — Vodacom has the best coverage', 'No Wi-Fi at campsites. Mid-range camps may have satellite internet (slow)', 'Download offline maps and wildlife guides before entering the park'] },
+  { icon: '💰', title: 'Money', items: ['Carry enough USD cash for park fees — card payment may not work at the gate', 'No ATMs inside the park — the nearest are in Arusha or roadside towns', 'Camp staff, guides, and local services expect cash tips in USD'] },
+  { icon: '📦', title: 'What to Pack', items: ['Binoculars essential for scanning the plains and river from viewpoints', 'Camera with 200mm+ telephoto — elephants at the river are a photographer\'s dream', 'Dust-proof layers, warm fleece for cold mornings, wide-brimmed hat, and high-SPF sunscreen'] },
+];
+
+const culturalTips = [
+  { icon: '🐘', title: 'Respect elephant space', text: 'Tarangire\'s elephants are well-habituated but still wild. If an elephant flaps its ears, raises its trunk, or mock-charges, your vehicle is too close. Ask your guide to reverse slowly. Never position between a mother and her calf.' },
+  { icon: '🏘️', title: 'Support Maasai communities', text: 'The Maasai communities surrounding Tarangire coexist with wildlife and depend partly on tourism income. Visit through official cultural tourism programs, buy crafts directly from makers, and photograph people only with consent and agreed fees.' },
+  { icon: '🗑️', title: 'Leave no trace', text: 'Carry all rubbish out of the park. Plastic bags are banned in Tanzania. Never leave food scraps — they attract dangerous animals to roads and camps. The bush should look the same when you leave as when you arrived.' },
+  { icon: '🔇', title: 'Silence is golden', text: 'The best wildlife encounters happen in silence. Keep voices low near animals, avoid engine revving, and resist the urge to shout when you spot something exciting. Patient, quiet observation is rewarded with intimate behaviour rarely seen by noisy tourists.' },
+  { icon: '💰', title: 'Tipping guide', text: 'Safari guide: $15–20/day, camp staff: $10/day, driver: $10/day. Tip in USD cash. For walking safari rangers, $10–15 is standard. Tips are a significant part of safari workers\' income — budget for them as part of your trip cost.' },
+];
+---
+
+<CityGuideLayout
+  title="Tarangire National Park Guide 2026 — Safari Itinerary for Young Travelers | roammate"
+  description="Plan your Tarangire safari with 1, 3, and 7-day itineraries. Massive elephant herds, ancient baobab trees, 550+ bird species, and uncrowded game drives in Tanzania's underrated wildlife gem."
+  heroImage="/images/guides/ngorongoro-hero.webp"
+  heroFlag="🇹🇿"
+  heroCountry="Tanzania"
+  heroRegion="East Africa"
+  heroCity="Tarangire"
+  heroSubtitle="Africa's underrated gem — massive elephant herds gathering beneath 1,000-year-old baobab trees along a river that draws the wild heart of Tanzania."
+  heroPills={["Safari & Elephants", "Baobab Wilderness", "Jun–Oct Best"]}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={3}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Tarangire offers exceptional value — similar wildlife density to the Serengeti at significantly lower cost. Group safaris and budget camping bring a multi-day Tarangire experience within reach of backpacker budgets."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Tarangire is home to some of Africa's largest elephant herds and borders Maasai communities who have coexisted with wildlife for centuries. Respect for both the animals and the people makes your safari richer."
+  ctaCity="Tarangire"
+  ctaText="Find safari companions on roammate — split vehicle costs, share unfenced camping adventures, and witness Tarangire's elephant herds together."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app."
+/>
