@@ -40,8 +40,8 @@ claude plugin install firebase@claude-plugins-official
 claude plugin enable firebase@claude-plugins-official
 claude plugin install commit-commands
 claude plugin enable commit-commands
-claude plugin install ralph-wiggum
-claude plugin enable ralph-wiggum
+#claude plugin install ralph-wiggum
+#claude plugin enable ralph-wiggum
 claude plugin install code-review
 claude plugin enable code-review
 claude plugin install feature-dev

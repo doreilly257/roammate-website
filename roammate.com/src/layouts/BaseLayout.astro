@@ -1,6 +1,7 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import WaitlistModal from '../components/WaitlistModal.astro';
 import '../styles/fonts.css';
 import '../styles/global.css';
 
@@ -22,7 +23,7 @@ const isHome = Astro.url.pathname === '/';
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com; connect-src 'self' https://us.i.posthog.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content={description}>
   <title>{title}</title>
@@ -122,6 +123,7 @@ const isHome = Astro.url.pathname === '/';
   </main>
 
   <Footer />
+  <WaitlistModal />
 
   <div id="cookieBanner" class="cookie-banner" role="alertdialog" aria-label="Cookie consent" aria-live="polite" style="display:none;">
     <p>We use cookies for anonymous analytics to improve your experience. <a href="/privacy/">Learn more</a></p>

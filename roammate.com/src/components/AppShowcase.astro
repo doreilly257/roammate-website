@@ -1,0 +1,149 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const cards = [
+  {
+    image: "app-screenshot-map.webp",
+    title: "Find Travelers Nearby",
+    desc: "See who's exploring the same destination and connect instantly.",
+  },
+  {
+    image: "app-screenshot-profile.webp",
+    title: "Share Your Journey",
+    desc: "Create travel plans, invite others, and build your travel story.",
+  },
+  {
+    image: "app-screenshot-phone-iso.webp",
+    title: "Plan Together",
+    desc: "Chat, coordinate meetups, and split costs with your group.",
+  },
+];
+---
+
+<section class="app-showcase">
+  <div class="app-showcase-header reveal">
+    <span class="section-label section-label--center">The App</span>
+    <h2>See It In <em>Action</em></h2>
+  </div>
+
+  <div class="showcase-scroll">
+    {cards.map((card, i) => (
+      <div class={`showcase-card reveal reveal-delay-${i + 1}`}>
+        <img
+          src={`${base}images/${card.image}`}
+          alt={card.title}
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="showcase-card-body">
+          <h3>{card.title}</h3>
+          <p>{card.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .app-showcase {
+    padding: 160px 40px;
+    background: #0f0f0f;
+    text-align: center;
+  }
+
+  .app-showcase-header {
+    max-width: 800px;
+    margin: 0 auto 64px;
+    text-align: center;
+  }
+
+  .section-label--center {
+    justify-content: center;
+  }
+
+  .section-label--center::before {
+    display: none;
+  }
+
+  .app-showcase-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+    color: var(--color-cream);
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .app-showcase-header h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .showcase-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 40px 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .showcase-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .showcase-card {
+    min-width: 300px;
+    max-width: 340px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    background: #1a1a1a;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .showcase-card img {
+    width: 100%;
+    aspect-ratio: auto;
+    display: block;
+  }
+
+  .showcase-card-body {
+    padding: 24px;
+  }
+
+  .showcase-card-body h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin: 0 0 8px;
+  }
+
+  .showcase-card-body p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .app-showcase {
+      padding: 100px 24px;
+    }
+
+    .showcase-scroll {
+      padding: 0 24px 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .showcase-card {
+      min-width: 260px;
+    }
+  }
+</style>

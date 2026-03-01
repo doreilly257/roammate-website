@@ -1,0 +1,171 @@
+---
+const faqs = [
+  {
+    q: 'What is roammate?',
+    a: "roammate is a travel app that connects solo travelers and small groups with like-minded people nearby. Whether you're looking for someone to share a taxi, explore a museum, or join you on a hike, roammate helps you find travel companions to share experiences and costs.",
+  },
+  {
+    q: 'Is roammate free?',
+    a: 'Yes! roammate is completely free to download and use. No ads, no subscriptions, no hidden fees. We believe everyone should have the opportunity to connect with fellow travelers.',
+  },
+  {
+    q: 'How does roammate work?',
+    a: "Simply create a profile, set your location, and browse travel plans created by other users near you. You can also create your own travel plans and let others request to join. Once connected, you can chat and coordinate your meetup.",
+  },
+  {
+    q: 'Is it safe to meet people through roammate?',
+    a: "Your safety is important to us. We recommend meeting in public places, letting someone know your plans, and trusting your instincts. You can view other users' profiles and reviews before connecting.",
+  },
+  {
+    q: 'Is roammate available worldwide?',
+    a: "Yes! roammate works globally. Wherever you're traveling, you can connect with other roammate users in that area. The more travelers using the app, the more connections you can make.",
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a,
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+<section class="home-faq">
+  <div class="home-faq-header reveal">
+    <div class="section-label section-label--center">FAQ</div>
+    <h2 class="home-faq-heading">Common <em>Questions</em></h2>
+  </div>
+  <div class="home-faq-list">
+    {faqs.map((faq, i) => (
+      <details class={`faq-item reveal reveal-delay-${(i % 4) + 1}`}>
+        <summary class="faq-question">{faq.q}</summary>
+        <div class="faq-answer">{faq.a}</div>
+      </details>
+    ))}
+  </div>
+  <div class="home-faq-more">
+    <a href="/faq/">View all FAQs →</a>
+  </div>
+</section>
+
+<style>
+  .home-faq {
+    padding: 160px 40px;
+  }
+
+  .home-faq-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 64px;
+  }
+
+  .section-label--center {
+    justify-content: center;
+  }
+
+  .section-label--center::before {
+    display: none;
+  }
+
+  .home-faq-heading {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+  }
+
+  .home-faq-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .home-faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0;
+  }
+
+  .faq-question {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-cream);
+    cursor: pointer;
+    padding: 28px 40px 28px 0;
+    position: relative;
+    list-style: none;
+    transition: color 0.3s;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--color-terracotta);
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .faq-question:hover {
+    color: var(--color-terracotta);
+  }
+
+  .faq-answer {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    padding: 0 40px 28px 0;
+  }
+
+  .home-faq-more {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .home-faq-more a {
+    color: var(--color-terracotta-light);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+  }
+
+  .home-faq-more a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .home-faq {
+      padding: 100px 24px;
+    }
+  }
+</style>

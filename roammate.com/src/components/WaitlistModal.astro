@@ -1,0 +1,278 @@
+<div id="waitlist-overlay" class="waitlist-overlay" role="dialog" aria-modal="true" aria-labelledby="waitlist-heading">
+  <div class="waitlist-modal" id="waitlist-modal">
+    <button class="waitlist-close" id="waitlist-close" aria-label="Close">&times;</button>
+
+    <div id="waitlist-form-state">
+      <h2 id="waitlist-heading" class="waitlist-heading">Android Coming Soon</h2>
+      <p class="waitlist-subtitle">Join the waitlist and we'll let you know the moment roammate lands on Android.</p>
+
+      <form id="waitlist-form" novalidate>
+        <input
+          type="email"
+          id="waitlist-email"
+          name="email"
+          class="waitlist-input"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+        />
+        <p class="waitlist-error" id="waitlist-error" aria-live="polite"></p>
+        <button
+          type="submit"
+          class="waitlist-submit"
+          data-ph-event="waitlist_submit"
+        >
+          Notify Me
+        </button>
+      </form>
+    </div>
+
+    <div id="waitlist-success-state" class="waitlist-success" hidden>
+      <div class="waitlist-checkmark" aria-hidden="true">&#10003;</div>
+      <h2 class="waitlist-heading">You're on the list!</h2>
+      <p class="waitlist-subtitle">We'll email you when Android launches. Thanks for your patience!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById('waitlist-overlay') as HTMLElement;
+  const modal = document.getElementById('waitlist-modal') as HTMLElement;
+  const closeBtn = document.getElementById('waitlist-close') as HTMLButtonElement;
+  const form = document.getElementById('waitlist-form') as HTMLFormElement;
+  const emailInput = document.getElementById('waitlist-email') as HTMLInputElement;
+  const errorEl = document.getElementById('waitlist-error') as HTMLParagraphElement;
+  const formState = document.getElementById('waitlist-form-state') as HTMLElement;
+  const successState = document.getElementById('waitlist-success-state') as HTMLElement;
+
+  function openModal() {
+    overlay.style.display = 'flex';
+    requestAnimationFrame(() => {
+      overlay.classList.add('is-visible');
+    });
+    document.body.style.overflow = 'hidden';
+    emailInput.focus();
+  }
+
+  function closeModal() {
+    overlay.classList.remove('is-visible');
+    overlay.addEventListener('transitionend', () => {
+      overlay.style.display = 'none';
+    }, { once: true });
+    document.body.style.overflow = '';
+    if (location.hash === '#waitlist') {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+  }
+
+  function checkHash() {
+    if (location.hash === '#waitlist') {
+      openModal();
+    }
+  }
+
+  checkHash();
+  window.addEventListener('hashchange', checkHash);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-visible')) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.textContent = '';
+
+    const email = emailInput.value.trim();
+    if (!email) {
+      errorEl.textContent = 'Please enter your email address.';
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Joining...';
+
+    try {
+      const res = await fetch('https://api.roammate.com/v1/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, platform: 'android' }),
+      });
+
+      if (!res.ok) {
+        throw new Error('Request failed');
+      }
+
+      formState.hidden = true;
+      successState.hidden = false;
+    } catch {
+      errorEl.textContent = 'Something went wrong. Please try again.';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Notify Me';
+    }
+  });
+</script>
+
+<style>
+  .waitlist-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out-expo);
+  }
+
+  .waitlist-overlay.is-visible {
+    opacity: 1;
+  }
+
+  .waitlist-modal {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 48px;
+    width: 100%;
+    max-width: 480px;
+    transform: scale(0.95);
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .waitlist-overlay.is-visible .waitlist-modal {
+    transform: scale(1);
+  }
+
+  .waitlist-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
+  }
+
+  .waitlist-close:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .waitlist-heading {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-cream);
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+
+  .waitlist-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.975rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 28px;
+    line-height: 1.6;
+  }
+
+  .waitlist-input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: #252525;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-cream);
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 8px;
+  }
+
+  .waitlist-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .waitlist-input:focus {
+    border-color: var(--color-terracotta);
+  }
+
+  .waitlist-error {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #e57373;
+    margin: 0 0 12px;
+    min-height: 1.2em;
+  }
+
+  .waitlist-submit {
+    display: block;
+    width: 100%;
+    background: var(--color-terracotta);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, opacity 0.2s;
+    margin-top: 4px;
+  }
+
+  .waitlist-submit:hover:not(:disabled) {
+    background: var(--color-terracotta-light);
+  }
+
+  .waitlist-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .waitlist-success {
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .waitlist-success .waitlist-subtitle {
+    margin-bottom: 0;
+  }
+
+  .waitlist-checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-terracotta);
+    color: #fff;
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .waitlist-modal {
+      padding: 32px 24px;
+    }
+  }
+</style>

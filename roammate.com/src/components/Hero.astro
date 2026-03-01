@@ -26,6 +26,7 @@ const base = import.meta.env.BASE_URL;
         <img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="564" height="168">
       </a>
     </div>
+    <p class="hero-free-line">Free on iOS &middot; No ads &middot; No subscriptions</p>
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -157,6 +158,18 @@ const base = import.meta.env.BASE_URL;
     width: auto;
   }
 
+  .hero-free-line {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta-light);
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
+  }
+
   .hero-scroll {
     position: absolute;
     bottom: 40px;
@@ -206,6 +219,7 @@ const base = import.meta.env.BASE_URL;
     .hero-subtitle { font-size: 16px; margin-bottom: 36px; }
     .hero-actions { flex-direction: column; align-items: flex-start; }
     .hero-actions img { height: 46px; }
+    .hero-free-line { font-size: 11px; }
     .hero-scroll { display: none; }
   }
 </style>

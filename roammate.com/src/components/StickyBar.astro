@@ -1,0 +1,131 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="sticky-bar">
+  <span class="sticky-bar-text">Free on iOS</span>
+  <a
+    class="sticky-bar-link"
+    href="https://apps.apple.com/app/id6758834253"
+    target="_blank"
+    rel="noopener"
+    data-ph-event="sticky_appstore_click"
+  >
+    <img
+      class="store-badge"
+      src={`${base}images/app-store-badge.png`}
+      alt="Download on the App Store"
+      height="36"
+    />
+  </a>
+  <button class="sticky-bar-dismiss" aria-label="Dismiss">&times;</button>
+</div>
+
+<style>
+  .sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transform: translateY(100%);
+    transition: transform 0.4s var(--ease-out-expo);
+  }
+
+  .sticky-bar.visible {
+    transform: translateY(0);
+  }
+
+  .sticky-bar-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-cream);
+    white-space: nowrap;
+  }
+
+  .sticky-bar .store-badge {
+    height: 36px;
+    width: auto;
+  }
+
+  .sticky-bar-dismiss {
+    background: none;
+    border: none;
+    color: rgba(245, 240, 232, 0.5);
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px 8px;
+    line-height: 1;
+    margin-left: 8px;
+  }
+
+  .sticky-bar-dismiss:hover {
+    color: var(--color-cream);
+  }
+
+  .sticky-bar-link {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+
+  .sticky-bar-link:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 640px) {
+    .sticky-bar {
+      padding: 10px 16px;
+      gap: 12px;
+    }
+
+    .sticky-bar-text {
+      font-size: 13px;
+    }
+
+    .sticky-bar .store-badge {
+      height: 30px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    var bar = document.querySelector('.sticky-bar');
+    if (!bar || sessionStorage.getItem('sticky_dismissed') === '1') return;
+
+    var hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          bar.classList.add('visible');
+        } else {
+          bar.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0 });
+
+    observer.observe(hero);
+
+    var dismiss = bar.querySelector('.sticky-bar-dismiss');
+    if (dismiss) {
+      dismiss.addEventListener('click', function() {
+        bar.classList.remove('visible');
+        sessionStorage.setItem('sticky_dismissed', '1');
+        observer.disconnect();
+      });
+    }
+  })();
+</script>
