@@ -37,6 +37,9 @@ const isHome = Astro.url.pathname === '/';
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:image" content={ogImageURL}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/webp">
   <meta property="og:image:alt" content={title}>
   <meta property="og:site_name" content="roammate">
   <meta property="og:locale" content="en_US">
@@ -78,6 +81,7 @@ const isHome = Astro.url.pathname === '/';
       "applicationCategory": "TravelApplication",
       "operatingSystem": "iOS, Android",
       "url": "https://roammate.com/",
+      "downloadUrl": "https://apps.apple.com/app/id6758834253",
       "description": "Travel companion app to connect with fellow travelers, share experiences, and split costs.",
       "offers": {
         "@type": "Offer",

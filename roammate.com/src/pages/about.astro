@@ -72,31 +72,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="about-stat-divider"></div>
       <div class="about-stat">
-        <span class="about-stat-number">Soon</span>
-        <span class="about-stat-label">Launching</span>
+        <span class="about-stat-number">iOS</span>
+        <span class="about-stat-label">Live Now</span>
       </div>
     </div>
   </div>
 
   <!-- The Story -->
-  <section class="about-section reveal">
-    <div class="about-section-inner">
-      <div class="section-label">Our Origin</div>
-      <h2 class="about-section-heading">The <em>story</em></h2>
-      <p class="about-section-body">
-        It started in a hostel common room in Hanoi. One of our founders had been on the road for three weeks —
-        visiting temples alone, eating at tables for one, watching sunsets without anyone to share them with.
-        Not because they didn't want company. Because finding it felt like luck.
-      </p>
-      <p class="about-section-body">
-        Then a stranger asked if they wanted to rent motorbikes and head north. That impromptu trip — two days
-        through rice terraces with someone they'd known for forty minutes — became the highlight of the whole journey.
-        Not a guided tour. Not a planned meetup. Just the right person, at the right moment, asking the right question.
-      </p>
-      <p class="about-section-body">
-        We kept asking: why does that still feel like an accident? Why isn't there a better way to find your people
-        when you're already out there? That question became roammate.
-      </p>
+  <section class="about-section about-section--story reveal">
+    <div class="story-grid">
+      <div class="story-text">
+        <div class="section-label">Our Origin</div>
+        <h2 class="about-section-heading">The <em>story</em></h2>
+        <p class="about-section-body">
+          It started with a girl teaching English in Chai Nat. Small town, central Thailand — the kind of place
+          that doesn't make the backpacker trail. She wanted to take the slow boat to Laos. Two days down the
+          Mekong, the kind of trip that needs company. But she was going alone.
+        </p>
+        <p class="about-section-body">
+          So she put the word out. Looking for other travelers heading the same way.
+        </p>
+        <p class="about-section-body">
+          That search eventually led her to Singapore. We met there. A few years later, married. Three kids now —
+          and still convinced the best things that happen while traveling involve other people, and that too much
+          of it still depends on luck, timing, and whoever happens to be around.
+        </p>
+        <p class="about-section-body">
+          That's the gap roammate closes.
+        </p>
+      </div>
+      <div class="story-phone-scene">
+        <img src="/images/app-phone-profile.webp" alt="roammate app showing a traveler profile on an iPhone" class="story-phone-iso" width="984" height="1332" loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -177,7 +184,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="about-section-body">
         We're a small team — a handful of people who between us have traveled through more than fifty countries,
         slept in dorm beds and overnight buses, eaten street food that turned out to be extraordinary and some
-        that definitely wasn't, and accumulated a lot of opinions about what solo travel actually needs.
+        that definitely wasn't, found love and a soulmate, and accumulated a lot of opinions about what solo travel actually needs.
       </p>
       <p class="about-section-body">
         We're building from experience, not assumption. Every feature we design, we've wished existed when we
@@ -196,14 +203,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="about-cta-logo">
         <img src="/images/rm-notext-cropped.svg" alt="" width="48" height="48" aria-hidden="true" />
       </div>
-      <h2 class="about-cta-heading">Be first when we <em>launch</em></h2>
+      <h2 class="about-cta-heading">Download roammate <em>now</em></h2>
       <p class="about-cta-body">
-        We're putting the finishing touches on roammate. Join the waitlist and we'll let you know
-        the moment it's ready — plus early access when we open up.
+        roammate is live on iOS. Connect with fellow travelers, share experiences,
+        and turn every trip into something worth remembering.
       </p>
-      <a href="/#waitlist" class="about-cta-btn" data-ph-event="cta_click" data-ph-label="About CTA — Join Waitlist">
-        Join the Waitlist
-      </a>
+      <div class="about-cta-badges">
+        <a href="https://apps.apple.com/app/id6758834253" class="about-cta-badge-link" aria-label="Download on App Store" target="_blank" rel="noopener" data-ph-event="cta_click" data-ph-label="About CTA — App Store">
+          <img src="/images/app-store-badge.png" alt="Download on App Store" class="about-cta-badge" width="564" height="189">
+        </a>
+        <a href="/#waitlist" class="about-cta-badge-link" aria-label="Get it on Google Play">
+          <img src="/images/google-play-badge.png" alt="Get it on Google Play" class="about-cta-badge" width="564" height="168">
+        </a>
+      </div>
     </div>
   </section>
 
@@ -420,6 +432,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     background: var(--color-bg);
   }
 
+  /* ========================
+     STORY SECTION
+     ======================== */
+  .about-section--story {
+    padding: 100px 40px;
+  }
+
+  .story-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .story-text {
+    max-width: 620px;
+  }
+
+  .story-phone-scene {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .story-phone-iso {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+  }
+
   .about-section--alt {
     background: var(--color-bg-warm);
   }
@@ -574,25 +620,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 44px;
   }
 
-  .about-cta-btn {
-    display: inline-block;
-    padding: 18px 48px;
-    background: var(--color-terracotta);
-    color: #fff;
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 999px;
-    transition: background 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+  .about-cta-badges {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
-  .about-cta-btn:hover {
-    background: var(--color-terracotta-light);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(196, 86, 42, 0.35);
+  .about-cta-badge-link {
+    display: block;
+    transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
+  }
+
+  .about-cta-badge-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+  }
+
+  .about-cta-badge {
+    height: 56px;
+    width: auto;
+    display: block;
   }
 
   /* ========================
@@ -603,16 +652,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   @media (max-width: 1024px) {
-    .about-hero { padding: 120px 24px 80px; }
+    .about-hero { padding: 170px 24px 80px; }
     .about-stat-bar { padding: 0 24px; }
     .about-section { padding: 80px 24px; }
+    .about-section--story { padding: 80px 24px; }
     .about-cta { padding: 100px 24px; }
     .about-hero-scroll { right: 24px; }
+    .story-grid { grid-template-columns: 1fr; gap: 60px; }
+    .story-phone-iso { max-width: 360px; }
   }
 
   @media (max-width: 640px) {
+    .story-phone-iso { max-width: 300px; }
+
     .about-hero {
-      padding: 100px 20px 80px;
+      padding: 170px 20px 80px;
       min-height: 90vh;
       align-items: flex-end;
     }
