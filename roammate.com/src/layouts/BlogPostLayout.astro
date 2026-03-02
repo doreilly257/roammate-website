@@ -198,6 +198,10 @@ const renderInlineLinks = (text: string) => {
           {updatedLabel && <span>Updated {updatedLabel}</span>}
         </div>
       </div>
+      <div class="blog-hero-scroll">
+        <span>Scroll</span>
+        <div class="blog-scroll-line"></div>
+      </div>
     </section>
 
     <section class="blog-post-body">
@@ -300,6 +304,46 @@ const renderInlineLinks = (text: string) => {
     z-index: 1;
     max-width: 820px;
     color: #f5f1eb;
+  }
+
+  .blog-hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 1.6s forwards;
+  }
+
+  .blog-hero-scroll span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.5);
+    writing-mode: vertical-rl;
+  }
+
+  .blog-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: rgba(245, 240, 232, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-terracotta);
+    animation: scrollLine 2s ease-in-out infinite;
   }
 
   .blog-post-breadcrumb {
@@ -581,6 +625,8 @@ const renderInlineLinks = (text: string) => {
       padding: 170px 20px 36px;
       min-height: 72vh;
     }
+
+    .blog-hero-scroll { display: none; }
 
     .blog-post-meta {
       gap: 8px;
