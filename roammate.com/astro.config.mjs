@@ -7,5 +7,6 @@ export default defineConfig({
   site: 'https://roammate.com',
   devToolbar: { enabled: false },
   compressHTML: true,
+  prefetch: true,
   integrations: [sitemap(), critters({ pruneSource: true, preload: 'swap' })],
 });

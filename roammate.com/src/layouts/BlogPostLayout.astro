@@ -164,8 +164,8 @@ const renderInlineLinks = (text: string) => {
           "url": "https://roammate.com/images/rm-full.svg",
         },
       },
-      "datePublished": isoPublishedAt,
-      "dateModified": isoUpdatedAt || isoPublishedAt,
+      ...(isoPublishedAt ? { "datePublished": isoPublishedAt } : {}),
+      ...(isoUpdatedAt || isoPublishedAt ? { "dateModified": isoUpdatedAt || isoPublishedAt } : {}),
       "mainEntityOfPage": canonical,
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
