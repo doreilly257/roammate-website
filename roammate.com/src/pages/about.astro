@@ -240,12 +240,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes scrollLine {
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    50.01% { transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
-  }
 
   @keyframes logoPulse {
     0%, 100% { opacity: 0.9; transform: scale(1); }
@@ -391,15 +385,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(245, 240, 232, 0.35);
+    color: rgba(245, 240, 232, 0.5);
     writing-mode: vertical-rl;
   }
 
   .about-scroll-line {
     width: 1px;
     height: 60px;
-    background: rgba(245, 240, 232, 0.18);
-    animation: scrollLine 2.5s ease-in-out 1.5s infinite;
+    background: rgba(245, 240, 232, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-terracotta);
+    animation: scrollLine 2s ease-in-out infinite;
   }
 
   /* ========================

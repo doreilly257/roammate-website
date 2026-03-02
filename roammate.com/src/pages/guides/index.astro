@@ -165,12 +165,6 @@ const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes scrollLine {
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    50.01% { transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
-  }
 
   .guides-hero {
     position: relative;
@@ -319,8 +313,20 @@ const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name
   .guides-scroll-line {
     width: 1px;
     height: 60px;
-    background: rgba(245, 240, 232, 0.2);
-    animation: scrollLine 2.5s ease-in-out infinite;
+    background: rgba(245, 240, 232, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guides-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-terracotta);
+    animation: scrollLine 2s ease-in-out infinite;
   }
 
   /* ========================

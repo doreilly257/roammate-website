@@ -239,39 +239,41 @@ const formatDate = (value?: string) => {
 
   .blog-hero-scroll {
     position: absolute;
-    right: 40px;
     bottom: 40px;
+    right: 40px;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    color: rgba(245, 241, 235, 0.75);
-    z-index: 2;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s var(--ease-out-expo) 1.6s forwards;
   }
 
   .blog-hero-scroll span {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
     font-size: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.5);
+    writing-mode: vertical-rl;
   }
 
   .blog-scroll-line {
     width: 1px;
-    height: 48px;
-    background: rgba(245, 241, 235, 0.3);
-    overflow: hidden;
+    height: 60px;
+    background: rgba(245, 240, 232, 0.3);
     position: relative;
+    overflow: hidden;
   }
 
   .blog-scroll-line::after {
     content: '';
     position: absolute;
+    top: -100%;
     left: 0;
     width: 100%;
-    height: 30px;
-    background: rgba(245, 241, 235, 0.95);
+    height: 100%;
+    background: var(--color-terracotta);
     animation: scrollLine 2s ease-in-out infinite;
   }
 
