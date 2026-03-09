@@ -80,7 +80,7 @@ const isHome = Astro.url.pathname === '/';
       "@type": "SoftwareApplication",
       "name": "roammate",
       "applicationCategory": "TravelApplication",
-      "operatingSystem": "iOS, Android",
+      "operatingSystem": "iOS",
       "url": "https://roammate.com/",
       "downloadUrl": "https://apps.apple.com/app/id6758834253",
       "description": "Travel companion app to connect with fellow travelers, share experiences, and split costs.",
@@ -89,6 +89,11 @@ const isHome = Astro.url.pathname === '/';
         "price": "0",
         "priceCurrency": "USD",
         "category": "Free"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
       }
     })} />
   )}
