@@ -350,6 +350,9 @@ const escapeCssUrl = (url: string) =>
         <a href="/#waitlist" class="badge-link"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy"></a>
       </div>
       <p class="guide-cta-customise">{ctaCustomise}</p>
+      <a href={`/companions/${currentSlug}/`} class="guide-cta-companions-link" data-ph-event="guide_companions_click" data-ph-label={currentSlug}>
+        Find travel companions in {ctaCity} →
+      </a>
     </div>
   </section>
 
@@ -1053,6 +1056,20 @@ const escapeCssUrl = (url: string) =>
     font-weight: 300;
     font-style: italic;
     margin-top: 32px;
+  }
+
+  .guide-cta-companions-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-terracotta-light);
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s;
+  }
+
+  .guide-cta-companions-link:hover {
+    opacity: 0.75;
   }
 
   /* ========================

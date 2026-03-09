@@ -122,6 +122,30 @@ const formatDate = (value?: string) => {
       </div>
     </div>
   </section>
+
+  <section class="blog-email-capture">
+    <div class="blog-email-inner">
+      <div class="blog-email-copy">
+        <p class="blog-email-label">Stay in the loop</p>
+        <h2 class="blog-email-heading">Get the best travel tips <em>in your inbox</em></h2>
+        <p class="blog-email-sub">No spam. New guides, routes, and travel tactics — a few times a month.</p>
+      </div>
+      <form class="blog-email-form" id="blog-email-form" novalidate>
+        <input
+          type="email"
+          class="blog-email-input"
+          id="blog-email-input"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+          aria-label="Email address"
+        />
+        <button type="submit" class="blog-email-submit" data-ph-event="blog_newsletter_submit">Subscribe</button>
+        <p class="blog-email-error" id="blog-email-error" aria-live="polite"></p>
+      </form>
+      <p class="blog-email-success" id="blog-email-success" hidden>You're in! We'll be in touch.</p>
+    </div>
+  </section>
 </BaseLayout>
 
 <script define:vars={{ blogHeroImages }}>
@@ -410,4 +434,157 @@ const formatDate = (value?: string) => {
       grid-template-columns: 1fr;
     }
   }
+
+  /* EMAIL CAPTURE */
+  .blog-email-capture {
+    padding: 80px 40px;
+    background: var(--color-bg-warm);
+  }
+
+  .blog-email-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .blog-email-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 14px;
+  }
+
+  .blog-email-heading {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+  }
+
+  .blog-email-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .blog-email-sub {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .blog-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .blog-email-input {
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(196, 86, 42, 0.2);
+    background: var(--color-bg);
+    color: var(--color-cream);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.25s;
+  }
+
+  .blog-email-input:focus {
+    border-color: var(--color-terracotta);
+  }
+
+  .blog-email-input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .blog-email-submit {
+    padding: 14px 24px;
+    border-radius: 12px;
+    background: var(--color-terracotta);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s var(--ease-out-expo);
+  }
+
+  .blog-email-submit:hover:not(:disabled) {
+    background: #b34f28;
+    transform: translateY(-1px);
+  }
+
+  .blog-email-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .blog-email-error {
+    font-size: 13px;
+    color: #e05a3a;
+    min-height: 1em;
+  }
+
+  .blog-email-success {
+    font-size: 16px;
+    color: var(--color-cream);
+    font-weight: 500;
+    padding: 14px 0;
+  }
+
+  @media (max-width: 768px) {
+    .blog-email-capture { padding: 60px 24px; }
+    .blog-email-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 640px) {
+    .blog-email-capture { padding: 48px 20px; }
+  }
 </style>
+
+<script>
+  (function () {
+    const form = document.getElementById('blog-email-form') as HTMLFormElement | null;
+    const input = document.getElementById('blog-email-input') as HTMLInputElement | null;
+    const errorEl = document.getElementById('blog-email-error') as HTMLElement | null;
+    const successEl = document.getElementById('blog-email-success') as HTMLElement | null;
+    if (!form || !input) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (errorEl) errorEl.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      if (errorEl) errorEl.textContent = '';
+      const submit = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (submit) submit.disabled = true;
+
+      try {
+        const res = await fetch('https://api.roammate.com/v1/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'blog-newsletter' }),
+        });
+        if (res.ok) {
+          form.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          if (errorEl) errorEl.textContent = 'Something went wrong. Please try again.';
+          if (submit) submit.disabled = false;
+        }
+      } catch {
+        if (errorEl) errorEl.textContent = 'Network error. Please try again.';
+        if (submit) submit.disabled = false;
+      }
+    });
+  })();
+</script>

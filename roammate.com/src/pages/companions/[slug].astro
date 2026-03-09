@@ -134,6 +134,26 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
     </div>
   </section>
 
+  <section class="comp-blog-links">
+    <div class="comp-blog-links-inner">
+      <p class="comp-blog-links-label">From the blog</p>
+      <div class="comp-blog-links-grid">
+        <a href="/blog/finding-travel-companions/" class="comp-blog-link" data-ph-event="companion_blog_click">
+          <span>How to Find Reliable Travel Companions in New Cities</span>
+          <span>→</span>
+        </a>
+        <a href="/blog/meeting-people-solo-travel/" class="comp-blog-link" data-ph-event="companion_blog_click">
+          <span>Meeting People as a Solo Traveler</span>
+          <span>→</span>
+        </a>
+        <a href="/blog/travel-friendship-building/" class="comp-blog-link" data-ph-event="companion_blog_click">
+          <span>Building Lasting Travel Friendships</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="comp-guide-link">
     <div class="comp-guide-link-inner">
       <span class="comp-guide-flag">{flag}</span>
@@ -421,5 +441,65 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
     .comp-how-cta { flex-direction: column; }
     .comp-guide-link { padding: 32px 20px; }
     .comp-guide-link-inner { flex-direction: column; text-align: center; padding: 28px 20px; }
+  }
+
+  /* BLOG LINKS */
+  .comp-blog-links {
+    padding: 0 40px 48px;
+  }
+
+  .comp-blog-links-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .comp-blog-links-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+  }
+
+  .comp-blog-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .comp-blog-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--color-bg-warm);
+    border: 1px solid rgba(196, 86, 42, 0.1);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-cream);
+    text-decoration: none;
+    transition: border-color 0.25s, transform 0.25s var(--ease-out-expo);
+  }
+
+  .comp-blog-link:hover {
+    border-color: rgba(196, 86, 42, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .comp-blog-link span:last-child {
+    color: var(--color-terracotta);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .comp-blog-links { padding: 0 24px 40px; }
+    .comp-blog-links-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .comp-blog-links { padding: 0 20px 32px; }
   }
 </style>
