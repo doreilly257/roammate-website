@@ -145,7 +145,7 @@ const renderInlineLinks = (text: string) => {
     <link rel="preload" as="image" type="image/webp" href={heroImage}>
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "BlogPosting",
       "headline": title,
       "description": description,
       "image": [new URL(heroImage, Astro.site).href],
@@ -230,6 +230,24 @@ const renderInlineLinks = (text: string) => {
             </section>
           );
         })}
+      </div>
+    </section>
+
+    <section class="blog-post-cta reveal">
+      <div class="blog-post-cta-inner">
+        <p class="blog-post-cta-label">Travel smarter</p>
+        <h2 class="blog-post-cta-heading">Find your perfect <em>travel companion</em></h2>
+        <p class="blog-post-cta-body">Roammate matches you with fellow travelers by style, budget, and destination — so you can share costs, stay safer, and go deeper.</p>
+        <div class="blog-post-cta-actions">
+          <a
+            href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=blog-post-cta&mt=8"
+            target="_blank"
+            rel="noopener"
+            class="blog-post-cta-btn"
+            data-ph-event="blog_cta_appstore_click"
+          >Download on iOS — Free</a>
+          <a href="/#waitlist" class="blog-post-cta-btn blog-post-cta-btn--ghost" data-ph-event="blog_cta_android_click">Android waitlist</a>
+        </div>
       </div>
     </section>
 
@@ -651,5 +669,101 @@ const renderInlineLinks = (text: string) => {
     .blog-related-posts-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  /* ========================
+     INLINE CTA
+     ======================== */
+  .blog-post-cta {
+    padding: 0 40px 80px;
+  }
+
+  .blog-post-cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1a1714 0%, #2a2015 60%, #1a1714 100%);
+    border: 1px solid rgba(196, 86, 42, 0.25);
+    border-radius: 26px;
+    padding: 64px;
+    text-align: center;
+  }
+
+  .blog-post-cta-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 18px;
+  }
+
+  .blog-post-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.08;
+    color: var(--color-cream);
+    margin-bottom: 18px;
+  }
+
+  .blog-post-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .blog-post-cta-body {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(245, 241, 235, 0.7);
+    max-width: 520px;
+    margin: 0 auto 36px;
+  }
+
+  .blog-post-cta-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .blog-post-cta-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: var(--color-terracotta);
+    color: #fff;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+    text-decoration: none;
+  }
+
+  .blog-post-cta-btn:hover {
+    background: #b34f28;
+    transform: translateY(-2px);
+  }
+
+  .blog-post-cta-btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(245, 241, 235, 0.25);
+    color: rgba(245, 241, 235, 0.8);
+  }
+
+  .blog-post-cta-btn--ghost:hover {
+    background: rgba(245, 241, 235, 0.06);
+    border-color: rgba(245, 241, 235, 0.4);
+    color: #fff;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-post-cta { padding: 0 24px 64px; }
+    .blog-post-cta-inner { padding: 48px 32px; }
+  }
+
+  @media (max-width: 640px) {
+    .blog-post-cta { padding: 0 20px 48px; }
+    .blog-post-cta-inner { padding: 36px 24px; }
+    .blog-post-cta-actions { flex-direction: column; align-items: center; }
   }
 </style>
