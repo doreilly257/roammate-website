@@ -213,21 +213,35 @@ const renderInlineLinks = (text: string) => {
         {sections.map((section, index) => {
           const sectionParagraphs = toParagraphs(section.content);
           return (
-            <section class={`blog-post-section reveal ${index % 2 === 1 ? 'is-reversed' : ''}`}>
-              <div class="blog-post-section-copy">
-                {section.kicker && <p class="blog-post-section-kicker">{section.kicker}</p>}
-                <h2>{section.heading}</h2>
-                {sectionParagraphs.map((paragraph) => (
-                  <p set:html={renderInlineLinks(paragraph)} />
-                ))}
-                {section.quote && <blockquote>{section.quote}</blockquote>}
-              </div>
-              {section.image && (
-                <figure class="blog-post-section-media">
-                  <img src={section.image} alt={section.imageAlt || `Illustration for ${section.heading}`} loading="lazy" width="1200" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px" />
-                </figure>
+            <>
+              <section class={`blog-post-section reveal ${index % 2 === 1 ? 'is-reversed' : ''}`}>
+                <div class="blog-post-section-copy">
+                  {section.kicker && <p class="blog-post-section-kicker">{section.kicker}</p>}
+                  <h2>{section.heading}</h2>
+                  {sectionParagraphs.map((paragraph) => (
+                    <p set:html={renderInlineLinks(paragraph)} />
+                  ))}
+                  {section.quote && <blockquote>{section.quote}</blockquote>}
+                </div>
+                {section.image && (
+                  <figure class="blog-post-section-media">
+                    <img src={section.image} alt={section.imageAlt || `Illustration for ${section.heading}`} loading="lazy" width="1200" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px" />
+                  </figure>
+                )}
+              </section>
+              {index === 0 && (
+                <div class="blog-midpost-cta reveal">
+                  <p class="blog-midpost-cta-text">Find a travel companion who matches your style and budget</p>
+                  <a
+                    href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=blog-midpost-cta&mt=8"
+                    target="_blank"
+                    rel="noopener"
+                    class="blog-midpost-cta-btn"
+                    data-ph-event="blog_midpost_cta_appstore_click"
+                  >Download Roammate — Free</a>
+                </div>
               )}
-            </section>
+            </>
           );
         })}
       </div>
@@ -499,6 +513,55 @@ const renderInlineLinks = (text: string) => {
     margin: 0 auto;
     display: grid;
     gap: 64px;
+  }
+
+  .blog-midpost-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 24px 32px;
+    background: linear-gradient(135deg, rgba(196, 86, 42, 0.12) 0%, rgba(196, 86, 42, 0.06) 100%);
+    border: 1px solid rgba(196, 86, 42, 0.25);
+    border-radius: 18px;
+    margin-top: -16px;
+  }
+
+  .blog-midpost-cta-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-cream);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .blog-midpost-cta-btn {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background: var(--color-terracotta);
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+    white-space: nowrap;
+  }
+
+  .blog-midpost-cta-btn:hover {
+    background: #b34f28;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 640px) {
+    .blog-midpost-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
   }
 
   .blog-post-section {
