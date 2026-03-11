@@ -15,6 +15,37 @@ const base = import.meta.env.BASE_URL;
       "url": "https://roammate.com/how-it-works/",
       "description": "How roammate matches solo travelers with compatible companions by travel style, budget, and destination.",
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Find a Travel Companion with roammate",
+      "description": "Find a compatible travel companion using roammate — a free iOS app that matches solo travelers by style, budget, and destination.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Build your travel profile",
+          "text": "Set your travel style (adventure, cultural, slow travel, food-focused), daily budget bracket, and your upcoming destination. Honest answers produce better matches."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Browse compatible travelers",
+          "text": "View travelers with overlapping destinations, matching budgets, and compatible travel styles. Read full profiles before deciding to connect."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Connect and meet",
+          "text": "Send a message, discuss your plans, and meet up. Share accommodation, split tour costs, or simply explore together."
+        }
+      ],
+      "tool": {
+        "@type": "HowToTool",
+        "name": "roammate app",
+        "url": "https://apps.apple.com/app/id6758834253"
+      }
+    })} />
   </Fragment>
 
   <section class="hiw-hero">
