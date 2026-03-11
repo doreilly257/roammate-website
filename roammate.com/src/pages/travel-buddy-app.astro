@@ -1,0 +1,395 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Travel Buddy App — Find Travel Friends | roammate"
+  description="roammate is the travel buddy app that matches solo travelers by style and destination. Find travel friends, share experiences, and make every trip more memorable. Free on iOS."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Travel Buddy App — Find Travel Friends",
+      "url": "https://roammate.com/travel-buddy-app/",
+      "description": "roammate matches solo travelers to find travel buddies by style, budget, and destination.",
+    })} />
+  </Fragment>
+
+  <section class="tba-hero">
+    <div class="tba-hero-inner">
+      <div class="section-label section-label--center">Travel Buddy App</div>
+      <h1 class="tba-title">The travel buddy app that finds your <em>kind of traveler</em></h1>
+      <p class="tba-subtitle">Solo travel is incredible. Solo travel with the right person is unforgettable. roammate matches you with compatible travelers so every trip becomes a shared story.</p>
+      <div class="tba-hero-actions">
+        <a
+          href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=travel-buddy-app-hero&mt=8"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tba-btn tba-btn--primary"
+          data-ph-event="tba_hero_appstore_click"
+        >Find Your Travel Buddy — Free</a>
+        <a href="/how-it-works/" class="tba-btn tba-btn--ghost">How matching works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tba-social">
+    <div class="tba-social-inner">
+      <div class="section-label">The Social Side of Travel</div>
+      <h2 class="tba-section-heading">Some of the best travel moments<br><em>happen because of who you met.</em></h2>
+      <div class="tba-grid">
+        <div class="tba-grid-item reveal">
+          <h3>Shared adventures</h3>
+          <p>The Ha Giang Loop on motorbikes. A spontaneous overnight in a mountain village. The boat to a hidden island. These trips happen because two compatible travelers crossed paths at the right moment.</p>
+        </div>
+        <div class="tba-grid-item reveal">
+          <h3>Real conversations</h3>
+          <p>Travel friendships form faster than any others. You're both outside your comfort zones, experiencing something new — the conditions for genuine connection that lasts beyond the trip.</p>
+        </div>
+        <div class="tba-grid-item reveal">
+          <h3>Someone who gets it</h3>
+          <p>The temple that moved you. The meal that changed your idea of food. The view from a ridge at sunrise. These moments are better when someone beside you is just as present as you are.</p>
+        </div>
+        <div class="tba-grid-item reveal">
+          <h3>Practical backup</h3>
+          <p>A travel buddy watches your bag while you sleep on a night bus, splits the cost of a private room, and knows your rough itinerary. Solo travel safety and peace of mind, improved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tba-match">
+    <div class="tba-match-inner">
+      <div class="section-label">How roammate Matches</div>
+      <h2 class="tba-section-heading">Not just nearby — <em>compatible.</em></h2>
+      <div class="tba-match-list">
+        <div class="tba-match-row reveal">
+          <div class="tba-match-label">Travel style</div>
+          <div class="tba-match-desc">Adventure, cultural immersion, slow travel, food-focused — matched to people who move the way you do.</div>
+        </div>
+        <div class="tba-match-row reveal">
+          <div class="tba-match-label">Budget range</div>
+          <div class="tba-match-desc">Budget mismatches are the #1 source of travel friction. roammate surfaces companions in your bracket.</div>
+        </div>
+        <div class="tba-match-row reveal">
+          <div class="tba-match-label">Destination overlap</div>
+          <div class="tba-match-desc">Heading to the same region at the same time? roammate connects you before you even arrive.</div>
+        </div>
+        <div class="tba-match-row reveal">
+          <div class="tba-match-label">Verified profiles</div>
+          <div class="tba-match-desc">Identity verification and travel history mean you know who you're meeting before you meet them.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tba-cta">
+    <div class="tba-cta-inner">
+      <p class="tba-cta-label">Free on iOS</p>
+      <h2 class="tba-cta-heading">Your next travel buddy is <em>already waiting</em></h2>
+      <p class="tba-cta-body">Download roammate, build your travel profile, and start connecting with compatible travelers heading to your next destination.</p>
+      <a
+        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=travel-buddy-app-cta&mt=8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="tba-btn tba-btn--primary tba-btn--large"
+        data-ph-event="tba_bottom_appstore_click"
+      >Download on the App Store — Free</a>
+      <p class="tba-cta-sub">Also: <a href="/blog/meeting-people-solo-travel/">Read: Meeting People as a Solo Traveler</a></p>
+    </div>
+  </section>
+
+  <section class="tba-related">
+    <div class="tba-related-inner">
+      <div class="section-label">From The Blog</div>
+      <h2 class="tba-section-heading">More on finding <em>travel friends</em></h2>
+      <div class="tba-related-links">
+        <a href="/blog/meeting-people-solo-travel/" class="tba-related-link">Meeting People as a Solo Traveler →</a>
+        <a href="/blog/travel-friendship-building/" class="tba-related-link">Building Lasting Travel Friendships →</a>
+        <a href="/blog/hostel-social-scene-navigation/" class="tba-related-link">Navigating the Hostel Social Scene →</a>
+        <a href="/blog/finding-travel-companions/" class="tba-related-link">How to Find Reliable Travel Companions →</a>
+        <a href="/find-travel-companion/" class="tba-related-link">Find a Travel Companion — roammate →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tba-hero {
+    padding: 160px 40px 100px;
+    text-align: center;
+    position: relative;
+  }
+
+  .tba-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(196, 86, 42, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .tba-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tba-title {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 6.5vw, 76px);
+    font-weight: 900;
+    line-height: 1.04;
+    color: var(--color-cream);
+    margin-bottom: 24px;
+  }
+
+  .tba-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .tba-subtitle {
+    font-size: clamp(17px, 2vw, 21px);
+    color: rgba(245, 241, 235, 0.75);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .tba-hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tba-btn {
+    display: inline-block;
+    padding: 15px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+    letter-spacing: 0.3px;
+  }
+
+  .tba-btn--primary {
+    background: var(--color-terracotta);
+    color: #fff;
+  }
+
+  .tba-btn--primary:hover {
+    background: #b34f28;
+    transform: translateY(-2px);
+  }
+
+  .tba-btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(245, 241, 235, 0.25);
+    color: rgba(245, 241, 235, 0.8);
+  }
+
+  .tba-btn--ghost:hover {
+    border-color: rgba(245, 241, 235, 0.5);
+    color: #fff;
+  }
+
+  .tba-btn--large {
+    padding: 18px 40px;
+    font-size: 16px;
+  }
+
+  .tba-section-heading {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 900;
+    line-height: 1.12;
+    color: var(--color-cream);
+    margin-bottom: 48px;
+  }
+
+  .tba-section-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .tba-social {
+    padding: 80px 40px;
+  }
+
+  .tba-social-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tba-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .tba-grid-item {
+    padding: 32px 28px;
+    background: rgba(247, 242, 234, 0.04);
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    border-radius: 20px;
+  }
+
+  .tba-grid-item h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--color-cream);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .tba-grid-item p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+
+  .tba-match {
+    padding: 80px 40px;
+    background: rgba(247, 242, 234, 0.02);
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+    border-bottom: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .tba-match-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .tba-match-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .tba-match-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    align-items: start;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+  }
+
+  .tba-match-row:last-child {
+    border-bottom: none;
+  }
+
+  .tba-match-label {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-terracotta-light);
+    line-height: 1.3;
+  }
+
+  .tba-match-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+
+  .tba-cta {
+    padding: 80px 40px;
+  }
+
+  .tba-cta-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tba-cta-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 18px;
+  }
+
+  .tba-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 16px;
+  }
+
+  .tba-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .tba-cta-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(245, 241, 235, 0.65);
+    margin-bottom: 32px;
+  }
+
+  .tba-cta-sub {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+  }
+
+  .tba-cta-sub a {
+    color: var(--color-terracotta-light);
+  }
+
+  .tba-related {
+    padding: 60px 40px 100px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .tba-related-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .tba-related-links {
+    display: grid;
+    gap: 12px;
+  }
+
+  .tba-related-link {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-cream);
+    text-decoration: none;
+    padding: 16px 20px;
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    border-radius: 12px;
+    transition: border-color 0.25s, color 0.25s;
+  }
+
+  .tba-related-link:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-terracotta-light);
+  }
+
+  @media (max-width: 1024px) {
+    .tba-hero { padding: 140px 24px 80px; }
+    .tba-social, .tba-match, .tba-cta, .tba-related { padding-left: 24px; padding-right: 24px; }
+  }
+
+  @media (max-width: 640px) {
+    .tba-hero { padding: 120px 20px 60px; }
+    .tba-social, .tba-match, .tba-cta, .tba-related { padding-left: 20px; padding-right: 20px; }
+    .tba-grid { grid-template-columns: 1fr; }
+    .tba-match-row { grid-template-columns: 1fr; gap: 8px; }
+    .tba-hero-actions { flex-direction: column; align-items: center; }
+  }
+</style>
