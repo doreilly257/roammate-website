@@ -24,7 +24,7 @@ const isHome = Astro.url.pathname === '/';
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com https://static.cloudflareinsights.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content={description}>
   <title>{title}</title>
@@ -57,9 +57,9 @@ const isHome = Astro.url.pathname === '/';
   <!-- iOS Smart App Banner -->
   <meta name="apple-itunes-app" content="app-id=6758834253">
   <!-- Preconnect -->
-  <link rel="preconnect" href="https://us.i.posthog.com">
   <link rel="dns-prefetch" href="https://us-assets.i.posthog.com">
-  <link rel="preconnect" href="https://api.roammate.com">
+  <link rel="dns-prefetch" href="https://us.i.posthog.com">
+  <link rel="dns-prefetch" href="https://api.roammate.com">
   {isHome && <link rel="preload" as="image" type="image/webp" href={`${import.meta.env.BASE_URL}images/hero-travelers-on-bus.webp`}>}
   <link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`}>
   <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`}>
