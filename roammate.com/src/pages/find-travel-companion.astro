@@ -14,6 +14,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       "url": "https://roammate.com/find-travel-companion/",
       "description": "roammate matches solo travelers by style, budget, and destination to find compatible travel companions.",
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".ftc-title", ".ftc-subtitle"]
+      },
+      "url": "https://roammate.com/find-travel-companion/"
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best app to find a travel companion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate is purpose-built for finding travel companions. It matches travelers by style, budget, and destination — not just proximity. Free on iOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find someone to travel with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download roammate, build a travel profile with your style and budget, and browse compatible travelers heading to your destination. Chat in-app before meeting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to find a travel companion through an app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate uses verified profiles and in-app messaging before any meetup. Meet in public for a first encounter, tell someone your plans, and trust your instincts."
+          }
+        }
+      ]
+    })} />
   </Fragment>
 
   <section class="ftc-hero">
@@ -78,6 +117,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>Connect and go</h3>
           <p>Message, meet, and take it from there. Share a guesthouse, split a tour, or just grab dinner — whatever works.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftc-compare">
+    <div class="ftc-compare-inner">
+      <div class="section-label">How It Compares</div>
+      <h2 class="ftc-section-heading">roammate vs <em>the alternatives</em></h2>
+      <div class="ftc-compare-table-wrap">
+        <table class="ftc-compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="ftc-col-roammate">roammate</th>
+              <th>Couchsurfing</th>
+              <th>Meetup</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Purpose</td>
+              <td class="ftc-col-roammate">Find a travel companion</td>
+              <td>Free accommodation with locals</td>
+              <td>Local events and groups</td>
+            </tr>
+            <tr>
+              <td>Matches by travel style</td>
+              <td class="ftc-col-roammate">✓</td>
+              <td>✗</td>
+              <td>✗</td>
+            </tr>
+            <tr>
+              <td>Matches by budget</td>
+              <td class="ftc-col-roammate">✓</td>
+              <td>✗</td>
+              <td>✗</td>
+            </tr>
+            <tr>
+              <td>Verified profiles</td>
+              <td class="ftc-col-roammate">✓</td>
+              <td>Partial</td>
+              <td>✗</td>
+            </tr>
+            <tr>
+              <td>Free</td>
+              <td class="ftc-col-roammate">✓ Free</td>
+              <td>Paid (~$15/yr)</td>
+              <td>Free / Paid tiers</td>
+            </tr>
+            <tr>
+              <td>Best for</td>
+              <td class="ftc-col-roammate">Compatible travel companions</td>
+              <td>Budget accommodation</td>
+              <td>Local social events</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -303,6 +399,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-text-muted);
   }
 
+  .ftc-compare {
+    padding: 80px 40px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .ftc-compare-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .ftc-compare-table-wrap {
+    overflow-x: auto;
+  }
+
+  .ftc-compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  .ftc-compare-table th,
+  .ftc-compare-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+    color: var(--color-text-muted);
+    vertical-align: top;
+  }
+
+  .ftc-compare-table th {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-cream);
+    padding-bottom: 16px;
+  }
+
+  .ftc-compare-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .ftc-col-roammate {
+    background: rgba(196, 86, 42, 0.07);
+    color: var(--color-cream) !important;
+    font-weight: 600;
+  }
+
+  .ftc-compare-table th.ftc-col-roammate {
+    color: var(--color-terracotta-light) !important;
+  }
+
   .ftc-cta {
     padding: 80px 40px;
   }
@@ -387,13 +535,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   @media (max-width: 1024px) {
     .ftc-hero { padding: 140px 24px 80px; }
-    .ftc-why, .ftc-how, .ftc-cta, .ftc-related { padding-left: 24px; padding-right: 24px; }
+    .ftc-why, .ftc-how, .ftc-cta, .ftc-related, .ftc-compare { padding-left: 24px; padding-right: 24px; }
     .ftc-cards { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 640px) {
     .ftc-hero { padding: 120px 20px 60px; }
     .ftc-why, .ftc-how, .ftc-cta, .ftc-related { padding-left: 20px; padding-right: 20px; }
+    .ftc-compare { padding-left: 20px; padding-right: 20px; }
     .ftc-step { grid-template-columns: 44px 1fr; gap: 16px; }
     .ftc-step-num { font-size: 36px; }
     .ftc-hero-actions { flex-direction: column; align-items: center; }
