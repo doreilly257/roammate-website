@@ -14,6 +14,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       "url": "https://roammate.com/travel-buddy-app/",
       "description": "roammate matches solo travelers to find travel buddies by style, budget, and destination.",
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".tba-title", ".tba-subtitle"]
+      },
+      "url": "https://roammate.com/travel-buddy-app/"
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a travel buddy app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A travel buddy app connects solo travelers who want to explore together. roammate matches travelers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby. Free on iOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find a travel buddy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download roammate, set your travel style and budget, and browse travelers heading to your destination. View profiles, chat in-app, and meet up when you're ready."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free app to find travel friends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — roammate is completely free to download and use on iOS. No subscription, no ads."
+          }
+        }
+      ]
+    })} />
   </Fragment>
 
   <section class="tba-hero">
