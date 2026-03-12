@@ -29,6 +29,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         { "@type": "ListItem", "position": 2, "name": "About", "item": "https://roammate.com/about/" }
       ]
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "roammate",
+      "url": "https://roammate.com/",
+      "logo": "https://roammate.com/images/rm-full.svg",
+      "foundingDate": "2017",
+      "description": "roammate is a travel companion app that matches solo travelers by travel style, budget, and destination.",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "iOS",
+      "sameAs": [
+        "https://www.facebook.com/roammate",
+        "https://www.instagram.com/roammate_travel_app",
+        "https://x.com/roammate",
+        "https://bsky.app/profile/roammate.bsky.social",
+        "https://www.linkedin.com/company/roammate"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "support@roammate.com"
+      }
+    })} />
   </Fragment>
 
   <!-- Hero -->
