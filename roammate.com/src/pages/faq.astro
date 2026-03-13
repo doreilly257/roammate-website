@@ -88,6 +88,14 @@ const faqs = [
         }
       }))
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://roammate.com/faq/" }
+      ]
+    })} />
   </Fragment>
   <section class="faq-hero">
     <div class="faq-hero-inner">

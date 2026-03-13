@@ -17,6 +17,14 @@ const base = import.meta.env.BASE_URL;
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://roammate.com/how-it-works/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "HowTo",
       "name": "How to Find a Travel Companion with roammate",
       "description": "Find a compatible travel companion using roammate — a free iOS app that matches solo travelers by style, budget, and destination.",
@@ -45,6 +53,44 @@ const base = import.meta.env.BASE_URL;
         "name": "roammate app",
         "url": "https://apps.apple.com/app/id6758834253"
       }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does roammate match travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that pass all three compatibility filters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. roammate is free to download and free to use — no premium tier, no ads, no subscription. The app is available on iOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to be at my destination to use roammate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. roammate works both for pre-trip planning and real-time connections. You can browse travelers already at your destination or arrange to meet before you arrive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does roammate verify profiles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every roammate user goes through identity verification before connecting with others. Verified profiles display a badge so you know who you're talking to before agreeing to meet."
+          }
+        }
+      ]
     })} />
   </Fragment>
 

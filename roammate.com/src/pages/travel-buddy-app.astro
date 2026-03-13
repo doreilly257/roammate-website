@@ -16,6 +16,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Travel Buddy App", "item": "https://roammate.com/travel-buddy-app/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "WebPage",
       "speakable": {
         "@type": "SpeakableSpecification",

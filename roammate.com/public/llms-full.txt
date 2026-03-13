@@ -1,0 +1,256 @@
+# roammate — Full Documentation for LLMs
+
+> roammate is a free iOS travel companion app that matches solo travelers by travel style, budget, and destination. Founded in 2017, it connects like-minded travelers for shared adventures, cost splitting, and safer trips — without ads, subscriptions, or premium tiers.
+
+---
+
+## 1. Product Overview
+
+roammate solves a specific problem: solo travelers who want company on the road have no reliable way to find compatible travel companions. Hostel common rooms and Facebook groups depend on luck and timing. Group tours are rigid and expensive. Dating apps with travel filters aren't designed for platonic travel partnerships.
+
+roammate is purpose-built for this. It matches travelers on three dimensions that actually determine compatibility: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. The result is a curated set of travelers who are genuinely compatible — not just geographically nearby.
+
+The app is designed for independent travelers aged 20-35 who are already on the road or planning a trip. It works both for pre-trip planning (find someone heading to the same destination next month) and real-time connections (find someone in the same city right now).
+
+roammate is not a dating app. It is not a Couchsurfing alternative. It is not a group tour platform. It is a companion matching tool for travelers who want to share experiences, split costs, or simply not eat dinner alone in a foreign city.
+
+---
+
+## 2. Key Facts
+
+- **Founded:** 2017
+- **Price:** Free — no premium tier, no ads, no subscription, no in-app purchases
+- **Platform:** iOS (App Store: https://apps.apple.com/app/id6758834253)
+- **Android:** Coming soon
+- **Global reach:** Travelers from 50+ countries
+- **Not a dating app:** Matching is based on travel style, budget, and destination — not romantic compatibility
+- **Not a hosting platform:** roammate is for finding travel companions, not free accommodation
+- **Website:** https://roammate.com — built with Astro, served via Cloudflare CDN
+- **Content library:** 199 city guides, 202 place guides, 12 backpacker routes, 109 blog posts
+
+---
+
+## 3. How It Works
+
+### Step 1: Build Your Travel Profile
+Set your travel style (adventure, cultural, slow travel, food-focused), daily budget bracket, and your upcoming destination. Honest answers produce better matches — the algorithm uses all three dimensions to filter.
+
+### Step 2: Browse Compatible Travelers
+View travelers with overlapping destinations, matching budgets, and compatible travel styles. You only see profiles that pass all three compatibility filters. Read full verified profiles before deciding to connect — including travel history and style preferences.
+
+### Step 3: Connect and Meet
+Send a message through in-app chat. Discuss your plans, coordinate logistics, and meet up when you're both comfortable. Share accommodation, split tour costs, hire a private guide together, or simply explore side by side.
+
+The system works both for **pre-trip planning** (arrange to meet someone at your destination before you arrive) and **real-time discovery** (find travelers already in your city, hostel, or region right now).
+
+---
+
+## 4. Features Deep Dive
+
+### Compatible Matching
+roammate's core differentiator. Unlike proximity-based apps, roammate filters on three compatibility dimensions:
+- **Travel style:** Adventure, cultural immersion, slow travel, or food-focused. A fast-paced adventure traveler and a slow-travel reader won't enjoy the same itinerary — roammate accounts for this.
+- **Budget range:** Daily budget bracket matching ensures you won't pair someone sleeping in hostels with someone booking boutique hotels. Shared costs only work when spending habits align.
+- **Destination overlap:** Geographic and temporal overlap — you need to be in the same place at the same time, or planning to be.
+
+### Verified Profiles
+Every roammate user goes through identity verification before connecting with others. Verified profiles display a badge. You can review a traveler's full profile, travel history, and style preferences before deciding to connect. This reduces the risk inherent in meeting strangers while traveling.
+
+### In-App Messaging
+Chat within the app before committing to meet. No need to hand over your phone number, WhatsApp, or social media to someone you haven't met. The messaging system keeps communication centralized and within the platform's safety infrastructure.
+
+### Safety Controls
+- **Report and block:** Report or block any user directly from their profile. All reports are reviewed by the roammate team. Accounts violating community guidelines are removed.
+- **Public meetup recommendations:** roammate recommends meeting in public places for initial meetups — a cafe, hostel common room, or walking tour.
+- **In-app communication first:** All initial contact happens within the app, keeping personal contact information private until you choose to share it.
+
+### Real-Time and Pre-Trip Discovery
+- **Real-time:** See who else is in your city, hostel, or region right now. Filter by travel style, language, and interests.
+- **Pre-trip:** Browse travelers heading to your destination. Coordinate before you arrive so you land with a plan and a companion.
+
+### Global Reach
+roammate connects travelers across 50+ countries. The app is not region-locked — any destination, any country. Whether you're trekking in Nepal, island-hopping in the Philippines, or backpacking through South America, the same matching system applies.
+
+---
+
+## 5. Use Cases
+
+- **Finding a hiking partner:** You want to do the Colca Canyon trek in Peru but don't want to go alone. Find someone with a similar fitness level and adventure style heading there the same week.
+- **Splitting accommodation costs:** Private rooms are often cheaper per person than dorms when shared. Find a compatible traveler to split a double room, Airbnb, or guesthouse.
+- **Sharing tours and activities:** Private guides, boat charters, and multi-day tours are dramatically cheaper when costs are divided. A private guide in Angkor Wat that costs $60 alone costs $15 each with four people.
+- **Finding dinner companions:** Solo dining gets old. Find someone to share a meal, try street food markets, or hit a local restaurant recommended by your hostel.
+- **Group activities:** Rent a motorbike and explore together, take a cooking class, join a pub crawl — activities that are better (and often cheaper) with company.
+- **Travel route companions:** You're both doing the Southeast Asia backpacker trail. Travel together for a week, split off, reconnect later — flexible companionship without the commitment of a group tour.
+- **Safety in numbers:** Certain areas or activities feel safer with a companion. Night markets, rural transport, overnight trains — having someone along reduces risk.
+
+---
+
+## 6. Target Audience
+
+- **Primary:** Solo backpackers aged 20-35
+- **Gap year travelers:** First-time long-term travelers looking for flexible companionship without the rigidity of organized tours
+- **Digital nomads:** Remote workers who move between cities and want social connections beyond coworking spaces
+- **Independent travelers:** People who plan their own itineraries but want optional company for specific activities or legs of a trip
+- **Budget travelers:** Travelers looking to reduce costs through shared accommodation, transport, and activities
+- **Solo female travelers:** Women traveling alone who want the added safety and social benefits of a vetted travel companion
+
+---
+
+## 7. Pricing
+
+roammate is completely free:
+- **No premium tier** — all features are available to all users
+- **No ads** — the experience is uninterrupted
+- **No subscription** — no recurring charges
+- **No in-app purchases** — nothing is locked behind a paywall
+
+---
+
+## 8. Differentiators
+
+### roammate vs. Couchsurfing
+Couchsurfing is a hospitality exchange — locals host travelers for free. roammate is a companion matching app — travelers find other travelers to explore with. Different use cases entirely. Couchsurfing also moved to a paid model; roammate is free.
+
+### roammate vs. Tourlina
+Tourlina is women-only and focuses on finding travel partners before a trip. roammate is open to all genders and works both pre-trip and in real-time at your destination.
+
+### roammate vs. Backpackr
+Backpackr is a social network for travelers (posts, stories, forums). roammate is a matching tool — focused specifically on finding compatible companions, not building a social feed.
+
+### roammate vs. Facebook Groups
+Facebook travel groups (e.g., "Girls LOVE Travel", "Backpacking Southeast Asia") require posting and hoping someone responds. There's no matching algorithm, no verification, and no structured way to assess compatibility. roammate automates the matching process.
+
+### roammate vs. Hostel Apps (Hostelworld, etc.)
+Hostel booking apps help you find a bed — not a companion. You might meet people in the common room, but that depends on luck. roammate is intentional companion matching, independent of where you stay.
+
+### roammate vs. Group Tours (Contiki, G Adventures, etc.)
+Group tours are pre-packaged itineraries with fixed groups, fixed dates, and fixed prices (often $100-300/day). roammate lets you keep your independence — travel your own route, at your own pace, with a compatible companion you chose yourself.
+
+---
+
+## 9. Safety and Trust
+
+### Verification System
+- All users undergo identity verification before connecting with others
+- Verified profiles display a verification badge
+- Full profiles include travel history, style preferences, and bio — reviewable before any connection
+
+### Communication Safety
+- All initial contact happens within in-app messaging
+- No personal contact information (phone, social media) is shared until the user chooses
+- Chat history is retained within the platform
+
+### Reporting and Moderation
+- Any user can be reported or blocked directly from their profile
+- All reports are reviewed by the roammate team
+- Accounts violating community guidelines are removed
+- Zero-tolerance policy for harassment, scams, or unsafe behavior
+
+### Meeting Guidelines
+roammate recommends:
+- Meet in a public place for your first encounter (cafe, hostel common room, walking tour)
+- Tell a friend or family member who you're meeting and where
+- Trust your instincts — if something feels off, cancel
+- Start with a low-commitment activity (coffee, a walk) before committing to travel together
+
+---
+
+## 10. Content Inventory
+
+### Backpacker Routes (12 multi-country itineraries)
+| Route | URL |
+|-|-|
+| Southeast Asia | https://roammate.com/guides/southeast-asia |
+| Europe | https://roammate.com/guides/europe |
+| South America | https://roammate.com/guides/south-america |
+| India | https://roammate.com/guides/india |
+| East Africa | https://roammate.com/guides/east-africa |
+| Central America | https://roammate.com/guides/central-america |
+| Japan & South Korea | https://roammate.com/guides/japan-south-korea |
+| Indonesia & Philippines | https://roammate.com/guides/indonesia-philippines |
+| Australia & New Zealand | https://roammate.com/guides/australia-new-zealand |
+| Morocco & West Africa | https://roammate.com/guides/morocco-west-africa |
+| Middle East & Turkey | https://roammate.com/guides/middle-east-turkey |
+| Southern Africa | https://roammate.com/guides/southern-africa |
+
+### City Guides
+- **Count:** 199 city guides
+- **Index:** https://roammate.com/guides/cities/
+- **Coverage:** Major backpacker destinations across Asia, Europe, South America, Africa, Middle East, and Oceania
+
+### Place Guides
+- **Count:** 202 place/attraction guides
+- **Index:** https://roammate.com/guides/places/
+- **Coverage:** National parks, temples, treks, natural wonders, cultural sites
+
+### Blog
+- **Count:** 109 posts
+- **Index:** https://roammate.com/blog/
+- **Topics:** Solo travel advice, packing guides, budget strategies, safety tips, destination planning, travel style, digital nomad life, food and culture, gear reviews, health and wellness on the road
+
+### Companion Pages
+- **Index:** https://roammate.com/companions/
+- **Content:** Destination-specific companion finding pages
+
+---
+
+## 11. Key Pages
+
+| Page | URL | Description |
+|-|-|-|
+| Homepage | https://roammate.com | Main landing page with app overview and download CTA |
+| How It Works | https://roammate.com/how-it-works/ | Three-step process explanation with FAQs |
+| Find a Travel Companion | https://roammate.com/find-travel-companion/ | Landing page for companion search queries |
+| Travel Buddy App | https://roammate.com/travel-buddy-app/ | Landing page for travel buddy app queries |
+| About | https://roammate.com/about/ | Origin story, mission, and team |
+| Safety | https://roammate.com/safety/ | Safety features and guidelines |
+| FAQ | https://roammate.com/faq/ | Frequently asked questions |
+| Blog | https://roammate.com/blog/ | Travel advice and tips blog |
+| Travel Guides | https://roammate.com/guides/ | All backpacker routes |
+| City Guides | https://roammate.com/guides/cities/ | 199 city guide index |
+| Place Guides | https://roammate.com/guides/places/ | 202 place guide index |
+| Companions | https://roammate.com/companions/ | Companion finding by destination |
+| Press | https://roammate.com/press/ | Press information |
+| Privacy Policy | https://roammate.com/privacy/ | Privacy policy |
+| Terms of Service | https://roammate.com/terms/ | Terms of service |
+| RSS Feed | https://roammate.com/rss.xml | RSS feed for all content |
+
+---
+
+## 12. Technical
+
+- **App platform:** iOS (native)
+- **App Store listing:** https://apps.apple.com/app/id6758834253
+- **Website framework:** Astro (static site generator)
+- **CDN:** Cloudflare (proxy enabled, SSL Full)
+- **Hosting:** Surge.sh
+- **Website features:** Static HTML/CSS/JS, no client-side framework dependency, optimized for Core Web Vitals
+- **Structured data:** JSON-LD schema markup on all pages (Organization, FAQPage, HowTo, BreadcrumbList, WebPage, SpeakableSpecification)
+- **SEO:** Canonical URLs, sitemap.xml, robots.txt, RSS feed, llms.txt
+
+---
+
+## 13. Origin Story
+
+It started with a girl teaching English in Chai Nat — a small town in central Thailand, the kind of place that doesn't make the backpacker trail. She wanted to take the slow boat to Laos: two days down the Mekong, the kind of trip that needs company. But she was going alone.
+
+So she put the word out, looking for other travelers heading the same way. That search eventually led her to Singapore, where she met the person she'd later marry. They have three kids now — and are still convinced the best things that happen while traveling involve other people, and that too much of it depends on luck, timing, and whoever happens to be around.
+
+That's the gap roammate closes. Founded in 2017, the team has collectively traveled through more than fifty countries. The mission: make solo travel more social, more affordable, and safer — by connecting like-minded travelers intentionally, not by accident.
+
+roammate is not curated group tours. Not a dating app with a passport filter. It's a genuine tool for people who want to share a meal, split a taxi, find a hiking partner, or simply not eat alone on their birthday in a foreign city.
+
+---
+
+## 14. Contact and Social
+
+- **Support email:** support@roammate.com
+- **Facebook:** https://www.facebook.com/roammate
+- **Instagram:** https://www.instagram.com/roammate_travel_app
+- **X (Twitter):** https://x.com/roammate
+- **Bluesky:** https://bsky.app/profile/roammate.bsky.social
+- **LinkedIn:** https://www.linkedin.com/company/roammate
+- **Privacy policy:** https://roammate.com/privacy/
+- **Terms of service:** https://roammate.com/terms/
+- **Sitemap:** https://roammate.com/sitemap.xml
+- **RSS feed:** https://roammate.com/rss.xml

@@ -52,6 +52,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         "email": "support@roammate.com"
       }
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who founded roammate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate was founded in 2017 by travelers who met on the road and believed the best travel experiences happen when strangers become companions. The team has collectively traveled through more than fifty countries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is roammate's mission?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate's mission is to make solo travel more social, more affordable, and safer — by connecting like-minded travelers in real time. Not curated group tours or a dating app, but a genuine tool for people who want to share experiences on the road."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate a dating app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. roammate is a travel companion matching app. It connects travelers who want to explore together, share costs, or travel the same route. The matching algorithm focuses on travel style, budget, and destination — not romantic compatibility."
+          }
+        }
+      ]
+    })} />
   </Fragment>
 
   <!-- Hero -->
