@@ -543,13 +543,13 @@ const renderInlineLinks = (text: string) => {
     margin: 0;
   }
 
-  .blog-midpost-cta-link {
+  .blog-midpost-cta-text a {
     color: var(--color-terracotta-light);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  .blog-midpost-cta-link:hover {
+  .blog-midpost-cta-text a:hover {
     color: var(--color-terracotta);
   }
 
@@ -800,15 +800,15 @@ const renderInlineLinks = (text: string) => {
   }
 
   /* ========================
-     COMPARISON TABLE
+     COMPARISON TABLE (slotted content — needs :global)
      ======================== */
-  .blog-comparison-table {
+  :global(.blog-comparison-table) {
     max-width: 1200px;
     margin: 64px auto 0;
     text-align: center;
   }
 
-  .blog-comparison-table h2 {
+  :global(.blog-comparison-table h2) {
     font-family: var(--font-display);
     font-size: clamp(26px, 3vw, 36px);
     line-height: 1.15;
@@ -816,27 +816,24 @@ const renderInlineLinks = (text: string) => {
     margin-bottom: 24px;
   }
 
-  .comparison-table-wrap table {
-    margin: 0 auto;
-  }
-
-  .comparison-table-wrap {
+  :global(.comparison-table-wrap) {
     overflow-x: auto;
     border-radius: 16px;
     border: 1px solid rgba(196, 86, 42, 0.15);
   }
 
-  .comparison-table-wrap table {
+  :global(.comparison-table-wrap table) {
     width: 100%;
     border-collapse: collapse;
     font-size: 15px;
+    margin: 0 auto;
   }
 
-  .comparison-table-wrap thead {
+  :global(.comparison-table-wrap thead) {
     background: rgba(196, 86, 42, 0.08);
   }
 
-  .comparison-table-wrap th {
+  :global(.comparison-table-wrap th) {
     padding: 14px 20px;
     text-align: left;
     font-weight: 700;
@@ -847,30 +844,31 @@ const renderInlineLinks = (text: string) => {
     border-bottom: 1px solid rgba(196, 86, 42, 0.15);
   }
 
-  .comparison-table-wrap td {
+  :global(.comparison-table-wrap td) {
     padding: 14px 20px;
     color: var(--color-text);
     border-bottom: 1px solid rgba(196, 86, 42, 0.08);
     line-height: 1.5;
+    text-align: left;
   }
 
-  .comparison-table-wrap tr:last-child td {
+  :global(.comparison-table-wrap tr:last-child td) {
     border-bottom: none;
   }
 
-  .comparison-table-wrap tbody tr:hover {
+  :global(.comparison-table-wrap tbody tr:hover) {
     background: rgba(196, 86, 42, 0.04);
   }
 
-  .comparison-table-wrap td:first-child {
+  :global(.comparison-table-wrap td:first-child) {
     font-weight: 600;
     color: var(--color-cream);
     white-space: nowrap;
   }
 
   @media (max-width: 640px) {
-    .comparison-table-wrap th,
-    .comparison-table-wrap td {
+    :global(.comparison-table-wrap th),
+    :global(.comparison-table-wrap td) {
       padding: 10px 14px;
       font-size: 13px;
     }
