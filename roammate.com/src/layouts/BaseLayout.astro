@@ -80,6 +80,7 @@ const isHome = Astro.url.pathname === '/';
     ]
   })} />
   {isHome && (
+    <>
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -88,7 +89,13 @@ const isHome = Astro.url.pathname === '/';
       "operatingSystem": "iOS",
       "url": "https://roammate.com/",
       "downloadUrl": "https://apps.apple.com/app/id6758834253",
-      "description": "Travel companion app to connect with fellow travelers, share experiences, and split costs.",
+      "description": "Travel companion app that matches solo travelers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby.",
+      "datePublished": "2017-01-01",
+      "dateModified": "2026-03-01",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-title", ".hero-subtitle"]
+      },
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -96,6 +103,37 @@ const isHome = Astro.url.pathname === '/';
         "category": "Free"
       }
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is roammate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate is a free travel companion app for solo travelers and backpackers. It matches you with compatible travelers based on travel style, daily budget, and destination overlap — so you find someone genuinely compatible, not just someone nearby. Available on iOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find a travel companion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download roammate, set your travel style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before you commit to meeting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees."
+          }
+        }
+      ]
+    })} />
+    </>
   )}
 
   <script>
