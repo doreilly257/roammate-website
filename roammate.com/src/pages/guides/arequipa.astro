@@ -1,0 +1,131 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PEN (Sol)', detail: '1 USD ≈ 3.7 PEN; cards accepted downtown' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'Little English outside tourist areas' },
+  { icon: '🕐', label: 'Timezone', value: 'PET (UTC-5)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'May – Nov', detail: 'Dry season; clear views of volcanoes' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–40 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: '90–183 days visa-free', detail: 'Most nationalities — check before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Arequipa Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Plaza de Armas & Monastery of Santa Catalina',
+          text: 'Start at Plaza de Armas, one of Peru\'s most beautiful colonial squares, framed by white sillar volcanic stone arcades and the twin-towered Cathedral. The brilliant white facades glow in the morning sun with the snow-capped Misti volcano rising directly behind — photograph this view from the Cathedral steps. From the plaza, walk five minutes to the Monasterio de Santa Catalina, a cloistered convent founded in 1579 that operated as a self-contained city for 400 years. Its vivid red, orange, and blue-painted streets, flower-filled courtyards, and silent chapels are the most extraordinary architectural experience in southern Peru.',
+          tip: 'Santa Catalina opens at 9am and entry costs 45 soles ($12). Allow two full hours to explore — the monastery covers 20,000 square metres and it is easy to get pleasantly lost in the labyrinthine streets.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Mercado San Camilo & Yanahuara',
+          text: 'Head to Mercado San Camilo, Arequipa\'s bustling central market, for a lunch of rocoto relleno — the city\'s signature dish of hot peppers stuffed with minced meat and cheese, baked until the skin blisters. The market food court serves this for 8-12 soles alongside pastel de papa (potato pie) and chupe de camarones (prawn chowder). After lunch, take a taxi or 20-minute walk to the Yanahuara viewpoint — a mirador with stone sillar arches framing perfect views of Misti and Chachani volcanoes rising above the city. The neighbourhood has a quiet, residential feel very different from the busy centre.',
+          tip: 'Rocoto relleno is genuinely hot — the rocoto pepper is one of the spiciest in Peru. Ask for "picante suave" if you want a milder version. The pastel de papa alongside it is cooling and delicious.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Barrio San Lázaro & Sunset Dinner',
+          text: 'Explore San Lázaro, Arequipa\'s oldest neighbourhood, a warren of narrow cobblestone lanes lined with sillar stone homes draped in bougainvillea. The area is quiet and largely tourist-free. Return to the plaza area for dinner — Arequipa has an excellent restaurant scene concentrated on the streets around the main square. Try adobo arequipeño (slow-braised pork in vinegar and chilli) at a traditional picanteríia, or freshwater prawn dishes if the season is right (Jun–Nov). The illuminated Cathedral and sillar facades at night are stunning.',
+          tip: 'A picantería is the traditional Arequipeño restaurant institution — family-run, unpretentious, and serving the city\'s signature dishes. La Lucila and Chicha por Gastón Acurio both have authentic menus. Budget 20-45 soles for a full meal.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Eat at Mercado San Camilo', text: 'The market food court serves full rocoto relleno meals for 8-12 soles ($2-3). It is the most authentic and affordable place to eat in the city and where locals lunch every day.' },
+  { title: 'Take combis around the city', text: 'Shared minivans (combis) run all major routes for 1.50-2 soles. For Yanahuara and suburban sights, a taxi costs 7-12 soles — always agree the fare before getting in.' },
+  { title: 'Book Colca Canyon as a group tour', text: 'Independent travel to Colca Canyon is complex. A shared group tour costs $25-45 and includes transport, guide, and entry fees — cheaper than piecing together a private trip.' },
+  { title: 'Stay near the market', text: 'Hostels within three blocks of San Camilo market offer dorm beds for 20-35 soles ($5-9). They are cheaper and livelier than the immediate plaza area while still being walkable to all sights.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$5–10', mid: '$18–45', notes: 'Dorm → private room' },
+  { category: 'Food', budget: '$5–10', mid: '$15–30', notes: 'Market meals → restaurants' },
+  { category: 'Transport', budget: '$1–5', mid: '$8–20', notes: 'Combis → taxis' },
+  { category: 'Activities', budget: '$8–15', mid: '$25–60', notes: 'Self-guided → Santa Catalina + tours' },
+  { category: 'Colca Canyon Tour', budget: '$25–35', mid: '$45–80', notes: 'Budget group → private' },
+  { category: 'Entry Fees', budget: '$5–12', mid: '$12–20', notes: 'Santa Catalina 45 PEN; Yanahuara free' },
+  { category: 'Daily Total', budget: '$20–40', mid: '$70–150', notes: 'Budget backpacker → comfortable mid' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Entry & Getting There',
+    items: [
+      'Arequipa has its own international airport with daily flights from Lima (1 hour, from $40)',
+      'Overnight buses from Cusco (6-8 hours, 35-60 soles) and Lima (14-16 hours, 50-100 soles)',
+      'Cruz del Sur and Oltursa are the most reliable long-distance bus companies',
+    ],
+  },
+  {
+    icon: '🏔',
+    title: 'Altitude & Health',
+    items: [
+      'Arequipa sits at 2,335m — much lower than Cusco but altitude sickness can still affect some visitors',
+      'If arriving from sea level, allow a day before attempting strenuous hikes or volcano climbs',
+      'Drink coca tea available in all restaurants and markets to ease any lightheadedness',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'The Historic Centre is compact and walkable — plaza to Santa Catalina is a 5-minute walk',
+      'Taxis to Yanahuara cost 7-10 soles; colectivos to the bus terminal cost 2-3 soles',
+      'Colca Canyon is 3.5-4 hours by road — go with an organised tour or rent a car',
+    ],
+  },
+  {
+    icon: '📱',
+    title: 'Connectivity & Money',
+    items: [
+      'Buy a Claro or Movistar SIM on Mercaderes street — 10 soles for basic data',
+      'ATMs are available throughout the centre; carry soles for markets and combis',
+      'Most restaurant and hotel prices are quoted in soles — verify before assuming USD',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏛', title: 'Sillar Architecture', text: 'The white volcanic sillar stone that gives Arequipa the name "La Ciudad Blanca" is a UNESCO World Heritage-listed historic centre. Handle the architecture with respect — the intricately carved facades of churches and mansions represent 500 years of craftsmanship.' },
+  { icon: '🌶', title: 'Arequipeño Food Pride', text: 'Arequipa has the most distinctive regional cuisine in Peru and locals are fiercely proud of it. Ordering rocoto relleno, adobo, or chupe de camarones in a traditional picantería will earn instant warmth. Avoid comparing it unfavourably to Lima food.' },
+  { icon: '📸', title: 'Monastery Photography', text: 'Santa Catalina permits photography throughout most of the complex. Ask permission before photographing nuns — a small community of Carmelite sisters still lives in a section of the monastery. The painted street corners and flower-filled patios are the most photogenic spots.' },
+  { icon: '🗣', title: 'Regional Identity', text: 'Arequipeños have a strong independent regional identity and sometimes jokingly refer to their city as a separate republic. Acknowledging this civic pride and asking about local traditions and food will open far better conversations than treating the city as merely a stop before Colca Canyon.' },
+];
+---
+
+<CityGuideLayout
+  title="Arequipa Guide 2026 — Itinerary | roammate"
+  description="Complete Arequipa travel guide for backpackers. Santa Catalina Monastery, colonial sillar architecture, and gateway to Colca Canyon. 1-day itinerary with budget tips."
+  heroImage="/images/guides/cusco-hero.webp"
+  heroFlag="🇵🇪"
+  heroCountry="Peru"
+  heroRegion="South America"
+  heroCity="Arequipa"
+  heroSubtitle="The White City — a colonial masterpiece of sillar volcanic stone set in a high-altitude valley between three volcanoes, gateway to the world's deepest canyon."
+  heroPills={['1–3 Day Itinerary', 'Peru', 'May – Nov Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in US dollars. Arequipa is excellent value — world-class architecture, Peru's finest regional cuisine, and dramatic volcano scenery at lower prices than Cusco."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Arequipa is Peru's second city with a fierce regional identity — approach its distinctive food, architecture, and culture with genuine curiosity and you will be rewarded."
+  ctaCity="Arequipa"
+  ctaText="Find travel companions to explore Arequipa together on roammate — split the Colca Canyon tour cost and share the adventure."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

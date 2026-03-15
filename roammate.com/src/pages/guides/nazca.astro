@@ -1,0 +1,131 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'PEN (Sol)', detail: '1 USD ≈ 3.7 PEN; USD accepted for flights' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'Little English outside flight operators' },
+  { icon: '🕐', label: 'Timezone', value: 'PET (UTC-5)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Year-round', detail: 'Dry desert; early morning best for flights' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$60–120 USD', detail: 'Flight + activities + accommodation' },
+  { icon: '🛂', label: 'Visa', value: '90–183 days visa-free', detail: 'Most nationalities — check before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Nazca Lines & Desert',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Nazca Lines Overflight',
+          text: 'The entire reason you are here: board a small Cessna or Piper for the 30-minute flight over the Nazca Lines. Morning departures (7-9am) offer the best light and calmer air — afternoon thermals make later flights turbulent. The lines were etched into the desert plateau between 100 BCE and 800 CE by removing the red surface stones to reveal the white caliche below. From 300-500m altitude, the enormous figures resolve: the Hummingbird (96m wingspan), the Spider (46m), the Condor (135m), the Astronaut (32m), and the geometric trapezoids stretching for kilometres. The scale and precision are staggering — these were drawn with perfect proportions using only extended cord lines and ground surveys.',
+          tip: 'Book your flight the evening before in Nazca — operators line the main street and competition keeps prices competitive at $60-90 per person. The 30-minute flight covers 12-15 figures. Take motion sickness medication the night before if susceptible to turbulence.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Nazca Lines Observation Tower & Cemetery',
+          text: 'After the flight, stop at the roadside mirador (observation tower, 2 soles) on the Panamericana to view the Hands and Tree figures from ground level — a useful perspective on how flat and invisible the lines are without altitude. Continue to the Chauchilla Cemetery, 30km south of Nazca, an ancient burial site where Nazca mummies are still exposed in their original burial pits, wrapped in textiles and accompanied by ceramics. The site is eerie and extraordinary — mummies preserved for 1,500 years in the bone-dry desert, some with intact hair and clothing still vivid. A taxi tour including the mirador and cemetery costs 60-80 soles ($16-22).',
+          tip: 'The Chauchilla Cemetery is not covered by the Lines overflight price. A taxi from Nazca town to the cemetery and mirador costs 60-80 soles for 2-3 hours — negotiate a price that includes waiting time at both stops.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Nazca Town & Overnight Bus',
+          text: 'Return to Nazca town for dinner before catching the overnight bus. The town is a dusty transit stop with little to detain you beyond the Lines — the restaurants on the main Plaza de Armas serve standard Peruvian dishes (lomo saltado, arroz con leche) for 12-20 soles. The Museo Antonini on Avenida de la Cultura is the best museum in town if you have an hour spare, with the aqueduct canal system visible in the grounds. Most travellers arrive from Lima on an overnight bus and leave the same afternoon or evening — a day is genuinely sufficient to see everything.',
+          tip: 'Book your onward bus before arriving in Nazca. Cruz del Sur and Oltursa buses to Cusco (13 hours, 50-90 soles) and Lima (8 hours, 30-60 soles) fill up. The bus terminal is on Avenida Los Incas — a 5-minute walk from the plaza.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Book flights direct with operators', text: 'Flight operators on Calle Lima in Nazca charge $60-90 for the 30-minute overflight. Booking through Lima travel agencies adds 20-40% commission for the same flight. Walk in the evening before and compare prices.' },
+  { title: 'Combine Nazca with Paracas', text: 'Nazca and Paracas are 2.5 hours apart on the Panamericana. Combining both on the same north-south journey avoids backtracking and maximises the value of each stop without extra long-distance bus costs.' },
+  { title: 'Stay at a budget hostel near the plaza', text: 'Dorm beds in Nazca cost 20-35 soles ($5-9). The town only warrants one night maximum — spend your accommodation budget on the flight rather than a nicer room.' },
+  { title: 'Negotiate taxi tours', text: 'A hired taxi for the afternoon cemetery and mirador circuit costs 60-80 soles for 1-3 people. Sharing with other travellers from your hostel halves the cost — most hostels have a noticeboard for grouping up.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$5–10', mid: '$20–40', notes: 'Dorm → private; one night typical' },
+  { category: 'Lines Overflight', budget: '$60–70', mid: '$80–100', notes: 'Group Cessna → premium operator' },
+  { category: 'Food', budget: '$5–12', mid: '$15–25', notes: 'Plaza restaurants; Nazca is cheap' },
+  { category: 'Cemetery Taxi Tour', budget: '$16–22', mid: '$25–35', notes: 'Shared → private taxi' },
+  { category: 'Observation Tower', budget: '$0.50', mid: '$0.50', notes: '2 soles; included in some tours' },
+  { category: 'Museum', budget: '$5–8', mid: '$5–8', notes: 'Museo Antonini entry ~20 soles' },
+  { category: 'Daily Total', budget: '$90–120', mid: '$150–200', notes: 'Flight day all-in budget' },
+];
+
+const practicalInfo = [
+  {
+    icon: '✈️',
+    title: 'Getting There',
+    items: [
+      'Nazca is 7-8 hours south of Lima by bus on the Panamericana (Cruz del Sur, 40-70 soles)',
+      'From Paracas/Pisco: 2.5 hours south by bus or colectivo (15-25 soles)',
+      'From Arequipa: 7-8 hours north by overnight bus (45-80 soles)',
+    ],
+  },
+  {
+    icon: '🌡',
+    title: 'Desert Climate',
+    items: [
+      'Nazca sits in one of the driest deserts on Earth — virtually no rain year-round',
+      'Temperatures reach 35-40°C in summer (Dec–Mar); cooler in June–September',
+      'The plateau winds that preserve the Lines can cause turbulent flights in the afternoon',
+    ],
+  },
+  {
+    icon: '✈️',
+    title: 'Flight Safety',
+    items: [
+      'Choose licensed operators with newer aircraft — check AeroCivil Peru operator lists online',
+      'Morning flights have calmer air; afternoon thermals make turbulence common and vomiting bags necessary',
+      'Eat lightly before the flight; the small aircraft bank steeply to show lines on both sides of the cabin',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money & Practicalities',
+    items: [
+      'Most flight operators accept USD cash or soles — USD is preferred and avoids conversion',
+      'There are ATMs on the Plaza de Armas but carry backup cash from Lima',
+      'The town has limited nightlife — most travellers arrive, fly, and depart within 24 hours',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🔍', title: 'Mystery Without Mysticism', text: 'The Nazca Lines are not supernatural — they are the product of an advanced pre-Columbian civilisation with sophisticated astronomical and engineering knowledge. The current academic consensus is that they served ceremonial and astronomical purposes. Engage with the genuine archaeological mystery rather than the alien mythology.' },
+  { icon: '⚠️', title: 'Environmental Fragility', text: 'The Lines are extremely vulnerable to disturbance. In 2014, Greenpeace activists caused irreparable damage to the Hummingbird figure by walking near it. Never walk on the pampa outside designated viewing areas, and do not drive off-road near any geoglyph sites.' },
+  { icon: '🏺', title: 'Nazca Civilisation', text: 'The Nazca people were not only geoglyph-builders — they created some of the most beautiful polychrome pottery in pre-Columbian history and engineered an extraordinary underground aqueduct system (puquios) that still functions today. The Museo Antonini gives proper context.' },
+  { icon: '🤝', title: 'Flight Operator Ethics', text: 'The overflight industry employs hundreds of local families. Choose established local operators over international booking platforms. Several crashes have occurred historically due to poor maintenance — verify your operator holds current DGAC certification.' },
+];
+---
+
+<CityGuideLayout
+  title="Nazca Lines Guide 2026 — Itinerary | roammate"
+  description="Complete Nazca travel guide for backpackers. Overflight tours, Chauchilla Cemetery, and desert archaeology. Budget tips and practical info for visiting the Nazca Lines."
+  heroImage="/images/guides/lima-hero.webp"
+  heroFlag="🇵🇪"
+  heroCountry="Peru"
+  heroRegion="South America"
+  heroCity="Nazca"
+  heroSubtitle="Ancient geoglyphs etched into the desert plateau — enormous figures of animals and geometric shapes visible only from the air, created 2,000 years ago by the Nazca civilisation."
+  heroPills={['1 Day Itinerary', 'Peru', 'Year-round']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in USD. The overflight ($60-90) dominates the budget — everything else in Nazca is inexpensive. One full day is all you need."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="The Nazca Lines are one of archaeology's great unsolved mysteries — approach them with genuine curiosity for the Nazca civilisation that created them over 2,000 years ago."
+  ctaCity="Nazca"
+  ctaText="Find travel companions to share the overflight cost and taxi tours on roammate — splitting expenses makes the Nazca Lines significantly cheaper."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

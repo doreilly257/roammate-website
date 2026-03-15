@@ -1,0 +1,130 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'USD / KHR (៛ Riel)', detail: 'USD is primary; riel for change < $1' },
+  { icon: '🗣', label: 'Language', value: 'Khmer', detail: 'English widely spoken in Siem Reap' },
+  { icon: '🕐', label: 'Timezone', value: 'ICT (UTC+7)', detail: 'No daylight saving' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: 'Dry season, 25–32°C, low humidity' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$20–40 USD', detail: 'Including 1-day Angkor pass ($37)' },
+  { icon: '🛂', label: 'Visa', value: 'Visa on arrival $30', detail: 'E-visa online for $36 — 30 days single entry' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Ta Prohm — The Jungle Temple',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Arrive Early — Before the Crowds',
+          text: 'Ta Prohm opens at 7:30am and the first two hours are the most atmospheric. Massive strangler fig and silk-cotton trees have grown through the sandstone walls over centuries — roots the width of cars cascade over lintels, split galleries, and embrace towers in a slow-motion grip. The temple was deliberately left partially unrestored when archaeologists arrived in the early 20th century, preserving this otherworldly scene. The famous "Tomb Raider courtyard" at the northwest end has the most dramatic tree, but explore beyond it — quieter corners have equally impressive root formations without the crowds.',
+          tip: 'Arrive at the eastern entrance (the main gate) at 7:30am sharp. By 9am tour buses fill the main paths. Buy your 1-day pass ($37) the evening before at the ticket office to save 30 minutes in the morning.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Banteay Kdei & Srah Srang',
+          text: 'A 10-minute walk southwest brings you to Banteay Kdei, a 12th-century Buddhist monastery with similar jungle-reclaimed atmosphere but a fraction of Ta Prohm\'s visitors. Carved devata (celestial dancers) line the corridors in impressive detail. Directly opposite Banteay Kdei, the Srah Srang royal bathing pool is one of the most serene spots in the entire Angkor complex — stone steps lead down to the water\'s edge, and locals fish in the shallows. Rest here in the shade before the afternoon heat peaks. A tuk-tuk ($2) takes you back to Siem Reap for a late lunch.',
+          tip: 'Banteay Kdei\'s outer wall has a remarkably well-preserved Hall of Dancers with carved apsara figures. Srah Srang at golden hour (5pm) is beautiful for reflection photography.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Siem Reap Night Market & Pub Street',
+          text: 'Back in town, explore the Angkor Night Market (6pm–midnight) for handmade crafts, silk scarves, and art from local artisans — prices are fixed but gentler negotiation is acceptable. Dinner on the streets running parallel to Pub Street: fish amok ($4), lok lak ($3–4), or a proper Khmer soup. Pub Street itself offers cold Angkor beer from $0.50 and live music from 8pm. The area is lively but safe — a great place to meet other Angkor-bound travelers. Consider booking the Phare Cambodian Circus ($18) for a world-class evening performance.',
+          tip: 'Eat one street back from Pub Street (Street 9 or the Old Market area) for half the price and the same quality. Haven restaurant trains at-risk youth and does excellent Cambodian food for $8–12 mains.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Buy your temple pass the evening before', text: 'The ticket office sells passes from 5pm the previous day. Buy your 1-day pass ($37) the evening before and get a free sunset entry that day. Saves queue time in the morning and maximises your early entry advantage.' },
+  { title: 'Tuk-tuk to Ta Prohm is the smart move', text: 'From Siem Reap centre to Ta Prohm is 12km. A tuk-tuk half-day to Ta Prohm, Banteay Kdei, and Srah Srang costs $12–15. Negotiate the evening before and include wait time. Bicycles are possible but the roads are long and hot.' },
+  { title: 'USD everywhere, small bills essential', text: 'Everything at Angkor is priced in USD. Bring $1, $5, and $10 notes — vendors and tuk-tuk drivers struggle to change $20+. The temple stalls near Ta Prohm sell water ($0.50) and coconuts ($1) — bring cash.' },
+  { title: 'Food near the temples is cheap but limited', text: 'A cluster of stalls east of Ta Prohm sells rice, noodles, and curry for $2–4. Coconut water and fruit are $0.50–1. Better to have a big breakfast in town before heading out than rely on temple-area food for lunch.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$5–12', mid: '$20–60' },
+  { category: 'Food', budget: '$5–10', mid: '$15–30' },
+  { category: 'Transport', budget: '$3–10', mid: '$15–20' },
+  { category: 'Temple Pass', budget: '$37', mid: '$37' },
+  { category: 'Drinks', budget: '$1–3', mid: '$5–10' },
+  { category: 'Daily Total', budget: '$51–72', mid: '$92–157' },
+];
+
+const practicalInfo = [
+  {
+    icon: '🛂',
+    title: 'Visa & Entry',
+    items: [
+      'Visa on arrival at Siem Reap airport: $30 for 30 days. Bring a passport photo or pay $2 extra. E-visa online at evisa.gov.kh for $36 (processed 3 business days)',
+      'Passport must be valid for 6+ months. Direct flights from Bangkok (1hr), Ho Chi Minh City (1.5hrs), KL (2.5hrs). Airport tuk-tuk to town: $7–10',
+      'Temple pass required for entry — buy at the Angkor Enterprise ticket office on the main road, not from touts near the temples',
+    ],
+  },
+  {
+    icon: '🕌',
+    title: 'Temple Access',
+    items: [
+      'Ta Prohm opens 7:30am–5:30pm. Angkor pass covers all temples in the complex. 1-day $37, 3-day $62 (valid 10 days), 7-day $72 (valid 1 month)',
+      'Dress code strictly enforced: covered shoulders and knees. Light cotton trousers and a loose shirt are ideal. Sandals are fine for Ta Prohm\'s flat ground',
+      'Some structures at Ta Prohm are fenced off for conservation. Follow the marked paths — climbing on ruins is prohibited and can cause real damage',
+    ],
+  },
+  {
+    icon: '🛺',
+    title: 'Getting There',
+    items: [
+      'Tuk-tuk from Siem Reap: $12–15 for a half-day circuit including Ta Prohm, Banteay Kdei, and Srah Srang. Full-day temple circuit: $18–25',
+      'Bicycles ($2–3/day) are possible — Ta Prohm is 12km from town via a flat road. Set off by 7am to beat the heat. E-bikes ($10–15/day) are more comfortable',
+      'Grab (ride-hailing app) works in Siem Reap for town trips. For temple runs, negotiate directly with a tuk-tuk driver the night before for better rates',
+    ],
+  },
+  {
+    icon: '💉',
+    title: 'Health',
+    items: [
+      'Mosquitoes are active at dawn and dusk in the temple area — bring repellent. No malaria risk in Siem Reap itself but apply repellent regardless',
+      'Tap water is not safe — bottled water $0.25 everywhere. Bring at least 1.5 litres per person for a temple morning. Coconut water from vendors is safe and refreshing',
+      'Pharmacies on Sivatha Boulevard stock basics. Royal Angkor Hospital handles emergencies. Travel insurance covering Cambodia is strongly recommended',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🛕', title: 'Active Worship Site', text: 'Monks still perform ceremonies at Ta Prohm. When you encounter monks, step aside and lower your gaze. Women must never touch or hand anything directly to a monk. Remove shoes when indicated by signs at inner sanctuaries.' },
+  { icon: '📸', title: 'Respectful Photography', text: 'Ta Prohm draws influencers and photographers in numbers. Be patient at the famous tree-root doorways and wait your turn. Never climb on roots or walls for a photo — even a foothold causes irreversible damage to 900-year-old stone.' },
+  { icon: '🙏', title: 'Sampeah Greeting', text: 'Greet Cambodians with a sampeah — palms pressed together, slight bow. Return any sampeah directed at you. A smile goes a long way. Most locals working at the temples appreciate a genuine greeting over silence.' },
+  { icon: '🤝', title: 'Supporting Ethically', text: 'Buy handicrafts from certified Artisans Angkor shops rather than from children at temple gates — the latter keeps kids out of school. Eat at social enterprise restaurants (Haven, Marum, Spoons) that train and employ vulnerable youth.' },
+];
+---
+
+<CityGuideLayout
+  title="Ta Prohm Travel Guide 2026 — Jungle Temple Itinerary | roammate"
+  description="The definitive Ta Prohm guide — when to visit, how to beat the crowds, what to see beyond the famous tree roots, and how to combine it with nearby temples."
+  heroImage="/images/guides/angkor-wat-hero.webp"
+  heroFlag="🇰🇭"
+  heroCountry="Cambodia"
+  heroRegion="Southeast Asia"
+  heroCity="Ta Prohm"
+  heroSubtitle="The jungle temple — where strangler fig and silk-cotton trees have consumed the 12th-century ruins, their roots cascading over doorways and splitting walls in an unstoppable slow-motion embrace."
+  heroPills={['Half-Day Visit', 'Angkor Complex', 'Nov – Mar Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in USD. The Angkor temple pass is the main expense — food, transport, and accommodation in Siem Reap are among the cheapest in Southeast Asia."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Cambodians are warm and resilient. The Angkor temples are sacred living sites, not just ruins — approach them with the same respect you would any active place of worship."
+  ctaCity="Ta Prohm"
+  ctaText="Find travel companions to split tuk-tuk costs, explore the Angkor complex together, and share the best quiet corners before the crowds arrive."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>
