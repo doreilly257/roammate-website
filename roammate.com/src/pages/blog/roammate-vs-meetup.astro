@@ -1,0 +1,123 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "roammate-vs-meetup",
+  title: "roammate vs Meetup: Which Is Better for Meeting Fellow Travelers?",
+  description: "roammate matches solo travelers by trip compatibility. Meetup organises local group events. Here's which platform actually helps you find a travel companion.",
+  category: "Comparison",
+  readMinutes: 3,
+  heroImage: "/images/blog/meeting-people-solo-travel-hero.webp",
+  intro: "roammate and Meetup both show up when people search for ways to meet fellow travelers, but they are built for fundamentally different situations. Meetup organises recurring local group events — hiking clubs, language exchanges, expat socials — and has no concept of trip matching or travel companions. roammate is a mobile app built specifically for solo travelers who want to find someone to share an upcoming trip, matched by travel style, budget, and destination. Understanding that distinction upfront saves you from signing up for the wrong platform.",
+  sections: [
+    {
+      heading: "What Meetup Does vs What roammate Does",
+      content: "Meetup is an event platform. You join groups in your city — a travel enthusiasts group, an expat network, a backpacker social — and attend scheduled meetups. It's community-focused and works well for building local connections with people who share an interest in travel. The events are one-off or recurring gatherings, not coordinated trips. There's no profile matching, no destination overlap feature, and no way to signal that you're looking for someone heading to the same place at the same time. Meetup's free tier lets you attend events; running a group requires a paid organiser subscription. It's available on iOS and Android and has a large established user base across many cities. roammate works differently. It's a mobile app (iOS, with Android in development) where you complete a travel profile — your travel style (adventure, cultural, slow travel, food-focused), your typical daily budget, and the destinations you're planning to visit. The app then matches you with other verified travelers who overlap on those dimensions. Every profile you see has already passed a compatibility filter before you spend time on a conversation. Profiles are verified, there are no ads, and the app is free. The entire experience is oriented around one outcome: finding a compatible person for a specific upcoming trip.",
+      image: "/images/blog/meeting-people-solo-travel-inline-1.webp",
+      imageAlt: "Solo traveler reviewing a map at a café",
+    },
+    {
+      heading: "Which One Should You Use?",
+      content: "Use Meetup if you want to build a local community around travel interests before you leave, or if you're an expat looking for social events in your current city. It's genuinely useful for meeting people who share a passion for travel, attending talks and socials, and maintaining an ongoing network. If you travel frequently and want a local hub of like-minded people, Meetup fills that role well. Use roammate if you have a specific trip planned and need a compatible companion for it. The compatibility matching means you're not cold-messaging people and hoping they happen to be heading the same direction with a similar budget — the app surfaces travelers where that alignment already exists. For solo travelers who find the prospect of weeks abroad alone daunting, roammate addresses the actual problem directly. The two platforms aren't really competing for the same use case. Meetup is for community events in a fixed location; roammate is for trip companions in motion. If you're planning a solo trip and want someone to share it with, roammate is the more targeted tool. If you want to stay connected to travel-minded people in your home city, Meetup is the better fit.",
+      image: "/images/blog/meeting-people-solo-travel-inline-2.webp",
+      imageAlt: "Two travelers with backpacks at an airport departure gate",
+    },
+  ],
+  publishedAt: "2026-03-14T10:00:00Z",
+  updatedAt: "2026-03-14T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "3 min read",
+  relatedPostSlugs: [
+    "roammate-vs-couchsurfing",
+    "finding-travel-companions",
+    "meeting-people-solo-travel",
+    "why-roammate-perfect-companion",
+  ],
+  relatedGuideSlugs: ["southeast-asia", "europe", "south-america"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides as any}
+  relatedPosts={relatedPosts}
+>
+  <div slot="extra" class="blog-comparison-table reveal">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="comparison-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>roammate</th>
+            <th>Meetup</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary purpose</td>
+            <td>Trip companion matching</td>
+            <td>Local group events</td>
+          </tr>
+          <tr>
+            <td>Matching logic</td>
+            <td>Style, budget, destination</td>
+            <td>None (event attendance)</td>
+          </tr>
+          <tr>
+            <td>Travel-specific</td>
+            <td>Yes (built for travelers)</td>
+            <td>No (general interest groups)</td>
+          </tr>
+          <tr>
+            <td>Verified profiles</td>
+            <td>Yes (all users)</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Free, no ads</td>
+            <td>Free to attend; paid organiser tier</td>
+          </tr>
+          <tr>
+            <td>Best for</td>
+            <td>Finding a compatible travel companion</td>
+            <td>Local community events and socials</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td>iOS (Android coming)</td>
+            <td>iOS, Android</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BlogPostLayout>

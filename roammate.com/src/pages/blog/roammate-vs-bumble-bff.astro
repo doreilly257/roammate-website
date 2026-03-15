@@ -1,0 +1,123 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "roammate-vs-bumble-bff",
+  title: "roammate vs Bumble BFF: Finding a Travel Companion vs Making Local Friends",
+  description: "Bumble BFF matches you with local friends in your city. roammate matches travelers by style, budget, and destination. Here's which one you actually need.",
+  category: "Comparison",
+  readMinutes: 3,
+  heroImage: "/images/blog/travel-friendship-building-hero.webp",
+  intro: "If you've searched for 'Bumble BFF for travelers,' you're not alone — but Bumble BFF isn't designed for finding travel companions. It's a friendship mode within the Bumble dating app, built to help you make friends in your home city through swipe-based matching. roammate is a purpose-built travel companion app that matches solo travelers by travel style, daily budget, and destination overlap. The distinction matters: one solves loneliness at home, the other solves the challenge of finding someone compatible to travel with.",
+  sections: [
+    {
+      heading: "What Bumble BFF Does vs What roammate Does",
+      content: "Bumble BFF is a mode inside the Bumble app — the same platform originally built for dating. In BFF mode, you swipe through profiles of people nearby and match with potential friends based on location and photos. It's useful for settling into a new city or building a social circle at home. The matching logic is simple: proximity and a swipe. There's no travel itinerary, no budget compatibility check, and no way to signal that you're looking for someone to share a trip with. It was designed for local friendship, and that's what it delivers. roammate starts from a completely different premise. You're not swiping through whoever happens to be nearby — you're being matched with travelers who share your specific travel profile. roammate asks about your travel style (adventure, cultural, slow travel, food-focused), your daily budget range, and the destinations you're planning to visit. Every match has already passed those filters. Profiles are verified, the app is free with no ads, and the entire experience is oriented around one outcome: finding someone compatible to travel with. There's no dating mode, no social feed, and no local friend-finding feature — just travel companion matching.",
+      image: "/images/blog/travel-friendship-building-inline-1.webp",
+      imageAlt: "Two travelers meeting and planning a trip together",
+    },
+    {
+      heading: "Which Should You Use as a Traveler?",
+      content: "If you're visiting a city and want to meet locals or expats who live there, Bumble BFF can work for that. You'll be visible to people in that location and could meet someone for a coffee or a day out. But it won't help you find a travel companion — someone to share the next leg of your trip, split accommodation costs with, or match your pace and budget over multiple weeks. For that, Bumble BFF simply isn't the right tool. Use roammate if you're looking for a travel companion. Whether you're planning a solo trip through Southeast Asia and want to find another traveler to team up with, or you're mid-trip and want to connect with someone heading the same direction, roammate's matching logic is built for exactly that scenario. The travel-specific filters mean you're not sorting through profiles hoping someone mentions travel in their bio — every profile you see is from someone actively planning travel who matches your style and budget. For local friendship at home, Bumble BFF is a reasonable choice. For finding someone to actually travel with, roammate is the right app.",
+      image: "/images/blog/travel-friendship-building-inline-2.webp",
+      imageAlt: "Solo traveler using a phone to find a travel companion",
+    },
+  ],
+  publishedAt: "2026-03-14T11:00:00Z",
+  updatedAt: "2026-03-14T11:00:00Z",
+  author: "roammate editorial",
+  readingTime: "3 min read",
+  relatedPostSlugs: [
+    "roammate-vs-couchsurfing",
+    "finding-travel-companions",
+    "meeting-people-solo-travel",
+    "travel-friendship-building",
+  ],
+  relatedGuideSlugs: ["southeast-asia", "europe", "south-america"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides as any}
+  relatedPosts={relatedPosts}
+>
+  <div slot="extra" class="blog-comparison-table reveal">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="comparison-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>roammate</th>
+            <th>Bumble BFF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary purpose</td>
+            <td>Travel companion matching</td>
+            <td>Local friendship matching</td>
+          </tr>
+          <tr>
+            <td>Matching logic</td>
+            <td>Style, budget, destination</td>
+            <td>Location + swipe</td>
+          </tr>
+          <tr>
+            <td>Travel-specific</td>
+            <td>Yes (built for travel)</td>
+            <td>No (local friends only)</td>
+          </tr>
+          <tr>
+            <td>Verified profiles</td>
+            <td>Yes (all users)</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Free, no ads</td>
+            <td>Free with Premium upsells</td>
+          </tr>
+          <tr>
+            <td>Best for</td>
+            <td>Finding a compatible travel companion</td>
+            <td>Making friends in your home city</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td>iOS (Android coming)</td>
+            <td>iOS, Android</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BlogPostLayout>
