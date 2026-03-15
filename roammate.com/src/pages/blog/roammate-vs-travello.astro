@@ -1,0 +1,128 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "roammate-vs-travello",
+  title: "roammate vs Travello: Travel Discovery App vs Travel Companion Matcher",
+  description: "Travello is a social travel discovery app. roammate matches solo travelers by style, budget, and destination. Here's what each does and when to use which.",
+  category: "Comparison",
+  readMinutes: 3,
+  heroImage: "/images/blog/solo-travel-vs-group-tours-hero.webp",
+  intro: "Travello and roammate both appear when backpackers look for ways to connect with other travelers, but they serve different purposes. Travello is a social discovery platform — it helps you find activities, share travel moments, and browse what other travelers are doing. roammate is a companion matching app — it pairs solo travelers based on travel style, budget, and destination overlap. The difference matters when you're planning a trip and need to know which tool solves your actual problem.",
+  sections: [
+    {
+      heading: "What Travello Does vs What roammate Does",
+      content: "Travello is built around social travel discovery. You create a profile, follow other travelers, share posts and experiences, and explore activities and deals at destinations worldwide. It functions more like a travel-focused social network — you can see what others are doing in the cities you're visiting, find experiences to book, and interact with a community of travelers through a social feed. There is a 'meet travelers' component, but it operates through social browsing rather than structured compatibility matching. You're scrolling a feed and potentially connecting with people whose content you see, not being matched with someone who has the same travel style and budget heading to your next stop. roammate does one thing: match solo travelers for upcoming trips. You set your travel style (adventure, cultural, slow travel, food-focused), your daily budget range, and your destination. The app surfaces verified travelers who overlap on all three dimensions. There's no social feed, no activity booking, no inspiration content — just a direct path to finding a compatible travel companion. Travello is available on iOS and Android and is free to use. roammate is free on iOS, with Android in development.",
+      image: "/images/blog/solo-travel-vs-group-tours-inline-1.webp",
+      imageAlt: "Traveler exploring a city with a smartphone",
+    },
+    {
+      heading: "Which One Should You Use?",
+      content: "Use Travello if you want a social layer to your travels — inspiration, activity discovery, and a feed of what other travelers are experiencing at your destination. It's well-suited for connecting with the broader travel community and finding things to do. If you enjoy sharing your journey and engaging with travel content, Travello fits that use case. Use roammate if you have a specific trip coming up and want to find someone to share it with. The matching is structured and compatibility-filtered — you're not browsing a social feed hoping someone responds to a comment, you're matched with travelers who are already aligned on the fundamentals. For solo travelers whose primary concern is not traveling alone, roammate is the more focused tool. The two apps aren't mutually exclusive. Some travelers use Travello for inspiration and activity discovery, and roammate when they have a concrete trip to plan and want a companion for it.",
+      image: "/images/blog/solo-travel-vs-group-tours-inline-2.webp",
+      imageAlt: "Two backpackers reviewing a route together",
+    },
+  ],
+  publishedAt: "2026-03-15T10:00:00Z",
+  updatedAt: "2026-03-15T10:00:00Z",
+  author: "roammate editorial",
+  readingTime: "3 min read",
+  relatedPostSlugs: [
+    "roammate-vs-gaffl",
+    "roammate-vs-meetup",
+    "finding-travel-companions",
+    "why-roammate-perfect-companion",
+  ],
+  relatedGuideSlugs: ["southeast-asia", "europe", "south-america"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides as any}
+  relatedPosts={relatedPosts}
+>
+  <div slot="extra" class="blog-comparison-table reveal">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="comparison-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>roammate</th>
+            <th>Travello</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary purpose</td>
+            <td>Trip companion matching</td>
+            <td>Social travel discovery</td>
+          </tr>
+          <tr>
+            <td>Matching logic</td>
+            <td>Style, budget, destination</td>
+            <td>None (social browsing)</td>
+          </tr>
+          <tr>
+            <td>Travel-specific</td>
+            <td>Yes (built for travelers)</td>
+            <td>Yes (travel social network)</td>
+          </tr>
+          <tr>
+            <td>Companion matching</td>
+            <td>Yes (core feature)</td>
+            <td>Incidental (via social feed)</td>
+          </tr>
+          <tr>
+            <td>Activity booking</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Verified profiles</td>
+            <td>Yes (all users)</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Free, no ads</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td>iOS (Android coming)</td>
+            <td>iOS, Android</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BlogPostLayout>

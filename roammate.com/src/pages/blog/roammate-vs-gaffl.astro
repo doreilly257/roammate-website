@@ -1,0 +1,123 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+
+const post = {
+  slug: "roammate-vs-gaffl",
+  title: "roammate vs GAFFL: Two Ways to Find a Travel Buddy",
+  description: "GAFFL lets you post trips and find applicants. roammate matches travelers by style, budget, and destination. Here's how the two approaches differ in practice.",
+  category: "Comparison",
+  readMinutes: 3,
+  heroImage: "/images/blog/finding-travel-companions-hero.webp",
+  intro: "roammate and GAFFL are both apps built specifically to help solo travelers find a travel companion — which puts them closer together than most apps in this space. The key difference is in the approach: GAFFL uses a trip-posting model where you describe a trip and others apply to join, while roammate uses compatibility matching to surface travelers who align with your travel style, budget, and destination before any conversation starts. Which approach works better depends on how you plan and what you're looking for.",
+  sections: [
+    {
+      heading: "How GAFFL Works vs How roammate Works",
+      content: "GAFFL is organised around trip posts. You create a listing describing your planned trip — destination, dates, rough budget, what you're looking for in a companion — and other users browse these posts and send requests to join. You review applicants and decide who to accept. It's effectively a travel classifieds system, which works well if you have a very specific trip planned and want to be selective about who joins. The limitation is that it requires active effort on both sides: you need to write a compelling post, and applicants need to find it and message you. Compatibility is assessed through the post and conversation, not through a structured filter. roammate uses a different model. You complete a travel profile — style, budget, destination — and the app matches you with travelers who overlap on all three. You see a filtered set of compatible people, not an unfiltered list of trip posts. Verification is built into both platforms. roammate is free with no ads or premium tier on iOS, with Android in development. GAFFL has a free tier with optional premium features on both iOS and Android.",
+      image: "/images/blog/finding-travel-companions-inline-1.webp",
+      imageAlt: "Solo traveler checking a map at a bus station",
+    },
+    {
+      heading: "Which Approach Works Better?",
+      content: "The trip-posting model (GAFFL) works well when you have a very specific, well-defined trip and want to be the one screening applicants. If you've already decided on an itinerary and want to share costs with someone who fits into it, posting a trip and reviewing responses gives you control. It can also work well for niche trips — a very specific trekking route, a multi-week overland route — where the post itself acts as a filter. The compatibility-matching model (roammate) works better when you want the app to do the compatibility screening for you, before you invest time in conversations. You set your parameters and see people who are already a likely fit. This tends to be faster and generates fewer mismatched conversations. For most solo travelers — especially those earlier in their planning who want to find someone with a similar travel style before committing to specific dates — roammate's matching approach removes more friction. For travelers with a very fixed, specific plan who want to screen applicants themselves, GAFFL's post-and-apply model offers more control.",
+      image: "/images/blog/finding-travel-companions-inline-2.webp",
+      imageAlt: "Travelers comparing notes at a hostel",
+    },
+  ],
+  publishedAt: "2026-03-15T11:00:00Z",
+  updatedAt: "2026-03-15T11:00:00Z",
+  author: "roammate editorial",
+  readingTime: "3 min read",
+  relatedPostSlugs: [
+    "roammate-vs-travello",
+    "roammate-vs-couchsurfing",
+    "finding-travel-companions",
+    "why-roammate-perfect-companion",
+  ],
+  relatedGuideSlugs: ["southeast-asia", "europe", "south-america"] as string[],
+};
+
+const relatedGuides = (post.relatedGuideSlugs ?? [])
+  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
+  .filter(Boolean);
+
+const relatedPosts = (post.relatedPostSlugs ?? [])
+  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
+  .filter(Boolean)
+  .slice(0, 3)
+  .map((entry: any) => ({
+    slug: entry.slug,
+    title: entry.title,
+    description: entry.description,
+    heroImage: entry.heroImage,
+    category: entry.category,
+  }));
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides as any}
+  relatedPosts={relatedPosts}
+>
+  <div slot="extra" class="blog-comparison-table reveal">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="comparison-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>roammate</th>
+            <th>GAFFL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary purpose</td>
+            <td>Compatibility matching</td>
+            <td>Trip posting &amp; applications</td>
+          </tr>
+          <tr>
+            <td>Matching logic</td>
+            <td>Style, budget, destination</td>
+            <td>Manual (read posts, apply)</td>
+          </tr>
+          <tr>
+            <td>Profile verification</td>
+            <td>Yes (all users)</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Compatibility filter</td>
+            <td>Before conversations</td>
+            <td>Through post description</td>
+          </tr>
+          <tr>
+            <td>Best for</td>
+            <td>Early-stage planning, style-matched trips</td>
+            <td>Fixed itinerary, selective screening</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Free, no ads, no premium tier</td>
+            <td>Free tier + optional premium</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td>iOS (Android coming)</td>
+            <td>iOS, Android</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BlogPostLayout>
