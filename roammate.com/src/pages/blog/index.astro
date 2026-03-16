@@ -30,6 +30,8 @@ const blogHeroImages = blogPosts
   .map((post) => post.heroImage)
   .filter((image): image is string => Boolean(image));
 
+const categories = [...new Set(blogPosts.map((p) => p.category).filter(Boolean))] as string[];
+
 const formatDate = (value?: string) => {
   if (!value) return null;
   const date = new Date(value);
@@ -104,9 +106,20 @@ const formatDate = (value?: string) => {
         <h2 class="section-heading">Recent <em>posts</em></h2>
         <p class="blog-section-intro">Advice and destination ideas for planning better trips and making the most of every stop.</p>
       </div>
-      <div class="blog-grid">
+
+      <div class="blog-controls">
+        <input type="text" id="blogSearch" class="blog-search" placeholder="Search posts..." aria-label="Search blog posts" />
+        <div class="blog-tabs" id="blogTabs">
+          <button class="blog-tab active" data-cat="all">All</button>
+          {categories.map((cat) => (
+            <button class="blog-tab" data-cat={cat}>{cat}</button>
+          ))}
+        </div>
+      </div>
+
+      <div class="blog-grid" id="blogGrid">
         {blogPosts.map((post, i) => (
-          <a href={`/blog/${post.slug}/`} class={`blog-card reveal reveal-delay-${(i % 4) + 1}`}>
+          <a href={`/blog/${post.slug}/`} class={`blog-card reveal reveal-delay-${(i % 4) + 1}`} data-category={post.category || ''} data-title={post.title.toLowerCase()} data-description={post.description.toLowerCase()}>
             <img src={post.heroImage} alt={post.title} loading={i === 0 ? 'eager' : 'lazy'} width="1200" height="800" />
             <div class="blog-card-content">
               {post.category && <span class="blog-card-category">{post.category}</span>}
@@ -119,6 +132,10 @@ const formatDate = (value?: string) => {
             </div>
           </a>
         ))}
+      </div>
+      <p class="blog-no-results" id="blogNoResults" hidden>No posts found.</p>
+      <div class="blog-show-more-wrap">
+        <button class="blog-show-more" id="blogShowMore">Show more</button>
       </div>
     </div>
   </section>
@@ -391,6 +408,93 @@ const formatDate = (value?: string) => {
     padding: 6px 10px;
   }
 
+  /* CONTROLS: search + tabs */
+  .blog-controls {
+    margin-bottom: 32px;
+  }
+
+  .blog-search {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(196, 86, 42, 0.2);
+    background: var(--color-bg);
+    color: var(--color-cream);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.25s;
+    margin-bottom: 16px;
+  }
+
+  .blog-search:focus {
+    border-color: var(--color-terracotta);
+  }
+
+  .blog-search::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .blog-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .blog-tab {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(196, 86, 42, 0.2);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+  }
+
+  .blog-tab:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-cream);
+  }
+
+  .blog-tab.active {
+    background: var(--color-terracotta);
+    border-color: var(--color-terracotta);
+    color: #fff;
+  }
+
+  .blog-no-results {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 18px;
+    padding: 48px 0;
+  }
+
+  .blog-show-more-wrap {
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .blog-show-more {
+    padding: 12px 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(196, 86, 42, 0.3);
+    background: transparent;
+    color: var(--color-terracotta);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s, transform 0.25s var(--ease-out-expo);
+  }
+
+  .blog-show-more:hover {
+    background: var(--color-terracotta);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
   @media (max-width: 1024px) {
     .blog-hero {
       min-height: 82vh;
@@ -586,5 +690,74 @@ const formatDate = (value?: string) => {
         if (submit) submit.disabled = false;
       }
     });
+  })();
+</script>
+
+<script>
+  (function () {
+    const PAGE_SIZE = 12;
+    const grid = document.getElementById('blogGrid');
+    const searchInput = document.getElementById('blogSearch') as HTMLInputElement | null;
+    const tabsWrap = document.getElementById('blogTabs');
+    const showMoreBtn = document.getElementById('blogShowMore');
+    const noResults = document.getElementById('blogNoResults');
+    if (!grid || !searchInput || !tabsWrap || !showMoreBtn || !noResults) return;
+
+    const allCards = Array.from(grid.querySelectorAll('.blog-card')) as HTMLElement[];
+    let activeCat = 'all';
+    let query = '';
+    let visibleCount = PAGE_SIZE;
+
+    function getFiltered(): HTMLElement[] {
+      return allCards.filter((card) => {
+        const cat = card.getAttribute('data-category') || '';
+        const title = card.getAttribute('data-title') || '';
+        const desc = card.getAttribute('data-description') || '';
+        const matchesCat = activeCat === 'all' || cat === activeCat;
+        const q = query.toLowerCase();
+        const matchesQuery = !q || title.includes(q) || desc.includes(q) || cat.toLowerCase().includes(q);
+        return matchesCat && matchesQuery;
+      });
+    }
+
+    function render() {
+      const filtered = getFiltered();
+      allCards.forEach((c) => (c.style.display = 'none'));
+      filtered.forEach((c, i) => {
+        c.style.display = i < visibleCount ? '' : 'none';
+      });
+      noResults.hidden = filtered.length > 0;
+      showMoreBtn.style.display = visibleCount >= filtered.length ? 'none' : '';
+    }
+
+    // Tabs
+    tabsWrap.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.blog-tab') as HTMLElement | null;
+      if (!btn) return;
+      tabsWrap.querySelectorAll('.blog-tab').forEach((t) => t.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat') || 'all';
+      visibleCount = PAGE_SIZE;
+      render();
+    });
+
+    // Search with debounce
+    let timer: ReturnType<typeof setTimeout>;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        query = searchInput.value.trim();
+        visibleCount = PAGE_SIZE;
+        render();
+      }, 300);
+    });
+
+    // Show more
+    showMoreBtn.addEventListener('click', () => {
+      visibleCount += PAGE_SIZE;
+      render();
+    });
+
+    render();
   })();
 </script>
