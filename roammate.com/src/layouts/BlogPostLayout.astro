@@ -187,6 +187,7 @@ const renderInlineLinks = (text: string) => {
     })} />
   </Fragment>
 
+  <div class="reading-progress" id="reading-progress"></div>
   <article>
     <section class="blog-post-hero" aria-label={heroImageAlt}>
       <div class="blog-post-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${escapeCssUrl(heroImage)}');`} />
@@ -368,9 +369,31 @@ const renderInlineLinks = (text: string) => {
       </section>
     )}
   </article>
+  <script>
+    (function() {
+      var bar = document.getElementById('reading-progress');
+      if (!bar) return;
+      window.addEventListener('scroll', function() {
+        var h = document.documentElement;
+        var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+        bar.style.width = Math.min(pct, 100) + '%';
+      }, { passive: true });
+    })();
+  </script>
 </BaseLayout>
 
 <style>
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--color-terracotta);
+    transition: width 0.1s;
+    z-index: 9999;
+  }
+
   .blog-post-hero {
     position: relative;
     min-height: 88vh;
