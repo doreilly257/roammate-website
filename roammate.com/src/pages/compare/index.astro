@@ -65,6 +65,48 @@ const itemListElements = allComparisonItems.map((post: any, i: number) => ({
     </div>
   </section>
 
+  <section class="compare-tool">
+    <div class="compare-tool-inner">
+      <div class="section-label">Quick Compare</div>
+      <h2 class="compare-tool-heading">Compare roammate with any app</h2>
+      <div class="compare-tool-row">
+        <div class="compare-tool-select-wrap">
+          <span class="compare-tool-select compare-tool-select--fixed">roammate</span>
+        </div>
+        <span class="compare-tool-vs">vs</span>
+        <div class="compare-tool-select-wrap">
+          <select id="compare-app-select" class="compare-tool-select">
+            <option value="" disabled selected>Select an app</option>
+            <option value="couchsurfing">Couchsurfing</option>
+            <option value="tourlina">Tourlina</option>
+            <option value="backpackr">Backpackr</option>
+            <option value="facebook-travel-groups">Facebook Travel Groups</option>
+            <option value="meetup">Meetup</option>
+            <option value="bumble-bff">Bumble BFF</option>
+            <option value="hostelworld">Hostelworld</option>
+            <option value="travello">Travello</option>
+            <option value="gaffl">GAFFL</option>
+          </select>
+        </div>
+      </div>
+      <button
+        id="compare-go-btn"
+        class="compare-tool-btn"
+        disabled
+        data-ph-event="compare_tool_select"
+      >Compare</button>
+    </div>
+  </section>
+
+  <script>
+    const sel = document.getElementById('compare-app-select') as HTMLSelectElement;
+    const btn = document.getElementById('compare-go-btn') as HTMLButtonElement;
+    sel.addEventListener('change', () => { btn.disabled = !sel.value; });
+    btn.addEventListener('click', () => {
+      if (sel.value) window.location.href = `/blog/roammate-vs-${sel.value}/`;
+    });
+  </script>
+
   {bestOfPost && (
     <section class="compare-featured reveal">
       <div class="compare-featured-inner">
@@ -325,6 +367,130 @@ const itemListElements = allComparisonItems.map((post: any, i: number) => ({
   .compare-cta-btn:hover {
     background: var(--color-terracotta-light);
     transform: translateY(-1px);
+  }
+
+  .compare-tool {
+    padding: 56px 24px 0;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .compare-tool-inner {
+    background: var(--color-bg-warm);
+    border-radius: 16px;
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    padding: 40px 36px;
+    text-align: center;
+  }
+
+  .compare-tool-heading {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 8px 0 28px;
+  }
+
+  .compare-tool-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .compare-tool-select-wrap {
+    flex: 1;
+    max-width: 240px;
+  }
+
+  .compare-tool-select {
+    width: 100%;
+    padding: 14px 18px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid rgba(58, 52, 46, 0.12);
+    border-radius: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+  select.compare-tool-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  .compare-tool-select:focus {
+    outline: none;
+    border-color: var(--color-terracotta);
+  }
+
+  .compare-tool-select--fixed {
+    text-align: center;
+    color: var(--color-terracotta);
+    border-color: rgba(196, 86, 42, 0.25);
+    cursor: default;
+  }
+
+  .compare-tool-vs {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--color-terracotta);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+  }
+
+  .compare-tool-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-terracotta);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, opacity 0.3s;
+  }
+
+  .compare-tool-btn:hover:not(:disabled) {
+    background: var(--color-terracotta-light);
+    transform: translateY(-1px);
+  }
+
+  .compare-tool-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 600px) {
+    .compare-tool-inner {
+      padding: 28px 20px;
+    }
+
+    .compare-tool-row {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .compare-tool-select-wrap {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .compare-tool-vs {
+      font-size: 14px;
+    }
   }
 
   @media (max-width: 600px) {
