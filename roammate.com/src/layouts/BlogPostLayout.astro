@@ -154,7 +154,8 @@ const renderInlineLinks = (text: string) => {
         "name": author,
       } : {
         "@type": "Organization",
-        "name": "roammate",
+        "name": "roammate editorial",
+        "url": "https://roammate.com/editorial/",
       },
       "publisher": {
         "@type": "Organization",
@@ -166,10 +167,13 @@ const renderInlineLinks = (text: string) => {
       },
       ...(isoPublishedAt ? { "datePublished": isoPublishedAt } : {}),
       ...(isoUpdatedAt || isoPublishedAt ? { "dateModified": isoUpdatedAt || isoPublishedAt } : {}),
-      "mainEntityOfPage": canonical,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": canonical,
+      },
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": [".blog-post-hero h1", ".blog-post-intro p"]
+        "cssSelector": [".blog-post-hero h1", ".blog-post-intro p", ".blog-post-section:first-of-type h2", ".blog-post-section:first-of-type .blog-post-section-copy p"]
       },
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({

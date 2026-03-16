@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["chiang-mai", "denpasar", "da-nang", "medellin"],
   },
   {
     slug: "budget-travel-cashflow-playbook",
@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "phnom-penh", "denpasar"],
   },
   {
     slug: "first-month-southeast-asia",
@@ -150,7 +150,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "siem-reap", "ho-chi-minh-city", "da-nang"],
   },
   {
     slug: "city-base-vs-fast-hopping",
@@ -192,7 +192,7 @@ export const blogPosts: BlogPost[] = [
       "first-month-southeast-asia",
       "three-day-city-sprint-template",
     ],
-    relatedGuideSlugs: ["southeast-asia", "europe", "bangkok"],
+    relatedGuideSlugs: ["chiang-mai", "split", "dubrovnik", "bangkok"],
   },
   {
     slug: "hostel-selection-operator-checklist",
@@ -234,7 +234,7 @@ export const blogPosts: BlogPost[] = [
       "flexible-booking-strategy",
       "city-base-vs-fast-hopping",
     ],
-    relatedGuideSlugs: ["central-america", "tulum-ruins", "blue-hole-belize"],
+    relatedGuideSlugs: ["bangkok", "barcelona", "bogota", "hoi-an"],
   },
   {
     slug: "carry-on-only-long-term",
@@ -276,7 +276,7 @@ export const blogPosts: BlogPost[] = [
       "airport-day-efficiency-system",
       "travel-day-mistakes-checklist",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "cusco", "bogota"],
   },
   {
     slug: "slow-travel-momentum-system",
@@ -318,7 +318,7 @@ export const blogPosts: BlogPost[] = [
       "first-month-southeast-asia",
       "three-day-city-sprint-template",
     ],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["lisbon", "tbilisi", "oaxaca", "medellin"],
   },
   {
     slug: "social-energy-management-abroad",
@@ -360,7 +360,7 @@ export const blogPosts: BlogPost[] = [
       "altitude-acclimatization-itinerary",
       "backpacker-gym-alternatives",
     ],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "southeast-asia"],
+    relatedGuideSlugs: ["chiang-mai", "denpasar", "ho-chi-minh-city", "budapest", "medellin"],
   },
   {
     slug: "travel-insurance-claim-proofing",
@@ -402,7 +402,7 @@ export const blogPosts: BlogPost[] = [
       "visa-run-risk-reduction",
       "border-crossing-document-pack",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["medellin", "denpasar", "istanbul", "bangkok", "siem-reap"],
   },
   {
     slug: "airport-day-efficiency-system",
@@ -444,7 +444,7 @@ export const blogPosts: BlogPost[] = [
       "public-transport-mastery",
       "overnight-train-productivity",
     ],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "europe"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "singapore", "kuala-lumpur", "istanbul"],
   },
   {
     slug: "weekend-reset-for-digital-nomads",
@@ -486,7 +486,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["southeast-asia", "europe"],
+    relatedGuideSlugs: ["denpasar", "da-nang", "tbilisi", "chiang-mai"],
   },
   {
     slug: "visa-run-risk-reduction",
@@ -528,7 +528,7 @@ export const blogPosts: BlogPost[] = [
       "adventure-day-risk-matrix",
       "solo-female-travel-operations",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "phuket", "southeast-asia"],
   },
   {
     slug: "local-sim-and-esim-strategy",
@@ -570,7 +570,7 @@ export const blogPosts: BlogPost[] = [
       "travel-workspace-setup-kit",
       "airport-day-efficiency-system",
     ],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "istanbul", "lisbon"],
   },
   {
     slug: "travel-workspace-setup-kit",
@@ -612,7 +612,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["chiang-mai", "denpasar", "lisbon", "bangkok"],
   },
   {
     slug: "night-bus-survival-guide",
@@ -654,7 +654,7 @@ export const blogPosts: BlogPost[] = [
       "airport-day-efficiency-system",
       "travel-day-mistakes-checklist",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "hanoi", "cusco", "lima"],
   },
   {
     slug: "rainy-season-travel-advantage",
@@ -696,7 +696,7 @@ export const blogPosts: BlogPost[] = [
       "storm-day-backup-plan",
       "mountain-route-weather-windows",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["denpasar", "chiang-mai", "antigua-guatemala", "southeast-asia"],
   },
   {
     slug: "three-day-city-sprint-template",
@@ -780,7 +780,7 @@ export const blogPosts: BlogPost[] = [
       "long-haul-recovery-protocol",
       "altitude-acclimatization-itinerary",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "hanoi", "mexico-city", "ho-chi-minh-city"],
   },
   {
     slug: "burnout-signals-on-the-road",
@@ -822,7 +822,7 @@ export const blogPosts: BlogPost[] = [
       "altitude-acclimatization-itinerary",
       "backpacker-gym-alternatives",
     ],
-    relatedGuideSlugs: ["southeast-asia", "europe", "bangkok"],
+    relatedGuideSlugs: ["chiang-mai", "denpasar", "lisbon", "medellin"],
   },
   {
     slug: "adventure-day-risk-matrix",
@@ -864,7 +864,7 @@ export const blogPosts: BlogPost[] = [
       "visa-run-risk-reduction",
       "border-crossing-document-pack",
     ],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["denpasar", "cusco", "queenstown", "chiang-mai"],
   },
   {
     slug: "long-haul-recovery-protocol",
@@ -906,7 +906,7 @@ export const blogPosts: BlogPost[] = [
       "social-energy-management-abroad",
       "burnout-signals-on-the-road",
     ],
-    relatedGuideSlugs: ["southeast-asia", "europe", "bangkok"],
+    relatedGuideSlugs: ["bangkok", "singapore", "tokyo", "dubai"],
   },
   {
     slug: "couples-travel-systems",
@@ -948,7 +948,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["central-america", "tulum-ruins", "blue-hole-belize"],
+    relatedGuideSlugs: ["denpasar", "lisbon", "bangkok", "rome"],
   },
   {
     slug: "solo-female-travel-operations",
@@ -990,7 +990,7 @@ export const blogPosts: BlogPost[] = [
       "visa-run-risk-reduction",
       "border-crossing-document-pack",
     ],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "bangkok"],
+    relatedGuideSlugs: ["bangkok", "medellin", "marrakech", "denpasar"],
   },
   {
     slug: "creator-workflow-while-traveling",
@@ -1074,7 +1074,7 @@ export const blogPosts: BlogPost[] = [
       "long-trip-memory-capture",
       "first-month-southeast-asia",
     ],
-    relatedGuideSlugs: ["southeast-asia", "europe"],
+    relatedGuideSlugs: ["kyoto", "prague", "marrakech", "lisbon"],
   },
   {
     slug: "public-transport-mastery",
@@ -1116,7 +1116,7 @@ export const blogPosts: BlogPost[] = [
       "airport-day-efficiency-system",
       "travel-day-mistakes-checklist",
     ],
-    relatedGuideSlugs: ["europe", "paris", "barcelona"],
+    relatedGuideSlugs: ["tokyo", "bangkok", "paris", "istanbul"],
   },
   {
     slug: "altitude-acclimatization-itinerary",
@@ -1158,7 +1158,7 @@ export const blogPosts: BlogPost[] = [
       "social-energy-management-abroad",
       "burnout-signals-on-the-road",
     ],
-    relatedGuideSlugs: ["zhangjiajie", "south-america", "lima"],
+    relatedGuideSlugs: ["cusco", "la-paz", "kathmandu", "pokhara"],
   },
   {
     slug: "beach-town-vs-mountain-town-work",
@@ -1200,7 +1200,7 @@ export const blogPosts: BlogPost[] = [
       "travel-workspace-setup-kit",
       "social-energy-management-abroad",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["denpasar", "chiang-mai", "da-nang", "medellin"],
   },
   {
     slug: "language-learning-travel-routine",
@@ -1242,7 +1242,7 @@ export const blogPosts: BlogPost[] = [
       "weekend-reset-for-digital-nomads",
       "travel-workspace-setup-kit",
     ],
-    relatedGuideSlugs: ["hanoi", "ho-chi-minh-city", "hue"],
+    relatedGuideSlugs: ["medellin", "oaxaca", "hanoi", "bangkok"],
   },
   {
     slug: "packing-cubes-real-usage",
@@ -1284,7 +1284,7 @@ export const blogPosts: BlogPost[] = [
       "airport-day-efficiency-system",
       "travel-day-mistakes-checklist",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "lisbon", "cusco"],
   },
   {
     slug: "travel-finance-automation",
@@ -1326,7 +1326,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["hanoi", "ho-chi-minh-city", "hue"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "denpasar", "lisbon"],
   },
   {
     slug: "backpacker-gym-alternatives",
@@ -1368,7 +1368,7 @@ export const blogPosts: BlogPost[] = [
       "social-energy-management-abroad",
       "burnout-signals-on-the-road",
     ],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["denpasar", "chiang-mai", "rio-de-janeiro", "bangkok"],
   },
   {
     slug: "storm-day-backup-plan",
@@ -1410,7 +1410,7 @@ export const blogPosts: BlogPost[] = [
       "first-month-southeast-asia",
       "three-day-city-sprint-template",
     ],
-    relatedGuideSlugs: ["hanoi", "ho-chi-minh-city", "hue"],
+    relatedGuideSlugs: ["denpasar", "bangkok", "hanoi", "ho-chi-minh-city"],
   },
   {
     slug: "overnight-train-productivity",
@@ -1452,7 +1452,7 @@ export const blogPosts: BlogPost[] = [
       "airport-day-efficiency-system",
       "travel-day-mistakes-checklist",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["hanoi", "bangkok", "delhi", "europe"],
   },
   {
     slug: "coastal-route-planning-framework",
@@ -1494,7 +1494,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["phuket", "krabi", "split", "dubrovnik"],
   },
   {
     slug: "mountain-route-weather-windows",
@@ -1536,7 +1536,7 @@ export const blogPosts: BlogPost[] = [
       "first-month-southeast-asia",
       "three-day-city-sprint-template",
     ],
-    relatedGuideSlugs: ["europe", "paris", "barcelona"],
+    relatedGuideSlugs: ["annapurna-circuit", "everest-base-camp", "cusco", "torres-del-paine"],
   },
   {
     slug: "border-crossing-document-pack",
@@ -1578,7 +1578,7 @@ export const blogPosts: BlogPost[] = [
       "adventure-day-risk-matrix",
       "solo-female-travel-operations",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "phnom-penh", "hanoi", "southeast-asia"],
   },
   {
     slug: "anti-theft-city-routines",
@@ -1662,7 +1662,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["mexico-city", "tulum-ruins", "mount-bromo"],
+    relatedGuideSlugs: ["tokyo", "london", "mexico-city", "bangkok"],
   },
   {
     slug: "flexible-booking-strategy",
@@ -1704,7 +1704,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "southeast-asia"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "lisbon", "chiang-mai"],
   },
   {
     slug: "scuba-snorkel-trip-integration",
@@ -1746,7 +1746,7 @@ export const blogPosts: BlogPost[] = [
       "three-day-city-sprint-template",
       "coastal-route-planning-framework",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["koh-tao", "gili-islands", "el-nido", "denpasar"],
   },
   {
     slug: "hiking-rotation-for-multi-country-trips",
@@ -1790,7 +1790,7 @@ export const blogPosts: BlogPost[] = [
       "three-day-city-sprint-template",
       "coastal-route-planning-framework",
     ],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["annapurna-circuit", "torres-del-paine", "chiang-mai", "cusco"],
   },
   {
     slug: "cultural-site-day-planning",
@@ -1832,7 +1832,7 @@ export const blogPosts: BlogPost[] = [
       "first-month-southeast-asia",
       "three-day-city-sprint-template",
     ],
-    relatedGuideSlugs: ["europe", "paris", "barcelona"],
+    relatedGuideSlugs: ["angkor-wat", "kyoto", "rome", "istanbul"],
   },
   {
     slug: "food-trail-by-neighborhood",
@@ -1874,7 +1874,7 @@ export const blogPosts: BlogPost[] = [
       "long-haul-recovery-protocol",
       "altitude-acclimatization-itinerary",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "hanoi", "mexico-city", "tokyo"],
   },
   {
     slug: "sunrise-sunset-shooting-workflow",
@@ -1916,7 +1916,7 @@ export const blogPosts: BlogPost[] = [
       "long-trip-memory-capture",
       "first-month-southeast-asia",
     ],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "angkor-wat"],
+    relatedGuideSlugs: ["angkor-wat", "denpasar", "santorini", "istanbul"],
   },
   {
     slug: "rain-heat-humidity-gear-guide",
@@ -1958,7 +1958,7 @@ export const blogPosts: BlogPost[] = [
       "airport-day-efficiency-system",
       "travel-day-mistakes-checklist",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "ho-chi-minh-city", "singapore"],
   },
   {
     slug: "long-trip-memory-capture",
@@ -2000,7 +2000,7 @@ export const blogPosts: BlogPost[] = [
       "weekend-reset-for-digital-nomads",
       "travel-workspace-setup-kit",
     ],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["chiang-mai", "lisbon", "denpasar", "cusco"],
   },
   {
     slug: "travel-day-mistakes-checklist",
@@ -2042,7 +2042,7 @@ export const blogPosts: BlogPost[] = [
       "public-transport-mastery",
       "overnight-train-productivity",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "hanoi", "bogota"],
   },
   {
     slug: "region-hopping-without-exhaustion",
@@ -2084,7 +2084,7 @@ export const blogPosts: BlogPost[] = [
       "first-month-southeast-asia",
       "three-day-city-sprint-template",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "istanbul", "cairo", "lisbon"],
   },
   {
     slug: "year-of-backpacking-strategy",
@@ -2126,7 +2126,7 @@ export const blogPosts: BlogPost[] = [
       "city-base-vs-fast-hopping",
       "slow-travel-momentum-system",
     ],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "cusco", "lisbon"],
   },
   {
     slug: "airport-lounge-budget-access",
@@ -2154,7 +2154,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["budget-travel-cashflow-playbook", "travel-finance-automation", "overnight-train-productivity", "public-transport-mastery"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "singapore", "dubai", "istanbul"],
   },
   {
     slug: "best-backpack-sizes-compared",
@@ -2182,7 +2182,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["carry-on-only-long-term", "packing-cubes-real-usage", "travel-daypack-selection", "first-backpacking-trip-checklist"],
-    relatedGuideSlugs: ["australia-new-zealand", "waitomo-caves", "bay-of-islands"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "cusco", "europe"],
   },
   {
     slug: "budget-flight-search-tactics",
@@ -2210,7 +2210,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["flexible-booking-strategy", "budget-travel-cashflow-playbook", "multi-city-flight-routing", "overland-vs-flying-comparison"],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines"],
+    relatedGuideSlugs: ["bangkok", "kuala-lumpur", "denpasar", "london"],
   },
   {
     slug: "campervan-road-trip-guide",
@@ -2238,7 +2238,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["public-transport-mastery", "motorcycle-scooter-rental-abroad", "island-hopping-route-planning", "budget-travel-cashflow-playbook"],
-    relatedGuideSlugs: ["europe", "paris", "barcelona"],
+    relatedGuideSlugs: ["queenstown", "melbourne", "lisbon", "europe"],
   },
   {
     slug: "cold-weather-backpacking-layers",
@@ -2266,7 +2266,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["carry-on-only-long-term", "packing-cubes-real-usage", "rain-heat-humidity-gear-guide", "best-backpack-sizes-compared"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "bangkok"],
+    relatedGuideSlugs: ["kathmandu", "cusco", "prague", "tokyo"],
   },
   {
     slug: "cooking-from-local-markets",
@@ -2294,7 +2294,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["food-trail-by-neighborhood", "food-safety-street-markets", "hostel-cooking-budget-meals", "budget-travel-cashflow-playbook"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "oaxaca", "marrakech", "hanoi"],
   },
   {
     slug: "dealing-with-homesickness",
@@ -2322,7 +2322,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["burnout-signals-on-the-road", "social-energy-management-abroad", "travel-anxiety-coping-strategies", "solo-female-travel-operations"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "bangkok"],
+    relatedGuideSlugs: ["chiang-mai", "denpasar", "lisbon", "medellin"],
   },
   {
     slug: "desert-travel-preparation",
@@ -2350,7 +2350,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["adventure-day-risk-matrix", "altitude-acclimatization-itinerary", "travel-insurance-claim-proofing", "travel-first-aid-kit-guide"],
-    relatedGuideSlugs: ["amman", "aqaba", "middle-east-turkey"],
+    relatedGuideSlugs: ["marrakech", "san-pedro-de-atacama", "wadi-rum", "jaipur"],
   },
   {
     slug: "digital-detox-while-traveling",
@@ -2378,7 +2378,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["burnout-signals-on-the-road", "travel-journaling-methods", "mindfulness-meditation-travel", "social-energy-management-abroad"],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "southeast-asia"],
+    relatedGuideSlugs: ["denpasar", "pai", "ella", "luang-prabang"],
   },
   {
     slug: "dry-bag-waterproof-essentials",
@@ -2406,7 +2406,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["rain-heat-humidity-gear-guide", "island-hopping-route-planning", "scuba-snorkel-trip-integration", "travel-camera-phone-photography"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["el-nido", "denpasar", "koh-tao", "gili-islands"],
   },
   {
     slug: "eco-lodge-vs-hostel-comparison",
@@ -2434,7 +2434,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["sustainable-backpacking-practices", "hostel-selection-operator-checklist", "ethical-wildlife-encounters", "slow-travel-momentum-system"],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "luang-prabang"],
+    relatedGuideSlugs: ["denpasar", "monteverde", "luang-prabang", "ella"],
   },
   {
     slug: "ethical-wildlife-encounters",
@@ -2462,7 +2462,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["scuba-snorkel-trip-integration", "sustainable-backpacking-practices", "adventure-day-risk-matrix", "eco-lodge-vs-hostel-comparison"],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["chiang-mai", "denpasar", "nairobi", "kota-kinabalu"],
   },
   {
     slug: "festival-travel-planning",
@@ -2490,7 +2490,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["cultural-site-day-planning", "photography-walk-planning", "flexible-booking-strategy", "year-of-backpacking-strategy"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "bangkok"],
+    relatedGuideSlugs: ["bangkok", "delhi", "rio-de-janeiro", "tokyo"],
   },
   {
     slug: "first-backpacking-trip-checklist",
@@ -2518,7 +2518,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["best-backpack-sizes-compared", "travel-insurance-claim-proofing", "first-month-southeast-asia", "lost-passport-emergency-plan"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "denpasar", "southeast-asia"],
   },
   {
     slug: "gap-year-planning-timeline",
@@ -2546,7 +2546,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["year-of-backpacking-strategy", "first-backpacking-trip-checklist", "budget-travel-cashflow-playbook", "first-month-southeast-asia"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "cusco", "lisbon"],
   },
   {
     slug: "group-travel-coordination",
@@ -2574,7 +2574,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["couples-travel-systems", "social-energy-management-abroad", "flexible-booking-strategy", "budget-travel-cashflow-playbook"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "cusco", "lisbon"],
   },
   {
     slug: "haggling-negotiation-tips-abroad",
@@ -2602,7 +2602,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["budget-travel-cashflow-playbook", "travel-finance-automation", "food-safety-street-markets", "language-learning-travel-routine"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["marrakech", "bangkok", "delhi", "ho-chi-minh-city"],
   },
   {
     slug: "hostel-cooking-budget-meals",
@@ -2630,7 +2630,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["food-trail-by-neighborhood", "food-safety-street-markets", "hostel-selection-operator-checklist", "cooking-from-local-markets"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "lisbon", "budapest"],
   },
   {
     slug: "hostel-social-scene-navigation",
@@ -2658,7 +2658,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["hostel-selection-operator-checklist", "social-energy-management-abroad", "meeting-people-solo-travel", "travel-friendship-building"],
-    relatedGuideSlugs: ["bangkok", "lisbon", "budapest"],
+    relatedGuideSlugs: ["bangkok", "budapest", "lisbon", "ho-chi-minh-city"],
   },
   {
     slug: "house-sitting-travel-strategy",
@@ -2686,7 +2686,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["eco-lodge-vs-hostel-comparison", "hostel-selection-operator-checklist", "budget-travel-cashflow-playbook", "slow-travel-momentum-system"],
-    relatedGuideSlugs: ["australia-new-zealand", "waitomo-caves", "bay-of-islands"],
+    relatedGuideSlugs: ["lisbon", "melbourne", "london", "europe"],
   },
   {
     slug: "island-hopping-route-planning",
@@ -2714,7 +2714,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["flexible-booking-strategy", "coastal-route-planning-framework", "first-month-southeast-asia", "rainy-season-travel-advantage"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["phuket", "el-nido", "denpasar", "santorini"],
   },
   {
     slug: "lost-passport-emergency-plan",
@@ -2742,7 +2742,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["border-crossing-document-pack", "anti-theft-city-routines", "travel-insurance-claim-proofing", "first-backpacking-trip-checklist"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "delhi", "bogota", "istanbul"],
   },
   {
     slug: "meeting-people-solo-travel",
@@ -2770,7 +2770,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["social-energy-management-abroad", "solo-female-travel-operations", "hostel-selection-operator-checklist", "travel-friendship-building"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "lisbon", "medellin", "chiang-mai"],
   },
   {
     slug: "mindfulness-meditation-travel",
@@ -2798,7 +2798,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["burnout-signals-on-the-road", "social-energy-management-abroad", "travel-anxiety-coping-strategies", "region-hopping-without-exhaustion"],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["chiang-mai", "denpasar", "rishikesh", "kathmandu"],
   },
   {
     slug: "motorcycle-scooter-rental-abroad",
@@ -2826,7 +2826,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["travel-insurance-claim-proofing", "adventure-day-risk-matrix", "public-transport-mastery", "overland-vs-flying-comparison"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["denpasar", "hanoi", "chiang-mai", "pai"],
   },
   {
     slug: "multi-city-flight-routing",
@@ -2854,7 +2854,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["budget-flight-search-tactics", "flexible-booking-strategy", "train-pass-europe-asia", "island-hopping-route-planning"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "london", "istanbul", "singapore"],
   },
   {
     slug: "noise-canceling-headphones-travel",
@@ -2882,7 +2882,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["portable-power-charging-kit", "sleep-kit-overnight-travel", "night-bus-survival-guide", "long-haul-recovery-protocol"],
-    relatedGuideSlugs: ["bangkok", "lisbon", "budapest"],
+    relatedGuideSlugs: ["bangkok", "tokyo", "london", "denpasar"],
   },
   {
     slug: "off-season-travel-advantages",
@@ -2910,7 +2910,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["rainy-season-travel-advantage", "flexible-booking-strategy", "island-hopping-route-planning", "first-month-southeast-asia"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["denpasar", "phuket", "barcelona", "cusco"],
   },
   {
     slug: "overland-vs-flying-comparison",
@@ -2938,7 +2938,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["overnight-train-productivity", "public-transport-mastery", "night-bus-survival-guide", "budget-flight-search-tactics"],
-    relatedGuideSlugs: ["hanoi", "ho-chi-minh-city", "hue"],
+    relatedGuideSlugs: ["bangkok", "hanoi", "cusco", "europe"],
   },
   {
     slug: "portable-hammock-travel",
@@ -2966,7 +2966,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["quick-dry-towel-accessories", "carry-on-only-long-term", "adventure-day-risk-matrix", "eco-lodge-vs-hostel-comparison"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["denpasar", "el-nido", "koh-phangan", "pai"],
   },
   {
     slug: "portable-power-charging-kit",
@@ -2994,7 +2994,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["travel-workspace-setup-kit", "local-sim-and-esim-strategy", "noise-canceling-headphones-travel", "travel-camera-phone-photography"],
-    relatedGuideSlugs: ["luang-prabang", "southeast-asia", "europe"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "hanoi", "cusco"],
   },
   {
     slug: "quick-dry-towel-accessories",
@@ -3022,7 +3022,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["carry-on-only-long-term", "packing-cubes-real-usage", "portable-hammock-travel", "first-backpacking-trip-checklist"],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "southeast-asia"],
+    relatedGuideSlugs: ["denpasar", "bangkok", "phuket", "gili-islands"],
   },
   {
     slug: "return-visitor-deeper-strategy",
@@ -3050,7 +3050,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["slow-travel-momentum-system", "language-learning-travel-routine", "cultural-site-day-planning", "micro-adventure-in-major-cities"],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "bangkok"],
+    relatedGuideSlugs: ["bangkok", "lisbon", "denpasar", "tokyo"],
   },
   {
     slug: "river-travel-routes-worldwide",
@@ -3078,7 +3078,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["public-transport-mastery", "overnight-train-productivity", "island-hopping-route-planning", "slow-travel-momentum-system"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["luang-prabang", "luxor", "mekong-slow-boat", "southeast-asia"],
   },
   {
     slug: "sleep-kit-overnight-travel",
@@ -3106,7 +3106,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["night-bus-survival-guide", "overnight-train-productivity", "carry-on-only-long-term", "long-haul-recovery-protocol"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "tokyo"],
+    relatedGuideSlugs: ["bangkok", "hanoi", "tokyo", "cusco"],
   },
   {
     slug: "solo-travel-vs-group-tours",
@@ -3134,7 +3134,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["meeting-people-solo-travel", "solo-female-travel-operations", "year-of-backpacking-strategy", "first-backpacking-trip-checklist"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "cusco", "marrakech", "southeast-asia"],
   },
   {
     slug: "staying-healthy-long-term-travel",
@@ -3162,7 +3162,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["food-safety-street-markets", "long-haul-recovery-protocol", "travel-insurance-claim-proofing", "burnout-signals-on-the-road"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "delhi", "denpasar", "ho-chi-minh-city"],
   },
   {
     slug: "sustainable-backpacking-practices",
@@ -3190,7 +3190,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["eco-lodge-vs-hostel-comparison", "ethical-wildlife-encounters", "volunteer-travel-ethics", "budget-travel-cashflow-playbook"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["denpasar", "chiang-mai", "lisbon", "southeast-asia"],
   },
   {
     slug: "teaching-english-abroad-guide",
@@ -3218,7 +3218,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["remote-work-backpacking-rhythm", "budget-travel-cashflow-playbook", "travel-finance-automation", "working-holiday-visa-playbook"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "ho-chi-minh-city", "seoul", "tokyo"],
   },
   {
     slug: "temple-mosque-etiquette-guide",
@@ -3246,7 +3246,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["cultural-site-day-planning", "photography-walk-planning", "festival-travel-planning", "solo-travel-vs-group-tours"],
-    relatedGuideSlugs: ["bangkok", "phuket", "southeast-asia"],
+    relatedGuideSlugs: ["angkor-wat", "istanbul", "kyoto", "delhi"],
   },
   {
     slug: "train-pass-europe-asia",
@@ -3274,7 +3274,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["public-transport-mastery", "overnight-train-productivity", "overland-vs-flying-comparison", "budget-travel-cashflow-playbook"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["tokyo", "paris", "delhi", "europe"],
   },
   {
     slug: "travel-anxiety-coping-strategies",
@@ -3302,7 +3302,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["burnout-signals-on-the-road", "dealing-with-homesickness", "mindfulness-meditation-travel", "social-energy-management-abroad"],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "tokyo"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "lisbon", "denpasar"],
   },
   {
     slug: "travel-camera-phone-photography",
@@ -3330,7 +3330,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["photography-walk-planning", "sunrise-sunset-shooting-workflow", "portable-power-charging-kit", "travel-workspace-setup-kit"],
-    relatedGuideSlugs: ["hanoi", "ho-chi-minh-city", "hue"],
+    relatedGuideSlugs: ["kyoto", "santorini", "marrakech", "denpasar"],
   },
   {
     slug: "travel-daypack-selection",
@@ -3358,7 +3358,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["best-backpack-sizes-compared", "carry-on-only-long-term", "rain-heat-humidity-gear-guide", "packing-cubes-real-usage"],
-    relatedGuideSlugs: ["manila", "indonesia-philippines", "central-america"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "cusco", "lisbon"],
   },
   {
     slug: "travel-first-aid-kit-guide",
@@ -3386,7 +3386,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["food-safety-street-markets", "staying-healthy-long-term-travel", "travel-insurance-claim-proofing", "adventure-day-risk-matrix"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "delhi", "southeast-asia"],
   },
   {
     slug: "travel-friendship-building",
@@ -3414,7 +3414,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["meeting-people-solo-travel", "social-energy-management-abroad", "hostel-social-scene-navigation", "couples-travel-systems"],
-    relatedGuideSlugs: ["denpasar", "indonesia-philippines", "mexico-city"],
+    relatedGuideSlugs: ["chiang-mai", "denpasar", "lisbon", "medellin"],
   },
   {
     slug: "travel-journaling-methods",
@@ -3442,7 +3442,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["slow-travel-momentum-system", "burnout-signals-on-the-road", "language-learning-travel-routine", "cultural-site-day-planning"],
-    relatedGuideSlugs: ["muscat", "middle-east-turkey", "southeast-asia"],
+    relatedGuideSlugs: ["chiang-mai", "lisbon", "kyoto", "cusco"],
   },
   {
     slug: "travel-shoe-system",
@@ -3470,7 +3470,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["carry-on-only-long-term", "rain-heat-humidity-gear-guide", "best-backpack-sizes-compared", "first-backpacking-trip-checklist"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "cusco", "denpasar", "chiang-mai"],
   },
   {
     slug: "travel-sketchbook-habit",
@@ -3498,7 +3498,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["travel-journaling-methods", "photography-walk-planning", "cultural-site-day-planning", "digital-detox-while-traveling"],
-    relatedGuideSlugs: ["bangkok", "lisbon", "budapest"],
+    relatedGuideSlugs: ["florence", "kyoto", "marrakech", "lisbon"],
   },
   {
     slug: "travel-tattoo-culture-guide",
@@ -3526,7 +3526,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["cultural-site-day-planning", "temple-mosque-etiquette-guide", "photography-walk-planning", "first-month-southeast-asia"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "denpasar", "tokyo"],
   },
   {
     slug: "traveling-with-food-allergies",
@@ -3554,7 +3554,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["food-safety-street-markets", "food-trail-by-neighborhood", "travel-first-aid-kit-guide", "travel-insurance-claim-proofing"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "tokyo", "delhi", "ho-chi-minh-city"],
   },
   {
     slug: "tropical-disease-prevention",
@@ -3582,7 +3582,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["food-safety-street-markets", "travel-insurance-claim-proofing", "staying-healthy-long-term-travel", "travel-first-aid-kit-guide"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["bangkok", "nairobi", "delhi", "southeast-asia"],
   },
   {
     slug: "volunteer-travel-ethics",
@@ -3610,7 +3610,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["sustainable-backpacking-practices", "ethical-wildlife-encounters", "social-energy-management-abroad", "cultural-site-day-planning"],
-    relatedGuideSlugs: ["siem-reap", "angkor-wat", "southeast-asia"],
+    relatedGuideSlugs: ["siem-reap", "nairobi", "kathmandu", "antigua-guatemala"],
   },
   {
     slug: "water-filter-bottle-backpackers",
@@ -3638,7 +3638,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["food-safety-street-markets", "staying-healthy-long-term-travel", "travel-first-aid-kit-guide", "budget-travel-cashflow-playbook"],
-    relatedGuideSlugs: ["southeast-asia", "bangkok", "ho-chi-minh-city"],
+    relatedGuideSlugs: ["delhi", "kathmandu", "bangkok", "southeast-asia"],
   },
   {
     slug: "working-holiday-visa-playbook",
@@ -3666,7 +3666,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "2 min read",
     relatedPostSlugs: ["visa-run-risk-reduction", "border-crossing-document-pack", "remote-work-backpacking-rhythm", "budget-travel-cashflow-playbook"],
-    relatedGuideSlugs: ["tokyo", "kyoto", "osaka"],
+    relatedGuideSlugs: ["tokyo", "sydney", "melbourne", "seoul"],
   },
   {
     slug: "finding-travel-companions",
@@ -3752,7 +3752,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "3 min read",
     relatedPostSlugs: ["roammate-vs-couchsurfing", "finding-travel-companions", "solo-female-travel-operations", "why-roammate-perfect-companion"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "lisbon", "denpasar"],
   },
   {
     slug: "roammate-vs-backpackr",
@@ -3782,7 +3782,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "3 min read",
     relatedPostSlugs: ["roammate-vs-couchsurfing", "finding-travel-companions", "meeting-people-solo-travel", "why-roammate-perfect-companion"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "medellin", "chiang-mai"],
   },
   {
     slug: "roammate-vs-facebook-travel-groups",
@@ -3812,7 +3812,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "3 min read",
     relatedPostSlugs: ["roammate-vs-couchsurfing", "finding-travel-companions", "travel-friendship-building", "meeting-people-solo-travel"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "lisbon", "cusco", "denpasar"],
   },
   {
     slug: "best-travel-companion-apps-2026",
@@ -3860,7 +3860,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "5 min read",
     relatedPostSlugs: ["roammate-vs-gaffl", "roammate-vs-travello", "roammate-vs-couchsurfing", "roammate-vs-tourlina"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "denpasar", "lisbon", "medellin"],
   },
   {
     slug: "roammate-vs-meetup",
@@ -3890,7 +3890,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "3 min read",
     relatedPostSlugs: ["roammate-vs-couchsurfing", "finding-travel-companions", "meeting-people-solo-travel", "why-roammate-perfect-companion"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "lisbon", "medellin", "chiang-mai"],
   },
   {
     slug: "roammate-vs-bumble-bff",
@@ -3920,7 +3920,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "3 min read",
     relatedPostSlugs: ["roammate-vs-couchsurfing", "finding-travel-companions", "meeting-people-solo-travel", "travel-friendship-building"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "lisbon", "chiang-mai"],
   },
   {
     slug: "roammate-vs-hostelworld",
@@ -3950,7 +3950,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "3 min read",
     relatedPostSlugs: ["roammate-vs-couchsurfing", "finding-travel-companions", "hostel-social-scene-navigation", "meeting-people-solo-travel"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "prague", "budapest", "ho-chi-minh-city"],
   },
   {
     slug: "roammate-vs-travello",
@@ -3980,7 +3980,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "3 min read",
     relatedPostSlugs: ["roammate-vs-gaffl", "roammate-vs-meetup", "finding-travel-companions", "why-roammate-perfect-companion"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "denpasar", "chiang-mai", "lisbon"],
   },
   {
     slug: "roammate-vs-gaffl",
@@ -4010,7 +4010,7 @@ export const blogPosts: BlogPost[] = [
     author: "roammate editorial",
     readingTime: "3 min read",
     relatedPostSlugs: ["roammate-vs-travello", "roammate-vs-couchsurfing", "finding-travel-companions", "why-roammate-perfect-companion"],
-    relatedGuideSlugs: ["southeast-asia", "europe", "south-america"],
+    relatedGuideSlugs: ["bangkok", "chiang-mai", "cusco", "medellin"],
   },
 ];
 

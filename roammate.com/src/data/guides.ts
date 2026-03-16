@@ -3504,7 +3504,6 @@ const guideToRoutes: Record<string, string[]> = {
   amman: ["middle-east-turkey"],
   muscat: ["middle-east-turkey"],
   aqaba: ["middle-east-turkey"],
-  fethiye: ["middle-east-turkey"],
   "cape-town": ["southern-africa"],
   durban: ["southern-africa"],
   windhoek: ["southern-africa"],

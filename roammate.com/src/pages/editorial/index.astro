@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Editorial — roammate"
+  description="Learn about the team behind roammate's travel guides, tips, and app comparisons. Practical, honest content from experienced independent travelers."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Editorial", "item": "https://roammate.com/editorial/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "roammate editorial",
+      "url": "https://roammate.com/editorial/",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "roammate",
+        "url": "https://roammate.com/"
+      },
+      "description": "The editorial team behind roammate's travel guides, tips, and app comparisons. Content written and reviewed by experienced independent travelers.",
+      "publishingPrinciples": "https://roammate.com/editorial/",
+      "logo": "https://roammate.com/images/rm-full.svg",
+      "sameAs": [
+        "https://www.instagram.com/roammate_travel_app",
+        "https://x.com/roammate"
+      ]
+    })} />
+  </Fragment>
+
+  <section class="ed-hero">
+    <div class="ed-hero-inner">
+      <nav class="ed-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Editorial</span>
+      </nav>
+      <h1 class="ed-hero-title">roammate editorial</h1>
+      <p class="ed-hero-subtitle">Who writes this, and why you should trust it.</p>
+    </div>
+  </section>
+
+  <article class="ed-content">
+    <div class="ed-content-inner">
+
+      <h2>Who we are</h2>
+
+      <p>roammate editorial is the content team behind every guide, tip, and comparison on this site. We are experienced independent travelers — people who have navigated overnight buses in Southeast Asia, negotiated guesthouse rates in East Africa, and figured out visa runs the hard way. Our collective travel spans over fifty countries across six continents.</p>
+
+      <p>We write under the name "roammate editorial" rather than individual bylines because our content is collaborative. Guides are drafted by the person with the most recent on-the-ground experience for that destination, then reviewed by at least one other team member for accuracy and tone.</p>
+
+      <h2>Our editorial mission</h2>
+
+      <p>We publish practical, honest travel advice for solo backpackers and independent travelers. Every piece of content exists to answer a real question someone has before, during, or after a trip. We aim to be the resource we wished we had when we started traveling.</p>
+
+      <h2>Editorial standards</h2>
+
+      <ul>
+        <li><strong>First-hand experience</strong> — we only write about destinations and topics where the author has direct personal experience. No rewritten press releases, no armchair travel writing.</li>
+        <li><strong>No sponsored influence</strong> — our comparisons and recommendations are based on genuine assessment. No company pays for placement or favorable coverage on this site.</li>
+        <li><strong>Regular updates</strong> — travel information changes fast. We revisit and update guides when prices, visa rules, or conditions shift significantly.</li>
+        <li><strong>Transparency</strong> — when we compare roammate to other apps, we state clearly what roammate does and doesn't do. We link to competitors so you can evaluate them yourself.</li>
+      </ul>
+
+      <h2>What we cover</h2>
+
+      <ul>
+        <li><strong>City and country guides</strong> — budget breakdowns, itineraries, and practical logistics for backpacker destinations</li>
+        <li><strong>Solo travel tips</strong> — how to meet people, stay safe, manage money, and navigate common challenges</li>
+        <li><strong>App comparisons</strong> — honest assessments of travel companion apps and platforms, including <a href="/compare/">how roammate compares</a></li>
+        <li><strong>Backpacker routes</strong> — multi-week itineraries with realistic budgets and transport details</li>
+      </ul>
+
+      <p>Questions about our content or editorial process? Reach us at <a href="mailto:support@roammate.com">support@roammate.com</a>.</p>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .ed-hero {
+    background: linear-gradient(135deg, #1a1714 0%, #2a2420 100%);
+    padding: 120px 24px 64px;
+    text-align: center;
+  }
+
+  .ed-hero-inner {
+    max-width: 660px;
+    margin: 0 auto;
+  }
+
+  .ed-breadcrumb {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+    margin-bottom: 40px;
+  }
+
+  .ed-breadcrumb a {
+    color: rgba(245, 240, 232, 0.55);
+    transition: color 0.3s;
+  }
+
+  .ed-breadcrumb a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .ed-breadcrumb span {
+    margin: 0 10px;
+  }
+
+  .ed-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #f5f0e8;
+    margin-bottom: 16px;
+  }
+
+  .ed-hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: rgba(245, 240, 232, 0.65);
+    line-height: 1.6;
+  }
+
+  .ed-content {
+    padding: 56px 24px 80px;
+  }
+
+  .ed-content-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .ed-content-inner h2 {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 40px 0 14px;
+  }
+
+  .ed-content-inner h2:first-child {
+    margin-top: 0;
+  }
+
+  .ed-content-inner p {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 18px;
+  }
+
+  .ed-content-inner ul {
+    margin: 0 0 24px;
+    padding-left: 20px;
+  }
+
+  .ed-content-inner li {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 10px;
+  }
+
+  .ed-content-inner a {
+    color: var(--color-terracotta);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+
+  .ed-content-inner a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  @media (max-width: 600px) {
+    .ed-hero {
+      padding: 100px 20px 48px;
+    }
+
+    .ed-content {
+      padding: 40px 20px 60px;
+    }
+  }
+</style>

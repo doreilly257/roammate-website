@@ -27,7 +27,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       "@type": "WebPage",
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": [".ftc-title", ".ftc-subtitle"]
+        "cssSelector": [".ftc-title", ".ftc-subtitle", ".faq-section"]
       },
       "url": "https://roammate.com/find-travel-companion/"
     })} />
@@ -37,26 +37,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the best app to find a travel companion?",
+          "name": "How do I find a travel companion with roammate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "roammate is purpose-built for finding travel companions. It matches travelers by style, budget, and destination — not just proximity. Free on iOS."
+            "text": "Download roammate free on iOS, build a travel profile with your style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before deciding to meet up."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I find someone to travel with?",
+          "name": "Is roammate free to use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Download roammate, build a travel profile with your style and budget, and browse compatible travelers heading to your destination. Chat in-app before meeting."
+            "text": "Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees. All features including messaging and matching are free."
           }
         },
         {
           "@type": "Question",
-          "name": "Is it safe to find a travel companion through an app?",
+          "name": "How does roammate match travelers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "roammate uses verified profiles and in-app messaging before any meetup. Meet in public for a first encounter, tell someone your plans, and trust your instincts."
+            "text": "roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that are genuinely compatible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate uses verified profiles, in-app messaging, and a report/block system. The platform recommends meeting in public for initial meetups. Standard safety practices apply — trust your instincts and let someone know your plans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I find a female-only travel companion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. roammate lets you filter potential companions by gender preference. Many solo female travelers use roammate specifically to find other women to travel with for added comfort and safety."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What countries does roammate work in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate works worldwide. You can set any destination and find travelers heading there. The app is especially popular in Southeast Asia, Europe, and South America — top solo travel regions."
           }
         }
       ]
@@ -182,6 +206,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section ftc-faq">
+    <div class="ftc-faq-inner">
+      <div class="section-label">Common Questions</div>
+      <h2 class="ftc-section-heading">Finding a travel companion — <em>FAQ</em></h2>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>How do I find a travel companion with roammate?</h3></summary>
+          <p class="faq-answer">Download roammate free on iOS, build a travel profile with your style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before deciding to meet up.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>Is roammate free to use?</h3></summary>
+          <p class="faq-answer">Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees. All features including messaging and matching are free.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>How does roammate match travelers?</h3></summary>
+          <p class="faq-answer">roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that are genuinely compatible.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>Is roammate safe?</h3></summary>
+          <p class="faq-answer">roammate uses verified profiles, in-app messaging, and a report/block system. The platform recommends meeting in public for initial meetups. Standard safety practices apply — trust your instincts and let someone know your plans.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>Can I find a female-only travel companion?</h3></summary>
+          <p class="faq-answer">Yes. roammate lets you filter potential companions by gender preference. Many solo female travelers use roammate specifically to find other women to travel with for added comfort and safety.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>What countries does roammate work in?</h3></summary>
+          <p class="faq-answer">roammate works worldwide. You can set any destination and find travelers heading there. The app is especially popular in Southeast Asia, Europe, and South America — top solo travel regions.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -541,15 +598,80 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-terracotta-light);
   }
 
+  .ftc-faq {
+    padding: 60px 40px 80px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .ftc-faq-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+  }
+
+  .faq-question {
+    font-family: var(--font-display);
+    cursor: pointer;
+    padding: 24px 40px 24px 0;
+    list-style: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-question h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--color-terracotta);
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .faq-question:hover h3 { color: var(--color-terracotta); }
+
+  .faq-answer {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted, rgba(245, 241, 235, 0.65));
+    font-weight: 300;
+    padding: 0 40px 24px 0;
+  }
+
   @media (max-width: 1024px) {
     .ftc-hero { padding: 140px 24px 80px; }
-    .ftc-why, .ftc-how, .ftc-cta, .ftc-related, .ftc-compare { padding-left: 24px; padding-right: 24px; }
+    .ftc-why, .ftc-how, .ftc-cta, .ftc-related, .ftc-compare, .ftc-faq { padding-left: 24px; padding-right: 24px; }
     .ftc-cards { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 640px) {
     .ftc-hero { padding: 120px 20px 60px; }
-    .ftc-why, .ftc-how, .ftc-cta, .ftc-related { padding-left: 20px; padding-right: 20px; }
+    .ftc-why, .ftc-how, .ftc-cta, .ftc-related, .ftc-faq { padding-left: 20px; padding-right: 20px; }
     .ftc-compare { padding-left: 20px; padding-right: 20px; }
     .ftc-step { grid-template-columns: 44px 1fr; gap: 16px; }
     .ftc-step-num { font-size: 36px; }

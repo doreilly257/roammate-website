@@ -56,11 +56,20 @@ const base = import.meta.env.BASE_URL;
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hiw-title", ".hiw-subtitle", ".faq-section"]
+      },
+      "url": "https://roammate.com/how-it-works/"
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How does roammate match travelers?",
+          "name": "How does roammate's matching work?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that pass all three compatibility filters."
@@ -68,26 +77,42 @@ const base = import.meta.env.BASE_URL;
         },
         {
           "@type": "Question",
-          "name": "Is roammate free to use?",
+          "name": "Do I need to pay to use roammate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. roammate is free to download and free to use — no premium tier, no ads, no subscription. The app is available on iOS."
+            "text": "No. roammate is completely free — no premium tier, no ads, no subscription. All features including messaging and matching are available at no cost."
           }
         },
         {
           "@type": "Question",
-          "name": "Do I need to be at my destination to use roammate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. roammate works both for pre-trip planning and real-time connections. You can browse travelers already at your destination or arrange to meet before you arrive."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does roammate verify profiles?",
+          "name": "How are profiles verified?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Every roammate user goes through identity verification before connecting with others. Verified profiles display a badge so you know who you're talking to before agreeing to meet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What travel styles can I filter by?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate supports multiple travel styles including adventure, cultural, slow travel, and food-focused. You can also filter by daily budget range and destination to find the most compatible companions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I message someone on roammate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once you find a compatible traveler, you can message them directly through the app. All communication stays in-app until you're comfortable sharing personal contact details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my travel dates change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can update your travel profile at any time — including dates, destinations, and preferences. Your matches will automatically refresh to reflect your new plans."
           }
         }
       ]
@@ -188,6 +213,40 @@ const base = import.meta.env.BASE_URL;
           <p>roammate is free to download and free to use — no premium tier that gatekeeps matches, no ads interrupting your browsing, no subscription to cancel. The app makes money when travelers have great experiences and tell their friends.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section hiw-faq">
+    <div class="hiw-faq-inner">
+      <div class="section-label">Common Questions</div>
+      <h2 class="hiw-features-title">How it works — <em>FAQ</em></h2>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>How does roammate's matching work?</h3></summary>
+          <p class="faq-answer">roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that pass all three compatibility filters.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>Do I need to pay to use roammate?</h3></summary>
+          <p class="faq-answer">No. roammate is completely free — no premium tier, no ads, no subscription. All features including messaging and matching are available at no cost.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>How are profiles verified?</h3></summary>
+          <p class="faq-answer">Every roammate user goes through identity verification before connecting with others. Verified profiles display a badge so you know who you're talking to before agreeing to meet.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>What travel styles can I filter by?</h3></summary>
+          <p class="faq-answer">roammate supports multiple travel styles including adventure, cultural, slow travel, and food-focused. You can also filter by daily budget range and destination to find the most compatible companions.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>How do I message someone on roammate?</h3></summary>
+          <p class="faq-answer">Once you find a compatible traveler, you can message them directly through the app. All communication stays in-app until you're comfortable sharing personal contact details.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>What happens if my travel dates change?</h3></summary>
+          <p class="faq-answer">You can update your travel profile at any time — including dates, destinations, and preferences. Your matches will automatically refresh to reflect your new plans.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -395,6 +454,71 @@ const base = import.meta.env.BASE_URL;
     color: var(--color-cream-muted);
   }
 
+  /* FAQ */
+  .hiw-faq {
+    padding: 60px 40px 80px;
+  }
+
+  .hiw-faq-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+  }
+
+  .faq-question {
+    font-family: var(--font-display);
+    cursor: pointer;
+    padding: 24px 40px 24px 0;
+    list-style: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-question h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--color-terracotta);
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .faq-question:hover h3 { color: var(--color-terracotta); }
+
+  .faq-answer {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    padding: 0 40px 24px 0;
+  }
+
   /* CTA */
   .hiw-cta {
     padding: 100px 40px 120px;
@@ -456,6 +580,7 @@ const base = import.meta.env.BASE_URL;
     .hiw-hero { padding: 140px 24px 60px; }
     .hiw-steps { padding: 0 24px 80px; }
     .hiw-features { padding: 60px 24px 80px; }
+    .hiw-faq { padding: 60px 24px 80px; }
     .hiw-cta { padding: 80px 24px 100px; }
     .hiw-grid { grid-template-columns: repeat(2, 1fr); }
   }
@@ -464,6 +589,7 @@ const base = import.meta.env.BASE_URL;
     .hiw-hero { padding: 120px 20px 48px; }
     .hiw-steps { padding: 0 20px 60px; }
     .hiw-features { padding: 48px 20px 60px; }
+    .hiw-faq { padding: 48px 20px 60px; }
     .hiw-cta { padding: 60px 20px 80px; }
     .hiw-grid { grid-template-columns: 1fr; }
     .hiw-step { grid-template-columns: 56px 1fr; gap: 20px; }
