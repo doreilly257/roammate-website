@@ -1,5 +1,6 @@
 ---
 import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+import SeasonCalendar from '../../components/SeasonCalendar.astro';
 
 const routeOverview = [
   { country: 'Colombia & Ecuador', flag: '🇨🇴🇪🇨', weeks: '1–6', color: '#c4562a', stops: ['Cartagena', 'Medellín', 'Bogotá', 'Salento', 'Quito', 'Galápagos (optional)'] },
@@ -223,6 +224,20 @@ const practicalInfo = [
   featuredGuides={['buenos-aires', 'rio-de-janeiro', 'lima', 'santiago', 'sao-paulo', 'machu-picchu', 'salar-de-uyuni', 'iguazu-falls', 'perito-moreno', 'galapagos', 'torres-del-paine', 'sacred-valley', 'cartagena', 'medellin', 'bogota', 'salento', 'cusco', 'quito', 'la-paz', 'lake-titicaca', 'atacama-desert', 'valparaiso', 'mendoza', 'el-calafate', 'cocora-valley']}
   accentColor="#c4562a"
 >
+  <SeasonCalendar slot="season-calendar" months={[
+    { name: 'Jan', rating: 'avoid', note: 'Wet season in many areas — heavy rain in the highlands' },
+    { name: 'Feb', rating: 'avoid', note: 'Inca Trail closes for maintenance, continued rains' },
+    { name: 'Mar', rating: 'good', note: 'Rains easing — shoulder season, fewer crowds' },
+    { name: 'Apr', rating: 'best', note: 'Dry season begins in the highlands — great trekking' },
+    { name: 'May', rating: 'best', note: 'Excellent weather across Peru and Bolivia highlands' },
+    { name: 'Jun', rating: 'best', note: 'Peak dry season — Inti Raymi festival in Cusco' },
+    { name: 'Jul', rating: 'best', note: 'Dry and clear — ideal for Patagonia (winter) and Andes' },
+    { name: 'Aug', rating: 'best', note: 'Buenos Aires Tango Festival, dry highlands' },
+    { name: 'Sep', rating: 'best', note: 'Dry season continues — wildflowers in Atacama' },
+    { name: 'Oct', rating: 'best', note: 'Spring in the south, last dry month in the highlands' },
+    { name: 'Nov', rating: 'good', note: 'Patagonia summer begins, rains returning to Andes' },
+    { name: 'Dec', rating: 'avoid', note: 'Wet season in Colombia and highlands — Uyuni mirror effect' },
+  ]} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([
     {
       "@context": "https://schema.org",

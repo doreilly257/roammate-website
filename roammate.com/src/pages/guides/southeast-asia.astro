@@ -1,5 +1,6 @@
 ---
 import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+import SeasonCalendar from '../../components/SeasonCalendar.astro';
 
 const routeOverview = [
   { country: 'Thailand', flag: '🇹🇭', weeks: '1–5', color: '#e8734a', stops: ['Bangkok', 'Chiang Mai', 'Pai', 'Koh Phangan', 'Koh Tao', 'Krabi'] },
@@ -237,6 +238,20 @@ const practicalInfo = [
   featuredGuides={['bangkok', 'chiang-mai', 'chiang-mai-temples', 'chiang-rai', 'pai', 'koh-phangan', 'full-moon-party', 'koh-tao', 'krabi', 'siem-reap', 'angkor-wat', 'phnom-penh', 'kampot', 'koh-rong', 'vientiane', 'vang-vieng', 'river-tubing', 'luang-prabang', 'kuang-si-falls', 'mekong-slow-boat', 'four-thousand-islands']}
   accentColor="#2e6d79"
 >
+  <SeasonCalendar slot="season-calendar" months={[
+    { name: 'Jan', rating: 'best', note: 'Cool and dry — peak season across all three countries' },
+    { name: 'Feb', rating: 'best', note: 'Excellent weather, still dry season' },
+    { name: 'Mar', rating: 'best', note: 'Last month of dry season, temperatures rising' },
+    { name: 'Apr', rating: 'good', note: 'Shoulder season — getting hotter, occasional showers' },
+    { name: 'May', rating: 'avoid', note: 'Monsoon begins — daily downpours, some islands close' },
+    { name: 'Jun', rating: 'avoid', note: 'Full monsoon — heavy rain, humid, fewer travellers' },
+    { name: 'Jul', rating: 'avoid', note: 'Rainy season continues — cheaper but wet' },
+    { name: 'Aug', rating: 'avoid', note: 'Heaviest rainfall in many areas' },
+    { name: 'Sep', rating: 'avoid', note: 'Tail end of monsoon — flooding possible' },
+    { name: 'Oct', rating: 'good', note: 'Rains easing, shoulder season begins' },
+    { name: 'Nov', rating: 'best', note: 'Dry season starts — great weather returns' },
+    { name: 'Dec', rating: 'best', note: 'Peak season — cool, dry, and busy' },
+  ]} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([
     {
       "@context": "https://schema.org",

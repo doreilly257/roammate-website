@@ -1,0 +1,144 @@
+---
+interface Props {
+  months: Array<{ name: string; rating: 'best' | 'good' | 'avoid'; note?: string }>;
+  title?: string;
+}
+
+const { months, title = 'Best Time to Visit' } = Astro.props;
+---
+
+<div class="season-calendar">
+  <h3 class="season-calendar-title">{title}</h3>
+  <div class="season-calendar-grid">
+    {months.map((m) => (
+      <button
+        class={`season-pill season-pill--${m.rating}`}
+        data-note={m.note || ''}
+        type="button"
+      >
+        {m.name}
+      </button>
+    ))}
+  </div>
+  <div class="season-note" aria-live="polite"></div>
+  <div class="season-legend">
+    <span class="season-legend-item"><span class="season-dot season-dot--best"></span> Best</span>
+    <span class="season-legend-item"><span class="season-dot season-dot--good"></span> Good</span>
+    <span class="season-legend-item"><span class="season-dot season-dot--avoid"></span> Avoid</span>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.season-calendar').forEach((cal) => {
+    const note = cal.querySelector('.season-note') as HTMLElement;
+    cal.querySelectorAll('.season-pill').forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const text = (pill as HTMLElement).dataset.note || '';
+        note.textContent = text;
+      });
+    });
+  });
+</script>
+
+<style>
+  .season-calendar {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    text-align: center;
+  }
+
+  .season-calendar-title {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-cream-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .season-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .season-pill {
+    all: unset;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 0;
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 0.15s, box-shadow 0.15s;
+    color: #1a1714;
+  }
+
+  .season-pill:hover,
+  .season-pill:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .season-pill--best {
+    background: #4ade80;
+  }
+
+  .season-pill--good {
+    background: #fbbf24;
+  }
+
+  .season-pill--avoid {
+    background: rgba(239, 68, 68, 0.4);
+    color: rgba(245, 240, 232, 0.7);
+  }
+
+  .season-note {
+    min-height: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .season-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .season-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--color-text-muted);
+    font-weight: 400;
+  }
+
+  .season-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .season-dot--best { background: #4ade80; }
+  .season-dot--good { background: #fbbf24; }
+  .season-dot--avoid { background: rgba(239, 68, 68, 0.4); }
+
+  @media (max-width: 640px) {
+    .season-calendar {
+      padding: 24px 20px;
+    }
+
+    .season-calendar-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+</style>
