@@ -70,6 +70,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
 <BaseLayout title={title} description={description} ogImage={ogImage}>
   <Fragment slot="head">
     {ogImage && <link rel="preload" as="image" type="image/webp" href={ogImage}>}
+    <slot name="head" />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "TouristTrip",
@@ -99,8 +100,8 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
   <section class="route-hero" style={`--accent: ${accentColor};`}>
     <div class="route-hero-bg">
       <div class="montage-grid">
-        {heroImages.map((img, i) => (
-          <img src={img.src} alt={img.alt} width="900" height="600" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : 'low'}>
+        {heroImages.map((img) => (
+          <img src={img.src} alt={img.alt} width="900" height="600" fetchpriority="high">
         ))}
       </div>
       <div class="route-hero-overlay"></div>
@@ -258,7 +259,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
       {practicalInfo.map((info, i) => (
         <div class={`route-practical-card reveal reveal-delay-${(i % 4) + 1}`}>
           <span class="route-practical-icon">{info.icon}</span>
-          <h4 class="route-practical-title">{info.title}</h4>
+          <h3 class="route-practical-title">{info.title}</h3>
           <ul class="route-practical-list">
             {info.items.map((item) => (
               <li>{item}</li>

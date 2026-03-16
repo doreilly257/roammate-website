@@ -233,7 +233,7 @@ const renderInlineLinks = (text: string) => {
                 </div>
                 {section.image && (
                   <figure class="blog-post-section-media">
-                    <img src={section.image} alt={section.imageAlt || `Illustration for ${section.heading}`} loading="lazy" width="1200" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px" />
+                    <img src={section.image} alt={section.imageAlt || `Illustration for ${section.heading}`} loading="lazy" decoding="async" width="1200" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px" />
                   </figure>
                 )}
               </section>
@@ -353,7 +353,7 @@ const renderInlineLinks = (text: string) => {
               <div class="blog-related-posts-grid">
                 {relatedPosts.map((post) => (
                   <a href={`/blog/${post.slug}/`} class="blog-related-post-card">
-                    <img src={post.heroImage} alt={post.title} loading="lazy" width="1200" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px" />
+                    <img src={post.heroImage} alt={post.title} loading="lazy" decoding="async" width="1200" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px" />
                     <div>
                       {post.category && <p class="blog-related-post-category">{post.category}</p>}
                       <h3>{post.title}</h3>

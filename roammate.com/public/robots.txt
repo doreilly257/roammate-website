@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /ai.txt
+Allow: /.well-known/ai.txt
 Disallow: /deletedata/
 
 User-agent: GPTBot
@@ -18,3 +20,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://roammate.com/sitemap.xml
+RSS: https://roammate.com/rss.xml

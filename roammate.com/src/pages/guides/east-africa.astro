@@ -222,4 +222,27 @@ const practicalInfo = [
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
   featuredGuides={['nairobi', 'giraffe-centre', 'maasai-mara', 'great-migration', 'lake-nakuru', 'diani-beach', 'mombasa', 'lamu', 'arusha', 'serengeti', 'ngorongoro', 'mount-kilimanjaro', 'zanzibar', 'stone-town', 'dar-es-salaam', 'kampala', 'jinja', 'nile-rafting', 'entebbe', 'bwindi', 'gorilla-trekking', 'queen-elizabeth-np', 'lake-bunyonyi', 'victoria-falls']}
   accentColor="#c9a84c"
-/>
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Great Migration",
+      "description": "Annual migration of over 1.5 million wildebeest, zebras, and gazelles between Tanzania's Serengeti and Kenya's Masai Mara. The dramatic Mara River crossings, where herds brave crocodile-filled waters, peak between July and October.",
+      "location": {
+        "@type": "Place",
+        "name": "Masai Mara National Reserve & Serengeti National Park",
+        "address": { "@type": "PostalAddress", "addressCountry": "KE" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1Y",
+        "startDate": "2026-07-01",
+        "endDate": "2026-10-31",
+        "scheduleTimezone": "Africa/Nairobi"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    }
+  ])} />
+</BackpackerRouteLayout>

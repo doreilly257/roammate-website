@@ -222,4 +222,51 @@ const practicalInfo = [
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
   featuredGuides={['buenos-aires', 'rio-de-janeiro', 'lima', 'santiago', 'sao-paulo', 'machu-picchu', 'salar-de-uyuni', 'iguazu-falls', 'perito-moreno', 'galapagos', 'torres-del-paine', 'sacred-valley', 'cartagena', 'medellin', 'bogota', 'salento', 'cusco', 'quito', 'la-paz', 'lake-titicaca', 'atacama-desert', 'valparaiso', 'mendoza', 'el-calafate', 'cocora-valley']}
   accentColor="#c4562a"
-/>
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Inti Raymi — Festival of the Sun",
+      "description": "Ancient Inca sun festival held annually on June 24 in Cusco, Peru. A grand ceremonial re-enactment at Sacsayhuaman fortress with thousands of performers in traditional dress, honouring the winter solstice and the Inca sun god Inti.",
+      "startDate": "2026-06-24",
+      "endDate": "2026-06-24",
+      "location": {
+        "@type": "Place",
+        "name": "Sacsayhuaman, Cusco",
+        "address": { "@type": "PostalAddress", "addressLocality": "Cusco", "addressRegion": "Cusco", "addressCountry": "PE" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1Y",
+        "startDate": "2026-06-24",
+        "endDate": "2026-06-24",
+        "scheduleTimezone": "America/Lima"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Buenos Aires Tango Festival and World Cup",
+      "description": "The world's largest tango event, held annually in August in Buenos Aires, Argentina. Two weeks of free milongas, classes, concerts, and the World Tango Championship in iconic venues across the city.",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-23",
+      "location": {
+        "@type": "Place",
+        "name": "Buenos Aires",
+        "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1Y",
+        "startDate": "2026-08-10",
+        "endDate": "2026-08-23",
+        "scheduleTimezone": "America/Argentina/Buenos_Aires"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    }
+  ])} />
+</BackpackerRouteLayout>

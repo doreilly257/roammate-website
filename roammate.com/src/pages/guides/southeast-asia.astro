@@ -236,4 +236,48 @@ const practicalInfo = [
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
   featuredGuides={['bangkok', 'chiang-mai', 'chiang-mai-temples', 'chiang-rai', 'pai', 'koh-phangan', 'full-moon-party', 'koh-tao', 'krabi', 'siem-reap', 'angkor-wat', 'phnom-penh', 'kampot', 'koh-rong', 'vientiane', 'vang-vieng', 'river-tubing', 'luang-prabang', 'kuang-si-falls', 'mekong-slow-boat', 'four-thousand-islands']}
   accentColor="#2e6d79"
-/>
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Full Moon Party",
+      "description": "Monthly all-night beach party on Koh Phangan, Thailand, held on the night of each full moon. One of the world's most famous backpacker events with fire shows, body paint, and DJs on Hat Rin Beach.",
+      "location": {
+        "@type": "Place",
+        "name": "Hat Rin Beach, Koh Phangan",
+        "address": { "@type": "PostalAddress", "addressLocality": "Koh Phangan", "addressRegion": "Surat Thani", "addressCountry": "TH" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1M",
+        "scheduleTimezone": "Asia/Bangkok"
+      },
+      "organizer": { "@type": "Organization", "name": "Koh Phangan local venues" },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Songkran Water Festival",
+      "description": "Thai New Year water festival celebrated nationwide every April 13-15. The world's largest water fight with street parties, temple ceremonies, and traditional merit-making across Thailand.",
+      "startDate": "2026-04-13",
+      "endDate": "2026-04-15",
+      "location": {
+        "@type": "Place",
+        "name": "Thailand (nationwide)",
+        "address": { "@type": "PostalAddress", "addressCountry": "TH" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1Y",
+        "startDate": "2026-04-13",
+        "endDate": "2026-04-15",
+        "scheduleTimezone": "Asia/Bangkok"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    }
+  ])} />
+</BackpackerRouteLayout>

@@ -3679,7 +3679,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         heading: "Where to Look: Platforms, Events, and On-the-Ground Tactics",
-        content: "Roammate is the most purpose-built option for finding travel companions — it matches by travel style, budget range, and destination overlap rather than just proximity, which filters out the mismatches before you ever have a conversation. Beyond dedicated apps, Couchsurfing Hangouts (free tier, no hosting required) surfaces locals and travelers available to meet same-day in cities like Tbilisi, Medellin, and Hanoi, where the communities are active and meetups happen weekly. Facebook groups work surprisingly well for niche searches: \"Backpackers in Southeast Asia\", \"Solo Travel Thailand\", and \"Digital Nomads Chiang Mai\" all have active members posting daily about finding travel buddies for specific routes — the Ha Giang Loop, the Mekong slow boat, or the overland run from Bangkok to Kuala Lumpur. For in-person discovery, free walking tours self-select for curious, open-minded travelers. In Prague, Lisbon, and Bogota, you spend two to three hours alongside the same dozen people — enough time to identify who you click with before the tour ends. Cooking classes, surf lessons, and dive courses create the same dynamic with even stronger bonds because you are learning together. Book group activities through hostels with social ratings above 8.5 on Hostelworld in cities like Chiang Mai, Cusco, and Istanbul; these places actively engineer the conditions for companion-finding.",
+        content: "roammate is the most purpose-built option for finding travel companions — it matches by travel style, budget range, and destination overlap rather than just proximity, which filters out the mismatches before you ever have a conversation. Beyond dedicated apps, Couchsurfing Hangouts (free tier, no hosting required) surfaces locals and travelers available to meet same-day in cities like Tbilisi, Medellin, and Hanoi, where the communities are active and meetups happen weekly. Facebook groups work surprisingly well for niche searches: \"Backpackers in Southeast Asia\", \"Solo Travel Thailand\", and \"Digital Nomads Chiang Mai\" all have active members posting daily about finding travel buddies for specific routes — the Ha Giang Loop, the Mekong slow boat, or the overland run from Bangkok to Kuala Lumpur. For in-person discovery, free walking tours self-select for curious, open-minded travelers. In Prague, Lisbon, and Bogota, you spend two to three hours alongside the same dozen people — enough time to identify who you click with before the tour ends. Cooking classes, surf lessons, and dive courses create the same dynamic with even stronger bonds because you are learning together. Book group activities through hostels with social ratings above 8.5 on Hostelworld in cities like Chiang Mai, Cusco, and Istanbul; these places actively engineer the conditions for companion-finding.",
         image: "/images/blog/finding-travel-companions-inline-1.webp",
       },
       {
@@ -3698,21 +3698,21 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "why-roammate-perfect-companion",
-    title: "Maximize Your Travel Experience: Why Roammate Is Your Perfect Companion",
-    description: "How Roammate connects travelers by style, budget, and destination match — and why traveling with the right companion unlocks experiences that solo travel simply cannot.",
+    title: "Why roammate Is Your Perfect Travel Companion",
+    description: "How roammate connects travelers by style, budget, and destination match — and why traveling with the right companion unlocks experiences that solo travel simply cannot.",
     category: "Social",
     readMinutes: 3,
     heroImage: "/images/blog/why-roammate-perfect-companion-hero.webp",
-    intro: "Traveling solo teaches you self-reliance. Traveling with the right person teaches you something harder to articulate — that the best experiences are not just had, they are shared. The problem has never been whether to travel with someone. It has been finding someone whose pace, budget, and interests actually align with yours. Roammate exists to solve that specific problem: connecting travelers who are genuinely compatible, not just geographically close at the same time.",
+    intro: "Traveling solo teaches you self-reliance. Traveling with the right person teaches you something harder to articulate — that the best experiences are not just had, they are shared. The problem has never been whether to travel with someone. It has been finding someone whose pace, budget, and interests actually align with yours. roammate exists to solve that specific problem: connecting travelers who are genuinely compatible, not just geographically close at the same time.",
     sections: [
       {
         heading: "Matching by Travel Style, Not Just Destination",
-        content: "Most approaches to finding travel companions filter by destination and dates, then leave you to figure out compatibility from a brief message exchange. Roammate goes deeper: travel style profiles (adventure, cultural immersion, slow travel, food-focused, nightlife) are paired with budget brackets and itinerary overlap before you ever start a conversation. This matters more than it sounds. Two travelers both heading to Bali in the same week are not automatically compatible — one might be planning a week of surf lessons in Canggu and cooking classes in Ubud, while the other wants to party in Seminyak and day-trip to Nusa Lembongan. The Roammate match surfaces the surfer heading to Koh Tao for a PADI course alongside someone else doing the same thing, or connects two travelers independently planning the Ha Giang Loop who can now split the motorbike rental and navigate the mountain passes together. For cultural travel, being matched with someone who shares the same appetite for slow exploration — two hours at a single museum, lunch at a market stall, an afternoon in a tea house — changes Hanoi, Istanbul, or Cusco from a checklist into an experience. The platform's verification layer adds a layer of safety that matters particularly for solo female travelers heading to less-traveled destinations: knowing your potential companion has verified their identity and travel history before you agree to anything.",
+        content: "Most approaches to finding travel companions filter by destination and dates, then leave you to figure out compatibility from a brief message exchange. Roammate goes deeper: travel style profiles (adventure, cultural immersion, slow travel, food-focused, nightlife) are paired with budget brackets and itinerary overlap before you ever start a conversation. This matters more than it sounds. Two travelers both heading to Bali in the same week are not automatically compatible — one might be planning a week of surf lessons in Canggu and cooking classes in Ubud, while the other wants to party in Seminyak and day-trip to Nusa Lembongan. The roammate match surfaces the surfer heading to Koh Tao for a PADI course alongside someone else doing the same thing, or connects two travelers independently planning the Ha Giang Loop who can now split the motorbike rental and navigate the mountain passes together. For cultural travel, being matched with someone who shares the same appetite for slow exploration — two hours at a single museum, lunch at a market stall, an afternoon in a tea house — changes Hanoi, Istanbul, or Cusco from a checklist into an experience. The platform's verification layer adds a layer of safety that matters particularly for solo female travelers heading to less-traveled destinations: knowing your potential companion has verified their identity and travel history before you agree to anything.",
         image: "/images/blog/why-roammate-perfect-companion-inline-1.webp",
       },
       {
         heading: "The Practical Case: Costs, Safety, and Richer Experiences",
-        content: "The financial math alone makes Roammate worth using. A private room in Bangkok costs $35-55 per night; a twin or double split between two matched companions drops that to $18-28 each — a saving of $120-180 over a week. The same logic applies to scooter rentals in Chiang Mai ($8/day split vs $12 solo), boat charters on the Mekong, and guided treks in the Himalayas or around Cusco where private guide fees divide neatly in half. Beyond cost, the right travel companion unlocks access that solo travel simply cannot. A matched traveler who has been in Medellin for two weeks knows which neighborhoods to avoid at night, which local guide does the best coffee farm tour, and which panadería opens at 6am with fresh arepas. A hiking companion for Trolltunga or Mount Rinjani is not optional — it is a genuine safety requirement on remote trails where mobile coverage disappears entirely. For travelers who crave depth over breadth, the difference between an evening spent eating alone and an evening spent cooking street food with someone equally curious about how dishes are made, what the vendor's story is, and which market has the freshest ingredients is the difference between a good trip and a transformative one. Roammate does not promise to manufacture chemistry — it removes the structural barriers that prevent compatible travelers from finding each other in the first place.",
+        content: "The financial math alone makes roammate worth using. A private room in Bangkok costs $35-55 per night; a twin or double split between two matched companions drops that to $18-28 each — a saving of $120-180 over a week. The same logic applies to scooter rentals in Chiang Mai ($8/day split vs $12 solo), boat charters on the Mekong, and guided treks in the Himalayas or around Cusco where private guide fees divide neatly in half. Beyond cost, the right travel companion unlocks access that solo travel simply cannot. A matched traveler who has been in Medellin for two weeks knows which neighborhoods to avoid at night, which local guide does the best coffee farm tour, and which panadería opens at 6am with fresh arepas. A hiking companion for Trolltunga or Mount Rinjani is not optional — it is a genuine safety requirement on remote trails where mobile coverage disappears entirely. For travelers who crave depth over breadth, the difference between an evening spent eating alone and an evening spent cooking street food with someone equally curious about how dishes are made, what the vendor's story is, and which market has the freshest ingredients is the difference between a good trip and a transformative one. roammate does not promise to manufacture chemistry — it removes the structural barriers that prevent compatible travelers from finding each other in the first place.",
         image: "/images/blog/why-roammate-perfect-companion-inline-2.webp",
       },
     ],
@@ -3786,7 +3786,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "roammate-vs-facebook-travel-groups",
-    title: "roammate vs Facebook Travel Groups: Why a Dedicated App Beats a General Platform",
+    title: "roammate vs Facebook Travel Groups: App vs Community",
     description: "Facebook travel groups are the default way to find travel companions, but a purpose-built app like roammate solves problems Facebook can't. Here's the honest comparison.",
     category: "Comparison",
     readMinutes: 3,
@@ -3816,7 +3816,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "best-travel-companion-apps-2026",
-    title: "Best Travel Companion Apps in 2026: A Honest Comparison",
+    title: "Best Travel Companion Apps in 2026: An Honest Comparison",
     description: "A fair comparison of the best travel companion apps in 2026 — roammate, Tourlina, Backpackr, Couchsurfing Hangouts, Facebook Groups, and Hostelworld. What each does, who it's for, and what it costs.",
     category: "Guide",
     readMinutes: 5,
@@ -3894,7 +3894,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "roammate-vs-bumble-bff",
-    title: "roammate vs Bumble BFF: Finding a Travel Companion vs Making Local Friends",
+    title: "roammate vs Bumble BFF: Travel Companion App vs Local Friend App",
     description: "Bumble BFF matches you with local friends. roammate matches travelers by style, budget, and destination. Here's what each app actually does for travelers.",
     category: "Comparison",
     readMinutes: 3,
