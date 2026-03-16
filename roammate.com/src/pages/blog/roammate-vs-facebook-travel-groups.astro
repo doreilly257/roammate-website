@@ -2,57 +2,12 @@
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 import { allBlogPosts } from '../../data/blog';
 import { allGuides } from '../../data/guides';
+import { resolveRelatedContent } from '../../lib/blog-utils';
 
-const post = {
-  slug: "roammate-vs-facebook-travel-groups",
-  title: "roammate vs Facebook Travel Groups: App vs Community",
-  description: "Facebook travel groups are the default way to find travel companions, but a purpose-built app like roammate solves problems Facebook can't. Here's the honest comparison.",
-  category: "Comparison",
-  readMinutes: 3,
-  heroImage: "/images/blog/social-energy-management-abroad-hero.webp",
-  intro: "Facebook travel groups like 'Girls LOVE Travel,' 'Backpacking Southeast Asia,' and dozens of destination-specific groups have been the default way to find travel companions for years. They work — sort of. You post your dates and destination, hope compatible people respond, and figure out the rest through DMs. roammate was built specifically because that process is inefficient, privacy-invasive, and unreliable. But Facebook groups have genuine strengths too. This comparison is honest about both.",
-  sections: [
-    {
-      heading: "Where Facebook Groups Fall Short",
-      content: "Facebook groups work on a broadcast model: you post your trip details to hundreds or thousands of strangers and wait for responses. The problem is threefold. First, there's no compatibility filtering. Anyone can respond to your post, and you have no way to know if the enthusiastic reply comes from someone who travels at your pace and budget until you've invested significant time in conversation. Second, privacy is a real issue. To connect with someone on Facebook, you're sharing your full social profile — your friends, your photos, your workplace, your relationship status — with a stranger you've never met. Many travelers, particularly women, are uncomfortable with this level of exposure before they've even decided whether to travel with someone. Third, Facebook's algorithm doesn't optimize for your travel needs. Your post competes with memes, ads, and other content for visibility. A post made at the wrong time of day gets buried. The group admins' rules about formatting and content add friction. And there's no mechanism to match you with someone who posted two weeks ago about the same destination — unless you scroll through hundreds of posts manually. roammate solves all three problems by design. Profiles are travel-specific (no personal social media exposure), matching is algorithmic (not broadcast-and-hope), and the entire UX is built around one purpose: finding a compatible travel companion.",
-      image: "/images/blog/social-energy-management-abroad-inline-1.webp",
-      imageAlt: "Traveler checking phone in a cafe",
-    },
-    {
-      heading: "Where Facebook Groups Still Win — and Where roammate Is Better",
-      content: "Facebook groups have two genuine advantages. First, volume: groups like 'Backpacking Europe' have hundreds of thousands of members. Even with an inefficient matching process, sheer numbers mean you'll probably find someone heading your way. Second, social proof: you can check a potential companion's Facebook profile, mutual friends, and post history to get a sense of who they are before committing. roammate counters both advantages. On volume, roammate's matching algorithm means you don't need hundreds of thousands of users to find a compatible match — you need a smaller pool of pre-filtered travelers who already match your criteria. One highly compatible match is worth more than fifty random responses to a Facebook post. On social proof, roammate's profile verification provides identity confirmation without requiring you to expose your personal social media to strangers. You verify your identity once on roammate rather than sharing your entire Facebook life with every potential travel companion. The privacy difference is significant and often underappreciated. On Facebook, declining someone's travel invitation means they still have access to your profile, your photos, and your friend list. On roammate, declining means they see your travel profile only — no personal details, no social graph, no workplace information. For travelers who value both safety and privacy, a purpose-built platform removes friction that Facebook structurally cannot. roammate is also completely free with no ads, while Facebook groups are surrounded by targeted advertising and algorithmic manipulation designed to keep you on the platform longer.",
-      image: "/images/blog/social-energy-management-abroad-inline-2.webp",
-      imageAlt: "Group of travelers connecting in person",
-    },
-  ],
-  publishedAt: "2026-03-13T12:00:00Z",
-  updatedAt: "2026-03-13T12:00:00Z",
-  author: "roammate editorial",
-  readingTime: "3 min read",
-  relatedPostSlugs: [
-    "roammate-vs-couchsurfing",
-    "finding-travel-companions",
-    "travel-friendship-building",
-    "meeting-people-solo-travel",
-  ],
-  relatedGuideSlugs: ["southeast-asia", "europe", "south-america"] as string[],
-};
+const post = allBlogPosts.find((p) => p.slug === 'roammate-vs-facebook-travel-groups');
+if (!post) throw new Error('Blog post not found: roammate-vs-facebook-travel-groups');
 
-const relatedGuides = (post.relatedGuideSlugs ?? [])
-  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
-  .filter(Boolean);
-
-const relatedPosts = (post.relatedPostSlugs ?? [])
-  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
-  .filter(Boolean)
-  .slice(0, 3)
-  .map((entry: any) => ({
-    slug: entry.slug,
-    title: entry.title,
-    description: entry.description,
-    heroImage: entry.heroImage,
-    category: entry.category,
-  }));
+const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
 ---
 
 <BlogPostLayout

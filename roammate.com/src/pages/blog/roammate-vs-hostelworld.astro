@@ -2,57 +2,12 @@
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 import { allBlogPosts } from '../../data/blog';
 import { allGuides } from '../../data/guides';
+import { resolveRelatedContent } from '../../lib/blog-utils';
 
-const post = {
-  slug: "roammate-vs-hostelworld",
-  title: "roammate vs Hostelworld: Booking a Bed vs Finding a Travel Companion",
-  description: "Hostelworld books you a bed. roammate finds you someone to travel with. They solve different problems — and most backpackers use both.",
-  category: "Comparison",
-  readMinutes: 3,
-  heroImage: "/images/blog/hostel-social-scene-navigation-hero.webp",
-  intro: "Hostelworld and roammate both show up when backpackers search for ways to meet people on the road — but they're not competing for the same job. Hostelworld is a hostel booking platform with social features bolted on; roammate is a purpose-built companion matching app that works before you've booked anything. Comparing them directly is a bit like comparing a hotel booking site to a dating app: different tools, different moments in your trip. The short version is that most backpackers end up using both, and for good reason.",
-  sections: [
-    {
-      heading: "What Hostelworld's Social Features Do vs What roammate Does",
-      content: "Hostelworld's core product is accommodation booking — it lists thousands of hostels worldwide with reviews, availability, and prices. In recent years it added a 'Meet the World' social tab that lets you see and message other guests who have booked the same property. That's a genuinely useful feature: if you're arriving at a hostel in Lisbon next week, you can already see who else will be there and break the ice before you show up. The limitation is scope. Hostelworld's social features are property-scoped — they only connect you with people booked at the same hostel, for overlapping dates. If you want to find someone to travel from Lisbon to Porto with, or someone heading to Southeast Asia on a similar itinerary, the platform isn't designed for that. There's no matching logic based on travel style, budget, or broader destination overlap. roammate works at the trip level rather than the property level. Before you've booked any accommodation, you can find travelers heading to the same region with a compatible daily budget and a similar travel style — adventure, cultural immersion, slow travel, or food-focused. Every profile is verified. The match is made around the trip itself, not around a shared booking. That means you can coordinate travel legs, decide together where to stay, and split costs from the start rather than meeting someone at check-in and hoping you click.",
-      image: "/images/blog/hostel-social-scene-navigation-inline-1.webp",
-      imageAlt: "Backpackers socializing in a hostel common room",
-    },
-    {
-      heading: "Do You Need Both?",
-      content: "For most solo backpackers, yes — and using both together makes more sense than choosing one. Hostelworld handles accommodation: it has the inventory, the reviews, and the booking infrastructure that no companion app replicates. If you're staying in hostels, you're probably already using it. roammate handles the companion search: finding someone compatible before you commit to an itinerary, coordinating which cities to hit in what order, and deciding whether to share a private room or book dorms independently. These are different decisions at different stages of trip planning. A common pattern: use roammate to find a travel companion for a multi-week leg, then use Hostelworld together to book accommodation along the route. The Hostelworld social tab is a nice bonus when you arrive somewhere solo and want to meet the other guests — but it doesn't replace the need to find a compatible travel partner before you've figured out where you're going. If your goal is to not travel alone, roammate is the tool built for that specific problem. Hostelworld is what you open once you know where you're sleeping.",
-      image: "/images/blog/hostel-social-scene-navigation-inline-2.webp",
-      imageAlt: "Travelers looking at a map and planning a route together",
-    },
-  ],
-  publishedAt: "2026-03-14T12:00:00Z",
-  updatedAt: "2026-03-14T12:00:00Z",
-  author: "roammate editorial",
-  readingTime: "3 min read",
-  relatedPostSlugs: [
-    "roammate-vs-couchsurfing",
-    "finding-travel-companions",
-    "hostel-social-scene-navigation",
-    "meeting-people-solo-travel",
-  ],
-  relatedGuideSlugs: ["southeast-asia", "europe", "south-america"] as string[],
-};
+const post = allBlogPosts.find((p) => p.slug === 'roammate-vs-hostelworld');
+if (!post) throw new Error('Blog post not found: roammate-vs-hostelworld');
 
-const relatedGuides = (post.relatedGuideSlugs ?? [])
-  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
-  .filter(Boolean);
-
-const relatedPosts = (post.relatedPostSlugs ?? [])
-  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
-  .filter(Boolean)
-  .slice(0, 3)
-  .map((entry: any) => ({
-    slug: entry.slug,
-    title: entry.title,
-    description: entry.description,
-    heroImage: entry.heroImage,
-    category: entry.category,
-  }));
+const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
 ---
 
 <BlogPostLayout

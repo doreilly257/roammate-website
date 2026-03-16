@@ -2,57 +2,12 @@
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 import { allBlogPosts } from '../../data/blog';
 import { allGuides } from '../../data/guides';
+import { resolveRelatedContent } from '../../lib/blog-utils';
 
-const post = {
-  slug: "roammate-vs-tourlina",
-  title: "roammate vs Tourlina: Which Travel Companion App Is Right for You?",
-  description: "Tourlina connects women travelers exclusively while roammate matches all travelers by style, budget, and destination. Here's how to decide which one fits your needs.",
-  category: "Comparison",
-  readMinutes: 3,
-  heroImage: "/images/blog/solo-female-travel-operations-hero.webp",
-  intro: "If you're searching for a travel companion app, you've probably come across both roammate and Tourlina. They both help travelers find people to explore with — but they take fundamentally different approaches. Tourlina is a women-only platform designed specifically for female travelers who want to connect with other women. roammate is open to all travelers and matches based on travel style, budget bracket, and destination overlap. Neither approach is inherently better — it depends on what you're looking for. This comparison breaks down the real differences so you can pick the right tool.",
-  sections: [
-    {
-      heading: "How Tourlina and roammate Differ",
-      content: "Tourlina's core proposition is safety through exclusivity: only women can join, and the platform is built around the idea that female travelers feel more comfortable connecting with other women. If you're a woman who exclusively wants to travel with other women, Tourlina delivers on that promise. The platform lets you browse profiles by destination and send connection requests. Tourlina offers a free tier with limited features and a premium subscription that unlocks additional functionality like seeing who viewed your profile and sending unlimited messages. roammate takes a different approach entirely. Instead of filtering by gender, roammate filters by compatibility. The matching algorithm considers travel style (adventure, cultural immersion, slow travel, food-focused), daily budget bracket, and destination overlap before surfacing profiles. This means you're not scrolling through everyone heading to Lisbon — you're seeing people whose pace, spending habits, and interests actually align with yours. roammate is free on iOS with no premium tier or subscription required. The platform is open to all travelers regardless of gender, which means a larger pool of potential companions and more destination coverage, particularly in regions outside Europe and North America where Tourlina's user base thins out considerably.",
-      image: "/images/blog/solo-female-travel-operations-inline-1.webp",
-      imageAlt: "Solo traveler exploring a city",
-    },
-    {
-      heading: "Which One Should You Choose?",
-      content: "Choose Tourlina if you are a woman who specifically wants to travel only with other women, and you're willing to pay for premium features to improve the experience. Tourlina's gender-exclusive model provides a layer of comfort that matters to many female travelers, particularly those heading to destinations where solo female travel carries additional safety considerations. Choose roammate if you want the deepest compatibility matching regardless of gender — if what matters most is finding someone who matches your travel pace, budget, and interests rather than demographic filters. roammate's algorithm-driven approach means less time scrolling and more time connecting with people who genuinely fit your travel style. The free model also means no friction to getting started. For solo female travelers specifically, roammate includes profile verification that adds a safety layer without restricting the platform to a single gender. Many women use roammate successfully to find female travel companions simply by indicating their preference — the matching pool is large enough that this works well in most popular destinations. The practical difference often comes down to pool size: roammate's broader user base means more potential matches in more destinations, while Tourlina's focused community means every match is guaranteed to be female. If you're heading to a well-traveled destination like Southeast Asia, Europe, or South America, roammate's larger pool and deeper matching logic will likely surface better-fit companions. If gender exclusivity is your non-negotiable requirement, Tourlina is built for exactly that.",
-      image: "/images/blog/solo-female-travel-operations-inline-2.webp",
-      imageAlt: "Women travelers meeting at a cafe",
-    },
-  ],
-  publishedAt: "2026-03-13T10:00:00Z",
-  updatedAt: "2026-03-13T10:00:00Z",
-  author: "roammate editorial",
-  readingTime: "3 min read",
-  relatedPostSlugs: [
-    "roammate-vs-couchsurfing",
-    "finding-travel-companions",
-    "solo-female-travel-operations",
-    "why-roammate-perfect-companion",
-  ],
-  relatedGuideSlugs: ["southeast-asia", "europe", "south-america"] as string[],
-};
+const post = allBlogPosts.find((p) => p.slug === 'roammate-vs-tourlina');
+if (!post) throw new Error('Blog post not found: roammate-vs-tourlina');
 
-const relatedGuides = (post.relatedGuideSlugs ?? [])
-  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
-  .filter(Boolean);
-
-const relatedPosts = (post.relatedPostSlugs ?? [])
-  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
-  .filter(Boolean)
-  .slice(0, 3)
-  .map((entry: any) => ({
-    slug: entry.slug,
-    title: entry.title,
-    description: entry.description,
-    heroImage: entry.heroImage,
-    category: entry.category,
-  }));
+const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
 ---
 
 <BlogPostLayout

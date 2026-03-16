@@ -2,57 +2,12 @@
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 import { allBlogPosts } from '../../data/blog';
 import { allGuides } from '../../data/guides';
+import { resolveRelatedContent } from '../../lib/blog-utils';
 
-const post = {
-  slug: "roammate-vs-backpackr",
-  title: "roammate vs Backpackr: Finding the Right Travel Buddy App",
-  description: "Backpackr is a social travel community while roammate is a companion matching app. Here's how they differ and which one will actually help you find the right travel partner.",
-  category: "Comparison",
-  readMinutes: 3,
-  heroImage: "/images/blog/hostel-social-scene-navigation-hero.webp",
-  intro: "Backpackr and roammate both appear in app store searches for 'travel buddy app' — but they solve different problems. Backpackr is a social networking platform for travelers: a feed of posts, photos, and updates from people on the road. roammate is a companion matching app that pairs you with travelers based on style, budget, and destination compatibility. The difference matters because one is built for browsing and the other is built for finding. This guide explains what each platform actually does so you can choose the right one.",
-  sections: [
-    {
-      heading: "What Backpackr Does vs What roammate Does",
-      content: "Backpackr functions like a social media platform tailored to travelers. You create a profile, post updates about your trips, browse a feed of other travelers' content, and can message people who seem interesting. It's useful for getting inspiration, seeing what other backpackers are doing, and passively connecting with people in the travel community. Think of it as Instagram meets a travel forum. The challenge is that Backpackr doesn't solve the compatibility problem. You might find someone heading to the same destination, but you have no way to know if they travel at your pace, spend at your budget level, or share your interests until you've invested time in conversation. roammate approaches the problem from the opposite direction. Instead of giving you a social feed to browse, it asks you specific questions about how you travel — your style (adventure, cultural, slow travel, food-focused), your daily budget bracket, and your upcoming destinations. Then it surfaces only the travelers who match on those dimensions. There's no feed to scroll, no posts to like, no algorithm optimizing for engagement. The entire UX is designed around one outcome: connecting you with a compatible travel companion. roammate is free with no ads, while Backpackr's model includes social features that can feel cluttered when all you want is to find someone to travel with.",
-      image: "/images/blog/hostel-social-scene-navigation-inline-1.webp",
-      imageAlt: "Backpackers socializing at a hostel",
-    },
-    {
-      heading: "Which Platform Fits Your Needs?",
-      content: "Use Backpackr if you enjoy travel-focused social media and want to passively connect with the backpacker community. It's good for inspiration, for seeing where other travelers are heading, and for building a network over time. If you're the kind of traveler who likes browsing travel content and doesn't mind doing the work of filtering through profiles to find compatible people, Backpackr gives you that social layer. Use roammate if you have a specific trip coming up and need to find a compatible companion efficiently. The matching algorithm does the filtering work for you — instead of posting 'heading to Thailand in March, anyone interested?' and hoping the right person responds, roammate shows you travelers already planning Thailand trips who match your budget and travel style. The difference becomes obvious when you're actually planning: on Backpackr, you might spend hours browsing profiles and messaging people who turn out to want a completely different type of trip. On roammate, every profile you see has already passed a compatibility filter. For most travelers with a concrete trip in mind, roammate gets you to the right person faster. For travelers who want an ongoing social connection to the backpacker community regardless of specific trip plans, Backpackr serves that broader purpose.",
-      image: "/images/blog/hostel-social-scene-navigation-inline-2.webp",
-      imageAlt: "Travelers planning a trip together",
-    },
-  ],
-  publishedAt: "2026-03-13T11:00:00Z",
-  updatedAt: "2026-03-13T11:00:00Z",
-  author: "roammate editorial",
-  readingTime: "3 min read",
-  relatedPostSlugs: [
-    "roammate-vs-couchsurfing",
-    "finding-travel-companions",
-    "meeting-people-solo-travel",
-    "why-roammate-perfect-companion",
-  ],
-  relatedGuideSlugs: ["southeast-asia", "europe", "south-america"] as string[],
-};
+const post = allBlogPosts.find((p) => p.slug === 'roammate-vs-backpackr');
+if (!post) throw new Error('Blog post not found: roammate-vs-backpackr');
 
-const relatedGuides = (post.relatedGuideSlugs ?? [])
-  .map((guideSlug: string) => allGuides.find((guide) => guide.slug === guideSlug))
-  .filter(Boolean);
-
-const relatedPosts = (post.relatedPostSlugs ?? [])
-  .map((relatedSlug: string) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
-  .filter(Boolean)
-  .slice(0, 3)
-  .map((entry: any) => ({
-    slug: entry.slug,
-    title: entry.title,
-    description: entry.description,
-    heroImage: entry.heroImage,
-    category: entry.category,
-  }));
+const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
 ---
 
 <BlogPostLayout
