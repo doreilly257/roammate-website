@@ -1,0 +1,489 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Is roammate Safe? — Safety Features & Guidelines"
+  description="roammate uses verified profiles, identity checks, and in-app safety controls to help solo travelers connect safely. Here's exactly how it works."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Is roammate Safe?",
+      "url": "https://roammate.com/safety/",
+      "description": "roammate safety features: verified profiles, identity checks, in-app reporting, and safe meeting guidelines for solo travelers.",
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Safety", "item": "https://roammate.com/safety/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".safety-title", ".safety-subtitle", ".faq-section"]
+      },
+      "url": "https://roammate.com/safety/"
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does roammate verify profiles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every roammate user goes through identity verification before their profile is visible to others. Verified accounts display a badge so you know who you're looking at before any conversation starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if I feel unsafe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trust your instincts. If something feels off before or during a meetup, leave the situation. You can block and report the user directly from their profile in the app. Contact local authorities if you feel in danger, and reach out to support@roammate.com."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I report a user on roammate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can report or block any user directly from their profile in two taps. All reports are reviewed by the roammate team and accounts that violate community guidelines are removed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my personal information private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Your personal contact details are never shared with other users. Trip plans are only visible to matched users, never publicly. All communication stays in-app until you choose to share personal details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What safety tips does roammate recommend for meeting travel companions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meet in a public place for your first encounter — a hostel common room, a café, or a walking tour. Tell a friend or family member who you're meeting and where. Keep early communication in-app. Trust your instincts: if something feels off, it's fine to cancel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate safe for solo female travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate's verified profiles and in-app messaging mean you know who you're connecting with before any meetup. The matching system surfaces travelers with compatible styles and budgets, reducing friction. Standard solo female travel safety practices apply: meet publicly first, tell someone your plans, trust your instincts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate safer than meeting people in a hostel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate adds a layer of verification and compatibility filtering that hostel common rooms don't have. You see verified profiles filtered by compatible travel style and budget before any contact. Both involve meeting strangers — roammate provides more information upfront."
+          }
+        }
+      ]
+    })} />
+  </Fragment>
+
+  <section class="safety-hero">
+    <div class="safety-hero-inner">
+      <div class="section-label section-label--center">Safety</div>
+      <h1 class="safety-title">Is roammate <em>safe?</em></h1>
+      <p class="safety-subtitle">Short answer: yes — with the same common sense you apply to any new connection while traveling. Here's exactly what roammate does to keep it that way.</p>
+    </div>
+  </section>
+
+  <section class="safety-features">
+    <div class="safety-features-inner">
+      <div class="section-label">How It Works</div>
+      <h2 class="safety-section-heading">Built-in safety <em>at every step</em></h2>
+      <div class="safety-cards">
+        <div class="safety-card reveal">
+          <div class="safety-card-num">01</div>
+          <h3>Verified profiles only</h3>
+          <p>Every user goes through identity verification before their profile is visible to others. Verified accounts display a badge. You know who you're looking at before any conversation starts.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-card-num">02</div>
+          <h3>Chat before you commit</h3>
+          <p>All communication happens inside the app before any in-person meetup. You can get a clear sense of the person — their travel plans, communication style, and vibe — before agreeing to anything.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-card-num">03</div>
+          <h3>Report and block</h3>
+          <p>Any user can be reported or blocked directly from their profile. Reports are reviewed by the roammate team. Accounts that violate community guidelines are removed.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-card-num">04</div>
+          <h3>Compatible matching reduces risk</h3>
+          <p>By matching on travel style and budget before surfacing profiles, roammate reduces mismatched expectations — one of the most common sources of tension when traveling with someone new.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="safety-guidelines">
+    <div class="safety-guidelines-inner">
+      <div class="section-label">Best Practices</div>
+      <h2 class="safety-section-heading">Safe meeting <em>guidelines</em></h2>
+      <div class="safety-guideline-list">
+        <div class="safety-guideline reveal">
+          <span class="safety-guideline-icon">📍</span>
+          <div>
+            <h3>Meet in public first</h3>
+            <p>For your first in-person meeting, choose a public location — a hostel common room, a café, or a walking tour. Avoid meeting at accommodation on a first encounter.</p>
+          </div>
+        </div>
+        <div class="safety-guideline reveal">
+          <span class="safety-guideline-icon">📱</span>
+          <div>
+            <h3>Tell someone your plans</h3>
+            <p>Let a friend, family member, or hostel staff know who you're meeting and where. Share a rough itinerary if you're planning a day trip or multi-day journey together.</p>
+          </div>
+        </div>
+        <div class="safety-guideline reveal">
+          <span class="safety-guideline-icon">🧠</span>
+          <div>
+            <h3>Trust your instincts</h3>
+            <p>If something feels off before or during a meetup, it's completely fine to cancel or leave. You don't owe anyone an explanation. Prioritise your comfort and safety.</p>
+          </div>
+        </div>
+        <div class="safety-guideline reveal">
+          <span class="safety-guideline-icon">💬</span>
+          <div>
+            <h3>Keep early communication in-app</h3>
+            <p>Until you've met and established trust, keep conversations inside roammate. Moving to personal numbers or social media too quickly can make it harder to report issues if they arise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section safety-faq">
+    <div class="safety-faq-inner">
+      <div class="section-label">Common Questions</div>
+      <h2 class="safety-section-heading">Safety <em>FAQ</em></h2>
+      <div class="safety-faq-list">
+        <details class="safety-faq-item reveal">
+          <summary class="safety-faq-q">How does roammate verify profiles?</summary>
+          <div class="safety-faq-a">Every roammate user goes through identity verification before their profile is visible to others. Verified accounts display a badge so you know who you're looking at before any conversation starts.</div>
+        </details>
+        <details class="safety-faq-item reveal">
+          <summary class="safety-faq-q">What should I do if I feel unsafe?</summary>
+          <div class="safety-faq-a">Trust your instincts. If something feels off before or during a meetup, leave the situation. You can block and report the user directly from their profile in the app. Contact local authorities if you feel in danger, and reach out to support@roammate.com.</div>
+        </details>
+        <details class="safety-faq-item reveal">
+          <summary class="safety-faq-q">Can I report a user on roammate?</summary>
+          <div class="safety-faq-a">Yes. You can report or block any user directly from their profile in two taps. All reports are reviewed by the roammate team and accounts that violate community guidelines are removed.</div>
+        </details>
+        <details class="safety-faq-item reveal">
+          <summary class="safety-faq-q">Is my personal information private?</summary>
+          <div class="safety-faq-a">Yes. Your personal contact details are never shared with other users. Trip plans are only visible to matched users, never publicly. All communication stays in-app until you choose to share personal details.</div>
+        </details>
+        <details class="safety-faq-item reveal">
+          <summary class="safety-faq-q">What safety tips does roammate recommend for meeting travel companions?</summary>
+          <div class="safety-faq-a">Meet in a public place for your first encounter — a hostel common room, a cafe, or a walking tour. Tell a friend or family member who you're meeting and where. Keep early communication in-app. Trust your instincts: if something feels off, it's fine to cancel.</div>
+        </details>
+        <details class="safety-faq-item reveal">
+          <summary class="safety-faq-q">Is roammate safe for solo female travelers?</summary>
+          <div class="safety-faq-a">roammate's verified profiles and in-app messaging mean you know who you're connecting with before any meetup. The matching system surfaces travelers with compatible styles and budgets, which reduces the friction that can lead to uncomfortable situations. Standard solo female travel safety practices apply: meet publicly first, tell someone your plans, trust your instincts.</div>
+        </details>
+        <details class="safety-faq-item reveal">
+          <summary class="safety-faq-q">Is roammate safer than meeting people in a hostel?</summary>
+          <div class="safety-faq-a">roammate adds a layer of verification and compatibility filtering that hostel common rooms don't have. In a hostel, you meet whoever happens to be there. On roammate, you see verified profiles filtered by compatible travel style and budget before any contact. Both involve meeting strangers — roammate just provides more information upfront.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="safety-cta">
+    <div class="safety-cta-inner">
+      <h2 class="safety-cta-heading">Ready to find a <em>compatible</em> travel companion?</h2>
+      <p class="safety-cta-body">Download roammate free on iOS. Verified profiles, compatible matching, and full safety controls built in.</p>
+      <a
+        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=safety-page-cta&mt=8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="safety-cta-btn"
+        data-ph-event="safety_cta_appstore_click"
+      >Download on the App Store — Free</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .safety-hero {
+    padding: 160px 40px 80px;
+    text-align: center;
+    position: relative;
+  }
+
+  .safety-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(196, 86, 42, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .safety-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .safety-title {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 7vw, 80px);
+    font-weight: 900;
+    line-height: 1.02;
+    color: var(--color-cream);
+    margin-bottom: 24px;
+  }
+
+  .safety-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .safety-subtitle {
+    font-size: clamp(17px, 2vw, 20px);
+    color: rgba(245, 241, 235, 0.75);
+    line-height: 1.65;
+  }
+
+  .safety-section-heading {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 40px;
+  }
+
+  .safety-section-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .safety-features {
+    padding: 60px 40px 80px;
+  }
+
+  .safety-features-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .safety-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .safety-card {
+    padding: 32px 28px;
+    background: rgba(247, 242, 234, 0.04);
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    border-radius: 20px;
+  }
+
+  .safety-card-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--color-terracotta);
+    opacity: 0.4;
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  .safety-card h3 {
+    font-family: var(--font-display);
+    font-size: 21px;
+    color: var(--color-cream);
+    margin-bottom: 10px;
+  }
+
+  .safety-card p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+
+  .safety-guidelines {
+    padding: 60px 40px 80px;
+    background: rgba(247, 242, 234, 0.02);
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+    border-bottom: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .safety-guidelines-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .safety-guideline-list {
+    display: grid;
+    gap: 24px;
+  }
+
+  .safety-guideline {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .safety-guideline-icon {
+    font-size: 28px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .safety-guideline h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--color-cream);
+    margin-bottom: 6px;
+  }
+
+  .safety-guideline p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+
+  .safety-faq {
+    padding: 60px 40px 80px;
+  }
+
+  .safety-faq-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .safety-faq-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .safety-faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .safety-faq-q {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-cream);
+    cursor: pointer;
+    padding: 24px 40px 24px 0;
+    list-style: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .safety-faq-q::-webkit-details-marker { display: none; }
+
+  .safety-faq-q::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--color-terracotta);
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .safety-faq-item[open] .safety-faq-q::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .safety-faq-q:hover { color: var(--color-terracotta); }
+
+  .safety-faq-a {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    padding: 0 40px 24px 0;
+  }
+
+  .safety-cta {
+    padding: 60px 40px 100px;
+    text-align: center;
+  }
+
+  .safety-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .safety-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 16px;
+  }
+
+  .safety-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .safety-cta-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(245, 241, 235, 0.65);
+    margin-bottom: 32px;
+  }
+
+  .safety-cta-btn {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    background: var(--color-terracotta);
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+  }
+
+  .safety-cta-btn:hover {
+    background: #b34f28;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 1024px) {
+    .safety-hero { padding: 140px 24px 60px; }
+    .safety-features, .safety-guidelines, .safety-faq, .safety-cta { padding-left: 24px; padding-right: 24px; }
+  }
+
+  @media (max-width: 640px) {
+    .safety-hero { padding: 120px 20px 60px; }
+    .safety-features, .safety-guidelines, .safety-faq, .safety-cta { padding-left: 20px; padding-right: 20px; }
+    .safety-cards { grid-template-columns: 1fr; }
+    .safety-guideline { grid-template-columns: 36px 1fr; gap: 14px; }
+  }
+</style>

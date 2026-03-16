@@ -37,6 +37,28 @@ const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "roammate Travel Guides",
+      "description": `Free backpacker travel guides covering ${destinationCount} destinations and ${routeCount} multi-country routes.`,
+      "url": "https://roammate.com/guides/",
+      "numberOfItems": destinationCount + routeCount,
+      "itemListElement": [
+        ...topCities.map((g, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": `${g.name} Travel Guide`,
+          "url": `https://roammate.com/guides/cities/${g.slug}/`,
+        })),
+        ...topRoutes.map((r, i) => ({
+          "@type": "ListItem",
+          "position": topCities.length + i + 1,
+          "name": `${r.name} Backpacker Route`,
+          "url": `https://roammate.com/guides/${r.slug}/`,
+        })),
+      ],
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },

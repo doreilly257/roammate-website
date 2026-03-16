@@ -1,0 +1,131 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'USD preferred', detail: 'Pay in USD cash for blue rate advantage' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'Basic English in ski resorts and tourist spots' },
+  { icon: '🕐', label: 'Timezone', value: 'ART (UTC-3)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Dec – Mar', detail: 'Summer trekking; Jun–Sep for skiing' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$40–80 USD', detail: 'Budget to mid-range' },
+  { icon: '🛂', label: 'Visa', value: '90 days visa-free', detail: 'Most nationalities — check before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'Bariloche Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Cerro Campanario & Lago Nahuel Huapi',
+          text: 'Take a taxi or bike 10km west along the shore to the Cerro Campanario chairlift — a 7-minute ride to a viewpoint consistently rated one of the most beautiful in South America. From the summit at 1,049m, the panorama takes in the jade-green Lago Nahuel Huapi stretching 100km west into Chile, the jagged peaks of the Andes rising beyond, and the dense Valdivian temperate rainforest below. The lake is 464m deep and ringed by snow-capped volcanoes. Early morning gives the clearest light and fewest crowds. The chairlift costs about $8 and the café at the top serves facturas (pastries) and coffee.',
+          tip: 'Arrive at the Campanario chairlift before 10am. By mid-morning, queues build and clouds can roll in from the west. The viewpoint is genuinely one of the finest in all of Patagonia.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Circuito Chico & Colonia Suiza',
+          text: 'Rent a bike (ARS 5,000-8,000 / $5-8 for a half-day) and ride the Circuito Chico — a 65km loop around the western peninsula that passes mirror-calm bays, dense coigüe forest, and the Swiss-influenced Colonia Suiza village. Colonia Suiza hosts a weekly curanto (Mapuche earth oven feast) and several excellent tea houses. The route passes Playa Bonita, the most swimmable beach near Bariloche, and the Punto Panorámico lookout with views back across the lake. The circuit is marked and beginner-friendly. Mountain e-bikes make the hills manageable.',
+          tip: 'The Circuito Chico is the most rewarding half-day activity in Bariloche. If cycling is too much, a remis taxi covers the loop in 2 hours for $15-20. The route passes directly under the Campanario chairlift.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Centro Cívico & Chocolate & Cerveza',
+          text: 'Return to the Centro Cívico, Bariloche\'s central civic square designed in the 1940s in a Swiss-Alpine style with stone buildings and a mountain backdrop — one of the most photographed squares in Patagonia. The streets nearby are lined with chocolate shops (Bariloche chocolate is famous throughout Argentina) and craft breweries. Sample the chocolate from Del Turista or Rapa Nui, then settle into one of the local breweries for a craft cerveza artesanal. Bariloche has been making its own beer since German and Swiss immigrants arrived in the 1900s. Dinner options range from lamb asado to fondue.',
+          tip: 'Bariloche chocolate is genuinely world-class — the Swiss immigrants brought proper chocolate-making traditions. Buy boxes to take home rather than airport chocolate. A 300g box from a good shop costs around $5-8.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Pay USD cash for everything', text: 'Argentina\'s parallel exchange rate gives 30-50% more ARS per dollar than official card rates. Bring $200 in clean USD bills. Almost every restaurant, hostel, and tour operator will accept USD cash and give the favourable rate.' },
+  { title: 'Rent a bike for Circuito Chico', text: 'Renting a bike ($5-8 for a half-day) to ride the Circuito Chico costs a fraction of a guided tour. The route is well-marked and the road is sealed. A café at Colonia Suiza serves lunch at the midpoint.' },
+  { title: 'Stay in Barrio Centro', text: 'Hostels near the Centro Cívico offer dorm beds for $12-18. The neighbourhood is walkable, lively, and has better value food options than the more expensive lakefront hotel strip.' },
+  { title: 'Self-cater from local supermarkets', text: 'Bariloche has excellent supermarkets stocked with Patagonian lamb, local cheeses, and wine. A supermarket dinner with a bottle of Malbec costs $8-10 per person — a fraction of restaurant prices in a tourist town.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$12–20', mid: '$40–80', notes: 'Dorm → private lakefront room' },
+  { category: 'Food', budget: '$10–20', mid: '$25–55', notes: 'Self-catered → restaurants' },
+  { category: 'Transport', budget: '$5–10', mid: '$15–30', notes: 'Local bus → remis' },
+  { category: 'Bike Rental', budget: '$5–8', mid: '$10–15', notes: 'Standard → e-bike' },
+  { category: 'Chairlifts / Gondola', budget: '$8–12', mid: '$15–25', notes: 'Campanario → Cerro Otto' },
+  { category: 'Activities', budget: '$10–20', mid: '$30–80', notes: 'Self-guided → kayak/trek tours' },
+  { category: 'Daily Total', budget: '$40–80', mid: '$100–200', notes: 'Budget backpacker → comfortable mid' },
+];
+
+const practicalInfo = [
+  {
+    icon: '✈️',
+    title: 'Getting There',
+    items: [
+      'Bariloche Airport (BRC) has daily flights from Buenos Aires (2 hours, from $60 on Aerolíneas)',
+      'Long-distance buses connect to Buenos Aires (20 hours, $30-60) and Mendoza (18 hours)',
+      'Cross to Puerto Montt, Chile via the 3-day Lake Crossing (Cruce de Lagos) — one of South America\'s iconic overland routes',
+    ],
+  },
+  {
+    icon: '🌊',
+    title: 'Weather & Seasons',
+    items: [
+      'Summer (Dec–Mar): 10-25°C, long days, excellent for trekking and water sports',
+      'Winter (Jun–Sep): snow on Cerro Catedral ski resort; can close roads temporarily',
+      'Rain arrives from the west year-round — always carry a waterproof layer',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Local bus No.20 runs from Centro Cívico to the Circuito Chico sites for 2 soles equivalently cheap',
+      'Bikes are the best way to explore — rental shops throughout the centre charge $5-8/half-day',
+      'Remis taxis to Cerro Campanario cost $8-10 one-way; drivers will wait for an agreed fee',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money & Currency',
+    items: [
+      'Bring USD cash — the blue rate gives 30-50% more value than card transactions',
+      'ATMs dispense pesos at official rates and charge high fees — withdraw minimally',
+      'Most tourist prices are quoted in USD; supermarkets and buses price in ARS',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🏔', title: 'Mapuche Heritage', text: 'The Nahuel Huapi region is Mapuche ancestral land. The park and lake names are Mapuche words — Nahuel Huapi means "Island of the Tiger" (puma). Several community tourism projects near Colonia Suiza offer authentic connection to Mapuche culture and food traditions.' },
+  { icon: '🍫', title: 'Chocolate Culture', text: 'Bariloche\'s Swiss and German immigrant heritage created a genuine artisan chocolate tradition that has been producing fine chocolate since the 1930s. Treat the town\'s chocolatiers seriously — the craft is real, not tourist kitsch. Del Turista and Rapa Nui both still hand-temper their own chocolate.' },
+  { icon: '🍺', title: 'Craft Beer Capital', text: 'Bariloche is the craft beer capital of Argentina with 30+ local breweries. The tradition started with German immigrant brewers in the early 1900s and is now a defining part of the city\'s identity. Blest on the lake shore is the oldest microbrewery in Argentina (1990) and still excellent.' },
+  { icon: '🌿', title: 'Leave No Trace Trekking', text: 'Nahuel Huapi National Park has strict LNT rules. Stay on marked trails, do not collect plants or fossils, pack out all waste, and camp only in designated areas. The Patagonian wilderness is fragile — fire bans are common in dry summer months.' },
+];
+---
+
+<CityGuideLayout
+  title="Bariloche Guide 2026 — Itinerary | roammate"
+  description="Complete Bariloche travel guide for backpackers. Lago Nahuel Huapi, Circuito Chico, Cerro Campanario, and Patagonian craft beer. Budget tips and practical info."
+  heroImage="/images/guides/machu-picchu-hero.webp"
+  heroFlag="🇦🇷"
+  heroCountry="Argentina"
+  heroRegion="South America"
+  heroCity="Bariloche"
+  heroSubtitle="Patagonia's alpine gem — a Swiss-influenced city on the shore of a glacial lake, surrounded by ski slopes in winter and world-class trekking in summer."
+  heroPills={['1–3 Day Itinerary', 'Patagonia', 'Dec – Mar Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in USD. Bring USD cash for the parallel exchange rate — it makes Bariloche significantly more affordable than paying by card."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Bariloche blends Mapuche heritage, Swiss immigrant traditions, and Patagonian wilderness — each layer rewards curiosity beyond the postcard views."
+  ctaCity="Bariloche"
+  ctaText="Find travel companions to explore Bariloche together on roammate — split trek guiding costs and share the Circuito Chico ride."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

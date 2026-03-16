@@ -1,0 +1,26 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+import { resolveRelatedContent } from '../../lib/blog-utils';
+
+const post = allBlogPosts.find((p) => p.slug === 'why-roammate-perfect-companion');
+if (!post) throw new Error('Blog post not found: why-roammate-perfect-companion');
+
+const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides}
+  relatedPosts={relatedPosts}
+/>

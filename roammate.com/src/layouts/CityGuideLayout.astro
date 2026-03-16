@@ -57,16 +57,16 @@ const escapeCssUrl = (url: string) =>
     <link rel="preload" as="image" type="image/webp" href={heroImage}>
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": ["TouristDestination", "Place"],
+      "@type": "TouristDestination",
       "name": heroCity,
       "description": description,
       "image": new URL(heroImage, Astro.site).href,
       "url": new URL(Astro.url.pathname, Astro.site).href,
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": heroCountry
-      },
-      "touristType": "Backpacker, Young Traveler"
+      "touristType": "Backpackers and solo travelers",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": heroCountry
+      }
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -188,7 +188,7 @@ const escapeCssUrl = (url: string) =>
     <div class="guide-budget-grid">
       {budgetTips.map((tip, i) => (
         <div class={`guide-budget-card reveal reveal-delay-${(i % 4) + 1}`}>
-          <h4 class="guide-budget-title">{tip.title}</h4>
+          <h3 class="guide-budget-title">{tip.title}</h3>
           <p class="guide-budget-text">{tip.text}</p>
         </div>
       ))}
@@ -245,7 +245,7 @@ const escapeCssUrl = (url: string) =>
       {practicalInfo.map((info, i) => (
         <div class={`guide-practical-card reveal reveal-delay-${(i % 4) + 1}`}>
           <span class="guide-practical-icon">{info.icon}</span>
-          <h4 class="guide-practical-title">{info.title}</h4>
+          <h3 class="guide-practical-title">{info.title}</h3>
           <ul class="guide-practical-list">
             {info.items.map((item) => (
               <li>{item}</li>
@@ -267,7 +267,7 @@ const escapeCssUrl = (url: string) =>
       {culturalTips.map((tip, i) => (
         <div class={`guide-culture-card reveal reveal-delay-${(i % 4) + 1}`}>
           <span class="guide-culture-icon">{tip.icon}</span>
-          <h4 class="guide-culture-title">{tip.title}</h4>
+          <h3 class="guide-culture-title">{tip.title}</h3>
           <p class="guide-culture-text">{tip.text}</p>
         </div>
       ))}
@@ -326,7 +326,7 @@ const escapeCssUrl = (url: string) =>
         {relatedPosts.map((post) => (
           <a href={`/blog/${post.slug}/`} class="guide-blog-card">
             <div class="guide-blog-card-img-wrap">
-              <img src={post.heroImage} alt={post.title} class="guide-blog-card-img" width="400" height="260" loading="lazy" />
+              <img src={post.heroImage} alt={post.title} class="guide-blog-card-img" width="400" height="260" loading="lazy" decoding="async" />
             </div>
             <div class="guide-blog-card-body">
               <span class="guide-blog-card-category">{post.category}</span>
@@ -346,10 +346,13 @@ const escapeCssUrl = (url: string) =>
       <h2 class="guide-cta-heading">Heading to <em>{ctaCity}</em>?</h2>
       <p class="guide-cta-text">{ctaText}</p>
       <div class="guide-cta-downloads">
-        <a href="https://apps.apple.com/app/id6758834253" class="badge-link" target="_blank" rel="noopener"><img src={`${base}images/app-store-badge.png`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
-        <a href="/#waitlist" class="badge-link"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy"></a>
+        <a href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=city-guide-cta&mt=8" class="badge-link" target="_blank" rel="noopener" data-ph-event="guide_appstore_click"><img src={`${base}images/app-store-badge.png`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy" decoding="async"></a>
+        <a href="/#waitlist" class="badge-link"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy" decoding="async"></a>
       </div>
       <p class="guide-cta-customise">{ctaCustomise}</p>
+      <a href={`/companions/${currentSlug}/`} class="guide-cta-companions-link" data-ph-event="guide_companions_click" data-ph-label={currentSlug}>
+        Find travel companions in {ctaCity} →
+      </a>
     </div>
   </section>
 
@@ -1053,6 +1056,20 @@ const escapeCssUrl = (url: string) =>
     font-weight: 300;
     font-style: italic;
     margin-top: 32px;
+  }
+
+  .guide-cta-companions-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-terracotta-light);
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s;
+  }
+
+  .guide-cta-companions-link:hover {
+    opacity: 0.75;
   }
 
   /* ========================

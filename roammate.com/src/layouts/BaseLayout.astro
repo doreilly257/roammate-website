@@ -11,9 +11,11 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogType?: string;
+  publishedAt?: string;
+  updatedAt?: string;
 }
 
-const { title, description = 'Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.webp', ogType = 'website' } = Astro.props;
+const { title, description = 'Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.webp', ogType = 'website', publishedAt, updatedAt } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 const isHome = Astro.url.pathname === '/';
@@ -24,7 +26,7 @@ const isHome = Astro.url.pathname === '/';
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com https://static.cloudflareinsights.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content={description}>
   <title>{title}</title>
@@ -41,6 +43,8 @@ const isHome = Astro.url.pathname === '/';
   <meta property="og:description" content={description}>
   <meta property="og:image" content={ogImageURL}>
   <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
   <meta property="og:image:alt" content={title}>
   <meta property="og:site_name" content="roammate">
   <meta property="og:locale" content="en_US">
@@ -52,9 +56,19 @@ const isHome = Astro.url.pathname === '/';
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={ogImageURL}>
   <meta name="twitter:image:alt" content={title}>
-  <!-- Preconnect for analytics -->
-  <link rel="preconnect" href="https://us.i.posthog.com">
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="roammate Blog" href="https://roammate.com/rss.xml">
+  <!-- Dates -->
+  {publishedAt && <meta name="date" content={publishedAt}>}
+  {updatedAt && <meta name="last-modified" content={updatedAt}>}
+  {publishedAt && <meta property="article:published_time" content={publishedAt}>}
+  {updatedAt && <meta property="article:modified_time" content={updatedAt}>}
+  <!-- iOS Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=6758834253">
+  <!-- Preconnect -->
   <link rel="dns-prefetch" href="https://us-assets.i.posthog.com">
+  <link rel="dns-prefetch" href="https://us.i.posthog.com">
+  <link rel="dns-prefetch" href="https://api.roammate.com">
   {isHome && <link rel="preload" as="image" type="image/webp" href={`${import.meta.env.BASE_URL}images/hero-travelers-on-bus.webp`}>}
   <link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`}>
   <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`}>
@@ -62,11 +76,19 @@ const isHome = Astro.url.pathname === '/';
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "roammate",
+    "url": "https://roammate.com/",
+    "description": "Travel companion app that matches solo travelers by travel style, budget, and destination."
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
     "@type": "Organization",
     "name": "roammate",
     "url": "https://roammate.com/",
     "logo": "https://roammate.com/images/rm-full.svg",
     "sameAs": [
+      "https://apps.apple.com/app/id6758834253",
       "https://www.facebook.com/roammate",
       "https://www.instagram.com/roammate_travel_app",
       "https://x.com/roammate",
@@ -75,15 +97,16 @@ const isHome = Astro.url.pathname === '/';
     ]
   })} />
   {isHome && (
+    <>
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "MobileApplication",
       "name": "roammate",
       "applicationCategory": "TravelApplication",
-      "operatingSystem": "iOS, Android",
+      "operatingSystem": "iOS",
       "url": "https://roammate.com/",
       "downloadUrl": "https://apps.apple.com/app/id6758834253",
-      "description": "Travel companion app to connect with fellow travelers, share experiences, and split costs.",
+      "description": "Travel companion app that matches solo travelers by travel style, budget, and destination.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -91,6 +114,109 @@ const isHome = Astro.url.pathname === '/';
         "category": "Free"
       }
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "roammate",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "iOS",
+      "url": "https://roammate.com/",
+      "downloadUrl": "https://apps.apple.com/app/id6758834253",
+      "description": "Travel companion app that matches solo travelers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby.",
+      "datePublished": "2017-01-01",
+      "dateModified": "2026-03-01",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-title", ".hero-subtitle"]
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "category": "Free"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is roammate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate is a free travel companion app for solo travelers and backpackers. It matches you with compatible travelers based on travel style, daily budget, and destination overlap — so you find someone genuinely compatible, not just someone nearby. Available on iOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find a travel companion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download roammate, set your travel style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before you commit to meeting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees."
+          }
+        }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "roammate",
+      "serviceType": "Travel Companion Matching",
+      "description": "roammate matches solo travelers by travel style, budget, and destination so they can find a compatible travel companion.",
+      "provider": {
+        "@type": "Organization",
+        "name": "roammate",
+        "url": "https://roammate.com/"
+      },
+      "areaServed": "Worldwide",
+      "url": "https://roammate.com/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Find a Travel Companion with roammate",
+      "description": "Find a compatible travel companion using roammate's matching system.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Build your travel profile",
+          "text": "Set your travel style (adventure, cultural, slow travel, food-focused), daily budget bracket, and your upcoming destination."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Browse compatible travelers",
+          "text": "View travelers with overlapping destinations, matching budgets, and compatible travel styles."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Connect and meet",
+          "text": "Message in-app, discuss your plans, and meet up. Share accommodation, split tour costs, or simply explore together."
+        }
+      ],
+      "tool": {
+        "@type": "HowToTool",
+        "name": "roammate app",
+        "url": "https://apps.apple.com/app/id6758834253"
+      }
+    })} />
+    </>
   )}
 
   <script>

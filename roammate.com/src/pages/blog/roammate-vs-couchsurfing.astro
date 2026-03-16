@@ -1,0 +1,78 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+import { resolveRelatedContent } from '../../lib/blog-utils';
+
+const post = allBlogPosts.find((p) => p.slug === 'roammate-vs-couchsurfing');
+if (!post) throw new Error('Blog post not found: roammate-vs-couchsurfing');
+
+const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides as any}
+  relatedPosts={relatedPosts}
+>
+  <div slot="extra" class="blog-comparison-table reveal">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="comparison-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>roammate</th>
+            <th>Couchsurfing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary purpose</td>
+            <td>Find a travel companion</td>
+            <td>Find free accommodation</td>
+          </tr>
+          <tr>
+            <td>Matching logic</td>
+            <td>Style, budget, destination</td>
+            <td>Host availability</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Free</td>
+            <td>~$15/year</td>
+          </tr>
+          <tr>
+            <td>Verified profiles</td>
+            <td>Yes (all users)</td>
+            <td>Optional (paid verification)</td>
+          </tr>
+          <tr>
+            <td>Accommodation exchange</td>
+            <td>No</td>
+            <td>Yes (core feature)</td>
+          </tr>
+          <tr>
+            <td>Best for</td>
+            <td>Solo travelers seeking compatible companions</td>
+            <td>Budget travelers seeking free stays with locals</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td>iOS (Android coming)</td>
+            <td>iOS, Android, Web</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BlogPostLayout>

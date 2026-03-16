@@ -1,0 +1,78 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+import { resolveRelatedContent } from '../../lib/blog-utils';
+
+const post = allBlogPosts.find((p) => p.slug === 'roammate-vs-facebook-travel-groups');
+if (!post) throw new Error('Blog post not found: roammate-vs-facebook-travel-groups');
+
+const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides as any}
+  relatedPosts={relatedPosts}
+>
+  <div slot="extra" class="blog-comparison-table reveal">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="comparison-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>roammate</th>
+            <th>Facebook Travel Groups</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Matching</td>
+            <td>Algorithmic (style, budget, destination)</td>
+            <td>None (post and hope)</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td>Travel-only profile</td>
+            <td>Full Facebook profile exposed</td>
+          </tr>
+          <tr>
+            <td>Verified profiles</td>
+            <td>Yes (all users)</td>
+            <td>No travel-specific verification</td>
+          </tr>
+          <tr>
+            <td>Ads</td>
+            <td>None</td>
+            <td>Targeted ads throughout</td>
+          </tr>
+          <tr>
+            <td>Discovery</td>
+            <td>Automatic matching</td>
+            <td>Manual scrolling through posts</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Free</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Best for</td>
+            <td>Finding compatible companions efficiently</td>
+            <td>Maximum reach via large group audiences</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BlogPostLayout>

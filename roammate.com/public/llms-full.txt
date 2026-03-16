@@ -1,0 +1,866 @@
+# roammate — Full Documentation for LLMs
+
+> roammate is a free iOS travel companion app that matches solo travelers by travel style, budget, and destination. Founded in 2017, it connects like-minded travelers for shared adventures, cost splitting, and safer trips — without ads, subscriptions, or premium tiers.
+
+---
+
+## 1. Product Overview
+
+roammate solves a specific problem: solo travelers who want company on the road have no reliable way to find compatible travel companions. Hostel common rooms and Facebook groups depend on luck and timing. Group tours are rigid and expensive. Dating apps with travel filters aren't designed for platonic travel partnerships.
+
+roammate is purpose-built for this. It matches travelers on three dimensions that actually determine compatibility: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. The result is a curated set of travelers who are genuinely compatible — not just geographically nearby.
+
+The app is designed for independent travelers aged 20-35 who are already on the road or planning a trip. It works both for pre-trip planning (find someone heading to the same destination next month) and real-time connections (find someone in the same city right now).
+
+roammate is not a dating app. It is not a Couchsurfing alternative. It is not a group tour platform. It is a companion matching tool for travelers who want to share experiences, split costs, or simply not eat dinner alone in a foreign city.
+
+---
+
+## 2. Key Facts
+
+- **Founded:** 2017
+- **Price:** Free — no premium tier, no ads, no subscription, no in-app purchases
+- **Platform:** iOS (App Store: https://apps.apple.com/app/id6758834253)
+- **Android:** Coming soon
+- **Global reach:** Travelers from 50+ countries
+- **Not a dating app:** Matching is based on travel style, budget, and destination — not romantic compatibility
+- **Not a hosting platform:** roammate is for finding travel companions, not free accommodation
+- **Website:** https://roammate.com — built with Astro, served via Cloudflare CDN
+- **Content library:** 199 city guides, 202 place guides, 12 backpacker routes, 116 blog posts
+
+---
+
+## 3. How It Works
+
+### Step 1: Build Your Travel Profile
+Set your travel style (adventure, cultural, slow travel, food-focused), daily budget bracket, and your upcoming destination. Honest answers produce better matches — the algorithm uses all three dimensions to filter.
+
+### Step 2: Browse Compatible Travelers
+View travelers with overlapping destinations, matching budgets, and compatible travel styles. You only see profiles that pass all three compatibility filters. Read full verified profiles before deciding to connect — including travel history and style preferences.
+
+### Step 3: Connect and Meet
+Send a message through in-app chat. Discuss your plans, coordinate logistics, and meet up when you're both comfortable. Share accommodation, split tour costs, hire a private guide together, or simply explore side by side.
+
+The system works both for **pre-trip planning** (arrange to meet someone at your destination before you arrive) and **real-time discovery** (find travelers already in your city, hostel, or region right now).
+
+---
+
+## 4. Features Deep Dive
+
+### Compatible Matching
+roammate's core differentiator. Unlike proximity-based apps, roammate filters on three compatibility dimensions:
+- **Travel style:** Adventure, cultural immersion, slow travel, or food-focused. A fast-paced adventure traveler and a slow-travel reader won't enjoy the same itinerary — roammate accounts for this.
+- **Budget range:** Daily budget bracket matching ensures you won't pair someone sleeping in hostels with someone booking boutique hotels. Shared costs only work when spending habits align.
+- **Destination overlap:** Geographic and temporal overlap — you need to be in the same place at the same time, or planning to be.
+
+### Verified Profiles
+Every roammate user goes through identity verification before connecting with others. Verified profiles display a badge. You can review a traveler's full profile, travel history, and style preferences before deciding to connect. This reduces the risk inherent in meeting strangers while traveling.
+
+### In-App Messaging
+Chat within the app before committing to meet. No need to hand over your phone number, WhatsApp, or social media to someone you haven't met. The messaging system keeps communication centralized and within the platform's safety infrastructure.
+
+### Safety Controls
+- **Report and block:** Report or block any user directly from their profile. All reports are reviewed by the roammate team. Accounts violating community guidelines are removed.
+- **Public meetup recommendations:** roammate recommends meeting in public places for initial meetups — a cafe, hostel common room, or walking tour.
+- **In-app communication first:** All initial contact happens within the app, keeping personal contact information private until you choose to share it.
+
+### Real-Time and Pre-Trip Discovery
+- **Real-time:** See who else is in your city, hostel, or region right now. Filter by travel style, language, and interests.
+- **Pre-trip:** Browse travelers heading to your destination. Coordinate before you arrive so you land with a plan and a companion.
+
+### Global Reach
+roammate connects travelers across 50+ countries. The app is not region-locked — any destination, any country. Whether you're trekking in Nepal, island-hopping in the Philippines, or backpacking through South America, the same matching system applies.
+
+---
+
+## 5. Use Cases
+
+- **Finding a hiking partner:** You want to do the Colca Canyon trek in Peru but don't want to go alone. Find someone with a similar fitness level and adventure style heading there the same week.
+- **Splitting accommodation costs:** Private rooms are often cheaper per person than dorms when shared. Find a compatible traveler to split a double room, Airbnb, or guesthouse.
+- **Sharing tours and activities:** Private guides, boat charters, and multi-day tours are dramatically cheaper when costs are divided. A private guide in Angkor Wat that costs $60 alone costs $15 each with four people.
+- **Finding dinner companions:** Solo dining gets old. Find someone to share a meal, try street food markets, or hit a local restaurant recommended by your hostel.
+- **Group activities:** Rent a motorbike and explore together, take a cooking class, join a pub crawl — activities that are better (and often cheaper) with company.
+- **Travel route companions:** You're both doing the Southeast Asia backpacker trail. Travel together for a week, split off, reconnect later — flexible companionship without the commitment of a group tour.
+- **Safety in numbers:** Certain areas or activities feel safer with a companion. Night markets, rural transport, overnight trains — having someone along reduces risk.
+
+---
+
+## 6. Target Audience
+
+- **Primary:** Solo backpackers aged 20-35
+- **Gap year travelers:** First-time long-term travelers looking for flexible companionship without the rigidity of organized tours
+- **Digital nomads:** Remote workers who move between cities and want social connections beyond coworking spaces
+- **Independent travelers:** People who plan their own itineraries but want optional company for specific activities or legs of a trip
+- **Budget travelers:** Travelers looking to reduce costs through shared accommodation, transport, and activities
+- **Solo female travelers:** Women traveling alone who want the added safety and social benefits of a vetted travel companion
+
+---
+
+## 7. Pricing
+
+roammate is completely free:
+- **No premium tier** — all features are available to all users
+- **No ads** — the experience is uninterrupted
+- **No subscription** — no recurring charges
+- **No in-app purchases** — nothing is locked behind a paywall
+
+---
+
+## 8. Differentiators
+
+### roammate vs. Couchsurfing
+Couchsurfing is a hospitality exchange — locals host travelers for free. roammate is a companion matching app — travelers find other travelers to explore with. Different use cases entirely. Couchsurfing also moved to a paid model; roammate is free.
+
+### roammate vs. Tourlina
+Tourlina is women-only and focuses on finding travel partners before a trip. roammate is open to all genders and works both pre-trip and in real-time at your destination.
+
+### roammate vs. Backpackr
+Backpackr is a social network for travelers (posts, stories, forums). roammate is a matching tool — focused specifically on finding compatible companions, not building a social feed.
+
+### roammate vs. Facebook Groups
+Facebook travel groups (e.g., "Girls LOVE Travel", "Backpacking Southeast Asia") require posting and hoping someone responds. There's no matching algorithm, no verification, and no structured way to assess compatibility. roammate automates the matching process.
+
+### roammate vs. Hostel Apps (Hostelworld, etc.)
+Hostel booking apps help you find a bed — not a companion. You might meet people in the common room, but that depends on luck. roammate is intentional companion matching, independent of where you stay.
+
+### roammate vs. Group Tours (Contiki, G Adventures, etc.)
+Group tours are pre-packaged itineraries with fixed groups, fixed dates, and fixed prices (often $100-300/day). roammate lets you keep your independence — travel your own route, at your own pace, with a compatible companion you chose yourself.
+
+---
+
+## 9. Safety and Trust
+
+### Verification System
+- All users undergo identity verification before connecting with others
+- Verified profiles display a verification badge
+- Full profiles include travel history, style preferences, and bio — reviewable before any connection
+
+### Communication Safety
+- All initial contact happens within in-app messaging
+- No personal contact information (phone, social media) is shared until the user chooses
+- Chat history is retained within the platform
+
+### Reporting and Moderation
+- Any user can be reported or blocked directly from their profile
+- All reports are reviewed by the roammate team
+- Accounts violating community guidelines are removed
+- Zero-tolerance policy for harassment, scams, or unsafe behavior
+
+### Meeting Guidelines
+roammate recommends:
+- Meet in a public place for your first encounter (cafe, hostel common room, walking tour)
+- Tell a friend or family member who you're meeting and where
+- Trust your instincts — if something feels off, cancel
+- Start with a low-commitment activity (coffee, a walk) before committing to travel together
+
+---
+
+## 10. Content Inventory
+
+### Backpacker Routes (12 multi-country itineraries)
+| Route | URL |
+|-|-|
+| Southeast Asia | https://roammate.com/guides/southeast-asia |
+| Europe | https://roammate.com/guides/europe |
+| South America | https://roammate.com/guides/south-america |
+| India | https://roammate.com/guides/india |
+| East Africa | https://roammate.com/guides/east-africa |
+| Central America | https://roammate.com/guides/central-america |
+| Japan & South Korea | https://roammate.com/guides/japan-south-korea |
+| Indonesia & Philippines | https://roammate.com/guides/indonesia-philippines |
+| Australia & New Zealand | https://roammate.com/guides/australia-new-zealand |
+| Morocco & West Africa | https://roammate.com/guides/morocco-west-africa |
+| Middle East & Turkey | https://roammate.com/guides/middle-east-turkey |
+| Southern Africa | https://roammate.com/guides/southern-africa |
+
+### City Guides
+- **Count:** 199 city guides
+- **Index:** https://roammate.com/guides/cities/
+- **Coverage:** Major backpacker destinations across Asia, Europe, South America, Africa, Middle East, and Oceania
+
+### Place Guides
+- **Count:** 202 place/attraction guides
+- **Index:** https://roammate.com/guides/places/
+- **Coverage:** National parks, temples, treks, natural wonders, cultural sites
+
+### Blog
+- **Count:** 109 posts
+- **Index:** https://roammate.com/blog/
+- **Topics:** Solo travel advice, packing guides, budget strategies, safety tips, destination planning, travel style, digital nomad life, food and culture, gear reviews, health and wellness on the road
+
+### Companion Pages
+- **Index:** https://roammate.com/companions/
+- **Content:** Destination-specific companion finding pages
+
+---
+
+## 11. Key Pages
+
+| Page | URL | Description |
+|-|-|-|
+| Homepage | https://roammate.com | Main landing page with app overview and download CTA |
+| How It Works | https://roammate.com/how-it-works/ | Three-step process explanation with FAQs |
+| Find a Travel Companion | https://roammate.com/find-travel-companion/ | Landing page for companion search queries |
+| Travel Buddy App | https://roammate.com/travel-buddy-app/ | Landing page for travel buddy app queries |
+| About | https://roammate.com/about/ | Origin story, mission, and team |
+| Safety | https://roammate.com/safety/ | Safety features and guidelines |
+| FAQ | https://roammate.com/faq/ | Frequently asked questions |
+| Blog | https://roammate.com/blog/ | Travel advice and tips blog |
+| Travel Guides | https://roammate.com/guides/ | All backpacker routes |
+| City Guides | https://roammate.com/guides/cities/ | 199 city guide index |
+| Place Guides | https://roammate.com/guides/places/ | 202 place guide index |
+| Companions | https://roammate.com/companions/ | Companion finding by destination |
+| Press | https://roammate.com/press/ | Press information |
+| Privacy Policy | https://roammate.com/privacy/ | Privacy policy |
+| Terms of Service | https://roammate.com/terms/ | Terms of service |
+| RSS Feed | https://roammate.com/rss.xml | RSS feed for all content |
+| Compare | https://roammate.com/compare/ | Hub page comparing roammate to alternative apps |
+| What Is a Travel Companion? | https://roammate.com/what-is-a-travel-companion/ | Definitional page with FAQ and structured data |
+| What Is Slow Travel? | https://roammate.com/what-is-slow-travel/ | Definition, benefits, and best destinations for slow travel |
+| What Is Adventure Travel? | https://roammate.com/what-is-adventure-travel/ | Definition, types, and destinations for adventure travel |
+| What Is Budget Travel? | https://roammate.com/what-is-budget-travel/ | Definition, tips, and daily cost targets for budget travel |
+| Best Time to Visit Southeast Asia | https://roammate.com/best-time-to-visit-southeast-asia/ | Month-by-month guide to Southeast Asia seasons |
+| Cost to Backpack Southeast Asia | https://roammate.com/how-much-does-it-cost-to-backpack-southeast-asia/ | 2026 daily cost breakdown by country and category |
+| Solo Travel Statistics 2026 | https://roammate.com/statistics/ | Key data on solo travel growth, companion app trends, and budget benchmarks |
+| Editorial Standards | https://roammate.com/editorial/ | Author information and content standards |
+
+---
+
+## 12. Technical
+
+- **App platform:** iOS (native)
+- **App Store listing:** https://apps.apple.com/app/id6758834253
+- **Website framework:** Astro (static site generator)
+- **CDN:** Cloudflare (proxy enabled, SSL Full)
+- **Hosting:** Surge.sh
+- **Website features:** Static HTML/CSS/JS, no client-side framework dependency, optimized for Core Web Vitals
+- **Structured data:** JSON-LD schema markup on all pages (Organization, FAQPage, HowTo, BreadcrumbList, WebPage, SpeakableSpecification)
+- **SEO:** Canonical URLs, sitemap.xml, robots.txt, RSS feed, llms.txt
+
+---
+
+## 13. Origin Story
+
+It started with a girl teaching English in Chai Nat — a small town in central Thailand, the kind of place that doesn't make the backpacker trail. She wanted to take the slow boat to Laos: two days down the Mekong, the kind of trip that needs company. But she was going alone.
+
+So she put the word out, looking for other travelers heading the same way. That search eventually led her to Singapore, where she met the person she'd later marry. They have three kids now — and are still convinced the best things that happen while traveling involve other people, and that too much of it depends on luck, timing, and whoever happens to be around.
+
+That's the gap roammate closes. Founded in 2017, the team has collectively traveled through more than fifty countries. The mission: make solo travel more social, more affordable, and safer — by connecting like-minded travelers intentionally, not by accident.
+
+roammate is not curated group tours. Not a dating app with a passport filter. It's a genuine tool for people who want to share a meal, split a taxi, find a hiking partner, or simply not eat alone on their birthday in a foreign city.
+
+---
+
+---
+
+## 15. Full Content Index
+
+### Blog Posts (116 posts)
+
+- [Finding Your Remote Work Backpacking Rhythm](https://roammate.com/blog/remote-work-backpacking-rhythm/) — Build a sustainable remote work backpacking rhythm that keeps you productive on the road without burning out or missing deadlines.
+- [Budget Travel Cashflow Playbook](https://roammate.com/blog/budget-travel-cashflow-playbook/) — Master your travel cashflow with a practical playbook covering currency strategies, ATM fees, and daily budget tracking across multiple countries.
+- [Your First Month in Southeast Asia](https://roammate.com/blog/first-month-southeast-asia/) — Plan your first 30 days in Southeast Asia with a tested itinerary covering Thailand, Cambodia, and Vietnam without rushing or overspending.
+- [City Base vs Fast Hopping: Which Fits You?](https://roammate.com/blog/city-base-vs-fast-hopping/) — Compare city-basing and fast-hopping travel styles with real cost breakdowns to decide which approach suits your trip length and budget.
+- [The Hostel Selection Checklist That Works](https://roammate.com/blog/hostel-selection-operator-checklist/) — Use this operator-level hostel selection checklist to find great stays every time, covering reviews, location signals, and red flags.
+- [Carry-On Only for Long-Term Travel](https://roammate.com/blog/carry-on-only-long-term/) — Pack carry-on only for months of travel with a tested gear list, layering strategy, and laundry system that keeps your bag under 7kg.
+- [The Slow Travel Momentum System](https://roammate.com/blog/slow-travel-momentum-system/) — Build slow travel momentum with a system for choosing when to stay, when to move, and how to avoid the stagnation trap in long-term trips.
+- [Managing Social Energy While Traveling](https://roammate.com/blog/social-energy-management-abroad/) — Manage your social energy abroad with strategies for hostel boundaries, solo recharge time, and avoiding the loneliness-overload cycle.
+- [Travel Insurance Claim-Proofing Guide](https://roammate.com/blog/travel-insurance-claim-proofing/) — Claim-proof your travel insurance before something goes wrong with documentation habits, photo evidence, and filing strategies that actually pay out.
+- [Airport Day Efficiency System](https://roammate.com/blog/airport-day-efficiency-system/) — Turn airport days from wasted time into productive transitions with a system covering timing, packing order, and layover optimization.
+- [The Weekend Reset Ritual for Digital Nomads](https://roammate.com/blog/weekend-reset-for-digital-nomads/) — Reset your mind and routine every weekend as a digital nomad with a structured ritual covering admin, exploration, and recovery.
+- [Visa Run Risk Reduction](https://roammate.com/blog/visa-run-risk-reduction/) — Reduce visa run risks with proven strategies for timing, border selection, documentation, and backup plans across Southeast Asia.
+- [Local SIM and eSIM Strategy for Travelers](https://roammate.com/blog/local-sim-and-esim-strategy/) — Navigate local SIM cards and eSIMs across multiple countries with a strategy covering costs, activation tricks, and the best providers.
+- [The Portable Workspace Kit That Fits a Daypack](https://roammate.com/blog/travel-workspace-setup-kit/) — Build a portable workspace setup kit under 1.5kg that transforms any cafe, hostel, or park bench into a productive remote work station.
+- [Night Bus Survival Guide](https://roammate.com/blog/night-bus-survival-guide/) — Survive overnight buses across Southeast Asia and South America with tested strategies for sleep, security, and arriving functional.
+- [Why Rainy Season Is Your Secret Advantage](https://roammate.com/blog/rainy-season-travel-advantage/) — Turn rainy season into a travel advantage with lower prices, fewer crowds, and lush landscapes across Southeast Asia and Central America.
+- [The Three-Day City Sprint Template](https://roammate.com/blog/three-day-city-sprint-template/) — Cover any city in three days with a sprint template that balances must-see sights, local neighborhoods, and genuine downtime.
+- [Street Market Food Safety Without the Paranoia](https://roammate.com/blog/food-safety-street-markets/) — Eat safely at street markets across Asia and Latin America using practical food safety signals that don't require avoiding everything delicious.
+- [Recognizing Burnout Signals on the Road](https://roammate.com/blog/burnout-signals-on-the-road/) — Spot travel burnout before it ruins your trip with these early warning signals and practical recovery strategies for long-term travelers.
+- [The Adventure Day Risk Matrix](https://roammate.com/blog/adventure-day-risk-matrix/) — Assess adventure activity risks while traveling using a practical matrix that balances thrill-seeking with smart safety decisions abroad.
+- [Long-Haul Flight Recovery Protocol](https://roammate.com/blog/long-haul-recovery-protocol/) — Recover from long-haul flights faster with a tested protocol covering hydration timing, movement strategies, and first-day scheduling.
+- [Travel Systems That Keep Couples Sane](https://roammate.com/blog/couples-travel-systems/) — Build travel systems for couples that prevent the fights over money, planning, and personal space that derail otherwise great trips.
+- [Solo Female Travel Operations Manual](https://roammate.com/blog/solo-female-travel-operations/) — Operational strategies for solo female travelers covering accommodation vetting, transit safety, and confidence-building routines abroad.
+- [Content Creator Workflow on the Road](https://roammate.com/blog/creator-workflow-while-traveling/) — Build a content creation workflow that works while traveling, covering batch shooting, mobile editing, and posting schedules across timezones.
+- [How to Plan a Photography Walk Anywhere](https://roammate.com/blog/photography-walk-planning/) — Plan productive photography walks in any city with route mapping, golden hour timing, and the gear carry strategy that keeps you shooting.
+- [Public Transport Mastery in Foreign Cities](https://roammate.com/blog/public-transport-mastery/) — Master public transport in any foreign city within hours using map reading, fare systems, and the routes that connect backpacker essentials.
+- [Altitude Acclimatization Itinerary That Works](https://roammate.com/blog/altitude-acclimatization-itinerary/) — Acclimatize to altitude safely with a step-by-step itinerary covering elevation gain limits, hydration, and the signs to descend immediately.
+- [Beach Town vs Mountain Town for Remote Work](https://roammate.com/blog/beach-town-vs-mountain-town-work/) — Compare beach towns and mountain towns for remote work based on wifi reliability, cost of living, social scenes, and productivity patterns.
+- [A Language Learning Routine That Travels](https://roammate.com/blog/language-learning-travel-routine/) — Build a language learning routine that fits travel life, using daily micro-sessions, real conversations, and destination-specific vocabulary.
+- [Packing Cubes: How They Actually Get Used](https://roammate.com/blog/packing-cubes-real-usage/) — See how packing cubes actually get used on long-term trips, with real organization systems that survive months of hostels and buses.
+- [Automate Your Travel Finances Completely](https://roammate.com/blog/travel-finance-automation/) — Set up automated travel finance systems covering multi-currency accounts, expense tracking, and bill payments that run while you explore.
+- [Backpacker Fitness Without a Gym](https://roammate.com/blog/backpacker-gym-alternatives/) — Stay fit while backpacking without a gym using bodyweight routines, city-based workouts, and the activity-as-exercise approach.
+- [Your Storm Day Backup Plan](https://roammate.com/blog/storm-day-backup-plan/) — Turn unexpected storm days into productive travel days with indoor alternatives, planning sessions, and the activities that weather can't cancel.
+- [Getting Things Done on Overnight Trains](https://roammate.com/blog/overnight-train-productivity/) — Turn overnight train journeys into productive work sessions with the right timing, power strategy, and comfort setup for sleeper cars.
+- [Coastal Route Planning Framework](https://roammate.com/blog/coastal-route-planning-framework/) — Plan a multi-stop coastal route with a framework covering tidal timing, beach-hop logistics, and the season windows that make or break it.
+- [Mountain Route Weather Windows](https://roammate.com/blog/mountain-route-weather-windows/) — Time your mountain travel routes using weather windows, altitude forecasts, and the seasonal patterns that keep you safe and scenery-filled.
+- [The Border Crossing Document Pack](https://roammate.com/blog/border-crossing-document-pack/) — Prepare a border crossing document pack covering the paperwork, photos, cash, and digital backups that prevent delays at land borders.
+- [Anti-Theft City Routines That Work](https://roammate.com/blog/anti-theft-city-routines/) — Protect your gear in cities with anti-theft routines covering bag positioning, phone handling, and the situational awareness that prevents loss.
+- [Micro-Adventures in Major Cities](https://roammate.com/blog/micro-adventure-in-major-cities/) — Find micro-adventures in major cities that break the museum-monument loop with urban hikes, neighborhood deep-dives, and off-map discoveries.
+- [The Flexible Booking Strategy](https://roammate.com/blog/flexible-booking-strategy/) — Save money and keep options open with a flexible booking strategy covering cancellation windows, last-minute deals, and the right time to commit.
+- [Integrating Scuba and Snorkeling Into Your Trip](https://roammate.com/blog/scuba-snorkel-trip-integration/) — Weave scuba diving and snorkeling into a backpacking itinerary with cost comparisons, certification timing, and the best value dive sites.
+- [Hiking Rotation for Multi-Country Trips](https://roammate.com/blog/hiking-rotation-for-multi-country-trips/) — Build a hiking rotation across multiple countries that balances intensity, recovery, and the best trails without burning out your knees.
+- [Planning a Cultural Site Day That Sticks](https://roammate.com/blog/cultural-site-day-planning/) — Plan cultural site visits that are memorable rather than exhausting, covering timing, context prep, and the pacing that prevents temple fatigue.
+- [Eating Your Way Through a City by Neighborhood](https://roammate.com/blog/food-trail-by-neighborhood/) — Build a food trail through any city neighborhood by neighborhood, discovering dishes the tourist strip misses and locals actually eat.
+- [Sunrise and Sunset Shooting Workflow](https://roammate.com/blog/sunrise-sunset-shooting-workflow/) — Nail sunrise and sunset photography while traveling with a workflow covering location scouting, camera settings, and the 20-minute golden window.
+- [Gear Guide for Rain, Heat, and Humidity](https://roammate.com/blog/rain-heat-humidity-gear-guide/) — Pack the right gear for tropical rain, extreme heat, and oppressive humidity with fabric choices, layering tricks, and gear that actually dries.
+- [Capturing Memories on Long Trips](https://roammate.com/blog/long-trip-memory-capture/) — Preserve long-trip memories that don't blur together using a daily capture system, photo organization, and the journaling method that sticks.
+- [The Travel Day Mistakes Checklist](https://roammate.com/blog/travel-day-mistakes-checklist/) — Avoid the most common travel day mistakes with a pre-departure checklist covering timing errors, packing oversights, and transit traps.
+- [Region Hopping Without the Exhaustion](https://roammate.com/blog/region-hopping-without-exhaustion/) — Hop between travel regions without burning out by spacing transitions, managing culture shock, and building recovery days into every move.
+- [One-Year Backpacking Strategy](https://roammate.com/blog/year-of-backpacking-strategy/) — Plan a full year of backpacking with a strategy covering seasonal routing, budget pacing, and the quarterly rhythm that prevents burnout.
+- [Airport Lounge Access on a Budget](https://roammate.com/blog/airport-lounge-budget-access/) — Access airport lounges without business class tickets. Priority Pass deals, credit card perks, day passes, and when lounge access actually saves backpackers money.
+- [Best Backpack Sizes for Every Trip Length](https://roammate.com/blog/best-backpack-sizes-compared/) — Compare 20L, 40L, 55L, and 65L backpacks with real weight data, brand picks, and size recommendations for every trip length from weekends to gap years.
+- [Budget Flight Search Tactics That Work](https://roammate.com/blog/budget-flight-search-tactics/) — Master Google Flights, Skyscanner, and Kiwi with flexible date tricks, regional budget airlines, and booking timing strategies that actually save money.
+- [Campervan Road Trip Guide](https://roammate.com/blog/campervan-road-trip-guide/) — Plan a campervan road trip: best countries for vanlife, rental vs buy-and-sell strategies, cost breakdowns, freedom camping rules, and essential cooking and sleeping setups.
+- [Cold Weather Backpacking Layering](https://roammate.com/blog/cold-weather-backpacking-layers/) — Master the three-layer system for backpacking in cold climates. Budget and premium brand picks for base, mid, and shell layers that pack into a 40L bag.
+- [Cooking from Local Markets While Traveling](https://roammate.com/blog/cooking-from-local-markets/) — Save money and eat better by cooking from local markets abroad. How to find markets, communicate without language, and prepare meals in hostel kitchens worldwide.
+- [Dealing with Homesickness on the Road](https://roammate.com/blog/dealing-with-homesickness/) — Recognize homesickness triggers on long trips and use practical coping strategies from scheduled calls to comfort food rituals to finding community.
+- [Desert Travel Preparation and Survival](https://roammate.com/blog/desert-travel-preparation/) — Essential preparation for desert travel in the Sahara, Atacama, Wadi Rum, and Thar including water needs, sun protection, and sandstorm safety.
+- [Digital Detox While Traveling](https://roammate.com/blog/digital-detox-while-traveling/) — Practical strategies for reducing screen time on the road including phone-free mornings, social media breaks, and journaling to reclaim the travel experience.
+- [Dry Bags and Waterproof Essentials](https://roammate.com/blog/dry-bag-waterproof-essentials/) — Choose the right dry bag sizes, waterproof phone pouches, and rain protection for island hopping, monsoon travel, and protecting electronics on the road.
+- [Eco-Lodges vs Hostels: Choosing Your Stay](https://roammate.com/blog/eco-lodge-vs-hostel-comparison/) — Compare eco-lodges and hostels on price, sustainability, community impact, and comfort with region-specific recommendations and greenwashing red flags.
+- [Ethical Wildlife Encounters](https://roammate.com/blog/ethical-wildlife-encounters/) — Identify ethical wildlife experiences and avoid exploitative ones. Red flags to watch for, certified sanctuaries, responsible safari tips, and marine wildlife guidelines.
+- [Festival Travel: Timing and Logistics](https://roammate.com/blog/festival-travel-planning/) — Plan travel around world festivals including Holi, Songkran, Carnival, and Lantern Festival with booking timelines, price surge data, and safety tips.
+- [Your First Backpacking Trip Checklist](https://roammate.com/blog/first-backpacking-trip-checklist/) — Complete pre-departure checklist for first-time backpackers covering insurance, vaccinations, bank setup, packing essentials, and first-week survival tips.
+- [Gap Year Planning Timeline](https://roammate.com/blog/gap-year-planning-timeline/) — Plan your gap year with a 12-month countdown covering savings targets, visa research, health prep, route planning, and practical steps for leaving home long-term.
+- [Group Travel Coordination Systems](https://roammate.com/blog/group-travel-coordination/) — Practical systems for coordinating group travel including expense splitting, decision-making frameworks, mixed budgets, and communication strategies.
+- [Haggling and Negotiation Tips Abroad](https://roammate.com/blog/haggling-negotiation-tips-abroad/) — Learn where haggling is expected, how to set your opening offer by region, and respectful negotiation techniques for markets, taxis, and tours.
+- [Hostel Cooking and Budget Meals](https://roammate.com/blog/hostel-cooking-budget-meals/) — Save 40-60% on food costs with hostel kitchen staple recipes, market shopping tips, kitchen etiquette rules, and cost comparisons across popular destinations.
+- [Navigating the Hostel Social Scene](https://roammate.com/blog/hostel-social-scene-navigation/) — Navigate hostel social dynamics with confidence. How to join groups, choose the right hostel vibe, manage dorm etiquette, and balance social energy on the road.
+- [House Sitting as a Travel Strategy](https://roammate.com/blog/house-sitting-travel-strategy/) — Use house sitting to travel for free accommodation worldwide, from building your profile to landing your first sit to saving over $1000 per month.
+- [Island Hopping Route Planning](https://roammate.com/blog/island-hopping-route-planning/) — Plan efficient island-hopping routes across Thailand, Philippines, Indonesia, and Greece with ferry schedules, monsoon timing, and per-island budgets.
+- [Lost Passport Emergency Plan](https://roammate.com/blog/lost-passport-emergency-plan/) — Step-by-step guide for handling a lost passport abroad including police reports, embassy contact, emergency travel documents, and prevention habits.
+- [Meeting People as a Solo Traveler](https://roammate.com/blog/meeting-people-solo-travel/) — Practical strategies for meeting fellow travelers and locals while solo, from hostel common rooms to walking tours and language exchange meetups.
+- [Mindfulness and Meditation While Traveling](https://roammate.com/blog/mindfulness-meditation-travel/) — Build a sustainable mindfulness practice on the road with hostel-friendly routines, meditation retreat options, walking meditation, and journaling methods.
+- [Motorcycle and Scooter Rental Abroad](https://roammate.com/blog/motorcycle-scooter-rental-abroad/) — Navigate motorcycle and scooter rentals in Bali, Vietnam, and Thailand with insurance advice, license requirements, scam avoidance, and safety essentials.
+- [Multi-City Flight Routing Strategies](https://roammate.com/blog/multi-city-flight-routing/) — Master multi-city flight booking with open-jaw tickets, RTW fares, hub city strategies, and virtual interlining to cut international airfare costs.
+- [Noise-Canceling Headphones for Long Travel](https://roammate.com/blog/noise-canceling-headphones-travel/) — Compare over-ear and in-ear noise-canceling headphones for travel, covering battery life, dorm sleeping, plane pressure, and budget picks.
+- [Off-Season Travel Advantages](https://roammate.com/blog/off-season-travel-advantages/) — Save 30-50% on accommodation and skip the crowds by traveling off-season with destination-specific timing, weather trade-offs, and shoulder season sweet spots.
+- [Overland vs Flying: When Each Makes Sense](https://roammate.com/blog/overland-vs-flying-comparison/) — Cost, time, and experience breakdowns for overland vs flying on popular backpacker routes with budget airline hidden costs and scenic value ratings.
+- [Portable Hammocks for Travel and Camping](https://roammate.com/blog/portable-hammock-travel/) — Compare parachute nylon vs cotton travel hammocks, tree strap systems, and where hammock camping is actually allowed worldwide.
+- [Portable Power and Charging Kits for Travel](https://roammate.com/blog/portable-power-charging-kit/) — Size your travel power bank, pick a multi-port charger, and build a charging kit that keeps all your devices alive through long travel days.
+- [Quick-Dry Towels and Travel Accessories](https://roammate.com/blog/quick-dry-towel-accessories/) — Compare microfiber and linen travel towels, pick the right size, and discover the small accessories that solve annoying hostel and laundry problems.
+- [Return Visitor Strategy: Going Deeper](https://roammate.com/blog/return-visitor-deeper-strategy/) — Transform repeat visits into deeper experiences with neighborhood-level exploration, local connections, seasonal timing, language learning, and second-city strategies.
+- [River Travel Routes Around the World](https://roammate.com/blog/river-travel-routes-worldwide/) — Explore the world by river: Mekong slow boats, Amazon tributaries, Nile feluccas, and European ferries. Booking tips, costs, and what to bring for river travel.
+- [Sleep Kit for Overnight Travel](https://roammate.com/blog/sleep-kit-overnight-travel/) — Build a compact sleep kit for buses, trains, and planes with the right neck pillow, eye mask, and earplugs to actually rest during overnight legs.
+- [Solo Travel vs Group Tours](https://roammate.com/blog/solo-travel-vs-group-tours/) — Compare solo backpacking and group tours on cost, freedom, logistics, and social experience with specific company recommendations and hybrid strategies.
+- [Staying Healthy on Long-Term Travel](https://roammate.com/blog/staying-healthy-long-term-travel/) — Prevent common travel health issues with vaccination planning, gut health strategies, sleep hygiene, and knowing when to see a doctor abroad.
+- [Sustainable Backpacking Practices](https://roammate.com/blog/sustainable-backpacking-practices/) — Reduce your travel footprint with practical sustainable backpacking habits from reusable gear to eco-accommodation choices to supporting local economies.
+- [Teaching English Abroad: Getting Started](https://roammate.com/blog/teaching-english-abroad-guide/) — How to start teaching English abroad with TEFL certification, top-paying countries, hiring timelines, contract tips, and realistic saving potential.
+- [Temple and Mosque Etiquette Guide](https://roammate.com/blog/temple-mosque-etiquette-guide/) — Essential etiquette for visiting temples, mosques, and religious sites worldwide including dress codes, photography rules, and gender-specific guidelines.
+- [Train Passes: Europe, Japan, and Beyond](https://roammate.com/blog/train-pass-europe-asia/) — Do the math on Eurail passes, Japan Rail Passes, and India train classes — with booking windows, seat reservations, and when point-to-point is cheaper.
+- [Travel Anxiety Coping Strategies](https://roammate.com/blog/travel-anxiety-coping-strategies/) — Manage pre-trip and on-the-road travel anxiety with grounding techniques, routine-building strategies, and guidance on professional help options abroad.
+- [Travel Camera and Phone Photography Setup](https://roammate.com/blog/travel-camera-phone-photography/) — Decide between phone, mirrorless, and action cam for travel photography, plus compact tripods, storage solutions, and mobile editing workflows.
+- [Choosing the Right Travel Daypack](https://roammate.com/blog/travel-daypack-selection/) — Compare packable, structured, and anti-theft daypacks from 15L to 25L to find the right one for city days, hikes, and transit.
+- [Building a Travel First Aid Kit](https://roammate.com/blog/travel-first-aid-kit-guide/) — Build a compact travel first aid kit with the essentials to pack from home, what to buy locally, and tropical-specific items for long-term backpacking.
+- [Building Lasting Travel Friendships](https://roammate.com/blog/travel-friendship-building/) — Move beyond surface-level hostel chat to build real travel friendships. Strategies for traveling together, staying in touch, and planning reunion trips years later.
+- [Travel Journaling Methods That Stick](https://roammate.com/blog/travel-journaling-methods/) — Find a travel journaling method you will actually maintain, from bullet journals to app-based systems to the 5-minute evening capture routine.
+- [The Travel Shoe System for Every Terrain](https://roammate.com/blog/travel-shoe-system/) — Build a 2-3 shoe travel system that handles jungle treks, city walks, and beach bars without wrecking your feet or your pack weight.
+- [Starting a Travel Sketchbook Habit](https://roammate.com/blog/travel-sketchbook-habit/) — Begin a travel sketchbook habit with minimal supplies and a simple 10-minute daily routine. Tips for urban sketching, beginner subjects, and drawing when cameras are not allowed.
+- [Travel Tattoo Culture Around the World](https://roammate.com/blog/travel-tattoo-culture-guide/) — Explore tattoo traditions from Thai Sak Yant to Polynesian tatau. Hygiene standards to check, cultural significance, price expectations, and healing tips while traveling.
+- [Traveling with Food Allergies and Restrictions](https://roammate.com/blog/traveling-with-food-allergies/) — Navigate food allergies abroad with allergy translation cards, safe cuisine guides by allergy type, restaurant communication tactics, and emergency medication tips.
+- [Tropical Disease Prevention for Travelers](https://roammate.com/blog/tropical-disease-prevention/) — Practical prevention strategies for malaria, dengue, typhoid, and other tropical diseases including prophylaxis options and pre-travel medication timelines.
+- [Volunteer Travel: Ethics and Impact](https://roammate.com/blog/volunteer-travel-ethics/) — Navigate volunteer travel ethically by spotting red flags in voluntourism, choosing skills-based programs, and ensuring your help actually helps.
+- [Water Filter Bottles for Backpackers](https://roammate.com/blog/water-filter-bottle-backpackers/) — Compare LifeStraw, Grayl, and SteriPen for backpacking — with cost savings, filtration needs by region, and the sustainability case for ditching bottled water.
+- [Working Holiday Visa Playbook](https://roammate.com/blog/working-holiday-visa-playbook/) — Complete guide to working holiday visas in Australia, New Zealand, Canada, Japan, and South Korea with age limits, timelines, and job strategies.
+- [How to Find Reliable Travel Companions in New Cities](https://roammate.com/blog/finding-travel-companions/) — A practical guide to finding trustworthy travel companions — which platforms actually work, how to vet compatibility before committing, and the signals that separate a great travel partner from a travel headache.
+- [Why roammate Is Your Perfect Travel Companion](https://roammate.com/blog/why-roammate-perfect-companion/) — How roammate connects travelers by style, budget, and destination match — and why traveling with the right companion unlocks experiences that solo travel simply cannot.
+- [roammate vs Tourlina: Which Travel Companion App Is Right for You?](https://roammate.com/blog/roammate-vs-tourlina/) — Tourlina connects women travelers exclusively while roammate matches all travelers by style, budget, and destination. Here's how to decide which one fits your needs.
+- [roammate vs Backpackr: Finding the Right Travel Buddy App](https://roammate.com/blog/roammate-vs-backpackr/) — Backpackr is a social travel community while roammate is a companion matching app. Here's how they differ and which one will actually help you find the right travel partner.
+- [roammate vs Facebook Travel Groups: App vs Community](https://roammate.com/blog/roammate-vs-facebook-travel-groups/) — Facebook travel groups are the default way to find travel companions, but a purpose-built app like roammate solves problems Facebook can't. Here's the honest comparison.
+- [Best Travel Companion Apps in 2026: An Honest Comparison](https://roammate.com/blog/best-travel-companion-apps-2026/) — A fair comparison of the best travel companion apps in 2026 — roammate, Tourlina, Backpackr, Couchsurfing Hangouts, Facebook Groups, and Hostelworld. What each does, who it's for, and what it costs.
+- [roammate vs Meetup: Which Is Better for Meeting Fellow Travelers?](https://roammate.com/blog/roammate-vs-meetup/) — Meetup is for local group events. roammate matches travelers by style, budget, and destination. Here's which one actually helps you find a travel companion.
+- [roammate vs Bumble BFF: Travel Companion App vs Local Friend App](https://roammate.com/blog/roammate-vs-bumble-bff/) — Bumble BFF matches you with local friends. roammate matches travelers by style, budget, and destination. Here's what each app actually does for travelers.
+- [roammate vs Hostelworld: Booking a Bed vs Finding a Travel Companion](https://roammate.com/blog/roammate-vs-hostelworld/) — Hostelworld books beds. roammate finds travel companions. Here's how they differ, how they complement each other, and when to use each one.
+- [roammate vs Travello: Travel Discovery App vs Travel Companion Matcher](https://roammate.com/blog/roammate-vs-travello/) — Travello is a social travel discovery app. roammate matches solo travelers by style, budget, and destination. Here's what each does and when to use which.
+- [roammate vs GAFFL: Two Ways to Find a Travel Buddy](https://roammate.com/blog/roammate-vs-gaffl/) — GAFFL lets you post trips and find applicants. roammate matches travelers by style, budget, and destination. Here's how the two approaches differ in practice.
+
+### City Guides (232 guides)
+
+- [Abu Dhabi Guide](https://roammate.com/guides/abu-dhabi/) — Backpacker guide to Abu Dhabi, UAE
+- [Accra Guide](https://roammate.com/guides/accra/) — Backpacker guide to Accra, Ghana
+- [Agra Guide](https://roammate.com/guides/agra/) — Backpacker guide to Agra, India
+- [Amsterdam Guide](https://roammate.com/guides/amsterdam/) — Backpacker guide to Amsterdam, Netherlands
+- [Antalya Guide](https://roammate.com/guides/antalya/) — Backpacker guide to Antalya, Türkiye
+- [Antigua Guatemala Guide](https://roammate.com/guides/antigua-guatemala/) — Backpacker guide to Antigua Guatemala, Guatemala
+- [Arusha Guide](https://roammate.com/guides/arusha/) — Backpacker guide to Arusha, Tanzania
+- [Athens Guide](https://roammate.com/guides/athens/) — Backpacker guide to Athens, Greece
+- [Auckland Guide](https://roammate.com/guides/auckland/) — Backpacker guide to Auckland, New Zealand
+- [Bali Guide](https://roammate.com/guides/denpasar/) — Backpacker guide to Bali, Indonesia
+- [Bangkok Guide](https://roammate.com/guides/bangkok/) — Backpacker guide to Bangkok, Thailand
+- [Barcelona Guide](https://roammate.com/guides/barcelona/) — Backpacker guide to Barcelona, Spain
+- [Beijing Guide](https://roammate.com/guides/beijing/) — Backpacker guide to Beijing, China
+- [Berat Guide](https://roammate.com/guides/berat/) — Backpacker guide to Berat, Albania
+- [Berlin Guide](https://roammate.com/guides/berlin/) — Backpacker guide to Berlin, Germany
+- [Bishkek Guide](https://roammate.com/guides/bishkek/) — Backpacker guide to Bishkek, Kyrgyzstan
+- [Bogotá Guide](https://roammate.com/guides/bogota/) — Backpacker guide to Bogotá, Colombia
+- [Bologna Guide](https://roammate.com/guides/bologna/) — Backpacker guide to Bologna, Italy
+- [Brussels Guide](https://roammate.com/guides/brussels/) — Backpacker guide to Brussels, Belgium
+- [Budapest Guide](https://roammate.com/guides/budapest/) — Backpacker guide to Budapest, Hungary
+- [Buenos Aires Guide](https://roammate.com/guides/buenos-aires/) — Backpacker guide to Buenos Aires, Argentina
+- [Busan Guide](https://roammate.com/guides/busan/) — Backpacker guide to Busan, South Korea
+- [Byron Bay Guide](https://roammate.com/guides/byron-bay/) — Backpacker guide to Byron Bay, Australia
+- [Cairns Guide](https://roammate.com/guides/cairns/) — Backpacker guide to Cairns, Australia
+- [Cairo Guide](https://roammate.com/guides/cairo/) — Backpacker guide to Cairo, Egypt
+- [Cancún Guide](https://roammate.com/guides/cancun/) — Backpacker guide to Cancún, Mexico
+- [Cape Coast Guide](https://roammate.com/guides/cape-coast/) — Backpacker guide to Cape Coast, Ghana
+- [Cartagena Guide](https://roammate.com/guides/cartagena/) — Backpacker guide to Cartagena, Colombia
+- [Cebu Guide](https://roammate.com/guides/cebu/) — Backpacker guide to Cebu, Philippines
+- [Chefchaouen Guide](https://roammate.com/guides/chefchaouen/) — Backpacker guide to Chefchaouen, Morocco
+- [Chiang Mai Guide](https://roammate.com/guides/chiang-mai/) — Backpacker guide to Chiang Mai, Thailand
+- [Chiang Rai Guide](https://roammate.com/guides/chiang-rai/) — Backpacker guide to Chiang Rai, Thailand
+- [Christchurch Guide](https://roammate.com/guides/christchurch/) — Backpacker guide to Christchurch, New Zealand
+- [Colombo Guide](https://roammate.com/guides/colombo/) — Backpacker guide to Colombo, Sri Lanka
+- [Copenhagen Guide](https://roammate.com/guides/copenhagen/) — Backpacker guide to Copenhagen, Denmark
+- [Cusco Guide](https://roammate.com/guides/cusco/) — Backpacker guide to Cusco, Peru
+- [Dakar Guide](https://roammate.com/guides/dakar/) — Backpacker guide to Dakar, Senegal
+- [Dar es Salaam Guide](https://roammate.com/guides/dar-es-salaam/) — Backpacker guide to Dar es Salaam, Tanzania
+- [Delhi Guide](https://roammate.com/guides/delhi/) — Backpacker guide to Delhi, India
+- [Doha Guide](https://roammate.com/guides/doha/) — Backpacker guide to Doha, Qatar
+- [Dubai Guide](https://roammate.com/guides/dubai/) — Backpacker guide to Dubai, UAE
+- [Dublin Guide](https://roammate.com/guides/dublin/) — Backpacker guide to Dublin, Ireland
+- [Dubrovnik Guide](https://roammate.com/guides/dubrovnik/) — Backpacker guide to Dubrovnik, Croatia
+- [Durban Guide](https://roammate.com/guides/durban/) — Backpacker guide to Durban, South Africa
+- [Edinburgh Guide](https://roammate.com/guides/edinburgh/) — Backpacker guide to Edinburgh, UK
+- [El Calafate Guide](https://roammate.com/guides/el-calafate/) — Backpacker guide to El Calafate, Argentina
+- [Elmina Guide](https://roammate.com/guides/elmina/) — Backpacker guide to Elmina, Ghana
+- [Entebbe Guide](https://roammate.com/guides/entebbe/) — Backpacker guide to Entebbe, Uganda
+- [Essaouira Guide](https://roammate.com/guides/essaouira/) — Backpacker guide to Essaouira, Morocco
+- [Fethiye Guide](https://roammate.com/guides/fethiye/) — Backpacker guide to Fethiye, Türkiye
+- [Fes Guide](https://roammate.com/guides/fes/) — Backpacker guide to Fes, Morocco
+- [Florence Guide](https://roammate.com/guides/florence/) — Backpacker guide to Florence, Italy
+- [Frankfurt Guide](https://roammate.com/guides/frankfurt/) — Backpacker guide to Frankfurt, Germany
+- [Fukuoka Guide](https://roammate.com/guides/fukuoka/) — Backpacker guide to Fukuoka, Japan
+- [Galle Guide](https://roammate.com/guides/galle/) — Backpacker guide to Galle, Sri Lanka
+- [Gjirokastër Guide](https://roammate.com/guides/gjirokaster/) — Backpacker guide to Gjirokastër, Albania
+- [Granada Guide](https://roammate.com/guides/granada-nicaragua/) — Backpacker guide to Granada, Nicaragua
+- [Granada Guide](https://roammate.com/guides/granada-spain/) — Backpacker guide to Granada, Spain
+- [Guangzhou Guide](https://roammate.com/guides/guangzhou/) — Backpacker guide to Guangzhou, China
+- [Gyeongju Guide](https://roammate.com/guides/gyeongju/) — Backpacker guide to Gyeongju, South Korea
+- [Hanoi Guide](https://roammate.com/guides/hanoi/) — Backpacker guide to Hanoi, Vietnam
+- [Haridwar Guide](https://roammate.com/guides/haridwar/) — Backpacker guide to Haridwar, India
+- [Helsinki Guide](https://roammate.com/guides/helsinki/) — Backpacker guide to Helsinki, Finland
+- [Heraklion Guide](https://roammate.com/guides/heraklion/) — Backpacker guide to Heraklion, Greece
+- [Hiroshima Guide](https://roammate.com/guides/hiroshima/) — Backpacker guide to Hiroshima, Japan
+- [Ho Chi Minh City Guide](https://roammate.com/guides/ho-chi-minh-city/) — Backpacker guide to Ho Chi Minh City, Vietnam
+- [Hong Kong Guide](https://roammate.com/guides/hong-kong/) — Backpacker guide to Hong Kong, China
+- [Honolulu Guide](https://roammate.com/guides/honolulu/) — Backpacker guide to Honolulu, USA
+- [Istanbul Guide](https://roammate.com/guides/istanbul/) — Backpacker guide to Istanbul, Türkiye
+- [Jaipur Guide](https://roammate.com/guides/jaipur/) — Backpacker guide to Jaipur, India
+- [Jerusalem Guide](https://roammate.com/guides/jerusalem/) — Backpacker guide to Jerusalem, Israel
+- [Jinja Guide](https://roammate.com/guides/jinja/) — Backpacker guide to Jinja, Uganda
+- [Johor Bahru Guide](https://roammate.com/guides/johor-bahru/) — Backpacker guide to Johor Bahru, Malaysia
+- [Kampala Guide](https://roammate.com/guides/kampala/) — Backpacker guide to Kampala, Uganda
+- [Kampot Guide](https://roammate.com/guides/kampot/) — Backpacker guide to Kampot, Cambodia
+- [Kandy Guide](https://roammate.com/guides/kandy/) — Backpacker guide to Kandy, Sri Lanka
+- [Kathmandu Guide](https://roammate.com/guides/kathmandu/) — Backpacker guide to Kathmandu, Nepal
+- [Kraków Guide](https://roammate.com/guides/krakow/) — Backpacker guide to Kraków, Poland
+- [Kuala Lumpur Guide](https://roammate.com/guides/kuala-lumpur/) — Backpacker guide to Kuala Lumpur, Malaysia
+- [Kumasi Guide](https://roammate.com/guides/kumasi/) — Backpacker guide to Kumasi, Ghana
+- [Kyoto Guide](https://roammate.com/guides/kyoto/) — Backpacker guide to Kyoto, Japan
+- [Lamu Guide](https://roammate.com/guides/lamu/) — Backpacker guide to Lamu, Kenya
+- [La Paz Guide](https://roammate.com/guides/la-paz/) — Backpacker guide to La Paz, Bolivia
+- [Las Vegas Guide](https://roammate.com/guides/las-vegas/) — Backpacker guide to Las Vegas, USA
+- [León Guide](https://roammate.com/guides/leon-nicaragua/) — Backpacker guide to León, Nicaragua
+- [Lima Guide](https://roammate.com/guides/lima/) — Backpacker guide to Lima, Peru
+- [Lisbon Guide](https://roammate.com/guides/lisbon/) — Backpacker guide to Lisbon, Portugal
+- [London Guide](https://roammate.com/guides/london/) — Backpacker guide to London, UK
+- [Los Angeles Guide](https://roammate.com/guides/los-angeles/) — Backpacker guide to Los Angeles, USA
+- [Luang Prabang Guide](https://roammate.com/guides/luang-prabang/) — Backpacker guide to Luang Prabang, Laos
+- [Macau Guide](https://roammate.com/guides/macau/) — Backpacker guide to Macau, China
+- [Madrid Guide](https://roammate.com/guides/madrid/) — Backpacker guide to Madrid, Spain
+- [Manali Guide](https://roammate.com/guides/manali/) — Backpacker guide to Manali, India
+- [Manila Guide](https://roammate.com/guides/manila/) — Backpacker guide to Manila, Philippines
+- [Marne-la-Vallée Guide](https://roammate.com/guides/marne-la-vallee/) — Backpacker guide to Marne-la-Vallée, France
+- [Marrakech Guide](https://roammate.com/guides/marrakech/) — Backpacker guide to Marrakech, Morocco
+- [Marseille Guide](https://roammate.com/guides/marseille/) — Backpacker guide to Marseille, France
+- [Mecca Guide](https://roammate.com/guides/mecca/) — Backpacker guide to Mecca, Saudi Arabia
+- [Medellín Guide](https://roammate.com/guides/medellin/) — Backpacker guide to Medellín, Colombia
+- [Medina Guide](https://roammate.com/guides/medina/) — Backpacker guide to Medina, Saudi Arabia
+- [Melbourne Guide](https://roammate.com/guides/melbourne/) — Backpacker guide to Melbourne, Australia
+- [Mendoza Guide](https://roammate.com/guides/mendoza/) — Backpacker guide to Mendoza, Argentina
+- [Mexico City Guide](https://roammate.com/guides/mexico-city/) — Backpacker guide to Mexico City, Mexico
+- [Miami Guide](https://roammate.com/guides/miami/) — Backpacker guide to Miami, USA
+- [Milan Guide](https://roammate.com/guides/milan/) — Backpacker guide to Milan, Italy
+- [Mombasa Guide](https://roammate.com/guides/mombasa/) — Backpacker guide to Mombasa, Kenya
+- [Montréal Guide](https://roammate.com/guides/montreal/) — Backpacker guide to Montréal, Canada
+- [Munich Guide](https://roammate.com/guides/munich/) — Backpacker guide to Munich, Germany
+- [Nairobi Guide](https://roammate.com/guides/nairobi/) — Backpacker guide to Nairobi, Kenya
+- [Nara Guide](https://roammate.com/guides/nara/) — Backpacker guide to Nara, Japan
+- [New York City Guide](https://roammate.com/guides/new-york-city/) — Backpacker guide to New York City, USA
+- [Nice Guide](https://roammate.com/guides/nice/) — Backpacker guide to Nice, France
+- [Nha Trang Guide](https://roammate.com/guides/nha-trang/) — Backpacker guide to Nha Trang, Vietnam
+- [Nuwara Eliya Guide](https://roammate.com/guides/nuwara-eliya/) — Backpacker guide to Nuwara Eliya, Sri Lanka
+- [Oaxaca Guide](https://roammate.com/guides/oaxaca/) — Backpacker guide to Oaxaca, Mexico
+- [Orlando Guide](https://roammate.com/guides/orlando/) — Backpacker guide to Orlando, USA
+- [Osaka Guide](https://roammate.com/guides/osaka/) — Backpacker guide to Osaka, Japan
+- [Oslo Guide](https://roammate.com/guides/oslo/) — Backpacker guide to Oslo, Norway
+- [Palma de Mallorca Guide](https://roammate.com/guides/palma-de-mallorca/) — Backpacker guide to Palma de Mallorca, Spain
+- [Panama City Guide](https://roammate.com/guides/panama-city/) — Backpacker guide to Panama City, Panama
+- [Paris Guide](https://roammate.com/guides/paris/) — Backpacker guide to Paris, France
+- [Pattaya Guide](https://roammate.com/guides/pattaya-chonburi/) — Backpacker guide to Pattaya, Thailand
+- [Phnom Penh Guide](https://roammate.com/guides/phnom-penh/) — Backpacker guide to Phnom Penh, Cambodia
+- [Phuket Guide](https://roammate.com/guides/phuket/) — Backpacker guide to Phuket, Thailand
+- [Pokhara Guide](https://roammate.com/guides/pokhara/) — Backpacker guide to Pokhara, Nepal
+- [Porto Guide](https://roammate.com/guides/porto/) — Backpacker guide to Porto, Portugal
+- [Prague Guide](https://roammate.com/guides/prague/) — Backpacker guide to Prague, Czech Republic
+- [Punta Cana Guide](https://roammate.com/guides/punta-cana/) — Backpacker guide to Punta Cana, Dominican Republic
+- [Queenstown Guide](https://roammate.com/guides/queenstown/) — Backpacker guide to Queenstown, New Zealand
+- [Quito Guide](https://roammate.com/guides/quito/) — Backpacker guide to Quito, Ecuador
+- [Rhodes Guide](https://roammate.com/guides/rhodes/) — Backpacker guide to Rhodes, Greece
+- [Rio de Janeiro Guide](https://roammate.com/guides/rio-de-janeiro/) — Backpacker guide to Rio de Janeiro, Brazil
+- [Rishikesh Guide](https://roammate.com/guides/rishikesh/) — Backpacker guide to Rishikesh, India
+- [Riyadh Guide](https://roammate.com/guides/riyadh/) — Backpacker guide to Riyadh, Saudi Arabia
+- [Rome Guide](https://roammate.com/guides/rome/) — Backpacker guide to Rome, Italy
+- [Rotorua Guide](https://roammate.com/guides/rotorua/) — Backpacker guide to Rotorua, New Zealand
+- [Saint-Louis Guide](https://roammate.com/guides/saint-louis-senegal/) — Backpacker guide to Saint-Louis, Senegal
+- [Salento Guide](https://roammate.com/guides/salento/) — Backpacker guide to Salento, Colombia
+- [San Cristóbal de las Casas Guide](https://roammate.com/guides/san-cristobal/) — Backpacker guide to San Cristóbal de las Casas, Mexico
+- [San Francisco Guide](https://roammate.com/guides/san-francisco/) — Backpacker guide to San Francisco, USA
+- [Santiago Guide](https://roammate.com/guides/santiago/) — Backpacker guide to Santiago, Chile
+- [São Paulo Guide](https://roammate.com/guides/sao-paulo/) — Backpacker guide to São Paulo, Brazil
+- [Sapa Guide](https://roammate.com/guides/sapa/) — Backpacker guide to Sapa, Vietnam
+- [Sapporo Guide](https://roammate.com/guides/sapporo/) — Backpacker guide to Sapporo, Japan
+- [Seoul Guide](https://roammate.com/guides/seoul/) — Backpacker guide to Seoul, South Korea
+- [Seville Guide](https://roammate.com/guides/seville/) — Backpacker guide to Seville, Spain
+- [Shanghai Guide](https://roammate.com/guides/shanghai/) — Backpacker guide to Shanghai, China
+- [Sharjah Guide](https://roammate.com/guides/sharjah/) — Backpacker guide to Sharjah, UAE
+- [Shenzhen Guide](https://roammate.com/guides/shenzhen/) — Backpacker guide to Shenzhen, China
+- [Siem Reap Guide](https://roammate.com/guides/siem-reap/) — Backpacker guide to Siem Reap, Cambodia
+- [Singapore Guide](https://roammate.com/guides/singapore/) — Backpacker guide to Singapore, Singapore
+- [Split Guide](https://roammate.com/guides/split/) — Backpacker guide to Split, Croatia
+- [Stockholm Guide](https://roammate.com/guides/stockholm/) — Backpacker guide to Stockholm, Sweden
+- [Stone Town Guide](https://roammate.com/guides/stone-town/) — Backpacker guide to Stone Town, Tanzania
+- [Sydney Guide](https://roammate.com/guides/sydney/) — Backpacker guide to Sydney, Australia
+- [Taipei Guide](https://roammate.com/guides/taipei/) — Backpacker guide to Taipei, Taiwan
+- [Tallinn Guide](https://roammate.com/guides/tallinn/) — Backpacker guide to Tallinn, Estonia
+- [Tamale Guide](https://roammate.com/guides/tamale/) — Backpacker guide to Tamale, Ghana
+- [Tbilisi Guide](https://roammate.com/guides/tbilisi/) — Backpacker guide to Tbilisi, Georgia
+- [Tel Aviv Guide](https://roammate.com/guides/tel-aviv/) — Backpacker guide to Tel Aviv, Israel
+- [Thessaloniki Guide](https://roammate.com/guides/thessaloniki/) — Backpacker guide to Thessaloniki, Greece
+- [Tirana Guide](https://roammate.com/guides/tirana/) — Backpacker guide to Tirana, Albania
+- [Tokyo Guide](https://roammate.com/guides/tokyo/) — Backpacker guide to Tokyo, Japan
+- [Toronto Guide](https://roammate.com/guides/toronto/) — Backpacker guide to Toronto, Canada
+- [Valencia Guide](https://roammate.com/guides/valencia/) — Backpacker guide to Valencia, Spain
+- [Valparaíso Guide](https://roammate.com/guides/valparaiso/) — Backpacker guide to Valparaíso, Chile
+- [Vancouver Guide](https://roammate.com/guides/vancouver/) — Backpacker guide to Vancouver, Canada
+- [Venice Guide](https://roammate.com/guides/venice/) — Backpacker guide to Venice, Italy
+- [Verona Guide](https://roammate.com/guides/verona/) — Backpacker guide to Verona, Italy
+- [Vientiane Guide](https://roammate.com/guides/vientiane/) — Backpacker guide to Vientiane, Laos
+- [Vienna Guide](https://roammate.com/guides/vienna/) — Backpacker guide to Vienna, Austria
+- [Vilnius Guide](https://roammate.com/guides/vilnius/) — Backpacker guide to Vilnius, Lithuania
+- [Wanaka Guide](https://roammate.com/guides/wanaka/) — Backpacker guide to Wanaka, New Zealand
+- [Warsaw Guide](https://roammate.com/guides/warsaw/) — Backpacker guide to Warsaw, Poland
+- [Washington D.C. Guide](https://roammate.com/guides/washington-dc/) — Backpacker guide to Washington D.C., USA
+- [Wellington Guide](https://roammate.com/guides/wellington/) — Backpacker guide to Wellington, New Zealand
+- [Zhuhai Guide](https://roammate.com/guides/zhuhai/) — Backpacker guide to Zhuhai, China
+- [Ziguinchor Guide](https://roammate.com/guides/ziguinchor/) — Backpacker guide to Ziguinchor, Senegal
+- [Zurich Guide](https://roammate.com/guides/zurich/) — Backpacker guide to Zurich, Switzerland
+- [Amman Guide](https://roammate.com/guides/amman/) — Backpacker guide to Amman, Jordan
+- [Muscat Guide](https://roammate.com/guides/muscat/) — Backpacker guide to Muscat, Oman
+- [Cape Town Guide](https://roammate.com/guides/cape-town/) — Backpacker guide to Cape Town, South Africa
+- [Hue Guide](https://roammate.com/guides/hue/) — Backpacker guide to Hue, Vietnam
+- [Da Nang Guide](https://roammate.com/guides/da-nang/) — Backpacker guide to Da Nang, Vietnam
+- [Penang Guide](https://roammate.com/guides/penang/) — Backpacker guide to Penang, Malaysia
+- [Yogyakarta Guide](https://roammate.com/guides/yogyakarta/) — Backpacker guide to Yogyakarta, Indonesia
+- [Kigali Guide](https://roammate.com/guides/kigali/) — Backpacker guide to Kigali, Rwanda
+- [Havana Guide](https://roammate.com/guides/havana/) — Backpacker guide to Havana, Cuba
+- [Udaipur Guide](https://roammate.com/guides/udaipur/) — Backpacker guide to Udaipur, India
+- [Hampi Guide](https://roammate.com/guides/hampi/) — Backpacker guide to Hampi, India
+- [Kota Kinabalu Guide](https://roammate.com/guides/kota-kinabalu/) — Backpacker guide to Kota Kinabalu, Malaysia
+- [Addis Ababa Guide](https://roammate.com/guides/addis-ababa/) — Backpacker guide to Addis Ababa, Ethiopia
+- [Windhoek Guide](https://roammate.com/guides/windhoek/) — Backpacker guide to Windhoek, Namibia
+- [Swakopmund Guide](https://roammate.com/guides/swakopmund/) — Backpacker guide to Swakopmund, Namibia
+- [Maun Guide](https://roammate.com/guides/maun/) — Backpacker guide to Maun, Botswana
+- [Livingstone Guide](https://roammate.com/guides/livingstone/) — Backpacker guide to Livingstone, Zambia
+- [Siena Guide](https://roammate.com/guides/siena/) — Backpacker guide to Siena, Italy
+- [Aqaba Guide](https://roammate.com/guides/aqaba/) — Backpacker guide to Aqaba, Jordan
+- [Bukhara Guide](https://roammate.com/guides/bukhara/) — Backpacker guide to Bukhara, Uzbekistan
+- [Koh Lanta Guide](https://roammate.com/guides/koh-lanta/) — Backpacker guide to Koh Lanta, Thailand
+- [Kamakura Guide](https://roammate.com/guides/kamakura/) — Backpacker guide to Kamakura, Japan
+- [Kuta Lombok Guide](https://roammate.com/guides/kuta-lombok/) — Backpacker guide to Kuta Lombok, Indonesia
+- [Puerto Princesa Guide](https://roammate.com/guides/puerto-princesa/) — Backpacker guide to Puerto Princesa, Philippines
+- [San Pedro de Atacama Guide](https://roammate.com/guides/san-pedro-de-atacama/) — Backpacker guide to San Pedro de Atacama, Chile
+- [Otavalo Guide](https://roammate.com/guides/otavalo/) — Backpacker guide to Otavalo, Ecuador
+- [Baños Guide](https://roammate.com/guides/banos/) — Backpacker guide to Baños, Ecuador
+- [El Chaltén Guide](https://roammate.com/guides/el-chalten/) — Backpacker guide to El Chaltén, Argentina
+- [Puno Guide](https://roammate.com/guides/puno/) — Backpacker guide to Puno, Peru
+- [Aguas Calientes Guide](https://roammate.com/guides/aguas-calientes/) — Backpacker guide to Aguas Calientes, Peru
+- [Minca Guide](https://roammate.com/guides/minca/) — Backpacker guide to Minca, Colombia
+- [Luxor Guide](https://roammate.com/guides/luxor/) — Backpacker guide to Luxor, Egypt
+- [Aswan Guide](https://roammate.com/guides/aswan/) — Backpacker guide to Aswan, Egypt
+- [Dahab Guide](https://roammate.com/guides/dahab/) — Backpacker guide to Dahab, Egypt
+- [Göreme Guide](https://roammate.com/guides/goreme/) — Backpacker guide to Göreme, Türkiye
+- [Nizwa Guide](https://roammate.com/guides/nizwa/) — Backpacker guide to Nizwa, Oman
+- [Sur Guide](https://roammate.com/guides/sur/) — Backpacker guide to Sur, Oman
+- [Jerash Guide](https://roammate.com/guides/jerash/) — Backpacker guide to Jerash, Jordan
+- [Knysna Guide](https://roammate.com/guides/knysna/) — Backpacker guide to Knysna, South Africa
+- [Walvis Bay Guide](https://roammate.com/guides/walvis-bay/) — Backpacker guide to Walvis Bay, Namibia
+- [Bhaktapur Guide](https://roammate.com/guides/bhaktapur/) — Backpacker guide to Bhaktapur, Nepal
+- [Unawatuna Guide](https://roammate.com/guides/unawatuna/) — Backpacker guide to Unawatuna, Sri Lanka
+- [Ksamil Guide](https://roammate.com/guides/ksamil/) — Backpacker guide to Ksamil, Albania
+- [Merzouga Guide](https://roammate.com/guides/merzouga/) — Backpacker guide to Merzouga, Morocco
+- [Imlil Guide](https://roammate.com/guides/imlil/) — Backpacker guide to Imlil, Morocco
+- [Jodhpur Guide](https://roammate.com/guides/jodhpur/) — Backpacker guide to Jodhpur, India
+- [Mumbai Guide](https://roammate.com/guides/mumbai/) — Backpacker guide to Mumbai, India
+- [Kolkata Guide](https://roammate.com/guides/kolkata/) — Backpacker guide to Kolkata, India
+- [Amritsar Guide](https://roammate.com/guides/amritsar/) — Backpacker guide to Amritsar, India
+- [Arequipa Guide](https://roammate.com/guides/arequipa/) — Backpacker guide to Arequipa, Peru
+- [Ushuaia Guide](https://roammate.com/guides/ushuaia/) — Backpacker guide to Ushuaia, Argentina
+- [Bariloche Guide](https://roammate.com/guides/bariloche/) — Backpacker guide to Bariloche, Argentina
+- [Tangier Guide](https://roammate.com/guides/tangier/) — Backpacker guide to Tangier, Morocco
+
+### Place Guides (210 guides)
+
+- [Perito Moreno](https://roammate.com/guides/perito-moreno/) — Guide to Perito Moreno, Argentina
+- [Iguazú Falls](https://roammate.com/guides/iguazu-falls/) — Guide to Iguazú Falls, Argentina / Brazil
+- [Blue Mountains](https://roammate.com/guides/blue-mountains/) — Guide to Blue Mountains, Australia
+- [Great Barrier Reef](https://roammate.com/guides/great-barrier-reef/) — Guide to Great Barrier Reef, Australia
+- [Great Ocean Road](https://roammate.com/guides/great-ocean-road/) — Guide to Great Ocean Road, Australia
+- [K'gari](https://roammate.com/guides/kgari/) — Guide to K'gari, Australia
+- [Magnetic Island](https://roammate.com/guides/magnetic-island/) — Guide to Magnetic Island, Australia
+- [Uluru](https://roammate.com/guides/uluru/) — Guide to Uluru, Australia
+- [Whitsundays](https://roammate.com/guides/whitsunday-islands/) — Guide to Whitsundays, Australia
+- [Salar de Uyuni](https://roammate.com/guides/salar-de-uyuni/) — Guide to Salar de Uyuni, Bolivia
+- [Okavango Delta](https://roammate.com/guides/okavango-delta/) — Guide to Okavango Delta, Botswana
+- [Chobe National Park](https://roammate.com/guides/chobe-national-park/) — Guide to Chobe National Park, Botswana
+- [Sugarloaf Mountain](https://roammate.com/guides/sugarloaf-mountain/) — Guide to Sugarloaf Mountain, Brazil
+- [Angkor Wat](https://roammate.com/guides/angkor-wat/) — Guide to Angkor Wat, Cambodia
+- [Koh Rong](https://roammate.com/guides/koh-rong/) — Guide to Koh Rong, Cambodia
+- [Banff](https://roammate.com/guides/banff/) — Guide to Banff, Canada
+- [Icefields Parkway](https://roammate.com/guides/icefields-parkway/) — Guide to Icefields Parkway, Canada
+- [Atacama Desert](https://roammate.com/guides/atacama-desert/) — Guide to Atacama Desert, Chile
+- [Torres del Paine](https://roammate.com/guides/torres-del-paine/) — Guide to Torres del Paine, Chile
+- [Great Wall](https://roammate.com/guides/great-wall/) — Guide to Great Wall, China
+- [Cocora Valley](https://roammate.com/guides/cocora-valley/) — Guide to Cocora Valley, Colombia
+- [La Fortuna](https://roammate.com/guides/la-fortuna/) — Guide to La Fortuna, Costa Rica
+- [Monteverde](https://roammate.com/guides/monteverde/) — Guide to Monteverde, Costa Rica
+- [Santa Teresa](https://roammate.com/guides/santa-teresa/) — Guide to Santa Teresa, Costa Rica
+- [Plitvice Lakes](https://roammate.com/guides/plitvice-lakes/) — Guide to Plitvice Lakes, Croatia
+- [Galápagos Islands](https://roammate.com/guides/galapagos/) — Guide to Galápagos Islands, Ecuador
+- [Pyramids of Giza](https://roammate.com/guides/pyramids-of-giza/) — Guide to Pyramids of Giza, Egypt
+- [Yasawa Islands](https://roammate.com/guides/yasawa-islands/) — Guide to Yasawa Islands, Fiji
+- [Calanques](https://roammate.com/guides/calanques/) — Guide to Calanques, France
+- [Mont Blanc](https://roammate.com/guides/mont-blanc/) — Guide to Mont Blanc, France
+- [Bora Bora](https://roammate.com/guides/bora-bora/) — Guide to Bora Bora, French Polynesia
+- [Neuschwanstein](https://roammate.com/guides/neuschwanstein/) — Guide to Neuschwanstein, Germany
+- [Kakum](https://roammate.com/guides/kakum/) — Guide to Kakum, Ghana
+- [Mole National Park](https://roammate.com/guides/mole-national-park/) — Guide to Mole National Park, Ghana
+- [Crete](https://roammate.com/guides/crete/) — Guide to Crete, Greece
+- [Meteora](https://roammate.com/guides/meteora/) — Guide to Meteora, Greece
+- [Santorini](https://roammate.com/guides/santorini/) — Guide to Santorini, Greece
+- [Lake Atitlán](https://roammate.com/guides/lake-atitlan/) — Guide to Lake Atitlán, Guatemala
+- [Semuc Champey](https://roammate.com/guides/semuc-champey/) — Guide to Semuc Champey, Guatemala
+- [Copán](https://roammate.com/guides/copan/) — Guide to Copán, Honduras
+- [Utila](https://roammate.com/guides/utila/) — Guide to Utila, Honduras
+- [Golden Circle](https://roammate.com/guides/golden-circle-iceland/) — Guide to Golden Circle, Iceland
+- [Jökulsárlón](https://roammate.com/guides/jokulsarlon/) — Guide to Jökulsárlón, Iceland
+- [Amber Fort](https://roammate.com/guides/amber-fort/) — Guide to Amber Fort, India
+- [Goa](https://roammate.com/guides/goa/) — Guide to Goa, India
+- [Leh-Ladakh](https://roammate.com/guides/leh-ladakh/) — Guide to Leh-Ladakh, India
+- [Pangong Lake](https://roammate.com/guides/pangong-lake/) — Guide to Pangong Lake, India
+- [Taj Mahal](https://roammate.com/guides/taj-mahal/) — Guide to Taj Mahal, India
+- [Varanasi Ghats](https://roammate.com/guides/varanasi-ghats/) — Guide to Varanasi Ghats, India
+- [Borobudur](https://roammate.com/guides/borobudur/) — Guide to Borobudur, Indonesia
+- [Canggu](https://roammate.com/guides/canggu/) — Guide to Canggu, Indonesia
+- [Flores](https://roammate.com/guides/flores/) — Guide to Flores, Indonesia
+- [Gili Islands](https://roammate.com/guides/gili-islands/) — Guide to Gili Islands, Indonesia
+- [Komodo](https://roammate.com/guides/komodo-national-park/) — Guide to Komodo, Indonesia
+- [Labuan Bajo](https://roammate.com/guides/labuan-bajo/) — Guide to Labuan Bajo, Indonesia
+- [Lombok](https://roammate.com/guides/lombok/) — Guide to Lombok, Indonesia
+- [Nusa Penida](https://roammate.com/guides/nusa-penida/) — Guide to Nusa Penida, Indonesia
+- [Ubud](https://roammate.com/guides/ubud-rice-terraces/) — Guide to Ubud, Indonesia
+- [Uluwatu](https://roammate.com/guides/uluwatu/) — Guide to Uluwatu, Indonesia
+- [Cliffs of Moher](https://roammate.com/guides/cliffs-of-moher/) — Guide to Cliffs of Moher, Ireland
+- [Amalfi Coast](https://roammate.com/guides/amalfi-coast/) — Guide to Amalfi Coast, Italy
+- [Cinque Terre](https://roammate.com/guides/cinque-terre/) — Guide to Cinque Terre, Italy
+- [Dolomites](https://roammate.com/guides/dolomites/) — Guide to Dolomites, Italy
+- [Fushimi Inari](https://roammate.com/guides/fushimi-inari/) — Guide to Fushimi Inari, Japan
+- [Full Moon Party](https://roammate.com/guides/full-moon-party/) — Guide to Full Moon Party, Thailand
+- [Hakone](https://roammate.com/guides/hakone/) — Guide to Hakone, Japan
+- [Mekong Slow Boat](https://roammate.com/guides/mekong-slow-boat/) — Guide to Mekong Slow Boat, Laos
+- [Miyajima](https://roammate.com/guides/miyajima/) — Guide to Miyajima, Japan
+- [Mount Fuji](https://roammate.com/guides/mount-fuji/) — Guide to Mount Fuji, Japan
+- [Dead Sea](https://roammate.com/guides/dead-sea/) — Guide to Dead Sea, Jordan
+- [Petra](https://roammate.com/guides/petra/) — Guide to Petra, Jordan
+- [Wadi Rum](https://roammate.com/guides/wadi-rum/) — Guide to Wadi Rum, Jordan
+- [Diani Beach](https://roammate.com/guides/diani-beach/) — Guide to Diani Beach, Kenya
+- [Lake Nakuru](https://roammate.com/guides/lake-nakuru/) — Guide to Lake Nakuru, Kenya
+- [Maasai Mara](https://roammate.com/guides/maasai-mara/) — Guide to Maasai Mara, Kenya
+- [Issyk-Kul](https://roammate.com/guides/issyk-kul/) — Guide to Issyk-Kul, Kyrgyzstan
+- [4,000 Islands](https://roammate.com/guides/four-thousand-islands/) — Guide to 4,000 Islands, Laos
+- [Kuang Si Falls](https://roammate.com/guides/kuang-si-falls/) — Guide to Kuang Si Falls, Laos
+- [Vang Vieng](https://roammate.com/guides/vang-vieng/) — Guide to Vang Vieng, Laos
+- [Batu Caves](https://roammate.com/guides/batu-caves/) — Guide to Batu Caves, Malaysia
+- [Mount Kinabalu](https://roammate.com/guides/mount-kinabalu/) — Guide to Mount Kinabalu, Malaysia
+- [Maldives](https://roammate.com/guides/maldives-local-islands/) — Guide to Maldives, Maldives
+- [Chichén Itzá](https://roammate.com/guides/chichen-itza/) — Guide to Chichén Itzá, Mexico
+- [Riviera Maya](https://roammate.com/guides/riviera-maya-cenotes/) — Guide to Riviera Maya, Mexico
+- [Bay of Kotor](https://roammate.com/guides/bay-of-kotor/) — Guide to Bay of Kotor, Montenegro
+- [Kotor](https://roammate.com/guides/kotor/) — Guide to Kotor, Montenegro
+- [Aït Benhaddou](https://roammate.com/guides/ait-benhaddou/) — Guide to Aït Benhaddou, Morocco
+- [Atlas Mountains](https://roammate.com/guides/atlas-mountains/) — Guide to Atlas Mountains, Morocco
+- [Sossusvlei](https://roammate.com/guides/sossusvlei/) — Guide to Sossusvlei, Namibia
+- [Etosha National Park](https://roammate.com/guides/etosha-national-park/) — Guide to Etosha National Park, Namibia
+- [Fish River Canyon](https://roammate.com/guides/fish-river-canyon/) — Guide to Fish River Canyon, Namibia
+- [Annapurna Circuit](https://roammate.com/guides/annapurna-circuit/) — Guide to Annapurna Circuit, Nepal
+- [Chitwan](https://roammate.com/guides/chitwan/) — Guide to Chitwan, Nepal
+- [Everest Base Camp](https://roammate.com/guides/everest-base-camp/) — Guide to Everest Base Camp, Nepal
+- [Abel Tasman](https://roammate.com/guides/abel-tasman/) — Guide to Abel Tasman, New Zealand
+- [Coromandel](https://roammate.com/guides/coromandel/) — Guide to Coromandel, New Zealand
+- [Lake Tekapo](https://roammate.com/guides/lake-tekapo/) — Guide to Lake Tekapo, New Zealand
+- [Milford Sound](https://roammate.com/guides/milford-sound/) — Guide to Milford Sound, New Zealand
+- [Tongariro](https://roammate.com/guides/tongariro/) — Guide to Tongariro, New Zealand
+- [Ometepe](https://roammate.com/guides/ometepe/) — Guide to Ometepe, Nicaragua
+- [Geirangerfjord](https://roammate.com/guides/geirangerfjord/) — Guide to Geirangerfjord, Norway
+- [Lofoten Islands](https://roammate.com/guides/lofoten/) — Guide to Lofoten Islands, Norway
+- [Musandam](https://roammate.com/guides/musandam/) — Guide to Musandam, Oman
+- [Wadi Shab](https://roammate.com/guides/wadi-shab/) — Guide to Wadi Shab, Oman
+- [Bocas del Toro](https://roammate.com/guides/bocas-del-toro/) — Guide to Bocas del Toro, Panama
+- [Lake Titicaca](https://roammate.com/guides/lake-titicaca/) — Guide to Lake Titicaca, Peru / Bolivia
+- [Machu Picchu](https://roammate.com/guides/machu-picchu/) — Guide to Machu Picchu, Peru
+- [Sacred Valley](https://roammate.com/guides/sacred-valley/) — Guide to Sacred Valley, Peru
+- [Bohol](https://roammate.com/guides/bohol/) — Guide to Bohol, Philippines
+- [Coron](https://roammate.com/guides/coron/) — Guide to Coron, Philippines
+- [El Nido](https://roammate.com/guides/el-nido/) — Guide to El Nido, Philippines
+- [Moalboal](https://roammate.com/guides/moalboal/) — Guide to Moalboal, Philippines
+- [Siargao](https://roammate.com/guides/siargao/) — Guide to Siargao, Philippines
+- [Cap Skirring](https://roammate.com/guides/cap-skirring/) — Guide to Cap Skirring, Senegal
+- [Île de Gorée](https://roammate.com/guides/ile-de-goree/) — Guide to Île de Gorée, Senegal
+- [Lake Bled](https://roammate.com/guides/lake-bled/) — Guide to Lake Bled, Slovenia
+- [Blyde River Canyon](https://roammate.com/guides/blyde-river-canyon/) — Guide to Blyde River Canyon, South Africa
+- [Drakensberg Mountains](https://roammate.com/guides/drakensberg/) — Guide to Drakensberg Mountains, South Africa
+- [Garden Route](https://roammate.com/guides/garden-route/) — Guide to Garden Route, South Africa
+- [Kruger National Park](https://roammate.com/guides/kruger-national-park/) — Guide to Kruger National Park, South Africa
+- [Table Mountain](https://roammate.com/guides/table-mountain/) — Guide to Table Mountain, South Africa
+- [DMZ](https://roammate.com/guides/dmz/) — Guide to DMZ, South Korea
+- [Jeju Island](https://roammate.com/guides/jeju-island/) — Guide to Jeju Island, South Korea
+- [Alhambra](https://roammate.com/guides/alhambra/) — Guide to Alhambra, Spain
+- [Camino de Santiago](https://roammate.com/guides/camino-de-santiago/) — Guide to Camino de Santiago, Spain
+- [Sagrada Família](https://roammate.com/guides/sagrada-familia/) — Guide to Sagrada Família, Spain
+- [Ella](https://roammate.com/guides/ella/) — Guide to Ella, Sri Lanka
+- [Mirissa](https://roammate.com/guides/mirissa/) — Guide to Mirissa, Sri Lanka
+- [Sigiriya](https://roammate.com/guides/sigiriya/) — Guide to Sigiriya, Sri Lanka
+- [Lauterbrunnen](https://roammate.com/guides/lauterbrunnen/) — Guide to Lauterbrunnen, Switzerland
+- [Mount Kilimanjaro](https://roammate.com/guides/mount-kilimanjaro/) — Guide to Mount Kilimanjaro, Tanzania
+- [Ngorongoro](https://roammate.com/guides/ngorongoro/) — Guide to Ngorongoro, Tanzania
+- [Serengeti](https://roammate.com/guides/serengeti/) — Guide to Serengeti, Tanzania
+- [Zanzibar](https://roammate.com/guides/zanzibar/) — Guide to Zanzibar, Tanzania
+- [Chiang Mai Temples](https://roammate.com/guides/chiang-mai-temples/) — Guide to Chiang Mai Temples, Thailand
+- [Koh Phangan](https://roammate.com/guides/koh-phangan/) — Guide to Koh Phangan, Thailand
+- [Koh Tao](https://roammate.com/guides/koh-tao/) — Guide to Koh Tao, Thailand
+- [Krabi](https://roammate.com/guides/krabi/) — Guide to Krabi, Thailand
+- [Pai](https://roammate.com/guides/pai/) — Guide to Pai, Thailand
+- [Cappadocia](https://roammate.com/guides/cappadocia/) — Guide to Cappadocia, Türkiye
+- [Pamukkale](https://roammate.com/guides/pamukkale/) — Guide to Pamukkale, Türkiye
+- [Jebel Jais](https://roammate.com/guides/jebel-jais/) — Guide to Jebel Jais, UAE
+- [Bwindi](https://roammate.com/guides/bwindi/) — Guide to Bwindi, Uganda
+- [Lake Bunyonyi](https://roammate.com/guides/lake-bunyonyi/) — Guide to Lake Bunyonyi, Uganda
+- [Queen Elizabeth NP](https://roammate.com/guides/queen-elizabeth-np/) — Guide to Queen Elizabeth NP, Uganda
+- [Giant's Causeway](https://roammate.com/guides/giants-causeway/) — Guide to Giant's Causeway, UK
+- [Scottish Highlands](https://roammate.com/guides/scottish-highlands/) — Guide to Scottish Highlands, UK
+- [Grand Canyon](https://roammate.com/guides/grand-canyon/) — Guide to Grand Canyon, USA
+- [Nā Pali Coast](https://roammate.com/guides/na-pali-coast/) — Guide to Nā Pali Coast, USA
+- [Yellowstone](https://roammate.com/guides/yellowstone/) — Guide to Yellowstone, USA
+- [Yosemite](https://roammate.com/guides/yosemite/) — Guide to Yosemite, USA
+- [Zion](https://roammate.com/guides/zion/) — Guide to Zion, USA
+- [Samarkand](https://roammate.com/guides/registan-samarkand/) — Guide to Samarkand, Uzbekistan
+- [Ha Long Bay](https://roammate.com/guides/ha-long-bay/) — Guide to Ha Long Bay, Vietnam
+- [Hoi An](https://roammate.com/guides/hoi-an/) — Guide to Hoi An, Vietnam
+- [River Tubing](https://roammate.com/guides/river-tubing/) — Guide to River Tubing, Laos
+- [Victoria Falls](https://roammate.com/guides/victoria-falls/) — Guide to Victoria Falls, Zambia / Zimbabwe
+- [Bullet Train](https://roammate.com/guides/bullet-train/) — Guide to Bullet Train, Japan
+- [Snow Monkeys](https://roammate.com/guides/snow-monkeys/) — Guide to Snow Monkeys, Japan
+- [Korean DMZ](https://roammate.com/guides/korean-dmz/) — Guide to Korean DMZ, South Korea
+- [Scuba Diving Gili Islands](https://roammate.com/guides/scuba-diving-gili/) — Guide to Scuba Diving Gili Islands, Indonesia
+- [Thresher Sharks](https://roammate.com/guides/thresher-sharks/) — Guide to Thresher Sharks, Philippines
+- [Komodo Dragons](https://roammate.com/guides/komodo-dragons/) — Guide to Komodo Dragons, Indonesia
+- [Coron Island Houseboat](https://roammate.com/guides/coron-houseboat/) — Guide to Coron Island Houseboat, Philippines
+- [Sahara Desert](https://roammate.com/guides/sahara-desert/) — Guide to Sahara Desert, Morocco
+- [Tikal](https://roammate.com/guides/tikal/) — Guide to Tikal, Guatemala
+- [Volcano Boarding](https://roammate.com/guides/volcano-boarding/) — Guide to Volcano Boarding, Nicaragua
+- [Cenote Diving](https://roammate.com/guides/cenote-diving/) — Guide to Cenote Diving, Mexico
+- [Caye Caulker](https://roammate.com/guides/caye-caulker/) — Guide to Caye Caulker, Belize
+- [Giraffe Centre](https://roammate.com/guides/giraffe-centre/) — Guide to Giraffe Centre, Kenya
+- [Great Migration](https://roammate.com/guides/great-migration/) — Guide to Great Migration, Kenya / Tanzania
+- [Roatán](https://roammate.com/guides/roatan/) — Guide to Roatán, Honduras
+- [Nile Rafting](https://roammate.com/guides/nile-rafting/) — Guide to Nile Rafting, Uganda
+- [Gorilla Trekking](https://roammate.com/guides/gorilla-trekking/) — Guide to Gorilla Trekking, Uganda / Rwanda
+- [Rainbow Mountain](https://roammate.com/guides/rainbow-mountain/) — Guide to Rainbow Mountain, Peru
+- [Phong Nha Caves](https://roammate.com/guides/phong-nha-caves/) — Guide to Phong Nha Caves, Vietnam
+- [Ha Giang Loop](https://roammate.com/guides/ha-giang-loop/) — Guide to Ha Giang Loop, Vietnam
+- [Mount Bromo](https://roammate.com/guides/mount-bromo/) — Guide to Mount Bromo, Indonesia
+- [Kawah Ijen](https://roammate.com/guides/kawah-ijen/) — Guide to Kawah Ijen, Indonesia
+- [Mount Rinjani](https://roammate.com/guides/mount-rinjani/) — Guide to Mount Rinjani, Indonesia
+- [Zhangjiajie](https://roammate.com/guides/zhangjiajie/) — Guide to Zhangjiajie, China
+- [Trolltunga](https://roammate.com/guides/trolltunga/) — Guide to Trolltunga, Norway
+- [Tulum Ruins](https://roammate.com/guides/tulum-ruins/) — Guide to Tulum Ruins, Mexico
+- [Blue Hole](https://roammate.com/guides/blue-hole-belize/) — Guide to Blue Hole, Belize
+- [Lake Malawi](https://roammate.com/guides/lake-malawi/) — Guide to Lake Malawi, Malawi
+- [Simien Mountains](https://roammate.com/guides/simien-mountains/) — Guide to Simien Mountains, Ethiopia
+- [Fairy Pools](https://roammate.com/guides/fairy-pools-skye/) — Guide to Fairy Pools, Scotland
+- [Waitomo Caves](https://roammate.com/guides/waitomo-caves/) — Guide to Waitomo Caves, New Zealand
+- [Bay of Islands](https://roammate.com/guides/bay-of-islands/) — Guide to Bay of Islands, New Zealand
+- [Tiger's Nest](https://roammate.com/guides/tigers-nest/) — Guide to Tiger's Nest, Bhutan
+- [Colca Canyon](https://roammate.com/guides/colca-canyon/) — Guide to Colca Canyon, Peru
+- [Kelimutu](https://roammate.com/guides/kelimutu/) — Guide to Kelimutu, Indonesia
+- [Tromso Northern Lights](https://roammate.com/guides/tromso-northern-lights/) — Guide to Tromso Northern Lights, Norway
+- [Skeleton Coast](https://roammate.com/guides/skeleton-coast/) — Guide to Skeleton Coast, Namibia
+- [Franz Josef Glacier](https://roammate.com/guides/franz-josef/) — Guide to Franz Josef Glacier, New Zealand
+- [Mount Cook (Aoraki)](https://roammate.com/guides/mount-cook/) — Guide to Mount Cook (Aoraki), New Zealand
+- [Abu Simbel](https://roammate.com/guides/abu-simbel/) — Guide to Abu Simbel, Egypt
+- [Jebel Shams](https://roammate.com/guides/jebel-shams/) — Guide to Jebel Shams, Oman
+- [Dana Nature Reserve](https://roammate.com/guides/dana/) — Guide to Dana Nature Reserve, Jordan
+- [Lake Manyara National Park](https://roammate.com/guides/lake-manyara/) — Guide to Lake Manyara National Park, Tanzania
+- [Tarangire National Park](https://roammate.com/guides/tarangire/) — Guide to Tarangire National Park, Tanzania
+- [Cape Cross Seal Colony](https://roammate.com/guides/cape-cross/) — Guide to Cape Cross Seal Colony, Namibia
+- [Nazca](https://roammate.com/guides/nazca/) — Guide to Nazca, Peru
+- [Paracas](https://roammate.com/guides/paracas/) — Guide to Paracas, Peru
+- [Ta Prohm](https://roammate.com/guides/ta-prohm/) — Guide to Ta Prohm, Cambodia
+- [Railay Beach](https://roammate.com/guides/railay/) — Guide to Railay Beach, Thailand
+- [Tsavo National Park](https://roammate.com/guides/tsavo/) — Guide to Tsavo National Park, Kenya
+- [Lake Naivasha](https://roammate.com/guides/lake-naivasha/) — Guide to Lake Naivasha, Kenya
+- [Amboseli National Park](https://roammate.com/guides/amboseli/) — Guide to Amboseli National Park, Kenya
+- [Golden Temple](https://roammate.com/guides/golden-temple/) — Guide to Golden Temple, India
+
+### Backpacker Routes (12 routes)
+
+- [Southeast Asia](https://roammate.com/guides/southeast-asia/) — Temples, street food & tropical islands (4–8 weeks)
+- [Europe](https://roammate.com/guides/europe/) — History, culture & Mediterranean coasts (6–10 weeks)
+- [South America](https://roammate.com/guides/south-america/) — Andes, Amazon & ancient ruins (6–12 weeks)
+- [Central America](https://roammate.com/guides/central-america/) — Volcanoes, jungles & Caribbean vibes (4–8 weeks)
+- [India](https://roammate.com/guides/india/) — Chaos, colour & spiritual journeys (4–8 weeks)
+- [East Africa](https://roammate.com/guides/east-africa/) — Safari, mountains & spice islands (4–8 weeks)
+- [Japan & South Korea](https://roammate.com/guides/japan-south-korea/) — Neon cities, ancient temples & ramen (3–6 weeks)
+- [Australia & New Zealand](https://roammate.com/guides/australia-new-zealand/) — Outback, reef & adventure sports (4–8 weeks)
+- [Indonesia & Philippines](https://roammate.com/guides/indonesia-philippines/) — Volcanoes, dive sites & rice terraces (4–8 weeks)
+- [Morocco & West Africa](https://roammate.com/guides/morocco-west-africa/) — Medinas, Sahara & vibrant markets (4–6 weeks)
+- [Middle East & Turkey](https://roammate.com/guides/middle-east-turkey/) — Ancient ruins, deserts & bazaars (8–12 weeks)
+- [Southern Africa](https://roammate.com/guides/southern-africa/) — Safari, dunes & Victoria Falls (8–10 weeks)
+
+
+---
+
+## 16. Informational Pages
+
+- [What Is a Travel Companion?](https://roammate.com/what-is-a-travel-companion/) — Definition, types of travel companions, how to find one, and safety considerations.
+- [What Is Slow Travel?](https://roammate.com/what-is-slow-travel/) — Definition, benefits over fast travel, best slow travel destinations, and how to find a slow travel companion.
+- [What Is Adventure Travel?](https://roammate.com/what-is-adventure-travel/) — Definition, types (trekking, diving, motorbike touring), top destinations, and solo vs companion adventure travel.
+- [What Is Budget Travel?](https://roammate.com/what-is-budget-travel/) — Definition, regional daily budget benchmarks, key strategies, and how companion travel reduces costs.
+- [Best Time to Visit Southeast Asia](https://roammate.com/best-time-to-visit-southeast-asia/) — Month-by-month breakdown of dry and wet seasons across Thailand, Vietnam, Cambodia, Laos, Philippines, and Indonesia.
+- [How Much Does It Cost to Backpack Southeast Asia?](https://roammate.com/how-much-does-it-cost-to-backpack-southeast-asia/) — 2026 daily cost breakdown by country, category, and how sharing costs with a companion reduces spend.
+- [Solo Travel Statistics 2026](https://roammate.com/statistics/) — Key data: solo travel growth, companion preference, safety concerns, budget benchmarks, and travel companion app adoption.
+
+---
+
+## 17. Contact and Social
+
+- **Support email:** support@roammate.com
+- **Facebook:** https://www.facebook.com/roammate
+- **Instagram:** https://www.instagram.com/roammate_travel_app
+- **X (Twitter):** https://x.com/roammate
+- **Bluesky:** https://bsky.app/profile/roammate.bsky.social
+- **LinkedIn:** https://www.linkedin.com/company/roammate
+- **Privacy policy:** https://roammate.com/privacy/
+- **Terms of service:** https://roammate.com/terms/
+- **Sitemap:** https://roammate.com/sitemap.xml
+- **RSS feed:** https://roammate.com/rss.xml

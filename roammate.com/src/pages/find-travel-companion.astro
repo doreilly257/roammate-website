@@ -1,0 +1,680 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Find a Travel Companion — roammate App"
+  description="Find a travel companion who matches your style, budget, and destination. roammate connects solo travelers for shared adventures, cost splitting, and safer trips. Free on iOS."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Find a Travel Companion",
+      "url": "https://roammate.com/find-travel-companion/",
+      "description": "roammate matches solo travelers by style, budget, and destination to find compatible travel companions.",
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Find a Travel Companion", "item": "https://roammate.com/find-travel-companion/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".ftc-title", ".ftc-subtitle", ".faq-section"]
+      },
+      "url": "https://roammate.com/find-travel-companion/"
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I find a travel companion with roammate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download roammate free on iOS, build a travel profile with your style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before deciding to meet up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees. All features including messaging and matching are free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does roammate match travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that are genuinely compatible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is roammate safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate uses verified profiles, in-app messaging, and a report/block system. The platform recommends meeting in public for initial meetups. Standard safety practices apply — trust your instincts and let someone know your plans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I find a female-only travel companion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. roammate lets you filter potential companions by gender preference. Many solo female travelers use roammate specifically to find other women to travel with for added comfort and safety."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What countries does roammate work in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "roammate works worldwide. You can set any destination and find travelers heading there. The app is especially popular in Southeast Asia, Europe, and South America — top solo travel regions."
+          }
+        }
+      ]
+    })} />
+  </Fragment>
+
+  <section class="ftc-hero">
+    <div class="ftc-hero-inner">
+      <div class="section-label section-label--center">Travel Companion Finder</div>
+      <h1 class="ftc-title">Find a <em>travel companion</em> who actually matches</h1>
+      <p class="ftc-subtitle">Not just someone nearby — someone compatible. roammate matches by travel style, budget, and destination so you share the right trip with the right person.</p>
+      <div class="ftc-hero-actions">
+        <a
+          href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=find-travel-companion-hero&mt=8"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ftc-btn ftc-btn--primary"
+          data-ph-event="ftc_hero_appstore_click"
+        >Download Free on iOS</a>
+        <a href="/how-it-works/" class="ftc-btn ftc-btn--ghost">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftc-why">
+    <div class="ftc-why-inner">
+      <div class="section-label">Why It Matters</div>
+      <h2 class="ftc-section-heading">The wrong travel companion ruins a trip.<br><em>The right one changes your life.</em></h2>
+      <div class="ftc-cards">
+        <div class="ftc-card reveal">
+          <div class="ftc-card-icon">💸</div>
+          <h3>Cut costs in half</h3>
+          <p>Split private rooms, taxis, tours, and rental cars. A matched companion saves $150–300 per week in Southeast Asia alone.</p>
+        </div>
+        <div class="ftc-card reveal">
+          <div class="ftc-card-icon">🔒</div>
+          <h3>Travel safer</h3>
+          <p>Verified profiles, identity checks, and a shared itinerary mean you know who you're meeting before you go anywhere.</p>
+        </div>
+        <div class="ftc-card reveal">
+          <div class="ftc-card-icon">🎯</div>
+          <h3>Matched by style, not luck</h3>
+          <p>Early riser or late starter? Budget backpacker or midrange? Adventure or culture? roammate filters by all of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftc-how">
+    <div class="ftc-how-inner">
+      <div class="section-label">How It Works</div>
+      <h2 class="ftc-section-heading">From solo to <em>matched</em> in minutes</h2>
+      <div class="ftc-steps">
+        <div class="ftc-step reveal">
+          <span class="ftc-step-num">01</span>
+          <h3>Build your travel profile</h3>
+          <p>Set your travel style, budget bracket, and destinations. The more honest you are, the better your matches.</p>
+        </div>
+        <div class="ftc-step reveal">
+          <span class="ftc-step-num">02</span>
+          <h3>Browse compatible travelers</h3>
+          <p>See travelers with overlapping destinations, matching budgets, and compatible styles — before starting any conversation.</p>
+        </div>
+        <div class="ftc-step reveal">
+          <span class="ftc-step-num">03</span>
+          <h3>Connect and go</h3>
+          <p>Message, meet, and take it from there. Share a guesthouse, split a tour, or just grab dinner — whatever works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftc-compare">
+    <div class="ftc-compare-inner">
+      <div class="section-label">How It Compares</div>
+      <h2 class="ftc-section-heading">roammate vs <em>the alternatives</em></h2>
+      <div class="ftc-compare-table-wrap">
+        <table class="ftc-compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="ftc-col-roammate">roammate</th>
+              <th>Couchsurfing</th>
+              <th>Meetup</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Purpose</td>
+              <td class="ftc-col-roammate">Find a travel companion</td>
+              <td>Free accommodation with locals</td>
+              <td>Local events and groups</td>
+            </tr>
+            <tr>
+              <td>Matches by travel style</td>
+              <td class="ftc-col-roammate">✓</td>
+              <td>✗</td>
+              <td>✗</td>
+            </tr>
+            <tr>
+              <td>Matches by budget</td>
+              <td class="ftc-col-roammate">✓</td>
+              <td>✗</td>
+              <td>✗</td>
+            </tr>
+            <tr>
+              <td>Verified profiles</td>
+              <td class="ftc-col-roammate">✓</td>
+              <td>Partial</td>
+              <td>✗</td>
+            </tr>
+            <tr>
+              <td>Free</td>
+              <td class="ftc-col-roammate">✓ Free</td>
+              <td>Paid (~$15/yr)</td>
+              <td>Free / Paid tiers</td>
+            </tr>
+            <tr>
+              <td>Best for</td>
+              <td class="ftc-col-roammate">Compatible travel companions</td>
+              <td>Budget accommodation</td>
+              <td>Local social events</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section ftc-faq">
+    <div class="ftc-faq-inner">
+      <div class="section-label">Common Questions</div>
+      <h2 class="ftc-section-heading">Finding a travel companion — <em>FAQ</em></h2>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>How do I find a travel companion with roammate?</h3></summary>
+          <p class="faq-answer">Download roammate free on iOS, build a travel profile with your style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before deciding to meet up.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>Is roammate free to use?</h3></summary>
+          <p class="faq-answer">Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees. All features including messaging and matching are free.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>How does roammate match travelers?</h3></summary>
+          <p class="faq-answer">roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that are genuinely compatible.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>Is roammate safe?</h3></summary>
+          <p class="faq-answer">roammate uses verified profiles, in-app messaging, and a report/block system. The platform recommends meeting in public for initial meetups. Standard safety practices apply — trust your instincts and let someone know your plans.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>Can I find a female-only travel companion?</h3></summary>
+          <p class="faq-answer">Yes. roammate lets you filter potential companions by gender preference. Many solo female travelers use roammate specifically to find other women to travel with for added comfort and safety.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question"><h3>What countries does roammate work in?</h3></summary>
+          <p class="faq-answer">roammate works worldwide. You can set any destination and find travelers heading there. The app is especially popular in Southeast Asia, Europe, and South America — top solo travel regions.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftc-cta">
+    <div class="ftc-cta-inner">
+      <p class="ftc-cta-label">Free on iOS</p>
+      <h2 class="ftc-cta-heading">Your next travel companion is <em>already on roammate</em></h2>
+      <p class="ftc-cta-body">Download free. Build your profile. Find someone who travels the way you do.</p>
+      <a
+        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=find-travel-companion-cta&mt=8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ftc-btn ftc-btn--primary ftc-btn--large"
+        data-ph-event="ftc_bottom_appstore_click"
+      >Download on the App Store — Free</a>
+      <p class="ftc-cta-sub">Also: <a href="/blog/finding-travel-companions/">Read our guide to finding travel companions</a></p>
+    </div>
+  </section>
+
+  <section class="ftc-related">
+    <div class="ftc-related-inner">
+      <div class="section-label">From The Blog</div>
+      <h2 class="ftc-section-heading">More on finding <em>travel companions</em></h2>
+      <div class="ftc-related-links">
+        <a href="/blog/finding-travel-companions/" class="ftc-related-link">How to Find Reliable Travel Companions in New Cities →</a>
+        <a href="/blog/meeting-people-solo-travel/" class="ftc-related-link">Meeting People as a Solo Traveler →</a>
+        <a href="/blog/travel-friendship-building/" class="ftc-related-link">Building Lasting Travel Friendships →</a>
+        <a href="/blog/hostel-social-scene-navigation/" class="ftc-related-link">Navigating the Hostel Social Scene →</a>
+        <a href="/blog/solo-travel-vs-group-tours/" class="ftc-related-link">Solo Travel vs Group Tours →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .ftc-hero {
+    padding: 160px 40px 100px;
+    text-align: center;
+    position: relative;
+  }
+
+  .ftc-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(196, 86, 42, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .ftc-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .ftc-title {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 7vw, 80px);
+    font-weight: 900;
+    line-height: 1.02;
+    color: var(--color-cream);
+    margin-bottom: 24px;
+  }
+
+  .ftc-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .ftc-subtitle {
+    font-size: clamp(17px, 2vw, 21px);
+    color: rgba(245, 241, 235, 0.75);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .ftc-hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ftc-btn {
+    display: inline-block;
+    padding: 15px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+    letter-spacing: 0.3px;
+  }
+
+  .ftc-btn--primary {
+    background: var(--color-terracotta);
+    color: #fff;
+  }
+
+  .ftc-btn--primary:hover {
+    background: #b34f28;
+    transform: translateY(-2px);
+  }
+
+  .ftc-btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(245, 241, 235, 0.25);
+    color: rgba(245, 241, 235, 0.8);
+  }
+
+  .ftc-btn--ghost:hover {
+    border-color: rgba(245, 241, 235, 0.5);
+    color: #fff;
+  }
+
+  .ftc-btn--large {
+    padding: 18px 40px;
+    font-size: 16px;
+  }
+
+  .ftc-section-heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 48px;
+  }
+
+  .ftc-section-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .ftc-why {
+    padding: 80px 40px;
+  }
+
+  .ftc-why-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .ftc-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .ftc-card {
+    padding: 36px 28px;
+    background: rgba(247, 242, 234, 0.04);
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    border-radius: 20px;
+  }
+
+  .ftc-card-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .ftc-card h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--color-cream);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .ftc-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .ftc-how {
+    padding: 80px 40px;
+    background: rgba(247, 242, 234, 0.02);
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+    border-bottom: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .ftc-how-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .ftc-steps {
+    display: grid;
+    gap: 32px;
+  }
+
+  .ftc-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .ftc-step-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--color-terracotta);
+    opacity: 0.4;
+    line-height: 1;
+  }
+
+  .ftc-step h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: var(--color-cream);
+    margin-bottom: 8px;
+  }
+
+  .ftc-step p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .ftc-compare {
+    padding: 80px 40px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .ftc-compare-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .ftc-compare-table-wrap {
+    overflow-x: auto;
+  }
+
+  .ftc-compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  .ftc-compare-table th,
+  .ftc-compare-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+    color: var(--color-text-muted);
+    vertical-align: top;
+  }
+
+  .ftc-compare-table th {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-cream);
+    padding-bottom: 16px;
+  }
+
+  .ftc-compare-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .ftc-col-roammate {
+    background: rgba(196, 86, 42, 0.07);
+    color: var(--color-cream) !important;
+    font-weight: 600;
+  }
+
+  .ftc-compare-table th.ftc-col-roammate {
+    color: var(--color-terracotta-light) !important;
+  }
+
+  .ftc-cta {
+    padding: 80px 40px;
+  }
+
+  .ftc-cta-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ftc-cta-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 18px;
+  }
+
+  .ftc-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 16px;
+  }
+
+  .ftc-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .ftc-cta-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(245, 241, 235, 0.65);
+    margin-bottom: 32px;
+  }
+
+  .ftc-cta-sub {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+  }
+
+  .ftc-cta-sub a {
+    color: var(--color-terracotta-light);
+  }
+
+  .ftc-related {
+    padding: 60px 40px 100px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .ftc-related-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .ftc-related-links {
+    display: grid;
+    gap: 12px;
+  }
+
+  .ftc-related-link {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-cream);
+    text-decoration: none;
+    padding: 16px 20px;
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    border-radius: 12px;
+    transition: border-color 0.25s, color 0.25s;
+  }
+
+  .ftc-related-link:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-terracotta-light);
+  }
+
+  .ftc-faq {
+    padding: 60px 40px 80px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .ftc-faq-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+  }
+
+  .faq-question {
+    font-family: var(--font-display);
+    cursor: pointer;
+    padding: 24px 40px 24px 0;
+    list-style: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-question h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--color-terracotta);
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .faq-question:hover h3 { color: var(--color-terracotta); }
+
+  .faq-answer {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-cream-muted, rgba(245, 241, 235, 0.65));
+    font-weight: 300;
+    padding: 0 40px 24px 0;
+  }
+
+  @media (max-width: 1024px) {
+    .ftc-hero { padding: 140px 24px 80px; }
+    .ftc-why, .ftc-how, .ftc-cta, .ftc-related, .ftc-compare, .ftc-faq { padding-left: 24px; padding-right: 24px; }
+    .ftc-cards { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .ftc-hero { padding: 120px 20px 60px; }
+    .ftc-why, .ftc-how, .ftc-cta, .ftc-related, .ftc-faq { padding-left: 20px; padding-right: 20px; }
+    .ftc-compare { padding-left: 20px; padding-right: 20px; }
+    .ftc-step { grid-template-columns: 44px 1fr; gap: 16px; }
+    .ftc-step-num { font-size: 36px; }
+    .ftc-hero-actions { flex-direction: column; align-items: center; }
+  }
+</style>

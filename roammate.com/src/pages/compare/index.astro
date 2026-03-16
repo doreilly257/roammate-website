@@ -1,0 +1,509 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+
+const comparisonPosts = allBlogPosts.filter((p: any) => p.slug.startsWith('roammate-vs-'));
+const bestOfPost = allBlogPosts.find((p: any) => p.slug === 'best-travel-companion-apps-2026');
+
+const appNames: Record<string, string> = {
+  'roammate-vs-couchsurfing': 'Couchsurfing',
+  'roammate-vs-tourlina': 'Tourlina',
+  'roammate-vs-backpackr': 'Backpackr',
+  'roammate-vs-facebook-travel-groups': 'Facebook Travel Groups',
+  'roammate-vs-meetup': 'Meetup',
+  'roammate-vs-bumble-bff': 'Bumble BFF',
+  'roammate-vs-hostelworld': 'Hostelworld',
+  'roammate-vs-travello': 'Travello',
+  'roammate-vs-gaffl': 'GAFFL',
+};
+
+const allComparisonItems = [
+  ...(bestOfPost ? [bestOfPost] : []),
+  ...comparisonPosts,
+];
+
+const itemListElements = allComparisonItems.map((post: any, i: number) => ({
+  "@type": "ListItem",
+  "position": i + 1,
+  "name": post.title,
+  "url": `https://roammate.com/blog/${post.slug}/`,
+}));
+---
+
+<BaseLayout
+  title="roammate vs Other Travel Apps — Full Comparison"
+  description="See how roammate compares to Couchsurfing, Tourlina, Backpackr, Meetup, GAFFL, Hostelworld, and more. Honest side-by-side breakdowns for every travel companion app."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://roammate.com/compare/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "roammate vs Other Travel Apps",
+      "description": "Honest comparisons between roammate and other travel companion platforms.",
+      "numberOfItems": allComparisonItems.length,
+      "itemListElement": itemListElements,
+    })} />
+  </Fragment>
+
+  <section class="compare-hero">
+    <div class="compare-hero-inner">
+      <nav class="compare-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Comparisons</span>
+      </nav>
+      <h1 class="compare-title">How roammate compares to other travel apps</h1>
+      <p class="compare-subtitle">There are dozens of apps that claim to help travelers connect. We've written honest, side-by-side comparisons so you can decide which tool actually fits what you need. No spin — just what each app does, who it's for, and where it falls short.</p>
+    </div>
+  </section>
+
+  <section class="compare-tool">
+    <div class="compare-tool-inner">
+      <div class="section-label">Quick Compare</div>
+      <h2 class="compare-tool-heading">Compare roammate with any app</h2>
+      <div class="compare-tool-row">
+        <div class="compare-tool-select-wrap">
+          <span class="compare-tool-select compare-tool-select--fixed">roammate</span>
+        </div>
+        <span class="compare-tool-vs">vs</span>
+        <div class="compare-tool-select-wrap">
+          <select id="compare-app-select" class="compare-tool-select">
+            <option value="" disabled selected>Select an app</option>
+            <option value="couchsurfing">Couchsurfing</option>
+            <option value="tourlina">Tourlina</option>
+            <option value="backpackr">Backpackr</option>
+            <option value="facebook-travel-groups">Facebook Travel Groups</option>
+            <option value="meetup">Meetup</option>
+            <option value="bumble-bff">Bumble BFF</option>
+            <option value="hostelworld">Hostelworld</option>
+            <option value="travello">Travello</option>
+            <option value="gaffl">GAFFL</option>
+          </select>
+        </div>
+      </div>
+      <button
+        id="compare-go-btn"
+        class="compare-tool-btn"
+        disabled
+        data-ph-event="compare_tool_select"
+      >Compare</button>
+    </div>
+  </section>
+
+  <script>
+    const sel = document.getElementById('compare-app-select') as HTMLSelectElement;
+    const btn = document.getElementById('compare-go-btn') as HTMLButtonElement;
+    sel.addEventListener('change', () => { btn.disabled = !sel.value; });
+    btn.addEventListener('click', () => {
+      if (sel.value) window.location.href = `/blog/roammate-vs-${sel.value}/`;
+    });
+  </script>
+
+  {bestOfPost && (
+    <section class="compare-featured reveal">
+      <div class="compare-featured-inner">
+        <div class="section-label">Overview</div>
+        <a href={`/blog/${bestOfPost.slug}/`} class="compare-featured-card">
+          <h2>{bestOfPost.title}</h2>
+          <p>{bestOfPost.description}</p>
+          <span class="compare-read-link">Read the full comparison &rarr;</span>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <section class="compare-grid-section reveal">
+    <div class="compare-grid-inner">
+      <div class="section-label">Head-to-Head</div>
+      <h2 class="compare-grid-heading">Individual comparisons</h2>
+      <div class="compare-grid">
+        {comparisonPosts.map((post: any) => (
+          <a href={`/blog/${post.slug}/`} class="compare-card">
+            <span class="compare-card-vs">vs {appNames[post.slug] || post.slug.replace('roammate-vs-', '')}</span>
+            <h3 class="compare-card-title">{post.title}</h3>
+            <p class="compare-card-desc">{post.description}</p>
+            <span class="compare-read-link">Read comparison &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="compare-cta reveal">
+    <div class="compare-cta-inner">
+      <h2>Ready to find your travel companion?</h2>
+      <p>roammate matches you by travel style, budget, and destination — free on iOS.</p>
+      <a
+        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=compare-cta&mt=8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="compare-cta-btn"
+        data-ph-event="compare_cta_appstore_click"
+      >Download roammate — Free</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .compare-hero {
+    background: linear-gradient(135deg, #1a1714 0%, #2a2420 100%);
+    padding: 120px 24px 80px;
+    text-align: center;
+  }
+
+  .compare-hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .compare-breadcrumb {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+    margin-bottom: 40px;
+  }
+
+  .compare-breadcrumb a {
+    color: rgba(245, 240, 232, 0.55);
+    transition: color 0.3s;
+  }
+
+  .compare-breadcrumb a:hover {
+    color: var(--color-terracotta-light);
+  }
+
+  .compare-breadcrumb span {
+    margin: 0 10px;
+  }
+
+  .compare-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #f5f0e8;
+    margin-bottom: 24px;
+  }
+
+  .compare-subtitle {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(245, 240, 232, 0.7);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .compare-featured {
+    padding: 64px 24px 0;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .compare-featured-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .compare-featured-card {
+    display: block;
+    margin-top: 24px;
+    padding: 40px 36px;
+    background: var(--color-bg-warm);
+    border-radius: 16px;
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+  }
+
+  .compare-featured-card:hover {
+    border-color: var(--color-terracotta);
+    box-shadow: 0 8px 32px rgba(196, 86, 42, 0.1);
+  }
+
+  .compare-featured-card h2 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 12px;
+  }
+
+  .compare-featured-card p {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+  }
+
+  .compare-read-link {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-terracotta);
+    letter-spacing: 0.5px;
+  }
+
+  .compare-grid-section {
+    padding: 64px 24px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .compare-grid-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .compare-grid-heading {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 8px 0 32px;
+  }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .compare-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px;
+    background: var(--color-bg);
+    border-radius: 14px;
+    border: 1px solid rgba(58, 52, 46, 0.08);
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    text-decoration: none;
+  }
+
+  .compare-card:hover {
+    border-color: var(--color-terracotta);
+    box-shadow: 0 6px 24px rgba(196, 86, 42, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .compare-card-vs {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 12px;
+  }
+
+  .compare-card-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
+  .compare-card-desc {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+    flex: 1;
+  }
+
+  .compare-cta {
+    padding: 80px 24px;
+    text-align: center;
+    background: var(--color-bg-warm);
+  }
+
+  .compare-cta-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .compare-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 12px;
+  }
+
+  .compare-cta p {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--color-text-muted);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .compare-cta-btn {
+    display: inline-block;
+    padding: 16px 36px;
+    background: var(--color-terracotta);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .compare-cta-btn:hover {
+    background: var(--color-terracotta-light);
+    transform: translateY(-1px);
+  }
+
+  .compare-tool {
+    padding: 56px 24px 0;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .compare-tool-inner {
+    background: var(--color-bg-warm);
+    border-radius: 16px;
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    padding: 40px 36px;
+    text-align: center;
+  }
+
+  .compare-tool-heading {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 8px 0 28px;
+  }
+
+  .compare-tool-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .compare-tool-select-wrap {
+    flex: 1;
+    max-width: 240px;
+  }
+
+  .compare-tool-select {
+    width: 100%;
+    padding: 14px 18px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid rgba(58, 52, 46, 0.12);
+    border-radius: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+  select.compare-tool-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  .compare-tool-select:focus {
+    outline: none;
+    border-color: var(--color-terracotta);
+  }
+
+  .compare-tool-select--fixed {
+    text-align: center;
+    color: var(--color-terracotta);
+    border-color: rgba(196, 86, 42, 0.25);
+    cursor: default;
+  }
+
+  .compare-tool-vs {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--color-terracotta);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+  }
+
+  .compare-tool-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-terracotta);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, opacity 0.3s;
+  }
+
+  .compare-tool-btn:hover:not(:disabled) {
+    background: var(--color-terracotta-light);
+    transform: translateY(-1px);
+  }
+
+  .compare-tool-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 600px) {
+    .compare-tool-inner {
+      padding: 28px 20px;
+    }
+
+    .compare-tool-row {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .compare-tool-select-wrap {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .compare-tool-vs {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .compare-hero {
+      padding: 100px 20px 60px;
+    }
+
+    .compare-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .compare-featured-card {
+      padding: 28px 24px;
+    }
+  }
+</style>

@@ -1,0 +1,83 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { allBlogPosts } from '../../data/blog';
+import { allGuides } from '../../data/guides';
+import { resolveRelatedContent } from '../../lib/blog-utils';
+
+const post = allBlogPosts.find((p) => p.slug === 'roammate-vs-travello');
+if (!post) throw new Error('Blog post not found: roammate-vs-travello');
+
+const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
+---
+
+<BlogPostLayout
+  title={post.title}
+  description={post.description}
+  heroImage={post.heroImage}
+  category={post.category}
+  publishedAt={post.publishedAt}
+  updatedAt={post.updatedAt}
+  author={post.author}
+  readingTime={post.readingTime}
+  intro={post.intro}
+  sections={post.sections}
+  relatedGuides={relatedGuides as any}
+  relatedPosts={relatedPosts}
+>
+  <div slot="extra" class="blog-comparison-table reveal">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="comparison-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>roammate</th>
+            <th>Travello</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary purpose</td>
+            <td>Trip companion matching</td>
+            <td>Social travel discovery</td>
+          </tr>
+          <tr>
+            <td>Matching logic</td>
+            <td>Style, budget, destination</td>
+            <td>None (social browsing)</td>
+          </tr>
+          <tr>
+            <td>Travel-specific</td>
+            <td>Yes (built for travelers)</td>
+            <td>Yes (travel social network)</td>
+          </tr>
+          <tr>
+            <td>Companion matching</td>
+            <td>Yes (core feature)</td>
+            <td>Incidental (via social feed)</td>
+          </tr>
+          <tr>
+            <td>Activity booking</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Verified profiles</td>
+            <td>Yes (all users)</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Free, no ads</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td>iOS (Android coming)</td>
+            <td>iOS, Android</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BlogPostLayout>

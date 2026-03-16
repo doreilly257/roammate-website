@@ -1,5 +1,6 @@
 ---
 import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+import SeasonCalendar from '../../components/SeasonCalendar.astro';
 
 const routeOverview = [
   { country: 'Colombia & Ecuador', flag: '🇨🇴🇪🇨', weeks: '1–6', color: '#c4562a', stops: ['Cartagena', 'Medellín', 'Bogotá', 'Salento', 'Quito', 'Galápagos (optional)'] },
@@ -66,7 +67,7 @@ const countries = [
         duration: '8–10 days',
         description: 'Fly from Quito/Guayaquil to Lima ($100–180). Lima is the gastronomic capital of South America — ceviche in Surquillo market (S/15–20), street food in Miraflores, and if you splurge once, try a S/45–60 menú at one of the world\'s top restaurants (Central, Maido). Explore Barranco\'s street art and Lima\'s colonial centre (free walking tour). Fly to Cusco (S/80–200 on Sky/JetSMART). Spend 2 days acclimatising to 3,400m — coca tea helps. Explore the Inca sites: Sacsayhuamán (Boleto Turístico S/130 covers 16 sites), San Pedro Market for fresh juices (S/5), and the chocolate museum.',
         tip: 'Altitude sickness in Cusco is real — arrive, drink coca tea, walk slowly, and don\'t plan anything strenuous for 48 hours.',
-        guides: ['lima', 'cusco'],
+        guides: ['lima', 'cusco', 'arequipa', 'nazca', 'paracas'],
       },
       {
         title: 'Sacred Valley & Machu Picchu',
@@ -118,7 +119,7 @@ const countries = [
         duration: '8–10 days',
         description: 'Fly from Mendoza to Buenos Aires (AR$15,000–30,000). BA is one of the world\'s great cities — free tango shows in San Telmo on Sundays, the best steak you\'ll ever eat at a parrilla (AR$8,000–12,000 for a massive bife de chorizo), and all-night milongas (tango dancehalls, AR$2,000–5,000 entry). Explore La Boca, Recoleta Cemetery (free), and the bookshops of Palermo. For Patagonia: fly to El Calafate (AR$25,000–50,000) for the Perito Moreno Glacier (AR$15,000 park entry — watching bus-sized chunks of ice calve into the lake is unforgettable). If time allows, El Chaltén for free hiking to Laguna de los Tres.',
         tip: 'Buenos Aires runs late — dinner starts at 9–10pm, clubs at 2am. Adjust your body clock. Sunday Feria de San Telmo is the best market on the continent.',
-        guides: ['buenos-aires', 'el-calafate', 'perito-moreno', 'torres-del-paine'],
+        guides: ['buenos-aires', 'el-calafate', 'perito-moreno', 'torres-del-paine', 'ushuaia', 'bariloche'],
       },
     ],
   },
@@ -222,4 +223,65 @@ const practicalInfo = [
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
   featuredGuides={['buenos-aires', 'rio-de-janeiro', 'lima', 'santiago', 'sao-paulo', 'machu-picchu', 'salar-de-uyuni', 'iguazu-falls', 'perito-moreno', 'galapagos', 'torres-del-paine', 'sacred-valley', 'cartagena', 'medellin', 'bogota', 'salento', 'cusco', 'quito', 'la-paz', 'lake-titicaca', 'atacama-desert', 'valparaiso', 'mendoza', 'el-calafate', 'cocora-valley']}
   accentColor="#c4562a"
-/>
+>
+  <SeasonCalendar slot="season-calendar" months={[
+    { name: 'Jan', rating: 'avoid', note: 'Wet season in many areas — heavy rain in the highlands' },
+    { name: 'Feb', rating: 'avoid', note: 'Inca Trail closes for maintenance, continued rains' },
+    { name: 'Mar', rating: 'good', note: 'Rains easing — shoulder season, fewer crowds' },
+    { name: 'Apr', rating: 'best', note: 'Dry season begins in the highlands — great trekking' },
+    { name: 'May', rating: 'best', note: 'Excellent weather across Peru and Bolivia highlands' },
+    { name: 'Jun', rating: 'best', note: 'Peak dry season — Inti Raymi festival in Cusco' },
+    { name: 'Jul', rating: 'best', note: 'Dry and clear — ideal for Patagonia (winter) and Andes' },
+    { name: 'Aug', rating: 'best', note: 'Buenos Aires Tango Festival, dry highlands' },
+    { name: 'Sep', rating: 'best', note: 'Dry season continues — wildflowers in Atacama' },
+    { name: 'Oct', rating: 'best', note: 'Spring in the south, last dry month in the highlands' },
+    { name: 'Nov', rating: 'good', note: 'Patagonia summer begins, rains returning to Andes' },
+    { name: 'Dec', rating: 'avoid', note: 'Wet season in Colombia and highlands — Uyuni mirror effect' },
+  ]} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Inti Raymi — Festival of the Sun",
+      "description": "Ancient Inca sun festival held annually on June 24 in Cusco, Peru. A grand ceremonial re-enactment at Sacsayhuaman fortress with thousands of performers in traditional dress, honouring the winter solstice and the Inca sun god Inti.",
+      "startDate": "2026-06-24",
+      "endDate": "2026-06-24",
+      "location": {
+        "@type": "Place",
+        "name": "Sacsayhuaman, Cusco",
+        "address": { "@type": "PostalAddress", "addressLocality": "Cusco", "addressRegion": "Cusco", "addressCountry": "PE" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1Y",
+        "startDate": "2026-06-24",
+        "endDate": "2026-06-24",
+        "scheduleTimezone": "America/Lima"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Buenos Aires Tango Festival and World Cup",
+      "description": "The world's largest tango event, held annually in August in Buenos Aires, Argentina. Two weeks of free milongas, classes, concerts, and the World Tango Championship in iconic venues across the city.",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-23",
+      "location": {
+        "@type": "Place",
+        "name": "Buenos Aires",
+        "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1Y",
+        "startDate": "2026-08-10",
+        "endDate": "2026-08-23",
+        "scheduleTimezone": "America/Argentina/Buenos_Aires"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    }
+  ])} />
+</BackpackerRouteLayout>

@@ -1,5 +1,6 @@
 ---
 import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+import SeasonCalendar from '../../components/SeasonCalendar.astro';
 
 const routeOverview = [
   { country: 'Thailand', flag: '🇹🇭', weeks: '1–5', color: '#e8734a', stops: ['Bangkok', 'Chiang Mai', 'Pai', 'Koh Phangan', 'Koh Tao', 'Krabi'] },
@@ -49,7 +50,7 @@ const countries = [
         duration: '10–14 days',
         description: 'Fly from Chiang Mai to Surat Thani (฿800–1,500 on AirAsia, book early). The Gulf Islands are the backpacker trail: Koh Phangan for the Full Moon Party (฿300 entry, held monthly — plan your dates around it), Koh Tao for diving (Open Water certification ฿9,000–10,000 over 3–4 days, among the cheapest globally). Then cross to the Andaman side — Krabi/Ao Nang as a base for Railay Beach (only accessible by longtail boat, ฿100). Island-hop to Koh Lanta for a quieter vibe. Ferries between islands: ฿200–600.',
         tip: 'Get your PADI Open Water on Koh Tao — it\'s one of the cheapest and best places in the world to learn to dive. Shop around the dive schools on Sairee Beach.',
-        guides: ['koh-phangan', 'full-moon-party', 'koh-tao', 'krabi'],
+        guides: ['koh-phangan', 'full-moon-party', 'koh-tao', 'krabi', 'railay'],
       },
     ],
   },
@@ -73,7 +74,7 @@ const countries = [
         duration: '4–5 days',
         description: 'Bus from Bangkok to Siem Reap takes 8–10 hours via Poipet border crossing ($10–15). Buy a 3-day Angkor Pass ($62) — it covers the entire Angkor Archaeological Park. Day 1: Angkor Wat at sunrise (arrive by 5am), then Angkor Thom and Bayon. Day 2: Ta Prohm (the "Tomb Raider temple" with trees growing through ruins), Preah Khan, and the smaller temples. Day 3: Explore further sites like Banteay Srei (the "pink temple", 30km out). Pub Street in town has $0.50 draft beers and $2–3 meals.',
         tip: 'Hire a tuk-tuk driver for all 3 days ($15–18/day) — they know the optimal route to dodge crowds and will wait at each temple.',
-        guides: ['siem-reap', 'angkor-wat'],
+        guides: ['siem-reap', 'angkor-wat', 'ta-prohm'],
       },
       {
         title: 'Phnom Penh',
@@ -236,4 +237,62 @@ const practicalInfo = [
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
   featuredGuides={['bangkok', 'chiang-mai', 'chiang-mai-temples', 'chiang-rai', 'pai', 'koh-phangan', 'full-moon-party', 'koh-tao', 'krabi', 'siem-reap', 'angkor-wat', 'phnom-penh', 'kampot', 'koh-rong', 'vientiane', 'vang-vieng', 'river-tubing', 'luang-prabang', 'kuang-si-falls', 'mekong-slow-boat', 'four-thousand-islands']}
   accentColor="#2e6d79"
-/>
+>
+  <SeasonCalendar slot="season-calendar" months={[
+    { name: 'Jan', rating: 'best', note: 'Cool and dry — peak season across all three countries' },
+    { name: 'Feb', rating: 'best', note: 'Excellent weather, still dry season' },
+    { name: 'Mar', rating: 'best', note: 'Last month of dry season, temperatures rising' },
+    { name: 'Apr', rating: 'good', note: 'Shoulder season — getting hotter, occasional showers' },
+    { name: 'May', rating: 'avoid', note: 'Monsoon begins — daily downpours, some islands close' },
+    { name: 'Jun', rating: 'avoid', note: 'Full monsoon — heavy rain, humid, fewer travellers' },
+    { name: 'Jul', rating: 'avoid', note: 'Rainy season continues — cheaper but wet' },
+    { name: 'Aug', rating: 'avoid', note: 'Heaviest rainfall in many areas' },
+    { name: 'Sep', rating: 'avoid', note: 'Tail end of monsoon — flooding possible' },
+    { name: 'Oct', rating: 'good', note: 'Rains easing, shoulder season begins' },
+    { name: 'Nov', rating: 'best', note: 'Dry season starts — great weather returns' },
+    { name: 'Dec', rating: 'best', note: 'Peak season — cool, dry, and busy' },
+  ]} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Full Moon Party",
+      "description": "Monthly all-night beach party on Koh Phangan, Thailand, held on the night of each full moon. One of the world's most famous backpacker events with fire shows, body paint, and DJs on Hat Rin Beach.",
+      "location": {
+        "@type": "Place",
+        "name": "Hat Rin Beach, Koh Phangan",
+        "address": { "@type": "PostalAddress", "addressLocality": "Koh Phangan", "addressRegion": "Surat Thani", "addressCountry": "TH" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1M",
+        "scheduleTimezone": "Asia/Bangkok"
+      },
+      "organizer": { "@type": "Organization", "name": "Koh Phangan local venues" },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Songkran Water Festival",
+      "description": "Thai New Year water festival celebrated nationwide every April 13-15. The world's largest water fight with street parties, temple ceremonies, and traditional merit-making across Thailand.",
+      "startDate": "2026-04-13",
+      "endDate": "2026-04-15",
+      "location": {
+        "@type": "Place",
+        "name": "Thailand (nationwide)",
+        "address": { "@type": "PostalAddress", "addressCountry": "TH" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1Y",
+        "startDate": "2026-04-13",
+        "endDate": "2026-04-15",
+        "scheduleTimezone": "Asia/Bangkok"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    }
+  ])} />
+</BackpackerRouteLayout>

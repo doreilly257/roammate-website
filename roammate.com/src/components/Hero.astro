@@ -19,12 +19,21 @@ const base = import.meta.env.BASE_URL;
     <h1 class="hero-title">Never Roam <em>Alone</em></h1>
     <p class="hero-subtitle">Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.</p>
     <div class="hero-actions">
-      <a href="https://apps.apple.com/app/id6758834253" class="badge-link" aria-label="Download on App Store" target="_blank" rel="noopener" data-ph-event="hero_appstore_click" data-ph-label="hero">
+      <a
+        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=homepage-hero-btn&mt=8"
+        class="hero-download-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-ph-event="hero_appstore_btn_click"
+        data-ph-label="hero"
+      >Download Free on iOS</a>
+      <a href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=homepage-hero&mt=8" class="badge-link" aria-label="Download on App Store" target="_blank" rel="noopener" data-ph-event="hero_appstore_click" data-ph-label="hero">
         <img src={`${base}images/app-store-badge.png`} alt="Download on App Store" class="store-badge" width="564" height="189">
       </a>
-      <a href="/#waitlist" class="badge-link" aria-label="Get it on Google Play">
-        <img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="564" height="168">
-      </a>
+      <div class="hero-android-soon" aria-label="Android app coming soon">
+        <img src={`${base}images/google-play-badge.png`} alt="Android coming soon" class="store-badge" width="564" height="168">
+        <span class="hero-android-label">Coming soon</span>
+      </div>
     </div>
     <p class="hero-free-line">Free on iOS &middot; No ads &middot; No subscriptions</p>
   </div>
@@ -170,6 +179,45 @@ const base = import.meta.env.BASE_URL;
     animation: fadeUp 1s var(--ease-out-expo) 1.4s forwards;
   }
 
+  .hero-download-btn {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background: var(--color-terracotta);
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+    white-space: nowrap;
+  }
+
+  .hero-download-btn:hover {
+    background: #b34f28;
+    transform: translateY(-3px);
+  }
+
+  .hero-android-soon {
+    position: relative;
+    display: block;
+    opacity: 0.38;
+    cursor: default;
+  }
+
+  .hero-android-label {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.5);
+    white-space: nowrap;
+  }
+
   .hero-scroll {
     position: absolute;
     bottom: 40px;
@@ -218,6 +266,7 @@ const base = import.meta.env.BASE_URL;
     .hero-title { margin-bottom: 24px; }
     .hero-subtitle { font-size: 16px; margin-bottom: 36px; }
     .hero-actions { flex-direction: column; align-items: flex-start; }
+    .hero-download-btn { width: 100%; text-align: center; }
     .hero-actions img { height: 46px; }
     .hero-free-line { font-size: 11px; }
     .hero-scroll { display: none; }

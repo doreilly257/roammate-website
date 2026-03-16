@@ -1,0 +1,131 @@
+---
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+
+const quickFacts = [
+  { icon: '💰', label: 'Currency', value: 'USD preferred', detail: 'Pay in USD; ARS accepted but inflation high' },
+  { icon: '🗣', label: 'Language', value: 'Spanish', detail: 'Basic English in tourist businesses' },
+  { icon: '🕐', label: 'Timezone', value: 'ART (UTC-3)', detail: 'No DST' },
+  { icon: '☀️', label: 'Best Months', value: 'Nov – Mar', detail: 'Austral summer; long daylight hours' },
+  { icon: '🎒', label: 'Daily Budget', value: '~$50–90 USD', detail: 'Budget to mid-range; remote city prices' },
+  { icon: '🛂', label: 'Visa', value: '90 days visa-free', detail: 'Most nationalities — check before travel' },
+];
+
+const itineraries = {
+  1: [
+    {
+      num: 1,
+      title: 'End of the World Highlights',
+      periods: [
+        {
+          time: 'Morning',
+          icon: '🌅',
+          title: 'Tierra del Fuego National Park',
+          text: 'Take a remis (taxi) or bus from downtown to Tierra del Fuego National Park, 12km west of Ushuaia — the only national park in Argentina accessible by road that reaches the Beagle Channel. Enter through the Lapataia sector and walk the Senda Costera trail (6km return) along the shore of Lago Roca through lenga beech forest coloured gold and red from November onwards. The trail ends at Bahía Lapataia, where the Route 3 marker declares it the end of the Pan-American Highway, 17,848km from Alaska. Beaver dams along the way are the work of Canadian beavers introduced in 1946, now an ecological disaster.',
+          tip: 'Park entry costs ARS 12,000 (~$12). A remis round-trip costs around $20 and the driver will wait. Alternatively, the hop-on bus runs from Ushuaia centre for ARS 8,000 return.',
+        },
+        {
+          time: 'Afternoon',
+          icon: '☀️',
+          title: 'Beagle Channel Boat Tour',
+          text: 'Return to Ushuaia and join an afternoon Beagle Channel catamaran tour — the most popular and worthwhile activity in the city. The 3-hour tours depart from the port at 3pm and navigate through the channel that Darwin sailed in 1833 aboard HMS Beagle. Stop at Isla de los Lobos (sea lion colony), Isla de los Pájaros (cormorant and penguin nesting sites), and if weather allows, pass Les Éclaireurs Lighthouse — often misidentified as the "Lighthouse at the End of the World" from Jules Verne\'s novel. On clear days, the snow-capped Chilean peaks across the channel are dramatic.',
+          tip: 'Beagle Channel tours cost $25-35 USD. Pre-book at the port kiosks or your hostel the day before — peak season departures fill up. Bring a windproof jacket regardless of sunshine, as the channel wind is fierce.',
+        },
+        {
+          time: 'Evening',
+          icon: '🌙',
+          title: 'Port Area & Centolla Dinner',
+          text: 'Walk the waterfront Paseo del Centenario as the evening light turns the Beagle Channel copper and the Martial mountains behind the city glow. The port area has several restaurants serving centolla — southern king crab unique to these waters, regarded as the finest shellfish in Argentina. A half centolla at a mid-range restaurant costs $15-25. More budget-friendly options include calafate sour cocktails made with the local Patagonian berry, and lamb stew at the covered market on Avenida Maipú. The city is small enough to walk end to end in 20 minutes.',
+          tip: 'Centolla season runs November–April. Outside those months it is frozen or unavailable. If you are here in season, this is absolutely worth splurging on — it is caught fresh that morning and unlike any crab you have eaten elsewhere.',
+        },
+      ],
+    },
+  ],
+};
+
+const budgetTips = [
+  { title: 'Pay everything in USD cash', text: 'Argentina\'s parallel exchange rate (blue rate) gives significantly more ARS per dollar than the official card rate. Pay USD cash where accepted and you effectively get a 30-50% discount on ARS-priced items.' },
+  { title: 'Book the Beagle Channel from the port', text: 'Booking boat tours directly at the port kiosks is cheaper than through hotels and hostels. Competition between operators keeps walk-up prices competitive and you can often negotiate a discount with groups of 3+.' },
+  { title: 'Self-cater for lunches', text: 'Ushuaia is expensive by Argentine standards due to its remote location. Supermarkets on Avenida San Martín stock good provisions. Self-catering lunch at the national park saves $10-15 per person.' },
+  { title: 'Visit Penguin Colony as a day trip', text: 'Magellanic penguin colony at Estancia Harberton costs $40-50 for the tour including transport. This is non-negotiable value — 50,000 penguins in their natural habitat is worth every cent.' },
+];
+
+const budgetBreakdown = [
+  { category: 'Accommodation', budget: '$15–25', mid: '$40–80', notes: 'Dorm → private room; limited budget options' },
+  { category: 'Food', budget: '$15–25', mid: '$35–70', notes: 'Self-catered → restaurants' },
+  { category: 'Transport', budget: '$5–15', mid: '$20–40', notes: 'Local bus → remis taxis' },
+  { category: 'Beagle Channel Tour', budget: '$25–30', mid: '$35–50', notes: 'Group catamaran → private' },
+  { category: 'National Park Entry', budget: '$12', mid: '$12', notes: 'Fixed fee; required for park' },
+  { category: 'Penguin Colony Tour', budget: '$40–50', mid: '$50–70', notes: 'Group tour from city' },
+  { category: 'Daily Total (excl. big tours)', budget: '$50–75', mid: '$100–200', notes: 'Budget with self-catering → full comfort' },
+];
+
+const practicalInfo = [
+  {
+    icon: '✈️',
+    title: 'Getting There',
+    items: [
+      'Malvinas Argentinas Airport (USH) has daily flights from Buenos Aires (3.5 hours, from $80 on Aerolíneas)',
+      'No road access from Chilean Patagonia without crossing into Chile — flying is standard for most visitors',
+      'Book flights 4-6 weeks ahead in Dec–Jan peak season — prices double close to the date',
+    ],
+  },
+  {
+    icon: '🌊',
+    title: 'Weather & Clothing',
+    items: [
+      'Ushuaia\'s weather is famously unpredictable — four seasons in one day is common even in summer',
+      'Pack waterproof jacket, fleece, and windproof layers regardless of season',
+      'Summer (Nov–Mar) brings 17+ hours of daylight and temperatures of 5-15°C; winter drops below freezing',
+    ],
+  },
+  {
+    icon: '🚗',
+    title: 'Getting Around',
+    items: [
+      'Downtown Ushuaia is walkable — the main strip along Avenida San Martín covers restaurants, shops, and agencies',
+      'Remis taxis to the national park cost $15-20 one-way; negotiate a round-trip with waiting',
+      'The hop-on Ushuaia Bus runs to the national park and Lago Escondido in summer',
+    ],
+  },
+  {
+    icon: '💰',
+    title: 'Money & Currency',
+    items: [
+      'Argentina\'s economy means USD cash is king — bring $100-200 bills for best exchange rates',
+      'ATMs in Ushuaia charge high fees and dispense pesos at official rates — avoid for large amounts',
+      'Most tourist businesses quote prices in USD; confirm before paying to avoid confusion',
+    ],
+  },
+];
+
+const culturalTips = [
+  { icon: '🌿', title: 'Patagonian Environment', text: 'Tierra del Fuego is one of the most pristine ecosystems on Earth. Stay on marked trails in the national park, do not feed wildlife, and pack out all waste. The introduced beaver population is already causing irreversible damage to native lenga beech forests — do not romanticise it.' },
+  { icon: '🐧', title: 'Wildlife Viewing Distance', text: 'Magellanic penguins at Harberton allow remarkably close approach — they are genuinely unafraid of humans. Guides set minimum distances; respect them. Touching or blocking penguins\' path to the sea causes real stress to breeding birds.' },
+  { icon: '⚓', title: 'Fuegian History', text: 'Ushuaia was established as a penal colony in 1896 — the Museo del Fin del Mundo tells the story of the Yaghan people who lived here for 10,000 years and the brutal impact of European contact. The last fully fluent Yaghan speaker, Cristina Calderón, passed away in 2022. This history deserves thoughtful engagement.' },
+  { icon: '🗺', title: 'End of World Hype', text: 'Ushuaia markets itself aggressively as the "End of the World." Puerto Williams in Chile is technically further south. Embrace the theatre of the End of the World stamp and sign — it is genuinely fun — but know you are participating in a well-crafted tourist narrative.' },
+];
+---
+
+<CityGuideLayout
+  title="Ushuaia Guide 2026 — Itinerary | roammate"
+  description="Complete Ushuaia travel guide for backpackers. Tierra del Fuego National Park, Beagle Channel tours, and penguin colonies at the end of the world. Budget tips and practical info."
+  heroImage="/images/guides/machu-picchu-hero.webp"
+  heroFlag="🇦🇷"
+  heroCountry="Argentina"
+  heroRegion="South America"
+  heroCity="Ushuaia"
+  heroSubtitle="The End of the World — the world's southernmost city, where the Andes plunge into the Beagle Channel and Antarctica begins just beyond the horizon."
+  heroPills={['1–3 Day Itinerary', 'Patagonia', 'Nov – Mar Best']}
+  quickFacts={quickFacts}
+  itineraries={itineraries}
+  defaultDays={1}
+  budgetTips={budgetTips}
+  budgetBreakdown={budgetBreakdown}
+  budgetIntro="Daily costs per person in USD. Ushuaia is the most expensive city in Argentina due to its remoteness — budget accordingly, and bring USD cash for the best exchange rates."
+  practicalInfo={practicalInfo}
+  culturalTips={culturalTips}
+  culturalIntro="Ushuaia sits at the meeting point of Andean wilderness, Fuegian indigenous history, and Antarctic frontier — engage with all three rather than just the End of the World souvenir shop."
+  ctaCity="Ushuaia"
+  ctaText="Find travel companions to split Ushuaia's costs on roammate — boat tours, park transport, and penguin trips are all cheaper with a group."
+  ctaCustomise="To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
+/>

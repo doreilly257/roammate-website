@@ -30,6 +30,8 @@ const blogHeroImages = blogPosts
   .map((post) => post.heroImage)
   .filter((image): image is string => Boolean(image));
 
+const categories = [...new Set(blogPosts.map((p) => p.category).filter(Boolean))] as string[];
+
 const formatDate = (value?: string) => {
   if (!value) return null;
   const date = new Date(value);
@@ -104,9 +106,20 @@ const formatDate = (value?: string) => {
         <h2 class="section-heading">Recent <em>posts</em></h2>
         <p class="blog-section-intro">Advice and destination ideas for planning better trips and making the most of every stop.</p>
       </div>
-      <div class="blog-grid">
+
+      <div class="blog-controls">
+        <input type="text" id="blogSearch" class="blog-search" placeholder="Search posts..." aria-label="Search blog posts" />
+        <div class="blog-tabs" id="blogTabs">
+          <button class="blog-tab active" data-cat="all">All</button>
+          {categories.map((cat) => (
+            <button class="blog-tab" data-cat={cat}>{cat}</button>
+          ))}
+        </div>
+      </div>
+
+      <div class="blog-grid" id="blogGrid">
         {blogPosts.map((post, i) => (
-          <a href={`/blog/${post.slug}/`} class={`blog-card reveal reveal-delay-${(i % 4) + 1}`}>
+          <a href={`/blog/${post.slug}/`} class={`blog-card reveal reveal-delay-${(i % 4) + 1}`} data-category={post.category || ''} data-title={post.title.toLowerCase()} data-description={post.description.toLowerCase()}>
             <img src={post.heroImage} alt={post.title} loading={i === 0 ? 'eager' : 'lazy'} width="1200" height="800" />
             <div class="blog-card-content">
               {post.category && <span class="blog-card-category">{post.category}</span>}
@@ -120,6 +133,34 @@ const formatDate = (value?: string) => {
           </a>
         ))}
       </div>
+      <p class="blog-no-results" id="blogNoResults" hidden>No posts found.</p>
+      <div class="blog-show-more-wrap">
+        <button class="blog-show-more" id="blogShowMore">Show more</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-email-capture">
+    <div class="blog-email-inner">
+      <div class="blog-email-copy">
+        <p class="blog-email-label">Stay in the loop</p>
+        <h2 class="blog-email-heading">Get the best travel tips <em>in your inbox</em></h2>
+        <p class="blog-email-sub">No spam. New guides, routes, and travel tactics — a few times a month.</p>
+      </div>
+      <form class="blog-email-form" id="blog-email-form" novalidate>
+        <input
+          type="email"
+          class="blog-email-input"
+          id="blog-email-input"
+          placeholder="your@email.com"
+          autocomplete="email"
+          required
+          aria-label="Email address"
+        />
+        <button type="submit" class="blog-email-submit" data-ph-event="blog_newsletter_submit">Subscribe</button>
+        <p class="blog-email-error" id="blog-email-error" aria-live="polite"></p>
+      </form>
+      <p class="blog-email-success" id="blog-email-success" hidden>You're in! We'll be in touch.</p>
     </div>
   </section>
 </BaseLayout>
@@ -367,6 +408,93 @@ const formatDate = (value?: string) => {
     padding: 6px 10px;
   }
 
+  /* CONTROLS: search + tabs */
+  .blog-controls {
+    margin-bottom: 32px;
+  }
+
+  .blog-search {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(196, 86, 42, 0.2);
+    background: var(--color-bg);
+    color: var(--color-cream);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.25s;
+    margin-bottom: 16px;
+  }
+
+  .blog-search:focus {
+    border-color: var(--color-terracotta);
+  }
+
+  .blog-search::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .blog-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .blog-tab {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(196, 86, 42, 0.2);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+  }
+
+  .blog-tab:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-cream);
+  }
+
+  .blog-tab.active {
+    background: var(--color-terracotta);
+    border-color: var(--color-terracotta);
+    color: #fff;
+  }
+
+  .blog-no-results {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 18px;
+    padding: 48px 0;
+  }
+
+  .blog-show-more-wrap {
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .blog-show-more {
+    padding: 12px 32px;
+    border-radius: 999px;
+    border: 1px solid rgba(196, 86, 42, 0.3);
+    background: transparent;
+    color: var(--color-terracotta);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s, transform 0.25s var(--ease-out-expo);
+  }
+
+  .blog-show-more:hover {
+    background: var(--color-terracotta);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
   @media (max-width: 1024px) {
     .blog-hero {
       min-height: 82vh;
@@ -410,4 +538,226 @@ const formatDate = (value?: string) => {
       grid-template-columns: 1fr;
     }
   }
+
+  /* EMAIL CAPTURE */
+  .blog-email-capture {
+    padding: 80px 40px;
+    background: var(--color-bg-warm);
+  }
+
+  .blog-email-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .blog-email-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 14px;
+  }
+
+  .blog-email-heading {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 12px;
+  }
+
+  .blog-email-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .blog-email-sub {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .blog-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .blog-email-input {
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(196, 86, 42, 0.2);
+    background: var(--color-bg);
+    color: var(--color-cream);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.25s;
+  }
+
+  .blog-email-input:focus {
+    border-color: var(--color-terracotta);
+  }
+
+  .blog-email-input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .blog-email-submit {
+    padding: 14px 24px;
+    border-radius: 12px;
+    background: var(--color-terracotta);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s var(--ease-out-expo);
+  }
+
+  .blog-email-submit:hover:not(:disabled) {
+    background: #b34f28;
+    transform: translateY(-1px);
+  }
+
+  .blog-email-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .blog-email-error {
+    font-size: 13px;
+    color: #e05a3a;
+    min-height: 1em;
+  }
+
+  .blog-email-success {
+    font-size: 16px;
+    color: var(--color-cream);
+    font-weight: 500;
+    padding: 14px 0;
+  }
+
+  @media (max-width: 768px) {
+    .blog-email-capture { padding: 60px 24px; }
+    .blog-email-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 640px) {
+    .blog-email-capture { padding: 48px 20px; }
+  }
 </style>
+
+<script>
+  (function () {
+    const form = document.getElementById('blog-email-form') as HTMLFormElement | null;
+    const input = document.getElementById('blog-email-input') as HTMLInputElement | null;
+    const errorEl = document.getElementById('blog-email-error') as HTMLElement | null;
+    const successEl = document.getElementById('blog-email-success') as HTMLElement | null;
+    if (!form || !input) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (errorEl) errorEl.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      if (errorEl) errorEl.textContent = '';
+      const submit = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (submit) submit.disabled = true;
+
+      try {
+        const res = await fetch('https://api.roammate.com/v1/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'blog-newsletter' }),
+        });
+        if (res.ok) {
+          form.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          if (errorEl) errorEl.textContent = 'Something went wrong. Please try again.';
+          if (submit) submit.disabled = false;
+        }
+      } catch {
+        if (errorEl) errorEl.textContent = 'Network error. Please try again.';
+        if (submit) submit.disabled = false;
+      }
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const PAGE_SIZE = 12;
+    const grid = document.getElementById('blogGrid');
+    const searchInput = document.getElementById('blogSearch') as HTMLInputElement | null;
+    const tabsWrap = document.getElementById('blogTabs');
+    const showMoreBtn = document.getElementById('blogShowMore');
+    const noResults = document.getElementById('blogNoResults');
+    if (!grid || !searchInput || !tabsWrap || !showMoreBtn || !noResults) return;
+
+    const allCards = Array.from(grid.querySelectorAll('.blog-card')) as HTMLElement[];
+    let activeCat = 'all';
+    let query = '';
+    let visibleCount = PAGE_SIZE;
+
+    function getFiltered(): HTMLElement[] {
+      return allCards.filter((card) => {
+        const cat = card.getAttribute('data-category') || '';
+        const title = card.getAttribute('data-title') || '';
+        const desc = card.getAttribute('data-description') || '';
+        const matchesCat = activeCat === 'all' || cat === activeCat;
+        const q = query.toLowerCase();
+        const matchesQuery = !q || title.includes(q) || desc.includes(q) || cat.toLowerCase().includes(q);
+        return matchesCat && matchesQuery;
+      });
+    }
+
+    function render() {
+      const filtered = getFiltered();
+      allCards.forEach((c) => (c.style.display = 'none'));
+      filtered.forEach((c, i) => {
+        c.style.display = i < visibleCount ? '' : 'none';
+      });
+      noResults.hidden = filtered.length > 0;
+      showMoreBtn.style.display = visibleCount >= filtered.length ? 'none' : '';
+    }
+
+    // Tabs
+    tabsWrap.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.blog-tab') as HTMLElement | null;
+      if (!btn) return;
+      tabsWrap.querySelectorAll('.blog-tab').forEach((t) => t.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat') || 'all';
+      visibleCount = PAGE_SIZE;
+      render();
+    });
+
+    // Search with debounce
+    let timer: ReturnType<typeof setTimeout>;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        query = searchInput.value.trim();
+        visibleCount = PAGE_SIZE;
+        render();
+      }, 300);
+    });
+
+    // Show more
+    showMoreBtn.addEventListener('click', () => {
+      visibleCount += PAGE_SIZE;
+      render();
+    });
+
+    render();
+  })();
+</script>

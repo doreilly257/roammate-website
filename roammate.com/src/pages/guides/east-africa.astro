@@ -1,5 +1,6 @@
 ---
 import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+import SeasonCalendar from '../../components/SeasonCalendar.astro';
 
 const routeOverview = [
   { country: 'Kenya', flag: '🇰🇪', weeks: '1–3', color: '#c4562a', stops: ['Nairobi', 'Masai Mara', 'Lake Nakuru', 'Diani Beach'] },
@@ -28,21 +29,21 @@ const countries = [
         duration: '3–4 days',
         description: 'Nairobi is vibrant and surprisingly cosmopolitan. Start at the David Sheldrick Elephant Trust (KSh 1,500 — orphaned baby elephants being rehabilitated, visit at 11am daily). The Giraffe Centre (KSh 1,500) lets you feed Rothschild\'s giraffes at eye level. Nairobi National Park (KSh 4,315 — lions, rhinos, and buffalo with the city skyline behind them) is unique globally. Eat nyama choma (grilled meat) at Carnivore restaurant for a splurge, or street ugali and sukuma wiki for KSh 100–200. The Maasai Market rotates locations — check for handicrafts.',
         tip: 'Download Bolt or Uber for transport in Nairobi — much safer than flagging matatus (minibuses) as a newcomer. City centre to Karen is about KSh 800–1,200.',
-        guides: ['nairobi', 'giraffe-centre'],
+        guides: ['nairobi', 'giraffe-centre', 'amboseli'],
       },
       {
         title: 'Masai Mara & Lake Nakuru',
         duration: '5–6 days',
         description: 'Join a budget group safari from Nairobi to the Masai Mara ($250–400 for 3 days/2 nights including transport, accommodation, meals, and game drives). The Mara is the best place in Africa to see the Big Five — lion, leopard, elephant, buffalo, and rhino. During the Great Migration (July–October), over 1.5 million wildebeest cross the Mara River — the river crossings are heart-stopping. Budget safaris use camps just outside the reserve (conservancy fees KSh 1,000 vs park fees KSh 5,700). Add Lake Nakuru (1 day, often combined) for flamingos and rhinos.',
         tip: 'Budget safaris are excellent value — shop around in Nairobi (Jungle Junction, Wildebeest Camp, and hostels in Westlands organise them). Avoid touts at the airport.',
-        guides: ['maasai-mara', 'lake-nakuru', 'great-migration'],
+        guides: ['maasai-mara', 'lake-nakuru', 'great-migration', 'lake-naivasha'],
       },
       {
         title: 'Kenyan Coast',
         duration: '4–5 days',
         description: 'Fly from Nairobi to Mombasa (KSh 3,000–7,000 on Jambojet/Kenya Airways) or overnight train (Madaraka Express KSh 1,000–3,000, 5 hrs). Diani Beach is Kenya\'s best — white sand, warm Indian Ocean, and budget-friendly. Snorkelling at Kisite-Mpunguti Marine Park ($15 boat trip) for dolphins and sea turtles. Explore Mombasa Old Town and Fort Jesus (KSh 1,200). Eat fresh seafood at beach shacks — grilled lobster for KSh 1,000–1,500 ($7–10). Budget guesthouses and Airbnbs: KSh 2,000–4,000/night.',
         tip: 'Take the SGR Madaraka Express train from Nairobi to Mombasa — it\'s brand new, comfortable, and offers views of Tsavo National Park from your window.',
-        guides: ['diani-beach', 'mombasa', 'lamu'],
+        guides: ['diani-beach', 'mombasa', 'lamu', 'tsavo'],
       },
     ],
   },
@@ -222,4 +223,41 @@ const practicalInfo = [
   ctaCustomise="To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences."
   featuredGuides={['nairobi', 'giraffe-centre', 'maasai-mara', 'great-migration', 'lake-nakuru', 'diani-beach', 'mombasa', 'lamu', 'arusha', 'serengeti', 'ngorongoro', 'mount-kilimanjaro', 'zanzibar', 'stone-town', 'dar-es-salaam', 'kampala', 'jinja', 'nile-rafting', 'entebbe', 'bwindi', 'gorilla-trekking', 'queen-elizabeth-np', 'lake-bunyonyi', 'victoria-falls']}
   accentColor="#c9a84c"
-/>
+>
+  <SeasonCalendar slot="season-calendar" months={[
+    { name: 'Jan', rating: 'best', note: 'Short dry season — good game viewing, warm weather' },
+    { name: 'Feb', rating: 'best', note: 'Dry and warm — calving season in the Serengeti' },
+    { name: 'Mar', rating: 'good', note: 'Shoulder season — light rains beginning' },
+    { name: 'Apr', rating: 'avoid', note: 'Long rains — roads impassable, some lodges close' },
+    { name: 'May', rating: 'avoid', note: 'Heavy rains continue — lowest prices, tough conditions' },
+    { name: 'Jun', rating: 'best', note: 'Dry season starts — animals gather at water sources' },
+    { name: 'Jul', rating: 'best', note: 'Great Migration river crossings begin in the Mara' },
+    { name: 'Aug', rating: 'best', note: 'Peak migration season — dramatic river crossings' },
+    { name: 'Sep', rating: 'best', note: 'Excellent wildlife viewing, dry and clear' },
+    { name: 'Oct', rating: 'good', note: 'Short rains approaching — still good game drives' },
+    { name: 'Nov', rating: 'avoid', note: 'Short rains — green but muddy, reduced visibility' },
+    { name: 'Dec', rating: 'avoid', note: 'Rains continue — festive season prices but wet conditions' },
+  ]} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Great Migration",
+      "description": "Annual migration of over 1.5 million wildebeest, zebras, and gazelles between Tanzania's Serengeti and Kenya's Masai Mara. The dramatic Mara River crossings, where herds brave crocodile-filled waters, peak between July and October.",
+      "location": {
+        "@type": "Place",
+        "name": "Masai Mara National Reserve & Serengeti National Park",
+        "address": { "@type": "PostalAddress", "addressCountry": "KE" }
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1Y",
+        "startDate": "2026-07-01",
+        "endDate": "2026-10-31",
+        "scheduleTimezone": "Africa/Nairobi"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    }
+  ])} />
+</BackpackerRouteLayout>
