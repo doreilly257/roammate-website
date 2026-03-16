@@ -1,9 +1,25 @@
 import { describe, it, expect } from 'vitest';
+import { readdirSync, readFileSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { resolveRelatedContent } from '../blog-utils';
-import { blogPosts } from '../../data/blog';
 import { allGuides } from '../../data/guides';
 import type { BlogPost } from '../../data/blog';
 import type { GuideEntry } from '../../data/guides';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+function loadBlogPostsFromJson(): BlogPost[] {
+  const contentDir = resolve(__dirname, '../../content/blog');
+  const files = readdirSync(contentDir).filter((f) => f.endsWith('.json'));
+  return files.map((file) => {
+    const slug = file.replace(/\.json$/, '');
+    const data = JSON.parse(readFileSync(resolve(contentDir, file), 'utf-8'));
+    return { slug, ...data } as BlogPost;
+  });
+}
+
+const blogPosts = loadBlogPostsFromJson();
 
 describe('resolveRelatedContent', () => {
   it('returns correct related posts and guides for valid slugs', () => {
