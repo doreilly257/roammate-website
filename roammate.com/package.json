@@ -6,12 +6,18 @@
     "dev": "astro dev",
     "build": "astro build && node scripts/normalize-sitemap.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "validate": "tsx scripts/validate.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.0",
     "astro": "^5.17.1",
     "astro-critters": "^2.2.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "vitest": "^4.1.0"
   }
 }
