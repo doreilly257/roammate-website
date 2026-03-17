@@ -187,7 +187,6 @@ const renderInlineLinks = (text: string) => {
     })} />
   </Fragment>
 
-  <div class="reading-progress" id="reading-progress"></div>
   <article>
     <section class="blog-post-hero" aria-label={heroImageAlt}>
       <div class="blog-post-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${escapeCssUrl(heroImage)}');`} />
@@ -224,19 +223,23 @@ const renderInlineLinks = (text: string) => {
           return (
             <>
               <section class={`blog-post-section reveal ${index % 2 === 1 ? 'is-reversed' : ''}`}>
-                <div class="blog-post-section-copy">
+                <div class="blog-post-section-header">
                   {section.kicker && <p class="blog-post-section-kicker">{section.kicker}</p>}
                   <h2>{section.heading}</h2>
-                  {sectionParagraphs.map((paragraph) => (
-                    <p set:html={renderInlineLinks(paragraph)} />
-                  ))}
-                  {section.quote && <blockquote>{section.quote}</blockquote>}
                 </div>
-                {section.image && (
-                  <figure class="blog-post-section-media">
-                    <img src={section.image} alt={section.imageAlt || `Illustration for ${section.heading}`} loading="lazy" decoding="async" width="1200" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px" />
-                  </figure>
-                )}
+                <div class="blog-post-section-body">
+                  <div class="blog-post-section-copy">
+                    {sectionParagraphs.map((paragraph) => (
+                      <p set:html={renderInlineLinks(paragraph)} />
+                    ))}
+                    {section.quote && <blockquote>{section.quote}</blockquote>}
+                  </div>
+                  {section.image && (
+                    <figure class="blog-post-section-media">
+                      <img src={section.image} alt={section.imageAlt || `Illustration for ${section.heading}`} loading="lazy" decoding="async" width="1200" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px" />
+                    </figure>
+                  )}
+                </div>
               </section>
               {index === 0 && (
                 <div class="blog-midpost-cta reveal">
@@ -369,31 +372,9 @@ const renderInlineLinks = (text: string) => {
       </section>
     )}
   </article>
-  <script>
-    (function() {
-      var bar = document.getElementById('reading-progress');
-      if (!bar) return;
-      window.addEventListener('scroll', function() {
-        var h = document.documentElement;
-        var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-        bar.style.width = Math.min(pct, 100) + '%';
-      }, { passive: true });
-    })();
-  </script>
 </BaseLayout>
 
 <style>
-  .reading-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0%;
-    background: var(--color-terracotta);
-    transition: width 0.1s;
-    z-index: 9999;
-  }
-
   .blog-post-hero {
     position: relative;
     min-height: 88vh;
@@ -532,14 +513,17 @@ const renderInlineLinks = (text: string) => {
 
   .blog-post-intro {
     max-width: 1200px;
-    margin: 0 auto 44px;
+    margin: 0 auto 52px;
+    padding: 28px 180px 28px 32px;
+    border-left: 3px solid var(--color-terracotta);
+    background: rgba(247, 242, 234, 0.04);
+    border-radius: 0 16px 16px 0;
   }
 
   .blog-post-intro p {
-    font-family: var(--font-display);
-    font-size: clamp(26px, 4vw, 40px);
-    line-height: 1.25;
-    color: var(--color-cream);
+    font-size: clamp(17px, 2vw, 19px);
+    line-height: 1.7;
+    color: var(--color-text);
   }
 
   .blog-post-sections {
@@ -609,18 +593,27 @@ const renderInlineLinks = (text: string) => {
   }
 
   .blog-post-section {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: 36px;
-    align-items: start;
     padding: 36px;
     border-radius: 26px;
     background: #f7f2ea;
     border: 1px solid rgba(196, 86, 42, 0.12);
   }
 
-  .blog-post-section.is-reversed {
-    grid-template-columns: 1fr 1.05fr;
+  .blog-post-section-header {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+  }
+
+  .blog-post-section-body {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .blog-post-section.is-reversed .blog-post-section-body {
+    grid-template-columns: 1fr 1.4fr;
   }
 
   .blog-post-section.is-reversed .blog-post-section-copy {
@@ -640,12 +633,11 @@ const renderInlineLinks = (text: string) => {
     margin-bottom: 10px;
   }
 
-  .blog-post-section-copy h2 {
+  .blog-post-section-header h2 {
     font-family: var(--font-display);
     font-size: clamp(30px, 3.6vw, 44px);
     line-height: 1.1;
     color: var(--color-cream);
-    margin-bottom: 20px;
   }
 
   .blog-post-section-copy p {
@@ -684,7 +676,13 @@ const renderInlineLinks = (text: string) => {
     gap: 64px;
   }
 
-  .blog-related-guides-grid,
+  .blog-related-guides-grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
   .blog-related-posts-grid {
     margin-top: 24px;
     display: grid;
@@ -715,7 +713,7 @@ const renderInlineLinks = (text: string) => {
   .blog-related-guide-card h3,
   .blog-related-post-card h3 {
     font-family: var(--font-display);
-    font-size: 22px;
+    font-size: 26px;
     line-height: 1.15;
     color: var(--color-cream);
   }
@@ -776,10 +774,13 @@ const renderInlineLinks = (text: string) => {
       padding-right: 24px;
     }
 
-    .blog-post-section,
-    .blog-post-section.is-reversed {
-      grid-template-columns: 1fr;
+    .blog-post-section {
       padding: 24px;
+    }
+
+    .blog-post-section-body,
+    .blog-post-section.is-reversed .blog-post-section-body {
+      grid-template-columns: 1fr;
     }
 
     .blog-post-section.is-reversed .blog-post-section-copy,
@@ -818,6 +819,10 @@ const renderInlineLinks = (text: string) => {
       padding: 18px;
       border-radius: 18px;
       gap: 18px;
+    }
+
+    .blog-post-intro {
+      padding-right: 32px;
     }
 
     .blog-related-guides-grid,

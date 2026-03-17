@@ -9,15 +9,13 @@ const destinationCount = cityGuideCount + placeGuideCount;
 
 const topCities = allGuides
   .filter((g) => cityGuideSlugs.has(g.slug))
-  .slice(0, 8)
   .map((g) => ({ slug: g.slug, name: g.name, flag: g.flag, country: g.country }));
 
 const topPlaces = allGuides
   .filter((g) => !cityGuideSlugs.has(g.slug))
-  .slice(0, 8)
   .map((g) => ({ slug: g.slug, name: g.name, flag: g.flag, country: g.country }));
 
-const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name, flags: r.flags, tagline: r.tagline, duration: r.duration }));
+const topRoutes = routeData.map((r) => ({ slug: r.slug, name: r.name, flags: r.flags, tagline: r.tagline, duration: r.duration }));
 ---
 
 <BaseLayout
@@ -105,7 +103,7 @@ const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name
           <h2 class="section-heading">Backpacker <em>Routes</em></h2>
           <p class="category-intro">Long-stay routes through entire regions — week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.</p>
         </div>
-        <div class="routes-preview">
+        <div class="routes-preview" data-shuffle-group="routes" data-show="4">
           {topRoutes.map((route, i) => (
             <a href={`/guides/${route.slug}/`} class={`route-preview-card reveal reveal-delay-${(i % 4) + 1}`}>
               <div class="route-preview-flags">{route.flags}</div>
@@ -125,7 +123,7 @@ const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name
           <h2 class="section-heading">{cityGuideCount} <em>Cities</em></h2>
           <p class="category-intro">1, 3, and 7-day itineraries with morning-to-evening plans, budget tips, cultural insights, and practical information.</p>
         </div>
-        <div class="cities-preview">
+        <div class="cities-preview" data-shuffle-group="cities" data-show="8">
           {topCities.map((city, i) => (
             <a href={`/guides/${city.slug}/`} class={`city-preview-card reveal reveal-delay-${(i % 4) + 1}`}>
               <span class="city-preview-flag">{city.flag}</span>
@@ -146,7 +144,7 @@ const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name
           <h2 class="section-heading">{placeGuideCount} <em>Places</em></h2>
           <p class="category-intro">National parks, UNESCO sites, bucket-list landmarks, epic treks, and island paradises — with 1 and 3-day itineraries.</p>
         </div>
-        <div class="places-preview">
+        <div class="places-preview" data-shuffle-group="places" data-show="8">
           {topPlaces.map((place, i) => (
             <a href={`/guides/${place.slug}/`} class={`place-preview-card reveal reveal-delay-${(i % 4) + 1}`}>
               <span class="place-preview-flag">{place.flag}</span>
@@ -177,6 +175,21 @@ const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name
     const safeSlug = slug.replace(/[^a-z0-9-]/g, '');
     bg.style.backgroundImage = `linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('/images/guides/${safeSlug}-hero.webp')`;
   }
+</script>
+
+<script>
+  document.querySelectorAll('[data-shuffle-group]').forEach(grid => {
+    const items = [...grid.children];
+    const show = parseInt(grid.dataset.show) || 8;
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+    items.forEach((item, idx) => {
+      grid.appendChild(item);
+      if (idx < show) item.classList.add('shuffle-visible');
+    });
+  });
 </script>
 
 <style>
@@ -350,6 +363,13 @@ const topRoutes = routeData.slice(0, 4).map((r) => ({ slug: r.slug, name: r.name
     background: var(--color-terracotta);
     animation: scrollLine 2s ease-in-out infinite;
   }
+
+  /* ========================
+     SHUFFLE VISIBILITY
+     ======================== */
+  [data-shuffle-group] > * { display: none; }
+  [data-shuffle-group] > .shuffle-visible { display: flex; }
+  .routes-preview[data-shuffle-group] > .shuffle-visible { display: block; }
 
   /* ========================
      CATEGORIES

@@ -241,6 +241,7 @@ const isHome = Astro.url.pathname === '/';
   </script>
 </head>
 <body>
+  <div class="reading-progress" id="reading-progress"></div>
   <a href="#main" class="skip-to-content">Skip to content</a>
   <Nav />
 
@@ -253,7 +254,7 @@ const isHome = Astro.url.pathname === '/';
   <WaitlistModal />
 
   <div id="cookieBanner" class="cookie-banner" role="alertdialog" aria-label="Cookie consent" aria-live="polite" style="display:none;">
-    <p>We use cookies for anonymous analytics to improve your experience. <a href="/privacy/">Learn more</a></p>
+    <p>We use cookies for anonymous analytics to improve your experience. <a href="/privacy/">Privacy policy</a></p>
     <div class="cookie-actions">
       <button id="cookieAccept" class="cookie-btn cookie-accept">Accept</button>
       <button id="cookieDecline" class="cookie-btn cookie-decline">Decline</button>
@@ -351,6 +352,18 @@ const isHome = Astro.url.pathname === '/';
       { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
     );
     reveals.forEach((el) => observer.observe(el));
+  </script>
+
+  <script>
+    (function() {
+      var bar = document.getElementById('reading-progress');
+      if (!bar) return;
+      window.addEventListener('scroll', function() {
+        var h = document.documentElement;
+        var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+        bar.style.width = Math.min(pct, 100) + '%';
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>
