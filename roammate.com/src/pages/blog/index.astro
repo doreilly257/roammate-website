@@ -1,23 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import * as blogData from '../../data/blog';
+import { getAllBlogPosts } from '../../lib/blog-data';
 
-interface BlogPostSummary {
-  slug: string;
-  title: string;
-  description: string;
-  heroImage: string;
-  category?: string;
-  publishedAt?: string;
-  readingTime?: string;
-}
+const allPosts = await getAllBlogPosts();
 
-const source = blogData as {
-  allBlogPosts?: BlogPostSummary[];
-  blogPosts?: BlogPostSummary[];
-};
-
-const blogPosts = (source.allBlogPosts ?? source.blogPosts ?? [])
+const blogPosts = allPosts
   .filter((post) => post.slug && post.title && post.description)
   .sort((a, b) => {
     const aTime = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;

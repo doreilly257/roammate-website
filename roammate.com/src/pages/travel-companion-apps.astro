@@ -1,0 +1,442 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Best Travel Companion Apps Compared — roammate"
+  description="Honest comparison of roammate, Couchsurfing, Meetup, Bumble BFF, Hostelworld, and more. Find the right travel companion app for how you travel."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Best Travel Companion Apps Compared",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "roammate", "url": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Couchsurfing", "url": "https://roammate.com/blog/roammate-vs-couchsurfing/" },
+        { "@type": "ListItem", "position": 3, "name": "Meetup", "url": "https://roammate.com/blog/roammate-vs-meetup/" },
+        { "@type": "ListItem", "position": 4, "name": "Bumble BFF", "url": "https://roammate.com/blog/roammate-vs-bumble-bff/" },
+        { "@type": "ListItem", "position": 5, "name": "Hostelworld", "url": "https://roammate.com/blog/roammate-vs-hostelworld/" },
+        { "@type": "ListItem", "position": 6, "name": "Tourlina", "url": "https://roammate.com/blog/roammate-vs-tourlina/" },
+        { "@type": "ListItem", "position": 7, "name": "GAFFL", "url": "https://roammate.com/blog/roammate-vs-gaffl/" },
+        { "@type": "ListItem", "position": 8, "name": "Backpackr", "url": "https://roammate.com/blog/roammate-vs-backpackr/" },
+        { "@type": "ListItem", "position": 9, "name": "Travello", "url": "https://roammate.com/blog/roammate-vs-travello/" }
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Travel Companion Apps", "item": "https://roammate.com/travel-companion-apps/" }
+      ]
+    })} />
+  </Fragment>
+
+  <section class="tca-hero">
+    <div class="tca-hero-inner">
+      <div class="section-label section-label--center">Travel App Comparison</div>
+      <h1 class="tca-title">Best Travel Companion Apps — <em>Compared</em></h1>
+      <p class="tca-subtitle">Honest comparison of roammate, Couchsurfing, Meetup, Bumble BFF, Hostelworld, and more. Find the right app for how you travel.</p>
+    </div>
+  </section>
+
+  <section class="tca-table-section">
+    <div class="tca-table-inner">
+      <div class="section-label">At A Glance</div>
+      <h2 class="tca-section-heading">Quick <em>comparison</em></h2>
+      <div class="tca-table-wrap">
+        <table class="tca-table">
+          <thead>
+            <tr>
+              <th>App</th>
+              <th>Primary Purpose</th>
+              <th>Matching Method</th>
+              <th>Price</th>
+              <th>Platform</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tca-row-highlight">
+              <td><strong>roammate</strong></td>
+              <td>Find travel companions</td>
+              <td>Style, budget &amp; destination matching</td>
+              <td>Free</td>
+              <td>iOS</td>
+              <td>Compatible travel partners</td>
+            </tr>
+            <tr>
+              <td>Couchsurfing</td>
+              <td>Free accommodation &amp; hangouts</td>
+              <td>Host/guest browsing</td>
+              <td>~$15/yr</td>
+              <td>iOS, Android, Web</td>
+              <td>Budget stays with locals</td>
+            </tr>
+            <tr>
+              <td>Meetup</td>
+              <td>Local events &amp; groups</td>
+              <td>Interest-based groups</td>
+              <td>Free / Paid tiers</td>
+              <td>iOS, Android, Web</td>
+              <td>Local social events</td>
+            </tr>
+            <tr>
+              <td>Bumble BFF</td>
+              <td>Friend matching</td>
+              <td>Swiping on profiles</td>
+              <td>Free / Premium</td>
+              <td>iOS, Android</td>
+              <td>Making friends in your city</td>
+            </tr>
+            <tr>
+              <td>Hostelworld</td>
+              <td>Hostel booking</td>
+              <td>Location search</td>
+              <td>Free (booking fees)</td>
+              <td>iOS, Android, Web</td>
+              <td>Booking social hostels</td>
+            </tr>
+            <tr>
+              <td>Tourlina</td>
+              <td>Female travel companions</td>
+              <td>Destination matching</td>
+              <td>Free / Premium</td>
+              <td>iOS, Android</td>
+              <td>Women-only travel partners</td>
+            </tr>
+            <tr>
+              <td>GAFFL</td>
+              <td>Trip sharing &amp; cost splitting</td>
+              <td>Trip listing board</td>
+              <td>Free / Premium</td>
+              <td>Web, iOS</td>
+              <td>Splitting trip costs</td>
+            </tr>
+            <tr>
+              <td>Backpackr</td>
+              <td>Backpacker social network</td>
+              <td>Location-based feed</td>
+              <td>Free</td>
+              <td>iOS, Android</td>
+              <td>Backpacker community</td>
+            </tr>
+            <tr>
+              <td>Travello</td>
+              <td>Traveler social network</td>
+              <td>Location-based feed</td>
+              <td>Free / Premium</td>
+              <td>iOS, Android</td>
+              <td>Social travel community</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tca-comparisons">
+    <div class="tca-comparisons-inner">
+      <div class="section-label">Deep Dives</div>
+      <h2 class="tca-section-heading">Deep Dive <em>Comparisons</em></h2>
+      <div class="tca-grid">
+        <a href="/blog/roammate-vs-couchsurfing/" class="tca-card reveal">
+          <h3>roammate vs Couchsurfing</h3>
+          <p>Travel companions vs free accommodation — different goals, different crowds.</p>
+        </a>
+        <a href="/blog/roammate-vs-meetup/" class="tca-card reveal">
+          <h3>roammate vs Meetup</h3>
+          <p>Matched travel partners vs local event groups — purpose-built for different needs.</p>
+        </a>
+        <a href="/blog/roammate-vs-bumble-bff/" class="tca-card reveal">
+          <h3>roammate vs Bumble BFF</h3>
+          <p>Travel-first matching vs city-based friend swiping — context matters.</p>
+        </a>
+        <a href="/blog/roammate-vs-hostelworld/" class="tca-card reveal">
+          <h3>roammate vs Hostelworld</h3>
+          <p>Compatible companions vs social hostels — matching people vs matching beds.</p>
+        </a>
+        <a href="/blog/roammate-vs-tourlina/" class="tca-card reveal">
+          <h3>roammate vs Tourlina</h3>
+          <p>All-gender matching with filters vs women-only — flexibility vs exclusivity.</p>
+        </a>
+        <a href="/blog/roammate-vs-gaffl/" class="tca-card reveal">
+          <h3>roammate vs GAFFL</h3>
+          <p>Style-based matching vs trip listing board — compatibility vs cost splitting.</p>
+        </a>
+        <a href="/blog/roammate-vs-backpackr/" class="tca-card reveal">
+          <h3>roammate vs Backpackr</h3>
+          <p>Companion matching vs social feed — finding partners vs finding a community.</p>
+        </a>
+        <a href="/blog/roammate-vs-travello/" class="tca-card reveal">
+          <h3>roammate vs Travello</h3>
+          <p>Focused matching vs social network — depth of connection vs breadth of content.</p>
+        </a>
+        <a href="/blog/roammate-vs-facebook-travel-groups/" class="tca-card reveal">
+          <h3>roammate vs Facebook Travel Groups</h3>
+          <p>Curated matching vs open forums — vetted profiles vs anonymous posts.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tca-cta">
+    <div class="tca-cta-inner">
+      <p class="tca-cta-label">Free on iOS</p>
+      <h2 class="tca-cta-heading">Ready to find <em>your travel companion</em>?</h2>
+      <p class="tca-cta-body">Download free. Build your profile. Get matched with travelers who share your style, budget, and destination.</p>
+      <a
+        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=travel-companion-apps-cta&mt=8"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="tca-btn tca-btn--primary tca-btn--large"
+        data-ph-event="tca_bottom_appstore_click"
+      >Download on the App Store — Free</a>
+      <p class="tca-cta-sub">Also: <a href="/find-travel-companion/">Learn how roammate matches travelers</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tca-hero {
+    padding: 160px 40px 100px;
+    text-align: center;
+    position: relative;
+  }
+
+  .tca-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(196, 86, 42, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .tca-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .tca-title {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 7vw, 80px);
+    font-weight: 900;
+    line-height: 1.02;
+    color: var(--color-cream);
+    margin-bottom: 24px;
+  }
+
+  .tca-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .tca-subtitle {
+    font-size: clamp(17px, 2vw, 21px);
+    color: rgba(245, 241, 235, 0.75);
+    line-height: 1.6;
+  }
+
+  .tca-section-heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 48px;
+  }
+
+  .tca-section-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .tca-table-section {
+    padding: 80px 40px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .tca-table-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tca-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tca-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    min-width: 800px;
+  }
+
+  .tca-table th,
+  .tca-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+    color: var(--color-text-muted);
+    vertical-align: top;
+  }
+
+  .tca-table th {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-cream);
+    padding-bottom: 16px;
+  }
+
+  .tca-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tca-row-highlight td {
+    background: rgba(196, 86, 42, 0.07);
+    color: var(--color-cream);
+    font-weight: 600;
+  }
+
+  .tca-comparisons {
+    padding: 80px 40px;
+    background: rgba(247, 242, 234, 0.02);
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+    border-bottom: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .tca-comparisons-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tca-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .tca-card {
+    padding: 32px 24px;
+    background: rgba(247, 242, 234, 0.04);
+    border: 1px solid rgba(196, 86, 42, 0.15);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: border-color 0.25s, transform 0.3s var(--ease-out-expo);
+  }
+
+  .tca-card:hover {
+    border-color: var(--color-terracotta);
+    transform: translateY(-3px);
+  }
+
+  .tca-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--color-cream);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .tca-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .tca-cta {
+    padding: 80px 40px;
+  }
+
+  .tca-cta-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tca-cta-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    margin-bottom: 18px;
+  }
+
+  .tca-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-cream);
+    margin-bottom: 16px;
+  }
+
+  .tca-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .tca-cta-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(245, 241, 235, 0.65);
+    margin-bottom: 32px;
+  }
+
+  .tca-btn {
+    display: inline-block;
+    padding: 15px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+    letter-spacing: 0.3px;
+  }
+
+  .tca-btn--primary {
+    background: var(--color-terracotta);
+    color: #fff;
+  }
+
+  .tca-btn--primary:hover {
+    background: #b34f28;
+    transform: translateY(-2px);
+  }
+
+  .tca-btn--large {
+    padding: 18px 40px;
+    font-size: 16px;
+  }
+
+  .tca-cta-sub {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+  }
+
+  .tca-cta-sub a {
+    color: var(--color-terracotta-light);
+  }
+
+  @media (max-width: 1024px) {
+    .tca-hero { padding: 140px 24px 80px; }
+    .tca-table-section, .tca-comparisons, .tca-cta { padding-left: 24px; padding-right: 24px; }
+    .tca-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .tca-hero { padding: 120px 20px 60px; }
+    .tca-table-section, .tca-comparisons, .tca-cta { padding-left: 20px; padding-right: 20px; }
+  }
+</style>

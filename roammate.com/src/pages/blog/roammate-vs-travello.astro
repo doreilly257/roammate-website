@@ -1,9 +1,10 @@
 ---
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
-import { allBlogPosts } from '../../data/blog';
+import { getAllBlogPosts } from '../../lib/blog-data';
 import { allGuides } from '../../data/guides';
 import { resolveRelatedContent } from '../../lib/blog-utils';
 
+const allBlogPosts = await getAllBlogPosts();
 const post = allBlogPosts.find((p) => p.slug === 'roammate-vs-travello');
 if (!post) throw new Error('Blog post not found: roammate-vs-travello');
 

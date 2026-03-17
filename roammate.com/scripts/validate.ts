@@ -1,4 +1,4 @@
-import { readdirSync, existsSync } from "fs";
+import { readdirSync, readFileSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -9,34 +9,36 @@ export type ValidateOptions = {
   blogPosts: any[];
   guideSlugs: Set<string>;
   routeSlugs: Set<string>;
-  blogPageDir?: string;
+  contentBlogDir?: string;
   publicDir?: string;
 };
 
 export function validate(opts: ValidateOptions): string[] {
   const { blogPosts, guideSlugs, routeSlugs } = opts;
-  const blogPageDir = opts.blogPageDir ?? resolve(ROOT, "src/pages/blog");
+  const contentBlogDir = opts.contentBlogDir ?? resolve(ROOT, "src/content/blog");
   const publicDir = opts.publicDir ?? resolve(ROOT, "public");
   const errors: string[] = [];
 
   const blogSlugs = new Set(blogPosts.map((p) => p.slug));
 
-  // 1. Every blog slug has a matching .astro file
+  // 1. Every blog slug has a matching .json content file
   for (const slug of blogSlugs) {
-    const astroPath = resolve(blogPageDir, `${slug}.astro`);
-    if (!existsSync(astroPath)) {
-      errors.push(`blog.ts slug "${slug}" has no matching file: src/pages/blog/${slug}.astro`);
+    const jsonPath = resolve(contentBlogDir, `${slug}.json`);
+    if (!existsSync(jsonPath)) {
+      errors.push(`blog slug "${slug}" has no matching file: src/content/blog/${slug}.json`);
     }
   }
 
-  // 2. Every .astro file (except index) has a matching slug in blog.ts
-  const astroFiles = readdirSync(blogPageDir).filter(
-    (f) => f.endsWith(".astro") && f !== "index.astro"
-  );
-  for (const file of astroFiles) {
-    const slug = file.replace(/\.astro$/, "");
-    if (!blogSlugs.has(slug)) {
-      errors.push(`src/pages/blog/${file} has no matching slug in blog.ts`);
+  // 2. Every .json file in content/blog has a matching slug
+  if (existsSync(contentBlogDir)) {
+    const jsonFiles = readdirSync(contentBlogDir).filter(
+      (f) => f.endsWith(".json")
+    );
+    for (const file of jsonFiles) {
+      const slug = file.replace(/\.json$/, "");
+      if (!blogSlugs.has(slug)) {
+        errors.push(`src/content/blog/${file} has no matching slug in blog data`);
+      }
     }
   }
 
@@ -79,8 +81,20 @@ export function validate(opts: ValidateOptions): string[] {
   return errors;
 }
 
+function loadBlogPostsFromJson(): any[] {
+  const contentDir = resolve(ROOT, "src/content/blog");
+  const files = readdirSync(contentDir).filter((f) => f.endsWith(".json"));
+  return files.map((file) => {
+    const slug = file.replace(/\.json$/, "");
+    const data = JSON.parse(
+      readFileSync(resolve(contentDir, file), "utf-8")
+    );
+    return { slug, ...data };
+  });
+}
+
 async function main() {
-  const { blogPosts } = await import("../src/data/blog.ts");
+  const blogPosts = loadBlogPostsFromJson();
   const { allGuides, backpackerRoutes } = await import("../src/data/guides.ts");
 
   const guideSlugs = new Set(allGuides.map((g: any) => g.slug));

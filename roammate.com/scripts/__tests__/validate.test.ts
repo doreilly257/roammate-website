@@ -1,13 +1,24 @@
 import { describe, it, expect } from "vitest";
+import { readdirSync, readFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { validate } from "../validate.ts";
-import { blogPosts } from "../../src/data/blog.ts";
 import { allGuides, backpackerRoutes } from "../../src/data/guides.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "../..");
 
+function loadBlogPostsFromJson(): any[] {
+  const contentDir = resolve(ROOT, "src/content/blog");
+  const files = readdirSync(contentDir).filter((f) => f.endsWith(".json"));
+  return files.map((file) => {
+    const slug = file.replace(/\.json$/, "");
+    const data = JSON.parse(readFileSync(resolve(contentDir, file), "utf-8"));
+    return { slug, ...data };
+  });
+}
+
+const blogPosts = loadBlogPostsFromJson();
 const guideSlugs = new Set(allGuides.map((g) => g.slug));
 const routeSlugs = new Set(backpackerRoutes.map((r) => r.slug));
 
@@ -17,7 +28,7 @@ describe("validate", () => {
     expect(errors).toEqual([]);
   });
 
-  it("detects a missing blog.ts slug (no matching .astro file)", () => {
+  it("detects a missing content JSON file", () => {
     const fakePosts = [
       {
         slug: "nonexistent-fake-post-xyz",
@@ -31,7 +42,7 @@ describe("validate", () => {
       blogPosts: fakePosts,
       guideSlugs,
       routeSlugs,
-      blogPageDir: resolve(ROOT, "src/pages/blog"),
+      contentBlogDir: resolve(ROOT, "src/content/blog"),
       publicDir: resolve(ROOT, "public"),
     });
     const slugError = errors.find((e) => e.includes("nonexistent-fake-post-xyz"));
@@ -53,7 +64,7 @@ describe("validate", () => {
       blogPosts: fakePosts,
       guideSlugs,
       routeSlugs,
-      blogPageDir: resolve(ROOT, "src/pages/blog"),
+      contentBlogDir: resolve(ROOT, "src/content/blog"),
       publicDir: resolve(ROOT, "public"),
     });
     const relatedError = errors.find((e) =>
@@ -77,7 +88,7 @@ describe("validate", () => {
       blogPosts: fakePosts,
       guideSlugs,
       routeSlugs,
-      blogPageDir: resolve(ROOT, "src/pages/blog"),
+      contentBlogDir: resolve(ROOT, "src/content/blog"),
       publicDir: resolve(ROOT, "public"),
     });
     const guideError = errors.find((e) => e.includes("nonexistent-city-xyz"));

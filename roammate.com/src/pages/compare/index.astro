@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { allBlogPosts } from '../../data/blog';
+import { getAllBlogPosts } from '../../lib/blog-data';
 
+const allBlogPosts = await getAllBlogPosts();
 const comparisonPosts = allBlogPosts.filter((p: any) => p.slug.startsWith('roammate-vs-'));
 const bestOfPost = allBlogPosts.find((p: any) => p.slug === 'best-travel-companion-apps-2026');
 
