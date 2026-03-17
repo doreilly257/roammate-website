@@ -8,8 +8,8 @@
   height: 3px;
   width: 0%;
   background: var(--color-terracotta);
-  transition: width 0.1s;
   z-index: 9999;
+  will-change: width;
 }
 
 /* ============================================

@@ -358,10 +358,18 @@ const isHome = Astro.url.pathname === '/';
     (function() {
       var bar = document.getElementById('reading-progress');
       if (!bar) return;
+      var tick = false;
       window.addEventListener('scroll', function() {
-        var h = document.documentElement;
-        var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-        bar.style.width = Math.min(pct, 100) + '%';
+        if (!tick) {
+          tick = true;
+          requestAnimationFrame(function() {
+            var h = document.documentElement;
+            var scrollable = h.scrollHeight - h.clientHeight;
+            var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+            bar.style.width = Math.min(Math.round(pct), 100) + '%';
+            tick = false;
+          });
+        }
       }, { passive: true });
     })();
   </script>
