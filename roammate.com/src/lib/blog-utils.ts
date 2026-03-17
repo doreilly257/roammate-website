@@ -6,9 +6,11 @@ export function resolveRelatedContent(
   allBlogPosts: BlogPost[],
   allGuides: GuideEntry[],
 ) {
-  const relatedGuides = (post.relatedGuideSlugs ?? [])
+  const allRelatedGuides = (post.relatedGuideSlugs ?? [])
     .map((guideSlug) => allGuides.find((guide) => guide.slug === guideSlug))
     .filter(Boolean);
+  const guideLimit = allRelatedGuides.length >= 6 ? 6 : 3;
+  const relatedGuides = allRelatedGuides.slice(0, guideLimit);
 
   const relatedPosts = (post.relatedPostSlugs ?? [])
     .map((relatedSlug) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
