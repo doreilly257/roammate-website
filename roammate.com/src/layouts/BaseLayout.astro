@@ -365,7 +365,7 @@ const isHome = Astro.url.pathname === '/';
           requestAnimationFrame(function() {
             var h = document.documentElement;
             var scrollable = h.scrollHeight - h.clientHeight;
-            var pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+            var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
             bar.style.width = Math.min(Math.round(pct), 100) + '%';
             tick = false;
           });

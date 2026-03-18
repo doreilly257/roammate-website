@@ -106,7 +106,7 @@ const formatDate = (value?: string) => {
 
       <div class="blog-grid" id="blogGrid">
         {blogPosts.map((post, i) => (
-          <a href={`/blog/${post.slug}/`} class={`blog-card reveal reveal-delay-${(i % 4) + 1}`} data-category={post.category || ''} data-title={post.title.toLowerCase()} data-description={post.description.toLowerCase()}>
+          <a href={`/blog/${post.slug}/`} class="blog-card" data-category={post.category || ''} data-title={post.title.toLowerCase()} data-description={post.description.toLowerCase()}>
             <img src={post.heroImage} alt={post.title} loading={i === 0 ? 'eager' : 'lazy'} width="1200" height="800" />
             <div class="blog-card-content">
               {post.category && <span class="blog-card-category">{post.category}</span>}

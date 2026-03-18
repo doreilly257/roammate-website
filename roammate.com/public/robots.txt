@@ -19,4 +19,52 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Anchor
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: ManuBot
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: NovellumCrawl
+Allow: /
+
+User-agent: PerplexityUser
+Allow: /
+
+User-agent: ProRataInc
+Allow: /
+
+User-agent: TerracottaBot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: CloudflareBot
+Allow: /
+
 Sitemap: https://roammate.com/sitemap.xml
