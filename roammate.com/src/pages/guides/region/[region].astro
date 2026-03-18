@@ -1,0 +1,512 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getAllGuides, getBackpackerRoutes } from '../../../data/guides';
+import { getAllBlogPosts } from '../../../lib/blog-data';
+import { regionToSlug } from '../../../lib/region-slug';
+
+export async function getStaticPaths() {
+  const allGuides = await getAllGuides();
+  const regionMap = new Map<string, string>();
+  for (const g of allGuides) {
+    const slug = regionToSlug(g.region);
+    if (!regionMap.has(slug)) regionMap.set(slug, g.region);
+  }
+  return Array.from(regionMap.entries()).map(([slug, name]) => ({
+    params: { region: slug },
+    props: { regionName: name },
+  }));
+}
+
+const { regionName } = Astro.props;
+const regionSlug = Astro.params.region;
+
+const allGuides = await getAllGuides();
+const guides = allGuides.filter((g) => regionToSlug(g.region) === regionSlug);
+const guideCount = guides.length;
+
+const allRoutes = await getBackpackerRoutes();
+const regionLower = regionName.toLowerCase();
+const routes = allRoutes.filter((r) => r.name.toLowerCase().includes(regionLower));
+
+const allPosts = await getAllBlogPosts();
+const posts = allPosts
+  .filter((p) => {
+    const text = `${p.title} ${p.description}`.toLowerCase();
+    return text.includes(regionLower);
+  })
+  .slice(0, 6);
+---
+
+<BaseLayout
+  title={`${regionName} Travel Guides — ${guideCount} Destinations | roammate`}
+  description={`Free travel guides for ${guideCount} destinations in ${regionName}. Budget tips, itineraries, and local recommendations for young travelers.`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": `${regionName} Travel Guides`,
+      "url": new URL(Astro.url.pathname, Astro.site).href,
+      "description": `Free travel guides for ${guideCount} destinations in ${regionName}.`,
+      "numberOfItems": guideCount,
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://roammate.com/guides/" },
+        { "@type": "ListItem", "position": 3, "name": regionName, "item": new URL(Astro.url.pathname, Astro.site).href },
+      ],
+    })} />
+  </Fragment>
+
+  <section class="region-hero">
+    <div class="region-hero-content">
+      <div class="region-breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/guides/">Guides</a>
+        <span>/</span>
+        <span>{regionName}</span>
+      </div>
+      <h1 class="region-hero-title">{regionName}</h1>
+      <p class="region-hero-subtitle">{guideCount} destination {guideCount === 1 ? 'guide' : 'guides'} with itineraries, budget tips, and local recommendations.</p>
+    </div>
+  </section>
+
+  <section class="region-guides">
+    <div class="region-section-header">
+      <div class="section-label">Destinations</div>
+      <h2 class="section-heading">Guides in <em>{regionName}</em></h2>
+    </div>
+    <div class="region-guides-grid">
+      {guides.map((g) => (
+        <a href={`/guides/${g.slug}/`} class="region-guide-card">
+          <span class="region-guide-flag">{g.flag}</span>
+          <div class="region-guide-info">
+            <span class="region-guide-name">{g.name}</span>
+            <span class="region-guide-country">{g.country}</span>
+          </div>
+          <span class="region-guide-arrow">→</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {routes.length > 0 && (
+    <section class="region-routes">
+      <div class="region-section-header">
+        <div class="section-label">Multi-Country</div>
+        <h2 class="section-heading">Backpacker <em>routes</em></h2>
+      </div>
+      <div class="region-routes-list">
+        {routes.map((r) => (
+          <a href={`/guides/${r.slug}/`} class="region-route-link">
+            <span class="region-route-flags">{r.flags}</span>
+            <span class="region-route-name">{r.name} Backpacker Route</span>
+            <span class="region-route-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {posts.length > 0 && (
+    <section class="region-blog">
+      <div class="region-section-header">
+        <div class="section-label">From the Blog</div>
+        <h2 class="section-heading">Reading about <em>{regionName}</em></h2>
+      </div>
+      <div class="region-blog-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}/`} class="region-blog-card">
+            <div class="region-blog-card-img-wrap">
+              <img src={post.heroImage} alt={post.title} width="400" height="260" loading="lazy" decoding="async" />
+            </div>
+            <div class="region-blog-card-body">
+              <span class="region-blog-card-category">{post.category}</span>
+              <h3 class="region-blog-card-title">{post.title}</h3>
+              <p class="region-blog-card-desc">{post.description}</p>
+              <span class="region-blog-card-link">Read article →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="region-cta">
+    <div class="region-cta-inner">
+      <h2 class="region-cta-heading">Traveling <em>{regionName}</em>?</h2>
+      <p class="region-cta-text">Find a travel companion who matches your style, budget, and destination.</p>
+      <div class="region-cta-actions">
+        <a
+          href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=region-hub-cta&mt=8"
+          target="_blank"
+          rel="noopener"
+          class="region-cta-btn"
+        >Download on iOS — Free</a>
+        <a href="/find-travel-companion/" class="region-cta-btn region-cta-btn--ghost">Find a travel companion</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .region-hero {
+    padding: 160px 40px 80px;
+    background: var(--color-bg-warm);
+  }
+
+  .region-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .region-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+  }
+
+  .region-breadcrumb a {
+    color: var(--color-text-muted);
+    transition: color 0.3s;
+  }
+
+  .region-breadcrumb a:hover {
+    color: var(--color-terracotta);
+  }
+
+  .region-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--color-cream);
+    margin-bottom: 20px;
+  }
+
+  .region-hero-subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    max-width: 600px;
+  }
+
+  .region-section-header {
+    max-width: 1200px;
+    margin: 0 auto 48px;
+  }
+
+  .region-guides {
+    padding: 100px 40px;
+  }
+
+  .region-guides-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .region-guide-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    background: var(--color-bg-warm);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s var(--ease-out-expo);
+  }
+
+  .region-guide-card:hover {
+    background: rgba(196, 86, 42, 0.08);
+    transform: translateX(4px);
+  }
+
+  .region-guide-flag {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .region-guide-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .region-guide-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-cream);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .region-guide-country {
+    font-size: 12px;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+  }
+
+  .region-guide-arrow {
+    color: var(--color-terracotta);
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .region-guide-card:hover .region-guide-arrow {
+    transform: translateX(4px);
+  }
+
+  .region-routes {
+    padding: 80px 40px;
+    background: #111;
+  }
+
+  .region-routes .region-section-header {
+    text-align: center;
+  }
+
+  .region-routes .section-heading {
+    color: rgba(255,255,255,0.85);
+  }
+
+  .region-routes .section-heading em {
+    color: var(--color-terracotta-light);
+  }
+
+  .region-routes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .region-route-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .region-route-link:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.18);
+  }
+
+  .region-route-flags { font-size: 20px; flex-shrink: 0; }
+
+  .region-route-name {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .region-route-arrow {
+    font-size: 14px;
+    color: rgba(255,255,255,0.35);
+    flex-shrink: 0;
+  }
+
+  .region-blog {
+    padding: 100px 40px;
+  }
+
+  .region-blog-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .region-blog-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-warm);
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+  }
+
+  .region-blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  }
+
+  .region-blog-card-img-wrap {
+    width: 100%;
+    aspect-ratio: 400 / 260;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .region-blog-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s var(--ease-out-expo);
+  }
+
+  .region-blog-card:hover .region-blog-card-img-wrap img {
+    transform: scale(1.04);
+  }
+
+  .region-blog-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .region-blog-card-category {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+
+  .region-blog-card-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: 1.3;
+  }
+
+  .region-blog-card-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--color-cream-muted);
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .region-blog-card-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-terracotta);
+    transition: color 0.2s;
+  }
+
+  .region-blog-card:hover .region-blog-card-link {
+    color: var(--color-terracotta-light);
+  }
+
+  .region-cta {
+    padding: 100px 40px;
+    background: #0f0f0f;
+    text-align: center;
+  }
+
+  .region-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .region-cta-heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.08;
+    color: #fff;
+    margin-bottom: 18px;
+  }
+
+  .region-cta-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .region-cta-text {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(245, 241, 235, 0.7);
+    margin-bottom: 36px;
+  }
+
+  .region-cta-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .region-cta-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--color-terracotta);
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+  }
+
+  .region-cta-btn:hover {
+    background: #b34f28;
+    transform: translateY(-2px);
+  }
+
+  .region-cta-btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(245, 241, 235, 0.25);
+    color: rgba(245, 241, 235, 0.8);
+  }
+
+  .region-cta-btn--ghost:hover {
+    background: rgba(245, 241, 235, 0.06);
+    border-color: rgba(245, 241, 235, 0.4);
+    color: #fff;
+  }
+
+  @media (max-width: 1024px) {
+    .region-hero { padding: 140px 24px 60px; }
+    .region-guides { padding: 80px 24px; }
+    .region-guides-grid { grid-template-columns: repeat(2, 1fr); }
+    .region-routes { padding: 60px 24px; }
+    .region-blog { padding: 80px 24px; }
+    .region-blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .region-cta { padding: 80px 24px; }
+  }
+
+  @media (max-width: 640px) {
+    .region-hero { padding: 140px 20px 40px; }
+    .region-guides { padding: 60px 20px; }
+    .region-guides-grid { grid-template-columns: 1fr; }
+    .region-routes { padding: 40px 20px; }
+    .region-blog { padding: 60px 20px; }
+    .region-blog-grid { grid-template-columns: 1fr; }
+    .region-cta { padding: 60px 20px; }
+    .region-cta-actions { flex-direction: column; align-items: center; }
+  }
+</style>

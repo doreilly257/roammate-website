@@ -1,16 +1,13 @@
 import type { BlogPost } from '../data/blog';
 import type { GuideEntry } from '../data/guides';
+import { findRelatedGuidesForPost } from './related-content';
 
 export function resolveRelatedContent(
   post: BlogPost,
   allBlogPosts: BlogPost[],
   allGuides: GuideEntry[],
 ) {
-  const allRelatedGuides = (post.relatedGuideSlugs ?? [])
-    .map((guideSlug) => allGuides.find((guide) => guide.slug === guideSlug))
-    .filter(Boolean);
-  const guideLimit = allRelatedGuides.length >= 6 ? 6 : 3;
-  const relatedGuides = allRelatedGuides.slice(0, guideLimit);
+  const relatedGuides = findRelatedGuidesForPost(post, allGuides, 3);
 
   const relatedPosts = (post.relatedPostSlugs ?? [])
     .map((relatedSlug) => allBlogPosts.find((entry) => entry.slug === relatedSlug))
