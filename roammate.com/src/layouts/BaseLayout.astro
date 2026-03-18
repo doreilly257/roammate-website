@@ -289,13 +289,82 @@ const isHome = Astro.url.pathname === '/';
       }
     }
 
-    // Track CTA / waitlist interactions
+    // Determine page section and metadata from URL
+    (function() {
+      var path = location.pathname.replace(/\/$/, '') || '/';
+      var parts = path.split('/').filter(Boolean);
+      var section = 'other';
+      var slug = parts[parts.length - 1] || 'home';
+      var meta = {};
+
+      if (path === '/') { section = 'landing'; slug = 'home'; }
+      else if (parts[0] === 'guides') { section = 'guide'; }
+      else if (parts[0] === 'blog') { section = 'blog'; }
+      else if (parts[0] === 'compare') { section = 'compare'; }
+      else if (['how-it-works', 'find-travel-companion', 'meet-travelers', 'about', 'safety'].indexOf(parts[0]) !== -1) { section = 'landing'; }
+
+      // Extract region from guide meta tag if present
+      var regionEl = document.querySelector('meta[name="ph-region"]');
+      if (regionEl) meta.region = regionEl.getAttribute('content');
+
+      // Extract category from blog meta tag if present
+      var catEl = document.querySelector('meta[name="ph-category"]');
+      if (catEl) meta.category = catEl.getAttribute('content');
+
+      // UTM parameter capture
+      var params = new URLSearchParams(location.search);
+      var utmProps = {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(key) {
+        var val = params.get(key);
+        if (val) utmProps[key] = val;
+      });
+      if (Object.keys(utmProps).length > 0 && window.posthog && typeof window.posthog.setPersonProperties === 'function') {
+        window.posthog.setPersonProperties(utmProps);
+      }
+
+      // Enhanced page view
+      phCapture('page_view_enhanced', Object.assign({ section: section, slug: slug, path: path }, meta, utmProps));
+
+      // Section-specific page views
+      if (section === 'guide' && parts.length > 1) {
+        phCapture('guide_view', Object.assign({ slug: slug, path: path }, meta));
+      }
+      if (section === 'blog' && parts.length > 1) {
+        phCapture('blog_view', Object.assign({ slug: slug, path: path }, meta));
+      }
+    })();
+
+    // Track elements with data-ph-event attributes
     document.querySelectorAll('[data-ph-event]').forEach(function(el) {
       el.addEventListener('click', function() {
-        phCapture(el.getAttribute('data-ph-event'), {
+        var eventName = el.getAttribute('data-ph-event');
+        var props = {
           label: el.getAttribute('data-ph-label') || el.textContent?.trim(),
           href: el.getAttribute('href') || undefined,
-        });
+        };
+        phCapture(eventName, props);
+
+        // Consolidated events for funnels
+        if (eventName.includes('appstore') || eventName.includes('app_store')) {
+          phCapture('app_store_click', { source: eventName, label: el.getAttribute('data-ph-label') || el.textContent?.trim() });
+        }
+        if (eventName.includes('cta')) {
+          var ctaType = eventName.includes('appstore') || eventName.includes('app_store') ? 'app_store'
+            : eventName.includes('waitlist') ? 'waitlist'
+            : eventName.includes('compare') ? 'compare'
+            : 'other';
+          phCapture('cta_click', { type: ctaType, source: eventName, label: el.getAttribute('data-ph-label') || el.textContent?.trim() });
+        }
+      });
+    });
+
+    // Track newsletter signup forms
+    ['blog-email-form', 'waitlist-form'].forEach(function(formId) {
+      var form = document.getElementById(formId);
+      if (!form) return;
+      form.addEventListener('submit', function() {
+        var source = formId === 'blog-email-form' ? 'blog' : 'waitlist';
+        phCapture('newsletter_signup', { source: source, path: location.pathname });
       });
     });
 

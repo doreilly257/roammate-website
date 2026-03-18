@@ -142,6 +142,7 @@ const renderInlineLinks = (text: string) => {
 
 <BaseLayout title={`${title} | roammate Blog`} description={description} ogImage={heroImage} ogType="article" publishedAt={isoPublishedAt} updatedAt={isoUpdatedAt}>
   <Fragment slot="head">
+    {category && <meta name="ph-category" content={category}>}
     <link rel="preload" as="image" type="image/webp" href={heroImage}>
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",

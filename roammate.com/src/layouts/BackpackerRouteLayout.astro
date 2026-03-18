@@ -70,6 +70,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
 
 <BaseLayout title={title} description={description} ogImage={ogImage}>
   <Fragment slot="head">
+    <meta name="ph-region" content={heroRegion}>
     {ogImage && <link rel="preload" as="image" type="image/webp" href={ogImage}>}
     <slot name="head" />
     <script type="application/ld+json" set:html={JSON.stringify({
