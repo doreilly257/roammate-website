@@ -1,0 +1,220 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  const paths: any[] = [];
+  for (const g of guides) {
+    if (g.data.type !== 'city') continue;
+    const d = g.data;
+    for (const [days, dayList] of Object.entries(d.itineraries)) {
+      paths.push({
+        params: { slug: `${d.slug}-${days}-day` },
+        props: {
+          city: d.heroCity,
+          country: d.heroCountry,
+          citySlug: d.slug,
+          days: Number(days),
+          itinerary: dayList,
+          allDays: Object.keys(d.itineraries).map(Number).sort((a, b) => a - b),
+        },
+      });
+    }
+  }
+  return paths;
+}
+
+const { city, country, citySlug, days, itinerary, allDays } = Astro.props;
+const dayLabel = days === 1 ? '1-day' : `${days}-day`;
+const pageTitle = `${city} ${dayLabel} Itinerary — Day-by-Day Guide | roammate`;
+const pageDesc = `A detailed ${dayLabel} itinerary for ${city}, ${country}. Morning, afternoon, and evening plans with tips, costs, and insider advice.`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+    { "@type": "ListItem", "position": 2, "name": `${city} Guide`, "item": `https://roammate.com/guides/${citySlug}/` },
+    { "@type": "ListItem", "position": 3, "name": `${dayLabel} Itinerary`, "item": `https://roammate.com/itinerary/${citySlug}-${days}-day/` }
+  ]
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <section class="it-hero">
+    <div class="it-hero-inner">
+      <nav class="it-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href={`/guides/${citySlug}/`}>{city}</a>
+        <span>/</span>
+        <span>{dayLabel} Itinerary</span>
+      </nav>
+      <h1 class="it-hero-title">{city} {dayLabel} itinerary</h1>
+      <p class="it-hero-sub">{country}</p>
+    </div>
+  </section>
+
+  <article class="it-content">
+    <div class="it-content-inner">
+
+      {allDays.length > 1 && (
+        <nav class="it-day-nav" aria-label="Itinerary options">
+          {allDays.map((d: number) => (
+            <a
+              href={`/itinerary/${citySlug}-${d}-day/`}
+              class={`it-day-pill ${d === days ? 'active' : ''}`}
+            >
+              {d === 1 ? '1 day' : `${d} days`}
+            </a>
+          ))}
+        </nav>
+      )}
+
+      {itinerary.map((day: any) => (
+        <section class="it-day">
+          <h2 class="it-day-title">Day {day.num}: {day.title}</h2>
+          {day.periods.map((period: any) => (
+            <div class="it-period">
+              <div class="it-period-header">
+                <span class="it-period-icon">{period.icon}</span>
+                <div>
+                  <span class="it-period-time">{period.time}</span>
+                  <h3 class="it-period-title">{period.title}</h3>
+                </div>
+              </div>
+              <p class="it-period-text">{period.text}</p>
+              {period.tip && (
+                <div class="it-tip">
+                  <strong>Tip:</strong> {period.tip}
+                </div>
+              )}
+            </div>
+          ))}
+        </section>
+      ))}
+
+      <h2>More resources</h2>
+      <ul>
+        <li><a href={`/guides/${citySlug}/`}>Full {city} travel guide</a></li>
+        <li><a href={`/budget/${citySlug}/`}>{city} budget breakdown</a></li>
+        <li><a href={`/best-time-to-visit/${citySlug}/`}>Best time to visit {city}</a></li>
+      </ul>
+
+    </div>
+  </article>
+
+  <section class="it-cta reveal">
+    <div class="it-cta-inner">
+      <h2>Explore {city} with a travel companion</h2>
+      <p>roammate matches you with travelers heading to {city} at the same time. Free on iOS.</p>
+      <a href={`/guides/${citySlug}/`} class="it-cta-btn">See the full {city} guide</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .it-hero {
+    background: linear-gradient(135deg, #1a1714 0%, #2a2420 100%);
+    padding: 120px 24px 64px; text-align: center;
+  }
+  .it-hero-inner { max-width: 760px; margin: 0 auto; }
+  .it-breadcrumb {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35); margin-bottom: 40px;
+  }
+  .it-breadcrumb a { color: rgba(245, 240, 232, 0.55); transition: color 0.3s; text-decoration: none; }
+  .it-breadcrumb a:hover { color: var(--color-terracotta-light); }
+  .it-breadcrumb span { margin: 0 10px; }
+  .it-hero-title {
+    font-family: var(--font-display); font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900; line-height: 1.15; color: #f5f0e8;
+  }
+  .it-hero-sub {
+    font-family: var(--font-body); font-size: 18px; color: rgba(245, 240, 232, 0.55);
+    margin-top: 12px; letter-spacing: 1px;
+  }
+  .it-day-nav {
+    display: flex; gap: 12px; justify-content: center;
+    margin: 0 0 48px; flex-wrap: wrap;
+  }
+  .it-day-pill {
+    display: inline-block; padding: 10px 24px; border-radius: 50px;
+    font-family: var(--font-body); font-size: 15px; font-weight: 600;
+    text-decoration: none; color: var(--color-text); background: var(--color-bg-warm);
+    transition: background 0.3s, color 0.3s;
+  }
+  .it-day-pill:hover { background: var(--color-terracotta); color: #fff; }
+  .it-day-pill.active { background: var(--color-terracotta); color: #fff; }
+  .it-content { padding: 56px 24px 64px; }
+  .it-content-inner { max-width: 720px; margin: 0 auto; }
+  .it-content-inner h2 {
+    font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px);
+    font-weight: 800; color: var(--color-text); margin: 48px 0 16px;
+  }
+  .it-content-inner ul { margin: 0 0 24px; padding-left: 20px; }
+  .it-content-inner li {
+    font-family: var(--font-body); font-size: 16px; line-height: 1.7;
+    color: var(--color-text); margin-bottom: 10px;
+  }
+  .it-content-inner a {
+    color: var(--color-terracotta); text-decoration: underline;
+    text-underline-offset: 2px; transition: color 0.2s;
+  }
+  .it-content-inner a:hover { color: var(--color-terracotta-light); }
+  .it-day { margin-bottom: 48px; }
+  .it-day-title {
+    font-family: var(--font-display); font-size: clamp(22px, 3vw, 28px);
+    font-weight: 800; color: var(--color-text); margin: 0 0 24px;
+    padding-bottom: 12px; border-bottom: 2px solid var(--color-terracotta);
+  }
+  .it-period {
+    margin-bottom: 28px; padding-left: 20px;
+    border-left: 2px solid rgba(58, 52, 46, 0.1);
+  }
+  .it-period-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .it-period-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .it-period-time {
+    font-family: var(--font-body); font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--color-terracotta); font-weight: 600;
+  }
+  .it-period-title {
+    font-family: var(--font-display); font-size: 18px; font-weight: 700;
+    color: var(--color-text); margin: 2px 0 0;
+  }
+  .it-period-text {
+    font-family: var(--font-body); font-size: 16px; line-height: 1.75;
+    color: var(--color-text); margin: 0 0 12px;
+  }
+  .it-tip {
+    font-family: var(--font-body); font-size: 14px; line-height: 1.6;
+    color: var(--color-text-muted); padding: 12px 16px; background: var(--color-bg-warm);
+    border-radius: 8px; border-left: 3px solid var(--color-terracotta);
+  }
+  .it-cta { padding: 80px 24px; text-align: center; background: var(--color-bg-warm); }
+  .it-cta-inner { max-width: 560px; margin: 0 auto; }
+  .it-cta h2 {
+    font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 800; color: var(--color-text); margin-bottom: 12px;
+  }
+  .it-cta p {
+    font-family: var(--font-body); font-size: 16px; color: var(--color-text-muted);
+    margin-bottom: 28px; line-height: 1.6;
+  }
+  .it-cta-btn {
+    display: inline-block; padding: 16px 36px; background: var(--color-terracotta);
+    color: #fff; font-family: var(--font-body); font-size: 16px; font-weight: 600;
+    border-radius: 50px; text-decoration: none; transition: background 0.3s, transform 0.2s;
+  }
+  .it-cta-btn:hover { background: var(--color-terracotta-light); transform: translateY(-1px); }
+  @media (max-width: 600px) {
+    .it-hero { padding: 100px 20px 48px; }
+    .it-content { padding: 40px 20px 48px; }
+    .it-period { padding-left: 16px; }
+  }
+</style>

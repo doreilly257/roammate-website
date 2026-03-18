@@ -1,0 +1,241 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides
+    .filter((g) => g.data.type === 'city')
+    .map((g) => {
+      const d = g.data;
+      const dailyBudget = d.quickFacts.find((f) => f.label === 'Daily Budget');
+      const currency = d.quickFacts.find((f) => f.label === 'Currency');
+      return {
+        params: { city: d.slug },
+        props: {
+          city: d.heroCity,
+          country: d.heroCountry,
+          slug: d.slug,
+          dailyBudget: dailyBudget?.value ?? '',
+          dailyBudgetDetail: dailyBudget?.detail ?? '',
+          currency: currency?.value ?? '',
+          currencyDetail: currency?.detail ?? '',
+          budgetBreakdown: d.budgetBreakdown,
+          budgetTips: d.budgetTips,
+          budgetIntro: d.budgetIntro,
+        },
+      };
+    });
+}
+
+const { city, country, slug, dailyBudget, dailyBudgetDetail, currency, currencyDetail, budgetBreakdown, budgetTips, budgetIntro } = Astro.props;
+const pageTitle = `${city} Budget Breakdown — Daily Costs & Tips | roammate`;
+const pageDesc = `How much does it cost to visit ${city}? Daily budget ${dailyBudget} (${dailyBudgetDetail}). Full breakdown of accommodation, food, transport, and activities.`;
+const hasMidrange = budgetBreakdown.some((r: any) => r.midrange || r.mid);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+    { "@type": "ListItem", "position": 2, "name": `${city} Guide`, "item": `https://roammate.com/guides/${slug}/` },
+    { "@type": "ListItem", "position": 3, "name": `${city} Budget`, "item": `https://roammate.com/budget/${slug}/` }
+  ]
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <section class="bg-hero">
+    <div class="bg-hero-inner">
+      <nav class="bg-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href={`/guides/${slug}/`}>{city}</a>
+        <span>/</span>
+        <span>Budget</span>
+      </nav>
+      <h1 class="bg-hero-title">{city} budget breakdown</h1>
+      <p class="bg-hero-sub">{country} — {dailyBudget}/day</p>
+    </div>
+  </section>
+
+  <article class="bg-content">
+    <div class="bg-content-inner">
+
+      <p class="bg-intro">{budgetIntro}</p>
+
+      <h2>Daily cost breakdown</h2>
+      <p><strong>Currency:</strong> {currency} ({currencyDetail})</p>
+
+      <div class="bg-table-wrap">
+        <table class="bg-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Budget</th>
+              {hasMidrange && <th>Mid-range</th>}
+              <th>Splurge</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {budgetBreakdown.map((row: any) => (
+              <tr class={row.category === 'Daily Total' ? 'bg-total-row' : ''}>
+                <td><strong>{row.category}</strong></td>
+                <td>{row.budget}</td>
+                {hasMidrange && <td>{row.midrange || row.mid || '—'}</td>}
+                <td>{row.splurge || '—'}</td>
+                <td class="bg-notes">{row.notes || ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {budgetTips && budgetTips.length > 0 && (
+        <>
+          <h2>Money-saving tips</h2>
+          <div class="bg-tips">
+            {budgetTips.map((tip: any) => (
+              <div class="bg-tip-card">
+                {typeof tip === 'string' ? (
+                  <p>{tip}</p>
+                ) : (
+                  <>
+                    <h3>{tip.title}</h3>
+                    <p>{tip.text}</p>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      <h2>Plan your trip</h2>
+      <ul>
+        <li><a href={`/guides/${slug}/`}>Full {city} travel guide</a> with itineraries and cultural tips</li>
+        <li><a href={`/best-time-to-visit/${slug}/`}>Best time to visit {city}</a></li>
+        <li><a href={`/itinerary/${slug}-1-day/`}>{city} 1-day itinerary</a></li>
+      </ul>
+
+    </div>
+  </article>
+
+  <section class="bg-cta reveal">
+    <div class="bg-cta-inner">
+      <h2>Travel {city} with a companion</h2>
+      <p>Split costs and share experiences. roammate matches you with travelers heading to {city}.</p>
+      <a href={`/guides/${slug}/`} class="bg-cta-btn">See the full {city} guide</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .bg-hero {
+    background: linear-gradient(135deg, #1a1714 0%, #2a2420 100%);
+    padding: 120px 24px 64px; text-align: center;
+  }
+  .bg-hero-inner { max-width: 760px; margin: 0 auto; }
+  .bg-breadcrumb {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35); margin-bottom: 40px;
+  }
+  .bg-breadcrumb a { color: rgba(245, 240, 232, 0.55); transition: color 0.3s; text-decoration: none; }
+  .bg-breadcrumb a:hover { color: var(--color-terracotta-light); }
+  .bg-breadcrumb span { margin: 0 10px; }
+  .bg-hero-title {
+    font-family: var(--font-display); font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900; line-height: 1.15; color: #f5f0e8;
+  }
+  .bg-hero-sub {
+    font-family: var(--font-body); font-size: 18px; color: rgba(245, 240, 232, 0.55);
+    margin-top: 12px; letter-spacing: 1px;
+  }
+  .bg-content { padding: 56px 24px 64px; }
+  .bg-content-inner { max-width: 820px; margin: 0 auto; }
+  .bg-intro {
+    font-family: var(--font-body); font-size: 19px; line-height: 1.75;
+    color: var(--color-text); margin-bottom: 24px; padding: 28px 32px;
+    background: var(--color-bg-warm); border-left: 4px solid var(--color-terracotta);
+    border-radius: 0 12px 12px 0;
+  }
+  .bg-content-inner p {
+    font-family: var(--font-body); font-size: 17px; line-height: 1.75;
+    color: var(--color-text); margin-bottom: 20px;
+  }
+  .bg-content-inner h2 {
+    font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px);
+    font-weight: 800; color: var(--color-text); margin: 48px 0 16px;
+  }
+  .bg-content-inner ul { margin: 0 0 24px; padding-left: 20px; }
+  .bg-content-inner li {
+    font-family: var(--font-body); font-size: 16px; line-height: 1.7;
+    color: var(--color-text); margin-bottom: 10px;
+  }
+  .bg-content-inner a {
+    color: var(--color-terracotta); text-decoration: underline;
+    text-underline-offset: 2px; transition: color 0.2s;
+  }
+  .bg-content-inner a:hover { color: var(--color-terracotta-light); }
+  .bg-table-wrap {
+    overflow-x: auto; margin: 24px 0 32px; -webkit-overflow-scrolling: touch;
+  }
+  .bg-table {
+    width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: 15px;
+  }
+  .bg-table thead { background: var(--color-bg-warm); }
+  .bg-table th {
+    text-align: left; padding: 12px 16px; font-weight: 700;
+    color: var(--color-text); border-bottom: 2px solid var(--color-terracotta); white-space: nowrap;
+  }
+  .bg-table td {
+    padding: 10px 16px; color: var(--color-text);
+    border-bottom: 1px solid rgba(58, 52, 46, 0.1);
+  }
+  .bg-table tbody tr:hover { background: var(--color-bg-warm); }
+  .bg-total-row { font-weight: 700; background: var(--color-bg-warm); }
+  .bg-total-row td { border-top: 2px solid var(--color-terracotta); }
+  .bg-notes { font-size: 13px; color: var(--color-text-muted); }
+  .bg-tips {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px; margin: 24px 0 32px;
+  }
+  .bg-tip-card {
+    padding: 20px; background: var(--color-bg-warm); border-radius: 12px;
+  }
+  .bg-tip-card h3 {
+    font-family: var(--font-display); font-size: 16px; font-weight: 700;
+    color: var(--color-text); margin: 0 0 8px;
+  }
+  .bg-tip-card p {
+    font-size: 15px !important; color: var(--color-text-muted) !important; margin: 0 !important;
+  }
+  .bg-cta { padding: 80px 24px; text-align: center; background: var(--color-bg-warm); }
+  .bg-cta-inner { max-width: 560px; margin: 0 auto; }
+  .bg-cta h2 {
+    font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 800; color: var(--color-text); margin-bottom: 12px;
+  }
+  .bg-cta p {
+    font-family: var(--font-body); font-size: 16px; color: var(--color-text-muted);
+    margin-bottom: 28px; line-height: 1.6;
+  }
+  .bg-cta-btn {
+    display: inline-block; padding: 16px 36px; background: var(--color-terracotta);
+    color: #fff; font-family: var(--font-body); font-size: 16px; font-weight: 600;
+    border-radius: 50px; text-decoration: none; transition: background 0.3s, transform 0.2s;
+  }
+  .bg-cta-btn:hover { background: var(--color-terracotta-light); transform: translateY(-1px); }
+  @media (max-width: 600px) {
+    .bg-hero { padding: 100px 20px 48px; }
+    .bg-intro { padding: 20px; font-size: 17px; }
+    .bg-content { padding: 40px 20px 48px; }
+    .bg-table th, .bg-table td { padding: 8px 10px; font-size: 14px; }
+    .bg-tips { grid-template-columns: 1fr; }
+  }
+</style>
