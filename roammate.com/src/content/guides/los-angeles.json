@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "los-angeles",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "USD ($)",
+      "detail": "1 EUR ≈ $1.08"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Spanish",
+      "detail": "Spanish very widely spoken"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "PST (UTC-8)",
+      "detail": "PDT (UTC-7) Mar–Nov"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – May, Sep – Nov",
+      "detail": "20–28°C, less smog"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$100–160",
+      "detail": "Hostel, tacos, transit"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ESTA / B1-B2",
+      "detail": "VWP countries need ESTA ($21)"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "LA Highlights in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Santa Monica & Venice Beach",
+            "text": "Start at Santa Monica Pier — the iconic ferris wheel, arcade games, and Pacific Ocean views. Walk south along the beach path to Venice Beach, passing Muscle Beach outdoor gym and the Venice Skatepark where locals shred. Stroll the Venice Boardwalk for street performers, artists, and eccentrics. Breakfast burrito from a taco truck on Abbot Kinney Boulevard ($8–10) — the street is lined with boutiques, coffee shops, and murals.",
+            "tip": "Arrive at Santa Monica Pier before 10am to beat the crowds. The farmers market on Wednesday and Saturday mornings is exceptional."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hollywood & Griffith Observatory",
+            "text": "Drive or Uber to Hollywood Boulevard for the Walk of Fame, TCL Chinese Theatre handprints, and the chaotic energy of tourist Hollywood. It's tacky but essential. Then head to Griffith Observatory — free entry and the best panoramic views in LA. On a clear day you can see downtown, the Hollywood Sign, and the Pacific. The observatory's planetarium shows are $7 and excellent. Hike the trail to the Hollywood Sign viewpoint (45 min round trip).",
+            "tip": "Drive up to Griffith Observatory by 3pm on weekdays to get parking. Weekends fill up fast — take the DASH bus from Vermont/Sunset Metro station instead."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Koreatown Dinner & Nightlife",
+            "text": "Head to Koreatown — LA's most underrated neighborhood for food and nightlife. Korean BBQ at Park's BBQ or Kang Ho-dong Baekjeong ($25–35 per person for all-you-can-eat). Then hit the noraebang (karaoke rooms) — Pharaoh Karaoke has private rooms from $20/hour. K-town bars stay open until 2am and beyond — try The Prince for old-Hollywood cocktail bar vibes or Dan Sung Sa for a retro Korean speakeasy.",
+            "tip": "Koreatown restaurants often have long waits on weekends. Put your name in at 6:30pm or try the less-known spots on 6th Street."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Beach Towns & Westside",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Santa Monica & Venice Beach",
+            "text": "Start at Santa Monica Pier — the ferris wheel, arcade, and Pacific Ocean panorama. Walk the palisades path above the beach for cleaner views, then descend to the sand and walk south to Venice Beach. Pass Muscle Beach outdoor gym and the Venice Skatepark where locals pull off insane tricks. Breakfast at Gjusta Bakery on Sunset Avenue in Venice — their smoked fish toast ($14) and pastries are outstanding, or grab a $8 breakfast burrito from a nearby taco truck.",
+            "tip": "Arrive at Santa Monica before 10am. The Venice canals (two blocks from the beach) are a hidden residential gem — beautiful for morning walks."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Abbot Kinney & Getty Center",
+            "text": "Explore Abbot Kinney Boulevard — Venice's trendiest strip with boutiques, galleries, and excellent coffee at Intelligentsia. Lunch at Gjelina for seasonal Cal-Italian ($18–25 mains) or keep it cheap at Tacos Por Favor on Olympic ($3.50/taco). Then drive to the Getty Center — free admission, stunning architecture by Richard Meier, incredible art collection, and panoramic views from the hilltop gardens. The tram ride up is part of the experience.",
+            "tip": "The Getty Center is always free but parking is $20. Take the Metro 734 bus to save. Gardens are most beautiful from March through May."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Strip & WeHo",
+            "text": "Drive up to the Sunset Strip in West Hollywood — the legendary stretch of Sunset Boulevard lined with music venues, comedy clubs, and rooftop bars. Catch a comedy show at The Comedy Store ($20–25) where every major comedian has performed. Dinner on Santa Monica Boulevard in WeHo — night market vibes with global street food. End at a rooftop bar on the Strip — Skybar at the Mondrian for cocktails ($18–22) and city views.",
+            "tip": "The Comedy Store's Original Room has the best intimate vibe. Buy tickets online — walk-ups sell out on weekends."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Hollywood, Arts & Highland Park",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hollywood Boulevard & Runyon Canyon",
+            "text": "Walk Hollywood Boulevard for the Walk of Fame, TCL Chinese Theatre handprints, and the Egyptian Theatre. It's chaotic and touristy but you need to see it once. Then escape the madness with a hike up Runyon Canyon — the main trail is a 3.5-mile loop with incredible panoramic views of the city and the Hollywood Sign. The trailhead is on Fuller Avenue just above Hollywood Boulevard. Bring water — it gets hot fast.",
+            "tip": "Runyon Canyon's south entrance (Fuller Ave) is less crowded than the north. Early morning hikes avoid the heat and the Instagram influencer crowds."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "LACMA & Museum Row",
+            "text": "Head to Museum Row on Wilshire Boulevard. LACMA (Los Angeles County Museum of Art, $20) houses 140,000 works — the Urban Light lamppost installation outside is LA's most photographed spot. Next door, the La Brea Tar Pits are a surreal prehistoric site where mammoths were trapped in natural asphalt (free to view the outdoor pits). Lunch at the LACMA cafe or walk to the Original Farmers Market at 3rd and Fairfax — a 1934 food hall with 100+ vendors.",
+            "tip": "The Original Farmers Market at 3rd & Fairfax is not the same as The Grove next door. The market has better, cheaper, and more authentic food."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Highland Park & Echo Park",
+            "text": "Head northeast to Highland Park — LA's fastest-evolving neighborhood. York Boulevard is lined with craft breweries (Highland Park Brewery, excellent IPAs $7–9), taco spots, and vintage stores. Dinner at Café Birdie for Mediterranean plates ($16–24) or keep it real at Tacos El Pollo — grilled chicken tacos for $3. Then to Echo Park for drinks at The Short Stop (dive bar, $5 beers) or 1642 Bar for mezcal cocktails.",
+            "tip": "Highland Park feels like LA without the pretense. The Gold Line Metro runs straight here from downtown — no need to drive or Uber."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Downtown LA & Griffith Park",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Downtown LA & Arts District",
+            "text": "Start in DTLA's Arts District — an industrial neighborhood turned creative hub with galleries, street art, and some of LA's best coffee at Verve on Mateo Street. Walk past the murals on 7th Street and browse the galleries. Head to Grand Central Market on Broadway — a 1917 food hall with 40+ vendors. Egg Slut does the city's most famous breakfast sandwich ($10), or try Tacos Tumbras a Tomas for Oaxacan tlayudas ($12).",
+            "tip": "Grand Central Market is busiest at lunch — arrive before 11am for Egg Slut without the 45-minute line. The market opens at 8am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Griffith Observatory & Hollywood Sign",
+            "text": "Drive or bus to Griffith Observatory — free admission, free parking on weekdays before 2pm, and LA's best panoramic views. On a clear day: downtown skyline, Pacific Ocean, and the Hollywood Sign all in one frame. The observatory's Samuel Oschin Planetarium ($7) runs shows every 45 minutes. Hike the Brush Canyon Trail to the closest Hollywood Sign viewpoint — a 6.3-mile round trip, or take the shorter Charlie Turner trail (1.5 miles).",
+            "tip": "Take the DASH Observatory shuttle bus from Vermont/Sunset Metro (free on weekends, $0.50 weekdays) to avoid the parking nightmare."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Koreatown Feast & Karaoke",
+            "text": "Finish in Koreatown — LA's densest, most energetic neighborhood. Korean BBQ at Kang Ho-dong Baekjeong or Quarters ($25–35 per person, you grill your own meat at the table). The soju flows freely. After dinner, rent a noraebang (karaoke room) at Pharaoh Karaoke — private rooms from $20/hour with a massive song library. K-town nightlife runs late — bars like The Prince and Dan Sung Sa stay packed until 2am.",
+            "tip": "Order the combo platters at Korean BBQ — better value than individual cuts. Always start with the brisket, then upgrade to short ribs."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Santa Monica, Venice & Westside",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Santa Monica & Venice Beach",
+            "text": "Start at Santa Monica Pier — the iconic ferris wheel, Route 66 endpoint sign, and Pacific Ocean panorama. Walk the palisades path above the beach then descend south toward Venice. Pass Muscle Beach, the Venice Skatepark, and the boardwalk's parade of street performers and artists. The Venice Canals, two blocks inland, are a hidden residential gem. Breakfast at Gjusta Bakery — smoked fish toast ($14) and pastries in a converted warehouse.",
+            "tip": "The Venice Canals are beautiful at sunrise — hardly anyone is there before 9am. It's a completely different Venice from the boardwalk."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Abbot Kinney & Getty Center",
+            "text": "Explore Abbot Kinney Boulevard — Venice's coolest strip with boutiques, galleries, and Intelligentsia coffee. Lunch at Gjelina ($18–25 mains) or cheap tacos at Tacos Por Favor on Olympic ($3.50/taco). Then the Getty Center — free admission, Richard Meier architecture, world-class art, and hilltop gardens with panoramic views. The tram ride up the hill sets the tone. Allow 2–3 hours for the art and gardens.",
+            "tip": "The Getty Center is always free but parking is $20. Take Metro 734 bus to skip parking costs. The gardens are most beautiful March through May."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Malibu Sunset",
+            "text": "Drive PCH north to Malibu for sunset. El Matador State Beach ($12 parking) has dramatic sea stacks and caves — the most photogenic beach in LA. Or try Point Dume for sweeping coastal views. Dinner at Malibu Seafood ($15–22 fish plates) — a casual counter-service spot right on the PCH with ocean views. Drive back along the coast as the sun sets behind you — this is the California dream.",
+            "tip": "El Matador involves a steep staircase down the cliff — wear shoes with grip. Arrive 90 minutes before sunset for the best light on the rocks."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Hollywood & the Hills",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Runyon Canyon Hike",
+            "text": "Hit Runyon Canyon early — the south entrance on Fuller Avenue is less crowded. The main loop is 3.5 miles with panoramic city views and the Hollywood Sign as a backdrop. You'll pass celebrity dog walkers and yoga classes on the plateau. Bring water and sunscreen. Post-hike, walk down to Hollywood Boulevard for breakfast at Republique on La Brea — a stunning Parisian-style bakery in a 1929 building. Their kouign-amann ($6) is legendary.",
+            "tip": "Start Runyon before 8am to beat the heat and crowds. The cloud/inspiration point halfway up has the best unobstructed views of the Hollywood Sign."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hollywood Boulevard & Paramount Studios",
+            "text": "Walk the Walk of Fame past TCL Chinese Theatre and the Dolby Theatre (Oscars venue). It's chaotic but essential. For a deeper Hollywood experience, take the Paramount Studios lot tour ($65, 2 hours) — the only major studio still in Hollywood proper. You'll walk soundstages where movies are actively being filmed. Lunch at Musso & Frank Grill on Hollywood Blvd — LA's oldest restaurant (1919), classic martinis and chicken pot pie ($28).",
+            "tip": "Paramount studio tours sell out weeks ahead — book online early. The VIP tour ($195) includes more access and smaller groups."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Strip Comedy & Music",
+            "text": "Head to the Sunset Strip in West Hollywood. Catch a show at The Comedy Store ($20–25 cover) where Dave Chappelle and Chris Rock still do drop-ins. Or live music at the Troubadour ($15–30), where Elton John played his US debut. Pre-show dinner at Petit Trois on Highland — French bistro, no reservations, counter seating, and a double-cheeseburger ($19) that's absurdly good. Late night drinks at Rainbow Bar & Grill — rock and roll's living room.",
+            "tip": "The Comedy Store's Belly Room is the most intimate — surprise drop-ins from A-list comedians happen here. Check their Instagram for hints."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Downtown LA & Arts District",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Grand Central Market & Historic Core",
+            "text": "Start at Grand Central Market on Broadway — a 1917 food hall with 40+ vendors. Egg Slut ($10 breakfast sandwich) has a cult following, or try Tacos Tumbras a Tomas for Oaxacan tlayudas ($12). Walk Broadway's Historic Theatre District — ornate movie palaces from the 1920s and 30s, some now event venues. The Bradbury Building on Broadway at 3rd (free lobby) has a stunning Victorian interior you'll recognize from Blade Runner.",
+            "tip": "The Bradbury Building lobby is free to enter during business hours. The ornate iron staircase and atrium skylight are pure architectural magic."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Arts District & Little Tokyo",
+            "text": "Walk to the Arts District — LA's creative heart with massive murals on every warehouse wall, galleries, and the best coffee at Verve on Mateo Street. Browse Hauser & Wirth gallery (free, world-class exhibitions) and the converted warehouses along 7th Street. Then Little Tokyo for ramen at Daikokuya ($14–16, expect a line) or curry at Curry House. The Japanese Village Plaza has mochi shops and a peaceful garden.",
+            "tip": "The Arts District is best on foot. The murals change frequently — the alley behind 6th and Anderson has some of the freshest street art."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rooftop Bars & DTLA Nightlife",
+            "text": "DTLA has transformed into a proper nightlife destination. Drinks at Perch on Pershing Square — a rooftop bar on the 15th floor with city skyline views and French bistro food (cocktails $16–20). Or try the more casual Broken Shaker at the Freehand Hotel. For something different, Angel City Brewery in the Arts District has a huge courtyard, food trucks, and local IPAs ($8). Finish at Barcade on Spring Street — retro arcade games and craft beer.",
+            "tip": "Perch gets packed after 8pm on weekends. Arrive at 5:30pm for happy hour ($10 cocktails) and secure a table with a view."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Museums & Koreatown",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "LACMA & La Brea Tar Pits",
+            "text": "Head to Museum Row on Wilshire Boulevard. LACMA ($20) has 140,000 works spanning ancient to contemporary — the Chris Burden Urban Light lamppost installation outside is LA's most photographed art piece. Next door, the La Brea Tar Pits are a surreal prehistoric site where ice age animals were trapped in natural asphalt (free to view the outdoor pits). Scientists are still excavating — you can watch through glass windows.",
+            "tip": "LACMA is free for LA County residents after 3pm on weekdays. The Resnick Pavilion has the best rotating exhibitions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "The Broad & Walt Disney Concert Hall",
+            "text": "Metro to DTLA for The Broad — a contemporary art museum that's free (timed entry, book online). Yayoi Kusama's Infinity Mirrored Room is the signature piece ($18 add-on, worth it). Walk next door to Walt Disney Concert Hall — Frank Gehry's swooping stainless steel masterpiece. Free self-guided audio tours let you explore the garden and interior. Lunch at the Original Farmers Market at 3rd & Fairfax — 100+ vendors since 1934.",
+            "tip": "Book The Broad's free timed entry weeks in advance — it sells out fast. The Infinity Room requires a separate reservation on-site."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Koreatown Feast",
+            "text": "Koreatown is LA's most underrated neighborhood for food. Korean BBQ at Kang Ho-dong Baekjeong or Quarters ($25–35, you grill at the table). All-you-can-eat options at Gen KBBQ are great value. After dinner, noraebang (karaoke) at Pharaoh Karaoke — private rooms from $20/hour. K-town nightlife runs late — try The Prince (cocktails in a 1920s setting), Dan Sung Sa (retro Korean speakeasy), or HMS Bounty (dive bar, $5 beers).",
+            "tip": "Order soju cocktails — way cheaper than beer or wine at K-BBQ restaurants. The watermelon soju at Quarters is dangerously good."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Beach Day & Malibu",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Surf & Sand",
+            "text": "Head to Manhattan Beach or Hermosa Beach — the South Bay's local beach towns are less touristy and more Californian than Santa Monica. Rent a surfboard ($15/hour) or boogie board ($8/hour) at a beachfront shop. The Strand bike path runs 22 miles along the coast — rent a beach cruiser ($12/hour) and ride from Hermosa to Redondo Beach Pier. Breakfast at Uncle Bill's Pancake House in Manhattan Beach — silver dollar pancakes ($14) since 1967.",
+            "tip": "Manhattan Beach's south side has gentler waves for beginners. The afternoon onshore wind makes morning the best time for surfing."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pacific Coast Highway to Malibu",
+            "text": "Drive PCH north through Pacific Palisades to Malibu. Stop at the Getty Villa (free, but reserve timed entry online) — a recreation of a Roman country house filled with Greek, Roman, and Etruscan art on a clifftop above the Pacific. Continue to El Matador State Beach ($12 parking) — dramatic sea stacks, caves, and golden cliffs. It's the most photogenic beach in Southern California. Bring shoes with grip for the steep cliff staircase.",
+            "tip": "The Getty Villa requires free timed-entry reservations — book a week ahead. It's less crowded than the Getty Center and equally stunning."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Malibu Sunset Dinner",
+            "text": "Watch the sunset from Point Dume or Zuma Beach — the sky turns impossible shades of pink and orange. Dinner at Malibu Seafood ($15–22) — counter-service fish and chips right on the PCH with ocean views. Or splurge at Nobu Malibu if the budget allows ($40–80 per person). Drive back along the coast road as the last light fades. Stop at the Santa Monica Pier for a nightcap — the ferris wheel lit up against the dark Pacific.",
+            "tip": "Malibu Seafood is cash only and closes early (check hours). The fish tacos are the best value — fresh-caught and generous portions."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Silver Lake, Echo Park & East LA",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Silver Lake",
+            "text": "Silver Lake is LA's hipster heartland — think vintage shops, independent bookstores, and the city's best specialty coffee. Start at Intelligentsia on Sunset Boulevard, then walk to the Silver Lake Reservoir loop trail (2.2 miles, flat, stunning skyline views). Browse Mohawk General Store for LA fashion and Skylight Books for independent literature. Breakfast at Sqirl on Virgil — their ricotta toast with seasonal jam ($16) launched a thousand imitators.",
+            "tip": "The Silver Lake Reservoir loop is best at golden hour but gorgeous anytime. Sunset Junction (Sunset & Santa Monica Blvd) has the neighborhood's highest concentration of shops."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Echo Park & Elysian Park",
+            "text": "Walk to Echo Park Lake — rent a swan pedal boat ($11/hour) on the lotus-filled lake with the downtown skyline rising behind the palm trees. Then hike up to Elysian Park for hidden trails and views of Dodger Stadium. For lunch, Guisados on Sunset in Echo Park does braised meat tacos ($4 each) that are worth the detour. Try the cochinita pibil and the chicharron. East LA's taco scene is unmatched.",
+            "tip": "Echo Park Lake is most photogenic in July when the lotus flowers bloom — the pink blooms with the skyline behind them are an LA icon."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Highland Park Nightlife",
+            "text": "Take the Gold Line to Highland Park — York Boulevard is lined with craft breweries, taco joints, and vintage shops. Highland Park Brewery does excellent IPAs ($7–9) in a converted warehouse. Dinner at Café Birdie for Mediterranean sharing plates ($16–24) or street tacos at Tacos El Pollo ($3 each). Evening drinks at The Hermosillo (dive bar, $4 Tecates) or Block Party for natural wines and DJ sets in an airy courtyard.",
+            "tip": "Highland Park is LA's most walkable nightlife strip outside of WeHo. York Blvd between Ave 50 and 56 has everything within a half-mile."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Griffith Park & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Griffith Observatory & Trails",
+            "text": "Drive or bus to Griffith Park early. Hike the Brush Canyon Trail (6.3 miles round trip) or the shorter Charlie Turner Trail (1.5 miles) for the closest Hollywood Sign views. Finish at Griffith Observatory — free admission, free telescopes, and the best panoramic views in LA. The Samuel Oschin Planetarium ($7) is excellent. On a clear morning, you can see the ocean, downtown, mountains, and the San Fernando Valley simultaneously.",
+            "tip": "Take the DASH Observatory bus from Vermont/Sunset Metro station (free on weekends). Avoid weekend driving — the parking lot fills by 10am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Bites & Souvenirs",
+            "text": "Head to the Original Farmers Market at 3rd and Fairfax for a final food crawl — 100+ vendors selling everything from French crepes to Singaporean laksa since 1934. Pick up souvenirs at the adjacent Grove if you need gifts. Or head to Olvera Street in DTLA — LA's historic Mexican marketplace with handmade crafts, churros ($3), and taquitos at Cielito Lindo ($5 for three). The Avila Adobe (1818) is the oldest house in LA.",
+            "tip": "Olvera Street's Cielito Lindo has served avocado-sauce taquitos since 1934 — there's always a line, and it always moves fast."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Sunset",
+            "text": "For your last LA evening, head to the Griffith Observatory for sunset if you missed it earlier, or to the rooftop at Mama Shelter in Hollywood for cocktails ($14–18) with skyline views. A farewell dinner at Bestia in the Arts District ($25–40 mains, Italian-inspired) or keep it budget at Howlin' Ray's for Nashville hot chicken ($14–18). Watch the city lights appear and toast to the city of angels.",
+            "tip": "LAX is a nightmare — leave 3 hours before domestic flights, 4 for international. The FlyAway bus from Union Station is $9.75 and avoids traffic."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free attractions",
+      "text": "Griffith Observatory, Getty Center, Getty Villa, The Broad, LACMA after 3pm (residents), Venice Beach, Runyon Canyon, and dozens of world-class hiking trails are all free."
+    },
+    {
+      "title": "Taco economy",
+      "text": "LA has the best tacos outside Mexico. Street tacos cost $2–4 each. Grand Central Market, Guisados, and East LA taco trucks offer full meals for $8–12."
+    },
+    {
+      "title": "TAP card transit",
+      "text": "Get a TAP card ($2) and load a day pass ($3.50 Metro, $5 Metro + buses). The Metro connects Downtown, Hollywood, Koreatown, Santa Monica, and LAX."
+    },
+    {
+      "title": "Happy hours",
+      "text": "LA bars run happy hours 4–7pm with $6–8 beers and $8–12 cocktails. Koreatown has the best deals — soju cocktails and Korean fried chicken for under $15."
+    },
+    {
+      "title": "Free museum days",
+      "text": "Most LA museums have free days: LACMA 2nd Tues (residents), Natural History Museum 1st Tues, The Broad is always free. Getty Center and Villa are always free."
+    },
+    {
+      "title": "Skip the rental car",
+      "text": "Metro + Uber for specific trips is often cheaper than renting a car + parking ($20–40/day in most areas). Use Metro for the spine of your journey."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$35–70",
+      "midrange": "$120–220",
+      "splurge": "$350+",
+      "notes": "Hostels → boutique hotels → beachfront luxury"
+    },
+    {
+      "category": "Food",
+      "budget": "$20–35",
+      "midrange": "$50–80",
+      "splurge": "$120+",
+      "notes": "Tacos & food trucks → casual restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$25–50",
+      "splurge": "$80+",
+      "notes": "Metro + walking → Metro + Uber → rental car + parking"
+    },
+    {
+      "category": "Activities",
+      "budget": "$0–15",
+      "midrange": "$30–60",
+      "splurge": "$100+",
+      "notes": "Free hikes & museums → paid attractions → studio tours + VIP"
+    },
+    {
+      "category": "Drinks",
+      "budget": "$8–15",
+      "midrange": "$25–40",
+      "splurge": "$60+",
+      "notes": "Happy hour beers → craft cocktails → rooftop bars"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$68–150",
+      "midrange": "$250–450",
+      "splurge": "$710+",
+      "notes": "Budget → comfortable → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Visa Waiver Program countries need an ESTA ($21) — apply at least 72 hours before travel at esta.cbp.dhs.gov",
+        "LAX is the main airport. The FlyAway bus to Union Station is $9.75. Metro C Line connects to the city via Aviation/LAX station",
+        "Burbank (BUR) is closer to Hollywood and often has cheaper domestic flights with shorter security lines"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance essential — US healthcare is extremely expensive without it. Urgent care visits start at $150+",
+        "LA is generally safe for tourists. Be aware of your surroundings in Hollywood at night and parts of downtown",
+        "Sunscreen is non-negotiable — UV is intense even on overcast days. Stay hydrated, especially when hiking"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "Get a TAP card ($2) for Metro rail and buses. Day pass: $3.50 (rail) or $5 (rail + bus). Metro runs 4am–12:30am",
+        "Metro connects DTLA, Hollywood, Koreatown, Santa Monica (Expo Line), and LAX area. The system is expanding fast",
+        "Uber/Lyft are essential for areas Metro doesn't cover. Traffic is brutal 7–10am and 4–7pm — plan around it or take the Metro"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Free WiFi at most cafes, libraries, and Metro stations. Starbucks and McDonald's have reliable free WiFi",
+        "US SIM: T-Mobile prepaid ($30/month unlimited) or Mint Mobile eSIM. Available at any phone store or Target/Walmart",
+        "Cell coverage is excellent everywhere except deep canyon hikes. Download offline maps for Griffith Park and Malibu trails"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cards accepted virtually everywhere — many places are cashless. Apple Pay and Google Pay widely used",
+        "Tipping: 18–20% at restaurants, $1–2/drink at bars, 15–20% for Uber/Lyft. Pre-tax total is the tipping base",
+        "ATMs everywhere. Avoid currency exchange — US bank ATMs give the best rates. Charles Schwab refunds all ATM fees"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Layers are essential — mornings are cool (15°C), afternoons hot (28°C+), and nights cool again. Marine layer keeps the coast cooler",
+        "Comfortable walking shoes plus something for beach/hiking. Flip-flops for the beach, trail shoes for canyons",
+        "Sunscreen (SPF 50+), sunglasses, reusable water bottle, and a light jacket for ocean breezes and air-conditioned restaurants"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "💵",
+      "title": "Tipping Culture",
+      "text": "Tip 18–20% at restaurants — it's not optional, servers depend on tips for income. Tip $1–2 per drink at bars, 15–20% for rideshare. Counter service tip jars are optional but appreciated."
+    },
+    {
+      "icon": "🚗",
+      "title": "Car Culture",
+      "text": "LA is a driving city but you can survive without a car using Metro + Uber. If you rent, expect to spend $20–40/day on parking alone. Valet is common ($5–10 tip). Right turn on red is legal unless signed otherwise."
+    },
+    {
+      "icon": "🌊",
+      "title": "Beach Etiquette",
+      "text": "All California beaches are public below the high tide line. No glass containers on the beach (strictly enforced). Smoking is banned on most beaches. Respect surfer right-of-way in the water."
+    },
+    {
+      "icon": "🌿",
+      "title": "Cannabis",
+      "text": "Recreational cannabis is legal in California for 21+. Only buy from licensed dispensaries (check for the state license number). No smoking in public, hotel rooms, or beaches — designated areas and private property only."
+    },
+    {
+      "icon": "🏋️",
+      "title": "Health Culture",
+      "text": "LA takes health and fitness seriously. Vegan and gluten-free options are everywhere. Juice bars and acai bowls are a way of life. Don't be surprised by $16 smoothies — it's normal here."
+    },
+    {
+      "icon": "🌍",
+      "title": "Diversity",
+      "text": "LA is one of the most diverse cities on earth — 224 languages spoken. Every neighborhood has its own cultural identity. Respect local communities when visiting ethnic neighborhoods."
+    }
+  ],
+  "title": "Los Angeles Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate LA guide for young travelers. 3-day itinerary with beach towns, hiking trails, taco crawls, and nightlife. Plan your Los Angeles trip with roammate.",
+  "heroImage": "/images/guides/los-angeles-hero.webp",
+  "heroFlag": "🇺🇸",
+  "heroCountry": "United States",
+  "heroRegion": "North America",
+  "heroCity": "Los Angeles",
+  "heroSubtitle": "Where golden coastline meets urban sprawl, and every sunset looks like it was color-graded for the movies.",
+  "budgetIntro": "Daily costs per person in USD. LA can be surprisingly affordable — free museums, cheap tacos, and Metro transit keep the budget under control.",
+  "culturalIntro": "LA is laid-back on the surface but has its own unwritten rules. Embrace the diversity, tip properly, and don't knock the avocado toast.",
+  "ctaCity": "Los Angeles",
+  "ctaText": "Find travel companions to share Airbnb costs, split car rentals for Pacific Coast Highway road trips, and explore LA's neighborhoods together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Mar – May Best"
+  ],
+  "defaultDays": 3
+}

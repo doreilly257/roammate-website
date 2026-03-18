@@ -1,0 +1,469 @@
+{
+  "type": "backpacker",
+  "slug": "india",
+  "routeOverview": [
+    {
+      "country": "North India",
+      "flag": "🇮🇳",
+      "weeks": "1–6",
+      "color": "#c4562a",
+      "stops": [
+        "Delhi",
+        "Agra",
+        "Jaipur",
+        "Varanasi",
+        "Rishikesh",
+        "Manali/Ladakh"
+      ]
+    },
+    {
+      "country": "Nepal",
+      "flag": "🇳🇵",
+      "weeks": "7–10",
+      "color": "#c9a84c",
+      "stops": [
+        "Kathmandu",
+        "Pokhara",
+        "Annapurna Base Camp",
+        "Chitwan"
+      ]
+    },
+    {
+      "country": "Sri Lanka",
+      "flag": "🇱🇰",
+      "weeks": "11–14",
+      "color": "#2e6d79",
+      "stops": [
+        "Colombo",
+        "Kandy",
+        "Ella",
+        "Mirissa",
+        "Galle"
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "name": "North India",
+      "flag": "🇮🇳",
+      "weeks": "Weeks 1–6",
+      "color": "#c4562a",
+      "intro": "India doesn't do half measures — it's sensory overload from the moment you land. The Taj Mahal, the chaos of Delhi, sunrise over the Ganges in Varanasi, and the Himalayas looming above it all. Incredibly cheap, endlessly fascinating, and it will change how you see the world.",
+      "quickFacts": [
+        {
+          "icon": "💰",
+          "label": "Daily Budget",
+          "value": "$15–35",
+          "detail": "Extremely budget-friendly"
+        },
+        {
+          "icon": "💵",
+          "label": "Currency",
+          "value": "INR (₹)",
+          "detail": "1 USD ≈ ₹84"
+        },
+        {
+          "icon": "🛂",
+          "label": "Visa",
+          "value": "e-Visa 30 days",
+          "detail": "$25; extendable to 90 days"
+        },
+        {
+          "icon": "🗣",
+          "label": "Language",
+          "value": "Hindi/English",
+          "detail": "English widely spoken"
+        },
+        {
+          "icon": "🕐",
+          "label": "Timezone",
+          "value": "IST (UTC+5:30)",
+          "detail": "Single timezone"
+        },
+        {
+          "icon": "☀️",
+          "label": "Best Months",
+          "value": "Oct – Mar",
+          "detail": "Cool & dry season"
+        }
+      ],
+      "phases": [
+        {
+          "title": "Delhi & the Golden Triangle",
+          "duration": "8–10 days",
+          "description": "Delhi is two cities — Old Delhi (Mughal chaos, Chandni Chowk spice market, Jama Masjid mosque) and New Delhi (wide boulevards, India Gate, Humayun's Tomb ₹35). Take the metro (₹10–60) everywhere. Street food in Paranthe Wali Gali (stuffed paratha ₹40–60). Train to Agra (₹250–800 Gatimaan Express, 1.5 hrs). The Taj Mahal at sunrise (₹1,100 foreigners — yes, it's worth it) is transcendent. Continue to Jaipur (train ₹300–600, 4 hrs) — the Pink City. Hawa Mahal, Amber Fort (₹500), and the best shopping in Rajasthan at Johari Bazaar.",
+          "tip": "Pre-book trains on IRCTC (irctc.co.in) at least 2 weeks ahead — popular routes sell out. Sleeper class is cheapest; AC 3-tier is the sweet spot for comfort.",
+          "guides": [
+            "delhi",
+            "agra",
+            "taj-mahal",
+            "jaipur",
+            "amber-fort",
+            "jodhpur"
+          ]
+        },
+        {
+          "title": "Varanasi",
+          "duration": "4–5 days",
+          "description": "Train from Jaipur to Varanasi (₹400–1,200, 12–16 hrs sleeper). Varanasi is the spiritual heart of India and the oldest continuously inhabited city in the world. The Ganga Aarti ceremony at Dashashwamedh Ghat every evening at 7pm is one of the most powerful things you'll ever witness (free, arrive early for a spot). Take a sunrise boat ride on the Ganges (₹100–200 shared). Walk the ghats from Assi to Manikarnika (the burning ghat — observe respectfully, no photos). Eat at Blue Lassi Shop (₹50–80) and Kashi Chat Bhandar for the best street chaat. The silk weavers in the Muslim quarter are fascinating.",
+          "tip": "Varanasi touts are aggressive — politely decline and navigate yourself. The lanes near the ghats are a labyrinth — get lost on purpose, you'll find incredible things.",
+          "guides": [
+            "varanasi-ghats"
+          ]
+        },
+        {
+          "title": "Rishikesh & the Himalayas",
+          "duration": "10–14 days",
+          "description": "Train to Haridwar (₹400–800, 8–10 hrs), then shared jeep to Rishikesh (₹30, 30 mins). Rishikesh is the yoga capital of the world — drop-in classes from ₹200–500, ashram stays from ₹300–800/night including meals. Rafting on the Ganges (₹800–1,500 for a half-day). The Beatles Ashram (₹600) is hauntingly beautiful. Cross Lakshman Jhula bridge at sunset. From Rishikesh, the Himalayas open up: bus to Manali (₹800–1,200, 14 hrs overnight) for Rohtang Pass, Old Manali hippie cafes, and the Solang Valley. Or push to Leh/Ladakh for the ultimate mountain experience (fly ₹3,000–6,000 or the epic 2-day Manali–Leh highway).",
+          "tip": "The Manali–Leh Highway is only open June–September. It's one of the world's greatest road trips — take the 2-day bus (₹1,500) and stop overnight in tent camps at 4,000m.",
+          "guides": [
+            "rishikesh",
+            "haridwar",
+            "manali",
+            "leh-ladakh",
+            "pangong-lake",
+            "amritsar",
+            "golden-temple"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nepal",
+      "flag": "🇳🇵",
+      "weeks": "Weeks 7–10",
+      "color": "#c9a84c",
+      "intro": "Nepal is where the Himalayas get personal. Home to 8 of the world's 14 highest peaks, it offers world-class trekking at backpacker prices. Kathmandu is chaotic and charming, Pokhara is lakeside bliss, and the mountain trails will test and reward you in equal measure.",
+      "quickFacts": [
+        {
+          "icon": "💰",
+          "label": "Daily Budget",
+          "value": "$15–30",
+          "detail": "Very affordable"
+        },
+        {
+          "icon": "💵",
+          "label": "Currency",
+          "value": "NPR (₨)",
+          "detail": "1 USD ≈ ₨134"
+        },
+        {
+          "icon": "🛂",
+          "label": "Visa",
+          "value": "$30 on arrival",
+          "detail": "15 days; $50 for 30 days"
+        },
+        {
+          "icon": "🗣",
+          "label": "Language",
+          "value": "Nepali",
+          "detail": "English in tourist areas"
+        },
+        {
+          "icon": "🕐",
+          "label": "Timezone",
+          "value": "NPT (UTC+5:45)",
+          "detail": "Yes, :45 offset"
+        },
+        {
+          "icon": "☀️",
+          "label": "Best Months",
+          "value": "Oct – Nov",
+          "detail": "Post-monsoon, clear skies"
+        }
+      ],
+      "phases": [
+        {
+          "title": "Kathmandu Valley",
+          "duration": "4–5 days",
+          "description": "Fly from Delhi or overland from the Indian border at Sunauli/Bhairahawa. Kathmandu's Thamel district is backpacker central — gear shops, rooftop bars, and momo (Nepali dumplings, ₨100–150) on every corner. Explore Durbar Square (₨1,000 foreigners), Swayambhunath (Monkey Temple, ₨200) for panoramic valley views, and Boudhanath Stupa (₨400) — the largest in Nepal. Day trip to Bhaktapur (₨1,800), a medieval city frozen in time. Hire a guide for the Shivapuri Nagarjun National Park hike (₨1,000 entry) for Himalayan views without trekking.",
+          "tip": "Buy trekking gear in Thamel — quality North Face and Patagonia copies for ₨500–2,000. Rent sleeping bags (₨100/day) if you don't want to buy.",
+          "guides": [
+            "kathmandu"
+          ]
+        },
+        {
+          "title": "Annapurna Base Camp Trek",
+          "duration": "10–14 days",
+          "description": "Bus from Kathmandu to Pokhara (tourist bus ₨700–1,000, 6–8 hrs). Pokhara is the gateway to the Annapurna region — relax lakeside for a day before trekking. The Annapurna Base Camp (ABC) trek takes 7–12 days round trip from Nayapul. TIMS card (₨2,000) and ACAP permit (₨3,000) required — get them in Pokhara. Tea house accommodation along the trail: ₨200–500/night (often free if you eat there). Meals: ₨400–800 per plate (prices increase with altitude). The trail climbs from subtropical forest to the glacial amphitheatre at 4,130m — surrounded by 7,000m+ peaks including Annapurna I and Machapuchare (Fishtail).",
+          "tip": "You don't need a guide for ABC — the trail is well-marked and tea houses are every 1–2 hours. But a porter (₨2,000–2,500/day) takes the pain out of carrying your pack.",
+          "guides": [
+            "annapurna-circuit"
+          ]
+        },
+        {
+          "title": "Pokhara & Chitwan",
+          "duration": "5–6 days",
+          "description": "Post-trek, recover in Pokhara. Paraglide from Sarangkot (₨7,000–9,000/$50–65 for 30 mins — tandem, no experience needed) over Phewa Lake with Annapurna as the backdrop. Rent a rowboat on Phewa Lake (₨500/hr), hike to the World Peace Pagoda (free, 45 mins), and eat dal bhat (Nepal's national dish, ₨300–500 — unlimited refills). Bus to Chitwan National Park (₨500–700, 5–6 hrs). 2-night jungle package (₨5,000–8,000) includes jeep safari, canoe ride, and guided walks — spot one-horned rhinos, crocodiles, and if very lucky, Bengal tigers. Village homestays: ₨1,000–1,500 including meals.",
+          "tip": "Dal bhat power — eat it twice a day like Nepalis do. It's cheap, filling, and comes with unlimited refills everywhere. Your trekking fuel.",
+          "guides": [
+            "pokhara",
+            "chitwan"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sri Lanka",
+      "flag": "🇱🇰",
+      "weeks": "Weeks 11–14",
+      "color": "#2e6d79",
+      "intro": "Sri Lanka packs an extraordinary amount into a small island — ancient ruins, misty tea plantations, pristine beaches, and some of the best wildlife in Asia. After the intensity of India and the altitude of Nepal, Sri Lanka is the perfect wind-down — tropical, relaxed, and endlessly beautiful.",
+      "quickFacts": [
+        {
+          "icon": "💰",
+          "label": "Daily Budget",
+          "value": "$25–45",
+          "detail": "Good value"
+        },
+        {
+          "icon": "💵",
+          "label": "Currency",
+          "value": "LKR (Rs)",
+          "detail": "1 USD ≈ Rs 320"
+        },
+        {
+          "icon": "🛂",
+          "label": "Visa",
+          "value": "ETA $50",
+          "detail": "30 days; apply online"
+        },
+        {
+          "icon": "🗣",
+          "label": "Language",
+          "value": "Sinhala/Tamil",
+          "detail": "English widely spoken"
+        },
+        {
+          "icon": "🕐",
+          "label": "Timezone",
+          "value": "SLST (UTC+5:30)",
+          "detail": "Same as India"
+        },
+        {
+          "icon": "☀️",
+          "label": "Best Months",
+          "value": "Dec – Mar",
+          "detail": "West/south coast dry"
+        }
+      ],
+      "phases": [
+        {
+          "title": "Colombo to Kandy",
+          "duration": "4–5 days",
+          "description": "Fly from Kathmandu or India to Colombo (CMB). Explore the Pettah market district, eat kottu roti (Rs 400–600 — the sound of it being chopped on the griddle is iconic), and visit the Gangaramaya Temple (Rs 500). Train to Kandy (Rs 200–600, 3 hrs — stunning mountain scenery). Kandy is home to the Temple of the Tooth Relic (Rs 2,000), the most sacred Buddhist site in Sri Lanka. Walk around Kandy Lake at sunset, visit the Royal Botanical Gardens at Peradeniya (Rs 2,000), and shop at the bustling central market. Stay in a guesthouse overlooking the lake (Rs 3,000–5,000/night).",
+          "tip": "Book train tickets in person at the station — the \"observation car\" on the Colombo–Kandy route has panoramic windows and is worth the Rs 600 upgrade.",
+          "guides": [
+            "colombo",
+            "kandy"
+          ]
+        },
+        {
+          "title": "Tea Country & Ella",
+          "duration": "4–5 days",
+          "description": "The train from Kandy to Ella is one of the most beautiful rail journeys on Earth (Rs 200–600, 6–7 hrs). The train winds through emerald tea plantations, misty mountains, and over viaducts — sit by the open door (yes, doors stay open). Stop in Nuwara Eliya for tea factory tours (Rs 500 including tasting) and the cool highland air. Ella is a backpacker favourite — hike Little Adam's Peak (1.5 hrs, free) for sunrise valley views, climb Ella Rock (3 hrs return, free), and walk the Nine Arches Bridge (free — time it with the 9:15am or 3:45pm train for photos). Cook-and-dine classes: Rs 2,500–4,000.",
+          "tip": "The Kandy–Ella train is hugely popular — book 2nd class reserved seats 30 days ahead at the station or online. 3rd class is unreserved and very crowded.",
+          "guides": [
+            "nuwara-eliya",
+            "ella"
+          ]
+        },
+        {
+          "title": "South Coast: Mirissa to Galle",
+          "duration": "5–7 days",
+          "description": "Bus from Ella to Mirissa (Rs 300–500, 5 hrs through winding roads). Mirissa is the whale-watching capital of Asia — blue whales and dolphins from December to April (Rs 7,000–10,000 for a morning tour). The beach is perfect for surfing (lessons Rs 3,000–4,000), sunset drinks, and fresh seafood (Rs 800–1,500 for a massive grilled fish). Continue along the coast to Unawatuna (beach and Japanese Peace Pagoda) and Galle — the Dutch colonial fort town is a UNESCO World Heritage Site. Walk the ramparts at sunset (free), explore the boutique shops and galleries inside the fort, and stay in a heritage guesthouse (Rs 3,000–6,000/night).",
+          "tip": "Whale watching season is December–April on the south coast. Book the previous evening and arrive at 6am — morning seas are calmest and sightings most likely.",
+          "guides": [
+            "mirissa",
+            "galle"
+          ]
+        }
+      ]
+    }
+  ],
+  "budgetColumns": [
+    {
+      "flag": "🇮🇳",
+      "label": "India"
+    },
+    {
+      "flag": "🇳🇵",
+      "label": "Nepal"
+    },
+    {
+      "flag": "🇱🇰",
+      "label": "Sri Lanka"
+    }
+  ],
+  "budgetRows": [
+    {
+      "category": "Accommodation",
+      "values": [
+        "$3–12",
+        "$4–15",
+        "$8–20"
+      ],
+      "notes": "Hostels, guesthouses, ashrams"
+    },
+    {
+      "category": "Food",
+      "values": [
+        "$2–8",
+        "$3–8",
+        "$5–12"
+      ],
+      "notes": "Street food, thalis, dal bhat"
+    },
+    {
+      "category": "Transport",
+      "values": [
+        "$2–8",
+        "$2–5",
+        "$3–8"
+      ],
+      "notes": "Trains, buses, tuk-tuks"
+    },
+    {
+      "category": "Activities",
+      "values": [
+        "$3–10",
+        "$5–12",
+        "$5–12"
+      ],
+      "notes": "Temples, treks, safaris"
+    },
+    {
+      "category": "Drinks/Social",
+      "values": [
+        "$2–5",
+        "$2–4",
+        "$3–6"
+      ],
+      "notes": "Chai, beer, nightlife"
+    },
+    {
+      "category": "Daily Total",
+      "values": [
+        "$15–35",
+        "$15–30",
+        "$25–45"
+      ],
+      "notes": "Budget–comfortable range"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visas",
+      "items": [
+        "India: e-Visa ($25 for 30 days, $40 for 1 year). Apply online at indianvisaonline.gov.in at least 4 days before",
+        "Nepal: Visa on arrival at Kathmandu airport ($30 for 15 days, $50 for 30 days). Bring passport photos",
+        "Sri Lanka: ETA ($50) applied online. 30 days, extendable to 90 at Immigration in Colombo"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health",
+      "items": [
+        "Recommended: Hep A/B, Typhoid, Tetanus, Rabies (especially if trekking/rural). Japanese Encephalitis for long stays",
+        "Delhi belly is almost guaranteed — carry Imodium, oral rehydration salts, and antibiotics prescribed by your GP",
+        "Altitude sickness above 3,000m in Nepal/Ladakh. Ascend slowly, drink water, take rest days. Diamox as a preventative"
+      ]
+    },
+    {
+      "icon": "🚆",
+      "title": "Transport",
+      "items": [
+        "Indian Railways: book on IRCTC (create account before your trip). Sleeper class is cheapest; AC 3-tier for comfort",
+        "Nepal: tourist buses are better than local buses. Book through your hostel. Domestic flights (Buddha Air) for time-saving",
+        "Sri Lanka: trains are scenic and cheap. Tuk-tuks everywhere — agree on fare first or use the PickMe app (Sri Lanka's Uber)"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "India: Airtel or Jio SIM (₹200–500 for 28 days with 1.5–2GB/day). Requires passport and local address (hostel works)",
+        "Nepal: Ncell SIM (₨500 for 30 days with data). Buy at Kathmandu airport. Good coverage in trekking zones up to ~3,500m",
+        "Sri Lanka: Dialog SIM (Rs 1,300 for 30 days tourist pack). Good 4G coverage across the island"
+      ]
+    },
+    {
+      "icon": "🌦️",
+      "title": "Best Time",
+      "items": [
+        "India: October–March for the north (cool, dry). South India works year-round. Avoid monsoon Jun–Sep",
+        "Nepal: October–November is peak trekking season (post-monsoon, clear skies). March–April (pre-monsoon) also good",
+        "Sri Lanka: Dec–Mar for west/south coast. April–Sep for east coast. The two monsoons alternate by region"
+      ]
+    },
+    {
+      "icon": "🙏",
+      "title": "Cultural Tips",
+      "items": [
+        "Remove shoes before entering temples, mosques, and many homes. Dress modestly — cover shoulders and knees",
+        "Eat with your right hand in India (left is considered unclean). Accept food/drinks with your right hand",
+        "Bargaining is expected at markets in India and Nepal. Start at 40% of the asking price. Never bargain in shops with fixed prices"
+      ]
+    }
+  ],
+  "title": "India, Nepal & Sri Lanka Route — 3–4 Month Itinerary | roammate",
+  "description": "The ultimate 3-4 month Indian Subcontinent backpacker route. Week-by-week itinerary through North India, Nepal, and Sri Lanka with budget breakdowns and insider tips.",
+  "heroFlags": "🇮🇳 🇳🇵 🇱🇰",
+  "heroRegion": "The Indian Subcontinent",
+  "heroTitle": "The Indian<br>Subcontinent",
+  "heroSubtitle": "Fourteen weeks through the subcontinent. From the Taj Mahal to Everest base camp to Sri Lankan surf breaks — the journey that transforms every traveller who takes it.",
+  "budgetIntro": "Daily costs per person in USD. Total 3–4 month budget: approximately $1,800–4,000 depending on your style. India and Nepal are among the cheapest countries in the world for backpackers.",
+  "ctaRegion": "the Indian Subcontinent",
+  "ctaText": "Find travel companions for Himalayan treks, split tuk-tuk fares through Delhi, and share chai stops with fellow backpackers on roammate.",
+  "ctaCustomise": "To customise this route to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "accentColor": "#c4562a",
+  "heroImages": [
+    {
+      "src": "/images/guides/ind-tajmahal.webp",
+      "alt": "Taj Mahal reflected in water at sunrise"
+    },
+    {
+      "src": "/images/guides/ind-varanasi.webp",
+      "alt": "Sunrise boat ride on the Ganges with temples along the ghats"
+    },
+    {
+      "src": "/images/guides/ind-chai.webp",
+      "alt": "Hands holding a clay cup of masala chai"
+    },
+    {
+      "src": "/images/guides/ind-himalaya.webp",
+      "alt": "Snow-capped Himalayan peaks above prayer flags"
+    }
+  ],
+  "heroPills": [
+    "3–4 Month Route",
+    "$15–45/day",
+    "Oct – Mar Best",
+    "3 Countries"
+  ],
+  "featuredGuides": [
+    "delhi",
+    "taj-mahal",
+    "varanasi-ghats",
+    "amber-fort",
+    "goa",
+    "pangong-lake",
+    "agra",
+    "jaipur",
+    "rishikesh",
+    "haridwar",
+    "manali",
+    "leh-ladakh",
+    "kathmandu",
+    "pokhara",
+    "chitwan",
+    "annapurna-circuit",
+    "colombo",
+    "kandy",
+    "nuwara-eliya",
+    "ella",
+    "mirissa",
+    "galle"
+  ]
+}

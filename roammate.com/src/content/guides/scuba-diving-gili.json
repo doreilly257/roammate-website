@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "scuba-diving-gili",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "IDR (Rupiah)",
+      "detail": "1 USD ≈ Rp 15,800"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Indonesian / English",
+      "detail": "English spoken at dive shops"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "WITA (UTC+8)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Nov",
+      "detail": "Calm seas, best visibility"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$30–60 USD",
+      "detail": "With diving included"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa on Arrival 30 days",
+      "detail": "Rp 500,000 — extendable once"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Two Fun Dives & Beach Snorkelling",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Shark Point & Turtle Heaven",
+            "text": "Meet your dive boat at the harbour by 7:30am for the first dive at Shark Point — a sloping reef where blacktip and whitetip reef sharks patrol the sandy bottom at 18–25m. The reef is covered in hard and soft corals teeming with fusiliers, sweetlips, and giant trevally. After a surface interval on the boat with tea and fruit, descend at Turtle Heaven — a gentle slope of coral bommies where green sea turtles rest and feed. You will almost certainly see multiple turtles here. Two-dive trips cost around Rp 900,000–1,200,000.",
+            "tip": "Bring your own mask if you have one — rental masks from budget shops can leak. Check that your BCD and regulator are in good condition before boarding."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Halik Reef & Beach Snorkelling",
+            "text": "After returning to shore and grabbing a Nasi Goreng lunch for Rp 25,000–40,000, walk to the east coast of Gili Trawangan where turtles come right up to the shallows. The snorkelling here is free — just walk in from the beach with a mask and snorkel. The coral starts a few metres from shore and green turtles graze on seagrass in waist-deep water. Halik Reef, accessible from the northeast shore, has the densest turtle population on the island.",
+            "tip": "Do not touch or chase the turtles — they are protected and will swim away. Float calmly and they will often approach you. Reef-safe sunscreen only."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset & Night Market",
+            "text": "The west coast of Gili Trawangan faces directly into the sunset with Mount Agung on Bali silhouetted against the sky — one of the most photographed sunsets in Indonesia. Grab a bean bag at a beach bar, order a Bintang beer (Rp 35,000), and watch the sky turn orange. After dark, the night market near the main strip serves fresh grilled seafood — pick your fish from the ice display and they grill it for Rp 50,000–80,000 with rice and sambal.",
+            "tip": "The night market gets busy by 7pm — arrive early for the best fish selection. Barramundi and red snapper are the freshest options."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "PADI Open Water — Pool Session & Theory",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Course Sign-Up & Knowledge Development",
+            "text": "Day one of the PADI Open Water course begins with knowledge development — watching videos, reading the manual, and completing quizzes at your dive shop. Most shops on Gili Trawangan run courses daily with groups of 2–4 students per instructor. The course costs Rp 5,500,000–7,000,000 and includes all equipment, certification fees, and usually 3 nights of basic accommodation. Compare shops in person — prices vary and equipment quality differs significantly between operators.",
+            "tip": "Choose your dive shop carefully. Ask to see the equipment, check recent Google reviews, and confirm the instructor-to-student ratio. Gili T has the most choice; Gili Air has fewer crowds and a more relaxed vibe."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Confined Water Session — First Breaths",
+            "text": "The afternoon confined water session takes place in a pool or shallow bay. You will learn to assemble your gear, breathe underwater for the first time, clear your mask, recover your regulator, and practise buoyancy control. The sensation of breathing underwater for the first time is unforgettable. Your instructor will run through each skill multiple times until you are comfortable. This session typically lasts 2–3 hours.",
+            "tip": "Relax and breathe slowly — the biggest challenge for new divers is controlling their breathing rate. If you feel anxious, signal your instructor and take a moment on the surface."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Study & Island Exploration",
+            "text": "Complete the remaining knowledge review chapters and prepare for the theory exam. The Gili Islands have no motorised vehicles — the soundtrack is horse carts, bicycles, and reggae. Rent a bicycle (Rp 50,000/day) and ride the flat 7km loop around Gili Trawangan in 45 minutes, stopping at quiet beaches on the east coast. Dinner at a warung on the main strip — Nasi Campur for Rp 30,000–45,000.",
+            "tip": "Do not skip the theory study — the final exam has 50 questions and you need 75% to pass. Most students who fail the exam did not review the material the night before."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Open Water Dives 1 & 2 — Into the Ocean",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Open Water Dive 1 — First Ocean Dive",
+            "text": "Your first real ocean dive takes place at a sheltered site with gentle currents and good visibility. At 8–12m depth, you will repeat confined water skills on the sandy bottom while surrounded by reef fish, coral, and potentially your first turtle sighting. The Gili Islands have exceptional visibility — 15–25m on good days — making them ideal for learning. Your instructor stays within arm's reach at all times.",
+            "tip": "Equalise your ears early and often during descent — pinch your nose and blow gently every metre. If you feel pressure, stop descending and equalise before continuing."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Open Water Dive 2 — Deeper Skills",
+            "text": "The second open water dive goes slightly deeper (12–18m) and introduces navigation, deeper equalisation, and more advanced buoyancy skills. The reef life at this depth is richer — look for nudibranchs, moray eels tucked into crevices, lionfish, and schools of fusiliers. You will also practise a controlled emergency swimming ascent, an essential safety skill. After two dives, most students feel significantly more comfortable underwater.",
+            "tip": "Watch your air consumption — new divers breathe fast. Signal your instructor when you reach 100 bar and again at 50 bar. Breathing slowly through your diaphragm conserves air."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Theory Exam & Sunset",
+            "text": "Complete the PADI theory exam at the dive shop — 50 multiple choice questions covering dive physics, physiology, equipment, and planning. Most students pass first time if they have studied the material. After the exam, reward yourself with sunset drinks at a beach bar. The post-exam feeling of relief combined with a Gili sunset is hard to beat. Fresh grilled fish at the night market for dinner.",
+            "tip": "If you struggle with any questions, your instructor will review the areas you got wrong and you can retake the missed sections. There is no penalty for retaking."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Open Water Dives 3 & 4 — Certification Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Open Water Dive 3 — Reef Sharks & Coral Gardens",
+            "text": "Dive three takes you to one of the Gilis' premier sites. At Shark Point, blacktip reef sharks glide along the sandy channels between coral bommies at 18–22m. You will also practise underwater navigation using a compass and natural references. By now your buoyancy should be noticeably better — you will use less air and move more gracefully. The marine life on the Gili reefs is extraordinary for such shallow, accessible sites.",
+            "tip": "Reef sharks are harmless to divers — they are more afraid of your bubbles than you are of them. Stay calm, maintain neutral buoyancy, and enjoy the encounter."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Open Water Dive 4 — Certification Dive",
+            "text": "Your final certification dive is the most enjoyable — fewer skills to demonstrate and more time to simply explore the reef. Your instructor will sign off remaining skills and then lead a guided tour of the site. Turtles, reef sharks, octopus, cuttlefish, and colourful reef fish are all common. When you surface from dive four, you are a certified PADI Open Water diver — qualified to dive independently to 18m anywhere in the world.",
+            "tip": "Ask your dive shop to process your certification card digitally — the PADI e-card is available instantly on your phone and is accepted at every dive centre worldwide."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Celebration & Gili Nightlife",
+            "text": "Celebrate your certification at one of Gili Trawangan's famous beach parties. Monday and Wednesday nights are the biggest party nights, with bars along the main strip hosting DJs and fire dancers. If you prefer something quieter, Gili Air has mellower beach bars with live acoustic music. Many dive shops offer discounted fun dives for newly certified divers — book a two-dive trip for the next morning before you leave the islands.",
+            "tip": "Do not drink heavily the night before diving — alcohol causes dehydration which significantly increases the risk of decompression sickness. Hydrate with water between any drinks."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Compare dive shops in person",
+      "text": "Walk along the main strip on Gili Trawangan and compare prices at 3–4 shops. Prices vary by Rp 500,000–1,000,000 for the same PADI course. Ask about equipment age, instructor ratios, and included accommodation."
+    },
+    {
+      "title": "Free snorkelling with turtles",
+      "text": "You do not need to pay for a snorkel tour. Walk into the water on the east coast of Gili Trawangan with a mask and snorkel (rent for Rp 30,000/day) and see turtles in waist-deep water for free."
+    },
+    {
+      "title": "Eat at warungs, not restaurants",
+      "text": "Local warungs serve Nasi Goreng, Mie Goreng, and Nasi Campur for Rp 25,000–40,000. Tourist restaurants on the strip charge Rp 80,000–150,000 for the same dishes with a sea view."
+    },
+    {
+      "title": "Book fast boat from Bali online",
+      "text": "Fast boats from Padang Bai or Serangan to Gili Trawangan cost Rp 200,000–400,000 booked online, versus Rp 500,000+ at the harbour. The trip takes 1.5–2.5 hours depending on the operator."
+    },
+    {
+      "title": "Choose Gili Air for cheaper stays",
+      "text": "Gili Air has fewer tourists and lower prices than Gili Trawangan. Guesthouses start at Rp 150,000/night versus Rp 250,000+ on Gili T. The diving is equally good with fewer boats on the sites."
+    },
+    {
+      "title": "Bring your own gear",
+      "text": "If you already own a mask, snorkel, and rash vest, bring them. Equipment rental adds Rp 100,000–200,000 per day and rental masks are often scratched or ill-fitting."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$8–15",
+      "midrange": "$20–45",
+      "splurge": "$60+",
+      "notes": "Dorm beds → fan bungalows → AC beachfront"
+    },
+    {
+      "category": "Food",
+      "budget": "$5–10",
+      "midrange": "$10–25",
+      "splurge": "$30+",
+      "notes": "Warungs → beachfront restaurants → seafood BBQ"
+    },
+    {
+      "category": "Diving (2 dives)",
+      "budget": "$55–75",
+      "midrange": "$75–95",
+      "splurge": "$100+",
+      "notes": "Fun dives → guided dives → private guide"
+    },
+    {
+      "category": "Transport",
+      "budget": "$0–5",
+      "midrange": "$5–10",
+      "splurge": "$15+",
+      "notes": "Walking → bicycle → horse cart"
+    },
+    {
+      "category": "Snorkelling",
+      "budget": "$2–5",
+      "midrange": "$10–20",
+      "splurge": "$30+",
+      "notes": "DIY from beach → boat trip → private charter"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$30–60",
+      "midrange": "$60–120",
+      "splurge": "$150+",
+      "notes": "Budget diver → comfortable → luxury resort"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Visa on Arrival 30 days — Rp 500,000 at immigration, extendable once for 30 more days",
+        "Keep your passport, visa, and dive certification accessible — dive shops need to see your cert",
+        "The Gili Islands are in Lombok province — fly into Lombok International Airport or take a fast boat from Bali"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "There is no decompression chamber on the Gili Islands — the nearest is in Lombok (1 hour by fast boat)",
+        "Travel insurance with diving cover is essential — standard policies exclude scuba. Check your depth limit matches your certification",
+        "Drink bottled or filtered water only — tap water is not safe. Reusable bottles with filters are ideal"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "No motorised vehicles on the Gili Islands — transport is by bicycle, horse cart (cidomo), or walking",
+        "Gili Trawangan takes 1.5 hours to walk around; Gili Air about 1 hour; Gili Meno about 45 minutes",
+        "Island-hopping boats run between all three Gilis for Rp 25,000–35,000 per trip"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a Telkomsel SIM card in Lombok or Bali before arriving — data coverage on the Gilis is patchy but usable",
+        "WiFi is available at most accommodation and restaurants but speeds are slow — do not rely on it for video calls",
+        "Download offline maps of the Gili Islands and Lombok before arrival"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: IDR (Rupiah). 1 USD ≈ Rp 15,800. ATMs on Gili T and Gili Air charge Rp 25,000–50,000 fees",
+        "Bring sufficient cash from Bali or Lombok — ATMs on the Gilis sometimes run out, especially in peak season",
+        "Dive shops accept cash and cards, but warungs and small shops are cash only"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Reef-safe sunscreen is mandatory — the coral reefs are fragile and chemical sunscreens cause bleaching",
+        "A rash vest provides sun protection and prevents BCD chafing during multiple dive days",
+        "Dry bags for electronics, a headtorch for power cuts, and reef shoes for rocky entries"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🐢",
+      "title": "Protect the Turtles",
+      "text": "Do not touch, ride, or chase sea turtles — they are endangered and protected by Indonesian law. Maintain a 2m distance and let them approach you. Report any dive shop that allows turtle harassment."
+    },
+    {
+      "icon": "🌍",
+      "title": "Reef Conservation",
+      "text": "Never touch, stand on, or break coral — even dead-looking coral is alive. Maintain good buoyancy to avoid fin kicks on the reef. Choose dive shops that participate in reef conservation programmes like Gili Eco Trust."
+    },
+    {
+      "icon": "🙏",
+      "title": "Respect Local Culture",
+      "text": "The Gili Islands are part of Muslim Lombok — dress modestly when visiting local areas away from the tourist strip. Remove shoes before entering mosques or homes. During Ramadan, eat and drink discreetly during daylight hours."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language",
+      "text": "Learn basic Indonesian — Terima kasih (thank you), Berapa harga? (how much?), and Selamat pagi (good morning) are appreciated. Dive briefings are in English but local interactions benefit from a few words of Bahasa."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Operators",
+      "text": "Choose locally-owned dive shops and warungs over international chains. Many dive instructors are Indonesian — supporting local operators keeps tourism revenue in the community."
+    },
+    {
+      "icon": "🚯",
+      "title": "Reduce Plastic Waste",
+      "text": "The Gili Islands have a serious waste problem. Bring a reusable water bottle, refuse plastic straws, and take your rubbish with you. The Gili Eco Trust runs regular beach clean-ups — join one if you have time."
+    }
+  ],
+  "title": "Scuba Diving Gili Islands Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate guide to scuba diving in the Gili Islands. PADI courses, turtle dives, reef sharks with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/scuba-diving-gili-hero.webp",
+  "heroFlag": "🇮🇩",
+  "heroCountry": "Indonesia",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Scuba Diving Gili Islands",
+  "heroSubtitle": "Three tiny islands off Lombok with crystal-clear water, resident sea turtles, reef sharks, and some of the cheapest PADI courses on the planet.",
+  "budgetIntro": "Daily costs per person in US dollars. Gili Islands costs depend on which island you stay on, season, and how much diving you do — these ranges cover budget backpacker to comfortable mid-range.",
+  "culturalIntro": "The Gili Islands are a fragile marine ecosystem on Muslim Lombok — respect both the ocean and the local culture for the best experience.",
+  "ctaCity": "Gili Islands",
+  "ctaText": "Find dive buddies to explore the Gili Islands together on roammate — split dive costs, share boat trips, and make lifelong friends underwater.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "PADI Open Water",
+    "Turtle Diving",
+    "Apr – Nov Best"
+  ],
+  "defaultDays": 1
+}

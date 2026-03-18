@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "bullet-train",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "JPY (Yen)",
+      "detail": "1 USD ≈ ¥150"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Japanese",
+      "detail": "Station signs in English"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "JST (UTC+9)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Year-round",
+      "detail": "Cherry blossom Mar–Apr best"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$60–100 USD",
+      "detail": "With JR Pass"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 90 days",
+      "detail": "Most Western passports"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Tokyo to Kyoto — The Classic Shinkansen Experience",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tokyo Station & Ekiben Selection",
+            "text": "Arrive at Tokyo Station at least 30 minutes before departure to browse the ekiben (station bento) vendors on the Shinkansen platforms and in the underground Gransta food hall. Pick up a regional bento — the Touge no Kamameshi (mountain pot rice) or a classic makunouchi bento with grilled salmon, pickled vegetables, and tamagoyaki. Board the Nozomi or Hikari service on the Tokaido Shinkansen line. Seat yourself on the right side (seats D or E) heading west for the best views of Mt Fuji, which appears around 40–50 minutes after departure near Shin-Fuji Station.",
+            "tip": "Reserve a window seat on the right side (E seat) in advance via the JR ticketing machines or SmartEX app. Mt Fuji is clearest on winter mornings — cloud cover often obscures it by midday."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "The Ride — 2 Hours 15 Minutes at 285 km/h",
+            "text": "Settle in and enjoy the ride as Japan blurs past at 285 km/h. The Tokaido Shinkansen passes through Nagoya and crosses the flatlands of Aichi Prefecture before climbing into the mountains approaching Kyoto. Eat your ekiben — this is a cherished ritual on the Shinkansen, and eating on bullet trains is not only acceptable but encouraged. The onboard trolley cart passes through every 20–30 minutes selling coffee, green tea, ice cream (famously hard-frozen Sinansen ice cream), and snacks.",
+            "tip": "The train is whisper-quiet — phone calls are taken in the vestibule area between carriages. Keep your luggage in the overhead racks or the space behind the last row of seats in each carriage."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Arriving at Kyoto Station",
+            "text": "Arrive at Kyoto Station, a striking modernist glass-and-steel building designed by Hiroshi Hara. The station itself is worth exploring — take the escalator to the rooftop Sky Garden for panoramic views across Kyoto. The Porta underground shopping mall beneath the station has excellent ramen shops for dinner. The Kyoto Tower observation deck across the street offers 360-degree city views at dusk. From here, Kyoto's temples, bamboo groves, and geisha district of Gion are all within easy reach by bus or subway.",
+            "tip": "Pick up an IC card (ICOCA or Suica) at the station — it works on all Kyoto buses and trains and saves fumbling for exact change. A one-day Kyoto bus pass costs ¥700."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Tokyo to Hakone — Romancecar & Hot Springs",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Shinjuku to Hakone via Romancecar",
+            "text": "Board the Odakyu Romancecar from Shinjuku Station — a panoramic sightseeing express that reaches Hakone-Yumoto in 85 minutes. The front observation car has floor-to-ceiling windows (book well ahead, these seats sell out). The train winds through the suburbs of western Tokyo before climbing into the Hakone mountains. Hakone-Yumoto is the gateway to the Hakone region, a volcanic area of hot springs, crater lakes, and mountain views.",
+            "tip": "The Hakone Free Pass (¥6,100 from Shinjuku) covers the Romancecar supplement, all Hakone transport (cable cars, ropeways, boats), and discounts on hot springs. Buy it at Shinjuku Station."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hakone Loop — Ropeway, Lake & Volcano",
+            "text": "Ride the Hakone Tozan switchback railway up to Gora, then the cable car and Hakone Ropeway over the volcanic valley of Owakudani — steaming sulphur vents where vendors sell black eggs boiled in the volcanic springs (eating one supposedly adds 7 years to your life). Continue the ropeway down to Lake Ashi and take the pirate ship replica ferry across the lake. On clear days, Mt Fuji dominates the horizon across the water.",
+            "tip": "The Owakudani ropeway sometimes closes due to volcanic activity — check conditions before setting out. The full Hakone loop takes 5–6 hours if you stop at each point."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Onsen Experience in Hakone",
+            "text": "End the day at one of Hakone's public onsen (hot spring baths). Hakone Yuryo offers outdoor baths surrounded by forest for around ¥1,500 entry. The ritual is simple — wash thoroughly at the seated shower stations before entering the communal bath. Tattoo-friendly facilities are increasingly common but check ahead. Soak in the naturally heated volcanic water as the mountain air cools around you. Stay overnight in a traditional ryokan (Japanese inn) for the full experience, or take the last Romancecar back to Shinjuku.",
+            "tip": "Bring a small towel for modesty when walking between baths (most onsen provide larger towels). Onsen are traditionally nude — swimwear is not worn. Many ryokan include dinner and breakfast kaiseki meals."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Tokyo to Kyoto — Bullet Train & JR Pass",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Activating Your JR Pass & Boarding",
+            "text": "Head to the JR Pass exchange office at Tokyo Station to activate your Japan Rail Pass (¥50,000 for 7 consecutive days of unlimited JR travel including most Shinkansen). The pass covers Hikari and Kodama services on the Tokaido line but not the fastest Nozomi. The Hikari takes 2 hours 40 minutes to Kyoto — only 25 minutes slower than the Nozomi. Queue for an ekiben at the platform kiosks and board your reserved-seat carriage.",
+            "tip": "Buy the JR Pass online before arriving in Japan — it must be purchased by non-residents and exchanged at a JR office. Reserve seats at the ticket counter for free with your pass to guarantee a window seat."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kyoto — Fushimi Inari & Eastern Hills",
+            "text": "Arrive in Kyoto by midday and head straight to Fushimi Inari Taisha — the iconic shrine with thousands of vermillion torii gates winding up the forested hillside. The main path takes about an hour to hike to the summit, but most visitors only walk the first 20 minutes. Continue beyond the crowds for quieter sections and small mountaintop shrines with views over Kyoto. Afterwards, walk through the Higashiyama historic district — narrow lanes lined with wooden machiya townhouses, tea shops, and ceramics studios.",
+            "tip": "Fushimi Inari is open 24 hours and free. Late afternoon visits (after 4pm) have fewer crowds and beautiful light filtering through the torii gates."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Gion District & Kyoto Street Food",
+            "text": "Walk through Gion, Kyoto's famous geisha district, as lanterns illuminate the traditional wooden facades along Hanamikoji Street. If you're fortunate, you may spot a maiko (apprentice geisha) heading to an evening engagement. Dinner at Nishiki Market — Kyoto's 400-year-old kitchen street — offers stalls selling yudofu (hot tofu), tsukemono (pickled vegetables), matcha desserts, and fresh sashimi. Most stalls close by 6pm, so arrive early or head to the Pontocho alley along the Kamo River for riverside dining.",
+            "tip": "Gion etiquette is important — do not block the narrow streets, follow maiko, or take photos without permission. Many restaurants in Pontocho display plastic food replicas outside to help you choose."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Kyoto to Hiroshima — Day Trip by Shinkansen",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kyoto to Hiroshima — 1 Hour 40 Minutes",
+            "text": "Use your JR Pass for a day trip to Hiroshima — the Hikari Shinkansen covers the 340km in just 1 hour 40 minutes. Arrive by mid-morning and head to the Peace Memorial Park, a sobering and powerful complex centred on the A-Bomb Dome — the skeletal remains of the only structure left standing near the hypocentre. The Peace Memorial Museum (¥200 entry) has been extensively renovated and tells individual stories of the bombing through personal artefacts.",
+            "tip": "Allow at least 2 hours for the museum — it is emotionally intense. The park is free and open. The Children's Peace Monument is surrounded by thousands of origami cranes sent from around the world."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Miyajima Island — Floating Torii Gate",
+            "text": "From Hiroshima Station, take the JR Sanyo line to Miyajimaguchi (25 minutes, covered by JR Pass) and the JR ferry (also covered) across to Miyajima Island. The vermillion torii gate of Itsukushima Shrine appears to float on the water at high tide — one of Japan's most photographed views. The island is home to wild deer that wander freely through the streets. Try momiji manju (maple-leaf-shaped cakes filled with red bean paste) from the many bakeries along the shopping street.",
+            "tip": "Check tide times before visiting — at low tide you can walk out to the torii gate, at high tide it appears to float. Both are worth seeing. The last ferry back is around 10pm."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hiroshima Okonomiyaki & Return",
+            "text": "Before catching the Shinkansen back to Kyoto, try Hiroshima-style okonomiyaki — a layered savoury pancake with cabbage, pork, noodles, and egg grilled on a hot plate. Okonomimura near Hiroshima Station is a multi-floor building with dozens of small okonomiyaki stalls, each with counter seating where you watch the chef prepare your meal. A full okonomiyaki costs around ¥900–1,200. Board the evening Hikari back to Kyoto — the last service departs around 9pm.",
+            "tip": "Time your return carefully — the last Hikari from Hiroshima to Kyoto departs around 20:50. Check the timetable on the JR app (Navitime or HyperDia) before heading to the station."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Get the JR Pass",
+      "text": "The Japan Rail Pass (¥50,000 for 7 days) pays for itself on a single Tokyo–Kyoto–Hiroshima round trip. It covers most Shinkansen services (Hikari/Kodama), JR local trains, and some JR ferries. Buy it before arriving in Japan."
+    },
+    {
+      "title": "Eat at station bento kiosks",
+      "text": "Ekiben (station bento boxes) cost ¥800–1,200 and are a complete, high-quality meal — far cheaper than station restaurants. Convenience stores (7-Eleven, Lawson, FamilyMart) sell excellent onigiri, sandwiches, and hot food for under ¥500."
+    },
+    {
+      "title": "Use IC cards for local transport",
+      "text": "Suica and ICOCA rechargeable IC cards work on all trains, buses, and metro systems nationwide. Tap in and out — fares are automatically calculated at the cheapest rate."
+    },
+    {
+      "title": "Stay in capsule hotels or hostels",
+      "text": "Capsule hotels near major stations cost ¥2,500–4,000 per night and include shower facilities. Hostels with private pods or dorms start around ¥2,000. Both are clean, safe, and centrally located."
+    },
+    {
+      "title": "Travel off-peak",
+      "text": "Avoid Golden Week (late Apr–early May), Obon (mid-Aug), and New Year for cheaper accommodation and less crowded trains. Shoulder seasons (May, Oct–Nov) offer the best balance of weather and value."
+    },
+    {
+      "title": "Free shrines and temples",
+      "text": "Many of Japan's most famous shrines (Fushimi Inari, Meiji Jingu, Sensoji) are free to enter. Even paid temples rarely charge more than ¥500–800. Parks, gardens, and city viewpoints are often free."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$20–35",
+      "midrange": "$50–100",
+      "splurge": "$150+",
+      "notes": "Capsule hotels → business hotels → ryokan"
+    },
+    {
+      "category": "Food",
+      "budget": "$10–20",
+      "midrange": "$25–50",
+      "splurge": "$80+",
+      "notes": "Convenience stores → ramen/curry → kaiseki"
+    },
+    {
+      "category": "Transport",
+      "budget": "$0–15",
+      "midrange": "$20–50",
+      "splurge": "$80+",
+      "notes": "JR Pass covers most travel"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$60+",
+      "notes": "Free shrines → museums → guided tours"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$0–10",
+      "midrange": "$10–20",
+      "splurge": "$30+",
+      "notes": "Most temples ¥300–800"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$35–95",
+      "midrange": "$120–260",
+      "splurge": "$400+",
+      "notes": "Budget traveller → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Visa-free 90 days for most Western passports",
+        "Visit Japan Web (immigration form) should be completed online before arrival",
+        "JR Pass must be purchased outside Japan and exchanged at a JR office on arrival"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Japan is one of the safest countries in the world — violent crime is virtually non-existent",
+        "Tap water is safe to drink everywhere",
+        "Pharmacies (drugstores) are well-stocked but labelling is in Japanese — bring any specific medication you need"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "The Shinkansen network connects all major cities — Tokyo, Kyoto, Osaka, Hiroshima, Nagano, and more",
+        "Download the Navitime or Japan Travel app for English train timetables and route planning",
+        "Reserved seats (shitei-seki) guarantee a seat; unreserved cars (jiyu-seki) are first-come-first-served — carriages 1–3 on most services"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Pocket WiFi rental (¥500–800/day) or eSIM from providers like Ubigi or Airalo is recommended — free WiFi is limited",
+        "IC cards (Suica/ICOCA) can be loaded on iPhone Wallet or purchased at station machines",
+        "Google Maps works well for train navigation in Japan with real-time departure info"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: JPY (Yen). Japan is still heavily cash-based — carry ¥10,000–20,000 at all times",
+        "ATMs at 7-Eleven and Japan Post accept international cards. Many local ATMs do not",
+        "No tipping in Japan — it is not customary and can cause confusion"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Pack light — Shinkansen luggage space is limited. Bags over 160cm (length + width + height) require a reservation for the oversized luggage area behind the last row",
+        "Slip-on shoes for temple visits where you remove footwear frequently",
+        "A small towel (tenugui) is essential — many restrooms and onsen expect you to carry your own"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Train Etiquette",
+      "text": "The Shinkansen is remarkably quiet. Phone calls should be taken in the vestibule. Keep your phone on silent mode. Eating ekiben is perfectly acceptable on Shinkansen but eating on local commuter trains is considered rude."
+    },
+    {
+      "icon": "🌍",
+      "title": "Queueing Culture",
+      "text": "Japanese platforms have marked queueing lines painted on the floor — line up behind them. Passengers wait for everyone to exit before boarding. The train stops with its doors aligned precisely to these markings every single time."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Photography is welcome on the Shinkansen and at most stations. Some temples prohibit indoor photography — check for signs. Never photograph geisha or maiko without permission in Kyoto's Gion district."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn basic phrases: sumimasen (excuse me), arigatou gozaimasu (thank you), and kudasai (please). Station announcements are bilingual (Japanese/English) on Shinkansen. Google Translate's camera mode reads Japanese signs in real time."
+    },
+    {
+      "icon": "🤝",
+      "title": "Respect the System",
+      "text": "Japan's rail system runs with extraordinary precision — trains depart to the second. If you are 30 seconds late, the train will have left. Arrive at the platform 5–10 minutes early. Return your seat to the upright position and take all rubbish with you when you exit."
+    },
+    {
+      "icon": "🕐",
+      "title": "Luggage Forwarding",
+      "text": "Takkyubin (luggage forwarding) services at convenience stores and hotels will send your bag to your next hotel for ¥1,500–2,500, arriving next day. This lets you ride the Shinkansen unencumbered — a common and highly recommended practice in Japan."
+    }
+  ],
+  "title": "Japan Bullet Train Guide 2026 — Shinkansen Itinerary | roammate",
+  "description": "The ultimate guide to riding Japan's Shinkansen bullet train. Tokyo to Kyoto, Mt Fuji views, JR Pass tips, ekiben culture. 1 and 3-day itineraries with budget tips.",
+  "heroImage": "/images/guides/bullet-train-hero.webp",
+  "heroFlag": "🇯🇵",
+  "heroCountry": "Japan",
+  "heroRegion": "East Asia",
+  "heroCity": "Bullet Train",
+  "heroSubtitle": "Ride the world's most iconic railway — 285 km/h through rice paddies, past Mt Fuji, from neon-lit Tokyo to ancient Kyoto in 2 hours 15 minutes.",
+  "budgetIntro": "Daily costs per person in US dollars. Japan is more affordable than most people expect, especially with a JR Pass covering transport. Budget depends on accommodation choice and dining style.",
+  "culturalIntro": "Japan's rail system is a cultural experience in itself — punctual to the second, spotlessly clean, and deeply respectful. Follow these customs to travel like a local.",
+  "ctaCity": "Japan",
+  "ctaText": "Find travel companions to explore Japan's Shinkansen routes together on roammate — split JR Pass costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "JR Pass",
+    "Ekiben Culture",
+    "Mt Fuji Views"
+  ],
+  "defaultDays": 1
+}

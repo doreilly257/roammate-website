@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
+import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide: guide.data } }));
+}
+
+const { guide } = Astro.props;
+---
+
+{guide.type === 'city' ? (
+  <CityGuideLayout
+    title={guide.title}
+    description={guide.description}
+    heroImage={guide.heroImage}
+    heroFlag={guide.heroFlag}
+    heroCountry={guide.heroCountry}
+    heroRegion={guide.heroRegion}
+    heroCity={guide.heroCity}
+    heroSubtitle={guide.heroSubtitle}
+    heroPills={guide.heroPills}
+    quickFacts={guide.quickFacts}
+    itineraries={guide.itineraries}
+    defaultDays={guide.defaultDays}
+    budgetIntro={guide.budgetIntro}
+    budgetTips={guide.budgetTips}
+    budgetBreakdown={guide.budgetBreakdown}
+    practicalInfo={guide.practicalInfo}
+    culturalIntro={guide.culturalIntro}
+    culturalTips={guide.culturalTips}
+    ctaCity={guide.ctaCity}
+    ctaText={guide.ctaText}
+    ctaCustomise={guide.ctaCustomise}
+  />
+) : (
+  <BackpackerRouteLayout
+    title={guide.title}
+    description={guide.description}
+    heroImages={guide.heroImages}
+    heroFlags={guide.heroFlags}
+    heroRegion={guide.heroRegion}
+    heroTitle={guide.heroTitle}
+    heroSubtitle={guide.heroSubtitle}
+    heroPills={guide.heroPills}
+    routeOverview={guide.routeOverview}
+    countries={guide.countries}
+    budgetIntro={guide.budgetIntro}
+    budgetColumns={guide.budgetColumns}
+    budgetRows={guide.budgetRows}
+    practicalInfo={guide.practicalInfo}
+    ctaRegion={guide.ctaRegion}
+    ctaText={guide.ctaText}
+    ctaCustomise={guide.ctaCustomise}
+    featuredGuides={guide.featuredGuides}
+    accentColor={guide.accentColor}
+  />
+)}

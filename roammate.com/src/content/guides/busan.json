@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "busan",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "KRW (Won)",
+      "detail": "1 USD ≈ ₩1,350"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Korean",
+      "detail": "English limited outside tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "KST (UTC+9)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Jun, Sep – Nov",
+      "detail": "15–25°C, clear skies"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$60–90 USD",
+      "detail": "₩80,000–120,000 budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "K-ETA or visa-free",
+      "detail": "Most nationalities 30–90 days"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "The Best of Busan in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gamcheon Culture Village & BIFF Square",
+            "text": "Start at Gamcheon Culture Village — Busan's pastel-painted hillside labyrinth nicknamed the \"Machu Picchu of Korea.\" Follow the stamp trail through narrow alleys decorated with murals, sculptures, and rooftop galleries. Take bus 1-1 or 2-2 from Toseong station. Afterward, head down to BIFF Square in Nampo-dong for hotteok (sweet pancakes, ₩2,000) from the famous street stalls.",
+            "tip": "Arrive before 10am to photograph Gamcheon without crowds — the morning light hitting the colourful houses is spectacular."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jagalchi Fish Market & Haeundae Beach",
+            "text": "Walk to Jagalchi Fish Market — the largest seafood market in Korea. The ground floor is a wet market of live octopus, crabs, and sea urchin; the upper floors are restaurants where vendors cook your purchase. Sashimi platters start from ₩15,000. Then take metro Line 2 to Haeundae Beach — Busan's most iconic stretch of sand. Walk the coastal Moontan Road boardwalk.",
+            "tip": "At Jagalchi, pick your fish downstairs and pay a ₩5,000–8,000 cooking fee upstairs — fresher and cheaper than ordering off the menu."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Haeundae Night Scene & Pojangmacha",
+            "text": "Explore Haeundae's beachfront strip as it lights up. Walk to The Bay 101 — a yacht marina complex with restaurants, cafes, and the best nighttime view of Haeundae's glowing skyline reflecting on the water. For dinner, find a pojangmacha (street tent bar) along the beach for soju, tteokbokki, and odeng (fish cake skewers, ₩1,000 each) in true Korean style.",
+            "tip": "The Bay 101 is free to walk around — grab a convenience store beer and enjoy the skyline view without the restaurant markup."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Colourful Culture & Street Food",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gamcheon Culture Village",
+            "text": "Take bus 1-1 from Toseong station (Line 1) to Gamcheon Culture Village — a hillside labyrinth of pastel houses, murals, and art installations built by Korean War refugees. Follow the stamp trail (₩2,000 map) through narrow alleys, rooftop galleries, and tiny cafes. The Little Prince statue overlooking the village is the iconic photo spot. Budget 2 hours to explore without rushing.",
+            "tip": "Arrive before 10am to photograph without crowds. The morning light hitting the eastern-facing houses creates the best colours."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jagalchi Market & Nampo-dong",
+            "text": "Head to Jagalchi Fish Market — Korea's largest. The ground floor teems with live seafood; the upper floors are restaurants. Pick your fish downstairs and pay ₩5,000–8,000 cooking fee upstairs for the freshest sashimi in the country. Then explore Nampo-dong's BIFF Square for hotteok (₩2,000), ssiat hotteok (seed-filled, ₩3,000), and browse Gukje International Market for souvenirs.",
+            "tip": "BIFF Square's most famous hotteok stall has the longest queue — it's worth the wait for the crispy, seed-filled version."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Yongdusan Park & Gwangalli Beach",
+            "text": "Take the Busan Tower elevator at Yongdusan Park (₩12,000) for panoramic views of the harbour and Yeongdo Island. Then metro to Gwangan station for Gwangalli Beach — arguably prettier than Haeundae at night, with the illuminated Diamond Bridge as your backdrop. Grab chimaek (fried chicken and beer) at one of the beachfront restaurants — a ₩15,000–20,000 combo is the quintessential Busan evening.",
+            "tip": "Gwangalli Beach lights up Diamond Bridge in colours after sunset — sit on the sand with convenience store soju for the best free show."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Temples, Cliffs & Ocean Views",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Haedong Yonggungsa Temple",
+            "text": "Take bus 181 from Haeundae to Haedong Yonggungsa — a seaside Buddhist temple perched on ocean cliffs. Unlike most Korean temples hidden in mountains, this one faces the East Sea with waves crashing below. The 108-step staircase descent is lined with stone lanterns and statues. Free entry. Arrive early to watch the sunrise illuminate the golden Buddha against the sea.",
+            "tip": "Visit on a weekday before 9am — weekend crowds can make the narrow cliff paths frustratingly slow."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Haeundae & Dongbaek Island",
+            "text": "Return to Haeundae Beach for a leisurely coastal walk. Head to the southern end and follow the trail around Dongbaek Island — a forested peninsula with the APEC House (free exterior), a lighthouse, and dramatic cliff views. The 40-minute loop trail is flat and shaded. Lunch at Haeundae Traditional Market — milmyeon (cold wheat noodles, ₩6,000), the local specialty you must try.",
+            "tip": "Haeundae Traditional Market is two blocks behind the beach — prices are half of the beachfront tourist restaurants."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Centum City & Spa Land",
+            "text": "Metro to Centum City — home to the world's largest department store (Shinsegae). But the real gem is Spa Land (₩18,000 weekday, ₩22,000 weekend) on the first floor — a massive jjimjilbang (Korean bath house) with 22 themed hot spring pools, saunas, and relaxation rooms. Spend 2–3 hours soaking. Dinner at the Centum City food court or the pojangmacha alley nearby.",
+            "tip": "Spa Land gives you a uniform and locker — bring nothing. The outdoor hinoki wood pool is the most relaxing spot in Busan."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Hidden Neighbourhoods & Coastal Trails",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Huinnyeoul Culture Village",
+            "text": "Take the ferry from Nampo-dong to Yeongdo Island (₩1,600, 5 minutes) and walk to Huinnyeoul Culture Village — a quiet, white-walled coastal village clinging to sea cliffs. Far less touristy than Gamcheon, with better ocean views. Walk the cliff-edge boardwalk past abandoned houses turned into cafes and galleries. The village is where Korean War refugees from the north first settled.",
+            "tip": "Huinnyeoul is a residential area — keep voices low and respect the locals. The cliff-edge cafe with sea views is unmissable."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Taejongdae & Songdo",
+            "text": "Walk or take the Danubi train (₩3,000) through Taejongdae Natural Park — coastal cliffs, lighthouse, and forest trails with views stretching to Japan on clear days. The Yeongdo Lighthouse viewpoint is the highlight. Then head back to the mainland and walk the Songdo Cloud Trails — a spectacular glass-bottomed overwater walkway stretching 365m over the sea.",
+            "tip": "Taejongdae is large — take the Danubi train one way and walk back along the coastal path to see both the forest and cliffs."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Seomyeon Nightlife",
+            "text": "Metro to Seomyeon — Busan's main nightlife and shopping district. Start with dinner at Seomyeon Pork Belly Street (Samgyeopsal-gil) where grilled pork belly restaurants line both sides. A full BBQ dinner with sides runs ₩12,000–18,000 per person. Then explore the underground shopping arcade or hit the bars and clubs of Seomyeon's nightlife alley — craft beer spots and soju bars everywhere.",
+            "tip": "Korean BBQ etiquette: the youngest person pours drinks, and you hold your glass with two hands when someone pours for you."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Colourful Culture & Street Food",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gamcheon Culture Village",
+            "text": "Take bus 1-1 from Toseong station (Line 1) to Gamcheon Culture Village — a hillside labyrinth of pastel houses, murals, and art installations built by Korean War refugees. Follow the stamp trail (₩2,000 map) through narrow alleys, rooftop galleries, and tiny cafes. The Little Prince statue overlooking the village is the iconic photo spot. Budget 2 hours to explore without rushing.",
+            "tip": "Arrive before 10am to photograph without crowds. The morning light hitting the eastern-facing houses creates the best colours."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jagalchi Market & Nampo-dong",
+            "text": "Head to Jagalchi Fish Market — Korea's largest. The ground floor teems with live seafood; the upper floors are restaurants. Pick your fish downstairs and pay ₩5,000–8,000 cooking fee upstairs for the freshest sashimi in the country. Then explore Nampo-dong's BIFF Square for hotteok (₩2,000), ssiat hotteok (seed-filled, ₩3,000), and browse Gukje International Market.",
+            "tip": "BIFF Square's most famous hotteok stall has the longest queue — it's worth the wait for the crispy, seed-filled version."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Yongdusan Park & Gwangalli Beach",
+            "text": "Take the Busan Tower elevator at Yongdusan Park (₩12,000) for panoramic views of the harbour. Then metro to Gwangan station for Gwangalli Beach — prettier than Haeundae at night with the illuminated Diamond Bridge as your backdrop. Grab chimaek (fried chicken and beer) at a beachfront restaurant — ₩15,000–20,000 for the quintessential Busan evening combo.",
+            "tip": "Gwangalli Beach lights up Diamond Bridge in colours after sunset — sit on the sand with convenience store soju for the best free show."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Temples, Cliffs & Ocean Views",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Haedong Yonggungsa Temple",
+            "text": "Take bus 181 from Haeundae to Haedong Yonggungsa — a seaside Buddhist temple perched on ocean cliffs. Unlike most Korean temples hidden in mountains, this one faces the East Sea with waves crashing below. The 108-step staircase descent is lined with stone lanterns and statues. Free entry. The sunrise illuminating the golden Buddha against the sea is breathtaking.",
+            "tip": "Visit on a weekday before 9am — weekend crowds make the narrow cliff paths frustratingly slow."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Haeundae & Dongbaek Island",
+            "text": "Walk Haeundae Beach and continue to Dongbaek Island — a forested peninsula with the APEC House, a lighthouse, and dramatic cliff views. The 40-minute loop trail is flat and shaded. Lunch at Haeundae Traditional Market — milmyeon (cold wheat noodles, ₩6,000), Busan's local specialty you absolutely must try. Also sample eomuk (fish cake) at any stall for ₩1,000.",
+            "tip": "Haeundae Traditional Market is two blocks behind the beach — prices are half of the beachfront tourist restaurants."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Centum City & Spa Land",
+            "text": "Metro to Centum City for Spa Land (₩18,000 weekday) — a massive jjimjilbang with 22 themed hot spring pools, saunas, and relaxation rooms. Spend 2–3 hours soaking. The outdoor hinoki wood pool is sublime. Dinner at Centum City's food court or explore the pojangmacha (tent bar) alley nearby for odeng and soju under the neon lights.",
+            "tip": "Spa Land gives you a uniform and locker — bring nothing. Tuesday and Wednesday are the quietest days."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Yeongdo Island & Coastal Trails",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Huinnyeoul Culture Village",
+            "text": "Ferry from Nampo-dong to Yeongdo Island (₩1,600, 5 minutes) then walk to Huinnyeoul Culture Village — a quiet, white-walled coastal village clinging to sea cliffs. Far less touristy than Gamcheon, with better ocean views. Walk the cliff-edge boardwalk past abandoned houses turned into atmospheric cafes and galleries. This is where Korean War refugees from the north first settled.",
+            "tip": "Huinnyeoul is a residential area — keep voices low and respect the locals. The cliff-edge cafe with sea views is unmissable."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Taejongdae Natural Park",
+            "text": "Walk or ride the Danubi train (₩3,000) through Taejongdae — coastal cliffs, forest trails, and views stretching to Japan on clear days. The Yeongdo Lighthouse viewpoint is the highlight. Take the train one way and walk the coastal path back. Grab lunch at one of the raw fish restaurants at the park entrance — hoe (raw fish) platters from ₩20,000 with ocean views.",
+            "tip": "On clear days you can see Tsushima Island, Japan from the Yeongdo Lighthouse — bring binoculars for the best view."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Songdo & Nampodong",
+            "text": "Head to the Songdo Cloud Trails — a spectacular glass-bottomed overwater walkway stretching 365m over the sea. Walk it at sunset for dramatic colours. Then take the Songdo Cable Car (₩17,000 round trip) for aerial views of the coastline. Dinner in Nampo-dong at one of the dakgalbi (spicy chicken) restaurants, then walk through the neon-lit Gwangbok-ro shopping street.",
+            "tip": "The Songdo Cable Car at sunset is one of Busan's most underrated experiences — book the crystal (glass-floor) cabin."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Gyeongju Day Trip — Ancient Capital",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gyeongju Tumuli Park & National Museum",
+            "text": "Take the KTX or intercity bus from Busan to Gyeongju (30 min–1 hour, ₩4,000–8,000). Start at Tumuli Park (₩3,000) — massive grass-covered royal tombs from the Silla Dynasty (57 BC–935 AD). Enter the Cheonmachong tomb to see the excavated interior. Then visit Gyeongju National Museum (free) for stunning gold crowns, bronze bells, and Buddhist relics.",
+            "tip": "Rent a bicycle near Gyeongju station (₩5,000/day) — the historic sites are spread out but flat, making cycling the perfect way to explore."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bulguksa Temple & Seokguram Grotto",
+            "text": "Bus 10 or 11 to Bulguksa Temple (₩6,000) — a UNESCO World Heritage Site and Korea's most famous Buddhist temple, dating to 774 AD. The stone bridges and pagodas are extraordinarily well preserved. From Bulguksa, take bus 12 up the mountain to Seokguram Grotto (₩6,000) — a granite cave housing a serene seated Buddha overlooking the East Sea.",
+            "tip": "The bus from Bulguksa to Seokguram runs every 30 minutes — check the last return bus time so you don't get stranded on the mountain."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Anapji Pond & Return",
+            "text": "Back in Gyeongju town, walk to Donggung Palace and Wolji Pond (₩3,000) — the ancient Silla royal pleasure garden. At night, the palace pavilions reflected in the still water are mesmerising. This is Gyeongju's most beautiful sight. Grab ssambap (lettuce wraps with pork, ₩9,000) at a nearby restaurant before catching the last bus or train back to Busan.",
+            "tip": "Wolji Pond is infinitely more beautiful after dark — visit from 7pm onward for the full illuminated reflection effect."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Beaches, Markets & K-Food Deep Dive",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Songjeong Beach & Surfing",
+            "text": "Metro to Songjeong station (the last stop on Line 2) for Songjeong Beach — Busan's surf beach, far mellower than Haeundae. Rent a surfboard (₩30,000 for 2 hours including wetsuit) or take a beginner lesson (₩50,000). The waves here are gentle enough for first-timers. After surfing, grab a coffee at one of the beach cafes along the railway-adjacent strip.",
+            "tip": "Songjeong surf shops rent everything — just show up in flip-flops. The railway cafe strip behind the beach has better coffee than Haeundae."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bupyeong Kkangtong Night Market",
+            "text": "Head to Bupyeong (Kkangtong) Market in Nampo-dong — Busan's best food market, especially as it transitions to the night market around 3pm. Try tteokbokki (₩3,000), sundae (blood sausage, ₩4,000), eomuk (fish cake, ₩1,000), and hotteok. Each stall gives tiny portions so you can sample widely. The covered arcade stretches for blocks with vintage shops, hanbok stores, and food stalls.",
+            "tip": "Bupyeong Night Market gets packed by 6pm — arrive around 3–4pm for the best food stalls without the crush."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Seomyeon Food & Nightlife",
+            "text": "Metro to Seomyeon for Samgyeopsal-gil (Pork Belly Street) — a full strip of Korean BBQ restaurants where you grill thick-cut pork belly at your table with unlimited sides for ₩12,000–18,000. After dinner, explore Seomyeon's nightlife district — craft beer bars, soju tents, and the famous Jeonpo Cafe Street for late-night coffee and dessert culture.",
+            "tip": "At Korean BBQ, wait for the staff to cut the meat — they know the perfect moment. Ask for cheongyang chilli for extra heat."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Mountains, Art & Local Life",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Geumjeongsan Fortress Hike",
+            "text": "Take metro Line 1 to Oncheonjang and bus to Geumjeongsanseong — a mountain fortress trail with stunning views over Busan. The moderate 2–3 hour loop passes through ancient stone gates, forest paths, and rocky ridgelines. The South Gate to East Gate section is the most scenic. Pack water and snacks. Makgeolli (rice wine) and pajeon (pancake) at the hilltop restaurant is the traditional reward.",
+            "tip": "The mountain huts sell makgeolli and pajeon — it's a Korean hiking tradition. Don't skip it, even if you're not hungry."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Oncheon Hot Springs & F1963",
+            "text": "After hiking, soak tired muscles at Hurshimchung Hot Spring (₩10,000) near Oncheonjang station — one of the largest hot spring bath houses in Asia. Then take a taxi to F1963 — a converted wire factory turned into Busan's coolest cultural space with a bookshop (Yes24), gallery, craft brewery (Galmegi Brewing, ₩7,000/pint), and architectural gardens.",
+            "tip": "Galmegi Brewing at F1963 makes the best craft beer in Busan — try the Haeundae Pale Ale, brewed with local citrus."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Jeonpo Cafe Street & Cinema",
+            "text": "Explore Jeonpo Cafe Street near Seomyeon — Busan's most concentrated cafe district with hundreds of shops in converted mechanics' garages. The contrast of industrial architecture and cute interiors is uniquely Busan. Grab dinner at a local kimbap-cheonguk (budget Korean diner, ₩5,000–8,000 per dish), then catch a movie at CGV Centum City — Korea's most advanced cinema complex.",
+            "tip": "Korean cinemas are cheap (₩10,000–14,000) and the experience is excellent — reserved seating, no ads, and great popcorn combos."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Sunrise, Souvenirs & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Oryukdo Skywalk & Igidae Coastal Walk",
+            "text": "Start early at Oryukdo Skywalk — a glass-bottomed platform jutting out over the sea cliffs (free, opens 9am). Then walk the Igidae Coastal Trail — a 4km cliffside path with dramatic rock formations and views of Haeundae's skyline across the bay. The trail is well-maintained with wooden boardwalks. Budget 1.5–2 hours for the walk. This is Busan's best coastal walk.",
+            "tip": "Start from Oryukdo end heading toward Haeundae — the skyline views get progressively better and you finish near the beach."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Shopping & Street Food",
+            "text": "Final shopping at Gukje Market in Nampo-dong — Korean souvenirs, K-beauty products, vintage clothing, and military surplus. For authentic gifts, buy gochugaru (chilli flakes), dried seaweed, and Korean tea sets. Grab a final ssiat hotteok at BIFF Square and a cup of patbingsu (shaved ice dessert, ₩6,000–8,000) from a Nampo-dong cafe. Pack your bags.",
+            "tip": "Gukje Market vendors expect mild haggling — start at 70% of the quoted price. K-beauty shops have fixed prices though."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Dinner & Sunset",
+            "text": "Final dinner at a dwaeji-gukbap (pork soup rice) restaurant near Seomyeon — Busan's signature dish, served 24 hours and costing just ₩8,000–9,000 for a hearty bowl. Add saeujeot (fermented shrimp) for the authentic flavour. Watch your last Busan sunset from Gwangalli Beach with the Diamond Bridge lit up, convenience store beer in hand. A perfect farewell.",
+            "tip": "Dwaeji-gukbap is to Busan what deep-dish is to Chicago — don't leave without trying it. Hapcheon Dwaeji-gukbap near Seomyeon is legendary."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free experiences",
+      "text": "Gamcheon Village, Haedong Yonggungsa Temple, Igidae Coastal Walk, Oryukdo Skywalk, beach promenades, Songdo Cloud Trails, and night market window shopping are all free."
+    },
+    {
+      "title": "Eat on ₩10,000/meal",
+      "text": "Kimbap-cheonguk diners serve meals for ₩5,000–8,000. Convenience stores (CU, GS25) have surprisingly good triangle kimbap (₩1,200), cup ramyeon (₩1,500), and meal deals."
+    },
+    {
+      "title": "Metro savings",
+      "text": "Get a Cashbee or Hanaro card — ₩1,300 per metro ride (vs ₩1,400 cash). Single-day unlimited pass: ₩5,000. The metro covers Haeundae, Seomyeon, Nampo-dong, and most tourist spots."
+    },
+    {
+      "title": "Budget accommodation",
+      "text": "Guesthouses and hostels near Seomyeon or Nampo-dong run ₩25,000–45,000/night. Love motels (not what you think — just budget hotels) are ₩35,000–55,000 with modern rooms."
+    },
+    {
+      "title": "Convenience store culture",
+      "text": "Korean convenience stores are a budget traveler's best friend — microwave meals, hot foods, cheap soju (₩1,800), beer (₩2,500), and seating areas. No stigma in dining there."
+    },
+    {
+      "title": "Soju economics",
+      "text": "A bottle of soju costs ₩1,800 at a convenience store vs ₩5,000–8,000 at a restaurant. Pre-drink at the beach or park — it's legal and socially normal in Korea."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "₩25,000–45,000",
+      "midrange": "₩70,000–120,000",
+      "splurge": "₩200,000+",
+      "notes": "Hostels → boutique hotels → beach resorts"
+    },
+    {
+      "category": "Food",
+      "budget": "₩15,000–25,000",
+      "midrange": "₩40,000–60,000",
+      "splurge": "₩100,000+",
+      "notes": "Street food & diners → BBQ & seafood → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "₩5,000–10,000",
+      "midrange": "₩15,000–25,000",
+      "splurge": "₩50,000+",
+      "notes": "Metro & bus → taxi → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "₩5,000–15,000",
+      "midrange": "₩30,000–60,000",
+      "splurge": "₩100,000+",
+      "notes": "Free sites & temples → spa & cable car → surf lessons & tours"
+    },
+    {
+      "category": "Drinks",
+      "budget": "₩5,000–10,000",
+      "midrange": "₩15,000–30,000",
+      "splurge": "₩50,000+",
+      "notes": "Convenience store soju → craft beer → rooftop bars"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "₩55,000–105,000",
+      "midrange": "₩170,000–295,000",
+      "splurge": "₩500,000+",
+      "notes": "$40–78 → $126–218 → $370+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Most nationalities need a K-ETA (Korean Electronic Travel Authorization, $10 USD) — apply online 24–72 hours before travel",
+        "Passport must be valid for 6+ months. You may need proof of onward travel",
+        "Busan's Gimhae Airport (PUS) connects to the city via metro Line 2 in 30 minutes"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required. Tap water is technically safe but most Koreans drink filtered — bottled water is ₩800–1,000",
+        "Busan is extremely safe — walk anywhere at any time. Petty crime is very rare",
+        "Summer (Jul–Aug) is hot and humid (30°C+) with monsoon rains. Typhoon season: Aug–Sep"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "Busan Metro: 6 lines covering all major tourist areas. Get a Cashbee transport card (₩2,500 + top-up) at any convenience store",
+        "City buses are excellent and reach areas the metro doesn't (Gamcheon, Haedong Yonggungsa). Use Naver Map app for real-time routes",
+        "Kakao Taxi app works like Uber — essential for late nights. Base fare ₩4,800"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Rent a pocket WiFi at Gimhae Airport (₩5,000/day) or buy a prepaid SIM (KT or SK Telecom, ₩33,000 for 5 days unlimited data)",
+        "Free WiFi is everywhere — metro, cafes, convenience stores, and public areas",
+        "Essential apps: Naver Map (Google Maps is poor in Korea), Kakao Taxi, Papago (translation), KakaoTalk (messaging)"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cards accepted almost everywhere — even street food stalls often take Samsung/Apple Pay via tap",
+        "ATMs at convenience stores (CU, GS25) accept foreign cards — use Global ATM option. Fees ₩3,000–4,000",
+        "Tipping is NOT practiced in Korea — it can actually cause confusion. Service charge is included"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable walking shoes essential — Busan is hilly. Bring layers for coastal winds even in summer",
+        "Pack a small towel for jjimjilbang visits (or rent one there for ₩1,000)",
+        "Sunscreen, hat, and umbrella — Busan gets both strong sun and sudden rain depending on season"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🍺",
+      "title": "Drinking Culture",
+      "text": "Pour drinks for others, never for yourself. Hold your glass with two hands when someone older pours. Turn your head away from elders when drinking. Soju is the social glue — refusing may seem rude, so accept at least the first glass."
+    },
+    {
+      "icon": "👟",
+      "title": "Shoes Off",
+      "text": "Remove shoes when entering homes, guesthouses, some restaurants (look for a raised platform or shoe rack), and all temple buildings. Wear socks you're not embarrassed by."
+    },
+    {
+      "icon": "🙇",
+      "title": "Bowing & Respect",
+      "text": "A slight head bow is a greeting, thank you, and goodbye. Use two hands when giving or receiving anything — money, business cards, drinks. Age hierarchy is deeply important in Korean culture."
+    },
+    {
+      "icon": "🚇",
+      "title": "Metro Etiquette",
+      "text": "Priority seats are sacred — never sit in them even if the car is empty. Keep voices low. No phone calls on the metro. Queuing is orderly — wait on the side for people to exit first."
+    },
+    {
+      "icon": "🏛️",
+      "title": "Temple Visits",
+      "text": "Dress modestly at temples (no shorts or tank tops). Remove shoes before entering any building. Photography is usually allowed outside but not inside prayer halls. Walk quietly and keep voices low."
+    },
+    {
+      "icon": "📱",
+      "title": "Photo Culture",
+      "text": "Koreans are very photo-conscious. Don't photograph strangers without asking. Selfie culture is huge — don't be surprised by ring lights and tripods at scenic spots. Photo booths are everywhere and make great souvenirs (₩4,000)."
+    }
+  ],
+  "title": "Busan Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Busan guide for young travelers. 3-day itinerary with beaches, temples, street food, K-culture, and nightlife. Plan your trip with roammate.",
+  "heroImage": "/images/guides/busan-hero.webp",
+  "heroFlag": "🇰🇷",
+  "heroCountry": "South Korea",
+  "heroRegion": "East Asia",
+  "heroCity": "Busan",
+  "heroSubtitle": "Korea's coastal soul — where colourful hillside villages tumble down to beaches, fish markets buzz at dawn, and the smell of grilled pork belly fills every alley.",
+  "budgetIntro": "Daily costs per person in Korean Won (₩). Busan is one of Asia's best-value destinations — incredible food, transport, and experiences at a fraction of Tokyo or Seoul prices.",
+  "culturalIntro": "Korean culture runs deep in Busan. A little awareness of social norms — especially around drinking, age hierarchy, and temple visits — goes a long way.",
+  "ctaCity": "Busan",
+  "ctaText": "Find travel companions for beach days, temple visits, and late-night chimaek sessions with fellow travelers on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Apr – Jun Best"
+  ],
+  "defaultDays": 3
+}

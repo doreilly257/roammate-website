@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "grand-canyon",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "USD (Dollar)",
+      "detail": "US dollars widely accepted"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "MST (UTC-7)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – May, Sep – Nov",
+      "detail": "Comfortable temperatures, lower crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$50–150 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ESTA required",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Grand Canyon Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Grand Canyon",
+            "text": "Begin your day at Grand Canyon early to beat the crowds and catch the best light. The area is most atmospheric in the morning when the air is cool and the landscape catches the first golden rays. Take time to explore the main highlights and capture photographs in the soft morning light. This is the most rewarding time to visit.",
+            "tip": "Arrive as early as possible — the first hour after opening has the fewest visitors and the best photography conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Deeper Exploration",
+            "text": "Spend the afternoon exploring further afield. Follow the trails deeper into the landscape for more secluded viewpoints and quieter corners. Grab lunch at a local eatery for authentic flavours and budget-friendly prices.",
+            "tip": "Midday sun can be intense — bring sunscreen, a hat, and plenty of water. Rest during the hottest hours if needed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rim-Side Dinner",
+            "text": "If staying at the South Rim, the El Tovar dining room offers fine dining with canyon views, while the Arizona Room serves solid steaks and southwestern dishes at lower prices. Otherwise, drive 10 minutes south to Tusayan for a wider range of restaurants and fast food. On the North Rim, the Grand Canyon Lodge dining room is your only sit-down option — reserve well in advance.",
+            "tip": "El Tovar dinner reservations open 6 months ahead and fill quickly. Walk-ins are sometimes available at the bar area, but don't count on it in summer."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "South Rim — Classic Views & Bright Angel Trail",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mather Point Sunrise & Rim Trail",
+            "text": "Arrive at Mather Point before dawn — the South Rim's most iconic overlook — and watch the canyon walls shift from purple to orange to gold as the sun rises over the Colorado River, 1,600m below. The 7-day park entry pass costs $35 per vehicle. Walk west along the Rim Trail (paved, flat, wheelchair accessible) to Yavapai Geology Museum, which has the best interpretive displays on the canyon's 1.8-billion-year geological timeline. The canyon is 18 miles wide at this point — the scale takes time to absorb.",
+            "tip": "Mather Point fills within minutes of sunrise — arrive 30 minutes early and stake your spot. The free shuttle buses start running at 7am, making it easy to hop between overlooks."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bright Angel Trail — Descend Into the Canyon",
+            "text": "Hike down the Bright Angel Trail, the most famous and well-maintained trail into the canyon, departing from the Bright Angel Trailhead near the historic 1935 Bright Angel Lodge. The 1.5-mile-round-trip to the first rest house descends 200m — dramatic enough for first-timers and doable in 2 hours with plenty of water. The trail passes two natural springs and a native Ancestral Puebloan granary. For a stronger hiker, the 3-mile rest house adds another 150m descent and stunning inner-gorge views.",
+            "tip": "The National Park Service rule: do NOT attempt to hike to the Colorado River and back in one day. The descent is deceptively easy — the climb back in heat kills several hikers each year."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hopi Point Sunset",
+            "text": "Take the free Hermit Road shuttle (runs March–November) to Hopi Point, 5km west of Grand Canyon Village — consistently rated the finest sunset viewpoint on the South Rim. The westward-facing position gives an unobstructed view as the sun drops behind Powell Plateau, casting crimson and violet shadows across the temples and buttes below. The El Tovar Hotel dining room ($40–60 mains) has rim-side windows for dinner — book weeks ahead. The Bright Angel Restaurant is the budget alternative at $15–25.",
+            "tip": "Last shuttle back from Hopi Point is typically 30 minutes after sunset. Check the exact time at the visitor centre or on the park app, as it varies seasonally."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "North Rim & the Inner Canyon Perspective",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Desert View Watchtower & Eastern Rim Drive",
+            "text": "Drive the 40km Desert View Drive east along the South Rim — a series of viewpoints that most visitors skip in favour of the village area. Stop at Grandview Point (where John Hance ran copper mines in the 1890s), Moran Point, and Navajo Point before reaching the Desert View Watchtower. Built in 1932 by architect Mary Colter on Ancestral Puebloan ruins at the canyon's highest rim point (2,254m), the tower offers views extending 50 miles into the Painted Desert. Entry included with park pass.",
+            "tip": "Desert View has the only petrol station on the South Rim — fill up here before driving to the North Rim or continuing east toward Page and Antelope Canyon."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Colorado River Rafting (Half-Day)",
+            "text": "Drive 135km south to Lees Ferry for a half-day Colorado River raft from Arizona Raft Adventures or Wilderness River Adventures ($100–150 per person). This calm, flat section beneath the Vermilion Cliffs reveals the canyon from the river's perspective — looking up at 300-metre walls of Marble Canyon rather than down from the rim. The water is an icy 10°C year-round (released from deep in Lake Powell dam). Half-day trips cover around 15 miles of river.",
+            "tip": "Book river trips 2–4 weeks ahead in peak season. The Lees Ferry launch site is 4.5 miles from the Lee's Ferry campground — bring everything you need as there are no services at the ramp."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Marble Canyon & Lonely Condor Watch",
+            "text": "The Navajo Bridge over Marble Canyon — two steel bridges side by side, one historic pedestrian bridge and one active road bridge — is the best place in the American Southwest to spot California condors. The world's largest flying land bird (3m wingspan) nests on the canyon walls here and is frequently seen soaring from the pedestrian bridge at dusk. Entry is free. The Marble Canyon Lodge restaurant serves enormous Navajo tacos for $14 and stays open until 9pm. Sleep at Lees Ferry Campground ($30/night) by the river.",
+            "tip": "Condors are most visible in the morning and late afternoon. Look for the numbered yellow wing tags — each bird is individually tracked. The Peregrine Fund posts regular sighting updates at the bridge information boards."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Havasu Falls & Havasupai — The Hidden Canyon",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hualapai Hilltop Trailhead at Dawn",
+            "text": "The Havasupai Reservation — home of the legendary turquoise Havasu Falls — requires a permit booked months in advance ($100 per person entry fee plus $100/night camping). If you have one, drive to Hualapai Hilltop (4 hours from Grand Canyon Village) and begin the 16km hike by 6am to beat the desert heat. The trail descends into a side canyon where the blue-green water of Havasu Creek suddenly appears surrounded by red sandstone walls — a genuinely surreal contrast. The colour comes from dissolved limestone.",
+            "tip": "Havasu permits open in February for the entire year and sell out within minutes. Set your alarm, have the booking page pre-loaded, and have multiple devices ready. Mule train alternatives cost around $400 return."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Havasu Falls, Mooney Falls & the Travertine Pools",
+            "text": "The centrepiece Havasu Falls drops 30m into a turquoise pool — swimming here is free for permit holders and is one of the most extraordinary natural swimming experiences in North America. Continue 1.5km further down-canyon to Mooney Falls (50m drop, the tallest), descended via iron chains bolted into the cliff face — exhilarating but manageable. Beyond Mooney, the trail continues to the travertine dams of Beaver Falls — shallower pools perfect for floating on your back in the silence.",
+            "tip": "The Havasupai Lodge (within the village) costs around $200/night and books out identically to camping permits. Camping is the far better experience — pack in everything including food, as the café has limited supplies."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Canyon Stargazing & Departure Prep",
+            "text": "If staying on the South Rim for a final night, the Grand Canyon is a certified International Dark Sky Park — one of the best stargazing sites in the continental USA. Mather Point, Lipan Point, and the Desert View Watchtower parking area all offer unobstructed horizons. The Milky Way is clearly visible with the naked eye from May–October. Pack your gear the night before departure: the South Rim Village and Tusayan have basic supplies but limited camping gear. Check road conditions if heading out via Highway 64.",
+            "tip": "The Grand Canyon Star Party runs each June — free telescope viewing with astronomy volunteers from multiple organisations. Check the park website for exact dates and locations each year."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book ahead online",
+      "text": "Tickets and tours booked online are often 10-30% cheaper than walk-in prices. Many attractions sell out in peak season — advance booking guarantees entry and saves money."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "Shoulder months (just before or after peak season) offer better prices on accommodation and flights with similar weather and fewer crowds. Mar – May is peak."
+    },
+    {
+      "title": "Stay nearby, not at the gate",
+      "text": "Accommodation directly at the attraction charges a premium. Staying 10-20 minutes away can save 30-50% on nightly rates. Use public transport or a rental car to bridge the gap."
+    },
+    {
+      "title": "Pack your own lunch",
+      "text": "Tourist-area restaurants charge inflated prices. Pack sandwiches, snacks, and a refillable water bottle to save $15-30 per day on food. Buy supplies at local supermarkets or markets."
+    },
+    {
+      "title": "Free walking tours & guides",
+      "text": "Many areas offer free or tip-based guided walks that are better than paid tours. Local guides provide insider knowledge and support the community. Check online for options."
+    },
+    {
+      "title": "Use local transport",
+      "text": "Taxis and private transfers are the most expensive option. Local buses, shared minivans, or ride-sharing are 50-80% cheaper and give you a more authentic experience."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$25–60",
+      "midrange": "$70–150",
+      "splurge": "$200+",
+      "notes": "Hostels → guesthouses → boutique lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–60",
+      "splurge": "$70+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Public buses → shared transfers → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$20–60",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$30–50",
+      "notes": "Combined tickets save money"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$75–190",
+      "midrange": "$165–370",
+      "splurge": "$430+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "ESTA required",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Entry fees for Grand Canyon should be paid in USD — US dollars are widely accepted"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential",
+        "Bring a basic first aid kit with blister plasters, antiseptic, painkillers, and any personal medication",
+        "Sun protection is essential — apply SPF 50+ and reapply every 2 hours"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Shared transport or guided tours are the most practical options",
+        "Download offline maps before arriving — mobile data coverage can be patchy in remote areas",
+        "Negotiate transport prices before departure or use metered taxis and ride-hailing apps"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card at the airport on arrival for affordable data — much cheaper than international roaming",
+        "WiFi is available at most accommodation but signal quality varies. Download offline maps and guides before heading to remote areas",
+        "Share your itinerary with someone at home and check in daily, especially for remote treks or island visits"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: USD (Dollar). US dollars widely accepted",
+        "ATMs are available in towns and cities. Visa and Mastercard are most widely accepted",
+        "Tip 15-20% at restaurants. Guides and porters appreciate tips — budget $5-10 per day per person"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable walking shoes, layers for temperature changes, and a packable rain jacket",
+        "A reusable water bottle, headlamp, and portable phone charger are essential for any outdoor adventure",
+        "Quick-dry clothing is ideal — you can wash and wear repeatedly, reducing pack weight"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Local Customs",
+      "text": "Be mindful of local customs and traditions. Ask before photographing people. Learn basic greetings in the local language — even a simple hello earns goodwill."
+    },
+    {
+      "icon": "🌍",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish. Stay on marked trails and paths. Do not touch, feed, or disturb wildlife. The natural beauty of Grand Canyon depends on every visitor treating it with respect. Take only photos, leave only footprints."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals, especially in indigenous or traditional communities. Many religious sites have photography restrictions — check signage and respect these rules. Drone regulations vary — check local laws before flying."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn a few words in English — greetings, please, thank you, and numbers go a long way. English is widely spoken in tourist areas but a translation app helps bridge gaps."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned guesthouses, restaurants, and guides over international chains. Buy handicrafts directly from artisans. Your spending has the most impact when it goes directly into the local economy rather than through large tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace & Patience",
+      "text": "Allow more time than you think — rushing through natural and cultural sites misses the point. The best experiences come from slowing down and being present."
+    }
+  ],
+  "title": "Grand Canyon Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Grand Canyon guide for young travelers. Nature, adventure, exploration with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/grand-canyon-hero.webp",
+  "heroFlag": "🇺🇸",
+  "heroCountry": "USA",
+  "heroRegion": "North America",
+  "heroCity": "Grand Canyon",
+  "heroSubtitle": "A mile-deep chasm carved by the Colorado River over 6 million years — layers of red, orange, and purple rock stretching 450km across Arizona.",
+  "budgetIntro": "Daily costs per person in US dollars. Grand Canyon costs depend on season, accommodation style, and activity choices — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Grand Canyon is a natural wonder — approach with curiosity and respect, and you will be rewarded with one of the most memorable experiences of your travels.",
+  "ctaCity": "Grand Canyon",
+  "ctaText": "Find travel companions to explore Grand Canyon together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Park Trip",
+    "Nature",
+    "Mar – May Best"
+  ],
+  "defaultDays": 1
+}

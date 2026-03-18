@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "dolomites",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EUR (Euro)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Italian / German",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "CET (UTC+1)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jun – Sep",
+      "detail": "Comfortable temperatures, lower crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$60–150 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Schengen Zone",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Dolomites Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Dolomites",
+            "text": "Begin your day at Dolomites early to beat the crowds and catch the best light. The trail is most atmospheric in the morning when the air is cool and the landscape catches the first golden rays. Take time to explore the main highlights and capture photographs in the soft morning light. This is the most rewarding time to visit.",
+            "tip": "Arrive as early as possible — the first hour after opening has the fewest visitors and the best photography conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "The Trail Continues",
+            "text": "Spend the afternoon exploring further afield. Follow the trails deeper into the landscape for more secluded viewpoints and quieter corners. Grab lunch at a local eatery for authentic flavours and budget-friendly prices.",
+            "tip": "Midday sun can be intense — bring sunscreen, a hat, and plenty of water. Rest during the hottest hours if needed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Mountain Sunset",
+            "text": "End the day watching the alpenglow light up the peaks. The evening light at Dolomites is spectacular and worth waiting for. Find a local restaurant for dinner — European cuisine with local wine.",
+            "tip": "Sunset times vary by season — check ahead and position yourself 30 minutes early for the best spot."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Tre Cime di Lavaredo — the Iconic Loop",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive to Rifugio Auronzo & the Three Peaks",
+            "text": "Drive up the toll road from Misurina to Rifugio Auronzo (€30 toll, parking included) to start the Tre Cime loop at 2,333m. The three monolithic dolomite towers — Cima Grande, Cima Occidentale, and Cima Piccola — are the most photographed mountains in the Alps. Start the 10km circular trail anticlockwise for the best early-morning light on the north face. The path is wide and well-marked, reaching its highest point at 2,630m.",
+            "tip": "The toll road opens at 6am — arrive by 6:30am to secure a parking spot and walk the first hour in near-silence before the day-trippers arrive by cable car from the south."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Rifugio Lavaredo Lunch & the WWI Trenches",
+            "text": "Complete the Tre Cime loop (3–4 hours total) and stop for lunch at Rifugio Lavaredo or Rifugio Locatelli — both serve hearty Tyrolean food including goulash, speck, and knödel (bread dumplings in broth) for around €12–18. The area around Locatelli contains remarkably preserved World War One defensive tunnels and trenches dug into the rock faces, a reminder that this landscape was a front line between Italian and Austro-Hungarian forces in 1915–18.",
+            "tip": "Order the Tiroler Knödel (bread dumplings with speck) at Rifugio Locatelli — it is the quintessential Dolomites mountain hut meal and costs around €12."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Alpenglow from Misurina Lake",
+            "text": "Descend to Lake Misurina — a glacial lake at 1,756m that perfectly mirrors the surrounding peaks. In the 30 minutes after sunset (known as the enrosadira), the dolomite spires turn from gold to deep rose-pink as the light changes. Find a spot on the lake's eastern shore for the best reflection photographs. Then drive 14km into Cortina d'Ampezzo for dinner — the Cantinetta restaurant on Corso Italia serves good local pasta and wine from around €35.",
+            "tip": "Misurina is 14km from Cortina d'Ampezzo. A night in Cortina is expensive (from €80/night), but the town of Dobbiaco to the north is half the price."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Seceda Ridgeline & Val Gardena",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Seceda — the Jagged Ridgeline of Val Gardena",
+            "text": "Take the cable car from Ortisei in Val Gardena to the Seceda plateau (€32 return) and walk the high ridgeline above 2,500m — the jagged sawtooth profile of the Odle massif behind you and a sweeping panorama of the Sella group, Sassolungo, and Marmolada glacier ahead. The walk from the top cable car station to the Gschnagenhardt Alm and back takes about 3 hours on easy terrain. The views are among the finest in the Dolomites without the crowds of Tre Cime.",
+            "tip": "Ortisei is in South Tyrol, where German (or Ladin) is the first language — the area has a distinctly Austrian character, reflected in the architecture, food, and culture."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Via Ferrata Introduction at Sassolungo",
+            "text": "Via ferrata (iron road) routes are fixed-cable climbing paths that let non-technical climbers tackle serious mountain terrain with borrowed harnesses and helmets. The Sassolungo circuit around the 3,181m peak includes a moderate via ferrata section (grade D/3) with breathtaking exposed ledges and dramatic Sella Pass views below. Gear rental in Ortisei or Selva costs around €20–30 for the day. The route takes 5–6 hours total including the ascent.",
+            "tip": "Via ferrata without a guide requires your own harness, helmet, and via ferrata kit — never attempt the exposed sections without proper equipment, regardless of your general fitness."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Selva di Val Gardena & South Tyrolean Dinner",
+            "text": "Drive to Selva di Val Gardena, a small resort town at the foot of Sassolungo. The local cuisine blends Italian and Austrian traditions — order schlutzkrapfen (cheese-filled pasta similar to ravioli) or speck-wrapped venison with Lagrein, the distinctive Tyrolean red wine. The Luislkeller restaurant in Selva is a favourite with locals, with mains around €18–24. Finish with a glass of Obstler (fruit schnapps) as the mountains darken outside.",
+            "tip": "Selva, Santa Cristina, and Ortisei are all in the Dolomiti Superski area — if you visit in winter, a single ski pass covers all three resorts and 175km of connected pistes."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Alpe di Siusi & Cortina Town",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Alpe di Siusi — Europe's Largest Alpine Meadow",
+            "text": "Take the Seiser Alm Bahn cable car from Seis am Schlern (€20 return) up to Alpe di Siusi — a 56km² high plateau of wildflower meadows sitting at 1,800–2,350m above the valley floor. Private cars are banned from the plateau in summer, keeping it quiet and peaceful. Gentle circular walks of 2–3 hours pass traditional malghe (mountain dairy farms) where farmers still hand-cut hay in summer. The Sassolungo and Sassopiatto towers rise dramatically from the meadow's far edge.",
+            "tip": "Rent an e-bike at the cable car top station (around €35/half day) to cover more of the plateau — it is large and the gentle slopes make cycling the best way to see it all."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Cortina d'Ampezzo — the Queen of the Dolomites",
+            "text": "Drive 1.5 hours to Cortina d'Ampezzo, the glamorous resort town that hosted the 1956 Winter Olympics and will again in 2026. Walk the pedestrian Corso Italia, browse the independent climbing and ski shops, and take the Freccia nel Cielo gondola (€35 return, 3,243m) for one of the most accessible high-altitude viewpoints in the entire range. The Dolomites UNESCO heritage visitor centre on the edge of town provides excellent geological and cultural context.",
+            "tip": "Cortina is one of Italy's most expensive resorts — save money by visiting for the afternoon only and staying overnight in Dobbiaco (14km north) or Auronzo di Cadore (25km east)."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Rifugio Dinner & Sunset",
+            "text": "For a memorable final evening, book dinner at a mountain rifugio accessible by gondola or cable car — many operate a restaurant service until 7–8pm before the last descent. Rifugio Lagazuoi above the Falzarego Pass (reachable by cable car, €15 return) sits at 2,752m with jaw-dropping sunset views over five mountain groups. The kitchen serves polenta with mushrooms and local cheese, and the atmosphere as the light fades and stars appear is something most Dolomites visitors never experience.",
+            "tip": "Most rifugi stop serving food at 7:30pm and close the kitchen — book your dinner slot by phone the same morning, as walk-ins are often turned away in peak season."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book ahead online",
+      "text": "Tickets and tours booked online are often 10-30% cheaper than walk-in prices. Many attractions sell out in peak season — advance booking guarantees entry and saves money."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "Shoulder months (just before or after peak season) offer better prices on accommodation and flights with similar weather and fewer crowds. Jun – Sep is peak."
+    },
+    {
+      "title": "Stay nearby, not at the gate",
+      "text": "Accommodation directly at the attraction charges a premium. Staying 10-20 minutes away can save 30-50% on nightly rates. Use public transport or a rental car to bridge the gap."
+    },
+    {
+      "title": "Pack your own lunch",
+      "text": "Tourist-area restaurants charge inflated prices. Pack sandwiches, snacks, and a refillable water bottle to save $15-30 per day on food. Buy supplies at local supermarkets or markets."
+    },
+    {
+      "title": "Free walking tours & guides",
+      "text": "Many areas offer free or tip-based guided walks that are better than paid tours. Local guides provide insider knowledge and support the community. Check online for options."
+    },
+    {
+      "title": "Use local transport",
+      "text": "Taxis and private transfers are the most expensive option. Local buses, shared minivans, or ride-sharing are 50-80% cheaper and give you a more authentic experience."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$25–60",
+      "midrange": "$70–150",
+      "splurge": "$200+",
+      "notes": "Hostels → guesthouses → boutique lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–60",
+      "splurge": "$70+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Public buses → shared transfers → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$20–60",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$30–50",
+      "notes": "Combined tickets save money"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$75–190",
+      "midrange": "$165–370",
+      "splurge": "$430+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Schengen Zone",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Entry fees for Dolomites should be paid in EUR — exchange money before arriving"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential",
+        "Bring a basic first aid kit with blister plasters, antiseptic, painkillers, and any personal medication",
+        "Altitude sickness is a risk above 2,500m — acclimatise slowly and stay hydrated"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Excellent public transport — trains, buses, and ferries connect major points",
+        "Download offline maps before arriving — mobile data coverage can be patchy in remote areas",
+        "Trails are usually well-marked but a local guide adds safety and insider knowledge"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card at the airport or any phone shop for affordable data — much cheaper than international roaming",
+        "WiFi is available at most accommodation but signal quality varies. Download offline maps and guides before heading to remote areas",
+        "Share your itinerary with someone at home and check in daily, especially for remote treks or island visits"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: EUR (Euro). Cards accepted in tourist areas, but carry cash for local vendors",
+        "ATMs are available in towns and cities. Visa and Mastercard are most widely accepted",
+        "Tip 5-10% or round up at restaurants. Guides and porters appreciate tips — budget $5-10 per day per person"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Sturdy hiking boots (broken in), moisture-wicking layers, and a quality rain jacket are essential",
+        "A reusable water bottle, headlamp, and portable phone charger are essential for any outdoor adventure",
+        "Quick-dry clothing is ideal — you can wash and wear repeatedly, reducing pack weight"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Local Customs",
+      "text": "Be mindful of local customs and traditions. Ask before photographing people. Learn basic greetings in the local language — even a simple hello earns goodwill."
+    },
+    {
+      "icon": "🌍",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish. Stay on marked trails and paths. Do not touch, feed, or disturb wildlife. The natural beauty of Dolomites depends on every visitor treating it with respect. Take only photos, leave only footprints."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals, especially in indigenous or traditional communities. Many religious sites have photography restrictions — check signage and respect these rules. Drone regulations vary — check local laws before flying."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn a few words in Italian — greetings, please, thank you, and numbers go a long way. English is widely spoken in tourist areas but a translation app helps bridge gaps."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned guesthouses, restaurants, and guides over international chains. Buy handicrafts directly from artisans. Your spending has the most impact when it goes directly into the local economy rather than through large tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace & Patience",
+      "text": "Allow more time than you think — rushing through natural and cultural sites misses the point. The best experiences come from slowing down and being present."
+    }
+  ],
+  "title": "Dolomites Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Dolomites guide for young travelers. Hiking trails, mountain views with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/dolomites-hero.webp",
+  "heroFlag": "🇮🇹",
+  "heroCountry": "Italy",
+  "heroRegion": "Europe",
+  "heroCity": "Dolomites",
+  "heroSubtitle": "UNESCO pale limestone spires rising above Alpine meadows — world-class hiking, via ferrata, and rifugio-to-rifugio trekking in northeast Italy.",
+  "budgetIntro": "Daily costs per person in US dollars. Dolomites trekking costs vary widely depending on whether you hire a guide, porter, and which route you choose — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Dolomites is wild terrain that demands respect — approach with curiosity and respect, and you will be rewarded with one of the most memorable experiences of your travels.",
+  "ctaCity": "Dolomites",
+  "ctaText": "Find travel companions to explore Dolomites together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Trek",
+    "Mountains",
+    "Jun – Sep Best"
+  ],
+  "defaultDays": 1
+}

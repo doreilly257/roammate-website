@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "ile-de-goree",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "XOF (CFA Franc)",
+      "detail": "Cash only on the island"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "French / Wolof",
+      "detail": "Some English with guides"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "GMT (UTC+0)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Nov – May",
+      "detail": "Dry season, pleasant temperatures"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$25–55 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Varies by nationality",
+      "detail": "Same as Senegal mainland — check requirements"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Île de Gorée Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "House of Slaves & Historical Museums",
+            "text": "Take the first ferry from Dakar's Gare Maritime (20 minutes) and arrive on Gorée when the island is quiet and the morning light is soft on the pastel-coloured colonial houses. Walk directly to the Maison des Esclaves (House of Slaves), built in 1776. The museum presents the history of the transatlantic slave trade through artefacts, documents, and the building's architecture itself — the narrow ground-floor holding rooms where captives were kept, and the \"Door of No Return\" opening directly onto the Atlantic. The emotional weight of the site is immense. Continue to the IFAN Historical Museum in the old fort for broader context on Senegalese history.",
+            "tip": "Take the 7:15am ferry for the quietest experience. The House of Slaves is small — visit early before it fills with school groups and day trippers arriving on later ferries."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Art Galleries & Bougainvillea Lanes",
+            "text": "Explore the island's narrow sandy lanes lined with colonial-era houses in faded pastel pink, yellow, and ochre, draped with purple bougainvillea. Gorée is entirely car-free — the only sounds are birdsong, waves, and conversation. The island has a thriving art community: small galleries in converted colonial houses display contemporary Senegalese painting, sculpture, and photography. The quality is high and prices are fair — artists often work in their studios and welcome visitors. The Women's Museum (Musée de la Femme) highlights the role of Senegalese women through history.",
+            "tip": "The art galleries are the island's hidden treasure. Spend time talking to artists — many speak French and English and share fascinating perspectives on Senegalese art and culture."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Castel Fort Sunset & Return Ferry",
+            "text": "Climb to the Castel — the fortified summit of the island — for panoramic views across to Dakar's skyline and south along the coast. The sunset from the Castel is spectacular: the sun drops into the Atlantic beyond the mainland, painting Dakar's tower blocks in gold while the island below darkens into silhouette. Descend to one of the island's small restaurants for grilled fish and attieke (cassava couscous) before catching the evening ferry back to Dakar.",
+            "tip": "The Castel climb takes 10 minutes and the path is straightforward. Bring water — there is no shade at the top. The last ferry to Dakar departs around 6pm — confirm the time."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "History, Heritage & First Impressions",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "House of Slaves & Door of No Return",
+            "text": "Arrive on the first ferry and walk to the Maison des Esclaves before the later crowds. The building dates to 1776 — one of the last remaining slave houses on the island. The ground floor held captives in cramped, dark rooms before embarkation; the upper floor was the slave trader's elegant residence, a stark architectural expression of the trade's inhumanity. The \"Door of No Return\" at the rear opens directly to the sea and has become one of the most powerful symbols of the African diaspora. Allow time to sit in the courtyard and absorb the weight of the place.",
+            "tip": "Entry is 500 XOF. A guide (available at the entrance) adds valuable historical context for 2,000–3,000 XOF. The building is most powerful when visited slowly and quietly."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "IFAN Historical Museum & Colonial Architecture",
+            "text": "Visit the IFAN Historical Museum in the Ancien Palais du Gouverneur — the old governor's palace on the island's north side. The museum covers Gorée's history from pre-colonial settlement through Portuguese, Dutch, French, and British occupations, to independence. The colonial architecture on the walk between sites tells its own story — fortified trading houses, barracks, churches, and warehouses that served the slave trade and later colonial administration. The buildings are beautiful in their decay, a complex aesthetic that demands reflection.",
+            "tip": "The IFAN Historical Museum is 500 XOF entry. Allow 1 hour. The exhibits provide essential context for understanding the House of Slaves in its broader historical framework."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Island Dinner & Evening Atmosphere",
+            "text": "As the day visitors depart on the afternoon ferries, Gorée transforms into its truest self — a quiet island of 1,500 residents going about their evening routines. Children play on the sandy lanes, women prepare dinner in open courtyards, and the light fades to a warm amber that makes the colonial facades glow. Dine at one of the island restaurants: grilled thiof (grouper), fried plantain, and attieke, with a view of the harbour where fishing boats bob in the twilight.",
+            "tip": "If staying overnight on the island, the evening atmosphere is magical. The restaurants are simple but the seafood is fresh. Meals cost 3,000–6,000 XOF."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Art, Beach & Castel Fort",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gallery Walk & Artist Studios",
+            "text": "Spend the morning visiting Gorée's art galleries — the island has attracted artists for decades, and the creative community is vibrant. Galleries in converted colonial houses display contemporary Senegalese painting in bold colours and fluid lines, Afro-surrealist sculpture, photography, and mixed-media work. Several artists maintain open studios where you can watch them work and discuss their practice. The artistic response to Gorée's history — the tension between beauty and horror — produces powerful and thought-provoking work.",
+            "tip": "Ask gallery owners about the next generation of Gorée artists — some emerging talents are producing remarkable work at very accessible prices."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Beach, Swimming & Island Life",
+            "text": "The small beach on the island's east side offers calm, clear water for swimming. The sand is narrow but the setting — colonial houses rising from the beach, fishing pirogues moored offshore, and the Dakar skyline across the water — is lovely. After swimming, explore the quieter southern end of the island where residential lanes are even more peaceful and the sense of island isolation deepens. The pace of life on Gorée is profoundly slow — this is a place where doing nothing is doing something.",
+            "tip": "The beach is small and gets crowded on weekends. Weekday visits are much quieter. Bring your own towel and drinking water."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Castel Fort Sunset",
+            "text": "Climb to the Castel at the island's highest point for sunset views. The fortification, built by the French in the 18th century, offers 360-degree views: Dakar's skyline to the east, the open Atlantic to the west, and the island's terracotta rooftops below. As the sun sets, the sky turns through the spectrum from gold to crimson to deep violet. The silence at the summit — no traffic, no engines, just wind and waves — is a rare urban experience this close to a major African city.",
+            "tip": "The Castel is free to access. Bring a light jacket — the hilltop catches the sea breeze and cools quickly after sunset."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Reflection, Markets & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Morning Reflection Walk",
+            "text": "Take a final morning walk through the island's lanes before the day visitors arrive. Gorée in the early morning belongs to its residents — women sweeping doorsteps, children walking to school, fishermen preparing boats. The colonial houses glow in the first light, bougainvillea cascades over stone walls, and the smell of coffee and fish drifts from open doorways. Visit the House of Slaves one final time if you feel drawn to it — the building's power deepens with a second encounter when you have the historical context from the museums.",
+            "tip": "The House of Slaves opens at 10:30am. An early morning walk past the exterior is still moving — the building's location facing the open ocean speaks for itself."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Souvenir Shopping & Final Island Lunch",
+            "text": "Browse the small craft stalls near the ferry dock — Gorée artisans sell paintings, jewellery, carved wooden figures, and beadwork. The quality is generally good and prices are reasonable. Have a final island lunch at a harbourside restaurant: the thiéboudienne or grilled fish with a view of the ferries coming and going represents Gorée at its most pleasant and quotidian — an island that is simultaneously a profound memorial and a living, eating, laughing community.",
+            "tip": "The craft stalls near the dock are the most convenient for last-minute shopping. Bargaining is gentle here — the island is small and the vendors are neighbours."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Dakar & Departure",
+            "text": "Take the afternoon ferry back to Dakar. The crossing offers a final view of Gorée's distinctive silhouette — the Castel fort on the hill, the colonial rooftops, and the small harbour. The island recedes but its impact does not: the House of Slaves, the bougainvillea lanes, the art galleries, and the quiet beauty of a place that holds one of history's darkest chapters with dignity and grace. Gorée changes how you see Africa, history, and yourself.",
+            "tip": "Ferries run every 1–2 hours. The crossing takes 20 minutes. Keep your ferry ticket — you may need to show it when boarding."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & House of Slaves",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ferry Crossing & Island Arrival",
+            "text": "Take the first ferry from Dakar to Gorée. The 20-minute crossing is itself a transition — from the noise and traffic of the capital to the car-free silence of the island. Disembark at the small harbour and walk up the main lane to your guesthouse. The island is tiny — 900 metres long by 300 metres wide — and you will know every corner within a day. Let the first impressions settle: the pastel houses, the sandy lanes, the bougainvillea, and the Atlantic on every side.",
+            "tip": "Guesthouses on Gorée should be booked in advance — there are only a handful and they fill quickly. Expect 15,000–30,000 XOF per night."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "House of Slaves",
+            "text": "Visit the Maison des Esclaves in the afternoon when the morning tour groups have departed. The building is more powerful when experienced without crowds — the narrow holding rooms, the courtyard, and the Door of No Return demand quiet reflection. The curator's presentation covers the history of the transatlantic slave trade from African capture to Middle Passage to plantation slavery in the Americas. Whether or not this specific building was a major slave trading point (historians debate this), its symbolic power as a memorial is undeniable.",
+            "tip": "Allow at least an hour. The emotional impact is significant — give yourself space to process. The courtyard benches are a good place to sit afterwards."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "First Island Evening",
+            "text": "As the sun sets, walk the island's perimeter — a 30-minute circuit that passes the harbour, the beach, the southern cliffs, and the western shoreline facing the open Atlantic. The evening light on the colonial facades is extraordinary. Dinner at a guesthouse or small restaurant: grilled fish, rice, and salad, with the sound of waves and the glow of kerosene lamps from the houses.",
+            "tip": "Gorée has no streetlights in many lanes — bring a small torch for evening walks. The darkness adds to the island's atmosphere."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Museums & Historical Context",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "IFAN Historical Museum",
+            "text": "Visit the IFAN Historical Museum for comprehensive context on Gorée's role in Atlantic trade, colonial competition, and Senegalese history. The museum covers five centuries of occupation — Portuguese, Dutch, British, and French — and the strategic importance of the island as a waystation for ships trading in slaves, gum arabic, gold, and other commodities. The exhibits include maps, documents, weapons, and everyday objects that bring the history to life.",
+            "tip": "The IFAN Museum is the intellectual complement to the House of Slaves' emotional impact. Visit both for a complete understanding of the island's significance."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Women's Museum & Church",
+            "text": "Visit the Musée de la Femme (Women's Museum) for perspectives on the role of Senegalese women through history — from pre-colonial matrilineal societies through slavery and colonialism to modern independence movements. The small church of Saint-Charles Borromée, dating to the 1830s, reflects the Catholic presence on the island. The interplay between Islamic, Catholic, and indigenous spiritual traditions on this tiny island mirrors the broader complexity of Senegalese culture.",
+            "tip": "The Women's Museum is small but powerful. The displays on signare women — wealthy mixed-race women who wielded significant economic power during the colonial period — are fascinating."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset from the Southern Cliffs",
+            "text": "Walk to the southern tip of the island where low cliffs face the open Atlantic. The sunset from here is different from the Castel — more intimate, with the waves breaking on the rocks below and no railing between you and the ocean. The same sea that carried slave ships now carries fishing pirogues home to Dakar. The juxtaposition is constant on Gorée — beauty and horror, past and present, memorial and living community.",
+            "tip": "The southern cliffs are not fenced. Be careful near the edges, especially if wet. The view is worth the caution."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Art Galleries & Creative Community",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gallery Crawl",
+            "text": "Dedicate a morning to the island's art galleries. Gorée's artistic community produces work that grapples with the island's history, African identity, and the tension between beauty and suffering. Galleries display everything from figurative oil painting and Afro-surrealist sculpture to photography and textile art. Artists often work in open studios attached to galleries — conversations about their practice, influences, and the experience of creating art on this historically charged island are illuminating.",
+            "tip": "Gallery prices are negotiable, especially for larger pieces. Original paintings start from 10,000 XOF. The investment supports working artists in one of West Africa's most important creative communities."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Workshop or Residency Visit",
+            "text": "Several Gorée galleries and cultural organisations host artist residencies. If a residency is active during your visit, ask if you can meet the artists — many are happy to discuss their work and the experience of creating on the island. The cross-cultural exchange between African and international artists on Gorée produces some of the most interesting contemporary art in the region.",
+            "tip": "Check with galleries about current residencies. The Gorée Institute, a pan-African cultural centre, sometimes hosts events and exhibitions open to the public."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Island Music & Social Evening",
+            "text": "Gorée occasionally hosts small musical performances — live mbalax or acoustic sets in restaurant courtyards. Even without organised events, the evening social life of the island is engaging: families gathering on doorsteps, children playing in the lanes, fishermen returning with the day's catch, and the general atmosphere of a small community settling into the night. Join a restaurant table, order attaya tea, and let the island come to you.",
+            "tip": "Social life on Gorée is gentle and communal. Accept invitations to share tea or sit with families — the island's version of teranga (hospitality) is warm and genuine."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Dakar Day Trip — Markets & Monument",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Day Trip to Dakar — African Renaissance Monument",
+            "text": "Take the morning ferry to Dakar for a day exploring the capital. Start with the African Renaissance Monument on the Mamelles hills — the 49-metre bronze statue is visible from Gorée on clear days. The observation deck provides panoramic views of Dakar and the Atlantic coast. The contrast between the monumental modern city and the quiet historical island enriches your understanding of both.",
+            "tip": "Buy a return ferry ticket at the Gare Maritime. Day trip to Dakar and back is easily manageable — ferries run every 1–2 hours."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sandaga Market & IFAN Museum",
+            "text": "Experience the intensity of Sandaga Market — Dakar's largest market, a sensory overload of colour, noise, and commerce. Then visit the IFAN Museum of African Arts on Place Soweto for West Africa's finest collection of masks, textiles, and ceremonial objects. The museum provides a broader cultural context that enriches your understanding of the art you have seen on Gorée.",
+            "tip": "Sandaga is overwhelming — go with a local guide or companion. Keep valuables secure. The IFAN Museum is a calm contrast and a good palate cleanser."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Gorée",
+            "text": "Take the late afternoon ferry back to Gorée. Arriving by sea as the light fades is one of the island's most evocative experiences — the colonial rooftops, the Castel silhouette, and the small harbour catching the last golden rays. After a day in Dakar's frenetic energy, the silence of Gorée feels like a physical weight lifting.",
+            "tip": "Confirm the last ferry time — missing it means finding accommodation in Dakar for the night. The last ferry is usually around 6pm."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Beach Day, Swimming & Island Rhythms",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Morning Swim & Beach Time",
+            "text": "Spend a quiet morning on the island's east-side beach. The water is calm and clear, and the setting — colonial houses rising directly from the sand — is unique. Swim, read, and watch the pirogues shuttle between Gorée and Dakar. The beach is small but the atmosphere is deeply relaxing. The morning sun warms the sand and the sea is at its calmest before the afternoon winds pick up.",
+            "tip": "Bring your own snacks and water — there are no beachside vendors. A towel, book, and sunscreen are all you need for a perfect Gorée morning."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Island Perimeter Walk & Photography",
+            "text": "Walk the island's full perimeter, photographing the details that make Gorée unique: the textures of aging colonial walls, the contrast of bougainvillea against stone, the Door of No Return seen from the seaward side, the harbour light on fishing nets, the children playing in doorways. The island is so small that every angle has been photographed a million times, yet it continues to surprise — the light is never the same twice.",
+            "tip": "The afternoon light (3–5pm) creates dramatic shadows on the colonial facades. The western shoreline has the best backlight for atmospheric photography."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rooftop Dinner & Stars",
+            "text": "Some guesthouses have rooftop terraces with views across the island and to Dakar's skyline. Dinner on the rooftop — grilled fish, rice, and salad — with the city lights across the water and the stars overhead is one of the most peaceful dining experiences in West Africa. The contrast between the glittering city skyline and the quiet island is a metaphor for Gorée itself: proximity to power and history, yet profoundly set apart.",
+            "tip": "Ask your guesthouse about rooftop dinner. The quiet of a Gorée evening, with the ocean on every side, is profoundly restorative."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Deep History & Community",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Return to the House of Slaves",
+            "text": "Visit the House of Slaves one final time. After five days on the island — understanding its history, meeting its people, seeing its art — the museum resonates differently. The Door of No Return is no longer an abstract symbol but a physical threshold you have walked past daily. The history is no longer distant but immediate — it happened here, on this small island, and its consequences shaped the modern world. The final visit is often the most powerful.",
+            "tip": "A second visit to the House of Slaves is free if you still have your original ticket. Morning visits before 11am are quietest."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Community Connections",
+            "text": "By the sixth day, faces are familiar. The shopkeeper who sells you water, the fisherman who waves from his pirogue, the children who run alongside you — Gorée's community is small enough that a week turns strangers into acquaintances. Spend the afternoon in the rhythm of island life: sit at the harbour watching boats, share attaya with a gallery owner, or help a fisherman mend nets. This is the deepest way to experience Gorée — not as a tourist site but as a home.",
+            "tip": "If invited to a local home for tea or a meal, accept graciously. Bring a small gift — fruit, biscuits, or sugar are always welcome."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Castel Sunset",
+            "text": "Climb to the Castel one final time for sunset. The view is the same — Dakar's skyline, the open Atlantic, the island's rooftops below — but after nearly a week it feels intimate rather than panoramic. You know the streets below, the people in the houses, the history in the walls. The sunset is not just beautiful, it is meaningful — a marker of time passing on an island where time moves differently.",
+            "tip": "Bring something warm — the evening hilltop wind can be cool. Stay until the stars appear."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Farewell & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn Island Walk",
+            "text": "Rise before the ferry crowds and walk the island one final time at dawn. The lanes are quiet, the light is golden, and Gorée belongs to its residents and to you. Every doorway, every wall, every tree is now familiar. The island that seemed small on arrival now feels rich — layered with history, art, hospitality, and the complex beauty of a place that holds profound suffering and joyful living in the same breath.",
+            "tip": "Dawn is the most peaceful time on Gorée. The light on the eastern facades is warm and the harbour is glass-calm."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Final Purchases & Goodbyes",
+            "text": "Visit your favourite gallery for a final purchase — a painting or photograph of the island that will carry its essence home with you. Say goodbye to the people who made your stay meaningful: the guesthouse host, the restaurant owner, the artist whose work you admired, the children who learned your name. Gorée is a place of lasting connections.",
+            "tip": "Art from Gorée galleries travels well — most artists will wrap paintings for transport. Ask about shipping for larger pieces."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Ferry Departure",
+            "text": "Take the ferry back to Dakar. Watch Gorée recede across the water — the Castel fort, the colonial rooftops, the small harbour — until the island is a silhouette against the afternoon sky. Île de Gorée is a place that stays with you permanently: not just the history, not just the beauty, but the experience of living briefly in a community that has transformed one of humanity's darkest chapters into a place of art, memory, and grace.",
+            "tip": "The ferry crossing is 20 minutes. Keep your camera ready — the view of Gorée from the water as you depart is the image that will represent the entire experience."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Stay on the island",
+      "text": "Guesthouses on Gorée cost 15,000–30,000 XOF per night ($23–46). Staying overnight gives you the island at dawn and dusk when day trippers have left — an immeasurably better experience than a half-day visit."
+    },
+    {
+      "title": "Eat at island restaurants",
+      "text": "Simple meals of grilled fish with rice cost 3,000–5,000 XOF ($5–8). The island has a handful of restaurants — all are affordable and serve fresh seafood from the local fishermen."
+    },
+    {
+      "title": "Ferry is the main expense",
+      "text": "Return ferry tickets cost 5,200 XOF ($8) for foreigners. This is non-negotiable but the only significant transport cost. Everything on the island is walkable."
+    },
+    {
+      "title": "Free attractions",
+      "text": "The island itself, the beaches, the lanes, and the Castel fort are all free. Museum entries are 500 XOF ($0.80) each — almost negligible."
+    },
+    {
+      "title": "Buy art from artists",
+      "text": "Gallery prices on Gorée are very fair. Original paintings from 10,000 XOF ($15). Your purchase directly supports the island's creative community."
+    },
+    {
+      "title": "Combine with Dakar stay",
+      "text": "If budget is tight, stay in Dakar and day-trip to Gorée. But if you can afford one or two nights on the island, the sunrise and sunset experiences are worth the extra cost."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$15–25",
+      "midrange": "$30–50",
+      "splurge": "$60+",
+      "notes": "Simple guesthouse → mid guesthouse → boutique stay"
+    },
+    {
+      "category": "Food",
+      "budget": "$5–8",
+      "midrange": "$8–15",
+      "splurge": "$20+",
+      "notes": "Simple meals → island restaurant → special dinner"
+    },
+    {
+      "category": "Transport",
+      "budget": "$8",
+      "midrange": "$8",
+      "splurge": "$8",
+      "notes": "Ferry return is fixed at 5,200 XOF for foreigners"
+    },
+    {
+      "category": "Activities",
+      "budget": "$0–2",
+      "midrange": "$2–5",
+      "splurge": "$8+",
+      "notes": "Museums 500 XOF each, art galleries free"
+    },
+    {
+      "category": "Souvenirs",
+      "budget": "$0–10",
+      "midrange": "$10–30",
+      "splurge": "$50+",
+      "notes": "Paintings, crafts, beadwork from island artisans"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$25–45",
+      "midrange": "$50–100",
+      "splurge": "$145+",
+      "notes": "Budget → comfortable mid → extended luxury stay"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Same visa requirements as Senegal mainland — check before travel",
+        "Ferry tickets purchased at the Gare Maritime in Dakar. Return: 5,200 XOF for foreigners",
+        "Keep your ferry ticket — you may need it for the return boarding"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Gorée is one of the safest places in Senegal — the island community is small and close-knit",
+        "Drink bottled water — there is no treated water supply on the island",
+        "Bring basic medical supplies — there is no pharmacy on Gorée. The nearest hospital is in Dakar"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "The island is entirely car-free and walkable in 30 minutes from end to end",
+        "Ferries from Dakar run every 1–2 hours. First ferry approximately 7:15am, last approximately 6pm",
+        "No motorised transport on the island — everything is reached on foot"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Mobile coverage on Gorée is decent from the Dakar towers across the water",
+        "WiFi at guesthouses is slow but functional. Embrace the digital detox — the island rewards presence",
+        "Download maps before arriving, though the island is small enough to navigate without one"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: XOF (CFA Franc). Cash only — there are no ATMs on the island",
+        "Withdraw enough CFA in Dakar before ferrying across. Budget 20,000–40,000 XOF per day",
+        "Tip restaurant staff and guides modestly — 500–1,000 XOF is generous on the island"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Pack light — you carry everything from the ferry to your guesthouse on foot through sandy lanes",
+        "Sunscreen, hat, swimwear, and a reusable water bottle. Comfortable walking sandals",
+        "A small torch for evening walks — many island lanes are unlit after dark"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Historical Sensitivity",
+      "text": "Gorée is a memorial site. The House of Slaves and the Door of No Return are not tourist attractions — they are places of profound historical significance. Visit with gravity, silence, and respect. Photography is permitted but should be done thoughtfully."
+    },
+    {
+      "icon": "🌍",
+      "title": "Respect the Community",
+      "text": "Gorée is home to 1,500 people. Treat the island as a living neighbourhood, not a museum. Respect residents' privacy, ask before photographing homes, and remember that you are a guest in someone's community."
+    },
+    {
+      "icon": "📸",
+      "title": "Thoughtful Photography",
+      "text": "The island is extraordinarily photogenic, but consider what you are photographing and why. The Door of No Return, the holding rooms, and the memorial spaces deserve more than a quick selfie. Photograph architecture and art freely; ask permission for portraits."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language",
+      "text": "\"Salaam alaikum\" and \"Nanga def?\" (Wolof greeting) open conversations. French is spoken by everyone. English is understood by guides and some gallery owners. A few Wolof phrases show deep respect."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Island Economy",
+      "text": "Gorée's economy depends entirely on visitors. Eat at island restaurants, stay in local guesthouses, and buy art from island galleries. Every franc spent on the island stays in the community."
+    },
+    {
+      "icon": "🕐",
+      "title": "Island Time",
+      "text": "Gorée operates on island time. Ferries may be late, restaurants may take longer than expected, and nothing happens quickly. Surrender to the pace — the island reveals itself to those who slow down."
+    }
+  ],
+  "title": "Île de Gorée Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Île de Gorée guide for young travelers. UNESCO heritage, Door of No Return, art galleries, and island beauty with 1, 3, and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/ile-de-goree-hero.webp",
+  "heroFlag": "🇸🇳",
+  "heroCountry": "Senegal",
+  "heroRegion": "Africa",
+  "heroCity": "Île de Gorée",
+  "heroSubtitle": "A car-free island of bougainvillea and colonial beauty holding one of history's most profound memorials — the Door of No Return.",
+  "budgetIntro": "Daily costs per person in US dollars. Gorée is affordable — the main expense is the ferry, and island costs are modest.",
+  "culturalIntro": "Île de Gorée is a place of beauty and sorrow — approach with respect for its history, openness to its art, and gratitude for the community that keeps its memory alive.",
+  "ctaCity": "Île de Gorée",
+  "ctaText": "Find travel companions to explore Île de Gorée together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Island",
+    "UNESCO Heritage",
+    "Nov – May Best"
+  ],
+  "defaultDays": 3
+}

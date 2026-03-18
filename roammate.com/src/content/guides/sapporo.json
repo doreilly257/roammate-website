@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "sapporo",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "JPY (Yen)",
+      "detail": "1 USD ≈ ¥150"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Japanese",
+      "detail": "Very limited English"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "JST (UTC+9)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jun – Sep, Feb",
+      "detail": "Summer festivals & Snow Festival"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$50–75 USD",
+      "detail": "¥7,500–11,000 budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Free 90 days",
+      "detail": "Most Western nationalities visa-free"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "The Best of Sapporo in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Nijo Market & Odori Park",
+            "text": "Start at Nijo Market — Sapporo's seafood market since the 1900s. Walk the aisles of glistening king crab, uni (sea urchin), salmon roe, and scallops. Breakfast on a kaisendon (seafood rice bowl, ¥1,500–3,000) — the freshest fish in Japan piled on rice. Then walk to Odori Park, a 1.5km-long green strip running through the city center. The park hosts the Snow Festival in February and Beer Garden in summer.",
+            "tip": "At Nijo Market, the stalls at the back have better prices than the entrance ones. Point at what you want — language isn't a barrier here."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sapporo Beer Museum & Factory",
+            "text": "Bus or walk to the Sapporo Beer Museum (free, tasting ¥200–600) in the iconic red-brick brewery building. Sapporo beer was born here in 1877 — learn the history, see the original brewing equipment, and taste limited-edition beers unavailable elsewhere. The adjacent Sapporo Beer Garden restaurant serves legendary Genghis Khan (jingisukan) — lamb grilled on a dome-shaped hotplate with beer. Sets from ¥2,500 with all-you-can-eat options.",
+            "tip": "The beer museum is free but the paid tasting (¥200 per glass) includes limited Kaitakushi beer — only available here. Worth it."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Susukino — Ramen Alley & Nightlife",
+            "text": "Susukino is Hokkaido's largest entertainment district — neon signs, restaurants, bars, and Sapporo's famous Ramen Alley (Ramen Yokocho). This tiny lane has 17 ramen shops serving Sapporo's signature miso ramen — rich, buttery broth with corn, butter, bean sprouts, and ground pork. Junren is the original since 1964. A bowl costs ¥850–1,100. After ramen, the surrounding streets have bars, karaoke, and izakaya until dawn.",
+            "tip": "Ramen Yokocho is tiny and touristy but the ramen is genuinely good. For a local experience, try Sumire (original miso ramen) nearby instead."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Sapporo Essentials — Beer, Ramen & Markets",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Nijo Market Seafood Breakfast",
+            "text": "Nijo Market has served Sapporo since the early 1900s. Walk past mountains of king crab legs, glowing uni, fat scallops, and jewel-like salmon roe (ikura). Choose a market restaurant for kaisendon (seafood bowl, ¥1,500–3,000) — the fish was swimming yesterday and it shows. Try the uni — Hokkaido's is Japan's best, sweet and creamy with no trace of bitterness. The scallops here are the size of your palm.",
+            "tip": "Nijo Market restaurants prepare seafood bowls to order. Ask for \"omakase\" (chef's choice) for the best seasonal selection — usually the best value too."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sapporo Beer Museum",
+            "text": "Walk or bus to the Sapporo Beer Museum (free, tasting extra) in the historic red-brick brewery. Sapporo beer started here in 1877, making it Japan's oldest beer brand. The museum traces Hokkaido's pioneering history alongside brewing development. The Sapporo Beer Garden next door serves Genghis Khan (jingisukan) — lamb grilled on a dome-shaped hotplate, served with Sapporo draft. All-you-can-eat-and-drink sets from ¥4,500.",
+            "tip": "The beer museum tasting room serves Kaitakushi beer — only available here and at the on-site garden. ¥200 per glass is a steal."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Ramen Yokocho & Susukino",
+            "text": "Head to Susukino for Ramen Yokocho (Ramen Alley) — 17 tiny shops in a narrow lane serving Sapporo's signature miso ramen. The broth is thick, rich, and loaded with butter, corn, bean sprouts, and ground pork. Junren (since 1964) is the original. Sapporo miso ramen is a world apart from Tokyo or Fukuoka styles — heavier, warmer, and built for Hokkaido winters. Walk Susukino's neon-lit streets after for bars and nightlife.",
+            "tip": "Sapporo miso ramen tip: add extra butter (¥50–100) and corn (¥100). The combination is why Sapporo ramen is famous worldwide."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Nature & Views — Mountains & Hot Springs",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mount Moiwa Ropeway",
+            "text": "Take the ropeway and mini cable car to the summit of Mount Moiwa (¥2,100 round trip) for the best panoramic view of Sapporo — the city grid stretches to mountains in every direction. On clear days, you can see the Sea of Japan. The summit has an observation deck, a restaurant, and a \"Lovers' Sanctuary\" bell. In winter, the snow-covered city viewed from above is a winter wonderland. Morning visits have the clearest air.",
+            "tip": "Mount Moiwa's night view is rated one of Japan's top three (with Hakodate and Kobe). The ropeway runs until 10pm — both day and night visits are worthwhile."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jozankei Onsen Day Trip",
+            "text": "Bus from Sapporo Station to Jozankei Onsen (¥780, 70 minutes) — a hot spring valley surrounded by forest. Several ryokan offer day-use bathing (¥1,000–2,000) with indoor and outdoor pools (rotenburo) overlooking the Toyohira River gorge. In autumn, the surrounding maple trees turn blazing red — one of Hokkaido's top foliage spots. Free hand and foot baths are scattered along the main street.",
+            "tip": "Jozankei's free foot baths are wonderful — dip your feet while surrounded by autumn foliage or snow-covered trees depending on season."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Soup Curry Dinner",
+            "text": "Soup curry is Sapporo's other signature dish — a light, spicy broth loaded with large chunks of Hokkaido vegetables (potato, carrot, pumpkin, eggplant) and your choice of chicken, pork, or seafood, served with rice on the side. Suage+ and Garaku are two of the best shops (¥1,100–1,500). Choose your spice level (1–40+). The flavors are complex, warming, and uniquely Sapporo.",
+            "tip": "Soup curry spice levels vary wildly between shops. Start at level 3–5 your first time. Garaku near Susukino has the most refined version."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Hokkaido Culture & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Historical Village of Hokkaido",
+            "text": "Bus to the Historical Village of Hokkaido (¥800, 40 minutes from Sapporo) — an open-air museum with 52 relocated historic buildings recreating Hokkaido's pioneer era. Walk through a fishing village, a farm settlement, and a small town, all with period interiors and costumed guides. In winter, horse-drawn sleighs replace the summer horse-drawn carriages. The village captures Hokkaido's rugged frontier spirit beautifully.",
+            "tip": "The Historical Village needs 2–3 hours to explore properly. The fishing village section with restored warehouses is the most atmospheric area."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tanukikoji & Souvenir Shopping",
+            "text": "Return to central Sapporo and walk Tanukikoji — a 1km covered shopping arcade that's been operating since 1873. Buy Hokkaido souvenirs: Shiroi Koibito (White Lover cookies, ¥600–1,300), Royce chocolate (¥700–1,500), LeTAO cheesecake, and Marusei butter sandwiches. Hokkaido dairy products are Japan's finest — the milk, cream, and butter here are noticeably richer. The Tanukikoji shops offer generous tastings.",
+            "tip": "Shiroi Koibito and Royce chocolate are Hokkaido's most gifted souvenirs. Buy at Tanukikoji or the airport — prices are the same."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Jingisukan & Beer",
+            "text": "Your farewell Sapporo dinner should be jingisukan — lamb grilled on a dome-shaped hotplate, Hokkaido's iconic dish named after Genghis Khan. Daruma in Susukino is the most famous spot (¥1,000–2,000 per person, queue expected). The lamb is fresh, not frozen, and the dome shape lets fat drain while the vegetables cook in the juices below. Pair with Sapporo Classic (Hokkaido-only beer) for the perfect farewell.",
+            "tip": "Daruma serves only lamb and nothing else — that's the point. The intensity is part of the charm. Open late, expect smoke-filled clothes."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Sapporo Essentials — Beer, Ramen & Markets",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Nijo Market Seafood Breakfast",
+            "text": "Nijo Market since the 1900s — mountains of king crab, glowing uni, fat scallops, and salmon roe. Choose a restaurant for kaisendon (¥1,500–3,000) — fish that was swimming yesterday. Hokkaido uni is Japan's best, sweet and creamy. The scallops are the size of your palm. This is the breakfast Sapporo is built on.",
+            "tip": "Ask for \"omakase\" (chef's choice) for the best seasonal selection — usually the best value at Nijo Market restaurants."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sapporo Beer Museum & Garden",
+            "text": "Sapporo Beer Museum (free, tastings extra) in the historic red-brick brewery. Japan's oldest beer brand started here in 1877. The Beer Garden next door serves Genghis Khan (jingisukan) — lamb grilled on dome-shaped hotplates with unlimited Sapporo draft. All-you-can-eat-and-drink sets from ¥4,500. The atmosphere is boisterous and communal — long tables, clinking glasses, sizzling meat.",
+            "tip": "Kaitakushi beer in the tasting room is only available here — ¥200 per glass. The museum is free but the beer is the real attraction."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Ramen Yokocho",
+            "text": "Susukino's Ramen Yokocho — 17 tiny shops in a narrow lane. Sapporo's signature miso ramen: thick broth, butter, corn, bean sprouts, ground pork. Junren (since 1964) is the original. Add extra butter and corn for the full experience. Walk Susukino's neon streets for bars and nightlife after your bowl.",
+            "tip": "Add extra butter (¥50–100) and corn (¥100) to your miso ramen — the combination is why Sapporo ramen is famous worldwide."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Mountains & Hot Springs",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mount Moiwa Panorama",
+            "text": "Ropeway and mini cable car to Mount Moiwa summit (¥2,100 return) for Sapporo's best panoramic view — city grid stretching to mountains. Clear days reveal the Sea of Japan. In winter, the snow-covered city from above is magical. Morning visits have the clearest air. The observation deck and restaurant provide comfort while you take in the scenery.",
+            "tip": "Mount Moiwa night view is rated one of Japan's top three. The ropeway runs until 10pm — consider returning for the evening view too."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jozankei Onsen",
+            "text": "Bus to Jozankei (¥780, 70 min) — a hot spring valley in forested mountains. Day-use bathing at ryokan (¥1,000–2,000) with outdoor pools overlooking the Toyohira River gorge. In autumn, the maple foliage is spectacular. In winter, snow-framed rotenburo (outdoor baths) are quintessential Hokkaido. Free foot baths line the main street for those who just want a taste.",
+            "tip": "Jozankei's free foot baths are wonderful — dip your feet surrounded by autumn foliage or snow-covered trees, depending on season."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Soup Curry Night",
+            "text": "Soup curry — Sapporo's signature light, spicy broth loaded with chunky Hokkaido vegetables and chicken, pork, or seafood. Rice on the side. Suage+ and Garaku are top shops (¥1,100–1,500). Choose your spice level. The flavors are complex and warming — built for Hokkaido's long winters but delicious year-round. This dish exists nowhere else in Japan with the same depth.",
+            "tip": "Start at spice level 3–5 your first time. Garaku near Susukino has the most refined version with deep, layered flavors."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Day Trip — Otaru Canal Town",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Otaru Canal & Glassworks",
+            "text": "JR train from Sapporo to Otaru (¥750, 35 minutes). The Otaru Canal, lined with stone warehouses from the early 1900s, is the city's iconic sight — especially beautiful with gas lamps at dusk or covered in snow. Walk through the warehouse district, now converted into cafes and shops. Otaru's glasswork tradition is famous — Kitaichi Glass has stunning galleries and workshops where you can watch glass-blowing (¥1,500 for a workshop).",
+            "tip": "Otaru Canal is most photogenic at dusk when the gas lamps light up. In winter, the snow-covered canal is Hokkaido's most romantic scene."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sushi Street & LeTAO",
+            "text": "Otaru's Sushi Street (Sushiya-dori) has over a dozen sushi restaurants — the port town's proximity to fishing grounds means the fish is extraordinary. A sushi set lunch runs ¥1,500–3,000 and the quality rivals Tokyo at half the price. Walk to LeTAO's original shop for their famous double fromage cheesecake (¥1,836 whole, or ¥350 for a slice). Otaru Music Box Museum has thousands of antique and modern music boxes.",
+            "tip": "Otaru sushi is among the best value in Japan — the same fish quality as Ginza at Sapporo prices. The uni here is outstanding."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Izakaya Night",
+            "text": "Train back to Sapporo by late afternoon. For dinner, try a Sapporo izakaya — order Hokkaido specialties: ika sashimi (squid, caught in nearby waters), zangi (Hokkaido-style fried chicken, crunchier and more seasoned than Tokyo karaage), and jaga-butter (baked potato with butter — Hokkaido potatoes are legendarily good). Wash down with Sapporo Classic, the Hokkaido-exclusive beer that locals refuse to trade for the national version.",
+            "tip": "Ask for Sapporo Classic (サッポロクラシック) at any izakaya — it's the Hokkaido-only version and locals are fiercely proud of it."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Historical Village & Hokkaido Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Historical Village of Hokkaido",
+            "text": "Bus to the Historical Village (¥800, 40 min) — 52 relocated historic buildings recreating Hokkaido's pioneer era. Walk through a fishing village, farm settlement, and small town with period interiors and costumed guides. In winter, horse-drawn sleighs glide between buildings. The village captures Hokkaido's frontier spirit — this was Japan's last frontier, settled barely 150 years ago.",
+            "tip": "The Historical Village needs 2–3 hours. The fishing village section with warehouses is most atmospheric. Winter visits have snow-covered magic."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hokkaido University Campus",
+            "text": "Walk through Hokkaido University's campus — one of Japan's most beautiful. The ginkgo-lined avenue turns brilliant gold in autumn (late October). The Poplar Avenue is equally scenic. The campus is free to walk and has a museum (free). Clark's bust (\"Boys, be ambitious!\" — the university's famous motto from its American founder) is a campus landmark. Lunch at the university co-op cafeteria for a ¥500 set meal.",
+            "tip": "The ginkgo avenue in late October is one of Sapporo's most photographed sights. The golden tunnel of leaves is genuinely magical."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Robatayaki & Local Drinks",
+            "text": "Robatayaki (fireside grilling) is a Hokkaido specialty — seasonal ingredients grilled over charcoal and served on a wooden paddle across the counter. Corn, asparagus, scallops, and lamb are highlights. Try a robatayaki restaurant in Susukino — Daruma Honten (lamb), Torihei (chicken), or any with a charcoal grill visible from the street. Pair with Nikka whisky, distilled in nearby Yoichi.",
+            "tip": "Nikka whisky is distilled just outside Sapporo in Yoichi. Order Nikka Taketsuru or Yoichi single malt — both are world-class Japanese whisky."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Day Trip — Noboribetsu Onsen",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Noboribetsu — Jigokudani (Hell Valley)",
+            "text": "JR train from Sapporo to Noboribetsu (¥4,270 limited express, 75 min). Noboribetsu is Hokkaido's most famous hot spring resort, powered by the volcanic Jigokudani (Hell Valley). Walk the boardwalk trail through steaming, sulfurous craters — the landscape is otherworldly, with boiling mud pots and mineral-stained rock in shades of rust and jade. The smell of sulfur is intense but the scenery is spectacular.",
+            "tip": "The Hell Valley boardwalk is free and takes 30–45 minutes. Continue to the natural footbath at Oyunuma River — free, naturally heated by volcanic springs."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Onsen Bathing",
+            "text": "Noboribetsu has multiple onsen types — Dai-ichi Takimotokan (¥2,250 day use) has 35 different pools sourced from seven different hot spring types. The sulfur pools, iron-rich pools, and mineral-laden pools each have distinct colors and health claims. The outdoor baths (rotenburo) overlooking the forested valley are peak Hokkaido onsen. For a budget option, the public Sagiriyu bathhouse (¥450) is local and authentic.",
+            "tip": "Dai-ichi Takimotokan's 35 pools take 2+ hours to properly experience. The sulfur pool and the outdoor pool with valley views are the highlights."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Zangi Night",
+            "text": "Train back to Sapporo. For dinner, try Hokkaido zangi — the local version of fried chicken, crunchier and more heavily seasoned than Tokyo karaage. Naruto in Otaru claims to have invented it, but Sapporo has excellent versions everywhere. Pair zangi with a Sapporo Classic beer at a local izakaya. The combination of crispy, juicy chicken and cold Hokkaido beer is simple perfection.",
+            "tip": "Zangi is crunchier than regular karaage because of the extra seasoning in the batter. Order it at any izakaya — it's always on the menu in Hokkaido."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Art, Parks & Hidden Sapporo",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Moerenuma Park",
+            "text": "Bus to Moerenuma Park (free) — a vast park designed by sculptor Isamu Noguchi. The park transforms a former garbage dump into geometric art landscape with a glass pyramid, a man-made mountain (Moere Mountain, climb for 360-degree views), and the iconic Sea Fountain that erupts 25 meters on summer afternoons. The design is playful and monumental. In winter, the hills become natural sledding slopes.",
+            "tip": "The Sea Fountain show runs 3–4 times daily in summer (Apr–Oct). Check the schedule — the 25-meter eruption is spectacular."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Maruyama Park & Zoo",
+            "text": "Maruyama Park is Sapporo's equivalent of Central Park — a dense forest with hiking trails and a shrine (Hokkaido Jingu, free). The trail to the summit (226m, 40 minutes) winds through ancient forest. Maruyama Zoo (¥800) nearby has polar bears, red pandas, and snow monkeys — the polar bears are Hokkaido's mascot. The park area has excellent cafes and the local neighborhood is charming.",
+            "tip": "Hokkaido Jingu shrine in Maruyama Park is beautiful year-round but stunning under snow. The forest walk to the shrine is peaceful."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Tanukikoji & Night Parfait",
+            "text": "Walk Tanukikoji arcade — 1km of covered shopping since 1873. Then experience Sapporo's unique \"shime (closing) parfait\" culture — after drinking, Sapporo locals finish the night with an elaborate dessert parfait instead of ramen. Parfait shops in Susukino serve artistic parfaits (¥1,200–1,800) featuring Hokkaido cream, melon, strawberries, and matcha until 3am. It's bizarre, indulgent, and utterly Sapporo.",
+            "tip": "Shime parfait is a genuine Sapporo tradition — Parfaiteria PaL and Noymond Organic Cafe are the top late-night parfait destinations."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Relaxation & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Shiroi Koibito Park",
+            "text": "Metro to Miyanosawa, then walk to Shiroi Koibito Park (¥800) — the factory of Hokkaido's most famous cookie brand. The European-style building has a chocolate museum, cookie decorating workshop (¥1,500), and a charming toy collection. Watch the production line through glass windows. The gardens are manicured and feature a mini rose garden. It's unapologetically touristy but charming.",
+            "tip": "The cookie decorating workshop is fun — you design and bake your own heart-shaped Shiroi Koibito. Book at the entrance."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Final Souvenir Shopping",
+            "text": "Sapporo Station's shopping area has everything — Shiroi Koibito, Royce chocolate (the fresh type that must be refrigerated is the best), LeTAO cheesecake, Marusei butter sandwiches, and Hokkaido melon jelly. The depachika (basement food hall) of Daimaru at Sapporo Station has Hokkaido dairy products, fresh seafood for last-minute eating, and beautifully packaged regional specialties.",
+            "tip": "Royce's \"Nama Chocolate\" (生チョコ, fresh chocolate) needs refrigeration — buy it last and eat it first. It's Hokkaido's best-kept chocolate secret."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Jingisukan",
+            "text": "One last Sapporo meal. Jingisukan at Daruma in Susukino — the smoke, the sizzle, the fresh Hokkaido lamb, and the Sapporo Classic beer. Or return to Nijo Market for a final kaisendon — Hokkaido seafood piled impossibly high on rice. Sapporo is a city that wins you over through your stomach, one bowl of miso ramen and one scallop at a time. The airport is 40 minutes by train — no rush.",
+            "tip": "New Chitose Airport is 37 minutes from Sapporo Station by JR Rapid Airport train (¥1,150). The airport has excellent souvenir shopping too."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Seafood at the source",
+      "text": "Nijo Market kaisendon from ¥1,500 — the same quality fish costs ¥3,000–5,000 in Tokyo. Hokkaido scallops, uni, and crab are at their freshest and cheapest here."
+    },
+    {
+      "title": "Subway day pass",
+      "text": "Sapporo Subway 1-day pass (¥830 weekdays, ¥520 weekends/holidays). Three lines cover the main areas. Individual rides ¥210–380."
+    },
+    {
+      "title": "Free attractions",
+      "text": "Odori Park, Hokkaido University campus, Sapporo Beer Museum (self-guided), Tanukikoji arcade, and neighborhood walks are all free. Nature is Sapporo's main draw."
+    },
+    {
+      "title": "Conbini Hokkaido specials",
+      "text": "Seicomart (Hokkaido's own convenience store chain) has excellent ¥100–300 onigiri, hot snacks, and Hokkaido milk products. Their in-store hot food rivals restaurants."
+    },
+    {
+      "title": "Winter savings",
+      "text": "Accommodation drops significantly outside Snow Festival (Feb) and summer. Spring (Apr–May) and late autumn (Nov) have the best hotel deals."
+    },
+    {
+      "title": "JR Pass day trips",
+      "text": "A Hokkaido Rail Pass (¥6,000 for 1 day flexible) covers Otaru, Noboribetsu, and Asahikawa day trips. Much cheaper than individual tickets."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "¥2,000–4,000",
+      "midrange": "¥6,000–12,000",
+      "splurge": "¥20,000+",
+      "notes": "Hostel/capsule → business hotel → onsen ryokan"
+    },
+    {
+      "category": "Food",
+      "budget": "¥2,000–3,500",
+      "midrange": "¥4,000–7,000",
+      "splurge": "¥12,000+",
+      "notes": "Ramen & conbini → seafood & izakaya → kaiseki & crab"
+    },
+    {
+      "category": "Transport",
+      "budget": "¥400–830",
+      "midrange": "¥1,000–2,500",
+      "splurge": "¥5,000+",
+      "notes": "Subway pass & walking → IC card & bus → taxi & JR express"
+    },
+    {
+      "category": "Activities",
+      "budget": "¥500–1,000",
+      "midrange": "¥2,000–5,000",
+      "splurge": "¥10,000+",
+      "notes": "Free parks & campus → museums & onsen → ski pass & private tours"
+    },
+    {
+      "category": "Drinks",
+      "budget": "¥300–600",
+      "midrange": "¥1,000–2,500",
+      "splurge": "¥5,000+",
+      "notes": "Conbini beer → izakaya → whisky bars"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "¥5,200–9,930",
+      "midrange": "¥14,000–29,000",
+      "splurge": "¥52,000+",
+      "notes": "$35–66 → $93–193 → $347+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "Sapporo Subway has 3 lines — Namboku (green), Tozai (orange), Toho (blue). Get a Sapica card or use ICOCA/Suica for tap-and-go",
+        "JR trains from Sapporo Station connect to Otaru (35 min), Asahikawa (85 min), and New Chitose Airport (37 min)",
+        "The city center (Odori–Susukino–Sapporo Station) is very walkable. Underground passages connect stations in winter — essential in snowstorms"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Pocket WiFi rental at New Chitose Airport (¥500–900/day). eSIMs from Ubigi or Airalo work well throughout Hokkaido",
+        "Google Maps is accurate for Sapporo transit. Download offline maps for day trips to rural areas where signal can be weak",
+        "Free WiFi at subway stations, Sapporo City WiFi hotspots, and most cafes. Coverage is decent but not comprehensive"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cash is essential — many small restaurants, markets, and onsen are cash-only. Carry ¥10,000–20,000. Cards accepted at larger establishments",
+        "7-Eleven and Seicomart ATMs accept foreign cards. Avoid smaller bank ATMs that reject overseas cards",
+        "No tipping in Japan. Prices are as displayed. Service is impeccable without financial incentive"
+      ]
+    },
+    {
+      "icon": "🛂",
+      "title": "Getting to Sapporo",
+      "items": [
+        "New Chitose Airport (CTS) — JR Rapid Airport train to Sapporo Station (¥1,150, 37 min). Airport bus to city center (¥1,100, 70 min)",
+        "From Tokyo: flight (1.5 hours, often cheapest) or Hokkaido Shinkansen to Hakodate + JR to Sapporo (8+ hours total)",
+        "Ferries from Niigata, Sendai, and other ports to Tomakomai or Otaru — overnight crossings with cabins"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Sapporo is extremely safe with negligible crime. The biggest risk is winter cold — temperatures drop to -10°C with heavy snowfall",
+        "No vaccinations required. Tap water is safe and excellent quality — Sapporo's mountain water is among Japan's best",
+        "Winter requires serious preparation — warm layers, waterproof boots, and awareness of icy sidewalks. Frostbite is a real risk below -15°C"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Winter (Dec–Mar): serious cold-weather gear — thermal layers, waterproof insulated boots, gloves, hat, and a warm coat. -10°C is normal",
+        "Summer (Jun–Aug): light clothing but bring a layer — Sapporo evenings cool to 15–18°C even in summer",
+        "Pocket hand warmers (kairo, ¥30 at any convenience store) are essential in winter. Stick-on versions go inside gloves and boots"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🍖",
+      "title": "Jingisukan Culture",
+      "text": "Genghis Khan lamb BBQ is Hokkaido's soul food. The dome-shaped grill lets fat drain while vegetables cook in the juices. Don't be shy — use the provided bib. Your clothes will smell like smoke. That's the experience."
+    },
+    {
+      "icon": "♨️",
+      "title": "Onsen Rules",
+      "text": "Wash thoroughly before entering the bath. No swimsuits. Keep towels out of the water. Tattoos may bar entry — look for tattoo-friendly onsen or use cover-up stickers (sold at some onsen). Silence is appreciated."
+    },
+    {
+      "icon": "❄️",
+      "title": "Winter Survival",
+      "text": "Sapporo gets 5+ meters of snow annually. Use the underground passages between stations. Walk like a penguin on ice (short steps, flat feet). Yakult-sized pocket warmers from konbini are lifesavers."
+    },
+    {
+      "icon": "🍺",
+      "title": "Beer & Whisky",
+      "text": "Hokkaido takes its brewing seriously. Sapporo Classic (Hokkaido-only) is a point of local pride. Nikka whisky from nearby Yoichi is world-class Japanese whisky. Ask for local recommendations at bars."
+    },
+    {
+      "icon": "🥢",
+      "title": "Dining Etiquette",
+      "text": "Slurping ramen is expected and appreciated. Eating at speed in ramen shops is normal — linger at izakayas, not noodle counters. Say \"gochisousama deshita\" (thank you for the meal) when leaving any restaurant."
+    },
+    {
+      "icon": "🐻",
+      "title": "Hokkaido Identity",
+      "text": "Hokkaido has a distinct identity from \"mainland\" Japan — more frontier spirit, less formal hierarchy. The Ainu indigenous culture is increasingly recognized. Bear awareness is real in rural areas — carry a bell on hikes."
+    }
+  ],
+  "title": "Sapporo Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Sapporo guide for young travelers. 3-day itinerary with miso ramen, seafood markets, hot springs, beer, and snow culture. Plan your trip with roammate.",
+  "heroImage": "/images/guides/sapporo-hero.webp",
+  "heroFlag": "🇯🇵",
+  "heroCountry": "Japan",
+  "heroRegion": "East Asia",
+  "heroCity": "Sapporo",
+  "heroSubtitle": "Hokkaido's snow-dusted capital where the ramen is richer, the beer is colder, and the seafood is pulled from waters so clean the scallops taste like butter.",
+  "budgetIntro": "Daily costs per person in JPY. Sapporo is affordable by Japanese standards — incredible seafood at market prices and Hokkaido's generous portions keep budgets comfortable.",
+  "culturalIntro": "Hokkaido has its own distinct culture within Japan — more rugged, more generous, and deeply connected to the land, sea, and seasons.",
+  "ctaCity": "Sapporo",
+  "ctaText": "Find travel companions for Otaru day trips, onsen adventures, and jingisukan BBQ nights on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Jun – Sep Best"
+  ],
+  "defaultDays": 3
+}

@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "calanques",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EUR (Euro)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "French",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "CET (UTC+1)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Jun, Sep – Oct",
+      "detail": "Comfortable temperatures, lower crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$30–60 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Schengen Zone",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Calanques Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Calanques",
+            "text": "Begin your day at Calanques early to beat the crowds and catch the best light. The area is most atmospheric in the morning when the air is cool and the landscape catches the first golden rays. Take time to explore the main highlights and capture photographs in the soft morning light. This is the most rewarding time to visit.",
+            "tip": "Arrive as early as possible — the first hour after opening has the fewest visitors and the best photography conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Deeper Exploration",
+            "text": "Spend the afternoon exploring further afield. Follow the trails deeper into the landscape for more secluded viewpoints and quieter corners. Grab lunch at a local eatery for authentic flavours and budget-friendly prices.",
+            "tip": "Midday sun can be intense — bring sunscreen, a hat, and plenty of water. Rest during the hottest hours if needed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Out Before Dark",
+            "text": "Hike back to the trailhead well before sunset — the Calanques trails are steep, rocky, and completely unlit after dark. Once out of the park, drive or bus into Cassis for a harbourside seafood dinner, or head back to Marseille for a wider choice of restaurants. Fresh-caught sea bream and a glass of Cassis white wine on the port is the perfect way to end a day in the calanques.",
+            "tip": "Allow at least 90 minutes for the hike out from any calanque. The trails are harder to navigate in fading light and the rocky descents become slippery."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Marseille & Calanque de Morgiou",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Calanque de Morgiou — The Fishermen's Cove",
+            "text": "Take bus 23 from Marseille's Rond-Point du Prado to the Luminy campus, then hike 45 minutes through garrigue scrubland on the GR98 trail to Calanque de Morgiou. This narrow inlet ends in a tiny working fishing village — a handful of colourful boats, a single restaurant, and limestone walls soaring 200 metres on either side. Swim in the impossibly clear turquoise water while local fishermen haul nets at the far end. Arrive before 10am before day-trippers descend.",
+            "tip": "Note that access to Calanques is restricted June–September on high fire-risk days — check the Parc National website before hiking. Regulations change daily."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Le Lunch at Restaurant Nautic & Rock Climbing",
+            "text": "Restaurant Nautic at Morgiou serves the best bouillabaisse in the Calanques — a fisherman's stew of local rockfish, saffron broth, and rouille on toast that takes 2 hours to prepare properly (booking essential, ~€35 per person). After lunch, watch climbers on the limestone faces above — the Calanques are France's premier sea-cliff climbing destination with over 1,000 routes. Several outfitters in Luminy offer half-day intro climbing sessions from ~€40.",
+            "tip": "Restaurant Nautic requires advance booking and only opens in summer. In shoulder season, carry a packed lunch — there are no other facilities inside the calanque."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Marseille Vieux-Port & Bouillabaisse",
+            "text": "Return to Marseille for the evening. Walk the Vieux-Port waterfront where fishing boats unload the day's catch alongside the morning fish market tables. Pick up a pastis at a terrace bar — the anise-flavoured aperitif is Marseille's drink of choice, diluted 5:1 with ice water until it clouds milky. Eat at one of the brasseries along Cours Julien, the bohemian neighbourhood behind the port, where menus offer three courses for €15–20.",
+            "tip": "The Vieux-Port metro stop (line 1) connects to Marseille Saint-Charles station in 10 minutes. Avoid walking alone in poorly lit side streets around the port late at night."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Calanque de Sugiton & Sea Kayaking",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sugiton Calanque — Double Inlet Hike",
+            "text": "Sugiton is the most architecturally dramatic calanque — two narrow inlets separated by a knife-edge limestone ridge, with the Torpilleur rock stack rising from the sea. The trail from Luminy campus takes 40 minutes one-way through dense rosemary and cistus. The main inlet has a small pebble beach and exceptionally clear water; the smaller Pierres Tombées inlet to the south is reachable by a scramble and rewards you with complete solitude even in July.",
+            "tip": "Arrive at Luminy car park before 8am in summer — the car park fills completely and the road is closed to traffic once it's full. No exceptions are made."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sea Kayak — Marseille to En-Vau",
+            "text": "Rent sea kayaks from Marseille's Pointe Rouge marina and paddle east along the coast — the only way to access several calanques that have no hiking trail entry. Paddle through the narrow entrance of Calanque de l'Ours, past the Ile Riou bird sanctuary where Yelkouan shearwaters nest on the cliffs, and into the broad Calanque de Callelongue. Experienced paddlers can reach Calanque d'En-Vau, widely regarded as the most beautiful of all — sheer white walls enclosing a brilliant green-blue pool. Allow 4 hours.",
+            "tip": "Kayak rental from ~€25 per half-day at Pointe Rouge. Check weather — the Mistral wind can make coastal paddling dangerous with no warning. Stay close to shore."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cassis Harbour at Sunset",
+            "text": "Drive or take the navette shuttle to Cassis, the charming fishing port at the eastern end of the Calanques National Park. The harbour is lined with pastel-coloured houses, fishing boats, and seafood restaurants. Order a bottle of Cassis Blanc — the local AOC white wine produced on the limestone slopes above the town, made mostly from Marsanne and Clairette grapes — and a plate of tellines, tiny local clams steamed in white wine and garlic. Cassis is far less touristy than Marseille.",
+            "tip": "Cassis is 30km from Marseille. The shuttle boat from Marseille's Pointe Rouge marina runs in summer (€30 return). By car, park at the upper car parks — the port fills completely."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "En-Vau & Cassis by Boat",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Calanque d'En-Vau — The Crown Jewel",
+            "text": "En-Vau is the most spectacular calanque and the hardest to reach on foot — 2.5 hours from the Gardiole car park via the GR98, or 1.5 hours from Port-Miou via a challenging ridge scramble. The reward is a cathedral of white limestone cliffs 300 metres tall enclosing a narrow cove of emerald water and a small pebble beach. Arrive before 9am — by midday in summer, 200 people are packed onto a beach designed for 30, making the early-morning timing transformative.",
+            "tip": "Bring everything you need — water, food, sun protection, shoes suitable for rocky scrambling. There are zero facilities at En-Vau. The approach trail is not marked consistently."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Boat Trip — The Three Calanques from Cassis",
+            "text": "Catch an afternoon boat tour from Cassis port — the classic \"Three Calanques\" trip visits Port-Miou, Port-Pin, and En-Vau by sea in 45 minutes (€18). The boat passes through the narrow entrance of En-Vau revealing the full cliff amphitheatre that is impossible to appreciate from inside. A \"Five Calanques\" option extends further west to Oule and Devenson, wild and rarely visited inlets with no beach access but extraordinary cliff photography. Boats run hourly in summer.",
+            "tip": "Buy boat tickets at the Cassis waterfront kiosks — no advance booking needed outside peak July–August. The trip runs in most weather except strong Mistral winds above 40km/h."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cassis Market & Train Back to Marseille",
+            "text": "Cassis holds a small market Wednesday and Friday mornings, but even on other evenings the village streets above the port are worth wandering — local art galleries, a Provençal fabric shop, and several excellent fromageries selling aged tomme and chèvre. Pick up a bottle of Cassis wine to take home from the Cave du Château, next to the medieval castle above the town. The train from Cassis station to Marseille Saint-Charles takes 25 minutes (€4.60) and runs until 10pm.",
+            "tip": "Cassis station is a 25-minute walk from the port — allow enough time or take the local bus. Last trains fill quickly on summer weekends; check the SNCF app in advance."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book ahead online",
+      "text": "Tickets and tours booked online are often 10-30% cheaper than walk-in prices. Many attractions sell out in peak season — advance booking guarantees entry and saves money."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "Shoulder months (just before or after peak season) offer better prices on accommodation and flights with similar weather and fewer crowds. Apr – Jun is peak."
+    },
+    {
+      "title": "Stay nearby, not at the gate",
+      "text": "Accommodation directly at the attraction charges a premium. Staying 10-20 minutes away can save 30-50% on nightly rates. Use public transport or a rental car to bridge the gap."
+    },
+    {
+      "title": "Pack your own lunch",
+      "text": "Tourist-area restaurants charge inflated prices. Pack sandwiches, snacks, and a refillable water bottle to save $15-30 per day on food. Buy supplies at local supermarkets or markets."
+    },
+    {
+      "title": "Free walking tours & guides",
+      "text": "Many areas offer free or tip-based guided walks that are better than paid tours. Local guides provide insider knowledge and support the community. Check online for options."
+    },
+    {
+      "title": "Use local transport",
+      "text": "Taxis and private transfers are the most expensive option. Local buses, shared minivans, or ride-sharing are 50-80% cheaper and give you a more authentic experience."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$25–60",
+      "midrange": "$70–150",
+      "splurge": "$200+",
+      "notes": "Hostels → guesthouses → boutique lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–60",
+      "splurge": "$70+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Public buses → shared transfers → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$20–60",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$30–50",
+      "notes": "Combined tickets save money"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$75–190",
+      "midrange": "$165–370",
+      "splurge": "$430+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Schengen Zone",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Entry fees for Calanques should be paid in EUR — exchange money before arriving"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential",
+        "Bring a basic first aid kit with blister plasters, antiseptic, painkillers, and any personal medication",
+        "Sun protection is essential — apply SPF 50+ and reapply every 2 hours"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Excellent public transport — trains, buses, and ferries connect major points",
+        "Download offline maps before arriving — mobile data coverage can be patchy in remote areas",
+        "Negotiate transport prices before departure or use metered taxis and ride-hailing apps"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card at the airport or any phone shop for affordable data — much cheaper than international roaming",
+        "WiFi is available at most accommodation but signal quality varies. Download offline maps and guides before heading to remote areas",
+        "Share your itinerary with someone at home and check in daily, especially for remote treks or island visits"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: EUR (Euro). Cards accepted in tourist areas, but carry cash for local vendors",
+        "ATMs are available in towns and cities. Visa and Mastercard are most widely accepted",
+        "Tip 5-10% or round up at restaurants. Guides and porters appreciate tips — budget $5-10 per day per person"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable walking shoes, layers for temperature changes, and a packable rain jacket",
+        "A reusable water bottle, headlamp, and portable phone charger are essential for any outdoor adventure",
+        "Quick-dry clothing is ideal — you can wash and wear repeatedly, reducing pack weight"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Local Customs",
+      "text": "Be mindful of local customs and traditions. Ask before photographing people. Learn basic greetings in the local language — even a simple hello earns goodwill."
+    },
+    {
+      "icon": "🌍",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish. Stay on marked trails and paths. Do not touch, feed, or disturb wildlife. The natural beauty of Calanques depends on every visitor treating it with respect. Take only photos, leave only footprints."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals, especially in indigenous or traditional communities. Many religious sites have photography restrictions — check signage and respect these rules. Drone regulations vary — check local laws before flying."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn a few words in French — greetings, please, thank you, and numbers go a long way. English is widely spoken in tourist areas but a translation app helps bridge gaps."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned guesthouses, restaurants, and guides over international chains. Buy handicrafts directly from artisans. Your spending has the most impact when it goes directly into the local economy rather than through large tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace & Patience",
+      "text": "Allow more time than you think — rushing through natural and cultural sites misses the point. The best experiences come from slowing down and being present."
+    }
+  ],
+  "title": "Calanques Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Calanques guide for young travelers. Nature, adventure, exploration with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/calanques-hero.webp",
+  "heroFlag": "🇫🇷",
+  "heroCountry": "France",
+  "heroRegion": "Europe",
+  "heroCity": "Calanques",
+  "heroSubtitle": "Dramatic limestone fjords plunging into turquoise Mediterranean waters between Marseille and Cassis — France's most spectacular coastal national park.",
+  "budgetIntro": "Daily costs per person in US dollars. Calanques costs depend on season, accommodation style, and activity choices — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Calanques is a natural wonder — approach with curiosity and respect, and you will be rewarded with one of the most memorable experiences of your travels.",
+  "ctaCity": "Calanques",
+  "ctaText": "Find travel companions to explore Calanques together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "1-Day Hike",
+    "Nature",
+    "Apr – Jun Best"
+  ],
+  "defaultDays": 1
+}

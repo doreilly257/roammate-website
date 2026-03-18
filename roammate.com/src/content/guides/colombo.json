@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "colombo",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "LKR (Sri Lankan Rupee)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Sinhala / Tamil",
+      "detail": "English widely spoken"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "IST (UTC+5:30)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Dec – Mar",
+      "detail": "Dry season on the west coast"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$20–50 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ETA / Visa on Arrival",
+      "detail": "Free ETA for many nationalities"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Colombo Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gangaramaya Temple & Beira Lake",
+            "text": "Start your day at Gangaramaya Temple, one of Colombo's most important and visually striking Buddhist temples. The complex is an eclectic fusion of Sri Lankan, Thai, Indian, and Chinese architectural styles, packed with a remarkable collection of Buddha statues, precious stones, ivory, and religious artefacts accumulated over a century. The adjacent Seema Malaka meditation centre floats on Beira Lake — a timber pavilion surrounded by water, connected to shore by a wooden walkway, designed by the renowned architect Geoffrey Bawa.",
+            "tip": "Visit Gangaramaya early in the morning when the monks perform their daily chanting. Dress modestly with shoulders and knees covered. Photography is allowed but remove shoes before entering temple halls."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pettah Market & Colombo Fort",
+            "text": "Plunge into Pettah, Colombo's chaotic and exhilarating market district. The narrow streets are crammed with vendors selling everything — spices, electronics, textiles, gold jewellery, fresh produce, and household goods in a sensory overload of colours, sounds, and smells. Each street specialises in a different trade. From Pettah, walk west into Colombo Fort — the old colonial district with the restored Dutch Hospital shopping precinct (now home to upscale restaurants and boutiques), the President's House, and the Lighthouse Clock Tower.",
+            "tip": "Pettah is best on weekday mornings when the market is at full intensity. Keep valuables secure in the crowds. The spice and tea streets are the most photogenic."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Galle Face Green Sunset & Kottu Roti",
+            "text": "Walk along Galle Face Green, Colombo's beloved oceanfront promenade that stretches 500m along the Indian Ocean. As the sun sets, the green fills with families, kite flyers, cricket players, and food vendors selling isso wade (shrimp fritters), corn on the cob, and ice cream. Find a street food stall and order kottu roti — Sri Lanka's iconic dish of chopped flatbread stir-fried with vegetables, eggs, and spices on a hot griddle, rhythmically chopped with metal cleavers in a distinctive clanging soundtrack.",
+            "tip": "The food stalls on the northern end of Galle Face Green serve the best street food. Kottu roti costs 300-600 LKR and the fresh shrimp fritters (isso wade) at 50 LKR each are not to be missed."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Gangaramaya, Pettah & Galle Face",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gangaramaya Temple Complex",
+            "text": "Begin at Gangaramaya Temple in the heart of Colombo — a sprawling Buddhist temple complex that defies the usual aesthetic minimalism of Buddhist architecture. The main vihara (temple hall) houses hundreds of Buddha images from across Asia, while the museum wing contains an almost overwhelming collection of religious and secular artefacts: vintage cars, mechanical toys, coins, ivory, and gifts from heads of state alongside sacred relics. Walk across the wooden bridge to the Seema Malaka floating meditation pavilion on Beira Lake — a peaceful Geoffrey Bawa-designed structure surrounded by water.",
+            "tip": "Gangaramaya is free to enter but donations are appreciated. The temple museum upstairs is easy to miss — ask a monk for directions. The Navam Perahera festival in February is the biggest annual event."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pettah Bazaar & Dutch Hospital",
+            "text": "Dive into Pettah, the pulsating market district east of the Fort area. The gridded streets each specialise in a different trade — Main Street for textiles and electronics, Keyzer Street for gold, Cross Street for spices and tea, and the produce streets for towering displays of tropical fruit. The noise, colour, and energy are intoxicating. After the market, walk to the Dutch Hospital — a beautifully restored 17th-century building that is now Colombo's most atmospheric dining and shopping venue, with boutiques and restaurants set around a colonial courtyard.",
+            "tip": "Pettah prices are the lowest in Colombo — this is where locals shop. Bargaining is expected. Buy Ceylon tea and spices here at a fraction of tourist shop prices."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Galle Face Green & Sunset Kottu",
+            "text": "Head to Galle Face Green for sunset — Colombo's most beloved public space, a long ocean-facing lawn where the city comes together every evening. The sky over the Indian Ocean turns dramatic shades of orange and pink while families fly kites, couples stroll, and street food vendors fire up their griddles. Order kottu roti — the rhythmic chopping of flatbread on hot metal is Colombo's signature sound — and wash it down with a king coconut (thambili) fresh from the shell.",
+            "tip": "Stay after dark — Galle Face is safe and lively in the evenings. The Galle Face Hotel's colonial verandah bar serves cocktails with ocean views if you want to upgrade from street food."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "National Museum, Colombo 7 & Mount Lavinia",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "National Museum & Viharamahadevi Park",
+            "text": "Visit the National Museum of Colombo in the leafy Cinnamon Gardens neighbourhood (Colombo 7). The white colonial building houses an excellent collection spanning Sri Lanka's rich history — Anuradhapura-era stone carvings, Kandyan crown jewels, ancient manuscripts on ola (palm) leaves, and colonial-period artefacts. The surrounding Viharamahadevi Park is Colombo's largest, with flowering trees, a golden Buddha statue, and shaded walking paths — a welcome green escape from the city heat.",
+            "tip": "The National Museum entry is 600 LKR. The ground floor galleries (stone carvings and bronze work) are the most impressive. Photography is allowed without flash."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mount Lavinia Beach",
+            "text": "Take a tuk-tuk or train south to Mount Lavinia (30 minutes) — Colombo's favourite beach escape. The golden sand beach stretches along the coast below the colonial Mount Lavinia Hotel, originally the governor's mansion. Swim in the warm Indian Ocean, watch local fishermen hauling in nets, and eat fresh grilled seafood at one of the beach shacks. The atmosphere is local and family-friendly, with none of the tourist-resort feel of the south coast.",
+            "tip": "The train from Colombo Fort to Mount Lavinia takes 30 minutes and costs under 50 LKR — one of the cheapest and most scenic commuter rides in Asia. Sit on the ocean side."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Colombo 7 Dining & Nightlife",
+            "text": "The Colombo 7 area (Cinnamon Gardens) and the adjacent Park Street/Mews area are the centre of Colombo's growing culinary scene. Restaurants range from traditional rice-and-curry joints to innovative fusion cuisine, craft cocktail bars, and rooftop lounges. Try a traditional Sri Lankan rice and curry — a plate of rice surrounded by 6-8 small curries including fish, chicken, dhal, pol sambol (coconut relish), and an array of vegetable preparations. The diversity and depth of Sri Lankan curry is a revelation.",
+            "tip": "Ministry of Crab at the Dutch Hospital is Colombo's most famous restaurant (book well ahead). For budget rice and curry, the local restaurants on Galle Road serve full plates for 400-800 LKR."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Kelaniya Temple, Independence Square & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kelaniya Raja Maha Vihara",
+            "text": "Take a tuk-tuk 11km northeast to Kelaniya Raja Maha Vihara, one of the most sacred Buddhist temples in Sri Lanka. According to tradition, the Buddha himself visited this site on the banks of the Kelani River during his third visit to the island. The temple complex features extraordinary 20th-century murals by the celebrated artist Solias Mendis, depicting the life of the Buddha and key moments in Sri Lankan Buddhist history. The decorative dagoba (stupa) and the image house with its reclining Buddha are deeply atmospheric.",
+            "tip": "Kelaniya is most vibrant during the Duruthu Perahera festival in January. Visit on a poya (full moon) day for the most active worship. Dress modestly and remove shoes."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Independence Square & Cinnamon Gardens",
+            "text": "Return to Colombo's civic heart — Independence Square, the grand open space where Sri Lanka declared independence in 1948. The Independence Memorial Hall, modelled after the Audience Hall of the Kandyan kings, stands at the centre. Walk through the surrounding Cinnamon Gardens neighbourhood — the most elegant part of Colombo with tree-lined avenues, colonial mansions, art galleries, and the Barefoot boutique (famous for handwoven textiles). This area showcases Colombo's aspirational, modern side alongside its colonial heritage.",
+            "tip": "The Barefoot Gallery and shop on Galle Road is a Colombo institution — handwoven fabrics, books, and a courtyard cafe that is the social hub for the city's creative community."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Colombo Evening",
+            "text": "Spend your last evening exploring one of Colombo's emerging neighbourhood food scenes — the street food stalls around Maradana for authentic hoppers (crispy rice-flour crepe bowls), string hoppers (steamed rice noodle nests), and egg rotis, or the restaurants along Marine Drive for seafood with ocean views. Colombo is a city in rapid transformation — confident, multicultural, and increasingly sophisticated, with a food culture that deserves far more international recognition than it currently receives.",
+            "tip": "For hoppers, head to any neighbourhood hopper shop in the early evening (5-8pm). Egg hoppers cost 50-100 LKR each and are best eaten with dhal and pol sambol. This is the quintessential Sri Lankan street meal."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Fort District",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrival in Colombo",
+            "text": "Arrive at Bandaranaike International Airport (35km north of the city) and take the airport expressway taxi or bus to central Colombo (1-1.5 hours depending on traffic). Check into your guesthouse in the Colombo 3 (Kollupitiya) or Colombo 7 (Cinnamon Gardens) area — both are well-connected and central. Colombo's first impression is busy and tropical — tuk-tuks weaving through traffic, tropical trees lining the roads, and the warmth of the Indian Ocean climate.",
+            "tip": "Pre-book an airport taxi at the counter inside the arrivals hall (fixed rate 3500-4000 LKR to Colombo). Avoid freelance taxi touts outside. Alternatively, the airport bus is 150 LKR but slow."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Colombo Fort District",
+            "text": "Explore the Fort district — Colombo's colonial administrative centre, now a mix of grand old buildings and modern commercial towers. The Dutch Hospital (restored as a shopping and dining complex), the Lighthouse Clock Tower, the Grand Oriental Hotel, and the red-and-white striped Jami Ul-Alfar Mosque (one of the most photographed buildings in Sri Lanka) are all within walking distance. The Fort area captures Colombo's layered history — Portuguese, Dutch, British, and independent Sri Lankan influences visible on every street.",
+            "tip": "The Jami Ul-Alfar Mosque (Red Mosque) in Pettah is open to visitors outside prayer times. Dress modestly and ask permission before entering. Photography of the exterior is freely permitted."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Welcome Dinner & Galle Face",
+            "text": "Head to Galle Face Green for your first Colombo sunset and street food experience. The ocean-facing promenade fills with families and food vendors as the light fades. Try isso wade (shrimp fritters), kottu roti, and fresh king coconut. The sound of kottu being chopped on hot griddles, the salt air from the Indian Ocean, and the buzz of Colombo's evening social life create an unforgettable first impression.",
+            "tip": "Galle Face street food is safe and excellent. Budget 500-1000 LKR for a full street food dinner. The area is well-lit and safe in the evenings."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Gangaramaya, Beira Lake & Pettah",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Gangaramaya Temple & Seema Malaka",
+            "text": "Spend a full morning exploring Gangaramaya Temple — one of Colombo's most fascinating religious sites. The main temple, the museum of Buddhist artefacts and curiosities, and the floating Seema Malaka meditation pavilion on Beira Lake (designed by Geoffrey Bawa) deserve at least 2 hours. Walk around Beira Lake — once a Dutch-era canal system, now a peaceful urban lake surrounded by temples, parkland, and the increasingly modern Colombo skyline.",
+            "tip": "Combine Gangaramaya with a walk around Beira Lake — the Gangarama Seema Malaka is on the lake and the surrounding path is shaded and peaceful."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pettah Market Deep Dive",
+            "text": "Spend the afternoon lost in Pettah — Colombo's oldest and most vibrant market district. Each street specialises: Main Street for textiles, Cross Street for spices, Keyzer Street for gold jewellery, and 5th Cross Street for fresh produce. The energy is relentless — vendors shouting, trolleys loaded with goods, and the smell of spices mixing with diesel fumes. Buy Ceylon tea (the best deals in Sri Lanka), whole spices, and curry powders at wholesale prices. Pettah is where Colombo reveals its unfiltered, multicultural character.",
+            "tip": "Carry small LKR notes in Pettah — vendors cannot always change large bills. Bargaining is expected on everything except food. The tea shops on Cross Street sell premium Ceylon tea at a fraction of airport prices."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Dutch Hospital Dining",
+            "text": "Have dinner at the Dutch Hospital precinct in the Fort area — the beautifully restored 17th-century colonial hospital is now Colombo's most atmospheric dining venue. Restaurants line the open courtyard with cuisine ranging from traditional Sri Lankan rice and curry to seafood, craft beer, and cocktails. The Ministry of Crab, run by celebrity chefs, serves Sri Lankan crab in a colonial-era setting — one of the country's most celebrated restaurants.",
+            "tip": "Book Ministry of Crab at least 2-3 days in advance — it is Colombo's most in-demand table. Budget options in the Dutch Hospital include the Colombo Fort Cafe for excellent coffee and light meals."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "National Museum & Cinnamon Gardens",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "National Museum of Colombo",
+            "text": "Visit Sri Lanka's premier museum in the elegant white colonial building in Colombo 7. The collection spans the island's 2,500-year recorded history — Anuradhapura and Polonnaruwa stone sculptures, the Kandyan crown jewels, ancient ola leaf manuscripts, colonial-era maps and weapons, and natural history galleries. The stone carvings on the ground floor are particularly outstanding — guard stones, moonstones, and Buddhist relief panels that rank among the finest examples of Sinhalese art.",
+            "tip": "Entry is 600 LKR. The museum is air-conditioned — a welcome relief from Colombo's heat. Allow 2 hours for a thorough visit. The natural history section upstairs has interesting Sri Lankan endemic wildlife displays."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Cinnamon Gardens & Geoffrey Bawa Walk",
+            "text": "Explore Colombo 7 (Cinnamon Gardens), the city's most elegant neighbourhood. Walk tree-lined streets past colonial mansions, embassies, and art galleries. Visit the Barefoot Gallery — a legendary Colombo institution combining a handwoven textile shop, bookstore, and courtyard cafe. Architecture enthusiasts should visit the Geoffrey Bawa house at Number 11 (by appointment) — the home-studio of Sri Lanka's most influential architect, a masterwork of tropical modernism that rewrote the rules of living with nature.",
+            "tip": "The Barefoot Cafe is the gathering place for Colombo's creative community — excellent coffee, light meals, and a curated book collection. The adjacent shop sells beautiful handloom textiles."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Independence Square & Arcade",
+            "text": "Walk to Independence Square at sunset — the grand civic space where Sri Lanka's independence was declared in 1948. The Independence Memorial Hall is modelled after the Kandyan Audience Hall and is beautifully lit in the evening. The surrounding Arcade Independence Square is a modern dining and retail complex with international and local restaurants, a cinema, and cafes — Colombo's vision of its contemporary, cosmopolitan future.",
+            "tip": "Independence Square is a popular evening gathering spot for Colombo's young professionals. The Arcade restaurants are mid-range priced and offer a good variety of cuisines."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Kelaniya Temple, Dehiwala & Wellawatte",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kelaniya Raja Maha Vihara",
+            "text": "Travel to Kelaniya Temple (11km northeast), one of the holiest Buddhist sites in Sri Lanka, believed to have been visited by the Buddha himself. The temple murals by Solias Mendis are among the most significant modern religious artworks on the island — vivid, detailed panels depicting the life of the Buddha and Sri Lankan Buddhist history covering the interior walls. The dagoba (stupa), the Bo tree, and the reclining Buddha image house create a deeply atmospheric sacred space on the banks of the Kelani River.",
+            "tip": "Kelaniya is an active worship site — visit early for the most spiritual atmosphere. Poya (full moon) days see the largest gatherings. Dress modestly and remove shoes."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Dehiwala Zoo & Wellawatte Beach",
+            "text": "Head south to the Dehiwala Zoo — one of Asia's oldest zoological gardens with a good collection of Sri Lankan wildlife including elephants, leopards, and birds. Continue to Wellawatte, a vibrant Tamil neighbourhood with a different cultural character from the Sinhalese-majority areas. The Wellawatte beachfront is popular with locals for evening walks, and the surrounding streets are filled with South Indian restaurants, Hindu temples, and textile shops.",
+            "tip": "Wellawatte's South Indian restaurants serve exceptional vegetarian thali meals, dosas, and idli at very low prices (200-400 LKR). The food is authentically Tamil and different from Sinhalese cuisine."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Colombo Rooftop Bars",
+            "text": "Colombo has a growing rooftop bar scene with views across the city skyline and the Indian Ocean. Sky Lounge at the Kingsbury, ON14 at the Hilton, and Cinnamon Red's rooftop all offer cocktails with panoramic views. The evening atmosphere in Colombo is increasingly cosmopolitan — a mix of locals and travellers enjoying the tropical night air, cold Lion beer, and arrack cocktails.",
+            "tip": "Rooftop bars in Colombo typically have a smart-casual dress code — no flip-flops or beach wear. Cocktails cost 1500-3000 LKR. Happy hour deals are available at most venues."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Negombo Day Trip — Lagoon & Fish Market",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Negombo Fish Market",
+            "text": "Take a train or bus north to Negombo (40km, 1.5 hours) — a fishing town famous for its massive fish market. The Negombo fish market (Lellama) is one of the largest in Sri Lanka — arrive early to see the catch being unloaded from outrigger boats and laid out on the ground in glistening rows of tuna, swordfish, prawns, squid, and crabs. The auction is loud, colourful, and utterly fascinating. The surrounding streets have a strong Catholic Portuguese heritage visible in the churches, shrines, and colonial architecture.",
+            "tip": "The fish market is most active between 6-9am. Arrive as early as possible for the full spectacle. The smell is intense — wear clothes you do not mind getting fishy."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Negombo Lagoon & Dutch Canal",
+            "text": "Explore the Negombo Lagoon by boat — a large tidal lagoon connected to the sea, fringed with mangroves and used by traditional fishermen who still deploy Chinese-style fishing nets. The Dutch Canal, built in the 17th century to transport cinnamon from the interior to the coast, runs through Negombo and can be explored by boat or bicycle. The lagoon birdlife is excellent — herons, kingfishers, and cormorants populate the mangrove edges.",
+            "tip": "Lagoon boat tours cost 2000-3000 LKR for a 2-hour trip. Combine with a bicycle ride along the canal for a full afternoon of exploration."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Negombo Beach & Seafood",
+            "text": "Negombo's long beach stretches north of the town with fishing boats pulled up on the sand and a string of seafood restaurants along the shore. Have dinner of fresh-caught fish grilled on the beach — the quality is exceptional given the proximity to the fish market. Return to Colombo by evening train or stay overnight in a beach guesthouse if you prefer a quieter pace.",
+            "tip": "The seafood restaurants on Negombo beach are tourist-priced but the fish is genuinely fresh from that morning's catch. Ask the waiter what was caught today and order that."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Colombo Food Trail & Markets",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Morning Hopper Tour",
+            "text": "Dedicate a morning to Sri Lanka's greatest breakfast tradition — hoppers. These crispy bowl-shaped rice-flour crepes are cooked in small curved pans and served with dhal, coconut sambol, and seeni sambol (caramelised onion relish). Egg hoppers with a runny yolk in the centre are the classic. String hoppers — steamed nests of rice noodles — are the other morning staple. Visit 2-3 neighbourhood hopper shops in the Colombo 4 or 5 area for a full breakfast crawl that will change your understanding of Sri Lankan cuisine.",
+            "tip": "Hopper shops open at 6am and often sell out by 9am. Each hopper costs 30-80 LKR. The string hopper + dhal + pol sambol combination is the perfect Sri Lankan breakfast."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Manning Market & Good Market",
+            "text": "Visit Manning Market, Colombo's wholesale fruit and vegetable market — a massive covered hall filled with towering displays of tropical produce: rambutan, mangosteen, wood apple, jak fruit, dragon fruit, and over a dozen varieties of banana. On Saturdays, the Good Market at the Racecourse grounds in Colombo 7 is an artisanal farmers' market with organic produce, local food stalls, craft vendors, and live music. Both markets offer an authentic window into Colombo's food culture.",
+            "tip": "Manning Market is open daily but busiest early in the morning. Good Market runs Saturdays 9am-2pm — the food stalls serve excellent organic Lankan cuisine."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rice & Curry Feast",
+            "text": "Seek out the most authentic rice and curry experience in Colombo — a traditional packet lunch (rice and 5-8 curries wrapped in a banana leaf) or a sit-down rice and curry spread at a local restaurant. The variety of curries is extraordinary: chicken, fish, dhal, potato, beetroot, bitter gourd, jackfruit, murunga (drumstick), and accompaniments like papadam, pickles, and coconut sambol. Each curry uses a different spice blend roasted fresh. This is the heart and soul of Sri Lankan cuisine.",
+            "tip": "The best rice and curry in Colombo is at no-frills local restaurants. A full plate costs 400-800 LKR. The lunchtime packets (wrapped in banana leaf) are the freshest option — available 11am-2pm at most local eateries."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Mount Lavinia & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mount Lavinia Beach",
+            "text": "Take the coastal train south to Mount Lavinia — a 30-minute scenic ride along the ocean for under 50 LKR. Mount Lavinia is Colombo's beach escape — a wide golden sand beach below the colonial Mount Lavinia Hotel (formerly the British governor's seaside residence). Swim in the warm Indian Ocean, watch local fishermen at work, and eat freshly grilled prawns at a beach shack. The atmosphere is local and family-friendly with few international tourists.",
+            "tip": "The Colombo-Mount Lavinia train runs frequently from Colombo Fort station. Sit on the ocean side (right side heading south) for stunning coastal views. Beach shack lunches cost 500-1000 LKR."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last-Minute Shopping & Souvenirs",
+            "text": "Return to Colombo for final shopping. The best souvenirs from Sri Lanka are: Ceylon tea (buy loose-leaf at Pettah market or from Dilmah and Mlesna shops), cinnamon (Sri Lanka produces the world's finest true cinnamon), handwoven textiles from Barefoot, batik prints, and wooden masks from traditional crafts shops. The Odel department store in Colombo 7 has a good selection of Sri Lankan-designed clothing and handicrafts under one roof.",
+            "tip": "Buy Ceylon tea at the Mlesna Tea Centre on Galle Road or in Pettah market — prices are 50-70% cheaper than at the airport duty-free shops."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Galle Face Sunset",
+            "text": "End your Colombo week where you started — at Galle Face Green for a final sunset over the Indian Ocean. Order one last plate of kottu roti from the street vendors, sip a king coconut, and reflect on a city that surprises every visitor. Colombo is not just a transit point — it is a vibrant, multicultural, increasingly confident capital with a food culture and cultural depth that rewards those who take the time to explore it properly.",
+            "tip": "Allow 2 hours to reach Bandaranaike Airport from central Colombo — traffic can be severe, especially during rush hour (4-7pm). Pre-book an airport taxi through your hotel."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Eat rice and curry packets",
+      "text": "Lunchtime rice and curry packets (wrapped in banana leaf) at local restaurants cost 400-800 LKR for a full meal. They are fresh, filling, and the most authentic way to eat in Colombo."
+    },
+    {
+      "title": "Use tuk-tuks with PickMe",
+      "text": "Download the PickMe app for metered tuk-tuk rides — it prevents overcharging and is cheaper than negotiating with drivers on the street. Most rides in central Colombo cost 200-500 LKR."
+    },
+    {
+      "title": "Take the train for day trips",
+      "text": "Sri Lankan trains are incredibly cheap (30-100 LKR for local journeys) and scenic. The Colombo-Mount Lavinia coastal line is one of the best short train rides in Asia."
+    },
+    {
+      "title": "Buy tea and spices in Pettah",
+      "text": "The Pettah market sells premium Ceylon tea and spices at wholesale prices — 50-70% cheaper than tourist shops, the airport, or Barefoot. Stock up here for gifts and personal supply."
+    },
+    {
+      "title": "Stay in guesthouses in Colombo 3-5",
+      "text": "The Kollupitiya (3), Bambalapitiya (4), and Havelock (5) neighbourhoods have excellent budget guesthouses from $10-20 per night, well-connected by bus to all major sights."
+    },
+    {
+      "title": "Eat street food at Galle Face",
+      "text": "Galle Face Green street food is safe, delicious, and cheap — a full meal of kottu roti, isso wade, and king coconut costs 500-800 LKR. This is local dining at its best."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$8–15",
+      "midrange": "$25–60",
+      "splurge": "$100+",
+      "notes": "Guesthouse → boutique hotel → luxury hotel"
+    },
+    {
+      "category": "Food",
+      "budget": "$5–12",
+      "midrange": "$12–25",
+      "splurge": "$35+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$2–5",
+      "midrange": "$5–15",
+      "splurge": "$20+",
+      "notes": "Bus/train → tuk-tuk → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$2–5",
+      "midrange": "$5–15",
+      "splurge": "$25+",
+      "notes": "Self-guided → guided tours → private tours"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$2–5",
+      "midrange": "$5–10",
+      "splurge": "$10–15",
+      "notes": "Most temples are free or donation-based"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$20–50",
+      "midrange": "$55–130",
+      "splurge": "$200+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Electronic Travel Authorization (ETA) required before travel — apply online at eta.gov.lk. Free for many nationalities since 2024",
+        "Visa on Arrival is also available but the ETA queue is faster. Apply at least 48 hours before departure",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Tap water is not safe to drink — use bottled water or filtered water from your hotel",
+        "Dengue fever is present in Colombo — use insect repellent and wear long sleeves at dawn and dusk",
+        "Colombo is generally safe for tourists. Normal urban precautions apply — watch for pickpockets in crowded areas like Pettah"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Tuk-tuks are the primary transport — use the PickMe or Uber apps for metered fares and avoid overcharging",
+        "Colombo buses are extremely cheap (20-50 LKR) but crowded and confusing for first-timers. Routes are numbered but not well-signed",
+        "The coastal train line from Colombo Fort to Mount Lavinia and beyond is scenic, cheap, and reliable"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a Dialog or Mobitel SIM card at the airport — data packages are cheap (1000 LKR for 10GB, valid 30 days)",
+        "WiFi is widely available at hotels, cafes, and restaurants in Colombo. Coverage is good throughout the city",
+        "Download the PickMe app for tuk-tuks and Google Maps for offline navigation before heading out"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: LKR (Sri Lankan Rupee). ATMs are plentiful — Commercial Bank and HNB have the most reliable international ATMs",
+        "Cards are accepted at hotels, upscale restaurants, and tourist shops. Cash is needed for tuk-tuks, markets, and street food",
+        "Tipping is appreciated but not mandatory — 10% at restaurants, 100-200 LKR for tuk-tuk drivers on longer journeys"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Light, breathable clothing — Colombo is hot and humid year-round (27-32°C). Cotton and linen are ideal",
+        "A light rain jacket or umbrella — afternoon showers are common even outside monsoon season",
+        "Modest clothing for temples — shoulders and knees must be covered. Carry a sarong or scarf for quick cover-ups"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Buddhist & Hindu Etiquette",
+      "text": "Remove shoes before entering temples and homes. Dress modestly with shoulders and knees covered. Do not pose with your back to Buddha statues or touch sacred objects. Treat all religious sites with quiet reverence."
+    },
+    {
+      "icon": "🌍",
+      "title": "Multicultural Respect",
+      "text": "Colombo is a multicultural city — Sinhalese Buddhist, Tamil Hindu, Muslim, and Christian communities coexist. Respect each community's practices, festivals, and places of worship. Sri Lanka's diversity is its strength."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing people, especially at religious sites and in markets. Some temples prohibit photography inside worship areas — check signage. Never photograph military installations or government buildings."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language Basics",
+      "text": "Learn basic Sinhala: \"ayubowan\" (hello/may you live long), \"istuti\" (thank you), \"kohomada\" (how are you). In Tamil areas: \"vanakkam\" (hello). English is widely spoken but local greetings are warmly received."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Businesses",
+      "text": "Choose locally-owned guesthouses, restaurants, and shops over international chains. Buy handicrafts and tea directly from Sri Lankan producers. Your spending has the most impact when it reaches local families and communities."
+    },
+    {
+      "icon": "🕐",
+      "title": "Island Time",
+      "text": "Sri Lanka operates at a relaxed pace. Buses and trains may run late, meals take time to prepare, and nothing happens in a rush. Embrace the pace — the best experiences come from slowing down and enjoying the journey."
+    }
+  ],
+  "title": "Colombo Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Colombo guide for young travelers. Temples, markets, street food, and colonial heritage with 1, 3, and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/colombo-hero.webp",
+  "heroFlag": "🇱🇰",
+  "heroCountry": "Sri Lanka",
+  "heroRegion": "South Asia",
+  "heroCity": "Colombo",
+  "heroSubtitle": "Sri Lanka's vibrant capital where Buddhist temples meet colonial architecture, Pettah's chaotic markets, and the world's best kottu roti on the Indian Ocean.",
+  "budgetIntro": "Daily costs per person in US dollars. Colombo offers good value for a capital city — these ranges cover budget backpacker to comfortable mid-range travel.",
+  "culturalIntro": "Colombo is a multicultural, multi-faith city where Buddhist, Hindu, Muslim, and Christian communities coexist — approach every neighbourhood with curiosity and respect.",
+  "ctaCity": "Colombo",
+  "ctaText": "Find travel companions to explore Colombo together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day City",
+    "Cultural",
+    "Dec – Mar Best"
+  ],
+  "defaultDays": 3
+}

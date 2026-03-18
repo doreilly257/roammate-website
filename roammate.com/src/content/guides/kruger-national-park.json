@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "kruger-national-park",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "ZAR (Rand)",
+      "detail": "1 USD ≈ 18 ZAR"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Afrikaans",
+      "detail": "English widely spoken in camps"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "SAST (UTC+2)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "May – Sep",
+      "detail": "Dry season, thinner bush, easier spotting"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~R1,200–2,500",
+      "detail": "Self-drive budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 90 days",
+      "detail": "Most Western nationalities"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Kruger Highlights — Dawn to Dusk Safari",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sunrise Game Drive from Phalaborwa or Orpen Gate",
+            "text": "Enter through Phalaborwa Gate at first light (around 5:30am in summer, 6am in winter). The first two hours after sunrise are prime time — animals are active and the golden light is spectacular. Drive the H14 towards Letaba Camp, scanning the Olifants River crossings for elephants, hippos, and crocodiles. Stop at viewpoints along the river for photography.",
+            "tip": "Fill up at the gate petrol station — distances between rest camps are 50–100km and there are no roadside services."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Letaba to Olifants — Big Cat Country",
+            "text": "Lunch at Letaba Rest Camp cafeteria (R60–100 for a burger or toasted sandwich). Check the sightings board at reception — staff pin locations of recent big five sightings updated by other visitors. Drive the S46 and S93 gravel roads between Letaba and Olifants — these quieter routes wind through mixed bushveld where leopards drape across marula trees and lions rest in the shade.",
+            "tip": "Gravel roads (S-roads) are slower but have far fewer vehicles. This is where the best sightings happen."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Olifants Camp Lookout & Braai",
+            "text": "Olifants Rest Camp sits on a cliff 100 metres above the Olifants River — arguably the best viewpoint in Kruger. Watch elephants crossing the river below as the sun sets. Buy meat packs and firewood from the camp shop (R80–120 for boerewors and steak) and braai at your campsite or bungalow. The night sounds of hyenas and impala alarm calls are the soundtrack.",
+            "tip": "Book Olifants in advance — it is the most popular camp. Failing that, try the satellite camp Balule nearby."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Southern Kruger — Big Five Hotspot",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Enter via Crocodile Bridge Gate — River Loop",
+            "text": "Enter through Crocodile Bridge Gate at opening time. The southern section is Kruger's most wildlife-dense area. Drive the S25 along the Crocodile River — this road is legendary for lion prides and large herds of buffalo. Hippos wallow in every river pool. Stop at the Hippo Pool viewpoint for guaranteed sightings of hippos, crocodiles, and waterbirds.",
+            "tip": "Southern Kruger is busiest — arrive at the gate 15 minutes before opening to be first in and avoid convoy driving."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Lower Sabie & Lake Panic",
+            "text": "Drive to Lower Sabie Rest Camp for lunch at the Mugg & Bean restaurant overlooking the Sabie River (R80–140). After eating, walk to the Lake Panic bird hide — a short boardwalk leads to a hide overlooking a small dam teeming with herons, kingfishers, and goliath herons. In winter, elephants and buffalo drink metres away from the hide.",
+            "tip": "Lake Panic hide is free and inside the camp fence — one of Kruger's best-kept secrets for close wildlife encounters."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Drive from Lower Sabie",
+            "text": "Book a guided sunset/night drive from Lower Sabie (R305 per person, book at reception on arrival). Open-top safari vehicles with spotlights venture into areas closed to self-drivers after dark. Expect bushbabies with glowing eyes, genets, spotted hyenas, and if you are lucky, leopard or African wild cat. The guide shares fascinating nocturnal ecology stories.",
+            "tip": "Night drives depart 30 minutes before gate closing — book the moment you arrive at camp as they fill up fast."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Central Kruger — Elephants & River Crossings",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sunrise Drive to Skukuza",
+            "text": "Leave Lower Sabie at dawn heading north on the H4-1 tar road. This stretch follows the Sabie River and is consistently rated Kruger's best road for wildlife diversity. Expect elephants at Nkuhlu picnic spot, leopards in the riverine forest, and white rhinos grazing the open plains. Pull over at every bridge crossing — animals congregate at water.",
+            "tip": "Drive slowly (max 40km/h on tar, 25km/h on gravel) — rushing is the biggest mistake visitors make in Kruger."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Skukuza Camp & Stevenson-Hamilton Memorial",
+            "text": "Lunch at Skukuza's Cattle Baron restaurant (R120–200 for mains) or the more affordable camp shop takeaway. Visit the Stevenson-Hamilton Memorial Library — a small museum honouring Kruger's first warden. Walk the camp's river-facing path where monkeys play in the trees and warthogs trot along the fence. Stock up on supplies at the well-stocked camp shop.",
+            "tip": "Skukuza is Kruger's biggest camp — it has an ATM, fuel station, car wash, and even a golf course."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Bush Braai & Star Gazing",
+            "text": "Buy a braai pack from the Skukuza butchery (R100–160 for steak and boerewors). Light up at your campsite and cook under the stars while listening to the bush. Skukuza's lack of light pollution makes for incredible stargazing — the Milky Way stretches overhead. Join the camp's guided bush braai experience if available (R450, includes game drive and dinner).",
+            "tip": "Download the SkySafari app before you arrive — the Kruger night sky is perfect for identifying constellations."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Northern Kruger — Wilderness & Baobabs",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Satara to Olifants — Lion Territory",
+            "text": "Drive north from Skukuza through Satara — the central grasslands around Satara are Kruger's best lion country. The open savanna means big cats are easier to spot here than in the denser south. Take the S100 gravel road east of Satara where cheetahs hunt on the open plains. Continue north towards Olifants, stopping at every waterhole.",
+            "tip": "Satara area has the highest lion density in Kruger — spend extra time on the S100 and S36 roads nearby."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Olifants River Viewpoint & Balule",
+            "text": "Arrive at Olifants Rest Camp and head straight to the main viewpoint — the panoramic cliff-edge view over the Olifants River is breathtaking. Watch elephant herds, hippos, and crocodiles from 100 metres above. Have lunch at the camp restaurant (R90–150) with this view as your backdrop. If time allows, visit tiny Balule satellite camp nearby for its intimate bushveld atmosphere.",
+            "tip": "Binoculars are essential at Olifants — the river below is wide and animals can be distant but spectacular to watch."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Letaba Elephant Museum & Farewell Braai",
+            "text": "Drive to Letaba Rest Camp and visit the Elephant Hall museum — free entry, with the tusks of the \"Magnificent Seven\" legendary bull elephants on display. The museum explains elephant ecology and Kruger's conservation history. Final braai at Letaba's riverside campsites. Exit via Phalaborwa Gate the next morning, or continue further north into the remote Punda Maria section.",
+            "tip": "Letaba is quieter than Skukuza or Lower Sabie — perfect for a peaceful final night in the bush."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Self-drive saves thousands",
+      "text": "Renting a car and self-driving Kruger is dramatically cheaper than guided safaris. A rental sedan handles all tar roads, and most gravel roads are manageable in a standard car — no 4x4 needed for 90% of the park."
+    },
+    {
+      "title": "Camp shop braais over restaurants",
+      "text": "Every rest camp has a shop selling meat, boerewors, rolls, and firewood. A braai dinner for two costs R150–200 versus R400+ at a camp restaurant. Cooking over an open fire is also quintessentially South African."
+    },
+    {
+      "title": "Book SANParks campsites early",
+      "text": "Camping at SANParks sites costs R330–440 per site versus R1,000–2,200 for bungalows. Sites include braai stands, shared ablution blocks, and power points. Book 11 months ahead at sanparks.org for peak season."
+    },
+    {
+      "title": "Fill up and stock up outside the park",
+      "text": "Fuel and groceries are 10–20% cheaper in towns like Nelspruit, Hoedspruit, or Hazyview than inside the park. Fill your cooler box before entering and top up fuel at the gate stations."
+    },
+    {
+      "title": "Wild Card annual pass",
+      "text": "If visiting for more than 5 days or planning to visit other SANParks reserves, the Wild Card (R965 for individuals, R1,640 for couples) pays for itself and includes unlimited entry to all South African national parks for a year."
+    },
+    {
+      "title": "Free activities add up",
+      "text": "Sightings boards, bird hides, viewpoints, nature trails, and self-guided drives are all free. The best wildlife sightings cost nothing — patience and early mornings are your most valuable assets in Kruger."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "R330–440",
+      "midrange": "R1,000–2,200",
+      "splurge": "R3,500–8,000",
+      "notes": "Camping vs bungalows vs private lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "R150–250",
+      "midrange": "R300–500",
+      "splurge": "R600–1,200",
+      "notes": "Braai self-catering vs camp restaurants vs lodge dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "R200–350",
+      "midrange": "R350–500",
+      "splurge": "R800–1,500",
+      "notes": "Self-drive fuel vs guided drives vs private safaris"
+    },
+    {
+      "category": "Activities",
+      "budget": "R0–305",
+      "midrange": "R305–575",
+      "splurge": "R1,000–3,000",
+      "notes": "Self-drive free, night drives R305, bush walks R575"
+    },
+    {
+      "category": "Park Entry",
+      "budget": "R440",
+      "midrange": "R440",
+      "splurge": "Included",
+      "notes": "Daily conservation fee per adult (foreign visitors)"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "R1,120–1,785",
+      "midrange": "R2,395–4,215",
+      "splurge": "R5,900–13,700",
+      "notes": "Per person sharing — huge range depending on style"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🚗",
+      "title": "Getting There",
+      "items": [
+        "Fly to Kruger Mpumalanga International (KMIA) or Hoedspruit Airport",
+        "Drive from Johannesburg: 4–5 hours via N4/N12",
+        "Main gates: Numbi, Phabeni, Crocodile Bridge, Malelane, Orpen, Phalaborwa"
+      ]
+    },
+    {
+      "icon": "🎟️",
+      "title": "Entry & Permits",
+      "items": [
+        "Daily conservation fee: R440/adult (foreign), R110/adult (SA resident)",
+        "Gate hours: sunrise to sunset (varies monthly)",
+        "No permit needed beyond entry fee — just book accommodation"
+      ]
+    },
+    {
+      "icon": "💊",
+      "title": "Health & Safety",
+      "items": [
+        "Kruger is a malaria zone — take prophylaxis (consult doctor 2 weeks before)",
+        "Stay in your vehicle at all times except at designated rest stops",
+        "Carry a first aid kit — nearest hospitals are outside the park"
+      ]
+    },
+    {
+      "icon": "📦",
+      "title": "What to Pack",
+      "items": [
+        "Binoculars, camera with zoom lens, bean bag for car-window stabilisation",
+        "Neutral-coloured clothing (khaki, brown, green)",
+        "Warm layers for early morning drives — winter mornings drop to 5°C"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Cell signal available at most rest camps (Vodacom/MTN best)",
+        "No Wi-Fi in most camps — some have paid hotspots",
+        "Download offline maps (Maps.me) before entering the park"
+      ]
+    },
+    {
+      "icon": "⛽",
+      "title": "Fuel & Supplies",
+      "items": [
+        "Fuel stations at main gates and large rest camps (Skukuza, Satara, Letaba)",
+        "Camp shops stock basics: ice, braai meat, bread, snacks, cold drinks",
+        "ATMs at Skukuza and Letaba only — bring cash for smaller camps"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🦁",
+      "title": "Respect wildlife distance",
+      "text": "Never leave your vehicle outside designated areas. Maintain at least 20 metres from elephants and never get between a mother and calf. Animals are wild and unpredictable — a car is your best hide."
+    },
+    {
+      "icon": "🚙",
+      "title": "Road etiquette matters",
+      "text": "Do not block the road at sightings — pull over to the side. Keep your engine off when stationary near animals. If others are already at a sighting, wait your turn and do not crowd in aggressively."
+    },
+    {
+      "icon": "🕐",
+      "title": "Gate times are strict",
+      "text": "If you are caught outside a rest camp after gate closing time, you receive a heavy fine (R2,500+). Plan your afternoon drives to return at least 30 minutes before closing. Gate times change monthly."
+    },
+    {
+      "icon": "🗑️",
+      "title": "Leave no trace",
+      "text": "Do not throw any food or litter from your vehicle — baboons and monkeys learn to associate cars with food, which leads to aggressive behaviour and eventual culling. Keep windows closed at monkey-heavy stops."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support local communities",
+      "text": "Buy crafts from community markets outside the park gates rather than mass-produced souvenirs inside. Many lodges and camps employ staff from surrounding communities — tipping R20–50 per day for camp cleaners is appreciated."
+    },
+    {
+      "icon": "📸",
+      "title": "Ethical photography",
+      "text": "Never use flash photography near animals — it can startle them and cause dangerous reactions. Do not use drones in the park (strictly illegal). Share sightings locations responsibly to avoid overcrowding sensitive areas."
+    }
+  ],
+  "title": "Kruger National Park Travel Guide 2026 — Safari Itinerary | roammate",
+  "description": "Plan your Kruger National Park safari with our 1, 3, and 7-day self-drive itineraries. Budget tips, Big Five game drives, rest camp guides, and practical advice for young travellers exploring South Africa's greatest wilderness.",
+  "heroImage": "/images/guides/kruger-national-park-hero.webp",
+  "heroFlag": "🇿🇦",
+  "heroCountry": "South Africa",
+  "heroRegion": "Africa",
+  "heroCity": "Kruger National Park",
+  "heroSubtitle": "Africa's most accessible Big Five safari — self-drive through 20,000 square kilometres of bushveld, river valleys, and open savanna teeming with wildlife.",
+  "budgetIntro": "Kruger is one of Africa's most affordable safari destinations — self-driving and camping can bring daily costs under R1,500 per person while still delivering world-class Big Five game viewing.",
+  "culturalIntro": "Kruger's rules exist to protect both wildlife and visitors. Respecting these guidelines ensures the park remains pristine for future generations and keeps you safe in genuine African wilderness.",
+  "ctaCity": "Kruger National Park",
+  "ctaText": "Ready to plan your Kruger safari? From self-drive camping routes to luxury lodge itineraries, roammate helps you build the perfect bush experience.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "7-Day Itinerary",
+    "Safari & Wildlife",
+    "May–Sep Best"
+  ],
+  "defaultDays": 1
+}

@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { allGuides, cityGuideSlugs } from '../../data/guides';
+import { getAllGuides, getCityGuideSlugs } from '../../data/guides';
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const allGuides = await getAllGuides();
+  const cityGuideSlugs = await getCityGuideSlugs();
   return allGuides
     .filter((guide) => cityGuideSlugs.has(guide.slug))
     .map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));

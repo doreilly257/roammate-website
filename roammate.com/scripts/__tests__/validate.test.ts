@@ -3,7 +3,6 @@ import { readdirSync, readFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { validate } from "../validate.ts";
-import { allGuides, backpackerRoutes } from "../../src/data/guides.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "../..");
@@ -18,9 +17,31 @@ function loadBlogPostsFromJson(): any[] {
   });
 }
 
+function loadGuideSlugsFromJson(): Set<string> {
+  const contentDir = resolve(ROOT, "src/content/guides");
+  const files = readdirSync(contentDir).filter((f) => f.endsWith(".json"));
+  const slugs: string[] = [];
+  for (const file of files) {
+    const data = JSON.parse(readFileSync(resolve(contentDir, file), "utf-8"));
+    if (data.type === "city") slugs.push(data.slug);
+  }
+  return new Set(slugs);
+}
+
+function loadRouteSlugsFromJson(): Set<string> {
+  const contentDir = resolve(ROOT, "src/content/guides");
+  const files = readdirSync(contentDir).filter((f) => f.endsWith(".json"));
+  const slugs: string[] = [];
+  for (const file of files) {
+    const data = JSON.parse(readFileSync(resolve(contentDir, file), "utf-8"));
+    if (data.type === "backpacker") slugs.push(data.slug);
+  }
+  return new Set(slugs);
+}
+
 const blogPosts = loadBlogPostsFromJson();
-const guideSlugs = new Set(allGuides.map((g) => g.slug));
-const routeSlugs = new Set(backpackerRoutes.map((r) => r.slug));
+const guideSlugs = loadGuideSlugsFromJson();
+const routeSlugs = loadRouteSlugsFromJson();
 
 describe("validate", () => {
   it("passes on current (known-good) state", () => {

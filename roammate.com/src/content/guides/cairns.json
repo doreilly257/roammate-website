@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "cairns",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "AUD (Dollar)",
+      "detail": "Cards widely accepted"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English",
+      "detail": "Multicultural locals"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "AEST (UTC+10)",
+      "detail": "No daylight saving in QLD"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jun – Oct",
+      "detail": "Dry season, clear skies, no stingers"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$50–100 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ETA / eVisitor",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Cairns Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Great Barrier Reef Snorkelling",
+            "text": "Board an early reef boat from Cairns Marina for the 90-minute cruise to the outer Great Barrier Reef. The morning departure gets you onto the reef before the wind picks up and visibility drops. Snorkel over coral gardens teeming with parrotfish, clownfish, giant clams, and sea turtles in water so clear you can see 20 metres down. Most day trips visit two or three reef sites with introductory diving options available for certified and first-time divers alike.",
+            "tip": "Book an outer reef trip rather than an inner reef one — the coral is healthier, the fish more abundant, and the visibility dramatically better. Reef Fleet Terminal opens at 7am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Esplanade Lagoon & Boardwalk",
+            "text": "Back on land by mid-afternoon, cool off in the Cairns Esplanade Lagoon — a free public saltwater swimming pool right on the waterfront. The surrounding boardwalk stretches 2.5km along the mudflats with interpretive signs about the mangrove ecosystem, wading birds, and saltwater crocodiles that inhabit the estuary. Grab fish and chips from one of the takeaway shops along the Esplanade and eat on the grass overlooking Trinity Inlet.",
+            "tip": "Cairns has no swimmable beach in the city centre — the Esplanade Lagoon is where locals swim. It is patrolled by lifeguards and free year-round."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cairns Night Markets",
+            "text": "Spend the evening at the Cairns Night Markets on the Esplanade. Over 130 stalls sell everything from handmade jewellery and Aboriginal art to crocodile leather goods and tropical fruit smoothies. The food court serves pad thai, laksa, fresh reef fish tacos, and wood-fired pizza at backpacker-friendly prices. The atmosphere is relaxed and social — this is where travellers meet after a day on the reef.",
+            "tip": "The night markets open at 4:30pm daily. Arrive early for the best food stalls and grab a table in the open-air food court before it fills up."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Great Barrier Reef Adventure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Outer Reef Snorkelling & Diving",
+            "text": "Depart Cairns Marina at 8am on a fast catamaran to the outer Great Barrier Reef — the world's largest coral reef system stretching over 2,300km along the Queensland coast. The outer reef sites like Agincourt, Flynn, and Norman reefs offer the healthiest coral and clearest water. Snorkel over massive bommies (coral towers) rising from the sandy seabed, swim alongside green sea turtles, spot whitetip reef sharks resting under ledges, and hover over gardens of staghorn and brain coral pulsing with neon-coloured fish.",
+            "tip": "Wear a stinger suit even in dry season — it protects against jellyfish and sunburn simultaneously. Most boats provide them free of charge."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Glass-Bottom Boat & Coral Viewing",
+            "text": "After lunch on the pontoon platform moored at the reef, join a glass-bottom boat tour or semi-submersible vessel for a dry-feet view of the coral below. Giant Maori wrasse — the reef's friendliest residents — often approach the boat. Marine biologists on board explain the reef ecosystem, coral bleaching challenges, and the conservation work underway. Spend the return journey on the upper deck watching for dolphins riding the bow wake and humpback whales breaching during migration season (June to September).",
+            "tip": "If you want to try scuba diving for the first time, book an introductory dive on the boat — no certification needed and instructors guide you the entire time. Around $50-80 extra."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cairns Esplanade & Waterfront Dining",
+            "text": "Back in Cairns by late afternoon, take a sunset stroll along the Esplanade boardwalk. The mudflats glow orange at low tide and flocks of egrets and herons pick through the shallows. Dinner at one of the waterfront restaurants on the Pier — try barramundi, a flaky white fish that is the quintessential North Queensland dish, or salt-and-pepper crocodile for something adventurous. The Pier Bar has live music most nights.",
+            "tip": "Cairns restaurants often have early bird specials before 6pm. The backpacker strip on Shields Street has $10-15 meal deals with a drink included."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Daintree Rainforest & Cape Tribulation",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Daintree River Cruise & Crocodile Spotting",
+            "text": "Drive 90 minutes north of Cairns to the Daintree River — the boundary between the developed coast and the ancient Daintree Rainforest, a 180-million-year-old ecosystem that predates the Amazon. Board a small wildlife cruise boat and glide silently along the river looking for saltwater crocodiles basking on mudbanks, azure kingfishers darting between mangrove roots, and tree snakes draped over branches. The river is home to an estimated 80 crocodiles and morning is the best time to spot them sunning.",
+            "tip": "Book the earliest cruise departure (usually 7am or 8am) — crocodiles are cold-blooded and most active basking in the morning sun. Afternoon tours see fewer animals."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Cape Tribulation Beach & Rainforest Walks",
+            "text": "Cross the Daintree River on the cable ferry and drive deeper into the rainforest to Cape Tribulation — the only place on Earth where two World Heritage sites meet: the Great Barrier Reef and the Wet Tropics Rainforest. Walk the elevated boardwalks through the dense canopy where fan palms, strangler figs, and ancient cycads tower overhead. Cape Tribulation Beach itself is a dramatic crescent of sand backed by jungle, with reef fringing the shore just metres from the treeline.",
+            "tip": "Do not swim at Cape Tribulation — saltwater crocodiles inhabit the creek mouths and estuaries along this coast. Admire the beach but stay out of the water."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Jungle Walk",
+            "text": "The Daintree comes alive after dark. Join a guided night walk through the rainforest with a local naturalist who uses UV torches and red-filtered headlamps to reveal creatures invisible during the day: tree kangaroos, sugar gliders, green tree frogs, giant orb-weaver spiders, and the luminescent glow of bioluminescent fungi on rotting logs. The soundscape after dark is extraordinary — a wall of insect and frog calls that drowns out all other noise.",
+            "tip": "Wear long sleeves and pants for the night walk — the mosquitoes are fierce after dark. Apply tropical-strength repellent with DEET before entering the forest."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Kuranda Village & Atherton Tablelands",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kuranda Scenic Railway",
+            "text": "Board the Kuranda Scenic Railway at Cairns station for one of Australia's most spectacular train journeys. The heritage carriages climb 328 metres through 15 hand-carved tunnels and over dozens of bridges as the track winds through the Barron Gorge National Park. The train pauses at Barron Falls station for photographs of the waterfall — thundering in wet season, a thin veil in dry season. The 34km journey takes about two hours and delivers you to the village of Kuranda perched on the rainforest plateau above Cairns.",
+            "tip": "Sit on the left side of the train heading up for the best views of Barron Gorge and the falls. Gold Class costs more but includes a window seat guarantee and refreshments."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kuranda Markets & Skyrail Return",
+            "text": "Kuranda village is a laid-back rainforest community with heritage markets operating since 1978. Browse the original Kuranda Markets and the Heritage Markets for handmade crafts, Aboriginal didgeridoos, local honey, and tropical fruit ice cream. Visit the Butterfly Sanctuary — the largest in Australia — where thousands of Ulysses blue butterflies and birdwing butterflies fly freely around you. Return to Cairns on the Skyrail Rainforest Cableway — a 7.5km gondola ride that floats just above the canopy with stops at two mid-stations for boardwalk nature trails.",
+            "tip": "Do the train up and the Skyrail down — this gives you the best views in both directions. Combo tickets save 15-20% over buying separately."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Atherton Tablelands Swimming Holes",
+            "text": "On the drive back from Kuranda, detour inland to the Atherton Tablelands — the elevated plateau behind Cairns dotted with volcanic crater lakes, waterfalls, and freshwater swimming holes. Stop at Josephine Falls for a swim in crystal-clear pools surrounded by giant boulders and rainforest, or drive further to Millaa Millaa Falls — one of Australia's most photographed waterfalls where you can swim right up to the cascading curtain of water. Return to Cairns for a final dinner on the Esplanade.",
+            "tip": "The Tablelands are significantly cooler than Cairns — bring a light jacket. Josephine Falls has natural rock slides but check conditions before sliding as water levels vary."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Cairns City Exploration",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Cairns Botanic Gardens & Tanks Arts Centre",
+            "text": "Start your week gently at the Cairns Botanic Gardens — 38 hectares of tropical rainforest, palm collections, and a conservatory housing rare orchids and ferns from the Wet Tropics. The adjacent Tanks Arts Centre occupies three enormous World War II fuel storage tanks converted into galleries and performance spaces. The Centenary Lakes section has elevated boardwalks through paperbark swamp where you can spot water dragons and azure kingfishers from just metres away.",
+            "tip": "The Botanic Gardens are free and open from 7:30am. The early morning walk through the rainforest section is cool and peaceful before the heat builds."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Esplanade Lagoon & Mudflat Boardwalk",
+            "text": "Spend the afternoon at the Cairns Esplanade Lagoon — the city's free saltwater pool surrounded by tropical gardens and barbecue areas. Swim laps in the patrolled pool or lounge on the grassy banks overlooking Trinity Inlet. Walk the 2.5km boardwalk along the mudflats at low tide and watch for saltwater crocodile warning signs — the estuary is genuine crocodile habitat. The boardwalk interpretive panels explain the mangrove ecosystem and the migratory shorebirds that travel from Siberia to feed here each year.",
+            "tip": "The Esplanade Lagoon is cleaned and refreshed daily. Free barbecue facilities are available — pick up supplies from Woolworths on Abbott Street."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Markets & Backpacker Strip",
+            "text": "Explore the Cairns Night Markets for dinner — the food court has dozens of stalls serving cuisines from across Asia and Australia at backpacker-friendly prices. Afterwards, wander along Shields Street — the main backpacker strip — where hostels, pubs, and late-night eateries create a social atmosphere. Woolshed and Gilligan's are the main nightlife spots popular with the backpacker crowd.",
+            "tip": "Many Cairns hostels organise free shuttle buses to nightlife venues. Ask at reception for the nightly schedule and drink deals."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Great Barrier Reef Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Outer Reef Snorkelling",
+            "text": "Board an early catamaran from the Reef Fleet Terminal for the outer Great Barrier Reef. The 90-minute journey reaches reef sites with the healthiest coral and clearest visibility — up to 25 metres on a calm day. Snorkel over coral bommies teeming with parrotfish, angelfish, clownfish hiding in anemones, and massive Maori wrasse that approach divers without fear. Keep an eye out for green sea turtles gliding gracefully through the blue and whitetip reef sharks resting under coral ledges.",
+            "tip": "Choose an outer reef trip over an inner reef one — the coral quality and marine life are significantly better, worth the extra 30 minutes of travel time."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Intro Dive & Pontoon Platform",
+            "text": "After the morning snorkel, try an introductory scuba dive from the reef pontoon — no certification required. Instructors brief you on the platform, fit your gear, and guide you underwater for a 20-minute dive to 6-12 metres where the coral formations are enormous and the fish variety staggering. Between dives, the pontoon has an underwater observatory, glass-bottom boats, and sun decks for relaxing. Lunch is served on board — usually a buffet with tropical fruits, salads, and barbecued prawns.",
+            "tip": "Introductory dives cost $50-80 extra on top of the reef trip. If you enjoy it, consider doing an open water certification course over the next few days."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Waterfront Dinner & Sunset",
+            "text": "Return to Cairns Wharf by late afternoon. Walk along the marina boardwalk past the luxury superyachts and fishing charter boats. Dinner at one of the restaurants on the Pier — try reef fish prepared with tropical Asian flavours, or salt-and-pepper crocodile as a local delicacy. Watch the sun set over the mountains behind Cairns from the waterfront park as fruit bats stream overhead by the thousands — a nightly spectacle unique to tropical North Queensland.",
+            "tip": "The Prawn Star is a trawler permanently moored at the marina that sells fresh seafood straight from the boat — prawns, oysters, bugs, and beer on the deck."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Daintree Rainforest & Cape Tribulation",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Daintree River Wildlife Cruise",
+            "text": "Drive north to the Daintree River and join a dawn wildlife cruise along the tea-coloured waterway. The Daintree Rainforest is 180 million years old — the oldest continuously surviving tropical rainforest on Earth. The river cruise reveals saltwater crocodiles sunning on mudbanks, azure kingfishers perched on overhanging branches, brahminy kites soaring above, and Boyd's forest dragons clinging motionless to tree trunks. The experienced guides know every animal's favourite basking spot.",
+            "tip": "The 6am sunrise cruise sees the most wildlife activity and has the most atmospheric lighting. Book the earliest departure available."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Cape Tribulation & Jungle Boardwalks",
+            "text": "Cross the Daintree River on the cable ferry and continue north through dense rainforest to Cape Tribulation — where the reef meets the rainforest. Walk the Dubuji Boardwalk through mangrove forest to the beach, then hike the Jindalba Boardwalk circuit through lowland rainforest thick with fan palms, epiphytic ferns, and strangler figs. Cape Trib Beach itself is stunning — a crescent of sand backed by jungle with reef visible just offshore.",
+            "tip": "Do not swim at Cape Tribulation or any beach north of the Daintree River — estuarine crocodiles are present. Signs are posted but not always visible."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Guided Night Walk",
+            "text": "The rainforest transforms after dark. A guided night walk reveals creatures that are completely invisible during daylight: tree kangaroos, sugar gliders launching between canopy trees, green tree frogs, giant orb-weaver spiders rebuilding their webs, and bioluminescent fungi glowing blue-green on rotting logs. The soundscape is immersive — a chorus of frogs, insects, and nocturnal birds that creates a wall of sound unique to ancient tropical forests.",
+            "tip": "Wear closed shoes, long pants, and insect repellent for the night walk. Bring a red-light headlamp — white light blinds nocturnal animals."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Fitzroy Island",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ferry to Fitzroy Island",
+            "text": "Catch the 8am fast ferry from Cairns Marina to Fitzroy Island — a continental island surrounded by fringing reef just 45 minutes offshore. Unlike the sand cay reef islands, Fitzroy is a granite island covered in dense rainforest rising to a 269-metre summit. Arrive early and head straight to Nudey Beach — voted Australia's best beach — a secluded cove of coral rubble and boulders fringed by rainforest with excellent snorkelling directly from shore over coral gardens just metres from the sand.",
+            "tip": "The first ferry at 8am means you arrive before day-trippers from later boats. Nudey Beach is a 20-minute walk from the jetty through rainforest."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Summit Trail & Lighthouse",
+            "text": "Hike the Secret Garden trail to the Fitzroy Island summit — a 3.6km return walk through boulder fields and dense forest to a lookout with 360-degree views over the Coral Sea, the reef, and the mainland mountains behind Cairns. On the descent, detour to the old lighthouse on the northeast point for views along the island's wild windward coast. The island's Reef Restoration Foundation nurtures baby coral in underwater nurseries visible from the jetty — ask at the dive shop about snorkelling past them.",
+            "tip": "Bring plenty of water for the summit hike — there is no shade on the exposed sections and temperatures are fierce. Allow 2-3 hours return."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Kayaking & Island Evening",
+            "text": "Hire a glass-bottom kayak from the beach hire centre and paddle along the island's southern coast in the late afternoon light. The clear-bottom kayak reveals coral and fish beneath you as you paddle. Watch the sunset from the beach before catching the last ferry back to Cairns, or if you're staying overnight at the island resort, enjoy a quiet evening with no light pollution — the stars above Fitzroy Island are spectacular.",
+            "tip": "The last ferry back to Cairns departs at 5pm — do not miss it unless you have accommodation booked on the island."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Kuranda Scenic Railway & Village",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kuranda Scenic Railway",
+            "text": "Board the heritage Kuranda Scenic Railway at Cairns station for one of the world's great train journeys. The restored carriages climb 328 metres through the Barron Gorge National Park, passing through 15 hand-carved tunnels and over bridges spanning deep ravines. The train pauses at Barron Falls station for photographs — the falls thunder in wet season and trail like silk in dry season. The 34km journey takes two hours and arrives at Kuranda station, a beautifully maintained heritage platform surrounded by tropical gardens.",
+            "tip": "Sit on the left side of the carriage heading up to Kuranda for the best gorge and waterfall views. The train runs daily — book online for cheaper fares."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kuranda Markets & Butterfly Sanctuary",
+            "text": "Kuranda village sits on the rainforest plateau above Cairns and has been a markets town since the 1970s. Browse the original Kuranda Markets and Heritage Markets for Aboriginal art, didgeridoos, local honey, handmade jewellery, and tropical fruit ice cream. Visit the Australian Butterfly Sanctuary — the largest in Australia — where Ulysses blue butterflies and Cairns birdwings fly freely around you in a controlled tropical greenhouse. The Birdworld aviary next door has cassowaries, lorikeets, and birds of paradise.",
+            "tip": "Wear red or white clothing to the Butterfly Sanctuary — butterflies are most attracted to bright colours and will land on you for photos."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Skyrail Cableway Return",
+            "text": "Return to Cairns via the Skyrail Rainforest Cableway — a 7.5km gondola ride floating just above the rainforest canopy with panoramic views over Barron Gorge to the Coral Sea. The cableway has two mid-stations where you can step out onto elevated boardwalks through the canopy and learn about the rainforest ecology at interpretive displays. The final descent into Smithfield offers sweeping views over the northern beaches and the reef-studded ocean beyond.",
+            "tip": "Do the train up and Skyrail down — this order gives the best views in both directions. Combo tickets are available and save about 15-20%."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Atherton Tablelands Waterfalls & Swimming Holes",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Millaa Millaa & Waterfall Circuit",
+            "text": "Drive 90 minutes up to the Atherton Tablelands — the elevated volcanic plateau behind the coastal range with a dramatically different landscape of rolling green dairy farms, crater lakes, and waterfalls. The Waterfall Circuit near Millaa Millaa links three spectacular falls: Millaa Millaa Falls (a perfect curtain of water you can swim behind), Zillie Falls (viewed from above through forest), and Ellinjaa Falls (a cascade over columnar basalt). Each is a short walk from the road and progressively more beautiful.",
+            "tip": "Millaa Millaa Falls is the classic swimming waterfall — arrive early morning for the best light and no crowds. The water is cold year-round."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Crater Lakes & Platypus Spotting",
+            "text": "Visit Lake Eacham — a perfectly circular volcanic crater lake surrounded by dense rainforest. The water is crystal clear, warm on top and cold below, and you can swim, snorkel, and kayak in a peaceful setting far removed from the tourist coast. Drive to the nearby Platypus Viewing Platform at Peterson Creek in Yungaburra — one of Australia's most reliable platypus-watching spots. The shy monotremes surface at dawn and dusk, diving for insects and crustaceans in the clear creek.",
+            "tip": "For platypus spotting, sit quietly on the viewing platform and watch the water surface. They surface every 1-2 minutes — look for small ripples and a dark flat shape breaking the surface."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Josephine Falls & Return to Cairns",
+            "text": "On the drive back to the coast, stop at Josephine Falls in Wooroonooran National Park — a series of tiered cascades tumbling over enormous granite boulders through pristine rainforest. The lower pools are deep enough for swimming and the smooth rock faces create natural water slides. The setting is extraordinary: ancient rainforest pressing in from every direction, clear water flowing over pale granite, and the sound of the falls echoing off the rock walls. Return to Cairns for dinner on the waterfront.",
+            "tip": "The rock slides at Josephine Falls can be dangerous in high water — check conditions and signage before sliding. Stick to the lower pools in wet season."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Green Island & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Green Island Reef & Rainforest",
+            "text": "Take the 45-minute ferry to Green Island — a coral cay island sitting directly on the Great Barrier Reef. Unlike rocky Fitzroy Island, Green Island is a true sand cay formed entirely from coral debris, covered in dense rainforest — a rare combination in the reef system. Snorkel directly from the beach over extensive coral gardens and seagrass beds frequented by sea turtles. The island's Marineland Melanesia houses a crocodile habitat and historical artefact collection. The reef here is accessible without a boat — just walk in from the beach.",
+            "tip": "Green Island gets crowded by 11am when multiple boats arrive. Take the first ferry at 8:30am for two peaceful hours on the island before the rush."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Glass-Bottom Boat & Island Walk",
+            "text": "Join the glass-bottom boat tour that circles Green Island's reef — enormous coral formations, giant clams, and reef sharks are visible through the viewing panels. Afterwards, walk the island's rainforest boardwalk — the circuit takes about 30 minutes and passes through dense vine forest with interpretive signs about the cay's formation and ecology. The western beach is less crowded than the main beach and better for afternoon snorkelling as the sun lights the reef from behind.",
+            "tip": "The last ferry back to Cairns is at 5pm. If you want a quieter experience, catch the 2:30pm ferry back and avoid the crowd rush."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Cairns Evening",
+            "text": "Spend your last evening in Cairns soaking up the tropical atmosphere. Watch the fruit bats stream overhead at dusk — tens of thousands of spectacled flying foxes leave their daytime roost in the Botanic Gardens and fly across the city to feed in the surrounding rainforest. A final dinner at Salt House or Dundee's on the waterfront is a fitting farewell to Tropical North Queensland — reef fish, local wines, and the warm evening air of the tropics.",
+            "tip": "Pack for your departure the night before — Cairns Airport is just 7km from the city centre and accessible by shuttle bus or a quick taxi ride."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book reef trips online",
+      "text": "Reef day trips booked online in advance are 10-30% cheaper than walk-up prices at the marina. Last-minute standby deals are sometimes available from the booking offices on the Esplanade the day before."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "June to August is peak dry season. Visiting in May or October offers similar weather with lower prices on accommodation and tours. Avoid school holidays for the cheapest rates."
+    },
+    {
+      "title": "Cook at your hostel",
+      "text": "Most Cairns hostels have excellent communal kitchens. Buy supplies at Woolworths or Coles and cook your own meals to save $20-40 per day. The Night Markets food court is the cheapest eating-out option."
+    },
+    {
+      "title": "Free activities abound",
+      "text": "The Esplanade Lagoon, Botanic Gardens, boardwalk, and many rainforest walks are completely free. Not every day needs a paid tour — alternate reef and rainforest days with free city exploration."
+    },
+    {
+      "title": "Multi-day dive courses save money",
+      "text": "If you plan to dive multiple times, a 3-4 day open water certification course is better value than paying for introductory dives each time — and you get a lifelong qualification."
+    },
+    {
+      "title": "Share transport costs",
+      "text": "Rent a car with other travellers for the Daintree and Tablelands trips — splitting fuel and hire costs between four people makes driving cheaper than joining a tour bus."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$20–45",
+      "midrange": "$60–120",
+      "splurge": "$180+",
+      "notes": "Hostels → guesthouses → resort lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–60",
+      "splurge": "$70+",
+      "notes": "Self-catering → casual dining → waterfront restaurants"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$20–50",
+      "splurge": "$60+",
+      "notes": "Public buses → shared transfers → private car hire"
+    },
+    {
+      "category": "Activities",
+      "budget": "$10–40",
+      "midrange": "$50–120",
+      "splurge": "$150+",
+      "notes": "Self-guided → group reef trips → private dive charters"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$0–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Many natural attractions are free"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$50–145",
+      "midrange": "$175–390",
+      "splurge": "$510+",
+      "notes": "Budget backpacker → comfortable mid → luxury reef"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Most nationalities require an ETA or eVisitor visa — apply online before arrival",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Australian customs are strict — declare all food, plant material, and wooden items on arrival"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential — reef and remote area activities carry inherent risks",
+        "Wear stinger suits and check for marine stinger warnings during wet season (November to May)",
+        "Sun protection is critical — the UV index in tropical Queensland is extreme. Apply SPF 50+ and reapply every 2 hours"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Cairns is walkable — the city centre, Esplanade, and marina are all within 15 minutes on foot",
+        "Sunbus operates local routes. The Daintree and Tablelands require a car or tour — no public transport serves these areas",
+        "Driving is on the left. A 4WD is recommended for the Bloomfield Track beyond Cape Tribulation"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Mobile coverage is good in Cairns but patchy north of the Daintree River and in the Tablelands. Download offline maps before heading out",
+        "Free WiFi is available at most hostels, cafes, and the Cairns Library. Most reef boats have no mobile signal once offshore",
+        "Share your itinerary with someone at home, especially for rainforest and reef activities"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: AUD (Australian Dollar). Cards accepted almost everywhere — contactless payment is universal",
+        "ATMs are widespread in Cairns. Smaller towns on the Tablelands may have limited banking",
+        "Tipping is not expected in Australia but appreciated for exceptional service. Round up at restaurants if you wish"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Reef shoes, a rashie or stinger suit, reef-safe sunscreen, and a waterproof phone case are essential",
+        "Quick-dry clothing, a light rain jacket, and insect repellent with DEET for rainforest walks",
+        "A reusable water bottle — Queensland tap water is safe to drink and refill stations are common"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Indigenous Culture",
+      "text": "The Cairns region is the traditional country of the Yirrganydji and Djabugay peoples. Show respect for Aboriginal cultural sites, art, and traditions. Many tours are led by Indigenous guides who share Dreamtime stories and traditional ecological knowledge."
+    },
+    {
+      "icon": "🌍",
+      "title": "Protect the Reef",
+      "text": "The Great Barrier Reef is a fragile ecosystem. Use only reef-safe sunscreen (zinc-based, no oxybenzone), do not touch or stand on coral, maintain buoyancy while snorkelling, and never take shells or coral. Every visitor's actions directly impact the reef's survival."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing Aboriginal cultural performances or sacred sites. Many Indigenous guides will indicate what can and cannot be photographed. Drone regulations apply in national parks — check Parks Australia rules before flying."
+    },
+    {
+      "icon": "🐊",
+      "title": "Wildlife Safety",
+      "text": "Saltwater crocodiles are present in all waterways north of Cairns. Obey warning signs, never swim in rivers or estuaries, and stay 5 metres from the water's edge. Marine stingers are present November to May — wear stinger suits when swimming in the ocean."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally owned tour operators, accommodation, and restaurants. Indigenous-owned businesses offer authentic cultural experiences and ensure tourism dollars directly benefit traditional communities. Buy local art directly from artists or community art centres."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace Yourself",
+      "text": "Tropical North Queensland operates on a relaxed timetable. Allow extra time for travel — distances are greater than they appear on maps and road conditions vary. The best experiences come from slowing down and absorbing the landscape."
+    }
+  ],
+  "title": "Cairns Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Cairns guide for young travelers. Great Barrier Reef, Daintree Rainforest, and tropical adventure with 1, 3, and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/cairns-hero.webp",
+  "heroFlag": "🇦🇺",
+  "heroCountry": "Australia",
+  "heroRegion": "Oceania",
+  "heroCity": "Cairns",
+  "heroSubtitle": "Gateway to the Great Barrier Reef and ancient Daintree Rainforest — tropical Australia's adventure capital where reef meets rainforest.",
+  "budgetIntro": "Daily costs per person in US dollars. Cairns costs are moderate by Australian standards — reef trips are the biggest expense. These ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Cairns sits at the intersection of two World Heritage sites and ancient Indigenous culture — approach with curiosity, respect the reef, and you will have one of the most rewarding travel experiences in Australia.",
+  "ctaCity": "Cairns",
+  "ctaText": "Find travel companions to explore Cairns and the Great Barrier Reef together on roammate — split reef trip costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Reef & Rainforest",
+    "Tropical",
+    "Jun – Oct Best"
+  ],
+  "defaultDays": 3
+}

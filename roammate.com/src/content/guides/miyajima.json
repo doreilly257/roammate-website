@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "miyajima",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "JPY (Yen)",
+      "detail": "Cash-heavy society, carry coins"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Japanese",
+      "detail": "Limited English outside ferry terminal"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "JST (UTC+9)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – May, Oct – Nov",
+      "detail": "Cherry blossoms or autumn leaves"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$40–80 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free for many",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Miyajima Island Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Floating Torii Gate & Itsukushima Shrine",
+            "text": "Catch the first ferry from Miyajimaguchi (10 minutes, covered by JR Pass) and arrive on the island before the day-trip crowds from Hiroshima. Walk straight to the iconic floating torii gate of Itsukushima Shrine — at high tide the vermillion gate appears to hover on the water, and at low tide you can walk across the sand flats right up to its base. The shrine itself is a UNESCO World Heritage Site built on stilts over the tidal flats, with long connecting corridors, a Noh theatre stage, and views framing the torii gate against the Inland Sea. Friendly wild deer roam the shrine grounds freely.",
+            "tip": "Check tide times before visiting — high tide is best for the classic floating torii photo, but low tide lets you walk out and stand beneath the gate. Both experiences are worth timing."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mount Misen Summit & Daisho-in Temple",
+            "text": "Take the Miyajima Ropeway from Momijidani Park up toward the summit of Mount Misen (535m), the highest peak on the island. From the upper station, hike 30 minutes along a forested ridge to the summit observatory for panoramic views across the Seto Inland Sea and the scattered islands stretching toward Shikoku. On the descent, stop at Daisho-in Temple at the base of Mount Misen — one of the most important Shingon Buddhist temples in western Japan, with hundreds of miniature Buddha statues lining the staircases, prayer wheels to spin, and an atmospheric cave lit by 100 lanterns.",
+            "tip": "The ropeway closes at 5pm (4pm in winter). If you plan to hike both ways, allow 3 hours round-trip from the ropeway station to the summit. Bring water — no vending machines on the trail."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Omotesando Street & Sunset Over the Torii",
+            "text": "Stroll Omotesando Shopping Street, the island's main pedestrian lane lined with souvenir shops and food stalls. Try momiji manju (maple leaf-shaped cakes filled with red bean, custard, or chocolate) — baked fresh in front of you — and grilled Miyajima oysters, which are famous across Japan for their plump sweetness. As the last ferries take the day-trippers back to the mainland, the island becomes remarkably quiet. Walk back to the shoreline to watch the sunset illuminate the floating torii gate — one of the most serene views in Japan.",
+            "tip": "Most visitors leave by 5pm. If you stay for sunset (or overnight), you will experience Miyajima almost empty — the illuminated torii gate at night is magical."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Itsukushima Shrine, Torii Gate & Omotesando",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Floating Torii Gate at High Tide",
+            "text": "Arrive on the first ferry from Miyajimaguchi to see the floating torii gate of Itsukushima Shrine in the soft morning light. At high tide, the massive vermillion gate stands in water with the shrine complex behind it — the defining image of Miyajima and one of Japan's Three Most Scenic Views. Explore the shrine's connected pavilions and corridors built on stilts over the tidal flats, watch the wild deer wander through the grounds, and visit the treasure hall housing ancient scrolls and armour dedicated by samurai clans over centuries.",
+            "tip": "The shrine opens at 6:30am and the first ferry arrives around 6:25am. Arriving this early means you will have the torii gate almost entirely to yourself for photography."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Omotesando Street & Momiji Manju",
+            "text": "Walk Omotesando Shopping Street, the island's main pedestrian lane from the ferry terminal to the shrine. The street is lined with shops selling momiji manju — maple leaf-shaped cakes filled with red bean paste, custard, matcha cream, or chocolate — baked fresh in iron moulds at every other stall. Sample grilled Miyajima oysters from the Inland Sea, known for their exceptional size and sweetness. Pick up a shamoji (rice paddle) souvenir — Miyajima is considered the birthplace of the wooden rice paddle, and enormous decorative versions line the street.",
+            "tip": "The oyster season runs October to March, but grilled oysters are available year-round. Try them with a squeeze of lemon and a dash of ponzu sauce."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Low Tide Walk & Illuminated Shrine",
+            "text": "If the tide cycle allows, walk out across the exposed sand flats at low tide to stand beneath the towering torii gate — the barnacle-encrusted pillars are enormous up close. As darkness falls, the shrine and torii gate are illuminated with warm lighting, creating a completely different atmosphere from the daytime visit. The island empties of day-trippers by early evening, so staying overnight gives you the rare experience of Miyajima at its most peaceful. Dine at a ryokan (traditional inn) or a small izakaya serving local seafood.",
+            "tip": "Book at least one night on the island to experience the illuminated shrine and the quiet morning atmosphere. Ryokans include dinner and breakfast in the room rate."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Mount Misen Hike & Daisho-in Temple",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mount Misen Summit Hike",
+            "text": "Hike to the summit of Mount Misen (535m) via the Momijidani trail — a forested 90-minute ascent through ancient cedar and maple trees that follows a stream through Momijidani (Maple Valley) Park. The trail passes through primeval forest that has been protected for centuries as sacred ground. Near the summit, the Eternal Flame Hall houses a fire said to have been burning continuously for 1,200 years since Kobo Daishi (the founder of Shingon Buddhism) lit it during meditation. The summit observatory offers 360-degree views of the Seto Inland Sea.",
+            "tip": "Start hiking by 8am to reach the summit before the ropeway opens and brings the crowds. Bring at least 1 litre of water — the trail is steep and humid in summer."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Daisho-in Temple Complex",
+            "text": "Descend via the Daisho-in trail to reach the temple of the same name at the base of Mount Misen. Daisho-in is the head temple of the Omuro branch of Shingon Buddhism and one of the most visually rich temple complexes in Japan. Hundreds of miniature Jizo statues wearing hand-knitted caps and scarves line the stairways, prayer wheels spin along the entrance path, and the Henjokutsu Cave contains 88 sacred icons representing the 88 temples of the Shikoku pilgrimage — walking through the dark cave is said to grant the same merit as the full pilgrimage.",
+            "tip": "Spin every prayer wheel you pass on the way up the stairs — each rotation is said to be equivalent to reading the entire sutra inscribed inside it."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Momijidani Park & Quiet Evening",
+            "text": "Walk through Momijidani Park in the late afternoon light — the park contains over 700 maple trees that create a canopy of red and gold in November, but are beautiful in any season. Wild deer rest beneath the trees and are remarkably calm around visitors. In the evening, enjoy a kaiseki (multi-course traditional) dinner at your ryokan or find a small restaurant serving anago (conger eel), another Miyajima specialty — grilled, simmered, or served over rice in a lacquered box. The island is profoundly quiet after dark.",
+            "tip": "Anago-meshi (conger eel rice box) is Miyajima's signature dish. Ueno restaurant near the ferry terminal is the most famous, but small restaurants in the village serve excellent versions too."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Inland Sea & Hiroshima Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sunrise & Sea Kayaking",
+            "text": "Wake early for a final sunrise view of the floating torii gate — the morning light turns the shrine complex gold against the still Inland Sea. If conditions allow, join a sea kayaking tour that paddles around the base of the torii gate and along the island's coastline, passing rocky coves and forested hillsides. Kayaking provides a perspective of the shrine and island that is impossible from land, and early morning is the calmest time on the water.",
+            "tip": "Sea kayak tours typically run 2-3 hours and cost around 5,000-7,000 yen. Book in advance — they run with small groups and fill quickly in peak seasons."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hiroshima Peace Memorial",
+            "text": "Take the ferry back to Miyajimaguchi and the JR Sanyo Line train 30 minutes into Hiroshima city. The Hiroshima Peace Memorial Park and Museum sits on the site of the atomic bombing of August 6, 1945. The A-Bomb Dome — the skeletal ruin of the former Industrial Promotion Hall — stands as the most powerful war memorial in the world. Walk through the museum's exhibits, the Children's Peace Monument draped in thousands of paper cranes, and the Memorial Cenotaph aligned to frame the Dome across the park.",
+            "tip": "The Peace Museum can be emotionally intense. Allow 2-3 hours and visit with an open mind. Audio guides are available in many languages."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hiroshima Okonomiyaki & Return",
+            "text": "Before returning to Miyajima or continuing your journey, eat Hiroshima-style okonomiyaki — a layered savoury pancake with cabbage, noodles, pork, and egg built up on a hot griddle, distinct from the Osaka mixed style. Okonomi-mura (Okonomiyaki Village) is a building with 24 stalls on multiple floors, each making their own version at counters where you sit right in front of the griddle. The dish is Hiroshima's soul food and costs around 800-1,200 yen for a filling meal.",
+            "tip": "At Okonomi-mura, pick any stall — they are all good. Sit at the counter, watch the chef build your okonomiyaki in front of you, and eat it directly off the griddle with a spatula."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Itsukushima Shrine",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ferry to Miyajima & First Impressions",
+            "text": "Arrive at Miyajimaguchi station and take the JR ferry (10 minutes, covered by JR Pass) across to Miyajima Island. As the ferry approaches, the floating torii gate of Itsukushima Shrine comes into view — one of the most iconic sights in Japan. Check into your accommodation and orient yourself to the island's compact layout. The main village, shrine, and trails are all within walking distance.",
+            "tip": "If you have a JR Pass, the JR ferry is free. The competing Matsudai ferry charges separately but takes a closer route past the torii gate — worth considering one way."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Itsukushima Shrine & Treasure Hall",
+            "text": "Visit Itsukushima Shrine, a UNESCO World Heritage Site built in the 6th century and rebuilt in its current form in the 12th century by the powerful Taira no Kiyomori. The shrine complex extends over the tidal flats on wooden stilts with connected corridors, a Noh theatre stage, and multiple pavilions. The adjacent Treasure Hall houses scrolls, fans, armour, and swords dedicated by feudal lords over the centuries.",
+            "tip": "The shrine entry fee is 300 yen. The Treasure Hall is a separate 300 yen fee and often skipped by visitors, but it contains remarkable samurai-era artefacts."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Torii & Ryokan Dinner",
+            "text": "Watch the sunset from the shrine shoreline as the light turns the torii gate and the Inland Sea golden. After dark, the gate and shrine are illuminated softly. Dine at your ryokan — traditional multi-course Japanese dinner served in your room, featuring local seafood, seasonal vegetables, and Miyajima specialities like anago (conger eel) and local oysters.",
+            "tip": "Ryokan dinners are typically served between 6-7pm and are elaborate affairs. Let your host know of any dietary restrictions when checking in."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Mount Misen Full Exploration",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Momijidani Trail to Summit",
+            "text": "Hike the Momijidani trail through ancient maple and cedar forest to the summit of Mount Misen (535m). The 90-minute ascent follows a boulder-strewn stream through primary forest that has been protected for centuries. Near the summit, visit the Eternal Flame Hall where a fire has burned for 1,200 years since Kobo Daishi's meditation, and the Sankido Hall with its panoramic terrace. The summit observatory gives 360-degree views across the Seto Inland Sea and its hundreds of islands.",
+            "tip": "Three trails lead to the summit: Momijidani (easiest), Daisho-in (most scenic), and Omoto (quietest). Consider ascending one and descending another for variety."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Descent via Daisho-in Trail",
+            "text": "Descend via the Daisho-in trail, which passes through a different section of the primeval forest with larger boulders and rougher terrain. The trail emerges at the back of Daisho-in Temple. Explore the temple complex thoroughly — the Henjokutsu Cave, the spinning prayer wheels, and the hundreds of Jizo statues in knitted caps are deeply atmospheric.",
+            "tip": "The Daisho-in descent takes about 60-75 minutes and is steeper than Momijidani. Wear proper shoes with grip — the stone steps can be slippery after rain."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Momijidani Park & Local Dining",
+            "text": "Walk slowly through Momijidani Park where wild deer rest under the maple canopy. In the evening, explore the quiet village lanes for a small izakaya or restaurant. Try anago-meshi (conger eel over rice) — Miyajima's signature dish — or grilled oysters with a cold Japanese beer. The island after dark is profoundly peaceful with the sound of waves and temple bells.",
+            "tip": "Most island restaurants close by 8-9pm. Plan your dinner early or ensure your ryokan includes meals."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Sea Kayaking & Tidal Flats",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sea Kayaking Around the Torii Gate",
+            "text": "Join an early morning sea kayak tour that paddles from the island's beach around the coastline and through the floating torii gate. Paddling beneath the massive vermillion pillars from water level is a perspective few visitors experience. The tour continues along the island's forested southern coast, passing rocky coves and quiet inlets.",
+            "tip": "Book sea kayak tours at least a day in advance. Tours cost 5,000-7,000 yen and run 2-3 hours. Morning departures offer the calmest water conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Low Tide Exploration & Beach Time",
+            "text": "If the tide is low, walk across the exposed sand and mud flats to the base of the torii gate. The massive camphor-wood pillars are encrusted with barnacles and the wooden structure is even more impressive up close. Explore the tidal pools and the coastline south of the shrine, where quieter beaches offer swimming spots with views back to the mainland.",
+            "tip": "Check the tide tables — the difference between high and low tide on Miyajima can be dramatic. The sand flats are exposed for several hours around low tide."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Omotesando Food Tour",
+            "text": "Spend the evening grazing along Omotesando Street. Try freshly-baked momiji manju in unusual flavours (cheese, chocolate, matcha), grilled oysters, takoyaki (octopus balls), and soft-serve ice cream in local flavours. Pick up omamori (protective charms) from the shrine's gift shop and wooden shamoji (rice paddles) — Miyajima is considered their birthplace.",
+            "tip": "Most Omotesando shops close by 5-6pm. The food stalls stay open slightly later but the street empties early — eat before 6pm for the best selection."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Hiroshima Peace Memorial",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hiroshima Peace Memorial Park",
+            "text": "Take the ferry and train into Hiroshima (45 minutes total). Visit the Hiroshima Peace Memorial Park, centred on the A-Bomb Dome — the skeletal ruin of the only building left standing near the bomb's hypocentre. Walk through the park past the Memorial Cenotaph, the Flame of Peace (which will burn until all nuclear weapons are eliminated), and the Children's Peace Monument festooned with thousands of colourful paper cranes.",
+            "tip": "The A-Bomb Dome is most powerful from across the river at sunrise or sunset. Allow time to simply sit and reflect — this is not a site to rush through."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Peace Memorial Museum",
+            "text": "Spend the afternoon in the Hiroshima Peace Memorial Museum, which was fully renovated and reopened with a deeply personal focus on individual stories of survivors (hibakusha). The exhibits are unflinching and emotionally powerful. The museum takes 2-3 hours to absorb properly. Afterward, walk through the park's gardens and along the riverside to decompress.",
+            "tip": "The museum charges 200 yen admission. Audio guides are available. Consider visiting on a weekday to avoid school groups that can make the galleries very crowded."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hiroshima Okonomiyaki",
+            "text": "Eat Hiroshima-style okonomiyaki for dinner — layered savoury pancakes with cabbage, yakisoba noodles, pork, and egg, griddled in front of you. Okonomi-mura in central Hiroshima has 24 stalls on multiple floors, each with their own recipe. The dish costs 800-1,200 yen and is deeply satisfying after an emotional day. Return to Miyajima on the evening ferry.",
+            "tip": "Hiroshima okonomiyaki is distinct from Osaka's mixed style — the layers are built up separately on the griddle. Ask for extra noodles (soba or udon) if hungry."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Omoto Trail & Island Beaches",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Omoto Trail — The Quiet Route",
+            "text": "Hike the Omoto trail, the least-used of Mount Misen's three trails. Starting from the Omoto Shrine on the island's west side, this route climbs through dense forest with virtually no other hikers. The trail is rougher and steeper than Momijidani but rewards with solitude and old-growth forest. Connect with the summit trail network near the top.",
+            "tip": "The Omoto trail is less maintained — wear proper hiking boots and bring water. Allow 2 hours for the ascent. Trail markers exist but are less frequent."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Island Beaches & Southern Coast",
+            "text": "Explore the island's southern and western coastline, where small beaches and rocky coves offer swimming and sunbathing away from the tourist crowds. Tsutsumigaura Beach on the island's south side has a free campsite and is popular with local families in summer. The coastal paths offer views of passing cargo ships and fishing boats on the Inland Sea.",
+            "tip": "Bring reef shoes for the rocky beaches. The water is warm enough for swimming from June to September. There are no lifeguards on the smaller beaches."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Walk & Stargazing",
+            "text": "After dinner, take a night walk through the empty village and along the shrine shoreline. With minimal light pollution (the island has no streetlights in many areas), the stars over the Inland Sea are remarkably clear. The illuminated torii gate reflecting on the calm water is one of Miyajima's most ethereal sights. Listen to the waves, the temple bells, and the occasional call of deer in the forest.",
+            "tip": "Bring a small flashlight or headlamp for the unlighted paths. Wild deer are active at night — they are gentle but can startle if surprised."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Iwaso Onsen, Craft & Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Onsen & Slow Morning",
+            "text": "Enjoy a slow morning with an onsen (hot spring bath) at your ryokan or the historic Iwaso inn, one of the oldest ryokans on the island. The mineral-rich waters are deeply relaxing, especially after days of hiking. Follow with a traditional Japanese breakfast — grilled fish, rice, miso soup, pickles, and tamagoyaki (rolled omelette) — a ritual that sets the pace for a gentle day.",
+            "tip": "Onsen etiquette: wash thoroughly before entering the bath, tie up long hair, no swimwear, and keep towels out of the water. Tattoo policies vary — ask your ryokan."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Shamoji Workshop & Craft Shopping",
+            "text": "Visit a shamoji (rice paddle) workshop to see how Miyajima's most famous craft product is made — the wooden paddles have been carved here since the 18th century. Browse the smaller artisan shops off Omotesando for hand-carved wooden items, Miyajima-bori (carved lacquerware), and ceramic pieces. Try making your own momiji manju at one of the bakeries that offers hands-on experiences.",
+            "tip": "The giant shamoji on display near the shrine is one of the world's largest wooden rice paddles. The smaller artisan shops off the main street have higher quality and lower prices than the tourist stalls."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Sunset & Farewell Dinner",
+            "text": "Watch your last sunset from a different vantage point — the hill behind Daisho-in Temple or the beach south of the shrine offer alternative perspectives on the torii gate at golden hour. Have a farewell dinner of the island's specialities: a kaiseki course featuring anago, oysters, local vegetables, and seasonal delicacies, paired with local sake.",
+            "tip": "Ask your ryokan or restaurant about seasonal specialities — Miyajima's cuisine changes with the seasons, and the chefs take pride in using the freshest local ingredients."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Departure & Nearby Temples",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn at the Shrine & Final Walk",
+            "text": "Wake for a final dawn visit to the shrine — if you have timed your stay right, the combination of tide, light, and solitude at sunrise is the most memorable experience on the island. Take a final stroll through the village, say goodbye to the deer, and pick up last-minute momiji manju for the journey.",
+            "tip": "Pack your bags the night before so you can spend the maximum time at the shrine in the morning. The first ferry departs around 6:25am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Senjokaku & Five-Storey Pagoda",
+            "text": "Before catching the ferry, climb the hill above the shrine to Senjokaku (the Hall of One Thousand Tatami Mats) — an enormous unfinished wooden hall commissioned by Toyotomi Hideyoshi in 1587. The open-sided structure is built from massive camphor pillars and offers shaded views over the shrine, the torii gate, and the sea. Adjacent is the elegant five-storey pagoda, blending Japanese and Chinese architectural styles.",
+            "tip": "Senjokaku is 100 yen admission and often empty despite being right above the main shrine. The massive wooden floor is cool in summer and the breeze flows through beautifully."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Departure & Onward Journey",
+            "text": "Take the ferry back to the mainland and catch the Shinkansen (bullet train) from Hiroshima station onward — Tokyo is 4 hours east, Kyoto 2 hours, and Fukuoka 1 hour west. Alternatively, continue exploring western Honshu with visits to the gardens of Okayama, the art islands of Naoshima, or the historic town of Onomichi along the Shimanami Kaido cycling route.",
+            "tip": "If continuing to Kyoto or Osaka, the Shinkansen from Hiroshima takes under 2 hours. The JR Pass covers all these journeys and is excellent value for multi-city travel."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Get a JR Pass",
+      "text": "The Japan Rail Pass covers the ferry to Miyajima, Shinkansen trains, and most JR buses. If you are visiting multiple cities, the pass pays for itself within 2-3 journeys and saves hundreds of dollars."
+    },
+    {
+      "title": "Stay on the island",
+      "text": "While day-tripping from Hiroshima is common, staying overnight on Miyajima lets you experience the island after the crowds leave. Ryokan rates include dinner and breakfast, making the total cost more reasonable than it appears."
+    },
+    {
+      "title": "Eat at convenience stores",
+      "text": "Japanese konbini (7-Eleven, Lawson, FamilyMart) sell surprisingly excellent onigiri, bento boxes, and sandwiches for 100-500 yen. Perfect for packed lunches on hiking days."
+    },
+    {
+      "title": "Carry cash",
+      "text": "Japan is still a cash-heavy society, especially on islands and at smaller shops. Withdraw yen at 7-Eleven ATMs (which accept international cards) before arriving on Miyajima."
+    },
+    {
+      "title": "Use the IC card system",
+      "text": "Load a Suica or ICOCA card for seamless travel on trains, buses, ferries, and even vending machines. Tap-and-go saves time and often provides small discounts over paper tickets."
+    },
+    {
+      "title": "Free attractions abound",
+      "text": "Walking around the shrine grounds, watching the torii gate, hiking Mount Misen trails, and exploring the village are all free. The shrine entry (300 yen) and ropeway (1,800 yen return) are the only significant costs."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$25–50",
+      "midrange": "$80–150",
+      "splurge": "$200+",
+      "notes": "Hostels → guesthouses → ryokan with meals"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–25",
+      "midrange": "$30–60",
+      "splurge": "$80+",
+      "notes": "Konbini & street food → restaurants → kaiseki"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–10",
+      "midrange": "$10–25",
+      "splurge": "$40+",
+      "notes": "JR Pass trains → local trains → taxi/private"
+    },
+    {
+      "category": "Activities",
+      "budget": "$0–10",
+      "midrange": "$15–40",
+      "splurge": "$60+",
+      "notes": "Hiking (free) → ropeway → kayak tours"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$3–5",
+      "midrange": "$5–15",
+      "splurge": "$15–30",
+      "notes": "Shrine & museum entries"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$40–80",
+      "midrange": "$120–260",
+      "splurge": "$350+",
+      "notes": "Budget backpacker → comfortable mid → luxury ryokan"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Many nationalities get 90-day visa-free entry to Japan",
+        "Keep your passport on you at all times — police can request ID checks",
+        "Register your Visit Japan Web profile online before arrival for faster immigration processing"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Japan is extremely safe — crime is virtually nonexistent on Miyajima",
+        "Travel insurance is recommended but pharmacies stock excellent over-the-counter medication",
+        "Tap water is safe to drink everywhere in Japan — refill your bottle freely"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Miyajima is car-free in the village area — everything is walkable",
+        "JR ferry from Miyajimaguchi runs every 15 minutes (10-minute crossing)",
+        "The Miyajima Ropeway runs from Momijidani Park toward Mount Misen summit — 1,800 yen return"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a travel eSIM or pocket WiFi before arriving — available at airports and online",
+        "WiFi is available at the ferry terminal and most accommodation but patchy elsewhere on the island",
+        "Download offline maps — mobile signal can drop on the Mount Misen trails"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: JPY (Japanese Yen). Cash is essential — many small shops and restaurants do not accept cards",
+        "Withdraw yen at 7-Eleven or Japan Post ATMs before arriving on the island — there are limited ATMs on Miyajima",
+        "Tipping is not customary in Japan and can cause confusion — the price you see is the price you pay"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable hiking shoes for Mount Misen, sandals for the village and beach areas",
+        "A compact umbrella or rain jacket — rain is common, especially June-July (tsuyu rainy season)",
+        "Light layers year-round — mornings and evenings on the water are cool even in summer"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Shrine Etiquette",
+      "text": "Bow slightly before passing through the shrine torii gate. At the purification fountain (temizuya), rinse your left hand, then right, then pour water into your left palm and rinse your mouth. Observe quietly and do not step on thresholds."
+    },
+    {
+      "icon": "🌍",
+      "title": "Respect the Deer",
+      "text": "Miyajima's wild deer are sacred Shinto messengers but are truly wild. Do not feed them human food — it damages their health. Keep bags closed as deer will investigate and pull out paper maps, tickets, and food wrappers."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Photography is welcome at most outdoor sites but prohibited inside some shrine buildings and museums. Always check for signs. Do not use drones on the island without permission from the shrine authorities."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn basic Japanese phrases: sumimasen (excuse me), arigatou gozaimasu (thank you), and konnichiwa (hello). English signage is good at major sites but limited at smaller restaurants and shops."
+    },
+    {
+      "icon": "🤝",
+      "title": "Shoes & Cleanliness",
+      "text": "Remove shoes when entering ryokans, temples, and some restaurants — look for a step up and a row of slippers at the entrance. Keep noise levels low, especially in the evening. Japan values quiet consideration for others."
+    },
+    {
+      "icon": "🕐",
+      "title": "Timing & Pace",
+      "text": "Japanese attractions open and close punctually. Arrive on time and do not linger past closing. The island rewards slow exploration — resist the urge to rush through and instead absorb the atmosphere of each place."
+    }
+  ],
+  "title": "Miyajima Island Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Miyajima Island guide for young travelers. Floating torii gate, Mount Misen hike, and sacred island culture with 1, 3, and 7-day itineraries.",
+  "heroImage": "/images/guides/miyajima-hero.webp",
+  "heroFlag": "🇯🇵",
+  "heroCountry": "Japan",
+  "heroRegion": "East Asia",
+  "heroCity": "Miyajima Island",
+  "heroSubtitle": "A sacred island where the iconic floating torii gate rises from the Inland Sea, wild deer roam ancient shrine grounds, and forested Mount Misen rewards hikers with panoramic views.",
+  "budgetIntro": "Daily costs per person in US dollars. Miyajima costs depend on whether you stay on the island (ryokan rates include meals) or day-trip from Hiroshima. A JR Pass dramatically reduces transport costs.",
+  "culturalIntro": "Miyajima is one of Japan's most sacred islands — approach with quiet reverence and curiosity, and you will experience a side of Japan that most tourists miss by only visiting for a few hours.",
+  "ctaCity": "Miyajima Island",
+  "ctaText": "Find travel companions to explore Miyajima together on roammate — split ryokan costs, share hiking adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Island",
+    "Cultural",
+    "Mar – May Best"
+  ],
+  "defaultDays": 3
+}

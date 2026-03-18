@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { getBySlug, cityGuideSlugs } from '../data/guides';
+import { getBySlug, getCityGuideSlugs } from '../data/guides';
 const base = import.meta.env.BASE_URL;
 
 interface Props {
@@ -54,7 +54,8 @@ const {
 } = Astro.props;
 
 const ogImage = heroImages[0]?.src;
-const routeGuides = getBySlug(featuredGuides);
+const routeGuides = await getBySlug(featuredGuides);
+const cityGuideSlugs = await getCityGuideSlugs();
 const routeCityGuides = routeGuides.filter(g => cityGuideSlugs.has(g.slug));
 const routePlaceGuides = routeGuides.filter(g => !cityGuideSlugs.has(g.slug));
 

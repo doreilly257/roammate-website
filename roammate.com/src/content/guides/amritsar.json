@@ -1,0 +1,290 @@
+{
+  "type": "city",
+  "slug": "amritsar",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "INR (₹)",
+      "detail": "1 USD ≈ ₹83. Cards work in hotels; carry cash for the Golden Temple area"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Punjabi / Hindi",
+      "detail": "English spoken in hotels and tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "IST (UTC+5:30)",
+      "detail": "No daylight saving time"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Oct – Mar",
+      "detail": "15–25°C and clear; Apr–Jun hits 45°C; Jul–Sep is monsoon"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$15–30 USD",
+      "detail": "₹1,200–2,500/day — langar (free temple meals) keep costs very low"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "e-Visa online",
+      "detail": "Tourist e-Visa $25 for 30 days; apply at indianvisaonline.gov.in"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Amritsar — The Essential Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Golden Temple at Dawn",
+            "text": "Arrive at the Harmandir Sahib (Golden Temple) before 6am for the most peaceful and profound experience — the gilded marble temple floating on the Amrit Sarovar (Pool of Nectar) in early morning silence is one of the world's great spiritual moments. The temple is free and open to all faiths at all hours. Remove shoes at the entrance, wash feet in the foot bath, and cover your head (free scarves available at the gate). Walk the Parikrama (marble promenade) around the sacred pool and cross the Causeway Bridge to the inner sanctum for the continuous singing of Gurbani (Sikh scripture).",
+            "tip": "The Golden Temple is most beautiful in the hour after sunrise before the midday crowds arrive. During the 2–4am amrit vela (ambrosial hours), the atmosphere is transcendent — even one hour of sleep loss is worth it."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Langar — The World's Largest Community Kitchen",
+            "text": "Eat at the Golden Temple langar (community kitchen) — a free meal served to up to 100,000 people daily regardless of religion, caste, or status. Sit cross-legged in the vast dining hall and receive dal, sabzi, roti, and kheer served by volunteers. This is one of the most humbling and beautiful experiences in India. Then walk to Jallianwala Bagh (₹10) — the public garden where British troops massacred unarmed civilians in 1919. The bullet holes in the walls are preserved and the adjacent museum provides essential context for understanding Indian independence.",
+            "tip": "Langar is served 24 hours — it is free, filling, and spiritually generous. Washing dishes afterwards as a volunteer (seva) is optional but widely done. Leave a donation if moved to do so."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Wagah Border Ceremony & Amritsari Kulcha",
+            "text": "Take a shared auto-rickshaw (₹50) to the Wagah border crossing 30km away for the Beating Retreat ceremony — the nightly flag-lowering by India's Border Security Force and Pakistan's Rangers. The ceremony (free, starts 1hr before sunset) is theatrical, patriotic, and strangely moving: soldiers in elaborate plumage, crowds waving flags, and the two nations separated by a gate 50 metres wide. Return to Amritsar for dinner: Kesar Da Dhaba near the Clock Tower for Amritsari dal makhani and kulcha (₹150–250) — arguably the best in Punjab.",
+            "tip": "Arrive at Wagah at least 1.5 hours before the ceremony for a good seat. VIP seating ₹100 is available online and worth it for the closest view. The ceremony time changes seasonally with sunset."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Golden Temple — Complete Immersion",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Golden Temple Before Dawn",
+            "text": "Arrive at 4:30am for the amrit vela — when Sikh scripture is first sung in the inner sanctum and the temple is draped in darkness punctuated by the golden reflection on the pool. The SGPC information office can arrange free accommodation inside the temple complex (prasad sewadar rooms) for those intending to join morning prayers. The Palki Sahib procession (scripture procession from the Akal Takht to the inner sanctum) at 4am is breathtaking. The experience of 200 people cross-legged in the pre-dawn dark listening to live kirtan is unlike anything else in India.",
+            "tip": "Free accommodation at the Golden Temple is available at the SGPC Guest House (Guru Nanak Niwas) near Gate 9 — register in person for the same day. Demand is high; arrive at 8am to secure a bed."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Langar Seva & Akal Takht",
+            "text": "Spend the afternoon doing langar seva (volunteer service in the community kitchen) — washing, chopping, kneading dough, serving, or cleaning. Thousands of volunteers work in 2-hour shifts daily. Then visit Akal Takht — the highest temporal seat of Sikh authority, located opposite the inner sanctum. The Sikh Reference Library (rebuilt after 1984 destruction) and the Akal Takht museum tell the difficult history of the 1984 Operation Blue Star and its aftermath. Respectful engagement with this history is important.",
+            "tip": "The langar kitchen can accommodate walk-in volunteers without advance notice — approach the seva coordinator near the main kitchen entrance. The chapati-making section involves the most people and is the easiest entry point."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Old City Amritsar at Night",
+            "text": "Walk through the old city streets radiating from the Golden Temple at night — the atmosphere of chai stalls, spice sellers, and marigold vendors feeding into the continuous flow of pilgrims is extraordinary. The illuminated Golden Temple from the outer Parikrama at night — when the marble promenade reflects in the pool and the gold dome glows — is the most beautiful religious site in India. Dinner at Brothers' Dhaba (₹120–200) on Lawrence Road for authentic Punjabi home-style cooking: rajma chawal and sarson da saag.",
+            "tip": "The Golden Temple at night (9pm–midnight) is less crowded than day and arguably more beautiful. The reflection of the illuminated temple in the pool is the defining image of Amritsar."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Wagah Border, Jallianwala Bagh & Food",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Jallianwala Bagh — A Place of Memory",
+            "text": "Visit Jallianwala Bagh (₹10) in the morning when it is quieter and contemplation is easier. On 13 April 1919, General Dyer ordered 90 soldiers to fire into a crowd of 15,000–20,000 unarmed civilians gathered for Baisakhi festival. The 10-minute massacre killed hundreds by official British count and over a thousand by Indian estimates. The narrow entrance through which people tried to flee, the well into which people jumped to escape, and the preserved bullet holes in the surrounding walls create a viscerally affecting memorial.",
+            "tip": "Read about the Jallianwala Bagh massacre before visiting — the historical context transforms the experience. Ramachandra Guha's \"India After Gandhi\" has an excellent chapter on the event and its political consequences."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Partition Museum & Hindu Temples",
+            "text": "Visit the Partition Museum at Town Hall (₹200 foreigners) — India's first museum dedicated to the 1947 Partition, covering the displacement of 14 million people, 200,000+ deaths, and the personal testimonies of survivors. The museum opened in 2017 and is deeply moving. Also visit Durgiana Temple (free) — a silver-doored Hindu temple built in the 1920s on a sacred pool, modelled on the Golden Temple. The contrast between the two adjacent sacred pools (Sikh and Hindu) captures Amritsar's complex spiritual identity.",
+            "tip": "The Partition Museum requires 2 hours to do justice — do not rush through it. The oral history video testimonies of elderly survivors are the most powerful part of the exhibition."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Wagah Border Ceremony",
+            "text": "Shared auto-rickshaw to Wagah border (₹50, 30km) for the Beating Retreat — the highly theatrical nightly flag-lowering ceremony at the India–Pakistan border. High-stepping soldiers in elaborate ceremonial uniforms, roaring crowds on both sides of the gate, and the handshake at the border fence as the flags are lowered together at exactly the same moment. The ceremony takes about 45 minutes. Crowd chanting and nationalist fervour is intense but the handshake moment is genuinely touching.",
+            "tip": "Pre-book the ₹100 VIP area online for the best view. The ceremony changes time with sunset — check the BSF website for the current timing. The last shared autos back to Amritsar leave immediately after the ceremony."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Amritsari Food Trail & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Amritsari Breakfast Trail",
+            "text": "Start the morning at Gurdas Ram Jalebi Wala near the Golden Temple (est. 1884) — the oldest jalebi shop in Amritsar, serving fat, golden jalebis dripping with sugar syrup fresh from the oil at 7am (₹60/100g). Then to Brahm Buta Akhara near the Clock Tower for lassi served in tall clay pots with a layer of malai (cream) floated on top (₹50–70) — served since 1912. Finally, Amritsari kulcha (flaky stuffed flatbread baked in a tandoor) from Kulwant Singh Kulcha wala on Lawrence Road (₹80–120 with chole).",
+            "tip": "The Amritsar breakfast trail hits all three locations within walking distance of each other near the Clock Tower. Arrive at Gurdas Ram when the oil is freshest — between 7–9am. The jalebi is served on newspaper and eaten standing."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Golden Temple — Final Visit & Farewell Seva",
+            "text": "Return to the Golden Temple for a final visit in the early afternoon — the midday light makes the gold dome intensely bright against the white marble and blue pool. Sit by the pool for as long as you need. The constant sound of kirtan (sacred music) is one of the world's genuinely therapeutic sonic environments. If you did not do seva yesterday, offer 30 minutes in the langar before leaving. The temple SGPC bookshop near Gate 8 sells Sikh texts, music CDs, and steel kada bracelets (₹50–200).",
+            "tip": "A steel kada (bracelet) from the Golden Temple gift shop is a meaningful souvenir — it is one of the five K's of Sikh faith and is bought by pilgrims worldwide. Buy directly from the SGPC shop, not from street vendors."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kesar Da Dhaba & Train Departure",
+            "text": "Farewell dinner at Kesar Da Dhaba (est. 1916) on Chowk Passian near the Golden Temple — the most famous restaurant in Amritsar, still using century-old clay pots and wood fire for their dal makhani (black lentils slow-cooked overnight, ₹180). Order sarson da saag (mustard greens with makki di roti — corn flatbread, ₹160) and mango lassi (₹80). The Shatabdi Express to Delhi departs Amritsar station at various times — book ahead for AC chair car (₹695, 6.5hrs) or overnight trains for an early Delhi arrival.",
+            "tip": "Kesar Da Dhaba fills by 7pm — arrive at 6:30pm or accept a wait. The dal makhani here is in a different league from anywhere else in India. Take the parcel (takeaway) option for the train if you have an evening departure."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Langar makes Amritsar extremely affordable",
+      "text": "The Golden Temple serves free meals (langar) 24 hours a day to everyone. A full meal of dal, sabzi, roti, and kheer costs nothing. If you eat langar twice a day and supplement with street food snacks, your food budget can be under ₹200/day ($2.40). This is not poverty travel — it is participating in one of the world's great communal institutions."
+    },
+    {
+      "title": "Stay near the Golden Temple",
+      "text": "The temple complex offers free accommodation (SGPC Guest House) for pilgrims and visitors of all faiths — register at Gate 9. Private guesthouses near the temple start at ₹400–700/dorm or ₹1,200–2,000 for a double. Staying within walking distance of the temple means you can visit at any hour, including 4am for the amrit vela."
+    },
+    {
+      "title": "Amritsari kulcha is the dish to eat",
+      "text": "Amritsari kulcha — a flaky tandoor-baked flatbread stuffed with spiced potatoes or paneer — is the city's signature food. The best costs ₹80–120 for a complete plate with chole (chickpeas), accompaniments, and lassi. Kulwant Singh, Bharawan Da Dhaba, and Crystal Restaurant are the main names. Do not leave without eating at least three."
+    },
+    {
+      "title": "Shared autos to Wagah are very cheap",
+      "text": "Shared auto-rickshaws to Wagah border leave from near the Golden Temple and cost ₹50–70 per person (30km, 45 mins). A private taxi is ₹500–700 return. The shared auto is the best way to find travel companions for the ceremony and the journey through Amritsar's outskirts is interesting. Pre-book VIP Wagah seating online (₹100) to avoid the general crowd crush."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "₹0–700 ($0–8)",
+      "mid": "₹1,200–2,500 ($14–30)"
+    },
+    {
+      "category": "Food",
+      "budget": "₹200–400 ($2–5)",
+      "mid": "₹600–1,200 ($7–14)"
+    },
+    {
+      "category": "Transport (local)",
+      "budget": "₹100–200 ($1–2)",
+      "mid": "₹300–500 ($4–6)"
+    },
+    {
+      "category": "Entry & Museum Fees",
+      "budget": "₹10–50 ($0–1)",
+      "mid": "₹200–400 ($2–5)"
+    },
+    {
+      "category": "Drinks & Snacks",
+      "budget": "₹100–200 ($1–2)",
+      "mid": "₹300–500 ($4–6)"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "₹410–1,550 ($5–19)",
+      "mid": "₹2,600–5,100 ($31–61)"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🚂",
+      "title": "Getting There",
+      "items": [
+        "Train from Delhi: Shatabdi Express 6.5hrs (₹695 AC chair, departs 7:20am daily from New Delhi). Also overnight options on Jammu Mail. Book on IRCTC at least 1 week in advance",
+        "Train from Jaipur: Via Delhi (change at New Delhi station) or direct 8–10hrs on Aravali Express. From Mumbai: 24–30hrs on various overnight services",
+        "Amritsar Airport (ATQ) has flights from Delhi (1hr, ₹1,500–4,000), Mumbai (2hrs), and international connections to Dubai, London, and Kuala Lumpur via Air India and IndiGo"
+      ]
+    },
+    {
+      "icon": "🛺",
+      "title": "Getting Around",
+      "items": [
+        "Amritsar is compact — the Golden Temple, Jallianwala Bagh, and old city are all walkable from each other within 10–15 minutes",
+        "Auto-rickshaws for longer trips: temple to railway station ₹80–100, temple to Wagah road ₹300–400 private. Shared autos run fixed routes at ₹10–20/person",
+        "Cycle-rickshaws are available near the Golden Temple for short hops (₹30–50). No Ola/Uber in Amritsar — negotiate with auto drivers or ask your hotel to arrange rides"
+      ]
+    },
+    {
+      "icon": "🕌",
+      "title": "Golden Temple Etiquette",
+      "items": [
+        "All visitors must remove shoes (free cloakrooms at all gates), wash feet in the foot bath, and cover their head at all times inside the complex. Free scarves and topi (head covers) are available at the entrance gates",
+        "No smoking, alcohol, or non-vegetarian food is permitted within the complex. The langar is strictly vegetarian. Alcohol is also not sold within 500 metres of the temple",
+        "Photography is permitted throughout the complex including the inner sanctum, but photography during active kirtan in the sanctum requires discretion. Video calls from inside the sanctum are considered disrespectful"
+      ]
+    },
+    {
+      "icon": "🌡️",
+      "title": "Weather & Planning",
+      "items": [
+        "Oct–Mar is ideal: Diwali (Oct/Nov) sees the Golden Temple illuminated with 100,000 candles — one of India's great festivals and worth timing your visit around",
+        "Baisakhi (13 April) is the Sikh New Year festival and the anniversary of Jallianwala Bagh — a historically loaded and atmospherically extraordinary time to visit despite the heat",
+        "Summer (Apr–Jun) is very hot (40–46°C) but the Golden Temple operates 24 hours — visit at 3am when temperatures drop. The marble pool provides some cooling"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Sikhism Basics",
+      "text": "The Golden Temple is the holiest site in Sikhism — one of the world's youngest major religions, founded in Punjab in the 15th century on the principles of equality, service, and devotion to one God. All are welcome regardless of religion. Sat Sri Akal is the standard Sikh greeting. The Guru Granth Sahib (the living scripture) is treated as a living presence — bow when approaching."
+    },
+    {
+      "icon": "⚔️",
+      "title": "Sikh History & 1984",
+      "text": "The 1984 Operation Blue Star (Indian Army storming the Golden Temple to dislodge militants) and subsequent anti-Sikh pogroms are open wounds in Punjabi memory. Approach the topic with sensitivity — many families lost relatives in 1984. The Akal Takht museum covers this history; engaging with it honestly earns respect."
+    },
+    {
+      "icon": "🥛",
+      "title": "Punjabi Hospitality",
+      "text": "Punjabis are among the most hospitable people in India — offers of chai, food, and conversation are genuine and frequent. Refusing food from a host is considered rude; accepting enthusiastically is appreciated. The culture of sharing (sharing a plate, offering the best portion to a guest) is deeply embedded. Match the energy and you will be adopted immediately."
+    },
+    {
+      "icon": "🚫",
+      "title": "Restrictions in the Complex",
+      "text": "No alcohol, tobacco, or meat is permitted inside the Golden Temple complex — this includes approaching the gates while visibly intoxicated. Non-Sikhs are fully welcome at all times but the rules are enforced. Loud behaviour, selfie-taking during kirtan, or sitting with feet pointing toward the Granth Sahib are considered disrespectful."
+    },
+    {
+      "icon": "🇮🇳",
+      "title": "Wagah Border Protocol",
+      "text": "The Wagah ceremony is deeply nationalistic — flags, chanting, and military pride are on full display from both the Indian and Pakistani sides. Participate with the crowd if you choose, but avoid making political statements. Indian citizens and foreigners have separate VIP viewing areas. Passport required for the VIP section."
+    }
+  ],
+  "title": "Amritsar Travel Guide 2026 — Golden Temple Itinerary | roammate",
+  "description": "Complete Amritsar travel guide for backpackers. Golden Temple, langar, Wagah Border ceremony, Jallianwala Bagh, and Amritsari kulcha. 1 to 3-day itinerary with real prices.",
+  "heroImage": "/images/guides/jaipur-hero.webp",
+  "heroFlag": "🇮🇳",
+  "heroCountry": "India",
+  "heroRegion": "South Asia",
+  "heroCity": "Amritsar",
+  "heroSubtitle": "Home to the Golden Temple — the most visited place in the world, where 100,000 pilgrims receive free meals daily in the world's largest community kitchen.",
+  "budgetIntro": "Daily costs per person in INR and USD. Langar (free temple meals) makes Amritsar uniquely affordable — the main expenses are accommodation and the Wagah trip.",
+  "culturalIntro": "The Golden Temple is open to all faiths at all hours — one of the world's truly universal sacred spaces. Approaching it with curiosity and humility opens an experience found nowhere else on earth.",
+  "ctaCity": "Amritsar",
+  "ctaText": "Find travel companions for the Wagah Border ceremony, share the langar experience, and discover Punjabi culture with fellow travelers on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "1–3 Day Itinerary",
+    "Punjab",
+    "Oct – Mar Best"
+  ],
+  "defaultDays": 1
+}

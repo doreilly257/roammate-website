@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "cliffs-of-moher",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EUR (Euro)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Irish",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "GMT (UTC+0)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "May – Sep",
+      "detail": "Comfortable temperatures, lower crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$30–60 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 90 days",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Cliffs of Moher Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Cliffs of Moher",
+            "text": "Begin your day at Cliffs of Moher early to beat the crowds and catch the best light. The area is most atmospheric in the morning when the air is cool and the landscape catches the first golden rays. Take time to explore the main highlights and capture photographs in the soft morning light. This is the most rewarding time to visit.",
+            "tip": "Arrive as early as possible — the first hour after opening has the fewest visitors and the best photography conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Deeper Exploration",
+            "text": "Spend the afternoon exploring further afield. Follow the trails deeper into the landscape for more secluded viewpoints and quieter corners. Grab lunch at a local eatery for authentic flavours and budget-friendly prices.",
+            "tip": "Midday sun can be intense — bring sunscreen, a hat, and plenty of water. Rest during the hottest hours if needed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Pints & Trad Music",
+            "text": "The visitor centre closes at dusk, so head to Doolin or Liscannor for the evening. Doolin is the heartland of traditional Irish music — pubs like Gus O'Connor's and McGann's host live trad sessions most nights from 9 PM. Order a bowl of seafood chowder with brown soda bread and a pint of Guinness for around ten euro.",
+            "tip": "Liscannor is closer to the cliffs (3 km) while Doolin is better for nightlife and music. Both have budget-friendly B&Bs if you want to stay overnight."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "The Cliffs, O'Brien's Tower & the Coastal Walk",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Early Entry & O'Brien's Tower",
+            "text": "Arrive at the Cliffs of Moher Visitor Experience when it opens at 9am (€8 entry, parking €6) to get ahead of the day-trip coaches. Walk north along the cliff-top path past O'Brien's Tower — a 19th-century observation tower built by Sir Cornelius O'Brien — for the most elevated views of the 214-metre drop to the Atlantic below. On clear mornings the Aran Islands sit clearly on the horizon, with the Twelve Bens of Connemara visible further north.",
+            "tip": "The visitor centre car park fills by 10:30am in summer. Arrive before 9am or park in Liscannor village and take the Cliffs of Moher Coastal Walk in from the south."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Walking South to Hag's Head",
+            "text": "Most visitors only see the main viewing platform — walk south along the official coastal path for 3km to Hag's Head, where a ruined signal tower perches on a narrow promontory above sea stacks and nesting seabirds. Razorbills, puffins (in spring), and guillemots nest in the cliff ledges below. The walk takes around 75 minutes each way and the crowds thin dramatically within the first kilometre past the main viewing area.",
+            "tip": "Stay well behind the fence lines — the cliff edges are unstable and the Atlantic wind can be unexpectedly strong even on apparently calm days."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset from the North Path & Dinner in Doolin",
+            "text": "Return to the main cliffs area for golden hour — the setting sun turns the sandstone faces amber and lights the sea silver. Then drive or take a taxi 4km north to Doolin, a tiny village that is the unofficial capital of traditional Irish music. McGann's, McDermott's, or Gus O'Connor's pubs host live trad sessions most evenings from 9pm. Hearty seafood chowder and brown bread costs around €10.",
+            "tip": "Doolin has excellent budget-friendly hostels (around €20–25/night) and is a far better overnight base than the cliffs car park area itself."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "The Burren Limestone & Aran Islands",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "The Burren — Stone Pavements & Wildflowers",
+            "text": "The Cliffs of Moher are the western edge of the Burren — a 250km² karst limestone plateau unlike anywhere else in Europe. Drive inland to Mullaghmore (about 25 minutes) for a circular walk through the strange cracked pavements (known as clints and grikes) that shelter rare Arctic-Alpine and Mediterranean plants growing side by side. The colours in spring are extraordinary. The landscape has almost no visitors compared to the cliffs themselves.",
+            "tip": "The free Burren National Park at Mullaghmore has no entry fee and limited signage — download the Burren Life walking app or pick up the OPW map from the Aillwee Cave visitor centre."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Inis Mór Ferry from Doolin",
+            "text": "Take the Doolin Ferry (around €25 return, 30-minute crossing) to Inis Mór, the largest of the Aran Islands. Rent a bicycle at the pier (€10–15/day) and ride 8km to Dún Aonghasa — a prehistoric stone fort perched directly on a 90-metre cliff edge with no barrier between you and the Atlantic below. The fort dates from 1100BC and the view from the cliff edge is even more dramatic than the Cliffs of Moher.",
+            "tip": "The last ferry back to Doolin departs around 5pm — check the exact time with Doolin Ferry when you book. Missing it means an unplanned overnight on the island."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Seafood & Trad Music in Doolin",
+            "text": "Back in Doolin, settle in at Gus O'Connor's pub — one of Ireland's most celebrated traditional music venues, licensed since 1832. The trad session usually starts around 9:30pm and continues past midnight. Order a bowl of Atlantic seafood chowder thick with local mussels and smoked salmon (€9) and a pint of Guinness to complete the County Clare experience. The village has a relaxed, unspoiled energy that keeps travellers longer than planned.",
+            "tip": "Doolin Craft Gallery on the main street sells authentic Clare-made pottery, tweed, and knitwear — better quality and more locally made than airport souvenir shops."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Coastal Walk, Caves & Coastal Drive South",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Cliffs of Moher Coastal Walk — Full Route",
+            "text": "Walk the full Cliffs of Moher Coastal Walk from Doolin to Liscannor — an 18km waymarked trail that takes 5–6 hours and covers every section of the cliff-top path. The trail passes the main visitor area around the halfway point. Starting from Doolin at 8am means you reach the most dramatic central sections in late morning light, before day-trippers arrive en masse. The southern sections past the visitor centre are the wildest and least walked.",
+            "tip": "Walk south-to-north (Liscannor to Doolin) if you want the sun at your back for photography, north-to-south (Doolin to Liscannor) if you prefer the morning light on the cliff faces."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Aillwee Cave & Birds of Prey Centre",
+            "text": "Drive 20 minutes into the Burren to Aillwee Cave — a 2-million-year-old cave system with stalactites, underground waterfalls, and the bones of extinct brown bears found in a hibernation den (guided tours €14, 45 minutes). The adjacent Birds of Prey Centre (€8) hosts daily hawk-walk displays with eagles, falcons, and owls in the open Burren landscape. Both are low-key, genuinely interesting, and almost entirely free of tourist coaches.",
+            "tip": "The combined ticket for Aillwee Cave and Birds of Prey is €20 — better value than buying separately. Pre-book online for a small discount."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Lahinch & the Coastal Drive",
+            "text": "Drive south to Lahinch, a popular surf village on Liscannor Bay, for a final evening walk on the beach and fish and chips from one of the seafront takeaways (around €10). The drive south along the R478 and N67 coastal road is particularly scenic in evening light — pull over at Milltown Malbay for a view of the Spanish Point headland. From Lahinch, Ennis and Limerick City are both under an hour, making this a natural departure point from the Burren region.",
+            "tip": "Lahinch Surf School hires boards and wetsuits if you want a spontaneous surf session before heading south — lessons from €35, hire from €15."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book ahead online",
+      "text": "Tickets and tours booked online are often 10-30% cheaper than walk-in prices. Many attractions sell out in peak season — advance booking guarantees entry and saves money."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "Shoulder months (just before or after peak season) offer better prices on accommodation and flights with similar weather and fewer crowds. May – Sep is peak."
+    },
+    {
+      "title": "Stay nearby, not at the gate",
+      "text": "Accommodation directly at the attraction charges a premium. Staying 10-20 minutes away can save 30-50% on nightly rates. Use public transport or a rental car to bridge the gap."
+    },
+    {
+      "title": "Pack your own lunch",
+      "text": "Tourist-area restaurants charge inflated prices. Pack sandwiches, snacks, and a refillable water bottle to save $15-30 per day on food. Buy supplies at local supermarkets or markets."
+    },
+    {
+      "title": "Free walking tours & guides",
+      "text": "Many areas offer free or tip-based guided walks that are better than paid tours. Local guides provide insider knowledge and support the community. Check online for options."
+    },
+    {
+      "title": "Use local transport",
+      "text": "Taxis and private transfers are the most expensive option. Local buses, shared minivans, or ride-sharing are 50-80% cheaper and give you a more authentic experience."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$25–60",
+      "midrange": "$70–150",
+      "splurge": "$200+",
+      "notes": "Hostels → guesthouses → boutique lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–60",
+      "splurge": "$70+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Public buses → shared transfers → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$20–60",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$30–50",
+      "notes": "Combined tickets save money"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$75–190",
+      "midrange": "$165–370",
+      "splurge": "$430+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Visa-free 90 days",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Entry fees for Cliffs of Moher should be paid in EUR — exchange money before arriving"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential",
+        "Bring a basic first aid kit with blister plasters, antiseptic, painkillers, and any personal medication",
+        "Sun protection is essential — apply SPF 50+ and reapply every 2 hours"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Excellent public transport — trains, buses, and ferries connect major points",
+        "Download offline maps before arriving — mobile data coverage can be patchy in remote areas",
+        "Negotiate transport prices before departure or use metered taxis and ride-hailing apps"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card at the airport or any phone shop for affordable data — much cheaper than international roaming",
+        "WiFi is available at most accommodation but signal quality varies. Download offline maps and guides before heading to remote areas",
+        "Share your itinerary with someone at home and check in daily, especially for remote treks or island visits"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: EUR (Euro). Cards accepted in tourist areas, but carry cash for local vendors",
+        "ATMs are available in towns and cities. Visa and Mastercard are most widely accepted",
+        "Tip 5-10% or round up at restaurants. Guides and porters appreciate tips — budget $5-10 per day per person"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable walking shoes, layers for temperature changes, and a packable rain jacket",
+        "A reusable water bottle, headlamp, and portable phone charger are essential for any outdoor adventure",
+        "Quick-dry clothing is ideal — you can wash and wear repeatedly, reducing pack weight"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Local Customs",
+      "text": "Be mindful of local customs and traditions. Ask before photographing people. Learn basic greetings in the local language — even a simple hello earns goodwill."
+    },
+    {
+      "icon": "🌍",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish. Stay on marked trails and paths. Do not touch, feed, or disturb wildlife. The natural beauty of Cliffs of Moher depends on every visitor treating it with respect. Take only photos, leave only footprints."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals, especially in indigenous or traditional communities. Many religious sites have photography restrictions — check signage and respect these rules. Drone regulations vary — check local laws before flying."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn a few words in English — greetings, please, thank you, and numbers go a long way. English is widely spoken in tourist areas but a translation app helps bridge gaps."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned guesthouses, restaurants, and guides over international chains. Buy handicrafts directly from artisans. Your spending has the most impact when it goes directly into the local economy rather than through large tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace & Patience",
+      "text": "Allow more time than you think — rushing through natural and cultural sites misses the point. The best experiences come from slowing down and being present."
+    }
+  ],
+  "title": "Cliffs of Moher Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Cliffs of Moher guide for young travelers. Nature, adventure, exploration with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/cliffs-of-moher-hero.webp",
+  "heroFlag": "🇮🇪",
+  "heroCountry": "Ireland",
+  "heroRegion": "Europe",
+  "heroCity": "Cliffs of Moher",
+  "heroSubtitle": "Ireland's most visited natural attraction — 214-metre cliffs plunging into the Atlantic, with views stretching to the Aran Islands and beyond.",
+  "budgetIntro": "Daily costs per person in US dollars. Cliffs of Moher costs depend on season, accommodation style, and activity choices — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Cliffs of Moher is a natural wonder — approach with curiosity and respect, and you will be rewarded with one of the most memorable experiences of your travels.",
+  "ctaCity": "Cliffs of Moher",
+  "ctaText": "Find travel companions to explore Cliffs of Moher together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "1-Day Highlight",
+    "Coastal",
+    "May – Sep Best"
+  ],
+  "defaultDays": 1
+}

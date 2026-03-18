@@ -1,0 +1,214 @@
+{
+  "type": "city",
+  "slug": "paracas",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "PEN (Sol)",
+      "detail": "1 USD ≈ 3.7 PEN; USD accepted by tour boats"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Spanish",
+      "detail": "Basic English in tour agencies"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "PET (UTC-5)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Year-round",
+      "detail": "Dry; fog common Jun–Oct mornings"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$35–65 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "90–183 days visa-free",
+      "detail": "Most nationalities — check before travel"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Paracas Reserve & Ballestas Islands",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ballestas Islands Boat Tour",
+            "text": "Join the 8am boat tour to the Islas Ballestas — two hours through the Paracas Bay to a chain of rocky islands just offshore teeming with marine wildlife. Colonies of 150,000+ Humboldt penguins nest in burrows on the cliffs, sharing the rocks with barking sea lions, Peruvian boobies, pelicans, cormorants, and Peruvian fur seals. The density of wildlife is extraordinary — you'll circle the islands at close range as guides point out the layers of activity. En route, the boat passes the Candelabra geoglyph, a 180m figure etched into the hillside by an unknown culture predating the Nazca Lines. The channel is cool and choppy — dress in layers.",
+            "tip": "Boats depart at 8am and 10am from the Paracas port. The 8am tour has better light and calmer water. Book through your hotel or the dock kiosks for $15-20. Bring a windproof layer — the open boat on the ocean is cold regardless of air temperature."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Paracas National Reserve — Red Beach & Lagunillas",
+            "text": "After the boat tour, hire a remis taxi or rent a bike to explore the Paracas National Reserve. Drive south through the reserve to Playa Roja (Red Beach), a crescent of dark crimson sand formed from volcanic rock, set against the bone-white desert and turquoise Pacific. Continue to Lagunillas Bay, a sheltered lagoon where flamingos wade in the shallows and Inca terns skim the surface — a deeply peaceful spot for lunch at the small cevichería on the shore. The reserve road passes dramatic red-brown cliffs plunging into the sea, the Catedral rock arch (now partially collapsed), and several secluded coves inaccessible on foot.",
+            "tip": "Reserve entry costs 11 soles. A remis taxi tour of the main reserve highlights costs 40-60 soles for 2-3 hours. Alternatively, rent a bike from Paracas town for 15-20 soles — the main reserve road is flat and sealed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset on the Bay & Ceviche Dinner",
+            "text": "Return to Paracas town for sunset over the bay — the desert sky turns extraordinary shades of orange and crimson as the sun drops over the Pacific. The malecón (waterfront promenade) is the best viewing spot. Paracas is one of the best places in Peru to eat ceviche — the fish comes directly from the bay and the town's restaurants on the malecón serve outstanding fresh versions at $10-18. Try tiradito (thinly sliced raw fish in ají amarillo sauce), chupe de camarones (prawn chowder), or the mixed ceviche plate with octopus and squid. The town is quiet in the evenings — most travellers are day-trippers or overnight stops.",
+            "tip": "The best ceviche restaurants in Paracas are on the malecón facing the bay. A full ceviche lunch or dinner with a glass of chicha morada costs 35-50 soles per person. The fish is freshest for lunch; evening is still excellent but order early."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book boat tours at the dock",
+      "text": "The Ballestas Islands boat tour costs $15-20 from dock kiosks. Hotels charge $25-30 for the same boats. Walk to the port and book direct the evening before for the 8am departure."
+    },
+    {
+      "title": "Eat ceviche for lunch not dinner",
+      "text": "Ceviche is always freshest at lunch when the day's catch arrives. A full lunch ceviche set at a malecón restaurant costs 25-40 soles ($7-11) — significantly cheaper than dinner at the same quality."
+    },
+    {
+      "title": "Combine with Nazca on one trip",
+      "text": "Paracas and Nazca are both on the Panamericana, 2.5 hours apart. Combining both stops on a Lima–Cusco journey avoids extra bus costs and makes the most of southern Peru's coastal desert attractions."
+    },
+    {
+      "title": "Rent a bike for the reserve",
+      "text": "Bike rental for reserve exploring costs 15-20 soles for a half-day versus 40-60 soles for a taxi tour. The main reserve road is flat and paved. Carry 2 litres of water — the desert sun and wind dehydrate quickly."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$8–15",
+      "mid": "$30–60",
+      "notes": "Dorm → private room on malecón"
+    },
+    {
+      "category": "Food",
+      "budget": "$8–15",
+      "mid": "$20–40",
+      "notes": "Market → malecón ceviche restaurants"
+    },
+    {
+      "category": "Ballestas Boat Tour",
+      "budget": "$15–18",
+      "mid": "$20–25",
+      "notes": "Dock booking → hotel booking"
+    },
+    {
+      "category": "Reserve Entry",
+      "budget": "$3",
+      "mid": "$3",
+      "notes": "11 soles; required for peninsula"
+    },
+    {
+      "category": "Reserve Transport",
+      "budget": "$4–6",
+      "mid": "$12–18",
+      "notes": "Bike rental → remis tour"
+    },
+    {
+      "category": "Transport In/Out",
+      "budget": "$5–10",
+      "mid": "$10–20",
+      "notes": "Bus from Lima/Nazca"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$35–55",
+      "mid": "$80–150",
+      "notes": "Budget with boat tour included"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🚌",
+      "title": "Getting There",
+      "items": [
+        "Paracas is 3.5 hours south of Lima — take a Cruz del Sur or Oltursa bus to Pisco (25-40 soles) then a mototaxi or colectivo to Paracas (5 soles)",
+        "Some buses stop directly at the Paracas junction or San Andrés — confirm with the driver",
+        "From Nazca: 2.5 hours north; take any northbound bus on the Panamericana to Pisco"
+      ]
+    },
+    {
+      "icon": "🌊",
+      "title": "Ocean & Wildlife",
+      "items": [
+        "The Humboldt Current brings cold, nutrient-rich water that supports extraordinary marine biodiversity",
+        "Penguin numbers peak in the nesting season (Apr–Aug); year-round presence guaranteed",
+        "Flamingo sightings at Lagunillas are most reliable in summer (Dec–Apr)"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Paracas town is small and walkable — the malecón, port, and main restaurants are within 10 minutes",
+        "Rent a bike (15-20 soles/half-day) or take a remis taxi (40-60 soles) to explore the national reserve",
+        "No public transport inside the national reserve — it is bikes, taxis, or guided tours only"
+      ]
+    },
+    {
+      "icon": "🌡",
+      "title": "Climate & Packing",
+      "items": [
+        "Desert climate — virtually zero rainfall year-round, strong Pacific wind daily",
+        "Morning fog (garúa) in Jun–Oct can obscure visibility; afternoons clear",
+        "Bring windproof jacket, sunscreen SPF 50+, and sunglasses — the desert sun reflects off white sand intensely"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🐧",
+      "title": "Wildlife Ethics",
+      "text": "The Ballestas Islands are a protected marine reserve. Boats maintain minimum distances from wildlife; never ask operators to get closer. Do not throw food overboard. The health of the penguin colony and sea lion populations depends entirely on the tourism industry following these rules."
+    },
+    {
+      "icon": "🌿",
+      "title": "Reserve Fragility",
+      "text": "The Paracas National Reserve is a hyper-arid desert ecosystem that looks barren but is highly sensitive. Stay on marked roads and trails. Do not collect shells, stones, or marine life from beaches. The red sand of Playa Roja is particularly vulnerable to compaction."
+    },
+    {
+      "icon": "🏺",
+      "title": "Paracas Civilisation",
+      "text": "The Paracas region is named for the pre-Inca Paracas culture (700 BCE – 200 CE), famous for producing the most sophisticated woven textiles in the pre-Columbian world. The Museo de Sitio Julio C. Tello in the reserve tells this story with genuine mummies and textiles."
+    },
+    {
+      "icon": "🐟",
+      "title": "Sustainable Seafood",
+      "text": "Paracas's fishing industry faces pressure from overfishing. When ordering seafood, choose ceviche made with corvina or lenguado (common species) rather than endangered varieties. Ask restaurants whether their octopus and squid are locally sourced from certified fishers."
+    }
+  ],
+  "title": "Paracas Guide 2026 — Itinerary | roammate",
+  "description": "Complete Paracas travel guide for backpackers. Ballestas Islands penguin tours, red beach, flamingo lagoons, and fresh ceviche. Budget tips and practical info.",
+  "heroImage": "/images/guides/lima-hero.webp",
+  "heroFlag": "🇵🇪",
+  "heroCountry": "Peru",
+  "heroRegion": "South America",
+  "heroCity": "Paracas",
+  "heroSubtitle": "Peru's coastal desert reserve — a dramatic landscape of red cliffs, flamingo-filled lagoons, and a marine reserve teeming with sea lions, penguins, and condors.",
+  "budgetIntro": "Daily costs per person in USD. Paracas is excellent value — the boat tour ($15-20) is the main expense, and everything else is inexpensive by Peruvian coastal standards.",
+  "culturalIntro": "Paracas is one of Peru's most biodiverse marine environments — the wildlife here is genuinely extraordinary, and the coastal desert landscape unlike anywhere else on Earth.",
+  "ctaCity": "Paracas",
+  "ctaText": "Find travel companions to share the Ballestas Islands boat tour on roammate — four people in a boat makes the wildlife experience even better.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "1–2 Day Itinerary",
+    "Peru",
+    "Year-round"
+  ],
+  "defaultDays": 1
+}

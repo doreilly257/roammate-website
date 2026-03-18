@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "lake-nakuru",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "KES (Kenyan Shilling)",
+      "detail": "M-Pesa mobile money widely used"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Swahili / English",
+      "detail": "English spoken at lodges and gates"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EAT (UTC+3)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jun – Oct, Jan – Mar",
+      "detail": "Dry seasons for best wildlife viewing"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$30–80 USD",
+      "detail": "Budget to mid-range including park fees"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "eTA required",
+      "detail": "Apply online before arrival at etakenya.go.ke"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Lake Nakuru Wildlife Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn Game Drive — Flamingos & Rhinos",
+            "text": "Enter Lake Nakuru National Park at dawn for the best wildlife viewing. The lake's alkaline waters have historically attracted up to two million lesser flamingos, creating one of the world's great natural spectacles — a shimmering pink band stretching along the shoreline. Even when flamingo numbers fluctuate due to water levels, the park is one of Kenya's best locations for both black and white rhinos, with over 70 individuals roaming the open grasslands and acacia woodland. The early morning is when predators are most active and the light is best for photography.",
+            "tip": "Flamingo numbers at Lake Nakuru fluctuate dramatically with water alkalinity levels. Check recent reports before visiting — when conditions are right, the pink spectacle is extraordinary."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Baboon Cliff Viewpoint & Southern Circuit",
+            "text": "Drive to Baboon Cliff — a dramatic escarpment viewpoint on the western edge of the park that offers a panoramic vista over the entire lake and the surrounding Rift Valley. From this elevation, the flamingos appear as a pink haze along the waterline and you can trace the full extent of the park's diverse habitats — open grassland, euphorbia forest, acacia woodland, and the shimmering soda lake. Continue south along the lakeshore circuit, watching for Rothschild's giraffes, waterbuck, and the elusive leopard in the dense euphorbia canopy.",
+            "tip": "Baboon Cliff is named for the baboon troops that frequent the viewpoint. Keep car windows closed and food secured — they are bold and opportunistic. The viewpoint is best visited between 10am and 3pm for the most even light over the lake."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Makalia Falls & Sunset",
+            "text": "Drive to the southern end of the park to Makalia Falls — a seasonal waterfall that tumbles through dense forest into a rocky pool. The surrounding forest is the best area in the park for spotting pythons, colobus monkeys, and the shy bushbuck antelope. Return along the eastern shore as the sun begins to set — the golden light on the lake with flocks of pelicans and cormorants silhouetted against the water creates stunning photography opportunities. Exit through the main gate and find dinner in Nakuru town.",
+            "tip": "Makalia Falls is most impressive after the rains (April-May, November). In dry months, the falls reduce to a trickle but the forest walk remains worthwhile for birdwatching and primate spotting."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Lake Nakuru Full-Day Safari",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn Game Drive — Rhino Sanctuary",
+            "text": "Enter the park at 6am and head directly to the rhino sanctuary area on the southern grasslands. Lake Nakuru National Park is a fenced rhino sanctuary protecting over 70 black and white rhinos — one of the highest densities in Kenya. White rhinos are easier to spot, grazing on the open plains in pairs or small groups, while the rarer black rhinos prefer the thicker bush and are more solitary. The early morning is when you are most likely to see rhinos in the open before they retreat to shade. Lions, leopards, and hyenas also hunt in the predawn darkness.",
+            "tip": "White rhinos have square lips (for grazing) and are generally placid. Black rhinos have hooked lips (for browsing) and are more aggressive and harder to find. A good guide will know their current territories."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Lakeshore Circuit — Flamingos & Pelicans",
+            "text": "Drive the lakeshore circuit for the full flamingo and waterbird experience. When alkalinity levels are favourable, the shallow soda lake attracts vast numbers of lesser flamingos that feed on spirulina algae — their pink colouration comes directly from the carotenoid pigments in this diet. Great white pelicans, yellow-billed storks, African fish eagles, and cormorants also congregate in huge numbers along the shore. Stop at designated viewing points along the eastern shore where you can leave your vehicle and approach the waterline on foot for closer views.",
+            "tip": "Bring binoculars — the flamingos often feed 50-100m from the shore and binoculars transform the experience from a pink blur to individual birds in extraordinary detail."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Baboon Cliff Sunset",
+            "text": "End the day at Baboon Cliff for the park's most spectacular sunset viewpoint. As the sun drops behind the western Rift Valley escarpment, the lake turns from blue to gold to orange, and the entire landscape is bathed in warm light. Baboon troops settle in the cliffs for the night, and if you are lucky, a fish eagle will make a final hunting pass across the water. The scale of the Rift Valley is most apparent from this elevation — the escarpment walls stretching north and south into the distance. Exit the park at dusk and head to your accommodation.",
+            "tip": "Baboon Cliff is 20 minutes' drive from the main gate — time your visit to arrive 45 minutes before sunset for the full colour display and leave enough time to exit before the park closes at 6:30pm."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Acacia Forest, Makalia Falls & Leopards",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Acacia Forest — Leopard Country",
+            "text": "Lake Nakuru has one of the highest leopard densities of any park in East Africa — the thick yellow-barked acacia forest (fever tree forest) along the lake's eastern shore is their primary habitat. Drive slowly through the forest with windows down, scanning the horizontal branches above for a draped tail or spotted flank. Leopards are most active in the early morning and late afternoon, resting in the canopy during the heat of the day. The fever tree forest is also home to olive baboons, vervet monkeys, and waterbuck that come to the lake edge to drink.",
+            "tip": "Leopards are masters of camouflage — scan every horizontal branch, fallen log, and dense thicket. Your driver-guide will know the most recent sighting areas. Patience is essential."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Makalia Falls & Southern Forest Walk",
+            "text": "Drive to the park's southern boundary to reach Makalia Falls — a waterfall surrounded by dense indigenous forest that feels worlds apart from the open grasslands. The falls cascade into a rocky pool that attracts wildlife for drinking, and the surrounding canopy is excellent for birdwatching — look for crowned eagles, Narina trogons, and silvery-cheeked hornbills. The forest is also the best place in the park to spot black-and-white colobus monkeys leaping between the canopy trees with their flowing white mantles.",
+            "tip": "Ask your guide if a short guided walk near Makalia Falls is permitted — on-foot experiences in the forest are far more immersive than game drives and the birdwatching is exceptional."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Nakuru Town — Local Dinner",
+            "text": "Head into Nakuru town for an evening meal at a local restaurant. Nakuru is Kenya's fourth-largest city and has a growing food scene beyond the tourist lodges. Try a local nyama choma joint for grilled goat or beef ribs with ugali and kachumbari, or visit one of the Indian restaurants that reflect Nakuru's historic South Asian community. The town's main street has bars and cafes where you can mix with locals and other travellers over a cold Tusker beer.",
+            "tip": "Nakuru town is safe and walkable in the central area during the evening. For the most authentic nyama choma experience, ask your accommodation to recommend a local favourite rather than a tourist-oriented restaurant."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Lake Bogoria Flamingos & Rift Valley",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lake Bogoria — Flamingos & Hot Springs",
+            "text": "Take a day trip 60km north to Lake Bogoria National Reserve — when Lake Nakuru's water levels rise and dilute the alkalinity, the flamingos migrate to Lake Bogoria's more reliably alkaline waters. Bogoria is a stunning Rift Valley soda lake backed by dramatic escarpment walls, and its shoreline features active geothermal hot springs and geysers that shoot boiling water and steam from the earth. The combination of millions of pink flamingos, steaming geysers, and the Rift Valley backdrop is one of the most surreal landscapes in East Africa.",
+            "tip": "Check flamingo migration patterns before visiting — local guides and Kenya Wildlife Service will know whether the main concentrations are at Nakuru or Bogoria. The hot springs can cause serious burns — stay on marked paths."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bogoria Hot Springs & Greater Kudu",
+            "text": "Walk along the shoreline trail past the hot springs and geysers — steam vents hiss from cracks in the rocks and boiling pools bubble with sulphurous water. The area smells strongly of hydrogen sulphide but the geological drama is extraordinary. Lake Bogoria is also one of the few places in Kenya to see the greater kudu — a magnificent spiral-horned antelope that favours the rocky, bushy terrain around the lake. Other wildlife includes Grant's gazelle, impala, klipspringer, and over 130 bird species.",
+            "tip": "Greater kudu are shy and best spotted in the rocky areas south of the hot springs in the early morning or late afternoon. They are one of Africa's most striking antelopes and well worth the search."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Nakuru & Departure",
+            "text": "Drive back to Nakuru in the late afternoon, stopping at viewpoints along the Rift Valley escarpment road for final panoramic photographs. The drive passes through small Rift Valley farming communities where you can buy fresh fruit, honey, and roasted maize from roadside vendors. Return to Nakuru for a farewell dinner before departing for your next destination — whether that is the Maasai Mara to the southwest, Nairobi to the southeast, or the Kenyan highlands further north.",
+            "tip": "The drive from Bogoria to Nakuru takes 90 minutes on good roads. If heading to the Maasai Mara next, the journey from Nakuru takes 5-6 hours — plan for a full travel day."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Lake Nakuru — Dawn Safari",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "First Light Game Drive",
+            "text": "Enter Lake Nakuru National Park at first light for the magical dawn hour when predators are finishing their night hunts and the lake mist lifts to reveal the flamingo-lined shore. The early morning game drive along the eastern lakeshore passes through the iconic yellow fever tree forest — towering acacia xanthophloea trees with luminous yellow-green bark that create cathedral-like canopies. Lions frequently rest in the morning shade here after overnight hunts, and the forest floor is alive with warthogs, bushbuck, and baboon troops.",
+            "tip": "The 6am–8am window is the golden hour for both wildlife activity and photography. Cold mornings (especially June–August) drive animals into the open to warm up in the early sun."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Rhino Viewing & Southern Plains",
+            "text": "Head to the southern grasslands where Lake Nakuru's rhino population concentrates. The park is a designated rhino sanctuary and one of Kenya's most important breeding grounds for both black and white rhinos. White rhinos graze the short grass in pairs or family groups, while solitary black rhinos browse in the thicker scrub. The southern plains also support large herds of buffalo, eland, and waterbuck, with Rothschild's giraffes browsing the acacia canopy above.",
+            "tip": "Keep 30m minimum distance from rhinos at all times — they have poor eyesight but excellent hearing and can charge at 50km/h if they feel threatened."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Settle In & Lake Views",
+            "text": "Check into your accommodation — options range from budget campsites and bandas inside the park to mid-range lodges and guesthouses in Nakuru town. If staying at one of the park lodges, the evening is perfect for a sundowner drink on the terrace overlooking the lake. As darkness falls, the sounds of the African bush emerge — hyena calls, nightjar whistles, and the distant rumble of hippos in the shallows. Dinner at your lodge with fellow travellers is a classic safari experience.",
+            "tip": "Staying inside the park at Sarova Lion Hill Lodge or Lake Nakuru Lodge allows you to start game drives at dawn without the commute from town. Book in advance during peak season (July–October)."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Baboon Cliff & Flamingo Circuit",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Baboon Cliff Sunrise",
+            "text": "Drive to Baboon Cliff at sunrise for the park's most panoramic viewpoint. The escarpment rises 200m above the lake floor and the view at dawn — mist rising off the water, flamingos beginning to stir, and the Rift Valley stretching to the horizon — is extraordinary. Baboon troops emerge from their cliff-face sleeping sites and begin their morning grooming rituals, seemingly indifferent to visitors. The cliff is also excellent for spotting raptors — Verreaux's eagles, augur buzzards, and African hawk-eagles ride the thermals along the escarpment.",
+            "tip": "Arrive at Baboon Cliff before 7am for the best light and the chance to watch baboon troops descend from their cliff-face sleeping ledges — a remarkable sight."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Full Lakeshore Flamingo Circuit",
+            "text": "Drive the complete lakeshore circuit, stopping at each designated viewing point to observe the waterbird concentrations. The northern shore is typically where flamingos gather in the greatest densities, while the eastern shore's fever tree forest offers the best general birdwatching — over 450 species have been recorded in the park. Look for malachite kingfishers, African jacanas walking on lily pads, and goliath herons standing motionless in the shallows. The western shore passes through open grassland where cheetahs occasionally hunt.",
+            "tip": "A good pair of binoculars is essential — the flamingos can be 50-200m from the road depending on water levels, and identifying individual waterbird species requires magnification."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Sounds & Stargazing",
+            "text": "If staying inside the park, the evening soundscape is a safari experience in itself. Hippos emerge from the lake to graze on shore, their grunting and bellowing echoing across the water. Hyenas begin their eerie whooping calls as they set out to hunt, and occasionally the deep roar of a lion carries across the grassland. The park's location away from major light pollution also makes it excellent for stargazing — the Southern Cross and Milky Way are vivid on clear nights.",
+            "tip": "Never walk outside your accommodation at night inside the park — hippos, buffalo, and lions move freely after dark and are extremely dangerous to pedestrians."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Leopard Search & Makalia Falls",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Fever Tree Forest — Leopard Patrol",
+            "text": "Spend the entire morning slowly driving through the fever tree forest along the eastern shore — this is Lake Nakuru's prime leopard territory. The park has an estimated 20+ leopards, one of the highest densities in East Africa, and the yellow-barked acacia forest provides perfect ambush cover. Drive at walking pace with windows open, scanning every horizontal branch overhead. Leopards often drape themselves along branches with their tails hanging down, nearly invisible in the dappled light. Even if you miss the leopards, the forest is full of other wildlife.",
+            "tip": "If a game vehicle is stopped and passengers are looking upward, there is almost certainly a leopard in the trees. Pull alongside quietly and follow their gaze."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Makalia Falls & Forest Trail",
+            "text": "Drive to the southern tip of the park for Makalia Falls, where a seasonal stream cascades through dense indigenous forest. The falls area is the park's most scenic walking destination and the best spot for forest-dwelling species — black-and-white colobus monkeys with their flowing white mantles, Sykes' monkeys, and an extraordinary diversity of forest birds. African crowned eagles — one of Africa's most powerful raptors — nest in the tall canopy trees and can sometimes be heard calling above.",
+            "tip": "The Makalia Falls area is quieter than the main lake circuit — fewer vehicles and a more peaceful, immersive bush experience. Pack a picnic lunch and take your time."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Drive & Campfire",
+            "text": "Return along the western shore for a sunset game drive — the golden hour light over the lake creates spectacular photography conditions, with silhouettes of giraffes, zebras, and acacia trees against the orange sky. If camping inside the park, build a small fire at your campsite (where permitted) and enjoy the bush atmosphere. If at a lodge, join other guests for dinner and swap safari stories — the communal dining experience is one of the joys of East African travel.",
+            "tip": "The western shore sunset drive is the most scenic route back to the main gate or lodges. Time it to finish with 30 minutes of daylight remaining for a safe exit."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Lake Bogoria Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive to Lake Bogoria",
+            "text": "Head north for a full-day excursion to Lake Bogoria National Reserve, 60km from Nakuru. The drive passes through the Rift Valley floor with views of the Menengai Crater — one of the largest volcanic calderas in the world. Lake Bogoria is a narrow soda lake backed by the Siracho Escarpment and is one of the most geologically active areas in the Rift Valley. When Lake Nakuru's water levels fluctuate, the flamingo population often migrates to Bogoria's more consistently alkaline waters, sometimes in concentrations of over a million birds.",
+            "tip": "Start early — the drive takes 90 minutes and morning light on the lake is the most dramatic. Bring packed lunch as there are limited food options at Bogoria."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hot Springs, Geysers & Greater Kudu",
+            "text": "Walk the shoreline trail past Bogoria's famous hot springs and geysers. Boiling water erupts from vents in the lakeshore rocks, steam columns rise from the ground, and the air smells of sulphur. The juxtaposition of flamingos feeding peacefully in the shallows while geysers blast nearby is surreal. The reserve is also one of Kenya's best locations for the greater kudu — a large, spiral-horned antelope that favours rocky, bushy terrain. Klipspringers stand on impossibly small rock ledges along the escarpment face.",
+            "tip": "The hot springs are genuinely dangerously hot — stay on marked paths and watch children carefully. The ground near active vents can be thin and unstable."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return via Menengai Crater",
+            "text": "On the return drive to Nakuru, detour to the rim of Menengai Crater — the second largest volcanic caldera in Africa. The crater floor, 500m below the rim, is peppered with smaller volcanic cones and steam vents, and the views from the rim stretch across the Rift Valley to Lake Nakuru glinting in the distance. The crater holds deep spiritual significance for the Maasai and local communities. Return to Nakuru for an evening meal and rest before continuing your explorations.",
+            "tip": "The Menengai Crater viewpoint is free and easily accessible by road. Go in the late afternoon for the best light and avoid the midday haze that can obscure the views."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Lake Naivasha & Crescent Island",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lake Naivasha Boat Safari",
+            "text": "Take a day trip 70km south to Lake Naivasha — a freshwater lake in the Rift Valley that contrasts dramatically with the soda lakes. Hire a boat at the Naivasha landing and cruise along the papyrus-fringed shoreline, passing pods of hippos, African fish eagles perched in dead trees over the water, and enormous concentrations of pelicans, cormorants, and herons. The lake supports one of Kenya's highest densities of hippos — the boat brings you within 20m of surfacing hippos, which is thrilling and slightly terrifying in equal measure.",
+            "tip": "Negotiate the boat price before departure — standard rates are 3,000-5,000 KES per boat (not per person) for a 1-2 hour trip. Morning trips offer the best light and bird activity."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Crescent Island Walking Safari",
+            "text": "Cross by boat to Crescent Island — a private wildlife sanctuary in Lake Naivasha where you can walk freely among wildlife without vehicles. Giraffes, zebras, wildebeest, waterbuck, and gazelles graze within metres of you on the island's open grassland. There are no predators on the island, so the animals are remarkably relaxed around humans. Walking among a herd of giraffes as they tower above you is a profoundly different experience from watching them from a vehicle — the scale, the sound of their chewing, and their liquid brown eyes at close range are unforgettable.",
+            "tip": "Crescent Island appeared in the film Out of Africa. The walking safari takes 1-2 hours and is safe for all ages. Bring water and sun protection — there is no shade on the island."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hell's Gate Sunset & Return",
+            "text": "If time permits, continue 20 minutes south to Hell's Gate National Park — one of Kenya's few parks where you can walk and cycle. The park's dramatic red-rock gorge, towering cliffs, and geothermal steam vents inspired the landscapes in Disney's The Lion King. Cycling past grazing zebras and giraffes with Fischer's Tower — a volcanic plug — rising behind them is one of Kenya's most unique experiences. Return to Nakuru in the evening along the scenic Rift Valley escarpment road.",
+            "tip": "Rent bicycles at the Hell's Gate entrance for around 500 KES. The main gorge walk requires a mandatory guide and takes 2 hours — it is spectacular but can be slippery."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Nakuru Town & Local Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hyrax Hill Prehistoric Site",
+            "text": "Visit Hyrax Hill — a prehistoric archaeological site on the outskirts of Nakuru dating back 3,000 years. The small museum displays Neolithic pottery, tools, and burial remains excavated from the site, while the outdoor trail passes ancient settlement pits and a historic iron smelting site. The hilltop offers panoramic views over Nakuru town and Lake Nakuru in the distance. The site is quiet and rarely visited by tourists, offering a peaceful morning of exploration and a reminder that humans have lived in this Rift Valley landscape for millennia.",
+            "tip": "Hyrax Hill is a 15-minute drive from Nakuru town centre. The museum is small but the guided walk is informative. Combine it with a morning in town before an afternoon activity."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Nakuru Town Markets & Street Food",
+            "text": "Explore Nakuru's central market — a bustling covered market selling fresh produce, spices, second-hand clothes (mitumba), and household goods. The market is a window into everyday Kenyan life far from the tourist circuit. Try fresh sugarcane juice pressed on the spot, roasted maize from street vendors, and mandazi (East African doughnuts) from the snack stalls. Walk through the main commercial streets to see the mix of Indian-influenced architecture, colonial-era buildings, and modern Kenyan commerce that reflects Nakuru's diverse history.",
+            "tip": "Nakuru's market is busiest in the morning. By afternoon, the produce section quiets down but the food stalls and fabric sellers remain active. Keep valuables secure in crowded areas."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Lord Egerton Castle",
+            "text": "Visit Lord Egerton Castle — a colonial-era manor house built in the 1930s by an eccentric English settler, Lord Maurice Egerton. The imposing stone castle sits on the grounds of Egerton University and was built in an attempt to impress a woman who ultimately rejected his proposal. The building combines European castle architecture with East African materials and now serves as a museum of colonial-era artifacts, furniture, and photographs. The grounds are pleasant for an evening walk, and the story of unrequited love that built it adds a romantic melancholy.",
+            "tip": "Lord Egerton Castle is on the Egerton University campus, a 10-minute drive from town. Entry is inexpensive and the eccentric history makes it far more interesting than the architecture alone suggests."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Final Safari & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Farewell Dawn Game Drive",
+            "text": "Return to Lake Nakuru National Park for a final dawn game drive — revisit your favourite areas and search for any species you missed earlier in the week. The park feels different each morning depending on weather, animal movements, and the shifting light. This is your best chance to complete your Big Five sightings (lion, leopard, rhino, buffalo — the park lacks elephant) or to simply sit quietly at a lakeshore viewpoint and absorb the extraordinary landscape of flamingos, rhinos, and Rift Valley escarpments one last time.",
+            "tip": "The park is quietest on weekday mornings — if your departure is flexible, time your final visit for a Tuesday or Wednesday to have the roads almost to yourself."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Souvenir Shopping & Packing",
+            "text": "Spend the early afternoon browsing Nakuru's craft shops and roadside stalls for souvenirs — soapstone carvings from the Kisii region, Maasai beadwork, woven sisal baskets, and Kenyan coffee beans make excellent gifts. The shops along the main highway towards Nairobi often have better prices and lower pressure than tourist markets. Pack your bags and settle any accommodation bills before your departure.",
+            "tip": "Kenyan AA coffee beans and Kilifi cashew nuts are excellent food souvenirs — lightweight, affordable, and available at supermarkets at a fraction of airport prices."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Departure to Nairobi or Maasai Mara",
+            "text": "Depart Nakuru for your next destination. The drive to Nairobi takes 2.5-3 hours on the main highway and passes through dramatic Rift Valley scenery — the escarpment descent towards Naivasha offers some of the most photographed views in Kenya. If heading to the Maasai Mara, the journey takes 5-6 hours via Narok on increasingly rural roads. Lake Nakuru is perfectly positioned as a stopover between Nairobi and the Mara, giving you a concentrated rhino and flamingo experience that complements the Mara's big cat and migration spectacle.",
+            "tip": "If driving to the Maasai Mara, fuel up in Nakuru — petrol stations become scarce after Narok. The final 50km to the Mara are unpaved and rough, especially after rain."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Camp inside the park",
+      "text": "KWS campsites inside Lake Nakuru are dramatically cheaper than lodge accommodation — around $30 per person per night including park fees. Bring your own tent or rent one locally. The bush camping experience is unforgettable."
+    },
+    {
+      "title": "Share a game vehicle",
+      "text": "Hiring a safari vehicle and driver-guide is the biggest daily cost. Share with other travellers to split the fee — most vehicles seat 6-7 passengers comfortably. Hostels and budget hotels in Nakuru can help arrange group safaris."
+    },
+    {
+      "title": "Buy a KWS Smart Card",
+      "text": "If visiting multiple Kenyan parks, buy a Kenya Wildlife Service Smart Card for discounted entry fees. The card avoids the per-visit premium and allows seamless entry at all KWS parks and reserves."
+    },
+    {
+      "title": "Eat in Nakuru town",
+      "text": "Lodge restaurants inside the park charge premium prices. If staying outside the park, eat in Nakuru town where a full meal costs 300-500 KES ($2-4). Stock up on snacks and water at Nakuru supermarkets before entering the park."
+    },
+    {
+      "title": "Combine with Lake Naivasha",
+      "text": "Lake Naivasha and Crescent Island are within day-trip distance and offer different wildlife experiences. Combining Nakuru and Naivasha in a single trip maximises your Rift Valley experience without paying for separate safari packages."
+    },
+    {
+      "title": "Travel in low season",
+      "text": "April-May (long rains) and November (short rains) are low season with reduced lodge prices and fewer vehicles in the park. Wildlife viewing can actually improve as animals congregate around water sources and vegetation is lush."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$10–30",
+      "midrange": "$50–120",
+      "splurge": "$200+",
+      "notes": "Camping → guesthouses → safari lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$5–15",
+      "midrange": "$15–35",
+      "splurge": "$50+",
+      "notes": "Self-catering → town restaurants → lodge dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$10–20",
+      "midrange": "$30–60",
+      "splurge": "$100+",
+      "notes": "Shared vehicle → private hire → fly-in"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–15",
+      "midrange": "$20–50",
+      "splurge": "$80+",
+      "notes": "Self-drive → guided safari → private guide"
+    },
+    {
+      "category": "Park Fees",
+      "budget": "$60",
+      "midrange": "$60",
+      "splurge": "$60",
+      "notes": "KWS entry: $60/day for non-residents"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$90–140",
+      "midrange": "$175–325",
+      "splurge": "$490+",
+      "notes": "Budget camper → comfortable mid → luxury lodge"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Electronic Travel Authorisation (eTA) required for most nationalities — apply at etakenya.go.ke",
+        "Lake Nakuru park entry fee is $60 per day for non-resident adults — payable by card at the gate",
+        "Yellow fever vaccination certificate required if arriving from an endemic country"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Malaria risk exists around Lake Nakuru — take prophylaxis and use insect repellent, especially at dusk",
+        "Travel insurance with medical evacuation coverage is essential — the nearest major hospital is in Nakuru town",
+        "Stay in your vehicle during game drives unless at designated spots — wildlife is wild and dangerous"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Most visitors hire a safari vehicle with driver-guide — self-drive is possible but a guide dramatically improves sightings",
+        "The park road network is well maintained — 2WD is sufficient in dry season, 4WD recommended in wet months",
+        "Nakuru town is 3km from the main park gate — taxis and boda-bodas (motorbike taxis) connect the two cheaply"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Mobile phone coverage is available at Nakuru town but patchy inside the park — download offline maps before your game drive",
+        "WiFi is available at lodges inside the park and most hotels in town",
+        "Share your itinerary with someone and inform your accommodation of your expected return time from game drives"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: KES (Kenyan Shilling). Park fees can be paid by card at the gate — carry KES cash for tips and town purchases",
+        "ATMs are available in Nakuru town. Stock up on cash before entering the park as there are no ATMs inside",
+        "Tip driver-guides $10-20 per day per group. Lodge staff appreciate tips of 200-500 KES per day"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Binoculars are essential — flamingos and rhinos are often at distance. A telephoto lens transforms wildlife photography",
+        "Bring warm layers for early morning game drives — open vehicles at dawn are cold, especially June–August",
+        "Dust is constant in dry season — a buff or bandana protects your face and camera lens covers are essential"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Park Rules",
+      "text": "Stay in your vehicle at all times unless at designated walking areas. Do not feed, call, or approach wildlife. Speed limits (40km/h on main roads, 25km/h on tracks) exist to protect animals and visitors alike."
+    },
+    {
+      "icon": "🌍",
+      "title": "Conservation Matters",
+      "text": "Lake Nakuru is a critical rhino sanctuary — your park fees directly fund anti-poaching patrols and conservation. Report any suspicious activity to rangers. Never share specific rhino locations on social media — poachers monitor these posts."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Ethics",
+      "text": "Never use flash photography near wildlife — it can startle animals and cause dangerous reactions. Keep noise levels low and engine idling rather than revving when near animals. The best wildlife photos come from patience, not pursuit."
+    },
+    {
+      "icon": "🗣",
+      "title": "Local Language",
+      "text": "Learn basic Swahili greetings — \"Jambo\" (hello), \"Asante\" (thank you), and \"Hakuna matata\" (no worries) go a long way with local guides and staff. Most people in the tourism industry speak good English."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Guides",
+      "text": "Hire local driver-guides rather than booking through international operators — more of your money stays in the community. Kenyan safari guides are among the most skilled wildlife trackers in Africa and their expertise is invaluable."
+    },
+    {
+      "icon": "🕐",
+      "title": "Patience Pays Off",
+      "text": "The best wildlife sightings come from sitting quietly and waiting. Rushing between areas misses the subtle behaviours — a leopard waking and stretching, a rhino calf playing, flamingos lifting off in a pink cloud. Slow down and let the bush come to you."
+    }
+  ],
+  "title": "Lake Nakuru Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Lake Nakuru guide for young travelers. Flamingos, rhinos, safari with 1, 3 and 7-day itineraries. Budget tips and practical info for Kenya.",
+  "heroImage": "/images/guides/lake-nakuru-hero.webp",
+  "heroFlag": "🇰🇪",
+  "heroCountry": "Kenya",
+  "heroRegion": "Africa",
+  "heroCity": "Lake Nakuru",
+  "heroSubtitle": "A shimmering pink lake of flamingos ringed by rhino-filled grasslands in the heart of the Great Rift Valley — Kenya's most concentrated wildlife spectacle.",
+  "budgetIntro": "Daily costs per person in US dollars. Park entry fees are the largest fixed cost. Accommodation ranges from budget camping inside the park to luxury lodges, and sharing a safari vehicle dramatically reduces per-person transport costs.",
+  "culturalIntro": "Lake Nakuru is a protected national park and rhino sanctuary — treat the wildlife and landscape with the respect they deserve, and you will be rewarded with one of East Africa's most unforgettable safari experiences.",
+  "ctaCity": "Lake Nakuru",
+  "ctaText": "Find travel companions to explore Lake Nakuru together on roammate — split safari vehicle costs, share the experience, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "7-Day Safari",
+    "Wildlife",
+    "Jun – Oct Best"
+  ],
+  "defaultDays": 3
+}

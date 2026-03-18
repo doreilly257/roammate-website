@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "koh-tao",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "THB (Baht)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Thai / English",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "ICT (UTC+7)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – Sep",
+      "detail": "Comfortable temperatures, lower crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$25–60 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 60 days",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Koh Tao Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Koh Tao",
+            "text": "Begin your day at Koh Tao early to beat the crowds and catch the best light. The dive site is most atmospheric in the morning when the air is cool and the landscape catches the first golden rays. Take time to explore the main highlights and capture photographs in the soft morning light. This is the most rewarding time to visit.",
+            "tip": "Arrive as early as possible — the first hour after opening has the fewest visitors and the best photography conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Afternoon Dive",
+            "text": "Spend the afternoon exploring further afield. Head to the water for swimming, snorkelling, or diving in the warm, clear conditions. Grab lunch at a local eatery for authentic flavours and budget-friendly prices.",
+            "tip": "Midday sun can be intense — bring sunscreen, a hat, and plenty of water. Rest during the hottest hours if needed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Golden Hour & Farewell",
+            "text": "End the day watching the golden hour transform the landscape. The evening light at Koh Tao is spectacular and worth waiting for. Find a local restaurant for dinner — street food stalls with incredible variety.",
+            "tip": "Sunset times vary by season — check ahead and position yourself 30 minutes early for the best spot."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Koh Tao — Snorkelling, Sairee Beach & First Dives",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Japanese Garden Snorkel",
+            "text": "Japanese Garden on Koh Nang Yuan, reachable by longtail boat from Sairee Beach (~100 THB), is the island's best snorkelling for beginners — a shallow coral garden with angelfish, clownfish in anemones, and sea turtles that regularly cruise through. Snorkel gear rents for around 100 THB. The entry fee to Koh Nang Yuan island is 100 THB, which includes the iconic twin-island sandbar viewpoint walk.",
+            "tip": "Go before 10am — the longtail boat tours arrive mid-morning and the snorkel site gets crowded. Most turtles are spotted in the 7–9am window."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Discover Scuba Diving — First Breath Underwater",
+            "text": "If you've never dived before, Koh Tao's Discover Scuba Diving intro course puts you underwater with an instructor on the same day for around 1,500–2,000 THB. Most dive shops on Sairee Beach offer this — Big Blue, Crystal, and Ban's are the largest. You'll do a shallow reef dive to 5–8m at sites like Ao Leuk or Aow Mao Bay, seeing coral, reef fish, and possibly reef sharks. No experience needed.",
+            "tip": "Book in person the evening before to compare prices and ask which instructor you'll be with — the quality of your first dive experience depends heavily on the instructor."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sairee Beach Sunset & Night Market",
+            "text": "Sairee Beach faces west — the sunset from the beach bar strip is one of Thailand's finest. Grab a 60 THB Chang beer from a beach bar and watch the sky turn crimson over the Gulf of Thailand. After dark, the night market near the 7-Eleven on Sairee Road fires up with pad thai, mango sticky rice, grilled satay, and fresh papaya salad — a full meal for under 200 THB.",
+            "tip": "The beach bar scene gets loud by 9pm. If you're doing an early dive the next day, eat at the market and head back early — dives run best before the diurnal thermocline shifts."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Open Water Dives — Reef & Deep Sites",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Chumphon Pinnacle — Whale Shark Territory",
+            "text": "Chumphon Pinnacle, 13km northwest of Koh Tao, is the island's most celebrated dive site — four granite pinnacles dropping to 36m, encrusted with enormous sea fans and hard corals. Whale sharks, chevron barracuda, and giant trevally are regularly encountered here. This is an advanced site; Open Water certified divers can join with a dive guide. The boat trip takes 30 minutes from Sairee pier. Expect to pay around 1,000 THB per dive.",
+            "tip": "Whale shark sightings peak March–May and September–October. Tell your dive shop you're hoping to see them — guides know which sites have had recent sightings."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "HTMS Sattakut Wreck Dive",
+            "text": "The HTMS Sattakut is a decommissioned US Navy landing craft deliberately sunk in 2011 as an artificial reef — now sitting at 18–30m depth just southwest of Koh Tao. Lionfish, giant grouper, barracuda, and batfish have colonised the hull. Visibility is often 15–20m. The wreck is accessible to Open Water divers with a guide. Most dive shops include it as a two-tank morning trip combined with a reef dive.",
+            "tip": "Bring an underwater torch to explore the interior passageways — they are safely navigable but dark. An Advanced Open Water cert opens more of the wreck's depth."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Dive Log & Koh Tao Cooking School",
+            "text": "After two days of diving, many divers spend the evening at one of Koh Tao's casual cooking classes. Charm Churee Villa and a few Sairee operators run 3-hour classes for around 1,200 THB covering pad thai, green curry, and som tam — you eat what you cook. Alternatively, write up your dive log at any of the beach bars over local craft beer from the Chalok Baan Kao microbrewery.",
+            "tip": "Keep your dive log updated daily — the PADI Advanced course requires logged dives and instructors check them. Many dive shops will review and sign off your log."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Freedom Beach, Viewpoints & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Freedom Beach — Hidden Cove",
+            "text": "Freedom Beach on the island's west coast is one of Koh Tao's best-kept secrets — a small cove accessed by a 15-minute walk down a steep jungle track from the road above Sairee. The beach has no development, no beach bars, just white sand and excellent snorkelling on the rocky headlands at either end. The walk down is steep; the walk back up in 35°C heat is the real challenge. Go early — it's tiny and fills up.",
+            "tip": "Wear shoes for the track down — the path is rocky and root-covered. Bring your own water and snacks as there are no vendors on the beach itself."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "John Suwan Viewpoint & Island Exploration",
+            "text": "John Suwan Viewpoint on the island's southern headland requires a 200 THB entry fee but delivers arguably the best panorama on Koh Tao — looking north across Chalok Baan Kao Bay with the Gulf of Thailand stretching to the horizon. Rent a scooter (200 THB/day) to explore the south and east coast, stopping at Tanote Bay for a last swim in one of the island's most sheltered anchorages, popular with day-trip boats.",
+            "tip": "The road to John Suwan Viewpoint is steep and loose-gravel in sections. Ride slowly — scooter accidents on Koh Tao's hills are common among inexperienced riders."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Ferry & Final Meal",
+            "text": "Most travellers leave Koh Tao on the night Lomprayah or Songserm high-speed catamaran to Chumphon or Surat Thani, departing around 9–10pm for a 6am arrival — saving a night's accommodation. Book tickets online 24 hours ahead in peak season. Before departure, eat at your last Koh Tao meal — the local Thai restaurant on the main Sairee road behind the beach does the best 80 THB pad see ew on the island.",
+            "tip": "The night ferry can be cold — air conditioning runs at Arctic levels. Bring a light jacket or sarong. Keep your valuables in a dry bag for the occasional wet spray on deck."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book ahead online",
+      "text": "Tickets and tours booked online are often 10-30% cheaper than walk-in prices. Many attractions sell out in peak season — advance booking guarantees entry and saves money."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "Shoulder months (just before or after peak season) offer better prices on accommodation and flights with similar weather and fewer crowds. Mar – Sep is peak."
+    },
+    {
+      "title": "Stay nearby, not at the gate",
+      "text": "Accommodation directly at the attraction charges a premium. Staying 10-20 minutes away can save 30-50% on nightly rates. Use public transport or a rental car to bridge the gap."
+    },
+    {
+      "title": "Pack your own lunch",
+      "text": "Tourist-area restaurants charge inflated prices. Pack sandwiches, snacks, and a refillable water bottle to save $15-30 per day on food. Buy supplies at local supermarkets or markets."
+    },
+    {
+      "title": "Free walking tours & guides",
+      "text": "Many areas offer free or tip-based guided walks that are better than paid tours. Local guides provide insider knowledge and support the community. Check online for options."
+    },
+    {
+      "title": "Use local transport",
+      "text": "Taxis and private transfers are the most expensive option. Local buses, shared minivans, or ride-sharing are 50-80% cheaper and give you a more authentic experience."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$10–25",
+      "midrange": "$30–60",
+      "splurge": "$80+",
+      "notes": "Hostels → guesthouses → boutique lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$40+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Public buses → shared transfers → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$20–60",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$30–50",
+      "notes": "Combined tickets save money"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$30–90",
+      "midrange": "$95–220",
+      "splurge": "$250+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Visa-free 60 days",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Entry fees for Koh Tao should be paid in THB — exchange money before arriving"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential",
+        "Bring a basic first aid kit with blister plasters, antiseptic, painkillers, and any personal medication",
+        "Sun protection is essential — apply SPF 50+ and reapply every 2 hours"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Scooter rental is cheap and popular but check insurance coverage",
+        "Download offline maps before arriving — mobile data coverage can be patchy in remote areas",
+        "Negotiate transport prices before departure or use metered taxis and ride-hailing apps"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card at the airport on arrival for affordable data — much cheaper than international roaming",
+        "WiFi is available at most accommodation but signal quality varies. Download offline maps and guides before heading to remote areas",
+        "Share your itinerary with someone at home and check in daily, especially for remote treks or island visits"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: THB (Baht). Cards accepted in tourist areas, but carry cash for local vendors",
+        "ATMs are available in towns and cities. Visa and Mastercard are most widely accepted",
+        "Tip 10-15% at restaurants. Guides and porters appreciate tips — budget $5-10 per day per person"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Reef-safe sunscreen, a rash vest, water shoes, and a dry bag for electronics",
+        "A reusable water bottle, headlamp, and portable phone charger are essential for any outdoor adventure",
+        "Quick-dry clothing is ideal — you can wash and wear repeatedly, reducing pack weight"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Local Customs",
+      "text": "Remove shoes before entering temples or homes. Point with your whole hand, not a finger. The head is considered sacred — never touch anyone on the head."
+    },
+    {
+      "icon": "🌍",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish. Stay on marked trails and paths. Do not touch, feed, or disturb wildlife. The natural beauty of Koh Tao depends on every visitor treating it with respect. Take only photos, leave only footprints."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals, especially in indigenous or traditional communities. Many religious sites have photography restrictions — check signage and respect these rules. Drone regulations vary — check local laws before flying."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn a few words in Thai — greetings, please, thank you, and numbers go a long way. English is limited outside tourist areas but a translation app helps bridge gaps."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned guesthouses, restaurants, and guides over international chains. Buy handicrafts directly from artisans. Your spending has the most impact when it goes directly into the local economy rather than through large tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace & Patience",
+      "text": "Things move at a different pace here — embrace it. Delays, diversions, and unexpected encounters are part of the adventure. Patience and flexibility will transform your experience."
+    }
+  ],
+  "title": "Koh Tao Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Koh Tao guide for young travelers. Diving, snorkelling, marine life with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/koh-tao-hero.webp",
+  "heroFlag": "🇹🇭",
+  "heroCountry": "Thailand",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Koh Tao",
+  "heroSubtitle": "The world's cheapest place to learn to dive — a tiny Gulf of Thailand island with coral reefs, whale sharks, and a backpacker beach-bar scene.",
+  "budgetIntro": "Daily costs per person in US dollars. Koh Tao costs depend on season, accommodation style, and activity choices — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Koh Tao is a natural wonder — approach with curiosity and respect, and you will be rewarded with one of the most memorable experiences of your travels.",
+  "ctaCity": "Koh Tao",
+  "ctaText": "Find travel companions to explore Koh Tao together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Dive Course",
+    "Dive",
+    "Mar – Sep Best"
+  ],
+  "defaultDays": 1
+}

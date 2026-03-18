@@ -1,0 +1,512 @@
+{
+  "type": "city",
+  "slug": "banos",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "USD (US Dollar)",
+      "detail": "Ecuador uses the US dollar"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Spanish",
+      "detail": "Limited English at agencies"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "ECT (UTC−5)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jun – Sep, Dec – Feb",
+      "detail": "Driest periods"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$25–60 USD",
+      "detail": "Budget-friendly adventure"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 90 days",
+      "detail": "US/EU/UK/AU citizens"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Adrenaline & Waterfalls",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ruta de las Cascadas by Bike",
+            "text": "Rent a mountain bike ($5–8 for the day) and ride the Ruta de las Cascadas — a 16km downhill route from Baños to Río Verde passing a dozen waterfalls. The road follows a dramatic gorge with the Pastaza River thundering below. Stop at Manto de la Novia waterfall (cable car $2) and Pailón del Diablo — Ecuador's most impressive waterfall. The 80m cascade plunges through a narrow basalt canyon ($2 entry, steep trail down).",
+            "tip": "The route is mostly downhill and spectacular. Rent from a shop near the bus terminal — they truck your bike back for $2. Pailón del Diablo alone is worth the ride."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bridge Jumps & Zip Lines",
+            "text": "Back in Baños, try the famous bridge bungee at Puente San Francisco ($20) — a 30m leap into the gorge. Not ready for bungee? Puenting (bridge swinging, $20) or the zip line across the canyon ($10) delivers adrenaline with harness security. Agencies on Calle Ambato book all activities — compare prices at 2–3 shops. Lunch at Café Hood ($3–6) for backpacker fare or La Casa del Abuelo for grilled trout ($4–7).",
+            "tip": "Puenting is unique to Baños — you jump off the bridge and swing like a pendulum under it. More terrifying than bungee but objectively safer."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Thermal Baths & Nightlife",
+            "text": "Soak at Termas de la Virgen ($3 day, $4 night) — natural hot springs fed by Volcán Tungurahua. The springs range from warm to scalding, with a cold plunge pool. Evening bathing under the stars is magical. Dinner at Swiss Bistro ($5–9) for fondue (yes, in Ecuador) or Stray Dog Brewpub for craft beer ($3–5). Baños has the best nightlife for a small town — Leprechaun Bar and Jack Rock Bar keep going past midnight.",
+            "tip": "Night bathing at La Virgen (6–10pm) is the best experience — fewer people, steam rising under the stars, volcanic water. Bring a towel and flip-flops."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Ruta de las Cascadas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Bike the Waterfall Route",
+            "text": "The Ruta de las Cascadas is Baños's signature experience. Rent a mountain bike ($5–8) and ride 16km downhill from Baños to Río Verde through tunnels, along cliff edges, and past a dozen waterfalls plunging into the Pastaza gorge. Stop at Agoyan for the first massive waterfall view. Continue to Manto de la Novia — take the cable car ($2) across the gorge for a closer look at the bridal veil falls.",
+            "tip": "Buses run the same route — if you tire of biking, flag one down and load your bike on top ($1–2). Most people bike down and bus back."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pailón del Diablo",
+            "text": "Continue to Pailón del Diablo — the Devil's Cauldron. Ecuador's most powerful waterfall drops 80m through a narrow basalt canyon. Descend the steep trail ($2 entry) through spray and mist to a viewing platform behind the falls. The thunder of the water is visceral. A second trail on the opposite bank gives a panoramic view. Lunch at a Río Verde riverside restaurant — trucha (trout) with patacones for $4–6.",
+            "tip": "There are two entrances to Pailón del Diablo — the one on the left (coming from Baños) gets you closest behind the falls. Prepare to get soaked."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hot Springs & Rest",
+            "text": "Return to Baños and soak at Termas de la Virgen ($3–4). The natural volcanic springs range from lukewarm to near-scalding — work your way up. The cold plunge pool provides contrast therapy. Dinner at Café Hood ($3–6) — a backpacker institution on Calle Ambato — or Donde Marcelo for Ecuadorian home cooking ($3–5). Browse the taffy (melcocha) shops — salt water taffy pulled fresh on hooks is Baños's signature treat ($1 for a bag).",
+            "tip": "Melcocha vendors hand-pull taffy on metal hooks outside their shops — it is theatrical and delicious. Guayaba (guava) and maracuyá (passion fruit) flavours are the best."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Adventure Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Canyoning or Rafting",
+            "text": "Choose your adventure: canyoning ($30, half day) descends waterfalls by rappel — you abseil down cascades up to 30m with professional guides. Or whitewater rafting ($30, half day) on the Pastaza River — Class III–IV rapids through the gorge. Both include equipment and transport. Agencies on Calle Ambato book everything — Imagine Ecuador and Geotours are reputable operators with certified guides.",
+            "tip": "Canyoning is Baños's most underrated activity — rappelling down a waterfall with water pounding over you is unlike anything else. No experience needed."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Swing at the End of the World",
+            "text": "Taxi or walk (30 min uphill) to Casa del Árbol ($1 entry) — the treehouse with the famous swing \"at the end of the world.\" The swing launches you over a cliff edge with Volcán Tungurahua (5,023m) as the backdrop. More terrifying than it looks in photos. The viewpoint itself offers the best panorama of Baños — the town nestled in its valley between green mountains and the volcano. A second larger swing adds to the thrill.",
+            "tip": "Go before noon for clearer views of Tungurahua — clouds build in the afternoon. The chiva (open-air bus, $3 round trip) runs from the centre."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Calle Ambato Nightlife",
+            "text": "Calle Ambato is the backpacker strip — hostels, agencies, restaurants, and bars packed into four blocks. Dinner at Stray Dog Brewpub ($5–8) for craft beer and burgers, or La Casa del Abuelo ($4–7) for grilled highland trout. Baños's nightlife punches above its weight — Leprechaun Bar for dancing, Jack Rock for live music, and street vendor canelazo ($1–2) to warm up between venues.",
+            "tip": "Baños is one of Ecuador's party towns despite its small size. Thursday and Saturday nights are busiest. The scene is friendly and backpacker-dominated."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Jungle & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Jungle Tour or Tree House Trail",
+            "text": "Half-day jungle tour ($20–30) into the cloud forest bordering the Amazon basin. Guides point out medicinal plants, insects, birds, and the transition from highland to tropical vegetation. You may see toucans, hummingbirds, and blue morpho butterflies. Alternatively, hike the trail from town to the Mirador de Bellavista (1.5 hours) — a steep climb through forest to a viewpoint over the entire Baños valley.",
+            "tip": "The jungle tours feel like stepping into another world. Baños sits right on the transition zone between Andes and Amazon — unique biodiversity."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Town Stroll & Shopping",
+            "text": "Walk through Baños's compact centre — the Basilica de la Virgen del Agua Santa with its paintings of volcanic miracles, the central park with food vendors, and the handicraft market for last-minute souvenirs. Buy melcocha (pulled taffy, $1 per bag) and sugarcane juice ($0.50) fresh-pressed on the street. Lunch at Donde Ivonne ($3–5) for a proper almuerzo — soup, rice, chicken, and juice.",
+            "tip": "The Basilica paintings depict miracles attributed to the Virgin — saving Baños from volcanic eruptions, floods, and accidents. Fascinating folk art."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Last Soak & Departure",
+            "text": "One last soak at the thermal baths before departure. Buses from Baños connect to Quito ($4.50, 3.5 hours), Riobamba ($2.50, 2 hours), Cuenca ($10, 7 hours), and Puyo for the Amazon ($2, 1.5 hours). Baños packs more adventure per dollar than almost anywhere in South America — waterfalls, bungee, thermal springs, and volcano views in a town you can walk across in 10 minutes.",
+            "tip": "If heading to the Amazon, Puyo (1.5 hours east) is the gateway. Direct buses continue deeper to Tena and Misahuallí for jungle lodges."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Thermal Springs",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrive in Baños",
+            "text": "Bus from Quito ($4.50, 3.5 hours) arrives in Baños — a small town of 20,000 wedged into a valley at 1,820m between green mountains and the active Volcán Tungurahua. Check into a hostel — Plantas y Blanco ($8–14 dorm), Hostal Chimenea ($12–20 private), or Great Hostels Backpackers ($7–12 dorm) are backpacker favorites. Walk the compact centre — you can cross town in 10 minutes.",
+            "tip": "Baños is warm and lush compared to highland Quito — leave your heavy layers. T-shirt weather during the day, light jacket at night."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Basilica & Town Walk",
+            "text": "Visit the Basilica de la Virgen del Agua Santa — Baños's patron saint. The interior is covered with paintings depicting volcanic miracles — the Virgin saving the town from eruptions, floods, and fires. The central park buzzes with food vendors and families. Walk Calle Ambato — the backpacker main street of agencies, cafes, and hostels. Compare activity prices at 3–4 agencies for tomorrow.",
+            "tip": "Book your Ruta de las Cascadas bike rental and one activity (canyoning/rafting/bungee) tonight. Morning starts are best for clear weather."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "First Hot Springs Soak",
+            "text": "Walk to Termas de la Virgen ($3 day, $4 night). Natural volcanic springs from hot to near-scalding, with a cold plunge for contrast. The mineral water is claimed to have healing properties — certainly healing for tired bus legs. Dinner at Café Hood ($3–6) for reliable backpacker food, or try jugo de caña (fresh sugarcane juice, $0.50) and a bag of melcocha (pulled taffy, $1) from the street vendors.",
+            "tip": "Bring a towel and lock for the shared lockers. Rental towels are available ($1) but bring your own. Flip-flops essential for pool edges."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Ruta de las Cascadas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Bike to the Waterfalls",
+            "text": "Pick up your bike ($5–8 for the day) early and ride the Ruta de las Cascadas — 16km downhill from Baños to Río Verde through tunnels and along cliffs above the Pastaza gorge. A dozen waterfalls line the route. Stop at Agoyan (massive cascade), Manto de la Novia (bridal veil falls, cable car $2), and the smaller cascades along the way. The road is paved but shared with traffic — stay alert.",
+            "tip": "Start by 8am for the best light and less traffic. The route is mostly downhill but there are some uphills between waterfalls. A mountain bike with gears helps."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pailón del Diablo",
+            "text": "Arrive at Río Verde and lock your bike near the restaurants. Walk to Pailón del Diablo ($2 entry) — the Devil's Cauldron. This 80m waterfall explodes through a narrow basalt canyon with terrifying force. The trail descends steeply through mist and spray to a platform behind the falls — you will get soaked. A second viewpoint across the river shows the full cascade. Lunch at a riverside comedor — trucha al ajillo (garlic trout, $4–6).",
+            "tip": "Put your phone in a waterproof case for the trail behind Pailón del Diablo. The spray is constant and heavy. Camera lenses fog immediately."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Taffy & Drinks",
+            "text": "Flag a bus back to Baños ($1–2, the shop trucks your bike). Browse the melcocha shops — vendors hand-pull taffy on metal hooks in doorways. Flavours include guayaba, maracuyá, mora (blackberry), and manjar (caramel). Dinner at Swiss Bistro ($5–9) for unexpected fondue or La Casa del Abuelo for trout ($4–7). Drinks at Stray Dog Brewpub for local craft beer ($3–5).",
+            "tip": "Watch the taffy-pulling — it is theatrical and every shop lets you taste samples. Buy a mixed bag of flavours for $1–2."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Adrenaline Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Canyoning Adventure",
+            "text": "Half-day canyoning ($30) — the highlight of Baños adventures. Rappel down waterfalls from 5m to 30m, jump into natural pools, and slide down rock chutes. Professional guides provide all equipment and safety training. The canyon is lush with tropical vegetation and the water is refreshingly cold. No experience needed — just willingness to step backward off a waterfall into the unknown.",
+            "tip": "Imagine Ecuador and Geotours have the best safety records for canyoning. Ask about guide certification. Wear quick-dry clothes and secure shoes."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Swing at the End of the World",
+            "text": "Take a chiva (open-air bus, $3 round trip) or taxi ($4) up to Casa del Árbol — the treehouse with the \"End of the World\" swing. You swing out over a cliff edge with Volcán Tungurahua filling the sky behind you. The views over Baños from the hilltop are the best in town. A larger second swing sends you even further. The treehouse itself is a seismographic monitoring station for the volcano.",
+            "tip": "The chiva runs hourly from the main road. Arrive before 11am for volcano views — clouds usually obscure Tungurahua by early afternoon."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Celebration Dinner",
+            "text": "You earned it. Dinner at Onde Marcelo ($4–7) for Ecuadorian comfort food or Zumo for healthier bowls and smoothies ($4–8). Walk Calle Ambato as the backpacker scene comes alive — street vendors sell canelazo ($1–2), empanadas ($0.50), and corn on the cob. Leprechaun Bar gets the party started early with $2 cocktail specials. Jack Rock Bar for live music later.",
+            "tip": "Canelazo in Baños is made with naranjilla (a tart highland fruit) — slightly different from the highland version. Both are excellent cold-weather drinks."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Rafting & Volcano Views",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Whitewater Rafting",
+            "text": "Half-day rafting on the Pastaza River ($30). Class III–IV rapids through the gorge below Baños — the river cuts between vertical green walls. Guides provide all equipment, safety briefing, and lunch. The rapids have names like \"La Licuadora\" (The Blender) and \"Salsa del Diablo.\" Between rapids, the calm sections reveal kingfishers, herons, and cloud forest rising above the canyon.",
+            "tip": "Rafting runs year-round. June–September water levels are lower (more technical). December–February is higher water (bigger waves). Both are excellent."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mirador Bellavista Hike",
+            "text": "Hike from town to Mirador de Bellavista (1.5 hours up). The steep trail climbs through cloud forest with orchids and bromeliads clinging to trees. The viewpoint reveals the entire Baños valley — the town below, the river gorge stretching east toward the Amazon, and Volcán Tungurahua towering above. On clear days, the snow-capped cone and fumaroles are clearly visible.",
+            "tip": "The trail is well-signed but steep. Bring water and a snack. Afternoon light is best for volcano photography. Start by 2pm."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Termas El Salado",
+            "text": "Try different hot springs tonight — Termas El Salado ($3, 15 min walk from centre) has fewer tourists and the hottest pools. The water is more mineral-rich and the setting more natural — concrete pools fed by volcanic springs surrounded by green cliffs. Dinner at Blah Blah Café ($4–7) for international food and craft cocktails, or street empanadas ($0.50 each) and sugarcane juice ($0.50) for the budget option.",
+            "tip": "El Salado's hottest pool is genuinely hot — 42°C. The cold river pool next to it creates the ultimate contrast. Go after 7pm for fewer people."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Cloud Forest & Jungle Edge",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Jungle Day Trip",
+            "text": "Full-day jungle tour ($30–45) into the upper Amazon cloud forest. Guides lead you through primary forest — pointing out medicinal plants, camouflaged insects, poison dart frogs, and birds including toucans and tanagers. Some tours include a visit to an indigenous Shuar community to learn about traditional rainforest life. The transition from Andes to Amazon along the Pastaza gorge is one of the most dramatic ecological gradients on Earth.",
+            "tip": "Bring rain gear — the cloud forest is wet by definition. Long sleeves and pants protect against scratches and insects. Rubber boots often provided."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Canopy Walk & Wildlife",
+            "text": "Some tours include a canopy bridge walkway — suspended pathways through the forest canopy 20m above the ground. Bird activity is highest in the canopy. Return to Baños via the Pastaza gorge with stops at small waterfalls and swimming holes. The biodiversity along this route is extraordinary — orchids cling to every surface and hummingbirds buzz between flowers.",
+            "tip": "Ask specifically for tours that include canopy walks — not all operators offer them. The elevated perspective transforms the forest experience."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Quiet Night",
+            "text": "After a long day in the forest, a quiet evening. Dinner at Donde Ivonne ($3–5) for almuerzo — soup, rice, meat, and juice. Baños's small size means everything is a 5-minute walk. Browse the handicraft shops for balsa wood carvings and tagua nut jewellery. An early hot springs soak at La Virgen, then sleep — tomorrow brings more adventure.",
+            "tip": "If you are continuing east to the Amazon, ask your jungle tour guide about multi-day options. Some agencies offer 3–5 day Amazon extensions from Baños."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Zip Lines & Bungee",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Canopy Zip Lines",
+            "text": "Full morning of zip-lining ($15–20, 2–3 hours). Multiple cable runs cross gorges and forest canopy — the longest lines reach 400m spanning deep valleys. Superman-style (face down) on the final cable is the adrenaline peak. The setting is extraordinary — flying over cloud forest with waterfalls visible in the distance. Operators include Imagine Ecuador and ViveBaños.",
+            "tip": "The Superman cable is optional — regular seated zip-lining is thrilling enough. Helmet, harness, and gloves all provided. Wear closed shoes."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bridge Jump & ATV",
+            "text": "For the bravest: bungee jumping from Puente San Francisco ($20) — a 30m leap into the gorge over the Pastaza River. Or try puenting (bridge swinging, $20) — you jump and swing pendulum-style under the bridge. Less scary: ATV tours ($15–25, 2 hours) through mountain trails and river crossings with views of the valley and Tungurahua. Something for every adrenaline threshold.",
+            "tip": "Puenting looks scarier than bungee but the forces are gentler — you swing rather than bounce. Great for people who want the jump experience without the snap."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Party Night",
+            "text": "Last night in Baños deserves a celebration. Start at Stray Dog Brewpub for craft beer ($3–5) and burgers. Move to Leprechaun Bar for $2 cocktail hours and dancing. Jack Rock Bar has live music weekends. Street vendors on Calle Ambato sell canelazo ($1–2) and empanadas ($0.50) for between-bar fuel. The backpacker community in Baños is small and friendly — you will know half the bar by now.",
+            "tip": "Baños nightlife peaks Thursday–Saturday. The scene moves between 3–4 bars all within walking distance. It is remarkably fun for such a small town."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Last Morning & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sunrise & Last Soak",
+            "text": "Wake early for a last hot springs soak at Termas de la Virgen (opens 5am, $3). The volcanic water is most peaceful at dawn — steam rises in the cool morning air with green mountains above. Walk to a balcony café for breakfast overlooking the valley — Pan de Casa ($2–4) for pastries and Ecuadorian coffee. Stock up on melcocha bags ($1 each) as gifts — they travel well.",
+            "tip": "The 5am opening at La Virgen is special — locals come for their morning soak before work. Join them for an authentic Baños experience."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Walk & Departure",
+            "text": "Walk through Baños one last time — the Basilica, the park, the melcocha vendors. Pick up last souvenirs — balsa wood bird carvings ($2–5), tagua nut jewellery ($3–8), and volcanic stone crafts. Buses from Baños connect to Quito ($4.50, 3.5 hours), Riobamba ($2.50, 2 hours), Cuenca ($10, 7 hours), Ambato ($1.50, 45 min), and Puyo ($2, 1.5 hours) for the Amazon.",
+            "tip": "If heading south, Riobamba is the launching point for the Nariz del Diablo train and Chimborazo volcano. Cuenca is Ecuador's most beautiful colonial city."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Onward Adventures",
+            "text": "Baños sits at Ecuador's crossroads — Andes to the west, Amazon to the east. From here, the adventure continues in any direction. The town's combination of thermal springs, extreme sports, waterfalls, and volcano views at budget prices makes it one of South America's best adventure bases. You will miss the adrenaline, the hot springs, and the $0.50 empanadas.",
+            "tip": "Puyo (1.5 hours east) is the gateway to the Amazon. Budget jungle lodges start at $40 per night including meals and guided walks."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Self-guided Ruta de las Cascadas",
+      "text": "Bike rental is $5–8 for the full day. The route is well-signed and downhill. No guide needed — buses bring you and the bike back for $1–2. A guided tour of the same route costs $25–35."
+    },
+    {
+      "title": "Compare activity prices",
+      "text": "Walk into 3–4 agencies on Calle Ambato before booking. Prices vary 20–30% for identical activities. Ask what is included — lunch, photos, and transport can be extras at cheaper agencies."
+    },
+    {
+      "title": "Eat at the market",
+      "text": "Mercado Central almuerzos (set lunch) cost $2–3. Street empanadas $0.50. Sugarcane juice $0.50. Corn on the cob $0.50. A day of market eating costs $5–8 total."
+    },
+    {
+      "title": "Hot springs timing",
+      "text": "Termas de la Virgen costs $3 day / $4 night. El Salado costs $3 any time. Go during the day for the cheapest soak. Night bathing is the most atmospheric but costs $1 more."
+    },
+    {
+      "title": "Walk instead of taxi",
+      "text": "Baños is tiny — everything is within 10 minutes on foot. Even Casa del Árbol is a 30-minute uphill walk. The chiva bus ($3 round trip) is the budget option for hilltop attractions."
+    },
+    {
+      "title": "Multi-activity discounts",
+      "text": "Book 2–3 activities with the same agency and ask for 10–15% off. Canyoning + rafting + zip-line as a package often saves $10–15 off individual prices."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$7–14",
+      "midrange": "$18–40",
+      "splurge": "$60+",
+      "notes": "Hostel dorm → private room → boutique hotel"
+    },
+    {
+      "category": "Food",
+      "budget": "$5–10",
+      "midrange": "$12–25",
+      "splurge": "$35+",
+      "notes": "Markets & street food → restaurants → Swiss Bistro"
+    },
+    {
+      "category": "Transport",
+      "budget": "$1–3",
+      "midrange": "$5–10",
+      "splurge": "$20+",
+      "notes": "Local bus → chiva/taxi → private transfer"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–15",
+      "midrange": "$25–45",
+      "splurge": "$80+",
+      "notes": "Bike rental & hot springs → canyoning/rafting → multi-activity days"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$18–42",
+      "midrange": "$60–120",
+      "splurge": "$195+",
+      "notes": "Baños is one of the cheapest adventure towns in the world"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Getting There",
+      "items": [
+        "Bus from Quito: $4.50, 3.5 hours via Ambato. Buses run every 30 minutes from Quitumbe terminal",
+        "Bus from Riobamba: $2.50, 2 hours. From Cuenca: $10, 7 hours. From Puyo (Amazon): $2, 1.5 hours",
+        "The approach road passes through spectacular Andes gorges — sit on the right side of the bus for the best views"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Baños is at 1,820m — no altitude issues. The thermal spring water is safe for bathing but do not drink it",
+        "Adventure activities have inherent risks. Use reputable agencies with certified guides. Check equipment before jumping off anything",
+        "Volcán Tungurahua is active — last major eruption 2014. The town has evacuation routes and sirens. Follow local instructions if alerts sound"
+      ]
+    },
+    {
+      "icon": "🚌",
+      "title": "Getting Around",
+      "items": [
+        "The town centre is walkable in 10 minutes end to end. No taxis needed for town attractions",
+        "Chiva buses ($3 round trip) run to Casa del Árbol hourly. Taxis to viewpoints $3–5",
+        "Ruta de las Cascadas: bike down, bus back ($1–2). All agencies organize the bike return"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "WiFi at hostels and cafes — generally reliable in town. Dead zones on the Ruta de las Cascadas and jungle tours",
+        "Claro or Movistar SIM ($5–10 for 3GB) from shops on Calle Ambato. Signal is good in town, patchy in gorges",
+        "Ecuador uses US dollars — ATMs at Banco Pichincha on the main road. Bring cash for activities — not all agencies take cards"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cash preferred for activities, hot springs, food stalls, and bike rentals. Cards accepted at larger restaurants and hostels",
+        "ATMs at Banco Pichincha and Banco Guayaquil. Withdraw enough for 2–3 days of activities",
+        "No tipping expected at restaurants. Tip guides $2–5 for excellent adventure tours"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Quick-dry clothes for water activities (canyoning, rafting, waterfalls). You will get soaked multiple times",
+        "Swimwear for hot springs. Towel and flip-flops. Waterproof phone case for Pailón del Diablo",
+        "Light rain jacket — afternoon showers are common. Comfortable walking shoes with grip for waterfall trails"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🌋",
+      "title": "Living with a Volcano",
+      "text": "Baños means \"baths\" — the town exists because of Volcán Tungurahua's thermal springs. The volcano erupted seriously in 1999 and 2006, evacuating the entire town. Locals live with the risk and monitor the volcano daily. Eruption sirens and evacuation routes are part of normal life here."
+    },
+    {
+      "icon": "🍬",
+      "title": "Melcocha Culture",
+      "text": "Hand-pulled taffy (melcocha) is Baños's signature product. Vendors pull and stretch sugarcane taffy on metal hooks in doorways — a skill passed through families. Every shop lets you watch and taste. Flavours include guayaba, maracuyá, mora, and manjar."
+    },
+    {
+      "icon": "⛪",
+      "title": "Virgen del Agua Santa",
+      "text": "The Basilica paintings depict miracles attributed to the Virgin of Holy Water — saving Baños from eruptions, floods, and accidents over centuries. The paintings are folk art masterpieces. Pilgrimage to Baños is a real tradition, not just tourism."
+    },
+    {
+      "icon": "🧗",
+      "title": "Adventure Capital",
+      "text": "Baños bills itself as Ecuador's adventure capital and delivers. The combination of gorges, waterfalls, volcanic terrain, and the Amazon edge creates a natural playground. Activities are run by local families who have been guiding in these mountains for generations."
+    },
+    {
+      "icon": "🌿",
+      "title": "Amazon Gateway",
+      "text": "Baños sits at the ecological transition between Andes and Amazon. Drive 1.5 hours east and you are in the jungle. This gives Baños incredible biodiversity — Andean plants mix with tropical species. The Pastaza gorge is a corridor for wildlife between ecosystems."
+    }
+  ],
+  "title": "Baños Travel Guide 2026 — Adventure Itinerary | roammate",
+  "description": "The ultimate Baños guide. Waterfalls, bungee jumping, thermal springs, and volcano views on a backpacker budget. Itineraries and adventure tips.",
+  "heroImage": "/images/guides/quito-hero.webp",
+  "heroFlag": "🇪🇨",
+  "heroCountry": "Ecuador",
+  "heroRegion": "South America",
+  "heroCity": "Baños",
+  "heroSubtitle": "Ecuador's adventure capital — where waterfalls plunge into gorges, volcanic hot springs steam at sunset, and every day ends with an adrenaline story.",
+  "budgetIntro": "Daily costs in US dollars. Baños is one of the cheapest adventure towns in the world — canyoning for $30, hot springs for $3, and empanadas for $0.50.",
+  "culturalIntro": "Baños de Agua Santa is a town shaped by fire and water — volcanic hot springs, thundering waterfalls, and an active volcano that locals live with daily.",
+  "ctaCity": "Baños",
+  "ctaText": "Find travel companions to share canyoning adventures, waterfall bike rides, and hot springs in Baños on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app.",
+  "heroPills": [
+    "3-Day Adventure",
+    "Adrenaline Sports",
+    "Jun – Sep Best"
+  ],
+  "defaultDays": 3
+}

@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "drakensberg",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "ZAR (Rand)",
+      "detail": "Cash for small shops, cards at lodges"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Zulu",
+      "detail": "English spoken at all tourist facilities"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "SAST (UTC+2)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – May / Sep",
+      "detail": "Mild, dry, clear mountain views"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$30–50 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free many",
+      "detail": "90 days for EU/UK/US/Aus/NZ"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Amphitheatre & Tugela Falls",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Chain Ladders to the Amphitheatre Summit",
+            "text": "Start at the Sentinel car park in Royal Natal National Park and begin the iconic chain ladders hike to the top of the Amphitheatre — a sheer 5km basalt wall that is one of the most impressive cliff faces on earth. The trail climbs steeply through grassland before reaching the two metal chain ladders bolted into the rock face. The ladders are exposed but manageable — grip firmly, do not look down, and haul yourself up to the summit plateau. At the top, the landscape transforms into a vast, flat mountaintop with expansive views over the Drakensberg escarpment and the Tugela River winding toward the cliff edge.",
+            "tip": "Start by 6am to reach the summit before clouds roll in. The chain ladders are not technically difficult but require a reasonable level of fitness and confidence with heights. Bring warm layers — it is always colder at the top."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tugela Falls Viewpoint",
+            "text": "From the summit, walk along the plateau to the edge where the Tugela River plunges 948 metres in five cascading tiers — making it the second-highest waterfall in the world after Angel Falls in Venezuela. The drop is vertiginous and the scale is hard to comprehend until you are standing at the lip looking down into the valley thousands of feet below. In winter the falls freeze into spectacular ice columns. After taking in the views, retrace your steps back down the chain ladders and the steep trail to the car park. The total hike is about 12km return and takes 5–7 hours depending on fitness.",
+            "tip": "The Tugela Falls are most impressive after rain — summer (Nov–Mar) has the best water flow. In winter (Jun–Aug) the frozen falls are beautiful but the plateau is bitterly cold and sometimes snowed in."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Recover at a Berg Camp",
+            "text": "Head back to your accommodation near Royal Natal — the Mahai Campsite within the park costs R180 per site and has hot showers, braai stands, and mountain views. Alternatively, Amphitheatre Backpackers in Bergville offers dorms from R180 and private rooms from R450, with a bar, communal kitchen, and the kind of post-hike atmosphere where trail stories flow freely. Cook up a braai or order dinner, and watch the Amphitheatre wall turn orange and then purple as the sun sets. The stars in the Drakensberg are extraordinary — with minimal light pollution, the Milky Way arches overhead in breathtaking detail.",
+            "tip": "The Sentinel car park access road is steep and unpaved — a standard car can make it in dry conditions but 4x4 is recommended in wet weather. Park costs R50 per vehicle."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Royal Natal & the Amphitheatre",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrive at Royal Natal National Park",
+            "text": "Drive to Royal Natal National Park, the gateway to the northern Drakensberg and home to the Amphitheatre — a 5km-wide, sheer basalt cliff wall that rises 1,200 metres from the valley floor. Check into your accommodation (Mahai Campsite at R180/site or Thendele Camp hutted accommodation from R600) and set out on the Cascades Walk, a gentle 6km trail that follows the Mahai River through yellowwood forest to a series of beautiful rock pools and waterfalls. The walk is flat and easy, winding through indigenous bush with the Amphitheatre looming above — a perfect introduction to the scale and beauty of the Drakensberg.",
+            "tip": "Book Thendele Camp or Mahai through SANParks well in advance — these are the only accommodation options inside Royal Natal and they fill up fast, especially on weekends and holidays."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tugela Gorge Trail",
+            "text": "After lunch, tackle the Tugela Gorge Trail — a 14km return hike that follows the Tugela River upstream through a dramatic gorge to the base of Tugela Falls. The trail crosses the river multiple times (sometimes requiring boulder-hopping or wading in summer) and passes through narrow rock corridors, over scree slopes, and beneath towering cliff faces. The deeper you go into the gorge, the more dramatic the scenery becomes. At the end, you will see the thin white ribbon of Tugela Falls dropping nearly a kilometre down the Amphitheatre wall. The scale is humbling.",
+            "tip": "Wear shoes that can get wet — river crossings are unavoidable. Bring lunch and plenty of water. The gorge is shaded and cool in the morning but exposed in the afternoon heat."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Campfire & Stargazing",
+            "text": "Return to camp for an evening braai — the campsites have designated fire pits and there is nothing better after a mountain hike than grilled boerewors, pap, and chakalaka under the stars. If you are camping, buy wood from the park office (R40/bag). The Drakensberg has some of the darkest skies in southern Africa — the lack of nearby cities means the Milky Way is visible in extraordinary detail. Sit outside with a warm drink and watch for satellites and shooting stars crossing the immense southern sky.",
+            "tip": "Night temperatures in the Drakensberg drop significantly — even in summer it can reach 5°C at night. Bring a proper sleeping bag rated to 0°C and warm layers for campfire evenings."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Chain Ladders & Summit Hike",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Chain Ladders to the Summit",
+            "text": "Leave early for the Sentinel car park (30-minute drive from Royal Natal, R50 parking) and begin the chain ladders hike. The trail climbs 800 metres through open grassland with increasingly spectacular views before reaching the famous chain ladders — two vertical metal ladders bolted into a cliff face that provide the final scramble to the summit plateau. The exposure is real but the ladders are sturdy and well-maintained. At the top, the landscape opens into a vast, rolling plateau stretching to the horizon — it feels like standing on the roof of southern Africa. Walk to the Tugela Falls lip for a vertigo-inducing view over the edge.",
+            "tip": "The chain ladders hike is 12km return and takes 5–7 hours. Start by 6am — afternoon thunderstorms are common in summer and the plateau is dangerously exposed to lightning. Carry waterproofs and warm layers."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Summit Exploration",
+            "text": "Spend time exploring the summit plateau. The flat, grassy expanse is dotted with lichen-covered rocks, small tarns, and the meandering headwaters of the Tugela River. Walk toward the edge of the escarpment for views that extend across KwaZulu-Natal, the Free State, and on clear days into Lesotho. The silence at the top is profound — just the wind and the occasional call of a jackal buzzard riding the thermals above the cliff edge. Retrace your steps carefully down the chain ladders and the steep descent path, arriving back at the car park in the late afternoon.",
+            "tip": "Weather changes rapidly at altitude — if cloud builds or you hear thunder, descend immediately. The chain ladders become dangerous when wet and the plateau is the highest point for kilometres, making lightning strikes a real risk."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Post-Hike Recovery",
+            "text": "After the physically demanding summit hike, return to your campsite or lodge for a well-earned rest. Soak tired legs, cook a simple dinner, and relive the day's highlights. If staying at Amphitheatre Backpackers in Bergville, the bar is the perfect place to meet other hikers and compare trail stories. The hostel can also arrange shuttle services and guides for the following day's hike. Stock up on supplies in Bergville if needed — the town has supermarkets, a pharmacy, and an ATM.",
+            "tip": "Bergville's Spar and Checkers supermarkets are well-stocked for self-catering. Buy braai meat, bread, and fresh produce here — options closer to the parks are limited and overpriced."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "San Rock Art & Cathedral Peak",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kamberg San Rock Art",
+            "text": "Drive south to the Kamberg area to visit the Game Pass Shelter — home to some of the finest San (Bushman) rock art in the Drakensberg and a UNESCO World Heritage Site. The paintings, created by the San people over thousands of years, depict hunting scenes, animals, trance dances, and spiritual figures in remarkable detail and colour. A guide leads you up a short trail to the rock overhang where the paintings are protected behind a gate. The centrepiece is the Rosetta Stone panel — a complex scene showing shamans in trance postures surrounded by eland, which are sacred animals in San cosmology.",
+            "tip": "Guided tours of Game Pass Shelter depart at set times — book through Kamberg Nature Reserve. The tour costs R80 per person and includes a knowledgeable local guide who explains the symbolism and history of the paintings."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Cathedral Peak Drive",
+            "text": "Drive north to the Cathedral Peak area — one of the most scenic valleys in the central Drakensberg. The road winds through rolling grasslands and Zulu villages before reaching the Cathedral Peak Hotel, a classic mountain lodge that has been welcoming hikers since 1939. From here, several day hikes fan out into the mountains. The Rainbow Gorge trail (10km return, 4 hours) follows a crystal-clear stream through a narrow gorge with natural swimming pools, waterfalls, and the towering spires of Cathedral Peak and the Bell rising above. The swimming pools are icy but refreshing after the walk.",
+            "tip": "Cathedral Peak Hotel welcomes non-guests for lunch and drinks with mountain views. The hotel can also provide hiking maps and advice — the trails in this valley are some of the best marked in the Berg."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Valley Sunset & Departure",
+            "text": "Watch the sunset from the Cathedral Peak valley — the mountains turn from gold to deep red to purple as the light fades, and the grasslands take on a warm amber glow. This is the Drakensberg at its most photogenic and peaceful. If you have time, visit Didima Camp in the Cathedral Peak area, which has a small San rock art interpretation centre with replicas and multimedia displays explaining the history and mythology behind the paintings. End the day with a simple dinner at your lodge or camp before departing the Drakensberg, taking with you memories of ancient mountains, ancient art, and ancient silence.",
+            "tip": "The drive from the Drakensberg to Durban takes about 3 hours — consider a late afternoon departure to catch the sunset from the mountains before heading to the coast."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Camp inside the parks",
+      "text": "SANParks and Ezemvelo KZN Wildlife campsites cost R120–200 per site with hot showers and braai facilities. Bring your own tent and sleeping gear — it is the cheapest way to sleep in the mountains."
+    },
+    {
+      "title": "Self-cater everything",
+      "text": "Stock up on food, braai meat, and drinks in Bergville or Winterton before heading into the mountains. Shops near the parks charge premium prices. A full day of self-catered meals costs R80–120 per person."
+    },
+    {
+      "title": "Hike without guides",
+      "text": "Most Drakensberg trails are well-marked and free to hike with park entry. You do not need a guide for the chain ladders, Tugela Gorge, or Rainbow Gorge. Save guide fees for the San rock art (where guides are mandatory) and technical routes."
+    },
+    {
+      "title": "Share transport costs",
+      "text": "The Drakensberg requires a car to access trailheads. Split rental and fuel costs with fellow travellers — check hostel notice boards in Bergville and Durban for ride-share opportunities."
+    },
+    {
+      "title": "Visit midweek",
+      "text": "Accommodation prices in the Berg drop by 20–40% outside of weekends and school holidays. Trails are also much quieter midweek — you may have entire valleys to yourself."
+    },
+    {
+      "title": "Bring proper gear",
+      "text": "Rental gear in the Berg is limited and expensive. Bring your own sleeping bag, hiking boots, waterproof jacket, and warm layers from home. Borrowing from hostels is possible but unreliable."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$7–14",
+      "midrange": "$20–50",
+      "splurge": "$70+",
+      "notes": "Camping → backpackers → mountain lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$7–12",
+      "midrange": "$15–30",
+      "splurge": "$40+",
+      "notes": "Self-catering → casual dining → lodge restaurants"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–10",
+      "midrange": "$15–25",
+      "splurge": "$35+",
+      "notes": "Shared car → rental car → private transfer"
+    },
+    {
+      "category": "Activities",
+      "budget": "$3–8",
+      "midrange": "$10–20",
+      "splurge": "$30+",
+      "notes": "Park entry → rock art tour → guided hikes"
+    },
+    {
+      "category": "Park Fees",
+      "budget": "$3–5",
+      "midrange": "$5–8",
+      "splurge": "$10+",
+      "notes": "SANParks / Ezemvelo day fees"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$30–50",
+      "midrange": "$65–130",
+      "splurge": "$185+",
+      "notes": "Budget camper → comfortable → mountain lodge"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🥾",
+      "title": "Hiking Essentials",
+      "items": [
+        "Register at park offices before all hikes and sign out when you return — this is mandatory for safety",
+        "Carry a map, compass, and fully charged phone. GPS signal can be unreliable in valleys",
+        "Summer thunderstorms (Nov–Mar) arrive suddenly in the afternoon — start early and descend before 2pm"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting There",
+      "items": [
+        "The Drakensberg is 3 hours from Durban, 4 hours from Johannesburg by car",
+        "No public transport reaches the trailheads — a rental car or hostel shuttle is essential",
+        "Roads to parks are tarred but access roads to Sentinel car park and remote camps can be rough — check conditions"
+      ]
+    },
+    {
+      "icon": "🌡️",
+      "title": "Weather & Seasons",
+      "items": [
+        "Summer (Nov–Mar): Warm days 25–30°C, cold nights 5–10°C, frequent afternoon thunderstorms",
+        "Winter (Jun–Aug): Cold and dry, snow on peaks, night temps below 0°C. Best for clear views",
+        "Spring/Autumn (Sep–Oct, Mar–May): Mild, stable weather — the best hiking months"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "The Drakensberg is malaria-free — no prophylaxis needed",
+        "Tap water in towns is safe. Purify mountain stream water before drinking",
+        "Mountain rescue can take hours — carry a first-aid kit and emergency whistle. Tell someone your route"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "ATMs in Bergville, Winterton, and Underberg. No ATMs inside the parks",
+        "Cards accepted at lodges and hotels but camp shops and local stores prefer cash",
+        "Park entry fees: R50–80 per person at Ezemvelo parks, R248 at SANParks sites"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Cell coverage is limited in the mountains — expect no signal on most trails and in deep valleys",
+        "Download offline maps (Maps.me or Google Maps) before heading into the Berg",
+        "WiFi available at hotels and backpackers in Bergville/Winterton but not inside the parks"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🎨",
+      "title": "San Rock Art Heritage",
+      "text": "The Drakensberg contains over 35,000 individual San rock paintings — the densest concentration in the world. These are not decorations but records of spiritual experiences, trance dances, and the relationship between the San people and the natural world. Treat all rock art sites with deep respect — never touch the paintings."
+    },
+    {
+      "icon": "🏘️",
+      "title": "Zulu Communities",
+      "text": "The foothills of the Drakensberg are home to rural Zulu communities. If driving through villages, wave and greet people warmly. Ask permission before photographing homes or people. Some communities offer cultural village visits where you can learn about traditional Zulu life, beer brewing, and beadwork."
+    },
+    {
+      "icon": "🌿",
+      "title": "Mountain Respect",
+      "text": "The Drakensberg means \"Dragon Mountains\" in Afrikaans and uKhahlamba (\"Barrier of Spears\") in Zulu. Both names reflect the awe these mountains inspire. Stay on trails, carry out all rubbish, and respect the fragile alpine environment above 2,500m."
+    },
+    {
+      "icon": "🔥",
+      "title": "Fire Safety",
+      "text": "Grassland fires are a serious risk in the dry winter months. Only make fires in designated braai areas, never leave a fire unattended, and extinguish completely before leaving. Berg grass burns fast and fires spread rapidly on windy days."
+    },
+    {
+      "icon": "🐍",
+      "title": "Wildlife Awareness",
+      "text": "The Drakensberg is home to puff adders, berg adders, and rinkhals. Watch where you step, especially on rocky trails in warm weather. Snakes are not aggressive but will strike if stepped on. Eland, baboons, and rhebok are common and harmless if left undisturbed."
+    },
+    {
+      "icon": "🇱🇸",
+      "title": "Lesotho Border",
+      "text": "The Drakensberg escarpment forms the border with Lesotho. The Sani Pass (4x4 only) crosses into Lesotho and is a popular day trip. You will need your passport — Lesotho is a separate country. The highest pub in Africa sits at the top of Sani Pass at 2,874m."
+    }
+  ],
+  "title": "Drakensberg Mountains Travel Guide 2026 | roammate",
+  "description": "The ultimate Drakensberg guide for hikers and backpackers. Amphitheatre, Tugela Falls, chain ladders, San rock art, Cathedral Peak. 1 and 3-day itineraries with budget tips.",
+  "heroImage": "/images/guides/drakensberg-hero.webp",
+  "heroFlag": "🇿🇦",
+  "heroCountry": "South Africa",
+  "heroRegion": "Africa",
+  "heroCity": "Drakensberg Mountains",
+  "heroSubtitle": "South Africa's dragon mountains — sheer basalt walls, the world's second-highest waterfall, ancient San rock art, and hiking trails through untouched wilderness.",
+  "budgetIntro": "Daily costs per person in US dollars. The Drakensberg is one of South Africa's most affordable destinations — nature is the main attraction and most of it is free or very cheap to access.",
+  "culturalIntro": "The Drakensberg is a UNESCO World Heritage Site for both its natural beauty and its cultural significance — home to the world's greatest concentration of San rock art and a sacred landscape for the Zulu people.",
+  "ctaCity": "Drakensberg",
+  "ctaText": "Find hiking companions for the Drakensberg on roammate — share transport costs, tackle the chain ladders together, and camp under the stars.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "1–3 Day Hiking",
+    "Mountains",
+    "Mar – May Best"
+  ],
+  "defaultDays": 1
+}

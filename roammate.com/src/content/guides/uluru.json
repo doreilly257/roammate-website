@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "uluru",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "AUD (Dollar)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Pitjantjatjara",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "ACST (UTC+9:30)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "May – Sep",
+      "detail": "Comfortable temperatures, lower crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$80–200 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ETA required",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Uluru Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Uluru",
+            "text": "Begin your day at Uluru early to beat the crowds and catch the best light. The main site is most atmospheric in the morning when the air is cool and the landscape catches the first golden rays. Take time to explore the main highlights and capture photographs in the soft morning light. This is the most rewarding time to visit.",
+            "tip": "Arrive as early as possible — the first hour after opening has the fewest visitors and the best photography conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Deeper Exploration",
+            "text": "Spend the afternoon exploring further afield. Explore the surrounding areas, museums, or lesser-known sections that most visitors miss. Grab lunch at a local eatery for authentic flavours and budget-friendly prices.",
+            "tip": "Midday sun can be intense — bring sunscreen, a hat, and plenty of water. Rest during the hottest hours if needed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Dining Under Desert Stars",
+            "text": "All dining is at Ayers Rock Resort in Yulara — there are no independent restaurants out here. For a special evening, book the Field of Light dinner experience, walking through Bruce Munro's 50,000-stemmed light installation after a meal in the desert. Tali Wiru offers fine dining under the stars with views of Uluru. For something casual, Gecko's Café and the Pioneer BBQ at the Outback Pioneer Lodge both serve solid meals at lower prices.",
+            "tip": "Book Tali Wiru or Field of Light well in advance — both sell out weeks ahead in peak season (April–October). Walk-ins are possible at Gecko's and the Pioneer BBQ."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Uluru Sunrise & Base Walk",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sunrise Viewing & Uluru Base Walk",
+            "text": "Arrive at the Talinguru Nyakunytjaku sunrise viewing area 30 minutes before dawn, when a hundred silhouettes cluster behind tripods and the rock is a cold grey outline. Then watch Uluru transform through terracotta, crimson, and finally rust-orange as the sun clears the horizon. Immediately after sunrise, begin the 10.6km base walk circling the entire monolith — the full circuit reveals caves painted with ancient Tjukurpa ceremonial designs, permanent waterholes, and the deeply sculpted southern face that most visitors never see.",
+            "tip": "The base walk takes 3–4 hours at a comfortable pace. Carry 3 litres of water per person — the desert dehydrates faster than you expect, even in mild weather."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Cultural Centre & Anangu Stories",
+            "text": "Visit the Uluru-Kata Tjuta Cultural Centre at the base of the rock — a world-class resource explaining Anangu law (Tjukurpa), traditional land management, and why the rock is sacred. The centre was designed by Anangu artists and contains the park's best traditional artworks and artefacts. The Mani Gallery sells authentic Anangu dot paintings, carvings, and woven baskets directly supporting the community — look for works signed by named artists rather than mass-produced souvenirs.",
+            "tip": "Photography is prohibited in several areas around the base where Tjukurpa ceremonies take place — heed the signage and do not photograph these sites."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Uluru Sunset at Talinguru",
+            "text": "Return to the sunset viewing area as the day's last light transforms Uluru from bright red through amber to deep purple-violet — a colour sequence that changes every few minutes as the angle of light shifts. After dark, the Field of Light installation by artist Bruce Munro covers 7 hectares of desert with 50,000 solar-powered stemmed spheres that glow softly after sunset, creating a dreamlike field of colour around the base of the rock. Book dinner at Sounds of Silence for a table under the stars.",
+            "tip": "The Field of Light requires a separate ticket ($45–55) and runs from dusk until 11pm — book online well in advance as it sells out months ahead."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Kata Tjuta — The Olgas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Walpa Gorge Walk",
+            "text": "Drive 50km west to Kata Tjuta (the Olgas) — 36 red domed rock formations covering 35 square kilometres, sacred to Anangu men and arguably more architecturally impressive than Uluru itself. Begin with the Walpa Gorge walk — a 2.6km return path into a narrow gorge between two of the highest domes, where the cliff walls rise 100m on either side and plant communities that survive in the sheltered microclimate include species found nowhere else in central Australia. Cool, quiet, and magnificent.",
+            "tip": "Start the Walpa Gorge walk before 8am — the gorge faces east and loses its dramatic shadowed light once the sun rises fully above the dome."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Valley of the Winds Circuit",
+            "text": "Tackle the Valley of the Winds — Kata Tjuta's most rewarding walk, a 7.4km circuit through the gaps between the domes with two lookout points: Karu and Karingana. From Karingana the full spread of the domes, the spinifex plains, and the distant silhouette of Uluru on the horizon create a panorama unlike anything else in Australia. The trail closes when temperatures exceed 36°C — start by 7am to guarantee access and finish before the midday heat.",
+            "tip": "The Valley of the Winds closes in extreme heat — check the Parks Australia website or visitor centre for closure notices before driving out."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kata Tjuta Sunset & Astronomy",
+            "text": "Watch the sunset over Kata Tjuta from the dedicated western viewing area — fewer people than the Uluru sunset spot and equally spectacular colour. After dark, the Ayers Rock Resort offers guided astronomy tours using large telescopes to view the Southern Cross, Eta Carinae Nebula, and the Milky Way core that hangs low and dense over the desert horizon. Anangu knowledge of the night sky — the \"dark constellation\" emu in the Milky Way — is introduced by Indigenous guides.",
+            "tip": "Astronomy tours book out — reserve at least two weeks ahead through the Ayers Rock Resort activities desk or the Longitude 131° camp."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Sunrise Camel Ride, Art & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Camel Trek at Sunrise",
+            "text": "Begin the final day on a 1-hour camel trek at sunrise with Uluru Camel Tours — the unhurried pace of a camel gives Uluru a completely different dimension, allowing you to absorb the silence and scale without the distraction of walking. The track follows the dune crest east of the rock with unobstructed views of the monolith as it changes colour. Camels were introduced to Australia in the 19th century as desert transport; the feral population now exceeds one million across the outback.",
+            "tip": "Camel treks cost around $130 and depart at 5:30am in summer. Book directly with Uluru Camel Tours — they operate the only licensed camel operation in the park."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Maruku Arts & Dot Painting Workshop",
+            "text": "Visit the Maruku Arts centre in the Cultural Centre for a traditional dot painting workshop led by Anangu artists — you learn the symbols and iconography of Western Desert art and paint your own canvas to take home. Maruku is community-owned and all proceeds go directly to Anangu artists and families. Purchasing art directly from the Cultural Centre gallery rather than from tourist shops elsewhere ensures artists receive fair compensation for their work.",
+            "tip": "Workshops run at 10am and 2pm and take about 45 minutes — no booking required. A basic painting kit is provided; finished works are yours to keep."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Sunset & Outback Departure",
+            "text": "Watch one last Uluru sunset from a quiet private spot along the Mala Walk — fewer visitors gather here than at the official viewing areas, and the rock's north face glows a particularly deep red in the final light. The Ayers Rock airport (Connellan Airport) is just 6km from the resort and serves direct flights to Sydney, Melbourne, Alice Springs, and Cairns. Pick up locally made Anangu arts and crafts from the airport gift shop — all profits support the community.",
+            "tip": "Allow 90 minutes from resort to gate — the airport is small but bag drop queues can be slow when multiple flights depart simultaneously."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book ahead online",
+      "text": "Tickets and tours booked online are often 10-30% cheaper than walk-in prices. Many attractions sell out in peak season — advance booking guarantees entry and saves money."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "Shoulder months (just before or after peak season) offer better prices on accommodation and flights with similar weather and fewer crowds. May – Sep is peak."
+    },
+    {
+      "title": "Stay nearby, not at the gate",
+      "text": "Accommodation directly at the attraction charges a premium. Staying 10-20 minutes away can save 30-50% on nightly rates. Use public transport or a rental car to bridge the gap."
+    },
+    {
+      "title": "Pack your own lunch",
+      "text": "Tourist-area restaurants charge inflated prices. Pack sandwiches, snacks, and a refillable water bottle to save $15-30 per day on food. Buy supplies at local supermarkets or markets."
+    },
+    {
+      "title": "Free walking tours & guides",
+      "text": "Many areas offer free or tip-based guided walks that are better than paid tours. Local guides provide insider knowledge and support the community. Check online for options."
+    },
+    {
+      "title": "Use local transport",
+      "text": "Taxis and private transfers are the most expensive option. Local buses, shared minivans, or ride-sharing are 50-80% cheaper and give you a more authentic experience."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$25–60",
+      "midrange": "$70–150",
+      "splurge": "$200+",
+      "notes": "Hostels → guesthouses → boutique lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–60",
+      "splurge": "$70+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Public buses → shared transfers → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$20–60",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$30–50",
+      "notes": "Combined tickets save money"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$75–190",
+      "midrange": "$165–370",
+      "splurge": "$430+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "ETA required",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Entry fees for Uluru should be paid in AUD — exchange money before arriving"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential",
+        "Bring a basic first aid kit with blister plasters, antiseptic, painkillers, and any personal medication",
+        "Sun protection is essential — apply SPF 50+ and reapply every 2 hours"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Shared transport or guided tours are the most practical options",
+        "Download offline maps before arriving — mobile data coverage can be patchy in remote areas",
+        "Negotiate transport prices before departure or use metered taxis and ride-hailing apps"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card at the airport on arrival for affordable data — much cheaper than international roaming",
+        "WiFi is available at most accommodation but signal quality varies. Download offline maps and guides before heading to remote areas",
+        "Share your itinerary with someone at home and check in daily, especially for remote treks or island visits"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: AUD (Dollar). Cards accepted in tourist areas, but carry cash for local vendors",
+        "ATMs are available in towns and cities. Visa and Mastercard are most widely accepted",
+        "Tip 10-15% at restaurants. Guides and porters appreciate tips — budget $5-10 per day per person"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable walking shoes, layers for temperature changes, and a packable rain jacket",
+        "A reusable water bottle, headlamp, and portable phone charger are essential for any outdoor adventure",
+        "Quick-dry clothing is ideal — you can wash and wear repeatedly, reducing pack weight"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Local Customs",
+      "text": "Be mindful of local customs and traditions. Ask before photographing people. Learn basic greetings in the local language — even a simple hello earns goodwill."
+    },
+    {
+      "icon": "🌍",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish. Stay on marked trails and paths. Do not touch, feed, or disturb wildlife. The natural beauty of Uluru depends on every visitor treating it with respect. Take only photos, leave only footprints."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals, especially in indigenous or traditional communities. Many religious sites have photography restrictions — check signage and respect these rules. Drone regulations vary — check local laws before flying."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn a few words in English — greetings, please, thank you, and numbers go a long way. English is widely spoken in tourist areas but a translation app helps bridge gaps."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned guesthouses, restaurants, and guides over international chains. Buy handicrafts directly from artisans. Your spending has the most impact when it goes directly into the local economy rather than through large tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace & Patience",
+      "text": "Allow more time than you think — rushing through natural and cultural sites misses the point. The best experiences come from slowing down and being present."
+    }
+  ],
+  "title": "Uluru Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Uluru guide for young travelers. History, culture, iconic sights with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/uluru-hero.webp",
+  "heroFlag": "🇦🇺",
+  "heroCountry": "Australia",
+  "heroRegion": "Oceania",
+  "heroCity": "Uluru",
+  "heroSubtitle": "Australia's spiritual heart — a 348m sandstone monolith sacred to the Anangu people that glows red, orange, and purple with the shifting desert light.",
+  "budgetIntro": "Daily costs per person in US dollars. Uluru costs depend on season, accommodation style, and activity choices — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Uluru is a place of deep cultural significance — approach with curiosity and respect, and you will be rewarded with one of the most memorable experiences of your travels.",
+  "ctaCity": "Uluru",
+  "ctaText": "Find travel companions to explore Uluru together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "1-Day Highlight",
+    "Landmark",
+    "May – Sep Best"
+  ],
+  "defaultDays": 1
+}

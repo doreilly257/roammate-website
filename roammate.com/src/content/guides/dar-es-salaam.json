@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "dar-es-salaam",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "TZS (Tanzanian Shilling)",
+      "detail": "USD widely accepted, carry small bills"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Swahili / English",
+      "detail": "Swahili dominant, English in business areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EAT (UTC+3)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jun – Oct",
+      "detail": "Dry season, cooler temperatures"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$20–50 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa on arrival",
+      "detail": "$50 USD for most nationalities"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Dar es Salaam Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "National Museum & City Centre",
+            "text": "Start your day at the National Museum of Tanzania on Shaaban Robert Street — the country's most important museum covering human evolution (casts of the Olduvai Gorge hominid fossils), Shirazi and Swahili coastal trading history, and the German and British colonial periods. The ethnographic galleries display traditional instruments, masks, and textiles from over 120 Tanzanian ethnic groups. Afterwards, walk south to the Askari Monument — a bronze soldier commemorating the African troops who fought in World War I — standing in the centre of a busy roundabout near the harbour. The surrounding streets are a chaotic, lively introduction to Dar's energy.",
+            "tip": "The National Museum opens at 9:30am. Entry is around 10,000 TZS (~$4). Go early to explore before the midday heat hits — Dar is hot and humid year-round."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kariakoo Market & Street Food",
+            "text": "Head inland to Kariakoo Market — East Africa's largest open-air market and the beating heart of Dar es Salaam. The main building is a brutalist concrete grid packed with vendors selling everything from fresh fish and tropical fruit to fabrics, spices, and second-hand electronics. The surrounding streets extend the market for blocks in every direction with informal stalls and hawkers. Stop for a plate of pilau (spiced rice with meat), mishkaki (grilled meat skewers), or chipsi mayai (chips omelette) from a street vendor — Dar's street food is excellent, cheap, and safe at the busy stalls.",
+            "tip": "Kariakoo is busiest in the morning but still vibrant through the afternoon. Keep valuables secure and be aware of your surroundings — the market is safe but crowded. Bargain firmly but respectfully."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Coco Beach Sunset & Seafood",
+            "text": "End your day at Coco Beach (Oyster Bay Beach) on the Msasani Peninsula — Dar's most popular beach gathering spot. The beach itself is modest, but the atmosphere at sunset is lively: families, football games on the sand, street food vendors grilling corn and cassava, and cold Safari or Kilimanjaro beer from beachfront bars. Walk north along the shore towards the Sea Cliff Hotel for the best sunset views over the Indian Ocean. For dinner, find a local seafood spot in the Msasani area — grilled octopus, prawns in coconut sauce, and freshly caught fish are the specialities.",
+            "tip": "Coco Beach comes alive from 5pm onwards. Bring cash — most beach vendors and small restaurants don't accept cards. The sunset over the ocean is consistently beautiful."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "National Museum, Kariakoo Market & Coco Beach",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "National Museum & Askari Monument",
+            "text": "Start your day at the National Museum of Tanzania on Shaaban Robert Street — the country's most important museum covering human evolution (casts of the Olduvai Gorge hominid fossils), Shirazi and Swahili coastal trading history, and the German and British colonial periods. The ethnographic galleries display traditional instruments, masks, and textiles from over 120 Tanzanian ethnic groups. Afterwards, walk south to the Askari Monument — a bronze soldier commemorating the African troops who fought in World War I — standing in the centre of a busy roundabout near the harbour.",
+            "tip": "The National Museum opens at 9:30am. Entry is around 10,000 TZS (~$4). Go early to explore before the midday heat — Dar is humid year-round with temperatures consistently above 28°C."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kariakoo Market & Street Food",
+            "text": "Head inland to Kariakoo Market — East Africa's largest open-air market and the beating heart of Dar es Salaam. The main building is a brutalist concrete grid packed with vendors selling everything from fresh fish and tropical fruit to fabrics, spices, and second-hand electronics. The surrounding streets extend the market for blocks in every direction. Stop for chipsi mayai (chips omelette), mishkaki (grilled meat skewers), or pilau (spiced rice) from a busy street vendor — Dar's street food scene is excellent and incredibly cheap.",
+            "tip": "Kariakoo is busiest in the morning but vibrant through the afternoon. Keep valuables secure — the market is safe but extremely crowded. Bargain firmly and with a smile."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Coco Beach Sunset & Seafood Dinner",
+            "text": "End your day at Coco Beach (Oyster Bay Beach) on the Msasani Peninsula — Dar's most popular beach gathering spot. The beach is modest but the atmosphere at sunset is lively: families, football games on the sand, street food vendors grilling corn and cassava, and cold Safari or Kilimanjaro beer from beachfront bars. Walk north along the shore for the best sunset views over the Indian Ocean. For dinner, find a local seafood spot in the Msasani area — grilled octopus, prawns in coconut sauce, and freshly caught fish are the specialities.",
+            "tip": "Coco Beach comes alive from 5pm onwards. Bring cash — most beach vendors and small restaurants don't accept cards. The Indian Ocean sunset is reliably spectacular."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Village Museum, Tingatinga Art & Msasani Peninsula",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Village Museum — Open-Air Cultural Park",
+            "text": "Take a dala-dala (local minibus) or taxi to the Village Museum (Makumbusho ya Kijiji) on the Bagamoyo Road — an open-air museum featuring reconstructed traditional houses from over 16 Tanzanian ethnic groups. Each dwelling is built to authentic specifications using local materials: Maasai bomas, Chagga beehive huts, Haya houses, and Sukuma shelters. Local guides demonstrate traditional crafts, cooking, and music in the grounds. It is a fascinating overview of Tanzania's ethnic diversity and building traditions in one morning.",
+            "tip": "The Village Museum is about 10km north of the city centre. Entry is around 5,000 TZS. Budget 1.5–2 hours for a thorough visit — the guides are excellent and appreciate tips."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tingatinga Art Centre & Craft Shopping",
+            "text": "Head to the Tingatinga Arts Cooperative Society in Oyster Bay — the birthplace of Tanzania's most recognisable art style. Tingatinga paintings use bright enamel paints on hardboard to depict stylised animals, village scenes, and Swahili proverbs in a flat, colourful, almost cartoonish style invented by Edward Said Tingatinga in the 1960s. Watch artists painting in the open-air workshop and buy directly from the creators — prices are fair and negotiable, starting from around $10 for small pieces. The Slipway shopping centre nearby has more upscale craft shops and waterfront cafes.",
+            "tip": "Buy Tingatinga paintings directly from the artists at the cooperative — you get better prices and the money goes straight to the painters. Rolled canvases are easy to carry home."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Msasani Nightlife & Live Music",
+            "text": "Explore the Msasani Peninsula's restaurant and bar scene in the evening. The Slipway waterfront has upscale dining options with harbour views, while the streets of Masaki and Oyster Bay have a range of bars and restaurants. Dar es Salaam has a vibrant nightlife — look for live bongo flava (Tanzanian hip-hop and R&B) performances at local bars and clubs. The music scene is genuine and energetic, fuelled by cold Serengeti beer and grilled nyama choma (barbecued meat).",
+            "tip": "Dar nightlife starts late — most clubs don't get going until 11pm. Taxis are the safest way to get around at night. Uber and Bolt operate in Dar and are reliable and affordable."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Mbudya Island Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Boat to Mbudya Island",
+            "text": "Take a morning boat from Kunduchi Beach to Mbudya Island — a small, uninhabited marine reserve island about 4km offshore in the Indian Ocean. Local boatmen depart from the beach near the Kunduchi Wet 'n' Wild waterpark; negotiate the return fare before boarding (expect 30,000–50,000 TZS per person return). The 20-minute crossing delivers you to a pristine white sand beach fringed with coconut palms and surrounded by clear turquoise water — a world away from the traffic and noise of Dar es Salaam.",
+            "tip": "Arrange your boat trip early in the morning (before 9am) for the calmest seas. Bring your own snorkelling gear if you have it — rental gear on the island is limited and basic."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Snorkelling, Swimming & Island Relaxation",
+            "text": "Spend the afternoon swimming and snorkelling around Mbudya Island's coral reefs — the water visibility is good and you can spot colourful reef fish, starfish, and occasionally sea turtles. The island has a few simple bandas (thatched shelters) and local vendors who grill fresh fish and lobster on the beach for remarkably low prices. Coconut water is served straight from the shell. The island is small enough to walk around in 30 minutes — the far side has a quieter beach with fewer visitors.",
+            "tip": "Bring reef-safe sunscreen, plenty of water, and cash — there are no ATMs or shops on the island. The grilled seafood from the beach vendors is excellent and very affordable."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Kivukoni Fish Market Dinner",
+            "text": "Take the boat back to Kunduchi Beach in the late afternoon, then head to the Kivukoni Fish Market on the waterfront near the ferry terminal for a final Dar es Salaam experience. The upstairs restaurants at the fish market let you choose your fish from the catch below — it is grilled or fried to order and served with ugali (maize meal), rice, and fiery pili pili sauce. The market is authentic, chaotic, and the seafood is as fresh as it gets. Watch the dhows and ferries crossing to Zanzibar as the sun sets over the harbour.",
+            "tip": "The Kivukoni Fish Market is best visited between 5–7pm when the day's catch comes in. Choose busy stalls with high turnover for the freshest fish. Bring wet wipes — it is a hands-on dining experience."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "National Museum, City Centre & Coco Beach",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "National Museum & City Walk",
+            "text": "Start your week at the National Museum of Tanzania on Shaaban Robert Street. The museum covers human evolution with casts from Olduvai Gorge, Swahili coastal trading history, and the colonial periods under Germany and Britain. Walk south through the city centre to the Askari Monument — a bronze soldier honouring African troops from World War I — then continue to the bustling streets around the harbour for your first taste of Dar's energy.",
+            "tip": "Entry is around 10,000 TZS (~$4). Go early before the heat builds. The area around the harbour is photogenic but watch your belongings in crowded spots."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "St. Joseph's Cathedral & Botanical Gardens",
+            "text": "Visit St. Joseph's Cathedral — a German-built Gothic cathedral from 1902 with intricate painted ceiling murals — then walk to the small Botanical Gardens nearby for some shade and quiet. The gardens date from the German colonial era and contain mature tropical trees, including baobabs and palms. It is a calm retreat from the city noise. Grab lunch at a local restaurant near Kivukoni Front with views across the harbour to Kigamboni.",
+            "tip": "The cathedral is free to enter but dress modestly — cover shoulders and knees. The Botanical Gardens are small but pleasant for a 30-minute wander."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Coco Beach Sunset",
+            "text": "Head to Coco Beach on the Msasani Peninsula for your first Indian Ocean sunset. Join the locals playing football on the sand, grab grilled corn or mishkaki from a beach vendor, and settle in with a cold Kilimanjaro beer as the sun drops below the horizon. The atmosphere is relaxed and welcoming — a perfect introduction to Dar's evening culture.",
+            "tip": "Coco Beach fills up from 5pm. Bring cash for vendors. The sunsets are reliably beautiful year-round."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Kariakoo Market & Tingatinga Art",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kariakoo Market Deep Dive",
+            "text": "Dedicate a full morning to Kariakoo Market — East Africa's largest open-air market. The main building houses fresh produce, fish, and meat on the ground floor with fabrics and clothing above. But the real experience is in the surrounding streets: blocks of informal stalls selling spices, traditional medicine, electronics, kitchenware, and secondhand clothes imported from around the world. Stop for a breakfast of vitumbua (coconut rice cakes) and chai from a street vendor.",
+            "tip": "Go early (before 9am) when the market is at its busiest and most photogenic. Wear comfortable shoes — the ground can be wet and uneven. Leave valuables at your accommodation."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tingatinga Arts Cooperative",
+            "text": "Visit the Tingatinga Arts Cooperative Society in Oyster Bay to see Tanzania's most iconic art form being created. Watch artists painting bright enamel animals and village scenes on hardboard in the open-air workshop. Buy directly from the creators at fair prices — small pieces start around $10 and make excellent souvenirs. Rolled canvases travel well in a backpack.",
+            "tip": "Buying from the cooperative ensures the artists receive fair payment. Prices are negotiable but already reasonable — don't haggle too aggressively."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Chipsi Mayai & Street Food Tour",
+            "text": "Explore Dar's street food scene on foot through the city centre and Kariakoo edges. Try chipsi mayai (chips omelette — Tanzania's national street snack), pilau, zanzibar pizza (stuffed crepe), and grilled cassava with chilli salt. Finish with fresh tropical juice — mango, passionfruit, or sugarcane pressed to order. The busiest stalls with the highest turnover serve the freshest food.",
+            "tip": "Street food is incredibly cheap — a full meal costs 2,000–5,000 TZS ($1–2). Stick to stalls with lots of local customers and food cooked to order in front of you."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Village Museum & Msasani Peninsula",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Village Museum",
+            "text": "Take a dala-dala north to the Village Museum (Makumbusho ya Kijiji) on Bagamoyo Road. This open-air museum features reconstructed traditional houses from over 16 Tanzanian ethnic groups — Maasai bomas, Chagga beehive huts, Haya houses, and Sukuma shelters — each built with authentic materials and techniques. Guides demonstrate crafts, cooking, and traditional music in the grounds.",
+            "tip": "Entry is around 5,000 TZS. Budget 1.5–2 hours for a thorough visit. The guides are knowledgeable and appreciate tips of 5,000–10,000 TZS."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Slipway Shopping & Waterfront",
+            "text": "Head to the Slipway shopping complex on the Msasani Peninsula — a waterfront development with craft shops, boutiques, a bookshop, and several restaurants with harbour views. Browse the craft stalls for Maasai beadwork, carved wooden animals, and batik fabrics. The waterfront terrace is a pleasant spot for a cold drink and a break from the city heat.",
+            "tip": "The Slipway prices are higher than market prices but the quality is more consistent. Good for picking up last-minute gifts without the intensity of Kariakoo."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Oyster Bay Restaurants & Bongo Flava",
+            "text": "Explore the restaurant and bar scene in Oyster Bay and Masaki. These upscale neighbourhoods have a good range of dining options — Ethiopian, Indian, seafood, and Tanzanian. After dinner, look for a bar with live bongo flava music — Tanzania's distinctive blend of hip-hop, R&B, and traditional rhythms that dominates East African music charts.",
+            "tip": "Dar nightlife starts late. Uber and Bolt operate reliably for getting around at night. Try nyama choma (barbecued meat) at an outdoor bar for the authentic local experience."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Mbudya Island Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Boat to Mbudya Island",
+            "text": "Take a taxi to Kunduchi Beach and negotiate a boat ride to Mbudya Island — a small uninhabited marine reserve about 4km offshore. The 20-minute crossing delivers you to pristine white sand and turquoise water, a world away from the city. Local boatmen charge 30,000–50,000 TZS per person return — agree the price and return time before boarding.",
+            "tip": "Depart before 9am for calm seas. Bring snorkelling gear, sunscreen, and plenty of water — facilities on the island are minimal."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Snorkelling & Beach Seafood",
+            "text": "Spend the afternoon snorkelling around the island's coral reefs — visibility is good and you can spot colourful reef fish and occasionally sea turtles. Local vendors on the beach grill fresh fish and lobster at remarkable prices, served with rice and coconut water straight from the shell. The far side of the island has a quieter beach if you want solitude.",
+            "tip": "Bring cash — no ATMs on the island. Grilled lobster from the beach vendors costs a fraction of restaurant prices and is incredibly fresh."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kunduchi Ruins & Sunset",
+            "text": "After returning from Mbudya, visit the Kunduchi Ruins nearby — remnants of a 15th-century Swahili trading settlement with coral stone tombs decorated with Chinese porcelain shards, evidence of the ancient Indian Ocean trade routes. The ruins are small but atmospheric. Watch the sunset from Kunduchi Beach before heading back to the city for dinner.",
+            "tip": "The Kunduchi Ruins are free to visit and rarely have other tourists. The combination of ancient ruins and beach sunset makes for a memorable late afternoon."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Kigamboni & South Beach",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kigamboni Ferry Crossing",
+            "text": "Take the local ferry from the Kivukoni waterfront across the harbour to Kigamboni — a 5-minute crossing that costs just a few hundred shillings. The ferry is packed with commuters, motorcycles, and vendors, and gives you a great view of the Dar es Salaam skyline from the water. Kigamboni has a completely different feel from the city centre — quieter, more rural, and with long stretches of undeveloped beach.",
+            "tip": "The ferry runs continuously and costs almost nothing. The Kigamboni Bridge also connects the two sides, but the ferry is the more interesting experience."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "South Beach & Kipepeo Village",
+            "text": "Walk or take a bajaj (three-wheeler) south along the coast to the long, quiet beaches of Kigamboni. South Beach stretches for kilometres with relatively few visitors — a stark contrast to the crowded city beaches. Some beach resorts offer day passes for swimming pools and sun loungers. The Kipepeo Beach area has a few simple restaurants serving grilled fish and cold drinks under palm-thatch shelters.",
+            "tip": "South Beach is exposed — bring sunscreen, a hat, and water. The sea can have strong currents in places, so swim where locals swim."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kivukoni Fish Market Dinner",
+            "text": "Return on the ferry and head to the Kivukoni Fish Market for dinner. Choose your fish from the day's catch downstairs, then take it upstairs where the cooks grill or fry it to order, served with ugali, rice, chips, and fiery pili pili sauce. The market is authentic, loud, and the seafood is as fresh as it gets. Watch dhows crossing the harbour as the sun sets.",
+            "tip": "The fish market is best between 5–7pm. Choose busy stalls with high turnover. Bring wet wipes — this is a hands-on dining experience."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Bagamoyo Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive to Bagamoyo",
+            "text": "Take a dala-dala or hire a car for the 65km drive north to Bagamoyo — a UNESCO-listed former slave trading port and one of East Africa's most historically significant towns. The name means \"lay down your heart\" in Swahili, a reference to the slaves who passed through here on their way to Zanzibar. Visit the old German colonial buildings along the waterfront, the Catholic Museum at the mission where Livingstone's body was brought before being shipped to England, and the ruins of Kaole — a 13th-century Swahili settlement with a mosque and coral tombs.",
+            "tip": "The drive takes 1–2 hours depending on traffic. Leave early to avoid Dar's notorious morning congestion. Dala-dalas depart from Mwenge bus stand."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bagamoyo Arts Quarter & Beach",
+            "text": "Visit the Bagamoyo Arts Quarter — home to the Bagamoyo College of Arts, one of East Africa's most important cultural institutions. Watch traditional dance rehearsals, drumming classes, and painting workshops. The college grounds are open and welcoming to visitors. Afterwards, walk along Bagamoyo's quiet beach — a long stretch of white sand facing Zanzibar, far less developed than Dar's beaches.",
+            "tip": "The arts college is most active on weekday mornings when classes are in session. A small donation is appreciated if you watch rehearsals."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset at Bagamoyo & Return",
+            "text": "Explore the old town's narrow streets and crumbling coral stone buildings before sunset. Many buildings date from the Omani and German periods and are slowly being restored. Find a waterfront restaurant for grilled fish as the sun sets over the channel towards Zanzibar — on a clear day you can see the island on the horizon. Return to Dar by dala-dala or taxi in the evening.",
+            "tip": "Bagamoyo is a deeply atmospheric place — allow time to simply wander the old streets without a fixed plan. The historical weight of the town is palpable."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Pugu Hills & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Pugu Hills Nature Reserve",
+            "text": "Take a taxi southwest to Pugu Hills Forest Reserve — a small patch of coastal forest on the outskirts of Dar that feels remarkably wild for its proximity to the city. Walking trails wind through the forest canopy with good birdwatching (hornbills, turacos, sunbirds) and occasional colobus monkey sightings. The Pugu Hills also contain a network of limestone caves, some accessible with a local guide.",
+            "tip": "Pugu Hills is about 25km from the city centre. Arrange a guide at the entrance — they know the best trails and cave access points. Entry fee is minimal."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Final Market Shopping & Souvenirs",
+            "text": "Return to the city for final shopping. The Mwenge Woodcarvers Market on Sam Nujoma Road specialises in Makonde carvings — intricate ebony sculptures that are Tanzania's most famous craft export. Prices are negotiable and range from $5 for small pieces to hundreds for large works. Pick up any remaining souvenirs, stock up on Tanzanian coffee or spices, and enjoy a final street food lunch.",
+            "tip": "Makonde carvings vary enormously in quality. Look for solid ebony (heavy and dark throughout) rather than stained softwood. The best carvers are happy to show you the wood grain."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Dinner at the Waterfront",
+            "text": "End your Dar es Salaam week with dinner at one of the waterfront restaurants along the Msasani Peninsula or Slipway. Reflect on a city that is gritty, energetic, and deeply authentic — the real East Africa, untouched by mass tourism. The Indian Ocean coastline, the markets, the music, and the warmth of the Tanzanian people make Dar one of the continent's most underrated destinations.",
+            "tip": "Book your airport transfer in advance — Dar traffic can be unpredictable, especially during rush hours. Julius Nyerere International Airport is about 12km from the city centre."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Use dala-dalas",
+      "text": "Local minibuses (dala-dalas) are the cheapest way to get around Dar — fares are typically 400–700 TZS ($0.15–0.30). Routes cover the entire city. They are crowded but efficient and a genuine local experience."
+    },
+    {
+      "title": "Eat street food",
+      "text": "Street food in Dar es Salaam is excellent, safe (at busy stalls), and incredibly cheap — a full meal costs $1–2. Chipsi mayai, mishkaki, pilau, and grilled fish are all reliable choices."
+    },
+    {
+      "title": "Negotiate everything",
+      "text": "Prices for taxis, market goods, and boat trips are negotiable. Always agree on a price before getting in a taxi or boat. Ask locals what the fair price should be and negotiate from there."
+    },
+    {
+      "title": "Stay in Kariakoo or Kinondoni",
+      "text": "Accommodation in Msasani and Oyster Bay is pricier. Budget guesthouses in Kariakoo or Kinondoni offer clean rooms from $10–20 per night, closer to the real city energy."
+    },
+    {
+      "title": "Use Bolt or Uber",
+      "text": "Ride-hailing apps offer transparent pricing and are often cheaper than negotiating with taxi drivers. Both Bolt and Uber operate reliably in Dar es Salaam."
+    },
+    {
+      "title": "Bring USD for big purchases",
+      "text": "US dollars are widely accepted for larger transactions (hotels, island boats, tours) and sometimes get a better rate than paying in TZS. Carry clean, post-2006 bills."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$8–20",
+      "midrange": "$25–60",
+      "splurge": "$80+",
+      "notes": "Guesthouses → mid-range hotels → beachfront resorts"
+    },
+    {
+      "category": "Food",
+      "budget": "$3–8",
+      "midrange": "$10–25",
+      "splurge": "$30+",
+      "notes": "Street food → local restaurants → upscale dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$1–5",
+      "midrange": "$5–15",
+      "splurge": "$20+",
+      "notes": "Dala-dalas → Bolt/Uber → private taxi"
+    },
+    {
+      "category": "Activities",
+      "budget": "$2–10",
+      "midrange": "$10–30",
+      "splurge": "$50+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$2–5",
+      "midrange": "$5–15",
+      "splurge": "$15–25",
+      "notes": "Museums and sites are inexpensive"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$20–50",
+      "midrange": "$55–145",
+      "splurge": "$195+",
+      "notes": "Budget backpacker → comfortable mid → upscale"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Visa on arrival available for most nationalities — $50 USD, paid in cash",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Yellow fever vaccination certificate required if arriving from an endemic country"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Malaria is present in Dar es Salaam — take antimalarials and use mosquito repellent (DEET 30%+)",
+        "Drink bottled or filtered water only. Avoid ice from unknown sources",
+        "Travel insurance with medical evacuation coverage is essential — the nearest high-quality hospitals are in Nairobi or South Africa"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Dala-dalas (local minibuses) cover the entire city cheaply. BRT (rapid transit buses) run on dedicated lanes and are faster",
+        "Bolt and Uber operate reliably and affordably — recommended for evening travel",
+        "Traffic in Dar is notoriously heavy — allow extra time for all journeys, especially during rush hours"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card (Vodacom, Airtel, or Tigo) at the airport or any phone shop — data is cheap and coverage is good in the city",
+        "WiFi is available at most hotels and restaurants but speed varies. Download offline maps before exploring",
+        "Mobile money (M-Pesa, Tigo Pesa) is widely used — you can pay for many services via mobile money with a local SIM"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: TZS (Tanzanian Shilling). USD widely accepted for hotels, tours, and larger purchases",
+        "ATMs are available in the city — Visa and Mastercard accepted. CRDB and NMB banks have the most reliable ATMs",
+        "Tipping: 10% at restaurants, 5,000–10,000 TZS for guides. Street food vendors do not expect tips"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Light, breathable clothing — Dar is hot and humid year-round (28–33°C). Modest dress is appreciated, especially away from tourist areas",
+        "Reef-safe sunscreen, insect repellent (DEET-based), and a reusable water bottle are essential",
+        "A headlamp and portable power bank are useful — power cuts are common outside the city centre"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Greetings Matter",
+      "text": "Swahili greetings are important — \"Mambo!\" (informal hello), \"Habari?\" (how are you?), and \"Asante sana\" (thank you very much) will open doors. Tanzanians are warm and welcoming, and a greeting in Swahili shows respect."
+    },
+    {
+      "icon": "🌍",
+      "title": "Dress Modestly",
+      "text": "Dar es Salaam has a significant Muslim population. Dress modestly when away from the beach — cover shoulders and knees, especially in markets and residential neighbourhoods. Beachwear is fine at the beach only."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Always ask permission before photographing people. Many Tanzanians are happy to be photographed but expect to be asked first. Never photograph military or government buildings. Offer to show people the photo on your screen."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language",
+      "text": "Swahili is the dominant language. English is spoken in business and tourist contexts but Swahili makes a huge difference to your interactions. Learn basic phrases — Tanzanians genuinely appreciate the effort."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Economy",
+      "text": "Buy directly from artists and craftspeople. Eat at local restaurants rather than hotel restaurants. Use local guides. Your spending has the most impact when it flows directly into the Tanzanian economy."
+    },
+    {
+      "icon": "🕐",
+      "title": "Swahili Time",
+      "text": "Tanzania uses Swahili time — 6 hours behind clock time (so \"1 o'clock\" in Swahili time is 7am). This can cause confusion when arranging meeting times. Always confirm whether someone means \"saa moja\" (Swahili 1 = 7am) or \"one o'clock\" (1pm)."
+    }
+  ],
+  "title": "Dar es Salaam Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Dar es Salaam guide for young travelers. Markets, island escapes, street food and culture with 1, 3 and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/dar-es-salaam-hero.webp",
+  "heroFlag": "🇹🇿",
+  "heroCountry": "Tanzania",
+  "heroRegion": "Africa",
+  "heroCity": "Dar es Salaam",
+  "heroSubtitle": "East Africa's largest port city — a vibrant, chaotic blend of Swahili culture, Indian Ocean beaches, world-class street food, and the gateway to Zanzibar.",
+  "budgetIntro": "Daily costs per person in US dollars. Dar es Salaam is one of East Africa's most affordable cities — street food and local transport are remarkably cheap, while island trips and nightlife can push costs higher.",
+  "culturalIntro": "Dar es Salaam is Tanzania's cultural heartbeat — a genuinely African city with Swahili, Indian, and Arab influences. Approach with curiosity and respect, and you will be rewarded with authentic, unforgettable experiences.",
+  "ctaCity": "Dar es Salaam",
+  "ctaText": "Find travel companions to explore Dar es Salaam together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day City",
+    "Coastal",
+    "Jun – Oct Best"
+  ],
+  "defaultDays": 3
+}

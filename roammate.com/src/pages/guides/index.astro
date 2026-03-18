@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { allGuides, cityGuideSlugs, backpackerRoutes as routeData } from '../../data/guides';
+import { getAllGuides, getCityGuideSlugs, getBackpackerRoutes } from '../../data/guides';
+
+const allGuides = await getAllGuides();
+const cityGuideSlugs = await getCityGuideSlugs();
+const routeData = await getBackpackerRoutes();
 
 const cityGuideCount = allGuides.filter((g) => cityGuideSlugs.has(g.slug)).length;
 const placeGuideCount = allGuides.filter((g) => !cityGuideSlugs.has(g.slug)).length;

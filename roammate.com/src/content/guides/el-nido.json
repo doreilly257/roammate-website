@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "el-nido",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "PHP (Peso)",
+      "detail": "1 USD ≈ ₱56"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Filipino / English",
+      "detail": "English widely spoken"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "PHT (UTC+8)",
+      "detail": "Same as Singapore/HK"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Nov – May",
+      "detail": "Dry season, calmest seas"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$30–50 USD",
+      "detail": "₱1,700–2,800 budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Free 30 days",
+      "detail": "Most nationalities visa-free"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "The El Nido Classic",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Big Lagoon & Secret Lagoon",
+            "text": "Join the legendary Tour A (₱1,400 including lunch) departing at 9am from El Nido beach. Your bangka boat weaves through towering limestone karst islands to Big Lagoon — paddle a kayak (₱300 extra) through crystal-clear turquoise water framed by sheer cliff walls draped in jungle. Then swim through a narrow rock gap into Secret Lagoon, a hidden emerald pool enclosed by cathedral-like limestone formations.",
+            "tip": "Book Tour A the afternoon before at any tour office on Calle Hama. Bring reef-safe sunscreen — chemical sunscreens are banned in the lagoons."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Shimizu Island & Payong-Payong Beach",
+            "text": "Anchor at Shimizu Island for snorkeling over vibrant coral gardens teeming with clownfish, parrotfish, and sea turtles if you are lucky. The underwater visibility here regularly exceeds 15 meters. After snorkeling, the boat crew serves a beach lunch of grilled fish, rice, and fresh mango — eaten with your feet in the sand. Continue to Payong-Payong Beach for swimming in water so clear the boat appears to float in mid-air.",
+            "tip": "Bring your own snorkel mask if you have one — rental sets (₱200) can be scratched and leaky. Underwater cameras earn their keep here."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "El Nido Beach Sunset & Seafood",
+            "text": "Back in town by 4pm, walk north along the beach to catch the sunset painting the karst islands gold and purple. El Nido's beachfront transforms after dark — fairy lights illuminate the restaurants along the shore. Dinner at a seafood grill on Calle Hama — order fresh catch of the day grilled with calamansi and garlic (₱300–500), paired with a San Miguel beer (₱80) while waves lap at your feet.",
+            "tip": "Trattoria Altrove has excellent Italian-Filipino fusion if you need a break from seafood. The beach bars north of town are quieter and cheaper."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Lagoons & Limestone Karsts",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Big Lagoon & Secret Lagoon",
+            "text": "Join Tour A (₱1,400 including lunch) departing at 9am. Your bangka boat navigates through towering limestone karst formations to Big Lagoon — rent a kayak (₱300) and paddle through crystal-clear turquoise water framed by sheer cliffs draped in jungle. The scale of the karsts is breathtaking from water level. Then swim through a narrow rock opening into Secret Lagoon, a hidden emerald pool enclosed by cathedral walls.",
+            "tip": "Book Tour A the afternoon before on Calle Hama. Arrive at the beach by 8:30am to board early and get the best seat near the bow."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Shimizu Island Snorkeling",
+            "text": "Anchor at Shimizu Island for world-class snorkeling over vibrant coral gardens — clownfish, parrotfish, giant clams, and occasionally sea turtles. Visibility regularly exceeds 15 meters. The boat crew prepares a beachside lunch of grilled fish, rice, atchara (pickled papaya), and fresh mango. After eating, snorkel the second reef or simply float in impossibly clear water staring up at the limestone towers above.",
+            "tip": "Bring your own mask and snorkel if possible — rental quality is inconsistent. A rash guard prevents sunburn during long snorkel sessions."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "El Nido Sunset & Street Food",
+            "text": "Return by 4pm and walk the beach northward for sunset — the karst silhouettes against burning sky are El Nido's signature view. For dinner, wander the Calle Hama strip where seafood grills display the day's catch on ice. Grilled squid stuffed with tomato and onion (₱250), garlic butter prawns (₱400), and cold San Miguel (₱80) make the perfect first-night feast. Live acoustic music drifts from several beachfront bars.",
+            "tip": "Happiness Beach Bar has the best sunset views and reasonably priced cocktails. Get there by 5pm for a good seat."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Hidden Beaches & Shrines",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hidden Beach & Matinloc Shrine",
+            "text": "Tour C (₱1,400) is arguably more beautiful than Tour A, with fewer crowds. First stop is Hidden Beach — accessed by swimming through a narrow gap between karst walls into a secluded cove with powder-white sand and water that shifts from emerald to sapphire. Continue to Matinloc Shrine, an abandoned clifftop shrine built into the rock face with views across the entire Bacuit Archipelago that will stop you mid-sentence.",
+            "tip": "Tour C runs less frequently than Tour A — book 2 days ahead in peak season (Dec–Apr). The swimming entrance to Hidden Beach requires confidence in open water."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Star Beach & Helicopter Island",
+            "text": "Lunch on Star Beach — a sandbar that emerges at low tide between two karst islands, creating a surreal dining experience surrounded by turquoise water on all sides. Then snorkel around Helicopter Island (named for its shape from above), where a dramatic reef wall drops into deep blue. The coral here is healthier than the more visited Tour A sites and the fish diversity is outstanding — lionfish, moorish idols, and blue-spotted rays.",
+            "tip": "Ask your boat captain to time the Star Beach stop around low tide — the sandbar is most dramatic and photogenic when fully exposed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Nacpan Beach Sunset Drive",
+            "text": "Rent a motorbike (₱500/day) or hire a tricycle (₱800 return) and ride 45 minutes to Nacpan Beach — a 4km stretch of golden sand with coconut palms, gentle waves, and almost nobody on it compared to El Nido town beach. Watch the sunset from a beanbag at one of the rustic beach bars, cocktail in hand. Return via the winding coastal road under a sky full of stars — street lights are sparse and the Milky Way is visible.",
+            "tip": "The road to Nacpan has some rough patches — ride slowly on a motorbike, especially the unpaved final section. A tricycle is safer if you are not confident."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Kayaking, Diving & Island Exploration",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Cadlao Island Kayak Adventure",
+            "text": "Rent a kayak (₱500/half-day) and paddle to Cadlao Island, the large karst island visible from El Nido beach. The crossing takes 30–40 minutes and rewards you with hidden coves, mangrove channels, and beaches completely empty of other tourists. Explore the coastline at your own pace, ducking into caves and snorkeling off rocky points. The sense of self-guided discovery is what makes this better than any organized tour.",
+            "tip": "Only attempt the Cadlao paddle in calm conditions (check with locals). Start early before afternoon winds pick up. Bring water and snacks."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Discover Scuba or Reef Snorkeling",
+            "text": "Try a discover scuba dive (₱2,500–3,500) at one of El Nido's PADI shops — no certification needed. South Miniloc and Dilumacad reefs offer beginner-friendly dives with sea turtles, reef sharks, and giant barrel sponges. If diving isn't your thing, join an afternoon snorkel trip (₱800) to the house reef where soft corals sway in the current and schools of fusiliers flash silver in the sunlight above you.",
+            "tip": "Deep Blue Diving and Palawan Divers are well-regarded PADI centers. Book a morning dive to avoid afternoon current changes at most sites."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rooftop Drinks & Night Market",
+            "text": "Climb to the rooftop bar at Art Cafe for panoramic sunset views over El Nido bay with cocktails (₱200–350). Then head to the evening food market near the public market for local Filipino dishes at budget prices — pork sisig on a sizzling plate (₱120), chicken adobo (₱100), and halo-halo shaved ice dessert (₱80). The market buzzes with backpackers and locals mixing over cheap beer and good food.",
+            "tip": "Art Cafe rooftop fills up fast at sunset — arrive by 4:30pm. The food market stalls near the basketball court have the most authentic local cooking."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Tour combos",
+      "text": "Book multiple island-hopping tours (A, B, C, D) together and negotiate a discount — ₱5,000 for all four is common. Tour A and C are the must-dos if you can only pick two."
+    },
+    {
+      "title": "Eat local",
+      "text": "Carinderia (local eateries) near the public market serve adobo, sinigang, and rice for ₱80–120. Tourist restaurants charge 3x more for the same dishes. Follow the Filipino diners."
+    },
+    {
+      "title": "Shared transport",
+      "text": "Split private bangka boats (₱4,000–6,000/day for 6–8 people) with hostel-mates for custom island trips. Per person it costs barely more than group tours but with total freedom."
+    },
+    {
+      "title": "Motorbike freedom",
+      "text": "Rent a motorbike (₱500/day) for Nacpan Beach, Las Cabanas, and Lio Beach — far cheaper than tricycles (₱300–800 per trip) and gives you complete flexibility."
+    },
+    {
+      "title": "Off-season deals",
+      "text": "June–October (wet season) brings 30–50% lower accommodation prices and fewer crowds. Weather is still mostly sunny with afternoon rain showers."
+    },
+    {
+      "title": "Water refills",
+      "text": "Bring a reusable bottle and refill at water stations (₱5–10 per liter) around town instead of buying plastic bottles (₱25–40). Better for your wallet and the ocean."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "₱500–1,000",
+      "midrange": "₱2,000–4,000",
+      "splurge": "₱8,000+",
+      "notes": "Dorm/fan room → AC guesthouse → beachfront resort"
+    },
+    {
+      "category": "Food",
+      "budget": "₱300–600",
+      "midrange": "₱800–1,500",
+      "splurge": "₱3,000+",
+      "notes": "Carinderia & market → beachfront grill → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "₱100–500",
+      "midrange": "₱500–1,000",
+      "splurge": "₱2,000+",
+      "notes": "Tricycle/motorbike → tours → private boat"
+    },
+    {
+      "category": "Activities",
+      "budget": "₱500–1,400",
+      "midrange": "₱1,400–3,500",
+      "splurge": "₱5,000+",
+      "notes": "Beach/kayak → island tours → diving/private tour"
+    },
+    {
+      "category": "Drinks",
+      "budget": "₱80–200",
+      "midrange": "₱300–600",
+      "splurge": "₱1,000+",
+      "notes": "San Miguel/local rum → cocktails → craft bar"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "₱1,480–3,700",
+      "midrange": "₱5,000–10,600",
+      "splurge": "₱19,000+",
+      "notes": "$26–66 → $89–189 → $339+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "✈️",
+      "title": "Getting There",
+      "items": [
+        "AirSWIFT flies direct to El Nido from Manila (1hr, ₱5,000–10,000). Scenic flight over islands but expensive and limited baggage",
+        "Budget option: fly to Puerto Princesa (₱2,000–4,000) then van/bus to El Nido (5–6 hours, ₱500–700). Book through Cherry Bus or El Nido Direct",
+        "Ferries from Coron to El Nido (3.5–7 hours, ₱1,600–2,400) are scenic but can be rough in monsoon season"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a Globe or Smart SIM at Puerto Princesa airport (₱300–500 for 10GB). Signal in El Nido is decent but drops on island tours",
+        "WiFi at hostels and cafes exists but is slow and unreliable. Don't count on working remotely — embrace the disconnect",
+        "Download offline maps before arriving. Google Maps works well for El Nido town and the road to Nacpan"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Only 2–3 ATMs in El Nido and they frequently run out of cash. Withdraw in Puerto Princesa or bring enough pesos for your stay",
+        "Most tour operators, restaurants, and accommodations are cash-only. Credit cards accepted only at upscale resorts",
+        "Budget ₱1,400 per island-hopping tour plus ₱200–500 daily for environmental and entrance fees"
+      ]
+    },
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Most nationalities get 30 days visa-free on arrival in the Philippines. Extensions available at immigration offices",
+        "El Nido charges an Eco-Tourism Development Fee (ETDF) of ₱200 valid for 10 days — paid at the municipal hall or tour offices",
+        "No special permits needed for standard tours. Diving requires a PADI card for fun dives or a discover scuba course"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "El Nido is very safe for travelers. The biggest risks are sunburn, coral cuts, and motorbike accidents — not crime",
+        "Bring reef-safe sunscreen — chemical sunscreens are banned in lagoon areas. Coral cuts are common; bring antiseptic cream",
+        "The nearest hospital is in Puerto Princesa (5 hours). Bring a basic medical kit and ensure your travel insurance covers medical evacuation"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Reef shoes or water sandals are essential — coral and rocky entries are common on island tours. Flip-flops alone won't cut it",
+        "Dry bag for island-hopping days to protect phone, camera, and cash. Bangka boats splash and waves can soak open bags",
+        "Bring a reusable water bottle, mosquito repellent, and a headlamp — power outages happen in El Nido and some beaches have no lighting"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🌊",
+      "title": "Ocean Respect",
+      "text": "Don't touch, stand on, or collect coral. Don't chase or touch sea turtles. Maintain distance from marine life. The reefs are El Nido's lifeblood and damage is permanent — snorkel and dive with care."
+    },
+    {
+      "icon": "😊",
+      "title": "Filipino Warmth",
+      "text": "Filipinos are among the friendliest people on earth. Greet with a smile and \"Kamusta!\" (How are you?). Accept invitations to eat — sharing food is central to Filipino culture. Don't refuse politely offered food."
+    },
+    {
+      "icon": "🗑️",
+      "title": "Leave No Trace",
+      "text": "El Nido's ecosystem is fragile. Carry out all trash from beaches and island-hopping trips. Avoid single-use plastics — many restaurants now ban straws. Reef-safe sunscreen only in the water."
+    },
+    {
+      "icon": "💵",
+      "title": "Bargaining Gently",
+      "text": "Light bargaining is acceptable for tours, transport, and market goods, but never aggressively. Filipinos avoid confrontation — harsh bargaining is considered rude. A smile and friendly negotiation works best."
+    },
+    {
+      "icon": "🍺",
+      "title": "Drinking Culture",
+      "text": "Filipinos love social drinking. If offered a drink from a shared bottle (tagay style), it's polite to accept at least once. Tanduay rum and Red Horse beer are the local favorites. Don't drink on the beach near families."
+    },
+    {
+      "icon": "🏠",
+      "title": "Community Respect",
+      "text": "El Nido is a working fishing town, not just a tourist destination. Respect early morning quiet (fishing boats leave at 4am), don't photograph people without asking, and support locally owned businesses over foreign chains."
+    }
+  ],
+  "title": "El Nido Travel Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate El Nido guide for young travelers. Island-hopping tours, hidden lagoons, world-class snorkeling, Nacpan Beach, and budget tips. Plan your Palawan trip with roammate.",
+  "heroImage": "/images/guides/el-nido-hero.webp",
+  "heroFlag": "🇵🇭",
+  "heroCountry": "Philippines",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "El Nido",
+  "heroSubtitle": "Towering limestone karsts rising from turquoise lagoons, secret beaches behind rock walls, and island-hopping days that feel like a screen saver come to life.",
+  "budgetIntro": "Daily costs per person in Philippine Pesos. El Nido is affordable but pricier than mainland Philippines — island tours and limited ATMs mean budgeting carefully pays off.",
+  "culturalIntro": "Filipino culture is warm, communal, and deeply connected to the ocean. Respect for nature and local communities makes your experience richer and El Nido's beauty last longer.",
+  "ctaCity": "El Nido",
+  "ctaText": "Find travel companions to share private boats, split dive costs, and discover hidden beaches together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Island Adventure",
+    "Nov – May Best"
+  ],
+  "defaultDays": 1
+}

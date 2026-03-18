@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "penang",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "MYR (Ringgit)",
+      "detail": "1 USD ≈ 4.5 MYR"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Malay / English",
+      "detail": "English widely spoken, Hokkien common"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "MYT (UTC+8)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Dec – Mar",
+      "detail": "Dry season with less humidity"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$20–35 USD",
+      "detail": "RM90–160 per day"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Free 90 days",
+      "detail": "Most Western nationalities visa-free"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Georgetown Street Art, Temples & Hawker Feasting",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Armenian Street Art & Clan Jetties",
+            "text": "Start your day at Armenian Street by 8am before the heat builds. Follow the famous street art trail — Ernest Zacharevic's \"Kids on Bicycle\" and \"Boy on Motorbike\" murals are the icons, but dozens of wrought-iron caricatures line the surrounding lanes. Walk south to the Chew Jetty, a waterfront village of stilted wooden houses where Chinese clan families have lived since the 19th century. Grab a fresh coconut (RM3) from the jetty entrance vendors and walk to the end for harbour views. The morning light here is perfect for photography.",
+            "tip": "Start at Armenian Street before 9am — tour groups arrive after 10am and the narrow lanes get congested quickly."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kek Lok Si Temple & Penang Hill",
+            "text": "Grab bus 201 or 204 from Komtar (RM2) to Air Itam. First stop: Kek Lok Si, Southeast Asia's largest Buddhist temple — a sprawling hilltop complex with a pagoda blending Chinese, Thai, and Burmese architecture. The inclined lift to the Kuan Yin statue costs RM6. Then walk 15 minutes to the Penang Hill funicular railway base station (RM30 return). The 5-minute ride to the 833m summit delivers panoramic views across Georgetown, the Strait of Malacca, and the mainland. Lunch at the David Brown's restaurant terrace or the cheaper food court at the summit.",
+            "tip": "Buy Penang Hill funicular tickets online at mypenanghill.com to skip the queue — walk-up waits can exceed 90 minutes on weekends."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Gurney Drive Hawker Centre & Love Lane Bars",
+            "text": "Head to Gurney Drive Hawker Centre for Penang's legendary street food. This is the food capital of Asia and the hawker stalls prove it. Order char kway teow (RM8) — smoky flat noodles fried in duck egg and lard — from Ah Leng, who has a permanent queue. Add Penang laksa (RM6) with its tangy tamarind broth, and cendol (RM4) shaved ice with palm sugar and coconut milk from Teochew Cendol. Walk off dinner along the seafront promenade, then head to Love Lane for craft cocktails at Out of Nowhere bar or live music at Ome by Spacebar.",
+            "tip": "Gurney Drive hawker stalls open from 5pm onwards. Arrive by 6pm for the best selection before popular stalls sell out."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Georgetown Heritage — Street Art, Temples & Hawker Food",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "UNESCO Georgetown Street Art Trail",
+            "text": "Begin at Armenian Street by 8am and follow the Georgetown street art trail. The UNESCO-listed core zone is compact and walkable — Ernest Zacharevic's \"Kids on Bicycle\" at Armenian Street and \"Boy on Chair\" at Cannon Street are the most photographed, but the real charm is in the dozens of wrought-iron caricatures depicting local history. Duck into Muntri Street and Lebuh Ah Quee for less-known murals. Stop at China House (51 Beach Street) for excellent espresso and pastries in a restored three-building heritage complex. The morning light before 10am is ideal for photography.",
+            "tip": "Download the \"Penang Street Art\" map from the Georgetown World Heritage office — it marks all 52 murals and iron sculptures."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Little India, Khoo Kongsi & Chew Jetty",
+            "text": "Walk to Little India on Lebuh Pasar for a quick banana leaf lunch at Restoran Kapitan (RM8–12 for nasi kandar). Then explore Khoo Kongsi, the most ornate Chinese clan house in Southeast Asia — the carved dragons, gilded beams, and ceramic roof figurines took 30 years to build. Entry is RM5. Continue to the Clan Jetties at Weld Quay — wooden stilt villages on the waterfront where Hokkien, Teochew, and other Chinese clans have lived since the 1800s. Chew Jetty is the longest and most vibrant, with small temples and shops built over the water.",
+            "tip": "Khoo Kongsi is quiet between 2–3pm during the hottest part of the day — perfect timing as most tourists are at lunch."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "New Lane Hawker Stalls & Love Lane Nightlife",
+            "text": "New Lane (Lorong Baru) transforms at dusk into Georgetown's most atmospheric hawker strip. Plastic tables fill the road as charcoal fires light up and woks clang. Start with char kway teow (RM8) — the smoky, lard-fried flat noodles are Penang's signature dish. Add oh chien (oyster omelette, RM8) and popiah (fresh spring rolls, RM3). Wash it down with fresh sugarcane juice (RM3). After dinner, head to Love Lane — Georgetown's backpacker strip — for cold Tiger beers at one of the open-air bars or cocktails at Behind 50 hidden speakeasy.",
+            "tip": "New Lane stalls open from 5:30pm and close by 11pm. The char kway teow uncle is always the longest queue — join it, it moves fast."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Penang Hill, Temples & Botanical Gardens",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kek Lok Si Temple & Air Itam Laksa",
+            "text": "Take bus 201 from Komtar (RM2, 30 minutes) to Air Itam. Begin at Kek Lok Si, Southeast Asia's largest Buddhist temple complex — the seven-storey Pagoda of Rama VI combines Chinese octagonal, Thai, and Burmese design. The inclined lift (RM6) takes you to the towering bronze Kuan Yin statue. The complex sprawls over 30 acres of hillside with gardens, turtle ponds, and prayer halls. Back at the base, walk 200 metres to the famous Air Itam laksa stall (RM5.50) — locals consider this the best laksa in Penang, a sour-spicy mackerel broth over thick rice noodles with shrimp paste.",
+            "tip": "Air Itam laksa stall is under a zinc roof next to the wet market. No signboard — just follow the massive queue. Cash only."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Penang Hill Funicular & The Habitat",
+            "text": "Walk to the Penang Hill funicular station (RM30 return for foreigners, book online to skip queues). The 2km funicular ride climbs to 833 metres above sea level in under 5 minutes. At the summit, buy a ticket for The Habitat (RM55) — a guided nature walk through 130-million-year-old rainforest with a canopy walkway 40 metres above ground. The Curtis Crest TreeTop Walk is the highest viewpoint on Penang Island. Alternatively, stroll the free heritage trail past colonial bungalows with views stretching to mainland Kedah and the Andaman Sea.",
+            "tip": "Book The Habitat tour for 2pm — the afternoon clouds rolling in create dramatic photography conditions from the treetop walk."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Gurney Drive Hawker Centre & Seafront Walk",
+            "text": "Descend Penang Hill for sunset and head to Gurney Drive Hawker Centre, the most famous food court in Penang. This is serious eating territory. Order Penang hokkien mee (RM7) — prawn broth noodle soup with boiled eggs and kangkung — from Hai Beng. Add pasembur (RM6), an Indian-Malay salad of fried fritters with sweet potato sauce, and cendol (RM4) for dessert. The seafront promenade at Gurney Drive stretches 1.5 kilometres with the sunset over the Strait behind you. End with a cold beer at Stratits Quay marina.",
+            "tip": "Gurney Drive hawker centre has two sections — the older covered section on the left has the legendary stalls with decades of reputation."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Beaches, Spice Garden & Local Markets",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tropical Spice Garden & Batu Ferringhi",
+            "text": "Take bus 101 from Komtar (RM2.70, 45 minutes) to the Tropical Spice Garden on Batu Ferringhi road. This 8-acre hillside garden (RM28 entry) has over 500 species of tropical flora with a guided spice tour explaining the history of Penang as a spice trading port. Walk the jungle trail to waterfalls and lily ponds. Continue to Batu Ferringhi beach — Penang's main tourist strip with a long sandy beach. The water is warm year-round and beach chair rental costs RM10. Grab a fresh fruit smoothie from one of the beachside stalls for RM6.",
+            "tip": "Take the 8am bus to reach the Spice Garden before the tour buses arrive at 10am. The guided tour is included in the entry price."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Balik Pulau & Durian Orchards",
+            "text": "Grab bus 401 to Balik Pulau on the island's rural west side (45 minutes). This Malay-majority town feels worlds apart from Georgetown — paddy fields, fishing villages, and fruit orchards line the road. Visit a durian orchard (June–August is peak season, but fruit stalls operate year-round). Try the famous Balik Pulau laksa (RM5) — sweeter and more pungent than Georgetown versions. Browse the small town market for nutmeg juice (RM3), belacan (shrimp paste), and handmade kuih (traditional cakes, RM1–2 each). Lunch at Nan Guang for their legendary oyster omelette.",
+            "tip": "Balik Pulau durian season runs June to August. Even outside season, the town's laksa and nutmeg products are worth the trip."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kimberley Street Night Market & Teochew Cuisine",
+            "text": "Back in Georgetown, head to Kimberley Street — the locals' choice for the best hawker food on the island. This narrow street becomes a hawker paradise after 5pm. The duck kway chap stall (RM10) serves braised duck and offal in a herbal soy broth over flat noodles — rich, complex, and addictive. Teochew chuir kuih (RM1.50 each) — steamed rice flour dumplings with preserved radish — are a Penang original. End with ice kacang (RM5) — a towering shaved ice dessert with red beans, jelly, and syrup. Walk the quiet heritage lanes back to your guesthouse under the warm night air.",
+            "tip": "Kimberley Street is where Georgetown locals actually eat dinner. It's cheaper and arguably better than the tourist-famous Gurney Drive."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Hawker food is king",
+      "text": "Penang's hawker stalls serve world-class food for RM5–10 per dish. Eat where locals eat — Kimberley Street, New Lane, and Air Itam. A full meal with drink costs under RM15."
+    },
+    {
+      "title": "Bus network",
+      "text": "Rapid Penang buses cover the entire island for RM1.40–4.00 per ride. Route 101 hits the beaches, 201/204 reach Kek Lok Si and Penang Hill. Google Maps has accurate bus times."
+    },
+    {
+      "title": "Free Georgetown walking",
+      "text": "The UNESCO core zone is entirely walkable. Street art, clan jetties, temples, and heritage buildings are all free to explore. Only Khoo Kongsi (RM5) and a few museums charge entry."
+    },
+    {
+      "title": "Budget accommodation",
+      "text": "Hostels in Georgetown's heritage zone start at RM30/night (about $7). Classic guesthouses on Love Lane and Chulia Street from RM60. Heritage boutique hotels from RM120 — stunning value."
+    },
+    {
+      "title": "Drink tap-free",
+      "text": "Fresh sugarcane juice (RM3), teh tarik (pulled tea, RM2), and coconut water (RM3) are cheaper and better than bottled drinks. Every hawker centre has a drinks stall."
+    },
+    {
+      "title": "Grab over taxis",
+      "text": "Use the Grab app for rides — it's Southeast Asia's Uber. Airport to Georgetown costs RM25–35 via Grab versus RM50+ for a metered taxi. Motorcycle rides (GrabBike) are even cheaper."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "RM30–60",
+      "midrange": "RM120–250",
+      "splurge": "RM400+",
+      "notes": "Hostel dorm → heritage guesthouse → boutique hotel"
+    },
+    {
+      "category": "Food",
+      "budget": "RM25–40",
+      "midrange": "RM60–100",
+      "splurge": "RM200+",
+      "notes": "Hawker stalls → restaurant meals → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "RM5–15",
+      "midrange": "RM20–50",
+      "splurge": "RM100+",
+      "notes": "Public bus → Grab rides → private car/driver"
+    },
+    {
+      "category": "Activities",
+      "budget": "RM0–30",
+      "midrange": "RM50–100",
+      "splurge": "RM200+",
+      "notes": "Free street art → temples & Penang Hill → private tours"
+    },
+    {
+      "category": "Drinks",
+      "budget": "RM5–10",
+      "midrange": "RM20–50",
+      "splurge": "RM80+",
+      "notes": "Hawker drinks → craft bars → rooftop cocktails"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "RM65–155",
+      "midrange": "RM270–550",
+      "splurge": "RM980+",
+      "notes": "$15–35 → $60–122 → $218+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🚌",
+      "title": "Getting Around",
+      "items": [
+        "Rapid Penang buses cover the whole island — RM1.40–4.00 per ride, exact change or Touch 'n Go card. Route 101 runs Georgetown to Batu Ferringhi beaches",
+        "Grab (ride-hailing app) is ubiquitous and cheap. Georgetown to airport: RM25–35. Set your pickup pin carefully in narrow heritage streets",
+        "Georgetown's UNESCO zone is flat and walkable — 2km end to end. Rent a bicycle from your hostel (RM15–25/day) for wider exploration"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a Digi or Hotlink SIM at the airport arrivals hall — RM35 for 15GB data valid 30 days. Registration takes 5 minutes with passport",
+        "Free WiFi is available at most cafes, hostels, and shopping malls. Georgetown heritage area has patchy public WiFi",
+        "eSIMs from Airalo or Holafly work well in Malaysia. Celcom and Maxis have the strongest coverage across Penang Island"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cash is preferred at hawker stalls and small shops. ATMs are plentiful — Maybank and CIMB have the lowest foreign card fees",
+        "Many restaurants and shops accept card payments and Touch 'n Go e-wallet. Hawker stalls are strictly cash — carry RM50–100 in small notes",
+        "Tipping is not expected in Malaysia. Service charge (10%) is already included at restaurants. Round up your Grab fare if you wish"
+      ]
+    },
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Most Western nationalities get 90-day visa-free entry to Malaysia. Passport must have 6 months validity from entry date",
+        "Penang International Airport (PEN) has direct flights from KL, Singapore, Bangkok, Jakarta, and other Asian cities",
+        "The Malaysia Digital Arrival Card (MDAC) must be filled online within 3 days before arrival — free and mandatory since 2024"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Penang is very safe for tourists. Georgetown is well-lit and walkable at night. Normal precautions apply for pickpockets in crowded areas",
+        "Tap water is not safe to drink — bottled water costs RM1–2. Most accommodation provides filtered water. Hawker stall ice is factory-made and safe",
+        "Dengue fever is present — use mosquito repellent, especially at dawn and dusk. Pharmacies are common and sell Western medications"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Pack light, breathable clothing — Penang is hot and humid year-round (28–33°C). Cotton and linen work best. Bring a light rain jacket for sudden showers",
+        "Modest clothing needed for temple and mosque visits — cover shoulders and knees. A sarong is versatile for beach, temple, and sleeping",
+        "Comfortable walking shoes for Georgetown's uneven pavements. Flip-flops for beaches and hostels. Bring reef-safe sunscreen — not always available locally"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🕌",
+      "title": "Mosque & Temple Etiquette",
+      "text": "Remove shoes before entering any place of worship. Cover shoulders and knees at mosques — many provide robes at the entrance. Women should cover their hair at mosques. Ask before photographing worshippers."
+    },
+    {
+      "icon": "🍜",
+      "title": "Food Culture",
+      "text": "Eating is Penang's religion. Locals eat 4–5 times daily and debate hawker stalls with passion. Never insult someone's favourite hawker stall — it's deeply personal. Eating with your hands is normal at Malay and Indian restaurants."
+    },
+    {
+      "icon": "🤝",
+      "title": "Multicultural Sensitivity",
+      "text": "Penang is a mix of Malay, Chinese, Indian, and Peranakan cultures. Respect religious diversity — you'll find mosques, temples, churches, and shrines on the same street. Avoid discussing race or religion politics."
+    },
+    {
+      "icon": "🖐️",
+      "title": "Left Hand Rule",
+      "text": "Use your right hand to give and receive things, especially in Malay and Indian contexts. The left hand is considered unclean. When eating with hands at a banana leaf restaurant, use only your right hand."
+    },
+    {
+      "icon": "👟",
+      "title": "Shoes Off Indoors",
+      "text": "Remove shoes before entering homes and many guesthouses. Look for a pile of shoes at the entrance as your cue. Some Chinese temples also require shoes removed — check for signs or follow what locals do."
+    },
+    {
+      "icon": "📸",
+      "title": "Street Art Respect",
+      "text": "Georgetown's street art is a UNESCO-recognized cultural asset. Don't touch, lean on, or deface murals. Some murals are deteriorating — flash photography accelerates this. Ask permission before photographing people in the clan jetties."
+    }
+  ],
+  "title": "Penang Travel Guide 2026 — Georgetown Food & Heritage | roammate",
+  "description": "The ultimate Penang guide for young travelers. 3-day itinerary covering Georgetown street art, hawker food trails, Penang Hill, temples, and budget tips. Plan your trip with roammate.",
+  "heroImage": "/images/guides/penang-hero.webp",
+  "heroFlag": "🇲🇾",
+  "heroCountry": "Malaysia",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Penang",
+  "heroSubtitle": "A UNESCO-listed food paradise where colonial streets burst with murals, temples smoke with incense, and every hawker stall serves a masterpiece.",
+  "budgetIntro": "Daily costs per person in MYR. Penang is one of Asia's cheapest destinations — world-class hawker food and heritage hostels make it a backpacker dream.",
+  "culturalIntro": "Penang's multicultural heritage means Malay, Chinese, Indian, and Peranakan customs coexist. A little awareness goes a long way in this welcoming island.",
+  "ctaCity": "Penang",
+  "ctaText": "Find travel companions for island exploration, split Grab rides, and discover hidden hawker stalls together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Dec – Mar Best"
+  ],
+  "defaultDays": 3
+}

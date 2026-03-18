@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "sahara-desert",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "MAD (Dirham)",
+      "detail": "1 USD ≈ 10 DH"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Arabic / French / Berber",
+      "detail": "French widely spoken, some English"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "WET (UTC+1)",
+      "detail": "No DST since 2018"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Oct – Apr",
+      "detail": "Avoid extreme summer heat"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$30–60 USD",
+      "detail": "Including desert camp"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 90 days",
+      "detail": "Most nationalities — check yours"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Camel Ride, Desert Camp & Sunrise",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Merzouga & Erg Chebbi Dunes",
+            "text": "Arrive in Merzouga, the small desert town at the foot of Erg Chebbi — a 22km stretch of Saharan sand dunes rising up to 150m high. The dunes begin literally at the edge of town, towering walls of orange sand that shift colour from gold to deep amber throughout the day. Spend the morning exploring the dune edge on foot, climbing the nearest ridge for your first panoramic view of the desert stretching to the Algerian border. The scale is humbling — nothing but sand and sky in every direction.",
+            "tip": "Wear closed-toe shoes for walking on the dunes — the sand is scorching by mid-morning and flip-flops sink. Start early while the sand is still cool enough to climb barefoot if you want that classic photo."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Camel Ride into Erg Chebbi",
+            "text": "At 3–4pm, mount your camel at the edge of Merzouga for the 1.5-hour ride into the dunes to your Berber desert camp. The camel caravan follows a trail over dune ridges and through sandy valleys — the swaying rhythm and total silence (broken only by camel bells) is meditative. Your guide leads the way, stopping at the highest dune ridge for the sunset. As the sun drops below the horizon, the dunes cycle through gold, orange, crimson, and purple. This is the moment everyone comes for. Camel ride and overnight camp packages cost DH 400–600.",
+            "tip": "Sit back and lean with the camel's movement — fighting it causes saddle soreness. Bring a scarf to wrap around your face if wind picks up sand. The sunset stop is the best photo opportunity of the trip."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Berber Camp, Drumming & Stars",
+            "text": "Arrive at the desert camp after sunset — a circle of Berber-style tents around a central fire pit. Dinner is a traditional Berber tagine cooked over coals, followed by mint tea and Moroccan pastries. After dinner, the camp staff bring out drums and hand-percussion for music around the fire. The real spectacle comes when you walk 50m from camp and look up — the Sahara has zero light pollution, and the star display is one of the most extraordinary things you will ever see. The Milky Way is a visible band across the sky. Many travellers sleep on mattresses outside their tents under the stars.",
+            "tip": "Winter nights in the Sahara drop to near freezing — bring warm layers, a beanie, and gloves. The desert camp provides blankets but they are often thin. A sleeping bag liner or thermal base layer makes the night much more comfortable."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Atlas Mountains & Ait Benhaddou",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Depart Marrakech — High Atlas Pass",
+            "text": "The 3-day desert tour departs Marrakech at 7–8am in a shared minivan (DH 800–1,500 per person all-inclusive). The route climbs through the High Atlas Mountains via the Tizi n'Tichka pass at 2,260m — a winding road through Berber villages clinging to mountain slopes, terraced fields of almond and walnut trees, and dramatic gorge views. The landscape shifts from green valleys to barren rock as you gain altitude. The pass itself offers sweeping views back towards Marrakech and forward into the arid pre-Saharan landscape.",
+            "tip": "Sit on the right side of the vehicle for the best views on the way over the pass. Bring snacks and water — the drive to the lunch stop takes 3–4 hours with limited rest stops."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ait Benhaddou — UNESCO Ksar",
+            "text": "Ait Benhaddou is a fortified ksar (village) of red clay kasbahs stacked on a hillside above the Ounila River — a UNESCO World Heritage Site and filming location for countless films. Cross the river on stepping stones and climb through the narrow lanes between crumbling towers and restored buildings. The view from the summit granary encompasses the river valley, palm groves, and the Atlas Mountains behind. Entry to the village is free; guides charge DH 50–100 for a 30-minute tour that explains the architecture and film history.",
+            "tip": "The light on Ait Benhaddou is best in late afternoon when the red clay glows golden. Cross the river carefully — in winter the water can be knee-deep. Waterproof shoes or sandals are useful."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Dades Gorge — Overnight",
+            "text": "Continue east through the Valley of Roses and the Road of a Thousand Kasbahs to Dades Gorge — a dramatic canyon cut through red and orange rock formations. The famous hairpin road winds up the gorge wall with vertiginous drops. Overnight in a guesthouse perched on the gorge rim with dinner included — Berber soup (harira), tagine with preserved lemons and olives, and fresh bread baked in a clay oven. The gorge at night, lit only by the guesthouse and the stars, is atmospheric and quiet.",
+            "tip": "The Dades Gorge road has some of Morocco's most dramatic hairpin bends — if you get travel sick, sit in the front. The guesthouse terrace views into the gorge at sunset are worth arriving early for."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Todra Gorge & Camel Ride to Desert Camp",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Todra Gorge — Towering Canyon Walls",
+            "text": "Todra Gorge is a slot canyon where 300m vertical limestone walls narrow to just 10m apart — the scale is staggering. A short walk through the canyon floor follows a shallow river between the towering red walls. Rock climbers scale the faces, and the acoustics inside the gorge amplify every sound. The morning light hitting the top of the walls while the canyon floor remains in cool shadow creates extraordinary photographs. Cafes at the gorge mouth serve breakfast — omelette with khobz bread and mint tea for DH 30–40.",
+            "tip": "Visit Todra Gorge in the morning when the light hits the upper walls — by afternoon the gorge is entirely in shadow. The walk through the narrowest section takes 20 minutes; the wider gorge beyond is quieter."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Drive to Merzouga & Erg Chebbi",
+            "text": "The road from Todra to Merzouga crosses the hamada — the flat, rocky pre-Saharan steppe dotted with oasis towns and date palm groves. At Erfoud, fossilised marble workshops sell polished ammonite and orthoceras fossils from the local quarries — DH 20–100 for a small piece makes a unique souvenir. As you approach Merzouga, the Erg Chebbi dunes appear on the horizon — a wall of orange rising from the black hamada. The contrast between the flat, dark desert floor and the towering golden dunes is dramatic.",
+            "tip": "The fossilised marble at Erfoud workshops is genuine — the region was an ancient seabed and the fossils are millions of years old. Smaller pieces make better souvenirs than the heavy polished tables they try to sell."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Camel Ride & Berber Desert Camp",
+            "text": "At 4pm, mount your camel at the dune edge for the 1.5-hour ride into Erg Chebbi. The caravan crosses dune ridges that grow taller as you penetrate deeper into the sand sea. Stop at the highest point for sunset — the dunes turn every shade of gold, orange, and crimson as the sun drops. Continue by dusk to the camp where Berber staff have prepared a fire, tagine dinner, and drums for the evening. After the music dies down, walk into the dunes alone and experience the total silence and star-filled sky of the Sahara.",
+            "tip": "Bring a head torch for navigating the camp at night — there is no electricity and the path between tents is sand. Keep electronics in a dry bag or ziplock; sand gets into everything, especially camera lenses and phone charging ports."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Sahara Sunrise & Return to Marrakech",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sahara Sunrise & Sandboarding",
+            "text": "Wake before dawn and climb the nearest high dune — 15–20 minutes of effort in soft sand — for the Sahara sunrise. The sky shifts from deep blue to pink to gold as the sun crests the dune horizon, casting long shadows across the sand ripples. This is the most magical moment of the desert trip. After sunrise, try sandboarding on the dune slopes (boards provided by most camps for free) before the sand heats up. The camel ride back to Merzouga departs at 8am, arriving in time for a shower and breakfast.",
+            "tip": "The sunrise dune is steep — take your time climbing and bring water. Position yourself on the ridge line facing east for the best light. The shadows of the rippled sand at sunrise make the best photographs of the entire trip."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Return Drive via Different Route",
+            "text": "The return to Marrakech follows a different route through the Draa Valley — Morocco's longest river valley lined with millions of date palms, fortified kasbahs, and oasis towns. Stop at Ouarzazate, the \"Door of the Desert,\" where Atlas Studios (one of the world's largest film studios) produced scenes from many well-known films. The drive is 8–9 hours with stops but the constantly changing landscape — from sand dunes to palm oases to mountain gorges — keeps the journey engaging.",
+            "tip": "The return drive is long — bring snacks, a charged phone with downloaded entertainment, and a neck pillow. The Draa Valley views are beautiful from the right side of the vehicle heading west."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Arrival in Marrakech",
+            "text": "Arrive back in Marrakech by 7–8pm. The contrast between the silence of the Sahara and the sensory overload of Marrakech is striking. Head straight to Jemaa el-Fnaa, the main square, for dinner — the food stalls fire up at dusk with everything from snail soup to lamb kebabs to fresh orange juice (DH 5 per glass). A full meal at the stalls costs DH 40–60. The square at night, with its storytellers, musicians, and steam from the food stalls, is one of the great travel experiences.",
+            "tip": "The food stalls in Jemaa el-Fnaa are safe to eat at — choose stalls with the most locals queuing. Stall 1 and Stall 14 have the best reputations for harira soup and grilled meats. Avoid stalls that aggressively tout for business."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book the 3-day tour in Marrakech",
+      "text": "Shared 3-day desert tours from Marrakech cost DH 800–1,500 per person all-inclusive (transport, accommodation, meals, camel ride, camp). Booking in the Marrakech medina the day before is cheapest — compare 3–4 operators on Rue Bab Agnaou."
+    },
+    {
+      "title": "Overnight camel ride, not day trip",
+      "text": "The overnight camel ride with desert camp is the essential experience and costs DH 400–600 from Merzouga. Day trips that return to town miss the sunset, stars, and sunrise — the three best moments."
+    },
+    {
+      "title": "Negotiate everything",
+      "text": "Prices in Morocco are negotiable — start at 40% of the first offer and settle around 60%. This applies to souvenirs, taxis, tours, and even some guesthouse rates. Polite bargaining is expected and respected."
+    },
+    {
+      "title": "Eat street food and souks",
+      "text": "A full meal from Marrakech food stalls costs DH 40–60. Restaurant meals in the medina cost DH 80–200 for the same dishes. Soup stalls, sandwich carts, and bakeries offer filling meals for DH 15–25."
+    },
+    {
+      "title": "Stay in riads, not hotels",
+      "text": "Traditional riad guesthouses in Marrakech and desert towns cost DH 150–400/night including breakfast. They are more atmospheric and better value than hotels at the same price point."
+    },
+    {
+      "title": "Share transport costs",
+      "text": "Private taxis and grands taxis charge per vehicle, not per person. Share with other travellers to split costs. Supratours and CTM buses are the cheapest intercity transport at DH 80–200 for most routes."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$8–15",
+      "midrange": "$20–40",
+      "splurge": "$60+",
+      "notes": "Hostel → riad → boutique riad"
+    },
+    {
+      "category": "Food",
+      "budget": "$5–10",
+      "midrange": "$10–20",
+      "splurge": "$25+",
+      "notes": "Street food → cafes → restaurant dining"
+    },
+    {
+      "category": "Desert Camp",
+      "budget": "$25–40",
+      "midrange": "$40–80",
+      "splurge": "$120+",
+      "notes": "Shared camp → private tent → luxury glamping"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$40+",
+      "notes": "Shared bus → shared taxi → private transfer"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–10",
+      "midrange": "$10–25",
+      "splurge": "$30+",
+      "notes": "Self-guided → group tour → private guide"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$30–60",
+      "midrange": "$60–130",
+      "splurge": "$180+",
+      "notes": "Budget backpacker → comfortable → luxury camp"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Visa-free 90 days for most nationalities including EU, US, UK, Canada, and Australia",
+        "Fly into Marrakech Menara Airport or Errachidia Airport (closest to Merzouga, limited flights)",
+        "If booking the 3-day tour, it departs and returns to Marrakech — no separate desert transport needed"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Winter nights in the Sahara drop to 0–5°C — bring warm layers, gloves, and a beanie. Days are 20–25°C in winter",
+        "Summer temperatures exceed 50°C — desert trips from May to September are dangerous and not recommended",
+        "Drink bottled water only. Bring at least 2 litres per person per day into the desert. Dehydration is the biggest risk"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "The 3-day tour from Marrakech includes all transport. Independent travellers can take Supratours bus to Errachidia then grand taxi to Merzouga",
+        "In Marrakech, use petit taxis (metered, red) and insist the meter is running. Ride-hailing apps like inDrive also work",
+        "The desert is only accessible by camel, 4x4, or on foot — there are no roads beyond Merzouga"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a Maroc Telecom or Inwi SIM card at the airport — 10GB data costs around DH 50",
+        "There is no mobile signal in the Erg Chebbi dunes — tell someone your itinerary before heading into the desert",
+        "WiFi in Merzouga guesthouses and riads is available but slow. Download maps and entertainment before the desert"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: MAD (Dirham). 1 USD ≈ 10 DH. ATMs in Marrakech, Ouarzazate, and Errachidia — limited in Merzouga",
+        "Carry cash for the desert — camps, camel guides, and local shops do not accept cards",
+        "Tip your camel guide DH 50–100 and the desert camp staff DH 30–50 — they work long hours in harsh conditions"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "A scarf or shemagh for face and head protection against sand and sun — essential during wind",
+        "Head torch for navigating the camp at night, dry bags or ziplock bags for electronics, and warm layers for winter nights",
+        "Sand gets into everything — keep camera lenses capped, phone in a ziplock, and leave valuables in your main bag at the guesthouse"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Berber Culture",
+      "text": "The Sahara region is home to Amazigh (Berber) communities with ancient traditions. Accept offers of mint tea graciously — refusing is considered rude. Remove shoes when entering homes or tents. The Berber greeting is \"Azul\" (hello) and \"Tanmirt\" (thank you)."
+    },
+    {
+      "icon": "🏜",
+      "title": "Desert Etiquette",
+      "text": "The Sahara is a sacred landscape for Berber and Tuareg people. Do not leave rubbish in the dunes — pack everything out. Respect the silence and the space. The mirror effect photograph (like Salar de Uyuni) does not happen in the Sahara — that is a completely different landscape in Bolivia."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography",
+      "text": "Ask permission before photographing Berber people, especially women and elderly. Many desert guides are happy to be photographed but ask first. The best photography light in the Sahara is at sunrise and sunset — midday light is flat and harsh."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language",
+      "text": "French is the most useful second language in Morocco. Arabic and Berber (Tamazight) are the local languages. English is understood in tourist areas but limited elsewhere. Learning \"Shukran\" (thank you in Arabic) and \"Tanmirt\" (thank you in Berber) goes far."
+    },
+    {
+      "icon": "🤝",
+      "title": "Bargaining Culture",
+      "text": "Bargaining is expected in Moroccan souks and with tour operators. It is not aggressive — it is a social ritual. Start at 40% of the asking price and negotiate with a smile. Walk away if the price is not right — the seller will often call you back with a lower offer."
+    },
+    {
+      "icon": "🕐",
+      "title": "Patience & Flexibility",
+      "text": "Moroccan time is relaxed — buses depart when full, meals arrive when ready, and schedules are approximate. Embrace it. The Sahara has existed for millions of years; your schedule can flex for a few hours. This patience transforms your experience."
+    }
+  ],
+  "title": "Sahara Desert Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate guide to the Sahara Desert from Merzouga. Camel rides, Berber camps, Erg Chebbi dunes with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/sahara-desert-hero.webp",
+  "heroFlag": "🇲🇦",
+  "heroCountry": "Morocco",
+  "heroRegion": "North Africa",
+  "heroCity": "Sahara Desert",
+  "heroSubtitle": "Towering orange dunes, camel caravans at sunset, Berber camps under a sky of stars — the Sahara experience from Merzouga's Erg Chebbi.",
+  "budgetIntro": "Daily costs per person in US dollars. Sahara costs depend on whether you book the 3-day tour from Marrakech or travel independently to Merzouga — these ranges cover budget backpacker to comfortable mid-range.",
+  "culturalIntro": "The Sahara is home to Amazigh (Berber) communities with ancient traditions — approach with curiosity, respect, and an open heart, and you will be rewarded with extraordinary hospitality.",
+  "ctaCity": "the Sahara",
+  "ctaText": "Find travel companions to explore the Sahara together on roammate — share desert tours, split camel rides, and watch the stars from a Berber camp with new friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "Camel Trek",
+    "Desert Camp",
+    "Oct – Apr Best"
+  ],
+  "defaultDays": 1
+}

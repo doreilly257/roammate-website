@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "las-vegas",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "USD ($)",
+      "detail": "1 EUR ≈ $1.08"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English",
+      "detail": "Spanish widely spoken"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "PST (UTC-8)",
+      "detail": "PDT (UTC-7) Mar–Nov"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – May, Oct – Nov",
+      "detail": "20–30°C, comfortable"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$80–140",
+      "detail": "Cheap hotels, buffets, transit"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ESTA / B1-B2",
+      "detail": "VWP countries need ESTA ($21)"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "The Strip in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "South Strip & Mandalay Bay",
+            "text": "Start at the Welcome to Fabulous Las Vegas sign on Las Vegas Boulevard — arrive before 9am to skip the line for photos. Walk north along the Strip to Mandalay Bay's Shark Reef Aquarium ($29) or head straight to the Bellagio to see the stunning botanical conservatory (free, changes seasonally). Breakfast at Mon Ami Gabi at Paris Las Vegas — their French crepes ($14) on the Strip-side patio with Bellagio fountain views are the best morning in Vegas.",
+            "tip": "The Welcome sign has a small parking lot — Uber there before 9am or you'll wait 30+ minutes in the photo line."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Casino Crawl & Free Shows",
+            "text": "Walk the mega-resorts: the Venetian's Grand Canal Shoppes (indoor gondola rides, $34), Caesars Palace's Forum Shops with living statues, and the LINQ Promenade to the High Roller observation wheel ($25 daytime, $37 night). The Bellagio fountain shows run every 15 minutes from noon (free). Lunch at the Cosmopolitan's Secret Pizza — follow the hallway on the 3rd floor past the pizzeria signs for $6 slices that rival New York.",
+            "tip": "The Cosmopolitan's Secret Pizza is on the 3rd floor — take the escalator up and follow the hallway past the unmarked door. No sign, just pizza."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Fremont Street & Downtown",
+            "text": "Take the Deuce bus ($8 all-day pass) or Uber to Fremont Street Experience downtown — a 5-block pedestrian mall covered by a massive LED canopy with light shows every hour. This is old-school Vegas — neon signs, cheaper drinks, and friendlier tables. Dinner at Carson Kitchen in a converted motel ($16–24 plates). Grab a $3 beer from one of the Fremont bars. Walk to the Arts District on Main Street for cocktails at Velveteen Rabbit or ReBar.",
+            "tip": "Fremont Street drinks and table minimums are 30–50% cheaper than the Strip. The Container Park nearby has live music and fire-breathing mantis sculpture."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "The Strip Experience",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Welcome Sign & South Strip",
+            "text": "Start at the Welcome to Fabulous Las Vegas sign — arrive before 9am for no line. Walk north to the Luxor pyramid and Excalibur (camp medieval castle), then to Park MGM for breakfast at Eataly's cafe counter — fresh pastries and espresso ($8–12). Continue to the Bellagio Conservatory and Botanical Gardens — a free, jaw-dropping seasonal display of flowers and sculptures inside the hotel. The adjacent gallery of fine art is $18.",
+            "tip": "The Welcome sign has free parking on the south side of the boulevard. The median walkway is the actual photo spot — look for the line."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Central Strip Casino Crawl",
+            "text": "Walk the iconic stretch: Bellagio fountains (free shows every 15 minutes from noon), Caesars Palace Forum Shops, the Venetian Grand Canal with gondoliers singing under a painted sky ($34 ride), and the Mirage volcano (free nightly show). Lunch at the Cosmopolitan's Secret Pizza on the 3rd floor — $6 slices in a hidden spot. Ride the LINQ High Roller ($25 daytime) — the world's tallest observation wheel at 550 feet.",
+            "tip": "The LINQ High Roller Happy Half Hour ticket ($47) includes an open bar during the 30-minute rotation — better value than paying for drinks separately."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Fremont Street & Downtown",
+            "text": "Take the Deuce bus ($8 all-day pass) to downtown Fremont Street — five blocks of pedestrian mall under a massive LED canopy with shows every 15 minutes after dark. This is old-school Vegas with cheaper drinks ($3 beers), looser table minimums, and more character. Dinner at Carson Kitchen ($16–24 plates). Walk to the Arts District on Main Street for cocktails at Velveteen Rabbit or ReBar. Container Park has live music and a fire-breathing mantis sculpture.",
+            "tip": "Downtown table minimums start at $5–10 vs $15–25 on the Strip. Fremont casinos like El Cortez and Golden Nugget have the friendliest dealers."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Adventure & Entertainment",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Red Rock Canyon",
+            "text": "Rent a car or join a tour to Red Rock Canyon National Conservation Area — a stunning 13-mile scenic loop through red sandstone formations just 30 minutes from the Strip. The Calico Tanks trail (2.5 miles round trip) rewards you with panoramic views of the canyon and Las Vegas Valley. Entry is $15 per vehicle. Bring water, sunscreen, and closed-toe shoes. Stop at a drive-through coffee shop on Charleston Boulevard on your way back.",
+            "tip": "Red Rock Canyon opens at 6am — start early to beat the heat and the tour buses. The scenic drive is one-way, so you can't backtrack."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pool Party or Thrill Rides",
+            "text": "Vegas pool parties are legendary: Wet Republic at MGM Grand, Encore Beach Club at Wynn, and Daylight at Mandalay Bay ($30–75 cover, often free for women before a cutoff time). For non-pool thrills, the Stratosphere Tower has insanity rides 1,000+ feet up ($35 per ride) — Big Shot, Insanity, and X-Scream. The STRAT observation deck alone ($25) has the best full-Strip panoramic views.",
+            "tip": "Pool parties run March through October. Arrive at opening (11am) to avoid cover charges. Guest lists through promoters often get free entry."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Shows & Nightlife",
+            "text": "Vegas shows are world-class. Cirque du Soleil has multiple residencies — \"O\" at Bellagio ($120+) and \"Mystère\" at Treasure Island ($75+) are classics. For comedy, catch a residency show or visit the Comedy Cellar at the Rio ($30–40). Dinner at Nacho Daddy on the Strip — $5 nachos during happy hour. Then hit the clubs: Hakkasan at MGM ($30–75 cover) or Marquee at the Cosmopolitan. Guest lists through promoters save 50%+ on cover.",
+            "tip": "Sign up for club guest lists through Vegas promoters on Instagram — free or reduced entry, especially for groups with women. Search \"Vegas guest list\" and DM."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Food, Shopping & Hidden Vegas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Brunch & Off-Strip Gems",
+            "text": "Vegas brunch culture is serious. Bacchanal Buffet at Caesars Palace ($50–65) is widely considered the best buffet in the world — 250+ dishes, live-cooking stations, and unlimited crab legs. Alternatively, Hash House a Go Go on Sahara Avenue does absurdly large farm-to-table plates ($16–22) — the fried chicken Benedict serves two. After brunch, visit the Neon Museum ($20–26) — a graveyard of iconic Las Vegas signs from the 1930s onward.",
+            "tip": "The Neon Museum's night tours ($28) are spectacular — the signs are illuminated and the guided tour tells incredible stories of old Vegas."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Premium Outlets & Mob Museum",
+            "text": "The Las Vegas North Premium Outlets are a 10-minute bus ride from downtown — designer brands at 40–65% off. Or visit the Mob Museum ($30) on Stewart Avenue downtown — an interactive museum about organized crime in a former federal courthouse where real mob hearings took place. The distillery in the basement makes prohibition-era cocktails ($14) and moonshine. Walk to Fremont East for lunch at Le Thai ($12–16 mains) — excellent Thai food in a casual setting.",
+            "tip": "The Mob Museum's basement speakeasy is hidden behind a wall — ask at the front desk for directions. The moonshine tasting ($10) is great fun."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell on the Strip",
+            "text": "End with a sunset walk along the Strip. The Bellagio fountains at night with music are genuinely moving. Grab a final dinner at In-N-Out Burger on the Strip ($7–10 for a combo) — the California fast-food icon. For one last splurge, Eiffel Tower Restaurant at Paris Las Vegas has Strip views and French cuisine ($40–60 mains), or keep it casual at the Peppermill Fireside Lounge — a retro neon diner with massive cocktails ($14) and fire pits.",
+            "tip": "The Peppermill is a Vegas institution — the scorpion bowl cocktail is meant for sharing but nobody will stop you ordering one for yourself."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "The Strip — South to North",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Welcome Sign & South Strip",
+            "text": "Start at the Welcome to Fabulous Las Vegas sign — arrive before 9am for no line. Walk north past the Luxor pyramid, Excalibur castle, and the Tropicana. Breakfast at Eataly inside Park MGM — fresh Italian pastries and espresso ($8–12) at the cafe counter. Continue to the Bellagio Conservatory and Botanical Gardens — free, stunning, and changes every season. The Bellagio Gallery of Fine Art ($18) is worth it for art lovers.",
+            "tip": "The Welcome sign has free parking on the south side. The median walkway is the actual photo spot — look for the line, it moves fast."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bellagio to Venetian",
+            "text": "Watch the Bellagio fountain shows (free, every 15 min from noon). Walk to Caesars Palace — the Forum Shops have a painted sky ceiling that cycles through day and night. Continue to the Venetian Grand Canal Shoppes — gondola rides ($34) under a frescoed ceiling with singing gondoliers. Lunch at the Cosmopolitan's Secret Pizza on the 3rd floor ($6 slices in a hidden spot). Ride the LINQ High Roller ($25 daytime).",
+            "tip": "The Secret Pizza at Cosmopolitan — take the escalator to the 3rd floor, follow the hallway. No sign, just the smell of great pizza."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Strip by Night",
+            "text": "The Strip transforms after dark — every hotel is lit up in neon. Watch the Mirage Volcano show (free, runs nightly at 8pm, 9pm, 10pm). Walk to the Wynn for its Lake of Dreams show (free, every 30 minutes after dark). Dinner at Nacho Daddy for $5 happy-hour nachos and $6 margaritas. End at the Chandelier Bar inside the Cosmopolitan — a three-story bar wrapped in crystal beads. Order \"The Verbena\" for a secret off-menu cocktail ($18).",
+            "tip": "The Chandelier Bar's secret \"Verbena\" cocktail includes a Szechuan flower that makes your tongue tingle — it's wild and totally worth it."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Downtown & Fremont Street",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Neon Museum & Arts District",
+            "text": "Start at the Neon Museum ($20–26) — a graveyard of iconic Las Vegas signs spanning decades. The guided tour tells stories of old Vegas through salvaged neon. Then walk to the nearby Arts District on Main Street — galleries, coffee shops, and murals. Breakfast at Makers & Finders on Main Street — Latin-inspired coffee and Colombian empanadas ($5–8). First Friday (first Friday of each month) turns the whole district into a massive art walk.",
+            "tip": "The Neon Museum night tour ($28) is spectacular — signs are illuminated and the desert sky makes for incredible photos."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mob Museum & Fremont East",
+            "text": "Visit the Mob Museum ($30) on Stewart Avenue — organized crime history in a former federal courthouse. Interactive exhibits let you take a mugshot, sit in the courtroom, and learn about the Vegas mob era. The basement speakeasy makes prohibition-era cocktails ($14). Walk to Fremont East for lunch at Le Thai ($12–16) — excellent Thai food. Browse Container Park — an outdoor shopping and entertainment center made from shipping containers with a 40-foot fire-breathing mantis.",
+            "tip": "The Mob Museum basement speakeasy is hidden behind a wall panel. Ask the front desk for the password — it changes daily."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Fremont Street Experience",
+            "text": "Fremont Street comes alive after dark. The Viva Vision LED canopy stretches five blocks with light shows every 15 minutes. Zip-line overhead on the SlotZilla ($25 zipline, $55 zoomline). Drink prices are half the Strip — $3 beers, $5 margaritas. Gamble at downtown casinos where $5 blackjack tables still exist (El Cortez, Golden Nugget). Golden Gate Hotel has the city's best $1 shrimp cocktail — a Vegas tradition since 1959.",
+            "tip": "Downtown table minimums are $5–10 vs $15–25 on the Strip. The dealers at El Cortez and Binion's are friendliest to beginners."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Red Rock Canyon & Adventure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Red Rock Canyon",
+            "text": "Drive 30 minutes west to Red Rock Canyon National Conservation Area — a 13-mile scenic loop through red and cream sandstone formations. The Calico Tanks trail (2.5 miles round trip) ends with panoramic views of the canyon and Las Vegas Valley. Ice Box Canyon (2.6 miles) has seasonal waterfalls in a narrow slot canyon. Entry is $15 per vehicle. Bring water, sunscreen, and proper shoes — it's desert terrain.",
+            "tip": "Arrive at 6am opening to beat tour buses and heat. The scenic drive is one-way, so plan your stops in advance."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pool Party or Thrill Rides",
+            "text": "Back in Vegas, hit a pool party — Wet Republic (MGM Grand), Encore Beach Club (Wynn), or Stadium Swim at Circa ($20–55 cover, often free for women before noon). For adrenaline without pools, the STRAT Tower has rides 1,000+ feet up — Big Shot, Insanity, and X-Scream ($35 each). The observation deck alone ($25) offers the best panoramic Strip views. Lunch at In-N-Out Burger on the Strip ($7–10 combo).",
+            "tip": "Sign up for pool party guest lists through Vegas promoters on Instagram — often free entry before a cutoff time, especially for groups."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Shows & Entertainment",
+            "text": "Vegas shows are world-class. Cirque du Soleil's \"O\" at Bellagio ($120+) is a water-based masterpiece. \"Mystère\" at Treasure Island ($75+) is their longest-running show. For laughs, Comedy Cellar at the Rio ($30–40) or a headliner residency. Dinner at Lotus of Siam on Sahara ($18–28 mains) — widely considered the best Thai restaurant in America, James Beard Award winner. Book well ahead.",
+            "tip": "Last-minute show tickets are 30–50% off through the TodayTix app or the TIX4Tonight booth near Planet Hollywood."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Grand Canyon Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive to Grand Canyon West",
+            "text": "Rent a car and drive 2.5 hours to Grand Canyon West — the Hualapai Nation's section of the Grand Canyon with the famous Skywalk. Alternatively, book a bus tour ($90–140 per person including entry). The Grand Canyon is one of those places that photos simply cannot capture — the scale is overwhelming. The West Rim's Eagle Point and Guano Point offer stunning viewpoints included in the general admission ($49).",
+            "tip": "Grand Canyon West is closer but not technically part of Grand Canyon National Park. For the South Rim (more famous views), it's a 4.5-hour drive — better as an overnight."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Skywalk & Canyon Views",
+            "text": "The Grand Canyon Skywalk ($32 add-on) extends 70 feet beyond the rim with a glass floor 4,000 feet above the Colorado River. Even if you skip the Skywalk, the viewpoints are staggering. Guano Point has a hiking trail along the rim with panoramic views and no crowds. Lunch at the Hualapai Ranch or pack food — onsite options are limited and pricey. Start the drive back by 3pm to avoid desert darkness.",
+            "tip": "No personal cameras on the Skywalk — they offer photos for $20–40. The views from Eagle Point without the Skywalk are equally stunning."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Chill Night",
+            "text": "Arrive back in Vegas by evening. Low-key dinner at the Peppermill Fireside Lounge — a retro neon diner with massive cocktails ($14), fire pits, and 24-hour service. The scorpion bowl is meant for sharing but legendary for solo attempts. Or head to AREA15 — an immersive entertainment complex with Meow Wolf's Omega Mart ($49), a mind-bending art installation disguised as a supermarket. Perfect for a surreal wind-down after the canyon.",
+            "tip": "AREA15's Omega Mart takes 90–120 minutes to fully explore. Book the last time slot for thinner crowds and a more surreal experience."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Buffets, Shopping & Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Legendary Vegas Brunch",
+            "text": "Vegas buffets are an art form. Bacchanal Buffet at Caesars Palace ($50–65 weekend brunch) is widely considered the world's best — 250+ dishes, live cooking stations, unlimited crab legs, and quality that rivals fine dining. Or try The Wicked Spoon at the Cosmopolitan ($45–55) for a more curated experience. The key is arriving hungry at opening time (8–9am) when everything is freshest. This is a meal that replaces breakfast AND lunch.",
+            "tip": "Bacchanal opens at 8am weekdays, 9am weekends. A wait of 30–60 minutes is common — arrive at opening for walk-right-in access."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Shopping & Springs Preserve",
+            "text": "Hit the Las Vegas North Premium Outlets (10-minute bus from downtown) for 40–65% off designer brands. Or visit Springs Preserve ($19) — a 180-acre nature park and museum complex telling the story of Las Vegas from desert springs to neon city. The botanical gardens and desert trails are a peaceful contrast to the Strip. For vintage, Retro Vegas on Main Street has old casino memorabilia and Rat Pack-era collectibles.",
+            "tip": "The Premium Outlets' Food Court has surprisingly good options. Go midweek — weekends bring crowds from LA and the deals thin out."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Chinatown & Hidden Bars",
+            "text": "Vegas has an incredible Chinatown along Spring Mountain Road — nothing like the tourist trap version. Raku ($15–30 plates) serves late-night Japanese robata-grilled dishes that chefs eat at after their shifts. Hwaro ($25–35 per person) has Korean BBQ rivaling Koreatown. After dinner, find hidden bars: The Laundry Room (text for a reservation — literally a hidden bar behind a laundromat) and Ghost Donkey at the Cosmopolitan (mezcal bar hidden behind a wall panel).",
+            "tip": "Vegas Chinatown on Spring Mountain Road is where the city's chefs eat. The strip between Decatur and Valley View is the sweet spot."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Valley of Fire & Desert",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Valley of Fire State Park",
+            "text": "Drive an hour northeast to Valley of Fire State Park ($10 per vehicle) — Nevada's oldest and most stunning state park. Red Aztec sandstone formations dating to 150 million years ago glow like fire at sunrise. The Fire Wave trail (1.5 miles round trip) is a photographer's dream — swirling bands of pink, red, and white stone. White Domes trail (1.25 miles) passes through a narrow slot canyon and past old movie sets.",
+            "tip": "Start the Fire Wave trail by 8am — no shade and temperatures soar by midday. Bring 2+ liters of water per person, even in cooler months."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Lake Mead & Hoover Dam",
+            "text": "On the drive back, stop at Lake Mead — the largest reservoir in the US (when full). The shoreline views and turquoise water against desert mountains are stunning. Continue to Hoover Dam ($15 for the visitor center, $30 for the powerplant tour) — an art deco engineering marvel built in the 1930s. Walk across the dam and the Mike O'Callaghan–Pat Tillman Memorial Bridge for vertigo-inducing Colorado River views. The dam straddles Nevada and Arizona — stand in two time zones at once.",
+            "tip": "Hoover Dam parking is $10. The powerplant tour is worth the upgrade — you descend inside the dam and see the massive generators up close."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Nightclub Experience",
+            "text": "Tonight is your big Vegas nightclub night. Pre-game at your hotel or a happy-hour spot, then hit the clubs after 11pm. Hakkasan at MGM Grand is a multi-story mega-club with world-class DJs. XS at the Wynn has a nightswim pool party. Marquee at the Cosmopolitan has a rooftop terrace. Cover runs $30–75 for men, often free for women on guest lists. Dress code: no athletic wear, shorts, or sandals for men.",
+            "tip": "Sign up for free guest lists through promoters on Instagram or via apps like Discotech. Groups with more women than men get priority entry."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Relaxation & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Recovery Brunch & Spa",
+            "text": "Ease into the last day with brunch at Mon Ami Gabi at Paris Las Vegas — Strip-side patio with Bellagio fountain views, French crepes ($14) and eggs Benedict ($18). If you're feeling rough from last night, many hotels offer spa day passes ($35–60) — the Venetian's Canyon Ranch and the Aria's spa are both excellent for recovery. Or simply lounge at the pool — most hotel pools are free for guests and open by 9am.",
+            "tip": "Mon Ami Gabi's patio tables fill fast — arrive before 9:30am or request patio when you check in. The fountain view tables are first-come."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Bets & Souvenirs",
+            "text": "Set a gambling budget for your last afternoon — $50 is enough for a few hours of entertainment at low-stakes tables or penny slots. The Pinball Hall of Fame on the Strip ($10–15 in quarters buys an hour of play) is a quirky alternative to casinos. Pick up souvenirs — playing cards from different casinos are free (ask at the cage), and ABC Stores on the Strip have cheap Vegas merch.",
+            "tip": "The Pinball Hall of Fame has 200+ machines from the 1950s to present — all playable. It's one of Vegas's best-kept secrets at just quarters per game."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Strip Walk",
+            "text": "One last walk down the Strip at night when it's at its most electric. Watch the Bellagio fountains one more time — each show uses different music and choreography. Farewell dinner at the Eiffel Tower Restaurant at Paris Las Vegas ($40–60 mains) for Strip views from 46 stories up, or keep it classic at In-N-Out Burger ($7–10). The Peppermill Fireside Lounge at 3am is a Vegas tradition for one last neon-lit drink.",
+            "tip": "Harry Reid International Airport (LAS) is 10 minutes from the Strip by Uber ($12–18). TSA PreCheck lines are fast — don't arrive too early."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free Strip experiences",
+      "text": "Bellagio fountains, conservatory, Mirage volcano, Venetian canal walk, LINQ promenade, casino lobbies, and people-watching are all free entertainment."
+    },
+    {
+      "title": "Downtown over Strip",
+      "text": "Fremont Street has $3 beers, $5 blackjack tables, and friendlier dealers. The Strip charges 3–5x more for the same drinks and higher table minimums."
+    },
+    {
+      "title": "Happy hours save big",
+      "text": "Strip bars run happy hours 2–6pm with $6–8 beers and $8–12 cocktails. Nacho Daddy: $5 nachos. Beer Park at Paris: $5 drafts. Off-Strip bars are even cheaper."
+    },
+    {
+      "title": "Midweek pricing",
+      "text": "Hotels are 40–70% cheaper Sunday through Thursday. A $200/night weekend room can be $60 midweek. Buffets and shows also drop prices during the week."
+    },
+    {
+      "title": "MyVegas rewards",
+      "text": "Download the MyVegas app months before your trip — play free slots to earn real rewards like free buffets, show tickets, and hotel room upgrades at MGM properties."
+    },
+    {
+      "title": "Resort fee awareness",
+      "text": "Every Vegas hotel charges a mandatory \"resort fee\" ($35–55/night) not included in the listed price. Factor this into your budget when comparing hotels."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$30–60",
+      "midrange": "$100–200",
+      "splurge": "$300+",
+      "notes": "Hostels/motels → Strip hotels midweek → suites + Strip view"
+    },
+    {
+      "category": "Food",
+      "budget": "$20–35",
+      "midrange": "$50–80",
+      "splurge": "$120+",
+      "notes": "Fast food & happy hours → buffets & casual → celebrity chef restaurants"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–10",
+      "midrange": "$15–30",
+      "splurge": "$50+",
+      "notes": "Deuce bus & walking → Uber/taxi → limo & car rental"
+    },
+    {
+      "category": "Activities",
+      "budget": "$0–25",
+      "midrange": "$50–100",
+      "splurge": "$200+",
+      "notes": "Free shows & casinos → paid shows & rides → VIP & day trips"
+    },
+    {
+      "category": "Drinks",
+      "budget": "$10–20",
+      "midrange": "$30–50",
+      "splurge": "$80+",
+      "notes": "Happy hours & free casino drinks → bars → clubs & bottle service"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$65–150",
+      "midrange": "$245–460",
+      "splurge": "$750+",
+      "notes": "Budget → comfortable → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Visa Waiver Program countries need an ESTA ($21) — apply at esta.cbp.dhs.gov at least 72 hours before travel",
+        "Harry Reid International Airport (LAS) is on the Strip's south end — 10-minute Uber to most hotels ($12–18)",
+        "The airport monorail doesn't connect to the Strip. Use Uber, taxi ($18–25 flat rate to Strip), or hotel shuttles"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance essential — US healthcare costs are extreme. Urgent care visits from $150+, ER from $2,000+",
+        "The Strip is well-lit and heavily surveilled. Be cautious on side streets after midnight. Drink spiking happens — watch your glass",
+        "Desert dehydration is real — drink water constantly, especially with alcohol. The dry heat doesn't make you feel as thirsty as you are"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "The Deuce bus runs the full Strip and to downtown Fremont Street — $8 all-day pass, $20 for 3 days. Runs 24/7",
+        "The Strip is 4.2 miles long — walking feels short but adds up fast. Use the free trams between Bellagio/CityCenter/Park MGM and Mandalay/Luxor/Excalibur",
+        "Uber/Lyft to anywhere on the Strip: $8–15. Airport to Strip: $12–18. To downtown: $15–22. Surge pricing after midnight"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Free WiFi in all casino hotels (lobby and room). Quality varies — the Cosmopolitan and Aria have the fastest",
+        "Cell service is good on the Strip but spotty inside massive casino floors. Download offline content before going deep into a resort",
+        "US SIM: T-Mobile or Mint Mobile eSIM. Buy at any phone store or the T-Mobile stores on the Strip"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cards accepted everywhere. Casinos are cash-heavy — ATMs charge $5–8 fees. Withdraw at your bank before arriving",
+        "Tipping: 18–20% at restaurants, $1–2/drink at bars (even for \"free\" casino floor drinks), $2–5 for hotel staff",
+        "Set a gambling budget and stick to it. Casino ATMs make it too easy to withdraw more. Leave cards in the safe if needed"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable walking shoes — you'll cover 8–12 miles/day on casino floors alone. Bring blister bandaids",
+        "Club attire for nightlife — men need collared shirts and dress shoes (no sneakers, shorts, or athletic wear). Women have more flexibility",
+        "Sunscreen, sunglasses, and a reusable water bottle. A light jacket for over-air-conditioned casinos and desert-cool evenings"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "💵",
+      "title": "Tipping Everywhere",
+      "text": "Tip 18–20% at restaurants, $1–2 per drink at bars (even free casino drinks), $2–5 per bag for bellhops, $2–5/night for housekeeping. Vegas runs on tips — the service economy is everything."
+    },
+    {
+      "icon": "🎰",
+      "title": "Gambling Etiquette",
+      "text": "Don't touch your bet after the cards are dealt. Don't give unsolicited advice at tables. Tip the dealer when you win ($1–5 per win). Know the table minimum before sitting down. Phones off at the table."
+    },
+    {
+      "icon": "🍸",
+      "title": "Free Casino Drinks",
+      "text": "Casinos serve free drinks to anyone actively gambling — slot machines and table games. Tip the cocktail waitress $1–2 per drink. Drinks take 15–30 minutes to arrive. Don't abuse it — pace yourself."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Rules",
+      "text": "No photography at casino gaming tables — security will intervene. Hotel lobbies, exteriors, and public areas are fine. Ask before photographing performers or costumed characters on the Strip."
+    },
+    {
+      "icon": "🔞",
+      "title": "Age Restrictions",
+      "text": "Must be 21+ to drink or gamble — always carry ID. Pool parties and nightclubs are 21+ (some 18+). Many restaurants and attractions are all-ages. Fake IDs are taken seriously — don't risk it."
+    },
+    {
+      "icon": "🚶",
+      "title": "Street Hustles",
+      "text": "Ignore people handing out escort cards on the Strip. \"Ticket sellers\" for shows are often scams — buy from the venue box office or TodayTix. \"Free\" photos with costumed characters expect a $5–10 tip."
+    }
+  ],
+  "title": "Las Vegas Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Las Vegas guide for young travelers. 3-day itinerary with Strip highlights, pool parties, desert day trips, and nightlife. Plan your trip with roammate.",
+  "heroImage": "/images/guides/las-vegas-hero.webp",
+  "heroFlag": "🇺🇸",
+  "heroCountry": "United States",
+  "heroRegion": "North America",
+  "heroCity": "Las Vegas",
+  "heroSubtitle": "A neon oasis in the Mojave where fortunes change hands and the desert sky never stops performing.",
+  "budgetIntro": "Daily costs per person in USD. Vegas is surprisingly affordable if you play it smart — midweek hotels are cheap, free entertainment is everywhere, and happy hours are generous.",
+  "culturalIntro": "Vegas has its own ecosystem of unwritten rules. Tip everyone, know the gambling etiquette, and pace yourself — the city runs 24/7 but you don't have to.",
+  "ctaCity": "Las Vegas",
+  "ctaText": "Find travel companions to share hotel rooms, split show tickets, and hit the pool parties together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Mar – May Best"
+  ],
+  "defaultDays": 3
+}

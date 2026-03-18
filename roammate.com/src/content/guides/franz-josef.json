@@ -1,0 +1,512 @@
+{
+  "type": "city",
+  "slug": "franz-josef",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "NZ Dollar (NZD)",
+      "detail": "1 USD ≈ NZ$1.72"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Te Reo Māori",
+      "detail": "English spoken everywhere"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "NZST (UTC+12)",
+      "detail": "NZDT (UTC+13) Sep–Apr"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Nov – Mar",
+      "detail": "Warmest, longest days"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~NZ$100–200",
+      "detail": "$58–116 USD per day"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "NZeTA required",
+      "detail": "Most nationalities 90 days visa-free with NZeTA"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Franz Josef Glacier in a Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Glacier Valley Walk",
+            "text": "Start with the Franz Josef Glacier Valley Walk — a well-maintained 5.4km return track from the car park to the glacier viewpoint. The walk follows the Waiho River through a landscape scoured by ice: polished grey rock, glacial debris, and waterfalls cascading from the valley walls. As you approach the viewpoint, the glacier comes into view — a river of ice descending from the peaks of the Southern Alps into temperate rainforest, a phenomenon found almost nowhere else on earth. The terminal face is currently about 1km from the viewpoint.",
+            "tip": "Start early (8am) to beat tour buses. The walk is flat and easy (1.5 hours return) but the final section crosses exposed river flats — wear layers as cold glacier winds funnel down the valley."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Heli-Hike or Scenic Flight",
+            "text": "The signature Franz Josef experience is the heli-hike (from NZ$479): a helicopter flies you onto the glacier surface where you spend 3 hours exploring ice caves, crevasses, and seracs with a guide and crampons. It is the only way to walk on the glacier itself, as ground access to the ice has been closed since 2012. If budget is tighter, a 20-minute scenic flight over the glacier and snowfields (from NZ$280) reveals the full scale — the névé (snowfield) feeding the glacier stretches to the summit of the Southern Alps.",
+            "tip": "Heli-hikes are weather-dependent and cancel frequently in poor visibility or high winds. Book for your first day and ask about next-day rebooking if cancelled — flexibility is key."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hot Pools & Town",
+            "text": "Soak tired legs in the Franz Josef Glacier Hot Pools (NZ$32 adults) — three bush-fringed mineral pools heated to 36–40°C, surrounded by native rainforest. The pools are atmospheric at dusk when steam rises into the cooling air and the forest darkens around you. For dinner, the small town has several options: Landing Bar & Restaurant for pub food and local craft beer, King Tiger for Asian fusion, or Alice May for woodfired pizza. The town is tiny (2 streets) but everything you need is within a 5-minute walk.",
+            "tip": "The hot pools get busy between 4–6pm when tours return. Visit after 7pm for a quieter soak. Towels are provided but bring flip-flops for the changing rooms."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Glacier Valley & Rainforest",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Franz Josef Glacier Valley Walk",
+            "text": "Walk the glacier valley track (5.4km return, 1.5 hours) in the morning when the air is still and the glacier is often bathed in golden light from the east. The track passes through a moonscape of glacial moraine — grey gravel and polished rock left behind as the glacier retreated. Information panels along the way mark where the glacier's terminal face stood in different decades — the rate of retreat is striking. The viewpoint reveals the ice face calving into a grey meltwater lake.",
+            "tip": "The track is mostly flat gravel — suitable for anyone with moderate fitness. The last 500m is across exposed river flats; follow orange markers and do not cross safety barriers."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Roberts Point Track",
+            "text": "For a more challenging hike, take the Roberts Point Track — a steep, muddy 5-hour return trail through dense rainforest to an elevated viewpoint directly opposite the glacier's terminal face. The track climbs 400m through moss-draped rimu and rata forest, crossing swing bridges over cascading streams. The reward is a viewpoint looking straight at the glacier's fractured blue ice from roughly the same altitude — a perspective that reveals the glacier's true scale and the valley it carved.",
+            "tip": "Roberts Point is a proper bush walk — wear hiking boots with ankle support, carry water and snacks, and allow the full 5 hours. The track is slippery after rain (which is frequent — this is the West Coast)."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hot Pools & Stargazing",
+            "text": "Relax at the Glacier Hot Pools (NZ$32) — the warm mineral water is especially welcome after the Roberts Point hike. The West Coast's remoteness means minimal light pollution: on clear nights, the Milky Way arches across the sky with extraordinary clarity. Walk to the main street for dinner — Landing Bar for venison burgers and West Coast craft beer (NZ$10–12 per pint), or Monsoon for quality bar food with mountain views.",
+            "tip": "The West Coast receives 5+ metres of rainfall annually — pack a waterproof jacket and don't be discouraged by rain. Many visitors say the glacier is more dramatic in moody weather than in sunshine."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Heli-Hike & Lake Matheson",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Heli-Hike on the Glacier",
+            "text": "The heli-hike departs from the heliport at the edge of town. A helicopter lifts you above the valley and lands on the glacier's upper surface, bypassing the broken, unstable lower section. Guides provide crampons, ice axes, and safety briefings. For the next 3 hours, walk through a surreal landscape of blue ice caves, crevasses, and ice ridges. The colour of the ice shifts from white at the surface to deep blue in the compressed depths. You are standing on ice that fell as snow on the mountains decades ago.",
+            "tip": "The heli-hike (NZ$479–$550) is weather-dependent. Book early and be flexible — if your morning flight cancels, they may rebook you for the afternoon or next day. Dress in layers; it is cold on the ice."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Lake Matheson Mirror Walk",
+            "text": "Drive 20 minutes south to Lake Matheson near Fox Glacier — one of New Zealand's most famous viewpoints. A 2.6km loop track through ancient kahikatea forest circles the lake. On still mornings and evenings, the lake surface creates a perfect mirror reflection of Aoraki/Mount Cook and Mount Tasman — the two highest peaks in New Zealand. The \"Jetty Viewpoint\" halfway around the loop is the classic photograph. The track is flat, boardwalked, and takes about 1 hour.",
+            "tip": "Lake Matheson reflections are best in the early morning (before 8am) or late afternoon when there is no wind. Even on non-reflective days, the walk through ancient forest is beautiful."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Matheson Cafe & Evening",
+            "text": "Eat at Matheson Cafe at the lake car park — it serves excellent food with views of the Southern Alps through floor-to-ceiling windows. The whitebait fritters (NZ$28, in season September–November) are a West Coast delicacy — tiny transparent native fish caught in the river mouths, bound with egg, and fried. Drive back to Franz Josef for a final evening. If skies are clear, join an evening stargazing session or simply walk to the edge of town and look up.",
+            "tip": "Whitebait is a New Zealand delicacy that's seasonal and expensive. If it's on the menu, try it — you won't find a fresher version anywhere. Outside season, the venison and blue cod are excellent."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Kayaking, Rainforest & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Glacier Kayak on Lake Mapourika",
+            "text": "Join a guided kayak tour on Lake Mapourika (NZ$119, 3 hours) — the largest lake on the West Coast, surrounded by dense native rainforest. Paddle across glassy water reflecting the snow-capped peaks of the Southern Alps. The guide points out native birdlife — fantails, tui, bellbirds, and the elusive kotuku (white heron). The lake was formed by glacial action thousands of years ago and the surrounding forest has been growing since the ice retreated. On clear days, the lake is a mirror.",
+            "tip": "The kayak tour runs rain or shine — wet weather on the West Coast is atmospheric and the forest is more alive after rain. Waterproof jackets and spray skirts are provided."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tatare Tunnels Walk & Treetop Walk",
+            "text": "Walk the Tatare Tunnels Track (30 minutes return) through a tunnel carved in the rock by an old gold mining water race — a quirky piece of West Coast history through dense bush. Then visit the West Coast Treetop Walk (NZ$35) near Hokitika — a 450-metre steel platform walkway 20 metres above the rainforest canopy with a 47-metre-high tower offering views to the Tasman Sea and the Southern Alps. The bird's-eye perspective of the ancient podocarp forest is revealing.",
+            "tip": "The Treetop Walk is 1 hour north towards Hokitika. If heading south towards Queenstown or the glaciers, skip it. If heading north, it's a worthwhile stop."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Departure & Onward",
+            "text": "Most travellers continue south to Fox Glacier (30 minutes), Wanaka (4.5 hours via Haast Pass — one of NZ's most scenic drives), or Queenstown (5 hours). The road south crosses the Haast Pass through Aspiring National Park — keep your camera ready for waterfalls, blue rivers, and mountain passes. Heading north, Hokitika (2 hours) is known for pounamu (greenstone) carving and stunning sunsets. The West Coast is linear — you are always heading somewhere next.",
+            "tip": "The Haast Pass road is remote with no fuel between Haast and Makarora (145km). Fill up before departing. The drive is spectacular but demanding — don't rush it."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Glacier Valley",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrival on the West Coast",
+            "text": "Arrive in Franz Josef from Greymouth (3 hours north), Hokitika (2 hours north), or Queenstown/Wanaka via Haast Pass (5 hours south). The West Coast is New Zealand's wildest region — dense rainforest, glacier-carved valleys, and a coastline pounded by the Tasman Sea. Franz Josef village is a tiny settlement of about 300 residents surrounded by Westland Tai Poutini National Park. Check into a hostel (from NZ$35 dorm) or lodge (NZ$120+ private room).",
+            "tip": "Fill up on fuel in Hokitika or Haast before arriving — petrol in Franz Josef is the most expensive in New Zealand due to remoteness. Stock up on groceries too — the local Four Square is pricey."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Glacier Valley Walk",
+            "text": "Walk the glacier valley track (5.4km return, 1.5 hours). The flat gravel path follows the Waiho River through a landscape shaped entirely by ice — polished rock, glacial till, and waterfalls. Information panels show where the glacier stood in 1750, 1900, 1950, and more recently, revealing the dramatic retreat of recent decades. The viewpoint reveals the glacier's current terminal face — a wall of grey-white ice surrounded by bare rock, with meltwater streaming from beneath it.",
+            "tip": "Start the walk after lunch when morning cloud often lifts. The valley acts as a wind tunnel — even on warm days, temperatures drop significantly near the glacier face."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Glacier Hot Pools",
+            "text": "Ease into the West Coast lifestyle at the Glacier Hot Pools (NZ$32). Three public pools at 36°C, 38°C, and 40°C sit beneath a canopy of tree ferns and rimu trees. The contrast between hot water and cold rainforest air is invigorating. Private pools (NZ$55 per person) offer more seclusion. For dinner, Alice May does excellent woodfired pizza (NZ$22–28) and the Landing Bar has craft beer from West Coast breweries.",
+            "tip": "Visit the hot pools after 7pm for a quieter experience — most tour groups visit between 4–6pm. Evening sessions under the stars are the most atmospheric."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Heli-Hike on the Glacier",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Heli-Hike Experience",
+            "text": "Board a helicopter at the Franz Josef heliport for the 5-minute flight onto the glacier. The aircraft rises over the valley, revealing the full extent of the ice — from the terminal face below to the vast snowfield at the top feeding the glacier. Land on a prepared pad on the upper glacier and strap on crampons. For the next 3 hours, your guide leads you through a frozen landscape: blue ice caves lit from within, crevasses dropping into blue-green depths, and ice formations sculpted by melt and refreeze cycles.",
+            "tip": "The helicopter flight itself is a highlight — ask for a window seat and have your camera ready. The pilot often circles the glacier for views before landing."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sentinel Rock Walk",
+            "text": "After the heli-hike, walk the Sentinel Rock Track (20 minutes return) from the glacier car park to an elevated viewpoint above the valley. The viewpoint looks down on the glacier's terminal lake and across the valley to the waterfalls cascading from the valley walls. It is a good complement to the valley floor walk — same glacier, different perspective. On the way back, stop at the Callery Gorge walk — a short trail to a dramatic river gorge with a swing bridge.",
+            "tip": "Sentinel Rock is an easy walk with a steep section of stairs. The viewpoint is elevated above the valley floor and catches afternoon light well for photography."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Town Dinner & Evening",
+            "text": "The village has 3–4 dining options — all within a 2-minute walk. King Tiger serves decent Thai-inspired dishes (NZ$18–24), Landing Bar is the social hub with burgers, steaks, and draft beer, and Monsoon bar has a cosy atmosphere for a post-glacier drink. The Four Square grocery store is the only option for self-catering — basic but adequate. Franz Josef is not a culinary destination, but the food is honest and filling after a day on ice.",
+            "tip": "The Landing Bar gets lively on weekends with backpackers and tour guides — a good spot to meet other travellers and swap stories from the glacier."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Lake Matheson & Fox Glacier",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lake Matheson at Dawn",
+            "text": "Drive to Lake Matheson (20 minutes south, near Fox Glacier) before sunrise for the famous mirror reflection. Walk the 2.6km loop track through kahikatea forest — New Zealand's tallest native tree — to the Jetty Viewpoint. On still mornings, the lake surface is a flawless mirror reflecting Aoraki/Mount Cook (3,724m) and Mount Tasman (3,497m). The reflection is so perfect that photographs can be flipped upside down and the mountains look identical. This is New Zealand's most iconic view.",
+            "tip": "Dawn arrivals (6–7am in summer) have the best chance of still water. Bring a headlamp for the early walk. Even a slight breeze breaks the reflection — patience pays off."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Fox Glacier Valley Walk",
+            "text": "Fox Glacier is Franz Josef's twin — a similar temperate glacier descending into rainforest, but less touristed and with a different valley character. Walk the Fox Glacier Valley Track (2.6km return, 1 hour) to the viewpoint. Fox's terminal face is currently slightly more accessible than Franz Josef's, and the valley is narrower, giving a more enclosed, dramatic feel. The river flats are dotted with glacial erratics — boulders carried from the mountains and dumped by retreating ice.",
+            "tip": "Fox Glacier heli-hikes are also available if Franz Josef's are booked out — the experience is nearly identical. The Fox Valley is quieter and less crowded than Franz Josef's."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Fox Glacier Village",
+            "text": "Fox Glacier village is even smaller than Franz Josef — a handful of cafes, a general store, and a petrol station. The Cook Saddle Cafe does good coffee and all-day breakfasts. If staying in Fox, the Matheson Cafe near the lake is the best restaurant in the area — local venison, blue cod, and seasonal whitebait in a glass-walled dining room facing the Alps. Drive back to Franz Josef (30 minutes) or overnight in Fox to break up the trip.",
+            "tip": "The road between Franz Josef and Fox is 30 minutes of rainforest-lined highway with occasional lookout stops. Drive slowly — native kiwi occasionally cross roads at night in this area."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Kayaking & Rainforest",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lake Mapourika Kayak",
+            "text": "Paddle Lake Mapourika on a guided kayak tour (NZ$119, 3 hours). The West Coast's largest lake is surrounded by unbroken native rainforest and backed by the snow-capped Southern Alps. On calm mornings, the lake is a mirror — kayaking across a reflected mountain range is surreal. The guide identifies native birds by call: tui with their metallic song, bellbirds with their chiming chorus, and fantails that dart around the kayak. Paddle into the shallows to observe freshwater fish and eels.",
+            "tip": "Dress in layers — mornings on the lake are cool and the wind can pick up. The tour provides spray skirts and waterproof jackets. No experience needed."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Okarito Lagoon & Kiwi Spotting",
+            "text": "Drive 30 minutes north to Okarito, a tiny settlement (population 30) on New Zealand's largest unmodified wetland. The Okarito Lagoon is a haven for birdlife including the kotuku (white heron) — New Zealand's rarest bird, with a single breeding colony nearby. Kayak the lagoon (NZ$85 for 3 hours) through channels lined with flax, cabbage trees, and alpine-reflected water. Okarito is also home to the Okarito rowi kiwi — the rarest kiwi subspecies. Guided night walks (NZ$75) offer a chance to spot kiwi in the wild.",
+            "tip": "The kiwi night walk (8pm, booking essential) has a 90%+ success rate for sightings. Okarito rowi are critically endangered — fewer than 600 exist. This is a rare privilege."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kiwi Walk or Quiet Evening",
+            "text": "If you booked the kiwi walk, the guide meets you at Okarito at 8pm (times vary seasonally). The walk through the rainforest is conducted in near-silence with red-filtered headlamps — kiwi are nocturnal and sensitive to white light. Hearing a kiwi call in the dark forest and then seeing the bird itself is an unforgettable New Zealand experience. If not doing the kiwi walk, return to Franz Josef for a hot pools session and an early night.",
+            "tip": "Okarito has no shops or restaurants — eat dinner in Franz Josef before heading out for the kiwi walk. Bring warm clothing — the forest is cold at night."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Roberts Point & Deeper Hikes",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Roberts Point Track",
+            "text": "Tackle the Roberts Point Track — the hardest day walk from Franz Josef village. The 11km return track climbs 400m through temperate rainforest draped in moss and ferns, crossing swing bridges over cascading streams. The forest is primary — some trees are over 800 years old. The trail can be muddy and rooty but is well-maintained. The Roberts Point viewpoint sits directly opposite the glacier's terminal face at roughly the same elevation — the view is dramatically different from the valley floor.",
+            "tip": "Allow 5 hours return. Start by 8am. Carry water (1.5L minimum), snacks, and a rain jacket — the West Coast can change from sun to rain in minutes."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Alex Knob Track (Optional)",
+            "text": "For fit and experienced hikers, the Alex Knob Track (17.2km return, 8 hours) climbs above the bushline to 1,303m — the highest point accessible from Franz Josef without a helicopter. The views from the top encompass the full length of the glacier, the Waiho River valley, the Tasman Sea, and the towering peaks of the main divide. This is a serious day hike requiring alpine fitness and good weather. Most visitors won't attempt this — the Roberts Point walk is the more accessible alternative.",
+            "tip": "Alex Knob is only for experienced hikers with good fitness. The track above the bushline is exposed — don't go in poor visibility or high winds. Check DOC weather forecasts before setting out."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Recovery Evening",
+            "text": "After a full day of hiking, the hot pools (NZ$32) are non-negotiable. Soak in the 40°C pool with aching legs and reflect on one of the best day hikes in New Zealand. For dinner, treat yourself to the best the village has — a venison steak at Landing Bar or a large pizza at Alice May. Rehydrate, stretch, and plan the next day's lighter activity. The West Coast's intensity — rain, bush, ice, mountains — is both exhausting and exhilarating.",
+            "tip": "If your legs need a rest day after Roberts Point or Alex Knob, swap day 5 and day 6 activities — put the scenic drive and relaxation day after the hard hike."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Hokitika & West Coast Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive to Hokitika",
+            "text": "Drive 2 hours north to Hokitika — the cultural capital of the West Coast. Stop at the Hokitika Gorge on the way — a short walk to a swingbridge over a surreal turquoise river. The water colour comes from glacial flour (finely ground rock) suspended in the water, giving it an almost artificial blue-green hue. The gorge is one of the most photographed spots on the West Coast and takes only 30 minutes to visit.",
+            "tip": "The Hokitika Gorge is signposted off SH73, about 30km east of Hokitika. The car park is small — arrive before 10am in peak season. The gorge colour is most vivid after rain."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pounamu Carving & Beach",
+            "text": "Hokitika is famous for pounamu (greenstone/jade) — sacred to Māori and found in the rivers of the West Coast. Visit a pounamu carving studio (Hokitika Jade, Tectonic Jade, or Bonz N Stonz) to watch master carvers work the stone and try carving your own pendant (NZ$120–180 for a half-day workshop). Walk Hokitika Beach — a wild, driftwood-strewn stretch of Tasman Sea coastline where the famous Hokitika sign spells out the town name in driftwood letters.",
+            "tip": "Carving your own pounamu pendant makes a meaningful souvenir with personal significance. The workshops are drop-in — no booking required for most studios."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Hokitika Sunset & Return",
+            "text": "Hokitika Beach faces directly west — the sunsets here are some of the best in New Zealand, with the Tasman Sea stretching unbroken to Australia. The driftwood sculptures on the beach create dramatic silhouettes against the sunset sky. Have dinner at Fat Pipi Pizza (excellent woodfired pizza, NZ$18–26) or Stations Inn for a West Coast pub meal before driving back to Franz Josef (2 hours) or staying overnight in Hokitika.",
+            "tip": "If driving back to Franz Josef at night, watch for possums and kiwi on the road — the highway passes through dense native bush and wildlife is active after dark."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Final Walks & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Terrace Walk & Callery Gorge",
+            "text": "Walk the Terrace Walk (30 minutes return) — a short track through regenerating rainforest on a glacial terrace above the Waiho River. The track is flat and peaceful, with mature tree ferns and native bush. Continue to the Callery Gorge walk — a short trail to a swing bridge over the Callery River gorge, where the river has carved a deep, narrow channel through the rock. These short walks are a gentle final morning in the national park.",
+            "tip": "Both walks start from the same car park and can be combined in under an hour. They are a good option if weather cancels more ambitious plans."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Departure South via Haast Pass",
+            "text": "Most travellers depart south via the Haast Pass (SH6) towards Wanaka and Queenstown. The 5-hour drive is one of New Zealand's most scenic roads — passing through Aspiring National Park, alongside the turquoise Haast River, and over the 563m pass flanked by snow-capped peaks. Stop at Thunder Creek Falls (5-minute walk to a 28m waterfall), the Blue Pools (30-minute walk to insanely clear glacial pools), and the Gates of Haast — a narrow rock gorge where the Haast River forces through a gap.",
+            "tip": "Fill up on fuel in Franz Josef — the next petrol station is in Haast (120km south). Pack lunch from the Four Square as there are no food options on the pass. The Blue Pools are unmissable — the water clarity is unreal."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Wanaka or Queenstown Arrival",
+            "text": "Arrive in Wanaka (4.5 hours) or Queenstown (5 hours) by evening. The transition from the West Coast's rainforest to the dry, golden Central Otago landscape is dramatic — you cross the main divide and the entire character of the country changes. Wanaka is quieter and more lakeside-focused; Queenstown is the adventure capital with more dining, nightlife, and activities. Both are excellent bases for continuing your South Island exploration.",
+            "tip": "If arriving late, Wanaka is closer and more relaxed. Lake Wanaka at sunset is a perfect end to the West Coast chapter of your trip."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Hostel Cooking",
+      "text": "The Franz Josef Four Square grocery store is expensive due to remoteness. Cook at your hostel kitchen — buy supplies in Hokitika or Greymouth before arriving. A week of self-catering saves NZ$200+ over eating out."
+    },
+    {
+      "title": "Free Walks",
+      "text": "The glacier valley walk, Sentinel Rock, Callery Gorge, and Terrace Walk are all free. These are the core Franz Josef experience and cost nothing — save your money for the heli-hike."
+    },
+    {
+      "title": "Book Direct",
+      "text": "Heli-hikes are cheapest when booked directly with the operator (Franz Josef Glacier Guides, Fox Glacier Guiding). Third-party booking sites add commissions."
+    },
+    {
+      "title": "Standby Heli Deals",
+      "text": "Some heli-hike operators offer standby rates for last-minute spots — ask at the booking office about same-day availability. Savings of NZ$50–100 are possible in shoulder season."
+    },
+    {
+      "title": "DOC Campsite",
+      "text": "The DOC campsite at Franz Josef (NZ$15 per person) is the cheapest accommodation option. Basic facilities (toilets, cold water) but surrounded by native bush and a short walk from town."
+    },
+    {
+      "title": "Combine Glaciers",
+      "text": "Franz Josef and Fox Glacier are 30 minutes apart — you don't need to stay in both towns. Base yourself in one and day-trip the other to save a night's accommodation."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "NZ$15–40",
+      "midrange": "NZ$80–150",
+      "splurge": "NZ$200+",
+      "notes": "DOC camp to boutique lodge"
+    },
+    {
+      "category": "Food",
+      "budget": "NZ$20–35",
+      "midrange": "NZ$40–70",
+      "splurge": "NZ$80+",
+      "notes": "Self-catering to restaurant dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "NZ$0–20",
+      "midrange": "NZ$30–60",
+      "splurge": "NZ$80+",
+      "notes": "Walking to rental car fuel"
+    },
+    {
+      "category": "Activities",
+      "budget": "NZ$0–35",
+      "midrange": "NZ$120–300",
+      "splurge": "NZ$480+",
+      "notes": "Free walks to heli-hike"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "NZ$35–130",
+      "midrange": "NZ$270–580",
+      "splurge": "NZ$840+",
+      "notes": "$20–75 / $157–337 / $488+ USD"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Most nationalities need an NZeTA (New Zealand Electronic Travel Authority, NZ$12 via app) before arrival. Visa-free stays up to 90 days for most Western passports",
+        "Franz Josef is on SH6 — 3 hours south of Greymouth, 5 hours north of Queenstown via Haast Pass. No public transport — you need a car, campervan, or the InterCity bus",
+        "The nearest airport is Hokitika (2 hours north) with flights from Christchurch. Most visitors drive from Christchurch (4.5 hours via Arthur's Pass) or Queenstown"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Franz Josef has a small medical centre for non-emergencies. The nearest hospital is Greymouth (3 hours). Helicopter rescue is available for serious incidents — travel insurance is essential",
+        "The glacier valley has falling ice and rock hazards — stay behind all safety barriers and warning signs. The ice is unstable and people have been killed by glacier collapse",
+        "Sandflies are aggressive on the West Coast — bring DEET repellent and apply liberally, especially near water at dawn and dusk. Long sleeves and pants help"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "A rental car is essential for exploring the West Coast. Franz Josef village is walkable but the glaciers, lakes, and Hokitika require driving. Petrol in Franz Josef is NZ$3+/litre",
+        "InterCity buses stop in Franz Josef on the Greymouth–Queenstown route (1–2 services daily). Limited schedules mean a car is far more practical",
+        "The glacier valley car park is 5km from the village — drive or walk (45 minutes). Tour shuttles are provided for heli-hike and kayak bookings"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Mobile coverage (Spark, Vodafone, 2degrees) is available in Franz Josef village but drops out on the glacier valley track and remote roads",
+        "Wi-Fi at accommodations is generally adequate for messaging but slow for streaming. The West Coast's remoteness means connectivity is never guaranteed",
+        "Download offline maps before arriving — Google Maps and maps.me work well for the West Coast roads and walking tracks"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Franz Josef has one ATM (Westpac) and one petrol station. Both accept international cards. Card acceptance is widespread — even small cafes take EFTPOS and Visa/Mastercard",
+        "New Zealand is largely cashless but carry NZ$50 for DOC campsite fees and small purchases. EFTPOS is the national debit card system — works everywhere",
+        "Prices on the West Coast are higher than urban New Zealand due to remoteness. Budget accordingly — groceries and fuel are 10–20% above national averages"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Waterproof jacket and trousers are essential — the West Coast receives 5+ metres of rain annually. Even in summer, rain is likely. Gore-Tex or equivalent recommended",
+        "Warm layers for the glacier — temperatures on the ice are 5–10°C cooler than the valley. Heli-hike operators provide boots, crampons, and waterproof jackets",
+        "Hiking boots with ankle support for the Roberts Point and Alex Knob tracks. Sandfly repellent (DEET-based) is non-negotiable on the West Coast"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🌿",
+      "title": "Kaitiakitanga",
+      "text": "Kaitiakitanga (guardianship of the natural world) is central to New Zealand's environmental ethic. Leave no trace, stay on marked tracks, and treat the glacier, forests, and waterways as the precious ecosystems they are."
+    },
+    {
+      "icon": "🏔",
+      "title": "Kā Roimata o Hine Hukatere",
+      "text": "Franz Josef Glacier is Kā Roimata o Hine Hukatere in Te Reo Māori — \"the tears of Hine Hukatere.\" In Māori legend, Hine Hukatere loved climbing the mountains and convinced her partner Wawe to join her. He fell to his death and her tears froze into the glacier. Respect this deep cultural connection."
+    },
+    {
+      "icon": "🦜",
+      "title": "Kea Awareness",
+      "text": "Kea (alpine parrots) are sometimes seen near the glacier car parks. These endangered, incredibly intelligent birds will investigate anything left unattended. Never feed them — human food is harmful. Secure your bags and car against their curious beaks."
+    },
+    {
+      "icon": "🚗",
+      "title": "West Coast Driving",
+      "text": "Drive on the left. The West Coast highway is narrow and winding with one-lane bridges. Pull over for faster traffic, use passing lanes, and respect the 100km/h open road limit. Fatigue is a real risk on these long, remote roads."
+    },
+    {
+      "icon": "🌧",
+      "title": "Weather Acceptance",
+      "text": "The West Coast is one of the wettest places in New Zealand. Rain is not bad luck — it is the climate that creates the rainforest, feeds the glacier, and fills the waterfalls. Embrace it rather than fighting it. Some of the most dramatic glacier views are in rain and cloud."
+    }
+  ],
+  "title": "Franz Josef Glacier Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Franz Josef Glacier guide for young travelers. Heli-hikes on the ice, rainforest walks, Lake Matheson, and West Coast adventures with 1, 3, and 7-day itineraries.",
+  "heroImage": "/images/guides/milford-sound-hero.webp",
+  "heroFlag": "🇳🇿",
+  "heroCountry": "New Zealand",
+  "heroRegion": "Oceania",
+  "heroCity": "Franz Josef Glacier",
+  "heroSubtitle": "Where a river of ancient ice descends from the Southern Alps into temperate rainforest — one of the most dramatic landscapes on earth.",
+  "budgetIntro": "The West Coast is remote and prices reflect it. The glacier walks are free — the big expense is the heli-hike, which is worth every dollar.",
+  "culturalIntro": "Franz Josef sits within a UNESCO World Heritage Area with deep Māori cultural significance. Respecting the environment is not optional — it is the price of admission.",
+  "ctaCity": "Franz Josef Glacier",
+  "ctaText": "Find travel companions for glacier heli-hikes, West Coast road trips, and rainforest adventures on roammate — share the journey.",
+  "ctaCustomise": "To customise this itinerary to your travel style — download the roammate app.",
+  "heroPills": [
+    "3-Day Adventure",
+    "Nature & Hiking",
+    "Nov–Mar Best"
+  ],
+  "defaultDays": 3
+}

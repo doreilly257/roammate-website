@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "maasai-mara",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "KES (Shilling)",
+      "detail": "1 USD ≈ 155 KES"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Swahili / English",
+      "detail": "English widely spoken"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EAT (UTC+3)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jul – Oct",
+      "detail": "Migration crossings, dry season"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$120–300 USD",
+      "detail": "Group safari to mid-range camp"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "eTA required",
+      "detail": "$30 USD, apply at etakenya.go.ke"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Maasai Mara Day Safari — Big Five Blitz",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn Game Drive — Mara Triangle",
+            "text": "Enter through Oloololo Gate at dawn and drive into the Mara Triangle — the western section of the reserve managed by the Mara Conservancy. The open grasslands here are prime predator territory with some of the highest lion densities on Earth. Drive along the Mara River scanning for hippo pods, crocodiles, and the resident leopard that frequents the fig trees near the bridge.",
+            "tip": "The Mara Triangle is less crowded than the Narok side — Oloololo Gate often has shorter queues at opening time."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mara River & Migration Crossing Points",
+            "text": "Drive to the famous Mara River crossing points where, from July to October, hundreds of thousands of wildebeest plunge into the crocodile-infested waters. Even outside migration season, the river banks are wildlife magnets — hippo pods of 50-plus, giant Nile crocodiles, and fish eagles hunting from riverside trees. Lunch is a packed picnic under an acacia tree overlooking the plains.",
+            "tip": "The main crossing points are at Lookout Hill and Serena — your guide will know where herds are currently building up."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset on the Mara Plains",
+            "text": "The Mara's flat-topped acacia trees silhouetted against a burning orange sunset is the definitive African safari image. Your guide finds an elevated viewpoint where you can watch the light fade while herds of wildebeest and zebra graze in the golden grass below. Lions become active as dusk approaches — listen for the first roars of the evening as you head to camp.",
+            "tip": "The Mara's proximity to the equator means sunset is around 6:30pm year-round — plan your final drive accordingly."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "The Mara Triangle — Predator Paradise",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrival & First Game Drive",
+            "text": "Drive from Nairobi (5–6 hours via Narok) or fly to Keekorok Airstrip (45 minutes from Wilson Airport, $150–300 one-way). Your guide collects you for an immediate game drive into the Mara Triangle. This western section has excellent roads and less congestion. Within the first hour, expect to encounter giraffe, zebra, topi, and the ever-present vultures soaring above the grasslands.",
+            "tip": "Flights from Wilson Airport in Nairobi save 5 hours of driving — book with Safarilink or AirKenya for best rates."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Lion Pride & Big Cat Tracking",
+            "text": "The Mara hosts an estimated 850 lions in around 25 prides — making it one of the best places on Earth to observe lion behaviour. Your guide uses radio networks to locate active prides. Watch lionesses teaching cubs to stalk prey, males defending territory, and the power dynamics of pride life playing out in real time. Cheetah mothers with cubs are another Mara speciality.",
+            "tip": "The Mara's big cat density means you can see lions, cheetahs, and leopards in a single day — ask your guide to prioritise all three."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Tented Camp & Bush Dinner",
+            "text": "Check into your tented camp along the Talek or Mara River. Budget options like Enchoro Wildlife Camp start at $80/person full-board, while mid-range camps like Mara Intrepids run $200–400. Dinner is served in the mess tent or under the stars — typical meals include grilled meats, fresh vegetables, and Kenyan chai. Hippos grunt in the nearby river as you fall asleep.",
+            "tip": "Budget camps along the Talek River offer genuine safari experiences at a fraction of luxury lodge prices — do not dismiss them."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Migration & Mara River",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn Patrol — Mara River Crossings",
+            "text": "Leave camp before sunrise and drive to the Mara River crossing points. During peak migration (August–September), hundreds of thousands of wildebeest mass on the river banks, building courage before the chaotic plunge into crocodile-infested waters. The noise, dust, and raw drama is overwhelming. Even outside migration months, the river supports incredible wildlife concentrations year-round.",
+            "tip": "River crossings can happen at any time — sometimes herds hesitate for hours before one brave wildebeest triggers the stampede."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Migration Herds on the Plains",
+            "text": "Drive through the migration herds stretching to the horizon — an estimated 1.5 million wildebeest and 300,000 zebra cross from the Serengeti into the Mara between July and October. The scale is impossible to photograph — you simply have to experience it. Predators follow the herds — hyena clans, jackals, and vultures clean up the casualties while cheetahs pick off stragglers.",
+            "tip": "Wildebeest crossings are most common between 8am and noon — position yourself at the river early and wait patiently."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Maasai Village Visit",
+            "text": "Visit a Maasai village (manyatta) near the reserve boundary — guided cultural visits cost KES 2,000–3,000 per person and include traditional jumping dances, fire-making demonstrations, and a tour of the mud-and-dung houses. The income supports the community directly. Ask questions respectfully about Maasai traditions of cattle herding, warrior culture, and coexistence with wildlife.",
+            "tip": "Negotiate the village visit fee before entering — agree on photography rules and whether crafts shopping is included or separate."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Conservancies & Farewell Safari",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Conservancy Game Drive — Off-Road Freedom",
+            "text": "The private conservancies bordering the Mara (Olare Motorogi, Mara North, Naboisho) offer an experience impossible inside the reserve — off-road driving, night drives, and walking safaris with Maasai guides. Vehicle numbers are strictly limited, so you might be the only car at a lion sighting. The open grasslands and wildlife corridors between the reserve and conservancies are pristine.",
+            "tip": "Conservancy access is usually included in your camp fee if you stay within one — otherwise negotiate a day pass with your operator."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Walking Safari with Maasai Warriors",
+            "text": "Join a guided bush walk with Maasai warriors and a certified wildlife guide. Walking through big cat territory on foot is a completely different experience from a vehicle — your senses heighten, the scale of the landscape hits you, and you notice the small details: dung beetle highways, animal tracks in the mud, and medicinal plants the Maasai have used for centuries.",
+            "tip": "Walking safaris operate in the conservancies, not inside the reserve. They are safe — Maasai guides read animal behaviour expertly."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Sunset & Bush Sundowner",
+            "text": "Your guide drives to a hilltop viewpoint for a farewell sundowner — cold Tusker beers and a panoramic view of the Mara plains below. Watch the sun set over the escarpment while herds of elephants move silently through the bush. Return to camp for a final dinner, tip your guide and camp staff (guide: $15–20/day, staff: $10/day), and prepare for your transfer to Nairobi.",
+            "tip": "If flying out of the Mara, morning flights offer stunning aerial views of the migration herds from above — book a window seat."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Join a group safari from Nairobi",
+      "text": "Solo travellers and couples save significantly by joining group safaris departing from Nairobi. Budget group trips run $120–180/person/day for 3–5 day packages including transport, accommodation (tented camps), meals, and game drives."
+    },
+    {
+      "title": "Book through local Kenyan operators",
+      "text": "Nairobi-based operators offer 30–50% lower rates than international agents. Research on SafariBookings.com and TripAdvisor. Visit multiple operators on River Road or in Westlands to compare quotes before committing."
+    },
+    {
+      "title": "Camp in budget tented camps",
+      "text": "Budget tented camps along the Talek River (Enchoro, Mara Leisure, Lenchada) charge $60–100/person full-board versus $300–800+ at premium camps. The wildlife is identical — you are in the same ecosystem."
+    },
+    {
+      "title": "Fly one way, save time",
+      "text": "Flights from Wilson Airport to the Mara cost $150–300 one-way. Fly in and drive out (or vice versa) to save time and money — the 5-hour drive is scenic but exhausting after a week of early mornings."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "November–December and March–May are cheaper with 20–30% lower rates. The short rains bring green landscapes, fewer tourists, and excellent bird life. The Mara has resident wildlife year-round — it is not just about the migration."
+    },
+    {
+      "title": "Combine Mara with budget destinations",
+      "text": "Balance the Mara's costs with cheaper stops — Lake Naivasha, Hell's Gate, and Lake Nakuru are all affordable additions that add diversity to a Kenya trip without the safari price premium."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$60–100",
+      "midrange": "$200–400",
+      "splurge": "$600–1,500",
+      "notes": "Budget tented camp vs mid-range camp vs luxury lodge"
+    },
+    {
+      "category": "Food",
+      "budget": "Included",
+      "midrange": "Included",
+      "splurge": "Included",
+      "notes": "Most Mara camps include full board in rates"
+    },
+    {
+      "category": "Transport",
+      "budget": "$40–60",
+      "midrange": "$60–100",
+      "splurge": "$200–400",
+      "notes": "Group safari share vs private vehicle vs fly-in"
+    },
+    {
+      "category": "Activities",
+      "budget": "$0",
+      "midrange": "$50–100",
+      "splurge": "$200–450",
+      "notes": "Game drives included; balloon $450, village visit $20–30"
+    },
+    {
+      "category": "Park Entry",
+      "budget": "$80",
+      "midrange": "$80",
+      "splurge": "$80",
+      "notes": "Conservancy fee $80/adult/day (reserve entry varies)"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$180–240",
+      "midrange": "$390–680",
+      "splurge": "$1,080–2,430",
+      "notes": "Per person — group safaris are the best value option"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "✈️",
+      "title": "Getting There",
+      "items": [
+        "Fly Nairobi Wilson Airport to Mara airstrips (45 min, $150–300 one-way)",
+        "Drive from Nairobi via Narok: 5–6 hours (last 80km unpaved)",
+        "Main gates: Sekenani, Oloololo, Talek, Musiara"
+      ]
+    },
+    {
+      "icon": "🎟️",
+      "title": "Entry & Permits",
+      "items": [
+        "Reserve entry: $80/adult/day (non-resident), payable via card only",
+        "Conservancy fees: $80–120/person/day (usually included in camp rates)",
+        "Vehicle fees: KES 300/day for registered safari vehicles"
+      ]
+    },
+    {
+      "icon": "💊",
+      "title": "Health & Safety",
+      "items": [
+        "Malaria prophylaxis essential — the Mara is in a high-risk zone",
+        "Yellow fever vaccination certificate required for Kenya entry",
+        "Carry a first aid kit — nearest hospital is in Narok (3+ hours away)"
+      ]
+    },
+    {
+      "icon": "📦",
+      "title": "What to Pack",
+      "items": [
+        "Binoculars, camera with 200mm+ zoom lens, extra memory cards",
+        "Layers for cold mornings (5–10°C) and warm afternoons (25–30°C)",
+        "Dust-proof bag for camera gear — Mara roads are extremely dusty"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Safaricom has best coverage — patchy signal in the reserve",
+        "Most camps have limited Wi-Fi in communal areas",
+        "Download offline maps and wildlife guides before arriving"
+      ]
+    },
+    {
+      "icon": "💵",
+      "title": "Money & Payments",
+      "items": [
+        "Park fees are card-only — no cash accepted at gates",
+        "Camps accept USD and credit cards",
+        "Carry KES cash for village visits, tips, and roadside purchases"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🦁",
+      "title": "Vehicle rules in the reserve",
+      "text": "Stay in your vehicle at all times except at designated picnic sites. Do not stand on vehicle roofs. Keep a minimum 25-metre distance from predators. Off-road driving is strictly prohibited and carries fines of $10,000 or more."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography etiquette",
+      "text": "Never use flash near wildlife. Drones are illegal in the Mara. At river crossings, stay calm and quiet — excessive noise and engine revving disturbs the herds and can prevent crossings from happening. Patience yields the best photos."
+    },
+    {
+      "icon": "🏘️",
+      "title": "Maasai cultural respect",
+      "text": "Always ask permission before photographing Maasai people. Negotiate and agree on fees before visiting a village. Dress modestly when visiting communities. The Maasai are proud people with rich traditions — engage with genuine curiosity and respect."
+    },
+    {
+      "icon": "🌍",
+      "title": "Conservation awareness",
+      "text": "The Mara ecosystem faces pressure from tourism overcrowding, agricultural encroachment, and human-wildlife conflict. Support conservancies that pay Maasai landowners to keep land wild. Choose operators that follow ethical wildlife viewing practices."
+    },
+    {
+      "icon": "🗑️",
+      "title": "Leave no trace",
+      "text": "Carry all rubbish out of the reserve. Kenya banned single-use plastic bags in 2017 — do not bring them into the country. Do not throw food from vehicles — this teaches animals to approach cars, leading to dangerous encounters."
+    },
+    {
+      "icon": "💰",
+      "title": "Tipping guidelines",
+      "text": "Safari guide: $15–20/person/day. Camp staff: $10/person/day. Transfer drivers: $5–10/trip. Tips are a significant portion of staff income and are greatly appreciated. Tip in USD cash or KES."
+    }
+  ],
+  "title": "Maasai Mara Travel Guide 2026 — Safari Itinerary | roammate",
+  "description": "Plan your Maasai Mara safari with 1, 3, and 7-day itineraries covering the Great Migration, Big Five game drives, Maasai culture, and budget tips for young travellers visiting Kenya's legendary wildlife reserve.",
+  "heroImage": "/images/guides/maasai-mara-hero.webp",
+  "heroFlag": "🇰🇪",
+  "heroCountry": "Kenya",
+  "heroRegion": "Africa",
+  "heroCity": "Maasai Mara",
+  "heroSubtitle": "Kenya's crown jewel — witness the Great Migration, track the Big Five, and experience Maasai warrior culture in Africa's most iconic safari destination.",
+  "budgetIntro": "The Maasai Mara offers Africa's most accessible safari experience with options ranging from budget group safaris at $120/day to exclusive luxury camps. Smart booking through local operators keeps costs manageable.",
+  "culturalIntro": "The Maasai Mara is both a wildlife reserve and Maasai homeland. Respecting local culture, following reserve rules, and supporting conservation ensures this ecosystem survives for future generations.",
+  "ctaCity": "Maasai Mara",
+  "ctaText": "Ready to experience the Great Migration? From budget group safaris to luxury balloon flights, roammate helps you plan the perfect Mara adventure.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "7-Day Itinerary",
+    "Safari & Culture",
+    "Jul–Oct Best"
+  ],
+  "defaultDays": 1
+}

@@ -1,0 +1,512 @@
+{
+  "type": "city",
+  "slug": "kamakura",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "JPY (Yen)",
+      "detail": "Cash preferred at temples and small shops"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Japanese",
+      "detail": "Limited English; major sites have English signs"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "JST (UTC+9)",
+      "detail": "No daylight saving time"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – May, Oct – Nov",
+      "detail": "Cherry blossoms or autumn colours"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$50–120 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 90 days",
+      "detail": "Most Western nationalities"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Kamakura Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Great Buddha & Hase-dera Temple",
+            "text": "Start at Kamakura's most iconic sight — the Great Buddha (Daibutsu) at Kotoku-in temple. This 13.35-metre bronze Amida Buddha, cast in 1252, once sat inside a massive wooden hall that was swept away by a tsunami in 1498. Now it sits in the open air with the sky behind it, giving it a serene, timeless quality. For 50 yen extra, step inside the hollow statue. Walk 10 minutes to Hase-dera temple, perched on a hillside with a stunning 9.18-metre gilded wooden Kannon (goddess of mercy) — the largest wooden sculpture in Japan — and panoramic views over Sagami Bay from the observation terrace.",
+            "tip": "Arrive at Kotoku-in before 9am to beat tour groups from Tokyo. The Great Buddha is a 10-minute walk from Hase Station on the Enoden Line."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tsurugaoka Hachimangu Shrine",
+            "text": "Walk or take the Enoden to Kamakura Station and head up Wakamiya Oji — the broad avenue that runs from the seafront to Tsurugaoka Hachimangu, Kamakura's most important Shinto shrine. Founded in 1063 and rebuilt in its current position in 1180 by Minamoto no Yoritomo (Japan's first shogun), the shrine complex includes sacred lotus ponds, a peony garden, and a dramatic stone staircase to the main hall with views back down the tree-lined avenue to the sea. The adjacent Kamakura National Treasure Museum houses Buddhist sculptures and samurai artefacts.",
+            "tip": "The shrine's lotus ponds bloom beautifully in July–August. The peony garden (entry 500 yen) is stunning in January–February. The staircase has 61 steps — climb slowly and take in the view."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Komachi-dori & Enoshima Sunset",
+            "text": "Walk through Komachi-dori, the narrow pedestrian shopping street near Kamakura Station. Browse Japanese crafts, try fresh-baked senbei (rice crackers), sample matcha soft-serve ice cream (400 yen), and pick up kamakura-bori lacquerware — a local craft dating back 800 years. For sunset, take the Enoden Line 25 minutes to Enoshima — the small island connected to the mainland by a bridge. Climb to the island's peak for a panoramic sunset view with Mount Fuji silhouetted on the western horizon on clear evenings.",
+            "tip": "Mount Fuji is visible from Enoshima on about 30% of evenings — autumn and winter offer the clearest views. The Enoshima Sea Candle observation tower costs 500 yen."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Great Buddha, Temples & Komachi-dori",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kotoku-in & Hase-dera",
+            "text": "Begin with the Great Buddha at Kotoku-in (300 yen entry). The 13.35-metre bronze statue has sat here since 1252, surviving earthquakes, typhoons, and the tsunami that destroyed its surrounding hall. The scale is impressive up close — the head alone weighs 15 tonnes. Walk to Hase-dera temple (400 yen), built into the hillside above the coast. The main hall holds a gilded 9.18-metre Kannon statue, and the Jizo-do garden is filled with small stone Jizo statues left by parents mourning lost children — deeply moving and uniquely Japanese.",
+            "tip": "Step inside the hollow Great Buddha for 50 yen — the interior reveals the casting technique and gives a sense of the statue's mass. Photography is allowed."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tsurugaoka Hachimangu & Museum",
+            "text": "Walk the cherry tree-lined Dankazura approach road to Tsurugaoka Hachimangu shrine. The shrine was the spiritual centre of Kamakura's military government — samurai came here to pray before battle. Explore the main hall, the maiden dance stage where traditional ceremonies are performed, and the Genpei Ponds symbolising the Minamoto and Taira clans. Visit the Kamakura National Treasure Museum (400 yen) for outstanding Buddhist sculptures, calligraphy, and weapons from the Kamakura period (1185–1333).",
+            "tip": "The Dankazura approach is stunning during cherry blossom season (late March–early April) when the trees form a pink tunnel. Even outside bloom season, the wide avenue is impressive."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Komachi-dori Shopping & Dinner",
+            "text": "Browse Komachi-dori's 250+ shops and food stalls. Try fresh warabi mochi (bracken starch mochi), taiyaki (fish-shaped red bean cakes, 200 yen), and handmade senbei hot off the grill. For dinner, Kamakura's speciality is shirasu — tiny translucent whitebait caught off the nearby coast, served raw (nama shirasu) on rice. Matsubara-an near the station serves excellent handmade soba noodles, and Bowls does fresh poke-style shirasu rice bowls for around 1,200 yen.",
+            "tip": "Komachi-dori shops close early (around 6pm). The restaurants stay open later but many close by 8–9pm — Kamakura is a daytime destination. Eat before 7pm to have full choice."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Zen Temples & Hiking Trails",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Engaku-ji & Kencho-ji Zen Temples",
+            "text": "Start at Kita-Kamakura Station and walk immediately into Engaku-ji (500 yen), one of the five great Zen temples of Kamakura, founded in 1282 to honour soldiers killed in the Mongol invasions. The temple complex spreads across a forested hillside with subtemples, moss-covered gates, and a massive bronze bell cast in 1301 — a National Treasure. Walk 10 minutes south to Kencho-ji (500 yen), Kamakura's oldest Zen temple (1253) and the most important of the Five Mountains. The juniper trees flanking the main path were allegedly planted by the founding Chinese monk 770 years ago.",
+            "tip": "Both temples offer occasional zazen (seated meditation) sessions for visitors — check schedules at the gate. The sessions are conducted in Japanese but non-speakers are welcome."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ten-en Hiking Trail",
+            "text": "From the rear of Kencho-ji temple, a trail leads up into the wooded hills above Kamakura — the Ten-en Hiking Trail. This 4km ridge walk (1.5–2 hours) passes through dense forest with occasional viewpoints over the Kamakura valley and Sagami Bay. The trail connects Kencho-ji to Zuisen-ji temple on the eastern side of the valley. The path is well-maintained but includes steep sections with exposed tree roots and stone steps. In autumn, the forest canopy turns brilliant red and gold.",
+            "tip": "Wear proper walking shoes — the trail has uneven stone steps and can be slippery after rain. Bring water as there are no facilities on the trail. The hike is not suitable in heavy rain."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Zuisen-ji Garden & Local Dinner",
+            "text": "End the hiking trail at Zuisen-ji temple (200 yen), famous for its Zen rock garden designed by the temple's founder, Muso Soseki, in the 14th century. The garden combines rocks, water, and a carved cliff face into a contemplative landscape. The plum blossoms here (February) are considered the finest in Kamakura. Walk back to Kamakura Station through residential lanes — a quiet contrast to Komachi-dori. For dinner, try ramen at Kamakura Afuri or local craft beer at Kamakura Beer Komachi.",
+            "tip": "Zuisen-ji closes at 4:30pm (last entry 4pm). Plan your hike timing to arrive with at least 30 minutes to explore the garden before closing."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Enoshima Island & Coastal Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Enoden Line to Enoshima",
+            "text": "Take the Enoden Line from Kamakura to Enoshima — one of Japan's most charming train rides. The vintage single-car electric tram winds through residential streets so narrow that you could reach out and touch the houses, then emerges along the coastline with views across Sagami Bay to the Izu Peninsula. Get off at Enoshima Station and walk across the 600-metre bridge to the island. Climb the stone steps through the shrine complex, passing through the bronze torii gate and Dragon's Cave on the way to the island's summit.",
+            "tip": "Buy an Enopass (1,000 yen) for unlimited Enoden rides plus Enoshima tower, gardens, and caves — saves money if you plan to see everything."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Enoshima Shrine, Caves & Sea Candle",
+            "text": "Explore Enoshima's three linked shrines dedicated to the goddess Benzaiten — the shrine complex has been a pilgrimage site for over 1,000 years. The Samuel Cocking Garden at the summit contains subtropical plants and the Sea Candle observation tower (500 yen) with 360-degree views — on clear days, Mount Fuji dominates the western skyline. Descend to the Iwaya Caves on the island's far side, where ocean waves have carved sea caves decorated with Buddhist statues and candle-lit passageways. The rocky tide pools outside host small crabs and sea anemones.",
+            "tip": "The walk from the bridge to the far caves involves a lot of steps. An escalator (360 yen) shortcuts the steepest climb to the summit. The caves close at 5pm."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Enoshima Sunset & Shirasu Dinner",
+            "text": "Position yourself on Enoshima's west-facing observation deck or the rocky platforms near the caves for sunset. On clear evenings, Mount Fuji appears as a perfect silhouette against an orange sky — one of the most photographed views in the Kanto region. Walk back through the shrine village and eat at one of the seafood restaurants near the bridge — fresh shirasu (whitebait) rice bowls (1,000–1,500 yen), grilled sazae (turban snails), and local craft beer from Enoshima Beer. Take the Enoden back to Kamakura in the dark.",
+            "tip": "Shirasu fishing is seasonal — raw shirasu (nama shirasu) is only available January–March and roughly June–December. In off-season, kamaage (boiled) shirasu is the alternative."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Great Buddha",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrival in Kamakura",
+            "text": "Arrive in Kamakura from Tokyo via JR Yokosuka Line (57 minutes from Tokyo Station, 940 yen) or Shonan-Shinjuku Line (60 minutes from Shinjuku). Check into your accommodation — guesthouses near the station range from 3,500–6,000 yen per night. Kamakura was Japan's de facto capital from 1185 to 1333, when the Minamoto shoguns ruled from here, and the town retains a remarkable concentration of temples, shrines, and medieval sites within a compact valley surrounded by forested hills.",
+            "tip": "A Suica or Pasmo IC card works on all trains, buses, and the Enoden. Load one at any Tokyo station before arriving — it saves time and small change throughout your stay."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Great Buddha & Hase-dera",
+            "text": "Visit the Great Buddha at Kotoku-in (300 yen) and Hase-dera temple (400 yen) on your first afternoon when the sites are quieter — most day-trippers arrive in the morning. The Great Buddha's open-air setting is particularly beautiful in afternoon light. At Hase-dera, explore the cave system (Benten-kutsu) dedicated to the goddess of fortune, and climb to the observation deck for sweeping views over the bay and Kamakura's rooftops.",
+            "tip": "The Kamakura area can be covered on foot or by Enoden, but distances between temple clusters are significant. Plan your days geographically to avoid backtracking."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Yuigahama Beach & Dinner",
+            "text": "Walk from Hase to Yuigahama Beach, Kamakura's main beach facing Sagami Bay. In summer (July–August), the beach is lively with temporary beach houses (umi no ie) serving food and drinks. Outside summer, it's a quiet stretch of sand with good sunset views. For dinner, explore Kamakura's surprisingly good dining scene — from fresh shirasu donburi at Akimoto to handmade udon at Matsubara-an, or pizza at Garden House Kamakura, a converted warehouse with a garden terrace.",
+            "tip": "Kamakura restaurants close early by Tokyo standards — most kitchens close by 8–9pm. Plan dinner for 6–7pm to have the best selection."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Tsurugaoka Hachimangu & Komachi-dori",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tsurugaoka Hachimangu Shrine",
+            "text": "Walk the Dankazura approach to Kamakura's most important shrine, founded in 1063 and moved to this site by the first shogun Minamoto no Yoritomo in 1180. The shrine was the political and spiritual centre of Kamakura's military government. Climb the 61-step stone staircase to the main hall and look back down the tree-lined avenue stretching to the sea. Visit the Genpei Ponds — the east pond (Genji) has three islands symbolising birth, while the west (Heike) has four, the number of death.",
+            "tip": "Free English volunteer guides are sometimes available at the shrine entrance — ask at the information booth. They provide fascinating context about the shrine's role in Japanese history."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Komachi-dori & Crafts",
+            "text": "Spend the afternoon browsing Komachi-dori's 250+ shops. Key finds include kamakura-bori (lacquered woodcarving — a craft unique to Kamakura dating back to the temple carvers of the 1200s), tenugui (hand-dyed cotton towels with Japanese patterns), locally made incense, and artisan pottery. Eat as you walk: purple sweet potato soft-serve, fresh-grilled senbei, dango (rice dumplings), and taiyaki filled with red bean or custard cream.",
+            "tip": "Kamakura-bori pieces range from 1,000 yen (chopstick rests) to 50,000+ yen (trays and boxes). Even small pieces make distinctive, genuinely local souvenirs."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kamakura Beer & Local Food",
+            "text": "Kamakura has a small but thriving craft beer scene. Kamakura Beer at their taproom on Komachi-dori serves their Getsu (wheat), Hoshi (pale ale), and seasonal brews in a traditional machiya setting (650 yen per glass). For dinner, Kamakura Bowls serves excellent chirashi-zushi (scattered sushi) and shirasu dishes using fish landed that morning at nearby Koshigoe fishing port.",
+            "tip": "If you want to experience a traditional Japanese izakaya, Nakamura-an near the station is a local favourite with small plates, sake, and a lively after-work atmosphere."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Zen Temples & Hiking",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Engaku-ji Temple",
+            "text": "Take the train one stop to Kita-Kamakura and enter Engaku-ji (500 yen) immediately from the station. Founded in 1282 to honour the dead from the Mongol invasions, this sprawling Zen temple complex covers a forested hillside with 18 subtemples. The Shariden (reliquary hall) is a National Treasure — its elegant proportions represent the peak of Kamakura-era Zen architecture. Climb to the Ogane (great bell, 1301), also a National Treasure, in its hilltop belfry overlooking the temple complex and the Kita-Kamakura valley.",
+            "tip": "Engaku-ji occasionally offers zazen meditation sessions — check schedules at the gate office. Sessions are in Japanese but silence is the same in any language."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kencho-ji & Ten-en Trail",
+            "text": "Walk 10 minutes south to Kencho-ji (500 yen), the first-ranked of Kamakura's Five Great Zen Temples, founded in 1253. The Sanmon gate, Butsuden hall, and juniper-lined main path create a powerful atmosphere. Behind the temple, climb the steep stone steps past the Hansobo shrine (with its tengu goblin statues) to join the Ten-en Hiking Trail — a 4km ridge walk through forest with views over Kamakura and the bay. The trail takes 1.5–2 hours to reach Zuisen-ji.",
+            "tip": "The Ten-en trail has steep, uneven sections with exposed roots. Proper walking shoes are essential. Carry water — there are no facilities on the trail."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Zuisen-ji & Quiet Evening",
+            "text": "Exit the trail at Zuisen-ji temple (200 yen), known for its contemplative Zen garden carved from the cliff face by the priest Muso Soseki in the 1320s. The garden is deliberately austere — rocks, water, and space meant to focus the mind. Walk back to central Kamakura through quiet residential lanes. For dinner, try tonkatsu (breaded pork cutlet) at Kamakura Ichi or a set-course kaiseki dinner at a traditional restaurant.",
+            "tip": "Zuisen-ji closes at 4:30pm — time your hike to arrive by 3:30pm at the latest to enjoy the garden without rushing."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Enoshima Island",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Enoden Line & Enoshima",
+            "text": "Ride the Enoden tram from Kamakura along the coast to Enoshima. Cross the 600-metre bridge to the island and climb through the shrine complex — three interconnected shrines dedicated to the goddess Benzaiten, patron of music, eloquence, and water. The Dragon's Cave legend says a five-headed dragon terrorised the area until Benzaiten descended from heaven and tamed it with her beauty. The shrine buildings are colourful and ornate, a contrast to Kamakura's austere Zen temples.",
+            "tip": "Buy an Enopass (1,000 yen) at the station for Enoden rides plus Enoshima tower, garden, and cave entry — good value if visiting all attractions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sea Candle Tower & Caves",
+            "text": "Visit the Samuel Cocking Garden and climb the Sea Candle observation tower (500 yen with Enopass) for panoramic views across Sagami Bay — Mount Fuji appears to the west on clear days, the Izu Peninsula stretches to the southwest, and the Shonan coast curves east. Descend to the far side of the island and explore the Iwaya sea caves — two interconnected caves carved by ocean waves over thousands of years, decorated with Buddhist statues and candlelit passageways. The tide pools outside have sea anemones and crabs.",
+            "tip": "The walk across Enoshima from bridge to caves takes 25–30 minutes and involves many steps. Use the escalator (360 yen) for the steepest section if fatigued."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Enoshima Sunset & Seafood",
+            "text": "Time your visit so you're on Enoshima's western side at sunset. The rocky platforms near the caves offer unobstructed views across the Pacific with Mount Fuji in silhouette on clear evenings. Walk back through the shrine village as lanterns light up and eat at Tobiccho near the bridge — famous for its nama shirasu (raw whitebait) bowls and crispy sakura-ebi (pink shrimp). Take the Enoden back to Kamakura under the stars.",
+            "tip": "Tobiccho has long queues during weekends and holidays. Visit on a weekday or arrive before 5:30pm to avoid the wait. The shirasu is landed daily from nearby Koshigoe port."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Hidden Temples & Bamboo Forest",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hokoku-ji Bamboo Temple",
+            "text": "Take a bus or walk 25 minutes east from Kamakura Station to Hokoku-ji (300 yen, or 900 yen with matcha), known as the Bamboo Temple. A dense grove of over 2,000 moso bamboo stalks towers overhead, filtering sunlight into green shafts. A small tea house set within the grove serves matcha and wagashi (traditional sweets) — sitting among the bamboo with a bowl of frothy green tea is one of Kamakura's most serene experiences. The temple also has a Zen rock garden visible from the main hall verandah.",
+            "tip": "Visit early in the morning when the bamboo grove is quiet and the light filters beautifully through the canopy. By mid-morning, tour groups arrive and the intimate atmosphere is lost."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jomyo-ji & Sugimoto-dera",
+            "text": "Walk 5 minutes to Jomyo-ji (100 yen), another of Kamakura's Five Great Zen Temples — less visited than Kencho-ji but with a beautiful garden and tea house (500 yen) serving matcha overlooking a dry landscape garden. Continue to Sugimoto-dera (300 yen), Kamakura's oldest temple (founded 734 CE). The moss-covered stone staircase leading up to the thatched-roof main hall is one of the most photographed spots in the city. Inside, three ancient wooden Kannon statues — over 1,000 years old — are enshrined in candlelight.",
+            "tip": "Sugimoto-dera's moss-covered stairs are too fragile to walk on — use the path to the side. The thatched main hall is tiny but incredibly atmospheric, especially in the dim candlelight."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kamakura Station Area & Dinner",
+            "text": "Return to central Kamakura for a relaxed evening. Browse the small antique shops and galleries tucked into the side streets near the station — several specialise in Japanese ceramics, woodblock prints, and vintage kimono fabric. For dinner, try Japanese curry at Kamakura Curry & Stew or sushi at one of the small counter sushi restaurants near the station where the chef prepares each piece in front of you. A 10-piece omakase (chef's choice) sushi set runs 2,500–4,000 yen.",
+            "tip": "Counter sushi restaurants typically seat 6–10 people and don't take reservations — arrive early (5:30pm) for the best chance of a seat."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Coastal Walk & Beach Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Inamuragasaki Coastal Walk",
+            "text": "Walk or take the Enoden to Inamuragasaki, a headland park between Kamakura and Enoshima with panoramic coastal views. This is where Nitta Yoshisada legendarily threw his sword into the sea in 1333, praying for the tide to recede so his army could attack Kamakura — the tide withdrew and his forces stormed the city, ending Kamakura's reign as Japan's capital. On clear mornings, Mount Fuji rises above the sea in the distance. Walk along the coastal road towards Shichirigahama beach.",
+            "tip": "The Inamuragasaki viewpoint is most impressive in the early morning or at sunset. The historical significance of this spot is enormous — this is where medieval Kamakura fell."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Shichirigahama & Beach Time",
+            "text": "Shichirigahama is a long, uncrowded beach backed by low cliffs with the Enoden running along the hilltop behind. The beach is popular with surfers year-round (board rental 2,000 yen/day) and has a handful of laid-back cafes along the coastal road. In summer, swim in the gentle Pacific surf; in other seasons, walk the beach and enjoy the coastal scenery. The Pacific Bakery and Amalfi Della Sera restaurant are popular stops for lunch with ocean views.",
+            "tip": "Shichirigahama has a moderate Pacific swell year-round — the conditions are beginner-friendly for surfing. Lifeguards are present in summer only (July–August)."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sasuke Inari Shrine at Dusk",
+            "text": "Return to Kamakura and walk to Sasuke Inari Shrine, hidden in the forested hills behind the residential area west of the station. A narrow lane leads to a tunnel of red torii gates climbing steeply into dense forest — reminiscent of Kyoto's Fushimi Inari but without the crowds. The shrine was founded on the spot where Minamoto no Yoritomo dreamed of the fox god Inari before becoming shogun. At dusk, the shrine is atmospheric and often completely empty.",
+            "tip": "Sasuke Inari has no official closing time but the forest path is unlit — bring a phone torch if visiting after 5pm. The torii tunnel photographs best in soft, overcast light."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Daibutsu Hiking Trail & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Daibutsu Hiking Trail",
+            "text": "Walk the Daibutsu (Great Buddha) Hiking Trail — a 3km forest path connecting Kita-Kamakura to the Great Buddha at Kotoku-in. Start at Jochi-ji temple (200 yen) near Kita-Kamakura Station, an understated Zen temple with a mossy garden and unusual carved tunnel. The trail passes through quiet forest, along ridgelines with glimpses of the sea, and past several small shrines and viewpoints. The walk takes about 1.5 hours at a relaxed pace and ends at the back entrance to Kotoku-in.",
+            "tip": "The Daibutsu trail is well-marked but has steep, narrow sections. Start at Kita-Kamakura (mostly downhill to the Great Buddha) rather than the reverse. Wear proper shoes."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Final Temple & Souvenirs",
+            "text": "After the hike, visit any temples you missed during the week. Meigetsuin (500 yen) near Kita-Kamakura is famous for its round \"window of enlightenment\" framing the garden — an iconic Japanese photograph — and its 2,500 hydrangea plants that bloom in spectacular blue in June. Pick up final souvenirs on Komachi-dori: matcha sweets, kamakura-bori lacquerware, or Japanese incense. A final bowl of shirasu on rice makes the perfect Kamakura farewell meal.",
+            "tip": "Meigetsuin is extraordinary during hydrangea season (mid-June) but requires patience for the queues. Outside that week, the temple is beautifully quiet."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Departure",
+            "text": "Take the JR Yokosuka Line from Kamakura Station back to Tokyo (57 minutes, 940 yen) or continue south to Yokohama (25 minutes). If you have time, stop at Kita-Kamakura Station for a final cup of matcha at one of the atmospheric tea houses near the temples. Kamakura's combination of medieval history, Zen culture, hiking, and ocean scenery makes it one of the most rewarding day-trip-or-longer destinations near Tokyo.",
+            "tip": "Avoid returning to Tokyo on Sunday evenings when trains are crowded. The last train to Tokyo departs around 11:30pm, but trains thin out after 10pm."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Day Trip or Stay?",
+      "text": "Kamakura is a popular day trip from Tokyo (57 min each way), but staying overnight gives you empty temples at dawn and dusk. Guesthouses start at 3,500 yen/night — much cheaper than Tokyo accommodation."
+    },
+    {
+      "title": "Temple Budgeting",
+      "text": "Most temples charge 200–500 yen entry. Visiting 4–5 temples in a day adds up to 1,500–2,500 yen. Prioritise the must-sees (Great Buddha, Hase-dera, Kencho-ji) and mix in free sites like Sasuke Inari."
+    },
+    {
+      "title": "Konbini Meals",
+      "text": "Japanese convenience stores (7-Eleven, Lawson, FamilyMart) sell excellent onigiri (150 yen), bento boxes (400–600 yen), and sandwiches. A konbini breakfast and temple-area lunch saves significantly over restaurants."
+    },
+    {
+      "title": "Enoden Day Pass",
+      "text": "The Enoden One-Day Pass (800 yen) pays for itself with 3+ rides between Kamakura, Hase, Enoshima, and the beaches. Without a pass, single rides are 200–310 yen each."
+    },
+    {
+      "title": "Free Hiking",
+      "text": "The Ten-en and Daibutsu hiking trails are completely free and are among Kamakura's best experiences. They connect temples so you can combine hiking with sightseeing."
+    },
+    {
+      "title": "Drink From Taps",
+      "text": "Japan's tap water is safe and excellent. Carry a reusable bottle and refill rather than buying plastic bottles. Vending machines sell drinks from 100 yen if you need something cold."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "¥3,500–5,000",
+      "midrange": "¥8,000–15,000",
+      "splurge": "¥20,000+",
+      "notes": "Guesthouse to ryokan"
+    },
+    {
+      "category": "Food",
+      "budget": "¥1,500–2,500",
+      "midrange": "¥3,000–5,000",
+      "splurge": "¥7,000+",
+      "notes": "Konbini and noodles to kaiseki"
+    },
+    {
+      "category": "Transport",
+      "budget": "¥800–1,500",
+      "midrange": "¥1,500–2,500",
+      "splurge": "¥3,000+",
+      "notes": "Enoden pass to taxi"
+    },
+    {
+      "category": "Activities",
+      "budget": "¥500–1,500",
+      "midrange": "¥2,000–3,500",
+      "splurge": "¥5,000+",
+      "notes": "Temple entry to guided tours"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "¥6,300–10,500",
+      "midrange": "¥14,500–26,000",
+      "splurge": "¥35,000+",
+      "notes": "$42–70 / $97–173 / $233+ USD"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Most Western nationalities receive 90-day visa-free entry to Japan. Visit Japan Web registration is required for immigration and customs before arrival",
+        "Kamakura is 57 minutes from Tokyo Station via JR Yokosuka Line (940 yen) or 60 minutes from Shinjuku via Shonan-Shinjuku Line",
+        "The Enoden Line connects Kamakura to Hase (Great Buddha), Enoshima, and the coastal beaches — runs every 12 minutes"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Japan is extremely safe — Kamakura has virtually no crime risk for tourists. Earthquakes are the main natural hazard; follow hotel evacuation guidance",
+        "Pharmacies (kusuri) stock most common medications. Japanese cold medicines differ from Western equivalents — ask the pharmacist for recommendations",
+        "Free Wi-Fi at Kamakura Station and major temples. Summer heat (July–August) is intense and humid — carry water and take breaks in shaded temple grounds"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Kamakura is walkable — the main temple clusters are within 30 minutes on foot from the station. The Enoden tram covers the coast and western sites",
+        "Buses run from Kamakura Station to eastern temples (Hokoku-ji, Zuisen-ji) — 200 yen flat fare, pay on exit with IC card or coins",
+        "Taxis are metered, clean, and reliable but expensive (starting fare 500 yen). Useful for reaching Kita-Kamakura if you don't want to walk the trail"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Prepaid SIM cards or eSIMs from providers like Mobal, IIJmio, or Ubigi available at airports — 3GB for 30 days costs about 1,500–3,000 yen",
+        "Free Wi-Fi is limited in Kamakura outside the station and major venues. A pocket Wi-Fi rental (500–1,000 yen/day) is more reliable than public Wi-Fi",
+        "Google Maps works excellently in Japan for train times, walking routes, and restaurant finding — download offline maps for Kamakura before arriving"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Japan is increasingly cashless but Kamakura temples, small shops, and market stalls are still cash-heavy. Carry at least ¥5,000 in cash daily",
+        "ATMs at 7-Eleven and Japan Post accept international cards with no surcharge. Withdraw in yen — declining the conversion to avoid poor exchange rates",
+        "IC cards (Suica/Pasmo) work for trains, convenience stores, and vending machines — load them at any station and they double as a digital wallet"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Bring comfortable walking shoes — Kamakura involves temple steps, hiking trails, and cobblestone streets. Leave heels and flip-flops at the hotel",
+        "Pack a compact umbrella year-round — Kamakura gets sudden showers, and June is rainy season (tsuyu). A rain jacket is useful for hiking trails",
+        "Temples require removing shoes — wear socks and shoes that are easy to slip on and off. Cold temple floors in winter make warm socks essential"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Temple & Shrine Etiquette",
+      "text": "At shrines, bow before the torii gate, wash hands at the temizuya, throw a coin (5 yen is lucky), bow twice, clap twice, bow once. At temples, bow and place hands together without clapping. Remove shoes wherever indicated."
+    },
+    {
+      "icon": "🤫",
+      "title": "Quiet Spaces",
+      "text": "Japanese temples are active religious sites, not museums. Keep voices low, don't point at statues, and ask before photographing interiors. Many Zen temples prohibit photography in the main halls entirely."
+    },
+    {
+      "icon": "🚶",
+      "title": "Walking Manners",
+      "text": "Walk on the left side of paths and escalators. Don't eat while walking — find a bench or designated eating area. Street food stalls expect you to eat at their counter, not while strolling Komachi-dori."
+    },
+    {
+      "icon": "💴",
+      "title": "Cash & Tipping",
+      "text": "Japan has no tipping culture — leaving a tip can cause confusion or embarrassment. Simply say \"gochisousama deshita\" (thank you for the meal) when leaving a restaurant. Pay at the register, not at the table."
+    },
+    {
+      "icon": "🗑",
+      "title": "Rubbish Etiquette",
+      "text": "Public rubbish bins are rare in Japan. Carry a small bag for your waste and dispose of it at your accommodation or at convenience stores. Littering is considered extremely rude."
+    }
+  ],
+  "title": "Kamakura Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Kamakura guide for young travelers. Medieval temples, the Great Buddha, Zen hiking trails, and Enoshima Island with 1, 3, and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/nara-hero.webp",
+  "heroFlag": "🇯🇵",
+  "heroCountry": "Japan",
+  "heroRegion": "East Asia",
+  "heroCity": "Kamakura",
+  "heroSubtitle": "Japan's medieval capital — where 800-year-old Zen temples meet Pacific surf and a Great Buddha sits open to the sky.",
+  "budgetIntro": "Kamakura is cheaper than Tokyo for accommodation and food, though temple entry fees add up. The best experiences — hiking and beach time — are free.",
+  "culturalIntro": "Kamakura's temples are active religious sites steeped in 800 years of history. A little cultural awareness makes the experience richer for everyone.",
+  "ctaCity": "Kamakura",
+  "ctaText": "Find travel companions to explore Kamakura's temples, hike the trails, and surf the coast on roammate — split costs, share the adventure.",
+  "ctaCustomise": "To customise this itinerary to your travel style — download the roammate app.",
+  "heroPills": [
+    "3-Day Cultural Trip",
+    "Budget-Friendly",
+    "Mar–May Best"
+  ],
+  "defaultDays": 3
+}

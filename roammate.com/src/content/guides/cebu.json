@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "cebu",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "PHP (Philippine Peso)",
+      "detail": "Cards in malls, cash elsewhere"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Cebuano / English",
+      "detail": "English widely spoken"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "PHT (UTC+8)",
+      "detail": "Philippine Time"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Dec – May",
+      "detail": "Dry season, best for canyoneering"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$20–50 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 30 days",
+      "detail": "Most nationalities, extendable"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Cebu City Heritage & Heights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Magellan's Cross & Basilica del Santo Nino",
+            "text": "Start at Magellan's Cross in the heart of Cebu City — a wooden cross planted by Ferdinand Magellan's expedition in 1521 when they arrived in Cebu and conducted the first Christian baptism in the Philippines. The original cross is encased in a later wooden shell to protect it, housed in a small kiosk next to Cebu's most important church — the Basilica del Santo Nino. The basilica holds the image of the Holy Child (Santo Nino), the oldest religious relic in the Philippines, given by Magellan to Queen Juana of Cebu. The church is alive with devotees lighting candles and praying at all hours.",
+            "tip": "Visit Magellan's Cross and the Basilica before 9am to avoid tour groups. Friday mornings see the largest number of devotees. The candle-lighting area behind the basilica is atmospheric and fragrant."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Temple of Leah & Tops Lookout",
+            "text": "Head uphill to the Temple of Leah in the Beverly Hills neighbourhood — a Roman-inspired temple built by a Cebuano businessman as a tribute to his late wife, featuring grand columns, statues, and sweeping city views. Continue higher to Tops Lookout, a viewpoint at 600m elevation overlooking the entire Cebu City metropolitan area, the harbour, Mactan Island, and the strait beyond. On clear days, the neighbouring islands of Bohol and Leyte are visible on the horizon. The temperature is noticeably cooler at this elevation.",
+            "tip": "Hire a motorbike or Grab car to reach Temple of Leah and Tops — the road is steep and winding. Entry fees are 50 PHP and 100 PHP respectively. Late afternoon light is best for city panorama photos."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Lechon Dinner & Nightlife",
+            "text": "No visit to Cebu is complete without lechon — whole roast suckling pig with impossibly crispy skin and tender, flavourful meat. Cebu lechon is widely considered the best in the Philippines, seasoned with lemongrass, garlic, and local spices before being spit-roasted over charcoal for hours. CnT Lechon and Rico's Lechon are local institutions where you eat the pig with rice and pickled vegetables using your hands. After dinner, explore Cebu's nightlife — the IT Park area has craft beer bars, live music, and a thriving food park scene.",
+            "tip": "Order lechon by the kilo (500–600 PHP) or as a set meal (150–200 PHP). It sells out daily at popular shops — arrive before 6pm. CnT on Lutao Street is the most authentic."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Cebu City Heritage",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Magellan's Cross & Basilica",
+            "text": "Begin at the historic heart of Cebu — Magellan's Cross, planted in 1521 by the first European expedition to reach the Philippines. The original cross (encased in a protective wooden shell) sits in a hexagonal kiosk with a ceiling painted with scenes of the baptism of Cebu's queen and her court. Steps away is the Basilica del Santo Nino, home to the oldest Christian relic in the Philippines — a figure of the infant Jesus given by Magellan to Queen Juana. The church is a living centre of devotion where hundreds of candles burn daily and Sinulog festival dancers practise in the courtyard.",
+            "tip": "The Basilica is free to enter. Sinulog dance rehearsals can often be seen in the courtyard on weekday mornings — the rhythmic drumming and colourful costumes are captivating."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Fort San Pedro & Carbon Market",
+            "text": "Walk to Fort San Pedro, the oldest and smallest Spanish colonial fort in the Philippines, built in 1565 by Miguel Lopez de Legazpi to protect the newly established settlement from raiders. The triangular fort has thick coral stone walls, a small museum, and a garden courtyard. Continue to Carbon Market — Cebu's largest and oldest public market, a sprawling, chaotic labyrinth of stalls selling fresh fish, tropical fruit, vegetables, flowers, and dried goods. The atmosphere is intense and the photo opportunities endless. Buy local dried mangoes — Cebu's most famous export.",
+            "tip": "Carbon Market is best visited in the morning when produce is freshest. Watch your belongings in the crowded aisles. The dried mango section near the entrance has the best prices for bulk purchases."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Lechon & IT Park Food Scene",
+            "text": "Head to CnT Lechon or Rico's Lechon for Cebu's signature dish — whole roast suckling pig with the crispiest skin in the Philippines, flavoured with lemongrass and local spices. Eat with your hands as the locals do — rice, pickled green papaya (atsara), and a cold San Miguel complete the experience. After lechon, explore IT Park — Cebu's modern tech hub transformed into a food and nightlife district after dark, with food trucks, craft beer taprooms, and live music venues attracting a young, energetic crowd.",
+            "tip": "Lechon shops sell out daily by early evening. Go before 6pm to guarantee the freshest pig. IT Park food park opens at 6pm and is busiest on Friday and Saturday nights."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Kawasan Falls Canyoneering",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive South & Begin Canyoneering",
+            "text": "Leave Cebu City early for the 3-hour drive south to Badian for the iconic Kawasan Falls canyoneering adventure — one of the most thrilling outdoor experiences in the Philippines. The activity starts upstream from the falls with a guided descent through a river canyon, jumping off cliffs (3–15 metres high, all optional), swimming through rapids, sliding down natural rock chutes, and floating through deep turquoise pools surrounded by jungle. The canyon is dramatic — towering limestone walls, cascading smaller falls, and crystal-clear water that glows blue-green in the filtered light.",
+            "tip": "Book canyoneering with a licensed operator — guides are mandatory and provide helmets and life vests. Cost is 1,500–2,500 PHP per person. The 3–4 hour descent is physically demanding but exhilarating."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kawasan Falls Swimming",
+            "text": "The canyoneering route ends at Kawasan Falls itself — a multi-tiered waterfall cascading into a massive turquoise pool that is one of the Philippines' most famous natural swimming holes. The main falls are 40 metres high and the pool at the base is deep enough for cliff jumping from the surrounding rocks. Bamboo rafts take visitors directly under the cascade for a thundering massage. Recover from the canyoneering adrenaline with a swim in the cool, mineral-rich water and lunch at one of the bamboo hut restaurants beside the falls.",
+            "tip": "Kawasan Falls gets crowded by midday — the canyoneering route delivers you to the falls from above, bypassing the main entrance crowds. Waterproof your phone or leave it with the guide."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Southern Cebu Dinner",
+            "text": "Drive back to Cebu City or stay overnight in Moalboal (40 minutes from Kawasan) to combine with the next day's marine adventures. The drive north along the coast passes through small fishing villages and offers views of Tanon Strait with the island of Negros visible across the water. Stop for dinner at a roadside restaurant in Barili or Carcar — Carcar is famous for its chicharon (deep-fried pork crackling) and ampao (puffed rice cakes), both made using traditional methods passed down through generations.",
+            "tip": "If staying in Moalboal, book accommodation in advance during weekends. The town has backpacker hostels from 400 PHP and beachfront resorts from 2,000 PHP per night."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Sardine Run & Temple of Leah",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Moalboal Sardine Run",
+            "text": "If you stayed in Moalboal, start the day with the sardine run — one of the Philippines' most extraordinary marine spectacles. Millions of sardines form a massive, shape-shifting ball just metres from the shoreline at Panagsama Beach. Snorkel directly into the swirling mass as the sardines part around you in synchronised waves — the experience of being surrounded by millions of silver fish is surreal and unforgettable. Sea turtles often cruise through the sardine ball, feeding on the small fish. The entire experience is accessible from the beach with just a mask and snorkel.",
+            "tip": "The sardine run is present year-round and visible from the shore. Enter the water early (before 8am) for the best visibility and least crowded conditions. No boat or tour is necessary — just wade in from Panagsama Beach."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Temple of Leah & Tops Lookout",
+            "text": "Drive back to Cebu City and head uphill to the Temple of Leah, a grandiose Roman-inspired temple with sweeping views over the city and strait. The temple's columns, lion statues, and terraced gardens are photogenic and slightly surreal — a love monument that feels transported from ancient Rome to a Philippine hilltop. Continue to Tops Lookout at 600m for the best panoramic view of metropolitan Cebu, the harbour, Mactan Island, and on clear days the neighbouring islands stretching to the horizon.",
+            "tip": "The road to Temple of Leah and Tops is steep and winding. A Grab car or hired motorbike handles it easily. Afternoon light is best for the city panorama from Tops."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Cebu Feast",
+            "text": "End your Cebu trip with a final feast that captures the island's culinary identity. Start with puso (hanging rice wrapped in woven palm leaves) — Cebu's signature rice preparation. Pair it with lechon, grilled liempo (pork belly), and sinuglaw (grilled pork belly with raw fish in vinegar and coconut milk). Finish with a walk through the Larsian sa Fuente BBQ area near Fuente Osmena circle — an open-air food court of grilled meat and seafood stalls that is pure Cebu street food culture at its smoky, delicious best.",
+            "tip": "Larsian opens in the late afternoon and runs until late. Choose the busiest stalls for the freshest food. A full meal with drinks costs 150–300 PHP per person."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Cebu City",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrive in Cebu",
+            "text": "Fly into Mactan-Cebu International Airport (CEB), one of the Philippines' major international gateways. Cross the bridge to Cebu City and check into your accommodation — the city has everything from $8 hostels to international hotels. Cebu is the Philippines' second-largest metropolitan area but significantly more manageable than Manila. Spend the late morning walking the downtown area around Colon Street — the oldest street in the Philippines — to get a feel for the city's energy.",
+            "tip": "Grab is the most reliable transport from the airport. The bridge crossing can be slow during rush hours — allow 45–90 minutes for the transfer to downtown Cebu City."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Magellan's Cross & Basilica",
+            "text": "Visit the historic cluster at the heart of Cebu — Magellan's Cross, the Basilica del Santo Nino, and the surrounding colonial-era streets. Magellan's expedition arrived here in 1521 and the cross they planted marks the beginning of Christianity in the Philippines. The Basilica houses the Santo Nino — the country's oldest Catholic relic — and is the centre of devotion that culminates in the massive Sinulog festival each January. Walk through the surrounding streets where candle vendors, fortune tellers, and food stalls create a vibrant, sensory-rich atmosphere.",
+            "tip": "Visit the Basilica during a service (multiple daily) to experience the devotion that defines Cebuano Catholicism. Photography is permitted but be respectful during worship."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Lechon Dinner & First Night",
+            "text": "Begin your Cebu food journey with the island's most famous dish — lechon. Head to CnT Lechon or Zubuchon for the gold standard of Philippine roast pig — impossibly crispy skin that shatters between your teeth and tender, lemongrass-flavoured meat that needs no sauce. Eat with rice, atsara (pickled papaya), and your hands. After dinner, explore the IT Park area for craft beer, food trucks, and live music — Cebu's modern nightlife scene has developed rapidly and rivals Manila for energy and variety.",
+            "tip": "CnT Lechon on Lutao Street is the most traditional and affordable. Zubuchon at Larsian is more polished and popular with visitors. Both are excellent — try both during your week."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Colonial History & Markets",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Fort San Pedro & Heritage Walk",
+            "text": "Visit Fort San Pedro — the oldest and smallest Spanish fort in the Philippines, built from coral stone in 1565. The triangular fortification has thick walls, a small museum, and a tranquil garden courtyard. Walk through the historic Parian district — once Cebu's vibrant Chinatown where Chinese, Spanish, and Filipino cultures mixed. The Yap-San Diego Ancestral House, a coral stone and hardwood mansion from the 17th century, offers a glimpse into the lives of Cebu's colonial-era Chinese-Filipino merchants.",
+            "tip": "Fort San Pedro entry is 30 PHP. The heritage walk from the fort through Parian to Colon Street takes about 90 minutes and covers 4 centuries of Cebu history."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Carbon Market & Street Food",
+            "text": "Dive into Carbon Market, Cebu's largest, oldest, and most chaotic market. The sprawling complex sells everything from fresh tuna and live poultry to tropical fruit, spices, dried fish, and household goods. The sensory overload is extraordinary — colours, smells, shouts, and the constant motion of thousands of buyers and sellers. Sample local street food as you explore — puso (palm leaf rice), ngohiong (Cebuano spring rolls), and tuslob buwa (a bubbling pork brain and liver dip eaten communally with puso). Carbon Market is raw, authentic Cebu.",
+            "tip": "Carbon Market is best in the morning. Watch your belongings, wear comfortable shoes, and embrace the chaos. The dried mango and dried fish sections are near the main entrance."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Larsian BBQ & Night Market",
+            "text": "Head to Larsian sa Fuente, an open-air food court near Fuente Osmena circle that is the beating heart of Cebu's street food scene. Rows of grilled meat and seafood stalls compete for your attention — chorizo, liempo (pork belly), chicken inasal, fish, and squid are all grilled over charcoal and served with puso rice and spicy vinegar dipping sauce. The atmosphere is smoky, noisy, and completely authentic. This is where Cebuanos eat after work and the prices are rock-bottom — a full meal for under 100 PHP.",
+            "tip": "Larsian is busiest from 6–10pm. Point at what you want, find a table, and food arrives within minutes. The chorizo and liempo stalls closest to the street entrance are the most popular for good reason."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Temple of Leah & Mountain Views",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sirao Flower Garden & Mountain Road",
+            "text": "Drive up into the Cebu highlands to Sirao Flower Garden — a hillside plantation of celosia flowers that creates fields of orange, yellow, and red blooms against the mountain backdrop. While it has been developed as a tourist attraction, the garden is genuinely colourful and the mountain views over the city and strait are excellent. Continue along the mountain road through the Transcentral Highway, which crosses the spine of Cebu Island through forested highlands with cool air and occasional viewpoints over both the eastern and western coasts.",
+            "tip": "Sirao is best in the morning when flowers are fresh and the light is soft. Entry is 100 PHP. Combine with Temple of Leah and Tops for a full mountain morning."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Temple of Leah & Tops Lookout",
+            "text": "Visit the Temple of Leah, a Roman-inspired monument with grand columns, lion statues, and terraced gardens overlooking the city. The temple was built as a love tribute and its grandiosity is both impressive and slightly eccentric — a unique Cebu attraction. Continue to Tops Lookout, the highest accessible viewpoint above Cebu City at 600m. The panorama encompasses the entire metropolitan area, the harbour, Mactan Island, Olango Island, and on clear days Bohol and Leyte on the horizon.",
+            "tip": "Late afternoon is the best time for Tops — the air is cooler and the city below starts to light up as the sun drops. A cold drink at the summit cafe while watching the sunset is a highlight."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cebu Nightlife",
+            "text": "Descend from the mountains for an evening exploring Cebu's diverse nightlife. The Mango Square area in the city centre has bars and clubs, while IT Park has a more modern scene with craft beer taprooms and rooftop venues. For live music, check out The Tinder Box or Handuraw Pizza. Cebu has a thriving local music scene — OPM (Original Pilipino Music) bands perform at venues across the city, and the energy of a Friday night in Cebu is infectious and welcoming.",
+            "tip": "IT Park is the safest and most modern nightlife area. Mango Square is more traditional but requires normal city-level caution. Grab transport home after a late night."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Kawasan Falls Canyoneering",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive South for Canyoneering",
+            "text": "Leave Cebu City by 5am for the 3-hour drive south to Badian. Kawasan Falls canyoneering is the most popular adventure activity on the island and for good reason — the 3–4 hour guided descent through a river canyon involves cliff jumping (3–15m heights, all optional), swimming through turquoise pools, sliding down natural rock chutes, and floating through rapids surrounded by towering limestone canyon walls and tropical jungle. The water is crystal clear and the canyon scenery is breathtaking.",
+            "tip": "Book with a licensed operator — costs 1,500–2,500 PHP including guide, helmet, and life vest. Wear shoes that can get wet (no flip-flops). Waterproof your phone or leave it with the guide."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kawasan Falls",
+            "text": "The canyoneering route ends at Kawasan Falls — a multi-tiered cascade plunging 40 metres into a massive turquoise pool. Swim in the cool, mineral-rich water, jump from the surrounding rocks, or take a bamboo raft directly under the thundering cascade for a natural massage. The main pool is deep, surrounded by jungle, and the colour of the water is almost unbelievable — a vivid turquoise caused by limestone minerals. Have lunch at a bamboo hut restaurant beside the falls while your adrenaline settles.",
+            "tip": "The bamboo raft under the falls costs 500 PHP for 15 minutes. The water pressure is powerful — hold on tight. It is one of the most exhilarating spa experiences you will ever have."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Continue to Moalboal",
+            "text": "Drive 40 minutes north to Moalboal and check into accommodation for the next day's marine adventures. Moalboal is a laid-back diving and beach town with a friendly backpacker vibe. Panagsama Beach is the social centre — a strip of dive shops, restaurants, and bars along the waterfront. Have dinner at one of the beachfront restaurants and watch the sunset over Tanon Strait. The atmosphere in Moalboal is distinctly more relaxed than Cebu City and the transition from urban to coastal is immediate.",
+            "tip": "Moalboal accommodation fills up on weekends — book in advance. Hostels on Panagsama Beach start from 400 PHP per night. The social hostel scene makes it easy to find dive and tour buddies."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Sardine Run & Pescador Island",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sardine Run at Panagsama",
+            "text": "Walk to Panagsama Beach and wade into the water for the famous Moalboal sardine run. Millions of sardines form a dense, swirling ball just metres from shore — the school is present year-round and is one of the most accessible major marine spectacles in the world. Snorkel directly into the sardine ball as millions of silver fish part around you in mesmerising synchronised waves. Sea turtles patrol through the sardines, feeding on the smaller fish. The experience of being surrounded by this moving, breathing mass of life is unlike anything else in the Philippines.",
+            "tip": "Enter the water before 8am for the best visibility and smallest crowds. No tour or boat is necessary — just a mask and snorkel from the beach. The sardines are usually within 20 metres of shore."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pescador Island Diving or Snorkelling",
+            "text": "Take a boat to Pescador Island, a tiny uninhabited island 3km offshore that is widely considered one of the best dive and snorkel sites in the Visayas. The island is surrounded by a coral wall that drops into deep blue water, attracting large pelagic fish, reef sharks, turtles, and massive schools of jack and barracuda. The famous Cathedral — an underwater cave formation — is a highlight for certified divers. Even snorkelling the surface above the wall provides excellent sightings of turtles, reef fish, and the dramatic depth below.",
+            "tip": "Pescador Island boat trips cost 500–1,000 PHP per person from Panagsama Beach. For divers, a 2-tank dive including Pescador costs 2,500–3,500 PHP. Book with a reputable dive shop."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Moalboal Beach Bars",
+            "text": "Spend the evening on Panagsama Beach, Moalboal's social hub. The strip of restaurants and bars along the waterfront serves fresh seafood, Filipino dishes, and international food at very reasonable prices. The sunset over Tanon Strait is beautiful and the beachfront bars fill with divers, backpackers, and travellers sharing stories from the day. The nightlife is mellow but social — Chili Bar and Pleasure is popular for cocktails and live music on weekends.",
+            "tip": "Moalboal nightlife is relaxed and friendly. Most bars close by midnight. The community is tight-knit — by your second evening you will recognise faces and feel like a temporary local."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Turtle Snorkelling & White Beach",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Turtle Encounters at Tongo Point",
+            "text": "Snorkel at Tongo Point along the Moalboal coastline where green sea turtles feed on seagrass beds in shallow water. The turtles are habituated to snorkellers and continue feeding as you float nearby — gentle, unhurried encounters with these ancient marine reptiles are virtually guaranteed. Multiple turtles are often visible simultaneously. The reef along this stretch also has excellent coral cover with colourful soft corals and schools of anthias, butterflyfish, and the occasional giant frogfish.",
+            "tip": "Turtles are most active feeding in the early morning. Maintain a respectful 2-metre distance — do not touch, chase, or ride the turtles. Reef-safe sunscreen only."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "White Beach & Relaxation",
+            "text": "Head to White Beach on the southern end of Moalboal — a stretch of genuine white sand (rare on Cebu's rocky coastline) with calm, clear water and a relaxed atmosphere. The beach has sunbeds, small restaurants, and coconut vendors, and is significantly less crowded than equivalent beaches in popular tourist destinations. Swim, sunbathe, or simply enjoy a slow afternoon watching fishing boats cross the strait. This is the balance to the adrenaline of canyoneering and the underwater intensity of the sardine run.",
+            "tip": "White Beach is a 10-minute motorbike ride from Panagsama. A trike costs 50–100 PHP each way. The beach is busiest on weekends — visit on a weekday for the most space."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Seafood Dinner & Stargazing",
+            "text": "Arrange a seafood dinner at one of Moalboal's beachfront restaurants — fresh grilled squid, garlic butter shrimp, and sinigang (sour fish soup) are highlights. After dinner, walk to a dark section of beach away from the restaurant lights and look up — Moalboal has significantly less light pollution than Cebu City and the night sky over the strait is full of stars. If the phosphorescence is active, trailing your hand through the water produces glowing blue sparks of bioluminescence.",
+            "tip": "Ask your accommodation about night snorkelling — the sardine run at night with a torch is a completely different and eerily beautiful experience as the sardines reflect the light."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Return to Cebu & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "One Last Sardine Run or Dive",
+            "text": "If you cannot get enough of the sardine run, take one final morning snorkel — the experience is slightly different each time depending on light, current, and the position of the sardine ball. For divers, a morning dive at one of Moalboal's excellent house reefs or a return to Pescador Island is a fitting way to close out your Cebu underwater adventures. Say goodbye to Moalboal's friendly diving community and begin the drive back to Cebu City.",
+            "tip": "Check out of your accommodation by mid-morning and enjoy a final breakfast on Panagsama Beach before the 3-hour drive back to the city or airport."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Souvenir Shopping & Packing",
+            "text": "Back in Cebu City, pick up last-minute souvenirs. Cebu's must-buy items include dried mangoes (7D and Profood brands are the best), lechon vacuum-packed for travel (available at Zubuchon), tablea (artisan chocolate tablets), and guitars from Mactan — Cebu is the guitar-making capital of the Philippines. The Ayala Center Cebu and SM City Cebu have wide selections of Filipino products and souvenirs in one convenient location.",
+            "tip": "Dried mangoes are available at supermarkets for much less than airport and souvenir shop prices. Buy in bulk at SM or Ayala for the best deals."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Lechon & Departure",
+            "text": "End your Cebu adventure the way it began — with lechon. A final feast of crispy, succulent roast pig with puso rice, atsara, and a cold beer is the perfect Cebu farewell. The island delivers an extraordinary range of experiences — 16th-century colonial history, world-class canyoneering, one of the planet's most accessible marine spectacles, and food that ranks among the best in Southeast Asia. Transfer to Mactan-Cebu International Airport for your onward journey.",
+            "tip": "Mactan-Cebu Airport is modern and efficient. Cebu has direct flights to Manila, Singapore, Hong Kong, Seoul, Tokyo, and other Asian cities. Allow 1–1.5 hours for the transfer from the city."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Eat lechon at the source",
+      "text": "CnT Lechon in Cebu City sells by the kilo (500–600 PHP) — a feast for 2–3 people. Tourist-oriented lechon restaurants charge double for the same quality. Buy puso rice (15 PHP) from street vendors to complete the meal."
+    },
+    {
+      "title": "Stay in Moalboal hostels",
+      "text": "Panagsama Beach hostels offer dorm beds from 400 PHP per night with social atmospheres perfect for finding dive buddies. Splitting a private room costs 300–500 PHP per person — cheaper than most city hotels."
+    },
+    {
+      "title": "Snorkel the sardine run free",
+      "text": "The sardine run is accessible from shore with just a mask and snorkel. No boat, guide, or tour is necessary. Rent a snorkel set in Moalboal for 150 PHP per day or bring your own. This world-class experience is essentially free."
+    },
+    {
+      "title": "Use V-hires for south Cebu",
+      "text": "V-hire (shared vans) run from Cebu South Bus Terminal to Moalboal and Badian for 150–200 PHP — faster and more comfortable than buses at only slightly higher cost. Depart every 30 minutes when full."
+    },
+    {
+      "title": "Book canyoneering direct",
+      "text": "Walk-in canyoneering bookings in Badian cost 1,500–2,000 PHP versus 3,000–5,000 PHP when booked through Cebu City tour agencies. Your hostel in Moalboal can arrange it at local prices."
+    },
+    {
+      "title": "Eat at Larsian BBQ",
+      "text": "Larsian sa Fuente is the most authentic and cheapest place to eat in Cebu City. A full meal of grilled meat, rice, and drinks costs 100–200 PHP per person — better quality than many restaurants at a fraction of the price."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$8–15",
+      "midrange": "$20–50",
+      "splurge": "$70+",
+      "notes": "Hostels → guesthouses → boutique hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "$4–10",
+      "midrange": "$12–25",
+      "splurge": "$35+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$3–8",
+      "midrange": "$10–30",
+      "splurge": "$40+",
+      "notes": "Jeepneys/V-hire → Grab → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$25–60",
+      "splurge": "$80+",
+      "notes": "Free snorkelling → canyoneering → multi-dive day"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$1–5",
+      "midrange": "$5–10",
+      "splurge": "$10–20",
+      "notes": "Most historic sites are very affordable"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$21–58",
+      "midrange": "$72–175",
+      "splurge": "$235+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Most nationalities receive visa-free entry for 30 days, extendable at immigration offices",
+        "Mactan-Cebu International Airport (CEB) has direct flights from major Asian cities and domestic routes",
+        "Keep digital and physical copies of your passport, return ticket, and travel insurance"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance is essential. Cebu Doctors' University Hospital and Chong Hua Hospital provide good medical care",
+        "Canyoneering carries inherent risks — only use licensed operators with proper safety equipment",
+        "Sun protection is critical for all marine activities. Use reef-safe sunscreen and wear a rash guard"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Grab is the most reliable transport in Cebu City. Jeepneys cost 13 PHP for short routes",
+        "V-hire (shared vans) are the best option for south Cebu — faster than buses and reasonably priced",
+        "Motorbike rental in Moalboal costs 300–500 PHP per day and is the easiest way to explore the coast"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a Globe or Smart SIM at the airport for 4G data. Coverage is good in Cebu City and Moalboal",
+        "WiFi is available at most accommodation and cafes. Download offline maps for rural areas south of the city",
+        "The Grab app is essential for Cebu City transport. Google Maps works well for navigation throughout the island"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: PHP (Philippine Peso). Cards accepted at malls and hotels, cash essential for markets and street food",
+        "ATMs widely available in Cebu City. Withdraw cash before heading to Moalboal — ATM options are limited there",
+        "Tipping is appreciated — 10% at restaurants, 50–100 PHP for dive guides, round up for tricycle and Grab rides"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Reef shoes, rash guard, and a good snorkel mask are essential for both canyoneering and marine activities",
+        "Quick-dry clothing for the wet activities and light layers for the cooler highland areas above the city",
+        "A waterproof phone case or dry bag is highly recommended for canyoneering and boat trips"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Religious Sites",
+      "text": "Cebu is deeply Catholic — the Basilica del Santo Nino is a living place of worship, not just a tourist attraction. Dress modestly, speak quietly, and avoid photographing people during prayer. Remove hats inside churches."
+    },
+    {
+      "icon": "🌍",
+      "title": "Protect Marine Life",
+      "text": "Do not touch, stand on, or collect coral. Do not chase or ride sea turtles. Use reef-safe sunscreen. The sardine run and Moalboal reefs are ecological treasures — their continued existence depends on responsible visitor behaviour."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Cebuanos are generally friendly about photos but always ask first, especially at markets and in residential areas. At Carbon Market, ask vendors before photographing their stalls. Underwater, never disturb marine life for a photo."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Cebuano (Bisaya) is the local language but English is widely spoken. Learning basic Cebuano — maayong buntag (good morning), salamat (thank you), pila ni (how much) — earns genuine appreciation and warm smiles."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned dive shops, restaurants, and guesthouses. Eat at warungs and market stalls rather than international chains. Tip generously by local standards — your spending directly supports local families and communities."
+    },
+    {
+      "icon": "🕐",
+      "title": "Embrace the Pace",
+      "text": "Cebu runs on Filipino time — allow extra time for everything and avoid getting frustrated with delays. The warmth and friendliness of Cebuano people more than compensate for any scheduling looseness. Flexibility leads to the best experiences."
+    }
+  ],
+  "title": "Cebu Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Cebu guide for young travelers. Lechon, Kawasan Falls canyoneering, and the sardine run with 1, 3, and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/cebu-hero.webp",
+  "heroFlag": "🇵🇭",
+  "heroCountry": "Philippines",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Cebu",
+  "heroSubtitle": "Crispy lechon, thundering Kawasan Falls, and millions of sardines swirling in turquoise water — the Philippines' most exciting island adventure.",
+  "budgetIntro": "Daily costs per person in US dollars. Cebu is very affordable — these ranges cover the spectrum from budget backpacker eating street food to comfortable mid-range with guided activities.",
+  "culturalIntro": "Cebu blends 500 years of colonial history with vibrant modern culture and extraordinary natural wonders — approach every experience with respect and you will be rewarded with the warmest hospitality in Southeast Asia.",
+  "ctaCity": "Cebu",
+  "ctaText": "Find travel companions to explore Cebu together on roammate — split canyoneering costs, share dive trips, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "Adventure & Culture",
+    "Foodie",
+    "Dec – May Best"
+  ],
+  "defaultDays": 3
+}

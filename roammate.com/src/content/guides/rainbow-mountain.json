@@ -1,0 +1,334 @@
+{
+  "type": "city",
+  "slug": "rainbow-mountain",
+  "quickFacts": [
+    {
+      "icon": "⛰️",
+      "label": "Altitude",
+      "value": "5,200m (17,060ft)",
+      "detail": "One of the highest tourist treks in Peru"
+    },
+    {
+      "icon": "🕐",
+      "label": "Hike Time",
+      "value": "5–6 hours return",
+      "detail": "2–3 hours each way, moderate pace"
+    },
+    {
+      "icon": "💰",
+      "label": "Tour Cost",
+      "value": "$30–50 USD",
+      "detail": "Guided day trip from Cusco incl. transport"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Oct",
+      "detail": "Dry season, clearest skies for colour"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$25–50 USD",
+      "detail": "Budget traveler including tour & meals"
+    },
+    {
+      "icon": "🫁",
+      "label": "Acclimatise",
+      "value": "2–3 days in Cusco",
+      "detail": "Essential — altitude sickness is real"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Rainbow Mountain — The Full Day Hike",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Cusco to Trailhead at Dawn",
+            "text": "Your tour picks you up from Cusco between 3:30–4:30am for the three-hour drive south through the Andean highlands. The road climbs through sleeping villages and past herds of llamas and alpacas grazing on ichu grass. Breakfast is included at a small settlement near the trailhead at Quesiyuno (4,600m). The air is thin and cold — layer up with a fleece and windbreaker. The trailhead buzzes with other hikers, local guides, and horse handlers offering rides for those who struggle with the altitude. Use the bathroom here — there are none on the trail.",
+            "tip": "Take acetazolamide (Diamox) starting 24 hours before the hike. Chew coca leaves offered at breakfast — locals swear by them for altitude. Drink at least a litre of water before starting."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "The Hike to Vinicunca Summit",
+            "text": "The trail covers roughly 5km each way with 600m of elevation gain. The first hour follows a gentle river valley through rolling grasslands dotted with grazing alpacas — stunning but deceptively easy. The final kilometre steepens dramatically and at 5,000m+ every step feels like ten. Take it painfully slow — there is no shame in stopping every 50 metres. At the summit (5,200m), the payoff is extraordinary: sweeping bands of red, gold, turquoise, and lavender minerals stripe the mountainside like a painter dragged a brush across the earth. On a clear day, the snow-capped Ausangate peak towers behind.",
+            "tip": "Horses are available for $20–30 to ride most of the way — they stop 200m below the summit. Worth considering if you feel altitude symptoms. The colours are most vivid between 10am–1pm in direct sunlight."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Descent, Red Valley & Return",
+            "text": "After photos at the summit, take the alternative path down via the Red Valley (Valle Rojo) — a detour that adds 30 minutes but reveals an entire hillside of deep crimson earth that many consider more impressive than Rainbow Mountain itself. The descent is far easier and the views back toward the coloured ridgeline are spectacular. Lunch is served at the base — a hearty Andean soup and rice. The three-hour drive back to Cusco arrives around 5–6pm. Your legs will ache but the hot showers and cheap pisco sours on Cusco's Plaza de Armas are the perfect recovery.",
+            "tip": "The Red Valley detour is absolutely worth it and far less crowded. Bring snacks for the return drive — you will be ravenous. Most hostels in Cusco have hot showers and a bar."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Cusco Acclimatisation & Sacred Valley",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Cusco at Altitude",
+            "text": "Spend your first full day acclimatising in Cusco (3,400m). Walk slowly through the cobblestone streets of the historic centre — the Plaza de Armas with its colonial cathedral, the Inca stone walls on Hatunrumiyoc street (find the famous 12-angled stone), and the bohemian San Blas neighbourhood with artisan workshops and cafes. The key is to move gently — altitude sickness hits hard if you rush. Drink coca tea constantly, stay hydrated, and eat light meals. The San Pedro Market is a sensory overload of fresh juices, soups, and Andean ingredients.",
+            "tip": "Do not drink alcohol on your first day in Cusco. Eat at San Pedro Market — a huge bowl of caldo de gallina (chicken soup) for 8 soles ($2) is the perfect altitude food."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sacsayhuaman & City Views",
+            "text": "Walk uphill (slowly) to Sacsayhuaman, the massive Inca fortress overlooking Cusco. The zigzag walls built from boulders weighing up to 200 tonnes fit together without mortar — the engineering is mind-boggling. The site offers panoramic views over the red-roofed city and surrounding mountains. Continue to the Cristo Blanco statue for sunset views. The walk back downhill through narrow streets leads past local picanterias (traditional restaurants) serving cuy (guinea pig) and chicharron — adventurous eating for the brave.",
+            "tip": "Buy a Boleto Turistico ($40) which covers 16 archaeological sites including Sacsayhuaman. The walk uphill is steep — take a taxi up and walk down if you feel breathless."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cusco Nightlife & Early Rest",
+            "text": "Cusco has a surprisingly vibrant backpacker scene. Grab dinner at a local restaurant — lomo saltado (stir-fried beef) or alpaca steak are Peruvian staples, both around 20–30 soles ($6–8). The bars around Plaza de Armas serve pisco sours for 10–15 soles ($3–4). But do not overdo it — alcohol amplifies altitude effects dramatically. Get an early night because the Rainbow Mountain pickup is between 3:30–4:30am tomorrow. Set multiple alarms.",
+            "tip": "Book your Rainbow Mountain tour a day in advance from any agency on the plaza — shop around for $30–50 including transport, guide, breakfast, and lunch. Avoid the cheapest ($20) tours as they cut corners."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Rainbow Mountain Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn Drive to the Trailhead",
+            "text": "Pickup from your hostel between 3:30–4:30am for the three-hour drive south through the Andean highlands. Watch the sunrise paint the mountains gold as you climb past 4,000m. Breakfast at a settlement near the trailhead includes bread, coca tea, and scrambled eggs. The trailhead at Quesiyuno sits at 4,600m — already higher than any mountain in Europe. Layer up with thermals, fleece, and a windbreaker. The morning air is biting cold but you will warm up quickly once walking.",
+            "tip": "Wear layers you can easily remove — the temperature swings from freezing at the start to warm in direct sun at the summit. Bring sunscreen and sunglasses — UV radiation at 5,000m is intense."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Summit & Red Valley",
+            "text": "The hike follows a gentle valley before a steep final push to 5,200m. Take each step deliberately — rushing at this altitude causes nausea, headaches, and worse. At the summit, the rainbow-striped mountainside spreads before you in bands of red iron, yellow sulfur, turquoise copper, and lavender clay. It looks unreal. Spend 20–30 minutes at the top for photos, then descend via the Red Valley — a hidden detour where entire hillsides glow deep crimson. Most hikers miss this because guides do not always mention it — insist on taking this route down.",
+            "tip": "Ask your guide specifically about the Red Valley (Valle Rojo) descent before the hike starts. Some budget tours skip it. Bring cash for horse rental ($20–30) in case the altitude hits hard."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Recovery in Cusco",
+            "text": "Arrive back in Cusco by 5–6pm exhausted but euphoric. Your legs will feel like lead and the altitude will have drained you. Head straight to a hot shower, then treat yourself to a proper meal — Cusco has excellent restaurants at backpacker prices. A massage at one of the spas near the plaza ($15–20/hour) works wonders on tired muscles. The city looks magical at night with the cathedral lit up and the streets buzzing with travelers sharing stories of their mountain conquests.",
+            "tip": "Hydrate aggressively after the hike — at least 2–3 litres. A coca tea before bed helps with sleep at altitude. Rest up for the Sacred Valley tomorrow."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Sacred Valley & Ollantaytambo",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Pisac Ruins & Market",
+            "text": "Take a colectivo (shared van, 5 soles) to Pisac in the Sacred Valley. The Inca ruins perched on the mountainside above the town are spectacular and far less crowded than Machu Picchu. Terraced agricultural platforms cascade down the hillside with views across the entire valley. Below, the Pisac Market (especially busy on Tuesdays, Thursdays, and Sundays) sells handwoven textiles, ceramics, and alpaca wool clothing at prices far below Cusco. Bargain gently — start at half the asking price.",
+            "tip": "Visit the ruins first (included in Boleto Turistico) then the market. Colectivos depart from Cusco's Puputi street — 1 hour, 5 soles. The ruins require a 30-minute climb from town."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ollantaytambo Fortress",
+            "text": "Continue by colectivo to Ollantaytambo (30 minutes from Pisac). This living Inca town still uses the original stone water channels and street layout from 600 years ago. The fortress-temple complex towers above the town — climb the steep terraces to the unfinished Sun Temple at the top for breathtaking views of the valley and the massive stone quarry across the river. The town itself is charming with narrow streets, traditional restaurants, and a relaxed vibe away from Cusco's tourist intensity.",
+            "tip": "Ollantaytambo is also the launch point for the train to Machu Picchu. If continuing to Machu Picchu, spend the night here instead of returning to Cusco — trains depart early morning."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Cusco or Onward",
+            "text": "Take a colectivo back to Cusco (2 hours, 10 soles) arriving by evening. Alternatively, spend the night in Ollantaytambo if you are heading to Machu Picchu the next day — hostels here cost $8–15 and the town is peaceful at night. Back in Cusco, celebrate your three days of Andean adventure with a farewell dinner. The Mercado San Pedro closes by 6pm but the restaurants around the plaza serve until late. Reflect on the fact that you hiked to 5,200m and survived — not everyone can say that.",
+            "tip": "If heading to Machu Picchu, book train tickets in advance on PeruRail or Inca Rail — they sell out. The cheapest option is the Expedition class at around $60 each way."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Shop around for tours",
+      "text": "Tour agencies on every corner in Cusco sell Rainbow Mountain trips for $30–50. The cheapest ($20) tours use old minibuses, skip the Red Valley, and serve minimal food. The sweet spot is $35–45 — transport, English guide, breakfast, lunch, and Red Valley included."
+    },
+    {
+      "title": "Acclimatise properly",
+      "text": "Spend at least 2–3 full days in Cusco before attempting Rainbow Mountain. Altitude sickness at 5,200m is no joke — headaches, nausea, and vomiting are common. Coca tea is free everywhere. Diamox from pharmacies costs 2 soles per tablet."
+    },
+    {
+      "title": "Bring your own water and snacks",
+      "text": "Water and snacks cost 3–5x more at the trailhead. Buy a 2.5L bottle in Cusco for 3 soles ($0.80). Bring chocolate, energy bars, and fruit. You will burn serious calories at altitude and the included lunch is hours away."
+    },
+    {
+      "title": "Horse rental is negotiable",
+      "text": "Horses at the trailhead cost $20–30 to ride most of the route. Negotiate before mounting — agree on the price and the exact drop-off point. They stop about 200m below the summit so you still need to walk the steepest section."
+    },
+    {
+      "title": "Avoid rainy season",
+      "text": "November to March brings rain that turns the trail to mud and clouds that hide the colours entirely. Some travelers hike in rain and see nothing. April to October (dry season) gives the best chance of vivid colours and clear skies."
+    },
+    {
+      "title": "Cusco is cheap",
+      "text": "Hostels cost $5–12/night, meals at San Pedro Market are $1.50–3, and a pisco sour is $2–3. The biggest expense is the tours and activities. Book Machu Picchu, Rainbow Mountain, and Sacred Valley separately rather than as a package to save money."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$5–12",
+      "midrange": "$20–50",
+      "splurge": "$80+",
+      "notes": "Cusco hostels → boutique hotels → luxury lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$5–10",
+      "midrange": "$15–25",
+      "splurge": "$40+",
+      "notes": "Markets & street food → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$2–5",
+      "midrange": "$10–20",
+      "splurge": "$40+",
+      "notes": "Colectivos → shared tours → private driver"
+    },
+    {
+      "category": "Rainbow Mountain Tour",
+      "budget": "$30–40",
+      "midrange": "$45–60",
+      "splurge": "$100+",
+      "notes": "Group tour → small group → private guide with horse"
+    },
+    {
+      "category": "Horse Rental",
+      "budget": "$0",
+      "midrange": "$20–25",
+      "splurge": "$30+",
+      "notes": "Walk → partial ride → full ride to summit base"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$25–50",
+      "midrange": "$60–120",
+      "splurge": "$200+",
+      "notes": "Tour day is the big expense — other days in Cusco are cheap"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "⛰️",
+      "title": "Altitude & Health",
+      "items": [
+        "Rainbow Mountain summit is 5,200m — higher than Everest Base Camp. Acclimatise in Cusco (3,400m) for 2–3 days minimum before attempting the hike",
+        "Symptoms of altitude sickness: headache, nausea, dizziness, shortness of breath. Descend immediately if symptoms worsen. Diamox helps — start 24 hours before",
+        "Coca tea and coca leaves are legal and widely available in Cusco. They genuinely help with altitude symptoms. Chew leaves or drink tea constantly during your first days"
+      ]
+    },
+    {
+      "icon": "🚐",
+      "title": "Getting There",
+      "items": [
+        "All Rainbow Mountain tours depart Cusco between 3:30–4:30am. The drive is 3 hours each way via paved and dirt roads to the trailhead at Quesiyuno (4,600m)",
+        "Book tours from agencies on Cusco's Plaza de Armas or via your hostel. Prices: $30–50 for group tours, $80–150 for private tours. Most include transport, guide, breakfast, and lunch",
+        "The nearest airport is Cusco (CUZ). Direct flights from Lima (1 hour), La Paz, and Bogota. Airport to city centre: taxi $5–8 or colectivo $1"
+      ]
+    },
+    {
+      "icon": "👕",
+      "title": "What to Wear",
+      "items": [
+        "Temperatures range from -5°C at dawn to 15°C in midday sun. Dress in layers: thermal base, fleece mid-layer, windproof/waterproof outer shell",
+        "Sturdy hiking boots with ankle support essential — the trail is rocky and uneven. Broken-in boots only. Bring trekking poles if you have knee issues",
+        "Sunscreen SPF50+, UV-blocking sunglasses, and a sun hat are mandatory — UV radiation at 5,200m causes severe sunburn in minutes even on cloudy days"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "No phone signal at Rainbow Mountain or the trailhead. Download offline maps (Maps.me or Google Maps) before leaving Cusco",
+        "Cusco has good WiFi in hostels and cafes. Buy a local SIM (Claro or Movistar) for $3–5 with data for the Sacred Valley and city coverage",
+        "Bring a portable charger — your phone camera will drain battery fast in the cold. Cold temperatures reduce battery life by up to 50%"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: Peruvian Sol (PEN). 1 USD ≈ 3.7 soles. ATMs in Cusco dispense soles and some dispense USD. Withdraw in Cusco — no ATMs near the trailhead",
+        "Cash only for colectivos, markets, horse rental, and most small restaurants. Cards accepted at mid-range restaurants and hotels in Cusco",
+        "Tip your Rainbow Mountain guide 10–20 soles ($3–5) if they were good. Horse handlers expect a small tip (5–10 soles) as well"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Essentials",
+      "items": [
+        "Daypack with: 2L water, snacks, sunscreen, sunglasses, layers, rain jacket, camera, toilet paper (no facilities on trail), small cash for tips and horse rental",
+        "Leave valuables at your hostel in Cusco. Bring only what you need for the day hike. A dry bag or ziplock for electronics in case of rain",
+        "Ibuprofen for altitude headaches, Diamox if prescribed, hand warmers for the cold morning drive, and a buff or balaclava for wind at the summit"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🦙",
+      "title": "Alpaca Photo Etiquette",
+      "text": "Local Quechua women at the trailhead dress in traditional clothing and pose with baby alpacas for photos. They expect a tip of 1–2 soles per photo. Always ask before photographing and pay willingly — this is a legitimate income source in a region with few economic options."
+    },
+    {
+      "icon": "🍃",
+      "title": "Coca is Cultural",
+      "text": "Coca leaves have been chewed in the Andes for thousands of years as medicine, ceremony, and daily sustenance. Accepting coca tea or leaves offered by locals is a sign of respect. It is legal and culturally significant in Peru — very different from its processed derivative."
+    },
+    {
+      "icon": "🏔️",
+      "title": "Apus — Mountain Spirits",
+      "text": "Quechua people believe mountains are living spirits called Apus that protect communities. Ausangate, the peak behind Rainbow Mountain, is one of the most sacred Apus. Treat the mountain with respect — do not leave litter, do not deface rocks, and step quietly through the landscape."
+    },
+    {
+      "icon": "🙏",
+      "title": "Respect Local Communities",
+      "text": "The communities near Rainbow Mountain are among the poorest in Peru. Tourism has brought income but also disruption. Buy snacks and water from local vendors at the trailhead rather than bringing everything from Cusco. A few soles spent locally makes a real difference to families here."
+    },
+    {
+      "icon": "🗑️",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish including food wrappers and tissues. The trail has become increasingly littered as visitor numbers have surged. Some tours provide rubbish bags — use them. The coloured minerals are fragile geological formations that took millions of years to form."
+    },
+    {
+      "icon": "🐴",
+      "title": "Horse Welfare",
+      "text": "The horses and mules at Rainbow Mountain work hard at extreme altitude. If you ride, ensure your horse looks healthy and well-fed. Do not ride a horse that appears exhausted or injured. Some animal welfare organisations have raised concerns about overworked animals on this route."
+    }
+  ],
+  "title": "Rainbow Mountain Travel Guide 2026 | roammate",
+  "description": "Complete guide to hiking Rainbow Mountain (Vinicunca) near Cusco, Peru. Altitude tips, tour costs, Red Valley detour, and what to expect at 5,200m. Plan your trip with roammate.",
+  "heroImage": "/images/guides/rainbow-mountain-hero.webp",
+  "heroFlag": "🇵🇪",
+  "heroCountry": "Peru",
+  "heroRegion": "South America",
+  "heroCity": "Rainbow Mountain",
+  "heroSubtitle": "A kaleidoscope of colour at 5,200 metres — mineral-striped ridgelines in red, gold, and turquoise painted by millions of years of geology.",
+  "budgetIntro": "Costs per person in USD. The Rainbow Mountain tour is the main expense — Cusco itself is one of the cheapest cities in South America for backpackers.",
+  "culturalIntro": "Rainbow Mountain sits in the heart of Quechua-speaking Andean communities. Respect for the land, the people, and the ancient traditions of the highlands goes a long way.",
+  "ctaCity": "Rainbow Mountain",
+  "ctaText": "Find travel companions for the hike, share tour costs, and connect with fellow adventurers heading to Cusco and the Sacred Valley on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "1-Day Hike",
+    "5,200m Altitude",
+    "3hrs from Cusco",
+    "Apr – Oct Best"
+  ],
+  "defaultDays": 1
+}

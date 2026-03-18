@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "cusco",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "PEN (Sol)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Spanish / Quechua",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "PET (UTC-5)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "May – Sep",
+      "detail": "Dry season, clear skies"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$25–55 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "90–183 days visa-free",
+      "detail": "Most nationalities — check before travel"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Cusco City Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Plaza de Armas & Cathedral",
+            "text": "Begin at Plaza de Armas, the stunning central square flanked by colonial arcades, the Cathedral, and the Jesuit Church of La Compañía. The morning light catches the stone facades beautifully and the square is relatively quiet before the tour groups arrive. The Cathedral houses an impressive collection of Cusqueña School paintings and a silver-covered altar. Walk the surrounding streets to see the famous Inca stone walls — the 12-angled stone on Hatunrumiyoc street is the most celebrated example of precision Inca masonry.",
+            "tip": "Buy the Boleto Turístico ($40) which covers 16 sites including Sacsayhuamán, museums, and Sacred Valley ruins — essential if you plan to visit multiple sites."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "San Pedro Market & San Blas",
+            "text": "Head to Mercado San Pedro, a bustling covered market where locals shop for everything from fresh produce to medicinal herbs. Try a fresh juice for 3 soles and a bowl of caldo de gallina (chicken soup) for 8 soles. After lunch, climb the steep cobblestone streets to San Blas, Cusco's artisan quarter with galleries, ceramic workshops, and boutique cafes. The Plazoleta de San Blas offers views down over the terracotta rooftops and the church contains an extraordinary carved wooden pulpit.",
+            "tip": "San Pedro Market is where locals eat — the juice stalls and soup counters inside offer the best value food in Cusco. Point at what looks good and sit down."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sacsayhuamán at Sunset",
+            "text": "Walk or taxi uphill to Sacsayhuamán, the massive Inca fortress overlooking the city. The zigzag walls are built from limestone blocks weighing up to 200 tonnes, fitted without mortar with razor-thin precision. The site is spectacular at sunset when the golden light hits the stone and the city of Cusco spreads out below. The grassy terraces are perfect for sitting and watching the light change. After dark, walk back down to the plaza for dinner and a pisco sour at one of the balcony restaurants.",
+            "tip": "Sacsayhuamán is a 20-minute uphill walk from the plaza at 3,700m — take it slowly. The altitude makes even gentle climbs exhausting on your first day."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Plaza de Armas, San Pedro & San Blas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Plaza de Armas & Inca Walls",
+            "text": "Start at Plaza de Armas where the colonial Cathedral and La Compañía church face each other across the square that was once the ceremonial heart of the Inca Empire. Explore the surrounding streets to find the famous Inca walls — massive stones fitted with millimetre precision, the foundations of colonial buildings built directly on top. The 12-angled stone on Hatunrumiyoc street is the most visited example. Cusco's stone streets and terracotta rooftops are beautiful in the early morning light before the crowds arrive.",
+            "tip": "Spend your first day acclimatising — Cusco is at 3,400m and altitude sickness is very common. Drink coca tea, eat light meals, and avoid alcohol and strenuous activity."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "San Pedro Market & Chocolate Museum",
+            "text": "Explore Mercado San Pedro, the vibrant central market where Cusqueños shop for everything from fresh cheese and dried herbs to alpaca clothing and medicinal plants. Eat lunch at the market counters — caldo de gallina, lomo saltado, or ají de gallina for under 10 soles. After lunch, visit the ChocoMuseo near the plaza for a free chocolate-making workshop using Peruvian cacao. Browse the artisan shops along Cuesta San Blas as you climb towards the San Blas neighbourhood.",
+            "tip": "Coca tea (mate de coca) is freely available everywhere in Cusco — it genuinely helps with altitude acclimatisation and is perfectly legal in Peru."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "San Blas & Pisco Sour",
+            "text": "Wander the steep cobblestone streets of San Blas, Cusco's artisan quarter with workshops, galleries, and intimate restaurants tucked into colonial courtyards. The Plazoleta de San Blas is a lovely square to sit and watch the evening light. End the day with a pisco sour at a balcony bar overlooking Plaza de Armas — the classic Peruvian cocktail made with pisco, lime, egg white, and bitters is the perfect sundowner. Museo del Pisco on the plaza offers excellent tastings.",
+            "tip": "Pisco sour hits harder at altitude — limit yourself to one or two on your first evening. Dehydration from the altitude compounds the effect of alcohol."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Sacsayhuamán, Qenqo & Tambomachay",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sacsayhuamán Fortress",
+            "text": "Walk or taxi uphill to Sacsayhuamán, the enormous Inca fortress complex overlooking Cusco. The zigzag walls stretch over 600 metres and are built from limestone blocks weighing up to 200 tonnes, fitted together without mortar so precisely that a sheet of paper cannot slide between them. The engineering feat remains unexplained — how the Inca moved and shaped these massive stones at 3,700m altitude without wheels or iron tools is one of archaeology's great mysteries. The panoramic view of Cusco from the fortress walls is stunning.",
+            "tip": "Arrive early — Sacsayhuamán gets busy by 10am with tour groups. The Boleto Turístico is required for entry. Bring water and sun protection."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Qenqo, Puka Pukara & Tambomachay",
+            "text": "Continue uphill to the trio of smaller Inca sites above Cusco. Qenqo is a carved limestone outcrop with an underground chamber used for ceremonial purposes — the zigzag channels carved into the rock were likely used for chicha (corn beer) offerings. Puka Pukara was a military checkpoint or rest stop on the road to the Sacred Valley. Tambomachay is a beautifully engineered water temple where natural springs still flow through carved stone channels exactly as the Inca designed them centuries ago. All three are covered by the Boleto Turístico.",
+            "tip": "The walk between the four sites above Cusco takes 2-3 hours at altitude. Carry snacks and water. The uphill sections between Qenqo and Tambomachay are the most demanding."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Peruvian Dinner & Nightlife",
+            "text": "Return to central Cusco for dinner at one of the city's excellent restaurants. Try cuy (roast guinea pig) — Cusco's signature dish and a pre-Inca delicacy — or alpaca steak, which is lean, tender, and surprisingly delicate. The restaurant scene in Cusco ranges from $3 market meals to world-class fine dining. After dinner, explore the nightlife on Calle Procuradores — known locally as \"Gringo Alley\" — where bars and clubs cater to the international backpacker crowd with salsa nights and live music.",
+            "tip": "Cuy is traditionally served whole. If the presentation is too confronting, many restaurants offer cuy in a casserole or deconstructed form that is more approachable."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Sacred Valley: Pisac & Ollantaytambo",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Pisac Ruins & Market",
+            "text": "Take a colectivo from Cusco to Pisac in the Sacred Valley (1.5 hours, 10 soles). The Inca ruins of Pisac sit high above the town — a vast complex of terraces, temples, and an Inca cemetery carved into the mountainside with over 1,000 tombs. The scale is breathtaking and the site receives a fraction of the visitors that Machu Picchu sees. On Sundays, the Pisac market fills the main square with textiles, ceramics, and produce from surrounding communities. The Sacred Valley sits at 2,900m — noticeably lower and warmer than Cusco.",
+            "tip": "The Pisac ruins require a steep 1-hour climb or you can take a taxi to the top entrance and walk down. The Sunday market is the most vibrant, but a smaller market runs daily."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ollantaytambo Fortress",
+            "text": "Continue by colectivo to Ollantaytambo, a living Inca town where the original stone channels still carry water through the narrow streets. Climb the steep terraces to the fortress at the top — an unfinished Inca temple complex where massive pink granite blocks were transported from a quarry 6km away on the opposite side of the valley. The Wall of Six Monoliths at the summit is extraordinary, and the views down over the valley and town are among the finest in the region. This was the site of the Inca's only military victory against the Spanish conquistadors.",
+            "tip": "Ollantaytambo is the usual starting point for the Inca Trail and the train to Machu Picchu. The town has good accommodation if you want to stay overnight rather than return to Cusco."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Cusco",
+            "text": "Take a colectivo back to Cusco through the Sacred Valley as the late afternoon light turns the terraced hillsides golden. The journey passes through small Andean villages and agricultural communities where traditional farming methods persist unchanged. Arrive back in Cusco for a final evening exploring the city's restaurant scene. Try causa (layered potato and seafood terrine) or anticuchos (grilled beef heart skewers) — both are classic Peruvian dishes best eaten in Cusco's lively market and street food scene.",
+            "tip": "Colectivos to Cusco depart from the main road in Ollantaytambo when full — the last reliable departures are around 6pm. The journey takes about 2 hours."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Plaza de Armas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrival & Acclimatisation",
+            "text": "Arrive in Cusco and take it extremely easy. At 3,400m, altitude sickness affects most visitors in the first 24-48 hours. Check into your accommodation, drink coca tea, and walk slowly around the immediate area. The cobblestone streets and terracotta rooftops are beautiful even from a gentle stroll. Let your body adjust before attempting anything strenuous. Rest is more valuable than sightseeing on this first half-day.",
+            "tip": "Do not book any treks or strenuous activities for your first day in Cusco. Altitude sickness symptoms include headache, nausea, and breathlessness — rest and hydrate."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Plaza de Armas & Gentle Walk",
+            "text": "After resting, take a gentle walk to Plaza de Armas. The grand square was the ceremonial centre of the Inca Empire and is now flanked by colonial arcades, the Cathedral, and La Compañía church. Sit on a bench and take in the scene — llama herders pose for photos, vendors sell artisan crafts, and the surrounding mountains frame the colonial buildings. Walk the nearby streets to see the famous Inca stone walls, including the 12-angled stone on Hatunrumiyoc. Keep the pace very slow.",
+            "tip": "Buy the Boleto Turístico ($40) for access to 16 sites across Cusco and the Sacred Valley — it pays for itself after visiting 2-3 major sites."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Coca Tea & Light Dinner",
+            "text": "Keep your first evening mellow. Find a quiet restaurant near the plaza for a light dinner — caldo de gallina (chicken soup) is traditional and gentle on the stomach at altitude. Continue drinking coca tea throughout the evening. Many restaurants on the plaza have balcony seating with views over the illuminated Cathedral and the mountain skyline. Early to bed is the best strategy for your first night at altitude.",
+            "tip": "Avoid alcohol, heavy meals, and smoking on your first night at altitude. Your body needs all its oxygen for acclimatisation."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "San Pedro Market & San Blas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mercado San Pedro",
+            "text": "Spend the morning exploring Mercado San Pedro, Cusco's central market. The market is a sensory overload of colour, smell, and sound — stalls sell everything from fresh tropical fruit and Andean grains to dried llama foetuses used in traditional rituals. Eat breakfast at the market: fresh juice (3 soles), bread with cheese, and caldo de gallina. The juice stalls blend any fruit you point at. The market is where Cusqueños shop and eat — the most authentic food experience in the city.",
+            "tip": "The market can be overwhelming — keep valuables secure and your bag in front of you. The food stalls upstairs are cleaner and less crowded than the ground floor."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "San Blas Artisan Quarter",
+            "text": "Climb the steep cobblestone streets to San Blas, Cusco's bohemian artisan neighbourhood. The narrow lanes are lined with galleries, ceramic workshops, and boutique cafes converted from colonial houses. Visit the San Blas church to see the extraordinary carved wooden pulpit, believed to have been crafted from a single cedar trunk. The Plazoleta de San Blas is a charming square for people-watching and the surrounding streets have the best independent shops in Cusco for handmade ceramics, textiles, and silver jewellery.",
+            "tip": "The uphill walk to San Blas is steep at 3,400m — take it very slowly and stop to catch your breath. The altitude makes even a five-minute climb feel demanding."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Pisco Sour & Peruvian Cuisine",
+            "text": "Return to the plaza area for dinner and a pisco sour at one of the balcony restaurants. Cusco's food scene is one of Peru's best — try lomo saltado (stir-fried beef with fries and rice), ají de gallina (creamy chicken in walnut sauce), or alpaca steak. The Museo del Pisco offers excellent tastings and cocktails. After dinner, stroll the illuminated streets around the plaza, which are safe and atmospheric in the evening.",
+            "tip": "Limit alcohol at altitude — one pisco sour has roughly the effect of two at sea level. Dehydration from altitude compounds the impact."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Sacsayhuamán & Inca Sites",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sacsayhuamán Fortress",
+            "text": "Walk uphill to Sacsayhuamán, the colossal Inca fortress above Cusco. The zigzag walls contain limestone blocks weighing up to 200 tonnes, fitted with impossible precision using no mortar. The scale is staggering — the walls stretch 600 metres and the engineering defies explanation given the tools available. The panoramic view of Cusco below is one of the finest vistas in Peru. Morning light is best for photographs and the site is quieter before the 10am tour group arrival.",
+            "tip": "The 20-minute uphill walk from the plaza is demanding at 3,700m. Take frequent breaks and drink water. Alternatively, take a taxi up and walk down."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Qenqo, Puka Pukara & Tambomachay",
+            "text": "Continue to the trio of Inca sites above the city. Qenqo is a carved limestone outcrop with an underground ceremonial chamber and zigzag channels for chicha offerings. Puka Pukara served as a military checkpoint on the road to the Sacred Valley. Tambomachay is an elegant water temple where natural springs still flow through stone channels as the Inca engineers designed them. The walk between sites passes through eucalyptus forest and grassland with views across the valley.",
+            "tip": "All four sites above Cusco can be visited in a half-day circuit. Start at Tambomachay (highest) and walk downhill through the others, ending at Sacsayhuamán."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cuy & Cusqueña Nightlife",
+            "text": "Tonight, try Cusco's most famous dish — cuy (roast guinea pig). It has been eaten in the Andes for thousands of years and is a genuine delicacy when well prepared, with crispy skin and tender meat. Several traditional restaurants in the centre specialise in cuy al horno. After dinner, explore the nightlife on Calle Procuradores where bars offer happy hour pisco sours, salsa nights, and live Andean music. The backpacker scene here is one of the most social in South America.",
+            "tip": "Cuy is traditionally served whole. If that is too confronting, ask for cuy chactado (fried and flattened) or cuy in a stew — both are delicious without the visual impact."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Sacred Valley: Pisac & Ollantaytambo",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Pisac Ruins & Market",
+            "text": "Take a colectivo to Pisac in the Sacred Valley (1.5 hours). The Inca ruins above the town are a vast complex of terraces, temples, and a mountainside cemetery with over 1,000 tombs — breathtaking in scale and far less crowded than Machu Picchu. The Sacred Valley sits at 2,900m, noticeably warmer and lower than Cusco. On Sundays, the Pisac market fills the square with textiles, ceramics, and highland produce. The ruins require a steep climb or a taxi to the top entrance.",
+            "tip": "Take a taxi to the top of the Pisac ruins and walk down through the terraces — much easier than climbing up, and the views unfold beautifully as you descend."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ollantaytambo Fortress & Town",
+            "text": "Continue to Ollantaytambo, a living Inca town with original stone water channels running through narrow streets. Climb the fortress terraces to the unfinished Temple of the Sun at the summit — massive pink granite monoliths transported from a quarry 6km away across the valley. The Wall of Six Monoliths is an engineering marvel and the views down over the town and valley are magnificent. Ollantaytambo was the only place the Inca successfully defeated the Spanish in battle.",
+            "tip": "The fortress steps are steep and exposed — take your time and use the handholds. The afternoon light on the pink granite is particularly beautiful."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sacred Valley Dinner & Return",
+            "text": "Eat dinner in Ollantaytambo before catching a colectivo back to Cusco. The town has several good restaurants serving trout from the Urubamba River, quinoa salads, and traditional Andean dishes. The cobblestone streets are charming in the evening and the fortress walls glow in the last light. The drive back to Cusco through the valley as darkness falls passes through agricultural communities with terraced hillsides that have been farmed since Inca times.",
+            "tip": "Last reliable colectivos to Cusco leave around 6pm. Alternatively, stay overnight in Ollantaytambo — it makes a good base for the Sacred Valley."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Moray Terraces & Maras Salt Mines",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Moray Agricultural Terraces",
+            "text": "Take a tour or taxi to Moray, a remote Inca site with extraordinary concentric circular terraces carved into a natural depression. Archaeologists believe it functioned as an agricultural laboratory — each terrace level creates a different microclimate, allowing the Inca to experiment with crops at various temperature zones. The deepest level is 30 metres below the rim and the temperature difference from top to bottom can reach 15°C. The geometric perfection of the circles against the green highlands is mesmerising.",
+            "tip": "Moray is remote and not on public transport routes. Join a group tour ($20-30) or hire a taxi for the day. The Boleto Turístico covers entry."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Maras Salt Mines (Salineras)",
+            "text": "Drive 7km to the Salineras de Maras, a mountainside covered in over 5,000 salt evaporation ponds fed by a natural saltwater spring. The ponds have been harvested since Inca times and are still worked by local families — each family owns and maintains their own terraces. The cascading white, pink, and brown pools against the red-brown mountain create one of the most photographed landscapes in Peru. You can buy bags of mineral-rich pink salt directly from the workers.",
+            "tip": "The salt mines charge a separate entry fee (10 soles) not covered by the Boleto Turístico. Visit in the afternoon when the sun illuminates the pools directly."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Cusco & Rest",
+            "text": "Return to Cusco through the Sacred Valley, stopping for panoramic views of the Urubamba River winding between the mountains. By now you should be well acclimatised and ready for the more demanding activities ahead. Have a relaxed dinner in the San Blas neighbourhood at one of the quiet courtyard restaurants. Try rocoto relleno — a stuffed hot pepper filled with minced meat and topped with melted cheese — or a hearty sopa criolla (spicy noodle soup).",
+            "tip": "If you are planning Rainbow Mountain on day 6, go to bed early and prepare layers, snacks, and water the night before. The pickup is usually around 4am."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Rainbow Mountain (Vinicunca)",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Pre-Dawn Drive to Vinicunca",
+            "text": "Depart Cusco at 4am for the 3-hour drive south to the trailhead of Vinicunca (Rainbow Mountain). The road climbs through remote Andean communities and alpaca herding land before reaching the starting point at 4,600m. The trek to the summit covers 5km with a gain of 500 metres, reaching 5,100m — one of the highest points most travellers ever stand. The striped mineral layers of the mountain — red, turquoise, yellow, lavender, and gold — were revealed by melting glaciers and are genuinely breathtaking.",
+            "tip": "Rainbow Mountain is at 5,100m — the altitude is extreme. Walk very slowly, rest often, and turn back if you feel seriously unwell. Altitude sickness at this elevation is dangerous."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Summit Views & Descent",
+            "text": "Reach the viewpoint at the summit and take in the surreal striped landscape stretching across the high Andes. On clear days, the Ausangate glacier (6,384m) looms behind — one of the most sacred mountains in Andean cosmology. Herds of llamas and alpacas graze the high plains below. The descent is easier but still demanding at altitude. Return to the bus for snacks and hot coca tea before the 3-hour drive back to Cusco, arriving in the late afternoon.",
+            "tip": "Bring warm layers (gloves, hat, fleece), sunscreen, snacks, and at least 2 litres of water. The temperature at 5,100m can be below freezing even with sunshine."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Recovery & Gentle Evening",
+            "text": "After the physical demands of Rainbow Mountain, spend the evening recovering. Take a hot shower, eat a hearty dinner, and rest. Many restaurants near the plaza serve comfort food — pizza, pasta, and steak alongside Peruvian dishes. The body needs calories and hydration after a day at extreme altitude. This is a good night to skip the nightlife and get an early rest.",
+            "tip": "Rainbow Mountain tours cost $15-25 from Cusco and include transport and breakfast. Quality varies — read reviews and choose an operator with good safety practices."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Qorikancha, Museums & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Qorikancha — Temple of the Sun",
+            "text": "Visit Qorikancha, the most important temple in the Inca Empire. Originally covered in gold sheets and filled with golden sculptures, it was stripped by the Spanish who built the Santo Domingo convent directly on top. The remaining Inca stone walls beneath the colonial structure are extraordinary — perfect coursework with no mortar, trapezoidal niches, and channels for gold offerings. The juxtaposition of Inca and colonial architecture in a single building is the most powerful symbol of the Spanish conquest in Peru.",
+            "tip": "Qorikancha is not covered by the Boleto Turístico — entry is 15 soles. Visit early morning when sunlight enters through the original Inca windows aligned with solstice positions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pre-Columbian Art Museum & Shopping",
+            "text": "Visit the Museo de Arte Precolombino (MAP), housed in a colonial mansion on a quiet plaza. The collection spans 3,000 years of Peruvian art — ceramics, textiles, gold, and silver from the Nazca, Moche, Chimú, and Inca civilisations. The curation is world-class and the building itself is beautiful. Afterwards, browse the quality artisan shops around the plaza for alpaca scarves, silver jewellery, and ceramics to take home. The shops near MAP are generally better quality than the market stalls.",
+            "tip": "Alpaca clothing varies enormously in quality — baby alpaca is the softest and most expensive. Check labels carefully as many cheaper items are synthetic blends."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Pisco & Departure",
+            "text": "End your Cusco week with a farewell dinner and pisco sour. By now you are acclimatised, well-fed, and carrying bags of alpaca clothing. The city rewards a slow approach — the deeper you go, the more layers of Inca, colonial, and contemporary culture reveal themselves. Cusco's airport is 15 minutes from the centre by taxi. If continuing overland, night buses to Puno (Lake Titicaca) and Lima depart from the Terminal Terrestre.",
+            "tip": "Cusco airport is at 3,400m and frequently experiences morning fog delays. Book afternoon flights if possible and confirm your departure the day before."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Eat at San Pedro Market",
+      "text": "Mercado San Pedro serves full meals for 6-10 soles ($1.50-2.50) and fresh juices for 3 soles. The market food stalls are where locals eat — the food is fresh, filling, and the cheapest option in the city centre."
+    },
+    {
+      "title": "Buy the Boleto Turístico",
+      "text": "The $40 tourist ticket covers 16 sites including Sacsayhuamán, Pisac, Ollantaytambo, and several museums. Individual entries to these sites cost more in total, so the combined ticket saves money if you visit 3+ sites."
+    },
+    {
+      "title": "Take colectivos not tours",
+      "text": "Shared minivans (colectivos) to the Sacred Valley cost 10-15 soles versus $40-60 for a guided tour. They depart from Cusco when full and drop you at the sites — much cheaper if you are happy exploring independently."
+    },
+    {
+      "title": "Stay near San Pedro",
+      "text": "Hostels around Mercado San Pedro and the lower streets offer dorm beds for 20-30 soles ($5-8). The plaza area charges 2-3x more for the same quality. A 5-minute walk saves significant money."
+    },
+    {
+      "title": "Free walking tours",
+      "text": "Free (tip-based) walking tours of Cusco depart daily from the plaza. They cover the Historic Centre, Inca walls, and key churches with knowledgeable local guides. Budget $10-20 for a tip."
+    },
+    {
+      "title": "Cook at your hostel",
+      "text": "Most Cusco hostels have kitchens. Buy ingredients at San Pedro Market — fresh bread, avocados, cheese, and fruit cost a fraction of restaurant prices. Cooking one meal a day saves $5-10."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$5–12",
+      "midrange": "$20–50",
+      "splurge": "$80+",
+      "notes": "Dorm beds → private rooms → boutique hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "$6–12",
+      "midrange": "$15–30",
+      "splurge": "$40+",
+      "notes": "Market meals → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$2–8",
+      "midrange": "$10–25",
+      "splurge": "$30+",
+      "notes": "Colectivos → taxis → private transfers"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–15",
+      "midrange": "$20–50",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$40+",
+      "notes": "Boleto Turístico covers most sites"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$25–55",
+      "midrange": "$80–195",
+      "splurge": "$270+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Most nationalities receive 90-183 days visa-free on arrival in Peru",
+        "Keep passport copies — police occasionally check documents in tourist areas",
+        "Buy the Boleto Turístico ($40) for entry to 16 sites across Cusco and the Sacred Valley"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Altitude sickness is very common at 3,400m — acclimatise for 24-48 hours before trekking",
+        "Coca tea and coca leaves help with altitude symptoms and are legal in Peru",
+        "Travel insurance with altitude and evacuation coverage is essential for treks above 4,000m"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "The Historic Centre is compact and walkable — most sites are within 15 minutes of the plaza",
+        "Colectivos to the Sacred Valley depart from Calle Pavitos when full (10-15 soles)",
+        "Taxis within Cusco cost 5-10 soles — agree the price before getting in as there are no meters"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a Claro or Movistar SIM at the airport — 10 soles for basic data",
+        "WiFi is available in most hostels and cafes in the centre but often slow",
+        "Download offline maps before Sacred Valley and Rainbow Mountain trips — coverage is nonexistent outside towns"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: PEN (Sol). ATMs widely available; Visa and Mastercard accepted in tourist areas",
+        "Carry small bills — many colectivos, markets, and small shops cannot change 100-sol notes",
+        "Tipping: 10% at restaurants, $5-10 per day for trek guides, $3-5 for porters"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Layers are critical — temperatures swing 20°C between midday sun and evening frost",
+        "Warm jacket, hat, and gloves for Sacsayhuamán, Rainbow Mountain, and evening walks",
+        "Comfortable walking shoes with grip for cobblestones and Inca ruins; sunscreen and sunglasses for high UV"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Inca Heritage",
+      "text": "Cusco was the capital of the Inca Empire and remains deeply important to Quechua communities. Do not climb on Inca walls or remove stones. Treat archaeological sites with the same reverence you would give a cathedral. The Inca legacy is a living culture, not just ruins."
+    },
+    {
+      "icon": "🌍",
+      "title": "Responsible Tourism",
+      "text": "The tourism industry in Cusco has both benefits and costs. Choose locally-owned businesses, eat at the market, and hire local guides. Avoid \"voluntourism\" at orphanages. If trekking, ensure your operator pays porters fairly — the minimum porter wage is legally mandated."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals in traditional dress — many will expect a tip of 1-2 soles if you photograph them. Drone use is prohibited at all archaeological sites. Church photography rules vary — check before shooting inside."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language",
+      "text": "Spanish is the primary language in tourist Cusco, but Quechua is still widely spoken. Learn basic Quechua greetings: \"Allianchu\" (hello/how are you) and \"Sulpayki\" (thank you). Even a few words earn enormous warmth from local people."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Buy directly from artisans, eat at family-run restaurants, and choose community-based tourism in the Sacred Valley. Your money has the most positive impact when it goes directly to Quechua families rather than through international tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Altitude & Pace",
+      "text": "The altitude forces you to slow down — embrace it. Cusco rewards patience and presence. Rushing through the ruins misses the point entirely. Sit in the plaza, watch the light change on the stone walls, and let the history of this extraordinary city sink in gradually."
+    }
+  ],
+  "title": "Cusco Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Cusco guide for young travelers. Inca ruins, Sacred Valley, and Rainbow Mountain with 1, 3, and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/cusco-hero.webp",
+  "heroFlag": "🇵🇪",
+  "heroCountry": "Peru",
+  "heroRegion": "South America",
+  "heroCity": "Cusco",
+  "heroSubtitle": "The ancient capital of the Inca Empire at 3,400m — massive stone fortresses, colonial grandeur, and the gateway to Machu Picchu and the Sacred Valley.",
+  "budgetIntro": "Daily costs per person in US dollars. Cusco offers extraordinary value — world-class history and culture at backpacker-friendly prices, especially if you eat at markets and take colectivos.",
+  "culturalIntro": "Cusco is the living heart of Inca civilization — approach with reverence for the extraordinary culture that built these walls, and the Quechua communities that maintain the traditions today.",
+  "ctaCity": "Cusco",
+  "ctaText": "Find travel companions to explore Cusco together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "7-Day Highland",
+    "Cultural",
+    "May – Sep Best"
+  ],
+  "defaultDays": 3
+}

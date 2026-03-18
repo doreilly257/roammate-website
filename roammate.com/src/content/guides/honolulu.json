@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "honolulu",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "USD ($)",
+      "detail": "1 EUR ≈ $1.08"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Hawaiian",
+      "detail": "Pidgin English common locally"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "HST (UTC-10)",
+      "detail": "No daylight saving time"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Oct",
+      "detail": "24–30°C, dry season"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$110–170",
+      "detail": "Hostel, poke, bus"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ESTA / B1-B2",
+      "detail": "Same as US mainland"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Honolulu in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Diamond Head Sunrise Hike",
+            "text": "Start before dawn at Diamond Head State Monument ($5 per person, $10 parking). The 1.6-mile round-trip trail to the 763-foot volcanic crater summit takes about 45 minutes up. At the top, you'll see Waikiki Beach, the Pacific stretching to the horizon, and the Ko'olau Mountains behind the city. The sunrise from the summit pillbox is one of Hawaii's most iconic experiences. Descend and drive to Leonard's Bakery for hot malasadas ($1.50 each) — Portuguese doughnuts that are an Oahu tradition.",
+            "tip": "Diamond Head requires advance reservations at gostateparks.hawaii.gov. Book 2+ weeks ahead. The 6am slot gets sunrise without the midday heat."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Waikiki Beach & Poke Lunch",
+            "text": "Head to Waikiki Beach — the iconic stretch of sand with Diamond Head as a backdrop. The water is warm, calm, and perfect for swimming year-round. Try a surf lesson at one of the beachfront schools ($80–100 for 2 hours, boards and rash guard included). Lunch at Ono Seafood on Kapahulu Avenue — their poke bowls ($14–16) are widely considered the best on the island. Ahi shoyu poke over rice is the move. Or grab a plate lunch at Rainbow Drive-In ($10–12) — two scoops of rice, mac salad, and a protein.",
+            "tip": "Waikiki surf lessons are worth it — the waves are gentle and instructors get beginners standing on the first session. Book the morning for calmer water."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Ala Moana Sunset & Dinner",
+            "text": "Walk to Ala Moana Beach Park — a less-touristy local beach west of Waikiki with calm swimming, picnic areas, and stunning sunset views. The Magic Island lagoon at the park's east end is the perfect sunset spot. Dinner at Marukame Udon on Kuhio Avenue — watch noodles being hand-pulled as you wait in line. A bowl of fresh udon is $4–7 and the tempura add-ons ($1–2 each) are crispy perfection. End with shave ice from Matsumoto's ($4) — the Hawaiian version of a snow cone, far superior.",
+            "tip": "Ala Moana Beach Park at sunset is where locals go — fewer tourists, better vibes, and the same view of Diamond Head that Waikiki charges hotel prices for."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Diamond Head, Waikiki & Poke",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Diamond Head Sunrise",
+            "text": "Reserve the earliest slot at Diamond Head State Monument ($5 per person, reservations required at gostateparks.hawaii.gov). The 1.6-mile trail up the volcanic crater takes 45 minutes. At the summit, Waikiki sprawls below, the Pacific stretches endlessly, and the Ko'olau Mountains frame the city. The sunrise from the pillbox bunker is one of Hawaii's most iconic views. Descend and drive to Leonard's Bakery for hot malasadas ($1.50 each) — Portuguese doughnuts, fluffy, sugary, and addictive.",
+            "tip": "Book Diamond Head 2+ weeks ahead — it sells out daily. The 6am slot gets sunrise and avoids the brutal midday heat on the exposed trail."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Waikiki Beach & Surfing",
+            "text": "Waikiki Beach is warm, calm, and iconic — Diamond Head rising behind turquoise water. Take a surf lesson ($80–100 for 2 hours) at one of the beachfront schools — the waves here are gentle and instructors have beginners standing within 20 minutes. After surfing, walk Kalakaua Avenue past the Royal Hawaiian (the \"Pink Palace\") and Moana Surfrider (Waikiki's oldest hotel). Lunch at Ono Seafood on Kapahulu — ahi shoyu poke bowls ($14–16) that are the gold standard of Hawaiian poke.",
+            "tip": "Ono Seafood closes when they sell out (usually by 3pm). Go for lunch, not dinner. The spicy ahi poke is exceptional."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset & Local Eats",
+            "text": "Walk to Ala Moana Beach Park for sunset at Magic Island — a less-touristy lagoon with views across the harbor. The sky turns pink and orange as Diamond Head silhouettes. Dinner at Marukame Udon on Kuhio Avenue ($4–7 for hand-pulled noodles, $1–2 tempura add-ons) — the line looks long but moves fast. For drinks, walk to Kaimana Beach Hotel's Hau Tree for cocktails ($14–16) on a lanai overlooking the ocean — the same tree that Robert Louis Stevenson wrote under.",
+            "tip": "Marukame Udon's line wraps around the block at dinner — go at 2–3pm for near-instant seating. The curry udon is the sleeper hit."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Pearl Harbor & North Shore",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Pearl Harbor National Memorial",
+            "text": "Arrive at Pearl Harbor by 7am (free entry, parking free). The USS Arizona Memorial shuttle boat takes you to the sunken battleship where 1,177 crew members are still entombed — oil still leaks from the wreck 80+ years later. The museum and film are profoundly moving. Allow 2–3 hours. The USS Missouri ($35) is docked nearby — the deck where Japan signed the WWII surrender. The USS Bowfin submarine ($15) lets you walk inside a real WWII submarine.",
+            "tip": "Free timed-entry tickets at nps.gov/perl are essential — they release 60 days ahead and sell out immediately. Walk-ups have limited availability starting at 7am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "North Shore Drive",
+            "text": "Drive 45 minutes to the North Shore — Oahu's legendary surf coast. Stop at Dole Plantation ($8 garden tour, free to browse and buy) for a Dole Whip ($6) — the iconic pineapple soft serve. Continue to Haleiwa — a laid-back surf town with shave ice (Matsumoto's, $4), art galleries, and food trucks. Giovanni's Shrimp Truck ($15 garlic shrimp plate) is the most famous food truck on the island. In winter (Nov–Feb), watch 30-foot waves at Pipeline and Sunset Beach.",
+            "tip": "The North Shore is a 45-minute drive without traffic, 90 minutes in rush hour. Leave Pearl Harbor by 11am and take the H-2 freeway north."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Beach & Return",
+            "text": "Watch the sunset from Sunset Beach on the North Shore — the name is literal. In winter, pro surfers ride massive waves at the Banzai Pipeline while you watch from the sand. In summer, the water is calm enough for swimming and snorkeling. Drive back along Kamehameha Highway for the scenic coastal route. Dinner at Helena's Hawaiian Food near downtown Honolulu ($12–18) — James Beard Award-winning Hawaiian comfort food. The kalua pig and pipikaula (dried beef) are legendary.",
+            "tip": "Helena's Hawaiian Food closes at 7:30pm and is cash only. Arrive before 6pm to avoid the line. This is as authentic as Hawaiian food gets."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Hanauma Bay & Chinatown",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hanauma Bay Snorkeling",
+            "text": "Drive to Hanauma Bay Nature Preserve ($25 per person, reservations required at hanaumabaystatepark.com). This volcanic crater bay is one of the best snorkeling spots in the world — crystal-clear water, 400+ species of fish, sea turtles, and coral reefs. The mandatory educational video (9 minutes) before entering protects the reef. Snorkel rental is $20 at the beach. Arrive at your reserved 7am slot for the calmest water and least crowds. The bay is closed Mondays and Tuesdays for reef recovery.",
+            "tip": "Book Hanauma Bay 2+ weeks ahead — it sells out every day. The 7am slot is best for calm water and fish activity. Bring reef-safe sunscreen (Hawaii law)."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Chinatown & Downtown Honolulu",
+            "text": "Head to Honolulu's Chinatown — the oldest in Hawaii and one of the most authentic in the US. Walk Maunakea Street past herbal medicine shops, produce markets, and lei stands where fragrant plumeria and pikake garlands are made ($5–15). Lunch at Mei Sum for dim sum ($3–5 per dish) or The Pig and the Lady for modern Vietnamese ($16–24). Visit Iolani Palace ($25 guided tour) — the only royal palace in the US, where Hawaii's last queen was imprisoned. The Hawaii State Art Museum (free) is nearby.",
+            "tip": "Chinatown lei shops along Maunakea Street sell fresh flower leis starting at $5 — they make a beautiful, fragrant, and lightweight souvenir."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Luau or Beach Sunset",
+            "text": "For a classic Hawaiian evening, attend a luau — Paradise Cove ($110–180) is the most popular, with a beachside ceremony, pig roasting from the underground imu, hula dancing, and fire knife performances. For something less touristy, watch the sunset from Kaimana Beach (locals' secret at the quiet end of Waikiki) with a plate lunch from Rainbow Drive-In ($10–12). Or farewell drinks at House Without a Key at the Halekulani — live Hawaiian music, hula, and ocean views under a century-old kiawe tree.",
+            "tip": "House Without a Key at the Halekulani is the most magical bar in Honolulu — live steel guitar, hula dancer, and Diamond Head sunset. No cover, drinks from $16."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Diamond Head & Waikiki",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Diamond Head Sunrise Hike",
+            "text": "Reserve the earliest slot at Diamond Head State Monument ($5, reservations at gostateparks.hawaii.gov). The 1.6-mile crater trail takes 45 minutes to the summit at 763 feet. At the top: Waikiki sprawling below, the Pacific stretching to infinity, and the Ko'olau Mountains behind the city. The sunrise from the WWII pillbox bunker is Hawaii's most iconic viewpoint. Descend and drive to Leonard's Bakery for hot malasadas ($1.50) — Portuguese doughnuts that are an Oahu institution.",
+            "tip": "Book Diamond Head 2+ weeks ahead. The 6am slot catches sunrise without the midday heat that makes the exposed trail brutal."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Waikiki Beach & Surf Lesson",
+            "text": "Waikiki's gentle waves are perfect for learning to surf. Book a lesson ($80–100, 2 hours) from one of the beachfront schools — instructors have beginners standing in 20 minutes. Walk Kalakaua Avenue past the Royal Hawaiian hotel (\"Pink Palace\"), the historic Moana Surfrider, and Duke Kahanamoku's statue. Lunch at Ono Seafood on Kapahulu — ahi shoyu poke bowls ($14–16) are the island's gold standard.",
+            "tip": "Book morning surf lessons — water is calmer and less crowded. The afternoon trade winds create choppier conditions."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Magic Island Sunset",
+            "text": "Walk to Ala Moana Beach Park's Magic Island lagoon for sunset — a local favorite with unobstructed ocean views and fewer tourists than Waikiki. The sky turns impossible shades of pink and orange as Diamond Head silhouettes against the glow. Dinner at Marukame Udon ($4–7 hand-pulled noodles) or go upscale at MW Restaurant in the Kaka'ako neighborhood ($24–38 mains) — farm-to-table Hawaiian cuisine from chef Wade Ueoka.",
+            "tip": "Magic Island at sunset is where Honolulu locals go — bring a towel, sit on the rocks, and watch the sky. Friday evenings have the Ala Moana fireworks show."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Pearl Harbor & History",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Pearl Harbor National Memorial",
+            "text": "Arrive by 7am at Pearl Harbor (free entry, parking free). Free timed-entry tickets (nps.gov/perl) include the museum, film, and shuttle boat to the USS Arizona Memorial over the sunken battleship where 1,177 crew are still entombed. Oil still leaks from the wreck after 80+ years. The adjacent USS Missouri ($35) is where Japan signed the WWII surrender — you can stand on the exact spot. The USS Bowfin submarine ($15) lets you walk through a real WWII sub.",
+            "tip": "Pearl Harbor tickets release 60 days ahead and sell out immediately. Set a calendar reminder. Walk-up availability starts at 7am but is limited."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Iolani Palace & Downtown",
+            "text": "Drive to downtown Honolulu for Iolani Palace ($25 guided tour, $15 self-guided) — the only royal palace in the United States. Queen Liliuokalani was imprisoned here when the Hawaiian monarchy was overthrown in 1893. The palace has electricity before the White House did. Walk to the Kamehameha Statue and the Hawaii State Capitol. Lunch at Moku Kitchen in Kaka'ako ($14–22 mains) — brick-oven pizza and craft beer in a converted warehouse.",
+            "tip": "Iolani Palace guided tours ($25) are worth the upgrade — the docents tell the emotional story of the Hawaiian monarchy's fall with passion."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kaka'ako Art & Food",
+            "text": "Kaka'ako is Honolulu's emerging art and food district. Walk the streets around Auahi Street for massive murals from POW! WOW! Hawaii (annual mural festival). SALT at Our Kaka'ako is an outdoor complex with restaurants, breweries, and shops — Moku Kitchen, Highway Inn (Hawaiian food, $14–18), and Hana Koa Brewing ($7–9 pints). For cocktails, Bar Leather Apron in Chinatown is Honolulu's best cocktail bar (reservations recommended, drinks $16–20).",
+            "tip": "Kaka'ako's murals are best on foot. Park at SALT and walk the surrounding blocks — the art changes annually thanks to POW! WOW! Hawaii."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Hanauma Bay & East Side",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hanauma Bay Snorkeling",
+            "text": "Drive to Hanauma Bay ($25, reservations at hanaumabaystatepark.com). This volcanic crater bay has crystal-clear water, 400+ fish species, sea turtles, and coral reefs. Snorkel rental: $20. The mandatory 9-minute educational video protects the reef ecosystem. Arrive at your 7am slot for the calmest, clearest water. The inner reef is shallow and safe for beginners. The outer reef (deeper, stronger current) has larger fish and turtles. Closed Mondays and Tuesdays for recovery.",
+            "tip": "Book 2+ weeks ahead. Bring reef-safe sunscreen (Hawaii law requires it). The beach has no shade — rent an umbrella or bring a hat."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Southeast Coast Drive",
+            "text": "Continue driving east along the coast. Stop at the Halona Blowhole — a natural lava tube that shoots ocean water into the air. Beside it, Halona Cove (the \"From Here to Eternity\" beach) is a tiny hidden beach in a volcanic cove. Continue to Makapu'u Lookout for the best clifftop views on Oahu — the lighthouse trail (2 miles round trip, paved) rewards with whale-watching opportunities (Nov–Apr). Sandy Beach is popular with bodyboarders but has dangerous shore break.",
+            "tip": "Makapu'u Lighthouse Trail is paved and stroller-friendly but has no shade. Start early or go late afternoon. Whale watching from the trail (Dec–Mar) is incredible."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kailua Town",
+            "text": "Continue north to Kailua — a beach town on the windward side. Kailua Beach and Lanikai Beach are consistently rated among the best in the world — turquoise water, white sand, and the Mokulua Islands offshore. Walk Kailua town's main street for boutiques, cafes, and restaurants. Dinner at Buzz's Steakhouse on the beach ($20–35 mains) — a local institution since 1962. Drive back over the Pali Highway for stunning views of the windward coast from the Nu'uanu Pali Lookout.",
+            "tip": "Lanikai Beach has no facilities and limited street parking — go early. The Lanikai Pillbox Hike (1.8 miles) above the beach has jaw-dropping views."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "North Shore",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dole Plantation & Haleiwa",
+            "text": "Drive north to Dole Plantation ($8 garden tour, maze $8) — grab a Dole Whip ($6), the iconic pineapple soft serve. Continue to Haleiwa town — the North Shore's laid-back surf capital with art galleries, boutiques, and food trucks. Matsumoto's shave ice ($4) is a 70-year tradition — get it with azuki beans and condensed milk. Browse the surf shops for local board shapers and vintage Hawaiian shirts. The town has a relaxed energy that's the antithesis of Waikiki.",
+            "tip": "The Dole Plantation garden maze is the world's largest hedge maze — fun for 30 minutes. The pineapple garden tour explains Hawaii's plantation history."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Surf Beaches & Food Trucks",
+            "text": "Drive the North Shore beaches. In winter (Nov–Feb), Banzai Pipeline, Sunset Beach, and Waimea Bay have massive waves and pro surfers — watching from the beach is free and thrilling. In summer, the same beaches are calm enough for swimming. Lunch at Giovanni's Shrimp Truck ($15 garlic shrimp plate) — the most famous food truck on Oahu. Or try Kahuku Shrimp trucks further north — multiple competing trucks, all excellent. Ted's Bakery at Sunset Beach has legendary chocolate haupia cream pie ($5/slice).",
+            "tip": "Never turn your back on North Shore waves — even from the beach, winter swells can surge up the sand unexpectedly. Swim only where lifeguards are posted."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Turtle Bay Sunset",
+            "text": "Drive to Turtle Bay Resort on the North Shore's northeast tip — the beach and grounds are open to visitors. Walk the coastal trail to see Hawaiian green sea turtles resting on the beach (keep 10 feet away, it's law). The sunset from Turtle Bay is quieter and more dramatic than Waikiki — waves crashing on volcanic rock with no high-rises in sight. Dinner at the resort's Ola restaurant ($24–40 mains) or head back to Haleiwa for fish tacos at a food truck ($8–12).",
+            "tip": "Hawaiian green sea turtles (honu) are protected by law — maintain 10 feet distance. They're commonly seen at Laniakea Beach (Turtle Beach) along the drive."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Hiking & Windward Coast",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Manoa Falls Trail",
+            "text": "Hike Manoa Falls Trail (1.6 miles round trip, $5 parking) through a lush tropical rainforest to a 150-foot waterfall. The trail passes through bamboo groves, banyan trees, and ferns the size of cars. It's muddy — bring proper shoes. The falls are most dramatic after rain. This is the valley where Jurassic Park was filmed. Afterwards, drive to the Lyon Arboretum (free, donation suggested) — a 194-acre botanical garden with 5,000+ tropical plants.",
+            "tip": "Manoa Falls is best in the morning before afternoon clouds roll in. The trail is muddy year-round — waterproof hiking shoes or sandals with grip."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Windward Coast",
+            "text": "Drive over the Ko'olau Mountains via the Pali Highway, stopping at Nu'uanu Pali Lookout for one of Oahu's most dramatic views — 1,000-foot cliffs dropping to the windward coast. Continue to Kaneohe Bay for a kayak trip to the Kaneohe Sandbar ($30–40 rental) — a shallow sand flat in the middle of the bay where you can stand in knee-deep turquoise water surrounded by mountains. Lunch at Waiahole Poi Factory ($10–14) for authentic Hawaiian food — laulau, poi, and haupia.",
+            "tip": "The Kaneohe Sandbar appears at low tide — check the tide table and time your kayak trip accordingly. Morning tours have calmer water."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Helena's Hawaiian Food",
+            "text": "Drive back to Honolulu for dinner at Helena's Hawaiian Food ($12–18) — James Beard Award-winning Hawaiian comfort food in a no-frills setting. The kalua pig (cooked in an underground imu), pipikaula short ribs, and lomi salmon are legendary. Helena's is cash only and closes at 7:30pm — arrive before 6pm. After dinner, walk through Chinatown's bar scene — Tchin Tchin! for wine, Manifest for craft cocktails ($14), and Bar Leather Apron for world-class mixology (reservations, $16–20).",
+            "tip": "Helena's has been serving Hawaiian food since 1946. The pipikaula (dried beef) short ribs are the signature dish — smoky, sweet, and unique to Hawaii."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Chinatown, Beach & Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Chinatown Market Walk",
+            "text": "Walk Honolulu's Chinatown — the oldest in Hawaii. Maunakea Street is the heart: herbal medicine shops, produce markets, and lei shops where plumeria and pikake garlands are strung by hand ($5–15). Kekaulike Market has stalls selling tropical fruits, dried fish, and local snacks. Breakfast at Mei Sum for dim sum ($3–5 per dish) — a local institution. Then The Pig and the Lady for modern Vietnamese ($16–24) if you want something more creative. The Hawaii Theatre (1922) is worth peeking into.",
+            "tip": "Buy a fresh flower lei from one of the Maunakea Street shops — they're fragrant, beautiful, and the most Hawaiian souvenir you can carry."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bishop Museum",
+            "text": "Visit the Bishop Museum ($27) — Hawaii's largest museum and the definitive repository of Hawaiian and Pacific Island culture. The Hawaiian Hall has artifacts from pre-contact Hawaii including royal feather cloaks, wooden idols, and the genealogy of Hawaiian royalty. The Science Adventure Center has volcano and ocean exhibits. The planetarium ($6 add-on) shows the Hawaiian star navigation used by Polynesian voyagers. Allow 2–3 hours.",
+            "tip": "The Bishop Museum tells the story of Hawaiian culture better than any other institution. The Hawaiian Hall's three floors trace from gods to kings to modern Hawaii."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Luau or Sunset Drinks",
+            "text": "For a classic experience, attend a luau. Paradise Cove ($110–180) includes beachside ceremony, pig from the underground imu, hula, and fire knife dancing. For something more authentic, the Bishop Museum's occasional evening events feature genuine hula and chanting. For a quieter farewell, House Without a Key at the Halekulani has live Hawaiian music, a solo hula dancer, and Diamond Head sunset views under a century-old kiawe tree — no cover, drinks from $16. Pure aloha.",
+            "tip": "House Without a Key starts live music at 5:30pm — arrive at 5pm for a table with an unobstructed sunset view. It's Honolulu's most magical evening experience."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Last Beach Day & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lanikai or Kailua Beach",
+            "text": "Return to the windward side for one last perfect beach day. Lanikai Beach — consistently ranked among the world's best — has powdery white sand, turquoise water, and the Mokulua Islands offshore. It's a residential neighborhood beach with no facilities (no lifeguards, restrooms, or parking lots — park on side streets). Or Kailua Beach, which has facilities and kayak/paddleboard rentals ($30/half-day) to explore the offshore islands.",
+            "tip": "Lanikai is best before 10am — limited parking fills up fast. The Lanikai Pillbox Hike above the beach (1.8 miles) has the best aerial views of the Mokuluas."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Final Poke & Souvenirs",
+            "text": "One last poke mission — Ono Seafood for the classic, or Foodland (any location) for their surprisingly excellent supermarket poke counter ($12–14/lb). Pick up souvenirs: Kona coffee beans, macadamia nuts from Big Island Candies, Hawaiian sea salt, or a fresh plumeria lei from Chinatown. The Ala Moana Center has local brands like Tori Richard shirts and Honolulu Cookie Company ($12–20 boxes). Pack carefully — Hawaiian host chocolates make great gifts.",
+            "tip": "Hawaiian Airlines allows a free box of pineapple or macadamia nuts as a carry-on souvenir. Check current rules before heading to the airport."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Aloha",
+            "text": "For your last Honolulu sunset, walk to Waikiki's beachfront. The Duke Kahanamoku statue at sunset with surfers and Diamond Head in the background is the image of Hawaii. Farewell dinner at Side Street Inn on Hopaka Street — a local favorite for pupu (appetizers) like fried rice and kimchi fried pork chops ($14–22, meant for sharing). Or one final plate lunch at Rainbow Drive-In ($10–12). Say aloha — you'll be back. Everyone comes back.",
+            "tip": "Daniel K. Inouye International Airport (HNL) is 20 minutes from Waikiki by Uber ($20–28). Give 2.5 hours for mainland flights, 3 for international."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free beaches everywhere",
+      "text": "All Hawaiian beaches are public by law. Waikiki, Ala Moana, Kailua, and Lanikai are free. Only Hanauma Bay ($25) and Diamond Head ($5) charge entry fees."
+    },
+    {
+      "title": "Poke and plate lunches",
+      "text": "Poke bowls ($12–16) and plate lunches ($10–12) from local spots are full meals. Foodland supermarket poke is excellent and cheaper ($12/lb). Skip the tourist restaurants on Kalakaua."
+    },
+    {
+      "title": "TheBus covers everything",
+      "text": "Oahu's TheBus system ($3 per ride, $7.50 day pass) reaches all major beaches, Pearl Harbor, the North Shore, and hiking trailheads. Get a Holo card at any ABC Store."
+    },
+    {
+      "title": "Happy hour culture",
+      "text": "Honolulu bars run happy hours 3–6pm with $5–8 beers and $8–12 cocktails. Many restaurants do half-price appetizers — a full pupu spread can replace dinner for $15–20."
+    },
+    {
+      "title": "Free cultural experiences",
+      "text": "Royal Hawaiian Center has free hula lessons, ukulele classes, and lei-making workshops (Tue–Sat). The Royal Hawaiian Band plays free concerts at Iolani Palace on Fridays."
+    },
+    {
+      "title": "Skip the resort fees",
+      "text": "Waikiki hotels add $30–50/night resort fees. Stay in a hostel or vacation rental in Kaimuki or Kaka'ako — 10 minutes from Waikiki without the resort markup."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$35–70",
+      "midrange": "$150–250",
+      "splurge": "$400+",
+      "notes": "Hostels → hotels outside Waikiki → beachfront resorts"
+    },
+    {
+      "category": "Food",
+      "budget": "$25–40",
+      "midrange": "$50–80",
+      "splurge": "$120+",
+      "notes": "Plate lunches & poke → casual restaurants → resort dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$7–15",
+      "midrange": "$25–50",
+      "splurge": "$80+",
+      "notes": "TheBus → Uber + bus → rental car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–25",
+      "midrange": "$50–100",
+      "splurge": "$200+",
+      "notes": "Beaches & hikes → snorkeling & Pearl Harbor → surf lessons & luau"
+    },
+    {
+      "category": "Drinks",
+      "budget": "$8–15",
+      "midrange": "$20–35",
+      "splurge": "$50+",
+      "notes": "Happy hours → cocktail bars → resort bars"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$80–165",
+      "midrange": "$295–515",
+      "splurge": "$850+",
+      "notes": "Budget → comfortable → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Hawaii is a US state — same visa requirements as the mainland. ESTA ($21) for Visa Waiver Program countries",
+        "Daniel K. Inouye International Airport (HNL) is 20 minutes from Waikiki. TheBus Route 19/20 ($3), Uber ($20–28), or airport shuttle ($16–20)",
+        "Inter-island flights to Maui, Big Island, and Kauai are $60–150 each way on Hawaiian Airlines or Southwest"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance essential — US healthcare costs apply. Nearest hospital to Waikiki: Straub Medical Center on King Street",
+        "Ocean safety is critical — respect warning signs, swim where lifeguards are posted, and never turn your back on the ocean. Rip currents are real",
+        "Use reef-safe sunscreen only (Hawaii law) — oxybenzone and octinoxate are banned to protect coral reefs. SPF 50+ zinc oxide brands are best"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "TheBus ($3/ride, $7.50 day pass) covers the entire island including North Shore, Pearl Harbor, and hiking trailheads. Get a Holo card at ABC Stores",
+        "Rental cars are $50–90/day and essential for the North Shore, windward coast, and flexibility. Book well ahead — Hawaii rental car prices surge",
+        "Biki bikeshare ($4.50/30-min ride) covers Waikiki to Kaka'ako. Uber/Lyft available but limited on the North Shore and windward side"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Cell coverage is good around Honolulu and Waikiki but spotty on the North Shore and in mountain valleys",
+        "Free WiFi at most hotels, cafes, and the Ala Moana Center. ABC Stores sell prepaid SIM cards",
+        "Download offline maps before heading to the North Shore or windward coast hikes — cell service drops out frequently"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cards accepted almost everywhere. Some food trucks and Helena's are cash-only — carry $40–60",
+        "Tipping: 18–20% at restaurants, $1–2/drink at bars, 15–20% for rideshare and tour guides. Hawaii's cost of living is high — tip generously",
+        "Everything costs more in Hawaii — groceries are 30–50% higher than the mainland. Shop at Costco or Foodland for basics"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Reef-safe sunscreen (SPF 50+), rash guard for snorkeling, water shoes for rocky beaches, and a reusable water bottle",
+        "Light, breathable clothing — it's warm year-round (24–32°C). One light jacket for air-conditioned restaurants and mountain hikes",
+        "Waterproof hiking shoes or Teva-style sandals for muddy trails. A dry bag ($15) protects your phone at the beach"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🌺",
+      "title": "Aloha Spirit",
+      "text": "Aloha means hello, goodbye, and love — but it's also a way of life. Be kind, respectful, and patient. Hawaii moves on \"island time.\" Rush and entitlement will not go over well with locals."
+    },
+    {
+      "icon": "🐢",
+      "title": "Wildlife Respect",
+      "text": "Hawaiian green sea turtles (honu) and monk seals are protected by law. Stay 10 feet away — fines for touching are up to $50,000. Never touch coral reefs or stand on live coral while snorkeling."
+    },
+    {
+      "icon": "🏝️",
+      "title": "Sacred Places",
+      "text": "Hawaii has many sacred sites (heiau). Respect signs asking you not to enter certain areas. Don't stack rocks (rock cairns disturb the landscape). Don't take lava rocks — locals believe Pele's curse brings bad luck."
+    },
+    {
+      "icon": "🤙",
+      "title": "Shaka & Local Customs",
+      "text": "The shaka sign (thumb and pinky extended) means \"hang loose\" and is used everywhere. Remove shoes before entering someone's home. Bring a dish to share if invited to a gathering — generosity is core to Hawaiian culture."
+    },
+    {
+      "icon": "🏖️",
+      "title": "Beach Etiquette",
+      "text": "All Hawaiian beaches are public. Don't leave trash — pack it out. Use reef-safe sunscreen (it's the law). Don't touch or disturb wildlife, coral, or tide pool creatures. Take only photos."
+    },
+    {
+      "icon": "💵",
+      "title": "Tipping & Cost",
+      "text": "Tip 18–20% at restaurants. Hawaii's cost of living is the highest in the US — workers depend on tips more than on the mainland. Respect that everything costs more here and tip accordingly."
+    }
+  ],
+  "title": "Honolulu Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Honolulu guide for young travelers. 3-day itinerary with Diamond Head, snorkeling, North Shore surf, and local Hawaiian food. Plan your trip with roammate.",
+  "heroImage": "/images/guides/honolulu-hero.webp",
+  "heroFlag": "🇺🇸",
+  "heroCountry": "United States",
+  "heroRegion": "North America",
+  "heroCity": "Honolulu",
+  "heroSubtitle": "Where volcanic craters meet turquoise water, and the aloha spirit turns every stranger into ohana.",
+  "budgetIntro": "Daily costs per person in USD. Hawaii is expensive but beaches are free, plate lunches are filling, and TheBus goes everywhere for $3.",
+  "culturalIntro": "Hawaii is not just a US state — it's a Polynesian kingdom with its own culture, language, and history. Respect the aloha spirit and you'll be welcomed like family.",
+  "ctaCity": "Honolulu",
+  "ctaText": "Find travel companions to split rental car costs, snorkel Hanauma Bay, and explore the North Shore together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Apr – Oct Best"
+  ],
+  "defaultDays": 3
+}

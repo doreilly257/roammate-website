@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "seville",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EUR (Euro)",
+      "detail": "1 USD ≈ €0.92"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Spanish",
+      "detail": "Limited English outside tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "CET (UTC+1)",
+      "detail": "CEST (UTC+2) in summer"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – May, Sep – Nov",
+      "detail": "20–30°C, avoid Jul–Aug heat"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$60–90 USD",
+      "detail": "€55–82 per day"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Schengen Zone",
+      "detail": "90 days visa-free for most"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Alcázar, Tapas & Flamenco in a Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Real Alcázar & Cathedral",
+            "text": "Start at the Real Alcázar (€14.50 online) at opening — one of the most beautiful palaces in the world, a Mudéjar masterpiece of intricate tilework, arched courtyards, and lush gardens. The Hall of Ambassadors ceiling is breathtaking. Then cross to the Seville Cathedral (€11) — the world's largest Gothic cathedral with Columbus's tomb and the Giralda bell tower (35 ramps, not steps, to the top for panoramic views).",
+            "tip": "Book Alcázar tickets online at least a week ahead — they sell out, especially for the early morning slots which are coolest."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Santa Cruz & Tapas Trail",
+            "text": "Wander the Barrio de Santa Cruz — Seville's former Jewish quarter, a labyrinth of whitewashed alleys draped in jasmine and bougainvillea. Get lost on purpose — every turn reveals a hidden plaza with an orange tree. Tapas at Bodega Santa Cruz \"Las Columnas\" on Rodrigo Caro — locals pack the counter for montaditos (€2.50) and cold Cruzcampo beer. Then to Casa Morales on García de Vinuesa — wine from the barrel since 1850.",
+            "tip": "In Seville, tapas bars often give a free tapa with each drink — order at the bar, not a table, for the tradition to apply."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Flamenco & Triana",
+            "text": "Cross the Puente de Isabel II to Triana — Seville's bohemian quarter and the birthplace of flamenco. Walk along Calle Betis for sunset views over the river with the Torre del Oro and cathedral in the background. Book an intimate flamenco show at Casa de la Memoria (€22) or Casa del Flamenco (€22) — small venues where you feel every footstep and guitar string. End with drinks on Calle Betis.",
+            "tip": "Casa de la Memoria books out days ahead — reserve online. Avoid the tourist tablao shows and seek intimate peña venues."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Alcázar, Cathedral & Santa Cruz",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Real Alcázar",
+            "text": "Be at the Real Alcázar (€14.50) at 9:30am opening — this Mudéjar palace is one of the most extraordinary buildings in Europe. The Patio de las Doncellas, with its reflecting pool and carved stucco arches, was used as Dorne in Game of Thrones. The gardens are a maze of fountains, pavilions, and orange groves. Allow 2 hours to wander without rushing — the tilework alone deserves slow attention.",
+            "tip": "Book online a week ahead — morning slots sell out. The palace is coolest and emptiest in the first hour after opening."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Cathedral, Giralda & Tapas",
+            "text": "Cross to the Seville Cathedral (€11) — the world's largest Gothic cathedral. Find Columbus's tomb (carried by four kings), then climb the Giralda tower's 35 ramps (designed for horses, not stairs) for the best panoramic view in Seville. Tapas lunch at Bodega Santa Cruz on Rodrigo Caro — locals pack the counter for montaditos (€2.50) and cold beer. Walk through the Barrio de Santa Cruz's jasmine-draped alleys.",
+            "tip": "The Giralda's ramps make it easy to climb — but the top gets crowded at sunset. Go mid-afternoon for clear views."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Triana & Riverside Drinks",
+            "text": "Cross the Puente de Isabel II to Triana — the bohemian barrio and flamenco birthplace. Walk Calle Betis for golden-hour views of the cathedral and Torre del Oro across the Guadalquivir. Dinner at Casa Cuesta on Calle Castilla — Triana's oldest bar (since 1880) serving classic sevillano tapas. End with drinks at the riverside terraces on Calle Betis — the view never gets old.",
+            "tip": "Calle Betis faces west — the sunset over the river with the cathedral skyline is one of Spain's most photogenic views."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Plaza de España, Flamenco & Alameda",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Plaza de España & Parque de María Luisa",
+            "text": "Start at Plaza de España — a sweeping 1929 semi-circular plaza with a moat, tiled alcoves representing each Spanish province, and Renaissance Revival architecture that feels like a film set (it was — Star Wars Episode II). Rent a rowboat on the moat (€6 for 35 min). Walk through the adjacent Parque de María Luisa — the city's most beautiful park with Moorish fountains, tile-lined benches, and shaded promenades.",
+            "tip": "Plaza de España is free and most photogenic in the morning — the tiles glow in low sun. The boat ride is pure joy."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mercado de Triana & Ceramics",
+            "text": "Cross to Triana for the Mercado de Triana — a modern food market built on the site of the Inquisition's castle (archaeological remains visible under glass floors). Lunch at the market counters — fresh fried fish, jamón ibérico, and cold gazpacho. Walk along Calle San Jorge and Calle Alfarería for Triana's famous ceramic workshops — hand-painted azulejos (tiles) make beautiful souvenirs from €5.",
+            "tip": "Triana ceramics are cheaper at workshops on Calle Alfarería than in tourist shops. Ask to see the painting process."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Flamenco & Alameda Nightlife",
+            "text": "Book a flamenco show at Casa de la Memoria (€22) or La Casa del Flamenco (€22) — intimate venues where you feel every footstep vibrate through the floor. Then head to the Alameda de Hércules — Seville's hippest plaza, lined with bars and terrace cafes. Try Fun Club for dancing, Eslava on Calle Eslava for award-winning tapas (book ahead, mains €8–14), or just settle into the Alameda vibe.",
+            "tip": "Casa de la Memoria books out days in advance — reserve online. Avoid the touristy tablao shows near the cathedral."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Metropol Parasol, Markets & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Metropol Parasol & Feria Quarter",
+            "text": "Start at the Metropol Parasol (Las Setas) on Plaza de la Encarnación — the world's largest wooden structure, a surreal mushroom-shaped canopy. The walkway on top (€5) offers unique rooftop views over the old town. The archaeological museum underneath (included) has Roman ruins. Walk north to the La Macarena neighbourhood — traditional, untouristy barrio with the Basilica de la Macarena and its famous weeping Virgin.",
+            "tip": "Metropol Parasol is best at sunset when the wooden lattice glows amber — but mornings are emptiest for photos."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mercado Lonja del Barranco & Shopping",
+            "text": "Lunch at the Mercado Lonja del Barranco — a Gustave Eiffel-designed iron market on the riverfront with gourmet tapas stalls, cocktail bars, and excellent jamón ibérico carving stations. Walk through the shopping streets of Calle Sierpes and Calle Tetuán for souvenirs — olive oil, hand-painted fans (abanicos), and sherry from a specialist wine shop. Visit the Hospital de los Venerables for its Velázquez painting.",
+            "tip": "The Mercado Lonja del Barranco is tourist-oriented but the quality is high — the tuna taco and ibérico ham stalls are worth it."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Tapas Crawl",
+            "text": "The ultimate Seville farewell: a tapas crawl through the old town. Start at El Rinconcillo on Gerona — Seville's oldest bar since 1670, where the tab is chalked on the wooden counter. Then Bar Europa on Alcaicería for fried aubergine with honey (berenjenas con miel). Finish at Eslava near the Alameda for their legendary slow-cooked egg tapa. Walk the illuminated streets of Santa Cruz one final time.",
+            "tip": "El Rinconcillo on a weekday evening is pure Seville — stand at the bar, order fino sherry and spinach with chickpeas (espinacas con garbanzos)."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Alcázar, Cathedral & Santa Cruz",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Real Alcázar",
+            "text": "Be at the Real Alcázar (€14.50) at opening. This Mudéjar palace is one of Europe's most extraordinary buildings — the Patio de las Doncellas, Hall of Ambassadors, and labyrinthine gardens of fountains and orange groves. The tilework and carved stucco are unmatched. Game of Thrones filmed the Dorne scenes here. Allow 2 hours.",
+            "tip": "Book online a week ahead. The first hour after opening is coolest and emptiest — essential in summer heat."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Cathedral & Giralda",
+            "text": "Seville Cathedral (€11) — the world's largest Gothic cathedral. Find Columbus's tomb, the gold-laden main altar, and the Chapter House. Climb the Giralda's 35 ramps (designed for horses) for panoramic views. Tapas lunch at Bodega Santa Cruz on Rodrigo Caro — montaditos (€2.50), cold Cruzcampo, and standing room only at the counter.",
+            "tip": "The Giralda ramps make the climb easy — but go mid-afternoon to avoid sunset crowds at the top."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Santa Cruz & First Tapas",
+            "text": "Get lost in the Barrio de Santa Cruz — whitewashed alleys draped in jasmine, hidden plazas with orange trees. Dinner at Casa Morales on García de Vinuesa — wine from barrels since 1850 and excellent chorizo. Walk to Calle Betis in Triana for sunset riverside drinks with the cathedral silhouetted against the sky.",
+            "tip": "In Seville, order at the bar for the best tapas experience. Many bars give a free tapa with each drink."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Plaza de España & Triana",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Plaza de España",
+            "text": "The 1929 semi-circular plaza with its moat, tiled provincial alcoves, and Renaissance Revival architecture feels like a movie set. Rent a rowboat (€6/35 min). Walk through the Parque de María Luisa — Moorish fountains, shaded promenades, and the Archaeological Museum (€1.50 for EU citizens, free Sundays).",
+            "tip": "Plaza de España is free and best in morning light. The provincial tile alcoves are a brilliant geography lesson."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Triana Market & Ceramics",
+            "text": "Cross to Triana for the Mercado de Triana — fresh fried fish, jamón ibérico, and cold gazpacho at the market counters. Inquisition ruins under glass floors. Walk Calle Alfarería for ceramic workshops — hand-painted azulejo tiles from €5. Visit the Centro Cerámica Triana (€2.10) for the history of the neighbourhood's tile-making tradition.",
+            "tip": "Buy ceramics at Calle Alfarería workshops, not tourist shops — same tiles, better prices, and you support local artisans."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Triana Tapas & Calle Betis",
+            "text": "Dinner at Casa Cuesta on Calle Castilla — Triana's oldest bar since 1880 for classic sevillano tapas. Try the pavías de bacalao (battered cod) and pringa montaditos. Walk Calle Betis at sunset — the cathedral and Torre del Oro reflected in the Guadalquivir is the iconic Seville view. Drinks at the riverside terraces.",
+            "tip": "Calle Betis faces west for perfect golden hour. Casa Cuesta's terrace fills fast — arrive by 8:30pm."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Flamenco, Alameda & Hidden Seville",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Metropol Parasol & Macarena",
+            "text": "Metropol Parasol (Las Setas, €5) — the world's largest wooden structure with rooftop views and Roman ruins below. Walk north to La Macarena — a traditional barrio with the Basilica de la Macarena (free) housing the famous weeping Virgin. Continue along the ancient Macarena city walls — some of Seville's best-preserved medieval fortifications.",
+            "tip": "Metropol Parasol is emptiest in the morning. La Macarena feels like a village within the city — untouristy and genuine."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Alameda & Lunch",
+            "text": "Explore the Alameda de Hércules — Seville's hippest plaza, once a red-light district, now lined with vintage shops, café terraces, and creative studios. Lunch at Eslava on Calle Eslava — award-winning creative tapas (tapa of slow-cooked egg on mushroom purée is legendary, €3.50). Browse the independent boutiques on Calle Amor de Dios and Calle Regina.",
+            "tip": "Eslava's tapas bar (not the restaurant) is first-come-first-served — arrive at 1:30pm for lunch to beat the crowd."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Flamenco Show",
+            "text": "Book an evening flamenco show at Casa de la Memoria (€22) on Calle Cuna — an intimate 100-seat venue in a 15th-century palace courtyard where you feel every footstep and guitar note. The shows feature cante (song), toque (guitar), and baile (dance) in their purest form. Afterwards, walk to the Alameda for post-show drinks — the plaza is magical at night.",
+            "tip": "Casa de la Memoria books out days ahead — reserve online. The 9pm show is more atmospheric than the 7:30pm."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Day Trip to Córdoba",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "AVE to Córdoba & Mezquita",
+            "text": "AVE high-speed train from Seville to Córdoba (45 minutes, €15–30 booked early). Head straight to the Mezquita-Catedral (€13) — one of the world's most astonishing buildings. 856 red-and-white striped arches create an infinite forest of columns, and a Renaissance cathedral was improbably inserted into the centre. The scale and beauty are overwhelming. Allow 90 minutes.",
+            "tip": "Book AVE tickets on Renfe.com 60 days ahead for €15 one-way vs €30+ last minute. The 8am train gets you to Córdoba by 8:45am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Judería & Patios",
+            "text": "Walk the Judería — Córdoba's medieval Jewish quarter of whitewashed lanes and flower-filled patios. Visit the Alcázar de los Reyes Cristianos (€5) with its geometric gardens. May is the Patio Festival — homeowners open their courtyards to the public. Any time of year, peek through open doorways for glimpses of private patios overflowing with geraniums. Lunch at Taberna Salinas for salmorejo (Córdoban cold soup).",
+            "tip": "Córdoba's patios are most visible in May (festival) but many stay open year-round. The Calleja de las Flores is the most photographed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Roman Bridge & Return",
+            "text": "Walk across the Puente Romano at sunset — the 1st-century Roman bridge over the Guadalquivir with the Mezquita rising behind. It's one of Spain's most photographed views. Quick tapas at Bodegas Mezquita near the mosque — try the flamenquín (Córdoban fried pork roll, €6) and salmorejo. Catch the evening AVE back to Seville — you'll be home by 9pm.",
+            "tip": "The Roman Bridge sunset with the Mezquita is extraordinary — arrive 30 minutes before for the best golden light."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Italica, River & Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Itálica Roman Ruins",
+            "text": "Bus M-172 from Plaza de Armas to Itálica (30 min, €1.70) — an ancient Roman city 9km from Seville, birthplace of emperors Trajan and Hadrian. The amphitheatre held 25,000 spectators and was used as the Dragonpit in Game of Thrones. The mosaic floors of the patrician houses are remarkably preserved. Entry €1.50 for EU, free Sundays. Allow 2 hours to explore the ruins.",
+            "tip": "Itálica is fully exposed with no shade — go early and bring water. The mosaics in the House of Neptune are extraordinary."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Guadalquivir & Torre del Oro",
+            "text": "Back in Seville, walk along the Guadalquivir. Visit the Torre del Oro (€3) — a 13th-century watchtower with a small maritime museum and rooftop views. Continue to the Hospital de la Caridad (€8) — a 17th-century charity hospital with Murillo and Valdés Leal paintings designed to remind the rich of mortality. Lunch at Mercado Lonja del Barranco — the Eiffel-designed riverside market.",
+            "tip": "Torre del Oro is free on Mondays. The rooftop view over the river and Triana is the best angle for the bridge."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Macarena Nightlife",
+            "text": "Head to the Macarena and Alameda area for Seville's most authentic nightlife. Start at Duo Tapas on Calatrava for creative small plates (€4–8). Move to the Alameda for drinks — Oso Bar for cocktails, La Taberna for live music, or just settle at a terrace table and watch Seville's social life unfold. The Alameda doesn't get going until 10pm.",
+            "tip": "Seville nightlife starts late — don't arrive at the Alameda before 10pm or you'll be drinking alone. Peak is midnight."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Barrios, Cooking & Sherry",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Morning Market & Cooking",
+            "text": "Join a cooking class that starts at the Mercado de Triana (from €50 for 3 hours) — shop for ingredients with a local chef, then learn to make gazpacho, salmorejo, and tortilla española. If not cooking, explore the Feria neighbourhood — Seville's most local market on Calle Feria has everything from fresh produce to flamenco dresses. The Thursday Feria street market is excellent for bargains.",
+            "tip": "The Calle Feria Thursday market (El Jueves) has been running since the 13th century — vintage items, antiques, and total chaos."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Casa de Pilatos & Sherry",
+            "text": "Visit Casa de Pilatos (€12) — a stunning 15th-century palace blending Mudéjar, Gothic, and Renaissance styles. The courtyard and tilework rival the Alcázar but with a fraction of the visitors. Walk to the nearby Bodega de las Columnas on Plaza del Cristo de Burgos for a sherry education — fino, manzanilla, oloroso, and palo cortado by the glass (€2–4). Pair with olives and jamón.",
+            "tip": "Casa de Pilatos is Seville's most underrated palace — equally beautiful as the Alcázar and never crowded."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "River Walk & Farewell Prep",
+            "text": "Evening walk along the Guadalquivir from Triana Bridge to Plaza de Armas — the river promenade is beautiful at dusk. Dinner at Contenedor on Calle San Luis — a creative restaurant in the Macarena using organic, local ingredients (mains €14–20). The neighbourhood feels authentically sevillano — families in the streets, kids playing, grandparents on benches. This is the real Seville.",
+            "tip": "Contenedor on San Luis is where Seville's food-conscious young locals eat — book ahead for weekend dinners."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Last Tapas & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Morning in the Alcázar Gardens",
+            "text": "Return to the Alcázar specifically for the gardens — use a second-visit ticket or time it for the first hour when they're coolest and emptiest. The English Garden, the Garden of the Poets, and the underground gallery (Baños de Doña María de Padilla) are magical in morning light. Alternatively, explore the Archivo de Indias (free) — the archive of Spain's colonial history in a gorgeous Herreresque building.",
+            "tip": "The Alcázar gardens alone justify a second visit — the morning light through the orange groves is ethereal."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Souvenirs & Last Stroll",
+            "text": "Pick up souvenirs: hand-painted ceramic tiles from Triana, olive oil from the Mercado de Triana, flamenco-themed items on Calle Sierpes, and mantecados (crumbly biscuits) from Convento de San Leandro (ring the bell, nuns sell through a revolving hatch). One last walk through Santa Cruz — every visit reveals a new hidden plaza.",
+            "tip": "The convent sweets from San Leandro are a uniquely sevillano souvenir — ring the bell, say \"dulces,\" and the nuns sell through a turnstile."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Tapas Crawl",
+            "text": "Ultimate farewell: a tapas crawl. El Rinconcillo on Gerona — Seville's oldest bar since 1670, tab chalked on the counter, fino sherry in hand. Bar Europa for berenjenas con miel (fried aubergine with honey). Bodeguita Casablanca on Zaragoza for montaditos. Finish at Eslava for the legendary slow-cooked egg tapa. Seville will haunt your taste buds for years.",
+            "tip": "El Rinconcillo at 8pm on a Tuesday is peak Seville — fino, espinacas con garbanzos, and a chalk-mark bill. Perfection."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free experiences",
+      "text": "Plaza de España, Triana walks, Guadalquivir promenade, cathedral exterior, Parque de María Luisa, Macarena walls, Santa Cruz alleys, and Torre del Oro on Mondays."
+    },
+    {
+      "title": "Tapas on a budget",
+      "text": "Many bars give a free tapa with each drink (€2.50–3 for a caña). Bodega Santa Cruz montaditos: €2.50. El Rinconcillo spinach and chickpeas: €4. Mercado de Triana counter lunches: €6–10."
+    },
+    {
+      "title": "Transport",
+      "text": "Seville is extremely walkable — most sights are within 20 minutes. Metro single: €1.35. Tussam bus: €1.40. Seville bike-share (Sevici): €13.33/week with first 30 min free per trip."
+    },
+    {
+      "title": "Free museum days",
+      "text": "Alcázar: free Mon 6–7pm (limited tickets). Cathedral: free Mon 4:30–6pm. Many museums free for EU citizens on Sundays. Archivo de Indias is always free."
+    },
+    {
+      "title": "Drink deals",
+      "text": "A caña (small beer) costs €1.50–2.50. Tinto de verano (red wine with lemon soda) is cheaper than sangria at €2–3. Fino sherry by the glass: €2–3. Supermarket wines from €2."
+    },
+    {
+      "title": "Flamenco budget",
+      "text": "Peña flamenca venues are cheaper than tablao shows — Peña Torres Macarena (€10) or catch free flamenco at bars in Triana. Casa de la Memoria (€22) is excellent value for a professional show."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "€18–35",
+      "midrange": "€70–130",
+      "splurge": "€200+",
+      "notes": "Hostels → boutique hotels → palace hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "€12–20",
+      "midrange": "€30–50",
+      "splurge": "€70+",
+      "notes": "Tapas bars & markets → sit-down restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "€2–5",
+      "midrange": "€8–15",
+      "splurge": "€25+",
+      "notes": "Walking & Sevici → bus/metro → taxis"
+    },
+    {
+      "category": "Activities",
+      "budget": "€0–15",
+      "midrange": "€20–40",
+      "splurge": "€60+",
+      "notes": "Free sights & walks → museums & flamenco → private tours"
+    },
+    {
+      "category": "Drinks",
+      "budget": "€5–10",
+      "midrange": "€12–20",
+      "splurge": "€30+",
+      "notes": "Cañas & tinto de verano → sherry bars → cocktail lounges"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "€37–85",
+      "midrange": "€140–255",
+      "splurge": "€385+",
+      "notes": "$40–92 → $152–278 → $419+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Schengen Zone — 90 days visa-free for most nationalities within any 180-day period",
+        "Seville Airport (SVQ) is 10km from centre. Bus EA to Plaza de Armas (€4, 35 min). Taxi: €22–30 fixed fare",
+        "AVE from Madrid (2.5 hrs, €25–60) and Córdoba (45 min, €15–30). Renfe trains connect most Spanish cities"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required. EHIC covers EU citizens. Spanish pharmacies (farmacias) are well-stocked and helpful",
+        "Tap water is safe. Summer heat (Jul–Aug) reaches 40–45°C — hydrate constantly, seek shade 2–5pm, wear sunscreen",
+        "Seville is very safe. Minor pickpocketing at tourist sites and on buses. Avoid deserted streets in Macarena late at night"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "Seville is very walkable — old town sights are within a 20-minute radius. Tram T1 runs through the centre (€1.40)",
+        "Sevici bike-share: €13.33/week with first 30 min free each trip. Flat city = perfect for cycling",
+        "Metro has 1 line (limited use for tourists). Tussam buses cover the wider city. Bolt/Uber for late-night rides"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "EU roaming for European SIMs. Local prepaid from Vodafone, Orange, or Lycamobile (€10–15 for 5–10GB)",
+        "Free WiFi in most cafés and restaurants. Coverage is excellent across the city",
+        "Download the Tussam app for bus routes and the Renfe app for train tickets to Córdoba and other day trips"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Euro (€) everywhere. Cards accepted at most places — contactless is standard. Small tapas bars may be cash-only",
+        "ATMs from Spanish banks (CaixaBank, BBVA, Santander) have lowest fees. Avoid Euronet machines",
+        "Tipping not expected — service is included. Rounding up or leaving €1–2 for good tapas service is appreciated"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Light, breathable clothing. A hat and sunscreen are non-negotiable. Carry a water bottle — Seville is hot",
+        "Comfortable walking shoes for cobblestones and long tapas crawls. A light layer for air-conditioned restaurants",
+        "Smart-casual for flamenco shows and nicer restaurants. A fan (abanico) is both practical and a souvenir"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "💃",
+      "title": "Flamenco Respect",
+      "text": "Flamenco is not a tourist show — it's a deeply emotional art form. Don't talk, photograph with flash, or clap out of time. Shout \"¡Ole!\" only during pauses. The audience's silence during cante (singing) is part of the experience."
+    },
+    {
+      "icon": "🕐",
+      "title": "Spanish Schedule",
+      "text": "Lunch is 2–4pm, dinner from 9:30pm. Most restaurants don't open before 8:30pm. Siesta (2–5pm) is real — many shops close. Nightlife starts at midnight. Adapt or suffer empty restaurants and closed doors."
+    },
+    {
+      "icon": "🍺",
+      "title": "Bar Culture",
+      "text": "Standing at the bar is cheaper than sitting at a table. Don't tip per drink — leave coins when you leave. It's normal to throw napkins on the floor at tapas bars. Ordering one tapa at a time and moving to the next bar is tradition."
+    },
+    {
+      "icon": "⛪",
+      "title": "Semana Santa & Feria",
+      "text": "Semana Santa (Holy Week, March/April) transforms Seville with processions, incense, and emotion. Feria de Abril (two weeks later) is a week-long party with flamenco dresses and horse carriages. Book months ahead for both."
+    },
+    {
+      "icon": "🌡️",
+      "title": "Heat Management",
+      "text": "July–August temperatures exceed 40°C regularly. Sevillanos avoid outdoors 2–5pm. Museums and churches offer refuge. Ice-cold gazpacho and tinto de verano are survival tools, not just drinks."
+    },
+    {
+      "icon": "🤝",
+      "title": "Social Warmth",
+      "text": "Sevillanos are famously warm and social. Two kisses on the cheek (right first) for greetings. Conversations are loud and animated — it's not arguing, it's enthusiasm. Personal space is smaller than in northern Europe."
+    }
+  ],
+  "title": "Seville Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Seville guide for young travelers. 3-day itinerary with flamenco, tapas crawls, Alcázar palaces, and rooftop drinks. Plan your trip with roammate.",
+  "heroImage": "/images/guides/seville-hero.webp",
+  "heroFlag": "🇪🇸",
+  "heroCountry": "Spain",
+  "heroRegion": "Europe",
+  "heroCity": "Seville",
+  "heroSubtitle": "A city that runs on sherry, sunlight, and spontaneous flamenco, where Moorish palaces hide behind jasmine-draped walls and every meal is a celebration.",
+  "budgetIntro": "Daily costs per person in EUR. Seville is one of Spain's most affordable cities — free tapas with drinks, cheap sherry, and walkable distances keep costs remarkably low.",
+  "culturalIntro": "Seville runs on its own clock and its own rules. The heat, the flamenco, the late dinners — once you surrender to the rhythm, you'll never want to leave.",
+  "ctaCity": "Seville",
+  "ctaText": "Find travel companions, share tapas crawls, and discover secret flamenco peñas together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Mar – May Best"
+  ],
+  "defaultDays": 3
+}

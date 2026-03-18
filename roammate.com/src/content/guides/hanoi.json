@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "hanoi",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "VND (₫ Dong)",
+      "detail": "1 USD ≈ ₫25,400"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Vietnamese",
+      "detail": "English limited outside tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "ICT (UTC+7)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Oct – Dec",
+      "detail": "18–28°C, cool & dry season"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$20–35 USD",
+      "detail": "₫500,000–900,000 budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "E-visa 90 days",
+      "detail": "$25 online — most nationalities"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Hanoi Highlights in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Old Quarter & Hoàn Kiếm Lake",
+            "text": "Start with a bowl of phở bò (beef phở) at Phở Gia Truyền on Bát Đàn Street (₫50,000) — a legendary stall running since the 1950s with zero decor and extraordinary broth. Then walk to Hoàn Kiếm Lake — Hanoi's spiritual centre. The red Thê Húc Bridge leads to Ngọc Sơn Temple (₫30,000) on a tiny island. Circle the lake as locals exercise, then plunge into the Old Quarter's 36 streets, each named after the goods historically traded there.",
+            "tip": "Phở Gia Truyền opens at 6am and often sells out by 10am. Go early — the queue moves fast and the broth is worth the 5am alarm."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ho Chi Minh Mausoleum Complex",
+            "text": "Walk or taxi to the Ho Chi Minh Mausoleum Complex — the embalmed body of Uncle Ho lies in a granite mausoleum (free, closed Mon & Fri, no cameras). The surrounding complex includes the Presidential Palace, Ho Chi Minh's Stilt House (₫40,000) — a modest wooden house where he lived and worked — and the One Pillar Pagoda. The Temple of Literature (₫30,000) nearby is Vietnam's first university, founded in 1070.",
+            "tip": "The Mausoleum has a strict dress code — no shorts, tank tops, or hats. The queue moves quickly. Photography inside is strictly prohibited."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Bia Hơi Corner & Water Puppets",
+            "text": "Head to Bia Hơi Corner (junction of Tạ Hiện and Lương Ngọc Quyến) — Hanoi's legendary street drinking spot where tiny plastic stools, fresh draft beer (₫7,000), and grilled food create an unforgettable atmosphere. Then catch the Thăng Long Water Puppet Theatre show (₫150,000, 50 minutes) — a thousand-year-old Vietnamese art form with carved wooden puppets performing on water to live traditional music.",
+            "tip": "Book water puppet tickets in advance online — shows sell out daily. The 8pm show is most popular. Seats in rows 3–5 give the best view."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Old Quarter, History & Street Food",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Phở Breakfast & Old Quarter",
+            "text": "Start with phở bò at Phở Gia Truyền on Bát Đàn Street (₫50,000) — legendary since the 1950s. Then explore the Old Quarter's 36 ancient streets, each named after the goods traded there — Hàng Bạc (Silver), Hàng Gai (Silk), Hàng Mã (Paper). Walk to Hoàn Kiếm Lake and cross the red Thê Húc Bridge to Ngọc Sơn Temple (₫30,000) on a tiny island. The lake is Hanoi's calm centre amidst the surrounding chaos.",
+            "tip": "Phở Gia Truyền opens at 6am and sells out by 10am. Go early — the queue moves fast and the bone broth has been perfected over 70 years."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Temple of Literature & Ho Chi Minh Complex",
+            "text": "Visit the Temple of Literature (₫30,000) — Vietnam's first university, founded in 1070, with five tranquil courtyards, turtle stele, and beautiful traditional architecture. Then walk to the Ho Chi Minh Mausoleum Complex — the mausoleum (free, closed Mon & Fri), Presidential Palace, Stilt House (₫40,000), and One Pillar Pagoda. The complex tells the story of Vietnam's most revered leader.",
+            "tip": "The Mausoleum has strict dress code and no cameras inside. The Stilt House and gardens are the real highlight — simple, beautiful, and deeply human."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Water Puppets & Bia Hơi Corner",
+            "text": "Catch the Thăng Long Water Puppet Theatre (₫150,000, 50 min) — a thousand-year-old Vietnamese art form with wooden puppets performing on water to live traditional music. Then head to Bia Hơi Corner at Tạ Hiện and Lương Ngọc Quyến — tiny plastic stools, draft beer (₫7,000), and grilled skewers in the most social drinking experience in Asia. The Old Quarter at night is electric.",
+            "tip": "Book water puppet tickets online — shows sell out. The 8pm session is most popular. Rows 3–5 offer the best perspective on the water stage."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "French Quarter, Art & Coffee",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Egg Coffee & Train Street",
+            "text": "Start with cà phê trứng (egg coffee) at Cafe Giảng on Nguyễn Hữu Huân Street — the inventor of egg coffee, running since 1946. The foamy egg yolk whipped with condensed milk over strong Vietnamese coffee (₫35,000) is extraordinary. Then walk to Train Street — a narrow residential lane where the daily Hanoi–Lào Cai train passes just centimetres from the houses. Coffee shops line the tracks.",
+            "tip": "Train Street can be intermittently closed by police — check with your hostel before visiting. The trains pass around 3:30pm and 7:30pm daily."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hỏa Lò Prison & French Quarter",
+            "text": "Visit Hỏa Lò Prison (₫30,000) — the infamous \"Hanoi Hilton\" where French colonists imprisoned Vietnamese revolutionaries, and later where American POWs including John McCain were held. The museum is sobering and fascinating. Walk through the French Quarter — tree-lined boulevards, the elegant Sofitel Metropole Hotel (peek inside), and the Hanoi Opera House modelled on the Paris Opera.",
+            "tip": "Hỏa Lò Prison covers two very different periods of history — take time to read both the French colonial and Vietnam War sections thoroughly."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Bún Chả & Nightlife",
+            "text": "Dinner at a bún chả stall — Hanoi's signature dish of smoky grilled pork patties with vermicelli noodles and dipping sauce. Bún Chả Hương Liên on Lê Văn Hưu is where Obama ate with Anthony Bourdain (₫50,000, the \"Obama combo\" is on the menu). For drinks, explore Tạ Hiện Street's evolving bar scene — Polite Pub and Standing Bar are local favourites with cocktails from ₫80,000.",
+            "tip": "Bún chả is a lunch dish in Hanoi — many stalls close by 2pm. The Obama bún chả place is open later but tastes best at lunchtime."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "West Lake, Markets & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "West Lake & Trần Quốc Pagoda",
+            "text": "Rent a bicycle and ride around West Lake (Hồ Tây) — Hanoi's largest lake surrounded by pagodas, cafes, and residential streets. Stop at Trần Quốc Pagoda (free) — the oldest Buddhist temple in Hanoi (1,500 years), sitting on a small peninsula with its iconic multi-tiered red tower. Continue to the Quán Thánh Temple (₫10,000) nearby — a Taoist temple from the 11th century with a 4-tonne bronze statue.",
+            "tip": "West Lake is best cycled in the early morning (7–9am) before the heat builds. Rent bikes from shops near the Sheraton — ₫30,000–50,000/day."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Đồng Xuân Market & Last Food",
+            "text": "Walk through Đồng Xuân Market — Hanoi's largest covered market with four floors of wholesale goods, clothing, and food. The surrounding streets are the real attraction — local food vendors selling bánh cuốn (steamed rice rolls, ₫25,000), nem chua rán (fried fermented pork, ₫15,000), and chè (Vietnamese sweet soup, ₫15,000). This is where Hanoi feeds itself — raw, authentic, and delicious.",
+            "tip": "The street food vendors around Đồng Xuân Market are cheaper and often better than the Old Quarter tourist stalls two blocks south."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Phở & Departure",
+            "text": "One last bowl of phở — try Phở Thìn on Lò Đúc Street for the stir-fried beef version (₫60,000) that differs from the classic boiled-beef style. The seared beef and caramelized garlic add a smoky depth. Walk the lake one final time as the lights reflect on Hoàn Kiếm. A last egg coffee at Cafe Giảng. Hanoi is the kind of city that grows on you — most people leave already planning their return.",
+            "tip": "Nội Bài Airport is 30km from the Old Quarter — Grab costs ₫200,000–300,000, airport minibuses ₫45,000. Allow 45–60 minutes for traffic."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Old Quarter, History & Street Food",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Phở Breakfast & Old Quarter",
+            "text": "Start with phở bò at Phở Gia Truyền on Bát Đàn Street (₫50,000). Then explore the Old Quarter's 36 ancient streets — Hàng Bạc (Silver), Hàng Gai (Silk), Hàng Mã (Paper). Walk to Hoàn Kiếm Lake and cross the Thê Húc Bridge to Ngọc Sơn Temple (₫30,000). The lake is Hanoi's calm centre amidst the controlled chaos of ten million motorbikes.",
+            "tip": "Phở Gia Truyền opens at 6am and sells out by 10am. Go early — the bone broth has been perfected over 70 years."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Temple of Literature & Ho Chi Minh Complex",
+            "text": "Temple of Literature (₫30,000) — Vietnam's first university (1070) with five courtyards and turtle stele. Then the Ho Chi Minh Mausoleum Complex — mausoleum (free, closed Mon & Fri), Presidential Palace, Stilt House (₫40,000), and One Pillar Pagoda. The complex tells the story of Vietnam's founding father with remarkable simplicity.",
+            "tip": "The Stilt House where Ho Chi Minh actually lived is more moving than the mausoleum — modest, beautiful, and deeply human."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Water Puppets & Bia Hơi Corner",
+            "text": "Thăng Long Water Puppet Theatre (₫150,000, 50 min) then Bia Hơi Corner at Tạ Hiện — draft beer (₫7,000), plastic stools, and grilled skewers. The Old Quarter at night is electric — neon signs, motorbike headlights, and the smell of charcoal grills from every alley. This is Hanoi's beating heart and you will keep coming back every evening.",
+            "tip": "Book water puppet tickets online in advance — shows sell out daily. Rows 3–5 offer the best view of the water stage."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "French Quarter & Coffee Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Egg Coffee & Train Street",
+            "text": "Start with cà phê trứng at Cafe Giảng (₫35,000) — the birthplace of egg coffee since 1946. The foamy egg yolk whipped with condensed milk over strong coffee is addictive. Then visit Train Street — a narrow residential lane where the daily train passes centimetres from the houses. Coffee shops line the tracks. The surreal domesticity of life along active railway tracks is uniquely Hanoi.",
+            "tip": "Train Street closures by police are intermittent — check with your hostel. Trains pass around 3:30pm and 7:30pm. Get a coffee and wait."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hỏa Lò Prison & Opera House",
+            "text": "Visit Hỏa Lò Prison (₫30,000) — the \"Hanoi Hilton\" where French colonists jailed Vietnamese revolutionaries, later holding American POWs. Sobering and essential. Walk through the French Quarter — tree-lined boulevards, the Sofitel Metropole (peek at the colonial lobby), and the Opera House modelled on Paris. Lunch at Quán Ăn Ngon on Phan Bội Châu (₫60,000–120,000) — all of Vietnam's dishes in one courtyard.",
+            "tip": "Quán Ăn Ngon recreates street food stalls in a beautiful colonial courtyard — it is tourist-friendly but the food is genuinely excellent."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Bún Chả Dinner",
+            "text": "Dinner at Bún Chả Hương Liên on Lê Văn Hưu — where Obama and Bourdain ate. The \"Obama combo\" (₫50,000) includes smoky grilled pork with vermicelli, spring rolls, and a cold Bia Hà Nội. For drinks, head to Tạ Hiện Street — Polite Pub and Standing Bar serve craft cocktails from ₫80,000. The evolving bar scene in the Old Quarter mixes hip and traditional.",
+            "tip": "Bún chả is traditionally a lunch dish in Hanoi. For the most authentic experience, eat it before 2pm when the smoke and crowds peak."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "West Lake & Pagodas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "West Lake Cycling",
+            "text": "Rent a bicycle (₫30,000–50,000/day) and ride around West Lake (Hồ Tây) — Hanoi's largest lake surrounded by pagodas, cafes, and leafy residential streets. Stop at Trần Quốc Pagoda (free) — a 1,500-year-old Buddhist temple with an iconic red tower on a small peninsula. Continue to Quán Thánh Temple (₫10,000) with its 4-tonne bronze statue. The lakeside lotus flowers bloom June–August.",
+            "tip": "West Lake is best cycled early morning (7–9am) before the heat. The lake circumference is 17km — plan for 2–3 hours with stops."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bánh Mì 25 & Vietnamese Museum",
+            "text": "Lunch at Bánh Mì 25 on Hàng Cá Street — consistently rated one of Hanoi's best bánh mì stalls (₫25,000) with crispy bread, pâté, and fresh herbs. Then visit the Vietnamese Women's Museum (₫30,000) — a beautifully curated museum telling the story of Vietnamese women through war, culture, and daily life. The street fashion photography exhibition is excellent.",
+            "tip": "The Vietnamese Women's Museum is one of the best museums in Hanoi and rarely crowded — allow 90 minutes for a thorough visit."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Weekend Night Market",
+            "text": "Friday to Sunday evenings, the Hanoi Night Market stretches from Đồng Xuân Market down Hàng Đào Street. Cheap clothes, souvenirs, and street food line the pedestrianized road. Grilled corn (₫10,000), fried quail eggs (₫5,000 each), and toasted sticky rice (₫15,000). The atmosphere of Hanoi families strolling on car-free streets is one of the city's greatest pleasures.",
+            "tip": "The night market runs Friday–Sunday only, 6pm–midnight. The food stalls near Đồng Xuân are best. Carry small notes — many vendors cannot break ₫500,000."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Day Trip — Ninh Bình",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tràng An Scenic Complex",
+            "text": "Book a day trip to Ninh Bình (₫400,000–700,000 with transport, boat, and lunch) — the \"Ha Long Bay on land,\" two hours south of Hanoi. Tràng An is a UNESCO World Heritage Site with limestone karsts, caves, and rivers navigated by small rowboats. The 2-hour boat ride through caves and past temples is mesmerizing. This is where Kong: Skull Island was filmed — the scenery is genuinely that dramatic.",
+            "tip": "Book through a small local operator, not a big hotel tour. The Tràng An boat ride takes 2 hours — bring sunscreen and a hat for the open water."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mua Cave & Rice Paddies",
+            "text": "Climb 500 steps to the top of Mua Cave (Hang Múa, ₫100,000) for what is arguably the most spectacular viewpoint in northern Vietnam — a 360-degree panorama of limestone karsts rising from emerald rice paddies. The climb is steep but short (20 minutes). Tam Cốc is an alternative boat ride through rice paddies and karst caves — equally beautiful but busier. Lunch at a local Vietnamese restaurant in the valley.",
+            "tip": "Climb Mua Cave in the late afternoon for the best light on the rice paddies below. The steps are steep — bring water and go at your own pace."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Old Quarter Dinner",
+            "text": "Return to Hanoi by late afternoon. Head straight to the Old Quarter for dinner — try chả cá (turmeric fish with dill, ₫120,000) at Chả Cá Thăng Long on Đường Thành — a Hanoi specialty since the 1800s. The fish is cooked tableside in a sizzling pan with dill, turmeric, and spring onions, then mixed with rice vermicelli and peanuts. One last bia hơi at the corner.",
+            "tip": "Chả cá is uniquely Hanoian — there is an entire street (Chả Cá Street) named after the dish. Ask for extra dill — it makes the dish."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Art, Cooking & Tay Ho",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Vietnamese Cooking Class",
+            "text": "Book a cooking class — Hanoi Cooking Centre (₫900,000) or Hidden Hanoi (₫800,000) start with a market tour to Đồng Xuân Market to select ingredients, then teach 4–5 northern Vietnamese dishes including phở, bún chả, and nem (spring rolls). Northern Vietnamese cuisine is more subtle than southern — emphasis on fresh herbs, clean broths, and balance rather than sweetness.",
+            "tip": "Morning classes include the market tour — this is the highlight. The afternoon sessions skip the market and feel less immersive."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tay Ho (West Lake District)",
+            "text": "Explore Tay Ho — the West Lake district where expats and artists have colonized old villas and colonial houses. Browse Tay Ho's gallery scene and specialty cafes. Lunch at Bún Ốc (snail noodle soup, ₫40,000) at one of the stalls along Trúc Bạch Lake — a unique Hanoi dish of tomato-based broth with rice vermicelli and freshwater snails. Visit the massive Tây Hồ Temple on a West Lake peninsula.",
+            "tip": "Bún ốc (snail noodle soup) is a Hanoi specialty rarely found elsewhere in Vietnam — try it at least once at the Trúc Bạch Lake stalls."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Long Biên Bridge & Night Eats",
+            "text": "Walk across Long Biên Bridge at sunset — the century-old cantilever bridge that survived American bombing and is still used by trains, motorbikes, and pedestrians. The views of the Red River and the city are stunning. Then head to the Long Biên night market (opens 11pm on weekends) for late-night snacking, or return to the Old Quarter for one last run at the grilled meat stalls on Tạ Hiện.",
+            "tip": "Long Biên Bridge is best walked from the Old Quarter side heading out — the sunset view looking back at the city is the money shot."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Bat Trang Pottery & Local Neighborhoods",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Bat Trang Pottery Village",
+            "text": "Take bus 47 from Long Biên station to Bat Trang (₫9,000, 45 minutes) — a 700-year-old pottery village on the Red River. Watch artisans hand-throw and paint ceramics. Try a pottery wheel class (₫50,000–100,000) and paint your own piece. The village market sells beautiful blue-and-white ceramics at factory prices — bowls from ₫20,000, vases from ₫100,000. Far cheaper than Hanoi shops.",
+            "tip": "Bat Trang pottery makes excellent lightweight souvenirs. The village is most active in the morning when the kilns are firing."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Museum of Ethnology & Cầu Giấy",
+            "text": "Grab to the Vietnam Museum of Ethnology (₫40,000) — the best museum in Hanoi with detailed exhibitions on Vietnam's 54 ethnic groups. The outdoor section has full-size traditional houses from mountain tribes, delta farmers, and highland communities. Allow 2 hours minimum. Then explore Cầu Giấy district for a taste of non-touristic Hanoi — local phở shops, communist-era apartment blocks, and neighborhood markets.",
+            "tip": "The Museum of Ethnology outdoor section is extensive — do it first while you have energy. The stilt houses and communal longhouses are extraordinary."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Phở Cuốn & Farewell Drinks",
+            "text": "Try phở cuốn (un-fried fresh spring rolls with phở noodles and beef) at the cluster of stalls on Ngũ Xã Street near Trúc Bạch Lake — this dish was invented on this very street and nowhere makes it better (₫50,000 for a plate). For farewell drinks, The Rooftop at Skyline Hotel has lake views and cocktails from ₫120,000, or keep it real at Bia Hơi Corner one final time.",
+            "tip": "Phở cuốn is unique to this one street in Hanoi — the fresh rice paper rolls with seared beef and herbs are addictive. Order multiple plates."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Shopping & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "One Last Walk",
+            "text": "Wake early and circle Hoàn Kiếm Lake as the city exercises — tai chi practitioners, joggers, and ballroom dancers fill the lakeside by 6am. Take in the morning mist on the water and the Red Bridge reflecting in the still surface. One last egg coffee at Cafe Giảng. One last amble through the Old Quarter as it wakes up — the motorbikes, the vendors, the life that makes Hanoi extraordinary.",
+            "tip": "Hoàn Kiếm Lake at 6am is Hanoi at its most magical — the city is quiet, the light is golden, and the lake is glassy. Set the alarm."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Souvenir Shopping",
+            "text": "Last shopping at Đồng Xuân Market for bargain souvenirs. For quality Vietnamese goods, Collective Memory on Hàng Buồm sells beautiful hand-printed textiles and ceramics by local artisans. For Vietnamese coffee beans, Hanoi Coffee Traders in the Old Quarter sells freshly roasted single-origin beans (₫150,000–300,000). Silk scarves from Hàng Gai (Silk Street) make lightweight gifts.",
+            "tip": "Vietnamese silk from Hàng Gai Street is beautiful and affordable — but check quality carefully. Real silk feels cool to the touch and recovers wrinkles quickly."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Phở & Departure",
+            "text": "One last bowl of phở — return to Phở Gia Truyền or try Phở Thìn Bờ Hồ near the lake for a different style. The simplicity of the broth, the fresh herbs, and the paper-thin beef — this is what you will miss most. Pack your bags and Grab to Nội Bài Airport (₫200,000–300,000, 45–60 minutes). Hanoi gets under your skin — plan your return before you even leave.",
+            "tip": "Nội Bài Airport is 30km from the Old Quarter. Allow 60–90 minutes during rush hour. The airport minibus (₫45,000) is cheap but slower."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Street food is sacred",
+      "text": "Phở: ₫40,000–60,000. Bún chả: ₫40,000–50,000. Bánh mì: ₫20,000–25,000. Egg coffee: ₫35,000. Three meals and coffee cost ₫120,000–180,000 ($5–7). Hanoi may have the cheapest excellent food on earth."
+    },
+    {
+      "title": "Bia hơi is ₫7,000",
+      "text": "Fresh draft beer at street corners costs ₫5,000–10,000 — roughly 20–40 cents. The most social and cheapest drinking experience in the world. Bia Hơi Corner at Tạ Hiện junction is the most famous spot."
+    },
+    {
+      "title": "Grab is essential",
+      "text": "GrabBike: ₫10,000–30,000 per ride. GrabCar: ₫40,000–100,000 across the city. Always cheaper and safer than negotiating with motorbike taxis. Download before you arrive."
+    },
+    {
+      "title": "Free attractions",
+      "text": "Hoàn Kiếm Lake, the Old Quarter walking, all pagodas and temples (most are free), Long Biên Bridge, weekend night markets, and the daily street life spectacle — Hanoi's best experiences cost nothing."
+    },
+    {
+      "title": "Bus to Ninh Bình",
+      "text": "Organized tours charge ₫500,000–800,000 for a Ninh Bình day trip. The public bus from Giáp Bát station costs ₫80,000 each way (2 hours) — arrange your own boat and bike rental for half the tour price."
+    },
+    {
+      "title": "Negotiate and smile",
+      "text": "Old Quarter shops and market vendors markup 2–3x for tourists. Start at 40% of the asking price. Always smile — Vietnamese culture values friendliness and aggression will get you nowhere."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "₫120,000–300,000",
+      "midrange": "₫500,000–1,200,000",
+      "splurge": "₫2,500,000+",
+      "notes": "Hostels → boutique Old Quarter → luxury colonial"
+    },
+    {
+      "category": "Food",
+      "budget": "₫80,000–150,000",
+      "midrange": "₫250,000–500,000",
+      "splurge": "₫1,000,000+",
+      "notes": "Street food → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "₫30,000–60,000",
+      "midrange": "₫80,000–200,000",
+      "splurge": "₫400,000+",
+      "notes": "GrabBike & bus → GrabCar → private driver"
+    },
+    {
+      "category": "Activities",
+      "budget": "₫30,000–150,000",
+      "midrange": "₫200,000–600,000",
+      "splurge": "₫1,500,000+",
+      "notes": "Temples & walks → museums & cooking → Ha Long Bay"
+    },
+    {
+      "category": "Drinks",
+      "budget": "₫15,000–40,000",
+      "midrange": "₫80,000–200,000",
+      "splurge": "₫400,000+",
+      "notes": "Bia hơi & egg coffee → craft bars → rooftop cocktails"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "₫275,000–700,000",
+      "midrange": "₫1,110,000–2,700,000",
+      "splurge": "₫5,800,000+",
+      "notes": "$11–28 → $44–106 → $228+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "E-visa: $25 online, 90 days single entry, 3 business days processing at evisa.xuatnhapcanh.gov.vn",
+        "Some nationalities get 45 days visa-free (UK, Germany, France, Japan, South Korea) — check your passport eligibility",
+        "Nội Bài International Airport is 30km from the Old Quarter — Grab (₫200,000–300,000) or airport minibus (₫45,000)"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Hepatitis A and typhoid recommended. Tap water is not safe — bottled water ₫5,000 everywhere. Most ice at restaurants is factory-made and safe",
+        "Hanoi is very safe for tourists. Petty theft is rare compared to Saigon. The main risk is traffic — motorbikes rule the roads",
+        "French Hospital Hanoi and Vinmec handle emergencies with English-speaking staff. Pharmacies sell most medications OTC cheaply"
+      ]
+    },
+    {
+      "icon": "🚕",
+      "title": "Getting Around",
+      "items": [
+        "The Old Quarter is completely walkable — most attractions are within 2km. Cross roads slowly and predictably — motorbikes flow around you",
+        "Grab is the main transport app — GrabBike (₫10,000–30,000) and GrabCar (₫40,000–100,000). Safer and cheaper than street taxis",
+        "Buses are cheap (₫7,000–9,000) but hard to navigate without Vietnamese. Useful for airport, Bat Trang, and day trips"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Tourist SIM at the airport: Viettel, Mobifone, or Vinaphone from ₫100,000 for 30 days with 5–10GB data",
+        "Free WiFi in most Old Quarter cafes, hotels, and restaurants. Speeds are good — Vietnam has fast internet",
+        "Essential apps: Grab, Google Maps, Google Translate (download Vietnamese offline pack)"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Vietnamese Dong has large denominations — ₫500,000 note is ~$20. Count zeros carefully. The ₫20,000 and ₫500,000 notes look similar in dim light",
+        "ATMs: Vietcombank and BIDV have lowest fees (₫20,000–50,000 per withdrawal). Carry backup cards — machines occasionally reject foreign cards",
+        "Cash only for street food, bia hơi, and most Old Quarter shops. Cards accepted at hotels, larger restaurants, and some cafes"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Layer clothing Oct–Feb — Hanoi gets surprisingly cold (10–15°C in January). A light jacket is essential for winter visits",
+        "Comfortable walking shoes for the Old Quarter cobblestones. A compact umbrella for rain (mostly May–September)",
+        "Cross-body bag, mosquito repellent, sunscreen, and patience — Hanoi rewards those who slow down and absorb"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🏍",
+      "title": "Road Rules",
+      "text": "Crossing the road in Hanoi is a rite of passage. Walk slowly and steadily — never stop, never run, never make sudden moves. The motorbikes will flow around you. Trust the system. It works for millions daily."
+    },
+    {
+      "icon": "🍜",
+      "title": "Food Culture",
+      "text": "Food in Hanoi is deeply regional and seasonal. Each dish has a \"best\" stall — locals will passionately debate phở supremacy. Ask your hostel staff for their personal recommendations. Never add hoisin to phở in Hanoi — it is a southern habit that northerners frown upon."
+    },
+    {
+      "icon": "👑",
+      "title": "Ho Chi Minh Respect",
+      "text": "Uncle Ho is deeply revered. Treat the Mausoleum and related sites with the same respect you would give a religious site. No disrespectful photos, jokes, or comments. Vietnamese people are very sensitive about their national hero."
+    },
+    {
+      "icon": "🏠",
+      "title": "Shoes Off",
+      "text": "Remove shoes when entering homes, many shops, and all temples and pagodas. If shoes are lined up outside a door, follow suit. It is a sign of respect that Vietnamese people deeply appreciate from visitors."
+    },
+    {
+      "icon": "💵",
+      "title": "Tipping & Bargaining",
+      "text": "Tipping is not traditional but appreciated — ₫20,000–50,000 at restaurants, ₫50,000–100,000 for tour guides. Bargain at markets but not at street food stalls — the quoted price is usually fair and the margins are thin."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography",
+      "text": "Ask before photographing people, especially elderly Vietnamese. Military sites and government buildings should not be photographed. Street photography is generally welcomed — Vietnamese people are often happy to pose if you ask politely."
+    }
+  ],
+  "title": "Hanoi Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Hanoi guide for young travelers. 3-day itinerary with Old Quarter food tours, temples, egg coffee, Ninh Bình day trip, and budget tips. Plan your trip with roammate.",
+  "heroImage": "/images/guides/hanoi-hero.webp",
+  "heroFlag": "🇻🇳",
+  "heroCountry": "Vietnam",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Hanoi",
+  "heroSubtitle": "A thousand years of history simmering in a bowl of phở — where every street corner tells a story and every meal is a masterpiece.",
+  "budgetIntro": "Daily costs per person in VND (₫). Hanoi is one of the cheapest capital cities in the world — extraordinary food and culture for almost nothing.",
+  "culturalIntro": "Hanoi is Vietnam\\'s cultural heart — older, more traditional, and more reserved than Saigon. Respect the history and the city will reveal its soul.",
+  "ctaCity": "Hanoi",
+  "ctaText": "Find travel companions, split Ninh Bình day trips, and share bia hơi corners with fellow travelers on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Oct – Dec Best"
+  ],
+  "defaultDays": 3
+}

@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "amalfi-coast",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EUR (Euro)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Italian",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "CET (UTC+1)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "May – Jun, Sep – Oct",
+      "detail": "Comfortable temperatures, lower crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$80–200 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Schengen Zone",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Amalfi Coast Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Amalfi Coast",
+            "text": "Begin your day at Amalfi Coast early to beat the crowds and catch the best light. The area is most atmospheric in the morning when the air is cool and the landscape catches the first golden rays. Take time to explore the main highlights and capture photographs in the soft morning light. This is the most rewarding time to visit.",
+            "tip": "Arrive as early as possible — the first hour after opening has the fewest visitors and the best photography conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Coastal Exploration",
+            "text": "Spend the afternoon exploring further afield. Wander beyond the main areas to discover hidden gems and local spots. Grab lunch at a local eatery for authentic flavours and budget-friendly prices.",
+            "tip": "Midday sun can be intense — bring sunscreen, a hat, and plenty of water. Rest during the hottest hours if needed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset by the Water",
+            "text": "End the day watching the sun sink into the sea. The evening light at Amalfi Coast is spectacular and worth waiting for. Find a local restaurant for dinner — European cuisine with local wine.",
+            "tip": "Sunset times vary by season — check ahead and position yourself 30 minutes early for the best spot."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Positano & the Blue Grotto Boat",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Positano Before the Crowds",
+            "text": "Catch the first SITA bus south from Sorrento or Amalfi town to reach Positano before 9am, when the cliffside village of stacked pastel houses and bougainvillea lanes still belongs to locals. Walk down to Spiaggia Grande beach for the classic postcard view of the town cascading to the sea. Visit the Church of Santa Maria Assunta to see its Byzantine icon of the Black Madonna above the tiled dome.",
+            "tip": "SITA buses along the SS163 coastal road are cheap (around €1.80) but get packed — stand near the door or risk missing your stop."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Boat Trip to Grotta dello Smeraldo",
+            "text": "Hire a small boat from Positano harbour (around €20–30 per person in a shared tour) to visit the Grotta dello Smeraldo — the Emerald Grotto — near Conca dei Marini. Sunlight refracting through an underwater arch turns the cave's water a luminous green. Alternatively, join a longer boat tour around the Li Galli islands — tiny rocky islets traditionally said to be where Homer's Sirens lived. Lunch on fresh grilled catch at a harbour-side restaurant.",
+            "tip": "Sea conditions can cancel boat trips. Book in the morning and confirm with the operator — they will advise on the day's conditions."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Amalfi Town at Dusk",
+            "text": "Continue by ferry or bus to Amalfi town itself — the medieval maritime republic that once rivalled Venice. Walk through the Piazza del Duomo and up to the Cathedral of Sant'Andrea (free entry to the square, €3 for the cloister), a stunning Arab-Norman facade of black-and-white stone. The piazza fills with locals for the evening passeggiata. Dine on scialatielli ai frutti di mare — wide fresh pasta with mixed seafood — at any trattoria in the side streets.",
+            "tip": "Ferries between Positano and Amalfi run regularly in season (€7–10) and are far more scenic — and faster — than the coastal bus."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Ravello, the Path of the Gods & Furore",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ravello — Villa Rufolo & Gardens",
+            "text": "Take the bus up the mountain from Amalfi town to Ravello (30 minutes, €1.30), the most serene town on the coast, perched 350m above the sea. Villa Rufolo (€7) has terraced gardens that Wagner used as inspiration for Parsifal — the view from the belvedere over the Bay of Salerno is among the finest in southern Italy. Villa Cimbrone (€7) nearby has a clifftop Terrace of Infinity lined with marble busts looking straight out to sea.",
+            "tip": "Ravello is a steep 25-minute bus ride from Amalfi. The road is single-track in places — morning buses are quieter than afternoon returns."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Path of the Gods Hike",
+            "text": "From Bomerano, hike the Sentiero degli Dei — the Path of the Gods — a 7.8km one-way trail along the cliff tops above the coast (around 3 hours, moderate difficulty). The route passes through maquis scrubland and abandoned terraces with uninterrupted views over the blue Tyrrhenian Sea to the island of Capri on the horizon. The path ends in Nocelle, from where a bus descends to Positano. Bring 2 litres of water and snacks.",
+            "tip": "Hike west-to-east (Bomerano to Nocelle) to keep the sea view in front of you rather than behind. SITA bus serves Bomerano from Amalfi."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Furore Fjord & Dinner in Praiano",
+            "text": "Stop at Furore, a tiny village known as the \"town that doesn't exist\" — most residents live inland, with only a handful of houses clinging to the walls of a dramatic sea inlet. The Furore fjord is a narrow slot of turquoise water visible from the SS163 bridge, popular with cliff divers during the annual international competition. Continue to Praiano for dinner — a quieter alternative to Positano with excellent seafood restaurants and far fewer tourists.",
+            "tip": "Praiano is walkable from the bus stop. Il Pirata is a reliable local restaurant with terrace views; budget around €30–40 for a full dinner with wine."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Cetara, Lemon Groves & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Cetara — The Fishing Village the Tourists Miss",
+            "text": "Cetara is a working fishing village at the eastern end of the coast that most Amalfi tourists never reach. Its speciality is colatura di alici — a pungent, intensely savoury anchovy sauce descended from ancient Roman garum — sold in small bottles at fishmongers along the main street. Walk the harbour where fishing boats still go out before dawn, and try the local tuna dishes at one of the simple trattorie that cater mostly to Italians.",
+            "tip": "Cetara is best reached by SITA bus from Amalfi (30 minutes east, €1.80). It is a genuine working village — arrive with respect for the locals' daily rhythms."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Lemon Groves & Limoncello Tour Near Minori",
+            "text": "The Amalfi Coast's sfusato amalfitano lemons — long, thick-skinned, and intensely fragrant — are a protected IGP product grown in terraced giardini clinging to the hillsides. Visit one of the family-run lemon farms near Minori or Maiori (free or €5–10 entry with tasting) to walk through the netted groves and learn how limoncello is made from the peel. Pick up a bottle direct from the producer — far better than supermarket versions.",
+            "tip": "Azienda Agricola Aceto near Ravello offers guided grove tours with tastings. Book by phone or email a day ahead — hours vary."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Sunset & Seafood Farewell",
+            "text": "Return to whichever town serves your departure point and claim a table at a waterfront restaurant for sunset. Order a carafe of local Fiano or Falanghina white wine, a plate of mozzarella di bufala, and finish with a tasting plate of local pastries — sfogliatella, delizia al limone, and zeppole. The Amalfi Coast is expensive but a single generous final meal — around €50 per person with wine — is the right way to close a visit here.",
+            "tip": "Book a farewell table in advance, especially in summer. Restaurants fill by 8pm and seafront tables go first."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book ahead online",
+      "text": "Tickets and tours booked online are often 10-30% cheaper than walk-in prices. Many attractions sell out in peak season — advance booking guarantees entry and saves money."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "Shoulder months (just before or after peak season) offer better prices on accommodation and flights with similar weather and fewer crowds. May – Jun is peak."
+    },
+    {
+      "title": "Stay nearby, not at the gate",
+      "text": "Accommodation directly at the attraction charges a premium. Staying 10-20 minutes away can save 30-50% on nightly rates. Use public transport or a rental car to bridge the gap."
+    },
+    {
+      "title": "Pack your own lunch",
+      "text": "Tourist-area restaurants charge inflated prices. Pack sandwiches, snacks, and a refillable water bottle to save $15-30 per day on food. Buy supplies at local supermarkets or markets."
+    },
+    {
+      "title": "Free walking tours & guides",
+      "text": "Many areas offer free or tip-based guided walks that are better than paid tours. Local guides provide insider knowledge and support the community. Check online for options."
+    },
+    {
+      "title": "Use local transport",
+      "text": "Taxis and private transfers are the most expensive option. Local buses, shared minivans, or ride-sharing are 50-80% cheaper and give you a more authentic experience."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$25–60",
+      "midrange": "$70–150",
+      "splurge": "$200+",
+      "notes": "Hostels → guesthouses → boutique lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–60",
+      "splurge": "$70+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Public buses → shared transfers → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$20–60",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$30–50",
+      "notes": "Combined tickets save money"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$75–190",
+      "midrange": "$165–370",
+      "splurge": "$430+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Schengen Zone",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Entry fees for Amalfi Coast should be paid in EUR — exchange money before arriving"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential",
+        "Bring a basic first aid kit with blister plasters, antiseptic, painkillers, and any personal medication",
+        "Sun protection is essential — apply SPF 50+ and reapply every 2 hours"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Excellent public transport — trains, buses, and ferries connect major points",
+        "Download offline maps before arriving — mobile data coverage can be patchy in remote areas",
+        "Negotiate transport prices before departure or use metered taxis and ride-hailing apps"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card at the airport or any phone shop for affordable data — much cheaper than international roaming",
+        "WiFi is available at most accommodation but signal quality varies. Download offline maps and guides before heading to remote areas",
+        "Share your itinerary with someone at home and check in daily, especially for remote treks or island visits"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: EUR (Euro). Cards accepted in tourist areas, but carry cash for local vendors",
+        "ATMs are available in towns and cities. Visa and Mastercard are most widely accepted",
+        "Tip 5-10% or round up at restaurants. Guides and porters appreciate tips — budget $5-10 per day per person"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable walking shoes, layers for temperature changes, and a packable rain jacket",
+        "A reusable water bottle, headlamp, and portable phone charger are essential for any outdoor adventure",
+        "Quick-dry clothing is ideal — you can wash and wear repeatedly, reducing pack weight"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Local Customs",
+      "text": "Be mindful of local customs and traditions. Ask before photographing people. Learn basic greetings in the local language — even a simple hello earns goodwill."
+    },
+    {
+      "icon": "🌍",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish. Stay on marked trails and paths. Do not touch, feed, or disturb wildlife. The natural beauty of Amalfi Coast depends on every visitor treating it with respect. Take only photos, leave only footprints."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals, especially in indigenous or traditional communities. Many religious sites have photography restrictions — check signage and respect these rules. Drone regulations vary — check local laws before flying."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn a few words in Italian — greetings, please, thank you, and numbers go a long way. English is widely spoken in tourist areas but a translation app helps bridge gaps."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned guesthouses, restaurants, and guides over international chains. Buy handicrafts directly from artisans. Your spending has the most impact when it goes directly into the local economy rather than through large tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace & Patience",
+      "text": "Allow more time than you think — rushing through natural and cultural sites misses the point. The best experiences come from slowing down and being present."
+    }
+  ],
+  "title": "Amalfi Coast Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Amalfi Coast guide for young travelers. Nature, adventure, exploration with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/amalfi-coast-hero.webp",
+  "heroFlag": "🇮🇹",
+  "heroCountry": "Italy",
+  "heroRegion": "Europe",
+  "heroCity": "Amalfi Coast",
+  "heroSubtitle": "A UNESCO coastline of vertiginous cliffside towns, lemon groves, and azure Mediterranean bays — Italy's most glamorous stretch of shore.",
+  "budgetIntro": "Daily costs per person in US dollars. Amalfi Coast costs depend on season, accommodation style, and activity choices — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Amalfi Coast is a natural wonder — approach with curiosity and respect, and you will be rewarded with one of the most memorable experiences of your travels.",
+  "ctaCity": "Amalfi Coast",
+  "ctaText": "Find travel companions to explore Amalfi Coast together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Coast Trip",
+    "Coastal",
+    "May – Jun Best"
+  ],
+  "defaultDays": 1
+}

@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "entebbe",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "UGX (USh)",
+      "detail": "1 USD ≈ USh 3,800"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Luganda",
+      "detail": "English is official and widely spoken"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EAT (UTC+3)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jun – Sep, Dec – Feb",
+      "detail": "Dry seasons, pleasant 24–28°C"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$25–45 USD",
+      "detail": "USh 95,000–171,000 budget traveler"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "eVisa required",
+      "detail": "Apply online — $50 USD single entry"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Best of Entebbe in One Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Botanical Gardens on Lake Victoria",
+            "text": "Start at the Entebbe Botanical Gardens (USh 15,000) — one of the oldest in Africa, established in 1898 on the shores of Lake Victoria. The 40-hectare gardens are a peaceful canopy of tropical trees, ferns, and flowering plants with paths winding through rainforest that was used as a location for the original Tarzan films. Vervet monkeys swing through the trees, enormous monitor lizards bask on the lake shore, and over 100 bird species inhabit the garden. The lakeside sections offer views across the enormous lake — the world's second-largest freshwater lake by area.",
+            "tip": "Enter early before tour groups arrive. The garden is best explored slowly — bring binoculars for birdwatching. The waterfront trail has the best lake views."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ngamba Island Chimpanzee Sanctuary",
+            "text": "Take a boat to Ngamba Island Chimpanzee Sanctuary (USh 250,000 including boat and entry) — a forested island in Lake Victoria home to 49 orphaned chimpanzees rescued from the illegal wildlife trade. The sanctuary occupies 100 acres of rainforest where the chimps live wild. At the feeding platform, you watch from an elevated walkway as the chimps interact, play, fight, groom, and use tools. The boat ride across Lake Victoria is beautiful — watch for fish eagles and kingfishers on the journey.",
+            "tip": "The afternoon feeding session (2:30pm) is the most dramatic with all chimps present. Book the boat through your hotel at least a day ahead."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Lake Victoria Sunset & Fish Dinner",
+            "text": "Entebbe sits on a peninsula jutting into Lake Victoria and the sunsets are magnificent — the sky turns amber and pink over the vast lake as fishing boats head out for the night. Watch from the beach near the Botanical Gardens or from one of the lakeside restaurants. Dinner should be fresh tilapia or Nile perch — the lake fish is Entebbe's culinary signature. A whole grilled tilapia with matoke (cooked banana) and groundnut sauce costs USh 15,000–25,000 at a lakeside restaurant.",
+            "tip": "The beach area near the Sailing Club is the best sunset spot in Entebbe. Bring insect repellent — mosquitoes are active at dusk near the lake."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Botanical Gardens & Ngamba Island",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Entebbe Botanical Gardens",
+            "text": "Spend a morning in the Entebbe Botanical Gardens (USh 15,000) — the 40-hectare tropical garden on the Lake Victoria shoreline is a haven of ancient trees, fern groves, and flowering plants. Established in 1898, the gardens were the filming location for the original Tarzan movies. Walk the main trails to the lakeside viewpoints where you can see across the water to the Ssese Islands on the horizon. Vervet monkeys, monitor lizards, and hornbills are commonly spotted. The garden is Entebbe's most peaceful place.",
+            "tip": "Wear comfortable walking shoes — some paths are muddy after rain. A guide at the gate (USh 20,000) significantly improves bird and plant identification."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ngamba Island Chimps",
+            "text": "Board a speedboat for the 45-minute ride to Ngamba Island Chimpanzee Sanctuary (USh 250,000 all-inclusive). The island is home to 49 orphaned chimpanzees living in 100 acres of natural rainforest. You observe from a raised walkway during feeding time — watching the chimps' social dynamics, tool use, and personalities is extraordinary. Each chimp has a name and known history. The guides share their individual rescue stories and explain chimpanzee behaviour in fascinating detail.",
+            "tip": "The combined boat transfer and sanctuary visit takes about 4 hours. Bring sunscreen for the boat ride and rain gear — Lake Victoria storms can appear quickly."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Lakeside Dinner",
+            "text": "Return to Entebbe for dinner at one of the lakeside restaurants. The Goretti's and Faze 3 are popular spots with terraces overlooking Lake Victoria. Order fresh tilapia — grilled whole over charcoal with lemon and chilli — accompanied by matoke and a cold Nile Special beer (USh 4,000). The sunset over the lake is a daily spectacle that turns the entire sky orange. After dinner, the town is quiet — Entebbe is not a nightlife destination but the peaceful evenings are a welcome contrast to Kampala's chaos.",
+            "tip": "Nile Special and Bell are Uganda's most popular beers — both brewed locally and excellent. For non-alcoholic options, fresh passion fruit juice is outstanding."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Wildlife Centre & Mabamba Swamp",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Uganda Wildlife Education Centre",
+            "text": "Visit the Uganda Wildlife Education Centre (USh 30,000) — a conservation zoo that rehabilitates injured and orphaned Ugandan wildlife. The centre houses chimpanzees, lions, rhinos, giraffes, shoebill storks, and dozens of other species in naturalistic enclosures. Unlike most African zoos, this facility focuses on education and rehabilitation with plans to return animals to the wild where possible. The behind-the-scenes keeper experience (USh 50,000) lets you get closer to the animals and hear their rescue stories.",
+            "tip": "Visit early morning when animals are most active. The chimpanzee feeding at 10am is a highlight. The centre is walkable from most Entebbe accommodation."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mabamba Swamp — Shoebill Birding",
+            "text": "Drive 45 minutes to Mabamba Swamp (USh 150,000 including boat and guide) for one of Africa's most sought-after wildlife encounters — the shoebill stork. This prehistoric-looking bird stands over a metre tall with a massive shoe-shaped bill and is found only in the papyrus swamps of central Africa. Mabamba is the most reliable place to spot them. A local guide paddles you through narrow channels in a dugout canoe, parting the papyrus reeds until you reach the shoebill's territory. Sightings are not guaranteed but success rates exceed 80%.",
+            "tip": "Early morning (6–9am) is the best time for shoebill sightings when the birds are hunting in open water. The afternoon trip also works but sighting rates are slightly lower."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Cruise",
+            "text": "Book a sunset cruise on Lake Victoria (USh 80,000–120,000 per person) — several operators run 90-minute boat trips from the Entebbe jetty as the sun drops over the lake. The cruise passes fishing villages, forested islands, and the enormous lake landscape that stretches to the horizon. Fish eagles circle overhead and the sunset over Africa's largest lake is genuinely awe-inspiring. Some cruises include drinks and snacks on board.",
+            "tip": "The sunset cruise is best on clear evenings — check the weather. Bring a light jacket as it gets cool on the water after sunset."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Beaches, Markets & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lake Victoria Beaches",
+            "text": "Spend the morning at one of Entebbe's Lake Victoria beaches — Aero Beach, Lido Beach, or Imperial Beach (entry USh 5,000–10,000). The freshwater lake beaches are sandy and warm, with calm water for swimming. They are popular weekend hangouts for Kampala residents and have a relaxed, festive atmosphere with music, grilled food, and cold drinks. The beaches are safe for swimming in designated areas — avoid going deep as the lake has strong undercurrents in places.",
+            "tip": "Aero Beach is the most popular and best-maintained. Weekdays are quieter. Bilharzia risk exists in Lake Victoria — avoid swimming in stagnant areas near reeds."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Local Market & Craft Shopping",
+            "text": "Browse Entebbe's local market for souvenirs — bark cloth (a traditional Buganda fabric beaten from fig tree bark), handmade baskets, coffee beans from the Ugandan highlands, and colourful kitenge fabric. The market is small and authentic, not a tourist trap. Kampala Road has several craft shops with curated Ugandan art, jewelry, and carvings. A kilo of Ugandan arabica coffee beans costs USh 15,000–25,000 and makes an excellent gift.",
+            "tip": "Ugandan coffee is some of the best in the world — buy arabica beans from the Rwenzori or Elgon regions for the richest flavour."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Fish & Sunset",
+            "text": "One last grilled tilapia at a lakeside spot, one last Nile Special beer, and one last sunset over Lake Victoria. Entebbe is a gentle introduction to East Africa — quieter than Nairobi, greener than Dar es Salaam, and with wildlife encounters that punch above its size. Many travellers pass through Entebbe on the way to gorilla trekking, Murchison Falls, or Queen Elizabeth National Park — but the town itself deserves at least two full days. The airport is 10 minutes from the town centre.",
+            "tip": "Entebbe International Airport is remarkably close to the town centre — you can be at the airport in 15 minutes. No need to leave hours early for a flight."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Botanical Gardens",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arriving in Entebbe",
+            "text": "Arrive at Entebbe International Airport — Uganda's only international airport, sitting right on the Lake Victoria shoreline. The airport is just 10 minutes from Entebbe town centre, making it one of the most convenient airport-to-town transfers in Africa. Check into your accommodation and take a walk through the town — Entebbe is small, green, and peaceful, a world away from the chaos of nearby Kampala. The tree-lined streets and colonial-era buildings give it a sleepy, pleasant atmosphere.",
+            "tip": "Change money at the airport forex bureau for a fair rate. Buy a local SIM card (Airtel or MTN) at the airport for mobile data."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Botanical Gardens Exploration",
+            "text": "Spend the afternoon in the Entebbe Botanical Gardens (USh 15,000) — wander the trails through tropical rainforest, palm groves, and flowering gardens that slope down to the Lake Victoria shore. The gardens were established in 1898 and served as a filming location for the original Tarzan movies. The lake-edge walk is particularly beautiful, with views across the water to the Ssese Islands. Look for vervet monkeys, monitor lizards, weaverbirds, and the enormous marabou storks that roost in the trees.",
+            "tip": "The garden is large enough for 2–3 hours of exploration. Bring binoculars for birds and a camera with a zoom lens for the monkeys."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "First Lake Victoria Sunset",
+            "text": "Find a spot on the lakefront for your first Lake Victoria sunset — the Sailing Club area or any of the beach restaurants have direct views over the water. The sky erupts in orange, pink, and purple as the sun drops below the lake's flat horizon. Order a Nile Special beer and a plate of fresh tilapia with chips and salad (USh 15,000–20,000). Entebbe's evening atmosphere is relaxed and safe — stroll the main road after dinner or sit on the beach and listen to the lake.",
+            "tip": "Wear insect repellent at dusk — Entebbe is on the equator beside a tropical lake, so mosquitoes are persistent. Take malaria prophylaxis."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Ngamba Island Chimps",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Boat to Ngamba Island",
+            "text": "Board the morning speedboat (departing 8:45am) for the 45-minute ride across Lake Victoria to Ngamba Island Chimpanzee Sanctuary (USh 250,000 all-inclusive). The boat crosses open water with beautiful views of the lake's island-studded northern shore. On arrival, guides brief you on the sanctuary's mission — rescuing orphaned and confiscated chimps from the illegal wildlife trade. The 49 residents live in 100 acres of natural forest and are semi-wild, returning to the feeding platform for supplementary food.",
+            "tip": "Bring a rain jacket — Lake Victoria storms can appear suddenly with strong winds and heavy rain. The boat ride is exposed."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Chimpanzee Feeding & Forest Walk",
+            "text": "Watch the afternoon feeding from the elevated viewing platform — all 49 chimps converge in a spectacular display of social hierarchy, playful wrestling, and surprisingly human behaviour. The alpha male eats first, mothers carry infants on their backs, and juveniles chase each other through the trees. The guides know every chimp by name and share their backstories. After the feeding, walk the forest trail along the island's edge — the chimps are often visible in the canopy overhead. The sanctuary also has a small education centre about primate conservation in Uganda.",
+            "tip": "The 2:30pm feeding is more dramatic than morning feeding — all chimps return from the forest. Stay on the platform until the last chimp leaves for maximum viewing time."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Local Dinner",
+            "text": "Boat back to Entebbe in the late afternoon and find a local restaurant for an authentic Ugandan dinner. Try the luwombo — a traditional Buganda dish of chicken, groundnut sauce, and vegetables steamed in banana leaves. It is rich, flavourful, and unlike anything in Western cooking. Alternatively, rolex (a rolled omelette with vegetables in a chapati, USh 2,000) is Uganda's most popular street food and surprisingly satisfying. The rolex vendors near the market are the best.",
+            "tip": "Rolex is pronounced \"roll-eggs\" and has nothing to do with watches. It is Uganda's national street food and every vendor makes it slightly differently."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Wildlife Centre & Mabamba Shoebill",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Uganda Wildlife Education Centre",
+            "text": "Visit the Uganda Wildlife Education Centre (USh 30,000) early when the animals are most active. The centre rehabilitates injured and orphaned Ugandan wildlife — lions, rhinos, chimpanzees, giraffes, elephants, and the elusive shoebill stork are all present. The enclosures are naturalistic and well-maintained by African standards. The keeper experience (USh 50,000 extra) gives you behind-the-scenes access and the chance to feed some animals. The centre's conservation breeding programme has successfully raised several species for reintroduction.",
+            "tip": "The shoebill enclosure is near the entrance — these incredible birds are almost impossible to see in the wild, so this is a guaranteed viewing opportunity."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mabamba Swamp Shoebill Trek",
+            "text": "Drive 45 minutes west to Mabamba Swamp for the ultimate shoebill encounter (USh 150,000 including dugout canoe and guide). A local guide paddles you through narrow channels carved into the papyrus swamp — the vegetation towers 3 metres above your canoe as you push deeper into the wetland. The shoebill stork, one of Africa's most bizarre and endangered birds, hunts in the open pools within the swamp. When you spot one, the guide stops and you observe from a respectful distance — the bird's enormous bill, grey plumage, and prehistoric stare are unforgettable.",
+            "tip": "Mabamba visits work morning or afternoon but birders swear by the early morning slot (departing Entebbe at 6am). Bring waterproof bags for cameras."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset & Rolex Dinner",
+            "text": "Back in Entebbe for a sunset beer at one of the lakefront spots. The golden light on Lake Victoria never gets old — each evening is slightly different as clouds, humidity, and season change the colour palette. Dinner tonight is street food: rolex (USh 2,000), grilled corn on the cob (USh 1,000), and a chapati with beans (USh 3,000) from the vendors near the main market. Budget travellers can eat extremely well in Uganda for under USh 10,000 a day.",
+            "tip": "The best rolex vendors have the longest queues. The chapati should be thin, flaky, and freshly cooked — if it is thick and cold, find another vendor."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Ssese Islands Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ferry to Ssese Islands",
+            "text": "Take the morning ferry from Entebbe or Nakiwogo pier to the Ssese Islands (USh 20,000–45,000, 3–4 hours) — an archipelago of 84 islands scattered across the northwestern corner of Lake Victoria. Bugala Island is the main destination with rainforest, sandy beaches, and a handful of basic lodges. The ferry ride crosses open lake with views of fishing canoes, forested islands, and enormous skies. The Ssese Islands feel genuinely remote — there are few tourists and the pace of life is dictated by fishing schedules and weather.",
+            "tip": "The ferry can be crowded and slow — consider hiring a speedboat for the crossing (USh 200,000–300,000 shared between passengers) to save time."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Island Beaches & Forest Walk",
+            "text": "Explore Bugala Island — the main settlement at Kalangala has basic restaurants and shops, but the real attraction is the unspoilt coastline. Walk to the sandy beaches on the south side of the island where the freshwater lake laps against palm-fringed shores. The inland forest is home to vervet monkeys, palm civet cats, and over 200 bird species. The island has a relaxed, end-of-the-world atmosphere — mobile signal is patchy, electricity is intermittent, and that is exactly the point.",
+            "tip": "Bilharzia risk exists in the lake around the islands — swim at sandy beach areas with wave action, not in stagnant bays. Ask locals about safe swimming spots."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Island Evening & Return",
+            "text": "If doing a day trip, catch the afternoon ferry back to the mainland (check return schedules — they are limited). If staying overnight, the island lodges offer simple rooms with lake views and fresh fish dinners. The night sky on the Ssese Islands is extraordinary — minimal light pollution means the Milky Way is visible on clear nights. Fireflies dance along the forest edge and the sounds of the lake at night are deeply peaceful.",
+            "tip": "If staying overnight on Ssese, bring a torch, insect repellent, and cash — there are no ATMs on the islands. Accommodation is basic but charming."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Golf Course Walk & Lake Beaches",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Entebbe Golf Course Walk",
+            "text": "Walk the perimeter of the Entebbe Golf Course — even if you do not play golf, the course is set on a beautiful peninsula jutting into Lake Victoria with mature tropical trees, manicured lawns, and lake views from multiple angles. The surrounding area is home to vervet monkeys, monitor lizards, crowned cranes, and marabou storks. The neighbourhood around the golf course is Entebbe's most affluent, with tree-lined avenues and colonial-era houses that give the area a garden-suburb feel.",
+            "tip": "The golf course is a public space and walking the perimeter paths is free. Early morning is best for birdwatching — crowned cranes are often on the fairways."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Beach Day & Lake Swimming",
+            "text": "Spend the afternoon at Aero Beach or Imperial Botanical Beach (entry USh 5,000–10,000). The Lake Victoria beaches have sandy shores, calm warm water, and a festive weekend atmosphere with music, grilled food, and cold drinks. Rent a sun lounger, swim in the designated safe areas, and order grilled tilapia and chips from the beach restaurant. The lake is so vast that it feels like an inland sea — the opposite shore is invisible, adding to the sense of scale.",
+            "tip": "The beaches are busiest on Saturday afternoons when Kampala residents make the 45-minute drive. Weekdays are quieter and more relaxed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cultural Performance",
+            "text": "Check locally for Ugandan cultural performances — several venues in Entebbe and nearby Kampala host traditional dance and drumming shows. The Ndere Troupe in Kampala (45 minutes by taxi) is the most famous, performing traditional dances from Uganda's many ethnic groups every Wednesday and weekend evening (USh 30,000). The drumming is extraordinary — deep, complex rhythms that have been passed down for generations. The dancers perform in traditional dress representing Baganda, Acholi, and Karamojong cultures.",
+            "tip": "If visiting Ndere Troupe, take a boda-boda or taxi to Kampala and arrange a return trip. The show runs from 7–9pm and is one of the best cultural experiences in Uganda."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Local Fish Market & Day at Leisure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kasenyi Fish Landing Site",
+            "text": "Visit the Kasenyi fish landing site on the outskirts of Entebbe — a working fishing village where the day's catch of Nile perch, tilapia, and silverfish is brought ashore, sorted, and sold. The fishermen work from wooden canoes using nets and longlines, setting out at dusk and returning at dawn. The market is at its busiest between 7–9am when the boats come in. The scale of Lake Victoria's fishing industry becomes clear here — thousands of tonnes of fish are landed daily across the lake's shoreline.",
+            "tip": "This is a working fish market, not a tourist site. Be respectful, ask before photographing, and expect strong fish smells. It is an authentic glimpse of lakeside life."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Relaxation & Day at Leisure",
+            "text": "Take an afternoon at your own pace — Entebbe rewards slow exploration. Revisit the Botanical Gardens for a quiet read under the trees, find a cafe with lake views for a long coffee, or explore the residential streets where tropical flowers spill over garden walls. If you want something active, rent a bicycle (USh 20,000/day from some guesthouses) and ride the quiet lake-edge roads south of town. The flat terrain and low traffic make cycling pleasant.",
+            "tip": "Entebbe's pace is its greatest asset. Do not try to fill every hour — the town is designed for lingering, not rushing."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Local Food Evening",
+            "text": "Eat at a local restaurant tonight — not a tourist spot. The Buganda cuisine is centred on matoke (steamed green banana), groundnut sauce, beans, posho (maize porridge), and grilled or stewed meat. A full local meal costs USh 5,000–10,000 and is enormously satisfying. Try katogo — a breakfast dish that Ugandans also eat for dinner, combining matoke with groundnut or bean stew. The restaurants near the market and along Kampala Road serve the most authentic food.",
+            "tip": "Point at what other diners are eating if the menu is confusing. Ugandan food is not spicy by default but chilli sauce is always available on the side."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Final Morning & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sunrise Walk",
+            "text": "Wake early for a final walk along the Lake Victoria shoreline. The sunrise over the lake — mist rising from the water, fishing canoes returning, the first light catching the tropical trees — is a quiet, beautiful start to the day. Walk through the Botanical Gardens one last time if they are open, or stroll the lakefront path south of town where the water laps against red laterite soil and palm trees lean out over the lake.",
+            "tip": "The sunrise is worth waking for — the equatorial light changes rapidly and the first 20 minutes of dawn are the most photogenic."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Souvenirs & Packing",
+            "text": "Pick up final souvenirs at the craft shops along Kampala Road — bark cloth, hand-woven baskets, Ugandan coffee beans, and banana-leaf art are distinctive and affordable. Pack your bags and settle any accommodation bills. Entebbe's compact size means nothing takes long — a final lunch of grilled tilapia at your favourite lakeside spot is easily squeezed in before a flight.",
+            "tip": "Ugandan arabica coffee from the Rwenzori mountains is genuinely world-class and costs a fraction of the European retail price. Stock up."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Entebbe",
+            "text": "One last sunset, one last Nile Special, one last view of Lake Victoria. Entebbe is often just a stopover — a place to sleep before gorilla trekking or safari. But giving it time reveals a gentle, green, wildlife-rich town that is rewarding in its own right. The chimpanzee encounters, shoebill sightings, and lakeside sunsets make it one of East Africa's underrated gems. The airport is 10 minutes away — the most relaxed departure in Africa.",
+            "tip": "Entebbe airport has limited food options landside. Eat in town before heading to the airport and bring snacks for your flight."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Eat rolex and local food",
+      "text": "A rolex (rolled omelette in chapati) costs USh 2,000 and is a complete meal. Local restaurants serve huge plates of matoke, beans, and meat for USh 5,000–10,000. Tourist restaurants charge 3–4 times more for the same food."
+    },
+    {
+      "title": "Use boda-bodas carefully",
+      "text": "Motorcycle taxis (boda-bodas) are the cheapest transport: USh 2,000–5,000 for short trips. They are fast but carry risk — always wear a helmet, hold on, and avoid night rides. Taxis are safer but cost USh 10,000–30,000."
+    },
+    {
+      "title": "Book Ngamba early",
+      "text": "Ngamba Island is the most expensive activity (USh 250,000) but worth every shilling. Book at least a day ahead through the Chimpanzee Sanctuary trust — walk-up visits are not always possible."
+    },
+    {
+      "title": "Budget accommodation",
+      "text": "Entebbe has guesthouses from USh 40,000–80,000/night ($10–20) with clean rooms, fans, and breakfast. The backpacker hostels charge USh 25,000 for dorms. Booking.com and Airbnb have good options."
+    },
+    {
+      "title": "Free activities",
+      "text": "Walking the lakefront, exploring town, watching sunsets, and visiting the golf course perimeter are all free. The beaches charge only USh 5,000–10,000 entry. Budget travellers can fill days without spending much."
+    },
+    {
+      "title": "Kampala day trip",
+      "text": "Kampala is 37km away (USh 5,000 by shared taxi, 45 min). The capital has markets, the Kasubi Tombs, Owino Market, and the National Mosque. It is chaotic but fascinating — go for a day, sleep in peaceful Entebbe."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "USh 25,000–80,000",
+      "midrange": "USh 100,000–250,000",
+      "splurge": "USh 400,000+",
+      "notes": "Dorms/guesthouses → hotels → lakeside resorts"
+    },
+    {
+      "category": "Food",
+      "budget": "USh 10,000–25,000",
+      "midrange": "USh 30,000–60,000",
+      "splurge": "USh 100,000+",
+      "notes": "Street food → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "USh 5,000–15,000",
+      "midrange": "USh 20,000–50,000",
+      "splurge": "USh 100,000+",
+      "notes": "Boda-boda → taxi → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "USh 15,000–30,000",
+      "midrange": "USh 150,000–300,000",
+      "splurge": "USh 500,000+",
+      "notes": "Gardens + beach → Ngamba + shoebill → private tours"
+    },
+    {
+      "category": "Drinks",
+      "budget": "USh 4,000–10,000",
+      "midrange": "USh 15,000–30,000",
+      "splurge": "USh 50,000+",
+      "notes": "Nile Special → cocktails → craft drinks"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "USh 59,000–160,000",
+      "midrange": "USh 315,000–690,000",
+      "splurge": "USh 1,150,000+",
+      "notes": "$16–42 → $83–182 → $303+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Most nationalities need an eVisa — apply at visas.immigration.go.ug ($50 single entry, $100 East Africa tourist visa covering Uganda, Kenya, Rwanda)",
+        "Entebbe International Airport is Uganda's only international airport, located 37km south of Kampala on the Lake Victoria shore",
+        "The airport-to-town transfer is just 10 minutes — one of the shortest in Africa. Taxis cost USh 20,000–30,000"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Yellow fever vaccination certificate is mandatory for entry to Uganda. Carry the original card",
+        "Malaria is a serious risk — take prophylaxis (doxycycline or Malarone), use insect repellent, and sleep under a treated mosquito net",
+        "Drink bottled or purified water only. Entebbe has a hospital for basic treatment — for serious emergencies, Kampala has better facilities"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Entebbe is small and walkable for the town centre. Boda-bodas (motorcycle taxis) cost USh 2,000–5,000 for short trips",
+        "Shared taxis to Kampala leave from the main road (USh 5,000, 45 min). Special hire taxis cost USh 50,000–80,000",
+        "For Mabamba Swamp and other excursions, arrange transport through your accommodation — public transport does not reach remote sites"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy an MTN or Airtel SIM at the airport for data (USh 10,000 for 2GB). MTN has slightly better coverage outside towns",
+        "WiFi available in hotels and cafes but speeds vary. Download offline maps before heading to islands or swamps",
+        "Mobile money (MTN MoMo, Airtel Money) is used everywhere in Uganda — load credit on your SIM for convenient payments"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "ATMs available in Entebbe town (Stanbic, Absa, Centenary). Visa and Mastercard accepted at ATMs — check your card's foreign transaction fees",
+        "Cash is essential for street food, boda-bodas, and smaller shops. Cards accepted only at hotels and tourist restaurants",
+        "The East Africa tourist visa ($100) covers Uganda, Kenya, and Rwanda — excellent value if visiting multiple countries"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Light, breathable clothing. Entebbe is warm (24–28°C year-round) and humid. A light rain jacket is essential for afternoon storms",
+        "Strong insect repellent (DEET 30%+), sunscreen, and a reusable water bottle. A head torch is useful for power outages",
+        "Binoculars for birding — Uganda is one of Africa's top birding destinations and Entebbe alone has over 300 species in the surrounding area"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Ugandan Warmth",
+      "text": "Ugandans are among the friendliest people in Africa. Greet everyone — \"Oli otya\" (how are you in Luganda) or \"Hello\" in English. Handshakes are standard and people take time to ask how you are before getting to business."
+    },
+    {
+      "icon": "👑",
+      "title": "Buganda Kingdom",
+      "text": "Entebbe is in the Buganda Kingdom — the largest traditional kingdom in Uganda. The Kabaka (king) still holds cultural authority and the Buganda traditions of music, dance, and bark cloth weaving are living culture, not museum exhibits."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography",
+      "text": "Always ask before photographing people. Most Ugandans are happy to be photographed but some prefer not to be. Military installations and government buildings should never be photographed — this is taken seriously."
+    },
+    {
+      "icon": "🌍",
+      "title": "Conservation Matters",
+      "text": "Uganda is the \"Pearl of Africa\" for its extraordinary biodiversity. Support conservation by visiting sanctuaries like Ngamba Island and Mabamba that fund wildlife protection. Avoid buying products made from wild animals."
+    },
+    {
+      "icon": "🍌",
+      "title": "Food Culture",
+      "text": "Matoke (steamed green banana) is the staple food of Buganda — treat it with the respect you would give bread or rice in other cultures. Eating with your right hand is traditional. Refusing food offered to you is considered rude."
+    },
+    {
+      "icon": "🕐",
+      "title": "African Time",
+      "text": "Things do not run on precise schedules. Buses leave when full, meals arrive when ready, and plans change without notice. Patience and flexibility are essential — getting frustrated achieves nothing and misses the point."
+    }
+  ],
+  "title": "Entebbe Travel Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Entebbe guide for young travelers. Chimpanzee sanctuary, shoebill birding, Lake Victoria sunsets with 1, 3, and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/entebbe-hero.webp",
+  "heroFlag": "🇺🇬",
+  "heroCountry": "Uganda",
+  "heroRegion": "East Africa",
+  "heroCity": "Entebbe",
+  "heroSubtitle": "A gentle lakeside town where chimpanzees play on island sanctuaries, shoebill storks hunt in papyrus swamps, and Lake Victoria sunsets set the sky on fire.",
+  "budgetIntro": "Daily costs per person in UGX (USh). Entebbe is affordable for East Africa — street food and guesthouses keep budgets low, while Ngamba Island and private tours push costs higher.",
+  "culturalIntro": "Entebbe is a welcoming, gentle town in the heart of Buganda Kingdom. Greet everyone warmly, respect the wildlife, and let the lakeside pace set your rhythm.",
+  "ctaCity": "Entebbe",
+  "ctaText": "Find travel companions to visit Ngamba Island chimps, spot shoebills, and watch Lake Victoria sunsets in Entebbe on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Wildlife",
+    "Nature",
+    "Jun – Sep Best"
+  ],
+  "defaultDays": 3
+}

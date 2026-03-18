@@ -1,0 +1,512 @@
+{
+  "type": "city",
+  "slug": "koh-lanta",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "THB (Baht)",
+      "detail": "1 USD ≈ 35 THB"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Thai",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "ICT (UTC+7)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Nov – Apr",
+      "detail": "Dry season, calm seas"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$25–55 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 60 days",
+      "detail": "Most nationalities"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Best of Koh Lanta in a Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Long Beach & Old Town",
+            "text": "Start your morning at Long Beach (Phra Ae) — a 3km stretch of golden sand that is quieter and more relaxed than anything on Phuket or Koh Phi Phi. Swim in the warm Andaman Sea, rent a kayak (300 THB/hour), or simply walk the length of the beach while the sand is still cool. By mid-morning, ride a scooter (250 THB/day) 20 minutes south to Lanta Old Town — a charming waterfront village of stilted wooden shophouses built by Chinese and Malay traders over a century ago. Browse the small galleries, pick up handmade batik, and have a coffee overlooking the mangrove-lined channel.",
+            "tip": "Long Beach faces west, so mornings are shaded and pleasant for swimming. Old Town is best visited before noon when it is quiet — the afternoon heat drives most visitors away."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mu Ko Lanta National Park",
+            "text": "Head to the southern tip of the island to Mu Ko Lanta National Park (200 THB entry). The park protects pristine coastline, mangrove forest, and a lighthouse perched on a dramatic rocky headland with panoramic views across the Andaman Sea to distant islands. Hike the short trail through old-growth forest to a white-sand cove — one of the few beaches on Koh Lanta with no development. The snorkelling off the rocks is excellent, with colourful reef fish and occasional sea turtles in the shallows.",
+            "tip": "The road to the national park is steep and winding in the final 5km — ride cautiously on a scooter. Bring water and snacks as the park cafe has limited options."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset at Relax Bay",
+            "text": "Koh Lanta's west-facing coast delivers some of Thailand's most spectacular sunsets. Head to Relax Bay (Phra Ae South) where a string of low-key beach bars line the sand — order a 100 THB cocktail, sink into a beanbag, and watch the sky turn from gold to crimson over the Andaman Sea. For dinner, walk to one of the beachside Thai restaurants on Long Beach for grilled whole fish with chilli and lime (200–300 THB), pad thai, and fresh mango sticky rice.",
+            "tip": "Sunset is around 6:15–6:30pm year-round. Arrive by 5:30pm to claim a good beanbag spot — the popular bars fill up quickly during peak season."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Beaches, Old Town & Island Vibes",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Long Beach Morning Swim",
+            "text": "Ease into Koh Lanta at Long Beach, the island's main stretch of sand. Unlike the party beaches of southern Thailand, Long Beach is calm, wide, and unhurried. Swim in the bath-warm Andaman water, walk the full 3km length, or rent a stand-up paddleboard (400 THB/hour) from one of the beachside operators. Grab breakfast at a beachfront cafe — banana pancakes and Thai iced coffee for under 150 THB.",
+            "tip": "The northern end of Long Beach is the most developed; walk south for 10 minutes to find emptier stretches with just a few bungalows and coconut palms."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Lanta Old Town Heritage Walk",
+            "text": "Ride south to Lanta Old Town on the island's quieter east coast. This atmospheric fishing village dates back over 100 years — stilted wooden shophouses line the waterfront, built by Chinese, Malay, and sea gypsy (Chao Ley) communities who traded across the Andaman. Visit the small Lanta Community Museum to learn about the island's multicultural history, browse local art galleries, and eat fresh crab curry at one of the waterfront restaurants overlooking the mangrove channel to Koh Lanta Noi.",
+            "tip": "Old Town is most atmospheric in the late afternoon when the fishing boats return and the light turns golden on the weathered wooden buildings. Hammock Cafe has excellent iced drinks."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Klong Dao Sunset Dinner",
+            "text": "Klong Dao Beach at the island's northern end is family-friendly and wide, with a gentle slope into shallow water. The sunset from here — framed by longtail boats and distant Ko Phi Phi silhouettes — is quintessential Andaman. Eat at one of the beachfront seafood restaurants where the day's catch is displayed on ice: choose your fish, pick your sauce (garlic, sweet chilli, or green curry), and pay by weight. A whole grilled barramundi with sides runs 250–400 THB.",
+            "tip": "Klong Dao restaurants quote fish prices per 100g — a whole barramundi is typically 400–600g. Confirm the total price before ordering to avoid surprises."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Four Islands Snorkelling & Caves",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Four Islands Boat Trip",
+            "text": "Join a Four Islands snorkelling tour (800–1,200 THB from any tour shop on Long Beach) departing at 8am. The traditional longtail boat heads first to Koh Chuek, a tiny limestone island with a shallow coral reef teeming with parrotfish, triggerfish, and Nemo clownfish in their anemone hosts. The second stop is Koh Mook and its famous Emerald Cave (Tham Morakot) — you swim 80 metres through a pitch-dark sea cave tunnel to emerge in a hidden lagoon surrounded by towering jungle-covered cliffs, open to the sky. The lagoon has a tiny white beach.",
+            "tip": "Wear a life jacket in the Emerald Cave — the tunnel is dark and 80m long. Go with the first boats of the day (before 10am) to experience the cave without dozens of swimmers blocking the way."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Koh Ngai & Paradise Beach",
+            "text": "The boat continues to Koh Ngai (also called Koh Hai), a small island with a stunning white sand beach and coral reef starting just metres from shore. Snorkel directly off the beach among schools of butterflyfish and blue-spotted stingrays in crystal-clear water. Lunch is included on most tours — typically pad thai, fried rice, and fresh fruit served on the beach. The final stop is Koh Maa (sometimes called Paradise Beach), a sandbar island connected to Koh Lanta's northwest tip, with calm shallow water perfect for a final swim.",
+            "tip": "Bring reef-safe sunscreen — Koh Ngai's shallow reef is suffering from chemical sunscreen damage. A rash guard is even better for sun protection while snorkelling."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kantiang Bay Seafood",
+            "text": "Back on Koh Lanta, head to Kantiang Bay on the southern half of the island — a crescent-shaped bay that many consider the island's most beautiful beach. The bay is quieter and more upscale than the northern beaches. Eat at Same Same But Different, a beachfront restaurant with excellent massaman curry and fresh prawns grilled with garlic (250 THB). The bay faces directly west, and the sunset here — framed by jungle-covered headlands on both sides — is intimate and spectacular.",
+            "tip": "Kantiang Bay has strong undertow during monsoon season (May–October). During dry season the water is calm and ideal for swimming at any time."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "National Park, Mangroves & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mu Ko Lanta National Park",
+            "text": "Ride to the southern tip of Koh Lanta to Mu Ko Lanta National Park (200 THB entry). The lighthouse at Tanod Cape stands on dramatic rocks overlooking the open Andaman Sea — on clear days you can see Ko Rok and Ko Haa on the horizon. Walk the nature trail through coastal forest filled with monitor lizards, hornbills, and macaques. The park's secluded beaches are pristine and rarely crowded — swim off the rocks where the snorkelling reveals colourful coral and reef fish just below the surface.",
+            "tip": "Allow 2 hours for the park. The lighthouse walk is easy (15 minutes each way) but the forest trail to the hidden beach is rougher — wear closed shoes."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mangrove Kayaking at Thung Yee Pheng",
+            "text": "Head to Thung Yee Pheng on the east coast for a kayaking tour through Koh Lanta's mangrove forests (500–700 THB for 2 hours). Paddle through tunnels of twisted mangrove roots, spotting mudskippers, fiddler crabs, kingfishers, and occasionally monitor lizards sliding silently into the water. The mangrove ecosystem is a vital nursery for fish and shrimp that sustain the island's fishing communities. Several operators offer guided tours with ecological commentary.",
+            "tip": "Go at high tide (check tide tables at your hotel) — at low tide the kayak drags on mud and the mangrove tunnels become impassable. Morning high tides are cooler and calmer."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Sunset & Onward Travel",
+            "text": "Spend your last afternoon on Klong Nin Beach — a quieter mid-island beach popular with long-stay travellers, with a more local feel than the northern stretches. Watch one final Andaman sunset from a hammock strung between coconut palms. For your onward journey, minivans to Krabi town depart until 4pm (350 THB, 2 hours), connecting to ferries to Koh Phi Phi, or direct boats to Koh Lipe in the deep south during high season (November–April).",
+            "tip": "Book onward transport a day ahead during December–February peak season. The Koh Lanta to Koh Lipe speedboat (1,800 THB) runs only in high season and is weather-dependent."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & Northern Beaches",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Klong Dao Beach Arrival",
+            "text": "Arrive on Koh Lanta via ferry from Krabi or Koh Phi Phi, docking at Saladan Pier on the northern tip. Check into a beachside bungalow on Klong Dao Beach — the island's most accessible beach with a wide, gently sloping shoreline ideal for swimming. Walk the 2km length of Klong Dao and feel the pace of the island immediately: Koh Lanta is slower, quieter, and more local than its neighbours. Rent a scooter in Saladan (200–250 THB/day) for the week.",
+            "tip": "Bungalows on Klong Dao range from 400 THB (basic fan) to 2,000 THB (air-con with pool access). Book ahead in December–January; walk-ins are easy in shoulder season."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Saladan Village & Market",
+            "text": "Explore Saladan, the island's main village at the northern tip where the ferry arrives. The small town has travel agencies, a 7-Eleven, pharmacies, and a handful of good restaurants. Browse the afternoon market for Thai snacks — grilled chicken skewers (20 THB), mango sticky rice (60 THB), and fresh fruit shakes (40 THB). Stock up on essentials for the week — Saladan has the best prices on the island for basics.",
+            "tip": "Exchange money in Saladan where rates are better than on the beaches. ATMs charge 220 THB per withdrawal — take out larger amounts to minimise fees."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Klong Dao Sunset & Seafood",
+            "text": "Klong Dao Beach faces directly west across the Andaman Sea. Grab a 60 THB Singha beer from a beach bar and settle in for the sunset. The wide beach catches the last light beautifully — the sky often turns deep orange and purple as the sun drops behind the horizon. For dinner, eat at one of the beachfront restaurants where fresh seafood is laid on ice: pick your fish, choose your cooking style, and watch the cook prepare it over coals.",
+            "tip": "The seafood restaurants on the northern end of Klong Dao are slightly cheaper than those on Long Beach further south, with the same quality catch."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Long Beach & Lanta Old Town",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Long Beach Morning",
+            "text": "Ride 5 minutes south to Long Beach (Phra Ae), the island's longest and most popular beach at 3km. The sand is wider and the vibe slightly more social than Klong Dao, with beach bars, yoga studios, and dive shops lining the road behind the beach. Swim, rent a kayak (300 THB/hour), or join a morning beach yoga class (300 THB) offered by several studios along the strip.",
+            "tip": "Long Beach has a gentle shelf — you can walk 50 metres out and still be waist-deep, making it perfect for swimming and stand-up paddleboarding."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Old Town & East Coast",
+            "text": "Cross the island to Lanta Old Town on the east coast. The atmospheric village of stilted wooden shophouses was once a major trading port for the Andaman Sea, with Chinese, Malay, and Chao Ley (sea gypsy) communities living side by side. Walk the single waterfront street, visiting art galleries, craft shops, and the small community museum. Eat crab curry or stir-fried morning glory at a waterfront restaurant overlooking the mangrove-lined channel.",
+            "tip": "The Chao Ley (sea gypsy) village at the south end of Old Town is a living community — visit respectfully and buy crafts directly from residents if you want to support them."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Thai Cooking Class",
+            "text": "Take an evening Thai cooking class (1,000–1,500 THB, 3–4 hours). Several operators on Long Beach and Klong Dao run classes where you visit a local market to buy ingredients, then learn to prepare 4–5 dishes: pad thai, green curry paste from scratch, tom yum soup, papaya salad, and mango sticky rice. You eat everything you cook. The classes are hands-on and fun — a highlight of many Koh Lanta visits.",
+            "tip": "Time Machine and Lanta Thai Cookery are well-reviewed. Book a day ahead as classes fill up. The market visit adds authenticity and local interaction."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Four Islands Snorkelling",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Koh Chuek & Emerald Cave",
+            "text": "Board a longtail boat at 8am for the Four Islands tour (800–1,200 THB). First stop is Koh Chuek with its shallow coral reef — snorkel among parrotfish, clownfish, and triggerfish in 2–3 metres of clear water. Next is Koh Mook's Emerald Cave (Tham Morakot): swim 80 metres through a pitch-dark sea cave to emerge in a hidden lagoon enclosed by jungle-covered limestone cliffs and open to the sky. A tiny beach sits at the lagoon's edge.",
+            "tip": "Bring a waterproof head torch for the Emerald Cave swim — it makes the 80-metre dark tunnel much less intimidating. Life jackets are provided."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Koh Ngai & Koh Maa",
+            "text": "Snorkel the coral reef at Koh Ngai, where the water clarity is exceptional and blue-spotted stingrays rest on the sandy bottom between coral heads. Lunch is served on the beach — pad thai, fried rice, watermelon, and pineapple. The final stop is Koh Maa, a tiny island connected to Koh Lanta's northwest tip by a sandbar. Walk across the sandbar at low tide and snorkel the calm waters on either side.",
+            "tip": "The Koh Maa sandbar is exposed at low tide and submerged at high tide — the boat captain times the visit accordingly. Bring reef-safe sunscreen."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Beachside Massage & Dinner",
+            "text": "After a full day on the water, treat yourself to a Thai massage on Long Beach (300 THB/hour) — several beach operators set up massage beds right on the sand with the sound of waves. For dinner, head to one of the southern beach restaurants on Klong Nin or Kantiang Bay for a change of scenery — grilled squid with tamarind sauce and a cold Singha overlooking the darkening Andaman.",
+            "tip": "Beachside massages are cheaper than spa massages and the setting is better. Tip 50–100 THB if you enjoyed it."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Rok Islands & Deep Snorkelling",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ko Rok Day Trip",
+            "text": "Join a day trip to Ko Rok Nai and Ko Rok Nok (1,500–2,000 THB, available November–April only), twin islands in the Mu Ko Lanta National Park about 30km south. The speedboat ride takes 1 hour. Ko Rok has some of the best snorkelling in all of Thailand — pristine coral reefs in turquoise water with visibility exceeding 20 metres, hawksbill turtles, blacktip reef sharks, and massive schools of fusiliers and surgeonfish.",
+            "tip": "Ko Rok trips only run in high season (Nov–Apr) and are weather-dependent. Book a day ahead and confirm departure the evening before. Bring seasickness medication if prone — the crossing can be rough."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ko Rok Beach & Second Snorkel",
+            "text": "After snorkelling, relax on Ko Rok's powder-white beach — one of the most beautiful in the Andaman Sea. Lunch is served on the beach (included in the tour). In the afternoon, the boat moves to a second snorkel site on the channel between the two islands, where the current attracts larger fish and the coral coverage is dense and colourful. Keep an eye out for banded sea kraits — beautiful black-and-white striped sea snakes that are venomous but non-aggressive.",
+            "tip": "The beach on Ko Rok Nai has shade under casuarina trees. Camping is possible with a park permit (500 THB/night) if you want to extend — arrange through national park offices."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kantiang Bay Evening",
+            "text": "Return to Koh Lanta by late afternoon. Ride to Kantiang Bay for a sundowner at one of the beach bars. This crescent bay — backed by jungle hills — is quieter and more intimate than the northern beaches. Eat at Same Same But Different for excellent massaman curry, or splash out at Phra Nang Lanta for upscale Thai seafood (mains 300–600 THB). The stars over Kantiang Bay on a clear night are spectacular — minimal light pollution this far south.",
+            "tip": "Kantiang Bay has a few upscale resorts but also budget bungalows from 600 THB. It's worth spending a night here for the quieter atmosphere if you have time."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "National Park & Mangroves",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mu Ko Lanta National Park",
+            "text": "Explore the national park (200 THB entry) at the island's southern tip. Walk to the lighthouse at Tanod Cape for sweeping views across the Andaman Sea. Follow the nature trail through coastal forest where monitor lizards bask on rocks and hornbills call from the canopy. The park's secluded beaches are ideal for a morning swim — bring a mask for the rocky reef at the lighthouse headland where colourful fish congregate.",
+            "tip": "The park opens at 8am. Go early to avoid the midday heat on the nature trail. Bring plenty of water — there's a small cafe but supplies are limited."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mangrove Kayaking",
+            "text": "Head to Thung Yee Pheng on the east coast for a guided mangrove kayak tour (500–700 THB, 2 hours). Paddle through tunnels formed by interlocking mangrove roots, spotting mudskippers, fiddler crabs, kingfishers, and brahminy kites overhead. The guides explain the mangrove ecosystem's importance as a fish nursery and coastal protector. The channels are narrow and shaded — a welcome break from the beach sun.",
+            "tip": "Paddle at high tide for the best experience — low tide exposes mudflats and restricts access to the inner channels. Ask your operator about tide times."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Klong Nin Beach Sunset",
+            "text": "End the day at Klong Nin Beach, a mid-island beach that attracts long-term travellers and has a relaxed, slightly bohemian feel. The beach has a mix of beach bars, small restaurants, and reggae-themed spots. Watch the sunset from a hammock, then eat at one of the roadside Thai restaurants behind the beach — cheaper and often more authentic than the beachfront places. Khao pad (fried rice) and som tam (papaya salad) for under 150 THB.",
+            "tip": "Klong Nin's southern end has large boulders in the water that create natural tide pools — interesting to explore at low tide."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Diving & Island Life",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Scuba Diving at Hin Daeng & Hin Muang",
+            "text": "For certified divers, Koh Lanta is the gateway to Hin Daeng and Hin Muang — two of Thailand's premier dive sites. A day trip (3,500–4,500 THB for 2 dives) takes you 60km southwest to twin submerged pinnacles where manta rays, whale sharks (season-dependent), and massive schools of barracuda and trevally patrol. The walls are covered in soft coral — Hin Muang (Purple Rock) is named for its dense purple soft coral coverage. For non-divers, Discover Scuba courses at local reefs cost 2,500–3,500 THB.",
+            "tip": "Hin Daeng/Hin Muang are deep sites (18–30m+) suited for Advanced Open Water or experienced divers. Current can be strong — discuss conditions with your dive operator."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Relax Bay & Beach Life",
+            "text": "Spend the afternoon at Relax Bay (also called Phra Ae South), a quiet stretch between Long Beach and Klong Nin. The beach is less developed, with a few bungalow operations and beach bars spaced well apart. Read in a hammock, swim in the gentle surf, or join an afternoon yoga session (300 THB) at one of the beachside studios. This is what Koh Lanta does best — unhurried, uncrowded island life.",
+            "tip": "If you want to avoid crowds entirely, the tiny beaches between Kantiang Bay and the national park on the southern coast see fewer than a dozen visitors on most days."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Market & Live Music",
+            "text": "On Saturday evenings, Saladan hosts a small night market with Thai street food, fresh grilled seafood, fruit shakes, and souvenir stalls. Pad thai for 60 THB, grilled corn for 20 THB, and coconut ice cream for 30 THB. Several bars on Long Beach have live acoustic music on weekend evenings — Funky Fish and Cha Cha Bar are reliable. The vibe is mellow, not a full moon party — exactly why people choose Koh Lanta.",
+            "tip": "The night market runs roughly 5–10pm. It's small compared to Chiang Mai or Bangkok markets, but the food quality is excellent and prices are local."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Southern Beaches & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Bamboo Bay & Waterfall",
+            "text": "Ride to Bamboo Bay (Ao Mai Pai) on the far southern coast — one of Koh Lanta's least-visited beaches, backed by dense jungle and reached by a steep road that deters casual visitors. The beach is wild and beautiful. Nearby, the Khlong Chak Waterfall trail (30-minute walk through rubber plantation and jungle) leads to a small but refreshing waterfall with a natural swimming pool at the base. Combine both for a peaceful final morning.",
+            "tip": "The waterfall has good flow in the wet season (May–October) and may be reduced to a trickle in late dry season (March–April). The trail is muddy after rain — wear proper shoes."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Beach & Packing Up",
+            "text": "Return to your favourite beach for a final swim and some pad thai. If you haven't visited Nui Bay (sometimes called Diamond Cliff Beach), the short rocky scramble down to this tiny cove is worth the effort — a private-feeling beach hemmed in by dramatic cliff formations. Pack up and prepare for your onward journey. Return your scooter to the rental shop in Saladan.",
+            "tip": "Photograph your scooter at drop-off to avoid any damage disputes. Most rental shops are honest, but a photo record protects both parties."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Departure from Koh Lanta",
+            "text": "Ferries and speedboats to Krabi, Koh Phi Phi, Koh Lipe, and Phuket depart from Saladan Pier throughout the day. The last ferries leave around 3–4pm. Minivans to Krabi Airport depart regularly (350 THB, 2.5 hours). If heading south, the Koh Lanta to Koh Lipe speedboat (November–April only, 1,800 THB) is one of Thailand's most scenic boat journeys through the islands of the lower Andaman. Book a day ahead in peak season.",
+            "tip": "Arrive at Saladan Pier 30 minutes before your ferry. In monsoon season (May–October), boat schedules are reduced and rough seas can cause cancellations — have a flexible plan."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Rent a Scooter",
+      "text": "A scooter (200–250 THB/day) is the cheapest and most practical way to explore the island. Negotiate a weekly rate of 1,200–1,500 THB. Petrol is sold in whisky bottles at roadside stalls for 40 THB."
+    },
+    {
+      "title": "Eat Local",
+      "text": "Skip the beachfront tourist restaurants for a meal and eat at the roadside Thai places behind the beaches — same food, half the price. A full Thai meal at a local spot costs 60–100 THB."
+    },
+    {
+      "title": "Book Direct",
+      "text": "Walk into tour shops on Long Beach to book boat trips and negotiate — you will almost always get 10–20% off the listed price, especially outside peak season."
+    },
+    {
+      "title": "Stay Inland",
+      "text": "Beachfront bungalows are 2–3x the price of places 100 metres back from the beach. The walk is negligible but the savings are significant — 300 THB vs 800 THB for similar quality."
+    },
+    {
+      "title": "Free Beaches, Free Sunsets",
+      "text": "Koh Lanta's biggest attractions cost nothing. Every beach is free, the sunsets are free, and the island vibe is free. Your main costs are accommodation and food — keep those low and you can stay for weeks."
+    },
+    {
+      "title": "DIY Snorkelling",
+      "text": "Buy a mask and snorkel set in Saladan (300–500 THB) rather than renting repeatedly. Snorkel directly off the rocks at the national park, Klong Nin, or Kantiang Bay for free."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "300–600 THB",
+      "midrange": "800–1,800 THB",
+      "splurge": "2,500+ THB",
+      "notes": "Fan bungalow to boutique resort"
+    },
+    {
+      "category": "Food",
+      "budget": "200–350 THB",
+      "midrange": "400–700 THB",
+      "splurge": "800+ THB",
+      "notes": "Street food to beachfront dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "200–250 THB",
+      "midrange": "250–500 THB",
+      "splurge": "800+ THB",
+      "notes": "Scooter rental to private taxi"
+    },
+    {
+      "category": "Activities",
+      "budget": "0–500 THB",
+      "midrange": "800–1,500 THB",
+      "splurge": "2,000+ THB",
+      "notes": "Free beaches to island tours"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "700–1,700 THB",
+      "midrange": "2,250–4,500 THB",
+      "splurge": "6,000+ THB",
+      "notes": "$20–50 / $65–130 / $170+ USD"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Thailand grants visa-free entry for 60 days to most nationalities — extendable 30 days at Krabi Immigration (1,900 THB)",
+        "Koh Lanta is reached by ferry from Krabi (1.5 hours, 400 THB), Koh Phi Phi (1 hour, 350 THB), or minivan from Krabi Airport (2.5 hours, 350 THB)",
+        "During monsoon season (May–Oct), some ferry routes are suspended — check schedules before booking"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Koh Lanta has a small hospital in Saladan and several clinics along the main road — serious cases go to Krabi Hospital (2 hours by minivan)",
+        "Mosquitoes are present year-round — bring DEET repellent and consider long sleeves at dusk. Dengue is a risk; no prophylaxis available",
+        "Scooter accidents are the main safety risk — wear a helmet, ride cautiously on steep southern roads, and avoid riding at night on unlit stretches"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Scooter rental (200–250 THB/day) is the standard way to explore — the island is 30km long and one main road runs north-south",
+        "Songthaews (shared pickup trucks) run along the main road from Saladan to the southern beaches for 50–100 THB, but schedules are irregular",
+        "Taxis and tuk-tuks charge fixed prices (200–500 THB per trip) — negotiate before getting in"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "AIS, DTAC, and TrueMove SIM cards available in Saladan — 299 THB for 8 days of unlimited data. Passport required for registration",
+        "Wi-Fi is available at most accommodations and cafes. Quality varies — the northern beaches have the most reliable connections",
+        "Mobile coverage is good on the main road and beaches; remote southern areas and the interior may have weak signal"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "ATMs in Saladan and along the main road charge 220 THB per withdrawal — withdraw larger amounts to reduce fees",
+        "Cash is preferred at local restaurants, markets, and small businesses. Beach bars and tourist restaurants often accept cards",
+        "Exchange rates in Saladan are reasonable but slightly worse than Krabi town or Bangkok — change money before arriving if possible"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Pack light, breathable clothing — Koh Lanta is hot year-round (28–34°C). A light rain jacket is useful even in dry season for afternoon showers",
+        "Reef shoes or water sandals are essential for rocky beaches at the national park and for boarding longtail boats",
+        "Bring a waterproof dry bag for boat trips — longtail boats get splashy and phones/cameras need protection"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Wai Greeting",
+      "text": "The wai (palms pressed together with a slight bow) is the Thai greeting. Return a wai when offered — it shows respect and is appreciated, especially outside tourist areas like Lanta Old Town."
+    },
+    {
+      "icon": "🕌",
+      "title": "Muslim Community",
+      "text": "Koh Lanta has a significant Muslim population, particularly in Old Town and the east coast villages. Dress modestly when visiting these communities and be aware that some local restaurants are halal."
+    },
+    {
+      "icon": "🦀",
+      "title": "Chao Ley Heritage",
+      "text": "The Chao Ley (sea gypsy) community on Koh Lanta's east coast has lived here for generations before tourism arrived. Visit their communities respectfully — buy crafts directly from residents if you want to support them."
+    },
+    {
+      "icon": "👣",
+      "title": "Temple Etiquette",
+      "text": "Remove shoes before entering any temple or home. Cover shoulders and knees at Buddhist temples. Koh Lanta has several small temples along the main road — the same etiquette applies even at minor sites."
+    },
+    {
+      "icon": "🐢",
+      "title": "Marine Conservation",
+      "text": "Koh Lanta's reefs are fragile. Never stand on coral, chase turtles, or collect shells. Use reef-safe sunscreen. The Lanta Marine National Park rangers actively enforce conservation rules."
+    }
+  ],
+  "title": "Koh Lanta Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Koh Lanta guide for young travelers. Quiet Andaman beaches, island snorkelling, mangrove kayaking, and Thai island life with 1, 3, and 7-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/koh-tao-hero.webp",
+  "heroFlag": "🇹🇭",
+  "heroCountry": "Thailand",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Koh Lanta",
+  "heroSubtitle": "Thailand's laid-back Andaman island — long beaches, hidden caves, and the kind of sunsets that make you cancel your next flight.",
+  "budgetIntro": "Koh Lanta is one of Thailand's best-value Andaman islands — slower pace, lower prices, and none of the party-island markup.",
+  "culturalIntro": "Koh Lanta has a diverse community of Thai Buddhist, Muslim, and Chao Ley (sea gypsy) residents. A little cultural awareness goes a long way.",
+  "ctaCity": "Koh Lanta",
+  "ctaText": "Find travel companions for island hopping, diving, and Andaman sunsets on roammate — split costs, share the adventure.",
+  "ctaCustomise": "To customise this itinerary to your travel style — download the roammate app.",
+  "heroPills": [
+    "7-Day Island Life",
+    "Budget-Friendly",
+    "Nov–Apr Best"
+  ],
+  "defaultDays": 3
+}

@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "great-migration",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "USD (for tours)",
+      "detail": "KES/TZS for local purchases"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Swahili / English",
+      "detail": "Safari guides speak English"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EAT (UTC+3)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jul – Oct",
+      "detail": "River crossings & predator action"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$80–200 USD",
+      "detail": "Safari-dependent pricing"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "eVisa required",
+      "detail": "Kenya $50 / Tanzania $50 online"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Great Migration — One Day Game Drive",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn Game Drive — River Crossing Viewpoints",
+            "text": "Depart camp before sunrise for a dawn game drive to the river crossing points — the Mara River in Kenya or the Grumeti River in Tanzania. During migration season (July–October), hundreds of thousands of wildebeest mass on the riverbanks, building courage to cross crocodile-infested waters. The crossings happen without warning — a single wildebeest steps in and suddenly thousands follow in a thundering, chaotic stampede through the water. Nile crocodiles up to 5 metres long ambush from below. It is nature at its most raw and dramatic.",
+            "tip": "River crossings are unpredictable — you may wait hours or see one immediately. Stay patient and keep your engine off near the riverbank. The best crossings happen in the early morning."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Migration Herds & Predator Action",
+            "text": "Drive across the open plains following the massive herds of wildebeest, zebra, and gazelle that make up the 2 million-strong migration. The scale is almost incomprehensible — from horizon to horizon, the savanna is alive with moving animals. Where the herds go, predators follow: lions patrol the flanks picking off weak animals, cheetahs sprint after young gazelles, and hyenas scavenge the aftermath. The circle of life plays out in real time across the golden grasslands.",
+            "tip": "Bring binoculars and a long zoom lens (200mm minimum). The action often happens at distance and you need magnification to appreciate the detail."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Golden Hour & Safari Sundowner",
+            "text": "The golden hour on the Serengeti or Masai Mara is extraordinary — the low-angle light turns the grass amber and silhouettes the acacia trees and migrating herds against the sky. Many safari operators offer sundowner stops where you watch the sunset from a viewpoint with a drink in hand as the herds continue their ancient march below. The night sky that follows is one of the darkest on earth — the Milky Way arcs across the sky above the sleeping savanna.",
+            "tip": "Sundowner stops are included in most safari packages but confirm with your operator. The sunset photo opportunities with silhouetted animals are the trip's signature images."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Departure & First Game Drive",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Departure from Nairobi or Arusha",
+            "text": "Most budget migration safaris depart early morning from Nairobi (for the Masai Mara) or Arusha (for the Serengeti). The drive to the Masai Mara from Nairobi takes 5–6 hours via Narok, crossing the Great Rift Valley escarpment with stunning views. Budget 3-day safaris ($250–400 per person all-inclusive) use 4x4 vehicles, camping or basic lodge accommodation, and experienced local guides. The road becomes increasingly rural — the last stretch is unpaved and bumpy, but every pothole brings you closer to one of the greatest wildlife spectacles on earth.",
+            "tip": "Book with a reputable Nairobi or Arusha-based operator. Check recent reviews and confirm what is included: park fees, accommodation, meals, and water should all be covered."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "First Game Drive — Migration Herds",
+            "text": "Enter the Masai Mara National Reserve (or Serengeti National Park) in the early afternoon for your first game drive. The initial sighting of the migration is overwhelming — enormous columns of wildebeest stretching to the horizon, zebra herds grazing alongside, and Thomson's gazelles darting between the larger animals. Your guide knows the current herd locations and heads directly for the densest concentrations. Even on the first afternoon, expect to see lions, elephants, giraffes, and buffalo alongside the migrating herds.",
+            "tip": "The Mara conservancies (Ol Kinyei, Naboisho, Olare Motorogi) bordering the main reserve have the same wildlife with fewer vehicles. Ask your operator about routing."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Bush Camp Under the Stars",
+            "text": "Budget safari camps are set up on the edge of the reserve or in the conservancies. Tented camps with basic beds, shared bucket showers, and communal dining under canvas are the standard. Dinner is cooked over an open fire — usually stew, rice, vegetables, and fruit. The experience of eating dinner while listening to hyenas call in the distance and lions roar across the plain is unforgettable. The night sky above the Mara is one of the darkest and starriest on the continent.",
+            "tip": "Budget camps are basic but the experience is authentic. Bring a warm fleece — the Mara sits at 1,500m elevation and nights can drop to 10°C even near the equator."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Full Day — River Crossings & Big Five",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dawn Drive to the Mara River",
+            "text": "Wake before dawn for the most anticipated moment of any migration safari — the river crossing. Your guide drives to known crossing points on the Mara River where wildebeest have been gathering on the banks. The animals mill and pace, sometimes for hours, before a single brave individual plunges in and the herd follows. The crossing is chaos — wildebeest leap from 3-metre banks into the churning river, crocodiles surge upward, and the noise of splashing, grunting, and thundering hooves fills the air. Not every animal makes it across.",
+            "tip": "Crossings are not guaranteed — they depend on herd movements that change daily. Your guide uses radio networks with other drivers to find active crossings."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Big Five & Plains Game",
+            "text": "The afternoon drive focuses on the broader ecosystem that the migration supports. The Big Five — lion, leopard, elephant, buffalo, and rhino — are all present in the Mara-Serengeti system. Your guide searches for leopards in sausage trees, elephants crossing the Mara River, and rhinos grazing in the open grassland. Hippo pools, vulture feeding sites, and cheetah hunting grounds round out a full afternoon of diverse wildlife encounters. The density of animals here during migration season is unmatched anywhere on earth.",
+            "tip": "Tell your guide what you most want to see — they prioritise accordingly. Leopard sightings require patience and specific habitat knowledge."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Campfire Stories & Night Sounds",
+            "text": "Return to camp as the sun sets for a campfire dinner under the African sky. Safari guides are extraordinary storytellers — the evening is spent sharing wildlife stories, explaining animal behaviour, and answering questions about the ecosystem. The sounds of the bush at night are hypnotic: hyenas whooping, lions grunting, hippos splashing in nearby rivers, and the rustle of animals moving through the grass. Sleep in your tent with the canvas flap open to the stars.",
+            "tip": "Do not leave your tent at night without a torch and a guide escort. The camp may have wildlife passing through — buffalo and hyenas are common visitors."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Final Game Drive & Return",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sunrise Game Drive",
+            "text": "The final morning drive is often the most rewarding — guides target the species you have not yet seen. Dawn on the savanna is magical: hot air balloons drift silently over the migrating herds, lions return from night hunts dragging kills, and the grass glistens with dew. The light at sunrise makes everything glow gold. Your guide may find a leopard returning to its tree, a cheetah mother teaching cubs to hunt, or a river crossing in perfect morning light. Savour every moment — this is the Africa that stays with you forever.",
+            "tip": "Hot air balloon rides over the migration ($450–500) depart at dawn and offer a perspective no game drive can match. Book months ahead in peak season."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Masai Village & Return Journey",
+            "text": "Many safari operators include a visit to a Masai village ($20–30 per person) on the return journey. The Masai communities that border the reserve maintain their traditional semi-nomadic pastoralist lifestyle — cattle herding, beaded jewelry, and manyatta (dung-and-stick homes) coexist with mobile phones and solar panels. The warriors demonstrate traditional jumping dances and explain their relationship with the wildlife that surrounds them. Then the long drive back to Nairobi or Arusha through the Rift Valley.",
+            "tip": "The Masai village visit is a cultural exchange — go with respect and genuine curiosity. Buy beadwork directly from the makers at fair prices."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Arrival Back in the City",
+            "text": "Arrive back in Nairobi or Arusha in the late evening, dusty and exhausted but profoundly changed. The Great Migration is one of those experiences that words and photographs cannot fully capture — the scale, the drama, the raw power of millions of animals following an ancient instinct across an ancient landscape. Find a restaurant for a hot meal and reflect on what you have witnessed. Many travellers say the migration safari is the single most extraordinary experience of their lives.",
+            "tip": "The return drive is long — bring snacks, a charged phone, and a neck pillow. Some operators offer one-way flights back to Nairobi (from $100) to skip the drive."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Budget group safaris",
+      "text": "Group camping safaris from Nairobi or Arusha cost $250–400 per person for 3 days/2 nights, all-inclusive (transport, park fees, camping, meals, guide). Book in-country for the best prices — online agencies add 30–50% markup."
+    },
+    {
+      "title": "Kenya vs Tanzania",
+      "text": "The Kenya side (Masai Mara) is cheaper than Tanzania (Serengeti) for budget travellers. Mara park fees are lower, Nairobi is a cheaper base, and budget safari operators are more numerous. The migration crosses both — the wildlife is the same."
+    },
+    {
+      "title": "Timing matters",
+      "text": "The migration moves in a clockwise loop: Dec–Mar in southern Serengeti (calving season), Apr–Jun heading north, Jul–Oct in the Masai Mara (river crossings), Nov heading south. Plan your visit around the spectacle you want to see."
+    },
+    {
+      "title": "Join a group",
+      "text": "Solo travellers pay more per person. Join a group of 4–6 to share vehicle and camping costs. Hostels in Nairobi and Arusha have noticeboards where travellers form safari groups. Roammate helps you find companions for exactly this."
+    },
+    {
+      "title": "Bring your own gear",
+      "text": "Budget safaris provide tents and sleeping bags but bringing your own sleeping bag liner and headlamp improves comfort significantly. Also pack warm layers — the Mara is cold at night."
+    },
+    {
+      "title": "Park fee strategy",
+      "text": "Masai Mara conservancy fees ($70–100/day) can be lower than the main reserve entry ($80/day for non-residents). Some budget operators use conservancies with less traffic and similar wildlife — ask what is included."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Safari Package",
+      "budget": "$85–135/day",
+      "midrange": "$200–350/day",
+      "splurge": "$500+/day",
+      "notes": "Budget camping → mid-range lodge → luxury tented camp"
+    },
+    {
+      "category": "Park Fees",
+      "budget": "$70–80/day",
+      "midrange": "$70–80/day",
+      "splurge": "$70–80/day",
+      "notes": "Included in most packages — verify before booking"
+    },
+    {
+      "category": "Transport to/from",
+      "budget": "$0 (included)",
+      "midrange": "$0 (included)",
+      "splurge": "$100–200",
+      "notes": "Overland included → flights optional"
+    },
+    {
+      "category": "Tips",
+      "budget": "$10–15/day",
+      "midrange": "$15–20/day",
+      "splurge": "$25+/day",
+      "notes": "Guide + cook tips expected — budget for it"
+    },
+    {
+      "category": "Extras",
+      "budget": "$5–20",
+      "midrange": "$20–50",
+      "splurge": "$450+",
+      "notes": "Souvenirs → village visits → hot air balloon"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$80–150",
+      "midrange": "$200–400",
+      "splurge": "$600+",
+      "notes": "Budget camping → comfortable lodge → luxury experience"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Kenya eVisa ($50) at evisa.go.ke or Tanzania eVisa ($50) at visa.immigration.go.tz — apply before arrival",
+        "The East Africa tourist visa ($100) covers Kenya, Uganda, and Rwanda — excellent value for multi-country trips",
+        "Most safaris depart from Nairobi (Kenya side) or Arusha (Tanzania side). Both cities have international airports"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Yellow fever vaccination recommended. Malaria prophylaxis essential — the Mara and Serengeti are high-risk malaria zones",
+        "Bring insect repellent (DEET 30%+) and long-sleeved clothing for evenings. Sleep under a mosquito net in camp",
+        "Stay in the vehicle during game drives. Lions, buffalo, and hippos are dangerous — never leave the vehicle without your guide's permission"
+      ]
+    },
+    {
+      "icon": "🚙",
+      "title": "Getting There",
+      "items": [
+        "Budget safaris include overland transport from Nairobi (5–6hrs to Masai Mara) or Arusha (8–10hrs to Serengeti)",
+        "Flights from Nairobi to Masai Mara airstrips (from $100 one-way) or Arusha to Serengeti (from $200) save time",
+        "Self-driving is possible but not recommended — you need a 4x4, park knowledge, and the tracks are challenging in wet season"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Mobile signal is patchy in the Mara and Serengeti — do not rely on data. Download offline maps and guides before departure",
+        "Some lodges and camps have WiFi but speeds are minimal. Budget camps have no connectivity — embrace the disconnection",
+        "Bring a portable battery pack — there are no charging points at most budget camps"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Safari packages are usually paid in USD by bank transfer or cash before departure. Bring USD cash for tips and extras",
+        "Guide tips ($10–15/day) and cook tips ($5–10/day) are expected and important — budget for them in advance",
+        "There are no ATMs or shops in the reserves. Bring everything you need from the city including snacks and personal items"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Neutral colours (khaki, green, brown) — avoid bright white or blue that scares wildlife. Long sleeves and trousers for sun and mosquitoes",
+        "Binoculars, a camera with a 200mm+ zoom lens, and a dust-proof bag for electronics. A bean bag for steadying cameras on the vehicle window",
+        "Warm layers (fleece, beanie) for early morning drives — the Mara is at 1,500m and dawn temperatures can be 8–12°C"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🦁",
+      "title": "Respect Wildlife",
+      "text": "Never pressure your guide to drive closer to animals than is safe. The migration is wild and unpredictable — enjoy what you see from a respectful distance. Flash photography disturbs animals and is prohibited at close range."
+    },
+    {
+      "icon": "🌍",
+      "title": "Conservation Impact",
+      "text": "Your safari fees fund wildlife conservation and local communities. The Masai Mara and Serengeti are protected because tourism makes wildlife more valuable alive than dead. Choose operators that employ local guides and support community projects."
+    },
+    {
+      "icon": "🤝",
+      "title": "Masai Communities",
+      "text": "The Masai people have coexisted with wildlife for centuries. If visiting a Masai village, approach with genuine respect and curiosity. Buy beadwork directly from the artisans at fair prices. Photography fees ($10–20) support the community."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Ethics",
+      "text": "Do not ask your driver to block other vehicles at a sighting. Share viewing space at river crossings. Never use drones in national parks — they are banned and disturb wildlife. The best photos come from patience, not proximity."
+    },
+    {
+      "icon": "🚫",
+      "title": "Leave No Trace",
+      "text": "Take all rubbish back to camp. Do not throw anything from the vehicle — even organic waste. Stay on designated tracks and do not drive off-road to chase animals. The ecosystem is fragile despite its vast appearance."
+    },
+    {
+      "icon": "🌅",
+      "title": "Be Present",
+      "text": "Put the camera down sometimes and just watch. The sounds, smells, and feeling of witnessing 2 million animals on the move cannot be captured in a photograph. Some moments are meant to be lived, not documented."
+    }
+  ],
+  "title": "Great Migration Guide 2026 — Safari Itinerary | roammate",
+  "description": "The ultimate Great Migration guide for young travelers. Wildebeest river crossings, budget safari tips, and Masai Mara/Serengeti itineraries. 1 and 3-day plans.",
+  "heroImage": "/images/guides/great-migration-hero.webp",
+  "heroFlag": "🇰🇪",
+  "heroCountry": "Kenya / Tanzania",
+  "heroRegion": "East Africa",
+  "heroCity": "Great Migration",
+  "heroSubtitle": "Two million wildebeest, zebra, and gazelle following ancient rains across the Serengeti and Masai Mara — the greatest wildlife spectacle on earth.",
+  "budgetIntro": "Daily costs per person in USD. Migration safaris are the most expensive activity in East Africa but budget camping options make it accessible. All prices are approximate and season-dependent.",
+  "culturalIntro": "The Great Migration is a privilege to witness. Respect the wildlife, support the conservation that protects it, and let the spectacle humble you.",
+  "ctaCity": "the Great Migration",
+  "ctaText": "Find travel companions to share a budget safari to the Great Migration — split vehicle costs, camp under the stars, and witness nature's greatest show on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Safari",
+    "Wildlife",
+    "Jul – Oct Best"
+  ],
+  "defaultDays": 3
+}

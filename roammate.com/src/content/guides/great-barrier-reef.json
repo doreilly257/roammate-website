@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "great-barrier-reef",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "AUD (Dollar)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "AEST (UTC+10)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Jun – Oct",
+      "detail": "Comfortable temperatures, lower crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$100–300 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ETA required",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Great Barrier Reef Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Exploring Great Barrier Reef",
+            "text": "Begin your day at Great Barrier Reef early to beat the crowds and catch the best light. The dive site is most atmospheric in the morning when the air is cool and the landscape catches the first golden rays. Take time to explore the main highlights and capture photographs in the soft morning light. This is the most rewarding time to visit.",
+            "tip": "Arrive as early as possible — the first hour after opening has the fewest visitors and the best photography conditions."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Afternoon Dive",
+            "text": "Spend the afternoon exploring further afield. Head to the water for swimming, snorkelling, or diving in the warm, clear conditions. Grab lunch at a local eatery for authentic flavours and budget-friendly prices.",
+            "tip": "Midday sun can be intense — bring sunscreen, a hat, and plenty of water. Rest during the hottest hours if needed."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night on the Coast",
+            "text": "If you are on a liveaboard, dinner is served onboard while the boat anchors at the reef overnight — a unique experience of eating fresh seafood surrounded by open ocean. Day-trippers return to Cairns or Port Douglas by late afternoon and can head to the waterfront restaurants for barramundi, mud crab, or tropical fruit platters.",
+            "tip": "Cairns Esplanade restaurants are tourist-priced. For better value, walk one block inland to Grafton or Shields Street where locals eat."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Cairns — Outer Reef Snorkel & First Dive",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Cairns Marina Departure — Outer Reef Day Trip",
+            "text": "Board a catamaran from Cairns Marina (departs 8am) for the 90-minute crossing to the Outer Reef at Norman, Saxon, or Flynn Reef — the most pristine sections of the Great Barrier Reef, 50km offshore. Snorkelling at the outer reef reveals coral bommies encrusted with staghorn and plate corals, hunting reef sharks, Maori wrasse the size of labradors, and sea turtles gliding past unconcerned. Full-day trips including 3 snorkel sessions and lunch cost AUD $180–240 from operators including Reef Magic and Sunlover.",
+            "tip": "Book through operators based at the Cairns Reef Fleet Terminal — they pick you up directly from your accommodation. Reef-safe sunscreen is mandatory; regular sunscreen is banned at all reef sites."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Introductory Scuba Dive on the Outer Reef",
+            "text": "Most day-trip operators offer introductory scuba dives from the pontoon — no certification required. An instructor dives with you 1-on-1 to a depth of 8–12 metres through coral gardens that snorkellers never reach: moray eels in crevices, schools of fusiliers flashing silver, and Maori wrasse following close behind. Cost is typically AUD $70–90 on top of the day-trip fare. Those already PADI certified can dive independently at the same pontoon — two guided dives included in most packages.",
+            "tip": "Tell your dive instructor your exact experience level honestly — they adjust the depth and pace accordingly. Never touch coral; even a slight brush can kill polyps that took decades to grow."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cairns Esplanade & Night Market",
+            "text": "Return to Cairns by 5pm and walk the Esplanade Lagoon — a free public swimming pool right on the waterfront, ideal for rinsing off salt and watching pelicans fish at sunset. The Cairns Night Markets on Abbott Street run every evening from 5–11pm, with 200+ stalls selling Queensland barramundi, mud crab, Daintree chocolate, and tropical fruit platters. Cairns is one of Australia's most affordable dining cities — a full barramundi dinner with a cold Queensland XXXX Gold runs around AUD $25–35.",
+            "tip": "Stinger season (November–May) means you must wear a stinger suit in the ocean at Cairns beaches — provided free on all reef day trips. The Esplanade Lagoon is safe year-round."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Whitsundays — Whitehaven Beach & Heart Reef",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Airlie Beach to Whitehaven Beach",
+            "text": "Fly or drive to Airlie Beach (4 hours south of Cairns, or a short flight) and take a speedboat to Whitehaven Beach on Whitsunday Island — 7km of pure silica sand so fine it doesn't heat up in the sun. The silica content is 98%, making it the whitest beach on earth. Visit Hill Inlet at the north end of the beach where the swirling turquoise and white sandbars visible from the Tongue Point lookout create the image used on every Queensland tourism poster. Full-day speedboat trips cost AUD $160–210 from Airlie Beach.",
+            "tip": "The Hill Inlet swirl pattern shifts with tide and season — ask your boat operator which departure time best catches it. Morning high tides and September–October typically produce the most dramatic patterns."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Snorkelling the Inner Reef — Blue Pearl Bay",
+            "text": "Blue Pearl Bay on Hayman Island is the finest snorkelling site in the Whitsundays, without the crowds of the outer reef pontoons. The bay's protected waters shelter giant clams (over 1 metre wide), green sea turtles grazing on seagrass, and dense colonies of hard and soft coral. Many Whitsundays liveaboard and day-trip operators include Blue Pearl Bay on their route. Liveaboard departures from Airlie Beach for 2 nights cost AUD $400–700 including all meals and unlimited diving.",
+            "tip": "Whitsundays reef visibility is typically 10–15m — less than the outer reef, but wildlife density including turtles and rays is often higher in the protected inner bays."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Heart Reef Scenic Helicopter Flight",
+            "text": "The famous Heart Reef — a naturally occurring heart-shaped coral formation visible only from the air — sits in the Hardy Reef lagoon 60km from the Whitsundays coast. Scenic helicopter flights from Hamilton Island or Airlie Beach cost AUD $250–350 for a 30-minute flight that also passes over the outer reef, Blue Pearl Bay, and Whitehaven Beach at golden hour. It's an expensive but genuinely extraordinary experience — the colour gradient from turquoise to deep navy seen from altitude is unlike anything from a boat.",
+            "tip": "Afternoon flights catch the best light on Whitehaven Beach and Heart Reef. Book directly with the helicopter operator at Hamilton Island Airport rather than through tour desks to save 10–15%."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Lady Elliot Island — Manta Rays & Turtles",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lady Elliot Island Day Trip — Southernmost Reef",
+            "text": "Lady Elliot Island, at the southern tip of the Great Barrier Reef (accessible by light aircraft from Bundaberg or Hervey Bay, AUD $300–400 return), is one of the best places in the world to swim with manta rays year-round. The island is a coral cay eco-resort with no day-visitor crowds — only resort guests and day-trippers sharing the pristine house reef. Walk straight off the beach and snorkel with loggerhead and green turtles resting in the shallows, and mantas circling the cleaning stations on the reef edge.",
+            "tip": "The light aircraft flights to Lady Elliot have a strict 10kg baggage limit. Book the earliest morning flight — day-trippers have priority use of snorkel equipment before the afternoon wind picks up."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Turtle Nesting & Glass-Bottom Boat Tour",
+            "text": "Between November and March, Lady Elliot Island is a major green turtle nesting site — rangers lead guided turtle walks after dark ($25 per person) where you watch females haul ashore to lay eggs. During the day, the island's glass-bottom boat tours (AUD $50, 45 minutes) cover the reef lagoon and coral bommies without requiring any swimming ability. The combination of giant manta rays, nesting turtles, and resident reef sharks in a single day at a single island is genuinely unmatched anywhere else on the reef.",
+            "tip": "Manta ray sightings are most consistent between June and September when plankton blooms attract them to the reef edge. Outside this window they are still present but harder to find; ask the resort dive staff each morning."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Great Barrier Reef Marine Park Visitor Centre & Departure",
+            "text": "Return to Cairns for a final evening and visit the Great Barrier Reef Marine Park Authority Reef HQ Aquarium on Flinders Street — the world's largest living coral reef aquarium with a live coral display tank, sharks, rays, and sea turtles in naturalistic habitats. Admission is AUD $30. It's an excellent overview of reef ecology and conservation challenges, and a fittingly thoughtful final stop. Dinner at Ochre Restaurant on the Esplanade specialises in native Queensland ingredients — crocodile, emu, and Moreton Bay bugs — around AUD $35–55 per person.",
+            "tip": "Reef HQ Aquarium offers free entry to students with valid ID. Check if the turtle hospital has patients in care — injured turtles are rehabilitated here before being released back to the reef."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Book ahead online",
+      "text": "Tickets and tours booked online are often 10-30% cheaper than walk-in prices. Many attractions sell out in peak season — advance booking guarantees entry and saves money."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "Shoulder months (just before or after peak season) offer better prices on accommodation and flights with similar weather and fewer crowds. Jun – Oct is peak."
+    },
+    {
+      "title": "Stay nearby, not at the gate",
+      "text": "Accommodation directly at the attraction charges a premium. Staying 10-20 minutes away can save 30-50% on nightly rates. Use public transport or a rental car to bridge the gap."
+    },
+    {
+      "title": "Pack your own lunch",
+      "text": "Tourist-area restaurants charge inflated prices. Pack sandwiches, snacks, and a refillable water bottle to save $15-30 per day on food. Buy supplies at local supermarkets or markets."
+    },
+    {
+      "title": "Free walking tours & guides",
+      "text": "Many areas offer free or tip-based guided walks that are better than paid tours. Local guides provide insider knowledge and support the community. Check online for options."
+    },
+    {
+      "title": "Use local transport",
+      "text": "Taxis and private transfers are the most expensive option. Local buses, shared minivans, or ride-sharing are 50-80% cheaper and give you a more authentic experience."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$25–60",
+      "midrange": "$70–150",
+      "splurge": "$200+",
+      "notes": "Hostels → guesthouses → boutique lodges"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–60",
+      "splurge": "$70+",
+      "notes": "Street food → local restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$15–40",
+      "splurge": "$50+",
+      "notes": "Public buses → shared transfers → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–20",
+      "midrange": "$20–60",
+      "splurge": "$80+",
+      "notes": "Self-guided → group tours → private guides"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–30",
+      "splurge": "$30–50",
+      "notes": "Combined tickets save money"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$75–190",
+      "midrange": "$165–370",
+      "splurge": "$430+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "ETA required",
+        "Keep a digital and physical copy of your passport, visa, and travel insurance at all times",
+        "Entry fees for Great Barrier Reef should be paid in AUD — exchange money before arriving"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical evacuation coverage is essential",
+        "Bring a basic first aid kit with blister plasters, antiseptic, painkillers, and any personal medication",
+        "Sun protection is essential — apply SPF 50+ and reapply every 2 hours"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Shared transport or guided tours are the most practical options",
+        "Download offline maps before arriving — mobile data coverage can be patchy in remote areas",
+        "Negotiate transport prices before departure or use metered taxis and ride-hailing apps"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a local SIM card at the airport on arrival for affordable data — much cheaper than international roaming",
+        "WiFi is available at most accommodation but signal quality varies. Download offline maps and guides before heading to remote areas",
+        "Share your itinerary with someone at home and check in daily, especially for remote treks or island visits"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: AUD (Dollar). Cards accepted in tourist areas, but carry cash for local vendors",
+        "ATMs are available in towns and cities. Visa and Mastercard are most widely accepted",
+        "Tip 10-15% at restaurants. Guides and porters appreciate tips — budget $5-10 per day per person"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Reef-safe sunscreen, a rash vest, water shoes, and a dry bag for electronics",
+        "A reusable water bottle, headlamp, and portable phone charger are essential for any outdoor adventure",
+        "Quick-dry clothing is ideal — you can wash and wear repeatedly, reducing pack weight"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Local Customs",
+      "text": "Be mindful of local customs and traditions. Ask before photographing people. Learn basic greetings in the local language — even a simple hello earns goodwill."
+    },
+    {
+      "icon": "🌍",
+      "title": "Leave No Trace",
+      "text": "Pack out all rubbish. Stay on marked trails and paths. Do not touch, feed, or disturb wildlife. The natural beauty of Great Barrier Reef depends on every visitor treating it with respect. Take only photos, leave only footprints."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask permission before photographing locals, especially in indigenous or traditional communities. Many religious sites have photography restrictions — check signage and respect these rules. Drone regulations vary — check local laws before flying."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "Learn a few words in English — greetings, please, thank you, and numbers go a long way. English is widely spoken in tourist areas but a translation app helps bridge gaps."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Choose locally-owned guesthouses, restaurants, and guides over international chains. Buy handicrafts directly from artisans. Your spending has the most impact when it goes directly into the local economy rather than through large tour operators."
+    },
+    {
+      "icon": "🕐",
+      "title": "Pace & Patience",
+      "text": "Allow more time than you think — rushing through natural and cultural sites misses the point. The best experiences come from slowing down and being present."
+    }
+  ],
+  "title": "Great Barrier Reef Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Great Barrier Reef guide for young travelers. Diving, snorkelling, marine life with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/great-barrier-reef-hero.webp",
+  "heroFlag": "🇦🇺",
+  "heroCountry": "Australia",
+  "heroRegion": "Oceania",
+  "heroCity": "Great Barrier Reef",
+  "heroSubtitle": "The world's largest coral reef system — 2,300km of vibrant coral, 1,500 fish species, manta rays, and sea turtles in warm tropical waters off Queensland.",
+  "budgetIntro": "Daily costs per person in US dollars. Great Barrier Reef costs depend on season, accommodation style, and activity choices — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Great Barrier Reef is a natural wonder — approach with curiosity and respect, and you will be rewarded with one of the most memorable experiences of your travels.",
+  "ctaCity": "Great Barrier Reef",
+  "ctaText": "Find travel companions to explore Great Barrier Reef together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Reef Trip",
+    "Dive",
+    "Jun – Oct Best"
+  ],
+  "defaultDays": 1
+}

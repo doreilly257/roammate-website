@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "tel-aviv",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "ILS (Shekel)",
+      "detail": "1 USD ≈ 3.6 ILS"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Hebrew / English",
+      "detail": "English widely spoken"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "IST (UTC+2/+3)",
+      "detail": "Daylight saving Mar–Oct"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Jun, Sep – Nov",
+      "detail": "22–30°C, dry & sunny"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$80–120 USD",
+      "detail": "₪290–430 budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free most",
+      "detail": "Most Western nationalities 90 days"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "The Best of Tel Aviv in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Old Jaffa & the Flea Market",
+            "text": "Start in ancient Jaffa, one of the world's oldest port cities. Walk through the cobblestone alleys of Old Jaffa past galleries, the Wishing Bridge, and St. Peter's Church with views over the Mediterranean. Then descend to the Jaffa Flea Market (Shuk HaPishpeshim) — a treasure trove of vintage furniture, vinyl records, and handmade jewellery. Breakfast at Dr. Shakshuka (₪55) for the city's most famous baked-egg dish.",
+            "tip": "Dr. Shakshuka opens at 8am — arrive early to avoid queues. The Libyan-style shakshuka with lamb is the one to order."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Carmel Market & Beach Time",
+            "text": "Walk north along the promenade to Carmel Market (Shuk HaCarmel) — Tel Aviv's buzzing central market. Sample halva, fresh pomegranate juice (₪15), and kubbeh soup. Then head to Gordon Beach or Frishman Beach for an afternoon swim. The Mediterranean here is warm and calm. Rent a sunbed (₪30) or claim a spot on the free sand. The beachfront promenade is perfect for people-watching.",
+            "tip": "Carmel Market closes early on Fridays for Shabbat — go before noon. The juice stands near the Allenby entrance are cheapest."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rothschild Boulevard & Nightlife",
+            "text": "Walk down Rothschild Boulevard — the tree-lined avenue of Bauhaus buildings, craft cocktail bars, and startup offices. Stop at the Independence Hall museum where Israel was declared a state. Dinner at Miznon on Ibn Gabirol Street — legendary pita sandwiches stuffed with cauliflower or lamb (₪55–75). Then hit the bars — Dizengoff Street and Florentin neighbourhood are the hotspots, buzzing until 3–4am.",
+            "tip": "Tel Aviv nightlife starts late — bars fill up after 11pm and clubs after midnight. Pre-drink at a kiosk on Rothschild."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Old Jaffa, Markets & Beach Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ancient Jaffa & the Port",
+            "text": "Begin in Jaffa, the ancient port city that's been inhabited for 4,000 years. Walk through the hilltop alleys past art galleries, the Wishing Bridge (find your zodiac sign and make a wish), and the Clock Tower. Descend to the renovated Jaffa Port — a working fishing harbour with hip restaurants. Breakfast at Abu Hassan on HaDolfin Street — the best hummus in Israel (₪30–40, cash only). Queue is the norm.",
+            "tip": "Abu Hassan closes when the hummus runs out, usually by 2pm. Go before 10am for no queue and warm, fresh batches."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Flea Market & Neve Tzedek",
+            "text": "Explore the Jaffa Flea Market — vintage treasures, Middle Eastern antiques, and local designer boutiques. Then walk through Neve Tzedek, Tel Aviv's oldest neighbourhood, now its most charming — pastel buildings, independent boutiques, and cozy cafes along Shabazi Street. Stop at Suzanna for a Mediterranean lunch in a beautiful courtyard (₪70–100 mains). Visit the Nahum Gutman Museum of Art.",
+            "tip": "Neve Tzedek is compact — you can explore the whole neighbourhood in an hour. Shabazi Street has the best boutiques."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Beach Sunset & Jaffa Port",
+            "text": "Head to the beach between Jaffa and Tel Aviv for sunset — the sky turns pink and gold over the ancient city skyline. Walk to the Jaffa Port area for dinner at one of the waterfront restaurants. The Container (HaMifratz) serves excellent fish and cocktails overlooking the harbour. Or keep it street-food — sabich (fried eggplant and egg in pita, ₪30) from one of the Jaffa stalls.",
+            "tip": "The beach between Jaffa Port and Alma Beach is one of the least crowded sunset spots — locals know, tourists don't."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Markets, Bauhaus & Beaches",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Carmel Market & Shabbat Vibes",
+            "text": "Dive into Carmel Market (Shuk HaCarmel) — the sensory heart of Tel Aviv. Stalls overflow with spices, halva, fresh-squeezed pomegranate juice (₪15), baklava, and exotic fruits. Sample as you go. Turn onto HaCarmel side streets for trendy cafes and bakeries. Try a Yemenite kubbeh soup at one of the stalls near the Yemenite Quarter (₪35). The market is a photographer's dream.",
+            "tip": "Friday morning is the best time — locals stock up for Shabbat dinner, and the energy is electric. Go before noon."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "White City Bauhaus Walking Tour",
+            "text": "Tel Aviv has the world's largest collection of Bauhaus buildings — over 4,000, earning it UNESCO status as the \"White City.\" Walk along Rothschild Boulevard admiring the curved balconies and clean lines. The free White City Centre at 71 Rothschild has maps for self-guided walks. Then hit Gordon Beach or Hilton Beach for swimming. The water is warm May through October.",
+            "tip": "The Bauhaus Centre at 77 Dizengoff Street sells excellent architecture maps (₪20). Friday 10am walking tours are free."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Florentin Nightlife",
+            "text": "Dinner at Miznon on Ibn Gabirol — legendary stuffed pitas with roasted cauliflower or lamb ragu (₪55–75). Then head to Florentin, the graffiti-covered neighbourhood that's the heart of Tel Aviv's nightlife. Start at Kuli Alma (cocktails, art space, DJ sets), then move to Radio EPGB for indie music. Or try Sputnik on Allenby Street for a more local, alternative vibe. Drinks ₪35–55.",
+            "tip": "Florentin bars don't charge cover on weeknights. Start at Kuli Alma's courtyard and let the night evolve from there."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Culture, Food & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tel Aviv Museum of Art",
+            "text": "Visit the Tel Aviv Museum of Art (₪54) — a world-class collection of Impressionist, modern, and contemporary art in a striking building. The Herta and Paul Amir building's geometric atrium is worth seeing even if you skip the galleries. Then walk through the neighbouring Sarona Market — an upscale food market in restored Templar-era buildings. Coffee and pastry here before moving on.",
+            "tip": "Wednesday and Saturday are less crowded. The photography and Israeli art galleries on the upper floors are the highlights."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Levinsky Market & Kerem HaTeimanim",
+            "text": "Head to Levinsky Market — smaller and more local than Carmel, specialising in spices, dried fruits, olives, and Persian foods. Try the burekas (₪15) and Turkish coffee (₪12). Then explore the Yemenite Quarter (Kerem HaTeimanim) — narrow streets, low-rise buildings, and some of the best Yemenite food in the world. Lunch at Shlomo & Doron for jachnun and malawach (₪35–55).",
+            "tip": "Levinsky Market is where Tel Aviv's chefs shop. Buy za'atar, sumac, and baharat spice mix as lightweight souvenirs."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Beach Farewell & Rooftop Drinks",
+            "text": "Final swim at Alma Beach or Mezizim Beach in the golden late-afternoon light. Walk the entire tayelet (promenade) from Jaffa to the Old Port as the sun sets. Dinner at The Old Man and the Sea in Jaffa — a legendary fish restaurant on the harbour (₪80–130 mains). End the night at Suramare rooftop bar at the Carlton Hotel for cocktails (₪55–70) with panoramic sea views.",
+            "tip": "The promenade walk from Jaffa to the Port is 5km — perfect for a sunset stroll. Bring a light layer; the sea breeze picks up."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Old Jaffa, Markets & Beach Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ancient Jaffa & Hummus",
+            "text": "Begin in Jaffa, the ancient port city inhabited for 4,000 years. Walk the hilltop alleys past art galleries, the Wishing Bridge, and the Clock Tower. Descend to Abu Hassan on HaDolfin Street — the best hummus in Israel (₪30–40, cash only). The masbacha (warm, whole chickpeas in tahini) is transcendent. Queue is expected, but it moves fast.",
+            "tip": "Abu Hassan closes when the hummus runs out, usually by 2pm. Go before 10am for no queue and warm, fresh batches."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Flea Market & Neve Tzedek",
+            "text": "Explore the Jaffa Flea Market — vintage treasures, Middle Eastern antiques, and local designer boutiques. Walk through Neve Tzedek, Tel Aviv's oldest neighbourhood — pastel buildings, independent shops, and cafes along Shabazi Street. Stop at Suzanna for a Mediterranean lunch (₪70–100). Visit the Nahum Gutman Museum of Art for its charming depictions of early Tel Aviv.",
+            "tip": "Neve Tzedek is compact — explore the whole neighbourhood in an hour. Shabazi Street has the best boutiques and cafes."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset & Jaffa Port",
+            "text": "Watch sunset from the beach between Jaffa and Charles Clore Park — the sky turns pink and gold behind the ancient skyline. Dinner at The Container at Jaffa Port — excellent fish and cocktails overlooking the harbour. Or keep it casual with sabich from Sabich Frishman (₪35) — fried eggplant, egg, and amba sauce in pita. Evening stroll along the illuminated port.",
+            "tip": "The beach just south of Alma Beach is one of the least crowded sunset spots — locals know, tourists don't."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Markets, Bauhaus & Beaches",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Carmel Market Deep Dive",
+            "text": "Dive into Carmel Market (Shuk HaCarmel) — the sensory heart of Tel Aviv. Stalls overflow with spices, halva, pomegranate juice (₪15), and exotic fruits. Turn onto the side streets for trendy cafes. Try kubbeh soup at a Yemenite Quarter stall (₪35). Walk through the Yemenite Quarter itself — narrow streets and low-rise buildings hiding the city's best traditional eateries.",
+            "tip": "Friday morning is the best time — locals stock up for Shabbat dinner and the energy is electric. Go before noon."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "White City & Beach Time",
+            "text": "Explore the White City — Tel Aviv's UNESCO-listed collection of 4,000+ Bauhaus buildings. Walk Rothschild Boulevard, admiring curved balconies and clean lines. The Bauhaus Centre at 77 Dizengoff has self-guided tour maps (₪20). Then hit Gordon Beach for swimming. Rent a sunbed (₪30) or find a free spot. The water is warm and calm May through October.",
+            "tip": "Free Bauhaus walking tours leave from 71 Rothschild on Fridays at 10am — book online, they fill up quickly."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rothschild & Cocktails",
+            "text": "Walk Rothschild Boulevard at golden hour — the Bauhaus buildings glow in the fading light. Dinner at Brasserie on Rothschild (₪65–120) — French-Israeli bistro cuisine in a stunning Bauhaus building. Then cocktails at Bellboy, a speakeasy-style bar behind an unmarked door on Lilienblum Street (₪55–70 cocktails). The bar scene on Lilienblum is excellent for a weeknight.",
+            "tip": "Bellboy doesn't take reservations — arrive before 10pm on weeknights. The bartenders make some of the best cocktails in the Middle East."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Art, Culture & Florentin",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tel Aviv Museum of Art",
+            "text": "Visit the Tel Aviv Museum of Art (₪54) — Impressionist, modern, and contemporary art in a world-class collection. The Herta and Paul Amir building's geometric atrium is architecturally stunning. Then walk to Sarona Market — an upscale food market in restored Templar-era buildings with artisan coffee, craft beer, and gourmet street food.",
+            "tip": "Wednesday and Saturday are least crowded. The Israeli art and photography galleries on the upper floors are the highlights."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Florentin Street Art Walk",
+            "text": "Explore Florentin — Tel Aviv's grittiest, most creative neighbourhood. The streets are a living gallery of murals, stencils, and graffiti by Israeli and international artists. Walk along Florentin Street and Vital Street for the best pieces. Lunch at Dallal (₪55–90) in an old Neve Tzedek building, or grab falafel from HaKosem on Shlomo HaMelech Street (₪20–30).",
+            "tip": "HaKosem is frequently named Tel Aviv's best falafel — it's perfectly crispy and the fried eggplant on the side is incredible."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Florentin Nightlife",
+            "text": "Florentin truly comes alive at night. Start at Kuli Alma — a cocktail bar, art space, and DJ venue in an underground warehouse (no cover weeknights). Then try Radio EPGB for indie and electronic sets, or Sputnik on Allenby for a local alternative vibe. Drinks run ₪35–55. The bars cluster along Vital Street and the surrounding blocks.",
+            "tip": "Florentin bars don't charge cover on weeknights. Start at Kuli Alma's courtyard and let the night evolve naturally."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Day Trip to Jerusalem",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Bus to Jerusalem & Old City",
+            "text": "Take the 405 bus from Tel Aviv Central Station (₪16, 1 hour) to Jerusalem Central Bus Station. Walk or take the light rail to the Old City. Enter through Jaffa Gate and explore the four quarters — Armenian, Christian, Jewish, and Muslim. Walk the Via Dolorosa, visit the Church of the Holy Sepulchre, and see the Western Wall. The atmosphere is overwhelming and unforgettable.",
+            "tip": "Dress conservatively — shoulders and knees covered at all religious sites. Carry a scarf for the Western Wall area."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mahane Yehuda Market",
+            "text": "Head to Mahane Yehuda Market (the Shuk) — Jerusalem's buzzing food market. Sample fresh-baked rugelach at Marzipan Bakery (₪10 for a bag), grab burekas (₪15), and try the pomegranate wine. Lunch at one of the market restaurants — Azura serves legendary kubbeh and slow-cooked stews (₪50–75). The market transforms into a bar scene on Thursday and Friday nights.",
+            "tip": "Marzipan Bakery's chocolate rugelach is legendary — buy a bag fresh from the oven. Thursday nights, the market becomes a party."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Mount of Olives Sunset & Return",
+            "text": "Take a taxi (₪30) to the Mount of Olives for sunset — the panoramic view over the Old City, the Dome of the Rock, and the Judean Hills is one of the most famous views on earth. Walk down through the Garden of Gethsemane. Then head back to the bus station for the return to Tel Aviv (last bus around 11pm). Dinner in Tel Aviv when you arrive.",
+            "tip": "The view from the Mount of Olives at sunset is genuinely one of the most moving sights you'll ever see. Give it time."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Dead Sea & Desert Adventure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Masada at Sunrise",
+            "text": "Pre-book a Dead Sea day trip or rent a car. Leave Tel Aviv at 4am to reach Masada for sunrise. Hike the Snake Path (45 minutes) or take the cable car (₪54) to Herod's mountaintop fortress. The sunrise over the Dead Sea and Jordanian mountains from the summit is extraordinary. The site tells the story of the Jewish revolt against Rome — deeply moving and historically significant.",
+            "tip": "The Snake Path sunrise hike requires a 4am departure from the parking area. Bring a headlamp, water, and layers — the desert is cold before dawn."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Dead Sea Float",
+            "text": "Drive 20 minutes to Ein Bokek — the main Dead Sea beach resort area. Float in the Dead Sea — the highest salt concentration of any body of water on earth means you literally cannot sink. Cover yourself in the mineral-rich black mud (free from the shore) for a natural spa treatment. Rinse off and relax on the beach. It's a surreal, bucket-list experience.",
+            "tip": "Don't shave the day before — the salt water stings any cuts. Wear an old swimsuit; the minerals can discolour fabric."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Tel Aviv Dinner",
+            "text": "Drive back to Tel Aviv (2.5 hours via Route 90 and Route 1). Stop at a Bedouin roadside cafe in the Negev for Turkish coffee and a view of the desert at dusk. Back in Tel Aviv, have dinner at Port Sa'id on Har Sinai Street — one of the city's most popular restaurants with Mediterranean small plates (₪35–65), excellent wine list, and a buzzy atmosphere.",
+            "tip": "Port Sa'id doesn't take reservations — queue from 7pm for a table. The lamb shawarma and whole cauliflower are the must-orders."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "North Tel Aviv, Food & Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tel Aviv Port & Park HaYarkon",
+            "text": "Start at the Tel Aviv Port (Namal) — a redeveloped harbour area with a farmer's market on Fridays, cafes, and a wave-like wooden boardwalk. Walk or rent a bike (₪20/hour from Tel-O-Fun) and ride along the Yarkon River through Park HaYarkon — Tel Aviv's Central Park. The park has bike trails, rowing boats (₪60/hour), and a tropical garden. A peaceful contrast to the city buzz.",
+            "tip": "The Friday farmer's market at the Port (6am–2pm) is Tel Aviv's best — organic produce, artisan bread, and craft cheeses."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Levinsky Market & Spice Shopping",
+            "text": "Head to Levinsky Market — smaller, more local than Carmel, specialising in spices, dried fruits, olives, and Persian foods. Buy za'atar, sumac, and baharat as lightweight souvenirs. Try the burekas (₪15) and Turkish coffee (₪12). Walk to nearby Dizengoff Street for boutique shopping — Israeli designers and independent stores. Visit the Dizengoff Centre for its quirky rooftop.",
+            "tip": "Levinsky Market is where Tel Aviv's chefs shop. The spice stalls will mix custom blends if you ask — great gifts."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Shabbat Dinner Experience",
+            "text": "If it's Friday, experience Shabbat — the city quiets as families gather for dinner. Join a Shabbat dinner experience through Abraham Hostel (₪85) or Haya Kitchen — communal dinners with locals and travelers. If it's not Friday, try Dalida in Jaffa — contemporary Middle Eastern sharing plates in a beautiful stone building (₪55–95 dishes). The pomegranate cocktail is outstanding.",
+            "tip": "On Shabbat (Friday sunset to Saturday sunset), public transport stops. Pre-plan your evening — taxis and rideshares still operate."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Beach Day & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hilton Beach & Breakfast",
+            "text": "Final morning at Hilton Beach — the most social beach in Tel Aviv with a mixed crowd, dog section, and LGBTQ+ friendly area. Swim in the calm Mediterranean, then breakfast at Benedict on Rothschild Boulevard — the famous 24-hour breakfast spot (₪55–85). Their shakshuka and eggs Benedict are equally legendary. Sit on the terrace and soak up the Rothschild morning vibe.",
+            "tip": "Hilton Beach has a designated surf section — rent a board (₪100/hour) from the nearby Top Sea surf shop."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Shopping & Culture",
+            "text": "Visit the Palmach Museum (₪30, reservation required) for an immersive experience of Israel's pre-state history. Then browse the shops on Dizengoff Street and Shenkin Street for Israeli fashion and souvenirs. Pick up Dead Sea cosmetics at AHAVA (or buy at the airport duty-free for better prices). Final falafel from HaKosem or shawarma from HaShomer 1 (₪35).",
+            "tip": "Duty-free at Ben Gurion Airport is excellent for Dead Sea products, wine, and chocolate. Prices are genuinely competitive."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Sunset & Dinner",
+            "text": "Walk the entire tayelet (promenade) from Jaffa to the Port one last time as the sun sets over the Mediterranean. Farewell dinner at The Old Man and the Sea in Jaffa — a legendary fish restaurant on the harbour where meze arrives in an endless stream (₪120–180 per person). Finish with arak on the rocks and baklava. The lights of Old Jaffa reflecting on the water is the perfect final image.",
+            "tip": "If your flight is late, Ben Gurion Airport is only 20 minutes from Tel Aviv. But arrive 3 hours early — security is thorough."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Shabbat savings",
+      "text": "Most markets and shops close Friday afternoon through Saturday evening. Plan activities around this — beaches and parks are free. Pre-buy food for Shabbat on Friday morning."
+    },
+    {
+      "title": "Street food is king",
+      "text": "Falafel (₪20–30), sabich (₪30–35), and shawarma (₪35–50) are filling, delicious, and everywhere. A full meal from a street stand costs a third of a restaurant."
+    },
+    {
+      "title": "Free beaches",
+      "text": "All Israeli beaches are free by law. Sunbed rental is ₪30–40 but the sand is free. Gordon, Frishman, Hilton, and Alma beaches are all excellent."
+    },
+    {
+      "title": "Bus passes",
+      "text": "Rav-Kav card (₪5) plus daily pass (₪13.50) covers all city buses and the Dan light rail. Egged bus 405 to Jerusalem is only ₪16 one way."
+    },
+    {
+      "title": "Happy hours",
+      "text": "Most bars have happy hours 5–8pm with drinks from ₪25–30. Rothschild Boulevard kiosks sell cold beers for ₪15–20. Pre-game before the bars."
+    },
+    {
+      "title": "Bike the city",
+      "text": "Tel-O-Fun bike share: ₪17/day subscription plus first 30 minutes free per ride. Tel Aviv is flat and bikeable — cover more ground for less."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "₪100–180",
+      "midrange": "₪350–700",
+      "splurge": "₪1,200+",
+      "notes": "Hostels → boutique hotels → beachfront 5-star"
+    },
+    {
+      "category": "Food",
+      "budget": "₪60–100",
+      "midrange": "₪150–250",
+      "splurge": "₪400+",
+      "notes": "Street food & markets → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "₪15–30",
+      "midrange": "₪50–100",
+      "splurge": "₪200+",
+      "notes": "Bus & bike → taxi/Gett → private driver"
+    },
+    {
+      "category": "Activities",
+      "budget": "₪0–50",
+      "midrange": "₪100–200",
+      "splurge": "₪400+",
+      "notes": "Beaches & walking tours → museums & day trips → surf & adventure"
+    },
+    {
+      "category": "Drinks",
+      "budget": "₪30–50",
+      "midrange": "₪80–150",
+      "splurge": "₪250+",
+      "notes": "Kiosk beers → bar happy hours → cocktail bars"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "₪205–410",
+      "midrange": "₪730–1,400",
+      "splurge": "₪2,450+",
+      "notes": "$57–114 → $203–389 → $680+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Most Western nationalities enter visa-free for 90 days. You receive a paper entry slip — keep it safe, you'll need it throughout your stay",
+        "Ben Gurion Airport security is thorough — arrive 3 hours early for international flights. Expect detailed questioning at departure",
+        "Israel entry stamps don't go in your passport anymore (paper slip system), so it won't affect travel to other countries"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required. Tap water is safe to drink. Healthcare is excellent but expensive without insurance",
+        "Tel Aviv is very safe for tourists. Petty crime is low. Be aware of your surroundings in crowded areas as in any city",
+        "Check current security advisories before travel. The situation can change quickly — register with your embassy"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "Dan buses cover the city (₪5.90 per ride). Rav-Kav card for contactless payment. Buses don't run on Shabbat (Friday sunset – Saturday sunset)",
+        "Gett is the main ride-hailing app (like Uber). Taxis are metered — ₪13 start + ₪3.60/km. Always verify the meter is running",
+        "Tel Aviv is flat and walkable. Tel-O-Fun bike share (₪17/day) is the best way to cover ground. Great bike lanes throughout"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Cellcom, Partner, and Pelephone sell tourist SIMs at Ben Gurion Airport — ₪60–100 for 30 days with 10–20GB data",
+        "Free WiFi in most cafes, restaurants, and the beach promenade. Speed is generally fast and reliable",
+        "WhatsApp is the primary communication app in Israel — restaurants, tours, and locals all use it extensively"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Israeli Shekel (₪/ILS). ATMs everywhere — airport exchange rates are poor; use city ATMs or change offices on Allenby Street",
+        "Cards accepted almost everywhere. Some street food vendors and small markets are cash-only — carry ₪100–200",
+        "Tipping: 10–15% at restaurants (not always included). No tipping at cafes or street food. Round up taxi fares"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Light, casual clothing. Tel Aviv is very relaxed — no dress code at restaurants or bars. Pack a swimsuit for the beach",
+        "Conservative clothing for Jerusalem day trips — cover shoulders and knees at all religious sites. Carry a scarf",
+        "Sunscreen (SPF 50+), sunglasses, hat, and a refillable water bottle. A light layer for evening sea breezes"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "✡️",
+      "title": "Shabbat",
+      "text": "Friday sunset to Saturday sunset — public transport stops, most shops and markets close. Restaurants in Tel Aviv stay open but may have limited menus. Plan ahead and stock up on Friday morning."
+    },
+    {
+      "icon": "🍽️",
+      "title": "Kosher & Food",
+      "text": "Many restaurants are kosher (no mixing of meat and dairy). Non-kosher options are abundant in Tel Aviv. Pork is rare but available. Tipping 10–15% is standard at sit-down restaurants."
+    },
+    {
+      "icon": "🏳️‍🌈",
+      "title": "LGBTQ+ Friendly",
+      "text": "Tel Aviv is the most LGBTQ+-friendly city in the Middle East. Pride Week in June is massive. Hilton Beach has a dedicated LGBTQ+ section. The Florentin area is the main nightlife hub."
+    },
+    {
+      "icon": "🕊️",
+      "title": "Sensitivity",
+      "text": "Israel-Palestine is deeply sensitive. Be respectful in conversations and avoid making assumptions. Listen more than you speak. Treat all communities with equal respect."
+    },
+    {
+      "icon": "🔒",
+      "title": "Security",
+      "text": "Bag checks at malls, restaurants, and public buildings are normal. Don't leave bags unattended — they will be treated as suspicious and may be destroyed. It's routine, not alarming."
+    },
+    {
+      "icon": "🏖️",
+      "title": "Beach Culture",
+      "text": "Beaches are a way of life. Matkot (paddle ball) is the national beach sport — join a game if invited. Don't sit in matkot zones (close to the water). Friday beach BBQs are a tradition."
+    }
+  ],
+  "title": "Tel Aviv Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Tel Aviv guide for young travelers. 3-day itinerary with beaches, Bauhaus architecture, buzzing markets, nightlife, and budget tips. Plan your trip with roammate.",
+  "heroImage": "/images/guides/tel-aviv-hero.webp",
+  "heroFlag": "🇮🇱",
+  "heroCountry": "Israel",
+  "heroRegion": "Middle East",
+  "heroCity": "Tel Aviv",
+  "heroSubtitle": "Where ancient Jaffa meets Mediterranean hedonism, and the best hummus on earth fuels nights that never end.",
+  "budgetIntro": "Daily costs per person in Israeli Shekel (₪). Tel Aviv is expensive by Middle Eastern standards but cheaper than Western Europe.",
+  "culturalIntro": "Tel Aviv is liberal and cosmopolitan, but Israel has unique cultural dynamics. Understanding Shabbat, security norms, and local customs enriches your visit.",
+  "ctaCity": "Tel Aviv",
+  "ctaText": "Find travel companions, split day trip costs, and share beach adventures with fellow travelers on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Apr – Nov Best"
+  ],
+  "defaultDays": 3
+}

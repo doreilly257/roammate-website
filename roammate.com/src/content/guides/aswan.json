@@ -1,0 +1,512 @@
+{
+  "type": "city",
+  "slug": "aswan",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EGP (Pound)",
+      "detail": "1 USD ≈ 48 EGP"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Arabic / Nubian",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EET (UTC+2)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Oct – Apr",
+      "detail": "22–32°C, warm & dry"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$25–50 USD",
+      "detail": "E£1,200–2,500 budget range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa on arrival",
+      "detail": "$25 USD for most nationalities"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "The Best of Aswan in One Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Philae Temple on Agilkia Island",
+            "text": "Take a motorboat (E£100–150 return, 10 minutes) from the Philae boat dock to Agilkia Island. The Temple of Isis at Philae (E£450) was rescued from rising Nile waters and relocated block-by-block to this island in the 1970s. The temple complex — built over 700 years from the Ptolemaic to Roman periods — is one of the last places where Egyptian hieroglyphics were carved. The birth house, colonnaded courtyard, and sanctuary of Isis are exquisite.",
+            "tip": "Arrive early to avoid tour groups. The Sound and Light Show at Philae (E£400, evenings) is actually one of the better ones in Egypt — worth considering if you have the evening free."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Felucca Sailing & Elephantine Island",
+            "text": "Take a felucca (E£200–300/hour) from the Corniche for a Nile sail around Elephantine Island — one of the most ancient inhabited places in Egypt, with ruins spanning 3,000 years. The Aswan Museum (E£100) and Nilometer (used to measure the Nile flood for tax purposes) are on the island. Sail past Kitchener's Island (Botanical Garden, E£50) — a lush garden island started by Lord Kitchener who collected plants from across the British Empire.",
+            "tip": "A 2-hour felucca combining Elephantine, Kitchener's Island, and the Aga Khan Mausoleum viewpoint costs E£400–600. Share with other travelers to split costs."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Nubian Village & Spice Market",
+            "text": "Visit a Nubian village on the West Bank (motorboat E£100–150 or felucca). The villages are painted in vivid colours — turquoise, yellow, and orange — and residents offer tea and the chance to hold baby crocodiles (E£20, a Nubian tradition). Return to the East Bank and walk through the Aswan Souk — the best spice market in Egypt. Saffron, hibiscus, cumin, and dried herbs overflow from burlap sacks. Dinner at The Nubian House (E£100–250) for Nubian cuisine.",
+            "tip": "The spice souk extends several blocks from the Corniche inland. Prices are better here than in Luxor or Cairo. Hibiscus tea (karkade) is the local specialty — buy it dried."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Philae Temple & Nile Sailing",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Philae Temple",
+            "text": "Motorboat (E£100–150 return) to Agilkia Island for the Temple of Isis at Philae (E£450) — one of the most beautiful temples in Egypt, rescued from the rising Nile by UNESCO in the 1970s. The complex was the last functioning temple of ancient Egyptian religion, only closing in the 6th century CE. The court of Nectanebo, the birth house of Horus, and the sanctuary of Isis are highlights. Relief carvings are remarkably well-preserved.",
+            "tip": "The Philae boat dock is 6km south of Aswan — taxi E£50–80. Negotiate the motorboat price before boarding. Morning light on the temple is best for photography."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Felucca Sailing the First Cataract",
+            "text": "Hire a felucca for a 2–3 hour sail (E£400–600) around the Aswan islands. Sail past the First Cataract — where granite boulders create rapids in the Nile, marking the ancient boundary of Egypt and Nubia. Circle Elephantine Island, pass the Aga Khan Mausoleum on the hillside (the Aga Khan III loved Aswan so much he chose to be buried here), and stop at Kitchener's Island Botanical Garden (E£50) — a shady retreat with tropical plants.",
+            "tip": "Aswan felucca captains are the best on the Nile — the wind is stronger here than in Luxor. A sunset sail from 4–6pm is the classic Aswan experience."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Aswan Spice Souk & Nile Dinner",
+            "text": "Walk through the Aswan Souk — the most atmospheric market in Egypt. The spice stalls sell hibiscus, saffron, cumin, dried mango, and Nubian perfumes at better prices than anywhere else in the country. The souk runs for several blocks from the Corniche inland. Dinner at Makka restaurant for grilled fish straight from the Nile (E£100–200) or The Terrace at the Old Cataract hotel for colonial splendour and river views (E£400–800).",
+            "tip": "The Aswan Souk stays open until 10pm. Spice vendors will let you taste before buying. Karkade (hibiscus) and doum (palm fruit) drinks are local specialities."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Nubian Culture & High Dam",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Aswan High Dam & Unfinished Obelisk",
+            "text": "Start at the Aswan High Dam (E£100) — the massive dam that controls the Nile's annual flood and created Lake Nasser, one of the world's largest artificial lakes. The views from the dam across Lake Nasser to the south and the Nile to the north are impressive. Then visit the Unfinished Obelisk (E£200) in the northern quarries — a 42-metre granite obelisk abandoned mid-carving after a crack appeared. It would have been the largest obelisk ever, weighing 1,200 tonnes.",
+            "tip": "The Unfinished Obelisk shows exactly how the ancient Egyptians quarried granite — you can see the chisel marks and the wedge holes. Far more interesting than the dam itself."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Nubian Villages",
+            "text": "Cross to the West Bank by motorboat (E£100–150) to visit the Nubian villages of Siou and Koti. The Nubians are an ancient people with their own language, music, and traditions. Their houses are painted in vivid colours with symbolic designs — crocodiles for protection, hands of Fatima for luck. You'll be invited for tea and to see baby crocodiles (E£20). The Nubian Museum in Aswan (E£200) provides excellent context on this ancient culture displaced by the dam.",
+            "tip": "The Nubian villages are genuine communities, not theme parks — be respectful. Buying handicrafts directly supports the village. Nubian henna painting is a memorable experience (E£50–100)."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset at the Old Cataract",
+            "text": "Walk the Corniche to the Old Cataract Hotel — the legendary Victorian hotel where Agatha Christie wrote part of \"Death on the Nile.\" Non-guests can drink on the terrace (cocktails E£200–400) with stunning Nile views at sunset. The river, the feluccas, Elephantine Island, and the West Bank desert create a perfect panorama. Dinner at Salah al-Din — a rooftop restaurant opposite the train station with solid Egyptian food and cold beer (E£100–200).",
+            "tip": "The Old Cataract terrace at sunset is one of the most beautiful spots in Egypt. Dress smartly — it's a 5-star hotel. The mocktails are just as good as the cocktails."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Abu Simbel Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive to Abu Simbel",
+            "text": "Join the convoy departing Aswan at 3:30–4:00am for the 280km drive south through the Sahara to Abu Simbel (3–3.5 hours). The convoy system groups all tourist vehicles together for the desert crossing. Arrive at the temples of Ramesses II as the morning light hits the four colossal statues (each 20 metres tall). The Great Temple interior has eight Osirid pillars and stunning wall reliefs of the Battle of Kadesh.",
+            "tip": "Book through your hotel (E£600–1,000 per person for shared minibus including entry tickets, or E£3,000–5,000 for a private car). The early wake-up is worth it."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Temple of Nefertari & Return",
+            "text": "Explore the smaller Temple of Nefertari next to the Great Temple — one of only two temples in Egypt dedicated to a queen. The facade has six standing figures (four of Ramesses, two of Nefertari) each 10 metres tall. Inside, the vivid reliefs show Nefertari being crowned by Isis and Hathor. The UNESCO relocation story is told in a museum behind the temples — moving 20,000 tonnes of rock to save them from Lake Nasser is one of the greatest engineering feats of the 20th century.",
+            "tip": "Allow 2–2.5 hours for both temples. The small museum explaining the 1960s relocation is free and fascinating. Return drive to Aswan takes 3–3.5 hours."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Nile Sunset",
+            "text": "Return to Aswan by mid-afternoon. Take a final felucca sunset sail (E£200–300/hour) on the Nile around the First Cataract. The granite boulders, the desert light, and the silence on the water are the essence of Upper Egypt. Farewell dinner at The Nubian House for traditional Nubian cuisine — try tagen (slow-cooked meat and vegetable stew) and fresh Nile fish with tahini (E£100–250).",
+            "tip": "If you're continuing south, EgyptAir flies Aswan to Abu Simbel (35 minutes) as an alternative to the long drive. Trains to Luxor (3 hours) and Cairo (13 hours) depart daily."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Philae Temple & First Impressions",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Philae Temple",
+            "text": "Motorboat (E£100–150 return) to Agilkia Island for the Temple of Isis at Philae (E£450). This Ptolemaic-Roman temple complex was the last functioning ancient Egyptian temple, only closed in 537 CE by Justinian. The court of Nectanebo, the birth house, and the sanctuary of Isis are beautifully preserved. Relief carvings show Ptolemaic pharaohs making offerings in the ancient Egyptian style despite being Greek rulers.",
+            "tip": "Arrive at 7am opening for near-empty temples. The Philae boat dock is 6km south of Aswan — taxi E£50–80."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Elephantine Island",
+            "text": "Take a local ferry (E£5) to Elephantine Island — inhabited for 5,000 years. The ruins of the Temple of Khnum (the ram-headed god), a Nilometer used to measure the annual flood, and the Aswan Museum (E£100) with local archaeological finds are on the southern tip. Walk through the Nubian village on the island — colourful houses, playing children, and friendly invitations for tea.",
+            "tip": "The Nilometer on Elephantine is one of the oldest measuring devices in the world — Nile flood levels determined tax rates for millennia."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Corniche Walk & Dinner",
+            "text": "Walk the Aswan Corniche at sunset — the Nile is at its most beautiful here, wider and calmer than in Luxor or Cairo, with feluccas drifting past desert islands. Dinner at Makka restaurant on the Corniche for grilled Nile fish and mango juice (E£100–200). The pace of life in Aswan is noticeably slower than Cairo — this is Egypt at its most relaxed.",
+            "tip": "The Corniche between the Ferial Garden and the Old Cataract hotel is the best stretch for sunset. Street vendors sell fresh karkade (hibiscus) juice for E£5–10."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Nile Felucca & Kitchener's Island",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kitchener's Island Botanical Garden",
+            "text": "Take a felucca or motorboat to Kitchener's Island (E£50 entry). Lord Kitchener was given the island during the British occupation and filled it with tropical plants from across the Empire — Indian palms, African hardwoods, and rare orchids. The shady paths, birdsong, and river breezes make it a peaceful morning escape. The island is small — 1 hour is enough to see everything.",
+            "tip": "Kitchener's Island is the perfect morning escape when Aswan heats up. Combine it with a felucca sail to Elephantine Island."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Felucca Sailing the First Cataract",
+            "text": "Hire a felucca for a 3-hour sail (E£600–800) through the First Cataract — the granite boulder rapids that marked the ancient border between Egypt and Nubia. The felucca navigates between smooth black rocks while the captain explains the river. Sail past the Aga Khan Mausoleum, the Monastery of St. Simeon (visible on the hillside), and the desert dunes that sweep down to the water. The contrast of blue Nile, black granite, and golden sand is stunning.",
+            "tip": "The First Cataract sail is unique to Aswan — nowhere else on the Nile has this rocky landscape. Afternoon wind is strongest for the best sailing."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Nubian Music & Culture",
+            "text": "Attend a Nubian music performance — ask your hotel or the Nubian House restaurant for evening shows. Nubian music blends African rhythms with Arabic melodies and is distinctly different from Egyptian music. The hand drums (tar), oud, and call-and-response singing are infectious. Dinner at The Nubian House (E£100–250) for tagen stew, Nubian bread, and fresh Nile fish in a colourfully painted setting.",
+            "tip": "Nubian musicians often perform at restaurants and hotels along the Corniche. The Philae Hotel sometimes hosts evening performances — ask at the front desk."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "High Dam, Obelisk & Nubian Villages",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Aswan High Dam & Unfinished Obelisk",
+            "text": "Taxi to the Aswan High Dam (E£100 entry, 12km south). Built with Soviet assistance in the 1960s, the dam controls the Nile flood and created Lake Nasser — 550km long. Views from the top stretch across the lake. Then visit the Unfinished Obelisk (E£200) — a 42-metre granite obelisk abandoned in the quarry after cracking. The chisel marks and wedge holes reveal the ancient quarrying technique used to create every obelisk in Egypt.",
+            "tip": "The Unfinished Obelisk is more interesting than the dam. The chisel marks are visible proof of how ancient Egyptians quarried granite — no alien conspiracies needed."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Nubian Villages",
+            "text": "Cross to the West Bank by motorboat (E£100–150) to visit the Nubian villages of Siou and Koti. Houses painted in vivid turquoise, orange, and yellow line the sandy paths. You'll be invited for sweet tea and shown baby crocodiles (E£20) — Nubians have kept crocodiles for centuries as protective symbols. Buy handmade Nubian crafts — beaded jewellery, woven baskets, and embroidered textiles directly from the artisans.",
+            "tip": "Learn a few Nubian greetings — \"Ari kayee\" (hello) and \"Kashkerey\" (thank you). Locals deeply appreciate the effort. Henna painting is popular (E£50–100)."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Nubian Museum & Sunset",
+            "text": "Visit the Nubian Museum (E£200) — a beautifully designed museum telling the story of Nubian civilization from prehistory to the displacement caused by the Aswan dams. Artifacts, reconstructed houses, and the story of the UNESCO temple relocations are moving and informative. Sunset drinks at the Old Cataract Hotel terrace (cocktails E£200–400) — the Nile view from here inspired Agatha Christie.",
+            "tip": "The Nubian Museum gives essential context for understanding what was lost when Lake Nasser flooded ancient Nubia. Allow 1.5–2 hours."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Abu Simbel Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive to Abu Simbel",
+            "text": "Depart Aswan at 3:30–4:00am in the convoy for the 280km drive through the Sahara (3–3.5 hours). Arrive at Abu Simbel as morning light illuminates the four colossal seated statues of Ramesses II — each 20 metres tall, carved from the cliff face. The Great Temple interior has Osirid pillars and wall reliefs of the Battle of Kadesh. Twice a year (Feb 22 and Oct 22), sunlight penetrates 60 metres to illuminate three of the four statues in the sanctuary.",
+            "tip": "Book through your hotel — E£600–1,000 per person shared minibus, or E£3,000–5,000 private car, including entry tickets."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Temple of Nefertari & Lake Nasser",
+            "text": "Explore the Temple of Nefertari — one of only two temples in Egypt dedicated to a queen, with six 10-metre standing figures on the facade. Inside, Nefertari is crowned by goddesses in vivid colour. Walk to the Lake Nasser viewpoint behind the temples — the vast turquoise lake stretching to the Sudanese border is extraordinary. The UNESCO relocation museum tells the story of moving 20,000 tonnes of rock to save the temples in the 1960s.",
+            "tip": "Allow 2–2.5 hours for both temples and the museum. Bring water and snacks — facilities are limited. The return drive reaches Aswan by mid-afternoon."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Aswan Souk & Dinner",
+            "text": "Spend the evening in the Aswan Souk — the best market in Egypt for spices. Hibiscus (karkade), saffron, cumin, black seed, and Nubian perfumes are stacked in colourful mounds. The souk runs several blocks from the Corniche inland through covered alleys. Dinner at Salah al-Din rooftop restaurant (E£100–200) for grilled meats and cold Stella beer, or Bit Alkeir for traditional Nubian dishes (E£80–150).",
+            "tip": "The souk vendors are friendlier and less aggressive than in Luxor or Cairo. Prices are already reasonable — a little bargaining is expected but the markup is lower."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Monastery of St. Simeon & Desert",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Monastery of St. Simeon",
+            "text": "Take a motorboat to the West Bank (E£50–100) and hike or camel ride (E£100–200) up to the Monastery of St. Simeon — a ruined 7th-century Coptic monastery set dramatically in the desert above the Nile. Once home to 300 monks, the massive mudbrick walls, church, and refectory are remarkably well-preserved. The desert landscape surrounding the monastery is stark and beautiful. Few tourists make the effort — you may have it to yourself.",
+            "tip": "The camel ride up is fun but the walk (20 minutes uphill) is manageable. Bring water — there's no shade or facilities. The views over Aswan from the monastery walls are superb."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tombs of the Nobles",
+            "text": "Visit the Tombs of the Nobles (E£60) on the West Bank hillside — rock-cut tombs of ancient Aswan's governors and officials dating from the Old Kingdom to the Roman period. The tombs of Sarenput I and II have the best-preserved paintings. The hillside location gives panoramic views over the Nile, Elephantine Island, and the city. The climb up the sandy path is worth it for the views alone.",
+            "tip": "The Nobles' Tombs are undervisited and atmospheric. The guardian may open additional tombs for a small baksheesh — the painted tombs are the most rewarding."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Philae Sound & Light Show",
+            "text": "Attend the Philae Sound and Light Show (E£400) — widely considered the best Sound and Light Show in Egypt. The temple is illuminated on its island while a narrated history plays across the water. The combination of the island setting, the reflections on the Nile, and the ancient architecture creates a genuinely atmospheric experience. The motorboat ride to and from the island adds to the magic.",
+            "tip": "Shows run in multiple languages — check the schedule. English shows are usually at 7pm or 8pm. Book through your hotel. It's genuinely worth doing, unlike most Sound and Light shows."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Lake Nasser & Kalabsha Temple",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Kalabsha Temple",
+            "text": "Take a motorboat (E£300–500 for the boat) from the High Dam area to Kalabsha Temple (E£100) — a Ptolemaic-Roman temple relocated to a promontory on Lake Nasser during the UNESCO salvage campaign. The temple of Mandulis (a Nubian sun god) is large and well-preserved, with relief carvings showing Roman emperors in Egyptian ceremonial dress. The setting on the lake shore is dramatic and peaceful. Few tourists visit.",
+            "tip": "Kalabsha is off the beaten path — you may have the temple to yourself. The motorboat ride across the lake is part of the experience. Negotiate the boat price in advance."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Aswan Dam History & Museum",
+            "text": "Revisit the area around the old Aswan Dam (built by the British in 1902, 6km south of the city) — the views between the old and new dams are scenic. The Sculpture Park near the Fatimid Cemetery has modern Egyptian artwork in a desert setting. Walk through the Fatimid Cemetery itself — hundreds of mudbrick domed tombs from the medieval period stretching across the desert.",
+            "tip": "The old dam area is quieter than the High Dam and has better Nile views. The Fatimid Cemetery is haunting and photogenic — best in late afternoon light."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cooking Class or Dinner Cruise",
+            "text": "Book a Nubian cooking class through your hotel or a local guide (E£300–500) — learn to make tagen, Nubian bread, foul with Nubian spices, and karkade. It's a social experience as much as a culinary one. Alternatively, take a dinner cruise on a motorboat or felucca (E£400–800 with food) — floating on the Nile under the stars with Aswan's lights reflecting on the water.",
+            "tip": "A cooking class in a Nubian home is one of the most authentic cultural experiences in Egypt. Ask your hotel to arrange it — most know local families who host."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Final Explorations & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Morning Felucca & Birdwatching",
+            "text": "Take a final morning felucca sail (E£200–300/hour) around the First Cataract. Aswan is excellent for birdwatching — egrets, herons, kingfishers, hoopoes, and Nile Valley sunbirds are common along the banks. The granite islands of the First Cataract create sheltered habitats. Binoculars are useful. The morning calm on the water with the desert mountains is the perfect farewell to Aswan.",
+            "tip": "The best birding spots are around the islands near the First Cataract. Ask your felucca captain to sail slowly — they know where the birds gather."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Shopping & Souk",
+            "text": "Final souvenir shopping in the Aswan Souk. Best buys: dried hibiscus and spices (the best value in Egypt), Nubian handicrafts (beaded jewellery, woven baskets), cotton scarves, and Nubian perfume oils. The souk is less pressured than Luxor or Cairo — browsing is pleasant. Have a final lunch at Panorama restaurant for Nile views and grilled fish (E£100–200).",
+            "tip": "Pack dried spices in sealed bags and carry them in hand luggage — they can leak. Hibiscus and saffron are the best-value purchases in the souk."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell & Departure",
+            "text": "Farewell dinner at the Old Cataract Hotel terrace (E£400–800 for dinner) if you want a splurge — the most atmospheric dining spot in Egypt. Or keep it local at Emy restaurant for budget Egyptian food (E£60–120). Aswan airport (ASW) is 25km southwest — taxi E£200–300. Trains to Luxor (3 hours, E£40–100) and Cairo (13 hours overnight sleeper, $60–90) depart from Aswan station.",
+            "tip": "The overnight sleeper train to Cairo is a classic Egyptian experience. Book online at wataniasleepingtrains.com — the train departs around 5pm and arrives 6am."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Local ferry is E£5",
+      "text": "The local public ferry to Elephantine Island costs E£5. Tourist motorboats charge E£50–100. Same destination, same crossing — the local ferry is part of the Aswan experience."
+    },
+    {
+      "title": "Share feluccas and Abu Simbel",
+      "text": "Feluccas cost per boat (not per person) — share with travelers from your hotel. Abu Simbel shared minibuses are E£600–1,000 vs E£3,000+ private. Ask your hotel to group you with others."
+    },
+    {
+      "title": "Aswan Souk spice prices",
+      "text": "Spices in the Aswan Souk are half the price of Luxor and a third of Cairo. Stock up here. Hibiscus E£10–20 per bag, saffron E£50–100, mixed spice sets E£30–50."
+    },
+    {
+      "title": "Skip the High Dam",
+      "text": "The Aswan High Dam (E£100) is underwhelming — it's a concrete wall with a view. The Unfinished Obelisk (E£200) is far more interesting. Combine it with a half-day taxi including Philae for E£400–600."
+    },
+    {
+      "title": "Nubian village meals",
+      "text": "Eating in the Nubian villages on the West Bank is cheaper and more authentic than Corniche restaurants. Tea is often free and meals cost E£50–100 for traditional home-cooked Nubian food."
+    },
+    {
+      "title": "Fly to Abu Simbel off-season",
+      "text": "EgyptAir flies Aswan to Abu Simbel (35 minutes, $100–150 return) — saving 7 hours of driving. Off-season prices can drop to $80 return. Worth considering if your time is limited."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "E£200–500",
+      "midrange": "E£700–1,500",
+      "splurge": "E£3,000+",
+      "notes": "Hostels → 3-star Nile view → Old Cataract Hotel"
+    },
+    {
+      "category": "Food",
+      "budget": "E£80–180",
+      "midrange": "E£250–500",
+      "splurge": "E£800+",
+      "notes": "Street food → Corniche restaurants → hotel dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "E£30–100",
+      "midrange": "E£150–300",
+      "splurge": "E£500+",
+      "notes": "Ferry & walking → taxis → private boat & driver"
+    },
+    {
+      "category": "Activities",
+      "budget": "E£400–700",
+      "midrange": "E£1,000–2,000",
+      "splurge": "E£4,000+",
+      "notes": "Philae & felucca → all sites → Abu Simbel flight"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "E£710–1,480",
+      "midrange": "E£2,100–4,300",
+      "splurge": "E£8,300+",
+      "notes": "$15–31 → $44–90 → $173+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "✈️",
+      "title": "Getting There",
+      "items": [
+        "Aswan International Airport (ASW) has flights from Cairo (1.5 hours). Taxi to city centre E£200–300. EgyptAir is the main carrier",
+        "Train from Luxor (3 hours, E£40–100) or Cairo (13 hours, overnight sleeper $60–90 foreign price). The Luxor–Aswan train follows the Nile — window seat recommended",
+        "Buses from Luxor (3–4 hours, E£60–100) via Upper Egypt Bus Co. Nile cruise ships from Luxor (3–4 nights) dock at the Corniche"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Aswan is extremely hot in summer — 45°C+ from May to September. Visit October–April for comfortable temperatures. Drink 3+ litres of water daily and avoid midday sun",
+        "Don't drink tap water. Bottled water E£5–10 everywhere. Aswan is very safe — one of the safest cities in Egypt with low crime and friendly people",
+        "Pharmacies on the Corniche stock basic medicines. The nearest major hospital is in Aswan city. Bring high-SPF sunscreen — the sun is intense year-round"
+      ]
+    },
+    {
+      "icon": "🚕",
+      "title": "Getting Around",
+      "items": [
+        "Aswan is compact and walkable on the East Bank. The Corniche runs along the Nile and connects all the main hotels, restaurants, and the souk. No Uber — use regular taxis",
+        "Taxi around town E£20–50. Negotiate before getting in. Motorboats to islands and the West Bank E£50–150. Feluccas E£200–300/hour",
+        "The West Bank (Nubian villages, Nobles' Tombs, Monastery) requires a boat crossing. Sites south of town (dam, Philae) need a taxi — E£200–400 half-day"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Mobile coverage is good in the city and on the main road to Abu Simbel. Patchy on the Nile and in the desert. Download offline maps before arriving",
+        "WiFi at most hotels and some Corniche restaurants. Speeds are slower than Cairo. Vodafone and Orange have shops in the city centre for SIM cards (E£200–400)",
+        "WhatsApp is the primary communication app. Cell signal drops during the Abu Simbel drive — the Sahara crossing is a dead zone for most of the route"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "ATMs on the Corniche and near the train station. Cash is essential — most restaurants, boats, and the souk are cash only. Bring enough EGP for your stay",
+        "Aswan is cheaper than Luxor and much cheaper than Cairo. Food, accommodation, and transport are bargains. Site entry fees are the main expense",
+        "Tipping is expected but amounts are smaller than Cairo. E£5–10 for small services, E£20–50 for boat captains and guides. Carry lots of small notes"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Lightweight, breathable clothing that covers shoulders and knees. A wide-brimmed hat and SPF 50+ sunscreen are essential — the Aswan sun is relentless",
+        "Comfortable sandals or walking shoes. The terrain is sandy and rocky on the West Bank. Bring a light jacket for early morning Abu Simbel trips and felucca sails",
+        "Binoculars for birdwatching and temple detail. A daypack with water, sunscreen, and snacks for island and West Bank excursions. Quick-dry clothing for boat trips"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🏠",
+      "title": "Nubian Hospitality",
+      "text": "Nubians are among the most hospitable people in Egypt. If invited for tea in a village home, accept gracefully — it's a genuine cultural tradition, not a tourist trap. Buying handicrafts is appreciated but never expected."
+    },
+    {
+      "icon": "🐊",
+      "title": "Crocodile Tradition",
+      "text": "Baby crocodiles in Nubian homes are a centuries-old tradition — crocodiles represent protection in Nubian culture. The animals are well-cared-for and eventually released. The E£20 fee supports the families."
+    },
+    {
+      "icon": "💵",
+      "title": "Fair Baksheesh",
+      "text": "Aswan is more relaxed about tipping than Cairo or Luxor. E£5–10 for small services, E£20–50 for guides and boat captains. The pressure is much lower but tips still supplement low wages — give generously when service is good."
+    },
+    {
+      "icon": "🗣",
+      "title": "Nubian Language",
+      "text": "Nubians speak their own language (Nobiin) alongside Arabic. Learning basic greetings — \"Ari kayee\" (hello), \"Kashkerey\" (thank you) — earns enormous goodwill. The Nubian language has no written form and is at risk of disappearing."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Respect",
+      "text": "Always ask before photographing Nubian villagers — most are happy to pose but permission matters. Don't photograph inside homes without explicit invitation. The colourful house exteriors are fair game and expected."
+    }
+  ],
+  "title": "Aswan Travel Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Aswan guide for young travelers. Philae Temple, Nubian villages, felucca sailing, Abu Simbel day trips, and the most relaxed city in Egypt. Budget tips and 1-7 day itineraries.",
+  "heroImage": "/images/guides/cairo-hero.webp",
+  "heroFlag": "🇪🇬",
+  "heroCountry": "Egypt",
+  "heroRegion": "Middle East",
+  "heroCity": "Aswan",
+  "heroSubtitle": "Egypt's most relaxed city, where Nubian culture meets ancient temples on the banks of the Nile at the gateway to Africa.",
+  "budgetIntro": "Aswan is one of Egypt's most affordable cities. Food, transport, and accommodation are cheaper than Luxor, though the Abu Simbel day trip is a significant single expense.",
+  "culturalIntro": "Aswan is Nubian Egypt — a distinct culture with its own language, music, and traditions. The hospitality is genuine and the pace of life is wonderfully slow.",
+  "ctaCity": "Aswan",
+  "ctaText": "Find travel companions to share felucca sails and Abu Simbel trips on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app.",
+  "heroPills": [
+    "3-Day Culture",
+    "Budget-Friendly",
+    "Oct–Apr Best"
+  ],
+  "defaultDays": 3
+}

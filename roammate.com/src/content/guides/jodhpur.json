@@ -1,0 +1,290 @@
+{
+  "type": "city",
+  "slug": "jodhpur",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "INR (₹)",
+      "detail": "1 USD ≈ ₹83. Cards work in hotels; carry cash for markets"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Hindi / Marwari",
+      "detail": "English spoken in tourist areas and hotels"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "IST (UTC+5:30)",
+      "detail": "No daylight saving time"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Oct – Mar",
+      "detail": "18–28°C, dry and clear; Apr–Sep is extreme heat (45°C+)"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$20–40 USD",
+      "detail": "₹1,600–3,300/day covers hostel, food, and entry fees"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "e-Visa online",
+      "detail": "Tourist e-Visa $25 for 30 days; apply at indianvisaonline.gov.in"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Jodhpur — The Essential Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mehrangarh Fort at Opening",
+            "text": "Arrive at Mehrangarh Fort (opens 9am, ₹600 entry + ₹100 audio guide) as early as possible before the day heats up. The fort rises 120 metres above the city on a sheer sandstone cliff — the most dramatic fort in Rajasthan. The audio guide is excellent and covers seven palaces within the walls. The Moti Mahal (Pearl Palace), Sheesh Mahal (Mirror Palace), and the Phool Mahal with its gold-panelled ceiling are the highlights. Arrive early for the best light on the blue city panorama from the ramparts.",
+            "tip": "The fort opens at 9am — be there at 9:05 to beat the tour buses that arrive at 10am. The north-facing rampart gives the best view over the sea of blue-washed houses stretching to the horizon."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Blue City Walk & Sardar Market",
+            "text": "Descend into the old city's winding lanes — the famous Brahmin quarter where houses are painted electric blue (originally to deter mosquitoes and mark Brahmin homes). Get intentionally lost in the maze of narrow alleys, spice shops, and textile stalls. Head to Sardar Market at the Clock Tower for the sensory overload of Rajasthani life: sacks of crimson chilli, silver jewellery, and street food vendors frying mirchi vada (₹20). Lunch at Jhankar Choti Haveli — thali with views over the old city (₹200–300).",
+            "tip": "The blue paint is most vivid in the Brahmin quarter northwest of the fort. A local guide (₹300–400/2hrs) from the fort gate will take you through lanes you would never find alone."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset from Jaswant Thada & Rooftop Dinner",
+            "text": "Walk to Jaswant Thada (₹30) — a stunning white marble cenotaph built in 1899, nicknamed the \"Taj Mahal of Marwar.\" The translucent marble panels glow in the late afternoon sun and the sunset view of Mehrangarh turning golden above the blue city is one of Rajasthan's great moments. Then dinner on a rooftop restaurant facing the fort at night — Indique or On The Rocks are the best spots for fort views with Rajasthani dal baati churma (₹300–500) and a cold Kingfisher beer.",
+            "tip": "Jaswant Thada closes at 5pm — plan your sunset visit for the hour before closing. The fort is floodlit after dark and dining with it as your backdrop is worth the slightly inflated rooftop prices."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Mehrangarh Fort & Old City",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mehrangarh Fort",
+            "text": "Spend the full morning at Mehrangarh (₹600 + ₹100 audio guide) — you need at least 3 hours to do it justice. The seven palaces inside chronicle Rajput history from the 15th century. The armoury has cannon balls still embedded in the outer walls from a Jaipur siege. The museum inside houses howdahs (elephant seats), royal cradles, and Mughal miniature paintings. The panoramic terrace café serves decent chai with views over the city.",
+            "tip": "The fort audio guide (included in premium ticket) is narrated by Paul Theroux and is genuinely excellent. Download the Mehrangarh app before your visit for additional AR overlays."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Blue City Lanes & Ghanta Ghar",
+            "text": "Explore the dense old city streets below the fort. The Nai Sarak lane is lined with wedding turban shops — turban tying demonstrations happen throughout the day (₹50–100 tip). Ghanta Ghar (Clock Tower) is the heart of Sardar Market — arrive around 4pm when the market is most alive. Try the famous Jodhpur mirchi vada (deep-fried stuffed chilli fritters, ₹20), makhania lassi (saffron lassi, ₹60), and mawa kachori (sweet pastry, ₹40).",
+            "tip": "Makhania Lassi at Shahi Samosa near the Clock Tower is famous across Rajasthan — the thick saffron lassi in a clay cup is unmissable. Get there before 6pm as they often sell out."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Jaswant Thada & Rooftop Dinner",
+            "text": "Visit Jaswant Thada (₹30) at golden hour when the white marble cenotaph glows pink against the blue city and fort. The adjacent royal cremation grounds and small lake add a contemplative atmosphere. Dinner at Indique rooftop restaurant (₹400–700) — book a table facing the fort for the floodlit evening view over Jodhpur. Dal baati churma, laal maas (fiery red mutton curry), and ker sangri (desert bean salad) are the dishes to order.",
+            "tip": "Reserve a table at Indique for sunset — walk-ins after 7pm face long waits. The rooftop at Darikhana is a cheaper alternative with the same fort views."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Osian Desert & Thar Edge",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Osian — Ancient Temples in the Desert",
+            "text": "Day trip 65km north to Osian (1.5hrs by shared jeep, ₹100, or taxi ₹1,200 round trip) — a cluster of 8th–11th century Hindu and Jain temples rising from golden desert sand. The Sachiya Mata Temple is the most elaborate, with its stepped shikhara (tower) still active and visited by pilgrims from across Rajasthan. The carved sandstone panels depicting celestial beings are as fine as Khajuraho. The surrounding desert landscape — flat, scrubby, and vast — is your first taste of the Thar.",
+            "tip": "Osian is rarely visited by tourists (most go to Jaisalmer for desert). The temples are free; hire a cycle-rickshaw at Osian town to move between the temple clusters (₹150)."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Camel Safari on the Dunes",
+            "text": "Arrange a camel safari at the sand dunes near Osian (₹600–800 for 2hrs including dunes entry through your driver or local guides) — proper desert dunes rather than the overcrowded Jaisalmer options. The Thar Desert at the edge of Jodhpur is dramatic but feels more intimate than the tourist circuit. Return to Jodhpur by 4pm. Stop at Kailana Lake on the way back — a large reservoir on the city outskirts where locals picnic at sunset.",
+            "tip": "Book the Osian camel safari through your Jodhpur accommodation in advance — a full-day package with transport is around ₹2,000–2,500 per person including camel, lunch, and return taxi."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Stepwells & Spice Market",
+            "text": "Back in Jodhpur, visit Toorji Ka Jhalra (Toor Ji's Stepwell) — a recently restored 18th-century stepwell with geometric blue-painted steps descending to the water. It is free, photogenic, and far less visited than Jaipur's Chand Baori. The surrounding lanes of the old city have handicraft and antique shops open late. Dinner at Jhankar Choti Haveli (₹200–400) or street food at the Clock Tower — the evening snack culture around Sardar Market is some of the best in Rajasthan.",
+            "tip": "Toorji Ka Jhalra is best photographed from the upper steps in the late afternoon. The restoration is recent and stunning — the blue paint job on the steps was the inspiration for the trending Instagram shots."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Mandore Gardens & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mandore Gardens — Ancient Capital",
+            "text": "Take an auto-rickshaw 9km north to Mandore Gardens (free entry) — the ancient capital of Marwar before Jodhpur. The sprawling garden contains royal cenotaphs of Jodhpur rulers, a Hall of Heroes with enormous painted warrior figures carved from rock, and a temple with 33 crore Hindu deities carved in a cave. It is completely free, rarely busy at 9am, and far more atmospheric than the tourist trail suggests. The cenotaphs rival Jaswant Thada in scale and elegance.",
+            "tip": "Mandore is best visited early morning (opens at sunrise) before the heat. The gardens close for lunch from 1–3pm. Return auto-rickshaw is ₹60–80."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Umaid Bhawan Palace & Museum",
+            "text": "Visit the extraordinary Umaid Bhawan Palace (museum ₹100) — one of the world's largest private residences, completed in 1943 and still home to the Jodhpur royal family. Part is a Taj hotel, part is the royal residence, and part is an open museum displaying royal memorabilia: vintage cars, art deco furniture, and Rajput weaponry. The palace is an extraordinary feat of art deco and Indo-Saracenic architecture rising from desert plains. The gardens and fountain courtyard are open to museum visitors.",
+            "tip": "The museum entrance is separate from the hotel — enter from the east gate and tell security you are visiting the museum. The vintage car collection alone is worth the ₹100 entry."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Spice Shopping & Farewell Thali",
+            "text": "Final afternoon in the old city spice market — Jodhpur is famous across India for its quality spices. The Ghanta Ghar market has dedicated spice lanes where you can buy direct from merchants: Mathania red chilli powder (the finest in India), whole coriander, and Rajasthani masala blends at ₹50–200/100g. Farewell dinner at a rooftop restaurant with dal baati churma — the traditional Rajasthani feast of wheat dumplings, five-lentil dal, and churma (crushed wheat with ghee and sugar) is the definitive Jodhpur send-off.",
+            "tip": "Buy Mathania mirchi powder at the market near the Clock Tower — it is sun-dried and far superior to what is sold in Delhi or Jaipur. Take vacuum-sealed packets to get through airport security."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Accommodation has a wide range",
+      "text": "Jodhpur has excellent backpacker hostels inside the old city walls for ₹400–700/night (dorm). Heritage guesthouses with fort views run ₹1,500–3,000 for a double. Paying more for a fort-view room is worth it — you will wake up to one of the world's great travel views."
+    },
+    {
+      "title": "Street food is the move",
+      "text": "Mirchi vada ₹20, makhania lassi ₹60, mawa kachori ₹40, dal baati thali ₹150–250. The Clock Tower market is the food hub. Rooftop restaurants charge a view premium (₹400–700/meal) but are worth doing once. Avoid tourist restaurants inside the fort area."
+    },
+    {
+      "title": "Negotiate auto-rickshaws",
+      "text": "Jodhpur auto-rickshaws have meters but drivers rarely use them. Agree on a price before getting in: old city to station ₹80–100, fort to market ₹50–70. Apps like Ola work in Jodhpur for transparent pricing — often cheaper and avoids negotiation."
+    },
+    {
+      "title": "Entry fees add up",
+      "text": "Mehrangarh ₹600 is the main cost (worth every rupee). Jaswant Thada ₹30, Umaid Bhawan museum ₹100, Mandore Gardens free. Budget ₹750–800 total for all entry fees over a 3-day stay. The fort audio guide at ₹100 extra is genuinely excellent — take it."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "₹400–700 ($5–8)",
+      "mid": "₹1,500–3,000 ($18–36)"
+    },
+    {
+      "category": "Food",
+      "budget": "₹300–500 ($4–6)",
+      "mid": "₹800–1,500 ($10–18)"
+    },
+    {
+      "category": "Transport (local)",
+      "budget": "₹100–200 ($1–2)",
+      "mid": "₹300–600 ($4–7)"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "₹600–750 ($7–9)",
+      "mid": "₹600–750 ($7–9)"
+    },
+    {
+      "category": "Drinks & Snacks",
+      "budget": "₹100–200 ($1–2)",
+      "mid": "₹300–500 ($4–6)"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "₹1,500–2,350 ($18–28)",
+      "mid": "₹3,500–6,350 ($42–76)"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🚂",
+      "title": "Getting There",
+      "items": [
+        "Train from Jaipur: 5–6hrs, ₹200–700 (sleeper to AC). The Mandor Express is the most popular service. Book on IRCTC app — tourist quota available",
+        "Train from Delhi: 10–12hrs overnight, ₹350–1,200. The Mandor Express departs Delhi Sarai Rohilla. Book at least 2 weeks ahead for AC sleeper berths",
+        "Jodhpur Airport (JDH) has flights from Delhi (1.5hrs, ₹2,000–5,000 one-way) and Mumbai (2hrs). Auto-rickshaw to city centre ₹150–200"
+      ]
+    },
+    {
+      "icon": "🛺",
+      "title": "Getting Around",
+      "items": [
+        "Auto-rickshaws are the main transport — negotiate beforehand or use Ola app. Old city to fort: ₹50–70. Fort to railway station: ₹100–120",
+        "The old city is best explored on foot — most of the key sights are within walking distance once you are inside the walled city. Allow 2–3 hours to get pleasantly lost",
+        "For day trips to Osian or Mandore, hire a taxi via your hotel or app — ₹1,200–1,500 for a half-day with waiting"
+      ]
+    },
+    {
+      "icon": "🌡️",
+      "title": "Weather & When to Go",
+      "items": [
+        "Oct–Mar is ideal: 18–28°C days, 10–15°C nights. January can be cold at night (bring a layer). The city is alive and comfortable for walking",
+        "Apr–Jun is brutal: 40–48°C. Avoid unless you enjoy extreme heat. The fort absorbs heat and is unpleasant in summer afternoons",
+        "Jul–Sep is monsoon: cooler (30–35°C) but humid and occasionally dusty storms. The desert turns briefly green — a different beauty, less visited"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity & Money",
+      "items": [
+        "Airtel or Jio SIM at the airport or any telecom shop: ₹200–300 for 28 days with 1.5GB/day data. Jio has the best coverage in Rajasthan desert areas",
+        "ATMs are plentiful near the Clock Tower and on Nai Sarak. HDFC and ICICI ATMs have the lowest foreign card fees (₹150–200 per withdrawal)",
+        "UPI payments (Google Pay, PhonePe) are widely accepted in shops and restaurants but foreign cards cannot use UPI — carry ₹2,000–3,000 cash at all times"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Namaste & Respect",
+      "text": "Namaste (palms together, slight bow) is the standard greeting and always welcome. Jodhpur is a deeply religious Hindu city — show respect at temples by removing shoes, not pointing feet at shrines, and dressing modestly. The Sachiya Mata Temple at Osian is an active pilgrimage site requiring genuine reverence."
+    },
+    {
+      "icon": "👗",
+      "title": "Dress Modestly",
+      "text": "Rajasthan is conservative. Cover shoulders and knees when walking through the old city, markets, and temples. Lightweight linen or cotton trousers and shirts work well in the heat. Women will receive less unwanted attention with a dupatta (light scarf) over the shoulders."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Always ask before photographing people — Rajasthani women in particular may object. The vendors at Sardar Market are used to being photographed but a smile and gesture before shooting is basic respect. Never photograph inside active temple sanctuaries without permission from priests."
+    },
+    {
+      "icon": "🍽️",
+      "title": "Food & Water Safety",
+      "text": "Stick to freshly cooked, piping-hot street food — the Clock Tower vendors have high turnover and are generally safe. Avoid raw salads and pre-cut fruit from unknown stalls. Drink only bottled or filtered water (₹20 for 1L). Kingfisher beer is available at permit rooms and mid-range restaurants — Rajasthan is not dry."
+    },
+    {
+      "icon": "🤝",
+      "title": "Bargaining Culture",
+      "text": "Bargaining is expected and enjoyable in Jodhpur's markets — start at 50–60% of the opening price and work toward 70%. Fixed-price government emporiums exist for those who hate negotiating. Never agree to \"just come look\" at carpet or textile shops without being prepared for a hard sell that can last an hour."
+    }
+  ],
+  "title": "Jodhpur Travel Guide 2026 — Blue City Itinerary | roammate",
+  "description": "Complete Jodhpur travel guide for backpackers. Mehrangarh Fort, the blue city streets, desert safaris, and Rajasthani food. 1 to 7-day itinerary with real prices.",
+  "heroImage": "/images/guides/jaipur-hero.webp",
+  "heroFlag": "🇮🇳",
+  "heroCountry": "India",
+  "heroRegion": "South Asia",
+  "heroCity": "Jodhpur",
+  "heroSubtitle": "The Blue City — a sea of indigo-washed buildings tumbling down a ridge below a massive golden fort.",
+  "budgetIntro": "Daily costs per person in INR and USD. Entry fees are largely fixed; food and accommodation have a wide range depending on how deep into the old city you go.",
+  "culturalIntro": "Jodhpur is one of Rajasthan's most authentically lived-in cities — the old city is not a tourist set but a functioning Brahmin quarter. Respect earns extraordinary warmth in return.",
+  "ctaCity": "Jodhpur",
+  "ctaText": "Find travel companions for Rajasthan road trips, share taxi costs to Osian, and explore the blue city with fellow travelers on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "1–7 Day Itinerary",
+    "Rajasthan",
+    "Oct – Mar Best"
+  ],
+  "defaultDays": 1
+}

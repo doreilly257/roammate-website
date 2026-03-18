@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "cape-town",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "ZAR (Rand)",
+      "detail": "1 USD ≈ 18.5 ZAR"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Afrikaans / Xhosa",
+      "detail": "English spoken everywhere"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "SAST (UTC+2)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Nov – Mar",
+      "detail": "20–30°C, dry summer"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$35–60 USD",
+      "detail": "ZAR 650–1,100 budget range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free for many",
+      "detail": "90 days for most Western passports"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Best of Cape Town in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Table Mountain",
+            "text": "Start with Cape Town's iconic landmark — Table Mountain. Take the Aerial Cableway (ZAR 395 return for adults, book online to skip queues) or hike up via Platteklip Gorge (2–3 hours, steep but manageable). The flat summit at 1,085m offers 360-degree views over the city, harbour, Robben Island, and the Atlantic coastline. Walk the summit trails — the Maclear's Beacon path gives the best views. Allow 2–3 hours on top. The cable car operates weather-permitting — check the webcam before going. Clouds roll in fast.",
+            "tip": "Book the first cable car (8am in summer, 8:30am in winter) online at tablemountain.net. Morning has the clearest skies and shortest queues — afternoon wind often closes the cable car."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bo-Kaap & City Bowl",
+            "text": "Head to Bo-Kaap — Cape Town's most photogenic neighbourhood with its brightly painted houses in pink, turquoise, yellow, and green climbing the slopes of Signal Hill. This is the historic Cape Malay quarter — a Muslim community with roots in the 1700s. The Bo-Kaap Museum (ZAR 20) tells the neighbourhood's story. Take a Cape Malay cooking class (ZAR 600–900, 3 hours) for bobotie, samoosas, and koesisters. Walk down to Long Street for lunch at Lefty's on Long — craft burgers for ZAR 80–120 in a buzzing atmosphere.",
+            "tip": "Bo-Kaap is a residential neighbourhood — photograph houses but be respectful of residents. The best photo spot is the corner of Wale and Chiappini Streets."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "V&A Waterfront & Sunset",
+            "text": "Walk to the V&A Waterfront — Cape Town's harbour-front dining and entertainment district. The setting is spectacular — Table Mountain as backdrop, working harbour, seals lounging on the pontoons. Browse the Watershed market for South African crafts, art, and design (free entry). Then head to Signal Hill for sunset — drive or Uber up for panoramic views over the city, Atlantic seaboard, and Robben Island as the sun drops into the ocean. Dinner at the Waterfront — Willoughby & Co for sushi (ZAR 120–200) or Karibu for South African cuisine (ZAR 150–250).",
+            "tip": "Signal Hill sunset is Cape Town's best free experience — bring a picnic blanket and a bottle of local wine from a shop (Woolworths has excellent own-brand wines from ZAR 50)."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Table Mountain, Bo-Kaap & City",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Table Mountain",
+            "text": "Begin with Table Mountain — the flat-topped icon that defines Cape Town's skyline. Take the Aerial Cableway (ZAR 395 return, book online at tablemountain.net) from the lower station on Tafelberg Road. The rotating cable car offers views on the ascent. At the 1,085m summit, walk the network of paths — Maclear's Beacon trail has the best panoramas over the city, Camps Bay, and the Twelve Apostles mountain range. On a clear day you can see Robben Island and the Cape Flats. Allow 2–3 hours including queues.",
+            "tip": "The cable car closes in strong winds — check the Table Mountain website before setting out. If you're fit, the Platteklip Gorge hike (2–3 hours up) rewards you with the same views for free."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bo-Kaap & Company's Garden",
+            "text": "Descend and head to Bo-Kaap — the technicolor Cape Malay neighbourhood on the slopes of Signal Hill. The rows of brightly painted houses date back to the 1760s — this is one of the oldest residential areas in South Africa. Visit the Bo-Kaap Museum (ZAR 20) for the neighbourhood's cultural history. Walk downhill to Company's Garden — a green oasis in the City Bowl dating to 1652 when the Dutch East India Company grew vegetables here. The South African Museum and National Gallery are nearby (ZAR 30 each). Lunch at Jason Bakery on Bree Street — sourdough sandwiches for ZAR 70–100.",
+            "tip": "Bo-Kaap cooking classes with local women teach Cape Malay recipes — bobotie, samoosas, and roti. Book through Cooking with Love (ZAR 750, 3 hours). A highlight of any Cape Town visit."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Signal Hill Sunset & Long Street",
+            "text": "Drive or Uber to Signal Hill for sunset — free parking at the top with 360-degree views over the city, Lion's Head, the Atlantic coast, and Table Mountain. Bring a blanket and a bottle of South African wine (Woolworths, Pick n Pay sell excellent bottles from ZAR 50–100). The sunset turns the Twelve Apostles mountains pink and gold. After dark, head to Long Street — Cape Town's nightlife artery with bars, live music, and restaurants packed into Victorian-era buildings. Dinner at Mama Africa for game meat and live music (ZAR 120–200) or Royale Eatery for gourmet burgers (ZAR 90–140).",
+            "tip": "Long Street is lively but keep valuables secure and use Uber after dark. Don't walk on side streets alone late at night — stick to busy, well-lit areas."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Cape Peninsula & Beaches",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Cape Point & Cape of Good Hope",
+            "text": "Rent a car or join a day tour to the Cape Peninsula — one of the world's most scenic drives. Head south along the Atlantic coast through Hout Bay and Chapman's Peak Drive (ZAR 52 toll) — a jaw-dropping cliffside road carved into the mountainside. Continue to Cape Point Nature Reserve (ZAR 376 entry for foreigners). Hike or take the Flying Dutchman funicular (ZAR 90 return) to the old lighthouse. Then walk to the Cape of Good Hope signpost — the famous southwestern tip of Africa. The wild, windswept coastline is dramatic.",
+            "tip": "Start the peninsula drive by 8am to beat traffic on Chapman's Peak. The Cape Point entry fee is per person — a car of four makes this much more affordable than a tour."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Boulders Beach Penguins & Simon's Town",
+            "text": "On the way back from Cape Point, stop at Boulders Beach (ZAR 176 for foreigners) — home to a colony of 3,000 African penguins. Walk the boardwalks above the beach and watch penguins waddling, swimming, and nesting just metres away. The beach itself is sheltered and swimmable — sharing crystal-clear water with penguins is surreal. Then explore Simon's Town — a charming naval village with Victorian architecture, seafood restaurants, and a working harbour. Lunch at the Salty Sea Dog for fish and chips overlooking the harbour (ZAR 80–130).",
+            "tip": "For a free penguin experience, walk along the Foxy Beach side of Boulders — you'll see penguins on the rocks without paying the entry fee (though the main colony is worth the ticket)."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kalk Bay & Camps Bay Sunset",
+            "text": "Stop in Kalk Bay on the drive back — a bohemian fishing village with vintage shops, art galleries, and the legendary Olympia Cafe (arrive early, no bookings, ZAR 90–150 for mains — the baked goods are famous). Browse Kalk Bay Books and the antique shops along the Main Road. Then continue to Camps Bay — Cape Town's glamorous beachfront backed by the Twelve Apostles mountains. Grab a sundowner at Cafe Caprice or Chinchilla (cocktails ZAR 80–120) and watch the Atlantic sunset. Dinner at Codfather for choose-your-own seafood at market prices (ZAR 200–350).",
+            "tip": "Camps Bay sunsets are world-famous but the restaurants are pricey. For budget-friendly sunsets, grab a bottle of wine and sit on the beach — the view is identical and free."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Robben Island, Wine & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Robben Island",
+            "text": "Take the ferry from the V&A Waterfront to Robben Island (ZAR 400 return including guided tour, book weeks ahead at robben-island.org.za) — the prison island where Nelson Mandela was held for 18 of his 27 years of imprisonment. Former political prisoners lead the tours through the cell blocks, lime quarry, and Mandela's tiny cell. The emotional weight of standing where South Africa's most famous leader was imprisoned is profound. The ferry ride itself offers stunning views of Table Mountain. Total trip: 3.5–4 hours.",
+            "tip": "Book Robben Island tickets at least 2–3 weeks in advance — they sell out fast, especially in summer. Take the 9am ferry for calmer seas and better morning light."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Constantia Wine Route",
+            "text": "Drive 20 minutes to the Constantia Wine Valley — the oldest wine-producing region in South Africa, with estates dating to 1685. Visit Groot Constantia (ZAR 120 for a tasting of 5 wines) — the oldest wine farm in the country with Cape Dutch architecture, oak-lined avenues, and excellent Bordeaux-style reds. Then walk to Beau Constantia for modern wines with panoramic valley-to-sea views (ZAR 120 tasting). Lunch at Bistro 1682 at Steenberg for contemporary South African cuisine in a vineyard setting (ZAR 150–250). The region produces superb Sauvignon Blanc, Chardonnay, and Cabernet.",
+            "tip": "Constantia is Cape Town's closest wine region — 20 minutes from the city bowl. For a deeper wine experience, Stellenbosch and Franschhoek (45–60 min) have hundreds of estates."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "V&A Waterfront & Farewell Dinner",
+            "text": "Return to the V&A Waterfront for a final evening. Browse the Watershed market for South African gifts — beaded jewellery, wire art, rooibos tea, biltong, and local wine. Watch the harbour seals and buskers. For a farewell dinner, Pier Restaurant has harbour views and excellent seafood (ZAR 200–350) or Test Kitchen alumni restaurant Salsify at The Roundhouse in Camps Bay for a special-occasion meal (ZAR 400–600 tasting menu). End with a walk along the Sea Point Promenade — lit up at night with public art installations and ocean views.",
+            "tip": "The Watershed market at the V&A Waterfront has better-quality South African crafts at fairer prices than most tourist shops — it's curated and supports local artisans."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free Table Mountain hike",
+      "text": "The Platteklip Gorge trail to Table Mountain summit is free — saving ZAR 395 per person on the cable car. The hike takes 2–3 hours up. Take the cable car down one-way (ZAR 235) if your legs are tired."
+    },
+    {
+      "title": "MyCiTi bus system",
+      "text": "The MyCiTi bus network connects the airport, city centre, Table Mountain, and the Atlantic coast. Buy a myconnect card (ZAR 35) and rides cost ZAR 11–30. Far cheaper than Uber for longer routes."
+    },
+    {
+      "title": "Braai culture",
+      "text": "South Africans braai (barbecue) constantly. Most hostels and Airbnbs have a braai. Buy boerewors sausage (ZAR 70/kg), chops, and rolls from Pick n Pay or Checkers — a full braai dinner for ZAR 60 per person versus ZAR 200+ at restaurants."
+    },
+    {
+      "title": "Free beaches everywhere",
+      "text": "Camps Bay, Clifton 4th, Muizenberg, and dozens more beaches are completely free. No lounger fees, no entry charges. Bring a towel and sunscreen — Cape Town has world-class beaches at no cost."
+    },
+    {
+      "title": "Wine farm picnics",
+      "text": "Instead of expensive restaurant lunches at wine farms, buy wine tastings (ZAR 80–120) and pack your own picnic. Many Constantia and Stellenbosch estates have lawns where you can spread out with cheese, biltong, and a bottle of local wine."
+    },
+    {
+      "title": "Uber over metered taxis",
+      "text": "Uber is significantly cheaper and safer than metered taxis in Cape Town. Airport to city centre: around ZAR 200–280 by Uber versus ZAR 350+ by taxi. Always use Uber after dark for safety."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "ZAR 200–400",
+      "midrange": "ZAR 600–1,200",
+      "splurge": "ZAR 2,500+",
+      "notes": "Hostels → boutique guesthouses → luxury hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "ZAR 100–200",
+      "midrange": "ZAR 300–500",
+      "splurge": "ZAR 800+",
+      "notes": "Self-catering & local spots → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "ZAR 50–100",
+      "midrange": "ZAR 150–300",
+      "splurge": "ZAR 500+",
+      "notes": "MyCiTi bus → Uber → rental car"
+    },
+    {
+      "category": "Activities",
+      "budget": "ZAR 0–200",
+      "midrange": "ZAR 400–800",
+      "splurge": "ZAR 1,500+",
+      "notes": "Free hikes & beaches → cable car & wine → Robben Island & Cape Point"
+    },
+    {
+      "category": "Drinks",
+      "budget": "ZAR 30–80",
+      "midrange": "ZAR 100–200",
+      "splurge": "ZAR 350+",
+      "notes": "Supermarket wine → craft beer bars → cocktail lounges"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "ZAR 380–980",
+      "midrange": "ZAR 1,550–3,000",
+      "splurge": "ZAR 5,650+",
+      "notes": "$21–53 → $84–162 → $305+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "MyCiTi buses connect the airport, city centre, Table Mountain, and Atlantic Seaboard. Buy a myconnect card (ZAR 35 + top-up). Clean and reliable",
+        "Uber is the safest and most convenient option — widely available and affordable. Use Uber after dark. Airport to city bowl: ZAR 200–280",
+        "Renting a car is ideal for the Cape Peninsula and Winelands. Roads are excellent. Drive on the left. Parking in the city centre: ZAR 10–30/hour"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Buy a Vodacom or MTN SIM at the airport — ZAR 50–100 for data bundles. Coverage is excellent in the city and along major routes",
+        "Free WiFi in most cafes, restaurants, malls, and at the V&A Waterfront. Speed is generally good in Cape Town proper",
+        "No restrictions on VoIP — WhatsApp calls, FaceTime, and all messaging apps work normally throughout South Africa"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "The South African Rand (ZAR) fluctuates — check rates before exchanging. ATMs are widespread. Use Nedbank, FNB, or Standard Bank ATMs in secure locations",
+        "Cards accepted everywhere — tap-to-pay is ubiquitous in Cape Town. Carry some cash for markets, minibus taxis, and car guards",
+        "Tipping 10–15% at restaurants is standard. Tip car guards ZAR 5–10. Tip tour guides ZAR 50–100 per person"
+      ]
+    },
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Visa-free for most Western, South American, and some Asian passport holders — 90 days on arrival. Check your nationality at dha.gov.za",
+        "Cape Town International Airport (CPT) is 20km from the city centre. Uber to City Bowl: ZAR 200–280 (25 min). MyCiTi bus: ZAR 90 (45 min)",
+        "South Africa also borders Namibia, Botswana, Mozambique, and Eswatini — combine with overland travel if time permits"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required from most countries. Malaria risk is zero in Cape Town (only in the northeast). Tap water is safe to drink",
+        "Cape Town has real safety concerns — avoid walking alone at night, keep valuables hidden, don't flash expensive phones. Use Uber after dark. Stay in well-known tourist areas",
+        "The sun is extremely strong — UV index regularly hits 10+. Wear SPF 50+, a hat, and reapply often. The Antarctic-fed Atlantic water is cold (12–16°C)"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Layers are essential — Cape Town weather changes rapidly. A warm fleece or jacket even in summer for Table Mountain and evening sea breezes",
+        "Good walking shoes for hikes. Flip-flops for the beach. Windbreaker for Chapman's Peak and Cape Point — it gets very windy",
+        "Swimwear (the beaches are world-class), sunscreen, sunglasses, and a reusable water bottle. A small daypack for hikes and day trips"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🍽",
+      "title": "Braai Culture",
+      "text": "South Africans are obsessed with braai (barbecue). If invited to a braai, bring meat, a side dish, and drinks. It's a social event — the cooking is as important as the eating. Boerewors, lamb chops, and sosaties are staples. September 24th is National Braai Day."
+    },
+    {
+      "icon": "🏘",
+      "title": "Understanding History",
+      "text": "Cape Town's history includes colonialism, slavery, and apartheid. Bo-Kaap, District Six Museum, and Robben Island tell these stories. Engage with the history respectfully. The wealth gap is stark and visible — conversations about inequality are important and welcomed."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language Mix",
+      "text": "Cape Town has three dominant languages — English (most common for tourists), Afrikaans (widely spoken in the Western Cape), and Xhosa (with its distinctive click consonants). Saying \"howzit\" (how are you), \"lekker\" (good/nice), and \"braai\" makes you sound local instantly."
+    },
+    {
+      "icon": "🍷",
+      "title": "Wine Culture",
+      "text": "South Africa is a world-class wine region and Cape Town is its capital. Wine tastings at estates cost ZAR 80–150 for 5–6 wines. Pinotage is the uniquely South African grape — try it everywhere. Wine is extremely affordable by international standards."
+    },
+    {
+      "icon": "🌊",
+      "title": "Ocean Respect",
+      "text": "The Atlantic side (Camps Bay, Clifton) has cold water (12–16°C) and strong currents. The False Bay side (Muizenberg, Fish Hoek) is warmer (18–22°C). Shark-spotting flags are used at some beaches — check conditions. Never swim alone at unmonitored beaches."
+    },
+    {
+      "icon": "🤝",
+      "title": "Tipping & Car Guards",
+      "text": "Car guards watch your car in public parking areas — tip ZAR 5–10 when you return. It's an informal economy that provides income for many. Tip restaurant waitstaff 10–15%. Petrol station attendants who fill your tank and clean windows: ZAR 5–10."
+    }
+  ],
+  "title": "Cape Town Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Cape Town guide for young travelers. 3-day itinerary with Table Mountain, Bo-Kaap, Cape Point penguins, Robben Island, and wine country. Plan your trip with roammate.",
+  "heroImage": "/images/guides/cape-town-hero.webp",
+  "heroFlag": "🇿🇦",
+  "heroCountry": "South Africa",
+  "heroRegion": "Africa",
+  "heroCity": "Cape Town",
+  "heroSubtitle": "Where a flat-topped mountain guards two oceans, penguins share beaches with surfers, and a wine valley sits in the city's backyard.",
+  "budgetIntro": "Daily costs per person in ZAR. Cape Town is exceptional value by international standards — world-class experiences at developing-world prices. Self-catering and free outdoor activities keep budgets low.",
+  "culturalIntro": "Cape Town is a complex, vibrant city shaped by centuries of diverse cultures, colonial history, and the legacy of apartheid. Engage with its stories, respect its people, and enjoy its extraordinary warmth.",
+  "ctaCity": "Cape Town",
+  "ctaText": "Find travel companions for Table Mountain hikes, Cape Peninsula road trips, and wine country tastings with fellow travelers on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Nov – Mar Best"
+  ],
+  "defaultDays": 3
+}

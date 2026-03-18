@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "rome",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EUR (Euro)",
+      "detail": "1 USD ≈ 0.92 EUR"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Italian",
+      "detail": "Some English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "CET (UTC+1)",
+      "detail": "CEST (UTC+2) in summer"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Jun, Sep – Oct",
+      "detail": "18–28°C, warm & pleasant"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$70–110 USD",
+      "detail": "€65–100 budget–midrange"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Schengen Zone",
+      "detail": "90 days visa-free for most"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Ancient Rome in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Colosseum, Forum & Palatine Hill",
+            "text": "Start at the Colosseum at opening (9am, €18 combined ticket with Forum and Palatine). Book the underground and arena floor upgrade (€24) for the most dramatic views. Walk through the Roman Forum — the political heart of the ancient world — then climb Palatine Hill for panoramic views over the ruins and the Circus Maximus below. Allow 3 hours total.",
+            "tip": "Book tickets online weeks ahead — timed entry eliminates most queuing. Morning slots are least crowded."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pantheon, Piazzas & Gelato",
+            "text": "Walk to the Pantheon (free entry, reserve online) — 2,000 years old and still the world's largest unreinforced concrete dome. The oculus casts a beam of light that rotates through the interior. Continue to Piazza Navona for Bernini's Fountain of the Four Rivers, then to the Trevi Fountain. Gelato at Fatamorgana (€2.50–4, no artificial ingredients) on Via Laurina.",
+            "tip": "Toss a coin right-handed over your left shoulder into the Trevi — tradition says you will return to Rome."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Trastevere — Food & Nightlife",
+            "text": "Cross the Tiber to Trastevere — Rome's most atmospheric neighbourhood. Cobblestone lanes draped in ivy, ochre-walled trattorias, and a genuine village feel. Dinner at Da Enzo al 29 (book ahead, pasta from €10) or Tonnarello (no reservations, queue early). Walk Piazza di Santa Maria in Trastevere for the illuminated basilica, then drinks at Ma Che Siete Venuti a Fà craft beer bar.",
+            "tip": "Da Enzo al 29 is tiny and legendary — arrive 20 minutes before opening (12:30pm or 7:30pm) or face a long wait."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Ancient Rome — Colosseum to Trastevere",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Colosseum & Roman Forum",
+            "text": "Book the 9am slot for the Colosseum (€18 combined, or €24 with underground and arena floor). The underground passages where gladiators waited and the arena-level view are breathtaking. Walk through the Roman Forum — Temple of Saturn, Arch of Titus, House of the Vestal Virgins. Climb Palatine Hill for views over the Circus Maximus. Allow 3 hours total.",
+            "tip": "Download the free Rome Colosseum app for a self-guided audio tour — saves €7 over renting an audioguide."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Capitoline Museums & Jewish Ghetto",
+            "text": "Walk up Capitoline Hill to the Capitoline Museums (€16) — the world's oldest public museum with the iconic She-Wolf sculpture, Marcus Aurelius equestrian statue, and Caravaggio paintings. Then descend into the Jewish Ghetto for lunch — Nonna Betta serves legendary carciofi alla giudia (Jewish-style fried artichokes, €8) and the best carbonara in Rome (€12).",
+            "tip": "The Capitoline Museums' rooftop terrace cafe has a view of the Forum that costs nothing extra — grab a €3 coffee."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Trastevere Evening",
+            "text": "Cross the Ponte Sisto to Trastevere at sunset — the ochre and terracotta buildings glow in the golden hour. Dinner at Da Enzo al 29 (cacio e pepe, €10), Tonnarello (queue for handmade pasta), or grab a €5 supplì (fried rice ball) from Supplizio. Walk Piazza Santa Maria in Trastevere, then drinks at the bars along Via della Lungaretta.",
+            "tip": "Trastevere fills fast — eat early (7:30pm) or late (9:30pm). The hour between is a battle for tables."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Vatican, Pantheon & Piazzas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Vatican Museums & Sistine Chapel",
+            "text": "Pre-book the Vatican Museums (€17, book on the official site weeks ahead). Arrive at 8am opening — the Sistine Chapel is manageable before 9:30am. Walk through the Gallery of Maps, Raphael Rooms, and the Gallery of the Candelabra before reaching Michelangelo's ceiling. Allow 2.5 hours. Exit through St. Peter's Basilica (free) for the Pietà and Bernini's baldachin.",
+            "tip": "Book the official Vatican ticket — third-party sites charge €40–60 for the same €17 ticket with a \"skip the line\" label."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pantheon & Piazza Navona",
+            "text": "Walk to the Pantheon (free, reserve online) — 2,000 years old, the oculus is still the largest unreinforced concrete dome on Earth. The beam of light through the opening is especially dramatic at midday. Continue to Piazza Navona with Bernini's fountains. Lunch at Antico Forno Roscioli on Via dei Chiavari — pizza al taglio (by the slice) from €3 and famous aged pasta.",
+            "tip": "Piazza Navona's restaurants are tourist traps — eat one block away on any side street for half the price."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Trevi Fountain, Spanish Steps & Aperitivo",
+            "text": "Walk to the Trevi Fountain — visit after 8pm when it is beautifully lit and the daytime crowds have thinned. Continue up to the Spanish Steps and the Pincio terrace in Villa Borghese for sunset views over the rooftops. Then back down for aperitivo (€8–12 for a drink with a buffet) at Salotto 42 or Freni e Frizioni in Trastevere.",
+            "tip": "Aperitivo is Rome's best-value dinner — most bars include a generous buffet spread with any drink ordered 6–9pm."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Borghese, Testaccio & Hidden Rome",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Galleria Borghese",
+            "text": "Pre-book Galleria Borghese (€15, mandatory reservation in 2-hour slots) — one of the world's greatest small museums. Bernini's Apollo and Daphne, Canova's Pauline Bonaparte, Caravaggio's dark masterpieces. The villa setting in the Borghese Gardens makes it intimate and overwhelming. Book the first slot (9am) and walk the gardens afterwards.",
+            "tip": "Galleria Borghese sells out weeks ahead — book the moment your dates are confirmed. Absolutely do not skip this."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Testaccio — Real Roman Food",
+            "text": "Metro to Testaccio — Rome's authentic working-class food neighbourhood. Mercato Testaccio (covered market, closed Sun) has incredible street food stalls — trapizzino (stuffed pizza pockets, €3.50) and supplì from the legendary Supplì stall. Walk to Monte Testaccio — an ancient hill literally made of 53 million broken Roman amphorae. The non-Catholic cemetery nearby holds Keats's grave.",
+            "tip": "Testaccio is where Romans eat when they want real Roman food — the tourist-free trattorias here are the city's best."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Monti & Farewell Aperitivo",
+            "text": "Monti is Rome's hippest neighbourhood — independent boutiques, vintage shops, and wine bars crammed into medieval lanes. Browse Via del Boschetto and Via Panisperna, then settle at Ai Tre Scalini for a €5 glass of wine on the cobblestones. Farewell dinner at Trattoria Monti (book ahead, Marche-style pasta, mains €14–18) — one of the best meals in the city.",
+            "tip": "Monti has Rome's best aperitivo scene — the tiny bars spill onto the cobblestones and the atmosphere is electric."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Ancient Rome — Colosseum to Trastevere",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Colosseum & Roman Forum",
+            "text": "Book the 9am Colosseum slot (€18 combined or €24 with underground). Walk the arena floor where gladiators fought, explore the underground corridors, then through the Roman Forum — Temple of Saturn, Arch of Titus, the House of the Vestal Virgins. Climb Palatine Hill for panoramic views over the Circus Maximus. Allow 3 hours.",
+            "tip": "Download the free Rome Colosseum app for an audio tour — saves €7 and you can go at your own pace."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Capitoline Museums & Jewish Ghetto",
+            "text": "Capitoline Museums (€16) house the She-Wolf, Marcus Aurelius statue, and Caravaggio works. The rooftop cafe has Forum views. Then the Jewish Ghetto — Rome's oldest Jewish quarter with a heartbreaking history and incredible food. Nonna Betta does the best carciofi alla giudia (€8) and carbonara (€12) in the city.",
+            "tip": "The Capitoline terrace cafe is the best-value view in Rome — a €3 espresso with the entire Forum spread below."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Trastevere Evening",
+            "text": "Cross Ponte Sisto as the golden hour hits — Trastevere's ochre walls glow amber. Dinner at Da Enzo al 29 (arrive 20 mins before 7:30pm opening, cacio e pepe €10) or grab supplì at Supplizio (€5). Walk the piazza, then drinks at Ma Che Siete Venuti a Fà for craft beers or Freni e Frizioni for aperitivo with free buffet.",
+            "tip": "Trastevere is Rome's party neighbourhood — Wednesdays to Saturdays are busiest, Sundays are more relaxed."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Vatican City",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Vatican Museums & Sistine Chapel",
+            "text": "Pre-book the 8am opening slot (€17 official site). The Sistine Chapel is manageable before 9:30am. Walk through the Gallery of Maps, Raphael Rooms, and Gallery of the Candelabra. Michelangelo's ceiling is overwhelming in person — the Creation of Adam, the Last Judgment. Exit through St. Peter's Basilica for the Pietà and Bernini's baldachin.",
+            "tip": "Book directly on the Vatican website at €17 — third-party \"skip the line\" tickets are the same ticket at triple the price."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "St. Peter's Dome & Castel Sant'Angelo",
+            "text": "Climb St. Peter's dome (€10 with lift, €8 stairs only — 551 steps). The view from the top over St. Peter's Square and Rome is unmatched. Walk to Castel Sant'Angelo (€17) — Hadrian's Mausoleum turned papal fortress with rooftop views. Lunch at Pizzarium Bonci near the Vatican — Rome's best pizza al taglio, created by pizza maestro Gabriele Bonci (€5–8).",
+            "tip": "Pizzarium has no seats — take your pizza to the low wall across the street. The potato and mozzarella slice is legendary."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Prati & Ponte Neighbourhood",
+            "text": "Prati — the neighbourhood behind the Vatican — is where Vatican employees and local families eat. Far less touristy than the centro storico. Try Sciascia Caffè for Rome's best coffee or Osteria dell'Angelo for a set menu (€30 with wine, Roman classics). Walk the Tiber at sunset — the bridges are romantic and beautiful, especially Ponte Sant'Angelo.",
+            "tip": "Prati restaurants are 30–40% cheaper than equivalent quality in the historic centre — locals guard this secret."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Galleria Borghese & Piazzas",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Galleria Borghese & Gardens",
+            "text": "Pre-book the 9am slot at Galleria Borghese (€15, mandatory reservation). Bernini's Apollo and Daphne, Canova's Pauline Bonaparte, Caravaggio's Boy with a Basket of Fruit. Two hours maximum enforced, which is enough. Walk the Borghese Gardens afterwards — rent a rowboat on the lake (€3) or visit the Pincio terrace for a panoramic view.",
+            "tip": "Book weeks ahead — this is the one Roman museum that consistently sells out. Morning light in the galleries is best."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pantheon, Navona & Centro Storico",
+            "text": "Walk to the Pantheon (free, reserve time online) — stand beneath the 43-metre dome and watch the light beam through the oculus. Continue to Piazza Navona for Bernini's Fountain of the Four Rivers. Lunch at Roscioli — the famous deli-bakery on Via dei Chiavari (pasta €12–16, worth every cent). Browse the antique shops on Via del Governo Vecchio.",
+            "tip": "When it rains, go to the Pantheon — water falls through the oculus and drains through invisible holes in the floor."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Trevi, Spanish Steps & Aperitivo",
+            "text": "Visit the Trevi Fountain after 8pm when it is lit and less crowded. Walk up to the Spanish Steps and Pincio terrace for night views. Aperitivo (6–9pm) is Rome's best deal — €8–12 for a cocktail with a buffet spread. Salotto 42 near the Pantheon, or Il Barretto at Via del Governo Vecchio, are excellent choices for aperitivo culture.",
+            "tip": "Aperitivo buffets vary hugely — scope out the spread before ordering. The best ones are a full dinner for the price of a drink."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Testaccio, Aventine & Appian Way",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Aventine Hill & Secret Keyhole",
+            "text": "Start at the Orange Garden (Giardino degli Aranci) on Aventine Hill — a peaceful garden with sweeping views over the Tiber and St. Peter's dome. Walk to the Piazza dei Cavalieri di Malta and peer through the famous keyhole — the perfectly framed view of St. Peter's dome through a garden tunnel is one of Rome's best surprises. Free.",
+            "tip": "The keyhole queue is shortest before 9am — later in the day, expect a 10–15 minute wait for your turn."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Testaccio Market & Street Food",
+            "text": "Mercato Testaccio (closed Sun) is Rome's best food market. Try trapizzino at the original stall (stuffed pizza pockets, €3.50), supplì from Supplì stall, and pasta from Mordi e Vai. Explore the Monte Testaccio hill of Roman pottery shards. The Protestant Cemetery holds Keats's and Shelley's graves — peaceful and beautiful (free, donations appreciated).",
+            "tip": "Testaccio is the birthplace of Roman cuisine — carbonara, amatriciana, and coda alla vaccinara all originated here."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Appian Way at Sunset",
+            "text": "Take bus 118 to the Via Appia Antica — Rome's ancient highway lined with ruins, tombs, and umbrella pines. The catacombs of San Callisto (€8) hold 500,000 burials in underground tunnels. Walk the original Roman basalt stones as the sun sets — the pine trees silhouetted against the sky are iconic. Return for dinner at a Testaccio trattoria.",
+            "tip": "Rent a bike at the Appia Antica visitor centre (€5/hour) — the road is pedestrian-only on Sundays."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Day Trip — Tivoli or Ostia Antica",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Ostia Antica — Rome's Pompeii",
+            "text": "Train from Roma Porta San Paolo to Ostia Antica (30 min, €1.50 with metro ticket). This ancient Roman port city is as impressive as Pompeii but without the crowds. Walk the Decumanus Maximus past the theatre, baths, apartments, and mosaics. The thermopolium (ancient bar) has a preserved menu on the wall. Allow 3 hours minimum. Entry €12.",
+            "tip": "Bring water and a hat — Ostia has minimal shade and no shops inside. The site is massive and you will walk for miles."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Ostia Beach or Return to Rome",
+            "text": "Continue on the train to Ostia Lido for a beach afternoon (free public sections, or €10–15 for a sunbed at a stabilimento). The water is decent for a capital city beach. Alternatively, head back to Rome and visit the Baths of Caracalla (€10) — the enormous 3rd-century bath complex ruins are stunning and host summer opera performances.",
+            "tip": "Ostia Lido beaches are where Romans go on summer weekends — Cancello 5 has the best free section."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "San Lorenzo — Student Rome",
+            "text": "San Lorenzo is Rome's student neighbourhood, just outside the Aurelian Walls near Sapienza University. The vibe is young, politically charged, and covered in street art. Cheap trattorias, underground bars, and live music venues. Dinner at Pompi for Rome's best tiramisù (€5 a slice), then drinks at bars along Via dei Volsci. Entry is usually free.",
+            "tip": "San Lorenzo's street art is constantly changing — walk Via dei Volsci and Via dei Sabelli with your eyes up."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Monti, Markets & Hidden Gems",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Monti — Rome's Hippest Quarter",
+            "text": "Monti is Rome's answer to Le Marais — medieval lanes packed with vintage boutiques, artisan workshops, and wine bars. Browse Via del Boschetto, Via Panisperna, and the Mercato Monti vintage market (weekends). Coffee at La Bottega del Caffè on Piazza della Madonna dei Monti — one of the most beautiful small squares in Rome, where locals sit on the fountain steps.",
+            "tip": "Monti vintage market (weekends only) has curated clothing, jewellery, and design — much better quality than flea markets."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Palazzo Doria Pamphilj & Gelato Tour",
+            "text": "The Palazzo Doria Pamphilj (€14) is a privately owned palace with an art collection rivalling the Borghese — Velázquez's Pope Innocent X portrait, Caravaggio works, and lavish baroque apartments. Afterwards, a self-guided gelato tour: Fatamorgana (Via Laurina, creative flavours), Il Gelato di Claudio Torcè (Via di San Giovanni in Laterano), and Giolitti (Via degli Uffici del Vicario, since 1890).",
+            "tip": "Avoid gelato shops with mountains of brightly coloured gelato — real artisan gelato is stored in metal lids and has muted colours."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Trastevere Reprise & Gianicolo Sunset",
+            "text": "Walk up the Gianicolo hill (Janiculum) above Trastevere for the best panoramic sunset view in Rome — the entire city spread from the Colosseum to St. Peter's. A cannon fires daily at noon from here. Then descend into Trastevere for a farewell dinner and drinks. Try Grazia & Graziella or Da Enzo. The neighbourhood is liveliest Thursday through Saturday.",
+            "tip": "The Gianicolo cannon still fires every day at noon — locals set their watches by it. Sunset views are unmissable."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Farewell — Quirinal, Gelato & Last Stroll",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Quirinal Hill & Morning Walk",
+            "text": "Walk up to the Quirinal Palace — the Italian President's residence (open select Sundays, €1.50). The Piazza del Quirinale has a view rivalling the more famous spots. Walk down Via del Quirinale past the two Bernini and Borromini churches facing each other — a Baroque architecture showdown. Coffee at Antico Caffè Greco (Via dei Condotti, since 1760).",
+            "tip": "The four-church Baroque walk — San Carlo alle Quattro Fontane, Sant'Andrea al Quirinale, Santa Maria della Vittoria, and San Pietro in Vincoli — is free and stunning."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Shopping & Campo de' Fiori",
+            "text": "Browse the morning market at Campo de' Fiori (Mon–Sat) for dried pasta, olive oil, and limoncello as souvenirs. The square transforms from a flower and food market by day to a lively bar scene at night. For gifts, Confetteria Moriondo e Gariglio (since 1850) sells exquisite handmade chocolates. Pack your bags and soak in one last Roman afternoon.",
+            "tip": "Italian olive oil and dried pasta are lightweight, authentic souvenirs — far better than miniature Colosseum figurines."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Dinner & Night Walk",
+            "text": "A final Roman dinner at Roscioli (book ahead, pasta €14–16) or splurge at Armando al Pantheon (traditional Roman cuisine, mains €16–20, book days ahead). Then a last night walk — the Pantheon, Trevi Fountain, and Colosseum are all dramatically lit and far less crowded after 10pm. Rome is never more beautiful than when you are about to leave.",
+            "tip": "Fiumicino Airport is 45 minutes by Leonardo Express train (€14) from Termini — runs every 15 minutes until 11:23pm."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free churches & views",
+      "text": "Rome's 900+ churches are free — including St. Peter's, the Pantheon, Santa Maria in Trastevere, and dozens with Caravaggio and Bernini masterpieces. Aventine Keyhole, Gianicolo, and Pincio viewpoints are also free."
+    },
+    {
+      "title": "Eat Roman",
+      "text": "Pizza al taglio (by weight) costs €3–5 for a filling lunch. Supplì (fried rice balls) are €2–3. Mercato Testaccio and Mercato Trionfale have the best market food. Avoid restaurants with picture menus near the Colosseum."
+    },
+    {
+      "title": "Aperitivo culture",
+      "text": "Most bars offer aperitivo 6–9pm — a €8–12 cocktail or Aperol Spritz comes with a free buffet spread. In some places this is a full dinner. Freni e Frizioni and Salotto 42 have generous spreads."
+    },
+    {
+      "title": "Roma Pass",
+      "text": "The Roma Pass (€33/48hr or €53/72hr) includes free metro/bus travel and entry to 1–2 museums plus discounts. Worth it if you plan to visit the Colosseum and Borghese Gallery within 3 days."
+    },
+    {
+      "title": "Water fountains",
+      "text": "Rome has 2,500+ nasoni (public drinking fountains) with cold, clean water. Block the spout and water shoots from a small hole on top — fill your bottle for free all day."
+    },
+    {
+      "title": "Walk everywhere",
+      "text": "The centro storico is tiny — Colosseum to Vatican is 40 minutes on foot. Walking lets you discover hidden piazzas and saves on metro tickets (€1.50 each). Buy a 24-hour pass (€7) for longer distances."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "€20–45",
+      "midrange": "€70–140",
+      "splurge": "€180+",
+      "notes": "Hostels → boutique hotels → luxury hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "€15–25",
+      "midrange": "€30–55",
+      "splurge": "€70+",
+      "notes": "Pizza al taglio & markets → trattorias → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "€3–7",
+      "midrange": "€10–18",
+      "splurge": "€25+",
+      "notes": "Walking & metro → taxis → private transfers"
+    },
+    {
+      "category": "Activities",
+      "budget": "€0–15",
+      "midrange": "€20–40",
+      "splurge": "€60+",
+      "notes": "Free churches → museums → guided tours"
+    },
+    {
+      "category": "Drinks",
+      "budget": "€5–8",
+      "midrange": "€10–20",
+      "splurge": "€30+",
+      "notes": "Aperitivo buffet → wine bars → rooftop cocktails"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "€43–100",
+      "midrange": "€140–273",
+      "splurge": "€365+",
+      "notes": "$47–109 → $152–297 → $397+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Schengen Zone — most nationalities get 90 days visa-free. EU/EEA citizens need only a national ID card",
+        "Passport valid for 3+ months beyond departure. Keep a copy separate from the original",
+        "Fiumicino Airport (FCO): Leonardo Express to Termini (€14, 32 min). Ciampino (CIA): bus to Termini (€6, 40 min)"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required. Tap water is safe and excellent — the nasoni fountains are everywhere. Carry a bottle",
+        "Pickpocketing is common on metro lines (A and B), around Termini, Colosseum, and Trevi Fountain. Front pockets, money belt",
+        "Emergency 112. Pharmacies (farmacie) marked by green crosses are common — some open 24 hours near Termini"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "Rome Metro: 3 lines, limited coverage. Single ticket €1.50 (100 min). 24hr pass €7, 48hr €12.50, 72hr €18, 7-day €24",
+        "Bus network is extensive but slow in traffic. Tram 3 and 8 are useful. Buy tickets at tabacchi (tobacco shops) — not on board",
+        "Central Rome is walkable — Colosseum to Trastevere is 25 minutes on foot. Taxis are metered, starting at €3"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Free WiFi in many cafes and restaurants. Some piazzas have Roma WiFi hotspots. Hotel WiFi is usually reliable",
+        "EU roaming works at home rates. Otherwise, TIM, Vodafone, or Wind Tre tourist SIMs from €10 for 10–50GB at any tabacchi",
+        "Download Google Maps offline — Rome's narrow streets confuse GPS, but offline maps work better than cellular"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cards accepted at most restaurants and shops. Some smaller trattorias and markets are cash-only — carry €20–30",
+        "ATMs (Bancomat) are everywhere. Use bank ATMs (Intesa Sanpaolo, UniCredit) — avoid Euronet and independent machines",
+        "Service charge (coperto) of €1–3 per person is added to restaurant bills. Tipping 5–10% for excellent service is appreciated"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Shoulders and knees must be covered to enter churches including St. Peter's and the Vatican — carry a scarf or light layer",
+        "Cobblestones (sampietrini) are brutal on shoes — bring sturdy, comfortable walking shoes with good soles",
+        "A refillable water bottle is essential — fill at any nasone fountain. Sunscreen and a hat for summer visits (35°C+)"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "☕",
+      "title": "Coffee Culture",
+      "text": "Espresso is the default coffee — order \"un caffè\" and you get an espresso. Standing at the bar (al banco) is €1–1.50, sitting at a table doubles or triples the price. Cappuccino is only for the morning."
+    },
+    {
+      "icon": "🍝",
+      "title": "Pasta Rules",
+      "text": "Never order fettuccine Alfredo (it does not exist in Italy). The four Roman pastas are carbonara, cacio e pepe, amatriciana, and gricia. Never ask for parmesan on seafood pasta — it is a serious offense."
+    },
+    {
+      "icon": "⛪",
+      "title": "Church Dress Code",
+      "text": "Cover shoulders and knees in all churches — this is strictly enforced at St. Peter's and the Vatican. Carry a light scarf. No selfie sticks, no loud talking, and silence your phone."
+    },
+    {
+      "icon": "🍽️",
+      "title": "Dining Etiquette",
+      "text": "Coperto (cover charge, €1–3) is standard and legal. Avoid restaurants with hawkers outside, picture menus, or signs in five languages — these are tourist traps. Follow the locals."
+    },
+    {
+      "icon": "🤌",
+      "title": "Greeting & Pace",
+      "text": "Greet shopkeepers with \"Buongiorno\" (morning) or \"Buonasera\" (after 3pm). Romans are not rude — they are direct. The pace of life is slow and deliberate. Rushing is considered gauche."
+    },
+    {
+      "icon": "🚰",
+      "title": "Free Water Trick",
+      "text": "The nasoni street fountains provide cold, clean drinking water for free. Block the main spout with your hand and water shoots up from a small hole on top — a centuries-old Roman drinking fountain design."
+    }
+  ],
+  "title": "Rome Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Rome guide for young travelers. 3-day itinerary with ancient ruins, pasta masterclasses, Trastevere nightlife, and budget tips. Plan your trip with roammate.",
+  "heroImage": "/images/guides/rome-hero.webp",
+  "heroFlag": "🇮🇹",
+  "heroCountry": "Italy",
+  "heroRegion": "Europe",
+  "heroCity": "Rome",
+  "heroSubtitle": "Two thousand years of history layered beneath your feet, with the world's best carbonara waiting around every corner.",
+  "budgetIntro": "Daily costs per person in euros. Rome is surprisingly affordable if you eat where locals eat, drink during aperitivo hours, and walk the compact centro storico.",
+  "culturalIntro": "Romans take food, coffee, and la bella vita seriously. Learn the unwritten rules and you will be rewarded with the warmest hospitality in Europe.",
+  "ctaCity": "Rome",
+  "ctaText": "Find travel companions to explore the Colosseum, share a Trastevere dinner, or wander the ancient streets together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Apr – Oct Best"
+  ],
+  "defaultDays": 3
+}

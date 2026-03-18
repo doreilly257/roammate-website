@@ -3,7 +3,6 @@ import { readdirSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { resolveRelatedContent } from '../blog-utils';
-import { allGuides } from '../../data/guides';
 import type { BlogPost } from '../../data/blog';
 import type { GuideEntry } from '../../data/guides';
 
@@ -19,7 +18,26 @@ function loadBlogPostsFromJson(): BlogPost[] {
   });
 }
 
+function loadGuidesFromJson(): GuideEntry[] {
+  const contentDir = resolve(__dirname, '../../content/guides');
+  const files = readdirSync(contentDir).filter((f) => f.endsWith('.json'));
+  return files
+    .map((file) => {
+      const data = JSON.parse(readFileSync(resolve(contentDir, file), 'utf-8'));
+      if (data.type !== 'city') return null;
+      return {
+        slug: data.slug,
+        name: data.heroCity,
+        country: data.heroCountry,
+        flag: data.heroFlag,
+        region: data.heroRegion,
+      } as GuideEntry;
+    })
+    .filter(Boolean) as GuideEntry[];
+}
+
 const blogPosts = loadBlogPostsFromJson();
+const allGuides = loadGuidesFromJson();
 
 describe('resolveRelatedContent', () => {
   it('returns correct related posts and guides for valid slugs', () => {

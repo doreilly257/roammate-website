@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { allGuides, cityGuideSlugs } from '../../../data/guides';
+import { getAllGuides, getCityGuideSlugs } from '../../../data/guides';
+
+const allGuides = await getAllGuides();
+const cityGuideSlugs = await getCityGuideSlugs();
 
 const placeGuides = allGuides
   .filter((guide) => !cityGuideSlugs.has(guide.slug))

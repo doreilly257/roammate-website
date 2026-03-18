@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "medina",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "SAR (Riyal)",
+      "detail": "1 USD ≈ 3.75 SAR"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Arabic",
+      "detail": "Some English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "AST (UTC+3)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Oct – Mar",
+      "detail": "18–28°C, pleasant & dry"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$60–90 USD",
+      "detail": "SAR 225–340 budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "eVisa or on arrival",
+      "detail": "Tourist visa SAR 480 for many nationalities"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "The Best of Medina in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Al-Masjid an-Nabawi — The Prophet's Mosque",
+            "text": "Start at Al-Masjid an-Nabawi, the Prophet's Mosque — one of the holiest sites in Islam and the second mosque ever built. The green dome marks the burial place of Prophet Muhammad (PBUH). The mosque accommodates over one million worshippers and is open 24 hours. Non-Muslims cannot enter the mosque or the central Haram area, but can appreciate the stunning exterior and surrounding plazas from designated areas.",
+            "tip": "For Muslim visitors: arrive for Fajr prayer for the most spiritual experience. The Rawdah area requires a separate reservation via the Nusuk app."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Historical Sites & Old City",
+            "text": "Visit the Quba Mosque — the first mosque in Islam, located 3.5km south of the Prophet's Mosque. Then explore Al-Madina Museum (SAR 50) housed in the old Hejaz Railway station, showcasing Medina's Islamic heritage and the historic railway that once connected Damascus to the holy city. Walk through the old streets of the Al-Uyun neighbourhood to see traditional Hejazi architecture.",
+            "tip": "The Hejaz Railway station building itself is beautifully restored Ottoman architecture — worth visiting for the building alone."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Date Markets & Dinner",
+            "text": "Head to the famous date markets near the mosque — Medina's Ajwa dates are legendary and considered among the finest in the world. The Al-Madinah Date Market has dozens of vendors; prices range from SAR 40–200/kg depending on the variety. Dinner at Al Baik — Saudi Arabia's beloved fried chicken chain (SAR 15–25 for a meal). End with Arabic coffee and dates at a traditional café.",
+            "tip": "Ajwa dates are Medina's most prized — buy directly from the markets near the mosque for the freshest selection and best prices."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "The Prophet's Mosque & Sacred Sites",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Al-Masjid an-Nabawi",
+            "text": "Begin at Al-Masjid an-Nabawi, the Prophet's Mosque. For Muslim visitors, this is a profoundly spiritual experience — the green dome marks the burial place of Prophet Muhammad (PBUH), and the Rawdah (Garden of Paradise) between his tomb and the pulpit is one of the holiest spots in Islam. Non-Muslims can admire the stunning exterior architecture, the enormous expandable umbrellas in the courtyard, and the surrounding plazas.",
+            "tip": "Muslim visitors: book Rawdah access through the Nusuk app well in advance — slots fill up fast, especially during peak seasons."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Quba Mosque & Qiblatain Mosque",
+            "text": "Visit Quba Mosque — the first mosque built in Islam, located 3.5km south. Prophet Muhammad laid its first stones upon arriving in Medina. The current structure is beautifully modern. Then head to Al-Qiblatain Mosque — the \"Mosque of Two Qiblas\" — where the direction of prayer changed from Jerusalem to Mecca. Both sites are free and open to Muslim visitors. Non-Muslims can view the exteriors.",
+            "tip": "Take a taxi or ride-share between mosques — SAR 10–15 each way. Walking in the midday heat is not advisable."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Date Souks & Traditional Dinner",
+            "text": "Explore the date markets clustered near the Prophet's Mosque — Medina produces some of the world's finest dates. Ajwa dates (SAR 80–200/kg) are the most prized. Sample varieties before buying. Dinner at Tiba Restaurant for traditional Hejazi cuisine — kabsa (spiced rice with lamb, SAR 45), mandi, and Arabian salads. The area around the mosque buzzes with life after Isha prayer.",
+            "tip": "Buy dates from the smaller vendors in the back streets behind the main markets — same quality, better prices, and less crowded."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Heritage, Museums & Mount Uhud",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mount Uhud & Battle Site",
+            "text": "Take a taxi (SAR 30) to Mount Uhud, 5km north of the city — the site of the historic Battle of Uhud in 625 CE. The Uhud Martyrs' Cemetery (Shuhada Uhud) is at the mountain's base, where companions of the Prophet are buried. The red-brown mountain rises dramatically from the plain. Walk the area and reflect on the history. A guide (SAR 100–200) can provide rich historical context.",
+            "tip": "Visit early morning before the heat. The mountain is best viewed from the martyrs' cemetery — the scale is impressive."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Al-Madina Museum & Hejaz Railway",
+            "text": "Visit Al-Madina Museum (SAR 50) in the restored Ottoman-era Hejaz Railway station. The museum chronicles Medina's history from pre-Islamic times through the Ottoman era and into the modern Kingdom. The railway once connected Damascus to Medina — see the original locomotives and carriages. Then explore the Hejaz Railway Museum nearby for more on this engineering marvel.",
+            "tip": "The Hejaz Railway station is one of the most photographed buildings in Medina — beautiful Ottoman architecture with Islamic geometric patterns."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Al-Noor Mall & Modern Medina",
+            "text": "Experience modern Medina at Al-Noor Mall or Al Rashid Mega Mall — both have international dining, shops, and a glimpse of contemporary Saudi life. Dinner at Mama Noura (SAR 25–50) — a legendary Saudi chain for shawarma, grilled chicken, and fresh juices. Return to the Prophet's Mosque area for Isha prayer or simply enjoy the illuminated plaza — the atmosphere at night is serene.",
+            "tip": "Mama Noura's chicken shawarma plate with garlic sauce is an institution — there's always a queue, but it moves fast."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Gardens, Mosques & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Masjid Al-Jummah & Historic Mosques",
+            "text": "Visit Masjid Al-Jummah — where Prophet Muhammad led the first Friday prayer after migrating from Mecca. Then see the Seven Mosques (Sab'u Masajid) on the western edge of Mount Sal'a — a cluster of small mosques commemorating the Battle of the Trench. The hilltop location offers panoramic views over the city. These sites are deeply meaningful for Muslim visitors and architecturally interesting for all.",
+            "tip": "The Seven Mosques are best visited together as a walking circuit — allow 1–2 hours. The elevated position gives excellent city views."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "King Fahd Garden & Shopping",
+            "text": "Relax at King Fahd Garden (Al-Hukair Park) — a large public park popular with families, with green lawns, fountains, and walking paths. A pleasant escape from the intensity of the holy sites. Then head to the traditional souks near the mosque for last-minute souvenir shopping — oud perfume oil (SAR 30–150), prayer beads, and Islamic calligraphy art.",
+            "tip": "Oud oil is Medina's most distinctive souvenir — the small perfume shops near the mosque have the best selection. Prices vary wildly; compare."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Final Visit & Farewell",
+            "text": "Return to the Prophet's Mosque for a final visit. The mosque is particularly beautiful after dark — the illuminated green dome, the vast marble plazas with the giant retractable umbrellas, and the gentle hum of prayers create an atmosphere of deep peace. Farewell dinner at Al Romansiah for a Saudi feast — lamb mandi and kabsa (SAR 40–60). Arabic coffee and Ajwa dates to close.",
+            "tip": "The retractable umbrellas in the mosque courtyard open during the day for shade and close at night — watching them is a spectacle in itself."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "The Prophet's Mosque & Sacred Sites",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Al-Masjid an-Nabawi",
+            "text": "Begin at Al-Masjid an-Nabawi, the Prophet's Mosque. For Muslim visitors, the green dome marks the burial place of Prophet Muhammad (PBUH), and the Rawdah is one of the holiest spots in Islam. Non-Muslims can admire the stunning exterior, the enormous expandable umbrellas in the courtyard, and the surrounding plazas which are architectural marvels in themselves.",
+            "tip": "Muslim visitors: book Rawdah access through the Nusuk app well in advance — slots fill up fast, especially during peak seasons."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Quba Mosque",
+            "text": "Visit Quba Mosque — the first mosque built in Islam, 3.5km south. Prophet Muhammad laid its first stones upon arriving in Medina. The current structure is a beautiful white marble building with a serene courtyard. Praying two rak'ahs here is considered equivalent to performing Umrah. Non-Muslims can view the elegant exterior. Lunch at a nearby restaurant — lamb machboos for SAR 35.",
+            "tip": "Quba Mosque is less crowded in the early afternoon. The architecture is stunning — white marble with geometric patterns."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Date Markets & Dinner",
+            "text": "Explore the date markets near the Prophet's Mosque — Ajwa dates (SAR 80–200/kg) are the most prized. Sample different varieties before buying. The smaller vendors in the back streets offer better prices. Dinner at Al Baik — Saudi Arabia's beloved fried chicken chain (SAR 15–25 for a meal). The area around the mosque comes alive after Isha prayer.",
+            "tip": "Al Baik is to Saudi Arabia what In-N-Out is to California — a fast-food institution. The garlic sauce is legendary."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Mount Uhud & Historical Medina",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mount Uhud & Martyrs' Cemetery",
+            "text": "Taxi (SAR 30) to Mount Uhud, the site of the Battle of Uhud in 625 CE. Visit the Shuhada Uhud cemetery where companions of the Prophet are buried, including Hamza ibn Abdul-Muttalib. The red-brown mountain rises dramatically from the plain. A guide (SAR 100–200) brings the historical narrative to life. The site is deeply moving for Muslim visitors.",
+            "tip": "Visit early morning before the heat. Hire a local guide for the full historical context — the battle narrative is complex and fascinating."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Al-Qiblatain Mosque & Seven Mosques",
+            "text": "Visit Al-Qiblatain Mosque — where the direction of prayer changed from Jerusalem to Mecca during a congregation. Then see the Seven Mosques (Sab'u Masajid) on Mount Sal'a — small mosques commemorating the Battle of the Trench. The elevated location offers panoramic city views. These sites connect you to the foundational events of Islamic history.",
+            "tip": "The Seven Mosques are a pleasant walking circuit on the hillside — allow 1–2 hours. Bring water and a hat for sun protection."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Traditional Hejazi Dinner",
+            "text": "Dinner at Tiba Restaurant for authentic Hejazi cuisine — the region's traditional cooking style. Try saleeg (creamy rice with chicken), kabsa (spiced rice with lamb, SAR 45), and mutabbaq (stuffed pastry). The flavours are distinctly different from the rest of Saudi Arabia. End with Arabian coffee (qahwa) and dates. Walk the illuminated mosque plaza afterwards.",
+            "tip": "Hejazi cuisine is unique to this region — saleeg (the creamy rice dish) is Medina's comfort food. Ask locals for their favourite spot."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Museums & Heritage",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Al-Madina Museum",
+            "text": "Visit Al-Madina Museum (SAR 50) in the restored Ottoman-era Hejaz Railway station. The museum covers Medina's pre-Islamic history, the Prophet's migration, and the Ottoman and modern eras. The building itself — arched corridors, geometric tiles — is worth seeing. Spend 2 hours here. The Hejaz Railway section with original locomotives is particularly interesting.",
+            "tip": "The Hejaz Railway station is one of the most photographed buildings in Medina — arrive early for crowd-free photos."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Masjid Al-Jummah & Old Medina Walk",
+            "text": "Visit Masjid Al-Jummah — where Prophet Muhammad led the first Friday prayer. Then walk through the old residential neighbourhoods like Al-Uyun and Al-Awali, where traditional Hejazi houses with wooden balconies (rawasheen) still stand. These narrow lanes give a sense of what the holy city looked like before modern development. Lunch at a local foul and tameez bakery (SAR 15–20).",
+            "tip": "The rawasheen (wooden-lattice balconies) in the old quarters are disappearing — photograph them while you can."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Modern Medina & Shopping",
+            "text": "Explore Al-Noor Mall or the new Taibah commercial district for a glimpse of modern Saudi life — international brands, family entertainment, and food courts. Dinner at Mama Noura (SAR 25–50) for shawarma and grilled chicken. Return to the Prophet's Mosque area for the evening — the plaza is beautifully lit and the atmosphere after Isha prayer is peaceful.",
+            "tip": "Saudi malls are social hubs — families gather here in the evenings. The food courts offer excellent variety at reasonable prices."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Day Trip to Al-Ula",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Drive or Fly to Al-Ula",
+            "text": "Al-Ula is 320km north of Medina — drive (4 hours) or fly (1 hour, from SAR 200 one-way). This ancient oasis city in a dramatic desert canyon is Saudi Arabia's most spectacular archaeological site. Book accommodation in advance — the area is developing rapidly but options are still limited. The Winter at Tantora festival (Dec–Mar) brings concerts and events.",
+            "tip": "Book Al-Ula tours through the official Experience AlUla website — it controls access to most sites and offers package deals."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hegra (Madain Saleh)",
+            "text": "Visit Hegra (SAR 95), Saudi Arabia's first UNESCO World Heritage Site — a Nabataean city with over 100 monumental tombs carved into sandstone cliffs, similar to Petra in Jordan but virtually tourist-free. The Qasr Al-Farid (Lonely Castle) — a single massive tomb carved from a standalone rock — is breathtaking. A guided tour (2–3 hours) is mandatory and included in the ticket.",
+            "tip": "Hegra is best in the late afternoon when the sandstone glows golden. The site is vast and uncrowded — a once-in-a-lifetime experience."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Al-Ula Old Town & Stargazing",
+            "text": "Walk through Al-Ula Old Town — a labyrinth of 900 abandoned mud-brick houses that were inhabited until the 1980s. The crumbling walls and narrow passages feel like a ghost city. Dinner at one of the desert camps or restaurants in the new Al-Ula town. The desert sky here is extraordinary — minimal light pollution means the Milky Way is vivid and star-filled.",
+            "tip": "Al-Ula's night sky is one of the darkest in Saudi Arabia. If you camp overnight, the stargazing is unforgettable."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Al-Ula Continued & Return",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Elephant Rock & Dadan",
+            "text": "Visit Jabal Al-Fil (Elephant Rock), a massive sandstone formation naturally sculpted into the shape of an elephant — one of Saudi's most iconic landmarks. Then explore the ancient ruins of Dadan and Jabal Ikmah — a pre-Islamic civilisation with carved inscriptions dating back 2,600 years. The Dadan tombs are carved high into cliff faces overlooking a palm-filled valley.",
+            "tip": "Elephant Rock is most photogenic at sunrise or sunset. The café nearby serves Arabic coffee with a stunning backdrop."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Return to Medina",
+            "text": "Drive back to Medina (4 hours) through dramatic desert landscapes — the route passes through valleys of red sandstone and volcanic lava fields (harrat). Stop at roadside stalls for fresh dates and Arabic coffee. The landscape between Al-Ula and Medina is one of the most scenic drives in the Arabian Peninsula. Arrive in Medina by late afternoon.",
+            "tip": "Fill up on petrol before leaving Al-Ula — stations are sparse on the desert highway. Carry extra water in the car."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rest & Local Dinner",
+            "text": "After the long drive, rest at your accommodation. For dinner, try Al Romansiah — a popular Saudi chain for mandi and kabsa (SAR 40–60 per person). The lamb mandi (slow-cooked in a tandoor pit) is their signature. Alternatively, walk the Prophet's Mosque plaza for a peaceful evening under the illuminated umbrellas.",
+            "tip": "Al Romansiah is best for large group platters — order a whole lamb mandi platter to share for the full Saudi dining experience."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Gardens, Wellness & Local Life",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Prophet's Mosque — Morning Prayer",
+            "text": "Return to the Prophet's Mosque for a peaceful morning visit. The early hours after Fajr prayer are the quietest — the vast marble plaza is calm and reflective. Walk the full perimeter to appreciate the mosque's scale. The retractable umbrellas begin to open as the sun rises, providing shade over the courtyard. It's an engineering and architectural marvel.",
+            "tip": "The mosque is at its most peaceful between Fajr and Dhuhr prayers. The retractable umbrellas opening at sunrise is a sight in itself."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "King Fahd Garden & Palm Groves",
+            "text": "Relax at King Fahd Garden — Medina's largest public park with green lawns, fountains, and family areas. Then visit one of Medina's date palm farms (some offer tours, SAR 50–100) to see how Ajwa and other date varieties are cultivated. The region has been growing dates for thousands of years. Lunch at a foul and tameez bakery — traditional Medina breakfast food available all day (SAR 15–20).",
+            "tip": "Foul (fava bean stew) with tameez bread is Medina's most traditional meal — simple, filling, and delicious. Find it near the old souks."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Oud & Perfume Shopping",
+            "text": "Explore the perfume souks near the mosque — oud oil, bakhoor (incense), and Arabian perfumes are Medina's most distinctive products. Vendors will let you sample extensively before buying. Oud oil ranges from SAR 30–500+ depending on quality. Dinner at a Yemeni restaurant in the old town — fahsa (meat stew) and saltah with fresh bread (SAR 30–45). End with qahwa and sweets.",
+            "tip": "The small perfume shops in the back alleys behind the main markets have better prices and more authentic products than the large stores."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Final Reflections & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Wadi Al-Jinn & Nature",
+            "text": "Visit Wadi Al-Jinn (Valley of the Jinn), 40km northwest of Medina — a mysterious valley where vehicles appear to roll uphill due to an optical illusion. The desert landscape is stark and beautiful. Continue to the volcanic lava fields (Harrat Rahat) on the city's outskirts — black basalt formations from ancient eruptions creating an otherworldly landscape.",
+            "tip": "Wadi Al-Jinn requires a car — hire a driver (SAR 200–300 half-day) or join a group tour. The optical illusion is genuinely bizarre."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Shopping & Souvenirs",
+            "text": "Final souvenir shopping in the markets near the mosque. Best buys: premium Ajwa dates (SAR 80–200/kg), oud oil (SAR 30–150), prayer beads (misbaha, SAR 10–50), Islamic calligraphy art, and Zamzam water containers. Pack carefully — date packages travel well. Pick up some sweets from a traditional halwa shop for gifts.",
+            "tip": "Dates and oud oil are the quintessential Medina souvenirs. Buy dates in sealed boxes for easier transport — they keep well."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Visit & Dinner",
+            "text": "A final visit to the Prophet's Mosque — many visitors find the farewell visit the most emotional. The illuminated green dome against the night sky is unforgettable. Farewell dinner at Habara Restaurant for traditional Medina cuisine — aseeda (wheat porridge with honey), lamb haneeth, and Arabic sweets. Close the evening with qahwa, dates, and gratitude.",
+            "tip": "Prince Mohammed bin Abdulaziz International Airport is 15km from the city. Allow extra time during Hajj and Umrah seasons."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Al Baik is king",
+      "text": "Saudi Arabia's legendary fried chicken chain serves massive meals for SAR 15–25. Every Saudi loves it. The garlic sauce and broasted chicken are genuinely outstanding value."
+    },
+    {
+      "title": "Free holy sites",
+      "text": "The Prophet's Mosque, Quba Mosque, Qiblatain Mosque, Mount Uhud, and the Seven Mosques are all free to visit. These are the main attractions of Medina."
+    },
+    {
+      "title": "Date market haggling",
+      "text": "Date prices near the mosque are inflated. Walk two blocks back to find the same quality for 30–40% less. Always sample before buying and compare several vendors."
+    },
+    {
+      "title": "Ride-share apps",
+      "text": "Uber and Careem operate in Medina. Rides within the city cost SAR 10–25. Much cheaper than hotel taxis. Airport transfer around SAR 40–60."
+    },
+    {
+      "title": "Hotel buffets",
+      "text": "Many hotels near the mosque offer all-you-can-eat buffets for SAR 50–80. These are excellent value for a large meal and often include traditional Saudi dishes."
+    },
+    {
+      "title": "Foul & tameez",
+      "text": "The most traditional (and cheapest) meal in Medina — fava bean stew with fresh bread for SAR 10–20. Found at bakeries throughout the old town. Filling and delicious."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "SAR 100–200",
+      "midrange": "SAR 300–600",
+      "splurge": "SAR 1,000+",
+      "notes": "Budget hotels → 3-4 star near mosque → 5-star with mosque view"
+    },
+    {
+      "category": "Food",
+      "budget": "SAR 40–70",
+      "midrange": "SAR 100–180",
+      "splurge": "SAR 300+",
+      "notes": "Street food & chains → restaurants → hotel fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "SAR 20–40",
+      "midrange": "SAR 60–120",
+      "splurge": "SAR 200+",
+      "notes": "Uber/Careem → private taxi → car rental"
+    },
+    {
+      "category": "Activities",
+      "budget": "SAR 0–50",
+      "midrange": "SAR 100–200",
+      "splurge": "SAR 400+",
+      "notes": "Mosques & markets → museums & guides → Al-Ula day trip"
+    },
+    {
+      "category": "Drinks",
+      "budget": "SAR 10–20",
+      "midrange": "SAR 30–50",
+      "splurge": "SAR 80+",
+      "notes": "Tea & coffee → fresh juices → specialty cafes"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "SAR 170–380",
+      "midrange": "SAR 590–1,150",
+      "splurge": "SAR 1,980+",
+      "notes": "$45–101 → $157–307 → $528+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Tourist e-visa (SAR 480 / ~$128) available for 49+ nationalities at visa.visitsaudi.com. Valid for 1 year, multiple entry, 90 days per visit",
+        "Umrah visa holders can visit Medina. Hajj visa holders have specific itinerary restrictions",
+        "Prince Mohammed bin Abdulaziz International Airport (MED) is 15km from the city. Taxis SAR 40–60 to city centre"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No mandatory vaccinations for tourist visa. Meningitis ACWY vaccine required for Hajj/Umrah pilgrims",
+        "Medina is extremely safe — one of the safest cities in the world. Petty crime is virtually nonexistent",
+        "Summer heat (Jun–Sep) exceeds 45°C. Carry water constantly, wear sunscreen, and limit outdoor time. Mosques are air-conditioned"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "Uber and Careem operate throughout the city — SAR 10–25 for most rides. The most convenient transport option",
+        "SAPTCO buses connect Medina to Mecca (SAR 70, 4 hours), Jeddah (SAR 70, 4 hours), and Riyadh (SAR 150, 9 hours)",
+        "The Haramain High-Speed Railway connects Medina to Mecca via Jeddah (SAR 150–250, 2.5 hours). Book at sar.hhr.sa"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "STC, Mobily, and Zain sell tourist SIMs at the airport — SAR 50–100 for 10–30GB data. STC has the best coverage",
+        "Free WiFi in the Prophet's Mosque, most hotels, and shopping malls. Reliable and generally fast",
+        "VPN services may be needed for some VoIP apps. WhatsApp calling works but FaceTime may be restricted"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Saudi Riyal (SAR) is pegged to USD at 3.75. ATMs everywhere. Credit cards widely accepted in shops and restaurants",
+        "Cash useful for souks, date markets, and small eateries. Most vendors near the mosque accept card payment",
+        "No tipping culture in Saudi Arabia, though rounding up is appreciated. Service charges are sometimes included"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Conservative dress is mandatory — for men: trousers and shirts with sleeves. For women: loose-fitting clothing covering arms and legs, headscarf in public",
+        "Comfortable shoes for mosque visits (you'll remove them frequently). Carry a bag for your shoes",
+        "Sunscreen, sunglasses, umbrella for sun protection. A reusable water bottle — the mosques have Zamzam water coolers"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🕌",
+      "title": "Mosque Etiquette",
+      "text": "Remove shoes before entering any mosque. Dress conservatively. Women must wear a headscarf. Maintain silence and respect during prayers. Photography inside mosques varies — ask first."
+    },
+    {
+      "icon": "👗",
+      "title": "Dress Code",
+      "text": "Saudi Arabia requires conservative dress for all. Men: trousers and sleeved shirts. Women: loose-fitting clothes covering arms and legs, headscarf in public. Abayas are available for purchase everywhere."
+    },
+    {
+      "icon": "🚫",
+      "title": "Alcohol & Substances",
+      "text": "Alcohol is completely prohibited in Saudi Arabia — zero tolerance. No bars, no restaurants serving alcohol, no importing. The penalty for drug possession is severe, up to death."
+    },
+    {
+      "icon": "🙏",
+      "title": "Prayer Times",
+      "text": "Shops and restaurants close briefly five times daily for prayer (15–30 minutes). Plan around prayer times — they shift daily. The Athan app shows exact times for your location."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography",
+      "text": "Never photograph people (especially women) without permission. No photography inside the Prophet's Mosque Haram area. Government and military buildings are off-limits for photos."
+    },
+    {
+      "icon": "🤲",
+      "title": "Non-Muslim Visitors",
+      "text": "Non-Muslims cannot enter the central Haram area of the Prophet's Mosque but can explore the rest of Medina freely. All other historical sites, museums, and markets are open to everyone."
+    }
+  ],
+  "title": "Medina Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Medina guide for travelers. 3-day itinerary covering the Prophet's Mosque, Mount Uhud, date markets, and Al-Ula day trip. Budget tips and practical info.",
+  "heroImage": "/images/guides/medina-hero.webp",
+  "heroFlag": "🇸🇦",
+  "heroCountry": "Saudi Arabia",
+  "heroRegion": "Middle East",
+  "heroCity": "Medina",
+  "heroSubtitle": "The radiant city where the Prophet's Mosque glows beneath its green dome, and centuries of devotion echo through ancient streets.",
+  "budgetIntro": "Daily costs per person in Saudi Riyal (SAR). Medina is affordable, especially for food and holy site visits which are free.",
+  "culturalIntro": "Medina is one of Islam's holiest cities. Whether you're a Muslim pilgrim or a curious traveler, deep respect for local customs and religious practices is essential.",
+  "ctaCity": "Medina",
+  "ctaText": "Find travel companions, share Al-Ula day trip costs, and connect with fellow pilgrims and travelers on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Oct – Mar Best"
+  ],
+  "defaultDays": 3
+}

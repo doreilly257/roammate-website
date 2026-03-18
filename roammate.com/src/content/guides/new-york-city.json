@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "new-york-city",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "USD ($)",
+      "detail": "1 EUR ≈ $1.08"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English",
+      "detail": "Spanish widely spoken too"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EST (UTC-5)",
+      "detail": "EDT (UTC-4) Mar–Nov"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Jun, Sep – Nov",
+      "detail": "15–25°C, mild & pleasant"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$120–180",
+      "detail": "Hostel, street food, transit"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "ESTA / B1-B2",
+      "detail": "VWP countries need ESTA ($21)"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Manhattan Highlights in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Central Park & Upper West Side",
+            "text": "Start with coffee from a Greek diner on Columbus Avenue, then enter Central Park at 72nd Street. Walk Bethesda Terrace, the Bow Bridge, and Strawberry Fields. The park is magical before 9am when joggers outnumber tourists. Head south through The Mall's elm-lined promenade. Exit at 59th Street and grab a bagel from Ess-a-Bagel or H&H — lox and cream cheese, the only proper way.",
+            "tip": "Central Park is 843 acres — don't try to see it all. The section between 66th and 79th Streets has the highest concentration of landmarks."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Midtown Icons & Times Square",
+            "text": "Walk down Fifth Avenue past the Plaza Hotel and St. Patrick's Cathedral. Pop into the New York Public Library's Rose Reading Room — free and jaw-dropping. Continue to Grand Central Terminal to admire the celestial ceiling and grab lunch at the lower-level food court (options from $8–14). Walk through Times Square — overwhelming but essential — then west to the High Line elevated park from 34th Street south.",
+            "tip": "The NYPL Rose Reading Room closes at 5pm most days. Grand Central's Oyster Bar has $1.50 happy hour oysters on weekdays."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Lower Manhattan & Brooklyn Bridge",
+            "text": "Subway to Wall Street. Walk past the Charging Bull, Federal Hall, and Trinity Church. Head to the 9/11 Memorial — the twin reflecting pools are most powerful at dusk. Walk across the Brooklyn Bridge at sunset — start from the Manhattan side for the best views. Land in DUMBO for pizza at Juliana's ($3.50/slice) and Manhattan skyline photos from the waterfront.",
+            "tip": "Walk the Brooklyn Bridge from Manhattan to Brooklyn — the skyline reveal as you walk is unforgettable. Allow 30–40 minutes."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Downtown Manhattan & Brooklyn",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lower East Side & Chinatown",
+            "text": "Start on the Lower East Side with a coffee from Devocion on Grand Street. Walk through the Tenement Museum neighborhood — even the exterior tells stories of immigrant New York. Head into Chinatown via Canal Street for dim sum at Nom Wah Tea Parlor on Doyers Street, Manhattan's oldest dim sum house. Dumplings from $6, turnip cakes and shrimp rolls for under $8. The street itself has wild gangster history.",
+            "tip": "Nom Wah doesn't take reservations — arrive before 11am on weekdays to avoid the line that snakes down Doyers Street."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "9/11 Memorial & Financial District",
+            "text": "Walk to the 9/11 Memorial and Museum ($26 adults, $15 students). The memorial pools are free and profoundly moving — allow 20 minutes there alone. Then explore the Oculus transit hub, a Calatrava-designed marvel of white steel ribs. Walk Wall Street past the Stock Exchange and Federal Hall. Take the free Staten Island Ferry from Whitehall Terminal for Statue of Liberty views — 25 minutes each way.",
+            "tip": "The Staten Island Ferry runs every 30 minutes and passes right by the Statue of Liberty. It's completely free — best deal in NYC."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Brooklyn Bridge & DUMBO",
+            "text": "Walk the Brooklyn Bridge at sunset — start from the Manhattan side for the unfolding skyline reveal. In DUMBO, grab a slice at Juliana's or L&B Spumoni Gardens if you venture further into Brooklyn. The waterfront at Main Street has the iconic Manhattan Bridge framed between brick warehouses. Then take the F train to the East Village for drinks on St. Marks Place or craft cocktails at Death & Co.",
+            "tip": "Time your Brooklyn Bridge walk to start 45 minutes before sunset. The golden light on the bridge cables is peak New York."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Midtown & Central Park",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Central Park & Museum Mile",
+            "text": "Enter Central Park at 72nd Street from the west. Walk Strawberry Fields, Bethesda Fountain, the Bow Bridge, and the Ramble — a wild 38-acre woodland in the middle of Manhattan. Exit on the east side at 82nd Street for the Metropolitan Museum of Art. The Met is pay-what-you-wish for NY residents but $30 for visitors — worth every cent. Focus on the Egyptian Temple of Dendur and the rooftop garden.",
+            "tip": "The Met is enormous — pick 2–3 departments max. The rooftop bar (open Apr–Oct) has Central Park views and cocktails from $18."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Midtown Classics",
+            "text": "Walk down Fifth Avenue past the Guggenheim's spiral exterior. Continue to Rockefeller Center — Top of the Rock ($43) has unobstructed views including the Empire State Building, which you can't see from the Empire State Building. Pop into St. Patrick's Cathedral (free). Grand Central Terminal's Beaux-Arts ceiling and whispering gallery are free to explore. Lunch at the lower-level food court — Shake Shack or Xi'an Famous Foods for $10–15.",
+            "tip": "Top of the Rock beats Empire State Building for views and shorter lines. Book the sunset time slot for the best light."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Times Square & Broadway",
+            "text": "Walk through Times Square — chaotic, neon-drenched, and quintessentially New York. For Broadway, TKTS booth in Times Square sells same-day tickets at 20–50% off (cash and card accepted). Shows start at 7 or 8pm. If Broadway's too pricey, Off-Broadway shows on the Lower East Side start at $30–50. Post-show, grab late-night dollar dumplings at Vanessa's in Chinatown — open until midnight.",
+            "tip": "The TKTS booth line moves fast after 5pm. Matinee tickets (Wed/Sat 2pm) are easier to get and often cheaper."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Villages, High Line & Nightlife",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Greenwich Village & Washington Square",
+            "text": "Start at Washington Square Park — street musicians, chess players, and NYU students under the marble arch. Walk the tree-lined streets of Greenwich Village where Bob Dylan played his first NYC gigs. Bleecker Street has some of the city's best coffee (Caffe Reggio, open since 1927) and vinyl record shops. Continue to the West Village for brunch — Buvette on Grove Street for a Parisian-style croque madame ($18).",
+            "tip": "The West Village's winding streets break Manhattan's grid — get intentionally lost. Every corner has a brownstone worth photographing."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Chelsea Market & The High Line",
+            "text": "Walk to Chelsea Market in the old Nabisco factory — a gourmet food hall with everything from tacos ($8) to lobster rolls ($22). Los Tacos No. 1 is the consensus favorite. Then step onto the High Line, a 1.45-mile elevated park built on a disused freight rail line. Walk north from Gansevoort Street, passing wildflower gardens, art installations, and framed views of the Hudson River and city skyline.",
+            "tip": "The High Line is least crowded before 10am and after 5pm. The sundeck between 14th and 15th Streets is perfect for people-watching."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "East Village & Lower East Side Nightlife",
+            "text": "Subway to the East Village for the city's best bar scene. Start with craft cocktails at Please Don't Tell (PDT) — enter through a phone booth inside Crif Dogs hot dog shop on St. Marks Place (reservations essential). Then bar-hop down to the Lower East Side — Pianos, Arlene's Grocery, or Welcome to the Johnsons for cheap drinks and live music. Late-night slice at Prince Street Pizza — the pepperoni square is legendary.",
+            "tip": "PDT books up fast — reserve online at noon exactly for same-day evening slots. The hot dog entrance never gets old."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Downtown Manhattan & Brooklyn Bridge",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Lower East Side & Chinatown",
+            "text": "Start on the Lower East Side with a coffee from Devocion on Grand Street. Walk through the Tenement Museum neighborhood — even without entering, the streetscape tells stories of immigrant New York. Head into Chinatown via Canal Street for dim sum at Nom Wah Tea Parlor on Doyers Street — dumplings from $6, turnip cakes and shrimp rolls under $8. This is Manhattan's oldest dim sum parlor.",
+            "tip": "Nom Wah doesn't take reservations — arrive before 11am on weekdays to avoid the line that snakes down Doyers Street."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "9/11 Memorial & Oculus",
+            "text": "Walk to the 9/11 Memorial — the twin reflecting pools surrounded by bronze panels inscribed with nearly 3,000 names are free to visit and profoundly moving. The museum ($26, $15 students) is harrowing but essential. Then explore the Oculus transit hub, Santiago Calatrava's soaring white steel structure. Walk Wall Street past the Stock Exchange and Federal Hall. Take the free Staten Island Ferry for Statue of Liberty views.",
+            "tip": "The Staten Island Ferry is completely free and passes right by the Statue of Liberty. It runs every 30 minutes from Whitehall Terminal."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Brooklyn Bridge & DUMBO",
+            "text": "Walk the Brooklyn Bridge at sunset, starting from the Manhattan side for the iconic skyline reveal. In DUMBO, grab pizza at Juliana's ($3.50/slice) — the owner is the original creator of Grimaldi's next door. The waterfront at Main Street frames the Manhattan Bridge perfectly between brick warehouses. Take the F train back to Manhattan for drinks in the East Village along St. Marks Place.",
+            "tip": "Time your Brooklyn Bridge walk to start 45 minutes before sunset — the golden light on the cables is peak New York City."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Central Park & Museum Mile",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Central Park Exploration",
+            "text": "Enter Central Park at 72nd Street from the west side. Walk through Strawberry Fields, Bethesda Fountain, the Bow Bridge, and into the Ramble — a wild 38-acre woodland in the heart of Manhattan. Continue to Belvedere Castle for panoramic views, then the Great Lawn. The park is magical before 9am when joggers and dog walkers outnumber tourists. Grab a coffee from a cart along the Literary Walk.",
+            "tip": "Central Park is 843 acres — don't try to see it all. The section between 66th and 82nd Streets packs in the most iconic spots."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "The Metropolitan Museum of Art",
+            "text": "Exit the park at 82nd Street for the Met ($30). This is one of the greatest museums on earth — 2 million works spanning 5,000 years. Focus on the Egyptian Temple of Dendur (a real temple in a glass-walled room), European Paintings, and the American Wing. The rooftop garden (Apr–Oct) has Central Park views and cocktails from $18. Allow at least 3 hours, but you could spend days.",
+            "tip": "Friday and Saturday evenings the Met stays open until 9pm — far fewer crowds and a completely different atmosphere."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Upper West Side Dinner",
+            "text": "Walk across the park to the Upper West Side. Dinner at Levain Bakery on 74th Street — their walnut chocolate chip cookie ($5) is genuinely life-changing. For a proper meal, Barney Greengrass (the \"Sturgeon King\") does classic Jewish deli fare — smoked fish platters and bagels since 1908. Walk down to Lincoln Center, where free performances often happen on the plaza in the evenings.",
+            "tip": "Levain cookies are best warm from the oven — the afternoon batch comes out around 3pm but the line is shortest right before closing."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Midtown Manhattan",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Grand Central & Midtown Architecture",
+            "text": "Start at Grand Central Terminal — the Beaux-Arts ceiling painted with constellations (backwards, by accident) is stunning. Find the whispering gallery in the dining concourse. Walk to the Chrysler Building's lobby (free) for art deco glory, then to the New York Public Library's Rose Reading Room — a cathedral of books and free to enter. Grab a breakfast sandwich from a bodega on Lex — egg, bacon, and cheese on a roll for $5.",
+            "tip": "The bodega breakfast sandwich (BEC on a roll) is a New York institution. Ask for salt, pepper, ketchup — \"the works\" — for $4–6."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Rockefeller Center & Fifth Avenue",
+            "text": "Walk to Rockefeller Center for Top of the Rock ($43) — unobstructed 360-degree views including the Empire State Building and Central Park. The observation deck is less crowded than the Empire State and arguably better. Continue down Fifth Avenue past Saks, St. Patrick's Cathedral, and the Diamond District. Lunch at Xi'an Famous Foods in Midtown ($10–14) — hand-pulled noodles and spicy cumin lamb burgers.",
+            "tip": "Book the Top of the Rock sunset time slot — you'll see the city transition from day to night in real time. Book online to skip the line."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Times Square & Broadway",
+            "text": "Walk through Times Square at dusk when the neon is at maximum intensity. For Broadway, the TKTS booth sells same-day tickets at 20–50% off. Shows start at 7 or 8pm. If Broadway's budget is too steep ($80–200), Off-Broadway shows on the Lower East Side or in the Village start from $30–50. After the show, grab late-night ramen at Ichiran in Times Square — private booths and rich tonkotsu broth, open until midnight.",
+            "tip": "TKTS matinee line (Wed/Sat) is shorter than evening. Download the TodayTix app for last-minute digital lottery tickets to hit shows."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Greenwich Village, Chelsea & High Line",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Greenwich Village Walk",
+            "text": "Start at Washington Square Park — the marble arch, street musicians, and chess hustlers are quintessential Village. Walk Bleecker Street through the heart of Greenwich Village where Bob Dylan, Jimi Hendrix, and the Beats hung out. Stop at Caffe Reggio (open since 1927) for an espresso. Browse Generation Records for vinyl. Continue to the West Village's winding streets — every corner has a brownstone, a garden, and a story.",
+            "tip": "The West Village breaks Manhattan's grid and feels like a European quarter. Get intentionally lost — every detour rewards you."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Chelsea Market & The High Line",
+            "text": "Walk to Chelsea Market in the old Nabisco factory — a gourmet food hall with tacos (Los Tacos No. 1, $5–8), lobster rolls, Thai food, and artisan gelato. Then step onto the High Line, a 1.45-mile elevated park on a disused freight rail line. Walk north from Gansevoort Street past wildflower gardens, art installations, and framed views of the Hudson River. Stop at the sundeck for people-watching.",
+            "tip": "The High Line gets packed on weekends. Visit on a weekday morning or late afternoon for breathing room and better photos."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Meatpacking District & West Side",
+            "text": "The High Line ends near Hudson Yards — the Vessel structure (free timed entry) is a massive honeycomb staircase. Walk south to the Meatpacking District's cobblestone streets, now filled with rooftop bars and restaurants. Catch sunset drinks at the Standard's rooftop or Le Bain. Dinner at Pastis for classic French bistro fare, or keep it cheap with a falafel from Mamoun's on MacDougal Street ($5).",
+            "tip": "Mamoun's on MacDougal Street has served the same $5 falafel since 1971 — it's the city's best cheap eat and open until 5am."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Brooklyn Deep Dive",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Williamsburg",
+            "text": "Take the L train to Bedford Avenue for Williamsburg — Brooklyn's creative epicenter. Start with coffee at Devocion (Colombian beans, gorgeous greenhouse interior). Walk Bedford Avenue's vintage shops, record stores, and street art. The Williamsburg waterfront has incredible Manhattan skyline views from Domino Park. Brunch at Egg on North 3rd Street — their biscuit sandwiches ($14) and pulled pork eggs Benedict are Southern comfort perfection.",
+            "tip": "Smorgasburg (Saturdays, Apr–Oct) at Williamsburg's Marsha P. Johnson Park has 100+ food vendors — arrive hungry before noon."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bushwick Street Art & Prospect Park",
+            "text": "Take the L to Jefferson Street for Bushwick's open-air street art galleries — every warehouse wall is a mural. The Bushwick Collective on Troutman Street is the epicenter. Then head south to Prospect Park, Brooklyn's answer to Central Park. Walk the Long Meadow, visit the Boathouse, and explore the Brooklyn Botanic Garden ($18, free Fridays). Lunch at a Flatbush Caribbean spot — jerk chicken plates from $10.",
+            "tip": "The Brooklyn Botanic Garden is free every Friday and stunning in spring when the cherry blossoms bloom in late April."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Park Slope & Brooklyn Nightlife",
+            "text": "Walk through Park Slope — tree-lined brownstone blocks that feel like a movie set. Dinner at Al di La Trattoria on Fifth Avenue for Northern Italian pasta ($18–26) or grab a slice at Lucali on Henry Street in Carroll Gardens (cash only, legendary). Evening in Bushwick or Williamsburg — Brooklyn's nightlife is more creative and cheaper than Manhattan. Elsewhere is an iconic dance club, or try House of Yes for immersive performance art.",
+            "tip": "House of Yes in Bushwick is the city's most unique nightlife spot — costumes encouraged, cover $10–20. Check their event calendar online."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "SoHo, East Village & Hidden NYC",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "SoHo & Nolita",
+            "text": "Walk SoHo's cast-iron architecture on Greene Street and Broome Street — these ornate buildings are an open-air museum of 19th-century industrial design. Browse boutiques and galleries in Nolita (North of Little Italy). Breakfast at Cafe Gitane on Mott Street — avocado toast ($16) in the cafe that arguably started the trend. Continue to Little Italy on Mulberry Street — mostly touristy now but the bakeries are still legit.",
+            "tip": "SoHo is best on weekday mornings before the shopping crowds arrive. The cast-iron facades on Greene Street are museum-quality architecture."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "East Village Exploration",
+            "text": "Walk east to the East Village — grittier, younger, and more punk than its western counterpart. Tompkins Square Park is the neighborhood's heart. St. Marks Place between Second and Third Avenues is lined with Japanese restaurants, piercing shops, and vinyl stores. Lunch at Veselka for Ukrainian pierogies ($15) — a 24-hour institution since 1954. Browse the Strand Bookstore's 18 miles of books on Broadway at 12th Street.",
+            "tip": "The Strand's outdoor $1 book carts are legendary. The rare book room upstairs has first editions worth browsing even if you can't afford them."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Speakeasy Bars & Live Music",
+            "text": "The East Village and LES have New York's best bar scene. Start at Please Don't Tell (PDT) — enter through a phone booth inside Crif Dogs on St. Marks (reservations essential). Then Angel's Share on Stuyvesant Street (hidden behind a Japanese restaurant). For live jazz, the Blue Note in the Village ($20–35 cover) or Smalls Jazz Club ($20 cover includes a drink). Late-night eats at Katz's Delicatessen — pastrami sandwich ($28) since 1888.",
+            "tip": "PDT books up fast — call or book online at noon exactly for same-day evening slots. The hot dog entrance never gets old."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Harlem, Uptown & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Harlem Heritage",
+            "text": "Take the A/C to 125th Street for Harlem — the cultural capital of Black America. Walk 125th Street past the Apollo Theater, where legends from Ella Fitzgerald to Lauryn Hill were discovered. Visit the Studio Museum (free) and the Schomburg Center for Research in Black Culture (free). Breakfast at Sylvia's on Malcolm X Boulevard — soul food since 1962. Their chicken and waffles ($18) are the real deal.",
+            "tip": "Wednesday Amateur Night at the Apollo ($20–35) is one of New York's most electric experiences. Book well ahead if your trip aligns."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "The Cloisters & Fort Tryon Park",
+            "text": "Subway to 190th Street for The Cloisters — the Met's medieval art branch built from parts of five French monasteries, perched above the Hudson River. The Unicorn Tapestries alone are worth the trip. Your Met ticket ($30) covers same-week admission. Fort Tryon Park surrounding the museum has stunning Hudson views and heather gardens. Lunch at New Leaf Restaurant inside the park.",
+            "tip": "The Cloisters is one of NYC's most underrated museums. The herb garden is a medieval paradise and the Hudson views are spectacular."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Dinner & Skyline Views",
+            "text": "For a final NYC splurge, dinner with a view. Westlight in Williamsburg has a rooftop bar with 360-degree skyline views (cocktails $18–22). Or keep it classic with a farewell meal at Joe's Pizza on Carmine Street ($3.50/slice). Take the subway to the Edge at Hudson Yards ($38) for nighttime views from the highest outdoor observation deck in the Western Hemisphere. One last look at the city that never sleeps.",
+            "tip": "The Edge is open until midnight on weekends. The glass floor section 1,100 feet up is thrilling — and the night views are unmatched."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free experiences",
+      "text": "Staten Island Ferry (Statue of Liberty views), Central Park, Brooklyn Bridge, 9/11 Memorial pools, High Line, many museum free nights, and street art in Bushwick and DUMBO."
+    },
+    {
+      "title": "Dollar slice culture",
+      "text": "Dollar pizza slices ($1–1.50) are on every other block in Manhattan. For better quality, $3.50 slices at Joe's Pizza, Prince Street, or Juliana's are world-class."
+    },
+    {
+      "title": "MetroCard savings",
+      "text": "Get a 7-Day Unlimited MetroCard for $34 — pays for itself in 12 rides. OMNY tap-to-pay auto-caps at $34/week too. Covers subway and all local buses."
+    },
+    {
+      "title": "Museum hacks",
+      "text": "MoMA is free Fridays 4–8pm. The Met is pay-what-you-wish for NY residents. Many galleries in Chelsea and the LES are always free."
+    },
+    {
+      "title": "Happy hour culture",
+      "text": "NYC bars offer 4–7pm happy hours with $6–8 beers and $8–12 cocktails. East Village and LES have the best deals. Dive bars always beat rooftops for prices."
+    },
+    {
+      "title": "Bodega breakfasts",
+      "text": "The classic BEC (bacon, egg, cheese on a roll) from any bodega costs $4–6 and is a proper New York breakfast. Better and cheaper than any sit-down brunch."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$40–80",
+      "midrange": "$150–250",
+      "splurge": "$350+",
+      "notes": "Hostels → boutique hotels → luxury hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "$25–40",
+      "midrange": "$60–100",
+      "splurge": "$150+",
+      "notes": "Bodega/dollar slices → casual dining → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–10",
+      "midrange": "$15–30",
+      "splurge": "$50+",
+      "notes": "Subway unlimited → subway + Uber → Uber/taxi everywhere"
+    },
+    {
+      "category": "Activities",
+      "budget": "$0–20",
+      "midrange": "$40–80",
+      "splurge": "$150+",
+      "notes": "Free sites & parks → museums + observation decks → Broadway + VIP"
+    },
+    {
+      "category": "Drinks",
+      "budget": "$10–20",
+      "midrange": "$30–50",
+      "splurge": "$80+",
+      "notes": "Bodega beers → happy hours → rooftop cocktails"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$80–170",
+      "midrange": "$295–510",
+      "splurge": "$780+",
+      "notes": "Budget → comfortable → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Visa Waiver Program (VWP) countries need an ESTA ($21) approved before travel — apply at least 72 hours in advance",
+        "All others need a B1/B2 visa from a US embassy. Processing times vary by country",
+        "JFK, Newark (EWR), and LaGuardia (LGA) all serve NYC. JFK's AirTrain + subway to Manhattan is $10.75 total"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required. Travel insurance is essential — US healthcare costs are extreme without it",
+        "NYC is very safe for tourists. Standard city precautions: watch your phone on subway platforms, avoid empty streets late at night",
+        "Tap water is excellent — NYC has some of the best municipal water in the US. Refill bottles freely"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "NYC subway runs 24/7 — get a 7-Day Unlimited MetroCard ($34) or use OMNY contactless pay (auto-caps at $34/week)",
+        "Walking is the best way to experience Manhattan. Most avenues are 750ft apart, crosstown blocks are 250ft",
+        "Uber/Lyft work well but surge pricing is brutal during rush hour. Yellow cabs are often cheaper for short trips"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Free WiFi across all subway stations (TransitWirelessWiFi), most cafes, and public spaces like Bryant Park and Times Square",
+        "US SIM cards: T-Mobile prepaid ($30/month unlimited) or Mint Mobile eSIM. Buy at any phone store",
+        "Cell service can be spotty underground on older subway lines — download offline maps before heading into stations"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cards accepted virtually everywhere — many places are cashless. Apple/Google Pay widely used",
+        "Tipping is expected: 18–20% at restaurants, $1–2 per drink at bars, $2–5 per bag for hotel bellhops",
+        "ATMs are everywhere. Avoid currency exchange booths — US bank ATMs give the best rates with a debit card"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Comfortable walking shoes are essential — you'll walk 10–15 miles per day without realizing it",
+        "Layers for spring/fall (temps swing 15°C in a day). Summer is hot and humid (30–35°C). Winter needs a serious coat",
+        "A light rain jacket and portable charger are must-haves. Backpack over suitcase for subway stairs (most stations lack elevators)"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "💵",
+      "title": "Tipping Culture",
+      "text": "Tipping 18–20% at restaurants is mandatory, not optional — servers earn $2–3/hour base pay. Tip $1–2 per drink at bars. Pre-tax amount is the tipping base. 15% is considered poor service feedback."
+    },
+    {
+      "icon": "🚶",
+      "title": "Walking Etiquette",
+      "text": "Walk fast, stay right, don't stop in the middle of the sidewalk. Treat the sidewalk like a highway. Standing on subway escalators? Stay right, walk left. Blocking the flow is the cardinal sin."
+    },
+    {
+      "icon": "🗽",
+      "title": "Subway Culture",
+      "text": "Let people exit before boarding. Move to the center of the car. Don't lean on poles during rush hour. Backpacks go on the floor. Manspreading is frowned upon. Keep music in your headphones."
+    },
+    {
+      "icon": "🍕",
+      "title": "Food Rules",
+      "text": "Real New York pizza is folded in half and eaten walking. A \"regular coffee\" means milk and sugar at most delis. Bagels are boiled then baked — if it's not, it's just bread with a hole."
+    },
+    {
+      "icon": "🗣",
+      "title": "New York Directness",
+      "text": "New Yorkers aren't rude — they're efficient. Ask for directions and you'll get detailed help. Don't take the brusqueness personally. \"How ya doin?\" doesn't require a life story — \"good\" will do."
+    },
+    {
+      "icon": "🚕",
+      "title": "Taxi & Rideshare",
+      "text": "Only hail yellow cabs with their roof number lit (means available). Never get in an unmarked car offering rides at the airport. Licensed Uber/Lyft drivers display their TLC plates on the windshield."
+    }
+  ],
+  "title": "New York City Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate NYC guide for young travelers. 3-day itinerary with budget tips, iconic landmarks, hidden speakeasies, and neighborhood deep dives. Plan your trip with roammate.",
+  "heroImage": "/images/guides/new-york-city-hero.webp",
+  "heroFlag": "🇺🇸",
+  "heroCountry": "United States",
+  "heroRegion": "North America",
+  "heroCity": "New York City",
+  "heroSubtitle": "Eight million stories stacked in steel and stone, where every subway stop is a different universe.",
+  "budgetIntro": "Daily costs per person in USD. New York is expensive, but between dollar slices, free museums, and the subway, you can do it on less than you think.",
+  "culturalIntro": "New Yorkers have their own rhythm — fast, direct, and unapologetically honest. Match the energy and you'll fit right in.",
+  "ctaCity": "New York City",
+  "ctaText": "Find travel companions to split Airbnb costs in Manhattan, share Broadway tickets, and explore Brooklyn's neighborhoods together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Apr – Jun Best"
+  ],
+  "defaultDays": 3
+}

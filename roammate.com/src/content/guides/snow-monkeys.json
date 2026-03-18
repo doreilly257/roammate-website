@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "snow-monkeys",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "JPY (Yen)",
+      "detail": "1 USD ≈ ¥150"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Japanese",
+      "detail": "Limited English outside stations"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "JST (UTC+9)",
+      "detail": "No DST"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Dec – Mar",
+      "detail": "Monkeys bathe in hot springs in winter"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$50–80 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa-free 90 days",
+      "detail": "Most Western passports"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Tokyo to Jigokudani — Snow Monkey Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Shinkansen to Nagano & Bus to the Park",
+            "text": "Catch an early Hokuriku Shinkansen from Tokyo Station to Nagano — the journey takes 1 hour 20 minutes and costs ¥8,200 one-way (covered by JR Pass). From Nagano Station, take the Nagaden Express bus bound for Kanbayashi Onsen (departures every 30–60 minutes, 40 minutes, ¥1,500 each way). The bus drops you at the Snow Monkey Park entrance area, from where a 1.6km forest trail leads to Jigokudani Monkey Park. The walk takes 25–30 minutes through a beautiful cedar and oak forest — in winter, the trail is snow-covered and magical.",
+            "tip": "Aim for the earliest Shinkansen (around 6:30am) to arrive at the park by 9:30am when the macaques are most active. Waterproof hiking boots or sturdy shoes with grip are essential — the trail is icy in winter."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Japanese Macaques in the Hot Springs",
+            "text": "Enter Jigokudani Monkey Park (¥800 entry) and witness one of Japan's most iconic wildlife scenes — wild Japanese macaques soaking in the steaming natural hot springs while snow falls around them. The park is home to around 160 macaques who descend from the surrounding mountains daily to bathe. The monkeys are wild but habituated to humans and will sit within metres of you. Winter is the prime season — the colder it is, the more monkeys huddle into the hot water. Watch for grooming behaviour, mothers carrying babies, and the social hierarchy playing out in real time.",
+            "tip": "Bring a zoom lens (70–200mm ideal) for close-up portraits without disturbing the animals. Do not touch, feed, or make direct eye contact with the monkeys — they can interpret this as aggression. Keep bags zipped."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Nagano City — Zenkoji Temple & Soba Noodles",
+            "text": "Return to Nagano Station by bus and spend the evening exploring Nagano city before your Shinkansen back to Tokyo. Zenkoji Temple, a 15-minute walk from the station along the atmospheric Nakamise shopping street, is one of Japan's most important Buddhist temples — founded in the 7th century and welcoming visitors regardless of sect or gender since its inception. The evening approach is atmospheric with lantern-lit streets. Nagano is famous for soba (buckwheat noodles) — Sobazen or Fujiki-an near the station serve handmade soba in dashi broth for around ¥900.",
+            "tip": "The last Shinkansen from Nagano to Tokyo departs around 21:30 — check times on the Navitime app. The journey back takes 1 hour 20 minutes, arriving at Tokyo Station by 11pm."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Tokyo to Nagano — Snow Monkeys & Forest Trail",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Shinkansen to Nagano & Kanbayashi Onsen",
+            "text": "Take the Hokuriku Shinkansen from Tokyo Station to Nagano (1hr 20min, ¥8,200 or JR Pass). From Nagano, the Nagaden Express bus to Kanbayashi Onsen takes 40 minutes (¥1,500). Check into a ryokan or guesthouse in the Yudanaka/Shibu Onsen area — atmospheric hot spring villages with wooden bathhouses, narrow lanes, and a strong sense of old Japan. Shibu Onsen has nine free public bathhouses that guests of local ryokan can access with a master key.",
+            "tip": "Book a ryokan in Shibu Onsen for the full experience — Uotoshi or Kanaguya are excellent mid-range options with private onsen and kaiseki dinner included. Budget travellers can stay at Nozaru Hostel near Yudanaka Station."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jigokudani Monkey Park — First Visit",
+            "text": "Walk the 1.6km forest trail to Jigokudani Monkey Park (¥800 entry). Afternoon visits in winter mean fewer visitors and softer light filtering through the snow-laden trees. The macaques tend to be active throughout the day in winter, but afternoon light is better for photography. Spend 1–2 hours observing the troop — there is no time limit once inside. The hot spring pool is surrounded by rocks and steam, with the monkeys arranged in a natural hierarchy — dominant males get the best spots.",
+            "tip": "The park is open from 8:30am until one hour before sunset (around 4pm in winter). Afternoon light hits the hot spring pool beautifully. A monopod is more practical than a tripod on the narrow viewing areas."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Shibu Onsen Night Walk & Hot Springs",
+            "text": "After dinner at your ryokan (many include multi-course kaiseki dinner), explore Shibu Onsen on foot. The village comes alive at night with guests in yukata (cotton robes) and geta (wooden sandals) walking between the nine public bathhouses — each is said to bring a different blessing, from safe childbirth to relief from illness. The narrow stone streets, lit by lanterns, feel like stepping into historical Japan. End the evening soaking in your ryokan's private onsen under the stars.",
+            "tip": "Collect stamps from all nine bathhouses in a small cloth towel (available from your ryokan for around ¥300). The water temperatures vary — some are scalding hot, so test with your foot first."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Nagano City — Zenkoji Temple & Local Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Zenkoji Temple — Morning Prayer Ceremony",
+            "text": "Rise early and visit Zenkoji Temple for the Oasaji morning prayer ceremony, held daily at sunrise (time varies seasonally — around 6:30am in winter, 5:30am in summer). The head priest walks from the residence to the main hall along a lantern-lit path, and worshippers can receive a blessing by bowing as the priest passes. Inside the main hall, the Kaidan Meguri allows visitors to descend into complete darkness beneath the altar and feel along the wall for a metal key — touching it is said to grant salvation. Entry to the main hall and Kaidan Meguri costs ¥600.",
+            "tip": "The Oasaji ceremony is free and deeply atmospheric — arrive 20 minutes early to get a spot near the path. The Kaidan Meguri in pitch darkness is a profound experience — trust the process and keep your right hand on the wall."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Nakamise Street & Nagano Exploration",
+            "text": "Walk the Nakamise-dori approach to Zenkoji — a 500m shopping street lined with traditional shops selling Nagano specialities: oyaki (grilled dumplings stuffed with vegetables or nozawana pickles), shichimi togarashi (seven-spice chilli blend), and local crafts. Continue to the Nagano Prefectural Shinano Art Museum or the quieter Togakushi Shrine area (40 minutes by bus), a Shinto shrine set in an ancient forest of 400-year-old cedar trees with a dramatic 2km-long approach path.",
+            "tip": "Nagano's oyaki are best freshly grilled from the street vendors on Nakamise-dori — the nozawana (pickled wild mustard greens) filling is the local classic. Buy shichimi togarashi from Yawataya Isogoro, the 280-year-old spice shop."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Second Monkey Park Visit & Return",
+            "text": "Consider a second visit to the monkey park in the morning light (the best photography conditions), or spend the afternoon exploring Obuse, a charming small town 30 minutes from Nagano by Nagaden train, famous for its chestnut confections and the Hokusai Museum — the ukiyo-e master Katsushika Hokusai spent his final years here. Return to your accommodation in the onsen village for a final soak and dinner.",
+            "tip": "Obuse's chestnut cream Mont Blanc cakes from Obuse-do and Sakurai Koseido are outstanding — the town has been cultivating chestnuts for over 600 years. The Hokusai Museum is small but excellent (¥1,000 entry)."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Ski Day — Shiga Kogen or Nozawa Onsen",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hit the Slopes — Shiga Kogen or Nozawa Onsen",
+            "text": "The Nagano region hosted the 1998 Winter Olympics and has world-class skiing. Shiga Kogen, reachable by bus from Yudanaka (25 minutes), is Japan's largest ski area — 21 interconnected resorts with a single lift pass (¥6,000/day). Nozawa Onsen, a traditional hot spring village with a ski resort above it, is 60 minutes from Nagano by bus and offers excellent intermediate terrain with powder snow. Ski rental costs around ¥4,000–5,000 per day at either resort.",
+            "tip": "Beginners should head to Nozawa Onsen — the lower slopes are gentle and the village atmosphere is unbeatable. Advanced skiers will prefer Shiga Kogen's variety and vertical. Both get heavy snowfall from December to March."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mountain Lunch & Afternoon Runs",
+            "text": "Japanese ski resort food is famously good — mountain lodges serve ramen, katsu curry, gyudon (beef bowls), and hot udon for ¥800–1,200. The runs are generally less crowded than European or North American resorts, and the snow quality (cold, dry powder from the Sea of Japan weather systems) is exceptional. Afternoon skiing until the lifts close at 4:30pm gives you a full day on the mountain. The tree-lined runs at Shiga Kogen are particularly atmospheric in the afternoon light.",
+            "tip": "Japanese ski resorts are incredibly well-organised. Buy your lift pass and rent gear at the base — everything is efficient and staff speak basic English. Onsen at the base are common — many resorts have hot spring baths for post-ski soaking."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Tokyo",
+            "text": "Head back to Nagano Station by bus and catch the Shinkansen to Tokyo. If you skied at Nozawa Onsen, spend an hour in the village's free public hot springs before leaving — the Ogama (large shared bath) in the village centre is fed by 90°C spring water and has been running for hundreds of years. Arrive back in Tokyo by late evening, reflecting on a trip that combined wildlife, culture, and world-class skiing — all within 90 minutes of the capital.",
+            "tip": "If travelling on a weekend, reserve your Shinkansen seat in advance — Sunday evening trains from Nagano to Tokyo fill up with returning weekenders. The last service departs around 21:30."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "JR Pass for Shinkansen access",
+      "text": "The Hokuriku Shinkansen from Tokyo to Nagano costs ¥8,200 each way. A 7-day JR Pass (¥50,000) pays for itself if you're combining this trip with other Shinkansen travel. For a standalone Nagano trip, individual tickets may be cheaper."
+    },
+    {
+      "title": "Stay in onsen villages",
+      "text": "Ryokan in Shibu Onsen and Yudanaka include dinner and breakfast — factor this into the total cost. A ryokan at ¥12,000 with two meals is comparable to a ¥6,000 hotel plus ¥3,000 each for dinner and breakfast."
+    },
+    {
+      "title": "Pack your own lunch for the park",
+      "text": "There are no food vendors at the monkey park or along the 1.6km trail. Bring onigiri and a thermos of hot tea from the convenience store in Yudanaka — essential on cold winter days."
+    },
+    {
+      "title": "Nagaden bus pass",
+      "text": "The Nagaden Snow Monkey Pass (¥3,200) includes return bus from Nagano to Kanbayashi plus monkey park entry — saving about ¥800 compared to buying separately. Available at Nagano Station."
+    },
+    {
+      "title": "Combine with skiing",
+      "text": "Shiga Kogen and Nozawa Onsen are both accessible from the Yudanaka area. Combining a monkey park visit with a ski day maximises the value of your trip to Nagano Prefecture."
+    },
+    {
+      "title": "Convenience store meals",
+      "text": "7-Eleven, Lawson, and FamilyMart in Japan are unlike anywhere else — fresh onigiri (¥120–180), bento boxes (¥400–600), and excellent hot food counters. A full day's meals can cost under ¥1,500 from convenience stores."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$20–35",
+      "midrange": "$60–120",
+      "splurge": "$200+",
+      "notes": "Hostels → ryokan with meals → luxury ryokan"
+    },
+    {
+      "category": "Food",
+      "budget": "$10–20",
+      "midrange": "$25–50",
+      "splurge": "$80+",
+      "notes": "Convenience stores → soba shops → kaiseki"
+    },
+    {
+      "category": "Transport",
+      "budget": "$15–30",
+      "midrange": "$40–60",
+      "splurge": "$80+",
+      "notes": "Bus passes → Shinkansen → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–10",
+      "midrange": "$20–50",
+      "splurge": "$60+",
+      "notes": "Monkey park → skiing → private guide"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–10",
+      "midrange": "$10–20",
+      "splurge": "$30+",
+      "notes": "Monkey park ¥800, temples ¥300–600"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$55–105",
+      "midrange": "$155–300",
+      "splurge": "$450+",
+      "notes": "Budget traveller → comfortable mid → luxury ryokan"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Visa-free 90 days for most Western passports",
+        "Visit Japan Web form should be completed online before arrival",
+        "The monkey park is open year-round but the hot spring bathing is primarily a winter behaviour (Dec–Mar)"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "The forest trail to the park can be icy — waterproof boots with good grip are essential in winter",
+        "Wind chill at the park can be severe — dress in warm layers, bring gloves and a hat",
+        "The monkeys are wild animals — do not touch or feed them. Keep food hidden in zipped bags"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "Hokuriku Shinkansen: Tokyo to Nagano, 1hr 20min, ¥8,200 (covered by JR Pass)",
+        "Nagaden Express Bus: Nagano Station to Kanbayashi Onsen, 40min, ¥1,500 each way",
+        "The 1.6km forest trail from the bus stop to the park is the only access — there is no vehicle access to the park itself"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Mobile signal is patchy on the forest trail and at the park — download maps and directions offline",
+        "Pocket WiFi or eSIM recommended for Japan — free WiFi is limited outside major stations",
+        "The Nagaden bus timetable is available on their English website — save a screenshot for offline reference"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: JPY (Yen). The monkey park, bus, and most local vendors are cash-only",
+        "ATMs at 7-Eleven in Nagano Station and Yudanaka accept international cards",
+        "No tipping in Japan — it is not expected at ryokan, restaurants, or for guides"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Waterproof hiking boots, thermal layers, and a warm hat and gloves are essential for winter visits",
+        "Camera with zoom lens (70–200mm) for monkey close-ups without getting too close",
+        "A thermos of hot tea or coffee for the trail — there are no vendors between the bus stop and the park"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect the Wildlife",
+      "text": "The macaques are wild animals, not pets. Do not touch, feed, or make direct eye contact (interpreted as aggression). Keep a respectful distance. Do not crouch down to their level — remain standing. Keep all food hidden and bags zipped."
+    },
+    {
+      "icon": "🌍",
+      "title": "Onsen Etiquette",
+      "text": "Wash thoroughly at the shower stations before entering any onsen bath. Onsen are traditionally nude — no swimwear. Tie long hair up so it does not touch the water. Small towels are for modesty when walking between baths, not for use in the water."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Tips",
+      "text": "Flash photography disturbs the monkeys — turn it off. Selfie sticks are not permitted at the park. The best shots come from patience — sit quietly on one of the viewing rocks and let the monkeys approach naturally. Winter snowfall creates the most dramatic images."
+    },
+    {
+      "icon": "🗣",
+      "title": "Language & Communication",
+      "text": "English signage at the park and along the trail is good. Learn basic Japanese: sumimasen (excuse me), arigatou (thank you). Staff at the park entrance speak basic English and can advise on monkey activity."
+    },
+    {
+      "icon": "🤝",
+      "title": "Support Local Communities",
+      "text": "Stay in locally-owned ryokan and eat at family-run soba restaurants in Nagano and the onsen villages. The Snow Monkey Park is managed by a local cooperative — your entry fee supports conservation and habitat management for the troop."
+    },
+    {
+      "icon": "🕐",
+      "title": "Timing Your Visit",
+      "text": "Mornings are best for monkey activity — the troop descends from the mountains at dawn and is most active in the first few hours. Weekdays are significantly quieter than weekends. Snowy days are the most photogenic and encourage the most bathing behaviour."
+    }
+  ],
+  "title": "Snow Monkeys Guide 2026 — Jigokudani Monkey Park Itinerary | roammate",
+  "description": "The ultimate guide to Japan's snow monkeys at Jigokudani Monkey Park. Day trip from Tokyo, winter hot springs, Nagano skiing. 1 and 3-day itineraries with budget tips.",
+  "heroImage": "/images/guides/snow-monkeys-hero.webp",
+  "heroFlag": "🇯🇵",
+  "heroCountry": "Japan",
+  "heroRegion": "East Asia",
+  "heroCity": "Snow Monkeys",
+  "heroSubtitle": "Wild Japanese macaques soaking in steaming hot springs while snow falls around them — one of the most extraordinary wildlife encounters on Earth.",
+  "budgetIntro": "Daily costs per person in US dollars. A day trip from Tokyo is affordable but staying in a ryokan with onsen and meals is the premium experience. Combine with skiing for maximum value.",
+  "culturalIntro": "Jigokudani is a rare place where wild animals and humans coexist peacefully — respect the monkeys, follow onsen etiquette, and you will have an unforgettable experience.",
+  "ctaCity": "Nagano",
+  "ctaText": "Find travel companions to visit the snow monkeys together on roammate — split transport costs, share the experience, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "Day Trip from Tokyo",
+    "Dec – Mar Best",
+    "Wildlife"
+  ],
+  "defaultDays": 1
+}

@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "prague",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "CZK (Crown)",
+      "detail": "1 USD ≈ 23 CZK"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Czech",
+      "detail": "Good English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "CET (UTC+1)",
+      "detail": "CEST (UTC+2) in summer"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Jun, Sep – Oct",
+      "detail": "15–25°C, pleasant & dry"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$45–80 USD",
+      "detail": "1,000–1,800 CZK budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Schengen Zone",
+      "detail": "90 days visa-free for most"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Prague Highlights in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Prague Castle & Malá Strana",
+            "text": "Start early at Prague Castle (Pražský hrad) — the largest ancient castle complex in the world. The short circuit ticket (250 CZK) covers St. Vitus Cathedral (the stained glass by Alfons Mucha is extraordinary), the Old Royal Palace, Golden Lane, and St. George's Basilica. Walk down through the castle gardens to Malá Strana — narrow baroque lanes, pastel-coloured houses, and the Church of St. Nicholas.",
+            "tip": "Arrive at the castle by 9am — the crowds double by 11am. Enter St. Vitus Cathedral first for the Mucha window in morning light."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Charles Bridge & Old Town",
+            "text": "Cross the Charles Bridge (Karlův most) — the 14th-century stone bridge lined with 30 baroque statues over the Vltava. Touch the brass plaque on the John of Nepomuk statue for good luck (it is worn golden from millions of hands). Walk into Old Town Square (Staroměstské náměstí) for the Astronomical Clock (every hour on the hour). Lunch at Lokál Dlouhááá — Czech classics (svíčková 249 CZK, tank Pilsner 59 CZK).",
+            "tip": "Walk Charles Bridge at sunrise or after 9pm — during the day it is shoulder-to-shoulder with tourists and scam artists."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Beer Halls & Old Town Nightlife",
+            "text": "Prague is one of the world's great beer cities — Czechs drink more beer per capita than any nation on Earth. Start at U Zlatého Tygra (The Golden Tiger, Husova 17) — a legendary no-frills pub where Václav Havel drank. Pilsner Urquell on tap for 69 CZK. Dinner at Kantýna (modern Czech butcher-restaurant, mains 200–350 CZK). Walk the illuminated Old Town and riverfront.",
+            "tip": "U Zlatého Tygra is standing room only and regulars get priority — arrive before 6pm and accept whatever seat is free."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Castle, Charles Bridge & Old Town",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Prague Castle Complex",
+            "text": "Prague Castle (short circuit 250 CZK) is the world's largest ancient castle. St. Vitus Cathedral dominates — the Mucha stained glass window (depicting Slavic saints) is mesmerising in morning light. Walk the Old Royal Palace with its incredible Vladislav Hall, then Golden Lane — tiny colourful houses once home to alchemists, now small museums (Kafka lived at No. 22). Allow 2–3 hours.",
+            "tip": "The castle courtyard is free — you only need tickets for the interiors. The short circuit covers the essentials."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Malá Strana & Charles Bridge",
+            "text": "Walk down through the castle gardens (free, beautiful views) to Malá Strana — Prague's baroque quarter. The Church of St. Nicholas (100 CZK) has the most opulent baroque interior in Prague. Walk to the Lennon Wall (Velkopřevorské náměstí) — constantly repainted with peace messages since the 1980s. Cross Charles Bridge for Old Town. Lunch at Lokál Dlouhááá (svíčková 249 CZK, tank Pilsner 59 CZK).",
+            "tip": "Lokál is the go-to spot for Czechs who want traditional food done properly — the tank Pilsner is unpasteurised and incredible."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Old Town Square & Beer Halls",
+            "text": "Watch the Astronomical Clock strike the hour (every hour, 9am–11pm — the apostle figures appear in the windows above). Walk to U Zlatého Tygra (Golden Tiger) for a Pilsner (69 CZK) in Havel's favourite pub. Dinner at Eska (New Czech cuisine, tasting menu 1,400 CZK, or à la carte 200–400 CZK) or Kantýna for modern Czech butcher-restaurant food. The illuminated riverfront at night is magical.",
+            "tip": "The Astronomical Clock show is brief (30 seconds) — the real attraction is the painted calendar dial and the medieval mechanism."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Josefov, Art & Vyšehrad",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Jewish Quarter — Josefov",
+            "text": "The Jewish Museum in Prague (350 CZK combined ticket) covers six sites — the Old Jewish Cemetery (12,000 visible tombstones layered 12 deep from the 15th century), the Pinkas Synagogue (walls inscribed with 77,297 names of Czech Holocaust victims), the Spanish Synagogue (extraordinary Moorish interior), and the Old-New Synagogue (the oldest active synagogue in Europe, since 1270).",
+            "tip": "Start at the Pinkas Synagogue — the handwritten names covering every wall are devastating and best experienced in quiet."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mucha Museum & Kafka's Prague",
+            "text": "The Mucha Museum (350 CZK) showcases Alfons Mucha's Art Nouveau masterpieces — the original Sarah Bernhardt posters, the Slav Epic sketches, and his legacy. Walk Kafka's Prague — his birthplace (náměstí Franze Kafky), the rotating head sculpture at Quadrio mall, and the Kafka Museum in Malá Strana (260 CZK). Lunch at Café Louvre (since 1902, Kafka and Einstein were regulars, mains 250–400 CZK).",
+            "tip": "Café Louvre on Národní is where Prague's intelligentsia gathered — Kafka, Einstein, and Čapek all sat in these rooms."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Vyšehrad Sunset & Žižkov Nightlife",
+            "text": "Metro to Vyšehrad — the ancient fortress above the Vltava with panoramic views, the neo-Gothic Church of Saints Peter and Paul, and the Vyšehrad Cemetery (Dvořák, Mucha, Čapek are buried here). Walk the ramparts at sunset. Then metro to Žižkov — Prague's grittiest, most authentic bar neighbourhood. U Kurelů (Balbínova 10) serves great Czech beer for 45 CZK. Bars line Bořivojova street.",
+            "tip": "Žižkov is where Prague drinks — dozens of pubs and bars in a few square blocks, almost zero tourists, and beer under 50 CZK."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Alternative Prague & Markets",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Holešovice — Modern Prague",
+            "text": "Holešovice is Prague's creative hub. The DOX Centre for Contemporary Art (220 CZK) has cutting-edge exhibitions and a rooftop airship sculpture. Walk to the Vltavská waterfront area for street art and converted industrial spaces. Prague Market (Pražská tržnice) is a sprawling Vietnamese-Czech market — excellent phở for 130 CZK and fresh produce. Coffee at Kavárna co hledá jméno (the cafe looking for a name).",
+            "tip": "DOX is Prague's most stimulating gallery — the Gulliver airship on the roof is a reading room with Vltava views."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Letná Park & Beer Garden",
+            "text": "Walk to Letná Park — the hill above the Vltava with the most spectacular panoramic view of Prague's bridges and the Old Town skyline. The metronome sculpture (where a giant Stalin statue once stood) is the focal point. Letná Beer Garden (Letenský zámeček) serves excellent Gambrinus and Staropramen with this view — a half litre for 55–70 CZK. Bring a picnic if you prefer.",
+            "tip": "Letná has the single best view in Prague — the seven bridges of the Vltava from above. The beer garden makes it perfect."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Náplavka Riverside & Farewell",
+            "text": "Náplavka riverfront (along the Vltava south of the National Theatre) is Prague's best evening gathering spot — farmers' market (Saturday), floating bars on river boats, and locals drinking on the embankment steps. Try Bajkazyl (bike-repair-turned-bar) or a riverboat bar. Farewell dinner at Nota Bene (modern Czech, mains 300–500 CZK) or La Degustation Bohême Bourgeoise for a splurge (Czech tasting menu, 3,500 CZK).",
+            "tip": "Náplavka on a warm evening is Prague at its best — bring a bottle of wine and sit on the river steps with the locals."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Castle, Charles Bridge & Old Town",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Prague Castle",
+            "text": "Prague Castle (short circuit 250 CZK). St. Vitus Cathedral has the Mucha stained glass and the Wenceslas Chapel encrusted with semi-precious stones. The Old Royal Palace's Vladislav Hall has a staircase wide enough for mounted knights. Golden Lane's colourful houses include Kafka's No. 22. The castle gardens cascade down to Malá Strana with views over the city.",
+            "tip": "Arrive before 9am to enter St. Vitus Cathedral first — the Mucha window catches morning light beautifully."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Malá Strana & Charles Bridge",
+            "text": "Walk through Malá Strana — Church of St. Nicholas (100 CZK, Prague's finest baroque interior), the Lennon Wall, and the Wallenstein Garden (free, peacocks roam among Renaissance arcades). Cross Charles Bridge at a quieter moment. Lunch at Lokál Dlouhááá (tank Pilsner 59 CZK, svíčková 249 CZK) — the most reliable Czech restaurant in the centre.",
+            "tip": "The Wallenstein Garden behind the Senate is free, beautiful, and almost empty — peacocks, a grotto wall, and a quiet fountain."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Old Town Beer Halls",
+            "text": "Watch the Astronomical Clock at the top of the hour. Dinner at U Zlatého Tygra (Golden Tiger) — standing room, no-frills, and the best Pilsner Urquell in the city (69 CZK). Or Kantýna for a modern Czech butcher-restaurant (burgers 200 CZK, steaks 350–500 CZK). Walk the illuminated Old Town Square and riverfront — Prague at night is stunning.",
+            "tip": "U Zlatého Tygra pours the freshest Pilsner Urquell in Prague — Havel used to bring visiting dignitaries here. No food, just beer."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Jewish Quarter & Vyšehrad",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Josefov — Jewish Quarter",
+            "text": "The Jewish Museum (350 CZK combined) covers six sites. Start at the Pinkas Synagogue — walls inscribed with 77,297 names of Czech Holocaust victims, each handwritten. The Old Jewish Cemetery has 12,000 visible tombstones layered 12 deep from the 15th century. The Spanish Synagogue's Moorish interior is gorgeous. The Old-New Synagogue (active since 1270) is Europe's oldest.",
+            "tip": "Budget 2–3 hours for all six sites — the Pinkas Synagogue alone deserves 30 minutes of quiet reflection."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Kafka Museum & Malá Strana",
+            "text": "The Kafka Museum (260 CZK) on the Malá Strana riverfront traces Kafka's life through original manuscripts, letters, and a disturbing-but-brilliant immersive exhibition. Walk through the narrow Malá Strana lanes — find the Infant Jesus of Prague at the Church of Our Lady Victorious (free). Lunch at Café Savoy (since 1893, neo-Renaissance ceiling, mains 300–450 CZK).",
+            "tip": "Café Savoy's Sunday brunch is legendary — the ornate 1893 interior alone justifies the visit."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Vyšehrad Sunset",
+            "text": "Metro to Vyšehrad — the ancient citadel above the Vltava. Walk the ramparts for panoramic views of Prague's bridges and the Castle in the distance. The neo-Gothic Church of Saints Peter and Paul has a painted interior. The cemetery holds Czech greats — Dvořák, Mucha, Čapek. At sunset, the fortress walls glow and the Vltava turns gold below. Dinner in Nusle below the fortress.",
+            "tip": "Vyšehrad at sunset is one of Prague's best-kept secrets — almost no tourists and a view that rivals the Castle hill."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Art, Mucha & Alternative Prague",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mucha Museum & Art Nouveau Walk",
+            "text": "The Mucha Museum (350 CZK) showcases Alfons Mucha's Art Nouveau posters, paintings, and decorative works. Walk to the Municipal House (Obecní dům) — the most lavish Art Nouveau building in Prague (free foyer, guided tour 390 CZK). The Kavárna Obecní dům cafe inside has a painted ceiling by Mucha. Walk Pařížská street for Art Nouveau building facades.",
+            "tip": "The Municipal House Smetana Hall concert (from 600 CZK) is a stunning way to experience Art Nouveau — the interior is jaw-dropping."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "National Gallery & Veletržní Palace",
+            "text": "Veletržní Palace (Holešovice, 220 CZK) houses the National Gallery's modern and contemporary collection — Czech Cubism, Klimt, Schiele, Picasso, and excellent 20th-century Czech art. The functionalist building is impressive. Walk to Stromovka Park — Prague's largest park, once a royal hunting ground, now perfect for cycling and walking along tree-lined paths.",
+            "tip": "Czech Cubism is unique to Bohemia — the architectural and furniture designs at Veletržní Palace exist nowhere else in the world."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Žižkov Pub Crawl",
+            "text": "Žižkov is Prague's authentic pub district — dozens of pubs in a few blocks, almost no tourists. Start at U Kurelů (Balbínova 10, beer 45 CZK) for cheap, excellent beer. Walk to Bořivojova street for bar after bar. U Sadu (Škroupovo nám.) has a beer garden. BeerGeek Bar has 32 taps of Czech and international craft beers. The Žižkov Television Tower (300 CZK) has observation deck views.",
+            "tip": "Žižkov pubs are where Prague's beer culture lives — cheap, unpretentious, and you will be the only tourist."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Kutná Hora Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Train to Kutná Hora",
+            "text": "Train from Prague Hlavní nádraží to Kutná Hora (1 hour, 130 CZK). This medieval silver-mining town is a UNESCO World Heritage site. Start at the Sedlec Ossuary (Bone Church, 120 CZK) — a chapel decorated with the bones of 40,000 people arranged into chandeliers, coat of arms, and garlands. It is macabre, fascinating, and oddly beautiful. Photography is allowed.",
+            "tip": "Take the 8am train for maximum time — Kutná Hora deserves a full day. Buy a return ticket at the station."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Old Town & Cathedral",
+            "text": "Walk from Sedlec to the old town (2km, pleasant walk through the town). St. Barbara's Cathedral (120 CZK) is a Gothic masterpiece — flying buttresses, vaulted ceilings with mining-themed frescoes, and a terrace with views over the valley. The Italian Court (Vlašský dvůr, 120 CZK) was the royal mint where Prague groschen were minted. Lunch at a Kutná Hora restaurant — Czech classics for 150–250 CZK.",
+            "tip": "The walk to St. Barbara's along the Jesuit College terrace has the best approach view of the cathedral — do not take a shortcut."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Vinohrady",
+            "text": "Train back to Prague. Explore Vinohrady — Prague's most elegant residential neighbourhood with Art Nouveau buildings, tree-lined streets, and excellent restaurants. Dinner at Vinohradský Parlament (Czech-international, mains 250–400 CZK) or Sansho (Asian-Czech fusion, tasting menu 1,800 CZK). Drinks at Beer Geek (craft beer) or wine bars on Mánesova street.",
+            "tip": "Vinohrady is where young Prague professionals live — the restaurants are excellent, less touristy, and 20–30% cheaper than the centre."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Holešovice, Markets & River",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Holešovice Creative District",
+            "text": "Holešovice is Prague's creative heart. DOX Centre for Contemporary Art (220 CZK) has provocative exhibitions and the Gulliver airship on the roof. Prague Market (Pražská tržnice) is a sprawling Vietnamese-Czech market — excellent phở for 130 CZK and fresh Asian ingredients. The converted Holešovice warehouses are filling with galleries, cafes, and coworking spaces.",
+            "tip": "DOX's bookshop is one of Prague's best — excellent design books, Czech literature in English, and exhibition catalogues."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Letná & River Walk",
+            "text": "Walk to Letná Park — the best panoramic view of Prague's bridges and Old Town skyline. The Letná Beer Garden serves a half litre for 55–70 CZK with this view. Walk along the Vltava south through Holešovice to Kampa Island — a peaceful island between the river and a millstream, with modern sculpture (David Černý's crawling babies on the TV Tower are also here).",
+            "tip": "The Letná Park metronome spot is where a massive Stalin statue stood until 1962 — now it is Prague's best hangout spot."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Náplavka Riverside",
+            "text": "Náplavka (Rašínovo nábřeží) riverfront is Prague's best evening scene — farmers' market on Saturdays, floating bars on boats, and locals drinking on the embankment steps. Try Bajkazyl (bike-workshop-bar), the boat bars, or simply bring a bottle and sit by the river. Dinner at Eska (modern Czech, bread bakery, mains 300–500 CZK) in Karlín nearby.",
+            "tip": "Náplavka on a summer Saturday evening with the farmers' market and river boats is Prague at its absolute best."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Karlín, Music & Hidden Prague",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Karlín — Prague's Food Scene",
+            "text": "Karlín was devastated by floods in 2002 and has rebuilt into Prague's coolest food neighbourhood. Breakfast at Můj šálek kávy (My Cup of Coffee, specialty coffee), then walk the tree-lined Sokolovská and Křižíkova streets for Art Nouveau facades and hip restaurants. The Forum Karlín hosts concerts and events. Browse Paralelní Polis (crypto-anarchist cafe) for Prague's most unusual coffee stop.",
+            "tip": "Karlín's food scene rivals any European capital's — Eska, Field, and Dice all hold culinary awards at accessible prices."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Petřín Hill & Gardens",
+            "text": "Funicular from Malá Strana up Petřín Hill (40 CZK, included with transit pass). The Petřín Lookout Tower (150 CZK) is a miniature Eiffel Tower with 360° views. Walk through the rose garden and the mirror maze (75 CZK, surprisingly fun). The Strahov Monastery Library (150 CZK) at the top has two baroque halls — the Theological and Philosophical halls are among the most beautiful rooms in Europe.",
+            "tip": "Strahov Library's Philosophical Hall is one of the most photographed rooms on Earth — the celestial ceiling fresco is overwhelming."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Classical Music & Jazz",
+            "text": "Prague is a music city. Attend a concert at the Rudolfinum (from 200 CZK) for the Czech Philharmonic, the Estates Theatre (where Mozart premiered Don Giovanni in 1787, from 500 CZK), or a church concert at St. Nicholas (from 400 CZK). For jazz, Jazz Dock on the riverside (cover 200–350 CZK) has nightly performances. Dinner before at Café Imperial (Art Deco tiled interior, mains 300–450 CZK).",
+            "tip": "Jazz Dock is built on the riverfront with floor-to-ceiling windows — book a table by the window for the concert and sunset views."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Farewell — Beer, Views & Last Walks",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Strahov Monastery & Brewery",
+            "text": "Start at the Strahov Monastery (library 150 CZK) — the Theological and Philosophical halls have baroque ceiling frescoes and floor-to-ceiling ancient books. The monastery has its own brewery — Klášterní pivovar Strahov — where monks have brewed since the 13th century. A half litre of St. Norbert Amber (65 CZK) with views over Prague is a civilised morning activity.",
+            "tip": "The Strahov Monastery brewery terrace has one of the best views in Prague — combine the library visit with a beer and breakfast."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Shopping & Czech Gifts",
+            "text": "For souvenirs: Bohemian crystal at Moser (Staré Město), marionettes from traditional puppet shops (Truhlář or U Loutky), Becherovka herbal liqueur (85 CZK at any potraviny), and Czech garnets from legitimate jewellers on Karlova. The Havelské tržiště (Havel's Market, Mon–Sun) has handicrafts and seasonal produce. One last trdelník (150 CZK) — the chimney pastry is technically Slovak but Prague has claimed it.",
+            "tip": "Becherovka Original and Slivovice (plum brandy) are the most authentic Czech gifts — available at any supermarket for 85–150 CZK."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Beer & River Views",
+            "text": "A Prague farewell deserves beer. One last visit to your favourite pub — U Fleků (since 1499, dark lager, 130 CZK with oompah show) for the tourist version, or U Kurelů in Žižkov for the local version (45 CZK). Walk Charles Bridge one last time at night when it is quiet and magical. Prague Airport is 40 minutes by Airport Express bus from Hlavní nádraží (100 CZK).",
+            "tip": "The Airport Express (AE) bus from the main train station is the cheapest, fastest airport transfer — runs every 30 minutes."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Czech beer prices",
+      "text": "A half litre of excellent Czech beer costs 45–70 CZK ($2–3) at local pubs. Prague is one of the world's cheapest cities for quality beer. Drink at neighbourhood pubs, not Old Town tourist bars (which charge 100–150 CZK)."
+    },
+    {
+      "title": "Eat Czech",
+      "text": "A full Czech lunch at a hospoda (pub-restaurant) costs 150–250 CZK ($7–11). Svíčková (beef in cream sauce), guláš (goulash), and smažený sýr (fried cheese) are hearty and cheap. Avoid restaurants on Old Town Square."
+    },
+    {
+      "title": "Lítačka transport card",
+      "text": "The Lítačka card or contactless payment works on metro, tram, and bus. Single ticket: 30 CZK (30 min) or 40 CZK (90 min). 24hr pass: 120 CZK. 3-day pass: 330 CZK. Buy via the PID Lítačka app."
+    },
+    {
+      "title": "Free experiences",
+      "text": "Prague Castle courtyards, Charles Bridge, Old Town Square, Vyšehrad ramparts, Letná Park view, Petřín Hill walking paths, Kampa Island, and all churches (exteriors and most interiors) are free."
+    },
+    {
+      "title": "Neighbourhood pubs",
+      "text": "Žižkov, Vinohrady, Holešovice, and Karlín have excellent pubs and restaurants at 30–50% less than the centre. A full meal with beer costs 200–350 CZK ($9–15) in these neighbourhoods."
+    },
+    {
+      "title": "Avoid exchange traps",
+      "text": "NEVER use exchange booths on the street — the \"0% commission\" signs hide terrible rates. Use ATMs (Bankomat) from banks (Česká spořitelna, ČSOB, Komerční banka) for the best CZK rate."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "400–700 CZK",
+      "midrange": "1,200–2,500 CZK",
+      "splurge": "3,500+ CZK",
+      "notes": "Hostels → boutique hotels → luxury hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "250–450 CZK",
+      "midrange": "500–900 CZK",
+      "splurge": "1,200+ CZK",
+      "notes": "Pub food & markets → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "40–120 CZK",
+      "midrange": "150–300 CZK",
+      "splurge": "500+ CZK",
+      "notes": "Metro/tram → taxis → private transfers"
+    },
+    {
+      "category": "Activities",
+      "budget": "0–200 CZK",
+      "midrange": "250–500 CZK",
+      "splurge": "800+ CZK",
+      "notes": "Free sights → museums → concerts & tours"
+    },
+    {
+      "category": "Drinks",
+      "budget": "100–200 CZK",
+      "midrange": "250–500 CZK",
+      "splurge": "700+ CZK",
+      "notes": "Local pubs → craft beer bars → cocktail bars"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "790–1,670 CZK",
+      "midrange": "2,350–4,700 CZK",
+      "splurge": "6,700+ CZK",
+      "notes": "$34–73 → $102–204 → $291+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Schengen Zone — most nationalities get 90 days visa-free within any 180-day period",
+        "Václav Havel Airport (PRG): Airport Express bus to Hlavní nádraží (100 CZK, 40 min). Bus 119 + metro (40 CZK, 50 min)",
+        "Passport valid for 3+ months beyond departure. EU/EEA citizens need only a national ID card"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required. Tap water is safe and good quality — fill your bottle freely",
+        "Prague is very safe. Watch for pickpockets on Charles Bridge, in Old Town Square, and on tram 22. Avoid unlicensed taxis",
+        "Emergency 112. Pharmacies (lékárna) are common. Motol University Hospital for emergencies"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "PID metro (3 lines), trams (30+ routes), and buses. 30-min ticket: 30 CZK. 90-min: 40 CZK. 24hr: 120 CZK. 3-day: 330 CZK",
+        "Trams are the best way to get around — tram 22 is a scenic route passing the Castle. Night trams run midnight–5am every 30 minutes",
+        "Walking is ideal in the centre — Old Town to Castle is 20 minutes on foot. Bolt and Liftago are cheaper than traditional taxis"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Free WiFi in most cafes, restaurants, and some metro stations. Prague has good overall WiFi coverage",
+        "EU roaming works at home rates. Otherwise, Vodafone, O2, or T-Mobile Czech prepaid SIMs from 200 CZK for 5–10GB",
+        "Download PID Lítačka app for transport, Mapy.cz (best Czech maps app, works offline), and Google Maps"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Czech Crown (CZK), NOT Euro. Never accept offers to pay in euros — the exchange rate will be terrible. Always pay in CZK",
+        "Cards accepted in most restaurants and shops. Some pubs and markets prefer cash — carry 500–1,000 CZK",
+        "NEVER use street exchange booths. Use ATMs from real banks (Česká spořitelna, ČSOB, Komerční banka). Decline \"dynamic currency conversion\""
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Layers and a waterproof jacket — Prague weather changes quickly. Summers can be hot (30°C+), winters are cold and grey (–5 to 5°C)",
+        "Comfortable walking shoes — Prague is cobblestoned and hilly. The Castle hill and Vyšehrad are steep",
+        "A reusable water bottle (tap water is excellent) and a power adapter (Type C/E plugs, 230V)"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🍺",
+      "title": "Beer Culture",
+      "text": "Czech Republic drinks more beer per capita than any country on Earth. Pilsner was invented here (Plzeň, 1842). A half litre is the standard order. Tipping on beer is done by rounding up to the nearest 10 CZK."
+    },
+    {
+      "icon": "💰",
+      "title": "Always Pay in CZK",
+      "text": "Prague is NOT in the Eurozone. Always pay in Czech Crowns. If a restaurant offers to charge in euros, decline — the conversion rate will be 10–15% worse. ATMs give the best rate."
+    },
+    {
+      "icon": "🚖",
+      "title": "Taxi Scams",
+      "text": "Never hail a taxi on the street — use Bolt, Liftago, or Uber apps for fair prices. If you must use a taxi, agree on the price beforehand. The rate should be around 28–36 CZK/km."
+    },
+    {
+      "icon": "🗣",
+      "title": "Czech Phrases",
+      "text": "\"Dobrý den\" (good day), \"Děkuji\" (thank you), \"Pivo, prosím\" (beer, please), and \"Na zdraví\" (cheers). Czechs are reserved but warm up quickly. A few Czech words earn enormous goodwill."
+    },
+    {
+      "icon": "🏛️",
+      "title": "Quiet Reverence",
+      "text": "In synagogues, churches, and memorials, keep voices low and phones silent. The Pinkas Synagogue (77,297 names on the walls) and Vyšehrad Cemetery deserve particular respect and quiet reflection."
+    },
+    {
+      "icon": "🎭",
+      "title": "Cultural Prague",
+      "text": "Prague has more live music, theatre, and performance per capita than almost any city. Check the Prague Fringe Festival (May), Signal Festival (Oct), and nightly classical concerts at churches throughout the year."
+    }
+  ],
+  "title": "Prague Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Prague guide for young travelers. 3-day itinerary with castle visits, world-class beer, Gothic architecture, and nightlife. Plan your trip with roammate.",
+  "heroImage": "/images/guides/prague-hero.webp",
+  "heroFlag": "🇨🇿",
+  "heroCountry": "Czech Republic",
+  "heroRegion": "Europe",
+  "heroCity": "Prague",
+  "heroSubtitle": "A Gothic fairy tale of spires and bridges where the world's best beer costs less than a coffee anywhere else in Europe.",
+  "budgetIntro": "Daily costs per person in Czech Crowns (CZK). Prague is exceptional value — world-class beer for $2, hearty meals for $10, and free Gothic architecture everywhere.",
+  "culturalIntro": "Prague rewards those who venture beyond the Old Town tourist zone. Drink at neighbourhood pubs, always pay in CZK, and let the beer culture pull you in.",
+  "ctaCity": "Prague",
+  "ctaText": "Find travel companions to explore the castle, share a pub crawl in Žižkov, or watch sunset from Letná Park together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Apr – Oct Best"
+  ],
+  "defaultDays": 3
+}

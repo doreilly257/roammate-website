@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "mecca",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "SAR (Riyal)",
+      "detail": "1 USD ≈ 3.75 SAR"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Arabic",
+      "detail": "Some English near the Haram"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "AST (UTC+3)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Nov – Feb",
+      "detail": "20–30°C, most comfortable"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$70–110 USD",
+      "detail": "SAR 260–410 budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Muslim travelers only",
+      "detail": "Non-Muslims cannot enter Mecca"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "The Heart of Mecca in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Al-Masjid al-Haram & the Kaaba",
+            "text": "Begin at Al-Masjid al-Haram, the Sacred Mosque — the holiest site in Islam, built around the Kaaba. Perform Tawaf (seven circuits around the Kaaba) in the early morning when crowds are thinnest. The first sight of the Kaaba is a moment most Muslims describe as life-changing. Then perform Sa'i — walking seven times between the hills of Safa and Marwah inside the mosque complex. Drink Zamzam water throughout.",
+            "tip": "Fajr prayer time is the least crowded for Tawaf. The rooftop level is less congested than the ground floor for both Tawaf and prayer."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jabal al-Nour & Cave of Hira",
+            "text": "Take a taxi (SAR 30) to Jabal al-Nour (Mountain of Light), 4km northeast of the Haram. Climb the mountain (600 steps, 1–1.5 hours) to reach the Cave of Hira — where Prophet Muhammad (PBUH) received the first revelation of the Quran. The climb is steep and challenging but profoundly meaningful. The panoramic views over Mecca from the summit are extraordinary. Descend and rest.",
+            "tip": "Climb early morning or late afternoon to avoid extreme heat. Bring 2+ litres of water, wear sturdy shoes, and pace yourself."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Evening Prayer & Clock Tower",
+            "text": "Return to the Haram for Maghrib and Isha prayers — the atmosphere as the mosque fills with worshippers from every nation on earth is overwhelming. After prayer, walk to the Abraj Al-Bait Clock Tower complex — the world's third-tallest building, visible from everywhere in Mecca. The shopping malls beneath have restaurants and shops. Dinner at one of the nearby restaurants — Al Baik (SAR 15–25) or a hotel buffet.",
+            "tip": "The Clock Tower observation deck offers unparalleled views over the Haram — check opening times as they vary by season."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "The Sacred Mosque & First Rites",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Al-Masjid al-Haram — First Visit",
+            "text": "Enter Al-Masjid al-Haram, the Sacred Mosque, for the first time. The sight of the Kaaba — the black-draped cube at the centre of the world's largest mosque — is indescribable for Muslim visitors. Perform Tawaf (seven counter-clockwise circuits) starting from the Black Stone corner. The ground floor near the Kaaba is most spiritually intense; the upper floors and rooftop are less crowded. Drink Zamzam water from the coolers throughout.",
+            "tip": "The rooftop level is best for first-time visitors who want to perform Tawaf without extreme crowds. Early morning after Fajr is quietest."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sa'i & Zamzam Well",
+            "text": "Perform Sa'i — walking seven times between the hills of Safa and Marwah inside the air-conditioned gallery. This commemorates Hajar's search for water for her son Ismail. The distance is about 450m each way. Wheelchairs and mobility scooters are available for those who need them. Visit the Zamzam Well exhibition near the mosque to learn about the sacred water source.",
+            "tip": "Sa'i is performed after Tawaf. The air-conditioned gallery makes it comfortable even in summer. Pace yourself — it's 3.15km total."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Evening Prayers & Local Dinner",
+            "text": "Join the Maghrib and Isha prayers at the Haram — the call to prayer echoing across the city as tens of thousands gather is deeply moving. After prayer, explore the streets around the mosque. Dinner at Al Baik — Saudi Arabia's beloved fried chicken chain, with the original branch near the Haram (SAR 15–25). Or try a Yemeni restaurant for lamb mandi and fahsa (SAR 30–50).",
+            "tip": "Al Baik near the Haram has long queues after prayer times. Go between prayers for shorter waits. The shrimp meal is excellent."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Historical Sites & Spiritual Depth",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Jabal al-Nour — Cave of Hira",
+            "text": "Taxi (SAR 30) to Jabal al-Nour, 4km northeast. Climb the Mountain of Light (600 steps, 1–1.5 hours) to the Cave of Hira — where the first verses of the Quran were revealed to Prophet Muhammad (PBUH). The climb is steep but the spiritual significance makes every step meaningful. The panoramic view of Mecca from the summit — the Haram, the Clock Tower, the surrounding mountains — is breathtaking.",
+            "tip": "Start the climb at first light (6am) to avoid the heat. Bring 2+ litres of water, a hat, and good shoes. The descent is harder than the ascent."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Jabal Thawr & Makkah Museum",
+            "text": "Visit Jabal Thawr — the mountain with the cave where Prophet Muhammad and Abu Bakr hid during the Hijra (migration to Medina). The climb is strenuous (2–3 hours) and optional; many visitors observe from below. Then visit the Exhibition of the Two Holy Mosques Architecture near the Clock Tower — showcasing the Kaaba's covering (Kiswah) and mosque expansion through the centuries.",
+            "tip": "If Jabal Thawr's climb is too strenuous, the exhibition near the Clock Tower is an accessible alternative that's deeply informative."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Prayers at the Haram",
+            "text": "Return to the Haram for extended evening worship. Night Tawaf is a unique experience — the floodlit Kaaba against the night sky, the cool air, and the quieter atmosphere create a deeply contemplative mood. During Ramadan, the Taraweeh prayers here are an extraordinary experience with the entire mosque filled to capacity. Dinner at one of the restaurants around the Clock Tower complex.",
+            "tip": "Night Tawaf (after Isha) is less crowded and more peaceful than daytime. The temperature is also much more comfortable for the circuits."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Mina, Arafat & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mina & Muzdalifah",
+            "text": "Visit the plains of Mina — the tent city 5km east of the Haram where millions camp during Hajj. Outside Hajj season, you can visit the Jamarat Bridge where pilgrims perform the stoning ritual. The scale of the infrastructure built for Hajj is staggering. Continue to Muzdalifah — the open plain where pilgrims spend the night during Hajj, collecting pebbles for the stoning.",
+            "tip": "These sites are most meaningful when visited with a knowledgeable guide (SAR 200–400) who can explain the Hajj rituals in context."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mount Arafat",
+            "text": "Continue to the Plain of Arafat — where the Prophet gave his final sermon and where the Day of Standing during Hajj takes place. Jabal al-Rahmah (Mount of Mercy) in the centre has a white pillar marking the spot. Standing at Arafat outside Hajj season gives you space to reflect without the millions of pilgrims. The vast, flat plain surrounded by mountains is powerfully symbolic.",
+            "tip": "Visit Arafat and Mina together in a half-day tour (SAR 200–400 with guide). The sites are 10–15km from the Haram."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Tawaf & Departure",
+            "text": "Perform a farewell Tawaf (Tawaf al-Wida) — the final circumambulation of the Kaaba before leaving Mecca. Many Muslims find this the most emotional moment of their visit. Take your time. After the farewell, shop for souvenirs in the Clock Tower complex — Zamzam water (free from the mosque, containers from SAR 10), prayer mats, Islamic calligraphy, and dates. Farewell dinner nearby.",
+            "tip": "Zamzam water is freely available at the mosque — bring containers to fill. Sealed bottles are also available at shops near the Haram."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrival & First Rites",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrival & Niyyah",
+            "text": "Arrive in Mecca and settle into your accommodation. If performing Umrah, enter a state of Ihram (ritual purity) — wearing the two white unsewn garments for men, or modest clothing for women. Make your intention (Niyyah) for Umrah. The anticipation of your first visit to the Haram builds as you prepare both physically and spiritually for the experience ahead.",
+            "tip": "Hotels near the Haram range from SAR 200–2,000/night. The Clock Tower complex hotels have direct mosque access — worth the premium for ease."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "First Tawaf at the Haram",
+            "text": "Enter Al-Masjid al-Haram for the first time. The sight of the Kaaba is a moment most Muslims describe as the most powerful of their lives. Perform Tawaf — seven counter-clockwise circuits around the Kaaba starting from the Black Stone corner. Make dua (supplication) as you circle. The ground floor is most spiritually intense; upper floors are less crowded.",
+            "tip": "The rooftop level is ideal for first-timers wanting to perform Tawaf without extreme crowds. After Fajr prayer is the quietest time."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sa'i & Rest",
+            "text": "After Tawaf, perform Sa'i — walking seven times between Safa and Marwah in the air-conditioned gallery (3.15km total). This completes the Umrah rites. Men then shave or trim their hair; women trim a small length. You've now completed Umrah. Rest, eat, and reflect. Dinner at one of the many restaurants near the Haram — the food options are international and plentiful.",
+            "tip": "There are barbershops right outside the mosque for the post-Umrah hair cutting. Prices are fixed at SAR 10–20."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Devotion & Extended Worship",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Fajr Prayer & Morning Recitation",
+            "text": "Join the Fajr prayer at the Haram — the pre-dawn atmosphere is extraordinarily peaceful. After prayer, stay for Quran recitation as the mosque fills with soft light. The acoustics of the mosque amplify the recitation beautifully. Spend the morning in worship, reading Quran, and making dua. Breakfast at the hotel or one of the nearby cafes (SAR 20–40 for a full breakfast).",
+            "tip": "The area closest to the Kaaba is most sought after for prayer. The second floor balcony overlooking the Kaaba is a beautiful alternative."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Additional Tawaf & Learning",
+            "text": "Perform additional voluntary Tawaf — each circuit of the Kaaba carries immense spiritual reward. Between Tawaf sets, attend a knowledge circle (halaqah) at the mosque — scholars regularly teach Quran, hadith, and Islamic jurisprudence. The sessions are in Arabic, but many scholars also teach in English and Urdu. Lunch at Al Baik or one of the hotel buffets (SAR 50–80).",
+            "tip": "Voluntary Tawaf between Dhuhr and Asr is often the least crowded time. Use the upper floors for a more contemplative experience."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Night Worship & Reflection",
+            "text": "The Haram at night is magical — the floodlit Kaaba, the cooler temperature, and the reflective atmosphere make nighttime visits deeply moving. Perform Tawaf, pray Tahajjud (night prayer), and spend time in contemplation. The diversity of worshippers — from every country, every language — is a powerful reminder of Islam's universality. Late dinner at a 24-hour restaurant near the mosque.",
+            "tip": "Many Muslims find the night hours at the Haram the most spiritually rewarding. The mosque is open 24 hours — there's no closing time."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Jabal al-Nour & Historical Mecca",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Jabal al-Nour — Cave of Hira",
+            "text": "Taxi (SAR 30) to Jabal al-Nour. Climb the Mountain of Light (600 steps, 1–1.5 hours) to the Cave of Hira where the first Quranic verses were revealed. The climb is steep but profoundly meaningful. At the summit, the panoramic view over Mecca — the Haram, the Clock Tower, the surrounding mountains — stretches across the entire holy city. Descend carefully and rest.",
+            "tip": "Start before 6am to avoid heat. Bring 2+ litres of water and sturdy shoes. The descent is harder on the knees — take your time."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Exhibition of the Two Holy Mosques",
+            "text": "Visit the Exhibition of the Two Holy Mosques Architecture — showcasing the history of the Kaaba's covering (Kiswah), the mosque's expansion through centuries, and architectural models of both Haram mosques. The exhibition is air-conditioned and informative — a welcome rest after the morning climb. Lunch at a nearby restaurant — biryani and kabsa are abundant and affordable (SAR 25–40).",
+            "tip": "The Kiswah (Kaaba covering) section is fascinating — learn how the black silk and gold-threaded cloth is made annually."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Clock Tower & Evening Prayer",
+            "text": "Explore the Abraj Al-Bait Clock Tower complex — the massive development beside the Haram with shopping malls, restaurants, and the clock tower museum. The clock face is the largest in the world. Join the Maghrib prayer at the Haram as the call to prayer echoes across the mountains. Dinner at one of the international restaurants in the complex (SAR 40–100).",
+            "tip": "The Clock Tower Museum (Makkah Clock Tower) has exhibits on astronomy and time in Islam — worth a visit if open."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Mina, Arafat & Hajj Sites",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Plains of Mina",
+            "text": "Visit Mina, 5km east — the tent city where millions camp during Hajj. Outside Hajj season, the vast infrastructure is visible and impressive. See the Jamarat Bridge where the stoning ritual takes place — the scale of engineering built to manage millions of pilgrims is remarkable. A guide (SAR 200–400) enriches the experience with detailed explanations of Hajj rituals.",
+            "tip": "Hire a guide for the Hajj sites — the rituals are complex and the historical context makes the visit far more meaningful."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mount Arafat & Muzdalifah",
+            "text": "Continue to the Plain of Arafat — the most important site of Hajj, where the Prophet delivered his farewell sermon. Jabal al-Rahmah (Mount of Mercy) has a white pillar at the summit. Outside Hajj season, the vast plain is peaceful and deeply reflective. Stop at Muzdalifah on the return — the open ground where pilgrims spend the night during Hajj.",
+            "tip": "Visiting Arafat outside Hajj season allows you to stand where millions gather annually — the emptiness makes the scale tangible."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Spiritual Reflection",
+            "text": "Return to Mecca and spend the evening in worship at the Haram. The experience of visiting the Hajj sites deepens the meaning of being in Mecca. Perform Tawaf and extended prayers. Dinner at a Yemeni restaurant in the Al-Aziziyah district — mandi lamb and fahsa stew for SAR 30–50. The simple meals shared with other pilgrims are part of the communal experience.",
+            "tip": "The Al-Aziziyah and Al-Misfalah districts have the most affordable accommodation and food — authentic and less commercialised."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Jabal Thawr & Deeper Exploration",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Jabal Thawr",
+            "text": "Visit Jabal Thawr — the mountain south of Mecca where Prophet Muhammad and Abu Bakr sheltered in a cave for three days during the Hijra to Medina. The climb is strenuous (2–3 hours each way) and only recommended for fit visitors. Those who reach the cave are rewarded with a powerful connection to this pivotal moment in Islamic history. Others can observe from the base.",
+            "tip": "Jabal Thawr is a serious climb — only attempt it if you're physically fit. Start at first light, bring plenty of water."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Birthplace of the Prophet & Old Mecca",
+            "text": "Visit the site of the Prophet Muhammad's birthplace in the Suq al-Layl area — now a library. Walk through the old streets of Mecca around Ajyad and Al-Misfalah to see what remains of the historic city. The narrow lanes and traditional buildings contrast sharply with the massive modern developments. Many historic sites have been replaced by infrastructure, but the atmosphere in the older quarters persists.",
+            "tip": "Old Mecca is disappearing rapidly due to development. Walk the back streets of Al-Misfalah for a glimpse of the traditional city."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Extended Night Worship",
+            "text": "Spend the evening and night at the Haram in extended worship. The last third of the night is considered the most blessed time for prayer and supplication. Many worshippers stay from Isha through to Fajr, alternating between prayer, Quran recitation, and reflection. Zamzam water and light snacks from nearby shops sustain you through the night.",
+            "tip": "If staying overnight at the Haram, bring a light blanket or shawl — the air conditioning can be cold during extended sitting."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Community & Cultural Experiences",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Fajr & Breakfast Walk",
+            "text": "Join the Fajr prayer at the Haram then walk through the awakening streets as shops open and the city comes to life. The morning call to prayer echoing through the mountain-ringed valley is unforgettable. Breakfast at one of the traditional foul restaurants near the mosque — foul medames (fava beans) with fresh bread and tea for SAR 15–20. This is how locals start their day.",
+            "tip": "The foul restaurants near the King Abdul Aziz Gate serve the most authentic traditional Meccan breakfast — simple and soul-satisfying."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Shopping & Souvenirs",
+            "text": "Explore the markets around the Haram for souvenirs — prayer mats (SAR 20–200), tasbih/misbaha prayer beads (SAR 10–100), Islamic calligraphy, attar perfume oils (SAR 20–150), and copies of the Quran. The Zamzam Tower area and King Fahad Road have large shopping centres. Fill Zamzam water containers for home — the sacred water is free from mosque coolers.",
+            "tip": "Buy Zamzam water containers from nearby shops (SAR 5–10) and fill them at the mosque. Airlines allow sealed Zamzam containers as extra luggage."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Community Iftar or Dinner",
+            "text": "If visiting during Ramadan, join the communal iftar at the Haram — one of the most powerful experiences in Islam, breaking fast with hundreds of thousands simultaneously. Outside Ramadan, the communal spirit persists — sharing food with fellow pilgrims is a beautiful tradition. Dinner at a South Asian restaurant in Al-Aziziyah for biryani and nihari (SAR 25–40).",
+            "tip": "During Ramadan, free iftar meals are distributed at the Haram — dates, water, and food boxes. The generosity is overwhelming."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Farewell & Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Final Morning Prayers",
+            "text": "Rise for a final Fajr prayer at the Haram. Spend the quiet morning hours in contemplation and dua. Many Muslims make specific prayers and intentions for their lives, families, and communities during these final moments at the Kaaba. The weight of the experience — knowing you may not return — makes these hours precious. Take your time.",
+            "tip": "The area directly in front of the Kaaba door (Multazam) is a place of accepted dua — press yourself against the wall and pray."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Farewell Tawaf",
+            "text": "Perform the Farewell Tawaf (Tawaf al-Wida) — the final circumambulation before leaving Mecca. This is sunnah (recommended practice) and deeply emotional. Walk the seven circuits slowly, savouring each moment. Many pilgrims weep as they take their last look at the Kaaba. After completing Tawaf, walk backwards from the mosque keeping the Kaaba in view for as long as possible.",
+            "tip": "The Farewell Tawaf is the last act in Mecca — don't perform any other acts of worship after it before departing."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Departure",
+            "text": "Depart Mecca for the airport or onward travel. Most visitors fly from King Abdulaziz International Airport in Jeddah (80km, 1–1.5 hours by road) or continue to Medina via the Haramain High-Speed Railway (2.5 hours). The journey from Mecca carries the weight of the entire experience — the spiritual transformation that millions describe is real and lasting.",
+            "tip": "The Haramain High-Speed Railway connects Mecca to Medina via Jeddah (SAR 150–250). Book at sar.hhr.sa — it's efficient and comfortable."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Al Baik & street food",
+      "text": "Al Baik fried chicken (SAR 15–25) is near the Haram. Foul and tameez breakfast is SAR 10–15. Yemeni restaurants serve full meals for SAR 25–40. Food near the Haram is surprisingly affordable."
+    },
+    {
+      "title": "Free worship",
+      "text": "The Haram is open 24 hours and entry is free. Zamzam water is free from coolers inside the mosque. Visiting the Hajj sites (Mina, Arafat) is free — only guides cost money."
+    },
+    {
+      "title": "Budget accommodation",
+      "text": "Hotels near the Haram are expensive. Stay in Al-Aziziyah or Al-Misfalah districts (2–3km away, SAR 100–200/night) and walk or take shuttle buses to the mosque."
+    },
+    {
+      "title": "Avoid peak seasons",
+      "text": "Prices triple during Hajj and Ramadan. Visit during off-peak months (May–Sep, excluding Ramadan) for the best rates — though summer heat is extreme."
+    },
+    {
+      "title": "Free shuttles",
+      "text": "Many hotels offer free shuttle buses to the Haram. Local buses also connect surrounding districts to the mosque area. Taxis within central Mecca cost SAR 10–20."
+    },
+    {
+      "title": "Zamzam for home",
+      "text": "Zamzam water is free at the mosque. Buy containers (SAR 5–10) and fill them for home. Most airlines allow sealed Zamzam containers as additional baggage allowance."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "SAR 100–250",
+      "midrange": "SAR 400–900",
+      "splurge": "SAR 1,500+",
+      "notes": "Budget hotels 2km away → near-Haram 3-star → Haram-view 5-star"
+    },
+    {
+      "category": "Food",
+      "budget": "SAR 40–70",
+      "midrange": "SAR 100–180",
+      "splurge": "SAR 300+",
+      "notes": "Street food & Al Baik → hotel restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "SAR 10–30",
+      "midrange": "SAR 50–100",
+      "splurge": "SAR 200+",
+      "notes": "Walking & shuttles → taxis → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "SAR 0–50",
+      "midrange": "SAR 100–250",
+      "splurge": "SAR 500+",
+      "notes": "Mosque & free sites → guided tours → premium Hajj packages"
+    },
+    {
+      "category": "Drinks",
+      "budget": "SAR 10–20",
+      "midrange": "SAR 30–50",
+      "splurge": "SAR 80+",
+      "notes": "Zamzam & tea → juices & coffee → hotel cafes"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "SAR 160–420",
+      "midrange": "SAR 680–1,480",
+      "splurge": "SAR 2,580+",
+      "notes": "$43–112 → $181–395 → $688+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "IMPORTANT: Non-Muslims cannot enter the city of Mecca. This restriction is strictly enforced at checkpoints on all roads into the city",
+        "Muslim visitors need either a tourist e-visa, Umrah visa, or Hajj visa. Umrah can be performed year-round; Hajj occurs during Dhul Hijjah",
+        "Jeddah's King Abdulaziz International Airport (JED) is the main gateway — 80km from Mecca. Haramain train also connects from Medina"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Meningitis ACWY vaccine is mandatory for Hajj and Umrah pilgrims. Seasonal flu and COVID vaccinations are recommended",
+        "Mecca is extremely safe. Crowds are the main risk — stay aware during peak prayer times and avoid stampede-prone areas",
+        "Summer heat exceeds 45°C. Heatstroke and dehydration are serious risks. Carry water constantly and rest in air-conditioned spaces"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "The Haram is walkable from central hotels. Districts further out (Al-Aziziyah, Al-Misfalah) are 2–3km away",
+        "Local taxis and Uber/Careem operate throughout the city — SAR 10–30 for most rides. Many hotels run free shuttle buses",
+        "The Al Mashaaer Al Mugaddassah Metro connects Mina, Arafat, and Muzdalifah during Hajj season only"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "STC, Mobily, and Zain have coverage in Mecca. Tourist SIMs from SAR 50 at the airport. STC has the best coverage inside the Haram",
+        "Free WiFi in the Haram and most hotels. Connectivity can be slow during peak prayer times due to the number of users",
+        "The Nusuk app is essential — book Rawdah visits, Tawaf slots during peak times, and Hajj/Umrah guidance"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "SAR pegged to USD at 3.75. ATMs near the Haram and in the Clock Tower complex. Cards accepted at hotels and larger shops",
+        "Cash useful for street food, small shops, and taxis. Carry SAR 200–300 for daily expenses",
+        "Prices increase significantly during Hajj and Ramadan — accommodation can be 3–5x normal rates"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "For Ihram: two white unsewn cloths for men (available in Mecca from SAR 20). Women wear modest, plain clothing",
+        "Comfortable, slip-on shoes (you remove them frequently at the mosque). Bring a shoe bag to carry them inside",
+        "Small prayer mat, Quran, and a light blanket for extended mosque stays. Sunscreen and an umbrella for outdoor sites"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🕋",
+      "title": "The Haram",
+      "text": "Al-Masjid al-Haram is the holiest site in Islam. Maintain utmost respect — no loud talking, photography restrictions near the Kaaba, and follow the crowd flow during Tawaf. Separate areas for men and women."
+    },
+    {
+      "icon": "🚫",
+      "title": "Non-Muslim Access",
+      "text": "Non-Muslims are strictly prohibited from entering Mecca. Checkpoints on all access roads verify this. If you are not Muslim, this guide is informational only — please respect this religious requirement."
+    },
+    {
+      "icon": "👗",
+      "title": "Dress Code",
+      "text": "During Ihram: men wear two white unsewn cloths. Women wear loose, modest clothing covering everything except face and hands. Outside Ihram, conservative dress remains mandatory throughout the city."
+    },
+    {
+      "icon": "🤲",
+      "title": "Spiritual Etiquette",
+      "text": "Mecca is a place of worship first. Keep conversations respectful, avoid worldly distractions, and be patient with crowds. The diversity of pilgrims from every nation is a beautiful aspect of the experience."
+    },
+    {
+      "icon": "🚫",
+      "title": "Alcohol & Conduct",
+      "text": "Alcohol is completely prohibited. Smoking is banned in and near the Haram. Music and loud entertainment are not appropriate near the mosque. Maintain a reverent demeanour throughout your stay."
+    },
+    {
+      "icon": "🫂",
+      "title": "Crowd Awareness",
+      "text": "The Haram can hold over 2 million people during peak times. Stay calm in crowds, don't push, and follow security instructions. Keep children close. Wheelchair and mobility assistance is available."
+    }
+  ],
+  "title": "Mecca Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "A comprehensive Mecca guide for Muslim travelers. 3-day itinerary covering the Haram, Umrah rites, Hajj sites, and practical tips for pilgrims. Plan your journey with roammate.",
+  "heroImage": "/images/guides/mecca-hero.webp",
+  "heroFlag": "🇸🇦",
+  "heroCountry": "Saudi Arabia",
+  "heroRegion": "Middle East",
+  "heroCity": "Mecca",
+  "heroSubtitle": "The holiest city in Islam, where the Kaaba stands at the centre of the world's oldest and most profound act of devotion.",
+  "budgetIntro": "Daily costs per person in Saudi Riyal (SAR). Worship at the Haram is free — accommodation and food near the mosque are the main expenses.",
+  "culturalIntro": "Mecca is exclusively accessible to Muslims. This guide is written for Muslim travelers — whether performing Umrah, Hajj, or visiting for spiritual renewal. Non-Muslims are respectfully prohibited from entering the holy city.",
+  "ctaCity": "Mecca",
+  "ctaText": "Connect with fellow pilgrims, share travel experiences, and find companions for your spiritual journey on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Muslim Travelers",
+    "Nov – Feb Best"
+  ],
+  "defaultDays": 3
+}

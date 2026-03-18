@@ -1,0 +1,333 @@
+{
+  "type": "city",
+  "slug": "crete",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EUR (Euro)",
+      "detail": "Cards accepted in tourist areas"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Greek",
+      "detail": "English widely spoken in resorts"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EET (UTC+2)",
+      "detail": "EEST (UTC+3) in summer"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "May – Jun, Sep – Oct",
+      "detail": "Warm weather, fewer crowds"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$50–160 USD",
+      "detail": "Budget to mid-range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Schengen Zone",
+      "detail": "Check requirements for your nationality"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Crete Highlights",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Knossos Palace — Minoan Civilization",
+            "text": "Start your Crete experience at the Palace of Knossos, 5km south of Heraklion — the ceremonial and political centre of the Minoan civilisation, Europe's first advanced society, flourishing from 2700 to 1450 BCE. The partially reconstructed palace complex covers 20,000 square metres with over 1,300 rooms: the Throne Room with its original alabaster seat, the Grand Staircase, the Queen's Megaron with dolphin frescoes, and the vast central courtyard where the legend of the Minotaur's labyrinth may have originated. The site is one of the most important archaeological discoveries in Mediterranean history.",
+            "tip": "Arrive when gates open at 8am — by 10am tour buses from cruise ships fill the site. A guide or audio tour is highly recommended as the layout is complex without context."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Chania Old Town & Venetian Harbour",
+            "text": "Drive or take the bus west to Chania, Crete's most beautiful town. The Venetian harbour — built in the 14th century and guarded by the Egyptian lighthouse at its entrance — is one of the most photogenic waterfronts in the Mediterranean. Walk the narrow lanes of the old town through Venetian, Ottoman, and Byzantine layers of architecture. Explore the covered market (Agora) built in 1913, the Etz Hayyim Synagogue, the Janissaries Mosque on the harbour, and the leather-making workshops of Skridlof Street. Lunch at a harbourside taverna with fresh seafood.",
+            "tip": "Chania is 2.5 hours from Heraklion by bus — if time is limited, fly into Chania airport instead. The old town is best explored on foot and most sites are free."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Harbourside Dinner & Sunset",
+            "text": "Watch the sunset from the old harbour breakwater or the rooftop of the Naval Museum at the western end. As darkness falls, the lighthouse and harbour walls illuminate and the waterfront restaurants fill with diners. Cretan cuisine is among the finest in Greece: try dakos (barley rusk with tomatoes, feta, and olive oil), boureki (courgette and potato pie), lamb with stamnagathi (wild greens), and finish with loukoumades (honey-drenched dough balls). Pair with Cretan raki — offered complimentary at the end of meals across the island.",
+            "tip": "Raki is traditionally offered free at the end of dinner in Crete — declining it can seem rude. It is served with fruit or sweets and is part of the hospitality ritual."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Knossos, Heraklion & Rethymno",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Knossos Palace & Heraklion Museum",
+            "text": "Explore the Palace of Knossos in the cool morning — the sprawling Minoan complex with its iconic red columns, the Throne Room (Europe's oldest throne still in situ), and the elaborate drainage system that hints at remarkable engineering 3,700 years ago. The bull-leaping frescoes, the snake goddess figurines, and the mysterious Linear A script discovered here transformed our understanding of pre-classical European civilisation. After Knossos, drive to the Heraklion Archaeological Museum in the city centre — it houses the original Minoan artefacts from Knossos and other Cretan sites, including the Phaistos Disc and the golden bee pendant.",
+            "tip": "Buy a combined ticket for Knossos and the Heraklion Museum — it saves money and both sites complement each other. The museum provides essential context for the palace ruins."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Rethymno Old Town & Fortezza",
+            "text": "Drive west along the coast to Rethymno, Crete's third city, with a beautifully preserved old town blending Venetian and Ottoman architecture. The Venetian Fortezza — a massive 16th-century fortress on the headland — dominates the town and offers panoramic views from its ramparts. Below, the old town's lanes are packed with Venetian doorways, ornate fountains (the Rimondi Fountain dates to 1626), Ottoman mosques with minarets, and a functioning hammam. The harbour below the fortress is smaller and quieter than Chania's, lined with fishing boats and unassuming tavernas.",
+            "tip": "Rethymno is 1.5 hours from Heraklion and 1 hour from Chania — it makes an ideal base between the two. The old town is best explored in the cooler afternoon hours."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Cretan Dinner & Live Music",
+            "text": "Rethymno has a vibrant evening scene with live Cretan music in several old town tavernas — the lyra (Cretan fiddle) and laouto (lute) accompany traditional Cretan mantinades (rhyming couplets). Dinner should be a full Cretan experience: start with a meze spread of Cretan graviera cheese, olives, kalitsounia (sweet cheese pastries), and snails cooked with rosemary (a Cretan speciality). Follow with slow-roasted lamb or fresh-caught fish, and accept the complimentary raki and fruit that ends every proper Cretan meal.",
+            "tip": "Ask your restaurant if there is live Cretan music that evening — many places host musicians 2–3 times per week in season. The music and atmosphere are unforgettable."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Samaria Gorge & Chania",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Samaria Gorge — Europe's Longest Gorge",
+            "text": "Take an early bus from Chania to the Omalos Plateau (1,200m) at the entrance to the Samaria Gorge — at 16km, it is the longest gorge in Europe and a UNESCO Biosphere Reserve. The hike descends from the xyloskalo (wooden staircase) at the top through towering cliffs reaching 300 metres high, ancient cypress and pine forests, abandoned stone villages, and the iconic Iron Gates — where the gorge narrows to just 3.5 metres wide with sheer walls on either side. The trail is well-marked and ends at the village of Agia Roumeli on the Libyan Sea. Keep an eye out for the kri-kri (Cretan wild goat), found only in this gorge.",
+            "tip": "Start by 7am to finish before the midday heat. The hike takes 5–7 hours and is downhill but rocky — bring sturdy boots, at least 2 litres of water, sunscreen, and lunch."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Agia Roumeli Beach & Ferry",
+            "text": "Emerge from the gorge at Agia Roumeli, a tiny coastal village accessible only by foot or boat. After 16km of hiking, the dark-sand beach and the Libyan Sea are a welcome reward — swim in the clear warm water and collapse at a beachside taverna for a late lunch. The village exists almost entirely to serve gorge hikers, with simple restaurants, cold drinks, and a pebble beach. Take the afternoon ferry along the spectacular south coast to either Sougia, Loutro, or Hora Sfakion, where buses return to Chania. The ferry ride itself is stunning — sheer cliffs dropping into turquoise water.",
+            "tip": "Check ferry times from Agia Roumeli before starting the hike — the last boat departs around 5:30pm. Ferries to Hora Sfakion (1 hour) have the most frequent bus connections back to Chania."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Chania Harbour & Recovery Dinner",
+            "text": "Return to Chania and reward your hiking efforts with a long dinner at the Venetian harbour. The old town is magical at night — the lighthouse beam sweeps across the water, the minaret of the Janissaries Mosque is illuminated, and the harbour wall fills with strolling couples and families. A post-hike dinner demands serious Cretan fuel: grilled octopus, tomato and fennel salad, moussaka (the Cretan version uses courgettes), and local red wine from the Kissamos region. The complimentary raki will ease any remaining muscle aches.",
+            "tip": "After the gorge hike, book a restaurant table in advance for the evening — you will arrive tired and hungry and the best harbourside spots fill up by 8pm in season."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Balos, Elafonisi & Spinalonga",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Balos Beach & Gramvousa Island",
+            "text": "Take a morning boat trip from Kissamos port (40 minutes west of Chania) to the Gramvousa Peninsula and Balos Lagoon — one of the most photographed beaches in the Mediterranean. The lagoon is a shallow turquoise pool of impossibly clear water connecting to the open sea, with white and pink sand and a wild, undeveloped coastline. The boat stops first at Gramvousa Island where a Venetian fortress crowns the summit (a steep 20-minute climb with spectacular views). Then it continues to Balos where you have 2–3 hours to swim, snorkel, and explore the lagoon. The colours are surreal — shifting from white to turquoise to deep blue.",
+            "tip": "The Balos boat trip departs at 10am and returns by 6pm — book tickets a day in advance in peak season. Bring an umbrella for shade as there is almost none on the beach."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Elafonisi Beach — Pink Sand Paradise",
+            "text": "For a second beach day alternative (or if you have a rental car), drive to Elafonisi on the southwest tip of Crete — a beach famous for its pink-tinged sand, created by millions of crushed red shells mixed with white sand. The beach extends onto a small island connected to the mainland by a shallow sandbar you can wade across. The water is warm, shallow, and crystal clear — ideal for swimming. The surrounding coast is a protected Natura 2000 area with sea daffodils, junipers, and loggerhead turtle nesting sites. Elafonisi regularly ranks among Europe's finest beaches.",
+            "tip": "Elafonisi is a 75-minute drive from Chania on a winding mountain road. Arrive before 11am for parking and space — the beach gets very busy in July and August."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Spinalonga Island & Farewell Dinner",
+            "text": "If based in eastern Crete, take a short boat trip from Elounda or Plaka to Spinalonga Island — a fortified islet in the Gulf of Mirabello that served as a Venetian stronghold, an Ottoman fortress, and most recently as a leper colony from 1903 to 1957, one of the last in Europe. The preserved stone buildings, the disinfection tunnel, the main street, and the tiny harbour create a haunting and moving atmosphere. Return to shore for a final Cretan dinner: stifado (slow-cooked beef with sweet onions), fresh fish from the Gulf of Mirabello, and one last toast of raki to the island that invented European civilisation.",
+            "tip": "Spinalonga boats run every 30 minutes from Elounda and Plaka in season. Allow 1.5–2 hours on the island to walk the full circuit of the walls and explore the leper colony buildings."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Rent a car for flexibility",
+      "text": "Crete is Greece's largest island (260km east to west) and public transport is limited outside the north coast. A rental car from Heraklion or Chania airport costs $25–40 per day and unlocks beaches, gorges, and villages that buses cannot reach."
+    },
+    {
+      "title": "Visit in shoulder season",
+      "text": "May–June and September–October offer warm swimming weather, lower accommodation prices, and far fewer crowds than July–August. Samaria Gorge opens in May and is least crowded in early June and late September."
+    },
+    {
+      "title": "Stay in village guesthouses",
+      "text": "Coastal resorts charge tourist prices. Inland villages like Archanes, Vamos, and Margarites offer traditional stone guesthouses at $30–50 per night with breakfast — authentic atmosphere at half the coastal price."
+    },
+    {
+      "title": "Eat at local bakeries & tavernas",
+      "text": "Skip the waterfront tourist restaurants. Village tavernas serve enormous portions of home-cooked food for $8–15 per person. Bakeries sell fresh bougatsa (custard pastry) and spinach pies for $2–3 — the perfect breakfast."
+    },
+    {
+      "title": "Free beaches are the best beaches",
+      "text": "Crete's finest beaches (Balos, Elafonisi, Preveli, Seitan Limania) are free to access. Sun-lounger rental costs $8–15 per pair but you can always lay a towel on the free section of the beach."
+    },
+    {
+      "title": "Cook with local produce",
+      "text": "Crete produces exceptional olive oil, cheese, fruit, and vegetables. If you have apartment accommodation, shop at village markets and cook Cretan meals — the ingredients are superb and very affordable."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$20–50",
+      "midrange": "$60–120",
+      "splurge": "$150+",
+      "notes": "Hostels → guesthouses → boutique hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "$15–30",
+      "midrange": "$30–55",
+      "splurge": "$65+",
+      "notes": "Bakeries & tavernas → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "$5–15",
+      "midrange": "$20–45",
+      "splurge": "$60+",
+      "notes": "Public buses → rental car → private transfers"
+    },
+    {
+      "category": "Activities",
+      "budget": "$5–15",
+      "midrange": "$20–50",
+      "splurge": "$70+",
+      "notes": "Self-guided → boat trips → private tours"
+    },
+    {
+      "category": "Entry Fees",
+      "budget": "$5–15",
+      "midrange": "$15–25",
+      "splurge": "$25–40",
+      "notes": "Combined tickets save money at museums"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$50–125",
+      "midrange": "$145–295",
+      "splurge": "$370+",
+      "notes": "Budget backpacker → comfortable mid → luxury"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Entry & Visas",
+      "items": [
+        "Schengen Zone — check visa requirements for your nationality before travel",
+        "Crete has two international airports: Heraklion (HER) in the east and Chania (CHQ) in the west",
+        "Ferries connect Crete to Athens (Piraeus) and other Greek islands — overnight ferries are a budget option"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Travel insurance with medical coverage is essential — mountain gorge hikes carry injury risk",
+        "Sun protection is critical — Crete's summer temperatures regularly exceed 35°C. Carry water at all times",
+        "Sea urchins are common on rocky coastlines — water shoes protect your feet when entering the sea"
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Getting Around",
+      "items": [
+        "KTEL buses connect Heraklion, Rethymno, Chania, and Agios Nikolaos along the north coast highway",
+        "A rental car is strongly recommended for south coast beaches, mountain villages, and gorge trailheads",
+        "Mountain roads are narrow and winding — drive carefully and fill up with fuel in towns as rural petrol stations are scarce"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "EU roaming applies — EU SIM cards work at home rates. Non-EU visitors can buy a Cosmote or Vodafone SIM",
+        "WiFi is available at most accommodation and cafes. Download offline maps for the mountains and south coast",
+        "Mobile coverage is reliable in towns but drops in deep gorges and remote mountain villages"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Currency: EUR (Euro). Cards accepted at hotels, restaurants, and large shops. Carry cash for villages and beaches",
+        "ATMs are available in all towns. Visa and Mastercard widely accepted — Amex less so",
+        "Tipping 5–10% at restaurants is customary. Raki and fruit at the end of meals is complimentary — do not tip for it"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Sturdy hiking boots for Samaria Gorge, water shoes for rocky beaches, and sandals for the towns",
+        "Bring a snorkel mask — Crete's coastline has excellent snorkelling and rental gear is not always available",
+        "Quick-dry clothing, a packable rain jacket, and a reusable water bottle are essential for any Crete trip"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Respect Religious Sites",
+      "text": "Crete has hundreds of churches and monasteries. Cover shoulders and knees when entering — wraps are sometimes provided at the door. Photography of icons and frescoes is often restricted."
+    },
+    {
+      "icon": "🌍",
+      "title": "Protect Natural Sites",
+      "text": "Samaria Gorge, Balos, and Elafonisi are protected natural areas. Stay on marked trails, do not disturb wildlife, take all rubbish with you. The kri-kri wild goat and loggerhead turtles depend on visitor respect."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography Etiquette",
+      "text": "Ask before photographing locals, especially in traditional mountain villages. Monastery interiors often prohibit photography. Drone regulations in Greece are strict — check before flying near archaeological or military sites."
+    },
+    {
+      "icon": "🗣",
+      "title": "Learn Basic Greek",
+      "text": "A few words in Greek earn immediate warmth: \"Yassas\" (hello), \"Efcharisto\" (thank you), \"Parakalo\" (please/you're welcome). Cretans are proud of their island identity and appreciate visitors who show cultural interest."
+    },
+    {
+      "icon": "🤝",
+      "title": "Embrace Cretan Hospitality",
+      "text": "Cretans are famously generous hosts. Accept the raki, the extra plate of food, and the conversation. Choose family-run tavernas and village guesthouses over resort chains — your spending directly supports island communities."
+    },
+    {
+      "icon": "🕐",
+      "title": "Slow Down & Explore",
+      "text": "Crete is too large and diverse to rush. The best experiences come from lingering in villages, swimming at empty coves, and talking to locals over coffee. Plan fewer activities per day than you think you need."
+    }
+  ],
+  "title": "Crete Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Crete guide for young travelers. Samaria Gorge, Knossos Palace, Balos Beach, Elafonisi with 1 and 3-day itineraries. Budget tips and practical info.",
+  "heroImage": "/images/guides/crete-hero.webp",
+  "heroFlag": "🇬🇷",
+  "heroCountry": "Greece",
+  "heroRegion": "Europe",
+  "heroCity": "Crete",
+  "heroSubtitle": "Greece's largest island — Minoan palaces, Europe's longest gorge, pink sand beaches, and Venetian harbour towns beneath snow-capped mountains.",
+  "budgetIntro": "Daily costs per person in US dollars. Crete offers excellent value compared to the smaller Greek islands — these ranges cover the spectrum from budget backpacker to comfortable mid-range.",
+  "culturalIntro": "Crete is the birthplace of European civilisation and one of the Mediterranean's most rewarding islands — approach with curiosity and respect, and you will discover a place of extraordinary depth.",
+  "ctaCity": "Crete",
+  "ctaText": "Find travel companions to explore Crete together on roammate — split costs, share adventures, and make lifelong friends.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Island",
+    "Coastal & Hiking",
+    "May – Jun Best"
+  ],
+  "defaultDays": 1
+}

@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "barcelona",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "EUR (Euro)",
+      "detail": "1 USD ≈ 0.92 EUR"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Catalan / Spanish",
+      "detail": "Good English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "CET (UTC+1)",
+      "detail": "CEST (UTC+2) in summer"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Jun, Sep – Oct",
+      "detail": "18–28°C, warm & sunny"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$65–110 USD",
+      "detail": "€60–100 budget–midrange"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Schengen Zone",
+      "detail": "90 days visa-free for most"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Barcelona in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sagrada Família & Eixample",
+            "text": "Start at La Sagrada Família (€26 with tower, book online weeks ahead) — Gaudí's unfinished masterpiece has been under construction since 1882 and the interior, with its forest-like columns and kaleidoscopic stained glass, is one of the most extraordinary spaces on Earth. Walk through the Eixample neighbourhood afterwards — the grid of chamfered blocks is lined with Modernista buildings.",
+            "tip": "Book the 9am slot — morning light through the east-facing stained glass creates a rainbow interior that fades by noon."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Gothic Quarter & La Boqueria",
+            "text": "Metro to the Barri Gòtic (Gothic Quarter) — a maze of medieval lanes, hidden plazas, and the 13th-century Cathedral of Barcelona (free, rooftop €9). Walk through Plaça Reial — Barcelona's most elegant square with Gaudí-designed lampposts. Lunch at La Boqueria market on La Rambla — fresh fruit smoothies (€3), jamón ibérico (€5 a plate), and seafood paella at a market stall bar (€10–14).",
+            "tip": "La Boqueria is mobbed at midday — arrive before 11am or after 3pm. The stalls deeper inside the market are cheaper."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Barceloneta Beach & El Born Nightlife",
+            "text": "Walk down to Barceloneta beach — the promenade, seafood restaurants, and Mediterranean sunset are quintessential Barcelona. Grab patatas bravas and a caña at a chiringuito (beach bar). Then head to El Born — the neighbourhood centred on Passeig del Born is packed with cocktail bars, tapas restaurants, and small clubs. Try Paradiso (hidden behind a pastrami bar fridge door — top 50 world bar).",
+            "tip": "Paradiso in El Born is hidden behind a refrigerator door in a pastrami bar — look for the queue and step through."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Gaudí, Gothic Quarter & El Born",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "La Sagrada Família",
+            "text": "Book the 9am slot at La Sagrada Família (€26 with tower, online only). The interior is unlike any church you have ever seen — tree-like columns branch into the ceiling, and the stained glass projects shifting rainbows across white stone. The Nativity facade tower offers city views. Gaudí worked on this for 43 years and is buried in the crypt. Allow 90 minutes.",
+            "tip": "Morning light through the east windows creates extraordinary colours — the afternoon has different, warmer tones through the west windows."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Gothic Quarter & La Boqueria",
+            "text": "Metro to the Barri Gòtic — Roman walls, medieval lanes, and the Cathedral of Barcelona (free, rooftop terrace €9). Walk Plaça del Rei, Plaça Sant Felip Neri (bullet-scarred from the Civil War), and Plaça Reial. Lunch at La Boqueria market — smoothies (€3), fresh oysters (€2 each), seafood stall bars (€10–14). Walk La Rambla but spend your money elsewhere.",
+            "tip": "La Rambla restaurants are overpriced tourist traps — eat at the Boqueria stalls or one block off the Rambla for half the price."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "El Born — Tapas & Cocktails",
+            "text": "El Born is Barcelona's coolest neighbourhood — medieval lanes now filled with boutiques, tapas bars, and cocktail spots. Visit the Santa Caterina market (€0 — beautiful wavy roof), then dinner at Cal Pep (legendary seafood tapas bar, arrive early) or Bar del Pla (creative tapas, €5–9 each). Drinks at Paradiso (hidden speakeasy, world top 50) or La Vinya del Senyor (wine and Sagrada Família views).",
+            "tip": "Cal Pep has no reservations for the bar — arrive at 7:15pm (opens 7:30pm) to guarantee a seat at the counter."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Park Güell, Gràcia & Beach",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Park Güell",
+            "text": "Pre-book Park Güell (€10, timed entry) — Gaudí's mosaic-covered park perched above the city with views stretching to the sea. The mosaic dragon (El Drac), the hypostyle hall with 86 columns, and the serpentine bench on the main terrace are iconic. The park outside the monumental zone is free and has trails through Mediterranean vegetation. Allow 90 minutes.",
+            "tip": "Book the first slot (opening time) — the park fills quickly and the morning light on the mosaics is magical."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Gràcia — Barcelona's Village",
+            "text": "Walk downhill from Park Güell into Gràcia — a former independent village that still has its own character. The plazas — Plaça del Sol, Plaça de la Vila de Gràcia, Plaça de la Virreina — are the neighbourhood's living rooms, filled with families, buskers, and terrace bars. Lunch at La Pepita (creative bocadillos, €6–9) or a vermuteria for vermouth and olives (€3–5).",
+            "tip": "Gràcia is where young Barcelona actually lives — the Festa Major de Gràcia in mid-August sees streets decorated by residents in a competition."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Barceloneta Beach & Seafood",
+            "text": "Metro to Barceloneta — Barcelona's beach neighbourhood. Walk the promenade, swim in the Mediterranean (free public beaches), and watch the sunset from the breakwater. Dinner at a chiringuito (beach bar) or La Mar Salada for excellent affordable seafood (fideuà €14, paella €13). The boardwalk bars stay open late — or head back to El Born for more cocktails.",
+            "tip": "Skip the overpriced restaurants on the Barceloneta boardwalk — walk one block inland for the same seafood at half the price."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Casa Batlló, Montjuïc & Raval",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Passeig de Gràcia — Gaudí's Houses",
+            "text": "Walk the Passeig de Gràcia — Barcelona's grand boulevard with the Block of Discord, where three rival Modernista architects built competing facades. Casa Batlló (€35, book online) is Gaudí's dragon-themed masterpiece — the roof, the light well, and the bone-shaped balconies are extraordinary. Casa Milà/La Pedrera (€25) next door has a surreal rooftop with warrior chimneys.",
+            "tip": "Casa Batlló is expensive but the augmented reality experience and rooftop are genuinely spectacular — do not skip it."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Montjuïc — Views, Art & Gardens",
+            "text": "Metro to Paral·lel, then the Montjuïc funicular and Telefèric cable car (€13 return) for panoramic views. The Fundació Joan Miró (€15) has a stunning collection in a light-filled building. Walk through the Jardins de Mossèn Costa i Llobera (free, cacti garden) and the Montjuïc Castle (€5, harbour views). The Olympic stadium from 1992 is free to enter.",
+            "tip": "The Miró Foundation's rooftop sculpture terrace has one of the best views in Barcelona — included with your ticket."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "El Raval & Farewell",
+            "text": "El Raval is Barcelona's grittiest and most multicultural neighbourhood — and increasingly its most creative. Dinner at Bar Cañete (Catalan tapas, mains €10–16) or Flax & Kale for health-conscious food (€12–18). Walk past Botero's cat sculpture and MACBA's plaza (skateboarders until midnight). Drinks at 33|45 (vinyl bar) or Betty Ford's. The Magic Fountain light show (free, Fri–Sat) is nearby.",
+            "tip": "The Magic Fountain of Montjuïc does free light and music shows on Friday and Saturday evenings from 9pm — arrive 15 min early."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Gaudí, Gothic Quarter & El Born",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "La Sagrada Família",
+            "text": "Book the 9am slot (€26 with tower). The interior's tree-like columns and kaleidoscopic stained glass are unlike anything else on Earth. The Nativity facade tower offers aerial views of Barcelona. Gaudí is buried in the crypt. Walk through the Eixample grid afterwards — the chamfered block corners reveal hidden shops and cafes. Allow 90 minutes.",
+            "tip": "Morning light through the east windows creates the most intense colour effects — book the earliest available slot."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Gothic Quarter & Boqueria",
+            "text": "The Barri Gòtic hides Roman walls beneath medieval lanes. Walk Plaça del Rei (medieval royal palace), Plaça Sant Felip Neri (Civil War bullet holes), and Plaça Reial (Gaudí lampposts). Cathedral of Barcelona is free (rooftop €9). Lunch at La Boqueria market — smoothies €3, fresh oysters €2 each, seafood paella €10–14 at a stall bar.",
+            "tip": "The Roman temple columns hidden inside the Centre Excursionista de Catalunya (Carrer del Paradís) are free and most tourists miss them."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "El Born — Tapas & Nightlife",
+            "text": "El Born is Barcelona's most magnetic neighbourhood at night. Dinner at Cal Pep (seafood tapas, no reservations for bar seats — arrive 7:15pm), Bar del Pla (creative tapas, €5–9), or Bormuth (vermouth and small plates). Drinks at Paradiso (speakeasy behind a pastrami bar fridge), Collage cocktail bar, or wine at La Vinya del Senyor.",
+            "tip": "Paradiso is a world top-50 bar — the queue builds after 10pm. Go at 8pm for a shorter wait."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Park Güell, Gràcia & Beach",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Park Güell",
+            "text": "Pre-book Park Güell (€10). The mosaic dragon El Drac, the 86-column hypostyle hall, and the serpentine bench terrace with city-to-sea views are Gaudí at his most playful. The free zone outside has Mediterranean trails and a stone viaduct. Walk downhill into Gràcia afterwards. Allow 90 minutes for the monumental zone.",
+            "tip": "Book the first morning slot — by 11am the park is crowded and the mosaics in harsh light lose their magic."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Gràcia Neighbourhood",
+            "text": "Gràcia is a former village that resists being absorbed into Barcelona — independent boutiques, vinyl record shops, and vermuterias. Sit on Plaça del Sol or Plaça de la Virreina with the locals. Lunch at La Pepita (bocadillos, €6–9) or Chivuo's (gourmet burgers, €9–12). The vermouth culture here is strong — a glass with olives and chips costs €3–5.",
+            "tip": "Gràcia's Festa Major (mid-August) is the city's best neighbourhood festival — streets are decorated competitively and the parties are legendary."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Barceloneta Beach & Seafood",
+            "text": "Barceloneta beach at golden hour is peak Barcelona. Swim in the Mediterranean, walk the promenade, and watch the sunset from the W Hotel breakwater. Dinner at La Mar Salada (fideuà €14, excellent value) or Can Paixano/La Xampanyeria (cava and tapas, standing room only, €2 a glass). The boardwalk bars stay open past midnight.",
+            "tip": "Can Paixano (La Xampanyeria) serves rosé cava for €2 a glass with excellent tapas — cash only, always packed, always fun."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Modernisme & Montjuïc",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Passeig de Gràcia & Casa Batlló",
+            "text": "Walk the Passeig de Gràcia for the Block of Discord — Gaudí's Casa Batlló (€35), Domènech i Montaner's Casa Lleó Morera, and Puig i Cadafalch's Casa Amatller competing side by side. Casa Batlló's dragon-themed roof, bone balconies, and light well are extraordinary. Next door, Casa Milà/La Pedrera (€25) has a surreal rooftop of warrior chimneys.",
+            "tip": "Casa Batlló's first-entry morning ticket is cheapest and least crowded — the augmented reality experience is included."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Montjuïc — Miró & Views",
+            "text": "Funicular from Paral·lel, then Telefèric (€13 return) for panoramic harbour views. Fundació Joan Miró (€15) is set in a light-filled building with Miró's playful, colourful works and a rooftop sculpture terrace. Walk through the Jardí Botànic (€3.50) and past the 1992 Olympic stadium (free). Montjuïc Castle (€5) has the widest views of all.",
+            "tip": "The Miró Foundation is uncrowded even in peak season — a refreshing contrast to the Gaudí sites."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Poble Sec & Magic Fountain",
+            "text": "Descend to Poble Sec — a neighbourhood of narrow streets and incredible tapas bars along Carrer de Blai (pintxos bars where each tapa is €1–2 on a toothpick). Walk the entire street and sample from multiple bars. End at the Magic Fountain of Montjuïc — free light, water, and music shows on Friday and Saturday evenings from 9pm. The National Palace backdrop is dramatic.",
+            "tip": "Carrer de Blai in Poble Sec is Barcelona's best-value tapas street — each pintxo is €1–2 and the quality is excellent."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Montserrat Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Train & Cable Car to Montserrat",
+            "text": "FGC train from Plaça Espanya to Montserrat Aeri (1 hour, €22 Tot Montserrat pass includes all transport, museum, and lunch discount). The cable car ascent above the valley is spectacular. The Montserrat monastery, set into dramatic serrated rock formations at 720 metres, houses the Black Madonna — the Moreneta. Arrive by 10am for the boys' choir (La Escolania) performance at 1pm.",
+            "tip": "The Tot Montserrat pass covers everything — train, cable car/rack railway, museum, and a meal voucher. Buy at Plaça Espanya."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hiking & Mountain Views",
+            "text": "Montserrat has several hiking trails through the otherworldly rock formations. The Sant Joan funicular (included in pass) takes you to a higher trailhead — the walk to the Sant Joan chapel (45 min) rewards you with views across Catalonia to the Pyrenees on clear days. The Sant Miquel viewpoint is easier and equally stunning. Pack water and sunscreen.",
+            "tip": "The Sant Joan trail has exposed sections with no shade — bring water, a hat, and proper footwear. The views are worth every step."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Raval Dinner",
+            "text": "Train back to Barcelona. Explore El Raval — the most multicultural neighbourhood in the city. Walk past Botero's fat cat sculpture and the MACBA plaza (skateboarders and street art). Dinner at Bar Cañete (excellent Catalan tapas, mains €10–16), Dos Palillos (Asian-Catalan fusion), or any of the international restaurants along Carrer de Joaquin Costa.",
+            "tip": "MACBA plaza at night is one of Barcelona's great social scenes — skaters, buskers, and locals mingling under the museum lights."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Picasso, Poblenou & Beach",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Museu Picasso & El Born",
+            "text": "The Museu Picasso (€12, free first Sunday of each month and every Thursday 4–7pm) occupies five medieval palaces on Carrer de Montcada. The collection focuses on Picasso's formative Barcelona years and his extraordinary Las Meninas series — 58 reinterpretations of Velázquez's masterpiece. The medieval palace courtyards alone are worth the visit. Allow 90 minutes.",
+            "tip": "Free Thursday evenings (4–7pm) get crowded — arrive at 3:45pm to queue. Otherwise, weekday mornings are best."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Poblenou — Barcelona's Brooklyn",
+            "text": "Metro to Poblenou — a former industrial district now the city's creative tech hub. Walk the Rambla del Poblenou (calmer than La Rambla), explore the Palo Alto market (first and third weekend of the month, free), and admire the street art around Carrer de Pallars. Lunch at Els Quatre Gats (homage to the historic restaurant) or the Poblenou market for budget options.",
+            "tip": "The Palo Alto market in a hidden garden is one of Barcelona's best — design, food trucks, and live music in a fairytale setting."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Bogatell Beach & Nightlife",
+            "text": "Playa de Bogatell is locals' preferred beach — less crowded than Barceloneta with beach volleyball courts and good chiringuitos. Swim, sunbathe, then watch the sunset. For nightlife, Barcelona goes late — dinner at 9:30pm, drinks from 11pm, clubs from 2am. Razzmatazz (five rooms, diverse music, €12–18) or Sala Apolo (indie/electronic in a vintage ballroom, €10–15).",
+            "tip": "Barcelona clubs do not fill up before 2am — pre-game at El Born bars and arrive at the club after midnight."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Sant Pau, Bunkers & Local Life",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Hospital de Sant Pau & Eixample",
+            "text": "The Recinte Modernista de Sant Pau (€15) is Domènech i Montaner's masterpiece — a UNESCO World Heritage hospital complex covered in mosaics, stained glass, and ceramic tile. Less famous than Gaudí's works but arguably more beautiful as a complete ensemble. Walk through the Eixample grid — the chamfered block interiors (hidden superblocks) reveal secret gardens and community spaces.",
+            "tip": "Sant Pau is directly up the street from Sagrada Família — the view of Gaudí's basilica from Sant Pau's main pavilion is a perfect photo."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bunkers del Carmel",
+            "text": "Walk or bus to the Bunkers del Carmel (free) — abandoned Civil War anti-aircraft batteries on a hilltop with the single best 360° view of Barcelona. The city, mountains, sea, and Sagrada Família are all visible. Locals come here at sunset with wine and snacks. It is a steep walk up from metro Alfons X but well worth it. Less known than Tibidabo, more rewarding.",
+            "tip": "Bring wine, snacks, and a blanket for sunset at the Bunkers — this is Barcelona's ultimate local sunset experience."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sant Antoni & Vermouth",
+            "text": "Sant Antoni is Barcelona's hippest emerging neighbourhood. The Mercat de Sant Antoni (reopened after renovation) is stunning. Vermouth culture thrives here — Bar Calders, Federal Café, and the vermut bars on Carrer del Parlament are the neighbourhood's living room. Dinner at Lolita Tapería (creative tapas, €4–8) or Morro Fi (Catalan bistro, mains €12–16).",
+            "tip": "Sunday vermouth session at Bar Calders with a plate of olives, chips, and a glass of house vermut for €4 is a Barcelona institution."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Tibidabo, Markets & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tibidabo Mountain",
+            "text": "FGC train to Peu del Funicular, then the Tramvia Blau (heritage tram, €5.50) and Tibidabo funicular (€4.10 one way) to the top. At 512 metres, Tibidabo offers the highest view of Barcelona with the sea stretching to the horizon. The Temple del Sagrat Cor church is free and has a lift to the very top (€4). The vintage amusement park next door (€35) is charmingly retro.",
+            "tip": "The Tramvia Blau only runs weekends and holidays — on weekdays, take bus 196 from the FGC station instead."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Mercat dels Encants & Last Shopping",
+            "text": "Mercat dels Encants (Mon/Wed/Fri/Sat) is Barcelona's open-air flea market — housed under a spectacular mirrored canopy near Glòries. Vintage clothing, antiques, vinyl records, and oddities at negotiable prices. For food souvenirs, head to a supermarket for olive oil, turrones, and canned seafood. Or visit Vila Viniteca in El Born for Catalan wines.",
+            "tip": "Arrive at the Encants before 10am when the morning auction happens — professional dealers bid but the atmosphere is fascinating."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Dinner & Sunset",
+            "text": "One final Barcelona evening. Dinner at a classic restaurant — Can Culleretes (Barri Gòtic, open since 1786, Catalan classics, mains €12–18) or splurge at Cervecería Catalana (book ahead, tapas €5–10). Walk La Rambla one last time, toast at a rooftop bar on Passeig de Gràcia, and catch the airport Aerobus from Plaça Catalunya (€7.75, every 5 minutes, 35 min to T1).",
+            "tip": "The Aerobus from Plaça Catalunya to the airport is faster and cheaper than a taxi — runs until 1am."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free first Sundays",
+      "text": "Many museums are free on the first Sunday of the month — Museu Picasso, MNAC, MACBA, and Museu d'Història. The Picasso Museum also has free Thursday evenings 4–7pm. Book online even for free sessions."
+    },
+    {
+      "title": "Eat cheap on Carrer de Blai",
+      "text": "Poble Sec's Carrer de Blai has pintxos bars where each tapa costs €1–2 on a toothpick. A filling dinner of 6–8 pintxos with a drink costs €10–15. Far cheaper than the Rambla or Born."
+    },
+    {
+      "title": "T-Casual transport card",
+      "text": "The T-Casual (€11.35 for 10 trips, Zone 1) covers metro, bus, tram, and FGC. Each trip allows connections within 75 minutes. Walking is often faster — the city centre is very compact."
+    },
+    {
+      "title": "Beach for free",
+      "text": "Barcelona's beaches are free — Barceloneta, Bogatell, Mar Bella, and Nova Icaria all have free access, showers, and facilities. Bring your own towel and snacks from a supermarket instead of renting sun beds."
+    },
+    {
+      "title": "Vermouth hour",
+      "text": "L'hora del vermut (vermouth hour, noon–2pm) is Catalan tradition — a glass of house vermut with olives costs €3–5 at most bars. It is the cheapest and most cultural way to start your afternoon."
+    },
+    {
+      "title": "Sunset at the Bunkers",
+      "text": "The Bunkers del Carmel have the best free view in Barcelona — bring supermarket wine and snacks for sunset. Free, local, and more impressive than any paid viewpoint in the city."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "€20–40",
+      "midrange": "€65–130",
+      "splurge": "€170+",
+      "notes": "Hostels → boutique hotels → luxury hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "€12–22",
+      "midrange": "€28–50",
+      "splurge": "€65+",
+      "notes": "Pintxos & markets → tapas bars → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "€3–8",
+      "midrange": "€10–18",
+      "splurge": "€25+",
+      "notes": "Metro & walking → taxi/Uber → private transfers"
+    },
+    {
+      "category": "Activities",
+      "budget": "€0–12",
+      "midrange": "€20–40",
+      "splurge": "€55+",
+      "notes": "Free sites & beaches → museums → Gaudí combined"
+    },
+    {
+      "category": "Drinks",
+      "budget": "€4–10",
+      "midrange": "€12–22",
+      "splurge": "€30+",
+      "notes": "Vermut & cañas → wine bars → cocktail bars"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "€39–92",
+      "midrange": "€135–260",
+      "splurge": "€345+",
+      "notes": "$42–100 → $147–283 → $375+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Schengen Zone — most nationalities get 90 days visa-free within any 180-day period",
+        "Barcelona El Prat Airport (BCN): Aerobus to Plaça Catalunya (€7.75, 35 min, every 5 min). Metro L9 (€5.15, 40 min)",
+        "Girona Airport (GRO, 100km) used by Ryanair — bus to Barcelona (€12, 75 min)"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required. Tap water is safe but heavily chlorinated — many locals buy bottled. Free fountains exist",
+        "Pickpocketing is Barcelona's biggest issue — extremely common on La Rambla, metro L3, and at the beach. Front pockets, money belt, no bags on chair backs",
+        "Emergency 112. Mossos d'Esquadra (Catalan police) handle most local issues. Pharmacies (farmàcies) marked by green crosses"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "TMB metro: 12 lines, runs 5am–midnight (24hr Fri, 5am–midnight Sat). T-Casual 10-trip card: €11.35 Zone 1",
+        "City is very walkable — Sagrada Família to the beach is 30 minutes on foot. Bicing bike-share requires local address, so use Donkey Republic (€8/day)",
+        "Taxis are yellow/black, metered, and affordable. Uber/Cabify work. Airport taxi fixed fare to centre: €39"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Free WiFi in most cafes, the Barcelona WiFi network covers some public spaces, and metro stations have connectivity",
+        "EU roaming at home rates. Otherwise, Orange, Vodafone, or Lycamobile tourist SIMs from €10 for 10GB at phone shops or estancos",
+        "Download TMB app for metro/bus planning, and Google Maps offline. ElTenedor (TheFork) for restaurant deals up to 50% off"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Cards accepted almost everywhere including contactless. Some market stalls and small bars prefer cash — carry €15–20",
+        "ATMs (caixer) everywhere. Use bank ATMs (CaixaBank, BBVA, Sabadell) — avoid standalone Euronet machines",
+        "Tipping is not expected. Rounding up the bill or leaving €1–2 for excellent service is appreciated. Cover charges are rare"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Light, casual clothes for summer (30°C+). A light jacket for evenings even in summer — the sea breeze can be cool",
+        "Comfortable walking shoes — the city is hilly (Montjuïc, Park Güell, Bunkers). Flip-flops for the beach only",
+        "Swimsuit for beaches, a small daypack (worn in front on the metro), sunscreen, and sunglasses"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🏴",
+      "title": "Catalan Identity",
+      "text": "Barcelona is Catalan, not just Spanish. Signs are in Catalan first. Saying \"Bon dia\" (good morning) or \"Gràcies\" (thank you) instead of Spanish earns genuine appreciation from locals."
+    },
+    {
+      "icon": "🕐",
+      "title": "Spanish Schedule",
+      "text": "Lunch is 2–3:30pm, dinner starts at 9pm. Nightlife kicks off after midnight, clubs open at 2am. Adapt to the rhythm — eating at 7pm means empty restaurants and confused waiters."
+    },
+    {
+      "icon": "🍷",
+      "title": "Vermouth Culture",
+      "text": "L'hora del vermut (vermouth hour, noon–2pm Sunday) is sacred. A glass of house vermut (€3) with olives, chips, and conserves at a neighbourhood bar is one of Barcelona's greatest pleasures."
+    },
+    {
+      "icon": "🏖️",
+      "title": "Beach Etiquette",
+      "text": "Topless sunbathing is normal and legal. Keep belongings close — beach theft is the most common crime. Never leave bags unattended while swimming. Use lockers at hostels."
+    },
+    {
+      "icon": "🙏",
+      "title": "Tourist Fatigue",
+      "text": "Barcelona has 12 million tourists per year in a city of 1.6 million. Residents are increasingly frustrated. Stay in less-touristy neighbourhoods, eat where locals eat, and be respectful of residential areas."
+    },
+    {
+      "icon": "⚽",
+      "title": "Football Culture",
+      "text": "FC Barcelona (Barça) is more than a club — it is a symbol of Catalan identity. Match day at Spotify Camp Nou (tickets from €40) is electric. Wearing a Real Madrid shirt in Barcelona is a bold choice."
+    }
+  ],
+  "title": "Barcelona Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Barcelona guide for young travelers. 3-day itinerary with Gaudí masterpieces, beach days, tapas crawls, and nightlife. Plan your trip with roammate.",
+  "heroImage": "/images/guides/barcelona-hero.webp",
+  "heroFlag": "🇪🇸",
+  "heroCountry": "Spain",
+  "heroRegion": "Europe",
+  "heroCity": "Barcelona",
+  "heroSubtitle": "A city where Gaudí's impossible architecture meets Mediterranean beaches, and every neighbourhood has its own heartbeat.",
+  "budgetIntro": "Daily costs per person in euros. Barcelona is excellent value for Western Europe — beaches are free, tapas are cheap, and many museums have free-entry windows.",
+  "culturalIntro": "Barcelona is proudly Catalan — with its own language, culture, and traditions. Respect the local identity, embrace the late-night schedule, and you will be welcomed warmly.",
+  "ctaCity": "Barcelona",
+  "ctaText": "Find travel companions to explore Gaudí's masterpieces, share beach days in Barceloneta, or hit El Born's bars together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Apr – Oct Best"
+  ],
+  "defaultDays": 3
+}

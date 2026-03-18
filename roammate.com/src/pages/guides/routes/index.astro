@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { backpackerRoutes as routeData } from '../../../data/guides';
+import { getBackpackerRoutes } from '../../../data/guides';
 
+const routeData = await getBackpackerRoutes();
 const backpackerRoutes = routeData.map((r) => ({
   slug: r.slug,
   title: r.name,

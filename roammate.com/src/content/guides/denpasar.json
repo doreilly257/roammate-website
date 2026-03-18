@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "denpasar",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "IDR (Rp Rupiah)",
+      "detail": "1 USD ≈ Rp15,800"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Indonesian / Balinese",
+      "detail": "English in tourist areas"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "WITA (UTC+8)",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Apr – Oct",
+      "detail": "27–30°C, dry season"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$30–50 USD",
+      "detail": "Rp470,000–790,000 budget"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Visa on arrival 30 days",
+      "detail": "Rp500,000 (~$32) — extendable once"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Bali Highlights in 24 Hours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tegallalang Rice Terraces & Ubud",
+            "text": "Start early with a Grab or driver to Tegallalang Rice Terraces (Rp20,000 entry) north of Ubud — the iconic stepped terraces carved into steep hillsides using the ancient Balinese subak irrigation system. Walk the trails through the terraces before the tour buses arrive. Then explore Ubud's cultural heart — the Royal Palace (free, dance performances at 7:30pm) and the Ubud Art Market for handmade crafts, paintings, and batik.",
+            "tip": "Arrive at Tegallalang by 8am to beat the Instagram crowds. The smaller Jatiluwih terraces (1 hour further) are a UNESCO site and far less crowded."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sacred Monkey Forest & Ubud Cafes",
+            "text": "Walk through the Sacred Monkey Forest Sanctuary (Rp80,000) — a mystical temple complex in a dense jungle with 700+ long-tailed macaques, ancient banyan trees, and moss-covered stone carvings. The three Hindu temples within are still active. Then explore Ubud's famous cafe scene — Seniman Coffee Studio serves excellent single-origin Bali coffee (Rp45,000) and the vegan smoothie bowls at Clear Cafe are legendary (Rp65,000).",
+            "tip": "At the Monkey Forest, secure all loose items — the monkeys will grab sunglasses, phones, and water bottles. Do not make eye contact or show teeth (seen as aggression)."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Tanah Lot Sunset",
+            "text": "Drive to Tanah Lot Temple (Rp60,000) — Bali's most iconic sea temple perched on a rocky outcrop surrounded by crashing waves. Arrive by 5pm for the sunset — the silhouette of the temple against the orange sky is one of Indonesia's most photographed moments. The temple complex has food stalls (nasi goreng Rp25,000) and craft shops. The sea snakes in the temple base are considered sacred.",
+            "tip": "Tanah Lot at sunset is extremely crowded — arrive by 4:30pm and walk past the main viewing area to the cliff on the left for a less obstructed angle."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Ubud — Culture, Nature & Terraces",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tegallalang Rice Terraces",
+            "text": "Start early at Tegallalang Rice Terraces (Rp20,000) north of Ubud — iconic stepped terraces using the ancient subak irrigation system. Walk the trails through the paddies before tour buses arrive. The morning mist rising from the terraces creates an ethereal atmosphere. Stop at one of the cliffside cafes for a Bali coffee overlooking the green valley — views that justify every \"Eat Pray Love\" cliché.",
+            "tip": "Arrive by 8am to beat the crowds. The Instagram swing photos are overpriced (Rp150,000–300,000) — walk past them to the free terraces behind."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sacred Monkey Forest & Ubud Palace",
+            "text": "Walk through the Sacred Monkey Forest (Rp80,000) — a jungle temple complex with 700+ macaques and moss-covered stone carvings. The three Hindu temples inside are still active and the ancient banyan trees create a cathedral-like canopy. Then walk to Ubud Royal Palace (free) and the adjacent Ubud Art Market — handmade crafts, paintings, and batik. Haggle hard — start at 30% of asking.",
+            "tip": "The monkeys will grab anything loose — secure sunglasses, phones, and water bottles. Do not make eye contact or show teeth."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kecak Fire Dance & Dinner",
+            "text": "Attend the Kecak Fire Dance at Ubud Royal Palace (Rp100,000, 7:30pm) — a mesmerizing Balinese performance where 50+ men chant \"cak-cak-cak\" in rhythmic circles while enacting scenes from the Hindu Ramayana epic with fire. It is one of the most powerful cultural performances in Southeast Asia. Dinner at Warung Biah Biah for traditional Balinese food — nasi campur (Rp35,000) on a banana leaf.",
+            "tip": "Buy Kecak tickets early in the day from the palace ticket office — evening performances sell out. Arrive 30 minutes early for a front-row seat."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Temples, Waterfalls & Sunset",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tirta Empul Water Temple",
+            "text": "Drive to Tirta Empul (Rp50,000) — a sacred water temple where Balinese Hindus perform purification rituals in the holy spring pools. Visitors can participate — wear a sarong (provided), enter the pools, and move through the 13 fountains as worshippers do, praying under each spout. The experience is spiritual regardless of your beliefs. The temple dates to 962 AD and the ornate carvings are extraordinary.",
+            "tip": "Participate in the purification ritual — it is welcomed and deeply moving. Follow the locals and skip fountains 11 and 12 which are for the deceased."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tegenungan Waterfall & Coffee Plantation",
+            "text": "Drive to Tegenungan Waterfall (Rp20,000) — a powerful cascade into a jungle swimming hole accessible by a short staircase. Swim in the pool below the falls for a refreshing break. Then visit a Bali coffee plantation (most are free with a tasting) to try luwak coffee — the famous civet cat coffee (Rp50,000 per cup). The plantations also show how vanilla, cacao, and cinnamon are grown.",
+            "tip": "Tegenungan is best before 10am when the light streams into the gorge. Bring a waterproof phone case — the mist from the falls soaks everything."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Tanah Lot Sunset",
+            "text": "Drive to Tanah Lot Temple (Rp60,000) — Bali's most iconic sea temple perched on a rocky outcrop surrounded by waves. The silhouette against the sunset sky is unmissable. The temple complex has food stalls (nasi goreng Rp25,000). On the way back, stop at a warung (family restaurant) for babi guling (suckling pig, Rp50,000) — Bali's most famous non-halal dish, crispy and aromatic.",
+            "tip": "Arrive at Tanah Lot by 4:30pm for parking and a good viewpoint. Walk past the main crowd to the cliff edge on the left for a wider angle."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Beach Life & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Uluwatu Temple & Clifftop",
+            "text": "Drive to Uluwatu Temple (Rp50,000) — a dramatic clifftop temple 70 metres above the Indian Ocean on Bali's southern tip. The carved coral walls date to the 11th century. The resident monkeys are notorious thieves — remove glasses and secure everything. The views from the cliff edge are staggering. Walk the cliff trail for 30 minutes of the most dramatic coastal scenery in Bali.",
+            "tip": "Uluwatu is best visited in the morning for photos (backlit at sunset for the Kecak dance). The monkeys here are more aggressive than Ubud — hide everything."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Padang Padang Beach & Surf",
+            "text": "Walk down the stone staircase through a cave to Padang Padang Beach — a tiny crescent of white sand between dramatic cliffs, famous from the \"Eat Pray Love\" movie. The water is crystal clear and the reef break is popular with intermediate surfers. Rent a board (Rp100,000/2 hours) or just swim. For a quieter experience, continue to Bingin Beach — a surfer village accessed by steep stairs with cliffside warungs.",
+            "tip": "Padang Padang is tiny and crowded by midday. Arrive early or go to Bingin instead — fewer people, better surf, and cliffside cafes with ocean views."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Uluwatu Kecak Dance & Jimbaran Seafood",
+            "text": "Return to Uluwatu for the sunset Kecak Fire Dance (Rp150,000, 6pm) — performed on the cliff edge with the Indian Ocean as backdrop, it is the most dramatic setting for the performance in all of Bali. Then drive to Jimbaran Bay for the farewell dinner — the beachfront seafood restaurants set up tables and candles on the sand. Choose your fish by weight (Rp100,000–200,000) and eat with your feet in the sand.",
+            "tip": "The Jimbaran beach restaurants all serve similar seafood at similar prices — pick one with an empty table on the sand closest to the water for the best sunset position."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Ubud Culture & Terraces",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tegallalang Rice Terraces",
+            "text": "Start at Tegallalang Rice Terraces (Rp20,000) north of Ubud — iconic stepped terraces using the ancient subak irrigation system. Walk the trails through the paddies before tour buses arrive. Stop at a cliffside cafe for Bali coffee overlooking the green valley. The morning mist rising from the terraces is ethereal and justifies every early alarm.",
+            "tip": "Arrive by 8am to beat the crowds. Walk past the Instagram swing area to the free terraces behind for a more peaceful experience."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Sacred Monkey Forest & Art Market",
+            "text": "Sacred Monkey Forest (Rp80,000) — a jungle temple complex with 700+ macaques and ancient banyan trees. Then Ubud Royal Palace (free) and Art Market — handmade crafts and batik. Lunch at Warung Biah Biah for nasi campur (Rp35,000) on a banana leaf. Explore Ubud's cafe scene — Seniman Coffee Studio for single-origin Bali coffee (Rp45,000).",
+            "tip": "Secure everything around the monkeys. At the Art Market, start haggling at 30% of asking — vendors expect negotiation."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Kecak Fire Dance",
+            "text": "Attend the Kecak Fire Dance at Ubud Royal Palace (Rp100,000, 7:30pm) — 50+ men chant in rhythmic circles enacting the Ramayana with fire. One of Southeast Asia's most powerful cultural performances. Dinner at Locavore To Go for modern Balinese cuisine at accessible prices (Rp45,000–90,000). The original Locavore is one of Asia's best restaurants but the casual sibling delivers similar quality.",
+            "tip": "Buy Kecak tickets early from the palace — shows sell out. Arrive 30 minutes early for front-row seats on the floor."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Sacred Temples & Waterfalls",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Tirta Empul Purification",
+            "text": "Drive to Tirta Empul (Rp50,000) — a sacred spring temple where Balinese Hindus perform purification rituals. Visitors can participate — wear a sarong (provided) and move through the 13 fountains, praying under each spout. The experience is spiritual regardless of beliefs. The temple dates to 962 AD. Nearby, Gunung Kawi (Rp50,000) has spectacular rock-cut shrines from the 11th century.",
+            "tip": "Participate in the purification — it is welcomed and moving. Skip fountains 11 and 12 which are reserved for the deceased."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tegenungan & Tibumana Waterfalls",
+            "text": "Visit Tegenungan Waterfall (Rp20,000) — a powerful cascade into a jungle swimming hole. Swim in the pool below the falls. For a quieter waterfall, continue to Tibumana Waterfall (Rp15,000) — a twin cascade in a bamboo gorge with far fewer tourists. The walk through the rice paddies to reach it is beautiful in itself. Stop at a coffee plantation for free tasting including luwak coffee.",
+            "tip": "Tibumana is one of Bali's most underrated waterfalls — the bamboo forest trail and the quiet twin cascades make it far more peaceful than Tegenungan."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Tanah Lot Sunset",
+            "text": "Drive to Tanah Lot (Rp60,000) for Bali's most iconic sunset — the sea temple silhouetted against the sky. Food stalls sell nasi goreng (Rp25,000) and fresh coconut water. On the return, dinner at Warung Mak Beng in Sanur (Rp55,000) — a legendary fish restaurant serving only one dish: deep-fried fish with sambal, rice, and soup. No menu, no choices, just perfection.",
+            "tip": "Warung Mak Beng has been serving the same single dish since the 1940s — the lack of menu is part of the charm. Cash only."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "South Bali — Beaches & Cliffs",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Uluwatu Temple",
+            "text": "Drive to Uluwatu Temple (Rp50,000) on the southern tip — a dramatic clifftop temple 70 metres above the Indian Ocean. The 11th-century coral walls and the crashing waves below are staggering. Walk the cliff trail for 30 minutes of Bali's most dramatic coastal scenery. The resident monkeys are notorious thieves — remove glasses and secure everything.",
+            "tip": "Morning visits offer the best light for cliff photography. The Kecak dance here at sunset (6pm, Rp150,000) is the most dramatic setting in Bali."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Padang Padang & Bingin Beach",
+            "text": "Walk through a cave entrance to Padang Padang Beach — white sand between dramatic cliffs, famous from \"Eat Pray Love.\" The water is crystal clear. Rent a surfboard (Rp100,000/2 hours) or swim. Then walk to Bingin Beach — a surfer village accessed by steep stairs with cliffside warungs serving cold Bintang beer (Rp30,000) and grilled fish (Rp60,000) overlooking the Indian Ocean.",
+            "tip": "Bingin is the locals' favourite beach — fewer tourists, better waves, and the clifftop warungs have the best views of any budget restaurant in Bali."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Jimbaran Seafood on the Sand",
+            "text": "Jimbaran Bay's beachfront restaurants set up tables and candles on the sand at sunset. Choose your seafood by weight — grilled fish (Rp80,000), prawns (Rp120,000), and squid (Rp60,000) — and eat with your toes in the sand as the sun drops into the Indian Ocean. Cold Bintang: Rp30,000. This is Bali dining at its most romantic and it does not need to be expensive.",
+            "tip": "Pick a restaurant table closest to the waterline for the best sunset. All restaurants along the strip serve similar quality at similar prices."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Nusa Penida Island Day Trip",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Fast Boat to Nusa Penida",
+            "text": "Take a fast boat from Sanur Harbour to Nusa Penida (Rp150,000–200,000, 30 minutes). This rugged island southeast of Bali has some of the most dramatic landscapes in Indonesia. Rent a scooter (Rp75,000/day) or hire a driver (Rp400,000/day). Head to Kelingking Beach — the famous T-Rex cliff viewpoint with a hidden beach 400 steps below. The turquoise water against the white limestone is extraordinary.",
+            "tip": "The roads on Nusa Penida are rough and steep — only rent a scooter if you are very confident. Hire a local driver for safety and local knowledge."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Angel's Billabong & Broken Beach",
+            "text": "Continue to Angel's Billabong — a natural infinity pool on the cliff edge where turquoise water pools between the rocks (safe to swim at low tide). Adjacent is Broken Beach (Pasih Uug) — a circular arch formation with a natural bridge over the sea that looks like a scene from Jurassic Park. The cliffs and rock formations here are genuinely otherworldly. Pack lunch or eat at a simple warung nearby.",
+            "tip": "Angel's Billabong is only safe to swim at low tide — check tidal charts before visiting. The current through the pool can be strong at high tide."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Crystal Bay Snorkel & Return",
+            "text": "Head to Crystal Bay for snorkelling — the coral reefs here are Bali's best, with manta rays a regular sighting (Rp150,000 for a snorkel trip). The bay faces west so the sunset is spectacular. Catch the 4pm or 5pm fast boat back to Sanur. Dinner in Sanur's beachfront restaurants — a quieter, more laid-back alternative to Kuta with excellent Indonesian food and craft cocktails.",
+            "tip": "Crystal Bay snorkelling between 10am–2pm gives the best underwater visibility. Manta ray sightings are most common during the dry season (Apr–Oct)."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Canggu & Surf Culture",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Surf Lesson at Batu Bolong",
+            "text": "Head to Canggu — Bali's surf and digital nomad capital. Batu Bolong Beach is perfect for beginners — rent a board (Rp100,000/2 hours) or book a lesson (Rp350,000 for 2 hours with an instructor). The waves are gentle and the sand bottom is forgiving. After surfing, breakfast at Crate Cafe (Rp65,000 for smoothie bowl and coffee) or the more local Warung Dandelion (Rp30,000 for nasi campur).",
+            "tip": "Surf before 9am for the cleanest waves and smallest crowds. Batu Bolong instructors are all over the beach — negotiate ₫300,000 for a 2-hour lesson."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Tanah Lot & Echo Beach",
+            "text": "After lunch, drive to nearby Tanah Lot if you missed it earlier, or head to Echo Beach — Canggu's more local surf beach with a dramatic rocky coastline and excellent beachfront warungs. The Lawn is a popular sunset bar with pool access (Rp100,000 minimum spend) and DJ sets. For something more authentic, the local warungs at the southern end of Echo Beach serve nasi goreng (Rp25,000) with ocean views.",
+            "tip": "Echo Beach at sunset is Canggu's main event — grab a Bintang at a beachfront warung and watch the surfers ride the last waves of the day."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Canggu Nightlife",
+            "text": "Canggu has Bali's best nightlife for young travelers. Old Man's is the legendary surf bar with live music and cheap drinks (Bintang Rp30,000). La Brisa is a stunning driftwood beach club with cocktails (Rp120,000). Deus Ex Machina is a motorcycle-themed temple of cool with a restaurant, gallery, and live events. The scene is international, creative, and runs late every night of the week.",
+            "tip": "Old Man's hosts live music most nights and gets packed by 10pm. Arrive by 8pm for a table. The pizza is surprisingly good for a surf bar."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "North Bali & Mount Batur",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Mount Batur Sunrise Trek",
+            "text": "Wake at 2am for the Mount Batur sunrise trek (Rp400,000–600,000 with guide, mandatory). The 2-hour hike in the dark leads to the summit of an active volcano for a sunrise above the clouds with Lake Batur and Mount Agung visible in the distance. Breakfast of eggs cooked by volcanic steam is included. The sunrise at 1,700 metres above sea level is one of Bali's most unforgettable experiences.",
+            "tip": "Book through a local guide, not a big tour company — smaller groups (4–6) are better on the narrow trail. Bring a headlamp and a warm layer — it is cold at the summit."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Hot Springs & Lake Batur",
+            "text": "Descend and recover at the Toya Devasya Hot Springs (Rp180,000) on the shores of Lake Batur — natural volcanic hot pools with views of the volcano you just climbed. The warm water soothes every muscle. Then drive to Kintamani for lunch at a restaurant overlooking the caldera — the views of the lake and volcano are stunning. The drive back through the rice terraces is beautiful.",
+            "tip": "The hot springs are worth the entry fee after the trek — the combination of volcanic pool views and sore-muscle relief is perfect."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Seminyak Dining & Drinks",
+            "text": "Head to Seminyak for a more upscale evening. Dinner at Mama San — Asian fusion in a colonial warehouse (mains Rp150,000–250,000). Or keep it real at Warung Made for Balinese classics (Rp50,000–90,000). For cocktails, Potato Head Beach Club is an institution — the sunset views from the art-deco building with infinity pool and cocktails from Rp130,000 are quintessential Bali.",
+            "tip": "Potato Head has a minimum spend policy at peak times — the afternoon is more relaxed. The building's recycled shutter facade is architectural art."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Cooking, Relaxation & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Balinese Cooking Class",
+            "text": "Book a cooking class in Ubud — Paon Bali (Rp350,000) or Casa Luna (Rp450,000) start with a market tour then teach 5–7 Balinese dishes including sate lilit (lemongrass-wrapped minced fish), lawar (spiced coconut salad), and nasi goreng. Balinese cooking uses fresh spice pastes ground by hand — the aromatic base paste (bumbu) lesson alone is worth the class. You eat everything you cook.",
+            "tip": "Morning classes include the market tour — the Ubud market at 7am is vibrant, chaotic, and the best introduction to Balinese ingredients."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Spa & Last Beach",
+            "text": "Bali is famous for affordable spa treatments. A 90-minute Balinese massage costs Rp150,000–300,000 at any of the hundreds of spas in Ubud, Seminyak, or Canggu. For a splurge, Fivelements in Ubud offers riverside bamboo treatment rooms. Then one last beach — return to your favourite from the week or discover Nyang Nyang Beach (Uluwatu) — a hidden stretch accessed by 500 steps, virtually empty.",
+            "tip": "Balinese massage shops are everywhere — quality varies widely. Ask your hostel for a recommendation rather than walking into the nearest one."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Sunset & Dinner",
+            "text": "For a final splurge, Rock Bar at Ayana Resort in Jimbaran — cocktails on a platform carved into the cliffside 14 metres above the ocean (Rp200,000+ per cocktail, reservation required). Budget farewell: one last Jimbaran Bay seafood dinner on the sand with your feet in the Indian Ocean. A final Bintang, a final sunset, and the promise that you will return — because everyone returns to Bali.",
+            "tip": "Rock Bar requires reservations for sunset slots — book at least 2 days ahead. Ngurah Rai Airport is only 15 minutes from Jimbaran."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Warungs are your kitchen",
+      "text": "Nasi goreng at a warung: Rp20,000–30,000. Same dish at a Seminyak restaurant: Rp80,000+. Eat at local warungs (family restaurants) for authentic food at a fraction of tourist-area prices. Look for the places full of Balinese workers."
+    },
+    {
+      "title": "Rent a scooter",
+      "text": "Scooter rental: Rp60,000–80,000/day. This is the only practical way to explore Bali independently. Grab works in South Bali but coverage is patchy. Taxis are overpriced outside Kuta/Seminyak. International license technically required."
+    },
+    {
+      "title": "Skip the beach clubs",
+      "text": "Beach club entry and minimum spends add Rp200,000–500,000. The beaches themselves are free. Buy a Bintang from a warung (Rp25,000), rent a mat, and enjoy the same sunset the club charges ten times more for."
+    },
+    {
+      "title": "Book day trips locally",
+      "text": "Mt Batur sunrise, Nusa Penida, and snorkelling tours are 30–50% cheaper booked directly with local operators in Ubud or your hostel than through online platforms. Compare prices at 2–3 shops."
+    },
+    {
+      "title": "Negotiate everything",
+      "text": "Taxi fares, market souvenirs, scooter rental, and private drivers all expect negotiation. Start at 40–50% of asking price. The only things with fixed prices are warungs, convenience stores, and official attractions."
+    },
+    {
+      "title": "Free temples and views",
+      "text": "Many smaller temples are free. Rice terrace walks are free (some charge Rp10,000–20,000). Sunrise from the beach is free. The best experiences in Bali — the culture, the nature, the spirituality — cost very little."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "Rp100,000–250,000",
+      "midrange": "Rp500,000–1,200,000",
+      "splurge": "Rp3,000,000+",
+      "notes": "Hostels → boutique villas → luxury resorts"
+    },
+    {
+      "category": "Food",
+      "budget": "Rp75,000–150,000",
+      "midrange": "Rp200,000–500,000",
+      "splurge": "Rp1,000,000+",
+      "notes": "Warungs → restaurants → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "Rp60,000–100,000",
+      "midrange": "Rp200,000–400,000",
+      "splurge": "Rp800,000+",
+      "notes": "Scooter → Grab & driver → private car"
+    },
+    {
+      "category": "Activities",
+      "budget": "Rp50,000–200,000",
+      "midrange": "Rp300,000–700,000",
+      "splurge": "Rp1,500,000+",
+      "notes": "Temples & beaches → tours & cooking → diving & spa"
+    },
+    {
+      "category": "Drinks",
+      "budget": "Rp30,000–80,000",
+      "midrange": "Rp100,000–250,000",
+      "splurge": "Rp500,000+",
+      "notes": "Warung Bintang → cafe cocktails → beach club"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "Rp315,000–780,000",
+      "midrange": "Rp1,300,000–3,050,000",
+      "splurge": "Rp6,800,000+",
+      "notes": "$20–49 → $82–193 → $430+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "Visa on arrival: Rp500,000 (~$32) for 30 days, extendable once for 30 more days at immigration (Rp500,000)",
+        "Some nationalities (ASEAN, Japan, South Korea) get 30 days free. Most others must pay VOA. E-VOA available pre-arrival online",
+        "Ngurah Rai International Airport (DPS) — Grab to Ubud: Rp250,000–350,000 (1.5 hours). To Kuta/Seminyak: Rp80,000–150,000"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "Hepatitis A and typhoid recommended. Tap water is not safe — bottled water Rp5,000 everywhere. \"Bali belly\" is common — eat at busy stalls with high turnover",
+        "Bali is very safe but petty theft from scooters is common. Wear bags cross-body. Stray dogs can carry rabies — avoid contact",
+        "BIMC Hospital in Kuta handles emergencies with English-speaking staff. Travel insurance with medical evacuation is essential"
+      ]
+    },
+    {
+      "icon": "🛵",
+      "title": "Getting Around",
+      "items": [
+        "Scooter rental (Rp60,000–80,000/day) is the most practical option. International driving permit technically required but rarely checked",
+        "Grab works in southern Bali (Kuta, Seminyak, Sanur) but is patchy in Ubud and the north. Use it as a fare benchmark",
+        "Hire a private driver for day trips: Rp500,000–700,000 for 10 hours. Cheaper than multiple Grabs and the driver knows the roads"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Tourist SIM at the airport: Telkomsel (best coverage) from Rp100,000 for 30 days with 15GB data. Also available at Mini Marts",
+        "Free WiFi in most cafes, restaurants, and hotels. Ubud and Canggu have excellent cafe WiFi — popular with digital nomads",
+        "Grab, Google Maps, and Gojek (Indonesian ride-hailing, often cheaper than Grab) are the essential apps"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "ATMs everywhere — BCA and Mandiri ATMs are most reliable. Maximum withdrawal usually Rp2,500,000. ₫50,000 notes and Rp50,000 notes look similar — check your change",
+        "Cash is king at warungs, markets, and local shops. Cards accepted at larger restaurants, hotels, and supermarkets",
+        "Money changers in Kuta are notorious for scams — use ATMs or official exchanges with digital counters at malls"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Light clothing, swimwear, reef-safe sunscreen (SPF 50+), and a sarong — you will need it for every temple visit",
+        "Mosquito repellent (dengue risk), waterproof phone case, and a dry bag for boat trips to Nusa Penida",
+        "Comfortable shoes for temple steps and waterfall trails. Flip-flops for beaches. A light rain jacket for the wet season (Nov–Mar)"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🛕",
+      "title": "Temple Etiquette",
+      "text": "Wear a sarong and sash at every temple (provided at major sites, bring your own elsewhere). Never stand higher than a priest. Women on their menstrual cycle are traditionally asked not to enter temples."
+    },
+    {
+      "icon": "🙏",
+      "title": "Offerings (Canang Sari)",
+      "text": "The small palm-leaf offerings with flowers and incense on sidewalks, steps, and doorways are sacred. Never step on them, kick them, or move them. They are daily offerings to Hindu gods and are deeply important to Balinese life."
+    },
+    {
+      "icon": "🐒",
+      "title": "Monkey Safety",
+      "text": "Monkeys at temples are wild animals, not pets. Never make eye contact, show teeth, or wave food. Secure sunglasses, phones, and water bottles. If a monkey grabs something, do not chase — temple staff can help retrieve it."
+    },
+    {
+      "icon": "🌊",
+      "title": "Ocean Respect",
+      "text": "Bali's currents are powerful. Red flags mean no swimming. Rip currents kill tourists every year. Always swim at lifeguarded beaches and never underestimate the Indian Ocean, even on calm days."
+    },
+    {
+      "icon": "🏍",
+      "title": "Scooter Safety",
+      "text": "Bali has a high scooter accident rate among tourists. Always wear a helmet. Do not drink and drive. The roads are narrow, poorly lit, and shared with dogs, trucks, and ceremony processions."
+    },
+    {
+      "icon": "🎭",
+      "title": "Ceremony Days",
+      "text": "Bali celebrates numerous Hindu ceremonies — you may encounter road closures, processions, and shops shutting for Nyepi (Day of Silence) or Galungan. Embrace the disruption — witnessing a Balinese ceremony is one of the island's greatest privileges."
+    }
+  ],
+  "title": "Bali Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Bali guide for young travelers. 3-day itinerary with rice terraces, temples, surf breaks, Nusa Penida, and budget tips. Plan your trip with roammate.",
+  "heroImage": "/images/guides/denpasar-hero.webp",
+  "heroFlag": "🇮🇩",
+  "heroCountry": "Indonesia",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Bali",
+  "heroSubtitle": "An island where ancient temples emerge from jungle mist, every sunset feels sacred, and the waves never stop calling.",
+  "budgetIntro": "Daily costs per person in IDR (Rp). Bali ranges from incredibly cheap to eye-wateringly expensive — your choices determine everything.",
+  "culturalIntro": "Bali is a Hindu island in a Muslim-majority nation — its spiritual culture is everywhere. Respect the ceremonies, the offerings, and the temples.",
+  "ctaCity": "Bali",
+  "ctaText": "Find travel companions, split scooter tours, and share Nusa Penida boat trips with fellow travelers on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "Apr – Oct Best"
+  ],
+  "defaultDays": 3
+}

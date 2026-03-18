@@ -1,0 +1,524 @@
+{
+  "type": "city",
+  "slug": "edinburgh",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "GBP (Pound Sterling)",
+      "detail": "1 USD ≈ £0.79"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "English / Scots",
+      "detail": "Some Gaelic signage"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "GMT (UTC+0)",
+      "detail": "BST (UTC+1) in summer"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "May – Sep",
+      "detail": "12–20°C, long daylight hours"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$75–110 USD",
+      "detail": "£60–88 per day"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "UK visa rules",
+      "detail": "6 months visa-free for most"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Castle, Royal Mile & Arthur's Seat in a Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Edinburgh Castle & Royal Mile",
+            "text": "Start at Edinburgh Castle (£19.50, book online) — perched on an extinct volcano, dominating the skyline. The Crown Jewels, Stone of Destiny, and St Margaret's Chapel (the city's oldest building, 1130) are the highlights. Exit and walk the Royal Mile downhill — a medieval spine of closes (narrow alleys), kirks, and whisky shops leading from the castle to the Palace of Holyroodhouse. Duck into the Real Mary King's Close (£19) — a buried 17th-century street beneath the Royal Mile.",
+            "tip": "Book Edinburgh Castle online to skip the queue — morning slots are least busy. The views from the ramparts are worth arriving early."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Arthur's Seat & Holyrood",
+            "text": "Continue down the Royal Mile to the Scottish Parliament (free guided tours) and the Palace of Holyroodhouse (£18) — the King's official Scottish residence. Then walk into Holyrood Park and climb Arthur's Seat — a 251m extinct volcano right in the city centre. The 45-minute hike rewards you with 360° views of Edinburgh, the Firth of Forth, and the Pentland Hills. Bring layers — it's always windier than you expect.",
+            "tip": "Arthur's Seat has multiple routes — the path from the back (past St Margaret's Loch) is less steep than the direct ascent."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Grassmarket & Whisky",
+            "text": "Head to the Grassmarket — a lively square below the castle with historic pubs and restaurants. Dinner at the Grain Store on Victoria Street for modern Scottish cuisine (mains £16–24). Then a whisky experience: The Scotch Whisky Experience (from £18) on the Royal Mile for a guided tasting, or simply walk into Bow Bar on Victoria Street — one of Edinburgh's finest whisky pubs with 300+ bottles and knowledgeable staff.",
+            "tip": "Bow Bar on Victoria Street is a whisky lover's paradise — ask the bartender to recommend a dram based on your taste. Singles from £4."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Castle, Royal Mile & Old Town",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Edinburgh Castle",
+            "text": "Start at Edinburgh Castle (£19.50 online) — perched on Castle Rock, an extinct volcanic plug. The Crown Jewels (Honours of Scotland), Stone of Destiny, and panoramic views from the Half Moon Battery are the highlights. St Margaret's Chapel — Edinburgh's oldest building from 1130 — is tiny but moving. The One O'Clock Gun fires daily (except Sunday) — a tradition since 1861 to help ships set their chronometers.",
+            "tip": "Book online and arrive at 9:30am opening. Walk straight to the Crown Jewels before the tour groups arrive at 10:30am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Royal Mile & Hidden Closes",
+            "text": "Walk the Royal Mile downhill — the medieval spine connecting the castle to Holyrood Palace. Duck into the closes (narrow alleys) branching off: Advocate's Close for views, Mary King's Close (£19) for a buried 17th-century street, and Dunbar's Close for a secret garden. Lunch at Oink on Victoria Street — pulled slow-roasted hog rolls (£5–7) that locals queue for. Visit St Giles' Cathedral (free, donation) for its Thistle Chapel.",
+            "tip": "The Royal Mile closes hide Edinburgh's real stories. Download the \"Edinburgh Closes\" walking guide for self-guided exploration."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Grassmarket & Whisky Bars",
+            "text": "Descend to the Grassmarket — a lively square below the castle walls with pubs, restaurants, and a gallows history. Dinner at the Grain Store on Victoria Street for modern Scottish cuisine (mains £16–24) or Ting Thai Caravan for excellent Thai at backpacker prices (mains £9–14). Then whisky: Bow Bar on Victoria Street (300+ bottles) or the Jolly Judge on James Court — a tiny pub hidden down a close.",
+            "tip": "Victoria Street is Edinburgh's most photogenic street — the colourful curved shopfronts inspired Diagon Alley in Harry Potter."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Arthur's Seat, New Town & Calton Hill",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arthur's Seat Hike",
+            "text": "Early morning hike up Arthur's Seat (251m) — an extinct volcano in Holyrood Park, right in the city centre. The 45-minute climb rewards you with 360° views of Edinburgh, the Firth of Forth, the Pentland Hills, and on clear days, the Highlands. Multiple routes — the gentler path from Dunsapie Loch is scenic; the direct route from Holyrood is steeper. Always windy at the top — bring layers.",
+            "tip": "Go early (8am) for the best light and fewest people. The sunrise from Arthur's Seat in summer is spectacular — dawn is around 5am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "New Town & Georgian Elegance",
+            "text": "Walk through the New Town — Edinburgh's 18th-century Georgian planned district, a UNESCO site of crescents, squares, and gardens. Browse independent shops on Thistle Street and Rose Street. Visit the Scottish National Gallery (free) on the Mound — works by Raeburn, Ramsay, and Scottish Colourists alongside Vermeer, Monet, and van Gogh. Lunch at the gallery café or The Dome on George Street for a lavish interior.",
+            "tip": "The Scottish National Gallery's Scottish collection on the upper floor is exceptional — the Raeburn \"Skating Minister\" is iconic."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Calton Hill Sunset & Leith",
+            "text": "Climb Calton Hill (10 minutes from Princes Street) for the classic Edinburgh panorama — the castle, Arthur's Seat, Salisbury Crags, and the Firth of Forth framed by the unfinished National Monument (Edinburgh's \"Disgrace\"). Then bus or walk to Leith — Edinburgh's port district, now a foodie hub. Dinner at The Shore on Leith Shore — Scottish seafood in a cozy waterfront setting (mains £16–22).",
+            "tip": "Calton Hill at sunset is Edinburgh's most photogenic viewpoint — arrive 30 minutes before golden hour for the best position."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Dean Village, Stockbridge & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dean Village & Water of Leith",
+            "text": "Walk to Dean Village — a fairy-tale former grain-milling village hidden in a gorge just minutes from the city centre. The Water of Leith Walkway follows the river through woodland past Victorian bridges and mill buildings. Continue to the Scottish National Gallery of Modern Art (free) — two buildings with Picasso, Hockney, and Paolozzi sculptures in landscaped grounds. The Landform Ueda grass sculpture is surreal.",
+            "tip": "Dean Village is most magical in morning mist — the stone buildings and river gorge feel like a different century entirely."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Stockbridge & Market",
+            "text": "Walk along the Water of Leith to Stockbridge — a village-like neighbourhood with independent shops, delis, and the famous Stockbridge Market (Sundays 10am–5pm). Browse vintage clothing, local cheese, and artisan bread. Lunch at Scran & Scallie — Tom Kitchin's gastropub on Comely Bank Road (mains £14–20) for elevated Scottish comfort food. Or grab a pie from Piemaker on South Bridge (£4.50).",
+            "tip": "Stockbridge Market on Sundays is Edinburgh's best — arrive by 11am for the widest selection and manageable crowds."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Edinburgh",
+            "text": "Final evening in the Old Town. Dinner at Wedgwood on the Royal Mile — a Michelin-recommended restaurant using foraged Scottish ingredients (tasting menu £65 or mains £26–32). Or budget farewell at Mums Great Comfort Food on Forrest Road — haggis, neeps, and tatties for £12. One last whisky at the Cadenhead's Whisky Shop tasting bar on the Royal Mile. Walk the illuminated castle from the Grassmarket.",
+            "tip": "Wedgwood is worth the splurge — the foraged and fermented ingredients make it uniquely Edinburgh. Book 3+ days ahead."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Castle, Royal Mile & Old Town",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Edinburgh Castle",
+            "text": "Start at Edinburgh Castle (£19.50 online) on its volcanic rock. Crown Jewels, Stone of Destiny, and panoramic views from the Half Moon Battery. St Margaret's Chapel dates to 1130 — the oldest building in Edinburgh. The One O'Clock Gun fires daily except Sunday. Allow 2 hours for the full castle experience.",
+            "tip": "Book online and arrive at 9:30am opening. Walk straight to the Crown Jewels before tour groups arrive at 10:30am."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Royal Mile & Hidden Closes",
+            "text": "Walk the Royal Mile downhill, exploring closes (narrow alleys): Advocate's Close for views, Dunbar's Close for a hidden garden, and Mary King's Close (£19) for a buried 17th-century street. Lunch at Oink on Victoria Street for pulled hog rolls (£5–7). Visit St Giles' Cathedral (free) for the Thistle Chapel and its carved angel roof.",
+            "tip": "Victoria Street's curved colourful shopfronts inspired Diagon Alley in Harry Potter — it's Edinburgh's most photogenic street."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Grassmarket & Whisky",
+            "text": "Grassmarket — a lively square below the castle with pubs and dark history (public executions happened here). Dinner at the Grain Store on Victoria Street (mains £16–24). Whisky at Bow Bar (300+ bottles) on Victoria Street — ask the bartender for a recommendation. The Jolly Judge on James Court is a secret gem hidden down a close.",
+            "tip": "Bow Bar's staff are passionate whisky experts — describe what you like and they'll find your perfect dram. Singles from £4."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Arthur's Seat, New Town & Calton Hill",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arthur's Seat",
+            "text": "Early hike up Arthur's Seat (251m) — an extinct volcano with 360° city views. The 45-minute climb is always windier than expected. Multiple routes: gentle from Dunsapie Loch, steep from Holyrood. On clear days you can see the Highlands. Descend via Salisbury Crags for a different perspective.",
+            "tip": "Go at 8am for the best light and emptiest paths. Summer sunrise is around 5am — extraordinary from the summit."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "New Town & National Gallery",
+            "text": "Explore the Georgian New Town — UNESCO-listed crescents and squares from the 18th century. Scottish National Gallery (free) on the Mound — Raeburn's \"Skating Minister,\" Scottish Colourists, plus Vermeer, Monet, and van Gogh. Lunch at The Dome on George Street for a stunning interior, or Dishoom for Indian brunch on St Andrew Square.",
+            "tip": "The Scottish National Gallery's upper floor Scottish collection is exceptional and often overlooked — don't skip it."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Calton Hill & Leith",
+            "text": "Climb Calton Hill (10 min from Princes Street) for the classic panorama — castle, Arthur's Seat, and the Firth of Forth. The unfinished National Monument is nicknamed \"Edinburgh's Disgrace.\" Bus to Leith for dinner at The Shore — Scottish seafood on the waterfront (mains £16–22). Leith's bar scene is more local than the Old Town.",
+            "tip": "Calton Hill at sunset is the Edinburgh photo — arrive 30 minutes before golden hour for the best position."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Dean Village, Stockbridge & Modern Art",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dean Village & Water of Leith",
+            "text": "Dean Village — a fairy-tale former mill village in a gorge minutes from the centre. Follow the Water of Leith Walkway through woodland to the Scottish National Gallery of Modern Art (free) — Picasso, Hockney, and Paolozzi sculptures in landscaped grounds. The Landform Ueda grass sculpture is surreal and beautiful.",
+            "tip": "Dean Village in morning mist is magical — the stone buildings and river gorge feel centuries removed from the city above."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Stockbridge",
+            "text": "Continue along the Water of Leith to Stockbridge — a village-like neighbourhood with independent shops and delis. Stockbridge Market (Sundays 10am–5pm) has vintage clothing, artisan food, and local crafts. Lunch at Scran & Scallie — Tom Kitchin's gastropub (mains £14–20) or The Pantry on Stockbridge Road for excellent brunch (£8–14).",
+            "tip": "Stockbridge Market on Sunday is Edinburgh's best. The Water of Leith walk from Dean Village takes about 15 minutes."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Rose Street Pub Crawl",
+            "text": "Rose Street in the New Town — a narrow lane of pubs running parallel to Princes Street. The traditional pub crawl runs from one end to the other: start at The Kenilworth, move to Milnes Bar (literary pub), The Abbotsford (Victorian interior), and finish at The Black Rose Tavern. Each pub has its own character. Fish and chips at any pub for £10–14.",
+            "tip": "Rose Street pub crawl is an Edinburgh tradition — pace yourself and try a different beer or whisky at each stop."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Museums, Underground & Ghost Tours",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "National Museum of Scotland",
+            "text": "Visit the National Museum of Scotland (free) on Chambers Street — a world-class museum spanning Scottish history, science, and world cultures. The rooftop terrace has 360° city views. Highlights: Dolly the Sheep (the first cloned mammal), Lewis Chessmen, and the Grand Gallery's Victorian atrium. Allow 2–3 hours — you could spend a full day here.",
+            "tip": "The National Museum rooftop terrace is a free viewpoint — take the lift to the 7th floor for castle and Arthur's Seat views."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Greyfriars & Edinburgh Underground",
+            "text": "Visit Greyfriars Kirkyard — one of Edinburgh's most atmospheric cemeteries with ornate 17th-century tombs and the statue of Greyfriars Bobby (the loyal terrier who guarded his master's grave for 14 years). The graveyards here inspired J.K. Rowling — spot the names Tom Riddle and McGonagall on headstones. Lunch at Elephant House café — where Rowling wrote early Harry Potter chapters.",
+            "tip": "The Greyfriars Kirkyard headstones with Harry Potter character names are real — the graveyard inspired Rowling's naming."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Ghost Tour & Vaults",
+            "text": "Edinburgh's ghost tours are legendary. Mercat Tours runs the most historically grounded walks through the Blair Street Underground Vaults (£16) — 18th-century chambers beneath the South Bridge where the city's poor lived in darkness. The Edinburgh Dungeon (£18) is more theatrical. Dinner at Howies on Victoria Street for Scottish comfort food (mains £14–18) before the tour.",
+            "tip": "The evening vault tours (8–9pm) are atmospheric — the combination of genuine history and dark tunnels is genuinely unsettling."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Day Trip to the Highlands or St Andrews",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Option A: Highlands or Option B: St Andrews",
+            "text": "For the Highlands, join a day tour (from £40) — Loch Lomond, Glencoe, and Fort William in a day, with a bus from Edinburgh. For St Andrews, take the bus (2 hours, £15 return) to Scotland's most beautiful university town. Walk the ruined cathedral, the castle on the cliffs, and the famous Old Course golf links. The town is charming and compact.",
+            "tip": "Highland day tours from Edinburgh are long (12 hours) but cover stunning scenery. Rabbies and Haggis Adventures are the best operators."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Exploring Further",
+            "text": "In the Highlands: Glencoe is breathtaking — a dramatic valley of waterfalls and mountains with a tragic massacre history. In St Andrews: walk the Lade Braes nature trail, explore the Scores (clifftop walk), and lunch at The Tailend for the best fish and chips in Fife (£10–14). The West Sands beach — used in the Chariots of Fire opening scene — is magnificent.",
+            "tip": "In St Andrews, the Swilcan Bridge on the Old Course is the most photographed spot in golf — you can walk the course in the evening."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return & Local Dinner",
+            "text": "Back in Edinburgh, dinner at Timberyard on Lady Lawson Street — a converted timber warehouse with Michelin-starred sustainable Scottish cuisine (tasting menu £85) or the more casual Ting Thai Caravan in the Old Town for excellent Thai at backpacker prices (mains £9–14). End at the Last Drop pub in the Grassmarket — named for the gallows that stood outside.",
+            "tip": "Timberyard forages many of its ingredients — the menu changes with what's available. Book a week ahead for Friday/Saturday."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Leith, Portobello & Edinburgh Food",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Leith Food Trail",
+            "text": "Bus to Leith — Edinburgh's port district, now the city's food capital. Start at the Royal Yacht Britannia (£19) — the Queen's former floating palace moored at Ocean Terminal. Then walk Leith Walk and The Shore — a waterfront area with restaurants, bars, and converted warehouses. Breakfast at The Roseleaf on Sandport Place — teapot cocktails and excellent brunch (£8–14).",
+            "tip": "Leith is where Edinburgh's restaurant scene is happening — The Shore area has more character than anywhere in the New Town."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Portobello Beach",
+            "text": "Bus 15/26 to Portobello — Edinburgh's seaside suburb with a long sandy beach, a promenade, and Victorian bathing vibes. On sunny days (they exist!) locals flock here with picnics and bodyboards. The water is cold but swimmable in summer (brave souls only). Walk the promenade, get fish and chips at the Espy (£10–13), and browse the independent shops on the High Street.",
+            "tip": "Portobello on a sunny day is Edinburgh's best-kept secret — the beach is sandy, the promenade charming, and it's 20 min by bus."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Southside & Live Music",
+            "text": "Explore the Southside — Edinburgh's student quarter around the University. Sandy Bell's on Forrest Road has free live folk music every night — fiddles, accordions, and sing-alongs in a tiny pub. Dinner at Mosque Kitchen on Nicolson Square — enormous plates of curry and rice for £7–9 (cash only, canteen-style). Then Sneaky Pete's for live music or Cabaret Voltaire for electronic music.",
+            "tip": "Sandy Bell's folk sessions are a genuine Edinburgh experience — arrive by 9pm for a seat. The music is spontaneous and free."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Holyrood, Whisky & Farewell",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Palace of Holyroodhouse",
+            "text": "Visit the Palace of Holyroodhouse (£18) — the King's official Scottish residence, home to Mary Queen of Scots in the 16th century. The State Apartments, the Great Gallery with 96 portraits, and Mary's chambers where her secretary Rizzio was murdered are the highlights. The ruins of Holyrood Abbey next door are hauntingly atmospheric.",
+            "tip": "Holyroodhouse is least crowded on weekday mornings. The audioguide (included) brings Mary Queen of Scots' dramatic story alive."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Last Souvenirs & Whisky",
+            "text": "Souvenir shopping on the Royal Mile — Edinburgh Woollen Mill for cashmere and tweed, Cadenhead's for whisky (the city's oldest independent bottler, tastings available), and Edinburgh Bookshop on West Port for Scottish literature. Visit the Scotch Whisky Experience (from £18) for a guided tasting and barrel ride, or simply buy a bottle from Cadenhead's to take home.",
+            "tip": "Cadenhead's Whisky Shop does free tastings on Saturday afternoons — the cask-strength bottles are exceptional value."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Farewell Edinburgh",
+            "text": "Final dinner at Wedgwood on the Royal Mile for foraged Scottish ingredients (tasting menu £65) or haggis, neeps, and tatties at Mums Great Comfort Food on Forrest Road (£12). A farewell whisky at the Devil's Advocate on Advocate's Close — a cocktail bar in a converted pump house below the Royal Mile. Walk the Grassmarket at night with the floodlit castle towering above.",
+            "tip": "The floodlit castle viewed from the Grassmarket at night — with a whisky in hand — is the definitive Edinburgh farewell."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "Free experiences",
+      "text": "National Museum of Scotland, Scottish National Gallery, Gallery of Modern Art, Greyfriars Kirkyard, Calton Hill, Arthur's Seat, Dean Village, Water of Leith walkway, and the Scottish Parliament tours."
+    },
+    {
+      "title": "Budget food",
+      "text": "Oink hog rolls: £5–7. Mosque Kitchen curries: £7–9. Piemaker pies: £4.50. Mums comfort food: £10–14. Supermarket meal deals: £3.50. Edinburgh is expensive but budget options exist."
+    },
+    {
+      "title": "Transport",
+      "text": "Lothian Buses day ticket: £4.80 (unlimited travel). Single: £2. Buy tickets via the Edinburgh Bus Tracker app or contactless on the bus. The tram to the airport costs £7.50."
+    },
+    {
+      "title": "Free walking tours",
+      "text": "Several companies run tip-based free tours daily from the Royal Mile — history, Harry Potter, ghost, and food tours available. Budget £5–10 per person as a tip."
+    },
+    {
+      "title": "Pub savings",
+      "text": "A pint in the Old Town: £5–7. In Leith or Stockbridge: £4–5.50. Happy hours at many pubs (4–7pm). Cask ales are usually cheaper than lagers. Whisky singles from £4 at Bow Bar."
+    },
+    {
+      "title": "Festival fringe tip",
+      "text": "During the August Fringe, hundreds of shows are free (PBH Free Fringe). Accommodation triples in price — book 6+ months ahead or stay in Glasgow (45 min by train) for half the cost."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "£20–40",
+      "midrange": "£80–150",
+      "splurge": "£220+",
+      "notes": "Hostels → boutique B&Bs → luxury hotels"
+    },
+    {
+      "category": "Food",
+      "budget": "£12–20",
+      "midrange": "£30–50",
+      "splurge": "£70+",
+      "notes": "Street food & pubs → gastropubs → fine dining"
+    },
+    {
+      "category": "Transport",
+      "budget": "£5–8",
+      "midrange": "£10–20",
+      "splurge": "£30+",
+      "notes": "Bus pass & walking → taxis → day trip transport"
+    },
+    {
+      "category": "Activities",
+      "budget": "£0–15",
+      "midrange": "£20–40",
+      "splurge": "£60+",
+      "notes": "Free museums & hikes → castle & tours → Highlands trip"
+    },
+    {
+      "category": "Drinks",
+      "budget": "£8–15",
+      "midrange": "£18–30",
+      "splurge": "£45+",
+      "notes": "Cask ale pints → whisky bars → cocktail lounges"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "£45–98",
+      "midrange": "£158–290",
+      "splurge": "£425+",
+      "notes": "$57–124 → $200–367 → $538+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🛂",
+      "title": "Visa & Entry",
+      "items": [
+        "UK visa rules apply (not Schengen). Most nationalities get 6 months visa-free. ETA required for some from 2025",
+        "Edinburgh Airport (EDI) is 13km west. Tram to city centre (£7.50, 30 min). Bus Airlink 100 (£5.50, 25 min). Taxi: £25–35",
+        "Trains from London King's Cross (4.5 hrs, £30–120). Glasgow (50 min, £15). Book via LNER or Scotrail websites"
+      ]
+    },
+    {
+      "icon": "💉",
+      "title": "Health & Safety",
+      "items": [
+        "No vaccinations required. NHS provides emergency care. GHIC/EHIC covers EU citizens at reduced rates",
+        "Tap water is excellent — Scottish water is some of the best in the world. Refill stations widespread",
+        "Edinburgh is very safe. Minor pickpocketing on the Royal Mile during festivals. Some areas of Leith quieter at night"
+      ]
+    },
+    {
+      "icon": "🚇",
+      "title": "Getting Around",
+      "items": [
+        "Lothian Buses run frequently. Day ticket: £4.80, single: £2. Contactless on the bus or via the TfE app",
+        "Edinburgh Trams run from the airport to York Place via Princes Street (£1.80 city zone, £7.50 airport)",
+        "The city is very walkable — Old Town to New Town is 15 min. Uber and Bolt work. Taxis are metered (black cabs)"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "UK SIM cards from Three, Vodafone, or EE. Pay-as-you-go from £10 for 5–10GB at airport or high street shops",
+        "Free WiFi in cafés, pubs, and museums. Edinburgh has good 4G/5G coverage across the city",
+        "Download the Edinburgh Bus Tracker app, Trainline for rail tickets, and CityMapper for navigation"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "Pound Sterling (£). Scottish banknotes are legal tender in Scotland but sometimes refused in England — spend them here",
+        "Contactless payment accepted almost everywhere. ATMs from major banks (RBS, Bank of Scotland) have no fees",
+        "Tipping: 10% at restaurants (check if service charge is included). Not expected at pubs for counter service"
+      ]
+    },
+    {
+      "icon": "🎒",
+      "title": "Packing Tips",
+      "items": [
+        "Layers are essential — Edinburgh weather changes hourly. Rain jacket mandatory year-round. Wind can be fierce",
+        "Comfortable walking shoes — the Old Town is hilly with cobblestones. Sturdy shoes for Arthur's Seat",
+        "Warm layer even in summer — evenings cool to 10–12°C. Sunscreen on sunny days (UV can be surprisingly strong)"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🥃",
+      "title": "Whisky, Not Whiskey",
+      "text": "In Scotland it's \"whisky\" (no \"e\"). Ask for a \"dram\" not a \"shot.\" Single malt is sipped neat or with a drop of water — never mixed. Tell the bartender what flavours you like and let them guide you. It's a conversation, not just a drink."
+    },
+    {
+      "icon": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "title": "Scottish Identity",
+      "text": "Scotland is NOT England. Don't call Scots \"English\" or say \"UK accent.\" Scotland has its own legal system, education system, banknotes, and strong national identity. Independence is a live debate — tread carefully."
+    },
+    {
+      "icon": "🎭",
+      "title": "Festival City",
+      "text": "August transforms Edinburgh — the Fringe, International Festival, Book Festival, and Art Festival run simultaneously. The city population doubles. It's extraordinary but chaotic. Book everything months ahead or embrace the spontaneity."
+    },
+    {
+      "icon": "🍽️",
+      "title": "Haggis & Scottish Food",
+      "text": "Haggis is delicious — don't knock it before trying it. It's spiced lamb offal with oatmeal, served with neeps (turnip) and tatties (potatoes). Cullen skink (smoked haddock soup) and cranachan (raspberry whisky cream) are other must-tries."
+    },
+    {
+      "icon": "🏔️",
+      "title": "Right to Roam",
+      "text": "Scotland has the \"right to roam\" — you can walk almost anywhere responsibly, including private land. This is a cherished freedom. Leave no trace, close gates, and respect wildlife and crops."
+    },
+    {
+      "icon": "🌧️",
+      "title": "Weather Attitude",
+      "text": "Edinburgh has four seasons in one day — literally. Don't wait for good weather; embrace it. Scots have a saying: \"There's no bad weather, only bad clothes.\" Rain is guaranteed; sunshine is a bonus."
+    }
+  ],
+  "title": "Edinburgh Travel Guide 2026 — 3-Day Itinerary | roammate",
+  "description": "The ultimate Edinburgh guide for young travelers. 3-day itinerary with castle visits, Arthur's Seat hikes, whisky bars, and hidden closes. Plan your trip with roammate.",
+  "heroImage": "/images/guides/edinburgh-hero.webp",
+  "heroFlag": "🇬🇧",
+  "heroCountry": "United Kingdom",
+  "heroRegion": "Europe",
+  "heroCity": "Edinburgh",
+  "heroSubtitle": "A city of volcanic crags and Gothic spires, where every close hides a story and the wind carries the scent of rain, whisky, and ancient stone.",
+  "budgetIntro": "Daily costs per person in GBP. Edinburgh isn't cheap, but free world-class museums, budget street food, and stunning free hikes keep it surprisingly accessible.",
+  "culturalIntro": "Edinburgh wears its history in every stone. Respect the Scottish identity, learn to love the weather, and never — ever — call a Scot English.",
+  "ctaCity": "Edinburgh",
+  "ctaText": "Find travel companions, share Highland day trips, and discover hidden closes and whisky bars together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app to tailor it to your preferences.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Budget-Friendly",
+    "May – Sep Best"
+  ],
+  "defaultDays": 3
+}

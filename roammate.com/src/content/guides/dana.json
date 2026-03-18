@@ -1,0 +1,512 @@
+{
+  "type": "city",
+  "slug": "dana",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "JOD (Dinar)",
+      "detail": "1 USD ≈ 0.71 JOD"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Arabic",
+      "detail": "English at lodges & guides"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "EET (UTC+2/+3)",
+      "detail": "Daylight saving Mar–Oct"
+    },
+    {
+      "icon": "☀️",
+      "label": "Best Months",
+      "value": "Mar – May, Oct – Nov",
+      "detail": "15–25°C, ideal for hiking"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "~$40–75 USD",
+      "detail": "JOD 28–53 budget range"
+    },
+    {
+      "icon": "🛂",
+      "label": "Visa",
+      "value": "Jordan Pass",
+      "detail": "Includes visa + 40 sites from JOD 70"
+    }
+  ],
+  "itineraries": {
+    "1": [
+      {
+        "num": 1,
+        "title": "Dana in One Day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Dana Village & Sunrise Over the Rift",
+            "text": "Arrive at Dana Village — a 15th-century Bedouin settlement perched on the edge of a cliff overlooking the Wadi Dana gorge and the Rift Valley beyond. The sunrise view from the village edge is one of the most dramatic in Jordan — sandstone cliffs dropping away to a vast, empty valley stretching to the Dead Sea. Walk the village lanes past restored stone houses and meet the local families who still live here.",
+            "tip": "Stay overnight to catch sunrise — it's transformative. If day-tripping, arrive by 7am for the best light."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Wadi Dana Trail",
+            "text": "Hike the Wadi Dana trail — the reserve's signature trek (14km, 5–6 hours, JOD 8 guide fee). The trail descends 1,000m from Dana Village through four eco-zones: sandstone cliffs, juniper woodland, Mediterranean scrub, and Saharan desert. The final stretch through Wadi Feynan is hot and flat. End at the award-winning Feynan Ecolodge (or arrange a pickup back to Dana Village if not staying).",
+            "tip": "Hiking down is the only option for a day trip — arrange transport back from Feynan in advance. Carry 3+ litres of water."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Candlelit Feynan or Stargazing at Dana",
+            "text": "If at Feynan Ecolodge: the lodge runs entirely on solar power and candles. Evening is a candlelit dinner of local Bedouin food, followed by stargazing on the roof terrace. If staying at Dana Village: the RSCN guesthouse has a terrace overlooking the gorge where the night sky — with zero light pollution — is extraordinary.",
+            "tip": "Feynan has no electricity from outlets. Charge everything before arriving. The candlelit experience is worth the inconvenience."
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "num": 1,
+        "title": "Dana Village & Short Trails",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Arrive & Village Exploration",
+            "text": "Arrive at Dana Village — a 15th-century Bedouin settlement restored by the Royal Society for the Conservation of Nature (RSCN). The village clings to a cliff edge overlooking a vast sandstone gorge dropping into the Rift Valley. Walk the winding lanes past stone houses, a mosque, and terraced gardens. Meet the families who still live here — some run small guesthouses and sell handmade jewellery.",
+            "tip": "The RSCN Dana Guesthouse (JOD 45–65 half board) has the best terrace view. Dana Tower Hotel is cheaper (JOD 25–35) but further from the cliff edge."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Rummana Mountain Trail",
+            "text": "Hike the Rummana Mountain Trail (2.5km loop, 1.5 hours, JOD 8 with guide). The trail climbs through sandstone formations to a viewpoint overlooking Wadi Dana and the Rift Valley. The 360-degree panorama takes in four eco-zones — from green hilltops to desert floor. Ibex, hyrax, and raptors are commonly spotted.",
+            "tip": "Bring binoculars — ibex are often visible on the cliff faces below. The guide knows the best spotting locations."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset & Village Dinner",
+            "text": "Watch sunset from the village edge — the gorge turns gold, then crimson, then deep purple. The Dead Sea is sometimes visible as a silver line on the western horizon. Dinner at the guesthouse: traditional Bedouin food — zarb (underground barbecue), fattoush, and hummus. After dark, the stargazing from Dana is world-class.",
+            "tip": "Zarb (meat and vegetables slow-cooked underground on hot coals) is the local speciality. Ask if your guesthouse can prepare it — it needs to be arranged in advance."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Wadi Dana Trail to Feynan",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Sunrise & Trail Start",
+            "text": "Wake for sunrise over the gorge — unmissable. After breakfast, start the Wadi Dana trail (14km, 5–6 hours, guide required JOD 8). The descent begins steeply through sandstone cliffs and juniper woodland. The trail is well-marked but the guide adds invaluable botanical and geological knowledge.",
+            "tip": "Start by 7am in warmer months. Carry 3+ litres of water — there's no water source until Feynan. Wear sturdy hiking boots."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "The Descent Through Four Eco-Zones",
+            "text": "As you descend 1,000m, the landscape transforms dramatically: sandstone cliffs → Mediterranean-type juniper and oak → arid scrubland → Saharan desert. Look for Nubian ibex on the cliff faces, Tristram's starling (a glossy black bird with orange wing flashes), and raptors circling the thermals. The final 4km through Wadi Feynan is flat, hot, and exposed.",
+            "tip": "The final flat section is the hardest — hot and monotonous after the dramatic descent. Keep reserves of water and energy for it."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Feynan Ecolodge",
+            "text": "Arrive at Feynan Ecolodge — an award-winning solar-powered lodge in the desert floor. No electricity from outlets — the entire building runs on candles after dark. Candlelit dinner of Bedouin food (included in stay, JOD 80–120/night full board). Rooftop stargazing with a Bedouin guide who knows the constellations and desert mythology.",
+            "tip": "Feynan is a unique experience. Charge all devices at Dana before the hike. The candlelit atmosphere is genuinely magical, not gimmicky."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Feynan Activities & Return",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Copper Mine Trail & Bedouin Visit",
+            "text": "Morning hike to the ancient copper mines near Feynan — this area has been mined for copper since 4,000 BC, making it one of the oldest industrial sites in the world. The green-stained rocks and ancient smelting furnaces are visible along the trail (2 hours round trip). Then visit a local Bedouin family — the lodge arranges genuine cultural exchanges with tea, coffee, and bread-making.",
+            "tip": "The copper mines trail is flat and easy — a gentle contrast to yesterday's descent. The green copper-stained rocks make excellent photos."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Return to Dana or Onward",
+            "text": "Arrange a 4x4 transfer back to Dana Village (JOD 35–45 per vehicle, 1 hour via dirt road) or continue onward to Petra (2.5 hours by car via the King's Highway). The drive from Feynan out through the desert passes Bedouin camps and copper-age archaeological sites.",
+            "tip": "Don't try to hike back uphill to Dana — it's 14km of ascent in desert heat. The 4x4 transfer is the only practical return option."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Dana Farewell or Petra Preview",
+            "text": "If returning to Dana Village, final sunset from the cliff edge. If continuing to Petra, arrive in Wadi Musa by evening — the entrance to Petra is a 10-minute walk from the town centre. The King's Highway route from Dana passes through stunning highland scenery.",
+            "tip": "Dana to Petra via the King's Highway is the most scenic route in Jordan — Wadi Mujib canyon, ancient churches, and highland villages."
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "num": 1,
+        "title": "Arrive at Dana Village",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Journey to Dana",
+            "text": "Drive from Amman (3 hours via the King's Highway) or from Petra (2 hours north). The King's Highway route is one of the most scenic drives in the Middle East — ancient castles, deep canyons, and highland villages.",
+            "tip": "The King's Highway is slower than the Desert Highway but infinitely more interesting. Allow extra time for stops."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Dana Village Exploration",
+            "text": "Walk the 15th-century village lanes. Stone houses, a small mosque, terraced gardens, and families who have lived here for generations. The RSCN visitor centre has maps and trail information. Register for guided hikes.",
+            "tip": "Book guided hikes a day in advance at the RSCN office. Self-guided trails are also available."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Over the Rift",
+            "text": "First sunset from the cliff edge — the gorge drops 1,000m to the Rift Valley floor. Dinner at your guesthouse: traditional Bedouin food. Stargazing with zero light pollution.",
+            "tip": "The cliff-edge viewpoint at Dana Guesthouse is the best sunset spot in the reserve."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Rummana Trails",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Rummana Mountain Trail",
+            "text": "Hike the Rummana Mountain Trail (2.5km loop, 1.5 hours, JOD 8 with guide). Climbs through sandstone to a viewpoint over Wadi Dana. Look for ibex, hyrax, and raptors.",
+            "tip": "Binoculars are essential for spotting ibex on the cliff faces."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Rummana Campsite",
+            "text": "Continue to Rummana Campsite (RSCN, JOD 35–55 full board) — tent accommodation on a hillside with panoramic views. The campsite trail connects to the main Wadi Dana trail for different vantage points. Lunch at the campsite with valley views.",
+            "tip": "Rummana Camp is seasonal (Mar–Oct). Book through RSCN Wild Jordan in Amman."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Campfire & Stars",
+            "text": "Evening at Rummana — campfire dinner cooked by Bedouin staff, tea brewed on the fire, and stargazing from the hillside. The isolation and silence are profound.",
+            "tip": "Nights can be cold even in spring — bring layers. The camp provides blankets but a sleeping bag liner helps."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "Wadi Dana Trail to Feynan",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Start the Descent",
+            "text": "Begin the Wadi Dana trail from Dana Village (14km, 5–6 hours, guide JOD 8). Steep descent through sandstone cliffs and juniper woodland. Carry 3+ litres of water.",
+            "tip": "Start by 7am. The first 3km are the steepest — take your time and enjoy the views."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Four Eco-Zones Descent",
+            "text": "Pass through four eco-zones as you descend 1,000m: sandstone → juniper → scrubland → Saharan desert. Look for ibex, Tristram's starling, and raptors. The final 4km is flat and exposed.",
+            "tip": "Save water and energy for the flat final section — it's hot and monotonous after the dramatic descent."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Feynan Ecolodge",
+            "text": "Arrive at Feynan — solar-powered, candlelit, and extraordinary. Candlelit dinner and rooftop stargazing with a Bedouin guide. Full board JOD 80–120/night.",
+            "tip": "Charge all devices before leaving Dana. Feynan has no power outlets."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "title": "Feynan & Copper Mines",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Copper Mine Trail",
+            "text": "Hike to ancient copper mines (4,000 BC) — green-stained rocks and smelting furnaces visible on a 2-hour trail. One of the oldest industrial sites in the world.",
+            "tip": "The green copper stains on the rocks are striking — excellent photography opportunity."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Bedouin Family Visit",
+            "text": "The lodge arranges visits to local Bedouin families. Genuine cultural exchange with tea, fresh-baked bread, and conversation about desert life. Many families have lived in the area for generations.",
+            "tip": "Bring a small gift — dates, fruit, or sweets are appreciated. The Bedouin are genuinely welcoming."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Sunset Walk & Candlelit Evening",
+            "text": "Walk into the surrounding desert for sunset — the flat terrain and clear air create extraordinary light. Return for candlelit dinner at Feynan. The silence of the desert night is profound.",
+            "tip": "Walk 15 minutes from the lodge in any direction and you're in total wilderness. Take water and a headlamp."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "title": "Return to Dana & Village Life",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Transfer Back to Dana",
+            "text": "4x4 transfer from Feynan to Dana Village (JOD 35–45, 1 hour via dirt road). The drive through the desert passes Bedouin camps and ancient copper sites.",
+            "tip": "The dirt road is rough — sit in the front for a slightly smoother ride."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Dana Village Handicrafts",
+            "text": "Visit the Dana Nature Shop — RSCN-supported crafts made by local women including silver jewellery, leather goods, and herbal products. The money directly supports village livelihoods. Walk to the old olive press and terraced gardens.",
+            "tip": "The silver jewellery is handmade by Dana women using traditional techniques. Unique souvenirs that support conservation."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Zarb Dinner",
+            "text": "Request a zarb dinner — Bedouin underground barbecue. Meat and vegetables wrapped in foil, buried on hot coals, and slow-cooked for hours. The guesthouse digs it up at dinnertime in a theatrical unveiling. Needs 24 hours advance booking.",
+            "tip": "Zarb is a communal event — the whole guesthouse shares the meal. It's a highlight of any Jordan trip."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "title": "Shobak Castle & King's Highway",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Shobak Castle",
+            "text": "Drive 40 minutes south to Shobak Castle (Montreal, JOD 2 or free with Jordan Pass) — a Crusader fortress built by Baldwin I in 1115. Perched on a hilltop in the middle of nowhere, it's less restored than Karak but more atmospheric. Explore the underground tunnels, the church, and the Islamic inscriptions added after Saladin's conquest.",
+            "tip": "Shobak is rarely crowded. You may have the entire castle to yourself. The underground passages need a flashlight."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "King's Highway Villages",
+            "text": "Drive the King's Highway north or south — one of the world's oldest trade routes. Stop at the highland villages for lunch. The landscape of rolling hills, olive groves, and ancient stone villages is beautiful. If heading south, Tafila has good local restaurants.",
+            "tip": "The King's Highway is one of the most scenic drives in the Middle East. Allow time for stops."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Dana",
+            "text": "Return to Dana for a final evening. Sunset from the cliff edge never gets old. The light changes every evening — some nights the Rift Valley fills with mist, others are crystal-clear to the Dead Sea.",
+            "tip": "Each sunset at Dana is different. Don't assume you've \"seen it\" after one evening."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "title": "Departure",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Final Sunrise",
+            "text": "Last sunrise from the Dana cliff edge. Walk the village one more time — say goodbye to the families and shopkeepers. Pick up last-minute handicrafts from the nature shop.",
+            "tip": "Exchange contact details with your guesthouse hosts — Jordanians value ongoing connections."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Onward to Petra or Dead Sea",
+            "text": "Continue south to Petra (2 hours) or northwest to the Dead Sea (2.5 hours). Both are natural next stops after Dana. The drive to Petra via the King's Highway is spectacular.",
+            "tip": "Dana → Petra → Wadi Rum → Aqaba is the classic southern Jordan route. Allow 2–3 days for Petra alone."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Next Destination",
+            "text": "If heading to Petra, arrive in Wadi Musa by evening. The town has a range of accommodation from hostels (JOD 8–12) to luxury hotels. The Petra entrance is a 10-minute walk from the town centre.",
+            "tip": "Book Petra's night visit (Monday/Wednesday/Thursday, JOD 17) for a candlelit walk through the Siq — magical but divisive. Go with low expectations."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetTips": [
+    {
+      "title": "RSCN guesthouses",
+      "text": "Dana Guesthouse (JOD 45–65 half board) and Rummana Camp (JOD 35–55) include dinner and breakfast. Proceeds fund conservation. Budget alternative: Dana Tower Hotel (JOD 25–35)."
+    },
+    {
+      "title": "Jordan Pass",
+      "text": "The Jordan Pass (from JOD 70) includes visa, Petra, and 40+ sites. Dana reserve entry and guided hikes are separate (JOD 8/hike), but the pass saves money on every other Jordanian site."
+    },
+    {
+      "title": "Self-guided trails",
+      "text": "Some shorter trails near Dana Village are free to hike independently. The Rummana and Wadi Dana trails require a guide (JOD 8) — split the cost with other hikers."
+    },
+    {
+      "title": "Pack lunch",
+      "text": "Bring bread, hummus, and fruit from the supermarket in Tafila (30 minutes away). The guesthouses will pack a trail lunch if asked in advance."
+    },
+    {
+      "title": "Feynan splurge",
+      "text": "Feynan Ecolodge (JOD 80–120) is a splurge but includes all meals, guided activities, and the candlelit/stargazing experience. If you can afford one night, it's worth it."
+    },
+    {
+      "title": "Transport sharing",
+      "text": "The 4x4 from Feynan to Dana costs JOD 35–45 per vehicle. Share with 3–4 hikers to split the cost. Ask at the lodge or post on travel forums in advance."
+    }
+  ],
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "JOD 15–25",
+      "midrange": "JOD 45–65",
+      "splurge": "JOD 80–120",
+      "notes": "Dana Tower Hotel → RSCN Guesthouse → Feynan Ecolodge"
+    },
+    {
+      "category": "Food",
+      "budget": "JOD 5–8",
+      "midrange": "JOD 10–15",
+      "splurge": "JOD 20+",
+      "notes": "Packed lunch + guesthouse dinner → half board → Feynan full board"
+    },
+    {
+      "category": "Transport",
+      "budget": "JOD 3–8",
+      "midrange": "JOD 10–20",
+      "splurge": "JOD 30+",
+      "notes": "Shared transport → rental car → private driver"
+    },
+    {
+      "category": "Activities",
+      "budget": "JOD 0–8",
+      "midrange": "JOD 8–15",
+      "splurge": "JOD 20+",
+      "notes": "Self-guided trails → guided hikes → guided + Bedouin experience"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "JOD 23–49",
+      "midrange": "JOD 73–115",
+      "splurge": "JOD 150+",
+      "notes": "$32–69 → $103–162 → $211+"
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "✈️",
+      "title": "Getting There",
+      "items": [
+        "Dana is 3 hours south of Amman via the King's Highway, or 2 hours north of Petra. No public transport to Dana Village — you need a car or arranged transfer",
+        "The turn-off from the King's Highway to Dana Village is steep and winding (3km) — manageable in a standard car but 4x4 is more comfortable",
+        "Feynan Ecolodge requires 4x4 access from the Dead Sea road side, or hiking in from Dana Village"
+      ]
+    },
+    {
+      "icon": "⛰️",
+      "title": "The Reserve",
+      "items": [
+        "Jordan's largest nature reserve — 320 sq km spanning from 1,500m hilltops to 50m below sea level in the Rift Valley",
+        "800+ plant species, 215 bird species, and rare mammals including Nubian ibex, sand cats, and wolves",
+        "Managed by RSCN (Royal Society for the Conservation of Nature). All fees support conservation and local communities"
+      ]
+    },
+    {
+      "icon": "🥾",
+      "title": "Hiking",
+      "items": [
+        "Wadi Dana trail (14km, 5–6 hours) is the signature hike — guide required (JOD 8). Start early, carry 3+ litres of water",
+        "Rummana Mountain Trail (2.5km, 1.5 hours) is gentler. Several shorter trails near Dana Village are self-guided",
+        "Sturdy hiking boots essential. Walking poles helpful for the Wadi Dana descent. Sun protection critical — limited shade"
+      ]
+    },
+    {
+      "icon": "🌡️",
+      "title": "Weather",
+      "items": [
+        "Mar–May & Oct–Nov: perfect hiking weather (15–25°C). Wildflowers in spring. Clear skies in autumn",
+        "Jun–Sep: very hot in lower elevations (35°C+). Dana Village at 1,200m is bearable but Wadi Feynan is scorching",
+        "Dec–Feb: cold at Dana Village (5–10°C, possible frost/snow). Feynan is mild. Carry warm gear for highland camping"
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Money",
+      "items": [
+        "No ATMs at Dana. Withdraw cash in Tafila (30 min away) or Amman before arriving",
+        "Guesthouses accept cards for accommodation. Guides, transport, and village shops are cash only",
+        "Feynan Ecolodge accepts cards for bookings made online. On-site purchases are limited"
+      ]
+    },
+    {
+      "icon": "📱",
+      "title": "Connectivity",
+      "items": [
+        "Mobile signal is patchy at Dana Village and non-existent at Feynan Ecolodge",
+        "RSCN Guesthouse has basic WiFi. Feynan intentionally has none — embrace the digital detox",
+        "Download offline maps and tell someone your plans before hiking. No mountain rescue service exists"
+      ]
+    }
+  ],
+  "culturalTips": [
+    {
+      "icon": "🤝",
+      "title": "Bedouin Culture",
+      "text": "Dana's families are Bedouin — deeply hospitable. If invited for tea, accept. Remove shoes before entering tents or homes. Eat and greet with the right hand. The warmth is genuine and the cultural exchange goes both ways."
+    },
+    {
+      "icon": "👗",
+      "title": "Dress Code",
+      "text": "Conservative dress in the village — cover shoulders and knees. On the trail, hiking gear is fine but cover up when passing through or near Bedouin camps. Women don't need to cover their hair."
+    },
+    {
+      "icon": "🌿",
+      "title": "Leave No Trace",
+      "text": "Dana is a protected reserve. Pack out all rubbish, stay on marked trails, don't pick plants or disturb wildlife. The ecosystem is fragile and the reserve depends on responsible visitors."
+    },
+    {
+      "icon": "📸",
+      "title": "Photography",
+      "text": "Ask before photographing village families, especially women and children. Landscape and wildlife photography is encouraged. The RSCN promotes nature photography in the reserve."
+    },
+    {
+      "icon": "💡",
+      "title": "Feynan Etiquette",
+      "text": "Feynan is intentionally off-grid. Embrace the candles and silence. Don't complain about the lack of WiFi — it's the point. The staff are local Bedouin and the lodge is a model of community tourism."
+    }
+  ],
+  "title": "Dana Nature Reserve Guide 2026 — Itinerary | roammate",
+  "description": "The ultimate Dana Nature Reserve guide. Canyon hiking, Bedouin culture, Feynan Ecolodge, ibex spotting, and wild Jordan adventure. Plan your trip with roammate.",
+  "heroImage": "/images/guides/wadi-rum-hero.webp",
+  "heroFlag": "🇯🇴",
+  "heroCountry": "Jordan",
+  "heroRegion": "Middle East",
+  "heroCity": "Dana Nature Reserve",
+  "heroSubtitle": "A cliff-edge Bedouin village above Jordan's greatest canyon — four ecosystems, zero light pollution, and a silence that resets you.",
+  "budgetIntro": "Daily costs per person in Jordanian Dinar. Dana ranges from budget-friendly village guesthouses to the splurge-worthy Feynan Ecolodge.",
+  "culturalIntro": "Dana is Bedouin country. Come with respect, accept the hospitality, and leave with a deeper understanding of Jordan's people and landscapes.",
+  "ctaCity": "Dana",
+  "ctaText": "Find hiking companions to share the Wadi Dana trail, split 4x4 transfers, and experience Bedouin hospitality together on roammate.",
+  "ctaCustomise": "To customise this itinerary to your travel style, pace, and budget — download the roammate app.",
+  "heroPills": [
+    "3-Day Adventure",
+    "Hiking & Nature",
+    "Mar – May Best"
+  ],
+  "defaultDays": 3
+}
