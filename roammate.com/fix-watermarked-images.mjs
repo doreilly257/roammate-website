@@ -40,7 +40,7 @@ async function searchUnsplash(query, perPage = 10) {
     }));
 }
 
-async function downloadAndConvert(url, outputPath, width = 900, height = 600) {
+async function downloadAndConvert(url, outputPath, width = 1600, height = 900) {
   const imgUrl = `${url}${url.includes('?') ? '&' : '?'}w=${width * 2}&q=80&fm=jpg`;
   const res = await fetch(imgUrl);
   if (!res.ok) throw new Error(`Download failed: ${res.status}`);
@@ -56,7 +56,8 @@ async function downloadAndConvert(url, outputPath, width = 900, height = 600) {
 
   let quality = 80;
   let webpBuf = await sharp(buffer).resize(width, height, { fit: 'cover' }).webp({ quality }).toBuffer();
-  while (webpBuf.length > 200 * 1024 && quality > 30) {
+  const maxSize = width > 1000 ? 300 * 1024 : 200 * 1024;
+  while (webpBuf.length > maxSize && quality > 30) {
     quality -= 10;
     webpBuf = await sharp(buffer).resize(width, height, { fit: 'cover' }).webp({ quality }).toBuffer();
   }
@@ -142,8 +143,11 @@ async function main() {
         }
 
         try {
-          const size = await downloadAndConvert(pick.url, filePath);
-          console.log(`  ✓ ${imgFile} (${(size / 1024).toFixed(0)}KB) photo:${pick.id}`);
+          const isHero = imgFile.includes('-hero');
+          const w = isHero ? 1600 : 900;
+          const h = isHero ? 900 : 600;
+          const size = await downloadAndConvert(pick.url, filePath, w, h);
+          console.log(`  ✓ ${imgFile} (${(size / 1024).toFixed(0)}KB${isHero ? ' @1600' : ''}) photo:${pick.id}`);
           success++;
         } catch (err) {
           console.log(`  ✗ ${imgFile}: ${err.message}`);
