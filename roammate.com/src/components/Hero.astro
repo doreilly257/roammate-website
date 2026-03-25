@@ -30,12 +30,11 @@ const base = import.meta.env.BASE_URL;
       <a href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=homepage-hero&mt=8" class="badge-link" aria-label="Download on App Store" target="_blank" rel="noopener" data-ph-event="hero_appstore_click" data-ph-label="hero">
         <img src={`${base}images/app-store-badge.png`} alt="Download on App Store" class="store-badge" width="564" height="189">
       </a>
-      <div class="hero-android-soon" aria-label="Android app coming soon">
-        <img src={`${base}images/google-play-badge.png`} alt="Android coming soon" class="store-badge" width="564" height="168">
-        <span class="hero-android-label">Coming soon</span>
-      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android" class="badge-link" aria-label="Get it on Google Play" target="_blank" rel="noopener" data-ph-event="hero_playstore_click" data-ph-label="hero">
+        <img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="564" height="168">
+      </a>
     </div>
-    <p class="hero-free-line">Free on iOS &middot; No ads &middot; No subscriptions</p>
+    <p class="hero-free-line">Free on iOS &amp; Android &middot; No ads &middot; No subscriptions</p>
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -196,26 +195,6 @@ const base = import.meta.env.BASE_URL;
   .hero-download-btn:hover {
     background: #b34f28;
     transform: translateY(-3px);
-  }
-
-  .hero-android-soon {
-    position: relative;
-    display: block;
-    opacity: 0.38;
-    cursor: default;
-  }
-
-  .hero-android-label {
-    position: absolute;
-    bottom: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(245, 240, 232, 0.5);
-    white-space: nowrap;
   }
 
   .hero-scroll {

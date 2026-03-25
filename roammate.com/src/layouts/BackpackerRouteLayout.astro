@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { getBySlug, getCityGuideSlugs } from '../data/guides';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 const base = import.meta.env.BASE_URL;
 
 interface Props {
@@ -274,6 +275,9 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     </div>
   </section>
 
+  <!-- Newsletter -->
+  <NewsletterSignup />
+
   <!-- CTA -->
   <section class="route-cta reveal" style={`--accent: ${accentColor};`}>
     <div class="route-cta-inner">
@@ -281,7 +285,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
       <p class="route-cta-text">{ctaText}</p>
       <div class="route-cta-downloads">
         <a href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=route-guide-cta&mt=8" class="badge-link" target="_blank" rel="noopener" data-ph-event="guide_appstore_click"><img src={`${base}images/app-store-badge.png`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
-        <a href="/#waitlist" class="badge-link"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android" class="badge-link" target="_blank" rel="noopener" data-ph-event="guide_playstore_click"><img src={`${base}images/google-play-badge.png`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy"></a>
       </div>
       <p class="route-cta-customise">{ctaCustomise}</p>
     </div>

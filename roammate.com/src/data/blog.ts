@@ -23,4 +23,5 @@ export type BlogPost = {
   readingTime?: string;
   relatedGuideSlugs?: string[];
   relatedPostSlugs?: string[];
+  cities?: string[];
 };

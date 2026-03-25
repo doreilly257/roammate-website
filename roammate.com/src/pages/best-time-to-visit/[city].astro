@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCitySiblingPages } from '../../lib/getCitySiblingPages';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -20,12 +21,13 @@ export async function getStaticPaths() {
           bestMonthsDetail: bestMonths?.detail ?? '',
           dailyBudget: dailyBudget?.value ?? '',
           quickFacts: d.quickFacts,
+          siblings: getCitySiblingPages(d.slug, d),
         },
       };
     });
 }
 
-const { city, country, slug, bestMonths, bestMonthsDetail, quickFacts } = Astro.props;
+const { city, country, slug, bestMonths, bestMonthsDetail, quickFacts, siblings } = Astro.props;
 const pageTitle = `Best Time to Visit ${city}, ${country} | roammate`;
 const pageDesc = `The best time to visit ${city} is ${bestMonths}. ${bestMonthsDetail}. Plan your trip with weather info, seasonal tips, and travel advice.`;
 
@@ -117,14 +119,6 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
       {timezone && <p><strong>Timezone:</strong> {timezone.value} ({timezone.detail})</p>}
       {visa && <p><strong>Visa:</strong> {visa.value} — {visa.detail}</p>}
 
-      <h2>Plan your trip</h2>
-      <p>Ready to plan your {city} trip? Check out our detailed resources:</p>
-      <ul>
-        <li><a href={`/guides/${slug}/`}>Full {city} travel guide</a> with itineraries and cultural tips</li>
-        <li><a href={`/budget/${slug}/`}>{city} budget breakdown</a> with daily costs</li>
-        <li><a href={`/itinerary/${slug}-1-day/`}>{city} 1-day itinerary</a></li>
-      </ul>
-
       <h2>Frequently asked questions</h2>
       <div class="pv-faq">
         <details class="pv-faq-item" open>
@@ -143,6 +137,26 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
 
     </div>
   </article>
+
+  <section class="city-more">
+    <div class="city-more-inner">
+      <h3>More about {city}</h3>
+      <ul class="city-more-links">
+        {siblings.guide && (
+          <li><a href={siblings.guide}>{city} Travel Guide</a></li>
+        )}
+        {siblings.itinerary.map((it: any) => (
+          <li><a href={it.slug}>{city} {it.days}-Day Itinerary</a></li>
+        ))}
+        {siblings.budget && (
+          <li><a href={siblings.budget}>{city} Budget Breakdown</a></li>
+        )}
+        {siblings.companions && (
+          <li><a href={siblings.companions}>Travel Companions in {city}</a></li>
+        )}
+      </ul>
+    </div>
+  </section>
 
   <section class="pv-cta reveal">
     <div class="pv-cta-inner">
@@ -257,10 +271,52 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
     border-radius: 50px; text-decoration: none; transition: background 0.3s, transform 0.2s;
   }
   .pv-cta-btn:hover { background: var(--color-terracotta-light); transform: translateY(-1px); }
+  .city-more {
+    padding: 48px 24px;
+    background: var(--color-bg-warm);
+  }
+  .city-more-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .city-more h3 {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 20px;
+  }
+  .city-more-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .city-more-links li a {
+    display: inline-block;
+    padding: 8px 18px;
+    background: var(--color-bg);
+    border: 1px solid rgba(58, 52, 46, 0.12);
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .city-more-links li a:hover {
+    background: var(--color-terracotta);
+    color: #fff;
+    border-color: var(--color-terracotta);
+  }
   @media (max-width: 600px) {
     .pv-hero { padding: 100px 20px 48px; }
     .pv-intro { padding: 20px; font-size: 17px; }
     .pv-content { padding: 40px 20px 48px; }
     .pv-facts-grid { grid-template-columns: repeat(2, 1fr); }
+    .city-more { padding: 36px 20px; }
   }
 </style>

@@ -24,6 +24,7 @@ const blog = defineCollection({
     readingTime: z.string().optional(),
     relatedGuideSlugs: z.array(z.string()).optional(),
     relatedPostSlugs: z.array(z.string()).optional(),
+    cities: z.array(z.string()).optional(),
   }),
 });
 

@@ -25,6 +25,7 @@ const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts
   sections={post.sections}
   relatedGuides={relatedGuides as any}
   relatedPosts={relatedPosts}
+  cities={post.cities}
 >
   <div slot="extra" class="blog-comparison-table reveal">
     <h2>Side-by-Side Comparison</h2>
@@ -70,7 +71,7 @@ const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts
           </tr>
           <tr>
             <td>Platform</td>
-            <td>iOS (Android coming)</td>
+            <td>iOS, Android</td>
             <td>iOS, Android, Web</td>
           </tr>
         </tbody>

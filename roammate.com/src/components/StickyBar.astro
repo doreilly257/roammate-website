@@ -3,9 +3,8 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <div class="sticky-bar">
-  <span class="sticky-bar-text" id="sticky-bar-text">Free on iOS</span>
+  <span class="sticky-bar-text">Free on iOS &amp; Android</span>
   <a
-    id="sticky-ios-link"
     class="sticky-bar-link"
     href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=sticky-bar&mt=8"
     target="_blank"
@@ -21,13 +20,19 @@ const base = import.meta.env.BASE_URL;
     />
   </a>
   <a
-    id="sticky-android-link"
-    class="sticky-bar-link sticky-bar-android"
-    href="/#waitlist"
-    data-ph-event="sticky_android_click"
-    style="display:none"
+    class="sticky-bar-link"
+    href="https://play.google.com/store/apps/details?id=com.roammate.app.android"
+    target="_blank"
+    rel="noopener"
+    data-ph-event="sticky_playstore_click"
   >
-    <span class="sticky-bar-android-btn">Join Android Waitlist</span>
+    <img
+      class="store-badge"
+      src={`${base}images/google-play-badge.png`}
+      alt="Get it on Google Play"
+      width="120"
+      height="36"
+    />
   </a>
   <button class="sticky-bar-dismiss" aria-label="Dismiss">&times;</button>
 </div>
@@ -99,17 +104,6 @@ const base = import.meta.env.BASE_URL;
     transform: translateY(-2px);
   }
 
-  .sticky-bar-android-btn {
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 999px;
-    background: var(--color-terracotta);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
   @media (max-width: 640px) {
     .sticky-bar {
       padding: 10px 16px;
@@ -128,16 +122,6 @@ const base = import.meta.env.BASE_URL;
 
 <script>
   (function() {
-    var isAndroid = /android/i.test(navigator.userAgent);
-    if (isAndroid) {
-      var iosLink = document.getElementById('sticky-ios-link');
-      var androidLink = document.getElementById('sticky-android-link');
-      var text = document.getElementById('sticky-bar-text');
-      if (iosLink) iosLink.style.display = 'none';
-      if (androidLink) androidLink.style.display = 'flex';
-      if (text) text.textContent = 'Android coming soon';
-    }
-
     var bar = document.querySelector('.sticky-bar');
     if (!bar || sessionStorage.getItem('sticky_dismissed') === '1') return;
 
