@@ -375,6 +375,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <p class="stats-methodology">Statistics on this page are compiled from publicly available industry reports, travel platform data (Hostelworld, Booking.com, Google Trends), market research firms (Grand View Research, Spherical Insights), and traveler surveys (TravelBoom, Klook, Road Scholar/Talker Research, Condor Ferries). Where precise figures are unavailable, we use hedged language. Some figures cited from secondary aggregators are marked as estimated. This page was last updated March 2026.</p>
 
+      <h2>City statistics</h2>
+      <p>Explore solo travel statistics, budget breakdowns, and practical info for popular destinations:</p>
+      <div class="city-stats-pills">
+        <a href="/statistics/bangkok/" class="city-stats-pill">Bangkok</a>
+        <a href="/statistics/tokyo/" class="city-stats-pill">Tokyo</a>
+        <a href="/statistics/denpasar/" class="city-stats-pill">Bali</a>
+        <a href="/statistics/barcelona/" class="city-stats-pill">Barcelona</a>
+        <a href="/statistics/lisbon/" class="city-stats-pill">Lisbon</a>
+        <a href="/statistics/amsterdam/" class="city-stats-pill">Amsterdam</a>
+        <a href="/statistics/rome/" class="city-stats-pill">Rome</a>
+        <a href="/statistics/paris/" class="city-stats-pill">Paris</a>
+        <a href="/statistics/london/" class="city-stats-pill">London</a>
+        <a href="/statistics/berlin/" class="city-stats-pill">Berlin</a>
+        <a href="/statistics/prague/" class="city-stats-pill">Prague</a>
+        <a href="/statistics/istanbul/" class="city-stats-pill">Istanbul</a>
+        <a href="/statistics/dubai/" class="city-stats-pill">Dubai</a>
+        <a href="/statistics/hanoi/" class="city-stats-pill">Hanoi</a>
+        <a href="/statistics/ho-chi-minh-city/" class="city-stats-pill">Ho Chi Minh City</a>
+        <a href="/statistics/chiang-mai/" class="city-stats-pill">Chiang Mai</a>
+        <a href="/statistics/marrakech/" class="city-stats-pill">Marrakech</a>
+        <a href="/statistics/buenos-aires/" class="city-stats-pill">Buenos Aires</a>
+        <a href="/statistics/mexico-city/" class="city-stats-pill">Mexico City</a>
+        <a href="/statistics/budapest/" class="city-stats-pill">Budapest</a>
+      </div>
+
     </div>
   </article>
 
@@ -710,6 +735,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .stats-cta-btn:hover {
     background: var(--color-terracotta-light);
+    transform: translateY(-1px);
+  }
+
+  /* City stats pills */
+  .city-stats-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0;
+  }
+
+  .city-stats-pill {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--color-bg-warm);
+    color: var(--color-terracotta) !important;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none !important;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .city-stats-pill:hover {
+    background: var(--color-terracotta);
+    color: #fff !important;
     transform: translateY(-1px);
   }
 
