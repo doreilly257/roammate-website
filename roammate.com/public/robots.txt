@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /ai.txt
-Allow: /.well-known/ai.txt
 Disallow: /deletedata/
 
 User-agent: GPTBot

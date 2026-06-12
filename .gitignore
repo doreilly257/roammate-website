@@ -12,3 +12,7 @@ node_modules/
 .dolt/
 *.db
 .gstack/
+
+# Beads runtime (per-machine, sensitive)
+.beads-credential-key
+.beads/proxieddb/

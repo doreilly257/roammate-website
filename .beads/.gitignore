@@ -48,6 +48,15 @@ dolt-server.port
 # Corrupt backup directories (created by bd doctor --fix recovery)
 *.corrupt.backup/
 
+# Credentials and per-machine runtime (bd >= 1.0)
+.env
+.beads-credential-key
+export-state.json
+embeddeddolt/
+proxieddb/
+dolt-server.activity
+proxied_server_client_info.json
+
 # Backup data (auto-exported JSONL, local-only)
 backup/
 

@@ -62,38 +62,51 @@ async function loadGuides() {
   const entries = await getCollection('guides');
   const citySlugSet = new Set<string>(CITY_GUIDE_SLUGS_LIST);
 
-  const cityTypeEntries = entries.filter((e) => e.data.type === 'city');
-  const routeEntries = entries.filter((e) => e.data.type === 'backpacker');
+  const cityDatas = entries.flatMap((e) => (e.data.type === 'city' ? [e.data] : []));
+
+  // Place guides also use type:'city', so the curated city list can't be
+  // derived from the collection. Assert at build time that every listed slug
+  // still exists as a city-type entry — catches silent divergence when a city
+  // guide is renamed or removed without updating CITY_GUIDE_SLUGS_LIST.
+  const cityTypeSlugs = new Set(cityDatas.map((d) => d.slug));
+  const missing = CITY_GUIDE_SLUGS_LIST.filter((s) => !cityTypeSlugs.has(s));
+  if (missing.length > 0) {
+    throw new Error(
+      `CITY_GUIDE_SLUGS_LIST has ${missing.length} slug(s) with no matching ` +
+        `type:'city' guide entry: ${missing.join(', ')}`,
+    );
+  }
+  const routeDatas = entries.flatMap((e) => (e.data.type === 'backpacker' ? [e.data] : []));
 
   const collatorOpts: Intl.CollatorOptions = { sensitivity: 'base' };
 
-  const allGuideEntries: GuideEntry[] = cityTypeEntries
-    .map((e) => ({
-      slug: e.data.slug,
-      name: e.data.heroCity,
-      country: e.data.heroCountry,
-      flag: e.data.heroFlag,
-      region: e.data.heroRegion,
+  const allGuideEntries: GuideEntry[] = cityDatas
+    .map((d) => ({
+      slug: d.slug,
+      name: d.heroCity,
+      country: d.heroCountry,
+      flag: d.heroFlag,
+      region: d.heroRegion,
     }))
     .sort((a, b) => {
       const c = a.country.localeCompare(b.country, undefined, collatorOpts);
       return c !== 0 ? c : a.name.localeCompare(b.name, undefined, collatorOpts);
     });
 
-  const backpackerRoutes: RouteEntry[] = routeEntries.map((e) => ({
-    slug: e.data.slug,
-    name: e.data.heroTitle.replace(/<br\s*\/?>/g, ' '),
-    flags: e.data.heroFlags,
-    duration: e.data.heroPills?.[0] ?? '',
-    tagline: e.data.heroSubtitle,
+  const backpackerRoutes: RouteEntry[] = routeDatas.map((d) => ({
+    slug: d.slug,
+    name: d.heroTitle.replace(/<br\s*\/?>/g, ' '),
+    flags: d.heroFlags,
+    duration: d.heroPills?.[0] ?? '',
+    tagline: d.heroSubtitle,
   }));
 
   const guideToRoutes: Record<string, string[]> = {};
-  for (const route of routeEntries) {
-    const slugs = route.data.featuredGuides ?? [];
+  for (const route of routeDatas) {
+    const slugs = route.featuredGuides ?? [];
     for (const guideSlug of slugs) {
       if (!guideToRoutes[guideSlug]) guideToRoutes[guideSlug] = [];
-      guideToRoutes[guideSlug].push(route.data.slug);
+      guideToRoutes[guideSlug].push(route.slug);
     }
   }
 

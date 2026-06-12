@@ -27,6 +27,7 @@ const isHome = Astro.url.pathname === '/';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com https://static.cloudflareinsights.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#c4562a">
   <meta name="description" content={description}>
   <title>{title}</title>
   <link rel="canonical" href={canonicalURL}>
@@ -58,8 +59,6 @@ const isHome = Astro.url.pathname === '/';
   <!-- RSS Feed -->
   <link rel="alternate" type="application/rss+xml" title="roammate Blog" href="https://roammate.com/rss.xml">
   <!-- Dates -->
-  {publishedAt && <meta name="date" content={publishedAt}>}
-  {updatedAt && <meta name="last-modified" content={updatedAt}>}
   {publishedAt && <meta property="article:published_time" content={publishedAt}>}
   {updatedAt && <meta property="article:modified_time" content={updatedAt}>}
   <!-- iOS Smart App Banner -->
@@ -73,171 +72,145 @@ const isHome = Astro.url.pathname === '/';
   <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`}>
   <slot name="head" />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "roammate",
-    "url": "https://roammate.com/",
-    "description": "Travel companion app that matches solo travelers by travel style, budget, and destination."
-  })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "roammate",
-    "url": "https://roammate.com/",
-    "logo": "https://roammate.com/images/rm-full.svg",
-    "sameAs": [
-      "https://apps.apple.com/app/id6758834253",
-      "https://www.facebook.com/roammate",
-      "https://www.instagram.com/roammate_travel_app",
-      "https://x.com/roammate",
-      "https://bsky.app/profile/roammate.bsky.social",
-      "https://www.linkedin.com/company/roammate"
-    ]
-  })} />
   {isHome && (
-    <>
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "MobileApplication",
-      "name": "roammate",
-      "applicationCategory": "TravelApplication",
-      "operatingSystem": "iOS",
-      "url": "https://roammate.com/",
-      "downloadUrl": "https://apps.apple.com/app/id6758834253",
-      "description": "Travel companion app that matches solo travelers by travel style, budget, and destination.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "category": "Free"
-      }
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "roammate",
-      "applicationCategory": "TravelApplication",
-      "operatingSystem": "iOS",
-      "url": "https://roammate.com/",
-      "downloadUrl": "https://apps.apple.com/app/id6758834253",
-      "description": "Travel companion app that matches solo travelers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby.",
-      "datePublished": "2017-01-01",
-      "dateModified": "2026-03-01",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".hero-title", ".hero-subtitle"]
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "category": "Free"
-      }
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "What is roammate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "roammate is a free travel companion app for solo travelers and backpackers. It matches you with compatible travelers based on travel style, daily budget, and destination overlap — so you find someone genuinely compatible, not just someone nearby. Available on iOS."
+          "@type": "WebSite",
+          "name": "roammate",
+          "url": "https://roammate.com/",
+          "description": "Travel companion app that matches solo travelers by travel style, budget, and destination."
+        },
+        {
+          "@type": "Organization",
+          "name": "roammate",
+          "url": "https://roammate.com/",
+          "logo": "https://roammate.com/images/rm-full.svg",
+          "sameAs": [
+            "https://apps.apple.com/app/id6758834253",
+            "https://www.facebook.com/roammate",
+            "https://www.instagram.com/roammate_travel_app",
+            "https://x.com/roammate",
+            "https://bsky.app/profile/roammate.bsky.social",
+            "https://www.linkedin.com/company/roammate"
+          ]
+        },
+        {
+          "@type": "MobileApplication",
+          "name": "roammate",
+          "applicationCategory": "TravelApplication",
+          "operatingSystem": "iOS, Android",
+          "url": "https://roammate.com/",
+          "downloadUrl": "https://apps.apple.com/app/id6758834253",
+          "description": "Travel companion app that matches solo travelers by travel style, budget, and destination.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "category": "Free"
           }
         },
         {
-          "@type": "Question",
-          "name": "How do I find a travel companion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Download roammate, set your travel style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before you commit to meeting."
+          "@type": "SoftwareApplication",
+          "name": "roammate",
+          "applicationCategory": "TravelApplication",
+          "operatingSystem": "iOS, Android",
+          "url": "https://roammate.com/",
+          "downloadUrl": "https://apps.apple.com/app/id6758834253",
+          "description": "Travel companion app that matches solo travelers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby.",
+          "dateModified": "2026-03-01",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero-title", ".hero-subtitle"]
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "category": "Free"
           }
         },
         {
-          "@type": "Question",
-          "name": "Is roammate free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees."
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is roammate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "roammate is a free travel companion app for solo travelers and backpackers. It matches you with compatible travelers based on travel style, daily budget, and destination overlap — so you find someone genuinely compatible, not just someone nearby. Available on iOS."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I find a travel companion?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Download roammate, set your travel style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before you commit to meeting."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is roammate free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "roammate",
+          "serviceType": "Travel Companion Matching",
+          "description": "roammate matches solo travelers by travel style, budget, and destination so they can find a compatible travel companion.",
+          "provider": {
+            "@type": "Organization",
+            "name": "roammate",
+            "url": "https://roammate.com/"
+          },
+          "areaServed": "Worldwide",
+          "url": "https://roammate.com/",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Find a Travel Companion with roammate",
+          "description": "Find a compatible travel companion using roammate's matching system.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Build your travel profile",
+              "text": "Set your travel style (adventure, cultural, slow travel, food-focused), daily budget bracket, and your upcoming destination."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Browse compatible travelers",
+              "text": "View travelers with overlapping destinations, matching budgets, and compatible travel styles."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Connect and meet",
+              "text": "Message in-app, discuss your plans, and meet up. Share accommodation, split tour costs, or simply explore together."
+            }
+          ],
+          "tool": {
+            "@type": "HowToTool",
+            "name": "roammate app",
+            "url": "https://apps.apple.com/app/id6758834253"
           }
         }
       ]
     })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "roammate",
-      "serviceType": "Travel Companion Matching",
-      "description": "roammate matches solo travelers by travel style, budget, and destination so they can find a compatible travel companion.",
-      "provider": {
-        "@type": "Organization",
-        "name": "roammate",
-        "url": "https://roammate.com/"
-      },
-      "areaServed": "Worldwide",
-      "url": "https://roammate.com/",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Find a Travel Companion with roammate",
-      "description": "Find a compatible travel companion using roammate's matching system.",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Build your travel profile",
-          "text": "Set your travel style (adventure, cultural, slow travel, food-focused), daily budget bracket, and your upcoming destination."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Browse compatible travelers",
-          "text": "View travelers with overlapping destinations, matching budgets, and compatible travel styles."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Connect and meet",
-          "text": "Message in-app, discuss your plans, and meet up. Share accommodation, split tour costs, or simply explore together."
-        }
-      ],
-      "tool": {
-        "@type": "HowToTool",
-        "name": "roammate app",
-        "url": "https://apps.apple.com/app/id6758834253"
-      }
-    })} />
-    </>
   )}
-
-  <script>
-    // Analytics consent — only load PostHog after explicit user grant (GDPR/CCPA)
-    function hasAnalyticsConsent() {
-      return localStorage.getItem('analytics_consent') === 'granted';
-    }
-    function loadPostHog() {
-      if (!hasAnalyticsConsent()) return;
-      !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init rs ls wi ns us ts ss capture calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty fs ds createPersonProfile setInternalOrTestUser ps Qr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing hs debug M cs getPageViewId captureTraceFeedback captureTraceMetric Kr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-      posthog.init('phc_4k6qY9TfSxtBwP6wyHaulKcBOPUqIFicoO1x3ZStFU6', {
-          api_host: 'https://us.i.posthog.com',
-          defaults: '2025-11-30',
-          person_profiles: 'identified_only',
-      })
-    }
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadPostHog);
-    } else {
-      setTimeout(loadPostHog, 3500);
-    }
-  </script>
 </head>
 <body>
   <div class="reading-progress" id="reading-progress"></div>
@@ -260,185 +233,212 @@ const isHome = Astro.url.pathname === '/';
   </div>
 
   <script>
-    // Cookie consent banner
-    (function() {
-      var consent = localStorage.getItem('analytics_consent');
-      if (!consent) {
-        var banner = document.getElementById('cookieBanner');
-        if (banner) banner.style.display = '';
-        document.getElementById('cookieAccept')?.addEventListener('click', function() {
-          localStorage.setItem('analytics_consent', 'granted');
-          banner && (banner.style.display = 'none');
-        });
-        document.getElementById('cookieDecline')?.addEventListener('click', function() {
-          localStorage.setItem('analytics_consent', 'denied');
-          banner && (banner.style.display = 'none');
-          if (window.posthog) window.posthog.opt_out_capturing();
-        });
+    const POSTHOG_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
+
+    function init() {
+      // ---- PostHog idle loader (consent-gated) ----
+      function hasAnalyticsConsent() {
+        return localStorage.getItem('analytics_consent') === 'granted';
       }
-    })();
-  </script>
-
-  <script>
-    // PostHog custom event tracking
-    function phCapture(event, props) {
-      if (window.posthog && typeof window.posthog.capture === 'function') {
-        window.posthog.capture(event, props);
+      function loadPostHog() {
+        if (!POSTHOG_KEY) return;
+        if (!hasAnalyticsConsent()) return;
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init rs ls wi ns us ts ss capture calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty fs ds createPersonProfile setInternalOrTestUser ps Qr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing hs debug M cs getPageViewId captureTraceFeedback captureTraceMetric Kr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init(POSTHOG_KEY, {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2025-11-30',
+            person_profiles: 'identified_only',
+        })
       }
-    }
-
-    // Determine page section and metadata from URL
-    (function() {
-      var path = location.pathname.replace(/\/$/, '') || '/';
-      var parts = path.split('/').filter(Boolean);
-      var section = 'other';
-      var slug = parts[parts.length - 1] || 'home';
-      var meta = {};
-
-      if (path === '/') { section = 'landing'; slug = 'home'; }
-      else if (parts[0] === 'guides') { section = 'guide'; }
-      else if (parts[0] === 'blog') { section = 'blog'; }
-      else if (parts[0] === 'compare') { section = 'compare'; }
-      else if (['how-it-works', 'find-travel-companion', 'meet-travelers', 'about', 'safety'].indexOf(parts[0]) !== -1) { section = 'landing'; }
-
-      // Extract region from guide meta tag if present
-      var regionEl = document.querySelector('meta[name="ph-region"]');
-      if (regionEl) meta.region = regionEl.getAttribute('content');
-
-      // Extract category from blog meta tag if present
-      var catEl = document.querySelector('meta[name="ph-category"]');
-      if (catEl) meta.category = catEl.getAttribute('content');
-
-      // UTM parameter capture
-      var params = new URLSearchParams(location.search);
-      var utmProps = {};
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(key) {
-        var val = params.get(key);
-        if (val) utmProps[key] = val;
-      });
-      if (Object.keys(utmProps).length > 0 && window.posthog && typeof window.posthog.setPersonProperties === 'function') {
-        window.posthog.setPersonProperties(utmProps);
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadPostHog);
+      } else {
+        setTimeout(loadPostHog, 3500);
       }
 
-      // Enhanced page view
-      phCapture('page_view_enhanced', Object.assign({ section: section, slug: slug, path: path }, meta, utmProps));
-
-      // Section-specific page views
-      if (section === 'guide' && parts.length > 1) {
-        phCapture('guide_view', Object.assign({ slug: slug, path: path }, meta));
-      }
-      if (section === 'blog' && parts.length > 1) {
-        phCapture('blog_view', Object.assign({ slug: slug, path: path }, meta));
-      }
-    })();
-
-    // Track elements with data-ph-event attributes
-    document.querySelectorAll('[data-ph-event]').forEach(function(el) {
-      el.addEventListener('click', function() {
-        var eventName = el.getAttribute('data-ph-event');
-        var props = {
-          label: el.getAttribute('data-ph-label') || el.textContent?.trim(),
-          href: el.getAttribute('href') || undefined,
-        };
-        phCapture(eventName, props);
-
-        // Consolidated events for funnels
-        if (eventName.includes('appstore') || eventName.includes('app_store')) {
-          phCapture('app_store_click', { source: eventName, label: el.getAttribute('data-ph-label') || el.textContent?.trim() });
-        }
-        if (eventName.includes('cta')) {
-          var ctaType = eventName.includes('appstore') || eventName.includes('app_store') ? 'app_store'
-            : eventName.includes('waitlist') ? 'waitlist'
-            : eventName.includes('compare') ? 'compare'
-            : 'other';
-          phCapture('cta_click', { type: ctaType, source: eventName, label: el.getAttribute('data-ph-label') || el.textContent?.trim() });
-        }
-      });
-    });
-
-    // Track newsletter signup forms
-    ['blog-email-form', 'waitlist-form'].forEach(function(formId) {
-      var form = document.getElementById(formId);
-      if (!form) return;
-      form.addEventListener('submit', function() {
-        var source = formId === 'blog-email-form' ? 'blog' : 'waitlist';
-        phCapture('newsletter_signup', { source: source, path: location.pathname });
-      });
-    });
-
-    // Track guide card clicks
-    document.querySelectorAll('a[href*="/guides/"]').forEach(function(el) {
-      el.addEventListener('click', function() {
-        var slug = el.getAttribute('href')?.replace(/^\/guides\//, '').replace(/\/$/, '');
-        if (slug && slug !== '' && !slug.includes('/')) {
-          phCapture('guide_clicked', { slug: slug });
-        }
-      });
-    });
-
-    // Track blog post clicks
-    document.querySelectorAll('a[href*="/blog/"]').forEach(function(el) {
-      el.addEventListener('click', function() {
-        var slug = el.getAttribute('href')?.replace(/^\/blog\//, '').replace(/\/$/, '');
-        if (slug && slug !== '' && !slug.includes('/')) {
-          phCapture('blog_clicked', { slug: slug });
-        }
-      });
-    });
-
-    // Track scroll depth (25%, 50%, 75%, 100%)
-    (function() {
-      var milestones = [25, 50, 75, 100];
-      var fired = {};
-      window.addEventListener('scroll', function() {
-        var scrollHeight = document.body.scrollHeight - window.innerHeight;
-        if (scrollHeight <= 0) return;
-        var scrollPct = Math.round((window.scrollY / scrollHeight) * 100);
-        milestones.forEach(function(m) {
-          if (scrollPct >= m && !fired[m]) {
-            fired[m] = true;
-            phCapture('scroll_depth', { percent: m, path: location.pathname });
-          }
-        });
-      }, { passive: true });
-    })();
-  </script>
-
-  <script>
-    // Scroll reveal observer
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
-    );
-    reveals.forEach((el) => observer.observe(el));
-  </script>
-
-  <script>
-    (function() {
-      var bar = document.getElementById('reading-progress');
-      if (!bar) return;
-      var tick = false;
-      window.addEventListener('scroll', function() {
-        if (!tick) {
-          tick = true;
-          requestAnimationFrame(function() {
-            var h = document.documentElement;
-            var scrollable = h.scrollHeight - h.clientHeight;
-            var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-            bar.style.width = Math.min(Math.round(pct), 100) + '%';
-            tick = false;
+      // ---- Cookie consent banner ----
+      (function() {
+        var consent = localStorage.getItem('analytics_consent');
+        if (!consent) {
+          var banner = document.getElementById('cookieBanner');
+          if (banner) banner.style.display = '';
+          document.getElementById('cookieAccept')?.addEventListener('click', function() {
+            localStorage.setItem('analytics_consent', 'granted');
+            banner && (banner.style.display = 'none');
+            loadPostHog();
+          });
+          document.getElementById('cookieDecline')?.addEventListener('click', function() {
+            localStorage.setItem('analytics_consent', 'denied');
+            banner && (banner.style.display = 'none');
+            if (window.posthog) window.posthog.opt_out_capturing();
           });
         }
-      }, { passive: true });
-    })();
+      })();
+
+      // ---- PostHog custom event tracking ----
+      function phCapture(event, props) {
+        if (!hasAnalyticsConsent()) return;
+        if (window.posthog && typeof window.posthog.capture === 'function') {
+          window.posthog.capture(event, props);
+        }
+      }
+
+      // Determine page section and metadata from URL
+      (function() {
+        var path = location.pathname.replace(/\/$/, '') || '/';
+        var parts = path.split('/').filter(Boolean);
+        var section = 'other';
+        var slug = parts[parts.length - 1] || 'home';
+        var meta = {};
+
+        if (path === '/') { section = 'landing'; slug = 'home'; }
+        else if (parts[0] === 'guides') { section = 'guide'; }
+        else if (parts[0] === 'blog') { section = 'blog'; }
+        else if (parts[0] === 'compare') { section = 'compare'; }
+        else if (['how-it-works', 'find-travel-companion', 'meet-travelers', 'about', 'safety'].indexOf(parts[0]) !== -1) { section = 'landing'; }
+
+        // Extract region from guide meta tag if present
+        var regionEl = document.querySelector('meta[name="ph-region"]');
+        if (regionEl) meta.region = regionEl.getAttribute('content');
+
+        // Extract category from blog meta tag if present
+        var catEl = document.querySelector('meta[name="ph-category"]');
+        if (catEl) meta.category = catEl.getAttribute('content');
+
+        // UTM parameter capture
+        var params = new URLSearchParams(location.search);
+        var utmProps = {};
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(key) {
+          var val = params.get(key);
+          if (val) utmProps[key] = val;
+        });
+        if (Object.keys(utmProps).length > 0 && window.posthog && typeof window.posthog.setPersonProperties === 'function') {
+          window.posthog.setPersonProperties(utmProps);
+        }
+
+        // Enhanced page view
+        phCapture('page_view_enhanced', Object.assign({ section: section, slug: slug, path: path }, meta, utmProps));
+
+        // Section-specific page views
+        if (section === 'guide' && parts.length > 1) {
+          phCapture('guide_view', Object.assign({ slug: slug, path: path }, meta));
+        }
+        if (section === 'blog' && parts.length > 1) {
+          phCapture('blog_view', Object.assign({ slug: slug, path: path }, meta));
+        }
+      })();
+
+      // Track elements with data-ph-event attributes
+      document.querySelectorAll('[data-ph-event]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var eventName = el.getAttribute('data-ph-event');
+          var props = {
+            label: el.getAttribute('data-ph-label') || el.textContent?.trim(),
+            href: el.getAttribute('href') || undefined,
+          };
+          phCapture(eventName, props);
+
+          // Consolidated events for funnels
+          if (eventName.includes('appstore') || eventName.includes('app_store')) {
+            phCapture('app_store_click', { source: eventName, label: el.getAttribute('data-ph-label') || el.textContent?.trim() });
+          }
+          if (eventName.includes('cta')) {
+            var ctaType = eventName.includes('appstore') || eventName.includes('app_store') ? 'app_store'
+              : eventName.includes('waitlist') ? 'waitlist'
+              : eventName.includes('compare') ? 'compare'
+              : 'other';
+            phCapture('cta_click', { type: ctaType, source: eventName, label: el.getAttribute('data-ph-label') || el.textContent?.trim() });
+          }
+        });
+      });
+
+      // Track newsletter signup forms
+      ['blog-email-form', 'waitlist-form'].forEach(function(formId) {
+        var form = document.getElementById(formId);
+        if (!form) return;
+        form.addEventListener('submit', function() {
+          var source = formId === 'blog-email-form' ? 'blog' : 'waitlist';
+          phCapture('newsletter_signup', { source: source, path: location.pathname });
+        });
+      });
+
+      // Track guide card clicks
+      document.querySelectorAll('a[href*="/guides/"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var slug = el.getAttribute('href')?.replace(/^\/guides\//, '').replace(/\/$/, '');
+          if (slug && slug !== '' && !slug.includes('/')) {
+            phCapture('guide_clicked', { slug: slug });
+          }
+        });
+      });
+
+      // Track blog post clicks
+      document.querySelectorAll('a[href*="/blog/"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var slug = el.getAttribute('href')?.replace(/^\/blog\//, '').replace(/\/$/, '');
+          if (slug && slug !== '' && !slug.includes('/')) {
+            phCapture('blog_clicked', { slug: slug });
+          }
+        });
+      });
+
+      // Track scroll depth (25%, 50%, 75%, 100%)
+      (function() {
+        var milestones = [25, 50, 75, 100];
+        var fired = {};
+        window.addEventListener('scroll', function() {
+          var scrollHeight = document.body.scrollHeight - window.innerHeight;
+          if (scrollHeight <= 0) return;
+          var scrollPct = Math.round((window.scrollY / scrollHeight) * 100);
+          milestones.forEach(function(m) {
+            if (scrollPct >= m && !fired[m]) {
+              fired[m] = true;
+              phCapture('scroll_depth', { percent: m, path: location.pathname });
+            }
+          });
+        }, { passive: true });
+      })();
+
+      // ---- Scroll reveal observer ----
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      // ---- Reading progress bar ----
+      (function() {
+        var bar = document.getElementById('reading-progress');
+        if (!bar) return;
+        var tick = false;
+        window.addEventListener('scroll', function() {
+          if (!tick) {
+            tick = true;
+            requestAnimationFrame(function() {
+              var h = document.documentElement;
+              var scrollable = h.scrollHeight - h.clientHeight;
+              var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+              bar.style.width = Math.min(Math.round(pct), 100) + '%';
+              tick = false;
+            });
+          }
+        }, { passive: true });
+      })();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
   </script>
 </body>
 </html>

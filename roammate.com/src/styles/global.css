@@ -40,8 +40,8 @@
 :root {
   --color-bg: #faf8f5;
   --color-bg-warm: #f2ede6;
-  --color-cream: #1a1714;
-  --color-cream-muted: #5a524a;
+  --color-ink: #1a1714;
+  --color-ink-muted: #5a524a;
   --color-terracotta: #c4562a;
   --color-terracotta-light: #e8734a;
   --color-teal-deep: #2e6d79;
@@ -147,7 +147,7 @@ body::after {
   font-size: clamp(36px, 4vw, 56px);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--color-cream);
+  color: var(--color-ink);
   margin-bottom: 32px;
 }
 

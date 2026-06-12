@@ -2,9 +2,9 @@
 const base = import.meta.env.BASE_URL;
 ---
 
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" aria-label="Main navigation">
   <a href={`${base}`} class="nav-logo-link">
-    <img src={`${base}images/rm-full-hz.svg`} alt="roammate" class="nav-logo" width="155" height="120" fetchpriority="high">
+    <img src={`${base}images/rm-full-hz.svg`} alt="roammate" class="nav-logo" width="155" height="120" fetchpriority="high" decoding="async">
   </a>
   <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
@@ -140,7 +140,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .nav-links a:hover {
-    color: var(--color-cream);
+    color: var(--color-ink);
   }
 
   .nav-links a:hover::after {
@@ -161,7 +161,7 @@ const base = import.meta.env.BASE_URL;
     display: block;
     width: 28px;
     height: 2px;
-    background: var(--color-cream);
+    background: var(--color-ink);
     transition: transform 0.3s, opacity 0.3s;
   }
 
@@ -197,7 +197,7 @@ const base = import.meta.env.BASE_URL;
       border: none;
       font-size: 40px;
       line-height: 1;
-      color: var(--color-cream);
+      color: var(--color-ink);
       cursor: pointer;
       padding: 8px;
     }

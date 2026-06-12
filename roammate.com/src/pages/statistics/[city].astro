@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AppCTA from '../../components/AppCTA.astro';
 import { getCitySiblingPages } from '../../lib/getCitySiblingPages';
 
 export async function getStaticPaths() {
@@ -31,7 +32,7 @@ const siblings = getCitySiblingPages(slug, guideData);
 
 const pageTitle = `${city} Solo Travel Statistics & Facts | roammate`;
 const pageDesc = `Solo travel statistics for ${city}, ${country}. Quick facts, daily budget breakdown, practical info, cultural tips, and travel companion resources.`;
-const pageUrl = `https://roammate.com/statistics/${slug}/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 
 const hasMidrange = budgetBreakdown?.some((r: any) => r.midrange || r.mid);
 
@@ -51,8 +52,6 @@ const webPageSchema = {
   "name": pageTitle,
   "description": pageDesc,
   "url": pageUrl,
-  "datePublished": "2026-03-25",
-  "dateModified": "2026-03-25",
   "publisher": {
     "@type": "Organization",
     "name": "roammate",
@@ -74,7 +73,7 @@ const webPageSchema = {
         <span>/</span>
         <a href="/statistics/">Statistics</a>
         <span>/</span>
-        <span>{city}</span>
+        <span aria-current="page">{city}</span>
       </nav>
       <h1 class="stats-hero-title">{city} solo travel statistics</h1>
       <p class="stats-hero-subtitle">Quick facts, budget breakdown, practical info, and cultural tips for solo travelers visiting {city}, {country}.</p>
@@ -172,22 +171,7 @@ const webPageSchema = {
     <div class="stats-cta-inner">
       <h2>Find a travel companion for {city}</h2>
       <p>roammate matches solo travelers by travel style, budget, and destination. Free on iOS and Android — no ads, no subscription.</p>
-      <div class="stats-cta-buttons">
-        <a
-          href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=city-statistics-cta&mt=8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="stats-cta-btn"
-          data-ph-event="city_stats_appstore_click"
-        >Download on App Store</a>
-        <a
-          href="https://play.google.com/store/apps/details?id=com.roammate.app.android"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="stats-cta-btn stats-cta-btn-secondary"
-          data-ph-event="city_stats_playstore_click"
-        >Get on Google Play</a>
-      </div>
+      <AppCTA />
     </div>
   </section>
 </BaseLayout>
@@ -458,42 +442,6 @@ const webPageSchema = {
     color: var(--color-text-muted);
     margin-bottom: 28px;
     line-height: 1.6;
-  }
-
-  .stats-cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .stats-cta-btn {
-    display: inline-block;
-    padding: 16px 36px;
-    background: var(--color-terracotta);
-    color: #fff !important;
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none !important;
-    transition: background 0.3s, transform 0.2s;
-  }
-
-  .stats-cta-btn:hover {
-    background: var(--color-terracotta-light);
-    transform: translateY(-1px);
-  }
-
-  .stats-cta-btn-secondary {
-    background: transparent;
-    border: 2px solid var(--color-terracotta);
-    color: var(--color-terracotta) !important;
-  }
-
-  .stats-cta-btn-secondary:hover {
-    background: var(--color-terracotta);
-    color: #fff !important;
   }
 
   @media (max-width: 768px) {

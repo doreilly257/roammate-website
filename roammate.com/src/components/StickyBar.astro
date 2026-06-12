@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL;
   >
     <img
       class="store-badge"
-      src={`${base}images/app-store-badge.png`}
+      src={`${base}images/app-store-badge.webp`}
       alt="Download on the App Store"
       width="107"
       height="36"
@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL;
   >
     <img
       class="store-badge"
-      src={`${base}images/google-play-badge.png`}
+      src={`${base}images/google-play-badge.webp`}
       alt="Get it on Google Play"
       width="120"
       height="36"
@@ -70,7 +70,7 @@ const base = import.meta.env.BASE_URL;
     font-family: var(--font-body);
     font-size: 14px;
     font-weight: 500;
-    color: var(--color-cream);
+    color: var(--color-ink);
     white-space: nowrap;
   }
 
@@ -91,7 +91,14 @@ const base = import.meta.env.BASE_URL;
   }
 
   .sticky-bar-dismiss:hover {
-    color: var(--color-cream);
+    color: var(--color-ink);
+  }
+
+  .sticky-bar-dismiss:focus-visible {
+    outline: 2px solid var(--color-terracotta);
+    outline-offset: 2px;
+    border-radius: 4px;
+    color: var(--color-ink);
   }
 
   .sticky-bar-link {

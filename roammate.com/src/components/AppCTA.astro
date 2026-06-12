@@ -1,0 +1,78 @@
+---
+interface Props {
+  appStoreCt?: string;
+  appStorePt?: string;
+  appStoreEvent?: string;
+  playStoreEvent?: string;
+  appStoreLabel?: string;
+  playStoreLabel?: string;
+}
+
+const {
+  appStoreCt = 'city-statistics-cta',
+  appStorePt = '118224460',
+  appStoreEvent = 'city_stats_appstore_click',
+  playStoreEvent = 'city_stats_playstore_click',
+  appStoreLabel = 'Download on App Store',
+  playStoreLabel = 'Get on Google Play',
+} = Astro.props;
+
+const appStoreHref = `https://apps.apple.com/app/id6758834253?pt=${appStorePt}&ct=${appStoreCt}&mt=8`;
+---
+
+<div class="stats-cta-buttons">
+  <a
+    href={appStoreHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="stats-cta-btn"
+    data-ph-event={appStoreEvent}
+    data-ph-label={appStoreLabel}
+  >{appStoreLabel}</a>
+  <a
+    href="https://play.google.com/store/apps/details?id=com.roammate.app.android"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="stats-cta-btn stats-cta-btn-secondary"
+    data-ph-event={playStoreEvent}
+    data-ph-label={playStoreLabel}
+  >{playStoreLabel}</a>
+</div>
+
+<style>
+  .stats-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .stats-cta-btn {
+    display: inline-block;
+    padding: 16px 36px;
+    background: var(--color-terracotta);
+    color: #fff !important;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none !important;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .stats-cta-btn:hover {
+    background: var(--color-terracotta-light);
+    transform: translateY(-1px);
+  }
+
+  .stats-cta-btn-secondary {
+    background: transparent;
+    border: 2px solid var(--color-terracotta);
+    color: var(--color-terracotta) !important;
+  }
+
+  .stats-cta-btn-secondary:hover {
+    background: var(--color-terracotta);
+    color: #fff !important;
+  }
+</style>
