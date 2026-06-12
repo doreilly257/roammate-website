@@ -4,10 +4,12 @@
 **Session:** 1 | **Date:** 2026-06-12
 
 ### Active Task
-Full-site code review + fix batch — COMPLETE (uncommitted, awaiting approval to commit)
+Full-site code review + fix batch — SHIPPED (commits 28edf60, 084dfa5; deployed 2026-06-12)
 - [x] 4-agent review (components, data/scripts, SEO/config, perf/a11y)
 - [x] All high/medium/low fixes applied across 50+ files
 - [x] Build (3,279 pages) + tests (16/16) green; post-fix review pass done
+- [x] validate.ts fixed (was broken since content-collection refactor — imported old guides.ts API)
+- [x] Deployed via deploy.sh; live verification passed (sitemap 3,278 URLs, RSS 572 items)
 
 ### Key Files (current shape)
 **`roammate.com/scripts/normalize-sitemap.mjs`** (REWRITTEN)
@@ -37,8 +39,9 @@ Build-time assertion that CITY_GUIDE_SLUGS_LIST matches collection; flatMap narr
 2. Optional: adopt AppCTA in guide/blog layouts; per-page OG images for statistics pages
 
 ### Blockers
-- `bd` (beads) broken: schema migration error on dirty tables — task tracking unavailable
+- None. (bd repaired 2026-06-12: committed dirty Dolt working set via dolt CLI, ran migration, untracked credential key)
 
 ### Watch Out
-- Builds without `roammate.com/.env` silently disable PostHog
+- Builds without `roammate.com/.env` silently disable PostHog (.env is gitignored — exists only on this machine)
 - Old badge PNGs deleted; webp only
+- Surge deploys flap for ~4 min after publish (stale 301s to www + occasional 504s from edge propagation) — wait before judging a deploy broken
