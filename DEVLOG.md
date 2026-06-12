@@ -1,7 +1,13 @@
 # roammate Website Dev Log
 
 ## Working State
-**Session:** 1 | **Date:** 2026-06-12
+**Session:** 2 | **Date:** 2026-06-12
+
+### Session 2: Second review batch — SHIPPED (commit 254f081, deployed)
+AppCTA badges variant adopted across all layouts + added to budget/best-time pages (was 6 inline copies); validate.ts covers all 572 guide images + featuredGuides refs; companions links gated to curated city slugs (place guides had 404 links — incl. CityGuideLayout CTA); z-index scale; StickyBar invisible-text fix; blog publisher logo rasterized (rm-logo.webp); region-hub breadcrumbs; noreferrer on store links; CORS file deleted. Tests 23/23, build 3,279 pages, live-verified.
+Open: roammate-website-vjs (Cloudflare security headers — manual dashboard task: frame-ancestors/X-Frame-Options/HSTS), cd7 (social proof), xnn (per-page OG images). NOT merged: --color-text vs --color-ink token pairs (values genuinely differ — intentional palette, not duplication).
+
+---
 
 ### Active Task
 Full-site code review + fix batch — SHIPPED (commits 28edf60, 084dfa5; deployed 2026-06-12)
