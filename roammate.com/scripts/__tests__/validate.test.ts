@@ -39,14 +39,74 @@ function loadRouteSlugsFromJson(): Set<string> {
   return new Set(slugs);
 }
 
+function loadGuidesFromJson(): any[] {
+  const contentDir = resolve(ROOT, "src/content/guides");
+  const files = readdirSync(contentDir).filter((f) => f.endsWith(".json"));
+  return files.map((file) => {
+    const data = JSON.parse(readFileSync(resolve(contentDir, file), "utf-8"));
+    return { _file: file, ...data };
+  });
+}
+
 const blogPosts = loadBlogPostsFromJson();
 const guideSlugs = loadGuideSlugsFromJson();
 const routeSlugs = loadRouteSlugsFromJson();
+const guides = loadGuidesFromJson();
 
 describe("validate", () => {
   it("passes on current (known-good) state", () => {
-    const errors = validate({ blogPosts, guideSlugs, routeSlugs });
+    const errors = validate({ blogPosts, guideSlugs, routeSlugs, guides });
     expect(errors).toEqual([]);
+  });
+
+  it("detects a guide with a missing heroImage", () => {
+    const errors = validate({
+      blogPosts: [],
+      guideSlugs,
+      routeSlugs,
+      guides: [
+        { _file: "fake-city.json", type: "city", slug: "fake-city", heroImage: "/images/guides/does-not-exist-xyz.webp" },
+      ],
+      publicDir: resolve(ROOT, "public"),
+    });
+    const err = errors.find((e) => e.includes("does-not-exist-xyz.webp"));
+    expect(err).toBeDefined();
+    expect(err).toContain("heroImage missing");
+    expect(err).toContain("fake-city.json");
+  });
+
+  it("detects a missing heroImages entry (string and object forms)", () => {
+    const errors = validate({
+      blogPosts: [],
+      guideSlugs,
+      routeSlugs,
+      guides: [
+        {
+          _file: "fake-route.json",
+          type: "backpacker",
+          slug: "fake-route",
+          heroImages: ["/images/routes/missing-a-xyz.webp", { src: "/images/routes/missing-b-xyz.webp", alt: "x" }],
+        },
+      ],
+      publicDir: resolve(ROOT, "public"),
+    });
+    expect(errors.find((e) => e.includes("heroImages[0]") && e.includes("missing-a-xyz.webp"))).toBeDefined();
+    expect(errors.find((e) => e.includes("heroImages[1]") && e.includes("missing-b-xyz.webp"))).toBeDefined();
+  });
+
+  it("detects a featuredGuides slug that does not resolve to a guide", () => {
+    const errors = validate({
+      blogPosts: [],
+      guideSlugs,
+      routeSlugs,
+      guides: [
+        { _file: "fake-route.json", type: "backpacker", slug: "fake-route", featuredGuides: ["nonexistent-guide-xyz"] },
+      ],
+      publicDir: resolve(ROOT, "public"),
+    });
+    const err = errors.find((e) => e.includes("nonexistent-guide-xyz"));
+    expect(err).toBeDefined();
+    expect(err).toContain("featuredGuides contains unknown guide slug");
   });
 
   it("detects a missing content JSON file", () => {

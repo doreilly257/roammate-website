@@ -1,13 +1,13 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { getRelated, getRoutes } from '../data/guides';
+import { getRelated, getRoutes, getCityGuideSlugs } from '../data/guides';
 import { findRelatedPostsForGuide } from '../lib/related-content';
 import { getAllBlogPosts } from '../lib/blog-data';
 import { regionToSlug } from '../lib/region-slug';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
+import AppCTA from '../components/AppCTA.astro';
 
 import { blogByGuide } from '../data/blogByGuide';
-const base = import.meta.env.BASE_URL;
 
 interface Props {
   /* SEO */
@@ -49,6 +49,8 @@ const {
 
 const defaultDaysStr = String(defaultDays);
 const currentSlug = Astro.url.pathname.replace(/^\/guides\//, '').replace(/\/$/, '');
+// Companions pages only exist for curated city slugs, not place guides
+const hasCompanionsPage = (await getCityGuideSlugs()).has(currentSlug);
 const relatedGuides = await getRelated(currentSlug, heroRegion, 6);
 const relatedRoutes = await getRoutes(currentSlug);
 // Use pre-built blogByGuide first, fall back to keyword matching
@@ -364,13 +366,14 @@ const escapeCssUrl = (url: string) =>
       <h2 class="guide-cta-heading">Heading to <em>{ctaCity}</em>?</h2>
       <p class="guide-cta-text">{ctaText}</p>
       <div class="guide-cta-downloads">
-        <a href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=city-guide-cta&mt=8" class="badge-link" target="_blank" rel="noopener" data-ph-event="guide_appstore_click"><img src={`${base}images/app-store-badge.webp`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy" decoding="async"></a>
-        <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android" class="badge-link" target="_blank" rel="noopener" data-ph-event="guide_playstore_click"><img src={`${base}images/google-play-badge.webp`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy" decoding="async"></a>
+        <AppCTA variant="badges" appStoreCt="city-guide-cta" appStoreEvent="guide_appstore_click" playStoreEvent="guide_playstore_click" />
       </div>
       <p class="guide-cta-customise">{ctaCustomise}</p>
-      <a href={`/companions/${currentSlug}/`} class="guide-cta-companions-link" data-ph-event="guide_companions_click" data-ph-label={currentSlug}>
-        Find travel companions in {ctaCity} →
-      </a>
+      {hasCompanionsPage && (
+        <a href={`/companions/${currentSlug}/`} class="guide-cta-companions-link" data-ph-event="guide_companions_click" data-ph-label={currentSlug}>
+          Find travel companions in {ctaCity} →
+        </a>
+      )}
     </div>
   </section>
 
@@ -1050,21 +1053,6 @@ const escapeCssUrl = (url: string) =>
     justify-content: center;
     gap: 16px;
     align-items: center;
-  }
-
-  .badge-link {
-    display: block;
-    transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
-  }
-
-  .badge-link:hover {
-    transform: translateY(-3px);
-    opacity: 0.85;
-  }
-
-  .store-badge {
-    height: 52px;
-    width: auto;
   }
 
   .guide-cta-customise {

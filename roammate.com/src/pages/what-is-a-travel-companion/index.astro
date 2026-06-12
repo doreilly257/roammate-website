@@ -9,64 +9,66 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
-        { "@type": "ListItem", "position": 2, "name": "What Is a Travel Companion?", "item": "https://roammate.com/what-is-a-travel-companion/" }
-      ]
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".tc-definition"]
-      },
-      "url": "https://roammate.com/what-is-a-travel-companion/"
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "What is a travel companion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A travel companion is a person who shares part or all of a journey with you. They can be a friend, partner, family member, or someone you met through a travel app or community. The defining feature is shared itinerary time — traveling the same route, visiting the same places, and coordinating logistics together."
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+            { "@type": "ListItem", "position": 2, "name": "What Is a Travel Companion?", "item": "https://roammate.com/what-is-a-travel-companion/" }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "What's the difference between a travel companion and a tour guide?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A tour guide is a paid professional who leads you through a destination and provides commentary. A travel companion is a peer — someone traveling alongside you as an equal, sharing decisions, costs, and experiences. There is no professional obligation or payment involved."
-          }
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".tc-definition"]
+          },
+          "url": "https://roammate.com/what-is-a-travel-companion/"
         },
         {
-          "@type": "Question",
-          "name": "How do you find a travel companion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can find a travel companion through friends, travel forums, social media groups, hostels, or dedicated travel companion apps like roammate. Apps that match travelers by travel style, budget, and destination tend to produce the most compatible pairings because compatibility is filtered before you start a conversation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is it safe to travel with someone you met online?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It can be, with precautions. Use platforms with verified profiles, video call before meeting, meet in a public place first, share your itinerary with someone at home, and trust your instincts. Millions of travelers successfully meet companions online every year through hostels, forums, and travel apps."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What should you look for in a travel companion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The most important factors are compatible travel pace, similar daily budget, overlapping interests, and good communication. Someone who wants to party until 3am is a poor match for an early-morning temple explorer. Alignment on spending habits and energy levels matters more than shared hobbies."
-          }
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a travel companion?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A travel companion is a person who shares part or all of a journey with you. They can be a friend, partner, family member, or someone you met through a travel app or community. The defining feature is shared itinerary time — traveling the same route, visiting the same places, and coordinating logistics together."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the difference between a travel companion and a tour guide?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A tour guide is a paid professional who leads you through a destination and provides commentary. A travel companion is a peer — someone traveling alongside you as an equal, sharing decisions, costs, and experiences. There is no professional obligation or payment involved."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you find a travel companion?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can find a travel companion through friends, travel forums, social media groups, hostels, or dedicated travel companion apps like roammate. Apps that match travelers by travel style, budget, and destination tend to produce the most compatible pairings because compatibility is filtered before you start a conversation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is it safe to travel with someone you met online?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It can be, with precautions. Use platforms with verified profiles, video call before meeting, meet in a public place first, share your itinerary with someone at home, and trust your instincts. Millions of travelers successfully meet companions online every year through hostels, forums, and travel apps."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What should you look for in a travel companion?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The most important factors are compatible travel pace, similar daily budget, overlapping interests, and good communication. Someone who wants to party until 3am is a poor match for an early-morning temple explorer. Alignment on spending habits and energy levels matters more than shared hobbies."
+              }
+            }
+          ]
         }
       ]
     })} />

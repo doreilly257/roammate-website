@@ -6,7 +6,18 @@ interface SiblingPages {
   companions: string | null;
 }
 
-export function getCitySiblingPages(citySlug: string, guideData: any): SiblingPages {
+// `/guides/{slug}/` pages are generated for every guide entry (see
+// pages/guides/[slug].astro), but `/companions/{slug}/` only exists for
+// curated city-guide slugs (CITY_GUIDE_SLUGS_LIST in data/guides.ts).
+// Place guides also use type:'city' and get statistics/budget/best-time
+// pages, so the companions link must be gated on membership to avoid
+// emitting links to non-existent pages.
+export function getCitySiblingPages(
+  citySlug: string,
+  guideData: any,
+  cityGuideSlugs: Set<string>,
+): SiblingPages {
+  const isCityGuide = cityGuideSlugs.has(citySlug);
   const guide = `/guides/${citySlug}/`;
 
   const itinerary = guideData.itineraries
@@ -23,7 +34,7 @@ export function getCitySiblingPages(citySlug: string, guideData: any): SiblingPa
   );
   const bestTime = hasBestMonths ? `/best-time-to-visit/${citySlug}/` : null;
 
-  const companions = `/companions/${citySlug}/`;
+  const companions = isCityGuide ? `/companions/${citySlug}/` : null;
 
   return { guide, itinerary, budget, bestTime, companions };
 }

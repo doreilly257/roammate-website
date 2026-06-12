@@ -2,7 +2,8 @@
 import BaseLayout from './BaseLayout.astro';
 import { getBySlug, getCityGuideSlugs } from '../data/guides';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
-const base = import.meta.env.BASE_URL;
+import AppCTA from '../components/AppCTA.astro';
+import { regionToSlug } from '../lib/region-slug';
 
 interface Props {
   /* page meta */
@@ -54,6 +55,8 @@ const {
   accentColor = '#2e6d79',
 } = Astro.props;
 
+const regionSlug = regionToSlug(heroRegion);
+
 const ogImage = heroImages[0]?.src;
 const routeGuides = await getBySlug(featuredGuides);
 const cityGuideSlugs = await getCityGuideSlugs();
@@ -94,7 +97,8 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
         { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://roammate.com/guides/" },
-        { "@type": "ListItem", "position": 3, "name": heroRegion, "item": new URL(Astro.url.pathname, Astro.site).href }
+        { "@type": "ListItem", "position": 3, "name": heroRegion, "item": new URL(`/guides/region/${regionSlug}/`, Astro.site).href },
+        { "@type": "ListItem", "position": 4, "name": heroTitle.replace(/<[^>]+>/g, ''), "item": new URL(Astro.url.pathname, Astro.site).href }
       ]
     })} />
   </Fragment>
@@ -284,8 +288,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
       <h2 class="route-cta-heading">Ready for <em>{ctaRegion}</em>?</h2>
       <p class="route-cta-text">{ctaText}</p>
       <div class="route-cta-downloads">
-        <a href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=route-guide-cta&mt=8" class="badge-link" target="_blank" rel="noopener" data-ph-event="guide_appstore_click"><img src={`${base}images/app-store-badge.webp`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy"></a>
-        <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android" class="badge-link" target="_blank" rel="noopener" data-ph-event="guide_playstore_click"><img src={`${base}images/google-play-badge.webp`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy"></a>
+        <AppCTA variant="badges" appStoreCt="route-guide-cta" appStoreEvent="guide_appstore_click" playStoreEvent="guide_playstore_click" />
       </div>
       <p class="route-cta-customise">{ctaCustomise}</p>
     </div>
@@ -931,87 +934,6 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
   }
 
   /* ========================
-     FEATURED GUIDES
-     ======================== */
-  .route-featured {
-    padding: 80px 40px;
-    background: #0f0f0f;
-  }
-
-  .route-featured .guide-section-header {
-    max-width: 900px;
-    margin: 0 auto 40px;
-    text-align: center;
-  }
-
-  .route-featured-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .route-featured-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background 0.2s, border-color 0.2s;
-  }
-
-  .route-featured-card:hover {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.18);
-  }
-
-  .route-featured-flag {
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-
-  .route-featured-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    flex: 1;
-    min-width: 0;
-  }
-
-  .route-featured-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .route-featured-country {
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-  }
-
-  .route-featured-arrow {
-    font-size: 14px;
-    color: rgba(255,255,255,0.3);
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 1024px) {
-    .route-featured-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 640px) {
-    .route-featured { padding: 60px 20px; }
-    .route-featured-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ========================
      CTA
      ======================== */
   .route-cta {
@@ -1054,21 +976,6 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
     gap: 16px;
     align-items: center;
     margin-bottom: 32px;
-  }
-
-  .badge-link {
-    display: block;
-    transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
-  }
-
-  .badge-link:hover {
-    transform: translateY(-3px);
-    opacity: 0.85;
-  }
-
-  .store-badge {
-    height: 52px;
-    width: auto;
   }
 
   .route-cta-customise {

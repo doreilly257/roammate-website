@@ -1,10 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AppCTA from '../../components/AppCTA.astro';
 import { getCitySiblingPages } from '../../lib/getCitySiblingPages';
+import { getCityGuideSlugs } from '../../data/guides';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
+  const cityGuideSlugs = await getCityGuideSlugs();
   return guides
     .filter((g) => g.data.type === 'city')
     .map((g) => {
@@ -21,15 +24,16 @@ export async function getStaticPaths() {
           bestMonthsDetail: bestMonths?.detail ?? '',
           dailyBudget: dailyBudget?.value ?? '',
           quickFacts: d.quickFacts,
-          siblings: getCitySiblingPages(d.slug, d),
+          siblings: getCitySiblingPages(d.slug, d, cityGuideSlugs),
         },
       };
     });
 }
 
 const { city, country, slug, bestMonths, bestMonthsDetail, quickFacts, siblings } = Astro.props;
+const bestMonthsDetailClean = bestMonthsDetail.replace(/\.+$/, '');
 const pageTitle = `Best Time to Visit ${city}, ${country} | roammate`;
-const pageDesc = `The best time to visit ${city} is ${bestMonths}. ${bestMonthsDetail}. Plan your trip with weather info, seasonal tips, and travel advice.`;
+const pageDesc = `The best time to visit ${city} is ${bestMonths}. ${bestMonthsDetailClean}. Plan your trip with weather info, seasonal tips, and travel advice.`;
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -40,7 +44,7 @@ const faqSchema = {
       "name": `When is the best time to visit ${city}?`,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": `The best months to visit ${city} are ${bestMonths}. ${bestMonthsDetail}.`
+        "text": `The best months to visit ${city} are ${bestMonths}. ${bestMonthsDetailClean}.`
       }
     },
     {
@@ -48,7 +52,7 @@ const faqSchema = {
       "name": `What is the weather like in ${city}?`,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": `During the best travel months (${bestMonths}), ${city} typically has ${bestMonthsDetail.toLowerCase()}. Check our full ${city} guide for seasonal packing tips.`
+        "text": `During the best travel months (${bestMonths}), ${city} typically has ${bestMonthsDetailClean.toLowerCase()}. Check our full ${city} guide for seasonal packing tips.`
       }
     },
     {
@@ -100,7 +104,7 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
   <article class="pv-content">
     <div class="pv-content-inner">
 
-      <p class="pv-intro">The best months to visit {city} are <strong>{bestMonths}</strong>. {bestMonthsDetail}.</p>
+      <p class="pv-intro">The best months to visit {city} are <strong>{bestMonths}</strong>. {bestMonthsDetailClean}.</p>
 
       <h2>Quick facts</h2>
       <div class="pv-facts-grid">
@@ -115,7 +119,7 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
       </div>
 
       <h2>When to go</h2>
-      <p>The ideal travel window for {city} is <strong>{bestMonths}</strong>, when you can expect {bestMonthsDetail.toLowerCase()}. This period offers the most comfortable conditions for sightseeing and outdoor activities.</p>
+      <p>The ideal travel window for {city} is <strong>{bestMonths}</strong>, when you can expect {bestMonthsDetailClean.toLowerCase()}. This period offers the most comfortable conditions for sightseeing and outdoor activities.</p>
       {timezone && <p><strong>Timezone:</strong> {timezone.value} ({timezone.detail})</p>}
       {visa && <p><strong>Visa:</strong> {visa.value} — {visa.detail}</p>}
 
@@ -123,7 +127,7 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
       <div class="pv-faq">
         <details class="pv-faq-item" open>
           <summary><h3>When is the best time to visit {city}?</h3></summary>
-          <p>The best months to visit {city} are {bestMonths}. {bestMonthsDetail}.</p>
+          <p>The best months to visit {city} are {bestMonths}. {bestMonthsDetailClean}.</p>
         </details>
         <details class="pv-faq-item">
           <summary><h3>What is the weather like in {city}?</h3></summary>
@@ -162,6 +166,9 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
     <div class="pv-cta-inner">
       <h2>Find a travel companion for {city}</h2>
       <p>roammate matches you with travelers heading to {city} at the same time. Free on iOS.</p>
+      <div class="pv-cta-app">
+        <AppCTA appStoreCt="best-time-cta" appStoreEvent="best_time_appstore_click" playStoreEvent="best_time_playstore_click" />
+      </div>
       <a href={`/guides/${slug}/`} class="pv-cta-btn">See the full {city} guide</a>
     </div>
   </section>
@@ -271,6 +278,7 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
     border-radius: 50px; text-decoration: none; transition: background 0.3s, transform 0.2s;
   }
   .pv-cta-btn:hover { background: var(--color-terracotta-light); transform: translateY(-1px); }
+  .pv-cta-app { margin-bottom: 20px; }
   .city-more {
     padding: 48px 24px;
     background: var(--color-bg-warm);

@@ -9,12 +9,14 @@ export type ValidateOptions = {
   blogPosts: any[];
   guideSlugs: Set<string>;
   routeSlugs: Set<string>;
+  guides?: any[];
   contentBlogDir?: string;
   publicDir?: string;
 };
 
 export function validate(opts: ValidateOptions): string[] {
   const { blogPosts, guideSlugs, routeSlugs } = opts;
+  const guides = opts.guides ?? [];
   const contentBlogDir = opts.contentBlogDir ?? resolve(ROOT, "src/content/blog");
   const publicDir = opts.publicDir ?? resolve(ROOT, "public");
   const errors: string[] = [];
@@ -78,6 +80,38 @@ export function validate(opts: ValidateOptions): string[] {
     }
   }
 
+  // 6. Every guide heroImage / heroImages entry resolves to a file in public/
+  const imageExists = (img: string) =>
+    existsSync(resolve(publicDir, img.replace(/^\//, "")));
+
+  for (const guide of guides) {
+    const file = guide._file ?? `${guide.slug}.json`;
+
+    if (typeof guide.heroImage === "string" && !imageExists(guide.heroImage)) {
+      errors.push(`guide ${file} heroImage missing: ${guide.heroImage}`);
+    }
+
+    if (Array.isArray(guide.heroImages)) {
+      guide.heroImages.forEach((entry: any, i: number) => {
+        const src = typeof entry === "string" ? entry : entry?.src;
+        if (typeof src === "string" && !imageExists(src)) {
+          errors.push(`guide ${file} heroImages[${i}] missing: ${src}`);
+        }
+      });
+    }
+  }
+
+  // 7. Every featuredGuides slug in a backpacker route resolves to a guide slug
+  for (const guide of guides) {
+    if (guide.type !== "backpacker") continue;
+    const file = guide._file ?? `${guide.slug}.json`;
+    for (const slug of guide.featuredGuides ?? []) {
+      if (!guideSlugs.has(slug)) {
+        errors.push(`route ${file} featuredGuides contains unknown guide slug: "${slug}"`);
+      }
+    }
+  }
+
   return errors;
 }
 
@@ -93,24 +127,26 @@ function loadBlogPostsFromJson(): any[] {
   });
 }
 
-function loadGuideSlugsFromJson(): { guideSlugs: Set<string>; routeSlugs: Set<string> } {
+function loadGuidesFromJson(): { guides: any[]; guideSlugs: Set<string>; routeSlugs: Set<string> } {
   // guides.ts reads the same collection via astro:content, which only exists
   // inside the Astro build — so read the content JSON directly here.
   const contentDir = resolve(ROOT, "src/content/guides");
+  const guides: any[] = [];
   const guideSlugs = new Set<string>();
   const routeSlugs = new Set<string>();
   for (const file of readdirSync(contentDir).filter((f) => f.endsWith(".json"))) {
     const data = JSON.parse(readFileSync(resolve(contentDir, file), "utf-8"));
+    guides.push({ _file: file, ...data });
     if (data.type === "backpacker") routeSlugs.add(data.slug);
     else guideSlugs.add(data.slug);
   }
-  return { guideSlugs, routeSlugs };
+  return { guides, guideSlugs, routeSlugs };
 }
 
 async function main() {
   const blogPosts = loadBlogPostsFromJson();
-  const { guideSlugs, routeSlugs } = loadGuideSlugsFromJson();
-  const errors = validate({ blogPosts, guideSlugs, routeSlugs });
+  const { guides, guideSlugs, routeSlugs } = loadGuidesFromJson();
+  const errors = validate({ blogPosts, guideSlugs, routeSlugs, guides });
 
   if (errors.length > 0) {
     console.error(`\nValidation failed with ${errors.length} error(s):\n`);

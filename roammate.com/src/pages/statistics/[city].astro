@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AppCTA from '../../components/AppCTA.astro';
 import { getCitySiblingPages } from '../../lib/getCitySiblingPages';
+import { getCityGuideSlugs } from '../../data/guides';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -28,7 +29,8 @@ export async function getStaticPaths() {
 }
 
 const { city, country, region, slug, quickFacts, budgetBreakdown, practicalInfo, culturalTips, guideData } = Astro.props;
-const siblings = getCitySiblingPages(slug, guideData);
+const cityGuideSlugs = await getCityGuideSlugs();
+const siblings = getCitySiblingPages(slug, guideData, cityGuideSlugs);
 
 const pageTitle = `${city} Solo Travel Statistics & Facts | roammate`;
 const pageDesc = `Solo travel statistics for ${city}, ${country}. Quick facts, daily budget breakdown, practical info, cultural tips, and travel companion resources.`;

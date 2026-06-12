@@ -2,9 +2,11 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCitySiblingPages } from '../../lib/getCitySiblingPages';
+import { getCityGuideSlugs } from '../../data/guides';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
+  const cityGuideSlugs = await getCityGuideSlugs();
   const paths: any[] = [];
   for (const g of guides) {
     if (g.data.type !== 'city') continue;
@@ -19,7 +21,7 @@ export async function getStaticPaths() {
           days: Number(days),
           itinerary: dayList,
           allDays: Object.keys(d.itineraries).map(Number).sort((a, b) => a - b),
-          siblings: getCitySiblingPages(d.slug, d),
+          siblings: getCitySiblingPages(d.slug, d, cityGuideSlugs),
         },
       });
     }

@@ -1,8 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
-
-const base = import.meta.env.BASE_URL;
+import AppCTA from '../components/AppCTA.astro';
 
 interface BlogPostSection {
   heading: string;
@@ -171,7 +170,9 @@ const renderInlineLinks = (text: string) => {
         "name": "roammate",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://roammate.com/images/rm-full.svg",
+          "url": "https://roammate.com/images/rm-logo.webp",
+          "width": 600,
+          "height": 464,
         },
       },
       ...(isoPublishedAt ? { "datePublished": isoPublishedAt } : {}),
@@ -227,8 +228,7 @@ const renderInlineLinks = (text: string) => {
       </div>
 
       <div class="blog-post-badges reveal">
-        <a href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=blog-post-cta&mt=8" class="badge-link" target="_blank" rel="noopener" data-ph-event="blog_appstore_click"><img src={`${base}images/app-store-badge.webp`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy" decoding="async"></a>
-        <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android" class="badge-link" target="_blank" rel="noopener" data-ph-event="blog_playstore_click"><img src={`${base}images/google-play-badge.webp`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy" decoding="async"></a>
+        <AppCTA variant="badges" appStoreCt="blog-post-cta" appStoreEvent="blog_appstore_click" playStoreEvent="blog_playstore_click" />
       </div>
 
       {cities.length > 0 && (
@@ -350,8 +350,7 @@ const renderInlineLinks = (text: string) => {
           <a href="/companions/" class="blog-post-cta-btn blog-post-cta-btn--ghost" data-ph-event="blog_cta_companions_click">Browse companions by city</a>
         </div>
         <div class="blog-post-cta-badges">
-          <a href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=blog-post-cta&mt=8" class="badge-link" target="_blank" rel="noopener" data-ph-event="blog_appstore_click"><img src={`${base}images/app-store-badge.webp`} alt="Download on the App Store" class="store-badge" width="120" height="40" loading="lazy" decoding="async"></a>
-          <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android" class="badge-link" target="_blank" rel="noopener" data-ph-event="blog_playstore_click"><img src={`${base}images/google-play-badge.webp`} alt="Get it on Google Play" class="store-badge" width="135" height="40" loading="lazy" decoding="async"></a>
+          <AppCTA variant="badges" appStoreCt="blog-post-cta" appStoreEvent="blog_appstore_click" playStoreEvent="blog_playstore_click" />
         </div>
       </div>
     </section>
@@ -1091,13 +1090,13 @@ const renderInlineLinks = (text: string) => {
     align-items: center;
   }
 
-  .blog-post-badges .store-badge {
+  .blog-post-badges :global(.store-badge) {
     height: 40px;
     width: auto;
     transition: transform 0.3s var(--ease-out-expo);
   }
 
-  .blog-post-badges .badge-link:hover .store-badge {
+  .blog-post-badges :global(.badge-link:hover .store-badge) {
     transform: translateY(-2px);
   }
 
@@ -1109,13 +1108,13 @@ const renderInlineLinks = (text: string) => {
     margin-top: 28px;
   }
 
-  .blog-post-cta-badges .store-badge {
+  .blog-post-cta-badges :global(.store-badge) {
     height: 40px;
     width: auto;
     transition: transform 0.3s var(--ease-out-expo);
   }
 
-  .blog-post-cta-badges .badge-link:hover .store-badge {
+  .blog-post-cta-badges :global(.badge-link:hover .store-badge) {
     transform: translateY(-2px);
   }
 

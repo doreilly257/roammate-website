@@ -8,7 +8,7 @@
   height: 3px;
   width: 0%;
   background: var(--color-terracotta);
-  z-index: 9999;
+  z-index: var(--z-progress);
   will-change: width;
 }
 
@@ -19,7 +19,7 @@
   position: absolute;
   top: -100%;
   left: 16px;
-  z-index: 10000;
+  z-index: var(--z-skip);
   padding: 12px 24px;
   background: var(--color-terracotta);
   color: #fff;
@@ -51,6 +51,12 @@
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Outfit', -apple-system, sans-serif;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --z-grain: 1;
+  --z-progress: 100;
+  --z-sticky: 1000;
+  --z-cookie: 1100;
+  --z-loader: 2000;
+  --z-skip: 2100;
 }
 
 /* ============================================
@@ -113,7 +119,7 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: var(--z-grain);
   opacity: 0.018;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
@@ -140,6 +146,14 @@ body::after {
   width: 30px;
   height: 1px;
   background: var(--color-terracotta);
+}
+
+.section-label--center {
+  justify-content: center;
+}
+
+.section-label--center::before {
+  display: none;
 }
 
 .section-heading {
@@ -212,7 +226,7 @@ body::after {
 .loader {
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  z-index: var(--z-loader);
   background: var(--color-bg);
   display: flex;
   align-items: center;
@@ -238,7 +252,7 @@ body::after {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: var(--z-cookie);
   background: rgba(26, 23, 20, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
