@@ -93,12 +93,23 @@ function loadBlogPostsFromJson(): any[] {
   });
 }
 
+function loadGuideSlugsFromJson(): { guideSlugs: Set<string>; routeSlugs: Set<string> } {
+  // guides.ts reads the same collection via astro:content, which only exists
+  // inside the Astro build — so read the content JSON directly here.
+  const contentDir = resolve(ROOT, "src/content/guides");
+  const guideSlugs = new Set<string>();
+  const routeSlugs = new Set<string>();
+  for (const file of readdirSync(contentDir).filter((f) => f.endsWith(".json"))) {
+    const data = JSON.parse(readFileSync(resolve(contentDir, file), "utf-8"));
+    if (data.type === "backpacker") routeSlugs.add(data.slug);
+    else guideSlugs.add(data.slug);
+  }
+  return { guideSlugs, routeSlugs };
+}
+
 async function main() {
   const blogPosts = loadBlogPostsFromJson();
-  const { allGuides, backpackerRoutes } = await import("../src/data/guides.ts");
-
-  const guideSlugs = new Set(allGuides.map((g: any) => g.slug));
-  const routeSlugs = new Set(backpackerRoutes.map((r: any) => r.slug));
+  const { guideSlugs, routeSlugs } = loadGuideSlugsFromJson();
   const errors = validate({ blogPosts, guideSlugs, routeSlugs });
 
   if (errors.length > 0) {
