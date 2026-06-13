@@ -35,37 +35,6 @@ const bestMonthsDetailClean = bestMonthsDetail.replace(/\.+$/, '');
 const pageTitle = `Best Time to Visit ${city}, ${country} | roammate`;
 const pageDesc = `The best time to visit ${city} is ${bestMonths}. ${bestMonthsDetailClean}. Plan your trip with weather info, seasonal tips, and travel advice.`;
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": `When is the best time to visit ${city}?`,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": `The best months to visit ${city} are ${bestMonths}. ${bestMonthsDetailClean}.`
-      }
-    },
-    {
-      "@type": "Question",
-      "name": `What is the weather like in ${city}?`,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": `During the best travel months (${bestMonths}), ${city} typically has ${bestMonthsDetailClean.toLowerCase()}. Check our full ${city} guide for seasonal packing tips.`
-      }
-    },
-    {
-      "@type": "Question",
-      "name": `Is ${city} expensive to visit?`,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": `See our detailed ${city} budget breakdown for daily costs covering accommodation, food, transport, and activities.`
-      }
-    }
-  ]
-};
-
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -76,15 +45,14 @@ const breadcrumbSchema = {
   ]
 };
 
-const visa = quickFacts.find((f) => f.label === 'Visa');
 const timezone = quickFacts.find((f) => f.label === 'Timezone');
-const currency = quickFacts.find((f) => f.label === 'Currency');
+const seasonLabels = ['Best Months', 'Timezone'];
+const seasonFacts = quickFacts.filter((f) => seasonLabels.includes(f.label));
 ---
 
 <BaseLayout title={pageTitle} description={pageDesc}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
   <section class="pv-hero">
@@ -108,7 +76,7 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
 
       <h2>Quick facts</h2>
       <div class="pv-facts-grid">
-        {quickFacts.map((fact) => (
+        {seasonFacts.map((fact) => (
           <div class="pv-fact-card">
             <span class="pv-fact-icon">{fact.icon}</span>
             <span class="pv-fact-label">{fact.label}</span>
@@ -119,23 +87,19 @@ const currency = quickFacts.find((f) => f.label === 'Currency');
       </div>
 
       <h2>When to go</h2>
-      <p>The ideal travel window for {city} is <strong>{bestMonths}</strong>, when you can expect {bestMonthsDetailClean.toLowerCase()}. This period offers the most comfortable conditions for sightseeing and outdoor activities.</p>
+      <p>Because {bestMonths} is the most popular window to visit {city}, accommodation and flights fill up fastest then — book a few weeks ahead to lock in better rates and availability. If you prefer fewer crowds, the shoulder weeks on either side of this window are often quieter while staying pleasant. Check the full <a href={`/guides/${slug}/`}>{city} guide</a> for packing tips and month-by-month detail before you travel.</p>
       {timezone && <p><strong>Timezone:</strong> {timezone.value} ({timezone.detail})</p>}
-      {visa && <p><strong>Visa:</strong> {visa.value} — {visa.detail}</p>}
 
       <h2>Frequently asked questions</h2>
       <div class="pv-faq">
         <details class="pv-faq-item" open>
           <summary><h3>When is the best time to visit {city}?</h3></summary>
-          <p>The best months to visit {city} are {bestMonths}. {bestMonthsDetailClean}.</p>
-        </details>
-        <details class="pv-faq-item">
-          <summary><h3>What is the weather like in {city}?</h3></summary>
-          <p>During the best travel months ({bestMonths}), {city} typically has {bestMonthsDetail.toLowerCase()}. Check our <a href={`/guides/${slug}/`}>full {city} guide</a> for seasonal packing tips.</p>
-        </details>
-        <details class="pv-faq-item">
-          <summary><h3>Is {city} expensive to visit?</h3></summary>
-          <p>See our detailed <a href={`/budget/${slug}/`}>{city} budget breakdown</a> for daily costs covering accommodation, food, transport, and activities.</p>
+          <p>
+            The best months to visit {city} are {bestMonths} — {bestMonthsDetailClean}, which makes for the most comfortable conditions for sightseeing and getting around.
+            {siblings.budget && (
+              <> For what a trip costs day to day, see the <a href={siblings.budget}>{city} budget breakdown</a>.</>
+            )}
+          </p>
         </details>
       </div>
 

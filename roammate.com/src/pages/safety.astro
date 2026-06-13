@@ -9,87 +9,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Is roammate Safe?",
-      "url": "https://roammate.com/safety/",
-      "description": "roammate safety features: verified profiles, identity checks, in-app reporting, and safe meeting guidelines for solo travelers.",
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Safety", "item": "https://roammate.com/safety/" }
-      ]
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".safety-title", ".safety-subtitle", ".faq-section"]
-      },
-      "url": "https://roammate.com/safety/"
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "How does roammate verify profiles?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Every roammate user goes through identity verification before their profile is visible to others. Verified accounts display a badge so you know who you're looking at before any conversation starts."
+          "@type": "WebPage",
+          "name": "Is roammate Safe?",
+          "url": "https://roammate.com/safety/",
+          "description": "roammate safety features: verified profiles, identity checks, in-app reporting, and safe meeting guidelines for solo travelers.",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".safety-title", ".safety-subtitle", ".faq-section"]
           }
         },
         {
-          "@type": "Question",
-          "name": "What should I do if I feel unsafe?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Trust your instincts. If something feels off before or during a meetup, leave the situation. You can block and report the user directly from their profile in the app. Contact local authorities if you feel in danger, and reach out to support@roammate.com."
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Safety", "item": "https://roammate.com/safety/" }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "Can I report a user on roammate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. You can report or block any user directly from their profile in two taps. All reports are reviewed by the roammate team and accounts that violate community guidelines are removed."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is my personal information private?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Your personal contact details are never shared with other users. Trip plans are only visible to matched users, never publicly. All communication stays in-app until you choose to share personal details."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What safety tips does roammate recommend for meeting travel companions?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Meet in a public place for your first encounter — a hostel common room, a café, or a walking tour. Tell a friend or family member who you're meeting and where. Keep early communication in-app. Trust your instincts: if something feels off, it's fine to cancel."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is roammate safe for solo female travelers?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "roammate's verified profiles and in-app messaging mean you know who you're connecting with before any meetup. The matching system surfaces travelers with compatible styles and budgets, reducing friction. Standard solo female travel safety practices apply: meet publicly first, tell someone your plans, trust your instincts."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is roammate safer than meeting people in a hostel?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "roammate adds a layer of verification and compatibility filtering that hostel common rooms don't have. You see verified profiles filtered by compatible travel style and budget before any contact. Both involve meeting strangers — roammate provides more information upfront."
-          }
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does roammate verify profiles?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every roammate user goes through identity verification before their profile is visible to others. Verified accounts display a badge so you know who you're looking at before any conversation starts."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What should I do if I feel unsafe before or during a meetup?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Trust your instincts — if something feels off, it's completely fine to cancel or leave, and you don't owe anyone an explanation. You can block and report the user directly from their profile in two taps, contact local authorities if you feel in danger, and reach out to support@roammate.com so the team can review the account."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I report a user, and what happens next?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can report or block any user directly from their profile in two taps. Every report is reviewed by the roammate team, and accounts that violate community guidelines are removed. Blocking is immediate and the other person isn't notified, so you stay in control of who can contact you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the safest ways to meet a travel companion in person?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Meet in a public place for your first encounter — a hostel common room, a café, or a walking tour — and avoid meeting at accommodation on a first meet. Tell a friend, family member, or hostel staff who you're meeting and where, share a rough itinerary for any day trip, and keep early communication in-app until you've met and built trust."
+              }
+            }
+          ]
         }
       ]
     })} />
@@ -179,28 +152,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="safety-faq-a">Every roammate user goes through identity verification before their profile is visible to others. Verified accounts display a badge so you know who you're looking at before any conversation starts.</div>
         </details>
         <details class="safety-faq-item reveal">
-          <summary class="safety-faq-q">What should I do if I feel unsafe?</summary>
-          <div class="safety-faq-a">Trust your instincts. If something feels off before or during a meetup, leave the situation. You can block and report the user directly from their profile in the app. Contact local authorities if you feel in danger, and reach out to support@roammate.com.</div>
+          <summary class="safety-faq-q">What should I do if I feel unsafe before or during a meetup?</summary>
+          <div class="safety-faq-a">Trust your instincts — if something feels off, it's completely fine to cancel or leave, and you don't owe anyone an explanation. You can block and report the user directly from their profile in two taps, contact local authorities if you feel in danger, and reach out to support@roammate.com so the team can review the account.</div>
         </details>
         <details class="safety-faq-item reveal">
-          <summary class="safety-faq-q">Can I report a user on roammate?</summary>
-          <div class="safety-faq-a">Yes. You can report or block any user directly from their profile in two taps. All reports are reviewed by the roammate team and accounts that violate community guidelines are removed.</div>
+          <summary class="safety-faq-q">How do I report a user, and what happens next?</summary>
+          <div class="safety-faq-a">You can report or block any user directly from their profile in two taps. Every report is reviewed by the roammate team, and accounts that violate community guidelines are removed. Blocking is immediate and the other person isn't notified, so you stay in control of who can contact you.</div>
         </details>
         <details class="safety-faq-item reveal">
-          <summary class="safety-faq-q">Is my personal information private?</summary>
-          <div class="safety-faq-a">Yes. Your personal contact details are never shared with other users. Trip plans are only visible to matched users, never publicly. All communication stays in-app until you choose to share personal details.</div>
-        </details>
-        <details class="safety-faq-item reveal">
-          <summary class="safety-faq-q">What safety tips does roammate recommend for meeting travel companions?</summary>
-          <div class="safety-faq-a">Meet in a public place for your first encounter — a hostel common room, a cafe, or a walking tour. Tell a friend or family member who you're meeting and where. Keep early communication in-app. Trust your instincts: if something feels off, it's fine to cancel.</div>
-        </details>
-        <details class="safety-faq-item reveal">
-          <summary class="safety-faq-q">Is roammate safe for solo female travelers?</summary>
-          <div class="safety-faq-a">roammate's verified profiles and in-app messaging mean you know who you're connecting with before any meetup. The matching system surfaces travelers with compatible styles and budgets, which reduces the friction that can lead to uncomfortable situations. Standard solo female travel safety practices apply: meet publicly first, tell someone your plans, trust your instincts.</div>
-        </details>
-        <details class="safety-faq-item reveal">
-          <summary class="safety-faq-q">Is roammate safer than meeting people in a hostel?</summary>
-          <div class="safety-faq-a">roammate adds a layer of verification and compatibility filtering that hostel common rooms don't have. In a hostel, you meet whoever happens to be there. On roammate, you see verified profiles filtered by compatible travel style and budget before any contact. Both involve meeting strangers — roammate just provides more information upfront.</div>
+          <summary class="safety-faq-q">What are the safest ways to meet a travel companion in person?</summary>
+          <div class="safety-faq-a">Meet in a public place for your first encounter — a hostel common room, a cafe, or a walking tour — and avoid meeting at accommodation on a first meet. Tell a friend, family member, or hostel staff who you're meeting and where, share a rough itinerary for any day trip, and keep early communication in-app until you've met and built trust.</div>
         </details>
       </div>
     </div>

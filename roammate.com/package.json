@@ -13,8 +13,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.0",
-    "astro": "^5.17.1",
-    "astro-critters": "^2.2.1"
+    "astro": "^5.17.1"
   },
   "devDependencies": {
     "tsx": "^4.21.0",

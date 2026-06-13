@@ -1,7 +1,12 @@
 # roammate Website Dev Log
 
 ## Working State
-**Session:** 2 | **Date:** 2026-06-12
+**Session:** 3 | **Date:** 2026-06-12
+
+### Session 3: Third review batch — BUILT + VERIFIED, UNCOMMITTED
+critters removed (CSS double-load + per-page @font-face gone; builds 67-90s vs 95-357s); FAQPage dedup across 4 landing pages (page-specific Q&As, @graph consolidation on 5 pages); programmatic de-dup (statistics pages lost the budget table → link to /budget/; best-time pages: facts trimmed to season-only, FAQ collapsed to 1 Q&A, FAQPage schema removed); newsletter analytics fire on API success only (was on submit / on any click via form-level data-ph-event); AbortController timeouts on both email forms; Nav overlay Escape+inert; rel noreferrer sweep on remaining store links; about.astro invalid Org props removed; faq.astro set:html; compareApps.ts with build-time guard; two more dark-on-dark --color-ink bugs fixed in NewsletterSignup. Tests 23/23, validate clean, build 3,279 pages, dist verified.
+
+---
 
 ### Session 2: Second review batch — SHIPPED (commit 254f081, deployed)
 AppCTA badges variant adopted across all layouts + added to budget/best-time pages (was 6 inline copies); validate.ts covers all 572 guide images + featuredGuides refs; companions links gated to curated city slugs (place guides had 404 links — incl. CityGuideLayout CTA); z-index scale; StickyBar invisible-text fix; blog publisher logo rasterized (rm-logo.webp); region-hub breadcrumbs; noreferrer on store links; CORS file deleted. Tests 23/23, build 3,279 pages, live-verified.

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AppCTA from '../components/AppCTA.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -72,15 +73,12 @@ const base = import.meta.env.BASE_URL;
       <div class="press-block reveal">
         <h2 class="press-block-heading">Download</h2>
         <div class="press-download-links">
-          <a
-            href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=press-page&mt=8"
-            target="_blank"
-            rel="noopener"
-            class="press-store-link"
-            data-ph-event="press_appstore_click"
-          >
-            <img src={`${base}images/app-store-badge.webp`} alt="Download on the App Store" width="135" height="45" loading="lazy">
-          </a>
+          <AppCTA
+            variant="badges"
+            appStoreCt="press-page"
+            appStoreEvent="press_appstore_click"
+            playStoreEvent="press_playstore_click"
+          />
         </div>
         <p class="press-store-note">App ID: 6758834253 · Bundle: com.roammate.app</p>
       </div>

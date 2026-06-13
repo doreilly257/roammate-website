@@ -352,15 +352,16 @@ const isHome = Astro.url.pathname === '/';
         });
       });
 
-      // Track newsletter signup forms
-      ['blog-email-form', 'waitlist-form'].forEach(function(formId) {
-        var form = document.getElementById(formId);
-        if (!form) return;
-        form.addEventListener('submit', function() {
-          var source = formId === 'blog-email-form' ? 'blog' : 'waitlist';
-          phCapture('newsletter_signup', { source: source, path: location.pathname });
+      // Track the waitlist signup form on submit.
+      // 'blog-email-form' and 'newsletter-form' are excluded: their own handlers
+      // fire newsletter_signup only after the API confirms success, so tracking
+      // the submit event here would double-fire and count failed attempts.
+      var waitlistForm = document.getElementById('waitlist-form');
+      if (waitlistForm) {
+        waitlistForm.addEventListener('submit', function() {
+          phCapture('newsletter_signup', { source: 'waitlist', path: location.pathname });
         });
-      });
+      }
 
       // Track guide card clicks
       document.querySelectorAll('a[href*="/guides/"]').forEach(function(el) {

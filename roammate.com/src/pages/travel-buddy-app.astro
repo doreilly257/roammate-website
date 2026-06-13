@@ -9,55 +9,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Travel Buddy App — Find Travel Friends",
-      "url": "https://roammate.com/travel-buddy-app/",
-      "description": "roammate matches solo travelers to find travel buddies by style, budget, and destination.",
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Travel Buddy App", "item": "https://roammate.com/travel-buddy-app/" }
-      ]
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".tba-title", ".tba-subtitle"]
-      },
-      "url": "https://roammate.com/travel-buddy-app/"
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "What is a travel buddy app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A travel buddy app connects solo travelers who want to explore together. roammate matches travelers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby. Free on iOS."
+          "@type": "WebPage",
+          "name": "Travel Buddy App — Find Travel Friends",
+          "url": "https://roammate.com/travel-buddy-app/",
+          "description": "roammate matches solo travelers to find travel buddies by style, budget, and destination.",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".tba-title", ".tba-subtitle"]
           }
         },
         {
-          "@type": "Question",
-          "name": "How do I find a travel buddy?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Download roammate, set your travel style and budget, and browse travelers heading to your destination. View profiles, chat in-app, and meet up when you're ready."
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Travel Buddy App", "item": "https://roammate.com/travel-buddy-app/" }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "Is there a free app to find travel friends?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — roammate is completely free to download and use on iOS. No subscription, no ads."
-          }
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is the roammate travel buddy app available on iPhone and Android?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "roammate is live on iOS and available on the App Store, with an Android version on Google Play. Your profile, matches, and messages stay in sync across whichever device you use, so you can switch phones without losing your travel connections."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does the roammate app cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "roammate is free to download and free to use. There's no premium tier that gatekeeps matches, no ads, and no subscription — every feature, including matching and in-app messaging, is available at no cost."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use the app offline while traveling?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "roammate needs an internet connection to discover travelers, refresh matches, and send messages in real time, but previously loaded profiles and conversations remain viewable offline. That means you can re-read a chat or check meetup details on a flight or in a dead zone, then sync up again when you reconnect."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What features does the roammate app include?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Core features include compatibility matching by travel style, budget, and destination; identity-verified profiles; in-app messaging that keeps your phone number private; and real-time discovery of travelers already at your destination as well as those arriving later. It's purpose-built for travelers rather than bolted onto a dating or general social app."
+              }
+            }
+          ]
         }
       ]
     })} />

@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import critters from 'astro-critters';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
@@ -9,5 +8,5 @@ export default defineConfig({
   devToolbar: { enabled: false },
   compressHTML: true,
   prefetch: true,
-  integrations: [sitemap(), critters({ pruneSource: true, preload: 'swap' })],
+  integrations: [sitemap()],
 });

@@ -9,79 +9,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Meet Travelers Worldwide",
-      "url": "https://roammate.com/meet-travelers/",
-      "description": "Meet fellow travelers who match your style, budget, and destination. roammate connects solo travelers and backpackers for shared adventures.",
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Meet Travelers", "item": "https://roammate.com/meet-travelers/" }
-      ]
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".mt-title", ".mt-subtitle", ".faq-section"]
-      },
-      "url": "https://roammate.com/meet-travelers/"
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "How do I find a travel companion with roammate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Download roammate free on iOS, build a travel profile with your style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before deciding to meet up."
+          "@type": "WebPage",
+          "name": "Meet Travelers Worldwide",
+          "url": "https://roammate.com/meet-travelers/",
+          "description": "Meet fellow travelers who match your style, budget, and destination. roammate connects solo travelers and backpackers for shared adventures.",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".mt-title", ".mt-subtitle", ".faq-section"]
           }
         },
         {
-          "@type": "Question",
-          "name": "Is roammate free to use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees. All features including messaging and matching are free."
-          }
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Meet Travelers", "item": "https://roammate.com/meet-travelers/" }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "How does roammate match travelers?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that are genuinely compatible."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is roammate safe?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "roammate uses verified profiles, in-app messaging, and a report/block system. The platform recommends meeting in public for initial meetups. Standard safety practices apply — trust your instincts and let someone know your plans."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I find a female-only travel companion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. roammate lets you filter potential companions by gender preference. Many solo female travelers use roammate specifically to find other women to travel with for added comfort and safety."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What countries does roammate work in?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "roammate works worldwide. You can set any destination and find travelers heading there. The app is especially popular in Southeast Asia, Europe, and South America — top solo travel regions."
-          }
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does roammate connect me with other travelers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "roammate surfaces travelers heading to the same destination as you, then ranks them by how well their travel style, budget, and dates overlap with yours. Instead of scrolling a feed of strangers, you see a shortlist of people you're genuinely likely to click with, and you message them in-app to start the conversation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I meet up with a group of travelers rather than just one person?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Many roammate users coordinate small group meetups — a shared day trip, a group hike, or a dinner — by connecting with several compatible travelers in the same city. It's a natural way to expand a solo trip into a small crew without committing to a fixed group tour."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How soon before a trip should I start connecting with travelers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can connect both before you leave and once you've arrived. Reaching out a week or two ahead lets you line up plans for your first days, while connecting on the ground is great for spontaneous meetups. roammate works for both — set your dates and destination and it shows who overlaps with you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the best way to break the ice with a traveler I've matched with?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Open with something specific from their profile — a destination you both have, a trail you want to do, or a shared travel style. Suggest a low-commitment first meetup like a coffee or a walking tour, and keep the chat in-app until you've met. Compatible matches make these conversations far easier than a cold hostel introduction."
+              }
+            }
+          ]
         }
       ]
     })} />
@@ -216,28 +197,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="mt-section-heading">Meeting fellow travelers — <em>FAQ</em></h2>
       <div class="faq-list">
         <details class="faq-item reveal">
-          <summary class="faq-question"><h3>How do I find a travel companion with roammate?</h3></summary>
-          <p class="faq-answer">Download roammate free on iOS, build a travel profile with your style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before deciding to meet up.</p>
+          <summary class="faq-question"><h3>How does roammate connect me with other travelers?</h3></summary>
+          <p class="faq-answer">roammate surfaces travelers heading to the same destination as you, then ranks them by how well their travel style, budget, and dates overlap with yours. Instead of scrolling a feed of strangers, you see a shortlist of people you're genuinely likely to click with, and you message them in-app to start the conversation.</p>
         </details>
         <details class="faq-item reveal">
-          <summary class="faq-question"><h3>Is roammate free to use?</h3></summary>
-          <p class="faq-answer">Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees. All features including messaging and matching are free.</p>
+          <summary class="faq-question"><h3>Can I meet up with a group of travelers rather than just one person?</h3></summary>
+          <p class="faq-answer">Yes. Many roammate users coordinate small group meetups — a shared day trip, a group hike, or a dinner — by connecting with several compatible travelers in the same city. It's a natural way to expand a solo trip into a small crew without committing to a fixed group tour.</p>
         </details>
         <details class="faq-item reveal">
-          <summary class="faq-question"><h3>How does roammate match travelers?</h3></summary>
-          <p class="faq-answer">roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that are genuinely compatible.</p>
+          <summary class="faq-question"><h3>How soon before a trip should I start connecting with travelers?</h3></summary>
+          <p class="faq-answer">You can connect both before you leave and once you've arrived. Reaching out a week or two ahead lets you line up plans for your first days, while connecting on the ground is great for spontaneous meetups. roammate works for both — set your dates and destination and it shows who overlaps with you.</p>
         </details>
         <details class="faq-item reveal">
-          <summary class="faq-question"><h3>Is roammate safe?</h3></summary>
-          <p class="faq-answer">roammate uses verified profiles, in-app messaging, and a report/block system. The platform recommends meeting in public for initial meetups. Standard safety practices apply — trust your instincts and let someone know your plans.</p>
-        </details>
-        <details class="faq-item reveal">
-          <summary class="faq-question"><h3>Can I find a female-only travel companion?</h3></summary>
-          <p class="faq-answer">Yes. roammate lets you filter potential companions by gender preference. Many solo female travelers use roammate specifically to find other women to travel with for added comfort and safety.</p>
-        </details>
-        <details class="faq-item reveal">
-          <summary class="faq-question"><h3>What countries does roammate work in?</h3></summary>
-          <p class="faq-answer">roammate works worldwide. You can set any destination and find travelers heading there. The app is especially popular in Southeast Asia, Europe, and South America — top solo travel regions.</p>
+          <summary class="faq-question"><h3>What's the best way to break the ice with a traveler I've matched with?</h3></summary>
+          <p class="faq-answer">Open with something specific from their profile — a destination you both have, a trail you want to do, or a shared travel style. Suggest a low-commitment first meetup like a coffee or a walking tour, and keep the chat in-app until you've met. Compatible matches make these conversations far easier than a cold hostel introduction.</p>
         </details>
       </div>
     </div>

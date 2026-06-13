@@ -656,25 +656,48 @@ const formatDate = (value?: string) => {
         return;
       }
       if (errorEl) errorEl.textContent = '';
+
       const submit = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-      if (submit) submit.disabled = true;
+      const originalLabel = submit ? submit.textContent : '';
+      if (submit) {
+        submit.disabled = true;
+        submit.textContent = 'Subscribing...';
+      }
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
 
       try {
         const res = await fetch('https://api.roammate.com/v1/waitlist', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, source: 'blog-newsletter' }),
+          signal: controller.signal,
         });
         if (res.ok) {
           form.hidden = true;
           if (successEl) successEl.hidden = false;
+          // Fire on confirmed success only; excluded from BaseLayout's
+          // generic tracker to avoid double-firing.
+          const w = window as any;
+          if (w.posthog && typeof w.posthog.capture === 'function') {
+            w.posthog.capture('newsletter_signup', { source: 'blog', path: location.pathname });
+          }
         } else {
           if (errorEl) errorEl.textContent = 'Something went wrong. Please try again.';
-          if (submit) submit.disabled = false;
+          if (submit) {
+            submit.disabled = false;
+            submit.textContent = originalLabel;
+          }
         }
       } catch {
         if (errorEl) errorEl.textContent = 'Network error. Please try again.';
-        if (submit) submit.disabled = false;
+        if (submit) {
+          submit.disabled = false;
+          submit.textContent = originalLabel;
+        }
+      } finally {
+        clearTimeout(timeoutId);
       }
     });
   })();

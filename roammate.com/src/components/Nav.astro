@@ -34,25 +34,51 @@ const base = import.meta.env.BASE_URL;
   // Mobile toggle
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
-  toggle?.addEventListener('click', () => {
-    toggle.classList.toggle('active');
-    links?.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', links?.classList.contains('open') ? 'true' : 'false');
-  });
+  const navEl = document.getElementById('nav');
 
-  const closeBtn = document.getElementById('navClose');
-  closeBtn?.addEventListener('click', () => {
+  // Make sibling content inert while the overlay is open (focus containment + a11y).
+  // inert is widely supported in modern browsers; older ones simply skip the attribute.
+  function setSiblingsInert(inert: boolean) {
+    if (!navEl || !navEl.parentElement) return;
+    Array.from(navEl.parentElement.children).forEach((el) => {
+      if (el === navEl) return;
+      if (inert) el.setAttribute('inert', '');
+      else el.removeAttribute('inert');
+    });
+  }
+
+  function openMenu() {
+    toggle?.classList.add('active');
+    links?.classList.add('open');
+    toggle?.setAttribute('aria-expanded', 'true');
+    setSiblingsInert(true);
+  }
+
+  function closeMenu(restoreFocus = false) {
     toggle?.classList.remove('active');
     links?.classList.remove('open');
     toggle?.setAttribute('aria-expanded', 'false');
+    setSiblingsInert(false);
+    if (restoreFocus) (toggle as HTMLElement | null)?.focus();
+  }
+
+  toggle?.addEventListener('click', () => {
+    if (links?.classList.contains('open')) closeMenu();
+    else openMenu();
   });
 
+  const closeBtn = document.getElementById('navClose');
+  closeBtn?.addEventListener('click', () => closeMenu(true));
+
   links?.querySelectorAll('a').forEach((a) => {
-    a.addEventListener('click', () => {
-      toggle?.classList.remove('active');
-      links?.classList.remove('open');
-      toggle?.setAttribute('aria-expanded', 'false');
-    });
+    a.addEventListener('click', () => closeMenu());
+  });
+
+  // Escape closes the overlay and returns focus to the toggle button.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && links?.classList.contains('open')) {
+      closeMenu(true);
+    }
   });
 </script>
 

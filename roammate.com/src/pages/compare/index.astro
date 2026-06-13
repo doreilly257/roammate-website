@@ -1,22 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getAllBlogPosts } from '../../lib/blog-data';
+import { appNames } from '../../data/compareApps';
 
 const allBlogPosts = await getAllBlogPosts();
 const comparisonPosts = allBlogPosts.filter((p: any) => p.slug.startsWith('roammate-vs-'));
 const bestOfPost = allBlogPosts.find((p: any) => p.slug === 'best-travel-companion-apps-2026');
 
-const appNames: Record<string, string> = {
-  'roammate-vs-couchsurfing': 'Couchsurfing',
-  'roammate-vs-tourlina': 'Tourlina',
-  'roammate-vs-backpackr': 'Backpackr',
-  'roammate-vs-facebook-travel-groups': 'Facebook Travel Groups',
-  'roammate-vs-meetup': 'Meetup',
-  'roammate-vs-bumble-bff': 'Bumble BFF',
-  'roammate-vs-hostelworld': 'Hostelworld',
-  'roammate-vs-travello': 'Travello',
-  'roammate-vs-gaffl': 'GAFFL',
-};
+const missingNames = comparisonPosts.filter((p: any) => !appNames[p.slug]);
+if (missingNames.length > 0) {
+  throw new Error(
+    `compare/index.astro: missing display name(s) in src/data/compareApps.ts for comparison post(s): ${missingNames
+      .map((p: any) => p.slug)
+      .join(', ')}`
+  );
+}
 
 const allComparisonItems = [
   ...(bestOfPost ? [bestOfPost] : []),
@@ -128,7 +126,7 @@ const itemListElements = allComparisonItems.map((post: any, i: number) => ({
       <div class="compare-grid">
         {comparisonPosts.map((post: any) => (
           <a href={`/blog/${post.slug}/`} class="compare-card">
-            <span class="compare-card-vs">vs {appNames[post.slug] || post.slug.replace('roammate-vs-', '')}</span>
+            <span class="compare-card-vs">vs {appNames[post.slug]}</span>
             <h3 class="compare-card-title">{post.title}</h3>
             <p class="compare-card-desc">{post.description}</p>
             <span class="compare-read-link">Read comparison &rarr;</span>

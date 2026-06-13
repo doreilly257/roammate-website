@@ -109,7 +109,7 @@ const faqs = [
       {faqs.map((faq, i) => (
         <details class={`faq-item reveal reveal-delay-${(i % 4) + 1}`}>
           <summary class="faq-question">{faq.q}</summary>
-          <div class="faq-answer">{faq.a}</div>
+          <div class="faq-answer" set:html={faq.a} />
         </details>
       ))}
     </div>

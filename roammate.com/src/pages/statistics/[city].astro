@@ -19,7 +19,6 @@ export async function getStaticPaths() {
           region: d.heroRegion,
           slug: d.slug,
           quickFacts: d.quickFacts,
-          budgetBreakdown: d.budgetBreakdown,
           practicalInfo: d.practicalInfo,
           culturalTips: d.culturalTips,
           guideData: d,
@@ -28,15 +27,13 @@ export async function getStaticPaths() {
     });
 }
 
-const { city, country, region, slug, quickFacts, budgetBreakdown, practicalInfo, culturalTips, guideData } = Astro.props;
+const { city, country, region, slug, quickFacts, practicalInfo, culturalTips, guideData } = Astro.props;
 const cityGuideSlugs = await getCityGuideSlugs();
 const siblings = getCitySiblingPages(slug, guideData, cityGuideSlugs);
 
 const pageTitle = `${city} Solo Travel Statistics & Facts | roammate`;
 const pageDesc = `Solo travel statistics for ${city}, ${country}. Quick facts, daily budget breakdown, practical info, cultural tips, and travel companion resources.`;
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
-
-const hasMidrange = budgetBreakdown?.some((r: any) => r.midrange || r.mid);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -96,30 +93,13 @@ const webPageSchema = {
         ))}
       </div>
 
-      {budgetBreakdown && budgetBreakdown.length > 0 && (
+      {siblings.budget && (
         <>
-          <h2>Budget breakdown</h2>
-          <div class="stats-table-wrap">
-            <table class="stats-table">
-              <thead>
-                <tr>
-                  <th>Category</th>
-                  <th>Budget</th>
-                  {hasMidrange && <th>Midrange</th>}
-                </tr>
-              </thead>
-              <tbody>
-                {budgetBreakdown.map((row: any) => (
-                  <tr>
-                    <td>{row.category}</td>
-                    <td>{row.budget}</td>
-                    {hasMidrange && <td>{row.midrange || row.mid || '—'}</td>}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <h2>Daily budget</h2>
+          <p>For a full category-by-category breakdown of accommodation, food, transport, and activity costs in {city}, see the dedicated budget guide.</p>
+          <div class="city-links">
+            <a href={siblings.budget} class="city-link-pill">{city} Budget Breakdown</a>
           </div>
-          <p class="stats-table-note">Daily per-person estimates. Costs vary by season and travel style.</p>
         </>
       )}
 
@@ -297,52 +277,6 @@ const webPageSchema = {
     font-size: 14px;
     line-height: 1.5;
     color: var(--color-text);
-  }
-
-  /* Budget table */
-  .stats-table-wrap {
-    overflow-x: auto;
-    margin: 24px 0 8px;
-    border-radius: 12px;
-    border: 1px solid rgba(58, 52, 46, 0.12);
-  }
-
-  .stats-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--font-body);
-    font-size: 15px;
-  }
-
-  .stats-table thead {
-    background: var(--color-bg-warm);
-  }
-
-  .stats-table th {
-    text-align: left;
-    padding: 14px 16px;
-    font-weight: 700;
-    color: var(--color-text);
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .stats-table td {
-    padding: 12px 16px;
-    color: var(--color-text);
-    border-top: 1px solid rgba(58, 52, 46, 0.08);
-  }
-
-  .stats-table tbody tr:hover {
-    background: rgba(58, 52, 46, 0.03);
-  }
-
-  .stats-table-note {
-    font-size: 13px !important;
-    color: var(--color-text-muted) !important;
-    font-style: italic;
-    margin-bottom: 24px !important;
   }
 
   /* Practical info & cultural tips grid */

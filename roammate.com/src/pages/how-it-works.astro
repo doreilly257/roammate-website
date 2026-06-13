@@ -10,110 +10,106 @@ const base = import.meta.env.BASE_URL;
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "How roammate Works",
-      "url": "https://roammate.com/how-it-works/",
-      "description": "How roammate matches solo travelers with compatible companions by travel style, budget, and destination.",
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
-        { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://roammate.com/how-it-works/" }
-      ]
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Find a Travel Companion with roammate",
-      "description": "Find a compatible travel companion using roammate — a free iOS app that matches solo travelers by style, budget, and destination.",
-      "step": [
+      "@graph": [
         {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Build your travel profile",
-          "text": "Set your travel style (adventure, cultural, slow travel, food-focused), daily budget bracket, and your upcoming destination. Honest answers produce better matches."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Browse compatible travelers",
-          "text": "View travelers with overlapping destinations, matching budgets, and compatible travel styles. Read full profiles before deciding to connect."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Connect and meet",
-          "text": "Send a message, discuss your plans, and meet up. Share accommodation, split tour costs, or simply explore together."
-        }
-      ],
-      "tool": {
-        "@type": "HowToTool",
-        "name": "roammate app",
-        "url": "https://apps.apple.com/app/id6758834253"
-      }
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".hiw-title", ".hiw-subtitle", ".faq-section"]
-      },
-      "url": "https://roammate.com/how-it-works/"
-    })} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How does roammate's matching work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that pass all three compatibility filters."
+          "@type": "WebPage",
+          "name": "How roammate Works",
+          "url": "https://roammate.com/how-it-works/",
+          "description": "How roammate matches solo travelers with compatible companions by travel style, budget, and destination.",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hiw-title", ".hiw-subtitle", ".faq-section"]
           }
         },
         {
-          "@type": "Question",
-          "name": "Do I need to pay to use roammate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. roammate is completely free — no premium tier, no ads, no subscription. All features including messaging and matching are available at no cost."
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
+            { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://roammate.com/how-it-works/" }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Find a Travel Companion with roammate",
+          "description": "Find a compatible travel companion using roammate — a free iOS app that matches solo travelers by style, budget, and destination.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Build your travel profile",
+              "text": "Set your travel style (adventure, cultural, slow travel, food-focused), daily budget bracket, and your upcoming destination. Honest answers produce better matches."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Browse compatible travelers",
+              "text": "View travelers with overlapping destinations, matching budgets, and compatible travel styles. Read full profiles before deciding to connect."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Connect and meet",
+              "text": "Send a message, discuss your plans, and meet up. Share accommodation, split tour costs, or simply explore together."
+            }
+          ],
+          "tool": {
+            "@type": "HowToTool",
+            "name": "roammate app",
+            "url": "https://apps.apple.com/app/id6758834253"
           }
         },
         {
-          "@type": "Question",
-          "name": "How are profiles verified?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Every roammate user goes through identity verification before connecting with others. Verified profiles display a badge so you know who you're talking to before agreeing to meet."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What travel styles can I filter by?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "roammate supports multiple travel styles including adventure, cultural, slow travel, and food-focused. You can also filter by daily budget range and destination to find the most compatible companions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I message someone on roammate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Once you find a compatible traveler, you can message them directly through the app. All communication stays in-app until you're comfortable sharing personal contact details."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens if my travel dates change?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can update your travel profile at any time — including dates, destinations, and preferences. Your matches will automatically refresh to reflect your new plans."
-          }
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does roammate's matching work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "roammate matches travelers based on three factors: travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. You only see profiles that pass all three compatibility filters."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to pay to use roammate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. roammate is completely free — no premium tier, no ads, no subscription. All features including messaging and matching are available at no cost."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How are profiles verified?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every roammate user goes through identity verification before connecting with others. Verified profiles display a badge so you know who you're talking to before agreeing to meet."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What travel styles can I filter by?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "roammate supports multiple travel styles including adventure, cultural, slow travel, and food-focused. You can also filter by daily budget range and destination to find the most compatible companions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I message someone on roammate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Once you find a compatible traveler, you can message them directly through the app. All communication stays in-app until you're comfortable sharing personal contact details."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens if my travel dates change?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can update your travel profile at any time — including dates, destinations, and preferences. Your matches will automatically refresh to reflect your new plans."
+              }
+            }
+          ]
         }
       ]
     })} />
@@ -260,7 +256,7 @@ const base = import.meta.env.BASE_URL;
         <a
           href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=how-it-works-cta&mt=8"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           class="hiw-cta-btn"
           data-ph-event="hiw_appstore_click"
         >
@@ -269,7 +265,7 @@ const base = import.meta.env.BASE_URL;
         <a
           href="https://play.google.com/store/apps/details?id=com.roammate.app.android"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           class="hiw-cta-btn"
           data-ph-event="hiw_playstore_click"
         >
