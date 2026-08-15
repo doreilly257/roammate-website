@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AppCTA from '../../components/AppCTA.astro';
 import { getCitySiblingPages } from '../../lib/getCitySiblingPages';
@@ -8,7 +9,7 @@ import { getCityGuideSlugs } from '../../data/guides';
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
   return guides
-    .filter((g) => g.data.type === 'city')
+    .filter((g): g is CollectionEntry<'guides'> & { data: Extract<CollectionEntry<'guides'>['data'], { type: 'city' }> } => g.data.type === 'city')
     .map((g) => {
       const d = g.data;
       return {

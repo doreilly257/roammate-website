@@ -10,7 +10,7 @@ interface Props {
   title: string;
   description: string;
   /* hero */
-  heroImages: { src: string; alt: string }[];
+  heroImages: (string | { src: string; alt: string })[];
   heroFlags: string;
   heroRegion: string;
   heroTitle: string;
@@ -25,8 +25,8 @@ interface Props {
     weeks: string;
     color: string;
     intro: string;
-    quickFacts: { icon: string; label: string; value: string; detail: string }[];
-    phases: { title: string; duration: string; description: string; tip: string; guides?: string[] }[];
+    quickFacts?: { icon: string; label: string; value: string; detail: string }[];
+    phases: { title: string; duration: string; description: string; tip?: string; guides?: string[] }[];
   }[];
   /* budget */
   budgetIntro: string;
@@ -57,7 +57,8 @@ const {
 
 const regionSlug = regionToSlug(heroRegion);
 
-const ogImage = heroImages[0]?.src;
+const heroImageObjects = heroImages.map((img) => (typeof img === 'string' ? { src: img, alt: '' } : img));
+const ogImage = heroImageObjects[0]?.src;
 const routeGuides = await getBySlug(featuredGuides);
 const cityGuideSlugs = await getCityGuideSlugs();
 const routeCityGuides = routeGuides.filter(g => cityGuideSlugs.has(g.slug));
@@ -107,7 +108,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
   <section class="route-hero" style={`--accent: ${accentColor};`}>
     <div class="route-hero-bg">
       <div class="montage-grid">
-        {heroImages.map((img) => (
+        {heroImageObjects.map((img) => (
           <img src={img.src} alt={img.alt} width="900" height="600" fetchpriority="high">
         ))}
       </div>
@@ -179,7 +180,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
 
       <div class="route-country-facts reveal">
         <div class="route-facts-grid">
-          {country.quickFacts.map((f) => (
+          {country.quickFacts?.map((f) => (
             <div class="route-fact">
               <span class="route-fact-icon">{f.icon}</span>
               <div>

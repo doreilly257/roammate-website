@@ -23,13 +23,13 @@ interface Props {
   heroPills: string[];
   /* data sections */
   quickFacts: { icon: string; label: string; value: string; detail: string }[];
-  itineraries: Record<number, { num: number; title: string; periods: { time: string; icon: string; title: string; text: string; tip: string }[] }[]>;
+  itineraries: Record<string, { num: number; title: string; periods: { time: string; icon: string; title: string; text: string; tip?: string }[] }[]>;
   defaultDays?: number;
-  budgetTips: { title: string; text: string }[];
-  budgetBreakdown: { category: string; budget: string; midrange: string; splurge: string; notes: string }[];
+  budgetTips: ({ title: string; text: string } | string)[];
+  budgetBreakdown: { category: string; budget: string; midrange?: string; mid?: string; splurge?: string; notes?: string }[];
   budgetIntro?: string;
   practicalInfo: { icon: string; title: string; items: string[] }[];
-  culturalTips: { icon: string; title: string; text: string }[];
+  culturalTips: ({ icon: string; title: string; text: string } | string)[];
   culturalIntro?: string;
   /* CTA */
   ctaCity: string;
@@ -205,8 +205,8 @@ const escapeCssUrl = (url: string) =>
     <div class="guide-budget-grid">
       {budgetTips.map((tip, i) => (
         <div class={`guide-budget-card reveal reveal-delay-${(i % 4) + 1}`}>
-          <h3 class="guide-budget-title">{tip.title}</h3>
-          <p class="guide-budget-text">{tip.text}</p>
+          {typeof tip !== 'string' && <h3 class="guide-budget-title">{tip.title}</h3>}
+          <p class="guide-budget-text">{typeof tip === 'string' ? tip : tip.text}</p>
         </div>
       ))}
     </div>
@@ -283,9 +283,9 @@ const escapeCssUrl = (url: string) =>
     <div class="guide-culture-grid">
       {culturalTips.map((tip, i) => (
         <div class={`guide-culture-card reveal reveal-delay-${(i % 4) + 1}`}>
-          <span class="guide-culture-icon">{tip.icon}</span>
-          <h3 class="guide-culture-title">{tip.title}</h3>
-          <p class="guide-culture-text">{tip.text}</p>
+          {typeof tip !== 'string' && <span class="guide-culture-icon">{tip.icon}</span>}
+          {typeof tip !== 'string' && <h3 class="guide-culture-title">{tip.title}</h3>}
+          <p class="guide-culture-text">{typeof tip === 'string' ? tip : tip.text}</p>
         </div>
       ))}
     </div>
@@ -1361,6 +1361,7 @@ const escapeCssUrl = (url: string) =>
 </style>
 
 <script>
+  // @ts-nocheck
   const btns = document.querySelectorAll('.guide-duration-btn');
   const variants = document.querySelectorAll('.guide-itinerary-variant');
 

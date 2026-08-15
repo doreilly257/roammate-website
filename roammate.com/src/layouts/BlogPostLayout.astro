@@ -31,7 +31,6 @@ interface Props {
   title: string;
   description: string;
   heroImage: string;
-  heroImageAlt?: string;
   category?: string;
   publishedAt?: string;
   updatedAt?: string;
@@ -48,7 +47,6 @@ const {
   title,
   description,
   heroImage,
-  heroImageAlt = title,
   category,
   publishedAt,
   updatedAt,
@@ -65,6 +63,13 @@ const formatCityName = (slug: string) =>
   slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+// Fallback author entity for posts without a named author, pointed at the /editorial/ page.
+const EDITORIAL_AUTHOR = {
+  "@type": "Organization",
+  "name": "roammate editorial",
+  "url": new URL('/editorial/', Astro.site).href,
+} as const;
 
 const toISODate = (value?: string) => {
   if (!value) return undefined;
@@ -160,11 +165,7 @@ const renderInlineLinks = (text: string) => {
       "author": author ? {
         "@type": "Person",
         "name": author,
-      } : {
-        "@type": "Organization",
-        "name": "roammate editorial",
-        "url": "https://roammate.com/editorial/",
-      },
+      } : EDITORIAL_AUTHOR,
       "publisher": {
         "@type": "Organization",
         "name": "roammate",
@@ -198,7 +199,7 @@ const renderInlineLinks = (text: string) => {
   </Fragment>
 
   <article>
-    <section class="blog-post-hero" aria-label={heroImageAlt}>
+    <section class="blog-post-hero">
       <div class="blog-post-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${escapeCssUrl(heroImage)}');`} />
       <div class="blog-post-hero-content">
         <div class="blog-post-breadcrumb">
@@ -292,7 +293,7 @@ const renderInlineLinks = (text: string) => {
         id="share-twitter"
         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(canonical)}&via=roammate`}
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         data-ph-event="blog_share_twitter"
         aria-label="Share on X / Twitter"
       >𝕏</a>
@@ -301,7 +302,7 @@ const renderInlineLinks = (text: string) => {
         id="share-whatsapp"
         href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + canonical)}`}
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         data-ph-event="blog_share_whatsapp"
         aria-label="Share on WhatsApp"
       >WhatsApp</a>
@@ -310,7 +311,7 @@ const renderInlineLinks = (text: string) => {
         id="share-pinterest"
         href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(canonical)}&description=${encodeURIComponent(title)}`}
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         data-ph-event="blog_share_pinterest"
         aria-label="Save to Pinterest"
       >Pinterest</a>

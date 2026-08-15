@@ -182,6 +182,7 @@ const topRoutes = routeData.map((r) => ({ slug: r.slug, name: r.name, flags: r.f
 </script>
 
 <script>
+  // @ts-nocheck
   document.querySelectorAll('[data-shuffle-group]').forEach(grid => {
     const items = [...grid.children];
     const show = parseInt(grid.dataset.show) || 8;

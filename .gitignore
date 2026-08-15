@@ -8,6 +8,12 @@ node_modules/
 # OS
 .DS_Store
 
+# Loose root-level screenshots (not deployed assets)
+/*.png
+
+# Playwright MCP session logs
+.playwright-mcp/
+
 # Dolt database files (added by bd init)
 .dolt/
 *.db

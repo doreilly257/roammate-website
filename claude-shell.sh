@@ -7,9 +7,10 @@ echo - Creating env vars                                                        
 echo ------------------------------------------------------------------------------------
 export DISABLE_AUTOUPDATER=true
 export FORCE_AUTOUPDATE_PLUGINS=true
-export AUGMENT_API_TOKEN=_464e4f35a427ef638f799e698d41cf1f
+# Secrets live in ~/.claude/secrets.env (never committed). Required keys:
+#   AUGMENT_API_TOKEN, CONTEXT7_API_KEY
+source ~/.claude/secrets.env
 export AUGMENT_API_URL=https://d16.api.augmentcode.com
-export CONTEXT7_API_KEY=ctx7sk-efe01c2c-53d7-432c-8b9c-e48b45c154f9
 echo - Setting up MCP                                                                   -
 echo ------------------------------------------------------------------------------------
 #claude mcp add context7 -- npx -y @upstash/context7-mcp

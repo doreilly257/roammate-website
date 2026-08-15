@@ -3,77 +3,87 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const faqs = [
   {
+    q: 'How do I find a travel buddy?',
+    a: "Create a roammate profile with your travel style, daily budget, and where you're headed, then browse travelers whose plans overlap with yours. roammate only surfaces people who pass all three compatibility filters, so you're not scrolling through everyone in the city — just the ones you'd actually get along with. From there you message in-app and agree on something small to do together, like a walking tour or a shared taxi.",
+  },
+  {
+    q: 'How do I meet people while traveling alone?',
+    a: "The easiest way is to attach yourself to a specific plan rather than hoping for a chance encounter. On roammate you can browse plans other travelers have already posted near you — a hike, a museum, a street food crawl — and ask to join, or post your own and let people request a spot. Because everything is anchored to an activity with a time and place, there's no awkward \"so what should we do?\" stage.",
+  },
+  {
+    q: 'Is roammate safe for solo female travelers?',
+    a: "roammate is built with solo travelers in mind, and several features exist specifically to reduce risk. Travelers can verify their identity with a government-ID and liveness check, and verified accounts carry a badge — so you can choose to only meet verified users. All communication stays in-app until you choose otherwise, and you can block or report anyone from their profile in two taps — blocking is immediate and the other person isn't notified. We still recommend the basics: meet in a public place first, and tell someone where you're going.",
+  },
+  {
+    q: 'Do I need to verify my identity?',
+    a: "Verification is optional, but strongly encouraged. Verified travelers complete a government-ID and liveness check and display a verified badge on their profile, so you can decide to connect only with people who have been through it. That badge is the biggest difference between roammate and an open forum or group chat.",
+  },
+  {
+    q: 'Is roammate free?',
+    a: "Yes, completely. roammate is free to download and free to use, with no premium tier, no ads, and no subscription. Messaging, matching, creating plans, and joining excursions are all included at no cost.",
+  },
+  {
+    q: 'How do excursions work?',
+    a: "An excursion is a plan someone has posted with an activity, a location, a date, and a number of spots — a day hike, a shared boat trip, a food tour. You can browse excursions near you and request to join, or tap the \"+\" button to create your own and let other travelers request a place. Once you're in, coordination happens in the in-app chat for that excursion.",
+  },
+  {
+    q: 'What makes roammate different from Couchsurfing, Bumble BFF, or Meetup?',
+    a: "Couchsurfing is a hospitality network — it matches you with a host who has a spare couch, not a companion for the day. Bumble BFF is a general friendship app built around where you live, so it's aimed at people staying put rather than travelers passing through. Meetup organises recurring local events, which works well for residents but rarely fits a three-night stop. roammate matches specifically on travel style, daily budget, and destination overlap, so the people you see are travelers whose trip actually intersects with yours.",
+  },
+  {
+    q: 'What cities does roammate work in?',
+    a: "roammate works anywhere in the world — there's no city list or regional restriction. Set your location or an upcoming destination and you'll see travelers and plans in that area. Activity is naturally highest along well-travelled backpacker routes in Southeast Asia, Latin America, and Europe, and it grows as more travelers in a given city join.",
+  },
+  {
     q: 'What is roammate?',
     a: "roammate is a travel app that connects solo travelers and small groups with like-minded people nearby. Whether you're looking for someone to share a taxi, explore a museum, or join you on a hike, roammate helps you find travel companions to share experiences and costs.",
   },
   {
-    q: 'How does roammate work?',
-    a: "Simply create a profile, set your location, and browse travel plans created by other users near you. You can also create your own travel plans and let others request to join. Once connected, you can chat and coordinate your meetup.",
-  },
-  {
-    q: 'Is roammate free to use?',
-    a: 'Yes! roammate is free to download and use. We believe everyone should have the opportunity to connect with fellow travelers and make the most of their adventures.',
+    q: 'How does roammate match travelers?',
+    a: "roammate matches travelers on three factors: travel style (adventure, cultural immersion, slow travel, food-focused), daily budget range, and destination overlap. Filtering on all three before anyone appears in your feed removes mismatched expectations early — which is the most common source of tension when travelling with someone new.",
   },
   {
     q: 'How do I create a travel plan?',
-    a: "Tap the \"+\" button in the app to create a new travel plan. Add details like the activity, location, date, and how many people you'd like to join. Other travelers nearby will be able to see your plan and request to join.",
-  },
-  {
-    q: 'Is it safe to meet strangers through roammate?',
-    a: "Your safety is important to us. We recommend meeting in public places, letting someone know your plans, and trusting your instincts. You can view other users' profiles and reviews before connecting.",
-  },
-  {
-    q: 'Can I use roammate anywhere in the world?',
-    a: "Yes! roammate works globally. Wherever you're traveling, you can connect with other roammate users in that area. The more travelers using the app, the more connections you can make.",
-  },
-  {
-    q: 'What if I need to cancel a plan?',
-    a: 'Life happens! You can cancel or modify your travel plans at any time through the app. We encourage you to notify anyone who has joined your plan as soon as possible if your plans change.',
-  },
-  {
-    q: 'How do I report inappropriate behavior?',
-    a: 'If you encounter any inappropriate behavior, you can report a user directly through their profile or contact our support team. We take all reports seriously and will investigate promptly.',
-  },
-  {
-    q: 'Do I need an internet connection to use roammate?',
-    a: 'Yes, roammate requires an internet connection to browse and create travel plans, and to communicate with other users. However, you can view previously loaded content offline.',
-  },
-  {
-    q: 'How do I delete my account?',
-    a: 'You can delete your account at any time through the app settings. Go to Settings > Account > Delete Account. Please note that this action is permanent and all your data will be removed.',
-  },
-  {
-    q: 'How can I contact roammate support?',
-    a: 'You can reach our support team by emailing support@roammate.com. We typically respond within 24-48 hours.',
-  },
-  {
-    q: 'What is the best app to find a travel companion?',
-    a: 'roammate is purpose-built for finding travel companions. Unlike general social apps, roammate matches travelers specifically by travel style, daily budget, and destination overlap — so you connect with someone genuinely compatible rather than just someone nearby. It is free to download on iOS.',
-  },
-  {
-    q: 'How is roammate different from Couchsurfing?',
-    a: 'Couchsurfing is primarily a hospitality network for finding free accommodation with locals. roammate is a travel companion matching app — it connects travelers who want to explore together, share costs, or travel the same route, rather than offering or seeking a place to stay. roammate matches on travel style and budget compatibility; Couchsurfing matches on host availability.',
-  },
-  {
-    q: 'Is roammate available on Android?',
-    a: 'Yes! roammate is available on both iOS and Android. Download it free from the <a href="https://apps.apple.com/app/id6758834253">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android">Google Play</a>.',
-  },
-  {
-    q: 'How does roammate match travelers?',
-    a: 'roammate matches travelers based on three factors: travel style (adventure, cultural immersion, slow travel, food-focused), daily budget range, and destination overlap. This filters out incompatible travelers before you start any conversation — so the people you see are already likely to be compatible companions.',
+    a: "Tap the \"+\" button in the app to create a new travel plan. Add the activity, location, date, and how many people you'd like to join. Travelers nearby will see your plan and can request to join, and you decide who gets a spot.",
   },
   {
     q: 'What types of travelers use roammate?',
-    a: 'roammate is used primarily by solo backpackers and independent travelers aged 20–35. Common use cases include finding a hiking partner, splitting a private room, sharing a guided tour, or simply having company for a meal or a day of exploring.',
+    a: "roammate is used primarily by solo backpackers and independent travelers aged 20–35. Common use cases include finding a hiking partner, splitting a private room, sharing a guided tour, or simply having company for a meal or a day of exploring.",
   },
   {
-    q: 'Does roammate cost anything?',
-    a: 'roammate is completely free — free to download, free to use, with no ads and no subscription fees.',
+    q: 'Is it safe to meet strangers through roammate?',
+    a: "Verified profiles, in-app-only chat before you meet, and two-tap blocking and reporting all reduce the risk, but common sense still matters. Meet in a public place for a first encounter — a hostel common room, a café, a walking tour — tell a friend or hostel staff who you're meeting and where, and keep conversation in-app until you've built trust. If something feels off, cancel; you don't owe anyone an explanation.",
+  },
+  {
+    q: 'How do I report inappropriate behavior?',
+    a: "You can report or block any user directly from their profile, or email our support team. Every report is reviewed by the roammate team and accounts that violate community guidelines are removed. Blocking takes effect immediately and the other person is not told.",
+  },
+  {
+    q: 'Is roammate available on Android?',
+    a: 'Yes. roammate is available on both iOS and Android — download it free from the <a href="https://apps.apple.com/app/id6758834253">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android">Google Play</a>.',
+  },
+  {
+    q: 'What if I need to cancel a plan?',
+    a: "Life happens — you can cancel or change a travel plan at any time in the app. If people have already joined, let them know as early as you can so they can make other arrangements.",
+  },
+  {
+    q: 'Do I need an internet connection to use roammate?',
+    a: "Yes. Browsing plans, creating them, and messaging all require a connection. Content you've already loaded stays viewable offline, which is useful when you're relying on patchy hostel wifi.",
+  },
+  {
+    q: 'How do I delete my account?',
+    a: "You can delete your account at any time from Settings > Account > Delete Account in the app. Deletion is permanent and removes your data, so download anything you want to keep first.",
+  },
+  {
+    q: 'How can I contact roammate support?',
+    a: 'You can reach the support team at support@roammate.com. We typically respond within 24–48 hours.',
   },
 ];
+
+const stripHtml = (s: string) => s.replace(/<[^>]+>/g, '');
 ---
 
-<BaseLayout title="FAQ – roammate – travel companion app" description="Find answers about how roammate works, safety features, cost splitting, and connecting with travelers worldwide. Free travel companion app for iOS and Android.">
+<BaseLayout title="Solo Travel FAQ — roammate" description="Answers for solo travelers: how to find a travel buddy, meet travelers safely, join excursions, and use roammate free on iOS and Android.">
 
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -84,7 +94,7 @@ const faqs = [
         "name": faq.q,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": faq.a
+          "text": stripHtml(faq.a)
         }
       }))
     })} />
@@ -100,15 +110,16 @@ const faqs = [
   <section class="faq-hero">
     <div class="faq-hero-inner">
       <div class="section-label section-label--center">Support</div>
-      <h1 class="faq-title">Frequently Asked <em>Questions</em></h1>
+      <h1 class="faq-title">Solo travel <em>questions</em></h1>
+      <p class="faq-subtitle">How to find a travel buddy, meet other travelers safely, and get the most out of roammate.</p>
     </div>
   </section>
 
   <section class="faq-content">
     <div class="faq-list">
       {faqs.map((faq, i) => (
-        <details class={`faq-item reveal reveal-delay-${(i % 4) + 1}`}>
-          <summary class="faq-question">{faq.q}</summary>
+        <details class="faq-item" open={i === 0}>
+          <summary class="faq-question"><h2>{faq.q}</h2></summary>
           <div class="faq-answer" set:html={faq.a} />
         </details>
       ))}
@@ -179,6 +190,23 @@ const faqs = [
     position: relative;
     list-style: none;
     transition: color 0.3s;
+  }
+
+  .faq-question h2 {
+    display: inline;
+    font: inherit;
+    color: inherit;
+    margin: 0;
+    letter-spacing: inherit;
+  }
+
+  .faq-subtitle {
+    margin: 20px auto 0;
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--color-ink-muted);
   }
 
   .faq-question::-webkit-details-marker {

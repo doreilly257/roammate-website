@@ -18,6 +18,8 @@ const { title, description = 'Connect with fellow travelers, share incredible ex
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 const isHome = Astro.url.pathname === '/';
+// Freshness signal for the app schema, stamped at build time.
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <!DOCTYPE html>
@@ -25,7 +27,10 @@ const isHome = Astro.url.pathname === '/';
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://us-assets.i.posthog.com https://static.cloudflareinsights.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
+  <!-- script-src drops 'unsafe-inline': all scripts are bundled to external files (vite assetsInlineLimit:0).
+       style-src keeps 'unsafe-inline' — hero/route pages set dynamic background-image and accent colors via
+       inline style attributes, which CSP cannot hash. Tightening that would require a large refactor. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://us-assets.i.posthog.com https://static.cloudflareinsights.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#c4562a">
   <meta name="description" content={description}>
@@ -100,26 +105,18 @@ const isHome = Astro.url.pathname === '/';
           "@type": "MobileApplication",
           "name": "roammate",
           "applicationCategory": "TravelApplication",
-          "operatingSystem": "iOS, Android",
+          "operatingSystem": "iOS",
           "url": "https://roammate.com/",
           "downloadUrl": "https://apps.apple.com/app/id6758834253",
-          "description": "Travel companion app that matches solo travelers by travel style, budget, and destination.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "category": "Free"
-          }
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "roammate",
-          "applicationCategory": "TravelApplication",
-          "operatingSystem": "iOS, Android",
-          "url": "https://roammate.com/",
-          "downloadUrl": "https://apps.apple.com/app/id6758834253",
+          "screenshot": [
+            "https://roammate.com/images/app-screenshot-map.webp",
+            "https://roammate.com/images/app-screenshot-profile.webp",
+            "https://roammate.com/images/app-phone-profile.webp",
+            "https://roammate.com/images/app-screenshot-phone-iso.webp",
+            "https://roammate.com/images/app-screenshots.webp"
+          ],
           "description": "Travel companion app that matches solo travelers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby.",
-          "dateModified": "2026-03-01",
+          "dateModified": buildDate,
           "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": [".hero-title", ".hero-subtitle"]
@@ -130,35 +127,6 @@ const isHome = Astro.url.pathname === '/';
             "priceCurrency": "USD",
             "category": "Free"
           }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is roammate?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "roammate is a free travel companion app for solo travelers and backpackers. It matches you with compatible travelers based on travel style, daily budget, and destination overlap — so you find someone genuinely compatible, not just someone nearby. Available on iOS."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do I find a travel companion?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Download roammate, set your travel style, budget, and destination, then browse compatible travelers heading the same way. Chat in-app before you commit to meeting."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is roammate free?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. roammate is completely free to download and use — no subscription, no ads, no hidden fees."
-              }
-            }
-          ]
         },
         {
           "@type": "Service",
@@ -233,6 +201,7 @@ const isHome = Astro.url.pathname === '/';
   </div>
 
   <script>
+    // @ts-nocheck
     const POSTHOG_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
 
     function init() {

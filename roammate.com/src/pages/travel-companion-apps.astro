@@ -1,211 +1,386 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const apps = [
+  {
+    name: 'roammate',
+    focus: 'Companion matching + meetups',
+    strengths: 'Matches on travel style, daily budget and destination overlap; excursion meetups you can create or join; identity verification is a hard gate before matching, with in-app-only messaging and one-tap report/block',
+    bestFor: 'Finding someone compatible for a specific upcoming trip',
+    slug: null,
+  },
+  {
+    name: 'GAFFL',
+    focus: 'Trip posts + cost splitting',
+    strengths: 'You post a defined trip and screen applicants yourself; strong for niche, well-planned routes',
+    bestFor: 'A fixed itinerary you want to share costs on',
+    slug: 'roammate-vs-gaffl',
+  },
+  {
+    name: 'Hostelworld',
+    focus: 'Hostel booking',
+    strengths: 'The best way to actually book budget beds; "Meet the World" shows who else is booked into your property',
+    bestFor: 'Booking accommodation, and meeting your dorm before arrival',
+    slug: 'roammate-vs-hostelworld',
+  },
+  {
+    name: 'Tourlina',
+    focus: 'Women-only companions',
+    strengths: 'Gender-exclusive by design; browse by destination; free tier plus premium messaging',
+    bestFor: 'Women who want to travel only with other women',
+    slug: 'roammate-vs-tourlina',
+  },
+  {
+    name: 'Meetup',
+    focus: 'Local group events',
+    strengths: 'Real events with real RSVPs; excellent in large cities with active travel groups',
+    bestFor: 'Building a local travel community between trips',
+    slug: 'roammate-vs-meetup',
+  },
+  {
+    name: 'Travello',
+    focus: 'Social travel discovery',
+    strengths: 'Feed of what travelers are doing near you, plus activities and deals to book',
+    bestFor: 'Inspiration and things to do at your destination',
+    slug: 'roammate-vs-travello',
+  },
+  {
+    name: 'Backpackr',
+    focus: 'Backpacker social network',
+    strengths: 'Profile + feed model for passively building a network over time',
+    bestFor: 'Following the backpacker community long-term',
+    slug: 'roammate-vs-backpackr',
+  },
+  {
+    name: 'Bumble BFF',
+    focus: 'Local friend swiping',
+    strengths: 'Huge user base in major cities; works well for meeting people in a city you have already arrived in',
+    bestFor: 'Same-week company in a Bumble-heavy city',
+    slug: 'roammate-vs-bumble-bff',
+  },
+  {
+    name: 'Facebook travel groups',
+    focus: 'Open community forums',
+    strengths: 'Enormous volume, and mutual friends give you real social proof',
+    bestFor: 'Crowdsourcing advice and casting a very wide net',
+    slug: 'roammate-vs-facebook-travel-groups',
+  },
+];
+
+const faqs = [
+  {
+    q: 'What is the best app to meet travelers?',
+    a: 'It depends on what you actually need. If you want a companion for a specific upcoming trip, a matching app like roammate is the most direct route, because it filters on travel style, daily budget and destination before any conversation starts. If you just landed somewhere and want company tonight, Hostelworld or Bumble BFF are faster. If you want a local travel community between trips, use Meetup.',
+  },
+  {
+    q: 'Are travel companion apps safe?',
+    a: 'Safety varies enormously between platforms. Look for identity verification that is mandatory rather than a premium upsell, messaging that stays inside the app so you never hand over your phone number, and one-tap report and block controls. roammate gates matching behind identity verification and keeps messaging in-app. Whatever app you use, meet in a public place first, tell someone your plans, and video call before you commit to travelling together.',
+  },
+  {
+    q: 'Is there a free travel companion app?',
+    a: 'Yes. roammate is free to download and use, and Backpackr is free. Meetup, Travello, Tourlina and GAFFL all run free tiers with paid upgrades, and Couchsurfing charges a small annual verification fee. Hostelworld is free to browse but takes booking fees.',
+  },
+  {
+    q: 'Do I need more than one travel app?',
+    a: 'Most backpackers use two or three, and that is the right answer rather than a compromise. A booking platform like Hostelworld handles the beds, a matching app handles the companion, and a community platform like Meetup or a Facebook group handles local knowledge. They solve genuinely different problems.',
+  },
+];
+
+const listItems = apps.map((app, i) => ({
+  '@type': 'ListItem',
+  position: i + 1,
+  name: app.name,
+  url: app.slug ? `https://roammate.com/blog/${app.slug}/` : 'https://roammate.com/',
+}));
 ---
 
 <BaseLayout
-  title="Best Travel Companion Apps Compared — roammate"
-  description="Honest comparison of roammate, Couchsurfing, Meetup, Bumble BFF, Hostelworld, and more. Find the right travel companion app for how you travel."
+  title="Best Travel Companion Apps (2026) — Honest Comparison | roammate"
+  description="An honest 2026 comparison of the best travel companion apps: roammate, GAFFL, Hostelworld, Tourlina, Meetup, Travello, Backpackr, Bumble BFF and Facebook travel groups."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Best Travel Companion Apps Compared",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "roammate", "url": "https://roammate.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Couchsurfing", "url": "https://roammate.com/blog/roammate-vs-couchsurfing/" },
-        { "@type": "ListItem", "position": 3, "name": "Meetup", "url": "https://roammate.com/blog/roammate-vs-meetup/" },
-        { "@type": "ListItem", "position": 4, "name": "Bumble BFF", "url": "https://roammate.com/blog/roammate-vs-bumble-bff/" },
-        { "@type": "ListItem", "position": 5, "name": "Hostelworld", "url": "https://roammate.com/blog/roammate-vs-hostelworld/" },
-        { "@type": "ListItem", "position": 6, "name": "Tourlina", "url": "https://roammate.com/blog/roammate-vs-tourlina/" },
-        { "@type": "ListItem", "position": 7, "name": "GAFFL", "url": "https://roammate.com/blog/roammate-vs-gaffl/" },
-        { "@type": "ListItem", "position": 8, "name": "Backpackr", "url": "https://roammate.com/blog/roammate-vs-backpackr/" },
-        { "@type": "ListItem", "position": 9, "name": "Travello", "url": "https://roammate.com/blog/roammate-vs-travello/" }
-      ]
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Best Travel Companion Apps (2026)',
+      description: 'Ranked comparison of the travel companion apps solo travelers actually use in 2026.',
+      numberOfItems: listItems.length,
+      itemListElement: listItems,
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roammate.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Travel Companion Apps", "item": "https://roammate.com/travel-companion-apps/" }
-      ]
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://roammate.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Best Travel Companion Apps', item: 'https://roammate.com/travel-companion-apps/' },
+      ],
     })} />
   </Fragment>
 
-  <section class="tca-hero">
-    <div class="tca-hero-inner">
-      <div class="section-label section-label--center">Travel App Comparison</div>
-      <h1 class="tca-title">Best Travel Companion Apps — <em>Compared</em></h1>
-      <p class="tca-subtitle">Honest comparison of roammate, Couchsurfing, Meetup, Bumble BFF, Hostelworld, and more. Find the right app for how you travel.</p>
+  <section class="bta-hero">
+    <div class="bta-hero-inner">
+      <div class="section-label section-label--center">2026 Comparison</div>
+      <h1 class="bta-title">Best Travel Companion Apps <em>(2026)</em></h1>
+      <p class="bta-answer">
+        There is no single best travel companion app — there is a best app for the problem you have right now.
+        If you need a companion for a specific upcoming trip, use a matching app like roammate, which filters
+        travelers by travel style, daily budget and destination before you ever start a conversation. If you
+        need a bed tonight use Hostelworld, if you want a local travel community between trips use Meetup, and
+        if you want to travel only with other women use Tourlina.
+      </p>
+      <p class="bta-subtitle">
+        We build roammate, so treat the roammate row as an interested party's own description. Everything below
+        is drawn from our long-form comparison posts, and each app is credited for what it genuinely does best.
+      </p>
     </div>
   </section>
 
-  <section class="tca-table-section">
-    <div class="tca-table-inner">
+  <section class="bta-table-section">
+    <div class="bta-inner">
       <div class="section-label">At A Glance</div>
-      <h2 class="tca-section-heading">Quick <em>comparison</em></h2>
-      <div class="tca-table-wrap">
-        <table class="tca-table">
+      <h2 class="bta-section-heading">Nine apps, <em>side by side</em></h2>
+      <div class="bta-table-wrap">
+        <table class="bta-table">
           <thead>
             <tr>
-              <th>App</th>
-              <th>Primary Purpose</th>
-              <th>Matching Method</th>
-              <th>Price</th>
-              <th>Platform</th>
-              <th>Best For</th>
+              <th scope="col">App</th>
+              <th scope="col">Focus</th>
+              <th scope="col">Strengths</th>
+              <th scope="col">Best for</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="tca-row-highlight">
-              <td><strong>roammate</strong></td>
-              <td>Find travel companions</td>
-              <td>Style, budget &amp; destination matching</td>
-              <td>Free</td>
-              <td>iOS</td>
-              <td>Compatible travel partners</td>
-            </tr>
-            <tr>
-              <td>Couchsurfing</td>
-              <td>Free accommodation &amp; hangouts</td>
-              <td>Host/guest browsing</td>
-              <td>~$15/yr</td>
-              <td>iOS, Android, Web</td>
-              <td>Budget stays with locals</td>
-            </tr>
-            <tr>
-              <td>Meetup</td>
-              <td>Local events &amp; groups</td>
-              <td>Interest-based groups</td>
-              <td>Free / Paid tiers</td>
-              <td>iOS, Android, Web</td>
-              <td>Local social events</td>
-            </tr>
-            <tr>
-              <td>Bumble BFF</td>
-              <td>Friend matching</td>
-              <td>Swiping on profiles</td>
-              <td>Free / Premium</td>
-              <td>iOS, Android</td>
-              <td>Making friends in your city</td>
-            </tr>
-            <tr>
-              <td>Hostelworld</td>
-              <td>Hostel booking</td>
-              <td>Location search</td>
-              <td>Free (booking fees)</td>
-              <td>iOS, Android, Web</td>
-              <td>Booking social hostels</td>
-            </tr>
-            <tr>
-              <td>Tourlina</td>
-              <td>Female travel companions</td>
-              <td>Destination matching</td>
-              <td>Free / Premium</td>
-              <td>iOS, Android</td>
-              <td>Women-only travel partners</td>
-            </tr>
-            <tr>
-              <td>GAFFL</td>
-              <td>Trip sharing &amp; cost splitting</td>
-              <td>Trip listing board</td>
-              <td>Free / Premium</td>
-              <td>Web, iOS</td>
-              <td>Splitting trip costs</td>
-            </tr>
-            <tr>
-              <td>Backpackr</td>
-              <td>Backpacker social network</td>
-              <td>Location-based feed</td>
-              <td>Free</td>
-              <td>iOS, Android</td>
-              <td>Backpacker community</td>
-            </tr>
-            <tr>
-              <td>Travello</td>
-              <td>Traveler social network</td>
-              <td>Location-based feed</td>
-              <td>Free / Premium</td>
-              <td>iOS, Android</td>
-              <td>Social travel community</td>
-            </tr>
+            {apps.map((app) => (
+              <tr class={app.slug ? '' : 'bta-row-highlight'}>
+                <th scope="row">{app.name}</th>
+                <td>{app.focus}</td>
+                <td>{app.strengths}</td>
+                <td>{app.bestFor}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <section class="tca-comparisons">
-    <div class="tca-comparisons-inner">
-      <div class="section-label">Deep Dives</div>
-      <h2 class="tca-section-heading">Deep Dive <em>Comparisons</em></h2>
-      <div class="tca-grid">
-        <a href="/blog/roammate-vs-couchsurfing/" class="tca-card reveal">
-          <h3>roammate vs Couchsurfing</h3>
-          <p>Travel companions vs free accommodation — different goals, different crowds.</p>
-        </a>
-        <a href="/blog/roammate-vs-meetup/" class="tca-card reveal">
-          <h3>roammate vs Meetup</h3>
-          <p>Matched travel partners vs local event groups — purpose-built for different needs.</p>
-        </a>
-        <a href="/blog/roammate-vs-bumble-bff/" class="tca-card reveal">
-          <h3>roammate vs Bumble BFF</h3>
-          <p>Travel-first matching vs city-based friend swiping — context matters.</p>
-        </a>
-        <a href="/blog/roammate-vs-hostelworld/" class="tca-card reveal">
-          <h3>roammate vs Hostelworld</h3>
-          <p>Compatible companions vs social hostels — matching people vs matching beds.</p>
-        </a>
-        <a href="/blog/roammate-vs-tourlina/" class="tca-card reveal">
-          <h3>roammate vs Tourlina</h3>
-          <p>All-gender matching with filters vs women-only — flexibility vs exclusivity.</p>
-        </a>
-        <a href="/blog/roammate-vs-gaffl/" class="tca-card reveal">
-          <h3>roammate vs GAFFL</h3>
-          <p>Style-based matching vs trip listing board — compatibility vs cost splitting.</p>
-        </a>
-        <a href="/blog/roammate-vs-backpackr/" class="tca-card reveal">
-          <h3>roammate vs Backpackr</h3>
-          <p>Companion matching vs social feed — finding partners vs finding a community.</p>
-        </a>
-        <a href="/blog/roammate-vs-travello/" class="tca-card reveal">
-          <h3>roammate vs Travello</h3>
-          <p>Focused matching vs social network — depth of connection vs breadth of content.</p>
-        </a>
-        <a href="/blog/roammate-vs-facebook-travel-groups/" class="tca-card reveal">
-          <h3>roammate vs Facebook Travel Groups</h3>
-          <p>Curated matching vs open forums — vetted profiles vs anonymous posts.</p>
-        </a>
+  <section class="bta-deep">
+    <div class="bta-inner">
+      <div class="section-label">The Detail</div>
+      <h2 class="bta-section-heading">What each app <em>is actually for</em></h2>
+
+      <article class="bta-app reveal">
+        <h3>GAFFL — best if your trip is already planned</h3>
+        <p>
+          GAFFL is one of the few apps in this list built specifically to help solo travelers find a companion,
+          which puts it closer to roammate than anything else here. It runs on a trip-posting model: you write a
+          listing with your destination, dates, rough budget and what you want in a companion, and other users
+          apply to join. You review the applicants and decide.
+        </p>
+        <p>
+          That model is genuinely strong when you have a specific, well-defined trip and want to be the one doing
+          the screening — a particular trekking route, a multi-week overland run. The post itself acts as a filter.
+          The cost is effort on both sides: you have to write something compelling, applicants have to find it, and
+          compatibility only surfaces through conversation rather than a structured filter.
+        </p>
+        <p>
+          roammate inverts that. You set your parameters once and the app screens for compatibility before you
+          invest time in messaging. Choose GAFFL if you want control over who joins a fixed itinerary; choose
+          roammate if you would rather the filtering happen up front.
+        </p>
+        <a class="bta-link" href="/blog/roammate-vs-gaffl/">Read the full roammate vs GAFFL comparison</a>
+      </article>
+
+      <article class="bta-app reveal">
+        <h3>Hostelworld — best for booking the bed, not finding the person</h3>
+        <p>
+          Hostelworld is a search and reservation engine for budget accommodation worldwide, and nothing on this
+          list replaces it for that. Its "Meet the World" social layer lets you see who else is booked into the
+          same property and message them before you arrive, which is genuinely useful for turning a dorm into a
+          group.
+        </p>
+        <p>
+          The limitation is structural rather than a flaw in execution. Hostelworld can only connect you with
+          people booked at the same property. You cannot search for travelers heading to your next destination,
+          filter by travel style or budget, or plan a companion for a trip that starts in three weeks.
+        </p>
+        <p>
+          Most backpackers should use both. Book through Hostelworld, match through a companion app, and if the
+          match works out, book the same hostel afterwards.
+        </p>
+        <a class="bta-link" href="/blog/roammate-vs-hostelworld/">Read the full roammate vs Hostelworld comparison</a>
+      </article>
+
+      <article class="bta-app reveal">
+        <h3>Tourlina — best for women who want women-only</h3>
+        <p>
+          Tourlina's proposition is safety through exclusivity: only women can join. You browse profiles by
+          destination and send connection requests, on a free tier with a premium subscription that unlocks
+          things like unlimited messaging and profile view history.
+        </p>
+        <p>
+          If you are a woman who specifically wants to travel with other women, Tourlina delivers that in a way
+          a mixed platform cannot, and that matters most in destinations where solo female travel carries extra
+          considerations. roammate takes the other approach — open to all travelers, with compatibility rather
+          than demographics doing the filtering.
+        </p>
+        <p>Neither is better in the abstract. It depends on whether gender is your primary filter or your secondary one.</p>
+        <a class="bta-link" href="/blog/roammate-vs-tourlina/">Read the full roammate vs Tourlina comparison</a>
+      </article>
+
+      <article class="bta-app reveal">
+        <h3>Meetup — best for a local travel community between trips</h3>
+        <p>
+          Meetup is organised around events. Organisers post a Thursday hike, a language exchange or a travel
+          meetup at a bar, and members RSVP. You meet people by turning up. In London, Berlin, New York or
+          Sydney there are active travel-focused groups where you can meet other travelers in person and plan
+          future trips with people you have already sat across a table from — which is a real advantage over
+          any purely online match.
+        </p>
+        <p>
+          The catch is coverage. Outside major Western metros, relevant travel groups are often sparse or
+          dormant, and Meetup cannot help you find a companion for a specific trip on a specific timeline
+          regardless of city.
+        </p>
+        <a class="bta-link" href="/blog/roammate-vs-meetup/">Read the full roammate vs Meetup comparison</a>
+      </article>
+
+      <article class="bta-app reveal">
+        <h3>Travello — best for discovery and activities</h3>
+        <p>
+          Travello is a social travel discovery platform. You follow travelers, share posts, and browse
+          activities and deals at destinations worldwide — closer to a travel-focused social network than to a
+          matching service. There is a meet-travelers component, but it works through social browsing rather
+          than structured compatibility.
+        </p>
+        <p>
+          Use Travello for the social layer of a trip: inspiration, what people are doing in the city you are
+          heading to, and things to book. It is a poor fit if your actual problem is finding one specific person
+          to share the next two weeks with, because you are scrolling a feed rather than being matched.
+        </p>
+        <a class="bta-link" href="/blog/roammate-vs-travello/">Read the full roammate vs Travello comparison</a>
+      </article>
+
+      <article class="bta-app reveal">
+        <h3>Backpackr — best for passively building a network</h3>
+        <p>
+          Backpackr is social media tailored to travelers: a profile, trip updates, a feed of other people's
+          content, and direct messages. Think Instagram crossed with a travel forum. It is good for inspiration
+          and for slowly accumulating contacts across the backpacker community.
+        </p>
+        <p>
+          What it does not do is solve compatibility. You might spot someone heading where you are heading, but
+          you have no way to know whether they move at your pace or spend at your budget level until you have
+          already invested in the conversation. That is the specific gap matching apps exist to close.
+        </p>
+        <a class="bta-link" href="/blog/roammate-vs-backpackr/">Read the full roammate vs Backpackr comparison</a>
+      </article>
+
+      <article class="bta-app reveal">
+        <h3>Bumble BFF — best once you have already arrived</h3>
+        <p>
+          Bumble BFF is the friendship mode inside Bumble: create a profile, swipe on people nearby, match when
+          both sides swipe right. It is location-based and built for meeting people in the city you live in.
+        </p>
+        <p>
+          For travelers it works in one specific scenario, and works well: you have landed somewhere, you want
+          company for the next day or two, and the city has heavy Bumble usage. The limitation is that there is
+          no trip-level matching. You cannot filter by travel style, budget or upcoming destination, most
+          profiles you see are not travelers at all, and it is no help at all for a trip starting in three weeks.
+        </p>
+        <a class="bta-link" href="/blog/roammate-vs-bumble-bff/">Read the full roammate vs Bumble BFF comparison</a>
+      </article>
+
+      <article class="bta-app reveal">
+        <h3>Facebook travel groups — best for volume and social proof</h3>
+        <p>
+          Groups like Girls LOVE Travel and Backpacking Southeast Asia have been the default way to find a
+          travel companion for years, and they have two advantages nothing else on this list matches: sheer
+          volume — hundreds of thousands of members — and social proof, since you can look at someone's real
+          profile and mutual friends before you commit.
+        </p>
+        <p>
+          The weaknesses are equally real. It is a broadcast model with no compatibility filtering, so anyone can
+          reply to your post. Connecting means exposing your full personal Facebook profile to a stranger, and
+          declining someone still leaves them with access to it. And your post competes with memes and ads for
+          visibility in a feed that was never optimised for your trip.
+        </p>
+        <a class="bta-link" href="/blog/roammate-vs-facebook-travel-groups/">Read the full roammate vs Facebook travel groups comparison</a>
+      </article>
+
+      <article class="bta-app bta-app--own reveal">
+        <h3>roammate — best for matching before the trip starts</h3>
+        <p>
+          roammate matches solo travelers on travel style, daily budget bracket and destination overlap, so the
+          compatibility screening happens before you spend a week messaging someone who turns out to travel at
+          triple your pace. Alongside one-to-one matching, you can create or join excursion meetups — a hike, a
+          day trip, a shared taxi — which is a lower-commitment way to meet people than committing to a whole
+          route together.
+        </p>
+        <p>
+          On safety, identity verification is a hard gate rather than a premium feature: you complete it before
+          you can match or message anyone. Conversations stay inside the app, so you never need to hand over
+          your phone number, Instagram or WhatsApp to talk to someone, and report and block are one tap away on
+          every profile and conversation.
+        </p>
+        <p>
+          Where roammate is the wrong tool: it will not book your hostel, it has no events calendar for your
+          home city, and it does not have Facebook's raw volume. Pair it accordingly.
+        </p>
+        <a class="bta-link" href="/find-travel-companion/">See how roammate matches travelers</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="bta-faq">
+    <div class="bta-inner">
+      <div class="section-label">Questions</div>
+      <h2 class="bta-section-heading">Common <em>questions</em></h2>
+      <div class="bta-faq-list">
+        {faqs.map((f) => (
+          <details class="bta-faq-item">
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="tca-cta">
-    <div class="tca-cta-inner">
-      <p class="tca-cta-label">Free on iOS &amp; Android</p>
-      <h2 class="tca-cta-heading">Ready to find <em>your travel companion</em>?</h2>
-      <p class="tca-cta-body">Download free. Build your profile. Get matched with travelers who share your style, budget, and destination.</p>
+  <section class="bta-cta">
+    <div class="bta-cta-inner">
+      <p class="bta-cta-label">Free on iOS &amp; Android</p>
+      <h2 class="bta-cta-heading">Find someone who travels <em>like you do</em></h2>
+      <p class="bta-cta-body">Build a travel profile, get matched on style, budget and destination, and join excursion meetups wherever you land.</p>
       <a
         href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=travel-companion-apps-cta&mt=8"
         target="_blank"
         rel="noopener noreferrer"
-        class="tca-btn tca-btn--primary tca-btn--large"
-        data-ph-event="tca_bottom_appstore_click"
+        class="bta-btn"
+        data-ph-event="bta_bottom_appstore_click"
       >Download on the App Store — Free</a>
-      <p class="tca-cta-sub">Also: <a href="/find-travel-companion/">Learn how roammate matches travelers</a></p>
+      <p class="bta-cta-sub">Also worth reading: <a href="/safety/">how roammate handles safety</a></p>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .tca-hero {
-    padding: 160px 40px 100px;
+  .bta-hero {
+    padding: 160px 40px 90px;
     text-align: center;
     position: relative;
   }
 
-  .tca-hero::after {
+  .bta-hero::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -213,73 +388,80 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     pointer-events: none;
   }
 
-  .tca-hero-inner {
+  .bta-hero-inner {
     position: relative;
     z-index: 1;
-    max-width: 780px;
+    max-width: 820px;
     margin: 0 auto;
   }
 
-  .tca-title {
+  .bta-title {
     font-family: var(--font-display);
-    font-size: clamp(44px, 7vw, 80px);
+    font-size: clamp(42px, 6.6vw, 76px);
     font-weight: 900;
-    line-height: 1.02;
+    line-height: 1.03;
     color: var(--color-ink);
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
-  .tca-title em {
+  .bta-title em {
     font-style: italic;
     font-weight: 400;
     color: var(--color-terracotta-light);
   }
 
-  .tca-subtitle {
+  .bta-answer {
     font-size: clamp(17px, 2vw, 21px);
-    color: rgba(245, 241, 235, 0.75);
-    line-height: 1.6;
+    line-height: 1.65;
+    color: rgba(245, 241, 235, 0.85);
+    margin-bottom: 20px;
   }
 
-  .tca-section-heading {
-    font-family: var(--font-display);
-    font-size: clamp(32px, 4.5vw, 52px);
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--color-ink);
-    margin-bottom: 48px;
+  .bta-subtitle {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
   }
 
-  .tca-section-heading em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--color-terracotta-light);
-  }
-
-  .tca-table-section {
-    padding: 80px 40px;
-    border-top: 1px solid rgba(196, 86, 42, 0.08);
-  }
-
-  .tca-table-inner {
+  .bta-inner {
     max-width: 1100px;
     margin: 0 auto;
   }
 
-  .tca-table-wrap {
+  .bta-section-heading {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4.2vw, 50px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-ink);
+    margin-bottom: 44px;
+  }
+
+  .bta-section-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-terracotta-light);
+  }
+
+  .bta-table-section {
+    padding: 80px 40px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .bta-table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  .tca-table {
+  .bta-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 15px;
-    min-width: 800px;
+    min-width: 820px;
   }
 
-  .tca-table th,
-  .tca-table td {
+  .bta-table th,
+  .bta-table td {
     padding: 14px 16px;
     text-align: left;
     border-bottom: 1px solid rgba(196, 86, 42, 0.1);
@@ -287,7 +469,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     vertical-align: top;
   }
 
-  .tca-table th {
+  .bta-table thead th {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -296,73 +478,117 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding-bottom: 16px;
   }
 
-  .tca-table tbody tr:last-child td {
+  .bta-table tbody th {
+    font-weight: 700;
+    color: var(--color-ink);
+    white-space: nowrap;
+  }
+
+  .bta-table tbody tr:last-child td,
+  .bta-table tbody tr:last-child th {
     border-bottom: none;
   }
 
-  .tca-row-highlight td {
+  .bta-row-highlight td,
+  .bta-row-highlight th {
     background: rgba(196, 86, 42, 0.07);
     color: var(--color-ink);
-    font-weight: 600;
   }
 
-  .tca-comparisons {
+  .bta-deep {
     padding: 80px 40px;
     background: rgba(247, 242, 234, 0.02);
     border-top: 1px solid rgba(196, 86, 42, 0.08);
     border-bottom: 1px solid rgba(196, 86, 42, 0.08);
   }
 
-  .tca-comparisons-inner {
-    max-width: 1100px;
-    margin: 0 auto;
+  .bta-app {
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+    max-width: 780px;
   }
 
-  .tca-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  .bta-app:last-child {
+    border-bottom: none;
   }
 
-  .tca-card {
-    padding: 32px 24px;
-    background: rgba(247, 242, 234, 0.04);
-    border: 1px solid rgba(196, 86, 42, 0.15);
-    border-radius: 20px;
-    text-decoration: none;
-    transition: border-color 0.25s, transform 0.3s var(--ease-out-expo);
-  }
-
-  .tca-card:hover {
-    border-color: var(--color-terracotta);
-    transform: translateY(-3px);
-  }
-
-  .tca-card h3 {
+  .bta-app h3 {
     font-family: var(--font-display);
-    font-size: 20px;
+    font-size: clamp(22px, 2.6vw, 28px);
     color: var(--color-ink);
-    margin-bottom: 10px;
     line-height: 1.2;
+    margin-bottom: 18px;
   }
 
-  .tca-card p {
-    font-size: 15px;
-    line-height: 1.7;
+  .bta-app p {
+    font-size: 16px;
+    line-height: 1.75;
     color: var(--color-text-muted);
+    margin-bottom: 16px;
   }
 
-  .tca-cta {
+  .bta-app--own {
+    padding: 32px 28px;
+    background: rgba(196, 86, 42, 0.06);
+    border: 1px solid rgba(196, 86, 42, 0.18);
+    border-radius: 20px;
+    margin-top: 32px;
+  }
+
+  .bta-link {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-terracotta-light);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196, 86, 42, 0.4);
+    padding-bottom: 2px;
+  }
+
+  .bta-link:hover {
+    border-bottom-color: var(--color-terracotta);
+  }
+
+  .bta-faq {
     padding: 80px 40px;
   }
 
-  .tca-cta-inner {
+  .bta-faq-list {
+    max-width: 780px;
+  }
+
+  .bta-faq-item {
+    border-bottom: 1px solid rgba(196, 86, 42, 0.1);
+    padding: 20px 0;
+  }
+
+  .bta-faq-item summary {
+    font-family: var(--font-display);
+    font-size: 19px;
+    color: var(--color-ink);
+    cursor: pointer;
+    line-height: 1.35;
+  }
+
+  .bta-faq-item p {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+
+  .bta-cta {
+    padding: 80px 40px;
+    border-top: 1px solid rgba(196, 86, 42, 0.08);
+  }
+
+  .bta-cta-inner {
     max-width: 680px;
     margin: 0 auto;
     text-align: center;
   }
 
-  .tca-cta-label {
+  .bta-cta-label {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 2.5px;
@@ -371,7 +597,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 18px;
   }
 
-  .tca-cta-heading {
+  .bta-cta-heading {
     font-family: var(--font-display);
     font-size: clamp(30px, 4vw, 48px);
     font-weight: 900;
@@ -380,63 +606,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 16px;
   }
 
-  .tca-cta-heading em {
+  .bta-cta-heading em {
     font-style: italic;
     font-weight: 400;
     color: var(--color-terracotta-light);
   }
 
-  .tca-cta-body {
+  .bta-cta-body {
     font-size: 16px;
     line-height: 1.7;
     color: rgba(245, 241, 235, 0.65);
     margin-bottom: 32px;
   }
 
-  .tca-btn {
+  .bta-btn {
     display: inline-block;
-    padding: 15px 32px;
+    padding: 18px 40px;
     border-radius: 999px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     text-decoration: none;
-    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
-    letter-spacing: 0.3px;
-  }
-
-  .tca-btn--primary {
     background: var(--color-terracotta);
     color: #fff;
+    letter-spacing: 0.3px;
+    transition: background 0.3s, transform 0.3s var(--ease-out-expo);
   }
 
-  .tca-btn--primary:hover {
+  .bta-btn:hover {
     background: #b34f28;
     transform: translateY(-2px);
   }
 
-  .tca-btn--large {
-    padding: 18px 40px;
-    font-size: 16px;
-  }
-
-  .tca-cta-sub {
+  .bta-cta-sub {
     margin-top: 20px;
     font-size: 14px;
     color: var(--color-text-muted);
   }
 
-  .tca-cta-sub a {
+  .bta-cta-sub a {
     color: var(--color-terracotta-light);
   }
 
   @media (max-width: 1024px) {
-    .tca-hero { padding: 140px 24px 80px; }
-    .tca-table-section, .tca-comparisons, .tca-cta { padding-left: 24px; padding-right: 24px; }
-    .tca-grid { grid-template-columns: 1fr; }
+    .bta-hero { padding: 140px 24px 70px; }
+    .bta-table-section, .bta-deep, .bta-faq, .bta-cta { padding-left: 24px; padding-right: 24px; }
   }
 
   @media (max-width: 640px) {
-    .tca-hero { padding: 120px 20px 60px; }
-    .tca-table-section, .tca-comparisons, .tca-cta { padding-left: 20px; padding-right: 20px; }
+    .bta-hero { padding: 120px 20px 56px; }
+    .bta-table-section, .bta-deep, .bta-faq, .bta-cta { padding-left: 20px; padding-right: 20px; }
+    .bta-app--own { padding: 26px 20px; }
   }
 </style>
