@@ -12,7 +12,7 @@ const cityGuides = allGuides
 
 <BaseLayout
   title="Find Travel Companions — Cities Worldwide | roammate"
-  description={`Find travel companions in ${cityGuides.length} cities worldwide. Roammate matches you by travel style, budget, and destination — free on iOS.`}
+  description={`Find travel companions in ${cityGuides.length} cities worldwide. roammate matches you by travel style, budget, and destination — free on iOS.`}
   ogImage="/images/hero-travelers-on-bus.webp"
 >
   <Fragment slot="head">
@@ -37,7 +37,7 @@ const cityGuides = allGuides
     <div class="comp-index-hero-inner">
       <div class="section-label section-label--center">Find your match</div>
       <h1 class="comp-index-title">Travel Companions<br><em>by City</em></h1>
-      <p class="comp-index-sub">Roammate matches you with like-minded travelers by style, budget, and destination. Choose a city to get started.</p>
+      <p class="comp-index-sub">roammate matches you with like-minded travelers by style, budget, and destination. Choose a city to get started.</p>
       <a
         href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=companions-index-hero&mt=8"
         target="_blank"
@@ -45,6 +45,7 @@ const cityGuides = allGuides
         class="comp-index-btn"
         data-ph-event="companions_index_appstore_click"
       >Download Free on iOS</a>
+      <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android" class="comp-index-btn comp-index-btn--ghost" target="_blank" rel="noopener noreferrer" data-ph-event="companions_index_playstore_click">Get it on Android</a>
     </div>
   </section>
 
@@ -117,6 +118,11 @@ const cityGuides = allGuides
     font-weight: 600;
     text-decoration: none;
     transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+  }
+
+  .comp-index-btn--ghost {
+    background: transparent;
+    border: 1px solid currentColor;
   }
 
   .comp-index-btn:hover {
