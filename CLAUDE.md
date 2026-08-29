@@ -1,5 +1,19 @@
 # roammate Website
 
+## Ground Rules
+
+- **No GitHub CI on this repo.** `.github/workflows/ci.yml` was removed 2026-08-29 by
+  explicit instruction. Do not re-add a workflow, re-trigger one, or suggest it.
+- **Verification is local.** `npm run build` runs `validateBuiltLinks()`, but it does
+  **not** type-check — run `npx astro check` by hand before pushing any `.astro`/`.ts`
+  change. That gap is what let a type error reach `main` and generate CI failure mail.
+- **This session is website-only.** Backend and mobile work goes to the
+  `roammate-app-ios` / `roammate-app-android` sessions via SendMessage. The backend lives
+  in `roammate-app-ios/api`. When told to hand something off, stop investigating it
+  immediately and report the handoff — do not keep digging.
+- Those sessions cannot write to beads in this workspace, so relay their findings onto
+  the relevant bead here on their behalf.
+
 ## Project Structure
 
 - `roammate.com/` — Astro site for roammate.com
