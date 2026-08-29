@@ -4,45 +4,43 @@
 **Session:** 5 | **Date:** 2026-08-29
 
 ### Active task
-None — deliberately. See "STOP" below. Everything is shipped, deployed and verified
-on production against a cleared Cloudflare cache. Working tree clean.
+GEO holdout (2u3) is live on production and awaiting recrawl — nothing to build.
+Both arms baselined before treatment. Working tree clean.
 
-### 8hq analysed (diagnosis only — nothing shipped)
-Offline against the built `dist/`. One hypothesis dead, one strong candidate found.
-- **Under-linking DISPROVED, and backwards.** Contextual inlinks per page (nav/footer
-  stripped): `/guides/` **16** — best on the site — vs `/companions/` 7, `/itinerary/`,
-  `/budget/`, `/best-time/`, `/blog/` all 5, `/statistics/` **0**. Strike it.
-- **Cannibalisation is the best candidate.** 442 of 458 destinations (97%) are targeted
-  by five templates at once — ~6.5 pages per city. Sharpest collision: **115 guides**
-  titled "<City> Travel Guide 2026 — 3-Day Itinerary" where a dedicated
-  `/itinerary/<city>-3-day/` page also exists, **100% of them**. Same city, same
-  duration, same intent, two URLs.
-- **88% of guides (402/457) have a bare place-name H1** ("Macau"), all descriptive terms
-  stranded in the `<title>`. Strongest content, weakest on-page signal.
-- **Incidental:** 422 of 442 `/statistics/` pages have zero contextual inlinks. 84l stands.
-- **Not proof** — structural candidates only. Confirming needs query-level GSC data (3on)
-  showing guide and itinerary pages on the SAME queries. And 8hq's own precondition
-  fired: AI blocks absorb informational queries and city guides are informational, so
-  de-cannibalising may reach page 1 and still earn no clicks.
+### 8hq findings (analysed, UNSHIPPED — gated on 3on)
+- Under-linking **disproved**: `/guides/` is the best-linked section (median 16
+  contextual inlinks vs 5–7 elsewhere, `/statistics/` 0).
+- **Cannibalisation** is the live candidate: 97% of destinations carry 5 templates, and
+  **115 guides collide head-on** with an `/itinerary/<city>-3-day/` page — 100% of them.
+- **88% of guides (402/457) have a bare place-name H1**, descriptive terms stranded in
+  the `<title>`.
+- Structural candidates, not proof. Confirming needs 3on. If shipped, use a holdout.
 
-### SHIPPED: GEO schema holdout on /itinerary/ (2u3)
-First test of the 8ho finding. The pages losing to AI blocks were the least
-machine-extractable on the site — `BreadcrumbList` and nothing else.
-- **Test:** 40 cities / 105 pages emit `TouristTrip` (ItemList of days) + `HowTo`
-  (day sections, morning/afternoon/evening steps) + `FAQPage`.
-  **Control:** 402 cities / 999 pages untouched. Zero overlap, verified in `dist/`.
-- **Why a holdout, given STOP:** it measures WITHIN one period instead of across a
-  before/after in which Google also changed — better attribution than waiting, not
-  worse. Existing measurements are untouched.
-- Assignment is by city (variants never split), a pure function of the slug, stable
-  across builds — `src/lib/geoTestSet.ts`. **Never reassign a city mid-experiment.**
-- `macau`, `tallinn`, `istanbul` forced in as hand-measurable probes; excluded from
-  CTR stats. **Pre-treatment baseline captured 2026-08-29T14:43Z: AI block present on
-  all three, roammate cited in none** (organic #2 / not-in-top-6 / #6).
-- Every emitted field derives from existing page data. Nothing invented.
-- **Power warning:** 40 of 442 cities is small and traffic is concentrated. A null
-  result may mean underpowered, not ineffective. Check crawl dates first — an
-  unrecrawled page cannot have responded.
+### SHIPPED: GEO holdout on /itinerary/ (2u3) — widened to 100 cities, stratified
+Test arm emits `TouristTrip` (ItemList of days) + `HowTo` + `FAQPage`; control keeps
+`BreadcrumbList` only. Every field derives from existing page data — nothing invented.
+
+| arm | cities | pages | core | tail |
+|-|-|-|-|-|
+| test | 100 | 263 | 40 | 60 |
+| control | 342 | 841 | 43 | 299 |
+
+- **Stratified deliberately.** Our audience skews young solo/backpacker and those
+  destinations carry most of the demand, so putting them all in the test arm would
+  confound schema with popularity. The 83 core destinations are **split across both
+  arms** — that is the like-for-like comparison.
+- **Why a holdout despite STOP:** measures WITHIN one period instead of a before/after
+  in which Google also changed. Better attribution than waiting.
+- By city (variants never split), pure function of slug — `src/lib/geoTestSet.ts`.
+  **Cohort 1 (40) frozen, verified 40/40**; cohort 2 (60) started later — age separately.
+- **Segment coverage ~95%**: 83 of ~87 canonical solo/backpacker destinations have
+  guides. Real gaps: `ninh-binh`, `playa-del-carmen`, `hvar`, `interlaken`. The core
+  list is curated judgement, **not measured demand** — re-stratify after 3on.
+- **The AI block is NOT universal — it is query-specific.** macau/tallinn/istanbul/
+  bangkok have one; lisbon/medellin/chiang-mai do not. Tempers 8ho: AI blocks absorb
+  SOME informational queries, not all. Only queries that HAD a block at baseline can
+  show a citation gain. Both-arm baselines are in bead 2u3.
+- Power: still a sample. A null result may mean underpowered. Check crawl dates first.
 
 ### STOP — decision in force
 **Do not ship further SEO changes until the next Search Console export** — except as a
