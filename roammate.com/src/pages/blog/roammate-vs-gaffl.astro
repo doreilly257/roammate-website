@@ -10,6 +10,29 @@ if (!post) throw new Error('Blog post not found: roammate-vs-gaffl');
 
 const allGuides = await getAllGuides();
 const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts, allGuides);
+
+// Search Console shows these exact question shapes already rank around
+// position 6 and convert at 3.5-6% -- far above the site average -- with no
+// page on the site actually answering them. Every answer below restates what
+// this page's researched comparison already establishes -- nothing new is
+// claimed about GAFFL. The answers deliberately stay on the approach
+// difference, which this page sources, and avoid user numbers or safety
+// claims, which it does not.
+const faqs = [
+  {
+    q: 'Is GAFFL legit?',
+    a: 'Yes. GAFFL is a real, established travel app built for the same problem roammate addresses \u2014 helping solo travelers find someone to travel with. It works on a trip-posting model: you describe a trip and other travelers apply to join it. The two apps differ in approach rather than legitimacy.',
+  },
+  {
+    q: 'How is roammate different from GAFFL?',
+    a: 'GAFFL starts from the trip: you post where you are going and review the people who apply. roammate starts from the person: it matches travelers on travel style, budget and destination, so you are introduced to people whose trip already fits yours rather than filtering applicants yourself.',
+  },
+  {
+    q: 'Which one should I use?',
+    a: 'It depends on how fixed your plans are. If you already know your dates and route and want people to join that specific trip, a trip-posting model like GAFFL fits naturally. If your plans are still forming and you would rather find compatible people first and shape the trip together, matching fits better. They are not mutually exclusive \u2014 plenty of travelers use both.',
+  },
+];
+
 ---
 
 <BlogPostLayout
@@ -26,6 +49,18 @@ const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts
   relatedGuides={relatedGuides as any}
   relatedPosts={relatedPosts}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    })} />
+  </Fragment>
+
   <div slot="extra" class="blog-comparison-table reveal">
     <h2>Side-by-Side Comparison</h2>
     <div class="comparison-table-wrap">
@@ -76,5 +111,26 @@ const { relatedGuides, relatedPosts } = resolveRelatedContent(post, allBlogPosts
         </tbody>
       </table>
     </div>
+
+    <h2 id="faq">Common questions about GAFFL</h2>
+    <div class="vs-faq">
+      {faqs.map((f) => (
+        <details class="vs-faq-item">
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+
   </div>
 </BlogPostLayout>
+
+<style>
+  .vs-faq { display: grid; gap: 10px; margin: 20px 0 8px; }
+  .vs-faq-item { border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 18px; }
+  .vs-faq-item summary { font-weight: 600; cursor: pointer; list-style: none; }
+  .vs-faq-item summary::-webkit-details-marker { display: none; }
+  .vs-faq-item summary::after { content: '+'; float: right; color: var(--color-ink-muted); }
+  .vs-faq-item[open] summary::after { content: '\2212'; }
+  .vs-faq-item p { margin: 10px 0 0; color: var(--color-ink-muted); }
+</style>

@@ -196,6 +196,7 @@ const renderInlineLinks = (text: string) => {
         { "@type": "ListItem", "position": 3, "name": title, "item": canonical },
       ],
     })} />
+      <slot name="head" />
   </Fragment>
 
   <article>
