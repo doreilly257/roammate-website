@@ -3,11 +3,16 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCitySiblingPages } from '../../lib/getCitySiblingPages';
 import { getCityGuideSlugs } from '../../data/guides';
+import { getGeoTestCities } from '../../lib/geoTestSet';
+import { buildItinerarySchema } from '../../lib/itinerarySchema';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
   const cityGuideSlugs = await getCityGuideSlugs();
   const paths: any[] = [];
+  const geoTestCities = getGeoTestCities(
+    guides.filter((g) => g.data.type === 'city').map((g) => g.data.slug).sort()
+  );
   for (const g of guides) {
     if (g.data.type !== 'city') continue;
     const d = g.data;
@@ -22,6 +27,7 @@ export async function getStaticPaths() {
           itinerary: dayList,
           allDays: Object.keys(d.itineraries).map(Number).sort((a, b) => a - b),
           siblings: getCitySiblingPages(d.slug, d, cityGuideSlugs),
+          inGeoTest: geoTestCities.has(d.slug),
         },
       });
     }
@@ -29,7 +35,7 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const { city, country, citySlug, days, itinerary, allDays, siblings } = Astro.props;
+const { city, country, citySlug, days, itinerary, allDays, siblings, inGeoTest } = Astro.props;
 const dayLabel = days === 1 ? '1-day' : `${days}-day`;
 const pageTitle = `${city} ${dayLabel} Itinerary — Day-by-Day Guide | roammate`;
 const pageDesc = `A detailed ${dayLabel} itinerary for ${city}, ${country}. Morning, afternoon, and evening plans with tips, costs, and insider advice.`;
@@ -43,11 +49,20 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 3, "name": `${dayLabel} Itinerary`, "item": `https://roammate.com/itinerary/${citySlug}-${days}-day/` }
   ]
 };
+
+// GEO holdout: the test group emits TouristTrip + HowTo + FAQPage on top of the
+// breadcrumbs the control group gets. See lib/geoTestSet.ts before changing this.
+const geoSchemas = inGeoTest
+  ? buildItinerarySchema({ city, country, citySlug, days, itinerary, allDays })
+  : [];
 ---
 
 <BaseLayout title={pageTitle} description={pageDesc}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    {geoSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </Fragment>
 
   <section class="it-hero">
