@@ -64,8 +64,47 @@ correctly did not follow), 11 routes 200, unknown path 404, `/about` 308s,
   repo. Recorded on the bead that api.github.com reported visibility=public at closing
   time and the tokens remain in 5 places in history, so it can be reopened cheaply.
 
+### Session 5b: Search Console 404s, image relevance, indexing — SHIPPED
+Triggered by GSC showing 1.33k not-indexed (447 "Not found", 867 "crawled, not indexed").
+
+**404s (d004a83).** Sitemap was clean — all 3,278 URLs resolve, and all 562 routes
+deleted in git history still resolve (blog .astro files became a dynamic route with
+the same slugs). The export showed three patterns: /guides/cities/{slug}/ and
+/guides/places/{slug}/ from an older nesting (wildcard 301s), seven /guides/region/
+names only backpacker routes use (301 to nearest hub), and 222 /companions/{place}/.
+The last are NOT redirected: **Cloudflare Pages free plan silently ignores _redirects
+rules past ~100** (found by binary search — rules at line 109 worked, line 121 did
+not), and a wildcard is impossible because **Pages evaluates redirects BEFORE static
+assets** — verified the hard way, /companions/* 301'd all 232 real pages for ~2 min
+before revert. Those URLs came from an internal linking bug already fixed, so 404 is
+the correct answer anyway.
+
+**Images (ec59508, 3d09f60).** companions/[slug] built its hero path by convention
+(`{slug}-hero.webp`) instead of reading heroImage, so 34 cities 404'd in three places
+at once — blank hero, dead preload, and a broken og:image on every social share.
+validate.ts missed it because it checks the collection values, not a path rebuilt in a
+template. Separately, 49 city guides used another place's photo; 10 are legitimate
+(Aguas Calientes IS the Machu Picchu town), 39 were replaced. **Verified by looking at
+contact sheets, not by trusting search** — the first pass returned a Mexican cenote for
+Puerto Princesa, Giza for Aswan, Pisac for Nazca, a Lebanese temple for Jerash and a
+satellite map for Nizwa. Blog images audited and clean.
+
+**lastmod (13da821).** 1,801 URLs claimed lastmod in 2023 — the hash scheme computed
+EPOCH(2024-01-01) minus hash%365 days, so every programmatic page said "unchanged since
+before this site existed". Now derived from git per guide. Watch out: git prints paths
+relative to the REPO ROOT, so a `src/...` prefix match silently matches nothing and
+falls through to a plausible-looking now() fallback.
+
+**Thin content (c6e83e9).** companions 96.1% -> 73.7% similar (371 -> 544 words),
+best-time 79.5% -> 61.2% (317 -> 411), by reading the per-city quickFacts /
+itineraries / practicalInfo the templates already had access to. Nothing invented.
+
 ### Next Steps
 1. Delete the Surge project once the rollback window closes (~2026-09-05).
+2. Recheck GSC in ~2 weeks. If companions/best-time are still unindexed, consolidate
+   them into the city guides rather than padding further — and that also makes the
+   /companions/* wildcard redirect correct, solving the 222 404s for one rule.
+3. 18 pre-existing blog hero images are marginally over the 200KB budget (204KB).
 
 ### Rollback
 Point the apex CNAME back to `geo.surge.world`. The Surge deployment is untouched.
