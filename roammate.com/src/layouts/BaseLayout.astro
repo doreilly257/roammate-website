@@ -27,10 +27,8 @@ const buildDate = new Date().toISOString().split('T')[0];
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- script-src drops 'unsafe-inline': all scripts are bundled to external files (vite assetsInlineLimit:0).
-       style-src keeps 'unsafe-inline' — hero/route pages set dynamic background-image and accent colors via
-       inline style attributes, which CSP cannot hash. Tightening that would require a large refactor. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://us-assets.i.posthog.com https://static.cloudflareinsights.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self';">
+  <!-- CSP is served as a real response header from public/_headers (Cloudflare
+       Pages), not from a meta tag: frame-ancestors has no effect in meta form. -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#c4562a">
   <meta name="description" content={description}>

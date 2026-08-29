@@ -2,7 +2,14 @@
 # Pages defaults every asset to max-age=0, must-revalidate; the fingerprinted
 # and content-addressed paths below are safe to cache immutably instead.
 
+# CSP lives here rather than in a <meta http-equiv> in BaseLayout: frame-ancestors
+# is ignored entirely in meta form, and meta-CSP is skipped on some fetch paths.
+# script-src drops 'unsafe-inline' because every script is bundled to an external
+# file (vite assetsInlineLimit:0). style-src keeps it -- hero/route pages set
+# background-image and accent colours via inline style ATTRIBUTES, which CSP
+# cannot hash; tightening that needs a real refactor.
 /*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://us-assets.i.posthog.com https://static.cloudflareinsights.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
