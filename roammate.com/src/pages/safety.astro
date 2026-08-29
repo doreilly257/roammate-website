@@ -1,4 +1,5 @@
 ---
+import AppCTA from '../components/AppCTA.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
@@ -170,14 +171,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="safety-cta">
     <div class="safety-cta-inner">
       <h2 class="safety-cta-heading">Ready to find a <em>compatible</em> travel companion?</h2>
-      <p class="safety-cta-body">Download roammate free on iOS. Verified profiles, compatible matching, and full safety controls built in.</p>
-      <a
-        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=safety-page-cta&mt=8"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="safety-cta-btn"
-        data-ph-event="safety_cta_appstore_click"
-      >Download on the App Store — Free</a>
+      <p class="safety-cta-body">Download roammate free on iOS and Android. Verified profiles, compatible matching, and full safety controls built in.</p>
+      <AppCTA
+        variant="badges"
+        appStoreCt="safety-page-cta"
+        appStoreEvent="safety_cta_appstore_click"
+        playStoreEvent="safety_cta_playstore_click"
+      />
     </div>
   </section>
 </BaseLayout>

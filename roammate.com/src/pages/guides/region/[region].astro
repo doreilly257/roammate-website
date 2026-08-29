@@ -1,4 +1,5 @@
 ---
+import AppCTA from '../../../components/AppCTA.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getAllGuides, getBackpackerRoutes } from '../../../data/guides';
 import { getAllBlogPosts } from '../../../lib/blog-data';
@@ -141,12 +142,12 @@ const posts = allPosts
       <h2 class="region-cta-heading">Traveling <em>{regionName}</em>?</h2>
       <p class="region-cta-text">Find a travel companion who matches your style, budget, and destination.</p>
       <div class="region-cta-actions">
-        <a
-          href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=region-hub-cta&mt=8"
-          target="_blank"
-          rel="noopener"
-          class="region-cta-btn"
-        >Download on iOS — Free</a>
+        <AppCTA
+          variant="badges"
+          appStoreCt="region-hub-cta"
+          appStoreEvent="appstore_click"
+          playStoreEvent="playstore_click"
+        />
         <a href="/find-travel-companion/" class="region-cta-btn region-cta-btn--ghost">Find a travel companion</a>
       </div>
     </div>

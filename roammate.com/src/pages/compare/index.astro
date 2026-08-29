@@ -1,4 +1,5 @@
 ---
+import AppCTA from '../../components/AppCTA.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getAllBlogPosts } from '../../lib/blog-data';
 import { appNames } from '../../data/compareApps';
@@ -139,14 +140,13 @@ const itemListElements = allComparisonItems.map((post: any, i: number) => ({
   <section class="compare-cta reveal">
     <div class="compare-cta-inner">
       <h2>Ready to find your travel companion?</h2>
-      <p>roammate matches you by travel style, budget, and destination — free on iOS.</p>
-      <a
-        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=compare-cta&mt=8"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="compare-cta-btn"
-        data-ph-event="compare_cta_appstore_click"
-      >Download roammate — Free</a>
+      <p>roammate matches you by travel style, budget, and destination — free on iOS and Android.</p>
+      <AppCTA
+        variant="badges"
+        appStoreCt="compare-cta"
+        appStoreEvent="compare_cta_appstore_click"
+        playStoreEvent="compare_cta_playstore_click"
+      />
     </div>
   </section>
 </BaseLayout>

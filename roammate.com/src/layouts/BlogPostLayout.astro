@@ -270,13 +270,12 @@ const renderInlineLinks = (text: string) => {
               {index === 0 && (
                 <div class="blog-midpost-cta reveal">
                   <p class="blog-midpost-cta-text">Find a <a href="/find-travel-companion/" class="blog-midpost-cta-link">travel companion</a> who matches your style and budget</p>
-                  <a
-                    href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=blog-midpost-cta&mt=8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="blog-midpost-cta-btn"
-                    data-ph-event="blog_midpost_cta_appstore_click"
-                  >Download Roammate — Free</a>
+                  <AppCTA
+                    variant="badges"
+                    appStoreCt="blog-midpost-cta"
+                    appStoreEvent="blog_midpost_cta_appstore_click"
+                    playStoreEvent="blog_midpost_cta_playstore_click"
+                  />
                 </div>
               )}
             </>
@@ -340,13 +339,12 @@ const renderInlineLinks = (text: string) => {
         <h2 class="blog-post-cta-heading">Find your perfect <em>travel companion</em></h2>
         <p class="blog-post-cta-body">Roammate matches you with fellow travelers by style, budget, and destination — so you can share costs, stay safer, and go deeper.</p>
         <div class="blog-post-cta-actions">
-          <a
-            href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=blog-post-cta&mt=8"
-            target="_blank"
-            rel="noopener"
-            class="blog-post-cta-btn"
-            data-ph-event="blog_cta_appstore_click"
-          >Download on iOS — Free</a>
+          <AppCTA
+      variant="badges"
+      appStoreCt="blog-post-cta"
+      appStoreEvent="blog_cta_appstore_click"
+      playStoreEvent="blog_cta_playstore_click"
+    />
           <a href="/find-travel-companion/" class="blog-post-cta-btn blog-post-cta-btn--ghost" data-ph-event="blog_cta_find_companion_click">Find a travel companion</a>
           <a href="/how-it-works/" class="blog-post-cta-btn blog-post-cta-btn--ghost" data-ph-event="blog_cta_how_it_works_click">See how it works</a>
           <a href="/companions/" class="blog-post-cta-btn blog-post-cta-btn--ghost" data-ph-event="blog_cta_companions_click">Browse companions by city</a>

@@ -1,10 +1,11 @@
 ---
+import AppCTA from '../components/AppCTA.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
   title="Travel Buddy App — Find Travel Friends | roammate"
-  description="roammate is the travel buddy app that matches solo travelers by style and destination. Find travel friends, share experiences, and make every trip more memorable. Free on iOS."
+  description="roammate is the travel buddy app that matches solo travelers by style and destination. Find travel friends, share experiences, and make every trip more memorable. Free on iOS and Android."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -74,13 +75,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1 class="tba-title">The travel buddy app that finds your <em>kind of traveler</em></h1>
       <p class="tba-subtitle">Solo travel is incredible. Solo travel with the right person is unforgettable. roammate matches you with compatible travelers so every trip becomes a shared story.</p>
       <div class="tba-hero-actions">
-        <a
-          href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=travel-buddy-app-hero&mt=8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="tba-btn tba-btn--primary"
-          data-ph-event="tba_hero_appstore_click"
-        >Find Your Travel Buddy — Free</a>
+        <AppCTA
+          variant="badges"
+          appStoreCt="travel-buddy-app-hero"
+          appStoreEvent="tba_hero_appstore_click"
+          playStoreEvent="tba_hero_playstore_click"
+        />
         <a href="/how-it-works/" class="tba-btn tba-btn--ghost">How matching works</a>
       </div>
     </div>
@@ -138,16 +138,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="tba-cta">
     <div class="tba-cta-inner">
-      <p class="tba-cta-label">Free on iOS</p>
+      <p class="tba-cta-label">Free on iOS &amp; Android</p>
       <h2 class="tba-cta-heading">Your next travel buddy is <em>already waiting</em></h2>
       <p class="tba-cta-body">Download roammate, build your travel profile, and start connecting with compatible travelers heading to your next destination.</p>
-      <a
-        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=travel-buddy-app-cta&mt=8"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="tba-btn tba-btn--primary tba-btn--large"
-        data-ph-event="tba_bottom_appstore_click"
-      >Download on the App Store — Free</a>
+      <AppCTA
+          variant="badges"
+          appStoreCt="travel-buddy-app-cta"
+          appStoreEvent="tba_bottom_appstore_click"
+          playStoreEvent="tba_bottom_playstore_click"
+        />
       <p class="tba-cta-sub">Also: <a href="/blog/meeting-people-solo-travel/">Read: Meeting People as a Solo Traveler</a></p>
     </div>
   </section>

@@ -1,4 +1,5 @@
 ---
+import AppCTA from '../components/AppCTA.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const apps = [
@@ -361,13 +362,12 @@ const listItems = apps.map((app, i) => ({
       <p class="bta-cta-label">Free on iOS &amp; Android</p>
       <h2 class="bta-cta-heading">Find someone who travels <em>like you do</em></h2>
       <p class="bta-cta-body">Build a travel profile, get matched on style, budget and destination, and join excursion meetups wherever you land.</p>
-      <a
-        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=travel-companion-apps-cta&mt=8"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bta-btn"
-        data-ph-event="bta_bottom_appstore_click"
-      >Download on the App Store — Free</a>
+      <AppCTA
+        variant="badges"
+        appStoreCt="travel-companion-apps-cta"
+        appStoreEvent="bta_bottom_appstore_click"
+        playStoreEvent="bta_bottom_playstore_click"
+      />
       <p class="bta-cta-sub">Also worth reading: <a href="/safety/">how roammate handles safety</a></p>
     </div>
   </section>

@@ -1,4 +1,5 @@
 ---
+import AppCTA from '../../components/AppCTA.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
@@ -173,14 +174,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="tc-cta reveal">
     <div class="tc-cta-inner">
       <h2>Find a compatible travel companion</h2>
-      <p>roammate matches you by travel style, budget, and destination. Free on iOS.</p>
-      <a
-        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=what-is-tc-cta&mt=8"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="tc-cta-btn"
-        data-ph-event="what_is_tc_cta_appstore_click"
-      >Download roammate — Free</a>
+      <p>roammate matches you by travel style, budget, and destination. Free on iOS and Android.</p>
+      <AppCTA
+        variant="badges"
+        appStoreCt="what-is-tc-cta"
+        appStoreEvent="what_is_tc_cta_appstore_click"
+        playStoreEvent="what_is_tc_cta_playstore_click"
+      />
     </div>
   </section>
 </BaseLayout>

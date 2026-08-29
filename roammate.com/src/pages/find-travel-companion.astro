@@ -1,10 +1,11 @@
 ---
+import AppCTA from '../components/AppCTA.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
   title="Find a Travel Companion — roammate App"
-  description="Find a travel companion who matches your style, budget, and destination. roammate connects solo travelers for shared adventures, cost splitting, and safer trips. Free on iOS."
+  description="Find a travel companion who matches your style, budget, and destination. roammate connects solo travelers for shared adventures, cost splitting, and safer trips. Free on iOS and Android."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -74,14 +75,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1 class="ftc-title">Find a <em>travel companion</em> who actually matches</h1>
       <p class="ftc-subtitle">Not just someone nearby — someone compatible. roammate matches by travel style, budget, and destination so you share the right trip with the right person.</p>
       <div class="ftc-hero-actions">
-        <a
-          href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=find-travel-companion-hero&mt=8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ftc-btn ftc-btn--primary"
-          data-ph-event="ftc_hero_appstore_click"
-        >Download Free on iOS</a>
-        <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android&referrer=utm_source%3Droammate.com%26utm_medium%3Dweb%26utm_campaign%3Dfind-travel-companion-hero" class="ftc-btn ftc-btn--ghost" target="_blank" rel="noopener noreferrer" data-ph-event="ftc_hero_playstore_click">Get it on Android</a>
+        <AppCTA
+          variant="badges"
+          appStoreCt="find-travel-companion-hero"
+          appStoreEvent="ftc_hero_appstore_click"
+          playStoreEvent="ftc_hero_playstore_click"
+        />
         <a href="/how-it-works/" class="ftc-btn ftc-btn--ghost">See how it works</a>
       </div>
     </div>
@@ -219,16 +218,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="ftc-cta">
     <div class="ftc-cta-inner">
-      <p class="ftc-cta-label">Free on iOS</p>
+      <p class="ftc-cta-label">Free on iOS &amp; Android</p>
       <h2 class="ftc-cta-heading">Your next travel companion is <em>already on roammate</em></h2>
       <p class="ftc-cta-body">Download free. Build your profile. Find someone who travels the way you do.</p>
-      <a
-        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=find-travel-companion-cta&mt=8"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="ftc-btn ftc-btn--primary ftc-btn--large"
-        data-ph-event="ftc_bottom_appstore_click"
-      >Download on the App Store — Free</a>
+      <AppCTA
+  variant="badges"
+  appStoreCt="find-travel-companion-cta"
+  appStoreEvent="ftc_bottom_appstore_click"
+  playStoreEvent="ftc_bottom_playstore_click"
+/>
       <p class="ftc-cta-sub">Also: <a href="/blog/finding-travel-companions/">Read our guide to finding travel companions</a></p>
     </div>
   </section>

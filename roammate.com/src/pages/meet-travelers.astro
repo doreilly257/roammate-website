@@ -1,10 +1,11 @@
 ---
+import AppCTA from '../components/AppCTA.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
   title="Meet Travelers Worldwide — roammate App"
-  description="Meet fellow travelers who match your style, budget, and destination. roammate connects solo travelers and backpackers for shared adventures. Free on iOS."
+  description="Meet fellow travelers who match your style, budget, and destination. roammate connects solo travelers and backpackers for shared adventures. Free on iOS and Android."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -74,14 +75,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1 class="mt-title">Meet travelers who <em>actually get you</em></h1>
       <p class="mt-subtitle">Not random strangers in a hostel lobby — travelers matched by style, budget, and destination. Real compatibility before you even say hello.</p>
       <div class="mt-hero-actions">
-        <a
-          href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=meet-travelers-hero&mt=8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-btn mt-btn--primary"
-          data-ph-event="mt_hero_appstore_click"
-        >Download Free on iOS</a>
-        <a href="https://play.google.com/store/apps/details?id=com.roammate.app.android&referrer=utm_source%3Droammate.com%26utm_medium%3Dweb%26utm_campaign%3Dmeet-travelers-hero" class="mt-btn mt-btn--ghost" target="_blank" rel="noopener noreferrer" data-ph-event="mt_hero_playstore_click">Get it on Android</a>
+        <AppCTA
+          variant="badges"
+          appStoreCt="meet-travelers-hero"
+          appStoreEvent="mt_hero_appstore_click"
+          playStoreEvent="mt_hero_playstore_click"
+        />
         <a href="/how-it-works/" class="mt-btn mt-btn--ghost">See how it works</a>
       </div>
     </div>
@@ -219,16 +218,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="mt-cta">
     <div class="mt-cta-inner">
-      <p class="mt-cta-label">Free on iOS</p>
+      <p class="mt-cta-label">Free on iOS &amp; Android</p>
       <h2 class="mt-cta-heading">Your next travel friend is <em>already on roammate</em></h2>
       <p class="mt-cta-body">Download free. Build your profile. Find someone who travels the way you do.</p>
-      <a
-        href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=meet-travelers-cta&mt=8"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-btn mt-btn--primary mt-btn--large"
-        data-ph-event="mt_bottom_appstore_click"
-      >Download on the App Store — Free</a>
+      <AppCTA
+  variant="badges"
+  appStoreCt="meet-travelers-cta"
+  appStoreEvent="mt_bottom_appstore_click"
+  playStoreEvent="mt_bottom_playstore_click"
+/>
       <p class="mt-cta-sub">Also: <a href="/blog/finding-travel-companions/">Read our guide to finding travel companions</a></p>
     </div>
   </section>
