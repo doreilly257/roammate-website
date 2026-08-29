@@ -16,10 +16,9 @@ images on 1,326 pages. Commit-by-commit detail in the Session 5 archive entry.
 
 ### Acted on the 3-month Search Console export (late session)
 Performance data arrived and **reversed the plan above**. By section:
-`/companions/` 6,015 impr → 565 clicks (**9.39% CTR**, best on site, ~6x average);
-`/itinerary/` 91k → 1,374 (1.51%); `/budget/` 90k → 720 (0.80%);
-`/best-time-to-visit/` 33k → **65** (0.20%); `/statistics/` 2.2k → 35.
-The split is not thin-vs-rich, it is **informational vs commercial**.
+`/companions/` 6,015 impr → 565 clicks (**9.39% CTR**, ~6x site average); `/itinerary/`
+91k → 1,374 (1.51%); `/budget/` 90k → 720 (0.80%); `/best-time-to-visit/` 33k → **65**
+(0.20%); `/statistics/` 2.2k → 35. The split is **informational vs commercial**.
 - **d0d5986** — built `/companions/` for all 442 destinations (was 232, gated by
   CITY_GUIDE_SLUGS_LIST). The best-converting template was simply missing for
   Petra, Machu Picchu, Angkor Wat and 207 others, which is also where the 222
