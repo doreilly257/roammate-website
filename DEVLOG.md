@@ -3,113 +3,107 @@
 ## Working State
 **Session:** 5 | **Date:** 2026-08-29
 
-### Session 5: Surge.sh → Cloudflare Pages — SHIPPED, DNS CUT OVER 2026-08-29
-Pages project `roammate` created (`roammate-cs7.pages.dev`); apex CNAME cut over
-and roammate.com now serves from Pages. Surge instance left running ~1 week as a
-30-second rollback, then to be deleted.
+### Active task
+None. All shipped, deployed, verified on production against a cleared
+Cloudflare cache. 9 commits, working tree clean.
 
-Migration surface was small: Astro's `trailingSlash: 'always'` already matches
-Pages' directory-index canonical form (308 `/about` → `/about/`), `/404.html` is
-picked up automatically, and 4,148 files / 352 KB max are far under the 20,000-file
-and 25 MiB caps. Three things genuinely needed doing:
-1. `public/_headers` — Pages defaults everything to `max-age=0, must-revalidate`,
-   which would have regressed `/_astro/*` from 31 days to nothing. Also added the
-   real security headers that Surge could never send (closes bead vjs).
-2. `deploy.sh` rewritten for `wrangler pages deploy`, plus a hard fail when
-   `.env` has no real `PUBLIC_POSTHOG_KEY` (silent-analytics-loss trap).
-3. `public/CNAME` deleted (Surge-only).
+### Shipped today
+- **Surge.sh → Cloudflare Pages** (af44145). Project `roammate`, apex cut over.
+  `deploy.sh` uses `wrangler pages deploy` (+`--preview`, + a hard fail when
+  `.env` lacks a real PUBLIC_POSTHOG_KEY). Node-22 pin gone. Surge is the
+  rollback until ~2026-09-05 (ao2).
+- **Headers + CSP** (af44145, 180a14c). `public/_headers`: security headers Surge
+  could never send, immutable caching for `/_astro/*` `/images/*` `/fonts/*`
+  (Pages defaults to max-age=0). CSP moved from `<meta>` to a real header,
+  gaining frame-ancestors/base-uri/form-action/object-src. Closes vjs, and epic
+  21r (11/11).
+- **Search Console triage** (d004a83, ec59508, 3d09f60). Sitemap was clean — all
+  3,278 URLs resolve. Old `/guides/cities/` + `/guides/places/` nesting and 7
+  stale region hubs now 301. Real bug found: companions/[slug] rebuilt its hero
+  path from the slug instead of reading heroImage → 34 pages with a dead hero,
+  dead preload and broken og:image. Plus 39 city guides showing another place's
+  photo (7 cross-border), re-sourced and visually verified.
+- **Sitemap lastmod** (13da821). 1,801 URLs claimed 2023, before the site
+  existed (hash scheme: EPOCH(2024-01-01) − hash%365 days). Now per-guide from
+  git. Live: zero pre-2026 dates.
+- **Thin content** (c6e83e9). companions 96.1%→73.7% similar (371→544 words),
+  best-time 79.5%→61.2% (317→411), using per-city data the templates already
+  had. Nothing invented. Retired a hardcoded "tuk-tuks" on ~200 cities.
+- **validate.ts blind spot** (6c5336f). All 7 checks read source data, which is
+  why it passed while 34 pages shipped a dead hero. `validateBuiltLinks()` now
+  crawls dist — including `url(...)` in inline style attrs, how that hero
+  actually reached the page. Wired into `npm run build`. 31 tests (was 23).
+- **Image budget** (a02823c). 18 blog heroes were 200–297KB; saved 1,063KB.
+  Nothing in public/images now exceeds 200KB.
 
-Incidental wins: `.DS_Store` files stop being published (Pages skips dotfiles) and
-`/.well-known/ai.txt` now returns 200 — it was a 404 on Surge. The Node-22 pin is
-gone; wrangler runs fine on Node 26, so the surge@0.23.1/fstream workaround is dead.
+### Key files (current shape)
+**`public/_headers`** (NEW) — CSP + security headers, immutable asset caching,
+`noindex` scoped to `*.pages.dev`. Host-scoped rules match only their own host
+(verified), so the noindex cannot reach production.
 
-**Verified on roammate-cs7.pages.dev:** 14 representative routes 200, unknown path
-404 (not 200), `/about` 308s to `/about/`, `_headers` and `.DS_Store` both 404,
-sitemap 3,278 `<loc>`s with sitemap-index gone, RSS renders, canonical still
-`https://roammate.com/...`, PostHog key baked into the external bundle,
-`/_astro/*` + `/images/*` immutable for a year, all four security headers present.
+**`public/_redirects`** (NEW, 10 rules) — old URL structures. See Watch out.
 
-**Proved rather than assumed:** a `noindex` leaking onto a 3,279-page production
-site would be catastrophic, so host-scoping was tested directly — a marker header
-scoped to `https://roammate.com/*` was deployed and confirmed *absent* on the
-pages.dev host while the pages.dev-scoped `X-Robots-Tag` applied. Host-scoped
-`_headers` rules match only their own host. Marker then removed and redeployed.
+**`scripts/validate.ts`** (MODIFIED) — 7 source checks + `validateBuiltLinks(dist)`.
+Runs post-build via `npm run build`, or `npm run validate:dist`.
 
-**Post-cutover verified on roammate.com:** `surge-cache`/`surge-stamp` headers
-gone, all four security headers present, NO `x-robots-tag` (the pages.dev noindex
-correctly did not follow), 11 routes 200, unknown path 404, `/about` 308s,
-`www` 301 to apex still intact, `_headers` 404, `/_astro/*` immutable and HTML
-`must-revalidate`, sitemap 3,278 locs, canonical correct, PostHog key live.
+**`scripts/build-lastmod.mjs`** (NEW) — one `git log` pass →
+`src/data/guide-lastmod.json` (gitignored), read by astro.config sitemap serialize.
 
-### Post-migration work (same session)
-- **CSP moved from meta tag to a real response header** (commit 180a14c). frame-ancestors
-  is ignored in meta form, so the clickjacking control was never actually active; the
-  header form also picked up base-uri, form-action and object-src (verified first that
-  src/ has no <base>, no <form action>, no iframes). Existing directives carried over
-  byte-for-byte. Headless check found ONE CSP violation and it is Cloudflare's own
-  injected bot script (/cdn-cgi/challenge-platform/.../jsd) — pre-existing, since the old
-  meta policy had an identical script-src, and unfixable by hash since the payload embeds
-  a per-request ray id. Our own 6 scripts all load; nav, sticky bar and the CF beacon work.
-  To silence it, turn off Bot Fight Mode in the dashboard.
-- **Per-city OG images** (commit c3ee941, closes xnn). The bead assumed this meant sourcing
-  442 city photos. It did not: all three programmatic sets are generated from the guides
-  collection, which already carries heroImage, and the curated layouts already passed it
-  through. Prop wiring only — 1,326 pages, zero new assets, verified live.
-- **cd7 (social proof) left open deliberately.** Genuinely blocked: the only
-  api.roammate.com endpoint is POST /v1/waitlist, so per-city traveler counts do not
-  exist. Declined to ship placeholder numbers — fabricated social proof across 3,279
-  indexed pages is a trust risk, not a shortcut. Notes on the bead list honest
-  no-API alternatives.
-- **21r.5 (leaked tokens) closed at user's direction** — treated as private/single-user
-  repo. Recorded on the bead that api.github.com reported visibility=public at closing
-  time and the tokens remain in 5 places in history, so it can be reopened cheaply.
+**`src/pages/companions/[slug].astro`** (MODIFIED) — reads the full collection
+entry, not just GuideEntry; renders that city's real day-one itinerary and facts.
 
-### Session 5b: Search Console 404s, image relevance, indexing — SHIPPED
-Triggered by GSC showing 1.33k not-indexed (447 "Not found", 867 "crawled, not indexed").
+### Watch out
+- **Pages evaluates `_redirects` BEFORE static assets.** A `/section/*` wildcard
+  301s the real pages in that section too (cost ~2 min of broken companions).
+- **Free plan silently ignores `_redirects` past ~100 rules.** No error.
+- **git prints paths relative to the REPO ROOT** (`roammate.com/src/...`); a
+  `src/...` prefix match silently matches nothing and hits the fallback.
+- **Cloudflare caches 404s** — probing a path before it exists poisons it. Assets
+  are immutable for a year, so in-place replacement needs a dashboard purge (the
+  wrangler token cannot).
+- **Don't crush image quality to hit a byte budget** — shrink the raster: 1400px
+  @ q74 beats 1600px @ q46 on both looks and size.
 
-**404s (d004a83).** Sitemap was clean — all 3,278 URLs resolve, and all 562 routes
-deleted in git history still resolve (blog .astro files became a dynamic route with
-the same slugs). The export showed three patterns: /guides/cities/{slug}/ and
-/guides/places/{slug}/ from an older nesting (wildcard 301s), seven /guides/region/
-names only backpacker routes use (301 to nearest hub), and 222 /companions/{place}/.
-The last are NOT redirected: **Cloudflare Pages free plan silently ignores _redirects
-rules past ~100** (found by binary search — rules at line 109 worked, line 121 did
-not), and a wildcard is impossible because **Pages evaluates redirects BEFORE static
-assets** — verified the hard way, /companions/* 301'd all 232 real pages for ~2 min
-before revert. Those URLs came from an internal linking bug already fixed, so 404 is
-the correct answer anyway.
+### Next steps
+1. Delete the Surge project after the rollback window (~2026-09-05, ao2).
+2. Recheck Search Console in ~2 weeks. If companions/best-time are still
+   unindexed, consolidate into the city guides rather than padding — that also
+   makes a `/companions/*` wildcard correct, fixing the 222 remaining 404s.
+3. cd7 blocked: no per-city counts endpoint. Not shipping invented numbers.
 
-**Images (ec59508, 3d09f60).** companions/[slug] built its hero path by convention
-(`{slug}-hero.webp`) instead of reading heroImage, so 34 cities 404'd in three places
-at once — blank hero, dead preload, and a broken og:image on every social share.
-validate.ts missed it because it checks the collection values, not a path rebuilt in a
-template. Separately, 49 city guides used another place's photo; 10 are legitimate
-(Aguas Calientes IS the Machu Picchu town), 39 were replaced. **Verified by looking at
-contact sheets, not by trusting search** — the first pass returned a Mexican cenote for
-Puerto Princesa, Giza for Aswan, Pisac for Nazca, a Lebanese temple for Jerash and a
-satellite map for Nizwa. Blog images audited and clean.
-
-**lastmod (13da821).** 1,801 URLs claimed lastmod in 2023 — the hash scheme computed
-EPOCH(2024-01-01) minus hash%365 days, so every programmatic page said "unchanged since
-before this site existed". Now derived from git per guide. Watch out: git prints paths
-relative to the REPO ROOT, so a `src/...` prefix match silently matches nothing and
-falls through to a plausible-looking now() fallback.
-
-**Thin content (c6e83e9).** companions 96.1% -> 73.7% similar (371 -> 544 words),
-best-time 79.5% -> 61.2% (317 -> 411), by reading the per-city quickFacts /
-itineraries / practicalInfo the templates already had access to. Nothing invented.
-
-### Next Steps
-1. Delete the Surge project once the rollback window closes (~2026-09-05).
-2. Recheck GSC in ~2 weeks. If companions/best-time are still unindexed, consolidate
-   them into the city guides rather than padding further — and that also makes the
-   /companions/* wildcard redirect correct, solving the 222 404s for one rule.
-3. 18 pre-existing blog hero images are marginally over the 200KB budget (204KB).
-
-### Rollback
-Point the apex CNAME back to `geo.surge.world`. The Surge deployment is untouched.
+### Known, accepted
+- Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level; our CSP
+  blocks it. Cosmetic (pages.dev serves the same build clean). Bot Fight Mode is
+  OFF and it still injects. Left by choice.
+- API tokens remain in public git history; closed at user direction (21r.5).
 
 ---
+---
+
+## Session Archive
+
+### Session 5 — 2026-08-29: Cloudflare Pages migration + Search Console fixes
+**What we did:** Migrated roammate.com off Surge.sh to Cloudflare Pages (project
+`roammate`), then used the new ability to send real response headers to move CSP
+out of a `<meta>` tag and add security + immutable-caching headers. Triaged a
+Search Console report of 447 404s and 867 crawled-not-indexed: added redirects for
+two dead URL structures, fixed 34 companions pages shipping a dead hero image,
+replaced 39 city-guide photos showing the wrong place, fixed a sitemap lastmod
+scheme that claimed 1,801 URLs were unchanged since 2023, and enriched the two
+thinnest page sets from per-city data they already had. Closed the loop by giving
+validate.ts a built-output link check, then brought 18 oversized blog heroes under
+budget.
+**Files:** deploy.sh, public/_headers, public/_redirects, scripts/validate.ts,
+scripts/build-lastmod.mjs, astro.config.mjs, package.json, companions/[slug].astro,
+best-time-to-visit/[city].astro, statistics|budget/[city].astro, 39 guide JSONs +
+images, 18 blog images.
+**Decisions:** Kept 222 /companions/{place}/ as 404s rather than redirects — Pages
+free plan caps _redirects at ~100 rules and evaluates them before static assets, and
+those URLs only ever existed via an internal linking bug. Declined to ship invented
+traveler counts for cd7. Chose raster-shrinking over quality-crushing to hit the
+image budget.
+**Commits:** af44145, 180a14c, c3ee941, ec59508, d004a83, 3d09f60, 13da821,
+c6e83e9, 6c5336f, a02823c.
 
 
 ### Session 4: Audit epic 21r fixes — BUILT + VERIFIED, UNCOMMITTED (do NOT commit/deploy per instructions)
