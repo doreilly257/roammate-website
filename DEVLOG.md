@@ -7,35 +7,6 @@
 None — deliberately. See "STOP" below. Everything is shipped, deployed and verified
 on production against a cleared Cloudflare cache. Working tree clean.
 
-### Session 5 shipped — 12 commits, all deployed and verified
-Cloudflare Pages migration, CSP + security/caching headers, old `/guides/cities|places/`
-301s, 34 dead companion heroes and 39 wrong city photos fixed, 18 blog heroes cut by
-1,063KB, git-derived sitemap lastmod, per-city enrichment, `validateBuiltLinks()`, and
-per-city OG images on 1,326 pages. Then the 3-month GSC export **reversed the plan**:
-`/companions/` 9.39% CTR (~6x site average) vs `/best-time-to-visit/` 0.20% — the split
-is **informational vs commercial**, not thin vs rich. Acted on it: **d0d5986** built
-`/companions/` for all 442 destinations (was 232 — the best-converting template was
-missing for 210 cities, and the source of 222 404s); **62c6174** added FAQPage schema to
-roammate-vs-gaffl, the only competitor with real demand. **84l** recorded the decision
-NOT to invest further in best-time/statistics — they rank ~pos 10 and are not
-click-worthy: a demand problem, not indexing. Commit detail in the Session 5 archive.
-
-### RESOLVED: the zero-click anomaly (verified by hand, 8ho closed)
-Headed Chrome, UAE IP, signed out. Two results, one of which kills a hypothesis.
-- **AI block confirmed.** On `macau itinerary 7 days` the whole above-the-fold is a
-  generated day-by-day itinerary needing no click. It cites Traveloka (x2), Plantrip,
-  Alexis Jetsets, YouTube, Instagram — **not roammate**. Below it we are organic #2,
-  behind Traveloka, matching GSC pos 3.4. Ranking and intent are real; the answer is
-  consumed above us and credits the competitor at organic #1.
-- **The Istanbul phrasing hypothesis is WRONG — do not build on it.** The 10.1% vs 0.3%
-  split does not prove SERP composition: both phrasings return near-identical SERPs with
-  roammate at organic **#6**. Almost certainly a volume artifact.
-- **Caveats:** one geo, one run per query, extension profile. Re-check elsewhere (8ho).
-- **Tooling fixed:** `browse --headed` was never blocked by Google — the Playwright
-  chromium binary had never been downloaded. Installed. Boots in ~25s vs a 15s window,
-  so "Server failed to start" is a false negative; wait and re-issue. Repeat `--headed`
-  on every command.
-
 ### 8hq analysed (diagnosis only — nothing shipped)
 Offline against the built `dist/`. One hypothesis dead, one strong candidate found.
 - **Under-linking DISPROVED, and backwards.** Contextual inlinks per page (nav/footer
@@ -54,28 +25,41 @@ Offline against the built `dist/`. One hypothesis dead, one strong candidate fou
   fired: AI blocks absorb informational queries and city guides are informational, so
   de-cannibalising may reach page 1 and still earn no clicks.
 
+### SHIPPED: GEO schema holdout on /itinerary/ (2u3)
+First test of the 8ho finding. The pages losing to AI blocks were the least
+machine-extractable on the site — `BreadcrumbList` and nothing else.
+- **Test:** 40 cities / 105 pages emit `TouristTrip` (ItemList of days) + `HowTo`
+  (day sections, morning/afternoon/evening steps) + `FAQPage`.
+  **Control:** 402 cities / 999 pages untouched. Zero overlap, verified in `dist/`.
+- **Why a holdout, given STOP:** it measures WITHIN one period instead of across a
+  before/after in which Google also changed — better attribution than waiting, not
+  worse. Existing measurements are untouched.
+- Assignment is by city (variants never split), a pure function of the slug, stable
+  across builds — `src/lib/geoTestSet.ts`. **Never reassign a city mid-experiment.**
+- `macau`, `tallinn`, `istanbul` forced in as hand-measurable probes; excluded from
+  CTR stats. **Pre-treatment baseline captured 2026-08-29T14:43Z: AI block present on
+  all three, roammate cited in none** (organic #2 / not-in-top-6 / #6).
+- Every emitted field derives from existing page data. Nothing invented.
+- **Power warning:** 40 of 442 cities is small and traffic is concentrated. A null
+  result may mean underpowered, not ineffective. Check crawl dates first — an
+  unrecrawled page cannot have responded.
+
 ### STOP — decision in force
-**Do not ship further SEO changes until the next Search Console export.** 12 commits
+**Do not ship further SEO changes until the next Search Console export** — except as a
+holdout with an untouched control, which is how 2u3 above was allowed to proceed. 12 commits
 landed 2026-08-29 and every one is an unmeasured bet; Google has not recrawled any of
 it. Stacking more changes makes attribution impossible. This is the same argument as
 "do not re-optimise before data", and it applies more now, not less.
 
 ### Pick up here (beads carry full context; `bd ready`)
-1. **8ho — CLOSED.** Verified; see the resolved section above. Strategy is unblocked.
-2. **3on (deferred to 2026-09-12)** — re-export GSC and measure. Baseline table is in
-   the bead. Cleanest test: do the 210 new `/companions/` pages pick up impressions at
-   that section's 9.39% CTR?
-3. **8hq (P3, now UNBLOCKED)** — why `/guides/` sits at median position 20.7 despite
-   being the strongest content on the site. Most interesting unexplored thread.
+1. **2u3 (P1)** — measure the GEO holdout. Citation check is manual in headed Chrome
+   (GSC does not report AI citation); CTR/position comparison lands with 3on.
+2. **3on (deferred 2026-09-11)** — re-export GSC and measure the 12 Session-5 bets.
+   Baseline table is in the bead. Check crawl dates before interpreting anything.
+3. **8hq (in progress)** — cannibalisation and bare-H1 fixes are ANALYSED BUT UNSHIPPED,
+   gated on 3on. If shipped, use a holdout like 2u3.
 4. **ao2 (deferred 2026-09-05)** — delete the Surge instance. It is the rollback until then.
-5. **cd7 (open, blocked in practice)** — needs a per-city counts API. Not shipping
-   invented numbers.
-
-### Data-quality caveat
-Some impressions are junk intent-mismatches, so site CTR reads worse than it is:
-"cost of living in X" drew 3,755 impr / 1 click, including "cost of living in machu
-picchu" and "...great barrier reef". Nobody lives in either. Does not apply to the
-Macau case — that intent is real, and now explained by the AI block above.
+5. **cd7 (blocked in practice)** — needs a per-city counts API. Not shipping invented numbers.
 
 ### Known, accepted
 - Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level and our CSP
@@ -86,6 +70,21 @@ Macau case — that intent is real, and now explained by the AI block above.
 ---
 
 ## Session Archive
+
+### Session 5 (cont.) — 2026-08-29: SERP verification + GEO holdout
+**Zero-click anomaly RESOLVED (8ho).** Verified by hand in headed Chrome. On
+`macau itinerary 7 days` the entire above-the-fold is a generated day-by-day
+itinerary citing Traveloka (x2), Plantrip, Alexis Jetsets, YouTube, Instagram —
+not roammate — while we sit organic #2. Ranking and intent are real; the click is
+consumed. **The Istanbul phrasing hypothesis was disproved:** both phrasings return
+near-identical SERPs with roammate at organic #6, so the 10.1% vs 0.3% split is a
+volume artifact, not SERP composition. Tooling: `browse --headed` was never blocked
+by Google — the Playwright chromium binary had simply never been downloaded.
+**8hq analysed:** under-linking disproved (guides are the best-linked section at 16
+median contextual inlinks); cannibalisation identified instead (97% of destinations
+carry 5 templates; 115 guides collide head-on with an `/itinerary/<city>-3-day/`
+page at a 100% collision rate); 88% of guides have a bare place-name H1.
+**Shipped:** the GEO schema holdout (2u3). Nothing else — STOP still holds.
 
 ### Session 5 — 2026-08-29: Cloudflare Pages migration + Search Console fixes
 **What we did:** Migrated roammate.com off Surge.sh to Cloudflare Pages (project
