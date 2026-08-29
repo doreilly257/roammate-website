@@ -31,8 +31,8 @@ The split is not thin-vs-rich, it is **informational vs commercial**.
   Backpackr gets 254 impr / 1 click and the other seven do not appear at all.
   Also fixed BlogPostLayout swallowing a post's `<Fragment slot="head">`.
 - **84l (closed record)** — decided NOT to invest further in best-time/statistics.
-  They rank (~pos 10) and are not click-worthy: a demand problem, not indexing.
-  No code change; pruning 554 pages on a hunch contradicts the evidence.
+  They rank (~pos 10) and are not click-worthy: demand problem, not indexing. No code
+  change; pruning 554 pages on a hunch contradicts the evidence.
 
 ### RESOLVED: the zero-click anomaly (verified by hand, 8ho closed)
 Headed Chrome, UAE IP, signed out. Two results, one of which kills a hypothesis.
@@ -80,9 +80,8 @@ picchu" and "...great barrier reef". Nobody lives in either. Does not apply to t
 Macau case — that intent is real, and now explained by the AI block above.
 
 ### Known, accepted
-- Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level; our CSP
-  blocks it. Cosmetic (pages.dev serves the same build clean). Bot Fight Mode is
-  OFF and it still injects. Left by choice.
+- Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level and our CSP
+  blocks it. Cosmetic; Bot Fight Mode is OFF and it still injects. Left by choice.
 - API tokens remain in public git history; closed at user direction (21r.5).
 
 ---
