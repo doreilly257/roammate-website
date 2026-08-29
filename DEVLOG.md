@@ -8,16 +8,11 @@ None — deliberately. See "STOP" below. Everything is shipped, deployed and ver
 on production against a cleared Cloudflare cache. Working tree clean.
 
 ### Shipped today — 12 commits, all deployed and verified
-Migration to Cloudflare Pages (af44145); CSP as a real header + security/caching
-headers (180a14c); 404 redirects for the old `/guides/cities|places/` nesting
-(d004a83); 34 companions pages that shipped a dead hero image, and 39 city guides
-showing another place's photo (ec59508, 3d09f60); 18 blog heroes brought under
-200KB, saving 1,063KB (a02823c); sitemap lastmod derived from git instead of a hash
-that claimed 1,801 URLs were unchanged since 2023 (13da821); per-city enrichment of
-companions and best-time (c6e83e9); `validateBuiltLinks()` so the build catches
-broken internal links, which is how the dead-hero bug escaped (6c5336f); per-city OG
-images on 1,326 programmatic pages (c3ee941). Full detail in the Session 5 archive
-entry below.
+Cloudflare Pages migration, CSP + security/caching headers, 404s for the old
+`/guides/cities|places/` nesting, 34 dead companion heroes and 39 wrong city photos
+fixed, 18 blog heroes cut by 1,063KB, git-derived sitemap lastmod, per-city
+companions/best-time enrichment, `validateBuiltLinks()` in the build, and per-city OG
+images on 1,326 pages. Commit-by-commit detail in the Session 5 archive entry.
 
 ### Acted on the 3-month Search Console export (late session)
 Performance data arrived and **reversed the plan above**. By section:
@@ -39,15 +34,27 @@ The split is not thin-vs-rich, it is **informational vs commercial**.
   They rank (~pos 10) and are not click-worthy: a demand problem, not indexing.
   No code change; pruning 554 pages on a hunch contradicts the evidence.
 
-### Unresolved: the zero-click anomaly
-`"macau itinerary 7 days"` ranks **pos 3.4 with 12,325 impressions and 0 clicks**;
-`"tallinn itinerary 7 days"` pos 2.7, 4,224 impr, 0 clicks. Not a snippet problem —
-titles and descriptions are well-formed. The tell: the SAME Istanbul page gets
-10.1% for "istanbul 7 day itinerary" and 0.3% for "istanbul itinerary 7 days".
-Hypothesis is AI Overviews absorbing the informational queries. **Unverified** —
-Google blocks the headless browser, and `browse --headed` fails to start. Needs a
-human to search it. If confirmed, 214k impressions of informational programmatic
-content is a declining asset and the strategy should follow the commercial pages.
+### RESOLVED: the zero-click anomaly (verified by hand, 8ho closed)
+Headed Chrome, UAE IP, signed out. Two results, one of which kills a hypothesis.
+- **AI block confirmed.** On `macau itinerary 7 days` the whole above-the-fold is a
+  generated day-by-day 7-day itinerary, complete enough that no click is needed. It
+  cites Traveloka (x2), Plantrip, Alexis Jetsets, YouTube, Instagram — **not roammate**.
+  In the blue links below it we are organic #2, behind Traveloka, matching GSC pos 3.4.
+  The ranking and the intent are both real; the answer is consumed above us and credits
+  the competitor sitting at organic #1.
+- **The Istanbul phrasing hypothesis is WRONG — do not build on it.** I claimed the
+  10.1% vs 0.3% split on two near-identical queries proved SERP composition. Checked
+  both: near-identical SERPs, same competitors, roammate at organic **#6 in both**.
+  Composition explains nothing there. Almost certainly a volume artifact — 10.1% is
+  likely a handful of clicks on a low-impression query.
+- **Caveats:** one geo, one run per query, extension-loaded profile. Google rendered an
+  AI Mode reply while simultaneously saying "An AI Overview is not available for this
+  search", so this may not match a typical user. Worth a second check from another geo.
+- **Tooling fixed (self-anneal):** `browse --headed` was never blocked by Google — the
+  Playwright chromium binary had simply never been downloaded. Installed. It boots in
+  ~25s, longer than the 15s startup window, so the CLI prints "Server failed to start"
+  while the daemon is actually coming up; wait and re-issue. Every command must repeat
+  `--headed` or it reports a config mismatch.
 
 ### STOP — decision in force
 **Do not ship further SEO changes until the next Search Console export.** 12 commits
@@ -56,13 +63,11 @@ it. Stacking more changes makes attribution impossible. This is the same argumen
 "do not re-optimise before data", and it applies more now, not less.
 
 ### Pick up here (beads carry full context; `bd ready`)
-1. **8ho (P1, BLOCKED ON HUMAN)** — verify the zero-click SERP by hand. Claude cannot:
-   Google blocks the headless browser and `browse --headed` fails to start. Search
-   `macau itinerary 7 days` and see what sits above us at position 3.4. Gates strategy.
+1. **8ho — CLOSED.** Verified; see the resolved section above. Strategy is unblocked.
 2. **3on (deferred to 2026-09-12)** — re-export GSC and measure. Baseline table is in
    the bead. Cleanest test: do the 210 new `/companions/` pages pick up impressions at
    that section's 9.39% CTR?
-3. **8hq (P3, blocked by 8ho)** — why `/guides/` sits at median position 20.7 despite
+3. **8hq (P3, now UNBLOCKED)** — why `/guides/` sits at median position 20.7 despite
    being the strongest content on the site. Most interesting unexplored thread.
 4. **ao2 (deferred 2026-09-05)** — delete the Surge instance. It is the rollback until then.
 5. **cd7 (open, blocked in practice)** — needs a per-city counts API. Not shipping
@@ -71,9 +76,8 @@ it. Stacking more changes makes attribution impossible. This is the same argumen
 ### Data-quality caveat
 Some impressions are junk intent-mismatches, so site CTR reads worse than it is:
 "cost of living in X" drew 3,755 impr / 1 click, including "cost of living in machu
-picchu" and "...great barrier reef". Nobody lives in either. This does NOT explain
-`macau itinerary 7 days` at pos 3.4 with 12,325 impressions — that is real intent and
-still unexplained.
+picchu" and "...great barrier reef". Nobody lives in either. Does not apply to the
+Macau case — that intent is real, and now explained by the AI block above.
 
 ### Known, accepted
 - Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level; our CSP
