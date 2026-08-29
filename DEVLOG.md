@@ -23,15 +23,13 @@ click-worthy: a demand problem, not indexing. Commit detail in the Session 5 arc
 ### RESOLVED: the zero-click anomaly (verified by hand, 8ho closed)
 Headed Chrome, UAE IP, signed out. Two results, one of which kills a hypothesis.
 - **AI block confirmed.** On `macau itinerary 7 days` the whole above-the-fold is a
-  generated day-by-day 7-day itinerary, complete enough that no click is needed. It
-  cites Traveloka (x2), Plantrip, Alexis Jetsets, YouTube, Instagram — **not roammate**.
-  In the blue links below it we are organic #2, behind Traveloka, matching GSC pos 3.4.
-  The ranking and the intent are both real; the answer is consumed above us and credits
-  the competitor sitting at organic #1.
-- **The Istanbul phrasing hypothesis is WRONG — do not build on it.** I claimed the
-  10.1% vs 0.3% split proved SERP composition. Both phrasings return near-identical
-  SERPs with roammate at organic **#6**. Composition explains nothing there; almost
-  certainly a volume artifact on a low-impression query.
+  generated day-by-day itinerary needing no click. It cites Traveloka (x2), Plantrip,
+  Alexis Jetsets, YouTube, Instagram — **not roammate**. Below it we are organic #2,
+  behind Traveloka, matching GSC pos 3.4. Ranking and intent are real; the answer is
+  consumed above us and credits the competitor at organic #1.
+- **The Istanbul phrasing hypothesis is WRONG — do not build on it.** The 10.1% vs 0.3%
+  split does not prove SERP composition: both phrasings return near-identical SERPs with
+  roammate at organic **#6**. Almost certainly a volume artifact.
 - **Caveats:** one geo, one run per query, extension profile. Re-check elsewhere (8ho).
 - **Tooling fixed:** `browse --headed` was never blocked by Google — the Playwright
   chromium binary had never been downloaded. Installed. Boots in ~25s vs a 15s window,
