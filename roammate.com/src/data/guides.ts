@@ -6,6 +6,7 @@ export type GuideEntry = {
   country: string;
   flag: string;
   region: string;
+  heroImage: string;
 };
 
 export type RouteEntry = {
@@ -87,6 +88,7 @@ async function loadGuides() {
       country: d.heroCountry,
       flag: d.heroFlag,
       region: d.heroRegion,
+      heroImage: d.heroImage,
     }))
     .sort((a, b) => {
       const c = a.country.localeCompare(b.country, undefined, collatorOpts);

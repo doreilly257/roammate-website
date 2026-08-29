@@ -11,10 +11,9 @@ export async function getStaticPaths() {
 }
 
 const { guide } = Astro.props;
-const { slug, name, country, flag, region } = guide;
+const { slug, name, country, flag, region, heroImage } = guide;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const heroImage = `/images/guides/${slug}-hero.webp`;
 const title = `Find Travel Companions in ${name} — roammate`;
 const description = `Looking for a travel companion in ${name}? Roammate matches you with like-minded travelers by style, budget, and itinerary. Free on iOS.`;
 ---
