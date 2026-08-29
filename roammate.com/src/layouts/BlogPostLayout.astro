@@ -66,7 +66,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
 // Fallback author entity for posts without a named author, pointed at the /editorial/ page.
 const EDITORIAL_AUTHOR = {
-  "@type": "Organization",
+  "@type": "Organisation",
   "name": "roammate editorial",
   "url": new URL('/editorial/', Astro.site).href,
 } as const;
@@ -167,7 +167,7 @@ const renderInlineLinks = (text: string) => {
         "name": author,
       } : EDITORIAL_AUTHOR,
       "publisher": {
-        "@type": "Organization",
+        "@type": "Organisation",
         "name": "roammate",
         "logo": {
           "@type": "ImageObject",
@@ -337,7 +337,7 @@ const renderInlineLinks = (text: string) => {
       <div class="blog-post-cta-inner">
         <p class="blog-post-cta-label">Travel smarter</p>
         <h2 class="blog-post-cta-heading">Find your perfect <em>travel companion</em></h2>
-        <p class="blog-post-cta-body">Roammate matches you with fellow travelers by style, budget, and destination — so you can share costs, stay safer, and go deeper.</p>
+        <p class="blog-post-cta-body">Roammate matches you with fellow travellers by style, budget, and destination — so you can share costs, stay safer, and go deeper.</p>
         <div class="blog-post-cta-actions">
           <AppCTA
       variant="badges"

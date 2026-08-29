@@ -55,7 +55,7 @@ const { slug, name, country, flag, region, heroImage } = guide;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const title = `Find Travel Companions in ${name} — roammate`;
-const description = `Looking for a travel companion in ${name}? Roammate matches you with like-minded travelers by style, budget, and itinerary. Free on iOS and Android.`;
+const description = `Looking for a travel companion in ${name}? Roammate matches you with like-minded travellers by style, budget, and itinerary. Free on iOS and Android.`;
 ---
 
 <BaseLayout {title} {description} ogImage={heroImage}>
@@ -116,7 +116,7 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
           <div class="comp-why-icon">💸</div>
           <h3>Split costs</h3>
           <p>{dailyBudget
-            ? `A solo traveler in ${name} spends about ${dailyBudget.value} a day. Accommodation, transport, guided tours and day trips all cost less split two ways.`
+            ? `A solo traveller in ${name} spends about ${dailyBudget.value} a day. Accommodation, transport, guided tours and day trips all cost less split two ways.`
             : `Accommodation, transport, guided tours and day trips all cost significantly less when shared in ${name}.`}</p>
         </div>
         <div class="comp-why-card reveal reveal-delay-2">
@@ -228,7 +228,7 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
           <span class="comp-step-num">02</span>
           <div>
             <h3>Browse compatible matches</h3>
-            <p>Roammate surfaces travelers heading to {name} with compatible styles and budgets — not just everyone nearby.</p>
+            <p>Roammate surfaces travellers heading to {name} with compatible styles and budgets — not just everyone nearby.</p>
           </div>
         </li>
         <li class="comp-how-step reveal reveal-delay-3">

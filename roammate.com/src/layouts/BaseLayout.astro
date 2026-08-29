@@ -14,7 +14,7 @@ interface Props {
   updatedAt?: string;
 }
 
-const { title, description = 'Connect with fellow travelers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.webp', ogType = 'website', publishedAt, updatedAt } = Astro.props;
+const { title, description = 'Connect with fellow travellers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.webp', ogType = 'website', publishedAt, updatedAt } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 const isHome = Astro.url.pathname === '/';
@@ -30,7 +30,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   <!-- CSP is served as a real response header from public/_headers (Cloudflare
        Pages), not from a meta tag: frame-ancestors has no effect in meta form. -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-color" content="#c4562a">
+  <meta name="theme-colour" content="#c4562a">
   <meta name="description" content={description}>
   <title>{title}</title>
   <link rel="canonical" href={canonicalURL}>
@@ -83,10 +83,10 @@ const buildDate = new Date().toISOString().split('T')[0];
           "@type": "WebSite",
           "name": "roammate",
           "url": "https://roammate.com/",
-          "description": "Travel companion app that matches solo travelers by travel style, budget, and destination."
+          "description": "Travel companion app that matches solo travellers by travel style, budget, and destination."
         },
         {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "roammate",
           "url": "https://roammate.com/",
           "logo": "https://roammate.com/images/rm-full.svg",
@@ -113,7 +113,7 @@ const buildDate = new Date().toISOString().split('T')[0];
             "https://roammate.com/images/app-screenshot-phone-iso.webp",
             "https://roammate.com/images/app-screenshots.webp"
           ],
-          "description": "Travel companion app that matches solo travelers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby.",
+          "description": "Travel companion app that matches solo travellers by travel style, budget, and destination — so you find someone genuinely compatible, not just someone nearby.",
           "dateModified": buildDate,
           "speakable": {
             "@type": "SpeakableSpecification",
@@ -130,9 +130,9 @@ const buildDate = new Date().toISOString().split('T')[0];
           "@type": "Service",
           "name": "roammate",
           "serviceType": "Travel Companion Matching",
-          "description": "roammate matches solo travelers by travel style, budget, and destination so they can find a compatible travel companion.",
+          "description": "roammate matches solo travellers by travel style, budget, and destination so they can find a compatible travel companion.",
           "provider": {
-            "@type": "Organization",
+            "@type": "Organisation",
             "name": "roammate",
             "url": "https://roammate.com/"
           },
@@ -158,8 +158,8 @@ const buildDate = new Date().toISOString().split('T')[0];
             {
               "@type": "HowToStep",
               "position": 2,
-              "name": "Browse compatible travelers",
-              "text": "View travelers with overlapping destinations, matching budgets, and compatible travel styles."
+              "name": "Browse compatible travellers",
+              "text": "View travellers with overlapping destinations, matching budgets, and compatible travel styles."
             },
             {
               "@type": "HowToStep",
@@ -262,7 +262,7 @@ const buildDate = new Date().toISOString().split('T')[0];
         else if (parts[0] === 'guides') { section = 'guide'; }
         else if (parts[0] === 'blog') { section = 'blog'; }
         else if (parts[0] === 'compare') { section = 'compare'; }
-        else if (['how-it-works', 'find-travel-companion', 'meet-travelers', 'about', 'safety'].indexOf(parts[0]) !== -1) { section = 'landing'; }
+        else if (['how-it-works', 'find-travel-companion', 'meet-travellers', 'about', 'safety'].indexOf(parts[0]) !== -1) { section = 'landing'; }
 
         // Extract region from guide meta tag if present
         var regionEl = document.querySelector('meta[name="ph-region"]');
