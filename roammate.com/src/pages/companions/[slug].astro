@@ -36,10 +36,16 @@ const currency = fact('Currency');
 const subtitle = detail?.heroSubtitle;
 const dayOne = detail?.itineraries?.['1']?.[0]?.periods ?? [];
 const highlights = dayOne.slice(0, 3).map((p) => ({ time: p.time, icon: p.icon, title: p.title }));
-const knowBefore: { icon: string; title: string; text?: string; items?: string[] }[] = [
+type KnowBeforeItem = { icon: string; title: string; text?: string; items?: string[] };
+// A cultural tip may be a bare string, which carries no icon or heading. This
+// card is a titled teaser of at most two, so take only the titled shape rather
+// than inventing an icon for a loose sentence.
+const knowBefore: KnowBeforeItem[] = [
   ...(detail?.culturalTips ?? []),
   ...(detail?.practicalInfo ?? []),
-].slice(0, 2);
+]
+  .flatMap((t) => (typeof t === 'string' ? [] : [t]))
+  .slice(0, 2);
 const { slug, name, country, flag, region, heroImage } = guide;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
