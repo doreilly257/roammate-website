@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { getAllGuides, getCityGuideSlugs } from '../../data/guides';
+import { getAllGuides } from '../../data/guides';
 
 export async function getStaticPaths() {
   const allGuides = await getAllGuides();
-  const cityGuideSlugs = await getCityGuideSlugs();
   // The full collection entry carries the per-city detail this page needs.
   // Without it every page was the same template with the city name swapped in.
   const collection = await getCollection('guides');
@@ -14,8 +13,11 @@ export async function getStaticPaths() {
       c.data.type === 'city'
   );
   const bySlug = new Map(cityEntries.map((c) => [c.data.slug, c.data]));
+  // Built for every destination with a guide, not just the curated city list.
+  // Search Console shows this is the highest-CTR page type on the site (9.4%,
+  // ~6x site average), and 222 destinations had no page at all -- which is also
+  // where the 222 /companions/ 404s came from.
   return allGuides
-    .filter((guide) => cityGuideSlugs.has(guide.slug))
     .map((guide) => ({
       params: { slug: guide.slug },
       props: { guide, detail: bySlug.get(guide.slug) },

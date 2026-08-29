@@ -1,27 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getAllGuides, getCityGuideSlugs } from '../../data/guides';
+import { getAllGuides } from '../../data/guides';
 
 const allGuides = await getAllGuides();
-const cityGuideSlugs = await getCityGuideSlugs();
 
-const cityGuides = allGuides
-  .filter((guide) => cityGuideSlugs.has(guide.slug))
-  .sort((a, b) => a.name.localeCompare(b.name));
+const cityGuides = allGuides.sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <BaseLayout
-  title="Find Travel Companions — Cities Worldwide | roammate"
-  description={`Find travel companions in ${cityGuides.length} cities worldwide. roammate matches you by travel style, budget, and destination — free on iOS.`}
+  title="Find Travel Companions — Destinations Worldwide | roammate"
+  description={`Find travel companions in ${cityGuides.length} destinations worldwide. roammate matches you by travel style, budget, and destination — free on iOS.`}
   ogImage="/images/hero-travelers-on-bus.webp"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Find Travel Companions — Cities Worldwide",
+      "name": "Find Travel Companions — Destinations Worldwide",
       "url": "https://roammate.com/companions/",
-      "description": `Find travel companions in ${cityGuides.length} cities worldwide.`,
+      "description": `Find travel companions in ${cityGuides.length} destinations worldwide.`,
       "numberOfItems": cityGuides.length,
       "breadcrumb": {
         "@type": "BreadcrumbList",
