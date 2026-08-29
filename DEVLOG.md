@@ -59,12 +59,31 @@ Google blocks the headless browser, and `browse --headed` fails to start. Needs 
 human to search it. If confirmed, 214k impressions of informational programmatic
 content is a declining asset and the strategy should follow the commercial pages.
 
-### Next steps
-1. Delete the Surge project after the rollback window (~2026-09-05, ao2).
-2. **Verify the zero-click SERPs by hand** — gates the whole content strategy.
-3. Recheck Search Console in ~2 weeks, especially whether the 210 new
-   `/companions/` pages pick up impressions at the section's 9.39% CTR.
-4. cd7 blocked: no per-city counts endpoint. Not shipping invented numbers.
+### STOP — decision in force
+**Do not ship further SEO changes until the next Search Console export.** 12 commits
+landed 2026-08-29 and every one is an unmeasured bet; Google has not recrawled any of
+it. Stacking more changes makes attribution impossible. This is the same argument as
+"do not re-optimise before data", and it applies more now, not less.
+
+### Pick up here (beads carry full context; `bd ready`)
+1. **8ho (P1, BLOCKED ON HUMAN)** — verify the zero-click SERP by hand. Claude cannot:
+   Google blocks the headless browser and `browse --headed` fails to start. Search
+   `macau itinerary 7 days` and see what sits above us at position 3.4. Gates strategy.
+2. **3on (deferred to 2026-09-12)** — re-export GSC and measure. Baseline table is in
+   the bead. Cleanest test: do the 210 new `/companions/` pages pick up impressions at
+   that section's 9.39% CTR?
+3. **8hq (P3, blocked by 8ho)** — why `/guides/` sits at median position 20.7 despite
+   being the strongest content on the site. Most interesting unexplored thread.
+4. **ao2 (deferred 2026-09-05)** — delete the Surge instance. It is the rollback until then.
+5. **cd7 (open, blocked in practice)** — needs a per-city counts API. Not shipping
+   invented numbers.
+
+### Data-quality caveat
+Some impressions are junk intent-mismatches, so site CTR reads worse than it is:
+"cost of living in X" drew 3,755 impr / 1 click, including "cost of living in machu
+picchu" and "...great barrier reef". Nobody lives in either. This does NOT explain
+`macau itinerary 7 days` at pos 3.4 with 12,325 impressions — that is real intent and
+still unexplained.
 
 ### Known, accepted
 - Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level; our CSP
