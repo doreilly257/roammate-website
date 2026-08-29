@@ -7,31 +7,18 @@
 None — deliberately. See "STOP" below. Everything is shipped, deployed and verified
 on production against a cleared Cloudflare cache. Working tree clean.
 
-### Shipped today — 12 commits, all deployed and verified
-Cloudflare Pages migration, CSP + security/caching headers, 404s for the old
-`/guides/cities|places/` nesting, 34 dead companion heroes and 39 wrong city photos
-fixed, 18 blog heroes cut by 1,063KB, git-derived sitemap lastmod, per-city
-companions/best-time enrichment, `validateBuiltLinks()` in the build, and per-city OG
-images on 1,326 pages. Commit-by-commit detail in the Session 5 archive entry.
-
-### Acted on the 3-month Search Console export (late session)
-Performance data arrived and **reversed the plan above**. By section:
-`/companions/` 6,015 impr → 565 clicks (**9.39% CTR**, ~6x site average); `/itinerary/`
-91k → 1,374 (1.51%); `/budget/` 90k → 720 (0.80%); `/best-time-to-visit/` 33k → **65**
-(0.20%); `/statistics/` 2.2k → 35. The split is **informational vs commercial**.
-- **d0d5986** — built `/companions/` for all 442 destinations (was 232, gated by
-  CITY_GUIDE_SLUGS_LIST). The best-converting template was simply missing for
-  Petra, Machu Picchu, Angkor Wat and 207 others, which is also where the 222
-  `/companions/` 404s came from. 3,279 → 3,489 pages. I had previously proposed
-  CONSOLIDATING this section — that would have destroyed the best page type.
-- **62c6174** — FAQ + FAQPage schema on roammate-vs-gaffl for the review-shaped
-  queries that already rank ~pos 6 and convert 3.5–6% ("is gaffl legit" 6.0%).
-  Scoped to GAFFL only: it is the sole competitor with demand (1,021 impr);
-  Backpackr gets 254 impr / 1 click and the other seven do not appear at all.
-  Also fixed BlogPostLayout swallowing a post's `<Fragment slot="head">`.
-- **84l (closed record)** — decided NOT to invest further in best-time/statistics.
-  They rank (~pos 10) and are not click-worthy: demand problem, not indexing. No code
-  change; pruning 554 pages on a hunch contradicts the evidence.
+### Session 5 shipped — 12 commits, all deployed and verified
+Cloudflare Pages migration, CSP + security/caching headers, old `/guides/cities|places/`
+301s, 34 dead companion heroes and 39 wrong city photos fixed, 18 blog heroes cut by
+1,063KB, git-derived sitemap lastmod, per-city enrichment, `validateBuiltLinks()`, and
+per-city OG images on 1,326 pages. Then the 3-month GSC export **reversed the plan**:
+`/companions/` 9.39% CTR (~6x site average) vs `/best-time-to-visit/` 0.20% — the split
+is **informational vs commercial**, not thin vs rich. Acted on it: **d0d5986** built
+`/companions/` for all 442 destinations (was 232 — the best-converting template was
+missing for 210 cities, and the source of 222 404s); **62c6174** added FAQPage schema to
+roammate-vs-gaffl, the only competitor with real demand. **84l** recorded the decision
+NOT to invest further in best-time/statistics — they rank ~pos 10 and are not
+click-worthy: a demand problem, not indexing. Commit detail in the Session 5 archive.
 
 ### RESOLVED: the zero-click anomaly (verified by hand, 8ho closed)
 Headed Chrome, UAE IP, signed out. Two results, one of which kills a hypothesis.
@@ -45,12 +32,29 @@ Headed Chrome, UAE IP, signed out. Two results, one of which kills a hypothesis.
   10.1% vs 0.3% split proved SERP composition. Both phrasings return near-identical
   SERPs with roammate at organic **#6**. Composition explains nothing there; almost
   certainly a volume artifact on a low-impression query.
-- **Caveats:** one geo, one run per query, extension-loaded profile. Worth re-checking
-  from another geo before betting on it. Full detail in bead 8ho.
+- **Caveats:** one geo, one run per query, extension profile. Re-check elsewhere (8ho).
 - **Tooling fixed:** `browse --headed` was never blocked by Google — the Playwright
-  chromium binary had never been downloaded. Installed. It boots in ~25s vs a 15s
-  startup window, so "Server failed to start" is a lie; wait and re-issue. Every
-  command must repeat `--headed` or it reports a config mismatch.
+  chromium binary had never been downloaded. Installed. Boots in ~25s vs a 15s window,
+  so "Server failed to start" is a false negative; wait and re-issue. Repeat `--headed`
+  on every command.
+
+### 8hq analysed (diagnosis only — nothing shipped)
+Offline against the built `dist/`. One hypothesis dead, one strong candidate found.
+- **Under-linking DISPROVED, and backwards.** Contextual inlinks per page (nav/footer
+  stripped): `/guides/` **16** — best on the site — vs `/companions/` 7, `/itinerary/`,
+  `/budget/`, `/best-time/`, `/blog/` all 5, `/statistics/` **0**. Strike it.
+- **Cannibalisation is the best candidate.** 442 of 458 destinations (97%) are targeted
+  by five templates at once — ~6.5 pages per city. Sharpest collision: **115 guides**
+  titled "<City> Travel Guide 2026 — 3-Day Itinerary" where a dedicated
+  `/itinerary/<city>-3-day/` page also exists, **100% of them**. Same city, same
+  duration, same intent, two URLs.
+- **88% of guides (402/457) have a bare place-name H1** ("Macau"), all descriptive terms
+  stranded in the `<title>`. Strongest content, weakest on-page signal.
+- **Incidental:** 422 of 442 `/statistics/` pages have zero contextual inlinks. 84l stands.
+- **Not proof** — structural candidates only. Confirming needs query-level GSC data (3on)
+  showing guide and itinerary pages on the SAME queries. And 8hq's own precondition
+  fired: AI blocks absorb informational queries and city guides are informational, so
+  de-cannibalising may reach page 1 and still earn no clicks.
 
 ### STOP — decision in force
 **Do not ship further SEO changes until the next Search Console export.** 12 commits
