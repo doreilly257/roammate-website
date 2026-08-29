@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/build-lastmod.mjs && astro build && node scripts/normalize-sitemap.mjs",
+    "build": "node scripts/build-lastmod.mjs && astro build && node scripts/normalize-sitemap.mjs && tsx scripts/validate.ts --dist",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "tsx scripts/validate.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "validate:dist": "tsx scripts/validate.ts --dist"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.17",

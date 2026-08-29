@@ -1,5 +1,5 @@
-import { readdirSync, readFileSync, existsSync } from "fs";
-import { resolve, dirname } from "path";
+import { readdirSync, readFileSync, existsSync, statSync } from "fs";
+import { resolve, dirname, sep } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -115,6 +115,75 @@ export function validate(opts: ValidateOptions): string[] {
   return errors;
 }
 
+/**
+ * Checks the BUILT output for internal links that 404.
+ *
+ * The checks above all read source data, which is why they never caught
+ * companions/[slug].astro rebuilding its hero path as `/images/guides/
+ * ${slug}-hero.webp`: every heroImage value in the collection was valid, but
+ * the path the template actually emitted was not, and 34 pages shipped a dead
+ * hero background, a dead preload and a broken og:image. A source-level check
+ * cannot see a path that only exists after rendering. This one can.
+ *
+ * Every internal reference must resolve to a real file with no redirect hop --
+ * a link to `/privacy` when the route is `/privacy/` costs a 308 on a path
+ * real users follow.
+ */
+export function validateBuiltLinks(distDir: string): string[] {
+  const errors: string[] = [];
+  if (!existsSync(distDir)) return [`dist directory not found: ${distDir}`];
+
+  const files: string[] = [];
+  const walk = (dir: string) => {
+    for (const entry of readdirSync(dir)) {
+      const full = resolve(dir, entry);
+      if (statSync(full).isDirectory()) walk(full);
+      else files.push(full);
+    }
+  };
+  walk(distDir);
+
+  // Every path the site can actually serve.
+  const routes = new Set<string>();
+  for (const f of files) {
+    const rel = "/" + f.slice(distDir.length + 1).split(sep).join("/");
+    routes.add(rel);
+    if (rel.endsWith("/index.html")) routes.add(rel.slice(0, -"index.html".length));
+  }
+
+  const IGNORED = /^(https?:|\/\/|#|mailto:|tel:|javascript:|data:)/;
+  const seen = new Map<string, string>();
+
+  for (const f of files.filter((f) => f.endsWith(".html"))) {
+    const page = "/" + f.slice(distDir.length + 1).split(sep).join("/");
+    const html = readFileSync(f, "utf-8");
+
+    const refs: string[] = [];
+    for (const m of html.matchAll(/(?:href|src)="([^"]+)"/g)) refs.push(m[1]);
+    // srcset carries width descriptors: "/a.webp 1x, /b.webp 2x"
+    for (const m of html.matchAll(/srcset="([^"]+)"/g)) {
+      for (const part of m[1].split(",")) refs.push(part.trim().split(/\s+/)[0]);
+    }
+    // Inline background-image: url('/x.webp') -- how the broken companions hero
+    // actually reached the page, and invisible to any attribute-only scan.
+    for (const m of html.matchAll(/url\((?:'|"|&#39;)?(\/[^'")]+)/g)) refs.push(m[1]);
+
+    for (const raw of refs) {
+      if (!raw || IGNORED.test(raw)) continue;
+      const target = raw.split("#")[0].split("?")[0];
+      if (!target.startsWith("/")) continue;
+      if (routes.has(target)) continue;
+      if (!seen.has(target)) seen.set(target, page);
+    }
+  }
+
+  for (const [target, page] of seen) {
+    const hint = routes.has(target + "/") ? " (add the trailing slash)" : "";
+    errors.push(`broken internal link: ${target}${hint} -- first seen on ${page}`);
+  }
+  return errors;
+}
+
 function loadBlogPostsFromJson(): any[] {
   const contentDir = resolve(ROOT, "src/content/blog");
   const files = readdirSync(contentDir).filter((f) => f.endsWith(".json"));
@@ -144,6 +213,20 @@ function loadGuidesFromJson(): { guides: any[]; guideSlugs: Set<string>; routeSl
 }
 
 async function main() {
+  // --dist runs after `astro build`; the source checks run before it.
+  if (process.argv.includes("--dist")) {
+    const distDir = resolve(ROOT, "dist");
+    const errors = validateBuiltLinks(distDir);
+    if (errors.length > 0) {
+      console.error(`\nBuilt-output validation failed with ${errors.length} broken link(s):\n`);
+      for (const err of errors) console.error(`  - ${err}`);
+      console.error("");
+      process.exit(1);
+    }
+    console.log("Built output passed: no broken internal links.");
+    process.exit(0);
+  }
+
   const blogPosts = loadBlogPostsFromJson();
   const { guides, guideSlugs, routeSlugs } = loadGuidesFromJson();
   const errors = validate({ blogPosts, guideSlugs, routeSlugs, guides });
