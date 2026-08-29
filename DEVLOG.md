@@ -7,62 +7,27 @@
 None. All shipped, deployed, verified on production against a cleared
 Cloudflare cache. 9 commits, working tree clean.
 
-### Shipped today
-- **Surge.sh → Cloudflare Pages** (af44145). Project `roammate`, apex cut over.
-  `deploy.sh` uses `wrangler pages deploy` (+`--preview`, + a hard fail when
-  `.env` lacks a real PUBLIC_POSTHOG_KEY). Node-22 pin gone. Surge is the
-  rollback until ~2026-09-05 (ao2).
-- **Headers + CSP** (af44145, 180a14c). `public/_headers`: security headers Surge
-  could never send, immutable caching for `/_astro/*` `/images/*` `/fonts/*`
-  (Pages defaults to max-age=0). CSP moved from `<meta>` to a real header,
-  gaining frame-ancestors/base-uri/form-action/object-src. Closes vjs, and epic
-  21r (11/11).
-- **Search Console triage** (d004a83, ec59508, 3d09f60). Sitemap was clean — all
-  3,278 URLs resolve. Old `/guides/cities/` + `/guides/places/` nesting and 7
-  stale region hubs now 301. Real bug found: companions/[slug] rebuilt its hero
-  path from the slug instead of reading heroImage → 34 pages with a dead hero,
-  dead preload and broken og:image. Plus 39 city guides showing another place's
-  photo (7 cross-border), re-sourced and visually verified.
-- **Sitemap lastmod** (13da821). 1,801 URLs claimed 2023, before the site
-  existed (hash scheme: EPOCH(2024-01-01) − hash%365 days). Now per-guide from
-  git. Live: zero pre-2026 dates.
-- **Thin content** (c6e83e9). companions 96.1%→73.7% similar (371→544 words),
-  best-time 79.5%→61.2% (317→411), using per-city data the templates already
-  had. Nothing invented. Retired a hardcoded "tuk-tuks" on ~200 cities.
-- **validate.ts blind spot** (6c5336f). All 7 checks read source data, which is
-  why it passed while 34 pages shipped a dead hero. `validateBuiltLinks()` now
-  crawls dist — including `url(...)` in inline style attrs, how that hero
-  actually reached the page. Wired into `npm run build`. 31 tests (was 23).
-- **Image budget** (a02823c). 18 blog heroes were 200–297KB; saved 1,063KB.
-  Nothing in public/images now exceeds 200KB.
-
-### Key files (current shape)
-**`public/_headers`** (NEW) — CSP + security headers, immutable asset caching,
-`noindex` scoped to `*.pages.dev`. Host-scoped rules match only their own host
-(verified), so the noindex cannot reach production.
-
-**`public/_redirects`** (NEW, 10 rules) — old URL structures. See Watch out.
-
-**`scripts/validate.ts`** (MODIFIED) — 7 source checks + `validateBuiltLinks(dist)`.
-Runs post-build via `npm run build`, or `npm run validate:dist`.
-
-**`scripts/build-lastmod.mjs`** (NEW) — one `git log` pass →
-`src/data/guide-lastmod.json` (gitignored), read by astro.config sitemap serialize.
-
-**`src/pages/companions/[slug].astro`** (MODIFIED) — reads the full collection
-entry, not just GuideEntry; renders that city's real day-one itinerary and facts.
-
-### Watch out
-- **Pages evaluates `_redirects` BEFORE static assets.** A `/section/*` wildcard
-  301s the real pages in that section too (cost ~2 min of broken companions).
-- **Free plan silently ignores `_redirects` past ~100 rules.** No error.
-- **git prints paths relative to the REPO ROOT** (`roammate.com/src/...`); a
-  `src/...` prefix match silently matches nothing and hits the fallback.
-- **Cloudflare caches 404s** — probing a path before it exists poisons it. Assets
-  are immutable for a year, so in-place replacement needs a dashboard purge (the
-  wrangler token cannot).
-- **Don't crush image quality to hit a byte budget** — shrink the raster: 1400px
-  @ q74 beats 1600px @ q46 on both looks and size.
+### Shipped today (migration + fixes)
+- **Surge → Cloudflare Pages** (af44145). Apex cut over; `deploy.sh` uses
+  `wrangler pages deploy` (+`--preview`, + PUBLIC_POSTHOG_KEY guard). Surge is
+  the rollback until ~2026-09-05 (ao2).
+- **Headers + CSP** (af44145, 180a14c). `public/_headers`: security headers,
+  immutable asset caching, `noindex` scoped to `*.pages.dev`. CSP moved from
+  `<meta>` to a real header. Closes vjs and epic 21r (11/11).
+- **404 triage** (d004a83). Sitemap was clean — all URLs resolve. Old
+  `/guides/cities/` + `/guides/places/` nesting and 7 stale region hubs now 301.
+- **Images** (ec59508, 3d09f60, a02823c). companions/[slug] rebuilt its hero path
+  from the slug instead of reading heroImage → 34 pages with a dead hero, dead
+  preload and broken og:image. 39 city guides showed another place's photo (7
+  cross-border), re-sourced and visually verified. 18 blog heroes brought under
+  200KB (saved 1,063KB).
+- **Sitemap lastmod** (13da821). 1,801 URLs claimed 2023, before the site existed.
+  Now per-guide from git. Live: zero pre-2026 dates.
+- **Thin content** (c6e83e9). companions 96.1%→73.7% similar, best-time
+  79.5%→61.2%, from per-city data the templates already had. Nothing invented.
+- **validate.ts blind spot** (6c5336f). All 7 checks read source data, which is why
+  it passed while 34 pages shipped a dead hero. `validateBuiltLinks()` now crawls
+  dist (incl. `url(...)` in inline styles). Wired into `npm run build`. 31 tests.
 
 ### Acted on the 3-month Search Console export (late session)
 Performance data arrived and **reversed the plan above**. By section:
