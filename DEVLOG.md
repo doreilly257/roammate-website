@@ -64,12 +64,42 @@ entry, not just GuideEntry; renders that city's real day-one itinerary and facts
 - **Don't crush image quality to hit a byte budget** — shrink the raster: 1400px
   @ q74 beats 1600px @ q46 on both looks and size.
 
+### Acted on the 3-month Search Console export (late session)
+Performance data arrived and **reversed the plan above**. By section:
+`/companions/` 6,015 impr → 565 clicks (**9.39% CTR**, best on site, ~6x average);
+`/itinerary/` 91k → 1,374 (1.51%); `/budget/` 90k → 720 (0.80%);
+`/best-time-to-visit/` 33k → **65** (0.20%); `/statistics/` 2.2k → 35.
+The split is not thin-vs-rich, it is **informational vs commercial**.
+- **d0d5986** — built `/companions/` for all 442 destinations (was 232, gated by
+  CITY_GUIDE_SLUGS_LIST). The best-converting template was simply missing for
+  Petra, Machu Picchu, Angkor Wat and 207 others, which is also where the 222
+  `/companions/` 404s came from. 3,279 → 3,489 pages. I had previously proposed
+  CONSOLIDATING this section — that would have destroyed the best page type.
+- **62c6174** — FAQ + FAQPage schema on roammate-vs-gaffl for the review-shaped
+  queries that already rank ~pos 6 and convert 3.5–6% ("is gaffl legit" 6.0%).
+  Scoped to GAFFL only: it is the sole competitor with demand (1,021 impr);
+  Backpackr gets 254 impr / 1 click and the other seven do not appear at all.
+  Also fixed BlogPostLayout swallowing a post's `<Fragment slot="head">`.
+- **84l (closed record)** — decided NOT to invest further in best-time/statistics.
+  They rank (~pos 10) and are not click-worthy: a demand problem, not indexing.
+  No code change; pruning 554 pages on a hunch contradicts the evidence.
+
+### Unresolved: the zero-click anomaly
+`"macau itinerary 7 days"` ranks **pos 3.4 with 12,325 impressions and 0 clicks**;
+`"tallinn itinerary 7 days"` pos 2.7, 4,224 impr, 0 clicks. Not a snippet problem —
+titles and descriptions are well-formed. The tell: the SAME Istanbul page gets
+10.1% for "istanbul 7 day itinerary" and 0.3% for "istanbul itinerary 7 days".
+Hypothesis is AI Overviews absorbing the informational queries. **Unverified** —
+Google blocks the headless browser, and `browse --headed` fails to start. Needs a
+human to search it. If confirmed, 214k impressions of informational programmatic
+content is a declining asset and the strategy should follow the commercial pages.
+
 ### Next steps
 1. Delete the Surge project after the rollback window (~2026-09-05, ao2).
-2. Recheck Search Console in ~2 weeks. If companions/best-time are still
-   unindexed, consolidate into the city guides rather than padding — that also
-   makes a `/companions/*` wildcard correct, fixing the 222 remaining 404s.
-3. cd7 blocked: no per-city counts endpoint. Not shipping invented numbers.
+2. **Verify the zero-click SERPs by hand** — gates the whole content strategy.
+3. Recheck Search Console in ~2 weeks, especially whether the 210 new
+   `/companions/` pages pick up impressions at the section's 9.39% CTR.
+4. cd7 blocked: no per-city counts endpoint. Not shipping invented numbers.
 
 ### Known, accepted
 - Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level; our CSP
