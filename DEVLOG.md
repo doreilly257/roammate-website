@@ -42,10 +42,9 @@ Headed Chrome, UAE IP, signed out. Two results, one of which kills a hypothesis.
   The ranking and the intent are both real; the answer is consumed above us and credits
   the competitor sitting at organic #1.
 - **The Istanbul phrasing hypothesis is WRONG — do not build on it.** I claimed the
-  10.1% vs 0.3% split on two near-identical queries proved SERP composition. Checked
-  both: near-identical SERPs, same competitors, roammate at organic **#6 in both**.
-  Composition explains nothing there. Almost certainly a volume artifact — 10.1% is
-  likely a handful of clicks on a low-impression query.
+  10.1% vs 0.3% split proved SERP composition. Both phrasings return near-identical
+  SERPs with roammate at organic **#6**. Composition explains nothing there; almost
+  certainly a volume artifact on a low-impression query.
 - **Caveats:** one geo, one run per query, extension-loaded profile. Worth re-checking
   from another geo before betting on it. Full detail in bead 8ho.
 - **Tooling fixed:** `browse --headed` was never blocked by Google — the Playwright
