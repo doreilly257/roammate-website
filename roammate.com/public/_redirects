@@ -1,0 +1,24 @@
+# Cloudflare Pages redirects. Recovering URLs that Google still has indexed
+# from earlier site structures. Verified against the Search Console 404 export.
+
+# The guides section was once nested under /cities/ and /places/.
+/guides/cities/*  /guides/:splat  301
+/guides/places/*  /guides/:splat  301
+
+# A truncated link in the wild, reported by Search Console.
+/guides/giraffe-  /guides/giraffe-centre/  301
+
+# Region hubs only build for regions that city guides use. These four names
+# come from backpacker routes, so their hubs no longer exist -- send each to
+# the closest hub that does.
+/guides/region/middle-east-and-turkey/  /guides/region/middle-east/  301
+/guides/region/the-indian-subcontinent/  /guides/region/south-asia/  301
+/guides/region/morocco-and-west-africa/  /guides/region/north-africa/  301
+/guides/region/indonesia-and-philippines/  /guides/region/southeast-asia/  301
+/guides/region/japan-and-south-korea/  /guides/region/east-asia/  301
+/guides/region/australia-and-new-zealand/  /guides/region/oceania/  301
+/guides/region/southern-europe/  /guides/region/europe/  301
+
+# /companions/ only builds for curated city guides. These 222 place guides were
+# linked here before that was gated, and Search Console still reports them as
+# 404s. Each one has a real guide page covering the same place.
