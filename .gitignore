@@ -22,3 +22,6 @@ node_modules/
 # Beads runtime (per-machine, sensitive)
 .beads-credential-key
 .beads/proxieddb/
+
+# wrangler local state
+.wrangler/

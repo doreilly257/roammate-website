@@ -4,13 +4,30 @@
 
 - `roammate.com/` — Astro site for roammate.com
 - `www.old/` — Legacy static HTML site (archived, not deployed)
-- `deploy.sh` — Builds and deploys to Surge.sh at roammate.com
+- `deploy.sh` — Builds and deploys to Cloudflare Pages at roammate.com
 
 ## Deployment
 
-- Hosted on **Surge.sh** behind **Cloudflare** (proxy ON, SSL Full)
-- CNAME: `roammate.com` → `geo.surge.world`
-- Deploy command: `bash deploy.sh`
+- Hosted on **Cloudflare Pages**, project `roammate` (`roammate-cs7.pages.dev`)
+- CNAME: `roammate.com` → `roammate-cs7.pages.dev` (proxied)
+- `www` → apex 301 is a zone-level Redirect Rule, independent of the host
+- Deploy command: `bash deploy.sh` (production) or `bash deploy.sh --preview`
+  - Requires `npx wrangler login` once, or `CLOUDFLARE_API_TOKEN`
+  - Aborts if `roammate.com/.env` lacks a real `PUBLIC_POSTHOG_KEY` — a build
+    without it silently ships with analytics disabled
+  - Uploads are incremental; only changed files go over the wire
+
+### Response headers
+
+`roammate.com/public/_headers` is Pages-only config (never served as a file):
+security headers site-wide, `immutable` year-long caching for `/_astro/*`,
+`/images/*`, `/fonts/*`, and `X-Robots-Tag: noindex` scoped to `*.pages.dev`
+so preview deployments stay out of the index. Host-scoped rules only match
+that host — verified, the `noindex` does not reach `roammate.com`.
+
+Pages serves `/404.html` automatically with a 404 status, 308-redirects
+`/path` → `/path/` (matching `trailingSlash: 'always'`), and skips dotfiles
+on upload except `.well-known/`.
 
 ## SEO Files
 
