@@ -41,6 +41,29 @@ correctly did not follow), 11 routes 200, unknown path 404, `/about` 308s,
 `www` 301 to apex still intact, `_headers` 404, `/_astro/*` immutable and HTML
 `must-revalidate`, sitemap 3,278 locs, canonical correct, PostHog key live.
 
+### Post-migration work (same session)
+- **CSP moved from meta tag to a real response header** (commit 180a14c). frame-ancestors
+  is ignored in meta form, so the clickjacking control was never actually active; the
+  header form also picked up base-uri, form-action and object-src (verified first that
+  src/ has no <base>, no <form action>, no iframes). Existing directives carried over
+  byte-for-byte. Headless check found ONE CSP violation and it is Cloudflare's own
+  injected bot script (/cdn-cgi/challenge-platform/.../jsd) — pre-existing, since the old
+  meta policy had an identical script-src, and unfixable by hash since the payload embeds
+  a per-request ray id. Our own 6 scripts all load; nav, sticky bar and the CF beacon work.
+  To silence it, turn off Bot Fight Mode in the dashboard.
+- **Per-city OG images** (commit c3ee941, closes xnn). The bead assumed this meant sourcing
+  442 city photos. It did not: all three programmatic sets are generated from the guides
+  collection, which already carries heroImage, and the curated layouts already passed it
+  through. Prop wiring only — 1,326 pages, zero new assets, verified live.
+- **cd7 (social proof) left open deliberately.** Genuinely blocked: the only
+  api.roammate.com endpoint is POST /v1/waitlist, so per-city traveler counts do not
+  exist. Declined to ship placeholder numbers — fabricated social proof across 3,279
+  indexed pages is a trust risk, not a shortcut. Notes on the bead list honest
+  no-API alternatives.
+- **21r.5 (leaked tokens) closed at user's direction** — treated as private/single-user
+  repo. Recorded on the bead that api.github.com reported visibility=public at closing
+  time and the tokens remain in 5 places in history, so it can be reopened cheaply.
+
 ### Next Steps
 1. Delete the Surge project once the rollback window closes (~2026-09-05).
 
