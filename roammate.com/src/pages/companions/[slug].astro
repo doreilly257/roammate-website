@@ -1,16 +1,43 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { getAllGuides, getCityGuideSlugs } from '../../data/guides';
 
 export async function getStaticPaths() {
   const allGuides = await getAllGuides();
   const cityGuideSlugs = await getCityGuideSlugs();
+  // The full collection entry carries the per-city detail this page needs.
+  // Without it every page was the same template with the city name swapped in.
+  const collection = await getCollection('guides');
+  const cityEntries = collection.filter(
+    (c): c is CollectionEntry<'guides'> & { data: Extract<CollectionEntry<'guides'>['data'], { type: 'city' }> } =>
+      c.data.type === 'city'
+  );
+  const bySlug = new Map(cityEntries.map((c) => [c.data.slug, c.data]));
   return allGuides
     .filter((guide) => cityGuideSlugs.has(guide.slug))
-    .map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));
+    .map((guide) => ({
+      params: { slug: guide.slug },
+      props: { guide, detail: bySlug.get(guide.slug) },
+    }));
 }
 
-const { guide } = Astro.props;
+const { guide, detail } = Astro.props;
+
+// Everything below is real per-city data from the guides collection. Nothing
+// here is generated or estimated -- if a field is missing the block is skipped.
+const fact = (label: string) => detail?.quickFacts?.find((f) => f.label === label);
+const dailyBudget = fact('Daily Budget');
+const bestMonths = fact('Best Months');
+const language = fact('Language');
+const currency = fact('Currency');
+const subtitle = detail?.heroSubtitle;
+const dayOne = detail?.itineraries?.['1']?.[0]?.periods ?? [];
+const highlights = dayOne.slice(0, 3).map((p) => ({ time: p.time, icon: p.icon, title: p.title }));
+const knowBefore: { icon: string; title: string; text?: string; items?: string[] }[] = [
+  ...(detail?.culturalTips ?? []),
+  ...(detail?.practicalInfo ?? []),
+].slice(0, 2);
 const { slug, name, country, flag, region, heroImage } = guide;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -50,7 +77,7 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
       </nav>
       <div class="comp-hero-flag">{flag}</div>
       <h1>Find a Travel Companion<br>in <em>{name}</em></h1>
-      <p class="comp-hero-sub">Matched by travel style, budget, and itinerary — not just location. Free on iOS.</p>
+      <p class="comp-hero-sub">{subtitle ?? 'Matched by travel style, budget, and itinerary — not just location.'}</p>
       <div class="comp-hero-actions">
         <a
           href="https://apps.apple.com/app/id6758834253?pt=118224460&ct=companion-page-hero&mt=8"
@@ -73,7 +100,9 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
         <div class="comp-why-card reveal reveal-delay-1">
           <div class="comp-why-icon">💸</div>
           <h3>Split costs</h3>
-          <p>Accommodation, tuk-tuks, guided tours, and day trips all cost significantly less when shared. Two travelers in {name} can cut daily spend by 30–50%.</p>
+          <p>{dailyBudget
+            ? `A solo traveler in ${name} spends about ${dailyBudget.value} a day. Accommodation, transport, guided tours and day trips all cost less split two ways.`
+            : `Accommodation, transport, guided tours and day trips all cost significantly less when shared in ${name}.`}</p>
         </div>
         <div class="comp-why-card reveal reveal-delay-2">
           <div class="comp-why-icon">🛡️</div>
@@ -91,6 +120,46 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
           <p>Roammate filters by travel pace, budget range, and interests — so you connect with someone genuinely compatible, not just whoever's in the same hostel dorm.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="comp-local">
+    <div class="comp-local-inner">
+      <div class="section-label">On the ground</div>
+      <h2 class="section-heading">What a day in <em>{name}</em> looks like</h2>
+
+      {highlights.length > 0 && (
+        <ol class="comp-local-day">
+          {highlights.map((h) => (
+            <li class="comp-local-slot">
+              <span class="comp-local-icon">{h.icon}</span>
+              <span class="comp-local-time">{h.time}</span>
+              <span class="comp-local-title">{h.title}</span>
+            </li>
+          ))}
+        </ol>
+      )}
+
+      <div class="comp-local-facts">
+        {bestMonths && <div class="comp-local-fact"><dt>Best months</dt><dd>{bestMonths.value}<span>{bestMonths.detail}</span></dd></div>}
+        {dailyBudget && <div class="comp-local-fact"><dt>Daily budget</dt><dd>{dailyBudget.value}<span>{dailyBudget.detail}</span></dd></div>}
+        {language && <div class="comp-local-fact"><dt>Language</dt><dd>{language.value}<span>{language.detail}</span></dd></div>}
+        {currency && <div class="comp-local-fact"><dt>Currency</dt><dd>{currency.value}<span>{currency.detail}</span></dd></div>}
+      </div>
+
+      {knowBefore.length > 0 && (
+        <div class="comp-local-know">
+          <h3>Worth agreeing on before you meet</h3>
+          {knowBefore.map((k) => (
+            <div class="comp-local-know-item">
+              <h4><span aria-hidden="true">{k.icon}</span> {k.title}</h4>
+              <p>{k.text ?? k.items?.[0]}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <p class="comp-local-more">Full detail — itineraries, budgets, neighbourhoods and safety — is in the <a href={`/guides/${slug}/`}>{name} travel guide</a>.</p>
     </div>
   </section>
 
@@ -502,5 +571,28 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
 
   @media (max-width: 640px) {
     .comp-blog-links { padding: 0 20px 32px; }
+  }
+
+  .comp-local { padding: 96px 24px; background: var(--color-bg); }
+  .comp-local-inner { max-width: 900px; margin: 0 auto; }
+  .comp-local-day { list-style: none; padding: 0; margin: 32px 0; display: grid; gap: 12px; }
+  .comp-local-slot { display: grid; grid-template-columns: 32px 92px 1fr; align-items: baseline; gap: 12px; padding: 14px 16px; border: 1px solid var(--color-border); border-radius: 12px; }
+  .comp-local-icon { font-size: 20px; }
+  .comp-local-time { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-muted); }
+  .comp-local-title { font-weight: 600; }
+  .comp-local-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 32px 0; }
+  .comp-local-fact dt { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-muted); margin-bottom: 4px; }
+  .comp-local-fact dd { margin: 0; font-weight: 600; }
+  .comp-local-fact dd span { display: block; font-weight: 400; font-size: 14px; color: var(--color-ink-muted); margin-top: 2px; }
+  .comp-local-know { margin: 32px 0; display: grid; gap: 20px; }
+  .comp-local-know h3 { margin-bottom: 4px; }
+  .comp-local-know-item h4 { margin: 0 0 6px; font-size: 16px; }
+  .comp-local-know-item p { margin: 0; color: var(--color-ink-muted); }
+  .comp-local-more { margin-top: 24px; }
+  @media (max-width: 640px) {
+    .comp-local { padding: 64px 20px; }
+    .comp-local-slot { grid-template-columns: 28px 1fr; }
+    .comp-local-time { grid-column: 2; }
+    .comp-local-title { grid-column: 2; }
   }
 </style>

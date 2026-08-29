@@ -26,13 +26,15 @@ export async function getStaticPaths() {
           bestMonthsDetail: bestMonths?.detail ?? '',
           dailyBudget: dailyBudget?.value ?? '',
           quickFacts: d.quickFacts,
+          heroSubtitle: d.heroSubtitle,
+          practicalInfo: d.practicalInfo,
           siblings: getCitySiblingPages(d.slug, d, cityGuideSlugs),
         },
       };
     });
 }
 
-const { city, country, slug, heroImage, bestMonths, bestMonthsDetail, quickFacts, siblings } = Astro.props;
+const { city, country, slug, heroImage, bestMonths, bestMonthsDetail, quickFacts, heroSubtitle, practicalInfo, siblings } = Astro.props;
 const bestMonthsDetailClean = bestMonthsDetail.replace(/\.+$/, '');
 const pageTitle = `Best Time to Visit ${city}, ${country} | roammate`;
 const pageDesc = `The best time to visit ${city} is ${bestMonths}. ${bestMonthsDetailClean}. Plan your trip with weather info, seasonal tips, and travel advice.`;
@@ -48,8 +50,14 @@ const breadcrumbSchema = {
 };
 
 const timezone = quickFacts.find((f) => f.label === 'Timezone');
-const seasonLabels = ['Best Months', 'Timezone'];
-const seasonFacts = quickFacts.filter((f) => seasonLabels.includes(f.label));
+// Previously this page showed only Best Months + Timezone, which left every
+// city with near-identical copy. All six quick facts are per-city and all of
+// them matter when you are picking dates, so show them.
+const seasonFacts = quickFacts;
+// A real per-city note, preferred in the order that most affects WHEN you go.
+const planningNote = ['Getting Around', 'Weather', 'What to Pack', 'Visa & Entry', 'Health & Safety']
+  .map((t) => practicalInfo?.find((p) => p.title === t))
+  .find(Boolean) ?? practicalInfo?.[0];
 ---
 
 <BaseLayout title={pageTitle} description={pageDesc} ogImage={heroImage}>
@@ -89,7 +97,17 @@ const seasonFacts = quickFacts.filter((f) => seasonLabels.includes(f.label));
       </div>
 
       <h2>When to go</h2>
-      <p>Because {bestMonths} is the most popular window to visit {city}, accommodation and flights fill up fastest then — book a few weeks ahead to lock in better rates and availability. If you prefer fewer crowds, the shoulder weeks on either side of this window are often quieter while staying pleasant. Check the full <a href={`/guides/${slug}/`}>{city} guide</a> for packing tips and month-by-month detail before you travel.</p>
+      {heroSubtitle && <p>{heroSubtitle}</p>}
+      <p>{bestMonths} is the busiest window in {city}, so accommodation and flights go first — book ahead. The shoulder weeks either side are usually quieter for the same reason.</p>
+      {planningNote && (
+        <div class="pv-note">
+          <h3><span aria-hidden="true">{planningNote.icon}</span> {planningNote.title} in {city}</h3>
+          <ul>
+            {planningNote.items.slice(0, 4).map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      )}
+      <p>For month-by-month detail, itineraries and costs, see the full <a href={`/guides/${slug}/`}>{city} travel guide</a>.</p>
       {timezone && <p><strong>Timezone:</strong> {timezone.value} ({timezone.detail})</p>}
 
       <h2>Frequently asked questions</h2>
@@ -293,4 +311,9 @@ const seasonFacts = quickFacts.filter((f) => seasonLabels.includes(f.label));
     .pv-facts-grid { grid-template-columns: repeat(2, 1fr); }
     .city-more { padding: 36px 20px; }
   }
+
+  .pv-note { margin: 28px 0; padding: 20px 22px; border: 1px solid var(--color-border); border-radius: 12px; }
+  .pv-note h3 { margin: 0 0 10px; font-size: 17px; }
+  .pv-note ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+  .pv-note li { color: var(--color-ink-muted); }
 </style>
