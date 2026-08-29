@@ -60,7 +60,7 @@ const webPageSchema = {
 };
 ---
 
-<BaseLayout title={pageTitle} description={pageDesc}>
+<BaseLayout title={pageTitle} description={pageDesc} ogImage={guideData.heroImage}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />

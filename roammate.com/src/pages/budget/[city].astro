@@ -21,6 +21,7 @@ export async function getStaticPaths() {
           city: d.heroCity,
           country: d.heroCountry,
           slug: d.slug,
+          heroImage: d.heroImage,
           dailyBudget: dailyBudget?.value ?? '',
           dailyBudgetDetail: dailyBudget?.detail ?? '',
           currency: currency?.value ?? '',
@@ -34,7 +35,7 @@ export async function getStaticPaths() {
     });
 }
 
-const { city, country, slug, dailyBudget, dailyBudgetDetail, currency, currencyDetail, budgetBreakdown, budgetTips, budgetIntro, siblings } = Astro.props;
+const { city, country, slug, heroImage, dailyBudget, dailyBudgetDetail, currency, currencyDetail, budgetBreakdown, budgetTips, budgetIntro, siblings } = Astro.props;
 const pageTitle = `${city} Budget Breakdown — Daily Costs & Tips | roammate`;
 const pageDesc = `How much does it cost to visit ${city}? Daily budget ${dailyBudget} (${dailyBudgetDetail}). Full breakdown of accommodation, food, transport, and activities.`;
 const hasMidrange = budgetBreakdown.some((r: any) => r.midrange || r.mid);
@@ -50,7 +51,7 @@ const breadcrumbSchema = {
 };
 ---
 
-<BaseLayout title={pageTitle} description={pageDesc}>
+<BaseLayout title={pageTitle} description={pageDesc} ogImage={heroImage}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>

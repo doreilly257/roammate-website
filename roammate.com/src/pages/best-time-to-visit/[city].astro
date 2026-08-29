@@ -21,6 +21,7 @@ export async function getStaticPaths() {
           city: d.heroCity,
           country: d.heroCountry,
           slug: d.slug,
+          heroImage: d.heroImage,
           bestMonths: bestMonths?.value ?? '',
           bestMonthsDetail: bestMonths?.detail ?? '',
           dailyBudget: dailyBudget?.value ?? '',
@@ -31,7 +32,7 @@ export async function getStaticPaths() {
     });
 }
 
-const { city, country, slug, bestMonths, bestMonthsDetail, quickFacts, siblings } = Astro.props;
+const { city, country, slug, heroImage, bestMonths, bestMonthsDetail, quickFacts, siblings } = Astro.props;
 const bestMonthsDetailClean = bestMonthsDetail.replace(/\.+$/, '');
 const pageTitle = `Best Time to Visit ${city}, ${country} | roammate`;
 const pageDesc = `The best time to visit ${city} is ${bestMonths}. ${bestMonthsDetailClean}. Plan your trip with weather info, seasonal tips, and travel advice.`;
@@ -51,7 +52,7 @@ const seasonLabels = ['Best Months', 'Timezone'];
 const seasonFacts = quickFacts.filter((f) => seasonLabels.includes(f.label));
 ---
 
-<BaseLayout title={pageTitle} description={pageDesc}>
+<BaseLayout title={pageTitle} description={pageDesc} ogImage={heroImage}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>
