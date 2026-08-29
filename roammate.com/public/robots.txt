@@ -66,3 +66,8 @@ User-agent: CloudflareBot
 Allow: /
 
 Sitemap: https://roammate.com/sitemap.xml
+
+# RSS feed: https://roammate.com/rss.xml
+# Structured data, CC-BY-4.0, no key required:
+#   index  https://roammate.com/data/destinations.json
+#   detail https://roammate.com/data/destinations/{slug}.json
