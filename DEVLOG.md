@@ -4,8 +4,8 @@
 **Session:** 5 | **Date:** 2026-08-29
 
 ### Active task
-None. All shipped, deployed, verified on production against a cleared
-Cloudflare cache. 9 commits, working tree clean.
+None — deliberately. See "STOP" below. Everything is shipped, deployed and verified
+on production against a cleared Cloudflare cache. Working tree clean.
 
 ### Shipped today — 12 commits, all deployed and verified
 Migration to Cloudflare Pages (af44145); CSP as a real header + security/caching
