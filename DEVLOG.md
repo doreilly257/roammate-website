@@ -60,6 +60,10 @@ it. Stacking more changes makes attribution impossible. This is the same argumen
 5. **cd7 (blocked in practice)** — needs a per-city counts API. Not shipping invented numbers.
 
 ### Known, accepted
+- **No GitHub CI on this repo.** `.github/workflows/ci.yml` removed 2026-08-29 at user
+  instruction. Verification is local: `npm run build` runs `validateBuiltLinks()`, and
+  **`npx astro check` must be run by hand** — the build does NOT type-check. Do not
+  reintroduce a GitHub Actions workflow.
 - Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level and our CSP
   blocks it. Cosmetic; Bot Fight Mode is OFF and it still injects. Left by choice.
 - API tokens remain in public git history; closed at user direction (21r.5).
