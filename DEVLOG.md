@@ -47,14 +47,12 @@ Headed Chrome, UAE IP, signed out. Two results, one of which kills a hypothesis.
   both: near-identical SERPs, same competitors, roammate at organic **#6 in both**.
   Composition explains nothing there. Almost certainly a volume artifact — 10.1% is
   likely a handful of clicks on a low-impression query.
-- **Caveats:** one geo, one run per query, extension-loaded profile. Google rendered an
-  AI Mode reply while simultaneously saying "An AI Overview is not available for this
-  search", so this may not match a typical user. Worth a second check from another geo.
-- **Tooling fixed (self-anneal):** `browse --headed` was never blocked by Google — the
-  Playwright chromium binary had simply never been downloaded. Installed. It boots in
-  ~25s, longer than the 15s startup window, so the CLI prints "Server failed to start"
-  while the daemon is actually coming up; wait and re-issue. Every command must repeat
-  `--headed` or it reports a config mismatch.
+- **Caveats:** one geo, one run per query, extension-loaded profile. Worth re-checking
+  from another geo before betting on it. Full detail in bead 8ho.
+- **Tooling fixed:** `browse --headed` was never blocked by Google — the Playwright
+  chromium binary had never been downloaded. Installed. It boots in ~25s vs a 15s
+  startup window, so "Server failed to start" is a lie; wait and re-issue. Every
+  command must repeat `--headed` or it reports a config mismatch.
 
 ### STOP — decision in force
 **Do not ship further SEO changes until the next Search Console export.** 12 commits
