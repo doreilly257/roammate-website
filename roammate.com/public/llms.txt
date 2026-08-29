@@ -64,6 +64,14 @@
 - City Statistics (442 cities): https://roammate.com/statistics/{city-slug}/ — per-city solo travel stats, budget breakdowns, practical info, and cultural tips
 - Blog (118 posts): https://roammate.com/blog/
 
+## Structured Data (JSON)
+
+- Machine-readable index of all 442 destinations: https://roammate.com/data/destinations.json
+- Full record for one destination: https://roammate.com/data/destinations/{slug}.json
+- Each destination record contains quick facts, day-by-day itineraries (1/3/7 day) with
+  morning, afternoon and evening detail, a budget breakdown, practical info and cultural tips.
+- Free to use with attribution to roammate.com (CC-BY-4.0). No key or signup required.
+
 ## Contact & Links
 
 - Support: support@roammate.com
