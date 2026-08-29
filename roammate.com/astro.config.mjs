@@ -5,6 +5,7 @@ import fs from 'node:fs';
 
 // slug -> ISO date of the last commit touching that guide's content file.
 // Written by scripts/build-lastmod.mjs, which runs before `astro build`.
+/** @type {Record<string, string>} */
 let guideLastmod = {};
 try {
   guideLastmod = JSON.parse(fs.readFileSync('./src/data/guide-lastmod.json', 'utf8'));
