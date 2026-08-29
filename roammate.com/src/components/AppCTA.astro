@@ -1,4 +1,6 @@
 ---
+import { appStoreUrl, playStoreUrl } from '../lib/storeLinks';
+
 const base = import.meta.env.BASE_URL;
 
 interface Props {
@@ -21,8 +23,8 @@ const {
   playStoreLabel = 'Get on Google Play',
 } = Astro.props;
 
-const appStoreHref = `https://apps.apple.com/app/id6758834253?pt=${appStorePt}&ct=${appStoreCt}&mt=8`;
-const playStoreHref = 'https://play.google.com/store/apps/details?id=com.roammate.app.android';
+const appStoreHref = appStoreUrl(appStoreCt, appStorePt);
+const playStoreHref = playStoreUrl(appStoreCt);
 ---
 
 {variant === 'badges' ? (
