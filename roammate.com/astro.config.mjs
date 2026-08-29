@@ -1,6 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import fs from 'node:fs';
+
+// slug -> ISO date of the last commit touching that guide's content file.
+// Written by scripts/build-lastmod.mjs, which runs before `astro build`.
+let guideLastmod = {};
+try {
+  guideLastmod = JSON.parse(fs.readFileSync('./src/data/guide-lastmod.json', 'utf8'));
+} catch {
+  // Fresh clone before the script has run; fall back to the build date below.
+}
 
 export default defineConfig({
   site: 'https://roammate.com',
@@ -12,19 +22,19 @@ export default defineConfig({
     sitemap({
       serialize(item) {
         // lastmod lets Google prioritize crawl scheduling across the ~3k URLs.
-        // Programmatic guide pages get a stable per-slug date (same scheme as
-        // the RSS feed) so lastmod doesn't falsely refresh on every build;
-        // curated pages get the build date, since deploys ship real edits.
+        // Pages derived from a guide take that guide's real last-edit date from
+        // git: stable across rebuilds (the point of the old hash scheme) but
+        // also TRUE, which the hash was not -- it stamped ~1,800 URLs with
+        // dates in 2023, before the site existed, telling Google they had been
+        // stale for years. Curated pages keep the build date, since a deploy of
+        // a hand-written page does ship real edits.
         const url = new URL(item.url);
-        const programmatic = /^\/(best-time-to-visit|budget|statistics|guides|routes)\//.test(url.pathname);
-        if (programmatic) {
-          let hash = 0;
-          for (let i = 0; i < url.pathname.length; i++) hash = (hash * 31 + url.pathname.charCodeAt(i)) | 0;
-          const EPOCH = Date.UTC(2024, 0, 1);
-          item.lastmod = new Date(EPOCH - (Math.abs(hash) % 365) * 86_400_000).toISOString();
-        } else {
-          item.lastmod = new Date().toISOString();
-        }
+        const m = url.pathname.match(
+          /^\/(?:guides|budget|statistics|best-time-to-visit|companions)\/([^/]+)\/$/
+        );
+        const itin = url.pathname.match(/^\/itinerary\/(.+?)-\d+-day\/$/);
+        const slug = m?.[1] ?? itin?.[1];
+        item.lastmod = (slug && guideLastmod[slug]) || new Date().toISOString();
         return item;
       },
     }),

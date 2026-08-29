@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/normalize-sitemap.mjs",
+    "build": "node scripts/build-lastmod.mjs && astro build && node scripts/normalize-sitemap.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "tsx scripts/validate.ts",
