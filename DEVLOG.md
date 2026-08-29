@@ -7,27 +7,17 @@
 None. All shipped, deployed, verified on production against a cleared
 Cloudflare cache. 9 commits, working tree clean.
 
-### Shipped today (migration + fixes)
-- **Surge → Cloudflare Pages** (af44145). Apex cut over; `deploy.sh` uses
-  `wrangler pages deploy` (+`--preview`, + PUBLIC_POSTHOG_KEY guard). Surge is
-  the rollback until ~2026-09-05 (ao2).
-- **Headers + CSP** (af44145, 180a14c). `public/_headers`: security headers,
-  immutable asset caching, `noindex` scoped to `*.pages.dev`. CSP moved from
-  `<meta>` to a real header. Closes vjs and epic 21r (11/11).
-- **404 triage** (d004a83). Sitemap was clean — all URLs resolve. Old
-  `/guides/cities/` + `/guides/places/` nesting and 7 stale region hubs now 301.
-- **Images** (ec59508, 3d09f60, a02823c). companions/[slug] rebuilt its hero path
-  from the slug instead of reading heroImage → 34 pages with a dead hero, dead
-  preload and broken og:image. 39 city guides showed another place's photo (7
-  cross-border), re-sourced and visually verified. 18 blog heroes brought under
-  200KB (saved 1,063KB).
-- **Sitemap lastmod** (13da821). 1,801 URLs claimed 2023, before the site existed.
-  Now per-guide from git. Live: zero pre-2026 dates.
-- **Thin content** (c6e83e9). companions 96.1%→73.7% similar, best-time
-  79.5%→61.2%, from per-city data the templates already had. Nothing invented.
-- **validate.ts blind spot** (6c5336f). All 7 checks read source data, which is why
-  it passed while 34 pages shipped a dead hero. `validateBuiltLinks()` now crawls
-  dist (incl. `url(...)` in inline styles). Wired into `npm run build`. 31 tests.
+### Shipped today — 12 commits, all deployed and verified
+Migration to Cloudflare Pages (af44145); CSP as a real header + security/caching
+headers (180a14c); 404 redirects for the old `/guides/cities|places/` nesting
+(d004a83); 34 companions pages that shipped a dead hero image, and 39 city guides
+showing another place's photo (ec59508, 3d09f60); 18 blog heroes brought under
+200KB, saving 1,063KB (a02823c); sitemap lastmod derived from git instead of a hash
+that claimed 1,801 URLs were unchanged since 2023 (13da821); per-city enrichment of
+companions and best-time (c6e83e9); `validateBuiltLinks()` so the build catches
+broken internal links, which is how the dead-hero bug escaped (6c5336f); per-city OG
+images on 1,326 programmatic pages (c3ee941). Full detail in the Session 5 archive
+entry below.
 
 ### Acted on the 3-month Search Console export (late session)
 Performance data arrived and **reversed the plan above**. By section:
