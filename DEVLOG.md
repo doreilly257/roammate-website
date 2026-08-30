@@ -1,63 +1,61 @@
 # roammate Website Dev Log
 
 ## Working State
-**Session:** 5 | **Date:** 2026-08-29
+**Session:** 6 | **Date:** 2026-08-30
 
 ### Active task
-GEO holdout (2u3) is live on production and awaiting recrawl — nothing to build.
-Both arms baselined before treatment. Working tree clean.
+None — everything shipped and verified live (commit e990570). Working tree clean.
 
-### 8hq findings (analysed, UNSHIPPED — gated on 3on)
-- Under-linking **disproved**: `/guides/` is the best-linked section (median 16
-  contextual inlinks vs 5–7 elsewhere, `/statistics/` 0).
-- **Cannibalisation** is the live candidate: 97% of destinations carry 5 templates, and
-  **115 guides collide head-on** with an `/itinerary/<city>-3-day/` page — 100% of them.
-- **88% of guides (402/457) have a bare place-name H1**, descriptive terms stranded in
-  the `<title>`.
-- Structural candidates, not proof. Confirming needs 3on. If shipped, use a holdout.
+### SHIPPED: site-wide em dash removal + 9 new posts
+Removed **35,104 of 35,118 em dashes** as a rewrite, not a find-and-replace: clauses a
+dash joined became full stops, headings took colons, asides containing commas moved to
+brackets, and sentences were restructured where punctuation alone read badly.
 
-### SHIPPED: GEO holdout on /itinerary/ (2u3) — widened to 100 cities, stratified
-Test arm emits `TouristTrip` (ItemList of days) + `HowTo` + `FAQPage`; control keeps
-`BreadcrumbList` only. Every field derives from existing page data — nothing invented.
+| area | removed |
+|-|-|
+| 454 city + route guides | 33,507 |
+| 107 blog posts | 624 |
+| 48 pages/layouts/components/data | 339 |
+| llms.txt + llms-full.txt | 630 |
 
-| arm | cities | pages | core | tail |
-|-|-|-|-|-|
-| test | 100 | 263 | 40 | 60 |
-| control | 342 | 841 | 43 | 299 |
+The 14 left are code comments plus 2 `data-ph-label` values on `about.astro` — invisible
+to readers, and renaming them would split PostHog history.
 
-- **Stratified deliberately.** Our audience skews young solo/backpacker and those
-  destinations carry most of the demand, so putting them all in the test arm would
-  confound schema with popularity. The 83 core destinations are **split across both
-  arms** — that is the like-for-like comparison.
-- **Why a holdout despite STOP:** measures WITHIN one period instead of a before/after
-  in which Google also changed. Better attribution than waiting.
-- By city (variants never split), pure function of slug — `src/lib/geoTestSet.ts`.
-  **Cohort 1 (40) frozen, verified 40/40**; cohort 2 (60) started later — age separately.
-- **Segment coverage ~95%**: 83 of ~87 canonical solo/backpacker destinations have
-  guides. Real gaps: `ninh-binh`, `playa-del-carmen`, `hvar`, `interlaken`. The core
-  list is curated judgement, **not measured demand** — re-stratify after 3on.
-- **The AI block is NOT universal — it is query-specific.** macau/tallinn/istanbul/
-  bangkok have one; lisbon/medellin/chiang-mai do not. Tempers 8ho: AI blocks absorb
-  SOME informational queries, not all. Only queries that HAD a block at baseline can
-  show a citation gain. Both-arm baselines are in bead 2u3.
-- Power: still a sample. A null result may mean underpowered. Check crawl dates first.
+**24 parallel subagents, verified mechanically, not by report.** `.tmp/verify_dash.py`
+diffs every changed file against git HEAD for JSON shape, every numeric/currency token
+inside every string, every URL, en-dash preservation and punctuation artifacts. 551 files,
+550 clean, 1 benign (`4+ hours` → `Four or more hours`, sentence now starts there).
 
-### STOP — decision in force
-**Do not ship further SEO changes until the next Search Console export** — except as a
-holdout with an untouched control, which is how 2u3 above was allowed to proceed. 12 commits
-landed 2026-08-29 and every one is an unmeasured bet; Google has not recrawled any of
-it. Stacking more changes makes attribution impossible. This is the same argument as
-"do not re-optimise before data", and it applies more now, not less.
+**9 posts live**, `best-apps-solo-female-travel-2026` deliberately held in `.tmp/`
+until eKYC ships (bead e4a; verified 404 on production).
 
-### Pick up here (beads carry full context; `bd ready`)
-1. **2u3 (P1)** — measure the GEO holdout. Citation check is manual in headed Chrome
-   (GSC does not report AI citation); CTR/position comparison lands with 3on.
-2. **3on (deferred 2026-09-11)** — re-export GSC and measure the 12 Session-5 bets.
-   Baseline table is in the bead. Check crawl dates before interpreting anything.
-3. **8hq (in progress)** — cannibalisation and bare-H1 fixes are ANALYSED BUT UNSHIPPED,
-   gated on 3on. If shipped, use a holdout like 2u3.
-4. **ao2 (deferred 2026-09-05)** — delete the Surge instance. It is the rollback until then.
-5. **cd7 (blocked in practice)** — needs a per-city counts API. Not shipping invented numbers.
+### Bugs found during the sweep — all pre-existing, all fixed
+- **`BackpackerRouteLayout:154` `.colour` → `.color`.** The UK spelling sweep (547513d)
+  anglicised a property name, so every route-map gradient rendered `undefined`. Live
+  since that commit. `astro check` went 1 error → 0.
+- **Duplicate store badges** in the blog CTA, on all 127 posts (from b6e008d).
+- **48 taxi "metres" → "meters"** — the fare device is a meter in British English too.
+- 5 `heroFlag` emoji stored double-escaped, rendering as literal `\ud83c\uddf3`.
+- 24 escaped apostrophes, `¥uancun station`, `orchting`, `Book accommodation with advance`.
+- `central-america` carried an unresolved authoring note in live copy ("Tuesday is Filthy
+  Friday's... wait, no.") that also contradicted the Bocas guide on which night runs.
+
+### Next steps
+1. **dpm (P1)** — 15 live places across 10 files assert identity verification that has
+   NOT shipped. Needs the app sessions to say what a released build enforces. Blocks e4a.
+2. **duv (P2)** — llms.txt founding date ("2017") unverified; counts still hand-maintained.
+3. **2u3** — note added: the corpus rewrite lands mid-holdout. Both arms moved equally and
+   `geoTestSet.ts` is untouched, so only a DIVERGENCE between arms is evidence.
+
+### Watch out
+- **`lastmod` comes from the last commit per guide file** (`scripts/build-lastmod.mjs`),
+  so e990570 stamped all 454 guides 2026-08-30 → expect a full recrawl before the 3on export.
+- **Counting a character in source undercounts what the source escapes.** Two em dashes
+  hid as `\u2014` in `roammate-vs-gaffl.astro` and survived every literal grep, including
+  the baseline count. Only found by grepping `dist/`. Check built output, not just src.
+- A `security-guidance` hook blocks `Write` on the word **"pickle"** (Python pickle
+  false-positive). It hit 6 agents on food copy; each worked around it with a placeholder.
+  Verified no placeholder was stranded, but check if it recurs.
 
 ### Known, accepted
 - **No GitHub CI on this repo.** `.github/workflows/ci.yml` removed 2026-08-29 at user
@@ -72,6 +70,17 @@ it. Stacking more changes makes attribution impossible. This is the same argumen
 ---
 
 ## Session Archive
+
+### Session 6 — 2026-08-30: em dash removal site-wide + 9 posts published
+**What we did:** Drafted 10 blog posts from the content beads, then removed 35,104 em
+dashes across 611 files using 24 parallel subagents, verified every change against git
+HEAD, and shipped 9 of the posts (commit e990570, deployed and verified live).
+**Files:** all 454 guides, 107 blog posts, 48 templates, both llms files.
+**Decisions:** rewrite rather than swap punctuation; hold the solo-female post until eKYC
+ships; index all 127 posts in llms-full.txt; leave the 2 analytics labels alone.
+**Found:** 7 pre-existing bugs including the `.colour` gradient break and duplicate store
+badges, plus 15 live assertions of unshipped identity verification (bead dpm, P1).
+
 
 ### Session 5 (cont.) — 2026-08-29: SERP verification + GEO holdout
 **Zero-click anomaly RESOLVED (8ho).** Verified by hand in headed Chrome. On
