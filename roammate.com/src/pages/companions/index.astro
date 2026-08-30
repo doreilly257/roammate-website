@@ -9,15 +9,15 @@ const cityGuides = allGuides.sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <BaseLayout
-  title="Find Travel Companions — Destinations Worldwide | roammate"
-  description={`Find travel companions in ${cityGuides.length} destinations worldwide. roammate matches you by travel style, budget, and destination — free on iOS and Android.`}
+  title="Find Travel Companions: Destinations Worldwide | roammate"
+  description={`Find travel companions in ${cityGuides.length} destinations worldwide. roammate matches you by travel style, budget, and destination. Free on iOS and Android.`}
   ogImage="/images/hero-travelers-on-bus.webp"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Find Travel Companions — Destinations Worldwide",
+      "name": "Find Travel Companions: Destinations Worldwide",
       "url": "https://roammate.com/companions/",
       "description": `Find travel companions in ${cityGuides.length} destinations worldwide.`,
       "numberOfItems": cityGuides.length,

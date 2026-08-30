@@ -1,0 +1,81 @@
+{
+  "title": "Best Travel Apps for Backpacking India",
+  "description": "The app stack that actually works for backpacking India: train and bus booking, ride-hailing, payments, offline maps, air quality, and finding people to travel with, with the caveats nobody mentions.",
+  "category": "Guide",
+  "readMinutes": 6,
+  "heroImage": "/images/blog/public-transport-mastery-hero.webp",
+  "intro": "India rewards preparation more than almost anywhere else, and a lot of that preparation is now app-shaped: a train account that takes days to verify, an offline map downloaded before the signal goes, a payment method that works when the QR code does not. This is the stack that earns its place, with the friction points a foreign passport introduces. Where something depends on rules that change, this post says so rather than guessing. Check the current position yourself close to your travel date.",
+  "sections": [
+    {
+      "heading": "Trains: IRCTC is the system, everything else is a front end",
+      "content": "Indian Railways sells its tickets through IRCTC, and every booking app you have heard of (ConfirmTkt, ixigo, RailYatri, the train tabs inside payment apps) is a front end on the same inventory. That matters for two reasons. Seats do not exist on one app and not another, so shopping around is pointless. And creating a working IRCTC account, not choosing a booking app, is the real gate.\n\nForeign passport holders routinely stall at IRCTC account verification, which has historically expected an Indian mobile number for one-time passwords. Start the process before you fly, and have a fallback: booking through a reputable agent or at a station counter still works.\n\nLearn the vocabulary, because it decides what your day feels like. Sleeper class versus 3AC and 2AC. The waitlist and RAC states, and what they mean for whether you actually board. Tatkal tickets released a day before departure at a premium. The foreign tourist quota, bookable at designated stations. Third-party apps mostly earn their fee by predicting whether a waitlisted ticket will confirm.",
+      "image": "/images/blog/overnight-train-productivity-inline-1.webp",
+      "imageAlt": "A long-distance train platform in India"
+    },
+    {
+      "heading": "Intercity buses: redBus, state operators and the shared jeep",
+      "content": "redBus is the default aggregator for private intercity coaches and covers most of the country. State transport corporations run their own booking sites and are usually cheaper, plainer and more dependable in the hills. Between them they cover almost every route the railways do not.\n\nRead the bus type rather than the price. \"Sleeper\" means a berth, \"semi-sleeper\" means a reclining seat, and an AC sleeper on a fourteen-hour Himalayan road is not the comfort the name suggests. Boarding points on aggregator apps are often a roadside marker rather than a bus station. Screenshot the pin and arrive early, because the driver will not wait for you.\n\nAbove [Manali](/guides/manali/), across [Ladakh](/guides/leh-ladakh/) and through much of the northeast, booking apps stop mattering and shared jeeps take over. They leave when full from a known stand, charge a fixed per-seat rate, and cannot be reserved online. Budget a morning for finding the stand and asking three people where it is. Seasonal road closures decide whether any of it runs at all.",
+      "image": "/images/blog/night-bus-survival-guide-inline-1.webp",
+      "imageAlt": "An intercity sleeper bus at a roadside stop"
+    },
+    {
+      "heading": "Ride-hailing and autos: Uber, Ola, Rapido and the fare you should know",
+      "content": "Uber and Ola both operate across the big cities, and both will book you an auto-rickshaw as well as a car. In traffic the auto is usually the better call, and booking it through an app removes the fare negotiation entirely. Rapido adds motorbike taxis, which are the fastest way across [Mumbai](/guides/mumbai/) or Bengaluru at rush hour and the least comfortable option with a backpack on.\n\nCancellation is the real friction. Drivers cancel on short trips and on cash rides. Expect it rather than resenting it, and do not stand in the sun on 6% battery waiting for someone to accept. Having both Uber and Ola installed, plus a rough idea of the going auto fare, is the difference between an annoyance and an hour lost.\n\nOutside the metros the apps thin out quickly and you are back to agreeing a price at the station. Ask your guesthouse what a fair fare is before you walk out. A number from a local beats any app estimate. In [Kolkata](/guides/kolkata/) the metro and the street taxis often beat both.",
+      "image": "/images/blog/public-transport-mastery-inline-1.webp",
+      "imageAlt": "Auto-rickshaws in Indian city traffic"
+    },
+    {
+      "heading": "Payments: UPI runs the country, and what that means for a visitor",
+      "content": "India runs on UPI. QR codes are on chai stalls, auto dashboards and temple donation boxes, and cash use has fallen accordingly. It is the dominant domestic payment rail and people will assume you have it.\n\nAccess for foreign visitors is the part to be careful about. Schemes exist that are intended to give inbound travellers UPI access, and various banks and prepaid providers have offered onboarding for visitors, but eligibility depends on your nationality, your bank and where you arrive, and the rules have moved more than once. Do not build a trip on the assumption that it will work for you. Check the current position with your own bank and a recent first-hand source shortly before you travel, and treat whatever access you get as a bonus rather than the plan.\n\nThe plan should be a card with no foreign transaction fee, plus cash. ATMs are everywhere in cities, patchier in the hills, and often cap withdrawals lower than you expect. Carry small notes. Nobody at a chai stall wants to break a 500.",
+      "image": "/images/blog/travel-finance-automation-inline-1.webp",
+      "imageAlt": "A QR code payment sign at a street stall"
+    },
+    {
+      "heading": "Maps, offline downloads and air quality",
+      "content": "Google Maps is the base layer, and its transit data for the Delhi, Mumbai, Kolkata, Chennai and Bengaluru metros is good. Its driving directions in old-city lanes are not. In the galis behind the [Varanasi](/guides/varanasi-ghats/) ghats or in the Jodhpur old town, navigate by landmark and ask.\n\nDownload offline maps for every state before you lose signal, and keep a second mapping app with trail data if you are heading into the hills. Mobile data in India is cheap and fast, but coverage across long rural stretches is not, so load entertainment for train and bus days while you still have wifi.\n\nAir quality deserves an app of its own. Across the north, and Delhi in particular, the post-monsoon and winter months produce readings that should change how you plan a day. Any AQI app pulling from official monitoring stations will do. The point is to check it the night before rather than wondering why you feel terrible on day three. When the number is bad, bring indoor plans forward and save the walking tour.",
+      "image": "/images/blog/local-sim-and-esim-strategy-inline-1.webp",
+      "imageAlt": "A traveller checking a phone map in an Indian street"
+    },
+    {
+      "heading": "Finding people to travel with",
+      "content": "India is a country where a companion changes the trip more than usual: for splitting a car around Rajasthan, for the long train legs, and for the sheer volume of small decisions a day demands.\n\nThe channels that work: hostel common rooms in the backpacker districts, which are strong in [Goa](/guides/goa/), [Rishikesh](/guides/rishikesh/), [Udaipur](/guides/udaipur/) and Hampi and thin almost everywhere else; route-specific Facebook groups, particularly for Ladakh road trips and motorbike runs; and companion-matching apps for lining someone up before you arrive.\n\nroammate matches on travel style, daily budget bracket and destination overlap, and is free on iOS and Android with no premium tier and no ads. The budget bracket carries real weight in India: a 1,500-rupee day and a 6,000-rupee day are sleeper class versus 2AC, dorm versus heritage hotel, shared jeep versus private car. You can also nominate emergency contacts in the app and raise an alert from it, which is worth setting up before a long overnight leg. It is companion matching, not accommodation.\n\nOur [India route guide](/guides/india/) covers how the regions sequence.",
+      "image": "/images/blog/meeting-people-solo-travel-inline-1.webp",
+      "imageAlt": "Travellers talking at a hostel in India"
+    },
+    {
+      "heading": "The minimum viable stack",
+      "content": "Installed before you land: IRCTC with a verified account, redBus, Uber and Ola, Google Maps with offline regions already downloaded, an AQI app, and WhatsApp. That last one is how every guesthouse, driver and agency in the country actually communicates. Add a companion app if you want someone lined up for the first leg.\n\nNot worth the space: a separate app for each city metro, most all-in-one \"India travel\" aggregators, and anything that wants a passport scan before it will show you bus times.\n\nTwo habits beat any of it. Screenshot every ticket, PNR and booking confirmation, because you will be asked for one somewhere with no signal and no patience. And ask a person before you trust an estimate: a station master, a guesthouse owner, the man selling chai on the platform. India's apps are genuinely good, and the country still moves faster than they do. For the parts of the trip that happen on a moving vehicle, [overnight train productivity](/blog/overnight-train-productivity/) and the [night bus survival guide](/blog/night-bus-survival-guide/) cover the rest.",
+      "image": "/images/blog/travel-day-mistakes-checklist-inline-1.webp",
+      "imageAlt": "A packed backpack and phone on a train berth"
+    }
+  ],
+  "relatedPosts": [
+    "public-transport-mastery",
+    "night-bus-survival-guide",
+    "overnight-train-productivity",
+    "local-sim-and-esim-strategy",
+    "travel-finance-automation"
+  ],
+  "publishedAt": "2026-08-30T09:00:00Z",
+  "updatedAt": "2026-08-30T09:00:00Z",
+  "author": "roammate editorial",
+  "readingTime": "6 min read",
+  "relatedPostSlugs": [
+    "public-transport-mastery",
+    "night-bus-survival-guide",
+    "overnight-train-productivity",
+    "local-sim-and-esim-strategy",
+    "travel-finance-automation"
+  ],
+  "relatedGuideSlugs": [
+    "mumbai",
+    "delhi",
+    "kolkata",
+    "jaipur",
+    "goa",
+    "rishikesh",
+    "varanasi-ghats",
+    "leh-ladakh",
+    "india"
+  ]
+}

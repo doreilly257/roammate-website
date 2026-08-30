@@ -54,7 +54,7 @@ const knowBefore: KnowBeforeItem[] = [
 const { slug, name, country, flag, region, heroImage } = guide;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const title = `Find Travel Companions in ${name} — roammate`;
+const title = `Find Travel Companions in ${name} | roammate`;
 const description = `Looking for a travel companion in ${name}? Roammate matches you with like-minded travellers by style, budget, and itinerary. Free on iOS and Android.`;
 ---
 
@@ -90,7 +90,7 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
       </nav>
       <div class="comp-hero-flag">{flag}</div>
       <h1>Find a Travel Companion<br>in <em>{name}</em></h1>
-      <p class="comp-hero-sub">{subtitle ?? 'Matched by travel style, budget, and itinerary — not just location.'}</p>
+      <p class="comp-hero-sub">{subtitle ?? 'Matched by travel style, budget, and itinerary, not just location.'}</p>
       <div class="comp-hero-actions">
         <AppCTA
           variant="badges"
@@ -127,12 +127,12 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
         <div class="comp-why-card reveal reveal-delay-3">
           <div class="comp-why-icon">🔍</div>
           <h3>Go deeper</h3>
-          <p>The best experiences in {name} — the off-menu restaurant, the dawn hike, the local's favourite spot — are found with a curious companion, not a guidebook.</p>
+          <p>The best experiences in {name} (the off-menu restaurant, the dawn hike, the local's favourite spot) are found with a curious companion, not a guidebook.</p>
         </div>
         <div class="comp-why-card reveal reveal-delay-4">
           <div class="comp-why-icon">🎯</div>
           <h3>Matched by style</h3>
-          <p>Roammate filters by travel pace, budget range, and interests — so you connect with someone genuinely compatible, not just whoever's in the same hostel dorm.</p>
+          <p>Roammate filters by travel pace, budget range, and interests, so you connect with someone genuinely compatible, not just whoever's in the same hostel dorm.</p>
         </div>
       </div>
     </div>
@@ -158,7 +158,7 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
           </div>
           <div class="comp-trust-card reveal reveal-delay-3">
             <h3>Report and block</h3>
-            <p>If someone makes you uncomfortable, report or block them at any point — before
+            <p>If someone makes you uncomfortable, report or block them at any point, before
               or after you have arranged anything.</p>
           </div>
           <div class="comp-trust-card reveal reveal-delay-4">
@@ -208,7 +208,7 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
         </div>
       )}
 
-      <p class="comp-local-more">Full detail — itineraries, budgets, neighbourhoods and safety — is in the <a href={`/guides/${slug}/`}>{name} travel guide</a>.</p>
+      <p class="comp-local-more">Full detail (itineraries, budgets, neighbourhoods and safety) is in the <a href={`/guides/${slug}/`}>{name} travel guide</a>.</p>
     </div>
   </section>
 
@@ -228,7 +228,7 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
           <span class="comp-step-num">02</span>
           <div>
             <h3>Browse compatible matches</h3>
-            <p>Roammate surfaces travellers heading to {name} with compatible styles and budgets — not just everyone nearby.</p>
+            <p>Roammate surfaces travellers heading to {name} with compatible styles and budgets, not just everyone nearby.</p>
           </div>
         </li>
         <li class="comp-how-step reveal reveal-delay-3">
@@ -276,7 +276,7 @@ const description = `Looking for a travel companion in ${name}? Roammate matches
       <div>
         <p class="comp-guide-region">{region} · {country}</p>
         <h3>Planning your trip to {name}?</h3>
-        <p>Read our full {name} travel guide — 1, 3, and 7-day itineraries with budget tips, neighbourhood breakdowns, and practical information.</p>
+        <p>Read our full {name} travel guide: 1, 3, and 7-day itineraries with budget tips, neighbourhood breakdowns, and practical information.</p>
       </div>
       <a href={`/guides/${slug}/`} class="comp-btn comp-btn--outline">{name} Guide →</a>
     </div>

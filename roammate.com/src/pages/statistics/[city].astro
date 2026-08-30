@@ -89,7 +89,7 @@ const webPageSchema = {
         {quickFacts.map((fact: any) => (
           <div class="stat-card">
             <span class="stat-number">{fact.value}</span>
-            <span class="stat-label">{fact.label}{fact.detail ? ` — ${fact.detail}` : ''}</span>
+            <span class="stat-label">{fact.label}{fact.detail ? `: ${fact.detail}` : ''}</span>
           </div>
         ))}
       </div>
@@ -153,7 +153,7 @@ const webPageSchema = {
   <section class="stats-cta reveal">
     <div class="stats-cta-inner">
       <h2>Find a travel companion for {city}</h2>
-      <p>roammate matches solo travellers by travel style, budget, and destination. Free on iOS and Android — no ads, no subscription.</p>
+      <p>roammate matches solo travellers by travel style, budget, and destination. Free on iOS and Android: no ads, no subscription.</p>
       <AppCTA />
     </div>
   </section>

@@ -1,0 +1,86 @@
+{
+  "title": "Best Apps for Splitting Travel Costs: What Splitting Actually Saves",
+  "description": "Splitwise, Tricount, Settle Up, Revolut and Wise compared for travel, plus real per-destination cost figures showing what splitting a twin room or a private transfer is genuinely worth.",
+  "category": "Budget",
+  "readMinutes": 6,
+  "heroImage": "/images/blog/budget-travel-cashflow-playbook-hero.webp",
+  "intro": "Every list of cost-splitting apps compares the same four ledgers and stops there. The ledger is the easy part. The hard part is the two questions nobody answers: which model suits the way you are actually travelling, and how much money splitting saves before you go to the trouble. This post covers both. The figures in the second half come straight out of our own destination guides (442 of them, each with a budget breakdown by category), so the arithmetic is real rather than illustrative.",
+  "sections": [
+    {
+      "heading": "Splitwise: Best for Long Trips With a Running Balance",
+      "content": "Splitwise's model is a persistent shared group with a running balance. Everyone logs what they paid, the app tracks who owes whom, and you settle whenever you like rather than after every meal. Its most useful feature on a long trip is debt simplification: in a group of four, instead of six separate IOUs it collapses the web into the smallest set of payments that clears everyone. It handles entries in multiple currencies, which matters on a route that crosses two or three of them. Where it fits: a trip measured in weeks with the same people, where daily settling would be tedious and a single reckoning at the end is fine. Where it does not: a group that formed yesterday and splits up in three days, because getting four people to create accounts for a two-day ledger is more friction than the ledger saves.",
+      "image": "/images/blog/travel-finance-automation-inline-1.webp",
+      "imageAlt": "Travellers reviewing shared expenses on a phone"
+    },
+    {
+      "heading": "Tricount and Settle Up: Best for a Group That Formed on the Road",
+      "content": "Both solve the friction problem Splitwise has at the short end. Tricount is built around a single trip: create the tricount, share a link, and people can add expenses without every one of them setting up an account first. That is the whole reason it works for a group assembled at a hostel. You can be logging the first shared taxi within a minute of meeting. Settle Up sits between the two, group-first rather than trip-first, with a similar shared-link approach and a clear balance view. Both do unequal splits, which is the feature you actually need in practice: three people share the room, only two did the dive course, one person is not drinking. Where they fit: short trips, ad hoc groups, and anyone who wants a ledger that dies naturally when the trip ends rather than one that follows them home.",
+      "image": "/images/blog/group-travel-coordination-inline-1.webp",
+      "imageAlt": "A small group coordinating plans over a table"
+    },
+    {
+      "heading": "Revolut and Wise: Best When the Split Has to Actually Move Money",
+      "content": "The other apps track a debt. These two settle it, which is a different problem. Both are multi-currency accounts with instant transfers between users on the same platform, and both offer shared or group features. Revolut has group bills and shared accounts, and Wise leans on multi-currency balances you can hold and move between. The practical advantage is that the ledger and the payment live in the same place, so a balance never sits open for three weeks waiting for a bank transfer nobody wants to make. The practical limitation is coverage: everyone in the group needs an account, and which features are available depends on the country you signed up in. Check what your own account actually offers before you rely on it mid-trip. Used well, this is the pairing that works: a ledger app for the accounting, one of these for the settling.",
+      "image": "/images/blog/travel-finance-automation-inline-2.webp",
+      "imageAlt": "Multi-currency payment cards laid out"
+    },
+    {
+      "heading": "roammate: Finding the Person to Split With",
+      "content": "None of the above helps if you are travelling alone, and that is the real bottleneck. Solo travel is not more expensive because you spend more; it is more expensive because every fixed cost lands on one person. roammate matches travellers on travel style, daily budget bracket and destination overlap, so the person you end up sharing costs with is on a comparable budget rather than one that quietly wrecks yours. The budget bracket filter is the one that matters for this specific purpose: cost-splitting only works between people who agree on what a night's accommodation is worth. roammate is companion matching, not accommodation. It finds the person, but you still book the room. It is free on iOS and Android, no premium tier and no ads.",
+      "image": "/images/blog/finding-travel-companions-inline-2.webp",
+      "imageAlt": "Two travel companions planning a route"
+    },
+    {
+      "heading": "What Splitting a Twin Room Actually Saves: Real Numbers",
+      "content": "Here is the arithmetic that makes the case, using accommodation figures from our destination guides. In [Lisbon](/guides/lisbon/), a budget bed runs €15–30 a night and a mid-range room €60–120. Split that mid-range room two ways and it is €30–60 each. That is the same money as a dorm bed, with a door. [Barcelona](/guides/barcelona/) is the same shape: €20–40 budget, €65–130 mid-range, so €32.50–65 split. [Tokyo](/guides/tokyo/) is the sharpest example, because a capsule or hostel bed is ¥2,500–4,000 and a business hotel is ¥8,000–15,000; halved, that is ¥4,000–7,500, and the bottom of that band is what you were paying for a capsule anyway. In [Dubai](/guides/dubai/), budget accommodation is AED 80–150 against AED 250–500 for a mid-range hotel: AED 125–250 split. The pattern holds nearly everywhere: sharing does not make travel cheaper so much as it buys you a category upgrade for roughly what you were already spending.",
+      "image": "/images/blog/hostel-cooking-budget-meals-inline-1.webp",
+      "imageAlt": "A twin room in budget accommodation"
+    },
+    {
+      "heading": "Transport Splits Harder Than Accommodation",
+      "content": "Transport is where the saving is most dramatic, because the jump from public transport to a private vehicle is the biggest single step in most budgets and a private vehicle costs the same whether one person or four are in it. In [Cairo](/guides/cairo/), getting around on the metro and Uber is E£50–150 a day against E£200–400 for a car and driver. Split two ways, a driver costs about what two people were spending on taxis separately. From [Petra](/guides/petra/), the JETT bus and shared taxis run JOD 3–8 while private taxis are JOD 15–30, so JOD 7.50–15 each. [Cape Town](/guides/cape-town/) follows the same shape: ZAR 50–100 on the MyCiTi bus against ZAR 150–300 for Uber or a rental car, and a rental car split two ways unlocks the peninsula. [Hanoi](/guides/hanoi/) runs ₫30,000–60,000 on bikes and buses against ₫80,000–200,000 for a car. Split the higher band and you land inside the lower one.",
+      "image": "/images/blog/group-travel-coordination-inline-2.webp",
+      "imageAlt": "Shared transport on a travel day"
+    },
+    {
+      "heading": "What Does Not Split: The Argument to Have Before You Book",
+      "content": "Be clear about the limits. Food, entry tickets and per-person activity fees do not split at all. In [Dahab](/guides/dahab/), snorkelling costs E£200–500 and two dives E£800–1,500. That gap is per person no matter how many of you go. So the honest summary is that sharing compresses accommodation and transport, roughly the two largest fixed lines, and leaves the rest alone. Which is why the conversation to have before anyone books is about brackets rather than receipts. Our guides give daily totals in bands: [Bangkok](/guides/bangkok/) is ฿800–1,900 a day on a budget ($23–54) against ฿2,600–6,200 mid-range ($74–177); [Medellín](/guides/medellin/) is $25–60 against $65–160. Someone anchored at the bottom of one band and someone anchored at the top of the other will fall out by day three, and no splitting app fixes that. Agree the bracket, then pick the ledger, then settle weekly rather than at the end.",
+      "image": "/images/blog/budget-travel-cashflow-playbook-inline-1.webp",
+      "imageAlt": "Notebook with a daily travel budget"
+    }
+  ],
+  "relatedPosts": [
+    "budget-travel-cashflow-playbook",
+    "travel-finance-automation",
+    "group-travel-coordination",
+    "finding-travel-companions"
+  ],
+  "publishedAt": "2026-08-30T09:00:00Z",
+  "updatedAt": "2026-08-30T09:00:00Z",
+  "author": "roammate editorial",
+  "readingTime": "6 min read",
+  "relatedPostSlugs": [
+    "budget-travel-cashflow-playbook",
+    "travel-finance-automation",
+    "group-travel-coordination",
+    "finding-travel-companions"
+  ],
+  "relatedGuideSlugs": [
+    "lisbon",
+    "barcelona",
+    "tokyo",
+    "dubai",
+    "cairo",
+    "petra",
+    "cape-town",
+    "hanoi",
+    "bangkok",
+    "medellin"
+  ],
+  "cities": [
+    "lisbon",
+    "bangkok",
+    "medellin",
+    "tokyo"
+  ]
+}

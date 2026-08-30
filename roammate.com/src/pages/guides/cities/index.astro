@@ -26,7 +26,7 @@ const cityGuideCount = cityGuides.length;
 ---
 
 <BaseLayout
-  title={`City Guides — ${cityGuideCount} Day-by-Day Itineraries | roammate`}
+  title={`City Guides: ${cityGuideCount} Day-by-Day Itineraries | roammate`}
   description={`Free city guides for ${cityGuideCount} destinations worldwide. 1, 3, and 7-day itineraries with budget tips, cultural insights, and practical information.`}
   ogImage="/images/guides/paris-hero.webp"
 >
@@ -35,7 +35,7 @@ const cityGuideCount = cityGuides.length;
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": `City Guides — ${cityGuideCount} Day-by-Day Itineraries`,
+      "name": `City Guides: ${cityGuideCount} Day-by-Day Itineraries`,
       "url": "https://roammate.com/guides/cities/",
       "description": `Free city guides for ${cityGuideCount} destinations worldwide. 1, 3, and 7-day itineraries with budget tips, cultural insights, and practical information.`,
       "numberOfItems": cityGuideCount,

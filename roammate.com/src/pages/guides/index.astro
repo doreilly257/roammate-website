@@ -23,7 +23,7 @@ const topRoutes = routeData.map((r) => ({ slug: r.slug, name: r.name, flags: r.f
 ---
 
 <BaseLayout
-  title={`Travel Guides — ${cityGuideCount} City & ${placeGuideCount} Place Itineraries | roammate`}
+  title={`Travel Guides: ${cityGuideCount} City & ${placeGuideCount} Place Itineraries | roammate`}
   description={`Free travel guides for ${cityGuideCount} cities, ${placeGuideCount} bucket-list places, and ${routeCount} backpacker routes. Budget tips, day-by-day itineraries, and local recommendations.`}
   ogImage="/images/guides/tokyo-hero.webp"
 >
@@ -32,7 +32,7 @@ const topRoutes = routeData.map((r) => ({ slug: r.slug, name: r.name, flags: r.f
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": `Travel Guides — ${cityGuideCount} City & ${placeGuideCount} Place Itineraries`,
+      "name": `Travel Guides: ${cityGuideCount} City & ${placeGuideCount} Place Itineraries`,
       "url": "https://roammate.com/guides/",
       "description": `Free travel guides for ${cityGuideCount} cities, ${placeGuideCount} bucket-list places, and ${routeCount} backpacker routes.`,
       "numberOfItems": destinationCount + routeCount,
@@ -105,7 +105,7 @@ const topRoutes = routeData.map((r) => ({ slug: r.slug, name: r.name, flags: r.f
         <div class="category-header">
           <div class="section-label">Multi-Country</div>
           <h2 class="section-heading">Backpacker <em>Routes</em></h2>
-          <p class="category-intro">Long-stay routes through entire regions — week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.</p>
+          <p class="category-intro">Long-stay routes through entire regions: week-by-week phasing, country-by-country breakdowns, and budget strategies for extended travel.</p>
         </div>
         <div class="routes-preview" data-shuffle-group="routes" data-show="4">
           {topRoutes.map((route, i) => (
@@ -146,7 +146,7 @@ const topRoutes = routeData.map((r) => ({ slug: r.slug, name: r.name, flags: r.f
         <div class="category-header">
           <div class="section-label">Bucket List</div>
           <h2 class="section-heading">{placeGuideCount} <em>Places</em></h2>
-          <p class="category-intro">National parks, UNESCO sites, bucket-list landmarks, epic treks, and island paradises — with 1 and 3-day itineraries.</p>
+          <p class="category-intro">National parks, UNESCO sites, bucket-list landmarks, epic treks, and island paradises, with 1 and 3-day itineraries.</p>
         </div>
         <div class="places-preview" data-shuffle-group="places" data-show="8">
           {topPlaces.map((place, i) => (

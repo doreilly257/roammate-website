@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 
 const { city, country, citySlug, days, itinerary, allDays, siblings, inGeoTest } = Astro.props;
 const dayLabel = days === 1 ? '1-day' : `${days}-day`;
-const pageTitle = `${city} ${dayLabel} Itinerary — Day-by-Day Guide | roammate`;
+const pageTitle = `${city} ${dayLabel} Itinerary: Day-by-Day Guide | roammate`;
 const pageDesc = `A detailed ${dayLabel} itinerary for ${city}, ${country}. Morning, afternoon, and evening plans with tips, costs, and insider advice.`;
 
 const breadcrumbSchema = {

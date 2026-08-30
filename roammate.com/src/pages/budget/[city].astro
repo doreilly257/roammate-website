@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 }
 
 const { city, country, slug, heroImage, dailyBudget, dailyBudgetDetail, currency, currencyDetail, budgetBreakdown, budgetTips, budgetIntro, siblings } = Astro.props;
-const pageTitle = `${city} Budget Breakdown — Daily Costs & Tips | roammate`;
+const pageTitle = `${city} Budget Breakdown: Daily Costs & Tips | roammate`;
 const pageDesc = `How much does it cost to visit ${city}? Daily budget ${dailyBudget} (${dailyBudgetDetail}). Full breakdown of accommodation, food, transport, and activities.`;
 const hasMidrange = budgetBreakdown.some((r: any) => r.midrange || r.mid);
 
@@ -66,7 +66,7 @@ const breadcrumbSchema = {
         <span>Budget</span>
       </nav>
       <h1 class="bg-hero-title">{city} budget breakdown</h1>
-      <p class="bg-hero-sub">{country} — {dailyBudget}/day</p>
+      <p class="bg-hero-sub">{country}: {dailyBudget}/day</p>
     </div>
   </section>
 
@@ -94,8 +94,8 @@ const breadcrumbSchema = {
               <tr class={row.category === 'Daily Total' ? 'bg-total-row' : ''}>
                 <td><strong>{row.category}</strong></td>
                 <td>{row.budget}</td>
-                {hasMidrange && <td>{row.midrange || row.mid || '—'}</td>}
-                <td>{row.splurge || '—'}</td>
+                {hasMidrange && <td>{row.midrange || row.mid || '–'}</td>}
+                <td>{row.splurge || '–'}</td>
                 <td class="bg-notes">{row.notes || ''}</td>
               </tr>
             ))}

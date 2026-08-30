@@ -89,7 +89,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
       "itinerary": routeOverview.map(stop => ({
         "@type": "City",
         "name": stop.country,
-        "description": `${stop.weeks} — ${stop.stops.join(', ')}`
+        "description": `${stop.weeks}: ${stop.stops.join(', ')}`
       }))
     })} />
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -151,7 +151,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
         {routeOverview.map((r, i) => (
           <div class="route-map-country">
             <div class="route-map-dot" style={`background: ${r.color};`}></div>
-            {i < routeOverview.length - 1 && <div class="route-map-line" style={`background: linear-gradient(to bottom, ${r.color}, ${routeOverview[i+1].colour});`}></div>}
+            {i < routeOverview.length - 1 && <div class="route-map-line" style={`background: linear-gradient(to bottom, ${r.color}, ${routeOverview[i+1].color});`}></div>}
             <div class="route-map-info">
               <div class="route-map-flag">{r.flag}</div>
               <div class="route-map-details">

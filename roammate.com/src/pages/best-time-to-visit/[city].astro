@@ -98,7 +98,7 @@ const planningNote = ['Getting Around', 'Weather', 'What to Pack', 'Visa & Entry
 
       <h2>When to go</h2>
       {heroSubtitle && <p>{heroSubtitle}</p>}
-      <p>{bestMonths} is the busiest window in {city}, so accommodation and flights go first — book ahead. The shoulder weeks either side are usually quieter for the same reason.</p>
+      <p>{bestMonths} is the busiest window in {city}, so accommodation and flights go first. Book ahead. The shoulder weeks either side are usually quieter for the same reason.</p>
       {planningNote && (
         <div class="pv-note">
           <h3><span aria-hidden="true">{planningNote.icon}</span> {planningNote.title} in {city}</h3>
@@ -115,7 +115,7 @@ const planningNote = ['Getting Around', 'Weather', 'What to Pack', 'Visa & Entry
         <details class="pv-faq-item" open>
           <summary><h3>When is the best time to visit {city}?</h3></summary>
           <p>
-            The best months to visit {city} are {bestMonths} — {bestMonthsDetailClean}, which makes for the most comfortable conditions for sightseeing and getting around.
+            The best months to visit {city} are {bestMonths} ({bestMonthsDetailClean}), which makes for the most comfortable conditions for sightseeing and getting around.
             {siblings.budget && (
               <> For what a trip costs day to day, see the <a href={siblings.budget}>{city} budget breakdown</a>.</>
             )}
