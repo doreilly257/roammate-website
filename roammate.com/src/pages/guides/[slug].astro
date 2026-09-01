@@ -2,18 +2,39 @@
 import { getCollection } from 'astro:content';
 import CityGuideLayout from '../../layouts/CityGuideLayout.astro';
 import BackpackerRouteLayout from '../../layouts/BackpackerRouteLayout.astro';
+import { collidesWithItinerary, getTitleTestCities, deCannibalisedTitle } from '../../lib/titleTestSet';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
-  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide: guide.data } }));
+  // flatMap, not filter: filter does not narrow the guide union, so g.data.itineraries
+  // would not typecheck on the backpacker variant.
+  const cities = guides.flatMap((g) => (g.data.type === 'city' ? [g.data] : []));
+  const colliding = cities
+    .filter((d) => collidesWithItinerary(d.title, d.itineraries))
+    .map((d) => d.slug)
+    .sort();
+  const titleTest = getTitleTestCities(
+    colliding,
+    cities.map((d) => d.slug).sort()
+  );
+  return guides.map((guide) => ({
+    params: { slug: guide.id },
+    props: {
+      guide: guide.data,
+      inTitleTest: guide.data.type === 'city' && titleTest.has(guide.data.slug),
+    },
+  }));
 }
 
-const { guide } = Astro.props;
+const { guide, inTitleTest } = Astro.props;
+// bead 849: treated guides drop the duration from the title and gain a descriptive H1.
+const cityTitle = inTitleTest ? deCannibalisedTitle(guide.title) : guide.title;
 ---
 
 {guide.type === 'city' ? (
   <CityGuideLayout
-    title={guide.title}
+    title={cityTitle}
+    h1Qualifier={inTitleTest ? 'Travel Guide' : undefined}
     description={guide.description}
     heroImage={guide.heroImage}
     heroFlag={guide.heroFlag}
