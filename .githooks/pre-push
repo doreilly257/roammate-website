@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+# Pre-push guard for roammate.com. Enable once with:
+#     git config core.hooksPath .githooks
+#
+# Two checks, both for incidents that actually happened:
+#
+#   1. astro check — `npm run build` does NOT type-check. That gap let
+#      BackpackerRouteLayout.astro reference routeOverview[i+1].colour instead of
+#      .color reach main in 547513d, where it rendered `undefined` into every
+#      route-map gradient until it was found ten days later. The build passed the
+#      whole time.
+#
+#   2. check-claims — the site told users in sixteen places that every account is
+#      identity-verified while the mandate was inert. Nothing caught it. The rules
+#      cover the claims already found; this stops them returning.
+#
+# Skip in an emergency with:  git push --no-verify
+# If you do, say so in the PR — both of these exist because something shipped.
+
+set -uo pipefail
+cd "$(dirname "$0")/../roammate.com" || exit 0
+
+RANGE_BASE="$(git merge-base HEAD origin/main 2>/dev/null || git rev-parse HEAD~1 2>/dev/null)"
+if [ -z "$RANGE_BASE" ]; then
+  CHANGED=""
+else
+  CHANGED="$(git diff --name-only "$RANGE_BASE"...HEAD 2>/dev/null)"
+fi
+
+needs_typecheck=false
+needs_claims=false
+if [ -z "$CHANGED" ]; then
+  needs_typecheck=true; needs_claims=true          # unknown range: check everything
+else
+  echo "$CHANGED" | grep -qE '\.(astro|ts|tsx)$' && needs_typecheck=true
+  echo "$CHANGED" | grep -qE '(src/(pages|components|layouts|content)/|public/llms)' && needs_claims=true
+fi
+
+fail=0
+
+if [ "$needs_claims" = true ]; then
+  echo "pre-push: checking claims…"
+  node scripts/check-claims.mjs --all || fail=1
+fi
+
+if [ "$needs_typecheck" = true ]; then
+  echo "pre-push: astro check…"
+  # astro check is slow; only its errors matter here, warnings and hints do not
+  if ! npx --no-install astro check 2>&1 | tee /tmp/roammate-astro-check.log | tail -4; then
+    fail=1
+  fi
+  if grep -qE '^- [1-9][0-9]* error' /tmp/roammate-astro-check.log; then
+    echo "pre-push: astro check reported errors (full log: /tmp/roammate-astro-check.log)"
+    fail=1
+  fi
+fi
+
+if [ "$fail" -ne 0 ]; then
+  echo
+  echo "pre-push FAILED. Fix the above, or push with --no-verify and explain why."
+  exit 1
+fi
+
+echo "pre-push: ok"
+exit 0
