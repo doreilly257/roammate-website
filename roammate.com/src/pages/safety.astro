@@ -15,7 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           "@type": "WebPage",
           "name": "Is roammate Safe?",
           "url": "https://roammate.com/safety/",
-          "description": "roammate safety features: verified profiles, identity checks, in-app reporting, and safe meeting guidelines for solo travellers.",
+          "description": "roammate safety features: emergency SOS with nominated contacts, check-in timers, optional identity verification, in-app reporting, and safe meeting guidelines for solo travellers.",
           "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": [".safety-title", ".safety-subtitle", ".faq-section"]
@@ -37,6 +37,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Travellers can verify their identity with a government-ID and liveness check. Verified accounts display a badge so you know who you're looking at before any conversation starts."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens when I use Emergency SOS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Raising an SOS alert sends your location to the emergency contacts you have nominated in the app. Alerts are delivered by email, so a contact needs an email address on file to be reachable. After sending, the app reports which contacts it actually reached and which it could not, rather than assuming everyone received it."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do check-in timers work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Set a check-in timer before you head out and the app counts down to it. You can check in when you are fine, extend it if plans run long, or stop it entirely. Joining an excursion can arm one automatically."
               }
             },
             {
@@ -101,6 +117,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="safety-card-num">04</div>
           <h3>Compatible matching reduces risk</h3>
           <p>By matching on travel style and budget before surfacing profiles, roammate reduces mismatched expectations, one of the most common sources of tension when travelling with someone new.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-card-num">05</div>
+          <h3>Emergency SOS and contacts</h3>
+          <p>Nominate emergency contacts in the app, then raise an SOS alert that sends them your location. Alerts go out by email, so add an email address for anyone you want reachable. After sending, the app tells you exactly who it reached and who it could not, rather than assuming everyone got it.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-card-num">06</div>
+          <h3>Check-in countdown</h3>
+          <p>Set a check-in timer before you head out and the app counts down to it. Check in when you are fine, extend it if plans run long, or stop it entirely. Join an excursion and it can arm itself, so the timer is running before you think to set one.</p>
         </div>
       </div>
     </div>
