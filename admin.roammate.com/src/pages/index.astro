@@ -1,0 +1,200 @@
+---
+import AdminLayout from '../layouts/AdminLayout.astro';
+import { api, type Overview, type TimeseriesPoint, type ActivityEvent } from '../lib/api';
+import { num, pct, relative, sparkline, truncate } from '../lib/format';
+
+const env = Astro.locals.runtime.env;
+
+// Fetched together; a slow queue should not serialise behind the counts.
+const [overviewRes, seriesRes, activityRes] = await Promise.all([
+  api.get<Overview>(env, '/overview'),
+  api.get<{ points: TimeseriesPoint[] }>(env, '/timeseries?days=30'),
+  api.get<{ events: ActivityEvent[] }>(env, '/activity?limit=12'),
+]);
+
+const o = overviewRes.ok ? overviewRes.data : null;
+const points = seriesRes.ok ? seriesRes.data.points : [];
+const events = activityRes.ok ? activityRes.data.events : [];
+const errors = [overviewRes, seriesRes, activityRes]
+  .filter((r) => !r.ok)
+  .map((r) => (r as { error: string; status: number }));
+
+const signupSpark = sparkline(points.map((p) => p.signups));
+const excursionSpark = sparkline(points.map((p) => p.excursions));
+const messageSpark = sparkline(points.map((p) => p.messages));
+
+const KIND_LABEL: Record<string, string> = {
+  signup: 'signed up',
+  excursion_created: 'created excursion',
+  excursion_join: 'joined',
+  media_upload: 'uploaded media',
+  report: 'reported content',
+  sos: 'raised SOS',
+  verification: 'verification',
+  moderation: 'moderation action',
+};
+---
+
+<AdminLayout
+  title="Overview"
+  subtitle={o ? `Live from the API · generated ${relative(o.generatedAt)}` : 'Live from the API'}
+  reportsOpen={o?.queues.reportsOpen}
+>
+  {errors.map((e) => (
+    <div class="err">Could not load part of this page: {e.error} (HTTP {e.status})</div>
+  ))}
+
+  {o && (
+    <>
+      {(o.queues.reportsOpen > 0 || o.queues.sosOpen > 0) && (
+        <div class="cards" style="margin-bottom:18px">
+          {o.queues.reportsOpen > 0 && (
+            <a href="/moderation" class="card alert" style="text-decoration:none">
+              <div class="label">Open reports</div>
+              <div class="value">{num(o.queues.reportsOpen)}</div>
+              <div class="foot">Needs review</div>
+            </a>
+          )}
+          {o.queues.sosOpen > 0 && (
+            <div class="card alert">
+              <div class="label">Unresolved SOS</div>
+              <div class="value">{num(o.queues.sosOpen)}</div>
+              <div class="foot">Safety alerts still open</div>
+            </div>
+          )}
+        </div>
+      )}
+
+      <h2>People</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="label">Total users</div>
+          <div class="value">{num(o.users.total)}</div>
+          <div class="foot">{num(o.users.new7d)} new this week</div>
+        </div>
+        <div class="card">
+          <div class="label">Verified</div>
+          <div class="value">{num(o.users.verified)}</div>
+          <div class="foot">{pct(o.users.verified, o.users.total)} of all users</div>
+        </div>
+        <div class="card">
+          <div class="label">Active (7d)</div>
+          <div class="value">{num(o.users.active7d)}</div>
+          <div class="foot">{pct(o.users.active7d, o.users.total)} seen this week</div>
+        </div>
+        <div class="card">
+          <div class="label">New (30d)</div>
+          <div class="value">{num(o.users.new30d)}</div>
+          <div class="foot">
+            <svg class="spark" width="160" height="36" viewBox="0 0 160 36" aria-hidden="true">
+              <path d={signupSpark.area} fill="rgba(255,107,53,0.15)" />
+              <path d={signupSpark.path} fill="none" stroke="#ff6b35" stroke-width="1.5" />
+            </svg>
+          </div>
+        </div>
+        <div class="card">
+          <div class="label">Ejected</div>
+          <div class="value">{num(o.users.ejected)}</div>
+          <div class="foot">Removed by moderation</div>
+        </div>
+      </div>
+
+      <h2>Excursions</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="label">Live excursions</div>
+          <div class="value">{num(o.excursions.total)}</div>
+          <div class="foot">{num(o.excursions.new7d)} created this week</div>
+        </div>
+        <div class="card">
+          <div class="label">Upcoming</div>
+          <div class="value">{num(o.excursions.upcoming)}</div>
+          <div class="foot">Dated in the future</div>
+        </div>
+        <div class="card">
+          <div class="label">Participants</div>
+          <div class="value">{num(o.excursions.participants)}</div>
+          <div class="foot">Joined, all time</div>
+        </div>
+        <div class="card">
+          <div class="label">Created (30d)</div>
+          <div class="value">{num(points.reduce((a, p) => a + p.excursions, 0))}</div>
+          <div class="foot">
+            <svg class="spark" width="160" height="36" viewBox="0 0 160 36" aria-hidden="true">
+              <path d={excursionSpark.area} fill="rgba(62,207,142,0.15)" />
+              <path d={excursionSpark.path} fill="none" stroke="#3ecf8e" stroke-width="1.5" />
+            </svg>
+          </div>
+        </div>
+        <div class="card">
+          <div class="label">Deleted</div>
+          <div class="value">{num(o.excursions.deleted)}</div>
+          <div class="foot">Soft-deleted</div>
+        </div>
+      </div>
+
+      <h2>Content</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="label">Albums</div>
+          <div class="value">{num(o.content.albums)}</div>
+        </div>
+        <div class="card">
+          <div class="label">Media items</div>
+          <div class="value">{num(o.content.media)}</div>
+          <div class="foot"><a href="/media">Browse</a></div>
+        </div>
+        <div class="card">
+          <div class="label">Messages (7d)</div>
+          <div class="value">{num(o.content.messages7d)}</div>
+          <div class="foot">
+            <svg class="spark" width="160" height="36" viewBox="0 0 160 36" aria-hidden="true">
+              <path d={messageSpark.area} fill="rgba(148,155,171,0.15)" />
+              <path d={messageSpark.path} fill="none" stroke="#949bab" stroke-width="1.5" />
+            </svg>
+          </div>
+        </div>
+        <div class="card">
+          <div class="label">Verifications pending</div>
+          <div class="value">{num(o.queues.verificationPending)}</div>
+          <div class="foot">Not yet approved or declined</div>
+        </div>
+      </div>
+    </>
+  )}
+
+  <h2>Latest activity</h2>
+  <div class="panel">
+    <div class="panel-head">
+      <h3>Most recent events</h3>
+      <a href="/activity" class="sub">Full log</a>
+    </div>
+    {events.length === 0 ? (
+      <div class="empty">Nothing has happened yet, or the activity feed could not be read.</div>
+    ) : (
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>When</th><th>Who</th><th>What</th><th>Detail</th></tr>
+          </thead>
+          <tbody>
+            {events.map((e) => (
+              <tr>
+                <td class="dim" style="white-space:nowrap">{relative(e.at)}</td>
+                <td>
+                  {e.actor_id ? (
+                    <a href={`/users/${e.actor_id}`}>{e.actor_name || 'Unknown'}</a>
+                  ) : (
+                    <span class="dim">System</span>
+                  )}
+                </td>
+                <td>{KIND_LABEL[e.kind] || e.kind}</td>
+                <td class="dim">{truncate(e.detail, 70)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </div>
+</AdminLayout>

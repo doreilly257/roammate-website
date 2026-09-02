@@ -1,0 +1,226 @@
+---
+import AdminLayout from '../layouts/AdminLayout.astro';
+import { api, type AdminReport, type ModerationAction, type Overview } from '../lib/api';
+import { dateTime, num, relative, truncate } from '../lib/format';
+
+const env = Astro.locals.runtime.env;
+const url = Astro.url;
+const status = url.searchParams.get('status') || 'open';
+
+let flash: { kind: 'ok' | 'err'; message: string } | null = null;
+if (Astro.request.method === 'POST') {
+  const form = await Astro.request.formData();
+  const reportId = String(form.get('reportId') || '');
+  const action = String(form.get('action') || 'dismiss');
+  const notes = String(form.get('notes') || '').slice(0, 500);
+
+  if (reportId) {
+    const result = await api.post(env, `/reports/${reportId}/resolve`, {
+      actorId: Astro.locals.operator,
+      action,
+      notes,
+    });
+    flash = result.ok
+      ? {
+          kind: 'ok',
+          message:
+            action === 'remove_content_and_eject_user'
+              ? 'Report resolved. The reported user was ejected and their content removed.'
+              : 'Report dismissed.',
+        }
+      : { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
+  }
+}
+
+const [res, logRes, overviewRes] = await Promise.all([
+  api.get<{ reports: AdminReport[] }>(env, `/reports?status=${encodeURIComponent(status)}&limit=200`),
+  api.get<{ actions: ModerationAction[] }>(env, '/moderation-log?limit=50'),
+  api.get<Overview>(env, '/overview'),
+]);
+
+const reports = res.ok ? res.data.reports : [];
+const log = logRes.ok ? logRes.data.actions : [];
+
+// The reported content itself. Without this a moderator is deciding from the
+// reason code alone, which is not a decision. Fetched in parallel and keyed by
+// report id; a target that cannot be resolved renders as "unavailable" rather
+// than silently looking like there was nothing there.
+type TargetPayload = { targetType: string; target: Record<string, unknown> | null };
+const targets = new Map<string, TargetPayload>();
+await Promise.all(
+  reports.map(async (r) => {
+    const t = await api.get<TargetPayload>(env, `/reports/${r.id}/target`);
+    if (t.ok) targets.set(r.id, t.data);
+  }),
+);
+
+/** Renders the handful of fields that matter per target type. */
+function describeTarget(t: TargetPayload | undefined): { label: string; body: string; image?: string } | null {
+  if (!t || !t.target) return null;
+  const g = (k: string) => (t.target?.[k] == null ? '' : String(t.target[k]));
+  if (t.targetType === 'message') {
+    return { label: 'Reported message', body: g('content') || '(no text — media only)', image: g('image_url') || undefined };
+  }
+  if (t.targetType === 'excursion') {
+    return { label: 'Reported excursion', body: `${g('title')}\n\n${g('description')}`.trim(), image: g('cover_image_url') || undefined };
+  }
+  if (t.targetType === 'album_media') {
+    return { label: 'Reported media', body: g('caption') || '(no caption)', image: g('thumbnail_url') || g('url') || undefined };
+  }
+  if (t.targetType === 'user') {
+    return { label: 'Reported profile', body: [g('name'), g('username'), g('headline'), g('location')].filter(Boolean).join(' · ') };
+  }
+  return { label: `Reported ${t.targetType}`, body: '(no preview available for this content type)' };
+}
+
+/** action_due_at in the past means the review SLA has already been missed. */
+function overdue(r: AdminReport): boolean {
+  if (!r.action_due_at || r.status !== 'open') return false;
+  const due = new Date(r.action_due_at.includes('T') ? r.action_due_at : `${r.action_due_at.replace(' ', 'T')}Z`);
+  return !Number.isNaN(due.getTime()) && due.getTime() < Date.now();
+}
+
+const STATUSES = ['open', 'resolved'];
+---
+
+<AdminLayout
+  title="Moderation"
+  subtitle={`${num(reports.length)} ${status} report${reports.length === 1 ? '' : 's'}`}
+  reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
+>
+  {flash && <div class={flash.kind === 'ok' ? 'notice' : 'err'}>{flash.message}</div>}
+  {!res.ok && <div class="err">Could not load the moderation queue: {res.error} (HTTP {res.status})</div>}
+
+  <div class="filters">
+    {STATUSES.map((s) => (
+      <a href={`/moderation?status=${s}`}>
+        <button type="button" class={status === s ? 'primary' : ''}>{s[0].toUpperCase() + s.slice(1)}</button>
+      </a>
+    ))}
+  </div>
+
+  {reports.length === 0 ? (
+    <div class="panel"><div class="empty">No {status} reports. Nothing needs attention.</div></div>
+  ) : (
+    reports.map((r) => (
+      <div class="panel" style="margin-bottom:12px">
+        <div class="panel-head">
+          <h3>
+            <span class="pill warn">{r.reason}</span>
+            <span class="dim" style="font-weight:400;margin-left:8px">
+              {r.target_type} · reported {relative(r.created_at)}
+            </span>
+          </h3>
+          {overdue(r) && <span class="pill bad">Overdue</span>}
+        </div>
+        <div style="padding:14px">
+          <div class="grid-2">
+            <div>
+              <dl class="kv">
+                <dt>Reported by</dt>
+                <dd>{r.reporter_id ? <a href={`/users/${r.reporter_id}`}>{r.reporter_name || r.reporter_id}</a> : '--'}</dd>
+                <dt>Target user</dt>
+                <dd>
+                  {r.target_user_id
+                    ? <a href={`/users/${r.target_user_id}`}>{r.target_user_name || r.target_user_id}</a>
+                    : <span class="dim">Not a user</span>}
+                  {r.target_ejected ? <span class="pill bad" style="margin-left:6px">Already ejected</span> : null}
+                </dd>
+                <dt>Target</dt>
+                <dd class="mono">
+                  {r.target_type === 'excursion'
+                    ? <a href={`/excursions/${r.target_id}`}>{r.target_id}</a>
+                    : r.target_id}
+                </dd>
+                <dt>Filed</dt><dd>{dateTime(r.created_at)}</dd>
+                {r.action_due_at ? <><dt>Due</dt><dd>{dateTime(r.action_due_at)}</dd></> : null}
+                {r.resolution_notes ? <><dt>Resolution</dt><dd>{r.resolution_notes}</dd></> : null}
+              </dl>
+              {r.details && (
+                <div style="margin-top:10px">
+                  <div class="sub">Reporter's description</div>
+                  <p style="white-space:pre-wrap;margin:4px 0 0">{r.details}</p>
+                </div>
+              )}
+
+              {(() => {
+                const t = describeTarget(targets.get(r.id));
+                if (!t) {
+                  return (
+                    <div style="margin-top:12px">
+                      <div class="sub">Reported content</div>
+                      <p class="dim" style="margin:4px 0 0">
+                        Could not be loaded. It may have been deleted already.
+                      </p>
+                    </div>
+                  );
+                }
+                return (
+                  <div style="margin-top:12px;padding:10px 12px;background:var(--panel-2);border:1px solid var(--line);border-radius:6px">
+                    <div class="sub" style="margin-bottom:5px">{t.label}</div>
+                    {t.image && (
+                      <img src={t.image} alt="" style="max-width:220px;max-height:160px;border-radius:5px;display:block;margin-bottom:8px" />
+                    )}
+                    <p style="white-space:pre-wrap;margin:0;color:var(--ink)">{t.body}</p>
+                  </div>
+                );
+              })()}
+            </div>
+
+            {r.status === 'open' && (
+              <div>
+                <form method="post">
+                  <input type="hidden" name="reportId" value={r.id} />
+                  <textarea name="notes" rows="2" placeholder="Notes (recorded against this decision)" style="width:100%;margin-bottom:8px"></textarea>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap">
+                    <button type="submit" name="action" value="dismiss">Dismiss</button>
+                    <button
+                      type="submit"
+                      name="action"
+                      value="remove_content_and_eject_user"
+                      class="danger"
+                      disabled={!r.target_user_id}
+                      title={r.target_user_id ? '' : 'This report has no target user to eject'}
+                    >
+                      Eject user &amp; remove content
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    ))
+  )}
+
+  <h2>Recent moderation actions</h2>
+  <div class="panel">
+    {log.length === 0 ? (
+      <div class="empty">No moderation actions have been taken.</div>
+    ) : (
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>When</th><th>Action</th><th>Target</th><th>By</th><th>Notes</th></tr></thead>
+          <tbody>
+            {log.map((a) => (
+              <tr>
+                <td class="dim mono" style="white-space:nowrap">{dateTime(a.created_at)}</td>
+                <td><span class="pill mute">{a.action_type}</span></td>
+                <td>
+                  {a.target_user_id
+                    ? <a href={`/users/${a.target_user_id}`}>{a.target_user_name || a.target_user_id}</a>
+                    : a.target_type === 'excursion' && a.target_id
+                      ? <a href={`/excursions/${a.target_id}`}>excursion</a>
+                      : <span class="dim">--</span>}
+                </td>
+                <td class="dim">{a.actor_id || '--'}</td>
+                <td class="dim">{truncate(a.notes, 60)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </div>
+</AdminLayout>

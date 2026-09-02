@@ -1,0 +1,173 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { api, type Overview } from '../../lib/api';
+import { dateTime, num, relative, truncate } from '../../lib/format';
+
+const env = Astro.locals.runtime.env;
+const { id } = Astro.params;
+
+type Detail = {
+  excursion: Record<string, unknown> & {
+    id: string; title: string; description: string | null; date: string | null; end_date: string | null;
+    location_name: string | null; location_address: string | null; status: string | null;
+    is_deleted: number; min_pax: number | null; max_pax: number | null; cover_image_url: string | null;
+    created_at: string; host_id: string | null; host_name: string | null; host_username: string | null;
+    host_verified: number | null;
+  };
+  participants: Array<{ user_id: string; status: string; created_at: string; name: string | null; username: string | null; profile_image_url: string | null; is_verified: number | null }>;
+  reports: Array<{ id: string; reporter_id: string; reason: string; details: string | null; status: string; created_at: string }>;
+  albums: Array<{ id: string; name: string; is_public: number; media_count: number }>;
+};
+
+let flash: { kind: 'ok' | 'err'; message: string } | null = null;
+if (Astro.request.method === 'POST') {
+  const form = await Astro.request.formData();
+  const action = String(form.get('action') || '');
+  const notes = String(form.get('notes') || '').slice(0, 500);
+
+  if (action === 'delete' || action === 'restore') {
+    const result = await api.post(env, `/excursions/${id}/${action}`, {
+      actorId: Astro.locals.operator,
+      notes,
+    });
+    flash = result.ok
+      ? { kind: 'ok', message: action === 'delete' ? 'Excursion removed.' : 'Excursion restored.' }
+      : { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
+  }
+}
+
+const [res, overviewRes] = await Promise.all([
+  api.get<Detail>(env, `/excursions/${id}`),
+  api.get<Overview>(env, '/overview'),
+]);
+
+if (!res.ok && res.status === 404) return Astro.redirect('/excursions');
+
+const d = res.ok ? res.data : null;
+const e = d?.excursion;
+const joined = d?.participants.filter((p) => p.status === 'joined').length ?? 0;
+---
+
+<AdminLayout
+  title={e?.title || 'Excursion'}
+  subtitle={e ? `${e.location_name || 'No location'} · ${dateTime(e.date)}` : undefined}
+  reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
+>
+  {flash && <div class={flash.kind === 'ok' ? 'notice' : 'err'}>{flash.message}</div>}
+  {!res.ok && <div class="err">Could not load this excursion: {res.error} (HTTP {res.status})</div>}
+
+  {d && e && (
+    <div class="grid-2">
+      <div>
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Details</h3>
+            {e.is_deleted ? <span class="pill bad">Deleted</span> : <span class="pill mute">{e.status || 'active'}</span>}
+          </div>
+          {e.cover_image_url && (
+            <img src={e.cover_image_url} alt="" style="width:100%;max-height:220px;object-fit:cover;display:block" />
+          )}
+          <div style="padding:14px">
+            <dl class="kv">
+              <dt>ID</dt><dd class="mono">{e.id}</dd>
+              <dt>Host</dt>
+              <dd>
+                {e.host_id
+                  ? <a href={`/users/${e.host_id}`}>{e.host_name || e.host_username || 'Unknown'}</a>
+                  : '--'}
+                {e.host_verified ? <span class="pill ok" style="margin-left:6px">Verified</span> : null}
+              </dd>
+              <dt>Starts</dt><dd>{dateTime(e.date)}</dd>
+              <dt>Ends</dt><dd>{e.end_date ? dateTime(e.end_date) : '--'}</dd>
+              <dt>Location</dt><dd>{e.location_name || '--'}{e.location_address ? ` — ${e.location_address}` : ''}</dd>
+              <dt>Capacity</dt><dd>{e.min_pax ?? '--'} to {e.max_pax ?? '--'}</dd>
+              <dt>Created</dt><dd>{dateTime(e.created_at)} ({relative(e.created_at)})</dd>
+            </dl>
+            {e.description && (
+              <>
+                <h2 style="margin-top:16px">Description</h2>
+                <p style="white-space:pre-wrap;margin:0;color:var(--ink-dim)">{e.description}</p>
+              </>
+            )}
+          </div>
+        </div>
+
+        <h2>Participants ({num(joined)} joined of {d.participants.length} total)</h2>
+        <div class="panel">
+          {d.participants.length === 0 ? <div class="empty">Nobody has joined.</div> : (
+            <div class="table-wrap"><table>
+              <thead><tr><th>User</th><th>Status</th><th>Joined</th></tr></thead>
+              <tbody>{d.participants.map((p) => (
+                <tr>
+                  <td>
+                    <a href={`/users/${p.user_id}`} class="who" style="text-decoration:none">
+                      {p.profile_image_url
+                        ? <img class="avatar" src={p.profile_image_url} alt="" loading="lazy" />
+                        : <span class="avatar"></span>}
+                      <span class="nm">{p.name || p.username || 'Unnamed'}</span>
+                      {p.is_verified ? <span class="pill ok">✓</span> : null}
+                    </a>
+                  </td>
+                  <td><span class={`pill ${p.status === 'joined' ? 'ok' : 'mute'}`}>{p.status}</span></td>
+                  <td class="dim" style="white-space:nowrap">{relative(p.created_at)}</td>
+                </tr>
+              ))}</tbody>
+            </table></div>
+          )}
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-head"><h3>Moderation</h3></div>
+          <div style="padding:14px">
+            <form method="post">
+              <input type="hidden" name="action" value={e.is_deleted ? 'restore' : 'delete'} />
+              <p class="sub" style="margin-top:0">
+                {e.is_deleted
+                  ? 'This excursion is soft-deleted and hidden from the app. Restoring makes it visible again.'
+                  : 'Removing soft-deletes the excursion. It disappears from the app but the row is kept, so this is reversible.'}
+              </p>
+              <textarea name="notes" rows="2" placeholder="Reason (recorded in the moderation log)" style="width:100%;margin-bottom:8px"></textarea>
+              <button type="submit" class={e.is_deleted ? 'primary' : 'danger'}>
+                {e.is_deleted ? 'Restore excursion' : 'Remove excursion'}
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <h2>Reports ({d.reports.length})</h2>
+        <div class="panel">
+          {d.reports.length === 0 ? <div class="empty">None.</div> : (
+            <div class="table-wrap"><table>
+              <thead><tr><th>Reason</th><th>Status</th><th>When</th></tr></thead>
+              <tbody>{d.reports.map((r) => (
+                <tr>
+                  <td>{r.reason}<div class="dim">{truncate(r.details, 60)}</div></td>
+                  <td><span class={`pill ${r.status === 'open' ? 'warn' : 'mute'}`}>{r.status}</span></td>
+                  <td class="dim" style="white-space:nowrap">{relative(r.created_at)}</td>
+                </tr>
+              ))}</tbody>
+            </table></div>
+          )}
+        </div>
+
+        <h2>Albums ({d.albums.length})</h2>
+        <div class="panel">
+          {d.albums.length === 0 ? <div class="empty">No album for this excursion.</div> : (
+            <div class="table-wrap"><table>
+              <thead><tr><th>Name</th><th>Visibility</th><th class="num">Media</th></tr></thead>
+              <tbody>{d.albums.map((a) => (
+                <tr>
+                  <td>{a.name}</td>
+                  <td><span class={`pill ${a.is_public ? 'warn' : 'mute'}`}>{a.is_public ? 'Public' : 'Private'}</span></td>
+                  <td class="num">{num(a.media_count)}</td>
+                </tr>
+              ))}</tbody>
+            </table></div>
+          )}
+        </div>
+      </div>
+    </div>
+  )}
+</AdminLayout>

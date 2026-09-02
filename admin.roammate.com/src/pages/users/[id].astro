@@ -1,0 +1,223 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { api, type AdminUser, type Overview } from '../../lib/api';
+import { dateTime, num, relative, truncate } from '../../lib/format';
+
+const env = Astro.locals.runtime.env;
+const { id } = Astro.params;
+
+type Detail = {
+  user: AdminUser;
+  hostedExcursions: Array<{ id: string; title: string; date: string | null; status: string | null; is_deleted: number; created_at: string }>;
+  joinedExcursions: Array<{ id: string; title: string; date: string | null; status: string; created_at: string }>;
+  media: Array<{ id: string; url: string; thumbnail_url: string | null; caption: string | null; created_at: string }>;
+  reportsAgainst: Array<{ id: string; reason: string; details: string | null; status: string; created_at: string }>;
+  reportsBy: Array<{ id: string; target_type: string; reason: string; status: string; created_at: string }>;
+  verificationSessions: Array<{ session_id: string; level: string | null; status: string; created_at: string; completed_at: string | null }>;
+};
+
+// Astro's security.checkOrigin guards these POSTs against cross-origin submission.
+let flash: { kind: 'ok' | 'err'; message: string } | null = null;
+if (Astro.request.method === 'POST') {
+  const form = await Astro.request.formData();
+  const action = String(form.get('action') || '');
+  const notes = String(form.get('notes') || '').slice(0, 500);
+  const operator = Astro.locals.operator;
+
+  if (action === 'eject' || action === 'restore') {
+    const result = await api.post(env, `/users/${id}/${action}`, { actorId: operator, notes });
+    flash = result.ok
+      ? {
+          kind: 'ok',
+          message:
+            action === 'eject'
+              ? 'User ejected. Their content has been removed and their sockets closed.'
+              : 'Account restored. Content removed by the ejection was NOT restored -- see the note below.',
+        }
+      : { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
+  }
+}
+
+const [res, overviewRes] = await Promise.all([
+  api.get<Detail>(env, `/users/${id}`),
+  api.get<Overview>(env, '/overview'),
+]);
+
+if (!res.ok && res.status === 404) return Astro.redirect('/users');
+
+const d = res.ok ? res.data : null;
+const u = d?.user;
+---
+
+<AdminLayout
+  title={u?.name || u?.username || 'User'}
+  subtitle={u ? `${u.email || 'no email'} · joined ${dateTime(u.created_at)}` : undefined}
+  reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
+>
+  {flash && <div class={flash.kind === 'ok' ? 'notice' : 'err'}>{flash.message}</div>}
+  {!res.ok && <div class="err">Could not load this user: {res.error} (HTTP {res.status})</div>}
+
+  {d && u && (
+    <div class="grid-2">
+      <div>
+        <div class="panel">
+          <div class="panel-head"><h3>Profile</h3>
+            <span>
+              {u.is_ejected ? <span class="pill bad">Ejected</span>
+                : u.is_verified ? <span class="pill ok">Verified</span>
+                : <span class="pill mute">Unverified</span>}
+            </span>
+          </div>
+          <div style="padding:14px">
+            <div class="who" style="margin-bottom:12px">
+              {u.profile_image_url
+                ? <img class="avatar" style="width:52px;height:52px;flex-basis:52px" src={u.profile_image_url} alt="" />
+                : <span class="avatar" style="width:52px;height:52px;flex-basis:52px"></span>}
+              <div>
+                <strong style="font-size:16px">{u.name || 'Unnamed'}</strong>
+                <div class="dim">{u.headline || 'No headline'}</div>
+              </div>
+            </div>
+            <dl class="kv">
+              <dt>ID</dt><dd class="mono">{u.id}</dd>
+              <dt>Username</dt><dd>{u.username || '--'}</dd>
+              <dt>Email</dt><dd>{u.email || '--'}</dd>
+              <dt>Location</dt><dd>{u.location || '--'}</dd>
+              <dt>Auth</dt><dd>{u.auth_provider || '--'}</dd>
+              <dt>Followers</dt><dd>{num(u.followers_count)}</dd>
+              <dt>Vouches</dt><dd>{num(u.vouches_count)}</dd>
+              <dt>Last seen</dt><dd>{u.last_seen_at ? `${relative(u.last_seen_at)} (${dateTime(u.last_seen_at)})` : '--'}</dd>
+              <dt>Joined</dt><dd>{dateTime(u.created_at)}</dd>
+              {u.is_ejected ? <><dt>Ejected</dt><dd>{dateTime(u.ejected_at)} — {u.ejection_reason || 'no reason recorded'}</dd></> : null}
+            </dl>
+          </div>
+        </div>
+
+        <h2>Excursions hosted ({d.hostedExcursions.length})</h2>
+        <div class="panel">
+          {d.hostedExcursions.length === 0 ? <div class="empty">None.</div> : (
+            <div class="table-wrap"><table>
+              <thead><tr><th>Title</th><th>Date</th><th>Status</th><th>Created</th></tr></thead>
+              <tbody>{d.hostedExcursions.map((e) => (
+                <tr>
+                  <td><a href={`/excursions/${e.id}`}>{truncate(e.title, 60)}</a></td>
+                  <td class="dim mono">{dateTime(e.date)}</td>
+                  <td>{e.is_deleted ? <span class="pill bad">Deleted</span> : <span class="pill mute">{e.status || 'active'}</span>}</td>
+                  <td class="dim mono">{dateTime(e.created_at)}</td>
+                </tr>
+              ))}</tbody>
+            </table></div>
+          )}
+        </div>
+
+        <h2>Excursions joined ({d.joinedExcursions.length})</h2>
+        <div class="panel">
+          {d.joinedExcursions.length === 0 ? <div class="empty">None.</div> : (
+            <div class="table-wrap"><table>
+              <thead><tr><th>Title</th><th>Date</th><th>Participation</th></tr></thead>
+              <tbody>{d.joinedExcursions.map((e) => (
+                <tr>
+                  <td><a href={`/excursions/${e.id}`}>{truncate(e.title, 60)}</a></td>
+                  <td class="dim mono">{dateTime(e.date)}</td>
+                  <td><span class="pill mute">{e.status}</span></td>
+                </tr>
+              ))}</tbody>
+            </table></div>
+          )}
+        </div>
+
+        {d.media.length > 0 && (
+          <>
+            <h2>Media uploaded ({d.media.length})</h2>
+            <div class="thumbs">
+              {d.media.map((m) => (
+                <div class="thumb">
+                  <img src={m.thumbnail_url || m.url} alt={m.caption || ''} loading="lazy" />
+                  <div class="meta">{truncate(m.caption, 40) || 'No caption'}<br /><span class="mono">{dateTime(m.created_at)}</span></div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-head"><h3>Moderation</h3></div>
+          <div style="padding:14px">
+            {u.is_ejected ? (
+              <form method="post">
+                <p class="sub" style="margin-top:0">
+                  This account is ejected. Restoring re-enables sign-in only. Content removed
+                  by the ejection is <strong>not</strong> brought back, because the ejection
+                  does not record which rows it touched.
+                </p>
+                <input type="hidden" name="action" value="restore" />
+                <textarea name="notes" rows="2" placeholder="Reason for restoring (optional)" style="width:100%;margin-bottom:8px"></textarea>
+                <button type="submit" class="primary">Restore account</button>
+              </form>
+            ) : (
+              <form method="post">
+                <p class="sub" style="margin-top:0">
+                  Ejecting removes this user's content, closes their live connections and
+                  blocks sign-in. It is reversible for the account, but not for the content.
+                </p>
+                <input type="hidden" name="action" value="eject" />
+                <textarea name="notes" rows="2" placeholder="Reason (recorded in the moderation log)" style="width:100%;margin-bottom:8px"></textarea>
+                <button type="submit" class="danger">Eject user</button>
+              </form>
+            )}
+          </div>
+        </div>
+
+        <h2>Reports against ({d.reportsAgainst.length})</h2>
+        <div class="panel">
+          {d.reportsAgainst.length === 0 ? <div class="empty">None.</div> : (
+            <div class="table-wrap"><table>
+              <thead><tr><th>Reason</th><th>Status</th><th>When</th></tr></thead>
+              <tbody>{d.reportsAgainst.map((r) => (
+                <tr>
+                  <td>{r.reason}<div class="dim">{truncate(r.details, 60)}</div></td>
+                  <td><span class={`pill ${r.status === 'open' ? 'warn' : 'mute'}`}>{r.status}</span></td>
+                  <td class="dim" style="white-space:nowrap">{relative(r.created_at)}</td>
+                </tr>
+              ))}</tbody>
+            </table></div>
+          )}
+        </div>
+
+        <h2>Reports filed ({d.reportsBy.length})</h2>
+        <div class="panel">
+          {d.reportsBy.length === 0 ? <div class="empty">None.</div> : (
+            <div class="table-wrap"><table>
+              <thead><tr><th>Target</th><th>Reason</th><th>When</th></tr></thead>
+              <tbody>{d.reportsBy.map((r) => (
+                <tr>
+                  <td class="dim">{r.target_type}</td>
+                  <td>{r.reason}</td>
+                  <td class="dim" style="white-space:nowrap">{relative(r.created_at)}</td>
+                </tr>
+              ))}</tbody>
+            </table></div>
+          )}
+        </div>
+
+        <h2>Verification</h2>
+        <div class="panel">
+          {d.verificationSessions.length === 0 ? <div class="empty">Never attempted.</div> : (
+            <div class="table-wrap"><table>
+              <thead><tr><th>Status</th><th>Level</th><th>Started</th></tr></thead>
+              <tbody>{d.verificationSessions.map((v) => (
+                <tr>
+                  <td><span class={`pill ${v.status === 'approved' ? 'ok' : v.status === 'declined' ? 'bad' : 'warn'}`}>{v.status}</span></td>
+                  <td class="dim">{v.level || '--'}</td>
+                  <td class="dim mono">{dateTime(v.created_at)}</td>
+                </tr>
+              ))}</tbody>
+            </table></div>
+          )}
+        </div>
+      </div>
+    </div>
+  )}
+</AdminLayout>

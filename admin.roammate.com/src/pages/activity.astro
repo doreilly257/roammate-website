@@ -1,0 +1,127 @@
+---
+import AdminLayout from '../layouts/AdminLayout.astro';
+import { api, type ActivityEvent, type Overview } from '../lib/api';
+import { dateTime, relative, truncate } from '../lib/format';
+
+const env = Astro.locals.runtime.env;
+const url = Astro.url;
+
+const KINDS = [
+  { id: 'signup', label: 'Signups' },
+  { id: 'excursion_created', label: 'Excursions created' },
+  { id: 'excursion_join', label: 'Joins' },
+  { id: 'media_upload', label: 'Media uploads' },
+  { id: 'report', label: 'Reports' },
+  { id: 'sos', label: 'SOS alerts' },
+  { id: 'verification', label: 'Verifications' },
+  { id: 'moderation', label: 'Moderation actions' },
+];
+
+const selected = url.searchParams.getAll('kind').filter((k) => KINDS.some((x) => x.id === k));
+const before = url.searchParams.get('before') || '';
+const limit = 100;
+
+const qs = new URLSearchParams({ limit: String(limit) });
+if (selected.length) qs.set('kinds', selected.join(','));
+if (before) qs.set('before', before);
+
+const [res, overviewRes] = await Promise.all([
+  api.get<{ events: ActivityEvent[]; nextCursor: string | null }>(env, `/activity?${qs}`),
+  api.get<Overview>(env, '/overview'),
+]);
+
+const events = res.ok ? res.data.events : [];
+const nextCursor = res.ok ? res.data.nextCursor : null;
+
+/** Preserves the active filters when paging. */
+function pageHref(cursor: string | null): string {
+  const p = new URLSearchParams();
+  selected.forEach((k) => p.append('kind', k));
+  if (cursor) p.set('before', cursor);
+  return `/activity${p.toString() ? `?${p}` : ''}`;
+}
+
+const KIND_META: Record<string, { label: string; cls: string }> = {
+  signup: { label: 'signed up', cls: 'ok' },
+  excursion_created: { label: 'created excursion', cls: 'ok' },
+  excursion_join: { label: 'joined excursion', cls: 'mute' },
+  media_upload: { label: 'uploaded media', cls: 'mute' },
+  report: { label: 'reported content', cls: 'warn' },
+  sos: { label: 'raised SOS', cls: 'bad' },
+  verification: { label: 'verification', cls: 'mute' },
+  moderation: { label: 'moderation action', cls: 'warn' },
+};
+
+function entityHref(e: ActivityEvent): string | null {
+  if (e.kind === 'excursion_created' || e.kind === 'excursion_join') return `/excursions/${e.entity_id}`;
+  if (e.kind === 'signup') return `/users/${e.entity_id}`;
+  if (e.kind === 'report' || e.kind === 'moderation') return '/moderation';
+  return null;
+}
+---
+
+<AdminLayout
+  title="Activity log"
+  subtitle="Every signup, excursion, join, upload, report, SOS and moderation action, newest first"
+  reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
+>
+  {!res.ok && <div class="err">Could not load the activity log: {res.error} (HTTP {res.status})</div>}
+
+  <form method="get" class="filters">
+    {KINDS.map((k) => (
+      <label style="display:flex;align-items:center;gap:5px;font-size:13px;color:var(--ink-dim)">
+        <input type="checkbox" name="kind" value={k.id} checked={selected.includes(k.id)} />
+        {k.label}
+      </label>
+    ))}
+    <button type="submit">Filter</button>
+    {selected.length > 0 && <a href="/activity"><button type="button" class="ghost">Clear</button></a>}
+  </form>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h3>{selected.length ? `${selected.length} of ${KINDS.length} event types` : 'All event types'}</h3>
+      <span class="sub">{events.length} shown</span>
+    </div>
+    {events.length === 0 ? (
+      <div class="empty">No events match these filters.</div>
+    ) : (
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>When</th><th>Age</th><th>Event</th><th>Who</th><th>Detail</th></tr>
+          </thead>
+          <tbody>
+            {events.map((e) => {
+              const meta = KIND_META[e.kind] || { label: e.kind, cls: 'mute' };
+              const href = entityHref(e);
+              return (
+                <tr>
+                  <td class="mono" style="white-space:nowrap">{dateTime(e.at)}</td>
+                  <td class="dim" style="white-space:nowrap">{relative(e.at)}</td>
+                  <td><span class={`pill ${meta.cls}`}>{meta.label}</span></td>
+                  <td>
+                    {e.actor_id ? (
+                      <a href={`/users/${e.actor_id}`}>{e.actor_name || 'Unknown'}</a>
+                    ) : (
+                      <span class="dim">System</span>
+                    )}
+                  </td>
+                  <td class="dim">
+                    {href ? <a href={href}>{truncate(e.detail, 80) || 'View'}</a> : truncate(e.detail, 80)}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </div>
+
+  <div class="pager">
+    {before && <a href={pageHref(null)}><button type="button">Newest</button></a>}
+    {nextCursor && <a href={pageHref(nextCursor)}><button type="button">Older →</button></a>}
+    {!nextCursor && events.length > 0 && <span>End of log.</span>}
+  </div>
+</AdminLayout>

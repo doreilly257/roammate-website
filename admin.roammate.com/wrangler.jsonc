@@ -1,0 +1,10 @@
+{
+  // Explicit config so wrangler stops walking UP the tree looking for one. It
+  // otherwise finds ~/wrangler.toml (an unrelated "chatcv" project) and attaches
+  // that project's D1, R2 and KV bindings to this Worker, which is how a local
+  // run ended up pointed at someone else's database.
+  "name": "roammate-admin",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-09-02",
+  "compatibility_flags": ["nodejs_compat"]
+}

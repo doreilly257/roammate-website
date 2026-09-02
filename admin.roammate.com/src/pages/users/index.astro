@@ -1,0 +1,110 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { api, type AdminUser, type Overview } from '../../lib/api';
+import { dateTime, num, relative } from '../../lib/format';
+
+const env = Astro.locals.runtime.env;
+const url = Astro.url;
+
+const q = url.searchParams.get('q')?.trim() || '';
+const filter = url.searchParams.get('filter') || 'all';
+const offset = Math.max(0, Number(url.searchParams.get('offset') || 0) || 0);
+const limit = 50;
+
+const qs = new URLSearchParams({ limit: String(limit), offset: String(offset), filter });
+if (q) qs.set('q', q);
+
+const [res, overviewRes] = await Promise.all([
+  api.get<{ users: AdminUser[]; total: number }>(env, `/users?${qs}`),
+  api.get<Overview>(env, '/overview'),
+]);
+
+const users = res.ok ? res.data.users : [];
+const total = res.ok ? res.data.total : 0;
+
+const FILTERS = [
+  { id: 'all', label: 'All' },
+  { id: 'verified', label: 'Verified' },
+  { id: 'unverified', label: 'Unverified' },
+  { id: 'active', label: 'Active 7d' },
+  { id: 'ejected', label: 'Ejected' },
+];
+
+function pageHref(newOffset: number): string {
+  const p = new URLSearchParams();
+  if (q) p.set('q', q);
+  if (filter !== 'all') p.set('filter', filter);
+  if (newOffset > 0) p.set('offset', String(newOffset));
+  return `/users${p.toString() ? `?${p}` : ''}`;
+}
+---
+
+<AdminLayout
+  title="Users"
+  subtitle={res.ok ? `${num(total)} matching` : 'Search and moderate accounts'}
+  reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
+>
+  {!res.ok && <div class="err">Could not load users: {res.error} (HTTP {res.status})</div>}
+
+  <form method="get" class="filters">
+    <input type="search" name="q" value={q} placeholder="Name, username, email or location" style="min-width:280px" />
+    <select name="filter">
+      {FILTERS.map((f) => <option value={f.id} selected={filter === f.id}>{f.label}</option>)}
+    </select>
+    <button type="submit" class="primary">Search</button>
+    {(q || filter !== 'all') && <a href="/users"><button type="button" class="ghost">Reset</button></a>}
+  </form>
+
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>User</th><th>Location</th><th>Status</th><th>Auth</th>
+            <th class="num">Followers</th><th>Last seen</th><th>Joined</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((u) => (
+            <tr>
+              <td>
+                <a href={`/users/${u.id}`} class="who" style="text-decoration:none">
+                  {u.profile_image_url ? (
+                    <img class="avatar" src={u.profile_image_url} alt="" loading="lazy" />
+                  ) : (
+                    <span class="avatar" aria-hidden="true"></span>
+                  )}
+                  <span class="nm">
+                    <strong>{u.name || u.username || 'Unnamed'}</strong>
+                    <div class="mono">{u.email || u.username || u.id}</div>
+                  </span>
+                </a>
+              </td>
+              <td class="dim">{u.location || '--'}</td>
+              <td>
+                {u.is_ejected ? (
+                  <span class="pill bad">Ejected</span>
+                ) : u.is_verified ? (
+                  <span class="pill ok">Verified</span>
+                ) : (
+                  <span class="pill mute">Unverified</span>
+                )}
+              </td>
+              <td class="dim">{u.auth_provider || '--'}</td>
+              <td class="num">{num(u.followers_count)}</td>
+              <td class="dim" style="white-space:nowrap">{u.last_seen_at ? relative(u.last_seen_at) : '--'}</td>
+              <td class="dim mono" style="white-space:nowrap">{dateTime(u.created_at)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {users.length === 0 && res.ok && <div class="empty">No users match that search.</div>}
+  </div>
+
+  <div class="pager">
+    {offset > 0 && <a href={pageHref(Math.max(0, offset - limit))}><button type="button">← Previous</button></a>}
+    <span>{total === 0 ? '0' : `${offset + 1}–${Math.min(offset + limit, total)}`} of {num(total)}</span>
+    {offset + limit < total && <a href={pageHref(offset + limit)}><button type="button">Next →</button></a>}
+  </div>
+</AdminLayout>

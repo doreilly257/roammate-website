@@ -1,0 +1,68 @@
+---
+import '../styles/admin.css';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  /** Open report count, shown as a badge so the queue is visible from anywhere. */
+  reportsOpen?: number;
+}
+
+const { title, subtitle, reportsOpen } = Astro.props;
+const operator = Astro.locals.operator;
+const path = Astro.url.pathname;
+
+/** Marks the tab active for its own page and its children (/users/:id). */
+const current = (href: string) =>
+  href === '/' ? path === '/' : path === href || path.startsWith(`${href}/`);
+
+const NAV = [
+  { href: '/', label: 'Overview' },
+  { href: '/activity', label: 'Activity log' },
+  { href: '/users', label: 'Users' },
+  { href: '/excursions', label: 'Excursions' },
+  { href: '/media', label: 'Content' },
+  { href: '/moderation', label: 'Moderation' },
+  { href: '/flags', label: 'Feature flags' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title} · roammate admin</title>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="side">
+        <div class="brand">roam<span>mate</span> admin</div>
+        <nav class="nav">
+          {NAV.map((item) => (
+            <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>
+              <span>{item.label}</span>
+              {item.href === '/moderation' && reportsOpen ? (
+                <span class="count alert">{reportsOpen}</span>
+              ) : null}
+            </a>
+          ))}
+        </nav>
+        <div class="side-foot">
+          Signed in as<br />{operator}
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="head">
+          <div>
+            <h1>{title}</h1>
+            {subtitle && <div class="sub">{subtitle}</div>}
+          </div>
+          <slot name="actions" />
+        </div>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

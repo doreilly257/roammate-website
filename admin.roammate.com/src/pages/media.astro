@@ -1,0 +1,66 @@
+---
+import AdminLayout from '../layouts/AdminLayout.astro';
+import { api, type AdminMedia, type Overview } from '../lib/api';
+import { dateTime, num, relative, truncate } from '../lib/format';
+
+const env = Astro.locals.runtime.env;
+const url = Astro.url;
+const offset = Math.max(0, Number(url.searchParams.get('offset') || 0) || 0);
+const limit = 60;
+
+const [res, overviewRes] = await Promise.all([
+  api.get<{ media: AdminMedia[]; total: number }>(env, `/media?limit=${limit}&offset=${offset}`),
+  api.get<Overview>(env, '/overview'),
+]);
+
+const media = res.ok ? res.data.media : [];
+const total = res.ok ? res.data.total : 0;
+const href = (o: number) => (o > 0 ? `/media?offset=${o}` : '/media');
+---
+
+<AdminLayout
+  title="Content"
+  subtitle={res.ok ? `${num(total)} media items published into albums, newest first` : 'Published media'}
+  reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
+>
+  {!res.ok && <div class="err">Could not load media: {res.error} (HTTP {res.status})</div>}
+
+  <p class="sub" style="margin-top:0;margin-bottom:16px">
+    Photos and video users have published into shared albums. Private message content is
+    deliberately not browsable here; a reported message is shown in the moderation queue
+    instead.
+  </p>
+
+  {media.length === 0 && res.ok ? (
+    <div class="panel"><div class="empty">No media has been uploaded yet.</div></div>
+  ) : (
+    <div class="thumbs">
+      {media.map((m) => (
+        <div class="thumb">
+          <img src={m.thumbnail_url || m.url} alt={m.caption || ''} loading="lazy" />
+          <div class="meta">
+            <div style="color:var(--ink)">{truncate(m.caption, 44) || <span class="dim">No caption</span>}</div>
+            <div style="margin-top:4px">
+              {m.user_id ? <a href={`/users/${m.user_id}`}>{m.user_name || 'Unknown'}</a> : 'Unknown'}
+              {m.is_verified ? <span class="pill ok" style="margin-left:4px">✓</span> : null}
+            </div>
+            <div class="mono" style="margin-top:3px">{dateTime(m.created_at)} · {relative(m.created_at)}</div>
+            <div style="margin-top:4px">
+              {m.album_name ? <span class="dim">{truncate(m.album_name, 24)}</span> : null}
+              {m.is_public ? <span class="pill warn" style="margin-left:4px">Public</span> : null}
+            </div>
+            {(m.likes_count > 0 || m.comments_count > 0) && (
+              <div class="dim" style="margin-top:3px">{num(m.likes_count)} likes · {num(m.comments_count)} comments</div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  <div class="pager">
+    {offset > 0 && <a href={href(Math.max(0, offset - limit))}><button type="button">← Previous</button></a>}
+    <span>{total === 0 ? '0' : `${offset + 1}–${Math.min(offset + limit, total)}`} of {num(total)}</span>
+    {offset + limit < total && <a href={href(offset + limit)}><button type="button">Next →</button></a>}
+  </div>
+</AdminLayout>

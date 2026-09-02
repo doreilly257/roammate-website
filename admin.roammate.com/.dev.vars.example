@@ -1,0 +1,10 @@
+# Local dev only. In production these are Pages secrets, set with:
+#   wrangler pages secret put <NAME> --project-name roammate-admin
+API_BASE_URL=https://api.roammate.com
+ADMIN_API_KEY=
+# Cloudflare Access. Find the team domain in Zero Trust > Settings > Custom Pages
+# and the AUD tag on the Access application itself.
+ACCESS_TEAM_DOMAIN=roammate.cloudflareaccess.com
+ACCESS_AUD=
+# Set to 1 ONLY for local development. Skips Access verification entirely.
+DEV_BYPASS_ACCESS=

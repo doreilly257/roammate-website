@@ -18,7 +18,8 @@
 # If you do, say so in the PR — both of these exist because something shipped.
 
 set -uo pipefail
-cd "$(dirname "$0")/../roammate.com" || exit 0
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT/roammate.com" || exit 0
 
 RANGE_BASE="$(git merge-base HEAD origin/main 2>/dev/null || git rev-parse HEAD~1 2>/dev/null)"
 if [ -z "$RANGE_BASE" ]; then
@@ -29,11 +30,15 @@ fi
 
 needs_typecheck=false
 needs_claims=false
+needs_admin=false
 if [ -z "$CHANGED" ]; then
-  needs_typecheck=true; needs_claims=true          # unknown range: check everything
+  needs_typecheck=true; needs_claims=true; needs_admin=true   # unknown range: check everything
 else
-  echo "$CHANGED" | grep -qE '\.(astro|ts|tsx)$' && needs_typecheck=true
+  echo "$CHANGED" | grep -qE '^roammate\.com/.*\.(astro|ts|tsx)$' && needs_typecheck=true
   echo "$CHANGED" | grep -qE '(src/(pages|components|layouts|content)/|public/llms)' && needs_claims=true
+  # The admin console is a SECOND Astro project. Without this it would push
+  # unchecked, which is the same gap that let routeOverview[i+1].colour ship.
+  echo "$CHANGED" | grep -qE '^admin\.roammate\.com/.*\.(astro|ts|tsx)$' && needs_admin=true
 fi
 
 fail=0
@@ -52,6 +57,22 @@ if [ "$needs_typecheck" = true ]; then
   if grep -qE '^- [1-9][0-9]* error' /tmp/roammate-astro-check.log; then
     echo "pre-push: astro check reported errors (full log: /tmp/roammate-astro-check.log)"
     fail=1
+  fi
+fi
+
+if [ "$needs_admin" = true ]; then
+  if [ -d "$ROOT/admin.roammate.com/node_modules" ]; then
+    echo "pre-push: astro check (admin console)…"
+    if ! ( cd "$ROOT/admin.roammate.com" && npx --no-install astro check 2>&1 | tee /tmp/roammate-admin-check.log | tail -4 ); then
+      fail=1
+    fi
+    if grep -qE '^- [1-9][0-9]* error' /tmp/roammate-admin-check.log; then
+      echo "pre-push: admin console astro check reported errors (log: /tmp/roammate-admin-check.log)"
+      fail=1
+    fi
+  else
+    echo "pre-push: admin.roammate.com/node_modules missing; SKIPPING its type check."
+    echo "          run 'npm install' in admin.roammate.com to enable it."
   fi
 fi
 

@@ -1,0 +1,98 @@
+---
+import AdminLayout from '../layouts/AdminLayout.astro';
+import { api, type FeatureFlags, type Overview } from '../lib/api';
+
+const env = Astro.locals.runtime.env;
+
+let flash: { kind: 'ok' | 'err'; message: string } | null = null;
+if (Astro.request.method === 'POST') {
+  const form = await Astro.request.formData();
+  const key = String(form.get('flag') || '');
+  const next = String(form.get('next') || '') === 'true';
+  if (key) {
+    const result = await api.put<{ flags: FeatureFlags }>(env, '/flags', { [key]: next });
+    flash = result.ok
+      ? { kind: 'ok', message: `${key} is now ${next ? 'ON' : 'OFF'}.` }
+      : { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
+  }
+}
+
+const [res, overviewRes] = await Promise.all([
+  api.get<{ flags: FeatureFlags }>(env, '/flags'),
+  api.get<Overview>(env, '/overview'),
+]);
+
+const flags = res.ok ? res.data.flags : null;
+
+/** Why each flag matters, so toggling is not a guess. These notes come from
+ *  things this project has actually been bitten by. */
+const NOTES: Record<string, string> = {
+  proximity_enabled: 'Nearby-traveller discovery. Core to the product.',
+  ai_concierge_enabled:
+    'GET /suggestions returns 404 while this is off. Turning it on alone does NOT make the Discover surface reachable; it is also two taps deep behind a non-default segment.',
+  trip_memory_enabled: 'Trip summaries built from excursions and photos.',
+  tonight_push_enabled: 'Batched FCM push. Defaults OFF so a blank KV cannot fire expensive work on cron.',
+  notifications_canonical_shadow: 'Writes notifications through the canonical path without serving them. Migration scaffolding.',
+  notifications_canonical_active: 'Serves notifications from the canonical path. Turn shadow on first.',
+  matchmaking_enabled: 'Traveller matching.',
+  verification_gate_enabled:
+    'THE eKYC MANDATE. While off, identity verification is optional and most accounts are unverified. Website copy claiming every user is verified is false until this is on. Check whether existing accounts are grandfathered before enabling.',
+};
+
+const entries = flags ? (Object.keys(flags) as Array<keyof FeatureFlags>) : [];
+---
+
+<AdminLayout
+  title="Feature flags"
+  subtitle="Live values from KV. Changes take effect immediately for every client."
+  reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
+>
+  {flash && <div class={flash.kind === 'ok' ? 'notice' : 'err'}>{flash.message}</div>}
+  {!res.ok && (
+    <div class="err">
+      Could not load flags: {res.error} (HTTP {res.status}).
+      {res.status === 401 && (
+        <> These endpoints accept only <code>ADMIN_API_KEY</code>, not the narrower
+        <code>ADMIN_READ_KEY</code>. If the console is configured with the read key, flags
+        will stay unavailable until the API is updated to accept it.</>
+      )}
+    </div>
+  )}
+
+  {flags && (
+    <div class="panel">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Flag</th><th>State</th><th>What it does</th><th></th></tr></thead>
+          <tbody>
+            {entries.map((key) => {
+              const on = flags[key];
+              return (
+                <tr>
+                  <td class="mono" style="color:var(--ink)">{key}</td>
+                  <td>{on ? <span class="pill ok">ON</span> : <span class="pill mute">OFF</span>}</td>
+                  <td class="dim" style="max-width:520px">{NOTES[key] || ''}</td>
+                  <td>
+                    <form method="post">
+                      <input type="hidden" name="flag" value={key} />
+                      <input type="hidden" name="next" value={on ? 'false' : 'true'} />
+                      <button type="submit" class={on ? 'danger' : 'primary'}>
+                        Turn {on ? 'off' : 'on'}
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+
+  <p class="sub" style="margin-top:14px">
+    A flag that is missing from KV falls back to its default in
+    <code>api/src/services/feature-flags.ts</code>. Reading a flag as OFF here means it is
+    off in production for every client, not that it is unset.
+  </p>
+</AdminLayout>

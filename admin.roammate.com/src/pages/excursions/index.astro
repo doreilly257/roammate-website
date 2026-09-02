@@ -1,0 +1,96 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { api, type AdminExcursion, type Overview } from '../../lib/api';
+import { dateTime, num, relative, truncate } from '../../lib/format';
+
+const env = Astro.locals.runtime.env;
+const url = Astro.url;
+
+const q = url.searchParams.get('q')?.trim() || '';
+const filter = url.searchParams.get('filter') || 'active';
+const offset = Math.max(0, Number(url.searchParams.get('offset') || 0) || 0);
+const limit = 50;
+
+const qs = new URLSearchParams({ limit: String(limit), offset: String(offset), filter });
+if (q) qs.set('q', q);
+
+const [res, overviewRes] = await Promise.all([
+  api.get<{ excursions: AdminExcursion[]; total: number }>(env, `/excursions?${qs}`),
+  api.get<Overview>(env, '/overview'),
+]);
+
+const rows = res.ok ? res.data.excursions : [];
+const total = res.ok ? res.data.total : 0;
+
+const FILTERS = [
+  { id: 'active', label: 'Active' },
+  { id: 'upcoming', label: 'Upcoming' },
+  { id: 'past', label: 'Past' },
+  { id: 'deleted', label: 'Deleted' },
+  { id: 'all', label: 'All' },
+];
+
+function pageHref(newOffset: number): string {
+  const p = new URLSearchParams();
+  if (q) p.set('q', q);
+  if (filter !== 'active') p.set('filter', filter);
+  if (newOffset > 0) p.set('offset', String(newOffset));
+  return `/excursions${p.toString() ? `?${p}` : ''}`;
+}
+---
+
+<AdminLayout
+  title="Excursions"
+  subtitle={res.ok ? `${num(total)} matching` : 'Browse and moderate excursions'}
+  reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
+>
+  {!res.ok && <div class="err">Could not load excursions: {res.error} (HTTP {res.status})</div>}
+
+  <form method="get" class="filters">
+    <input type="search" name="q" value={q} placeholder="Title, description or location" style="min-width:280px" />
+    <select name="filter">
+      {FILTERS.map((f) => <option value={f.id} selected={filter === f.id}>{f.label}</option>)}
+    </select>
+    <button type="submit" class="primary">Search</button>
+    {(q || filter !== 'active') && <a href="/excursions"><button type="button" class="ghost">Reset</button></a>}
+  </form>
+
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Excursion</th><th>Host</th><th>When</th><th class="num">Joined</th><th>Status</th><th>Created</th></tr>
+        </thead>
+        <tbody>
+          {rows.map((e) => (
+            <tr>
+              <td>
+                <a href={`/excursions/${e.id}`}><strong>{truncate(e.title, 54)}</strong></a>
+                <div class="dim">{e.location_name || 'No location'}</div>
+              </td>
+              <td>
+                {e.host_id ? <a href={`/users/${e.host_id}`}>{e.host_name || 'Unknown'}</a> : <span class="dim">--</span>}
+                {e.host_verified ? <span class="pill ok" style="margin-left:5px">✓</span> : null}
+              </td>
+              <td class="dim mono" style="white-space:nowrap">{dateTime(e.date)}</td>
+              <td class="num">{num(e.participant_count)}{e.max_pax ? <span class="dim"> / {e.max_pax}</span> : null}</td>
+              <td>
+                {e.is_deleted
+                  ? <span class="pill bad">Deleted</span>
+                  : <span class="pill mute">{e.status || 'active'}</span>}
+              </td>
+              <td class="dim" style="white-space:nowrap">{relative(e.created_at)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {rows.length === 0 && res.ok && <div class="empty">No excursions match that search.</div>}
+  </div>
+
+  <div class="pager">
+    {offset > 0 && <a href={pageHref(Math.max(0, offset - limit))}><button type="button">← Previous</button></a>}
+    <span>{total === 0 ? '0' : `${offset + 1}–${Math.min(offset + limit, total)}`} of {num(total)}</span>
+    {offset + limit < total && <a href={pageHref(offset + limit)}><button type="button">Next →</button></a>}
+  </div>
+</AdminLayout>
