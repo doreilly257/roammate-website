@@ -150,3 +150,111 @@ dl.kv dd { margin: 0; word-break: break-word; }
   .grid-2 { grid-template-columns: 1fr; }
   .main { padding: 16px; }
 }
+
+/* ===== tear sheets ======================================================= */
+.tear-scrim {
+  position: fixed; inset: 0; background: rgba(6, 8, 12, 0.55);
+  opacity: 0; pointer-events: none; transition: opacity 0.16s ease; z-index: 40;
+}
+.tear-scrim.open { opacity: 1; pointer-events: auto; }
+.tear {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(560px, 92vw);
+  background: var(--panel); border-left: 1px solid var(--line);
+  box-shadow: -18px 0 48px rgba(0, 0, 0, 0.4);
+  transform: translateX(100%); transition: transform 0.18s ease;
+  z-index: 41; overflow-y: auto; overscroll-behavior: contain;
+}
+.tear.open { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .tear, .tear-scrim { transition: none; }
+}
+.ts-head {
+  position: sticky; top: 0; background: var(--panel); z-index: 1;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  padding: 15px 16px; border-bottom: 1px solid var(--line);
+}
+.ts-head h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.ts-sub { color: var(--ink-faint); font-size: 12px; margin-top: 2px; word-break: break-word; }
+.ts-close {
+  background: transparent; border: 0; color: var(--ink-faint);
+  font-size: 22px; line-height: 1; cursor: pointer; padding: 0 4px; border-radius: 4px;
+}
+.ts-close:hover { color: var(--ink); }
+.ts-body { padding: 15px 16px 40px; }
+.ts-body h4 {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-faint); margin: 20px 0 8px; font-weight: 600;
+}
+.ts-fields {
+  display: grid; grid-template-columns: max-content 1fr; gap: 5px 14px;
+  margin: 0; font-size: 12.5px;
+}
+.ts-fields dt { color: var(--ink-faint); }
+.ts-fields dd { margin: 0; word-break: break-word; }
+.ts-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 6px; }
+.ts-table th {
+  text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--ink-faint); padding: 6px 8px; border-bottom: 1px solid var(--line);
+}
+.ts-table td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+.ts-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.ts-more { margin-top: 16px; font-size: 12.5px; }
+body.tear-open { overflow: hidden; }
+
+/* Anything that opens a tear sheet must look like it does. */
+[data-tear] {
+  cursor: pointer; color: inherit;
+  border-bottom: 1px dotted var(--ink-faint); text-decoration: none;
+}
+[data-tear]:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ===== charts =========================================================== */
+.chart-empty { padding: 20px; text-align: center; color: var(--ink-faint); font-size: 12.5px; }
+.chart-donut { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.donut-total { fill: var(--ink); font-size: 19px; font-weight: 700; }
+.donut-cap { fill: var(--ink-faint); font-size: 9px; text-transform: uppercase; letter-spacing: 0.09em; }
+.chart-legend { display: flex; flex-direction: column; gap: 4px; font-size: 12px; min-width: 0; }
+.chart-legend.row { flex-direction: row; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.lg-row { display: flex; align-items: center; gap: 7px; }
+.lg-dot { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+.lg-label { color: var(--ink-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 190px; }
+.lg-val { margin-left: auto; font-variant-numeric: tabular-nums; }
+.lg-pct { color: var(--ink-faint); font-variant-numeric: tabular-nums; min-width: 34px; text-align: right; }
+
+.chart-bars { display: flex; flex-direction: column; gap: 5px; }
+.bar-row { display: grid; grid-template-columns: minmax(90px, 190px) 1fr max-content max-content; gap: 10px; align-items: center; font-size: 12.5px; }
+.bar-label { color: var(--ink-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+a.bar-label { cursor: pointer; }
+a.bar-label:hover { color: var(--accent); }
+.bar-track { background: var(--line); border-radius: 99px; height: 9px; overflow: hidden; }
+.bar-fill { display: block; height: 100%; border-radius: 99px; }
+.bar-val { font-variant-numeric: tabular-nums; min-width: 42px; text-align: right; }
+.bar-pct { color: var(--ink-faint); font-variant-numeric: tabular-nums; min-width: 34px; text-align: right; }
+
+.chart-funnel { display: flex; flex-direction: column; gap: 12px; }
+.fn-head { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; }
+.fn-val { font-variant-numeric: tabular-nums; font-weight: 600; }
+.fn-track { background: var(--line); border-radius: 4px; height: 22px; overflow: hidden; }
+.fn-fill { height: 100%; background: linear-gradient(90deg, #ff6b35, #ff8f5e); border-radius: 4px; }
+.fn-drop { font-size: 11.5px; color: var(--bad); margin-top: 4px; }
+
+/* Cap the width: a viewBox at width:100% scales its height with the container,
+   and at full page width the scatter grew to roughly 700px tall. */
+.chart-scatter, .chart-ribbon { max-width: 520px; display: block; }
+.chart-scatter .grid { stroke: var(--line); stroke-width: 1; }
+.chart-scatter .axis-line { stroke: var(--ink-faint); stroke-width: 1; opacity: 0.5; }
+.chart-scatter .axis { fill: var(--ink-faint); font-size: 10px; }
+.chart-scatter .dot { fill: var(--accent); fill-opacity: 0.85; }
+.chart-scatter a:hover .dot { fill: #fff; }
+.chart-ribbon .axis-line { stroke: var(--ink-faint); stroke-width: 1; opacity: 0.5; }
+.chart-ribbon .axis { fill: var(--ink-faint); font-size: 10px; }
+
+.meter { display: inline-block; width: 84px; height: 8px; background: var(--line); border-radius: 99px; overflow: hidden; vertical-align: middle; }
+.meter-fill { display: block; height: 100%; border-radius: 99px; }
+.meter.ok .meter-fill { background: var(--ok); }
+.meter.warn .meter-fill { background: var(--warn); }
+.meter.bad .meter-fill { background: var(--bad); }
+.meter-pct { font-size: 11.5px; font-variant-numeric: tabular-nums; margin-left: 7px; }
+.meter-pct.ok { color: var(--ok); }
+.meter-pct.warn { color: var(--warn); }
+.meter-pct.bad { color: var(--bad); }

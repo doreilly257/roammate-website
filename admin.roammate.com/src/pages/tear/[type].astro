@@ -1,0 +1,35 @@
+---
+/**
+ * Tear sheet fragments. Returns an HTML FRAGMENT, not a page: no layout, no
+ * shell. The browser fetches it from our own origin and injects it into the
+ * side panel.
+ *
+ * WHY A SERVER ROUTE RATHER THAN A CLIENT FETCH TO THE API: the admin key lives
+ * only in the Pages Function. A browser calling api.roammate.com directly would
+ * need that key in the page, which is the thing this whole design exists to
+ * prevent. So the browser talks to us, and we talk to the API.
+ *
+ * All content building lives in lib/tearsheets.ts. This file stays markup.
+ */
+import { renderTearSheet } from '../../lib/tearsheets';
+
+const sheet = await renderTearSheet(
+  Astro.locals.runtime.env,
+  Astro.params.type ?? '',
+  Astro.url.searchParams,
+);
+---
+<div class="ts-inner">
+  <div class="ts-head">
+    <div>
+      <h3>{sheet.title}</h3>
+      {sheet.subtitle && <div class="ts-sub">{sheet.subtitle}</div>}
+    </div>
+    <button type="button" class="ts-close" data-tear-close aria-label="Close">&times;</button>
+  </div>
+  <div class="ts-body">
+    {sheet.error
+      ? <div class="err">{sheet.error}</div>
+      : <Fragment set:html={sheet.body} />}
+  </div>
+</div>

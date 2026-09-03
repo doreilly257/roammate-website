@@ -80,7 +80,11 @@ function pageHref(newOffset: number): string {
                   </span>
                 </a>
               </td>
-              <td class="dim">{u.location || '--'}</td>
+              <td class="dim">
+                {u.location
+                  ? <span data-tear="distribution" data-tear-field="location" data-tear-label="User location">{u.location}</span>
+                  : '--'}
+              </td>
               <td>
                 {u.is_ejected ? (
                   <span class="pill bad">Ejected</span>
@@ -90,7 +94,11 @@ function pageHref(newOffset: number): string {
                   <span class="pill mute">Unverified</span>
                 )}
               </td>
-              <td class="dim">{u.auth_provider || '--'}</td>
+              <td class="dim">
+                {u.auth_provider
+                  ? <span data-tear="distribution" data-tear-field="auth_provider" data-tear-label="Sign-in method">{u.auth_provider}</span>
+                  : '--'}
+              </td>
               <td class="num">{num(u.followers_count)}</td>
               <td class="dim" style="white-space:nowrap">{u.last_seen_at ? relative(u.last_seen_at) : '--'}</td>
               <td class="dim mono" style="white-space:nowrap">{dateTime(u.created_at)}</td>

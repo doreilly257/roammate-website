@@ -1,0 +1,207 @@
+---
+import AdminLayout from '../layouts/AdminLayout.astro';
+import { api, type Overview } from '../lib/api';
+import { num, relative } from '../lib/format';
+import { bars, donut, fillMeter } from '../lib/charts';
+
+const env = Astro.locals.runtime.env;
+
+type Check = { id: string; label: string; count: number; why: string; level: 'ok' | 'warn' | 'bad' };
+type ColumnProfile = { column: string; filled: number; blank: number; distinct: number | null };
+type Profile = { table: string; rows: number; columns: ColumnProfile[] };
+
+const [tablesRes, colsRes, intRes, anomRes, freshRes, ovRes] = await Promise.all([
+  api.get<{ tables: Array<{ table: string; rows: number }> }>(env, '/quality/tables'),
+  api.get<{ profiles: Profile[] }>(env, '/quality/columns'),
+  api.get<{ checks: Check[] }>(env, '/quality/integrity'),
+  api.get<{ anomalies: Check[]; userTotal: number }>(env, '/quality/anomalies'),
+  api.get<{ sources: Array<{ id: string; label: string; latest: string | null }> }>(env, '/quality/freshness'),
+  api.get<Overview>(env, '/overview'),
+]);
+
+const tables = tablesRes.ok ? tablesRes.data.tables : [];
+const profiles = colsRes.ok ? colsRes.data.profiles : [];
+const integrity = intRes.ok ? intRes.data.checks : [];
+const anomalies = anomRes.ok ? anomRes.data.anomalies : [];
+const freshness = freshRes.ok ? freshRes.data.sources : [];
+const errors = [tablesRes, colsRes, intRes, anomRes, freshRes]
+  .filter((r) => !r.ok).map((r) => r as { error: string; status: number });
+
+/** Anything not green, ordered worst first. This is the whole point of the page:
+ *  a list of things to look at, before any of the detail. */
+const failing = [...integrity, ...anomalies]
+  .filter((c) => c.level !== 'ok' && c.count > 0)
+  .sort((a, b) => (a.level === b.level ? b.count - a.count : a.level === 'bad' ? -1 : 1));
+
+const tableChart = tables
+  .filter((t) => t.rows > 0)
+  .sort((a, b) => b.rows - a.rows)
+  .map((t) => ({ label: t.table, value: t.rows }));
+
+/** Distributions worth a tear sheet, keyed to the API's allow-list. */
+const DISTRIBUTIONS = [
+  { field: 'auth_provider', label: 'Sign-in method' },
+  { field: 'location', label: 'User location' },
+  { field: 'travel_style', label: 'Travel style' },
+  { field: 'excursion_city', label: 'Excursion city' },
+  { field: 'excursion_status', label: 'Excursion status' },
+  { field: 'participant_status', label: 'Participation status' },
+  { field: 'verification_status', label: 'Verification status' },
+  { field: 'report_reason', label: 'Report reason' },
+  { field: 'media_type', label: 'Media type' },
+];
+
+const staleness = (iso: string | null) => {
+  if (!iso) return { text: 'never', tone: 'bad' as const };
+  const d = new Date(iso.includes('T') ? iso : `${iso.replace(' ', 'T')}Z`);
+  if (Number.isNaN(d.getTime())) return { text: 'unparseable', tone: 'bad' as const };
+  const days = (Date.now() - d.getTime()) / 86400000;
+  return { text: relative(iso), tone: days > 30 ? ('bad' as const) : days > 7 ? ('warn' as const) : ('ok' as const) };
+};
+---
+
+<AdminLayout
+  title="Data quality"
+  subtitle="Structural profiling of the production database"
+  reportsOpen={ovRes.ok ? ovRes.data.queues.reportsOpen : undefined}
+>
+  {errors.map((e) => <div class="err">Could not load part of this page: {e.error} (HTTP {e.status})</div>)}
+
+  <div class="err" style="background:rgba(245,165,36,0.1);border-color:#f5a524;color:#ffe0ad">
+    <strong>These are structural checks.</strong> They find emptiness, orphans, duplicates and
+    impossible values. They cannot see a field populated with something wrong, a timestamp in
+    the right format but the wrong timezone, or a location that is real but stale. Clean here
+    means nothing is structurally broken, never that the data is correct.
+  </div>
+
+  <h2>Needs attention</h2>
+  {failing.length === 0 ? (
+    <div class="panel"><div class="empty">No structural problems found.</div></div>
+  ) : (
+    <div class="panel">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>Finding</th><th class="num">Rows</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            {failing.map((c) => (
+              <tr>
+                <td><span class={`pill ${c.level === 'bad' ? 'bad' : 'warn'}`}>{c.level === 'bad' ? 'high' : 'check'}</span></td>
+                <td>{c.label}</td>
+                <td class="num">{num(c.count)}</td>
+                <td class="dim" style="max-width:520px">{c.why}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )}
+
+  <h2>Row counts</h2>
+  <div class="panel"><div style="padding:14px">
+    <Fragment set:html={bars(tableChart, { showPct: false })} />
+  </div></div>
+
+  <h2>Freshness</h2>
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source</th><th>Most recent row</th><th>Age</th></tr></thead>
+        <tbody>
+          {freshness.map((f) => {
+            const s = staleness(f.latest);
+            return (
+              <tr>
+                <td>{f.label}</td>
+                <td class="mono">{f.latest ?? '--'}</td>
+                <td><span class={`pill ${s.tone === 'ok' ? 'ok' : s.tone === 'warn' ? 'warn' : 'bad'}`}>{s.text}</span></td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="sub" style="margin-top:8px;max-width:80ch">
+    A source with nothing recent is either genuinely idle or has stopped writing. This table
+    cannot tell those apart; it tells you where to look.
+  </p>
+
+  <h2>Distributions</h2>
+  <p class="sub" style="margin:0 0 10px;max-width:80ch">
+    Click any of these to open the full breakdown, with every value, its share, and a chart.
+  </p>
+  <div class="panel"><div style="padding:14px;display:flex;gap:8px;flex-wrap:wrap">
+    {DISTRIBUTIONS.map((d) => (
+      <button type="button" class="btn" data-tear="distribution" data-tear-field={d.field} data-tear-label={d.label}>
+        {d.label}
+      </button>
+    ))}
+  </div></div>
+
+  <h2>Column completeness</h2>
+  {profiles.map((p) => (
+    <>
+      <div class="panel" style="margin-bottom:12px">
+        <div class="panel-head">
+          <h3><span class="mono" style="color:var(--color-ink,#e6e8ee)">{p.table}</span></h3>
+          <span class="sub">{num(p.rows)} rows</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Column</th><th style="width:200px">Populated</th><th class="num">Filled</th><th class="num">Blank</th><th class="num">Distinct</th></tr></thead>
+            <tbody>
+              {p.columns.map((c) => (
+                <tr>
+                  <td class="mono" style="color:var(--color-ink,#e6e8ee)">{c.column}</td>
+                  <td><Fragment set:html={fillMeter(c.filled, p.rows)} /></td>
+                  <td class="num">{num(c.filled)}</td>
+                  <td class="num dim">{num(c.blank)}</td>
+                  <td class="num dim">{c.distinct === null ? '--' : num(c.distinct)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  ))}
+
+  <h2>Referential integrity</h2>
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Check</th><th class="num">Rows</th><th></th><th>Meaning</th></tr></thead>
+        <tbody>
+          {integrity.map((c) => (
+            <tr>
+              <td>{c.label}</td>
+              <td class="num">{c.count < 0 ? '--' : num(c.count)}</td>
+              <td><span class={`pill ${c.level === 'ok' ? 'ok' : c.level === 'warn' ? 'warn' : 'bad'}`}>{c.level === 'ok' ? 'clean' : c.level}</span></td>
+              <td class="dim" style="max-width:460px">{c.why}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2>Anomalies</h2>
+  <div class="panel">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Check</th><th class="num">Rows</th><th></th><th>Meaning</th></tr></thead>
+        <tbody>
+          {anomalies.map((c) => (
+            <tr>
+              <td>{c.label}</td>
+              <td class="num">{c.count < 0 ? '--' : num(c.count)}</td>
+              <td><span class={`pill ${c.level === 'ok' ? 'ok' : c.level === 'warn' ? 'warn' : 'bad'}`}>{c.level === 'ok' ? 'clean' : c.level}</span></td>
+              <td class="dim" style="max-width:460px">{c.why}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</AdminLayout>

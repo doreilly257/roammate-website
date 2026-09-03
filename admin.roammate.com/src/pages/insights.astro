@@ -2,6 +2,7 @@
 import AdminLayout from '../layouts/AdminLayout.astro';
 import { api, type Overview } from '../lib/api';
 import { num, pct } from '../lib/format';
+import { bars, donut, funnel, ribbon, scatter } from '../lib/charts';
 
 const env = Astro.locals.runtime.env;
 const days = Math.min(365, Math.max(7, Number(Astro.url.searchParams.get('days') || 90) || 90));
@@ -122,6 +123,9 @@ const WINDOWS = [30, 90, 180, 365];
               {track.key === 'onboarding' ? 'Sequential steps' : `Parallel outcome of signing up, not a step after the track above`}
             </span>
           </div>
+          <div style="padding:14px 15px 4px">
+            <Fragment set:html={funnel(track.stages.map((s) => ({ label: s.label, value: s.count })))} />
+          </div>
           <div class="table-wrap">
             <table>
               <thead><tr><th>Stage</th><th class="num">People</th><th class="num">Of signups</th><th class="num">Step conversion</th><th>Share</th></tr></thead>
@@ -187,6 +191,16 @@ const WINDOWS = [30, 90, 180, 365];
           <div class="foot">Only counts ones that got a join</div>
         </div>
       </div>
+      <div class="panel" style="margin-top:10px">
+        <div class="panel-head"><h3>What happened to the excursions that were created</h3></div>
+        <div style="padding:14px">
+          <Fragment set:html={bars([
+            { label: 'Got at least one join', value: sup.excursionsWithAtLeastOneJoin, colour: '#3ecf8e' },
+            { label: 'Filled to capacity', value: sup.excursionsFilled, colour: '#5b9df9' },
+            { label: 'Nobody joined', value: Math.max(0, sup.excursionsCreated - sup.excursionsWithAtLeastOneJoin), colour: '#f2545b' },
+          ], { max: sup.excursionsCreated, showPct: true })} />
+        </div>
+      </div>
       <p class="sub" style="margin-top:8px;max-width:80ch">{sup.note}</p>
     </>
   )}
@@ -222,6 +236,18 @@ const WINDOWS = [30, 90, 180, 365];
   {geo && geo.cities.length > 0 && (
     <>
       <h2>Where people are, and where excursions are not</h2>
+      <div class="panel" style="margin-bottom:10px">
+        <div class="panel-head">
+          <h3>Demand against supply, by city</h3>
+          <span class="sub">Bottom-right is demand with nothing to join</span>
+        </div>
+        <div style="padding:14px">
+          <Fragment set:html={scatter(
+            geo.cities.map((c) => ({ x: c.users, y: c.excursions, label: c.city })),
+            { xLabel: 'Users in city', yLabel: 'Excursions in city' },
+          )} />
+        </div>
+      </div>
       <div class="panel">
         <div class="table-wrap">
           <table>
@@ -235,9 +261,12 @@ const WINDOWS = [30, 90, 180, 365];
                   <td class="num">{num(c.hosts)}</td>
                   <td class="num">{c.usersPerExcursion === null ? '--' : c.usersPerExcursion}</td>
                   <td>
+                    {/* 5:1 rather than 10:1. At seven users per excursion there is
+                        already far more demand than there is anything to join, and
+                        calling that balanced hides the gap this table exists to show. */}
                     {c.excursions === 0
                       ? <span class="pill bad">Demand, no supply</span>
-                      : c.usersPerExcursion !== null && c.usersPerExcursion >= 10
+                      : c.usersPerExcursion !== null && c.usersPerExcursion >= 5
                         ? <span class="pill warn">Supply thin</span>
                         : <span class="pill mute">Balanced</span>}
                   </td>
@@ -282,6 +311,18 @@ const WINDOWS = [30, 90, 180, 365];
       </div>
       {ver.byStatus.length > 0 && (
         <div class="panel" style="margin-top:10px">
+          <div class="panel-head"><h3>Session outcomes</h3></div>
+          <div style="padding:14px">
+            <Fragment set:html={donut(ver.byStatus.map((s) => ({
+              label: s.status,
+              value: s.n,
+              colour: s.status === 'verified' ? '#3ecf8e' : s.status === 'failed' ? '#f2545b' : '#f5a524',
+            })))} />
+          </div>
+        </div>
+      )}
+      {ver.byStatus.length > 0 && (
+        <div class="panel" style="margin-top:10px">
           <div class="table-wrap">
             <table>
               <thead><tr><th>Session status</th><th class="num">Sessions</th></tr></thead>
@@ -306,6 +347,22 @@ const WINDOWS = [30, 90, 180, 365];
   {surv && (
     <>
       <h2>Signup cohorts</h2>
+      <div class="panel" style="margin-bottom:10px">
+        <div class="panel-head">
+          <h3>Cohort composition</h3>
+          <span class="sub">Each band is a share of that week's signups</span>
+        </div>
+        <div style="padding:14px">
+          <Fragment set:html={ribbon(
+            [...surv.cohorts].reverse().map((c) => c.cohort.split('-')[1] ?? c.cohort),
+            [
+              { label: 'Seen in 7d', values: [...surv.cohorts].reverse().map((c) => c.seen_7d) },
+              { label: 'Seen in 30d only', values: [...surv.cohorts].reverse().map((c) => Math.max(0, c.seen_30d - c.seen_7d)) },
+              { label: 'Not seen recently', values: [...surv.cohorts].reverse().map((c) => Math.max(0, c.signed_up - c.seen_30d)) },
+            ],
+          )} />
+        </div>
+      </div>
       <div class="panel">
         <div class="table-wrap">
           <table>
