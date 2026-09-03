@@ -98,13 +98,21 @@ async function verifyAccessJwt(
   return claims;
 }
 
-function deny(message: string, status: number): Response {
+function deny(message: string, status: number, operator?: string): Response {
   // Deliberately plain and non-specific to the caller; the detail goes to logs.
+  // ALWAYS carries a sign-out link: without one, an operator who reaches any
+  // refusal page has no way to change identity except by knowing the
+  // /cdn-cgi/access/logout URL by heart, which is not a thing to expect.
+  const who = operator
+    ? `<p style="color:#666">Signed in as <strong>${operator}</strong>.</p>`
+    : '';
   return new Response(
     `<!doctype html><meta charset="utf-8"><title>Not available</title>` +
-      `<body style="font:14px system-ui;padding:3rem;max-width:34rem;margin:0 auto">` +
+      `<body style="font:14px system-ui;padding:3rem;max-width:34rem;margin:0 auto;line-height:1.5">` +
       `<h1 style="font-size:1.1rem">${message}</h1>` +
-      `<p style="color:#666">This console is restricted to roammate operators.</p></body>`,
+      `<p style="color:#666">This console is restricted to roammate operators.</p>` +
+      who +
+      `<p><a href="/cdn-cgi/access/logout">Sign out</a></p></body>`,
     {
       status,
       headers: {
@@ -122,17 +130,17 @@ function deny(message: string, status: number): Response {
 export const onRequest = defineMiddleware(async (context, next) => {
   const env = context.locals.runtime?.env;
 
-  if (!env?.API_BASE_URL || !env?.ADMIN_API_KEY) {
-    console.error('admin: API_BASE_URL or ADMIN_API_KEY is not configured');
-    return deny('Console is not configured.', 503);
-  }
-
-  if (env.DEV_BYPASS_ACCESS === '1') {
+  if (env?.DEV_BYPASS_ACCESS === '1') {
     context.locals.operator = 'dev@localhost';
     return next();
   }
 
-  const { ACCESS_TEAM_DOMAIN, ACCESS_AUD } = env;
+  // IDENTITY FIRST, CONFIGURATION SECOND. The config check used to run before
+  // Access was verified, which meant the "not configured" page rendered for
+  // anyone the edge let through and could not name who was signed in -- so an
+  // operator seeing it had no way to tell WHICH identity they were using. It
+  // also disclosed our configuration state before establishing who was asking.
+  const { ACCESS_TEAM_DOMAIN, ACCESS_AUD } = env ?? {};
   if (!ACCESS_TEAM_DOMAIN || !ACCESS_AUD) {
     // Fail closed. An unconfigured Access check must never mean "allow".
     console.error('admin: ACCESS_TEAM_DOMAIN or ACCESS_AUD is not configured; denying all requests');
@@ -153,6 +161,14 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
   if (!claims) return deny('Not authorised.', 403);
 
-  context.locals.operator = claims.email || 'unknown';
+  const operator = claims.email || 'unknown';
+  context.locals.operator = operator;
+
+  // Now that we know who this is, report configuration state to them by name.
+  if (!env?.API_BASE_URL || !env?.ADMIN_API_KEY) {
+    console.error('admin: API_BASE_URL or ADMIN_API_KEY is not configured');
+    return deny('Console is not configured yet.', 503, operator);
+  }
+
   return next();
 });
