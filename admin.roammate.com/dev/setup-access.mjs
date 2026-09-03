@@ -34,7 +34,12 @@ const PRIMARY_HOST = 'admin.roammate.com';
  * apps are configured the same way, which is where this pattern comes from.
  */
 const HOSTS = ['admin.roammate.com', `${PROJECT}.pages.dev`, `*.${PROJECT}.pages.dev`];
-const ALLOWED_EMAILS = ['daniel.oreilly@simpaisa.com'];
+/**
+ * The single operator address. Keep this list minimal and current: re-running
+ * this script REWRITES the allow policy, so a stale address here silently
+ * re-grants access to a mailbox that should no longer have it.
+ */
+const ALLOWED_EMAILS = ['dan@roammate.com'];
 const API_BASE_URL = 'https://api.roammate.com';
 const DRY = process.argv.includes('--dry-run');
 

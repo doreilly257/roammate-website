@@ -85,7 +85,7 @@ Verified: all three return 302 to the Access login with no data in the body.
 
     team domain  quiet-hall-00a9.cloudflareaccess.com
     login        One-time PIN, pinned via allowed_idps
-    allowed      daniel.oreilly@simpaisa.com
+    allowed      dan@roammate.com
 
 `ACCESS_AUD` is the **primary host's** AUD only. The two pages.dev applications
 exist to block at the edge, not to grant: a token minted for one of them carries
