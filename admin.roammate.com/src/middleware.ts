@@ -105,7 +105,17 @@ function deny(message: string, status: number): Response {
       `<body style="font:14px system-ui;padding:3rem;max-width:34rem;margin:0 auto">` +
       `<h1 style="font-size:1.1rem">${message}</h1>` +
       `<p style="color:#666">This console is restricted to roammate operators.</p></body>`,
-    { status, headers: { 'content-type': 'text/html; charset=utf-8' } },
+    {
+      status,
+      headers: {
+        'content-type': 'text/html; charset=utf-8',
+        // The project is reachable at roammate-admin.pages.dev, a public
+        // hostname. Denial pages carry no data, but an admin console should not
+        // appear in an index at all.
+        'x-robots-tag': 'noindex, nofollow',
+        'cache-control': 'no-store',
+      },
+    },
   );
 }
 

@@ -66,6 +66,36 @@ the narrower key on the Worker and give the console only that one.
 `ADMIN_API_KEY` only. With just the read key configured, the flags page will show
 a 401 and say so. Either keep using the master key, or update those two handlers.
 
+## Deployment state (2026-09-03)
+
+| Step | State |
+|---|---|
+| Pages project `roammate-admin` | **done** |
+| Deployed | **done** — https://roammate-admin.pages.dev (returns 503, see below) |
+| Custom domain attached to project | **done** — `admin.roammate.com`, status `pending` |
+| DNS record for `admin.roammate.com` | **NOT done — needs you.** The wrangler token is `zone (read)`; creating the CNAME returns `10000 Authentication error` |
+| Cloudflare Access application | **NOT done — needs you.** No Zero Trust scope on the token |
+| Secrets set | **NOT done** — deliberately, see below |
+| API deployed | **NOT done** — branch `admin-console-api` in roammate-app-ios is unmerged |
+
+**The live deployment returns 503 "Console is not configured", and that is
+correct.** The middleware fails closed at every incomplete stage: no API secrets
+→ 503; secrets but no Access → 503; Access but no token → 401. It cannot serve
+data until every piece is in place, which is why deploying it early is safe.
+
+### What you need to do
+
+1. **DNS.** In the Cloudflare dashboard for `roammate.com`, add a CNAME:
+   `admin` → `roammate-admin.pages.dev`, proxied. The custom domain is already
+   attached to the project, so it flips from `pending` to `active` once the
+   record exists.
+2. **Access.** Section 4 below. Do this BEFORE setting the secrets in step 3,
+   so there is never a window where the console has data and no auth.
+3. **Secrets.** Section 2 below.
+4. **API.** Ask the roammate-app-ios session to review and deploy branch
+   `admin-console-api`. Until then every page shows a fetch error, because
+   `/v1/admin/*` does not exist in production yet.
+
 ## Deploying
 
 ### 1. Create the Pages project
@@ -74,7 +104,7 @@ a 401 and say so. Either keep using the master key, or update those two handlers
 cd admin.roammate.com
 npm install
 npm run build
-npx wrangler pages project create roammate-admin --production-branch main
+npx wrangler pages project create roammate-admin --production-branch main   # already done
 npm run deploy
 ```
 
