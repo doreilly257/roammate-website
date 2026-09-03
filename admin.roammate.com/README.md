@@ -66,48 +66,46 @@ the narrower key on the Worker and give the console only that one.
 `ADMIN_API_KEY` only. With just the read key configured, the flags page will show
 a 401 and say so. Either keep using the master key, or update those two handlers.
 
-## Deployment state (2026-09-03)
+## Deployment state (2026-09-03) — LIVE
 
-| Step | State |
-|---|---|
-| Pages project `roammate-admin` | done |
-| Deployed | done |
-| DNS `admin.roammate.com` | done |
-| Cloudflare Access | **done** — all three hostnames redirect to login |
-| `ADMIN_API_KEY` secret | **not set** — deliberate, see below |
-| API deployed | **not done** — branch `admin-console-api` is unmerged |
+Everything is deployed and working. admin.roammate.com serves real production
+data to an authenticated operator and refuses everyone else.
 
-Access covers `admin.roammate.com`, `roammate-admin.pages.dev` **and**
-`*.roammate-admin.pages.dev`. The wildcard is not belt-and-braces: every Pages
-deployment gets its own subdomain (`362b03b7.roammate-admin.pages.dev`), and a
-policy naming only the bare hostname leaves each one publicly reachable.
-Verified: all three return 302 to the Access login with no data in the body.
-
+    hostname     admin.roammate.com
+    auth         Cloudflare Access, one-time PIN, dan@doreilly.com only
     team domain  quiet-hall-00a9.cloudflareaccess.com
-    login        One-time PIN, pinned via allowed_idps
-    allowed      dan@doreilly.com
+    API          https://api.roammate.com  (/v1/admin/*, merged 7fadda2)
+    console key  ADMIN_CONSOLE_KEY, in ~/.roammate-secrets/roammate-api.env
 
-`ACCESS_AUD` is the **primary host's** AUD only. The two pages.dev applications
-exist to block at the edge, not to grant: a token minted for one of them carries
-a different `aud`, and the middleware rejects it. The console is reached at
-admin.roammate.com or not at all.
+Access covers three hostnames: the custom domain, roammate-admin.pages.dev, and
+*.roammate-admin.pages.dev. The wildcard is load-bearing — each Pages deployment
+gets its own subdomain, and a policy naming only the custom domain leaves every
+one of them publicly reachable.
 
-### What is left
+### The console key is a CREATE, not a rotation
 
-1. **Merge and deploy `admin-console-api`** (roammate-app-ios). Until then
-   `/v1/admin/*` does not exist and every page shows a fetch error.
-2. **Set `ADMIN_API_KEY`**: `ROAMMATE_ADMIN_API_KEY=<key> node dev/setup-access.mjs`,
-   then redeploy. Held back on purpose — a console holding a live admin key is
-   worth less risk than a console that 503s.
+The original ADMIN_API_KEY is a Worker secret and is not recoverable — write-only,
+not in ~/.roammate-secrets, nobody has a copy. Two sessions had reduced the
+problem to "rotate it or stay broken". Daniel pointed out that ADMIN_CONSOLE_KEY
+has never existed, so provisioning it is a create: the unrecoverable key stays
+untouched, its blast radius never has to be measured, and the console ends up
+holding a key that CANNOT run migrations. Verified in production: the console key
+returns 401 on POST /v1/admin/migrate.
 
-### Re-running the setup
+### Setting Pages env vars: send ALL of them
 
-    node dev/setup-access.mjs --dry-run   # plan only, changes nothing
-    node dev/setup-access.mjs             # idempotent; skips what exists
+Cloudflare's Pages PATCH REPLACES deployment_configs.production.env_vars rather
+than merging. Sending one variable silently dropped ACCESS_TEAM_DOMAIN and
+API_BASE_URL, which would have taken the console down on the next deploy. Always
+send the complete set. dev/setup-access.mjs does.
 
-It will not create a Zero Trust organisation. One already exists and its team
-domain is effectively permanent, since other applications authenticate against
-it.
+### What must never regress
+
+An unauthenticated request to any of the three hostnames must 302 to the Access
+login, and no response may contain the admin key or console markup. Re-check with:
+
+    curl -s -o /dev/null -w '%{http_code}\n' https://admin.roammate.com/     # 302
+    curl -s -o /dev/null -w '%{http_code}\n' https://roammate-admin.pages.dev/  # 302
 
 ## Deploying
 
