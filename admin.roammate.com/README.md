@@ -95,6 +95,26 @@ Open `admin.roammate.com` in a private window. You should be asked to sign in by
 Cloudflare, and only then see the console. Confirm `roammate-admin.pages.dev`
 does **not** serve the console to an unauthenticated request.
 
+## Look at it right now
+
+```bash
+npm install     # first time only
+npm run demo
+```
+
+Then open **http://localhost:4331**. That builds the console, starts a mock API
+with realistic data, and serves the built output under workerd — the same
+runtime as production. No credentials, no Cloudflare account, no risk of a stray
+eject landing on a real account.
+
+The mock data is shaped to exercise the edge cases rather than to look tidy: an
+ejected user, a soft-deleted excursion, an overdue report, and reports of all
+four target types.
+
+`npm run demo` sets `DEV_BYPASS_ACCESS=1`, which skips Access verification.
+That is safe only because wrangler binds to localhost. Never set it in
+production; the middleware fails closed without it.
+
 ## Local development
 
 ```bash
@@ -105,10 +125,6 @@ npm run build && npx wrangler pages dev ./dist --port 4331
 `npm run dev` (astro dev) currently fails: the Cloudflare adapter tries to open a
 remote preview session against the account and cannot get a token. Building and
 running under `wrangler pages dev` works and is closer to production anyway.
-
-There is a mock API for working without production data — see the handover notes
-on bead `roammate-website-<admin dashboard>`; it serves every endpoint this
-console reads.
 
 ### wrangler.jsonc is load-bearing
 

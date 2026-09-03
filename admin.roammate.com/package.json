@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "wrangler pages dev ./dist",
     "check": "astro check",
-    "deploy": "astro build && wrangler pages deploy ./dist --project-name roammate-admin"
+    "deploy": "astro build && wrangler pages deploy ./dist --project-name roammate-admin",
+    "mock": "node dev/mock-api.mjs",
+    "demo": "astro build && node dev/demo.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.0",
