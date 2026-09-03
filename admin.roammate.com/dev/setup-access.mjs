@@ -38,8 +38,16 @@ const HOSTS = ['admin.roammate.com', `${PROJECT}.pages.dev`, `*.${PROJECT}.pages
  * The single operator address. Keep this list minimal and current: re-running
  * this script REWRITES the allow policy, so a stale address here silently
  * re-grants access to a mailbox that should no longer have it.
+ *
+ * WHY THE GOOGLE MAILBOX AND NOT dan@roammate.com. Mail for @roammate.com is
+ * handled by Cloudflare Email Routing, which forwards to this address. Pointing
+ * the login at the forwarded address made reaching the console depend on a
+ * forwarding rule -- and when that rule stopped delivering, the way in was the
+ * console you would use to investigate. One less hop, one less thing that can
+ * lock you out. (The routing fault is real and worth fixing separately; mail to
+ * @roammate.com is presumably going missing for more than one-time PINs.)
  */
-const ALLOWED_EMAILS = ['dan@roammate.com'];
+const ALLOWED_EMAILS = ['dan@doreilly.com'];
 const API_BASE_URL = 'https://api.roammate.com';
 const DRY = process.argv.includes('--dry-run');
 
