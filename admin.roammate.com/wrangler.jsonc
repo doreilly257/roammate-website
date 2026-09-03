@@ -1,10 +1,20 @@
 {
   // Explicit config so wrangler stops walking UP the tree looking for one. It
   // otherwise finds ~/wrangler.toml (an unrelated "chatcv" project) and attaches
-  // that project's D1, R2 and KV bindings to this Worker, which is how a local
-  // run ended up pointed at someone else's database.
+  // that project's D1, R2 and KV bindings to this Worker.
   "name": "roammate-admin",
   "pages_build_output_dir": "./dist",
   "compatibility_date": "2026-09-02",
-  "compatibility_flags": ["nodejs_compat"]
+  "compatibility_flags": ["nodejs_compat"],
+
+  // NON-SECRET VARS MUST LIVE HERE, NOT ONLY IN THE DASHBOARD.
+  // `wrangler pages deploy` syncs plain-text vars FROM this file and deletes any
+  // it does not find. Setting them by API worked, reported success, and was then
+  // silently wiped by the very next deploy -- which took the console down with a
+  // 503 while the API still reported the variables as set. Secrets
+  // (ADMIN_API_KEY, ACCESS_AUD) are unaffected and stay out of source control.
+  "vars": {
+    "API_BASE_URL": "https://api.roammate.com",
+    "ACCESS_TEAM_DOMAIN": "quiet-hall-00a9.cloudflareaccess.com"
+  }
 }

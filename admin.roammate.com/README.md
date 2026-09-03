@@ -92,12 +92,22 @@ untouched, its blast radius never has to be measured, and the console ends up
 holding a key that CANNOT run migrations. Verified in production: the console key
 returns 401 on POST /v1/admin/migrate.
 
-### Setting Pages env vars: send ALL of them
+### Non-secret vars belong in wrangler.jsonc, NOT the dashboard
 
-Cloudflare's Pages PATCH REPLACES deployment_configs.production.env_vars rather
-than merging. Sending one variable silently dropped ACCESS_TEAM_DOMAIN and
-API_BASE_URL, which would have taken the console down on the next deploy. Always
-send the complete set. dev/setup-access.mjs does.
+`wrangler pages deploy` syncs plain-text vars FROM wrangler.jsonc and DELETES any
+it does not find there. Setting API_BASE_URL and ACCESS_TEAM_DOMAIN by API worked,
+reported success, showed correctly on a read-back — and was then silently wiped by
+the very next deploy, taking the console down with a 503 while every API response
+still claimed the variables were set. The two that survived were secrets;
+secret_text is unaffected, which is what made the pattern legible.
+
+So: plain vars live in `wrangler.jsonc` under `vars` (committed, they are not
+secret). Secrets — ADMIN_API_KEY, ACCESS_AUD — are set by API and stay out of
+source control. Verified by deploying twice in a row and confirming all four
+variables survived.
+
+Separately, Cloudflare's Pages PATCH REPLACES env_vars rather than merging, so
+any API write must send the complete set. dev/setup-access.mjs does.
 
 ### What must never regress
 
