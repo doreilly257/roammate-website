@@ -70,31 +70,44 @@ a 401 and say so. Either keep using the master key, or update those two handlers
 
 | Step | State |
 |---|---|
-| Pages project `roammate-admin` | **done** |
-| Deployed | **done** — https://roammate-admin.pages.dev (returns 503, see below) |
-| Custom domain attached to project | **done** — `admin.roammate.com`, status `pending` |
-| DNS record for `admin.roammate.com` | **NOT done — needs you.** The wrangler token is `zone (read)`; creating the CNAME returns `10000 Authentication error` |
-| Cloudflare Access application | **NOT done — needs you.** No Zero Trust scope on the token |
-| Secrets set | **NOT done** — deliberately, see below |
-| API deployed | **NOT done** — branch `admin-console-api` in roammate-app-ios is unmerged |
+| Pages project `roammate-admin` | done |
+| Deployed | done |
+| DNS `admin.roammate.com` | done |
+| Cloudflare Access | **done** — all three hostnames redirect to login |
+| `ADMIN_API_KEY` secret | **not set** — deliberate, see below |
+| API deployed | **not done** — branch `admin-console-api` is unmerged |
 
-**The live deployment returns 503 "Console is not configured", and that is
-correct.** The middleware fails closed at every incomplete stage: no API secrets
-→ 503; secrets but no Access → 503; Access but no token → 401. It cannot serve
-data until every piece is in place, which is why deploying it early is safe.
+Access covers `admin.roammate.com`, `roammate-admin.pages.dev` **and**
+`*.roammate-admin.pages.dev`. The wildcard is not belt-and-braces: every Pages
+deployment gets its own subdomain (`362b03b7.roammate-admin.pages.dev`), and a
+policy naming only the bare hostname leaves each one publicly reachable.
+Verified: all three return 302 to the Access login with no data in the body.
 
-### What you need to do
+    team domain  quiet-hall-00a9.cloudflareaccess.com
+    login        One-time PIN, pinned via allowed_idps
+    allowed      daniel.oreilly@simpaisa.com
 
-1. **DNS.** In the Cloudflare dashboard for `roammate.com`, add a CNAME:
-   `admin` → `roammate-admin.pages.dev`, proxied. The custom domain is already
-   attached to the project, so it flips from `pending` to `active` once the
-   record exists.
-2. **Access.** Section 4 below. Do this BEFORE setting the secrets in step 3,
-   so there is never a window where the console has data and no auth.
-3. **Secrets.** Section 2 below.
-4. **API.** Ask the roammate-app-ios session to review and deploy branch
-   `admin-console-api`. Until then every page shows a fetch error, because
-   `/v1/admin/*` does not exist in production yet.
+`ACCESS_AUD` is the **primary host's** AUD only. The two pages.dev applications
+exist to block at the edge, not to grant: a token minted for one of them carries
+a different `aud`, and the middleware rejects it. The console is reached at
+admin.roammate.com or not at all.
+
+### What is left
+
+1. **Merge and deploy `admin-console-api`** (roammate-app-ios). Until then
+   `/v1/admin/*` does not exist and every page shows a fetch error.
+2. **Set `ADMIN_API_KEY`**: `ROAMMATE_ADMIN_API_KEY=<key> node dev/setup-access.mjs`,
+   then redeploy. Held back on purpose — a console holding a live admin key is
+   worth less risk than a console that 503s.
+
+### Re-running the setup
+
+    node dev/setup-access.mjs --dry-run   # plan only, changes nothing
+    node dev/setup-access.mjs             # idempotent; skips what exists
+
+It will not create a Zero Trust organisation. One already exists and its team
+domain is effectively permanent, since other applications authenticate against
+it.
 
 ## Deploying
 
