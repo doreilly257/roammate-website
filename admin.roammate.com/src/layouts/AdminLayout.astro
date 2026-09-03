@@ -33,12 +33,16 @@ const NAV = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title} · roammate admin</title>
   </head>
   <body>
     <div class="shell">
       <aside class="side">
-        <div class="brand">roam<span>mate</span> admin</div>
+        <a class="brand" href="/">
+          <img src="/images/rm-full-hz.svg" alt="roammate" width="120" height="93" />
+          <span class="brand-tag">admin</span>
+        </a>
         <nav class="nav">
           {NAV.map((item) => (
             <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>
