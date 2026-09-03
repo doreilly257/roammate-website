@@ -45,7 +45,7 @@ if (!res.ok && res.status === 404) return Astro.redirect('/excursions');
 
 const d = res.ok ? res.data : null;
 const e = d?.excursion;
-const joined = d?.participants.filter((p) => p.status === 'joined').length ?? 0;
+const joined = d?.participants.filter((p) => p.status === 'going').length ?? 0;
 ---
 
 <AdminLayout
@@ -92,11 +92,11 @@ const joined = d?.participants.filter((p) => p.status === 'joined').length ?? 0;
           </div>
         </div>
 
-        <h2>Participants ({num(joined)} joined of {d.participants.length} total)</h2>
+        <h2>Participants ({num(joined)} going of {d.participants.length} total)</h2>
         <div class="panel">
-          {d.participants.length === 0 ? <div class="empty">Nobody has joined.</div> : (
+          {d.participants.length === 0 ? <div class="empty">Nobody has responded.</div> : (
             <div class="table-wrap"><table>
-              <thead><tr><th>User</th><th>Status</th><th>Joined</th></tr></thead>
+              <thead><tr><th>User</th><th>Status</th><th>Responded</th></tr></thead>
               <tbody>{d.participants.map((p) => (
                 <tr>
                   <td>
@@ -108,7 +108,7 @@ const joined = d?.participants.filter((p) => p.status === 'joined').length ?? 0;
                       {p.is_verified ? <span class="pill ok">✓</span> : null}
                     </a>
                   </td>
-                  <td><span class={`pill ${p.status === 'joined' ? 'ok' : 'mute'}`}>{p.status}</span></td>
+                  <td><span class={`pill ${p.status === 'going' ? 'ok' : 'mute'}`}>{p.status}</span></td>
                   <td class="dim" style="white-space:nowrap">{relative(p.created_at)}</td>
                 </tr>
               ))}</tbody>

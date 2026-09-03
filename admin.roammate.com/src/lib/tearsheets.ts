@@ -101,7 +101,9 @@ async function excursionSheet(env: Env, id: string): Promise<Sheet> {
   if (!r.ok) return fail(`${r.error} (HTTP ${r.status})`);
   const e = r.data.excursion;
 
-  const joined = r.data.participants.filter((p) => p.status === 'joined').length;
+  // excursion_participants.status is 'going' | 'interested' | 'not_going'.
+  // It is NOT 'joined' -- see api/src/utils/participation.ts.
+  const joined = r.data.participants.filter((p) => p.status === 'going').length;
   const capacity = Number(e.max_pax ?? 0);
 
   const body = [
@@ -126,11 +128,11 @@ async function excursionSheet(env: Env, id: string): Promise<Sheet> {
       : '',
     `<h4>Participants (${r.data.participants.length})</h4>`,
     r.data.participants.length
-      ? `<table class="ts-table"><thead><tr><th>Name</th><th>Status</th><th>Joined</th></tr></thead><tbody>${
+      ? `<table class="ts-table"><thead><tr><th>Name</th><th>Status</th><th>Responded</th></tr></thead><tbody>${
           r.data.participants.map((p) =>
             `<tr><td>${val(p.name)}</td><td>${val(p.status)}</td><td>${relative(String(p.created_at))}</td></tr>`).join('')
         }</tbody></table>`
-      : '<div class="empty">Nobody has joined.</div>',
+      : '<div class="empty">Nobody has responded.</div>',
     r.data.reports.length
       ? `<h4>Reports (${r.data.reports.length})</h4><table class="ts-table"><thead><tr><th>Reason</th><th>Status</th><th>When</th></tr></thead><tbody>${
           r.data.reports.map((x) =>
