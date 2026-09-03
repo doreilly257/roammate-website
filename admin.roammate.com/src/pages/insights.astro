@@ -1,0 +1,341 @@
+---
+import AdminLayout from '../layouts/AdminLayout.astro';
+import { api, type Overview } from '../lib/api';
+import { num, pct } from '../lib/format';
+
+const env = Astro.locals.runtime.env;
+const days = Math.min(365, Math.max(7, Number(Astro.url.searchParams.get('days') || 90) || 90));
+
+type Stage = { key: string; label: string; count: number };
+type Track = { key: string; label: string; sequential: boolean; stages: Stage[] };
+type Activation = {
+  basis: string; note: string; windowDays: number; suspectExcluded: number;
+  entryCount: number; tracks: Track[];
+};
+type Supply = {
+  windowDays: number; excursionsCreated: number; excursionsWithAtLeastOneJoin: number;
+  excursionsFilled: number; hosts: number; repeatHosts: number; hostsWhoNeverGotAJoin: number;
+  medianHoursToFirstJoin: number | null; note: string;
+  weekly: Array<{ week: string; created: number; hosts: number }>;
+};
+type Geography = {
+  note: string;
+  cities: Array<{ city: string; users: number; excursions: number; hosts: number; usersPerExcursion: number | null }>;
+};
+type Verification = {
+  byStatus: Array<{ status: string; n: number }>; usersWhoStarted: number; usersWhoCompleted: number;
+  eligibleUsers: number; verifiedUsers: number; medianMinutesToComplete: number | null; note: string;
+};
+type Survival = {
+  kind: string; note: string;
+  cohorts: Array<{ cohort: string; signed_up: number; seen_7d: number; seen_30d: number; ever_joined: number }>;
+};
+type Engagement = {
+  activeSenders: number; messages: number; conversations: number;
+  messagesPerSender: number; joinedButNeverMessaged: number; note: string;
+};
+
+const [actRes, supRes, geoRes, verRes, survRes, engRes, ovRes] = await Promise.all([
+  api.get<Activation>(env, `/insights/activation?days=${days}`),
+  api.get<Supply>(env, `/insights/supply?days=${days}`),
+  api.get<Geography>(env, '/insights/geography?limit=20'),
+  api.get<Verification>(env, `/insights/verification?days=${days}`),
+  api.get<Survival>(env, '/insights/survival?weeks=12'),
+  api.get<Engagement>(env, '/insights/engagement?days=30'),
+  api.get<Overview>(env, '/overview'),
+]);
+
+const act = actRes.ok ? actRes.data : null;
+const sup = supRes.ok ? supRes.data : null;
+const geo = geoRes.ok ? geoRes.data : null;
+const ver = verRes.ok ? verRes.data : null;
+const surv = survRes.ok ? survRes.data : null;
+const eng = engRes.ok ? engRes.data : null;
+const errors = [actRes, supRes, geoRes, verRes, survRes, engRes]
+  .filter((r) => !r.ok).map((r) => r as { error: string; status: number });
+
+const top = act?.entryCount ?? 0;
+
+/** Biggest drop between CONSECUTIVE stages WITHIN a track. Comparing across
+ *  tracks is what produced a 233% conversion: hosting is a parallel outcome of
+ *  signing up, not a step after joining twice. */
+const worstStep = (() => {
+  if (!act) return null;
+  let worst: { from: Stage; to: Stage; lost: number } | null = null;
+  for (const track of act.tracks) {
+    for (let i = 1; i < track.stages.length; i++) {
+      const lost = track.stages[i - 1].count - track.stages[i].count;
+      if (lost > 0 && (!worst || lost > worst.lost)) {
+        worst = { from: track.stages[i - 1], to: track.stages[i], lost };
+      }
+    }
+  }
+  return worst;
+})();
+
+const WINDOWS = [30, 90, 180, 365];
+---
+
+<AdminLayout
+  title="Insights"
+  subtitle={`Product analytics over the last ${days} days`}
+  reportsOpen={ovRes.ok ? ovRes.data.queues.reportsOpen : undefined}
+>
+  {errors.map((e) => <div class="err">Could not load part of this page: {e.error} (HTTP {e.status})</div>)}
+
+  <div class="filters">
+    {WINDOWS.map((w) => (
+      <a href={`/insights?days=${w}`}>
+        <button type="button" class={days === w ? 'primary' : ''}>{w} days</button>
+      </a>
+    ))}
+  </div>
+
+  <div class="err" style="background:rgba(245,165,36,0.1);border-color:#f5a524;color:#ffe0ad">
+    <strong>Read this before acting on a number here.</strong>
+    The database stores <em>state</em>, not events, so these are state funnels: how far each
+    signup cohort has got, not the order they did things in or where inside a screen they
+    dropped. Behavioural funnels need PostHog. Retention below is a survival snapshot for the
+    same reason. {act ? `${num(act.suspectExcluded)} test-looking accounts are excluded from every figure.` : ''}
+  </div>
+
+  {act && (
+    <>
+      <h2>Activation funnel</h2>
+      {worstStep && (
+        <div class="panel" style="margin-bottom:10px;border-color:#f2545b">
+          <div style="padding:13px 15px">
+            <strong style="color:#f2545b">Biggest drop: {worstStep.from.label} → {worstStep.to.label}</strong>
+            <div class="sub" style="margin-top:3px">
+              {num(worstStep.lost)} of {num(worstStep.from.count)} people
+              ({pct(worstStep.lost, worstStep.from.count)}) do not make this step. It is the
+              single highest-leverage thing on this page.
+            </div>
+          </div>
+        </div>
+      )}
+      {act.tracks.map((track) => (
+        <div class="panel" style="margin-bottom:10px">
+          <div class="panel-head">
+            <h3>{track.label}</h3>
+            <span class="sub">
+              {track.key === 'onboarding' ? 'Sequential steps' : `Parallel outcome of signing up, not a step after the track above`}
+            </span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Stage</th><th class="num">People</th><th class="num">Of signups</th><th class="num">Step conversion</th><th>Share</th></tr></thead>
+              <tbody>
+                {track.stages.map((s, i) => {
+                  const prev = i > 0 ? track.stages[i - 1].count : null;
+                  const width = top ? Math.max(1, Math.round((s.count / top) * 100)) : 0;
+                  return (
+                    <tr>
+                      <td>{s.label}</td>
+                      <td class="num">{num(s.count)}</td>
+                      <td class="num dim">{pct(s.count, top)}</td>
+                      <td class="num dim">{prev === null ? '--' : pct(s.count, prev)}</td>
+                      <td style="width:38%">
+                        <div style="height:9px;border-radius:99px;background:#272c37;overflow:hidden">
+                          <div style={`height:100%;width:${width}%;background:#ff6b35`}></div>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+      <p class="sub" style="margin-top:8px;max-width:80ch">{act.note}</p>
+    </>
+  )}
+
+  {sup && (
+    <>
+      <h2>Supply health</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="label">Excursions created</div>
+          <div class="value">{num(sup.excursionsCreated)}</div>
+          <div class="foot">by {num(sup.hosts)} host{sup.hosts === 1 ? '' : 's'}</div>
+        </div>
+        <div class="card">
+          <div class="label">Got at least one join</div>
+          <div class="value">{num(sup.excursionsWithAtLeastOneJoin)}</div>
+          <div class="foot">{pct(sup.excursionsWithAtLeastOneJoin, sup.excursionsCreated)} of those created</div>
+        </div>
+        <div class={sup.hostsWhoNeverGotAJoin > 0 ? 'card alert' : 'card'}>
+          <div class="label">Hosts who got nothing</div>
+          <div class="value">{num(sup.hostsWhoNeverGotAJoin)}</div>
+          <div class="foot">Posted, nobody joined</div>
+        </div>
+        <div class="card">
+          <div class="label">Repeat hosts</div>
+          <div class="value">{num(sup.repeatHosts)}</div>
+          <div class="foot">{pct(sup.repeatHosts, sup.hosts)} came back</div>
+        </div>
+        <div class="card">
+          <div class="label">Filled to capacity</div>
+          <div class="value">{num(sup.excursionsFilled)}</div>
+          <div class="foot">Hit max_pax</div>
+        </div>
+        <div class="card">
+          <div class="label">Median time to 1st join</div>
+          <div class="value">{sup.medianHoursToFirstJoin === null ? '--' : `${sup.medianHoursToFirstJoin}h`}</div>
+          <div class="foot">Only counts ones that got a join</div>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:8px;max-width:80ch">{sup.note}</p>
+    </>
+  )}
+
+  {eng && (
+    <>
+      <h2>Engagement</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="label">People who sent a message</div>
+          <div class="value">{num(eng.activeSenders)}</div>
+          <div class="foot">Last 30 days</div>
+        </div>
+        <div class="card">
+          <div class="label">Messages</div>
+          <div class="value">{num(eng.messages)}</div>
+          <div class="foot">{eng.messagesPerSender} per sender</div>
+        </div>
+        <div class="card">
+          <div class="label">Conversations</div>
+          <div class="value">{num(eng.conversations)}</div>
+        </div>
+        <div class={eng.joinedButNeverMessaged > 0 ? 'card alert' : 'card'}>
+          <div class="label">Joined, never spoke</div>
+          <div class="value">{num(eng.joinedButNeverMessaged)}</div>
+          <div class="foot">All time</div>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:8px;max-width:80ch">{eng.note}</p>
+    </>
+  )}
+
+  {geo && geo.cities.length > 0 && (
+    <>
+      <h2>Where people are, and where excursions are not</h2>
+      <div class="panel">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>City</th><th class="num">Users</th><th class="num">Excursions</th><th class="num">Hosts</th><th class="num">Users per excursion</th><th>Read</th></tr></thead>
+            <tbody>
+              {geo.cities.map((c) => (
+                <tr>
+                  <td>{c.city}</td>
+                  <td class="num">{num(c.users)}</td>
+                  <td class="num">{num(c.excursions)}</td>
+                  <td class="num">{num(c.hosts)}</td>
+                  <td class="num">{c.usersPerExcursion === null ? '--' : c.usersPerExcursion}</td>
+                  <td>
+                    {c.excursions === 0
+                      ? <span class="pill bad">Demand, no supply</span>
+                      : c.usersPerExcursion !== null && c.usersPerExcursion >= 10
+                        ? <span class="pill warn">Supply thin</span>
+                        : <span class="pill mute">Balanced</span>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:8px;max-width:80ch">{geo.note}</p>
+    </>
+  )}
+
+  {ver && (
+    <>
+      <h2>Identity verification</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="label">Started</div>
+          <div class="value">{num(ver.usersWhoStarted)}</div>
+          <div class="foot">{pct(ver.usersWhoStarted, ver.eligibleUsers)} of all users</div>
+        </div>
+        <div class="card">
+          <div class="label">Completed</div>
+          <div class="value">{num(ver.usersWhoCompleted)}</div>
+          <div class="foot">{pct(ver.usersWhoCompleted, ver.usersWhoStarted)} of those who started</div>
+        </div>
+        <div class={ver.usersWhoStarted - ver.usersWhoCompleted > 0 ? 'card alert' : 'card'}>
+          <div class="label">Abandoned</div>
+          <div class="value">{num(Math.max(0, ver.usersWhoStarted - ver.usersWhoCompleted))}</div>
+          <div class="foot">Started, never finished</div>
+        </div>
+        <div class="card">
+          <div class="label">Median time to finish</div>
+          <div class="value">{ver.medianMinutesToComplete === null ? '--' : `${ver.medianMinutesToComplete}m`}</div>
+        </div>
+        <div class="card">
+          <div class="label">Verified accounts</div>
+          <div class="value">{num(ver.verifiedUsers)}</div>
+          <div class="foot">{pct(ver.verifiedUsers, ver.eligibleUsers)} of all users</div>
+        </div>
+      </div>
+      {ver.byStatus.length > 0 && (
+        <div class="panel" style="margin-top:10px">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Session status</th><th class="num">Sessions</th></tr></thead>
+              <tbody>
+                {ver.byStatus.map((s) => (
+                  <tr>
+                    <td>
+                      <span class={`pill ${s.status === 'verified' ? 'ok' : s.status === 'failed' ? 'bad' : 'warn'}`}>{s.status}</span>
+                    </td>
+                    <td class="num">{num(s.n)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+      <p class="sub" style="margin-top:8px;max-width:80ch">{ver.note}</p>
+    </>
+  )}
+
+  {surv && (
+    <>
+      <h2>Signup cohorts</h2>
+      <div class="panel">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Cohort week</th><th class="num">Signed up</th><th class="num">Seen in 7d</th><th class="num">Seen in 30d</th><th class="num">Ever joined</th></tr></thead>
+            <tbody>
+              {surv.cohorts.map((c) => (
+                <tr>
+                  <td class="mono">{c.cohort}</td>
+                  <td class="num">{num(c.signed_up)}</td>
+                  <td class="num">{num(c.seen_7d)} <span class="dim">({pct(c.seen_7d, c.signed_up)})</span></td>
+                  <td class="num">{num(c.seen_30d)} <span class="dim">({pct(c.seen_30d, c.signed_up)})</span></td>
+                  <td class="num">{num(c.ever_joined)} <span class="dim">({pct(c.ever_joined, c.signed_up)})</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {surv.cohorts.length === 0 && <div class="empty">No cohorts in this window.</div>}
+      </div>
+      <p class="sub" style="margin-top:8px;max-width:80ch"><strong>Not a retention curve.</strong> {surv.note}</p>
+    </>
+  )}
+
+  <h2>What this page cannot tell you</h2>
+  <div class="panel"><div style="padding:15px">
+    <ul style="margin:0;padding-left:18px;color:var(--color-ink-muted,#949bab);font-size:13px;line-height:1.7;max-width:80ch">
+      <li><strong>Where inside onboarding people drop.</strong> Needs screen events. The funnel above shows the gap between stages, not the step someone abandoned.</li>
+      <li><strong>Real week-N retention.</strong> <code>last_seen_at</code> is overwritten on every visit, so there is one observation per user and no history. Fixing this means a daily-active table or PostHog.</li>
+      <li><strong>Why anyone left.</strong> No exit survey, no session recording.</li>
+      <li><strong>Whether a number moved because of something you did.</strong> Nothing here is an experiment. Before-and-after on a live product with changing traffic is not evidence.</li>
+    </ul>
+  </div></div>
+</AdminLayout>

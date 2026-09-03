@@ -165,6 +165,75 @@ const routes = {
       { id: 'ma_2', report_id: null, action_type: 'remove_excursion', actor_id: 'daniel@roammate.com', target_user_id: null, target_type: 'excursion', target_id: excursions[4].id, notes: 'Duplicate listing', created_at: iso(86400000 * 5) },
     ],
   }),
+  // Insights. Numbers are shaped to tell this product's ACTUAL story rather than
+  // a flattering one: acquisition is fine, activation is not, and the supply side
+  // is where it breaks. A demo full of healthy metrics would teach the wrong
+  // thing about what the page is for.
+  '/insights/activation': () => ({
+    basis: 'state',
+    note: 'Stage counts are current state for the signup cohort, not an ordered event funnel. Within a track a user may have done the steps in a different order; across tracks there is no order at all.',
+    windowDays: 90, suspectExcluded: 14, entryCount: 47,
+    tracks: [
+      { key: 'onboarding', label: 'Getting set up', sequential: true, stages: [
+        { key: 'signed_up', label: 'Signed up', count: 47 },
+        { key: 'added_photo', label: 'Added a photo', count: 31 },
+        { key: 'profile_complete', label: 'Completed profile', count: 18 },
+        { key: 'verified', label: 'Verified identity', count: 16 } ] },
+      { key: 'joiner', label: 'As a joiner', sequential: true, stages: [
+        { key: 'joined', label: 'Joined an excursion', count: 9 },
+        { key: 'joined_repeat', label: 'Joined twice or more', count: 3 } ] },
+      { key: 'host', label: 'As a host', sequential: true, stages: [
+        { key: 'hosted', label: 'Hosted an excursion', count: 7 },
+        { key: 'hosted_repeat', label: 'Hosted twice or more', count: 1 } ] },
+    ],
+  }),
+  '/insights/supply': () => ({
+    basis: 'state', windowDays: 90,
+    excursionsCreated: 23, excursionsWithAtLeastOneJoin: 9, excursionsFilled: 2,
+    hosts: 7, repeatHosts: 1, hostsWhoNeverGotAJoin: 4, medianHoursToFirstJoin: 31.5,
+    weekly: [], 
+    note: 'A host who never got a join is the clearest churn signal on the supply side - they did the work and got nothing back. Repeat hosts are the number to move.',
+  }),
+  '/insights/geography': () => ({
+    basis: 'state',
+    cities: [
+      { city: 'Lisbon, Portugal', users: 11, excursions: 4, hosts: 2, usersPerExcursion: 2.8 },
+      { city: 'Chiang Mai, Thailand', users: 9, excursions: 0, hosts: 0, usersPerExcursion: null },
+      { city: 'Medellin, Colombia', users: 7, excursions: 1, hosts: 1, usersPerExcursion: 7 },
+      { city: 'Tbilisi, Georgia', users: 6, excursions: 0, hosts: 0, usersPerExcursion: null },
+      { city: 'Split, Croatia', users: 5, excursions: 3, hosts: 2, usersPerExcursion: 1.7 },
+      { city: 'Da Nang, Vietnam', users: 4, excursions: 0, hosts: 0, usersPerExcursion: null },
+      { city: 'Oaxaca, Mexico', users: 3, excursions: 1, hosts: 1, usersPerExcursion: 3 },
+      { city: 'Tirana, Albania', users: 2, excursions: 0, hosts: 0, usersPerExcursion: null },
+    ],
+    note: 'users.location is self-reported and often a home city rather than where someone is now, so treat this as where people SAY they are. A city with users and no excursions is the supply gap worth seeding.',
+  }),
+  '/insights/verification': () => ({
+    basis: 'state', windowDays: 90,
+    byStatus: [{ status: 'verified', n: 16 }, { status: 'pending', n: 3 }, { status: 'failed', n: 5 }],
+    usersWhoStarted: 24, usersWhoCompleted: 21, eligibleUsers: 47, verifiedUsers: 16,
+    medianMinutesToComplete: 4.2,
+    note: 'Verification is OPTIONAL while verification_gate_enabled is off, so a low start rate is the expected outcome of the current design, not a broken flow. Read the abandon rate (started minus completed) rather than the take-up rate.',
+  }),
+  '/insights/survival': () => ({
+    basis: 'state', kind: 'survival-snapshot',
+    note: 'NOT a retention curve. last_seen_at is overwritten on every visit, so there is one observation per user and no history. This says how many of each signup cohort have been seen RECENTLY, which is a survival snapshot. Real week-N retention needs an event store.',
+    weeks: 12,
+    cohorts: [
+      { cohort: '2026-35', signed_up: 6, seen_7d: 5, seen_30d: 6, ever_joined: 2 },
+      { cohort: '2026-34', signed_up: 8, seen_7d: 4, seen_30d: 7, ever_joined: 3 },
+      { cohort: '2026-33', signed_up: 5, seen_7d: 1, seen_30d: 3, ever_joined: 1 },
+      { cohort: '2026-32', signed_up: 9, seen_7d: 2, seen_30d: 4, ever_joined: 2 },
+      { cohort: '2026-31', signed_up: 7, seen_7d: 1, seen_30d: 2, ever_joined: 1 },
+      { cohort: '2026-30', signed_up: 12, seen_7d: 1, seen_30d: 2, ever_joined: 0 },
+    ],
+  }),
+  '/insights/engagement': () => ({
+    basis: 'state', windowDays: 30,
+    activeSenders: 12, messages: 412, conversations: 19, messagesPerSender: 34.3,
+    joinedButNeverMessaged: 5,
+    note: 'joinedButNeverMessaged counts people who joined an excursion and have never sent a single message. On a social product that is the sharpest activation failure this schema can detect.',
+  }),
   '/flags': () => ({
     flags: {
       proximity_enabled: true, ai_concierge_enabled: false, trip_memory_enabled: true,

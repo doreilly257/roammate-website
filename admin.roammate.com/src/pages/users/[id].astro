@@ -209,7 +209,7 @@ const u = d?.user;
               <thead><tr><th>Status</th><th>Level</th><th>Started</th></tr></thead>
               <tbody>{d.verificationSessions.map((v) => (
                 <tr>
-                  <td><span class={`pill ${v.status === 'approved' ? 'ok' : v.status === 'declined' ? 'bad' : 'warn'}`}>{v.status}</span></td>
+                  <td><span class={`pill ${v.status === 'verified' ? 'ok' : v.status === 'failed' ? 'bad' : 'warn'}`}>{v.status}</span></td>
                   <td class="dim">{v.level || '--'}</td>
                   <td class="dim mono">{dateTime(v.created_at)}</td>
                 </tr>
