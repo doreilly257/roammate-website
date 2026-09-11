@@ -12,14 +12,18 @@
     "validate:dist": "tsx scripts/validate.ts --dist"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.17",
-    "@astrojs/sitemap": "^3.7.0",
-    "astro": "^5.17.1"
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.2"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3",
-    "vitest": "^4.1.0"
+    "@astrojs/check": "^0.9.10",
+    "tsx": "^4.23.13",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.0"
+  },
+  "engines": {
+    "node": "^22.20.0 || ^24.12.0 || >=26.0.0",
+    "npm": ">=9.6.5"
   }
 }
