@@ -30,7 +30,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   <!-- CSP is served as a real response header from public/_headers (Cloudflare
        Pages), not from a meta tag: frame-ancestors has no effect in meta form. -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="theme-colour" content="#c4562a">
+  <meta name="theme-color" content="#c4562a">
   <meta name="description" content={description}>
   <title>{title}</title>
   <link rel="canonical" href={canonicalURL}>
@@ -86,7 +86,7 @@ const buildDate = new Date().toISOString().split('T')[0];
           "description": "Travel companion app that matches solo travellers by travel style, budget, and destination."
         },
         {
-          "@type": "Organisation",
+          "@type": "Organization",
           "name": "roammate",
           "url": "https://roammate.com/",
           "logo": "https://roammate.com/images/rm-full.svg",
@@ -132,7 +132,7 @@ const buildDate = new Date().toISOString().split('T')[0];
           "serviceType": "Travel Companion Matching",
           "description": "roammate matches solo travellers by travel style, budget, and destination so they can find a compatible travel companion.",
           "provider": {
-            "@type": "Organisation",
+            "@type": "Organization",
             "name": "roammate",
             "url": "https://roammate.com/"
           },
