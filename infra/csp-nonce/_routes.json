@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "description": "OPT-IN ONLY: public HTML nonce middleware; copy only to isolated staging output",
+  "include": ["/*"],
+  "exclude": [
+    "/_astro/*", "/images/*", "/fonts/*", "/.well-known/*",
+    "/api", "/api/*", "/admin", "/admin/*", "/cdn-cgi/*",
+    "/robots.txt", "/llms.txt", "/llms-full.txt", "/rss.xml",
+    "/sitemap.xml", "/sitemap-*.xml", "/sitemap_index.xml",
+    "/favicon.ico", "/favicon.svg", "/site.webmanifest",
+    "/apple-touch-icon.png", "/android-chrome-192x192.png", "/android-chrome-512x512.png"
+  ]
+}

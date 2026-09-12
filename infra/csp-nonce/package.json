@@ -1,0 +1,6 @@
+{
+  "name": "roammate-csp-nonce-preparation",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test nonce.test.mjs" }
+}
