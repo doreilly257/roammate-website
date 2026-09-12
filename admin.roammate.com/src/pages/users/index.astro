@@ -53,12 +53,12 @@ function pageHref(newOffset: number): string {
   {!res.ok && <div class="err">Could not load users: {res.error} (HTTP {res.status})</div>}
 
   <form method="get" class="filters">
-    <input type="search" name="q" value={q} placeholder="Name, username, email or location" style="min-width:280px" />
-    <select name="filter">
+    <input type="search" name="q" aria-label="Search users" value={q} placeholder="Name, username, email or location" style="min-width:280px" />
+    <select name="filter" aria-label="Filter users by status">
       {FILTERS.map((f) => <option value={f.id} selected={filter === f.id}>{f.label}</option>)}
     </select>
     <button type="submit" class="primary">Search</button>
-    {(q || filter !== 'all') && <a href="/users"><button type="button" class="ghost">Reset</button></a>}
+    {(q || filter !== 'all') && <a href="/users" class="button-link ghost">Reset</a>}
   </form>
 
   <div class="panel">
@@ -117,8 +117,8 @@ function pageHref(newOffset: number): string {
   </div>
 
   <div class="pager">
-    {offset > 0 && <a href={pageHref(Math.max(0, offset - limit))}><button type="button">← Previous</button></a>}
+    {offset > 0 && <a href={pageHref(Math.max(0, offset - limit))} class="button-link">← Previous</a>}
     <span>{total === 0 ? '0' : `${offset + 1}–${Math.min(offset + limit, total)}`} of {num(total)}</span>
-    {offset + limit < total && <a href={pageHref(offset + limit)}><button type="button">Next →</button></a>}
+    {offset + limit < total && <a href={pageHref(offset + limit)} class="button-link">Next →</a>}
   </div>
 </AdminLayout>

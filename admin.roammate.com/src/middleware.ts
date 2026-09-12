@@ -24,16 +24,24 @@ type Jwks = { keys: Jwk[] };
  *  living forever; a cache miss is one sub-request. */
 let jwksCache: { domain: string; fetchedAt: number; jwks: Jwks } | null = null;
 const JWKS_TTL_MS = 15 * 60 * 1000;
+const JWKS_TIMEOUT_MS = 15_000;
 
 async function getJwks(teamDomain: string): Promise<Jwks> {
   const fresh = jwksCache && jwksCache.domain === teamDomain && Date.now() - jwksCache.fetchedAt < JWKS_TTL_MS;
   if (fresh && jwksCache) return jwksCache.jwks;
 
-  const res = await fetch(`https://${teamDomain}/cdn-cgi/access/certs`);
-  if (!res.ok) throw new Error(`Access certs fetch failed: ${res.status}`);
-  const jwks = (await res.json()) as Jwks;
-  jwksCache = { domain: teamDomain, fetchedAt: Date.now(), jwks };
-  return jwks;
+  // Keep the deadline active through body consumption, not just the headers.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), JWKS_TIMEOUT_MS);
+  try {
+    const res = await fetch(`https://${teamDomain}/cdn-cgi/access/certs`, { signal: controller.signal });
+    if (!res.ok) throw new Error(`Access certs fetch failed: ${res.status}`);
+    const jwks = (await res.json()) as Jwks;
+    jwksCache = { domain: teamDomain, fetchedAt: Date.now(), jwks };
+    return jwks;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 // Returns Uint8Array<ArrayBuffer> rather than the default Uint8Array<ArrayBufferLike>:
@@ -99,17 +107,21 @@ async function verifyAccessJwt(
 }
 
 function deny(message: string, status: number, operator?: string): Response {
+  // Signed identity claims are still text, not trusted HTML.
+  const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (char) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  })[char]!);
   // Deliberately plain and non-specific to the caller; the detail goes to logs.
   // ALWAYS carries a sign-out link: without one, an operator who reaches any
   // refusal page has no way to change identity except by knowing the
   // /cdn-cgi/access/logout URL by heart, which is not a thing to expect.
   const who = operator
-    ? `<p style="color:#666">Signed in as <strong>${operator}</strong>.</p>`
+    ? `<p style="color:#666">Signed in as <strong>${escapeHtml(operator)}</strong>.</p>`
     : '';
   return new Response(
     `<!doctype html><meta charset="utf-8"><title>Not available</title>` +
       `<body style="font:14px system-ui;padding:3rem;max-width:34rem;margin:0 auto;line-height:1.5">` +
-      `<h1 style="font-size:1.1rem">${message}</h1>` +
+      `<h1 style="font-size:1.1rem">${escapeHtml(message)}</h1>` +
       `<p style="color:#666">This console is restricted to roammate operators.</p>` +
       who +
       `<p><a href="/cdn-cgi/access/logout">Sign out</a></p></body>`,

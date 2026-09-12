@@ -75,7 +75,7 @@ function entityHref(e: ActivityEvent): string | null {
       </label>
     ))}
     <button type="submit">Filter</button>
-    {selected.length > 0 && <a href="/activity"><button type="button" class="ghost">Clear</button></a>}
+    {selected.length > 0 && <a href="/activity" class="button-link ghost">Clear</a>}
   </form>
 
   <div class="panel">
@@ -120,8 +120,8 @@ function entityHref(e: ActivityEvent): string | null {
   </div>
 
   <div class="pager">
-    {before && <a href={pageHref(null)}><button type="button">Newest</button></a>}
-    {nextCursor && <a href={pageHref(nextCursor)}><button type="button">Older →</button></a>}
+    {before && <a href={pageHref(null)} class="button-link">Newest</a>}
+    {nextCursor && <a href={pageHref(nextCursor)} class="button-link">Older →</a>}
     {!nextCursor && events.length > 0 && <span>End of log.</span>}
   </div>
 </AdminLayout>

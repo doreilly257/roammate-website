@@ -65,8 +65,8 @@ const href = (o: number) => (o > 0 ? `/media?offset=${o}` : '/media');
   )}
 
   <div class="pager">
-    {offset > 0 && <a href={href(Math.max(0, offset - limit))}><button type="button">← Previous</button></a>}
+    {offset > 0 && <a href={href(Math.max(0, offset - limit))} class="button-link">← Previous</a>}
     <span>{total === 0 ? '0' : `${offset + 1}–${Math.min(offset + limit, total)}`} of {num(total)}</span>
-    {offset + limit < total && <a href={href(offset + limit)}><button type="button">Next →</button></a>}
+    {offset + limit < total && <a href={href(offset + limit)} class="button-link">Next →</a>}
   </div>
 </AdminLayout>

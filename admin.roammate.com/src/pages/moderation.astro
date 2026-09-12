@@ -7,31 +7,6 @@ const env = Astro.locals.runtime.env;
 const url = Astro.url;
 const status = url.searchParams.get('status') || 'open';
 
-let flash: { kind: 'ok' | 'err'; message: string } | null = null;
-if (Astro.request.method === 'POST') {
-  const form = await Astro.request.formData();
-  const reportId = String(form.get('reportId') || '');
-  const action = String(form.get('action') || 'dismiss');
-  const notes = String(form.get('notes') || '').slice(0, 500);
-
-  if (reportId) {
-    const result = await api.post(env, `/reports/${reportId}/resolve`, {
-      actorId: Astro.locals.operator,
-      action,
-      notes,
-    });
-    flash = result.ok
-      ? {
-          kind: 'ok',
-          message:
-            action === 'remove_content_and_eject_user'
-              ? 'Report resolved. The reported user was ejected and their content removed.'
-              : 'Report dismissed.',
-        }
-      : { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
-  }
-}
-
 const [res, logRes, overviewRes] = await Promise.all([
   api.get<{ reports: AdminReport[] }>(env, `/reports?status=${encodeURIComponent(status)}&limit=200`),
   api.get<{ actions: ModerationAction[] }>(env, '/moderation-log?limit=50'),
@@ -41,36 +16,46 @@ const [res, logRes, overviewRes] = await Promise.all([
 const reports = res.ok ? res.data.reports : [];
 const log = logRes.ok ? logRes.data.actions : [];
 
-// The reported content itself. Without this a moderator is deciding from the
-// reason code alone, which is not a decision. Fetched in parallel and keyed by
-// report id; a target that cannot be resolved renders as "unavailable" rather
-// than silently looking like there was nothing there.
+// Content is private and fetched only for the report the operator opens.
+// Never turn an arbitrary query parameter into a target API request.
+Astro.response.headers.set('Cache-Control', 'private, no-store');
+// no-referrer makes native POST Origin:null, which Astro rightly rejects.
+// same-origin still keeps private report URLs out of cross-origin requests.
+Astro.response.headers.set('Referrer-Policy', 'same-origin');
 type TargetPayload = { targetType: string; target: Record<string, unknown> | null };
-const targets = new Map<string, TargetPayload>();
-await Promise.all(
-  reports.map(async (r) => {
-    const t = await api.get<TargetPayload>(env, `/reports/${r.id}/target`);
-    if (t.ok) targets.set(r.id, t.data);
-  }),
-);
+const selectedId = url.searchParams.get('report') || '';
+const selectedReport = reports.find((r) => r.id === selectedId);
+const targetRes = selectedReport
+  ? await api.get<TargetPayload>(env, `/reports/${encodeURIComponent(selectedReport.id)}/target`)
+  : null;
+const targetPreview = targetRes?.ok && targetRes.data.targetType === selectedReport?.target_type
+  ? describeTarget(targetRes.data) : null;
+const targetError = targetRes && !targetRes.ok
+  ? `Could not load reported content: ${targetRes.error} (HTTP ${targetRes.status}).`
+  : 'Reported content is unavailable, deleted, or not supported for full review here. Video messages and album media without a verified image type cannot be reviewed in this console.';
+const reviewHref = (id: string) => `/moderation?${new URLSearchParams({ status, report: id })}#report-${encodeURIComponent(id)}`;
 
 /** Renders the handful of fields that matter per target type. */
 function describeTarget(t: TargetPayload | undefined): { label: string; body: string; image?: string } | null {
   if (!t || !t.target) return null;
   const g = (k: string) => (t.target?.[k] == null ? '' : String(t.target[k]));
   if (t.targetType === 'message') {
+    if (g('video_url')) return null;
     return { label: 'Reported message', body: g('content') || '(no text — media only)', image: g('image_url') || undefined };
   }
   if (t.targetType === 'excursion') {
     return { label: 'Reported excursion', body: `${g('title')}\n\n${g('description')}`.trim(), image: g('cover_image_url') || undefined };
   }
   if (t.targetType === 'album_media') {
-    return { label: 'Reported media', body: g('caption') || '(no caption)', image: g('thumbnail_url') || g('url') || undefined };
+    // The current API omits media type: do not guess from URL or thumbnail.
+    // Require a future authoritative image type before enabling this review.
+    if (g('type') !== 'image' || !g('url')) return null;
+    return { label: 'Reported media', body: g('caption') || '(no caption)', image: g('url') };
   }
   if (t.targetType === 'user') {
-    return { label: 'Reported profile', body: [g('name'), g('username'), g('headline'), g('location')].filter(Boolean).join(' · ') };
+    return { label: 'Reported profile', body: [g('name'), g('username'), g('headline'), g('location'), g('bio')].filter(Boolean).join('\n'), image: g('profile_image_url') || undefined };
   }
-  return { label: `Reported ${t.targetType}`, body: '(no preview available for this content type)' };
+  return null;
 }
 
 /** action_due_at in the past means the review SLA has already been missed. */
@@ -78,6 +63,27 @@ function overdue(r: AdminReport): boolean {
   if (!r.action_due_at || r.status !== 'open') return false;
   const due = new Date(r.action_due_at.includes('T') ? r.action_due_at : `${r.action_due_at.replace(' ', 'T')}Z`);
   return !Number.isNaN(due.getTime()) && due.getTime() < Date.now();
+}
+
+let flash: { kind: 'ok' | 'err'; message: string } | null = null;
+if (Astro.request.method === 'POST') {
+  const form = await Astro.request.formData();
+  const reportId = String(form.get('reportId') || '');
+  const action = String(form.get('action') || 'dismiss');
+  const notes = String(form.get('notes') || '').slice(0, 500);
+
+  const allowedAction = action === 'dismiss' || (action === 'remove_content_and_eject_user' && !!selectedReport?.target_user_id);
+  if (!selectedReport || selectedReport.id !== reportId || selectedReport.status !== 'open' || !targetPreview || form.get('reviewed') !== 'yes' || !allowedAction) {
+    flash = { kind: 'err', message: 'Open this report, load its content, and confirm your review before making a decision.' };
+  } else {
+    const result = await api.post(env, `/reports/${encodeURIComponent(reportId)}/resolve`, {
+      actorId: Astro.locals.operator,
+      action,
+      notes,
+    });
+    if (result.ok) return Astro.redirect(`/moderation?status=${encodeURIComponent(status)}`, 303);
+    flash = { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
+  }
 }
 
 const STATUSES = ['open', 'resolved'];
@@ -90,11 +96,14 @@ const STATUSES = ['open', 'resolved'];
 >
   {flash && <div class={flash.kind === 'ok' ? 'notice' : 'err'}>{flash.message}</div>}
   {!res.ok && <div class="err">Could not load the moderation queue: {res.error} (HTTP {res.status})</div>}
+  {selectedId && !selectedReport && res.ok && (
+    <div class="err" role="status">Selected report is no longer available in this queue. It may have been resolved or moved outside the current results. Choose a report below or change the status filter.</div>
+  )}
 
   <div class="filters">
     {STATUSES.map((s) => (
-      <a href={`/moderation?status=${s}`}>
-        <button type="button" class={status === s ? 'primary' : ''}>{s[0].toUpperCase() + s.slice(1)}</button>
+      <a href={`/moderation?status=${s}`} class={status === s ? 'button-link primary' : 'button-link'} aria-current={status === s ? 'page' : undefined}>
+        {s[0].toUpperCase() + s.slice(1)}
       </a>
     ))}
   </div>
@@ -103,7 +112,7 @@ const STATUSES = ['open', 'resolved'];
     <div class="panel"><div class="empty">No {status} reports. Nothing needs attention.</div></div>
   ) : (
     reports.map((r) => (
-      <div class="panel" style="margin-bottom:12px">
+      <div class="panel" id={`report-${r.id}`} style="margin-bottom:12px">
         <div class="panel-head">
           <h3>
             <span class="pill warn">{r.reason}</span>
@@ -143,35 +152,34 @@ const STATUSES = ['open', 'resolved'];
                 </div>
               )}
 
-              {(() => {
-                const t = describeTarget(targets.get(r.id));
-                if (!t) {
-                  return (
-                    <div style="margin-top:12px">
-                      <div class="sub">Reported content</div>
-                      <p class="dim" style="margin:4px 0 0">
-                        Could not be loaded. It may have been deleted already.
-                      </p>
-                    </div>
-                  );
-                }
-                return (
-                  <div style="margin-top:12px;padding:10px 12px;background:var(--panel-2);border:1px solid var(--line);border-radius:6px">
-                    <div class="sub" style="margin-bottom:5px">{t.label}</div>
-                    {t.image && (
-                      <img src={t.image} alt="" style="max-width:220px;max-height:160px;border-radius:5px;display:block;margin-bottom:8px" />
-                    )}
-                    <p style="white-space:pre-wrap;margin:0;color:var(--ink)">{t.body}</p>
-                  </div>
-                );
-              })()}
+              {r.id !== selectedReport?.id ? (
+                <div style="margin-top:12px">
+                  <p class="dim">Reported content has not been loaded. Open it and review the full content before making a decision.</p>
+                  <a href={reviewHref(r.id)} class="button-link">View reported content</a>
+                  <p class="sub">Opening loads this report's content; wait for the page to finish loading.</p>
+                </div>
+              ) : targetPreview ? (
+                <div style="margin-top:12px;padding:10px 12px;background:var(--panel-2);border:1px solid var(--line);border-radius:6px">
+                  <div class="sub" style="margin-bottom:5px">{targetPreview.label}</div>
+                  {targetPreview.image && (
+                    <img src={targetPreview.image} alt="Reported content — review before deciding" referrerpolicy="no-referrer" style="max-width:100%;height:auto;border-radius:5px;display:block;margin-bottom:8px" />
+                  )}
+                  <p style="white-space:pre-wrap;margin:0;color:var(--ink)">{targetPreview.body}</p>
+                </div>
+              ) : (
+                <div style="margin-top:12px" role="status">
+                  <p class="err">{targetError} No decision is available until the content can be reviewed.</p>
+                  <a href={reviewHref(r.id)} class="button-link">Retry loading content</a>
+                </div>
+              )}
             </div>
 
-            {r.status === 'open' && (
+            {r.status === 'open' && r.id === selectedReport?.id && targetPreview && (
               <div>
-                <form method="post">
+                <form method="post" action={reviewHref(r.id)}>
                   <input type="hidden" name="reportId" value={r.id} />
-                  <textarea name="notes" rows="2" placeholder="Notes (recorded against this decision)" style="width:100%;margin-bottom:8px"></textarea>
+                  <label style="display:block;margin-bottom:8px"><input type="checkbox" name="reviewed" value="yes" required /> I have reviewed the full reported content, including any media, and am ready to decide.</label>
+                  <textarea aria-label="Decision notes" name="notes" rows="2" placeholder="Notes (recorded against this decision)" style="width:100%;margin-bottom:8px"></textarea>
                   <div style="display:flex;gap:8px;flex-wrap:wrap">
                     <button type="submit" name="action" value="dismiss">Dismiss</button>
                     <button
