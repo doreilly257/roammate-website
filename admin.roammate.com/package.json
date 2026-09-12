@@ -10,7 +10,8 @@
     "check": "astro check",
     "deploy": "astro build && wrangler pages deploy ./dist --project-name roammate-admin",
     "mock": "node dev/mock-api.mjs",
-    "demo": "astro build && node dev/demo.mjs"
+    "demo": "astro build && node dev/demo.mjs",
+    "test": "node --test dev/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.13",
@@ -24,5 +25,11 @@
   "engines": {
     "node": "^22.20.0 || ^24.12.0 || >=26.0.0",
     "npm": ">=9.6.5"
+  },
+  "overrides": {
+    "miniflare@4.20260114.0": {
+      "undici": "7.29.0"
+    },
+    "ws": "8.21.0"
   }
 }
