@@ -1,10 +1,14 @@
-# Public-site CSP nonce preparation (8sw)
+# Public-site CSP nonce staging (8sw)
 
-**Not active. Not deployed.** This directory is deliberately outside every live
-Pages Functions and Astro `public/` directory. `deploy.sh`, static `_headers`,
-Astro configuration, Cloudflare settings and the separate admin project are
-unchanged. Normal deployments do not include this middleware. This is a tested
-local implementation template, **not evidence that the production CSP issue is fixed**.
+**Staging verified; NOT production-active.** The approved isolated preview at
+`https://csp-nonce-review.roammate.com` verified real Cloudflare JSD nonce injection
+on 2026-09-12; see the [evidence report](staging-2026-09-12.md) for scope and limits.
+This directory remains outside normal Pages Functions and Astro `public/`
+deployment paths. `deploy.sh`, production static `_headers`, Astro configuration
+and the separate admin project are unchanged. Normal deployments do not include
+this middleware. Only staging DNS/custom-domain resources were added; no bot,
+WAF or cache rules were changed. **The production CSP issue is not fixed**, and
+bead `8sw` remains open pending production review and approval.
 
 ## Design
 
@@ -23,7 +27,8 @@ allowed by `'self'`. See [Cloudflare JSD CSP guidance](https://developers.cloudf
 
 Pages does not apply `_headers` to Function-generated responses, so middleware
 sets all five current security headers explicitly, preserves other origin
-headers, and restores `noindex, nofollow` on this project's Pages preview hosts.
+headers, and restores `noindex, nofollow` on this project's Pages preview hosts
+and the explicitly allowlisted `csp-nonce-review.roammate.com` staging host.
 The test compares runtime policy against the real static `_headers` to catch
 drift. If headers change, update both policies before activation.
 An upstream enforced CSP is accepted only when absent or exactly equal to that
@@ -63,10 +68,11 @@ body/headers/status, cache and conditional handling, preview noindex, HEAD/404,
 static/admin/API bypasses, routing exclusions and absence from live deploy paths.
 They cannot emulate Cloudflare's downstream injection or actual edge caching.
 
-## Explicit staging path — requires a separate approval to deploy
+## Explicit staging path — isolated staging approval only
 
 Do **not** copy `functions/` into the repository root or `roammate.com/`, and do
-not put `_routes.json` in live `public/`. For a later approved experiment, first
+not put `_routes.json` in live `public/`. The approved experiment used this
+scratch-only path; it does not authorize production rollout. For a repeat, first
 run the ordinary site validation, tests, type check and build. Use a fresh scratch
 directory so staging cannot contaminate a subsequent normal deployment:
 
@@ -87,7 +93,8 @@ with output `dist`, project `roammate`, and a new **non-production** branch such
 `csp-nonce-review`; never `main`. `functions/` must be at Wrangler's working-directory
 root, while `_routes.json` belongs in the output root. Verify the CLI builds the
 Function and retains the supplied exclusions before accepting the upload. No
-Wrangler deploy command is automated or run by this preparation.
+Wrangler deploy command is automated by this template. The approved manual
+staging upload and staging-only noindex header copy are recorded in the report.
 See [Pages routing](https://developers.cloudflare.com/pages/functions/routing/)
 and [Function next API](https://developers.cloudflare.com/pages/functions/api-reference/).
 
@@ -111,12 +118,20 @@ HTML will move from static serving to a Function invocation per matching request
 `no-store` also removes HTML browser/CDN reuse and may affect repeat-view latency.
 Static exclusions preserve current asset caching and avoid Function billing for
 those paths. Review traffic, Workers/Pages quotas, failure mode on quota exhaustion,
-and projected cost before enabling; this preparation neither purchases a plan
-nor changes limits. See [Pages Functions pricing](https://developers.cloudflare.com/pages/functions/pricing/).
+and projected cost before enabling production; staging neither purchased a plan
+nor changed limits. Pages Free Functions share the Workers Free allowance of
+100,000 requests/day; static requests that do not invoke Functions are free.
+Account subscription reads were unavailable (MCP authentication error; authorized
+direct API returned 403), so the account plan, headroom and Free eligibility
+remain unverified. Both production and preview currently have `fail_open: true`;
+decide quota-exhaustion policy
+explicitly before rollout, and do not change it without approval.
+See [Pages Functions pricing](https://developers.cloudflare.com/pages/functions/pricing/).
 
 Production activation needs separate approval and an explicit deployment workflow
 change after staging evidence is recorded on bead `8sw`. Do not close `8sw` merely
-because these local tests pass. Record the last known-good static deployment ID
+because staging passes. The unchanged production deployment observed during
+staging was `a70bd978-9b79-48e1-98ea-f0e95f62ab50`; recheck the last known-good static deployment ID
 before rollout. If approved rollout fails, restore that static Pages deployment;
 the current unchanged normal deploy path also produces a static-only build.
 Verify removal of the Function and restoration of existing static headers after

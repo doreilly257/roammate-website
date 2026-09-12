@@ -8,9 +8,13 @@ const SECURITY_HEADERS = Object.freeze({
   'Permissions-Policy': 'geolocation=(), microphone=(), camera=(), interest-cohort=()',
 });
 
+// Explicitly approved staging only; never allow arbitrary roammate subdomains.
+const STAGING_HOST = 'csp-nonce-review.roammate.com';
+
 /** @param {URL} url */
 function isHtmlCandidate(url) {
   const publicHost = url.hostname === 'roammate.com' || url.hostname === 'www.roammate.com'
+    || url.hostname === STAGING_HOST
     || url.hostname === 'roammate-cs7.pages.dev' || url.hostname.endsWith('.roammate-cs7.pages.dev')
     || url.hostname === 'localhost' || url.hostname === '127.0.0.1';
   if (!publicHost || /^\/(?:api|admin|cdn-cgi|_astro|images|fonts|\.well-known)(?:\/|$)/.test(url.pathname)) return false;
@@ -40,7 +44,7 @@ export async function onRequest(context) {
     throw new Error('Unexpected upstream Content-Security-Policy; refusing nonce transformation');
   }
   for (const [name, value] of Object.entries(SECURITY_HEADERS)) headers.set(name, value);
-  if (url.hostname.endsWith('.pages.dev')) headers.set('X-Robots-Tag', 'noindex, nofollow');
+  if (url.hostname.endsWith('.pages.dev') || url.hostname === STAGING_HOST) headers.set('X-Robots-Tag', 'noindex, nofollow');
 
   const html = /^text\/html(?:\s*;|\s*$)/i.test(headers.get('Content-Type') ?? '');
   if (html && (response.status < 300 || response.status >= 400)) {

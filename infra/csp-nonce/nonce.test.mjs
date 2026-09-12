@@ -67,6 +67,13 @@ test('Pages preview hosts are noindexed, production is not', async () => {
   }
   assert.equal((await run()).response.headers.get('X-Robots-Tag'), null);
 });
+test('approved custom staging host gets a nonce and noindex, other subdomains do not', async () => {
+  const { response } = await run('https://csp-nonce-review.roammate.com/');
+  assert.match(response.headers.get('Content-Security-Policy') ?? '', /'nonce-/);
+  assert.equal(response.headers.get('X-Robots-Tag'), 'noindex, nofollow');
+  const other = await run('https://unapproved.roammate.com/');
+  assert.equal(other.response.headers.get('Content-Security-Policy'), null);
+});
 test('HEAD and HTML 404s get a nonce and retain their status', async () => {
   for (const [init, status] of [[{ method: 'HEAD' }, 200], [{}, 404]]) {
     const { response } = await run(undefined, init, { status });
