@@ -123,13 +123,17 @@ HTML will move from static serving to a Function invocation per matching request
 Static exclusions preserve current asset caching and avoid Function billing for
 those paths. Review traffic, Workers/Pages quotas, failure mode on quota exhaustion,
 and projected cost before enabling production; staging neither purchased a plan
-nor changed limits. Pages Free Functions share the Workers Free allowance of
-100,000 requests/day; static requests that do not invoke Functions are free.
-Account subscription reads were unavailable (MCP authentication error; authorized
-direct API returned 403), so the account plan, headroom and Free eligibility
-remain unverified. Both production and preview currently have `fail_open: true`;
-decide quota-exhaustion policy
-explicitly before rollout, and do not change it without approval.
+nor changed limits. The user confirmed **Workers Paid**; no plan upgrade is
+needed. The Free 100,000/day allowance is only a hypothetical comparison, not
+this account's active limit. Static requests that do not invoke Functions are
+free. Account subscription reads were unavailable (MCP authentication error;
+authorized direct API returned 403), so plan confirmation comes from the user,
+not the API; actual invoices and aggregate billed CPU remain unknown, with no
+zero-cost guarantee. Both production and preview have `fail_open: true`; retain
+that existing setting for the public nonce-only Function as recommended in the
+operations review. Free quota exhaustion is not a current Paid runtime concern.
+Next obtain explicit production approval with recorded rollback and
+post-deployment verification; no settings change is authorized.
 See [Pages Functions pricing](https://developers.cloudflare.com/pages/functions/pricing/).
 
 Production activation needs separate approval and an explicit deployment workflow

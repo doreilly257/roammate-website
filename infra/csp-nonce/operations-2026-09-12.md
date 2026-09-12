@@ -7,10 +7,11 @@ deployment, settings changes or plan changes**. This report records the
 supervising agent's verified analytics and official documentation. No code,
 deployment, failure policy, plan or alerts were changed. Bead `8sw` remains open.
 
-Observed traffic alone does not establish a need to upgrade. However, the
-account's actual subscription and aggregate billing remain unverified, so this
-is **not a no-charge guarantee**. Verify the plan in the dashboard before seeking
-explicit production rollout approval.
+The user subsequently confirmed **Workers Paid**; this is user confirmation,
+not API verification. No plan upgrade is needed for this proposal. Actual
+invoices and aggregate billed CPU remain unknown, so this is **not a no-charge
+guarantee**. The next step is explicit production rollout approval with a
+recorded rollback deployment and post-deployment verification.
 
 ## Account traffic and conservative request scenario
 
@@ -35,7 +36,8 @@ route exclusions; the actual public-site increment should be lower because
 excluded static requests do not invoke the Function.
 
 The scenario peaks at **28,802 requests/day**, or **28.8%** of the documented
-100,000/day Free allowance. Its daily mean extrapolated to 30 days is about
+100,000/day Free allowance **as a hypothetical comparison only, not this Paid
+account's active limit**. Its daily mean extrapolated to 30 days is about
 **710,867 requests**. This is an illustrative run rate, not a bill or forecast.
 Analytics are adaptive; seven days do not capture future traffic, other new
 hosts, future account workloads or exceptional spikes.
@@ -65,7 +67,7 @@ test-biased staging sample: p99 is neither the maximum nor the mean, and these
 percentiles do not establish production CPU usage, universal compliance with a
 CPU limit, or a production bill forecast.
 
-## Pricing and unresolved subscription
+## Pricing and user-confirmed subscription
 
 The official [Workers pricing documentation](https://developers.cloudflare.com/workers/platform/pricing/)
 lists:
@@ -78,15 +80,16 @@ lists:
 
 Static Pages requests that do not invoke Functions are free; see
 [Pages Functions pricing](https://developers.cloudflare.com/pages/functions/pricing/).
-These are general published terms, not verification of this account's plan or
-remaining entitlement. Other account usage also matters for aggregate billing.
+These are general published terms, not verification of remaining entitlement or
+an actual invoice. Other account usage also matters for aggregate billing.
 
 The observed `default_usage_model: standard` is **not proof of a Paid
 subscription**: new Pages Functions use the Standard usage model. Subscription
 reads remain unavailable (MCP authentication error and authorized direct API
-**403**). The user was asked whether the account is Free or Paid; no answer had
-been received when this report was written. Plan and billing headroom remain
-unresolved.
+**403**). The user subsequently explicitly answered **Workers Paid**, resolving
+the plan question through user confirmation rather than API verification.
+Actual invoices, aggregate billed CPU and remaining included entitlement are
+still unknown; the observed request scenario is not a billing forecast.
 
 ## Failure behavior and recommendation
 
@@ -94,6 +97,8 @@ Both production and preview currently have `fail_open: true`; neither was
 changed. Cloudflare documents that quota exhaustion with fail open serves static
 assets, whereas fail closed returns an error page. See
 [Pages Functions fail-open/closed routing](https://developers.cloudflare.com/pages/functions/routing/#fail-open--closed).
+The Free daily-cap exhaustion scenario is not a current runtime concern for
+this user-confirmed Paid account; the existing setting can remain unchanged.
 
 **Recommendation: retain the existing fail-open setting for the public,
 nonce-only Function.** This Function does not enforce authentication or access
@@ -109,14 +114,15 @@ implementation does not call `passThroughOnException`.
 
 ## Approval and operational follow-up
 
-Verify the subscription and account-wide usage in the dashboard, then obtain
-explicit production rollout approval with a recorded last-known-good rollback
-deployment and verification of the deployment guard before activation. The
+Obtain explicit production rollout approval with a recorded last-known-good
+rollback deployment, verification of the deployment guard before activation,
+and post-deployment verification of nonce behavior, JSD, caching and unchanged
+admin/API behavior. The
 normal deployment workflow remains unchanged and does not include this
 middleware. The [staging report](staging-2026-09-12.md) retains the deployment,
 resource and cleanup evidence.
 
-If the account is Free, consider account-aggregate request alerts at **50,000**
-and **75,000 requests/day**. These thresholds are proposals only: no alert or
-scheduled monitoring has been configured. Keep `8sw` open until separately
+Earlier Free-plan alert proposals at **50,000** and **75,000 requests/day** are
+not applicable as quota thresholds for this Paid account. No alert or scheduled
+monitoring has been configured. Keep `8sw` open until separately
 approved production resolution is verified.
