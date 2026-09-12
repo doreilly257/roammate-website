@@ -7,7 +7,6 @@
 - roammate is a free app for solo travellers and backpackers who want to find a compatible travel companion. Unlike general social apps, roammate matches travellers specifically on travel style (adventure, cultural, slow travel, food-focused), daily budget range, and destination overlap. The app is built around verified profiles and in-app messaging.
 - Available on: iOS (App Store: https://apps.apple.com/app/id6758834253?pt=118224460&ct=ai-referral&mt=8) and Android (Google Play: https://play.google.com/store/apps/details?id=com.roammate.app.android&referrer=utm_source%3Droammate.com%26utm_medium%3Dllms-txt%26utm_campaign%3Dai-referral)
 - Price: Free
-- Founded: 2017
 
 ## Key Facts (quotable)
 
@@ -30,7 +29,6 @@
 - Verified Profiles: optional government-ID and liveness check, badged on the profile
 - In-app Messaging: Chat before you commit to meeting
 - Safety Controls: Report and block tools, public meetup recommendations
-- Global Reach: Travellers from 50+ countries
 
 ## Key Pages
 
@@ -47,6 +45,9 @@
 
 ## Travel Content
 
+- [Kratie Guide](https://roammate.com/guides/kratie/): Koh Trong, the Mekong riverfront and responsible Kampi dolphin viewing
+- [Pakse Guide](https://roammate.com/guides/pakse/): City markets, Phou Salao and a separate Vat Phou heritage day
+- [Savannakhet Guide](https://roammate.com/guides/savannakhet/): Old-town streets, the Dinosaur Museum and That Ing Hang
 - [Battambang Guide](https://roammate.com/guides/battambang/): Three days of Cambodian arts, food and countryside planning
 - [Thakhek Guide](https://roammate.com/guides/thakhek/): Southern Laos riverfront, caves and practical loop planning
 - [Nong Khiaw Guide](https://roammate.com/guides/nong-khiaw/): Northern Laos river scenery and practical hiking planning
@@ -64,13 +65,13 @@
 - Backpacker Routes (Morocco & West Africa): https://roammate.com/guides/morocco-west-africa
 - Backpacker Routes (Middle East & Turkey): https://roammate.com/guides/middle-east-turkey
 - Backpacker Routes (Southern Africa): https://roammate.com/guides/southern-africa
-- City Guides (235 cities): https://roammate.com/guides/cities/
+- City Guides (238 cities): https://roammate.com/guides/cities/
 - City Statistics (442 cities): https://roammate.com/statistics/{city-slug}/ (per-city solo travel stats, budget breakdowns, practical info, and cultural tips)
 - Blog (127 posts): https://roammate.com/blog/
 
 ## Structured Data (JSON)
 
-- Machine-readable index of all 445 destinations: https://roammate.com/data/destinations.json
+- Machine-readable index of all 448 destinations: https://roammate.com/data/destinations.json
 - Full record for one destination: https://roammate.com/data/destinations/{slug}.json
 - Each destination record contains quick facts, day-by-day itineraries (available durations vary) with
   morning, afternoon and evening detail, a budget breakdown, practical info and cultural tips.

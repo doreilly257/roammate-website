@@ -12,7 +12,6 @@ const script = (source: string, marker: string) => [...source.matchAll(/<script(
 describe('blog scripts under the existing self-only script CSP', () => {
   it.each([
     ['navigator.share', post],
-    ['blogHeroBackground', blog],
   ])('extracts the %s feature into Astro’s processed script pipeline', async (marker, source) => {
     const compiled = await transform(source);
     // Compiler scripts are extracted for Vite; define:vars produces rendered inline
@@ -26,7 +25,7 @@ describe('blog scripts under the existing self-only script CSP', () => {
   it('passes server values through escaped Astro attributes rather than raw script text', () => {
     expect(post).toContain('data-share-title={title}');
     expect(post).toContain('data-share-url={canonical}');
-    expect(blog).toContain('data-hero-images={JSON.stringify(blogHeroImages)}');
+    expect(blog).not.toContain('<script define:vars');
   });
 });
 
@@ -64,33 +63,5 @@ describe('native blog sharing', () => {
     await page.events.get('click')?.();
     await Promise.resolve();
     expect(page.share).toHaveBeenCalledTimes(1);
-  });
-});
-
-function heroPage(data: string | undefined, present = true) {
-  const hero = { dataset: { heroImages: data }, style: { backgroundImage: 'server fallback' } };
-  runInNewContext(script(blog, 'blogHeroBackground'), {
-    document: { getElementById: () => present ? hero : null },
-    Math: { random: () => 0.75, floor: Math.floor },
-    blogHeroImages: ['/wrong-global.webp'],
-  });
-  return hero.style.backgroundImage;
-}
-
-describe('blog hero selection', () => {
-  it('selects from per-element image data and retains the gradient', () => {
-    const background = heroPage(JSON.stringify(['/first.webp', '/second.webp']));
-    expect(background).toContain("url('/second.webp')");
-    expect(background).toContain('linear-gradient(');
-    expect(background).not.toContain('/wrong-global.webp');
-  });
-  it.each([undefined, '[]', 'invalid JSON', 'null', '{}'])('retains server fallback for absent or invalid data: %s', (data) => {
-    expect(heroPage(data)).toBe('server fallback');
-  });
-  it('does not fail if the hero element is absent', () => {
-    expect(() => heroPage('[]', false)).not.toThrow();
-  });
-  it('strips CSS URL delimiter characters from a selected filename', () => {
-    expect(heroPage(JSON.stringify(["/image'()\\\".webp"]))).toContain("url('/image.webp')");
   });
 });

@@ -55,6 +55,10 @@ describe('standalone guide eligibility', () => {
       expect(slugs.has(slug)).toBe(true);
     }
   });
+  it.each(['kratie', 'pakse', 'savannakhet'])('registers second-batch %s as a city exactly once', async (slug) => {
+    expect((await guideFunctions.getCityGuideSlugs()).has(slug)).toBe(true);
+    expect(curatedSlugs.filter((value) => value === slug)).toHaveLength(1);
+  });
   it('keeps opted-out guides in the full registry with their eligibility flag', async () => {
     expect((await getAllGuides()).find((g) => g.slug === 'standalone')).toMatchObject({ generateDerivedPages: false });
   });

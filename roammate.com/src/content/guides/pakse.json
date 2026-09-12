@@ -1,0 +1,313 @@
+{
+  "type": "city",
+  "slug": "pakse",
+  "generateDerivedPages": false,
+  "title": "Pakse Guide 2026: 3-Day Itinerary | roammate",
+  "heroImage": "/images/guides/pakse-hero.webp",
+  "heroFlag": "🇱🇦",
+  "heroCountry": "Laos",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Pakse",
+  "defaultDays": 3,
+  "ctaCity": "Pakse",
+  "ctaText": "Use roammate to look for travel companions interested in Pakse. Agree shared plans and costs before booking together.",
+  "ctaCustomise": "Adapt this itinerary to your budget, mobility and local conditions. An app introduction does not guarantee someone’s identity or your safety.",
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "Lao kip (LAK)",
+      "detail": "Use USD estimates only for comparison"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Lao",
+      "detail": "Save accommodation addresses offline"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "UTC+7",
+      "detail": "Indochina Time, no seasonal clock change"
+    },
+    {
+      "icon": "☀️",
+      "label": "Trip style",
+      "value": "Three-night city base",
+      "detail": "Keep a spare day for regional extensions"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily basics",
+      "value": "$25–45 USD",
+      "detail": "Editorial Sept 2026 estimate; excursions extra"
+    },
+    {
+      "icon": "🛂",
+      "label": "Entry",
+      "value": "Check your checkpoint",
+      "detail": "Passport and visa rules vary"
+    }
+  ],
+  "description": "A realistic three-day Pakse guide with Wat Luang, a Mekong viewpoint and a separate Vat Phou day trip, plus budgets, transport planning and safety.",
+  "heroSubtitle": "Discover the city where the Xe Don meets the Mekong, then give Vat Phou a day of its own. Southern Laos is better explored without rushing every stop.",
+  "heroPills": [
+    "3-Day City Base",
+    "Vat Phou Day Trip",
+    "No Motorcycle Needed"
+  ],
+  "itineraries": {
+    "3": [
+      {
+        "num": 1,
+        "title": "Arrive and find your bearings in Pakse",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Check in before planning the region",
+            "text": "Make your arrival the morning’s main job. Pakse serves a much wider region, so a ticket labelled with the city name is not enough: establish your arrival point and the final ride to your accommodation. Keep water and a meal break in the plan. If travelling overnight, a proper rest is more useful than immediately joining a long sightseeing drive.",
+            "tip": "Send your accommodation your arrival details and ask for its address in Lao."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Wat Luang and the central streets",
+            "text": "Begin with a short walk around central Pakse and visit Wat Luang if the grounds are welcoming visitors. This is a Buddhist religious and educational setting, not a performance for cameras. Look at the architecture from public areas and allow students and worshippers their space. Afterwards, stop for a coffee and orient yourself before attempting longer walks along busy roads.",
+            "tip": "Ask before entering a building; being inside the grounds is not permission to enter classrooms."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Dinner near the rivers",
+            "text": "Choose a simple cooked meal, then enjoy the light near the Xe Don and Mekong from a public path or restaurant terrace with suitable access. The meeting of the rivers gives the city its setting, but a good view does not require a boat trip. Keep the first evening easy and ask about tomorrow’s short cross-river excursion.",
+            "tip": "Pick a return route you recognise and keep your accommodation address available without data."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Markets, local food and Phou Salao",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Browse Dao Heuang market",
+            "text": "Arrange a short ride to Dao Heuang, also written Dao Hueng, and browse at a respectful pace. A working market is most rewarding when you pay attention to ingredients and everyday purchases rather than treating vendors as a photo opportunity. Buy a snack only if you can judge its preparation and ask before handling goods. Leave space in narrow aisles for shoppers.",
+            "tip": "Carry small kip notes and a translated dietary note if sauces, stocks or allergens matter."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Pause before the hilltop visit",
+            "text": "Return to your base for lunch and a break, then organise a driver for Wat Phou Salao across the Mekong. Ask where the vehicle can currently go, how many steps remain and whether that suits your mobility. This programme does not require a motorcycle or a strenuous climb. In heavy rain or poor visibility, a cafe afternoon is an entirely reasonable alternative.",
+            "tip": "Confirm the waiting time and round-trip price, not just the fare to the hill."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Wat Phou Salao and a daylight return",
+            "text": "Visit the hilltop Buddhist complex and its large Buddha statue with time to appreciate the view across the river towards Pakse. Cover shoulders and knees and follow instructions around worship areas. Although the viewpoint is often promoted for sunset, this itinerary favours an earlier visit with a clear return plan rather than an unfamiliar descent or road trip in darkness.",
+            "tip": "Do not confuse Wat Phou Salao in Pakse with Vat Phou near Champasak, tomorrow’s separate destination."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "A dedicated Vat Phou and Champasak day",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Travel to the Vat Phou cultural landscape",
+            "text": "Leave Pakse with pre-arranged return transport for Vat Phou, also written Wat Phou, near Champasak. The UNESCO property includes an archaeological landscape, not merely an isolated temple facade. Give the visit room in the day rather than combining it with a waterfall circuit. Bring water, sun protection and footwear suited to old stone surfaces.",
+            "tip": "Ask which ticket inclusions and guiding services are in your booking; do not rely on an old quoted price."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☀️",
+            "title": "Choose your level of exploration",
+            "text": "Explore the managed visitor areas at a pace that suits the heat and the steps. You do not have to reach every upper section to appreciate the setting. If the site museum is open, it can add context without another outdoor climb. Afterwards, stop in Champasak for lunch or a short riverside pause before returning to Pakse.",
+            "tip": "Discuss access limitations before leaving the vehicle. Wet stone and a late rush make a poor combination."
+          },
+          {
+            "time": "Evening",
+            "icon": "🌙",
+            "title": "Return to Pakse, leaving the plateau for later",
+            "text": "Finish with dinner in Pakse and prepare for onward travel the following morning. If the Bolaven Plateau or Si Phan Don is next, book it as a separate stage with its own nights and transport budget. Three days in this guide means a city stay and one heritage excursion, not completion of southern Laos.",
+            "tip": "Allow slack between today’s return and your next departure rather than booking a tight evening connection."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetIntro": "Editorial estimates as of September 2026, per person per day in USD, not live prices. Budget accommodation assumes two sharing a basic room; solo private occupancy can cost more. Totals cover city-day basics and exclude the Vat Phou day trip, private drivers to Phou Salao, regional tours, intercity travel, visas and insurance. Obtain separate excursion quotes including return transport and entrances.",
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$9–16",
+      "midrange": "$22–40",
+      "splurge": "$55+",
+      "notes": "Per person sharing; room type and season affect prices"
+    },
+    {
+      "category": "Food & drinking water",
+      "budget": "$10–18",
+      "midrange": "$20–32",
+      "splurge": "$40+",
+      "notes": "Simple meals to more restaurant choice"
+    },
+    {
+      "category": "Town transport & small visits",
+      "budget": "$6–11",
+      "midrange": "$10–18",
+      "splurge": "$25+",
+      "notes": "Local allowance, not a private excursion"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$25–45",
+      "midrange": "$52–90",
+      "splurge": "$120+",
+      "notes": "Vat Phou, Phou Salao driver and regional trips extra"
+    }
+  ],
+  "budgetTips": [
+    {
+      "title": "Get the complete Vat Phou quote",
+      "text": "Check the vehicle, return journey, waiting time, guide and entrance arrangements. An advertised transfer is not automatically a guided day tour."
+    },
+    {
+      "title": "Do not buy a whole loop for one interest",
+      "text": "If you want to taste southern Lao coffee, start in Pakse. You need not rent a motorcycle simply because the plateau is nearby."
+    },
+    {
+      "title": "Choose your base by access",
+      "text": "A central room can save short rides, but check pavement access and the actual distance to food rather than trusting a map thumbnail."
+    },
+    {
+      "title": "Keep a transport reserve",
+      "text": "Allow for a changed pickup, an extra night or a private alternative if a shared service does not run. Do not budget down to the last kip."
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🚐",
+      "title": "Pakse connections",
+      "items": [
+        "Confirm bus terminals and hotel transfers with the provider. The linked Champasak access page describes Pakse’s road connections and transfer options, but its published schedules are not a guarantee.",
+        "If flying, check the actual dates and routing with Lao Airlines before booking a connecting journey. This guide makes no claim of a daily service on any route."
+      ]
+    },
+    {
+      "icon": "🏛",
+      "title": "Two different temple destinations",
+      "items": [
+        "Wat Phou Salao is the hilltop Buddhist complex across the Mekong from Pakse. Vat Phou is the separate heritage site near Champasak. Give drivers the full destination and check the map pin.",
+        "For the heritage excursion, use UNESCO for the site’s significance and the local tourism page for visitor arrangements, then reconfirm access. Do not combine Vat Phou with an ambitious Bolaven circuit in the same day."
+      ]
+    },
+    {
+      "icon": "🛂",
+      "title": "Entry & paperwork",
+      "items": [
+        "Check visa eligibility and the permitted entry checkpoint on the official Lao eVisa service. Border choice matters, including when travelling through Thailand.",
+        "FCDO entry information is written for British-passport holders. Use it to check relevant requirements, not as a universal rule for every nationality."
+      ]
+    },
+    {
+      "icon": "🩺",
+      "title": "Health precautions",
+      "items": [
+        "FCDO health advice reports anthrax in cattle and buffalo around Pakse and other southern destinations. Avoid animal contact and eat thoroughly cooked meat. Review current advice before travel.",
+        "Arrange health and evacuation cover, carry medication and take mosquito precautions. Seek personalised travel-health advice if you have a medical condition."
+      ]
+    },
+    {
+      "icon": "🚗",
+      "title": "Safer local outings",
+      "items": [
+        "Use a driver if you are not appropriately licensed, insured and experienced to ride. Keep excursions in daylight and do not leave your passport as a motorcycle deposit.",
+        "Stay on managed paths at heritage sites. Do not swim in the Mekong or assume a calm-looking stretch is safe. The linked FCDO guidance explains road and outdoor hazards."
+      ]
+    },
+    {
+      "icon": "📷",
+      "title": "Sources & image context",
+      "items": [
+        "Sources below were checked for this September 2026 editorial guide. Budgets are estimates and access must be confirmed locally.",
+        "Hero: View of Pakse from across the Mekong, photographed 20 June 2018 by Christophe95, CC BY-SA 4.0. Resized and converted to WebP; the image remains under the same licence. It is not a current skyline or river-conditions report."
+      ]
+    }
+  ],
+  "culturalIntro": "Pakse is a place to shop, study, worship and work, not just a departure point for waterfalls. Give those everyday activities the same respect as the region’s famous monuments.",
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Temples are not viewpoints alone",
+      "text": "Respect prayer spaces at Wat Luang and Phou Salao. Ask before taking photographs near people or ceremonies."
+    },
+    {
+      "icon": "🧺",
+      "title": "Shop without obstructing",
+      "text": "Keep market aisles clear and ask before photographing vendors. Do not handle produce without permission."
+    },
+    {
+      "icon": "🏛",
+      "title": "Protect the stonework",
+      "text": "Follow the marked visitor route at Vat Phou. Do not climb on carvings or move stones for a photograph."
+    },
+    {
+      "icon": "🤝",
+      "title": "Share plans, not assumptions",
+      "text": "Meet potential companions in public and agree costs directly with the operator. Do not infer reliability from an app profile."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Wat Phou Travels: Pakse city sites and market",
+      "url": "https://www.watphou-travels.com/pakse-city"
+    },
+    {
+      "title": "UNESCO: Vat Phou and the Champasak cultural landscape",
+      "url": "https://whc.unesco.org/en/list/481/"
+    },
+    {
+      "title": "Visit Champasak: Vat Phou visitor context",
+      "url": "https://tourismchampasak.com/vat_phou"
+    },
+    {
+      "title": "Visit Champasak: access via Pakse",
+      "url": "https://tourismchampasak.com/access-to-champasak/"
+    },
+    {
+      "title": "Lao Airlines: confirm dated flight availability",
+      "url": "https://laoairlines.com/en/"
+    },
+    {
+      "title": "Photo: View of Pakse, Christophe95, 20 June 2018, CC BY-SA 4.0; resized and converted to WebP",
+      "url": "https://commons.wikimedia.org/wiki/File:View_of_Pakse.jpg"
+    },
+    {
+      "title": "Image licence: CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "title": "Lao Government: official eVisa service",
+      "url": "https://laoevisa.gov.la/"
+    },
+    {
+      "title": "FCDO: Laos entry requirements for British passports",
+      "url": "https://www.gov.uk/foreign-travel-advice/laos/entry-requirements"
+    },
+    {
+      "title": "FCDO: Laos safety and transport",
+      "url": "https://www.gov.uk/foreign-travel-advice/laos/safety-and-security"
+    },
+    {
+      "title": "FCDO: Laos health guidance",
+      "url": "https://www.gov.uk/foreign-travel-advice/laos/health"
+    }
+  ]
+}
