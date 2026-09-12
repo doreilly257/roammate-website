@@ -10,6 +10,10 @@ this middleware. Only staging DNS/custom-domain resources were added; no bot,
 WAF or cache rules were changed. **The production CSP issue is not fixed**, and
 bead `8sw` remains open pending production review and approval.
 
+The [quota, cost and failure-behavior review](operations-2026-09-12.md) records
+observed traffic, pricing assumptions and the recommended public-site failure
+policy. It does not authorize production deployment or settings/plan changes.
+
 ## Design
 
 An opt-in Pages Function wraps public GET/HEAD HTML responses, creating a fresh
