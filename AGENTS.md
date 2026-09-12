@@ -12,6 +12,9 @@
 - CNAME: `roammate.com` → `roammate-cs7.pages.dev` (proxied)
 - Production deploy: `bash deploy.sh` (Pages branch `main`)
 - Preview deploy: `bash deploy.sh --preview` (Pages branch `preview`; does not update roammate.com)
+- Public-site nonce rollout is approved and prepared; live verification is still required before claiming activation. Normal production and preview deployments include reviewed `infra/csp-nonce` Functions/routes via scratch assembly, while Astro `public/` and `dist/` remain static.
+- `deploy.sh` pins Wrangler 4.131.1 and runs authentication, nonce tests/type-check, public validation/tests, Astro type-check, build/link validation and claims gates before upload.
+- Rollback uses a rechecked known-good Cloudflare Pages deployment. A normal `deploy.sh` invocation now includes the nonce Function and is not a static-only rollback. See `infra/csp-nonce/README.md` for verification and rollback requirements.
 
 ## SEO Files
 
@@ -32,8 +35,9 @@ All pages must include a canonical link tag (handled automatically by `BaseLayou
 
 - RSS feed is generated at build time via `@astrojs/rss` at `src/pages/rss.xml.ts`
 - Available at `https://roammate.com/rss.xml`
-- Includes blog posts with `publishedAt`, all city/place guides, and backpacker routes; static pages are not included
-- Blog dates use `publishedAt`; guide and route dates currently use deterministic slug hashes (legacy behavior, consistent across builds)
+- Includes blog posts with a valid `publishedAt`, all city/place guides, and backpacker routes; static pages are not included
+- Blog dates use authored `publishedAt`; guide and route `pubDate` is omitted until source-backed publication metadata exists. Never invent publication dates from slug hashes or build time.
+- Items sort by publication date newest first, then undated entries; URL ordering breaks date ties and keeps undated items deterministic across builds.
 - **Must be kept in sync**: The endpoint reads blog metadata from `src/lib/blog-data.ts` and guides/routes from `src/data/guides.ts`; update it if those data sources change
 - The `robots.txt` should reference the RSS feed URL
 

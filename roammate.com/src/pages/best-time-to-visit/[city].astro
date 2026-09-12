@@ -98,7 +98,6 @@ const planningNote = ['Getting Around', 'Weather', 'What to Pack', 'Visa & Entry
 
       <h2>When to go</h2>
       {heroSubtitle && <p>{heroSubtitle}</p>}
-      <p>{bestMonths} is the busiest window in {city}, so accommodation and flights go first. Book ahead. The shoulder weeks either side are usually quieter for the same reason.</p>
       {planningNote && (
         <div class="pv-note">
           <h3><span aria-hidden="true">{planningNote.icon}</span> {planningNote.title} in {city}</h3>
@@ -107,7 +106,7 @@ const planningNote = ['Getting Around', 'Weather', 'What to Pack', 'Visa & Entry
           </ul>
         </div>
       )}
-      <p>For month-by-month detail, itineraries and costs, see the full <a href={`/guides/${slug}/`}>{city} travel guide</a>.</p>
+      <p>For itineraries, costs and practical travel advice, see the full <a href={`/guides/${slug}/`}>{city} travel guide</a>.</p>
       {timezone && <p><strong>Timezone:</strong> {timezone.value} ({timezone.detail})</p>}
 
       <h2>Frequently asked questions</h2>

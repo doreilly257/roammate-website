@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "OPT-IN ONLY: public HTML nonce middleware; copy only to isolated staging output",
+  "description": "Approved public HTML nonce middleware; assembled only in scratch deployment output",
   "include": ["/*"],
   "exclude": [
     "/_astro/*", "/images/*", "/fonts/*", "/.well-known/*",

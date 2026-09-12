@@ -97,11 +97,16 @@ test('non-HTML and redirects do not receive a nonce', async () => {
     assert.equal(response.headers.get('Cache-Control'), null);
   }
 });
-test('normal deployment paths never opt into the template', () => {
+test('source stays static and approved deployments assemble nonce middleware in scratch', () => {
   for (const path of ['../../functions', '../../roammate.com/functions', '../../roammate.com/public/_worker.js', '../../roammate.com/public/_routes.json']) {
     assert.equal(existsSync(new URL(path, import.meta.url)), false, path);
   }
-  assert.doesNotMatch(readFileSync(new URL('../../deploy.sh', import.meta.url), 'utf8'), /csp-nonce/);
+  const deploy = readFileSync(new URL('../../deploy.sh', import.meta.url), 'utf8');
+  assert.match(deploy, /cp -R "\$SCRIPT_DIR\/infra\/csp-nonce\/functions" "\$STAGE\/functions"/);
+  assert.match(deploy, /cp "\$SCRIPT_DIR\/infra\/csp-nonce\/_routes\.json" "\$STAGE\/dist\/_routes\.json"/);
+  assert.match(deploy, /trap .*STAGE.* EXIT/);
+  assert.match(deploy, /cd "\$STAGE"/);
+  assert.match(deploy, /wrangler@4\.131\.1 pages deploy dist/);
 });
 test('opt-in routing excludes static resources and admin/API at the edge', () => {
   const path = new URL('./_routes.json', import.meta.url);

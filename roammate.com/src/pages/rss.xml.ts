@@ -3,21 +3,6 @@ import type { APIContext } from 'astro';
 import { getAllBlogPosts } from '../lib/blog-data';
 import { getAllGuides, getCityGuideSlugs, getBackpackerRoutes } from '../data/guides';
 
-// Deterministic pubDate from a slug hash, so guide feed dates are stable across
-// builds (guides have no authored publish date). Maps a hash onto a fixed
-// window ending at the project epoch.
-const EPOCH = Date.UTC(2024, 0, 1);
-const WINDOW_DAYS = 365 * 2;
-
-function dateFromSlug(slug: string): Date {
-  let hash = 0;
-  for (let i = 0; i < slug.length; i++) {
-    hash = (hash * 31 + slug.charCodeAt(i)) | 0;
-  }
-  const dayOffset = Math.abs(hash) % WINDOW_DAYS;
-  return new Date(EPOCH - dayOffset * 86_400_000);
-}
-
 export async function GET(context: APIContext) {
   const [allBlogPosts, allGuides, cityGuideSlugs, backpackerRoutes] = await Promise.all([
     getAllBlogPosts(),
@@ -27,7 +12,7 @@ export async function GET(context: APIContext) {
   ]);
 
   const blogItems = allBlogPosts
-    .filter((post) => post.publishedAt)
+    .filter((post) => post.publishedAt && Number.isFinite(Date.parse(post.publishedAt)))
     .map((post) => ({
       title: post.title,
       description: post.description,
@@ -40,7 +25,6 @@ export async function GET(context: APIContext) {
     return {
       title: `${guide.name} ${isCity ? 'City' : 'Travel'} Guide`,
       description: `Solo travel guide for ${guide.name}, ${guide.country}.`,
-      pubDate: dateFromSlug(guide.slug),
       link: `/guides/${guide.slug}/`,
     };
   });
@@ -48,13 +32,23 @@ export async function GET(context: APIContext) {
   const routeItems = backpackerRoutes.map((route) => ({
     title: `${route.name} Backpacker Route`,
     description: route.tagline,
-    pubDate: dateFromSlug(route.slug),
     link: `/guides/${route.slug}/`,
   }));
 
-  const items = [...blogItems, ...guideItems, ...routeItems].sort(
-    (a, b) => b.pubDate.getTime() - a.pubDate.getTime(),
-  );
+  // Guides/routes have no authored publication metadata: omit optional pubDate,
+  // rather than inventing one. Dated posts lead; URL order keeps ties and undated
+  // entries deterministic even if collection loading order changes.
+  const items: { title: string; description: string; link: string; pubDate?: Date }[] =
+    [...blogItems, ...guideItems, ...routeItems];
+  items.sort((a, b) => {
+    if (a.pubDate && b.pubDate) {
+      const difference = b.pubDate.getTime() - a.pubDate.getTime();
+      if (difference) return difference;
+    } else if (a.pubDate || b.pubDate) {
+      return a.pubDate ? -1 : 1;
+    }
+    return a.link < b.link ? -1 : a.link > b.link ? 1 : 0;
+  });
 
   return rss({
     title: 'roammate Blog & Travel Guides',

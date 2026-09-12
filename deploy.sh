@@ -15,10 +15,20 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
 BRANCH="main"
+if [ "$#" -gt 1 ] || { [ "$#" -eq 1 ] && [ "$1" != "--preview" ]; }; then
+  echo "Usage: bash deploy.sh [--preview]" >&2
+  exit 2
+fi
 if [ "${1:-}" = "--preview" ]; then
   BRANCH="preview"
   echo "Preview deploy: this will NOT update roammate.com."
 fi
+
+echo "Verifying Cloudflare authentication..."
+npx --yes wrangler@4.131.1 whoami
+echo "Checking nonce middleware..."
+node --test infra/csp-nonce/*.test.mjs
+roammate.com/node_modules/.bin/tsc --allowJs --checkJs --noEmit --target ES2022 --module ESNext --lib ES2022,DOM --skipLibCheck infra/csp-nonce/functions/_middleware.js
 
 cd roammate.com
 
@@ -36,16 +46,31 @@ npm run validate
 echo "Running tests..."
 npm test
 
+echo "Checking Astro types..."
+npx --no-install astro check
+
 echo "Building Astro site..."
 # npm run build runs scripts/normalize-sitemap.mjs, which merges Astro's
 # sitemap shards into a single dist/sitemap.xml and removes the index.
 npm run build
+node scripts/check-claims.mjs --all
 cd ..
 
+# Deploy the reviewed middleware from an isolated assembly so Astro's output
+# and public/ remain static. Future normal deployments must retain this fix.
+STAGE="$(mktemp -d "${TMPDIR:-/tmp}/roammate-pages.XXXXXX")"
+trap 'rm -rf "$STAGE"' EXIT
+cp -R "$SCRIPT_DIR/roammate.com/dist" "$STAGE/dist"
+cp -R "$SCRIPT_DIR/infra/csp-nonce/functions" "$STAGE/functions"
+cp "$SCRIPT_DIR/infra/csp-nonce/_routes.json" "$STAGE/dist/_routes.json"
+COMMIT_HASH="$(git rev-parse HEAD)"
+cd "$STAGE"
+
 echo "Deploying to Cloudflare Pages (project: $PROJECT_NAME, branch: $BRANCH)..."
-npx wrangler pages deploy roammate.com/dist \
+npx --yes wrangler@4.131.1 pages deploy dist \
   --project-name="$PROJECT_NAME" \
   --branch="$BRANCH" \
+  --commit-hash="$COMMIT_HASH" \
   --commit-dirty=true
 
 echo "Deployment complete!"

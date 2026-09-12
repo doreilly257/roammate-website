@@ -1,22 +1,27 @@
-# Public-site CSP nonce staging (8sw)
+# Public-site CSP nonce middleware (8sw)
 
-**Staging verified; NOT production-active.** The approved isolated preview at
-`https://csp-nonce-review.roammate.com` verified real Cloudflare JSD nonce injection
-on 2026-09-12; see the [evidence report](staging-2026-09-12.md) for scope and limits.
-This directory remains outside normal Pages Functions and Astro `public/`
-deployment paths. `deploy.sh`, production static `_headers`, Astro configuration
-and the separate admin project are unchanged. Normal deployments do not include
-this middleware. Only staging DNS/custom-domain resources were added; no bot,
-WAF or cache rules were changed. **The production CSP issue is not fixed**, and
-bead `8sw` remains open pending production review and approval.
+**Production rollout approved and prepared; live verification pending.** The
+isolated preview at `https://csp-nonce-review.roammate.com` verified real
+Cloudflare JSD nonce injection on 2026-09-12; see the historical
+[evidence report](staging-2026-09-12.md). The user subsequently approved public-site
+production deployment. Approval is not evidence that production is already fixed;
+keep bead `8sw` open until the production upload and live checks pass.
 
-The [quota, cost and failure-behavior review](operations-2026-09-12.md) records
-observed traffic, pricing assumptions and the recommended public-site failure
-policy. It does not authorize production deployment or settings/plan changes.
+Normal `deploy.sh` production and preview deployments now include this reviewed
+middleware and routing configuration, assembled in a temporary scratch directory.
+Astro `public/` and `dist/` remain static; do not copy Functions or `_routes.json`
+into either source path. The separate admin project is unaffected. No bot, WAF,
+cache, plan or failure-mode settings change is part of this rollout.
+
+The historical [quota, cost and failure-behavior review](operations-2026-09-12.md)
+records observed traffic, pricing assumptions and the public-site failure policy.
+The user confirmed Workers Paid and subsequently approved deployment; earlier
+staging-only approval statements in those dated reports describe that earlier
+stage, not the current authorization.
 
 ## Design
 
-An opt-in Pages Function wraps public GET/HEAD HTML responses, creating a fresh
+The reviewed Pages Function wraps public GET/HEAD HTML responses, creating a fresh
 256-bit nonce with Web Crypto and appending it only to `script-src` in the CSP
 response header. External first-party bundles continue to use `'self'`. The
 existing PostHog and Cloudflare Insights origins remain allowed. No
@@ -34,7 +39,7 @@ sets all five current security headers explicitly, preserves other origin
 headers, and restores `noindex, nofollow` on this project's Pages preview hosts
 and the explicitly allowlisted `csp-nonce-review.roammate.com` staging host.
 The test compares runtime policy against the real static `_headers` to catch
-drift. If headers change, update both policies before activation.
+drift. If headers change, update both policies before deployment.
 An upstream enforced CSP is accepted only when absent or exactly equal to that
 reviewed baseline. Any different/duplicate policy fails closed with an exception,
 rather than silently deleting new restrictions. There is no exception bypass;
@@ -69,36 +74,30 @@ roammate.com/node_modules/.bin/tsc --allowJs --checkJs --noEmit --target ES2022 
 
 Tests cover unique nonce format, exact security-header parity, preservation of
 body/headers/status, cache and conditional handling, preview noindex, HEAD/404,
-static/admin/API bypasses, routing exclusions and absence from live deploy paths.
+static/admin/API bypasses, routing exclusions and scratch-only deployment assembly.
 They cannot emulate Cloudflare's downstream injection or actual edge caching.
 
-## Explicit staging path — isolated staging approval only
+## Normal production and preview deployment
 
-Do **not** copy `functions/` into the repository root or `roammate.com/`, and do
-not put `_routes.json` in live `public/`. The approved experiment used this
-scratch-only path; it does not authorize production rollout. For a repeat, first
-run the ordinary site validation, tests, type check and build. Use a fresh scratch
-directory so staging cannot contaminate a subsequent normal deployment:
+From repository root, use `bash deploy.sh` for production or
+`bash deploy.sh --preview` for the normal Pages preview branch. Both paths pin
+Wrangler **4.131.1** and run authentication, nonce tests/type-check, public content
+validation, unit tests, Astro type-check, build/link validation and claims checks
+before uploading. The script requires the existing public PostHog key guard.
 
-```sh
-# Preparation only; these commands do not deploy.
-REPO="$PWD"
-STAGE="$(mktemp -d /tmp/roammate-csp-nonce.XXXXXX)"
-cp -R "$REPO/roammate.com/dist" "$STAGE/dist"
-cp -R "$REPO/infra/csp-nonce/functions" "$STAGE/functions"
-cp "$REPO/infra/csp-nonce/_routes.json" "$STAGE/dist/_routes.json"
-cd "$STAGE"
-# For local platform smoke testing, using a reviewed/pinned Wrangler version:
-# npx wrangler pages dev dist --compatibility-date=2026-09-12
-```
+After those gates, the script creates a fresh temporary directory, copies Astro
+`dist/` there, places reviewed `functions/` at the scratch working-directory root
+and `_routes.json` inside scratch `dist/`, and deploys from that directory.
+The temporary assembly is removed on exit. A normal deployment therefore retains
+the nonce fix; **it is no longer a static-only rollback path**.
 
-After explicit deployment approval, run Wrangler from **that scratch directory**
-with output `dist`, project `roammate`, and a new **non-production** branch such as
-`csp-nonce-review`; never `main`. `functions/` must be at Wrangler's working-directory
-root, while `_routes.json` belongs in the output root. Verify the CLI builds the
-Function and retains the supplied exclusions before accepting the upload. No
-Wrangler deploy command is automated by this template. The approved manual
-staging upload and staging-only noindex header copy are recorded in the report.
+Do not copy `functions/` into repository root or `roammate.com/`, or put
+`_routes.json` in Astro `public/` or generated `dist/`. Tests preserve that source
+isolation while checking the deploy script includes the reviewed scratch assets.
+The earlier isolated `csp-nonce-review` branch/custom-domain procedure and its
+staging-only noindex copy remain documented in the dated staging report. Repeating
+that special staging experiment requires reviewing its explicit host allowance;
+the ordinary `--preview` command deploys the normal `preview` branch instead.
 See [Pages routing](https://developers.cloudflare.com/pages/functions/routing/)
 and [Function next API](https://developers.cloudflare.com/pages/functions/api-reference/).
 
@@ -108,8 +107,7 @@ is not an edge HIT; static assets retain immutable caching and avoid invocations
 preview remains noindexed; redirects and admin/API behavior remain unchanged.
 Browser checks must also confirm navigation, PostHog and Cloudflare Insights.
 
-**A `pages.dev` preview alone cannot prove zone JSD compatibility.** Before
-production approval, test through an explicitly approved proxied hostname in the
+**A `pages.dev` preview alone cannot prove zone JSD compatibility.** For any material middleware change, repeat testing through an explicitly approved proxied hostname in the
 same zone with equivalent JSD settings (and extend the host allowlist for that
 hostname). Confirm an injected script's `.nonce` property matches its document's
 CSP nonce, challenge-platform requests succeed, and no JSD CSP violation remains.
@@ -118,7 +116,7 @@ every response. Do not change bot settings or WAF enforcement for this experimen
 
 ## Cost, activation and rollback
 
-HTML will move from static serving to a Function invocation per matching request;
+On activation, HTML moves from static serving to a Function invocation per matching request;
 `no-store` also removes HTML browser/CDN reuse and may affect repeat-view latency.
 Static exclusions preserve current asset caching and avoid Function billing for
 those paths. Review traffic, Workers/Pages quotas, failure mode on quota exhaustion,
@@ -132,16 +130,19 @@ not the API; actual invoices and aggregate billed CPU remain unknown, with no
 zero-cost guarantee. Both production and preview have `fail_open: true`; retain
 that existing setting for the public nonce-only Function as recommended in the
 operations review. Free quota exhaustion is not a current Paid runtime concern.
-Next obtain explicit production approval with recorded rollback and
-post-deployment verification; no settings change is authorized.
+Production deployment is now approved; record the rechecked rollback target and
+post-deployment verification. No settings change is authorized.
 See [Pages Functions pricing](https://developers.cloudflare.com/pages/functions/pricing/).
 
-Production activation needs separate approval and an explicit deployment workflow
-change after staging evidence is recorded on bead `8sw`. Do not close `8sw` merely
-because staging passes. The unchanged production deployment observed during
-staging was `a70bd978-9b79-48e1-98ea-f0e95f62ab50`; recheck the last known-good static deployment ID
-before rollout. If approved rollout fails, restore that static Pages deployment;
-the current unchanged normal deploy path also produces a static-only build.
-Verify removal of the Function and restoration of existing static headers after
-rollback. The original JSD CSP violation may return, but script policy must not
-be weakened as a fallback.
+Production activation is approved and the normal deployment workflow now includes
+this middleware. Do not close `8sw` merely because staging passes: record the
+production deployment ID and successful live checks first. The static production
+deployment observed during staging was `a70bd978-9b79-48e1-98ea-f0e95f62ab50`;
+this is historical evidence, **not an automatically valid rollback target**.
+Recheck and record the actual last known-good Pages deployment immediately before
+rollout. If rollout fails, use Cloudflare Pages rollback to that rechecked
+known-good deployment, not a normal `deploy.sh` invocation (which includes the
+Function). Verify the restored deployment's routing and security headers; if the
+selected known-good deployment is static, confirm the Function is absent. The
+original JSD CSP violation may return after a static rollback, but script policy
+must not be weakened as a fallback.

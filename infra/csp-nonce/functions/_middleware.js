@@ -1,4 +1,4 @@
-// Opt-in template only. Never copy into a live deployment without staged review.
+// Reviewed public-site middleware; approved rollout uses deploy.sh scratch assembly.
 // Keep in parity with public/_headers: Pages does not apply it to Functions.
 const SECURITY_HEADERS = Object.freeze({
   'Content-Security-Policy': "default-src 'self'; script-src 'self' https://us-assets.i.posthog.com https://static.cloudflareinsights.com; connect-src 'self' https://us.i.posthog.com https://api.roammate.com https://cloudflareinsights.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'",
