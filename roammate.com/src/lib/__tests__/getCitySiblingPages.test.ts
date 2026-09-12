@@ -8,6 +8,17 @@ const cityGuideData = {
 };
 
 describe("getCitySiblingPages", () => {
+  it("keeps only the main guide link when derived pages are disabled", () => {
+    expect(getCitySiblingPages("standalone", { ...cityGuideData, generateDerivedPages: false }, new Set(["standalone"]))).toEqual({
+      guide: "/guides/standalone/", itinerary: [], budget: null, bestTime: null, companions: null,
+    });
+  });
+
+  it("preserves links when derived pages are explicitly enabled", () => {
+    expect(getCitySiblingPages("bangkok", { ...cityGuideData, generateDerivedPages: true }, new Set(["bangkok"])))
+      .toEqual(getCitySiblingPages("bangkok", cityGuideData, new Set(["bangkok"])));
+  });
+
   it("emits guide and companions links for a city-guide slug", () => {
     const r = getCitySiblingPages("bangkok", cityGuideData, new Set(["bangkok"]));
     expect(r.guide).toBe("/guides/bangkok/");

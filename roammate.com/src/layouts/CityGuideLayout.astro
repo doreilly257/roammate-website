@@ -10,6 +10,8 @@ import AppCTA from '../components/AppCTA.astro';
 import { blogByGuide } from '../data/blogByGuide';
 
 interface Props {
+  generateDerivedPages?: boolean;
+  sources?: { title: string; url: string }[];
   /* SEO */
   title: string;
   description: string;
@@ -40,7 +42,7 @@ interface Props {
 }
 
 const {
-  title, description,
+  title, description, generateDerivedPages = true, sources = [],
   heroImage, heroFlag, heroCountry, heroRegion, heroCity, h1Qualifier, heroSubtitle, heroPills,
   quickFacts, itineraries, defaultDays = 3,
   budgetTips, budgetBreakdown, budgetIntro,
@@ -51,8 +53,8 @@ const {
 
 const defaultDaysStr = String(defaultDays);
 const currentSlug = Astro.url.pathname.replace(/^\/guides\//, '').replace(/\/$/, '');
-// Companions pages only exist for curated city slugs, not place guides
-const hasCompanionsPage = (await getCityGuideSlugs()).has(currentSlug);
+// Keep the existing curated-city CTA placement, unless this guide opts out.
+const hasCompanionsPage = generateDerivedPages && (await getCityGuideSlugs()).has(currentSlug);
 const relatedGuides = await getRelated(currentSlug, heroRegion, 6);
 const relatedRoutes = await getRoutes(currentSlug);
 // Use pre-built blogByGuide first, fall back to keyword matching
@@ -359,6 +361,17 @@ const escapeCssUrl = (url: string) =>
     </section>
   )}
 
+  {sources.length > 0 && (
+    <section class="guide-sources" aria-labelledby="guide-sources-heading">
+      <h2 id="guide-sources-heading">Sources and photo credits</h2>
+      <ul>
+        {sources.map((source) => (
+          <li><a href={source.url} rel="noopener noreferrer">{source.title}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
   <!-- Newsletter -->
   <NewsletterSignup />
 
@@ -382,6 +395,18 @@ const escapeCssUrl = (url: string) =>
 </BaseLayout>
 
 <style>
+  .guide-sources {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px clamp(20px, 4vw, 40px);
+    overflow-wrap: anywhere;
+  }
+
+  .guide-sources h2 { margin-bottom: 16px; }
+  .guide-sources ul { padding-left: 20px; }
+  .guide-sources li { margin-bottom: 12px; }
+  .guide-sources a { text-decoration: underline; }
+
   /* ========================
      HERO
      ======================== */

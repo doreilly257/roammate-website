@@ -33,7 +33,7 @@ export const GET: APIRoute = async ({ props }) => {
         })),
         itineraries: days.map((n) => ({
           days: n,
-          url: `${ORIGIN}/itinerary/${d.slug}-${n}-day/`,
+          ...(d.generateDerivedPages === false ? {} : { url: `${ORIGIN}/itinerary/${d.slug}-${n}-day/` }),
           plan: (d.itineraries[String(n)] ?? []).map((day: any) => ({
             day: day.num,
             title: day.title,

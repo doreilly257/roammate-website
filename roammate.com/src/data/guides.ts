@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content';
 
 export type GuideEntry = {
+  generateDerivedPages?: boolean;
   slug: string;
   name: string;
   country: string;
@@ -22,7 +23,7 @@ export type RouteEntry = {
 const CITY_GUIDE_SLUGS_LIST = [
   "abu-dhabi","accra","addis-ababa","agra","aguas-calientes","amman","amritsar","amsterdam",
   "antalya","antigua-guatemala","aqaba","arequipa","arusha","aswan","athens","auckland",
-  "bangkok","banos","barcelona","bariloche","beijing","berat","berlin","bhaktapur","bishkek",
+  "bangkok","banos","barcelona","bariloche","battambang","beijing","berat","berlin","bhaktapur","bishkek",
   "bogota","bologna","brussels","budapest","buenos-aires","bukhara","busan","byron-bay",
   "cairns","cairo","cancun","cape-coast","cape-town","cartagena","cebu","chefchaouen",
   "chiang-mai","chiang-rai","christchurch","colombo","copenhagen","cusco","da-nang","dahab",
@@ -38,14 +39,14 @@ const CITY_GUIDE_SLUGS_LIST = [
   "manali","manila","marne-la-vallee","marrakech","marseille","maun","mecca","medellin","medina",
   "melbourne","mendoza","merzouga","mexico-city","miami","milan","minca","mombasa","montreal",
   "mumbai","munich","muscat","nairobi","nara","new-york-city","nha-trang","nice","nizwa",
-  "nuwara-eliya","oaxaca","orlando","osaka","oslo","otavalo","palma-de-mallorca","panama-city",
+  "nong-khiaw","nuwara-eliya","oaxaca","orlando","osaka","oslo","otavalo","palma-de-mallorca","panama-city",
   "paris","pattaya-chonburi","penang","phnom-penh","phuket","pokhara","porto","prague",
   "puerto-princesa","puno","punta-cana","queenstown","quito","rhodes","rio-de-janeiro",
   "rishikesh","riyadh","rome","rotorua","saint-louis-senegal","salento","san-cristobal",
   "san-francisco","san-pedro-de-atacama","santiago","sao-paulo","sapa","sapporo","seoul",
   "seville","shanghai","sharjah","shenzhen","siem-reap","siena","singapore","split","stockholm",
   "stone-town","sur","swakopmund","sydney","taipei","tallinn","tamale","tangier","tbilisi",
-  "tel-aviv","thessaloniki","tirana","tokyo","toronto","udaipur","unawatuna","ushuaia","valencia",
+  "tel-aviv","thakhek","thessaloniki","tirana","tokyo","toronto","udaipur","unawatuna","ushuaia","valencia",
   "valparaiso","vancouver","venice","verona","vienna","vientiane","vilnius","walvis-bay","wanaka",
   "warsaw","washington-dc","wellington","windhoek","yogyakarta","zhuhai","ziguinchor","zurich",
 ] as const;
@@ -89,6 +90,7 @@ async function loadGuides() {
       flag: d.heroFlag,
       region: d.heroRegion,
       heroImage: d.heroImage,
+      generateDerivedPages: d.generateDerivedPages,
     }))
     .sort((a, b) => {
       const c = a.country.localeCompare(b.country, undefined, collatorOpts);
@@ -118,6 +120,11 @@ async function loadGuides() {
 
 export async function getAllGuides(): Promise<GuideEntry[]> {
   return (await loadGuides()).allGuides;
+}
+
+// Derivative consumers must opt in here; main guide discovery keeps getAllGuides().
+export async function getDerivedGuides(): Promise<GuideEntry[]> {
+  return (await getAllGuides()).filter((guide) => guide.generateDerivedPages !== false);
 }
 
 export async function getCityGuideSlugs(): Promise<Set<string>> {

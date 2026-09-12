@@ -1,9 +1,9 @@
 ---
 import AppCTA from '../../components/AppCTA.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getAllGuides } from '../../data/guides';
+import { getDerivedGuides } from '../../data/guides';
 
-const allGuides = await getAllGuides();
+const allGuides = await getDerivedGuides();
 
 const cityGuides = allGuides.sort((a, b) => a.name.localeCompare(b.name));
 ---

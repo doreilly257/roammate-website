@@ -1,0 +1,369 @@
+{
+  "type": "city",
+  "slug": "battambang",
+  "generateDerivedPages": false,
+  "title": "Battambang Travel Guide: 3 Days of Arts & Food | roammate",
+  "description": "Plan three days in Battambang with market breakfasts, Cambodian arts, countryside cycling and Phnom Sampov, plus realistic budgets and transport advice.",
+  "heroImage": "/images/guides/battambang-hero.webp",
+  "heroFlag": "🇰🇭",
+  "heroCountry": "Cambodia",
+  "heroRegion": "Southeast Asia",
+  "heroCity": "Battambang",
+  "heroSubtitle": "Market breakfasts, shophouse streets and a living Cambodian arts scene: make room for a slower stop beside the Sangkae River.",
+  "heroPills": [
+    "3-Day Itinerary",
+    "Arts & Food",
+    "Check Regional Advice"
+  ],
+  "defaultDays": 3,
+  "quickFacts": [
+    {
+      "icon": "💰",
+      "label": "Currency",
+      "value": "Cambodian riel (KHR)",
+      "detail": "Carry small cash; confirm currency before paying"
+    },
+    {
+      "icon": "🗣",
+      "label": "Language",
+      "value": "Khmer",
+      "detail": "Save your accommodation address in Khmer"
+    },
+    {
+      "icon": "🕐",
+      "label": "Timezone",
+      "value": "UTC+7",
+      "detail": "No daylight saving"
+    },
+    {
+      "icon": "☀️",
+      "label": "Seasonal Planning",
+      "value": "Nov–Jan: cooler",
+      "detail": "Wet season usually May–October"
+    },
+    {
+      "icon": "🎨",
+      "label": "Stay Length",
+      "value": "3 full days",
+      "detail": "Add arrival and onward travel separately"
+    },
+    {
+      "icon": "🎒",
+      "label": "Daily Budget",
+      "value": "US$30–50",
+      "detail": "Editorial estimate, September 2026; extras below"
+    },
+    {
+      "icon": "🧭",
+      "label": "Before Travel",
+      "value": "Check border advice",
+      "detail": "City visits and border trips are different plans"
+    }
+  ],
+  "itineraries": {
+    "3": [
+      {
+        "num": 1,
+        "title": "Market streets and contemporary art",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🌅",
+            "title": "Psar Nath and the old centre",
+            "text": "Start at Psar Nath, also written Phsar Nat, using the market as your anchor rather than trying to cover the whole city. Find a breakfast stall with food being cooked to order, then walk the nearby shophouse streets, including Street 1.5. Look up at the different facades, but keep doorways clear: these are working premises, not an open-air museum. A short guided walk can explain the buildings better than a checklist of photographs. Pause for water and shade before continuing towards the river.",
+            "tip": "Choose accommodation near the central market if you want to do this on foot. Uneven pavements and parked motorbikes can make short distances slower than a map suggests."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "🎨",
+            "title": "Make time for Cambodian artists",
+            "text": "After lunch and a break from the heat, visit Romchek 5 for contemporary Cambodian art if it is open. Treat it as the main afternoon stop rather than squeezing it between distant temples. Ask about the artists represented and whether photography is permitted. If the gallery is closed, arrange a history-and-arts outing with a local guide or spend longer exploring the centre. Battambang rewards interest in what people are making now as much as in its older architecture.",
+            "tip": "Check gallery access before crossing town. Do not assume every studio operates daily or that artists are available for unannounced visits."
+          },
+          {
+            "time": "Evening",
+            "icon": "🍜",
+            "title": "Dinner beside the Sangkae",
+            "text": "Return towards the river for dinner and a gentle walk. Battambang joined UNESCO's Creative Cities Network for gastronomy in 2023, a useful reason to give food more attention than a quick meal between attractions. Ask which dishes are available that evening and try a rice or noodle dish you have not already eaten elsewhere. Choose a stall or restaurant that can explain ingredients if you have allergies. Leave the evening flexible rather than planning a second paid activity after a full first day.",
+            "tip": "Ask whether fish sauce, shrimp paste or meat stock is used even when a dish looks vegetarian. A translated dietary card is useful, but confirm understanding."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "title": "Countryside livelihoods and a circus evening",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🚲",
+            "title": "A guided ride with a manageable distance",
+            "text": "Book a shorter countryside cycling trip rather than improvising a route into unfamiliar rural lanes. Soksabike lists half-day tours with different distances and themes; ask which visits are operating and choose for your fitness, not just the word 'easy'. The point is to understand everyday work and food production, not to enter homes without invitation. Leave space to listen, ask permission before portraits and buy something directly if you want to support a participating producer.",
+            "tip": "Confirm helmet, drinking water, surface conditions and a non-cycling alternative. A nominal half-day can occupy most of the morning and part of lunchtime."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "☕",
+            "title": "Rest, or book a Phare campus tour",
+            "text": "Allow a proper lunch and recovery after the ride. If you still have energy and there is a suitable booking, take an organised campus tour at Phare Ponleu Selpak to learn about its arts education work. Otherwise save the campus for the evening and spend the afternoon at your accommodation or a café. This is deliberately not a second countryside circuit: heat, rain and a late return from cycling can easily consume the margin in an overfilled itinerary.",
+            "tip": "Campus tours are advertised on weekdays. Reserve through Phare and follow the host's rules around classes and student photography."
+          },
+          {
+            "time": "Evening",
+            "icon": "🎪",
+            "title": "Phare Battambang, if a show is scheduled",
+            "text": "Attend a student performance at Phare Ponleu Selpak on a confirmed show night. This is the Battambang arts school, not the separate Phare venue in Siem Reap. Book the correct location and arrange your return transport before the show. Performances are not nightly, so move this evening to another day if necessary. If no show fits your dates, keep the campus visit and enjoy an unhurried dinner instead of inventing a substitute attraction.",
+            "tip": "Use the current booking calendar and ask about last-minute changes. Phare's published pages differ on weekly show days, so do not build the trip around an old timetable."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "title": "A flexible morning and Phnom Sampov at dusk",
+        "periods": [
+          {
+            "time": "Morning",
+            "icon": "🏘️",
+            "title": "Choose one extra, not a full circuit",
+            "text": "Keep the morning light ahead of a late return. Ask your accommodation about a hosted visit to a traditional house around Wat Kor, or revisit a market and finish the city walk. A bamboo-train ride is another optional choice, not essential transport: confirm which site the driver means, its operating status, the fare basis and what the ride involves before leaving. Skip it if the arrangements or equipment do not feel right. There is no need to fit every excursion into three days.",
+            "tip": "Do not combine a house visit, bamboo train, distant temples and the bat flight by default. Choose one morning activity and leave time for lunch back in town."
+          },
+          {
+            "time": "Afternoon",
+            "icon": "⛰️",
+            "title": "Phnom Sampov with a local driver",
+            "text": "Subject to current advice and local conditions, arrange a return trip to Phnom Sampov, also written Phnom Sampeau. Discuss the full outing with the driver, including any hill access, waiting time and the return after dark. If visiting the memorial caves, approach them as a place of remembrance connected with Khmer Rouge violence, not a spooky attraction. You can decline the memorial visit or steep sections without giving up the whole outing. If conditions rule out the excursion, stay with city-based food and arts activities.",
+            "tip": "Recheck the safety section before booking. Use established visitor routes, carry water and wear shoes with grip; do not wander into scrub for a viewpoint."
+          },
+          {
+            "time": "Evening",
+            "icon": "🦇",
+            "title": "Watch the bat emergence, then return",
+            "text": "Be at the established viewing area near the foot of the hill before dusk for the possibility of seeing bats emerge. Wildlife does not run to a guaranteed minute, and weather can change the experience. Watch from a respectful distance without lights directed into the cave, feeding or approaching animals. Return with your prearranged driver and have dinner in town. Keep onward travel for the following morning rather than trying to connect a dusk outing with a tightly timed departure.",
+            "tip": "Agree a clearly identifiable meeting point and save the driver's number. Do not rely on finding an available ride at the roadside after the viewing."
+          }
+        ]
+      }
+    ]
+  },
+  "budgetIntro": "Editorial planning estimates in US dollars, prepared September 2026, not quoted tariffs or live offers. Daily amounts are per person; midrange accommodation assumes two people sharing. Excludes travel into/out of Battambang, visas, insurance and premium private tours. A paid cycling trip or several activities on one day can exceed these ranges.",
+  "budgetBreakdown": [
+    {
+      "category": "Accommodation",
+      "budget": "$8–14",
+      "midrange": "$20–35",
+      "splurge": "$55–100",
+      "notes": "Dorm/basic room; shared comfortable room; higher-end room allowance"
+    },
+    {
+      "category": "Food and drinking water",
+      "budget": "$8–12",
+      "midrange": "$15–25",
+      "splurge": "$30–45",
+      "notes": "Per day; alcohol and specialist dining add cost"
+    },
+    {
+      "category": "Local transport",
+      "budget": "$4–8",
+      "midrange": "$8–15",
+      "splurge": "$20–40",
+      "notes": "Daily average; split rides only with an agreed group"
+    },
+    {
+      "category": "Activities",
+      "budget": "$10–16",
+      "midrange": "$17–30",
+      "splurge": "$30–60",
+      "notes": "Daily average across the stay, not an admission-price list"
+    },
+    {
+      "category": "Daily Total",
+      "budget": "$30–50",
+      "midrange": "$60–105",
+      "splurge": "$135–245",
+      "notes": "Editorial estimates; solo private rooms and tours cost more"
+    }
+  ],
+  "budgetTips": [
+    {
+      "title": "Put the paid experiences on paper first",
+      "text": "Add the actual quotes for cycling, a performance and the Phnom Sampov outing before booking accommodation. A cheap bed does not make a private activity day cheap."
+    },
+    {
+      "title": "Agree what a shared ride includes",
+      "text": "Write down stops, passengers, waiting time, hill transfers and the return journey. Share the agreed total rather than assuming a driver will add more people for the same price."
+    },
+    {
+      "title": "Pay for the experience, not unnecessary distance",
+      "text": "A market walk and one art stop make a worthwhile city day. Avoid booking long multi-stop circuits merely to fill time, especially when conditions make rural detours unwise."
+    },
+    {
+      "title": "Keep a cash buffer",
+      "text": "Carry small-denomination cash for markets and transport, but do not keep all your money in one pocket. Ask about card acceptance and fees before relying on them."
+    }
+  ],
+  "practicalInfo": [
+    {
+      "icon": "🧭",
+      "title": "Regional safety: check before booking",
+      "items": [
+        "Checked 12 September 2026: UK FCDO advice advises against all but essential travel within 20km of the Thai land border and says Cambodia–Thailand land crossings remain suspended. Do not plan an onward bus across that border on the strength of an old booking page.",
+        "Advice differs by government: Australia's Smartraveller warns against travel within 50km of the border in named provinces, including Battambang. A warning about a border zone is not automatically a warning against every place in the province. Check the precise route, your government's current map and your insurer rather than treating this city guide as a safety clearance.",
+        "Avoid border excursions and check conditions before countryside outings. Stay on established roads and visitor paths because unexploded ordnance remains a concern. For road safety, theft and health preparation, read the FCDO safety guidance and health guidance."
+      ]
+    },
+    {
+      "icon": "🌦️",
+      "title": "When to go and how to pace the days",
+      "items": [
+        "Cambodia's Second National Communication to the UN climate convention describes a generally dry November–April and rainy May–October pattern, with hotter conditions towards April and early May. November–January is a sensible starting point for travellers who want less heat, not a promise of rain-free days.",
+        "Plan walking and cycling early, leave a shaded lunch break and carry drinking water. During wetter months, ask operators about road surfaces and any local flooding before countryside trips. Keep the art and market day movable so it can replace a weather-disrupted outing; postpone hill visits during thunderstorms or unsafe conditions."
+      ]
+    },
+    {
+      "icon": "🚌",
+      "title": "Arriving and leaving",
+      "items": [
+        "Approach Battambang as a domestic stop from Siem Reap or Phnom Penh, not a guaranteed overland link to Thailand. Compare dated departures with operators such as Vireak Buntham; confirm the exact boarding office, vehicle, luggage allowance and arrival point. Allow a separate travel day rather than treating an advertised journey time as a connection guarantee.",
+        "Royal Railway lists a northern passenger route connecting Phnom Penh, Pursat and Battambang. Check operation on your travel date directly; no fixed timetable or fare is promised here. Do not assume the route continues across the Thai border.",
+        "This itinerary does not depend on the Siem Reap boat connection: current operation and water conditions need separate confirmation. If considering a boat, ask about the actual vessel, lifejackets, transfer points and cancellation arrangements before paying."
+      ]
+    },
+    {
+      "icon": "🏠",
+      "title": "Where to stay and how to move around",
+      "items": [
+        "For a first visit, use the streets around Psar Nath and the central riverfront as a search area, then check recent accommodation reviews for noise, air-conditioning and access. Outlying properties may suit a quieter stay but add transport to dinner and evening events.",
+        "Walk short central sections when conditions allow; use a prearranged tuk-tuk or car for evenings and farther stops. Get the fare and return plan in writing. Self-riding a scooter is not required for this itinerary.",
+        "Tell an activity operator about mobility or heat limitations before booking. Uneven pavements, temple steps and rural surfaces mean a map pin alone does not establish accessibility. Ask for an achievable route and vehicle boarding details."
+      ]
+    },
+    {
+      "icon": "🎟️",
+      "title": "Arts, food and activity sources",
+      "items": [
+        "Phare's Battambang circus page and campus tours page are the direct booking references. Confirm the date and location, and keep the performance evening movable.",
+        "Soksabike's current tours provide options for cycling, arts and guided city or countryside visits. Use descriptions to select a suitable effort level, then request current availability and inclusions; a listing is not a guarantee that every stop runs each day.",
+        "Read UNESCO's Battambang profile for the gastronomy designation and Cambodia's Ministry of Tourism profile for destination background. Neither is a live opening-hours service."
+      ]
+    },
+    {
+      "icon": "🛂",
+      "title": "Entry, money and everyday preparation",
+      "items": [
+        "Use the official Cambodia e-Visa portal and current entry guidance for passport, visa and arrival requirements applicable to your nationality and entry point. Do not assume an e-Visa is accepted at every crossing.",
+        "Ask whether each bill is in riel or US dollars and check the conversion before paying. Keep small cash for purchases; foreign cards and QR payments should not be your only payment method.",
+        "Save offline maps, your address in Khmer and transport contacts. Carry drinking water, sun protection and a rain layer; ask about refill water quality. Arrange travel-health advice before departure and insurance appropriate for your chosen activities."
+      ]
+    },
+    {
+      "icon": "📷",
+      "title": "Image credit and editorial scope",
+      "items": [
+        "Hero photograph: Phsar Nat 4, Battambang, by Christophe95 (4 July 2018), via Wikimedia Commons, licensed CC BY-SA 4.0. Resized and converted to WebP; displayed with a responsive crop and dark overlay. The adapted image is shared under the same licence.",
+        "Researched September 2026. This is an editorial itinerary, not a firsthand trip report or a guarantee of access, prices, wildlife sightings or local app membership. Recheck operational details directly before travelling."
+      ]
+    }
+  ],
+  "culturalIntro": "Battambang is a working city with active arts institutions, family businesses and places of remembrance. Give people control over how you visit, photograph and discuss their lives.",
+  "culturalTips": [
+    {
+      "icon": "🙏",
+      "title": "Ask before entering",
+      "text": "A traditional house is still someone's space. Visit only through an agreed arrangement, pay the stated fee and ask before photographing residents or interiors."
+    },
+    {
+      "icon": "🕯️",
+      "title": "Treat memorials as memorials",
+      "text": "Keep voices low at the Phnom Sampov memorial caves. Do not stage playful photographs or press a guide or resident to share personal trauma. It is reasonable to opt out if you find the visit distressing."
+    },
+    {
+      "icon": "🎨",
+      "title": "Respect artists and students",
+      "text": "Follow gallery photography rules and ask before reproducing an artwork. On a campus tour, stay with the host and do not interrupt lessons or seek unsupervised contact with children."
+    },
+    {
+      "icon": "🛕",
+      "title": "Dress for active religious places",
+      "text": "Carry clothing that covers shoulders and knees. Follow signs and local instructions about shoes, photography and access, and do not climb on carvings for a better camera angle."
+    },
+    {
+      "icon": "🦇",
+      "title": "Leave wildlife undisturbed",
+      "text": "Keep food secured, give animals space and watch the bat flight from the designated area. Do not handle wildlife or turn a viewing stop into an attempt to enter the cave."
+    },
+    {
+      "icon": "🤝",
+      "title": "Make the exchange clear",
+      "text": "Agree fees before a visit and ask before taking portraits at markets or workshops. A purchase is not permission to photograph someone, and a refusal does not need an explanation."
+    }
+  ],
+  "ctaCity": "Battambang",
+  "ctaText": "Planning Battambang? Use roammate to look for travel companions interested in art, food and sharing an agreed local excursion.",
+  "ctaCustomise": "Use this three-day plan as a starting point, then adapt it to your dates, confirmed activities and preferred pace.",
+  "sources": [
+    {
+      "title": "UK FCDO advice",
+      "url": "https://www.gov.uk/foreign-travel-advice/cambodia"
+    },
+    {
+      "title": "Australia's Smartraveller",
+      "url": "https://www.smartraveller.gov.au/destinations/asia/cambodia"
+    },
+    {
+      "title": "FCDO safety guidance",
+      "url": "https://www.gov.uk/foreign-travel-advice/cambodia/safety-and-security"
+    },
+    {
+      "title": "health guidance",
+      "url": "https://www.gov.uk/foreign-travel-advice/cambodia/health"
+    },
+    {
+      "title": "Vireak Buntham",
+      "url": "https://www.vireakbunthamgroup.com/"
+    },
+    {
+      "title": "Royal Railway",
+      "url": "https://www.royalrailway.com.kh/passenger_train"
+    },
+    {
+      "title": "Phare's Battambang circus page",
+      "url": "https://phareps.org/circus-shows/"
+    },
+    {
+      "title": "campus tours page",
+      "url": "https://phareps.org/campus-tours/"
+    },
+    {
+      "title": "Soksabike's current tours",
+      "url": "https://www.soksabike.com/p/tours.html"
+    },
+    {
+      "title": "UNESCO's Battambang profile",
+      "url": "https://www.unesco.org/en/creative-cities/battambang"
+    },
+    {
+      "title": "Cambodia's Ministry of Tourism profile",
+      "url": "https://tourismcambodia.org/public/index.php/provinces/58/battambang"
+    },
+    {
+      "title": "official Cambodia e-Visa portal",
+      "url": "https://www.evisa.gov.kh/"
+    },
+    {
+      "title": "current entry guidance",
+      "url": "https://www.gov.uk/foreign-travel-advice/cambodia/entry-requirements"
+    },
+    {
+      "title": "Hero: Phsar Nat 4, Christophe95, CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Phsar_Nat_4.jpg"
+    },
+    {
+      "title": "CC BY-SA 4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "title": "Cambodia: Second National Communication (climate background, PDF)",
+      "url": "https://unfccc.int/sites/default/files/resource/khmnc2.pdf"
+    }
+  ]
+}

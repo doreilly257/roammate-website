@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync, existsSync, statSync } from "fs";
 import { resolve, dirname, sep } from "path";
 import { fileURLToPath } from "url";
+import { validateStandaloneGuides } from "./validate-standalone-guides";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -216,14 +217,15 @@ async function main() {
   // --dist runs after `astro build`; the source checks run before it.
   if (process.argv.includes("--dist")) {
     const distDir = resolve(ROOT, "dist");
-    const errors = validateBuiltLinks(distDir);
+    const { guides } = loadGuidesFromJson();
+    const errors = [...validateBuiltLinks(distDir), ...validateStandaloneGuides(distDir, guides)];
     if (errors.length > 0) {
-      console.error(`\nBuilt-output validation failed with ${errors.length} broken link(s):\n`);
+      console.error(`\nBuilt-output validation failed with ${errors.length} publishing/link error(s):\n`);
       for (const err of errors) console.error(`  - ${err}`);
       console.error("");
       process.exit(1);
     }
-    console.log("Built output passed: no broken internal links.");
+    console.log("Built output passed: no broken internal links; standalone guide publishing checks passed.");
     process.exit(0);
   }
 

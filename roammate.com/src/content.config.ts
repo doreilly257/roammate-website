@@ -40,6 +40,11 @@ const culturalTip = z.union([z.object({ icon: z.string(), title: z.string(), tex
 
 const cityGuideSchema = z.object({
   type: z.literal('city'),
+  generateDerivedPages: z.boolean().default(true),
+  sources: z.array(z.object({
+    title: z.string(),
+    url: z.string().url().refine((url) => /^https?:\/\//.test(url), 'Use an HTTP or HTTPS source URL'),
+  })).optional(),
   slug: z.string(),
   title: z.string(),
   description: z.string(),

@@ -8,7 +8,11 @@ export async function getStaticPaths() {
   const guides = await getCollection('guides');
   // flatMap, not filter: filter does not narrow the guide union, so g.data.itineraries
   // would not typecheck on the backpacker variant.
-  const cities = guides.flatMap((g) => (g.data.type === 'city' ? [g.data] : []));
+  // Standalone additions have no competing itinerary URL and must not reassign
+  // existing guides in the title/GEO holdout populations.
+  const cities = guides.flatMap((g) => (
+    g.data.type === 'city' && g.data.generateDerivedPages !== false ? [g.data] : []
+  ));
   const colliding = cities
     .filter((d) => collidesWithItinerary(d.title, d.itineraries))
     .map((d) => d.slug)
@@ -34,6 +38,8 @@ const cityTitle = inTitleTest ? deCannibalisedTitle(guide.title) : guide.title;
 {guide.type === 'city' ? (
   <CityGuideLayout
     title={cityTitle}
+    generateDerivedPages={guide.generateDerivedPages}
+    sources={guide.sources}
     h1Qualifier={inTitleTest ? 'Travel Guide' : undefined}
     description={guide.description}
     heroImage={guide.heroImage}

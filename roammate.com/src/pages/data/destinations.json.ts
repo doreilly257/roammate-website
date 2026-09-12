@@ -32,10 +32,12 @@ export const GET: APIRoute = async () => {
         itinerary_lengths_days: days,
         urls: {
           guide: `${ORIGIN}/guides/${d.slug}/`,
-          itineraries: days.map((n) => `${ORIGIN}/itinerary/${d.slug}-${n}-day/`),
-          budget: `${ORIGIN}/budget/${d.slug}/`,
-          best_time: `${ORIGIN}/best-time-to-visit/${d.slug}/`,
-          companions: `${ORIGIN}/companions/${d.slug}/`,
+          ...(d.generateDerivedPages === false ? {} : {
+            itineraries: days.map((n) => `${ORIGIN}/itinerary/${d.slug}-${n}-day/`),
+            budget: `${ORIGIN}/budget/${d.slug}/`,
+            best_time: `${ORIGIN}/best-time-to-visit/${d.slug}/`,
+            companions: `${ORIGIN}/companions/${d.slug}/`,
+          }),
           detail: `${ORIGIN}/data/destinations/${d.slug}.json`,
         },
       };

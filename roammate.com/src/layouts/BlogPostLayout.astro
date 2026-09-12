@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getDerivedGuides } from '../data/guides';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import AppCTA from '../components/AppCTA.astro';
 
@@ -58,6 +59,9 @@ const {
   relatedPosts = [],
   cities = [],
 } = Astro.props;
+
+const companionSlugs = new Set((await getDerivedGuides()).map((guide) => guide.slug));
+const companionCities = cities.filter((slug) => companionSlugs.has(slug));
 
 const formatCityName = (slug: string) =>
   slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
@@ -233,9 +237,9 @@ const renderInlineLinks = (text: string) => {
         <AppCTA variant="badges" appStoreCt="blog-post-cta" appStoreEvent="blog_appstore_click" playStoreEvent="blog_playstore_click" />
       </div>
 
-      {cities.length > 0 && (
+      {companionCities.length > 0 && (
         <div class="blog-city-companions reveal">
-          {cities.map((slug) => (
+          {companionCities.map((slug) => (
             <a href={`/companions/${slug}/`} class="blog-city-companion-link">
               Find travel companions in {formatCityName(slug)} →
             </a>

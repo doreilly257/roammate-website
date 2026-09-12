@@ -9,7 +9,7 @@ import { getCityGuideSlugs } from '../../data/guides';
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
   return guides
-    .filter((g): g is CollectionEntry<'guides'> & { data: Extract<CollectionEntry<'guides'>['data'], { type: 'city' }> } => g.data.type === 'city')
+    .filter((g): g is CollectionEntry<'guides'> & { data: Extract<CollectionEntry<'guides'>['data'], { type: 'city' }> } => g.data.type === 'city' && g.data.generateDerivedPages !== false)
     .map((g) => {
       const d = g.data;
       return {

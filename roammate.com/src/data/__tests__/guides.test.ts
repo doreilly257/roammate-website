@@ -29,6 +29,7 @@ function cityEntry(slug: string, region: string, country = 'Testland') {
 // All share the same country so they sort by name (a0, a1, ... a7).
 const asiaCities = Array.from({ length: 8 }, (_, i) => cityEntry(`a${i}`, 'asia'));
 const europeCities = [cityEntry('e0', 'europe'), cityEntry('e1', 'europe')];
+const standalone = { ...cityEntry('standalone', 'other'), data: { ...cityEntry('standalone', 'other').data, generateDerivedPages: false } };
 
 // The build-time assertion in loadGuides() requires every slug in
 // CITY_GUIDE_SLUGS_LIST to exist as a type:'city' entry. Read that curated list
@@ -41,10 +42,30 @@ const curatedSlugs = [...listBlock.matchAll(/"([^"]+)"/g)].map((m) => m[1]);
 const curatedCities = curatedSlugs.map((slug) => cityEntry(slug, 'curated'));
 
 vi.mock('astro:content', () => ({
-  getCollection: vi.fn(async () => [...asiaCities, ...europeCities, ...curatedCities]),
+  getCollection: vi.fn(async () => [...asiaCities, ...europeCities, ...curatedCities, standalone]),
 }));
 
-import { getBySlug, getRelated } from '../guides';
+import { getBySlug, getRelated, getAllGuides } from '../guides';
+import * as guideFunctions from '../guides';
+
+describe('standalone guide eligibility', () => {
+  it('registers the three approved standalone destinations as cities', async () => {
+    const slugs = await guideFunctions.getCityGuideSlugs();
+    for (const slug of ['nong-khiaw', 'thakhek', 'battambang']) {
+      expect(slugs.has(slug)).toBe(true);
+    }
+  });
+  it('keeps opted-out guides in the full registry with their eligibility flag', async () => {
+    expect((await getAllGuides()).find((g) => g.slug === 'standalone')).toMatchObject({ generateDerivedPages: false });
+  });
+  it('provides a separate eligible collection without removing legacy destinations', async () => {
+    expect(guideFunctions).toHaveProperty('getDerivedGuides');
+    const guides = await (guideFunctions as any).getDerivedGuides();
+    expect(guides.some((g: any) => g.slug === 'standalone')).toBe(false);
+    expect(guides.some((g: any) => g.slug === 'a0')).toBe(true);
+    expect((await getAllGuides()).length).toBe(guides.length + 1);
+  });
+});
 
 describe('getBySlug', () => {
   it('returns entries for known slugs and skips missing ones', async () => {

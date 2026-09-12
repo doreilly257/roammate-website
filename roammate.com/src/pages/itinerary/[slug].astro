@@ -7,7 +7,9 @@ import { getGeoTestCities } from '../../lib/geoTestSet';
 import { buildItinerarySchema } from '../../lib/itinerarySchema';
 
 export async function getStaticPaths() {
-  const guides = await getCollection('guides');
+  const guides = (await getCollection('guides')).filter(
+    (g) => g.data.type === 'city' && g.data.generateDerivedPages !== false,
+  );
   const cityGuideSlugs = await getCityGuideSlugs();
   const paths: any[] = [];
   const geoTestCities = getGeoTestCities(
