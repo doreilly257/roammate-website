@@ -204,8 +204,22 @@ const buildDate = new Date().toISOString().split('T')[0];
 
     function init() {
       // ---- PostHog idle loader (consent-gated) ----
+      function readAnalyticsConsent() {
+        try {
+          return localStorage.getItem('analytics_consent');
+        } catch {
+          return null; // Unavailable storage is not consent.
+        }
+      }
+      function saveAnalyticsConsent(consent) {
+        try {
+          localStorage.setItem('analytics_consent', consent);
+        } catch {
+          // Keep the UI usable; analytics still requires readable persisted consent.
+        }
+      }
       function hasAnalyticsConsent() {
-        return localStorage.getItem('analytics_consent') === 'granted';
+        return readAnalyticsConsent() === 'granted';
       }
       let posthogStarted = false;
       function loadPostHog() {
@@ -229,17 +243,17 @@ const buildDate = new Date().toISOString().split('T')[0];
 
       // ---- Cookie consent banner ----
       (function() {
-        var consent = localStorage.getItem('analytics_consent');
+        var consent = readAnalyticsConsent();
         if (!consent) {
           var banner = document.getElementById('cookieBanner');
           if (banner) banner.style.display = '';
           document.getElementById('cookieAccept')?.addEventListener('click', function() {
-            localStorage.setItem('analytics_consent', 'granted');
+            saveAnalyticsConsent('granted');
             banner && (banner.style.display = 'none');
             loadPostHog();
           });
           document.getElementById('cookieDecline')?.addEventListener('click', function() {
-            localStorage.setItem('analytics_consent', 'denied');
+            saveAnalyticsConsent('denied');
             banner && (banner.style.display = 'none');
             if (window.posthog) window.posthog.opt_out_capturing();
           });

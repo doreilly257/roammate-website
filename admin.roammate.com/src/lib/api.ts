@@ -10,6 +10,7 @@ export type ApiResult<T> =
   | { ok: false; error: string; status: number };
 
 type Env = { API_BASE_URL: string; ADMIN_API_KEY: string };
+const REQUEST_TIMEOUT_MS = 15_000;
 
 async function request<T>(
   env: Env,
@@ -24,8 +25,16 @@ async function request<T>(
     body = JSON.stringify(init.json);
   }
 
+  // Keep the deadline active through the body read, not just response headers.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
-    const res = await fetch(url, { ...init, headers: { ...headers, ...init?.headers }, body });
+    const res = await fetch(url, {
+      ...init,
+      headers: { ...headers, ...init?.headers },
+      body,
+      signal: controller.signal,
+    });
     const text = await res.text();
     if (!res.ok) {
       // Surface the API's own message when it sent one; a bare status tells the
@@ -41,7 +50,19 @@ async function request<T>(
     }
     return { ok: true, data: JSON.parse(text) as T };
   } catch (err) {
+    if (controller.signal.aborted) {
+      const mutation = init?.method === 'POST' || init?.method === 'PUT';
+      return {
+        ok: false,
+        error: mutation
+          ? 'API request timed out. The outcome is unknown; check the current state before trying again.'
+          : 'API request timed out. Please try again.',
+        status: 0,
+      };
+    }
     return { ok: false, error: err instanceof Error ? err.message : 'Network error', status: 0 };
+  } finally {
+    clearTimeout(timeout);
   }
 }
 

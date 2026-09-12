@@ -3,9 +3,11 @@ import AdminLayout from '../layouts/AdminLayout.astro';
 import { api, type AdminMedia, type Overview } from '../lib/api';
 import { dateTime, num, relative, truncate } from '../lib/format';
 
+import { parseOffset, paginationRedirect } from '../lib/pagination';
+
 const env = Astro.locals.runtime.env;
 const url = Astro.url;
-const offset = Math.max(0, Number(url.searchParams.get('offset') || 0) || 0);
+const offset = parseOffset(url.searchParams.get('offset'));
 const limit = 60;
 
 const [res, overviewRes] = await Promise.all([
@@ -15,6 +17,10 @@ const [res, overviewRes] = await Promise.all([
 
 const media = res.ok ? res.data.media : [];
 const total = res.ok ? res.data.total : 0;
+if (res.ok) {
+  const redirect = paginationRedirect(url, total, limit);
+  if (redirect) return Astro.redirect(redirect);
+}
 const href = (o: number) => (o > 0 ? `/media?offset=${o}` : '/media');
 ---
 

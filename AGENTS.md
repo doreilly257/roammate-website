@@ -4,20 +4,27 @@
 
 - `roammate.com/` — Astro site for roammate.com
 - `www.old/` — Legacy static HTML site (archived, not deployed)
-- `deploy.sh` — Builds and deploys to Surge.sh at roammate.com
+- `deploy.sh` — Validates, tests, builds, and deploys to Cloudflare Pages
 
 ## Deployment
 
-- Hosted on **Surge.sh** behind **Cloudflare** (proxy ON, SSL Full)
-- CNAME: `roammate.com` → `geo.surge.world`
-- Deploy command: `bash deploy.sh`
+- Hosted on **Cloudflare Pages**, project `roammate` (`roammate-cs7.pages.dev`)
+- CNAME: `roammate.com` → `roammate-cs7.pages.dev` (proxied)
+- Production deploy: `bash deploy.sh` (Pages branch `main`)
+- Preview deploy: `bash deploy.sh --preview` (Pages branch `preview`; does not update roammate.com)
 
 ## SEO Files
 
-**IMPORTANT**: `robots.txt`, `sitemap.xml`, and `llms.txt` in `roammate.com/public/` must be updated:
+**IMPORTANT**: Review and update `robots.txt` and `llms.txt` in `roammate.com/public/` as needed:
 - Before any deployment that adds, removes, or restructures pages
 - When adding new pages to `roammate.com/src/pages/`
 - When changing URL paths or page slugs
+
+The sitemap is generated, not manually maintained in `public/`: `npm run build` runs
+`scripts/build-lastmod.mjs`, Astro's sitemap integration, then
+`scripts/normalize-sitemap.mjs` to merge sitemap shards into `dist/sitemap.xml`
+and remove the shards/index. Verify the generated sitemap includes page changes
+before deployment; keep the sitemap and RSS references in `robots.txt` correct.
 
 All pages must include a canonical link tag (handled automatically by `BaseLayout.astro`).
 
@@ -25,9 +32,9 @@ All pages must include a canonical link tag (handled automatically by `BaseLayou
 
 - RSS feed is generated at build time via `@astrojs/rss` at `src/pages/rss.xml.ts`
 - Available at `https://roammate.com/rss.xml`
-- Includes all city guides, place guides, backpacker routes, and static pages
-- Dates are deterministically generated from slug hashes (consistent across builds)
-- **Must be kept in sync**: When adding new guides or routes, update the RSS endpoint if the data source changes (currently auto-reads from `guides.ts`)
+- Includes blog posts with `publishedAt`, all city/place guides, and backpacker routes; static pages are not included
+- Blog dates use `publishedAt`; guide and route dates currently use deterministic slug hashes (legacy behavior, consistent across builds)
+- **Must be kept in sync**: The endpoint reads blog metadata from `src/lib/blog-data.ts` and guides/routes from `src/data/guides.ts`; update it if those data sources change
 - The `robots.txt` should reference the RSS feed URL
 
 ## Agent Workflow

@@ -394,4 +394,4 @@ createServer((req, res) => {
   if (!handler) { res.writeHead(404); return res.end(JSON.stringify({ error: `No mock for ${path}` })); }
   res.writeHead(200);
   res.end(JSON.stringify(handler(url.searchParams)));
-}).listen(PORT, () => console.log(`[mock-api] listening on http://localhost:${PORT}`));
+}).listen(PORT, '127.0.0.1', () => console.log(`[mock-api] listening on http://127.0.0.1:${PORT}`));

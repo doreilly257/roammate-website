@@ -3,12 +3,14 @@ import AdminLayout from '../../layouts/AdminLayout.astro';
 import { api, type AdminExcursion, type Overview } from '../../lib/api';
 import { dateTime, num, relative, truncate } from '../../lib/format';
 
+import { parseOffset, paginationRedirect } from '../../lib/pagination';
+
 const env = Astro.locals.runtime.env;
 const url = Astro.url;
 
 const q = url.searchParams.get('q')?.trim() || '';
 const filter = url.searchParams.get('filter') || 'active';
-const offset = Math.max(0, Number(url.searchParams.get('offset') || 0) || 0);
+const offset = parseOffset(url.searchParams.get('offset'));
 const limit = 50;
 
 const qs = new URLSearchParams({ limit: String(limit), offset: String(offset), filter });
@@ -21,6 +23,10 @@ const [res, overviewRes] = await Promise.all([
 
 const rows = res.ok ? res.data.excursions : [];
 const total = res.ok ? res.data.total : 0;
+if (res.ok) {
+  const redirect = paginationRedirect(url, total, limit);
+  if (redirect) return Astro.redirect(redirect);
+}
 
 const FILTERS = [
   { id: 'active', label: 'Active' },

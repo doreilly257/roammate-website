@@ -46,7 +46,7 @@ setTimeout(() => {
       'wrangler', 'pages', 'dev', './dist',
       '--port', PORT,
       '--binding',
-      `API_BASE_URL=http://localhost:${MOCK_PORT}`,
+      `API_BASE_URL=http://127.0.0.1:${MOCK_PORT}`,
       `ADMIN_API_KEY=${KEY}`,
       'DEV_BYPASS_ACCESS=1',
     ],
