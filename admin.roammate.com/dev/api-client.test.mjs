@@ -73,6 +73,16 @@ for (const method of ['get', 'post', 'put']) {
 }
 
 for (const method of ['get', 'post', 'put']) {
+  test(`${method}: rejects redirects rather than forwarding the admin credential`, async t => {
+    const fetchMock = t.mock.method(globalThis, 'fetch', async (_url, init) => {
+      assert.equal(init.redirect, 'error');
+      throw new TypeError('Redirect rejected');
+    });
+    const result = await api[method](env, '/flags', { enabled: true });
+    assert.deepEqual(result, { ok: false, error: 'Redirect rejected', status: 0 });
+    assert.equal(fetchMock.mock.callCount(), 1, 'never retry a redirected admin request');
+  });
+
   test(`${method}: preserves successful requests and clears deadline`, async t => {
     const clock = deadlineClock(t);
     const fetchMock = t.mock.method(globalThis, 'fetch', async () => new Response('{"value":42}'));

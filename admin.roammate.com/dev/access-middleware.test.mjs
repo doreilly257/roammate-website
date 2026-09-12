@@ -50,7 +50,7 @@ function harness({ certs = () => Response.json({ keys: [jwk] }), timers = { setT
   vm.runInNewContext(compiled, sandbox, { filename: 'middleware.js' });
   return {
     requests, errors,
-    async request({ jwt, cookie, config = env, hostname = 'admin.roammate.com', bypass } = {}) {
+    async request({ jwt, cookie, config = env, hostname = 'admin.roammate.com', bypass, pageResponse } = {}) {
       const headers = jwt === undefined ? {} : { 'Cf-Access-Jwt-Assertion': jwt };
       const locals = { runtime: { env: bypass === undefined ? config : { ...config, DEV_BYPASS_ACCESS: bypass } } };
       let nextCalls = 0;
@@ -58,7 +58,7 @@ function harness({ certs = () => Response.json({ keys: [jwk] }), timers = { setT
         request: new Request(`https://${hostname}/users?search=private`, { headers }),
         cookies: { get: name => name === 'CF_Authorization' && cookie !== undefined ? { value: cookie } : undefined },
         locals,
-      }, async () => { nextCalls++; return new Response('private console'); });
+      }, async () => { nextCalls++; return pageResponse ?? new Response('private console'); });
       return { response, locals, nextCalls };
     },
   };
@@ -77,6 +77,31 @@ async function assertDenied(result, status, message) {
     assert.ok(!html.includes(secret), `denial must not disclose ${secret}`);
   }
   return html;
+}
+
+for (const mode of ['header', 'cookie', 'demo']) {
+  for (const kind of ['page', 'error', 'redirect']) {
+    test(`${mode}: prevents storing downstream ${kind} responses`, async () => {
+      const pageResponse = kind === 'redirect'
+        ? Response.redirect('https://admin.roammate.com/users', 303)
+        : new Response('private console', {
+            status: kind === 'error' ? 500 : 200,
+            headers: { 'cache-control': 'public, max-age=3600', 'x-route-header': 'preserved' },
+          });
+      const credentials = mode === 'header' ? { jwt: token() }
+        : mode === 'cookie' ? { cookie: token() } : { bypass: '1' };
+      const result = await harness().request({ ...credentials, pageResponse });
+      assert.equal(result.nextCalls, 1);
+      assert.equal(result.response.headers.get('cache-control'), 'no-store');
+      assert.equal(result.response.status, pageResponse.status);
+      if (kind === 'redirect') {
+        assert.equal(result.response.headers.get('location'), 'https://admin.roammate.com/users');
+      } else {
+        assert.equal(result.response.headers.get('x-route-header'), 'preserved');
+        assert.equal(await result.response.text(), 'private console');
+      }
+    });
+  }
 }
 
 for (const transport of ['header', 'cookie']) {

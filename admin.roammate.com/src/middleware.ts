@@ -139,12 +139,21 @@ function deny(message: string, status: number, operator?: string): Response {
   );
 }
 
+async function privateResponse(next: () => Promise<Response>): Promise<Response> {
+  const response = await next();
+  // Apply to every authenticated page and fragment, including errors and PRG
+  // redirects. Clone because redirect responses can have immutable headers.
+  const secured = new Response(response.body, response);
+  secured.headers.set('cache-control', 'no-store');
+  return secured;
+}
+
 export const onRequest = defineMiddleware(async (context, next) => {
   const env = context.locals.runtime?.env;
 
   if (env?.DEV_BYPASS_ACCESS === '1') {
     context.locals.operator = 'dev@localhost';
-    return next();
+    return privateResponse(next);
   }
 
   // IDENTITY FIRST, CONFIGURATION SECOND. The config check used to run before
@@ -182,5 +191,5 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return deny('Console is not configured yet.', 503, operator);
   }
 
-  return next();
+  return privateResponse(next);
 });

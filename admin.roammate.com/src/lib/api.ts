@@ -34,6 +34,8 @@ async function request<T>(
       headers: { ...headers, ...init?.headers },
       body,
       signal: controller.signal,
+      // Custom credential headers are not stripped on cross-origin redirects.
+      redirect: 'error',
     });
     const text = await res.text();
     if (!res.ok) {
