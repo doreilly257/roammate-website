@@ -68,9 +68,13 @@
         successEl.hidden = false;
         // Fire on confirmed success only (not tracked by BaseLayout's
         // generic submit tracker, which would record failed attempts too).
-        const w = window as any;
-        if (w.posthog && typeof w.posthog.capture === 'function') {
-          w.posthog.capture('newsletter_signup', { source: 'newsletter', path: location.pathname });
+        try {
+          const w = window as any;
+          if (w.posthog && typeof w.posthog.capture === 'function') {
+            w.posthog.capture('newsletter_signup', { source: 'newsletter', path: location.pathname });
+          }
+        } catch {
+          // Optional telemetry must not turn a confirmed subscription into a failure.
         }
       } catch {
         errorEl.textContent = 'Something went wrong. Please try again.';
