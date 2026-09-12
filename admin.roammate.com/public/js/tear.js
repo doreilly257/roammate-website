@@ -16,6 +16,7 @@
   var scrim = document.getElementById('tearscrim');
   if (!panel || !scrim) return;
   var lastFocus = null;
+  var requestVersion = 0;
 
   function setContent(markup) {
     var parsed = new DOMParser().parseFromString('<body>' + markup + '</body>', 'text/html');
@@ -29,6 +30,7 @@
   }
 
   function close() {
+    requestVersion++;
     panel.classList.remove('open');
     scrim.classList.remove('open');
     document.body.classList.remove('tear-open');
@@ -38,6 +40,7 @@
   function load(trigger) {
     var type = trigger.getAttribute('data-tear');
     if (!type) return;
+    var version = ++requestVersion;
     var params = new URLSearchParams();
     for (var i = 0; i < trigger.attributes.length; i++) {
       var a = trigger.attributes[i];
@@ -58,11 +61,13 @@
         return r.text();
       })
       .then(function (html) {
+        if (version !== requestVersion) return;
         setContent(html);
         var closer = panel.querySelector('[data-tear-close]');
         if (closer) closer.focus();
       })
       .catch(function (err) {
+        if (version !== requestVersion) return;
         setContent('<div class="ts-inner"><div class="ts-head"><h3>Could not load</h3>' +
           '<button type="button" class="ts-close" data-tear-close aria-label="Close">&times;</button></div>' +
           '<div class="ts-body"><div class="err"></div></div></div>');

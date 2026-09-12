@@ -81,11 +81,12 @@ function entityHref(e: ActivityEvent): string | null {
   <div class="panel">
     <div class="panel-head">
       <h3>{selected.length ? `${selected.length} of ${KINDS.length} event types` : 'All event types'}</h3>
-      <span class="sub">{events.length} shown</span>
+      <span class="sub">{res.ok ? `${events.length} shown` : 'Unavailable'}</span>
     </div>
-    {events.length === 0 ? (
+    {!res.ok && <div class="empty">Activity results are unavailable. Try loading this page again.</div>}
+    {res.ok && events.length === 0 ? (
       <div class="empty">No events match these filters.</div>
-    ) : (
+    ) : events.length > 0 && (
       <div class="table-wrap">
         <table>
           <thead>

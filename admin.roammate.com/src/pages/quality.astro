@@ -75,9 +75,12 @@ const staleness = (iso: string | null) => {
   </div>
 
   <h2>Needs attention</h2>
-  {failing.length === 0 ? (
+  {(!intRes.ok || !anomRes.ok) && (
+    <div class="err">Structural checks are incomplete. Findings from checks that loaded are shown below; unavailable checks cannot be considered clean.</div>
+  )}
+  {intRes.ok && anomRes.ok && failing.length === 0 ? (
     <div class="panel"><div class="empty">No structural problems found.</div></div>
-  ) : (
+  ) : failing.length > 0 && (
     <div class="panel">
       <div class="table-wrap">
         <table>
