@@ -1,11 +1,15 @@
 # Public-site CSP nonce middleware (8sw)
 
-**Production rollout approved and prepared; live verification pending.** The
+**Production active; sampled live HTTP and browser verification passed.** Public
+Pages deployment `8a9276b8-5cd8-4908-b8ae-71567eb0bc37` (source `8925d4b`)
+was created at 16:24:40 UTC on 2026-09-12. See the
+[production verification report](production-2026-09-12.md) for evidence and limits. The
 isolated preview at `https://csp-nonce-review.roammate.com` verified real
 Cloudflare JSD nonce injection on 2026-09-12; see the historical
 [evidence report](staging-2026-09-12.md). The user subsequently approved public-site
-production deployment. Approval is not evidence that production is already fixed;
-keep bead `8sw` open until the production upload and live checks pass.
+production deployment. The sampled production pages now show matching JSD/header
+nonces with no observed CSP violations; this does not guarantee every future
+request, browser, cost or indexing outcome.
 
 Normal `deploy.sh` production and preview deployments now include this reviewed
 middleware and routing configuration, assembled in a temporary scratch directory.
@@ -68,7 +72,7 @@ custom domains require explicit host-allowlist review.
 From repository root:
 
 ```sh
-node --test infra/csp-nonce/nonce.test.mjs
+node --test infra/csp-nonce/*.test.mjs
 roammate.com/node_modules/.bin/tsc --allowJs --checkJs --noEmit --target ES2022 --module ESNext --lib ES2022,DOM --skipLibCheck infra/csp-nonce/functions/_middleware.js
 ```
 
