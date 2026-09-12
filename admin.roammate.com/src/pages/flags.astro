@@ -6,14 +6,25 @@ const env = Astro.locals.runtime.env;
 
 let flash: { kind: 'ok' | 'err'; message: string } | null = null;
 if (Astro.request.method === 'POST') {
-  const form = await Astro.request.formData();
-  const key = String(form.get('flag') || '');
-  const next = String(form.get('next') || '') === 'true';
-  if (key) {
-    const result = await api.put<{ flags: FeatureFlags }>(env, '/flags', { [key]: next });
-    flash = result.ok
-      ? { kind: 'ok', message: `${key} is now ${next ? 'ON' : 'OFF'}.` }
-      : { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
+  let form: FormData | null = null;
+  try { form = await Astro.request.formData(); } catch { /* Invalid body: reject without mutation. */ }
+  const keys = form?.getAll('flag') ?? [];
+  const values = form?.getAll('next') ?? [];
+  const key = keys[0];
+  const next = values[0];
+  const allowed: Array<keyof FeatureFlags> = [
+    'proximity_enabled', 'ai_concierge_enabled', 'trip_memory_enabled', 'tonight_push_enabled',
+    'notifications_canonical_shadow', 'notifications_canonical_active',
+    'matchmaking_enabled', 'verification_gate_enabled',
+  ];
+  if (keys.length !== 1 || typeof key !== 'string' || !allowed.includes(key as keyof FeatureFlags)
+      || values.length !== 1 || (next !== 'true' && next !== 'false')) {
+    Astro.response.status = 400;
+    flash = { kind: 'err', message: 'Invalid flag change. No change was submitted.' };
+  } else {
+    const result = await api.put<{ flags: FeatureFlags }>(env, '/flags', { [key]: next === 'true' });
+    if (result.ok) return Astro.redirect('/flags', 303);
+    flash = { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
   }
 }
 

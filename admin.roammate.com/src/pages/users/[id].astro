@@ -19,31 +19,32 @@ type Detail = {
 // Astro's security.checkOrigin guards these POSTs against cross-origin submission.
 let flash: { kind: 'ok' | 'err'; message: string } | null = null;
 if (Astro.request.method === 'POST') {
-  const form = await Astro.request.formData();
-  const action = String(form.get('action') || '');
-  const notes = String(form.get('notes') || '').slice(0, 500);
-  const operator = Astro.locals.operator;
-
-  if (action === 'eject' || action === 'restore') {
-    const result = await api.post(env, `/users/${id}/${action}`, { actorId: operator, notes });
-    flash = result.ok
-      ? {
-          kind: 'ok',
-          message:
-            action === 'eject'
-              ? 'User ejected. Their content has been removed and their sockets closed.'
-              : 'Account restored. Content removed by the ejection was NOT restored -- see the note below.',
-        }
-      : { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
+  let form: FormData | null = null;
+  try { form = await Astro.request.formData(); } catch { /* Invalid body: reject without mutation. */ }
+  const actions = form?.getAll('action') ?? [];
+  const noteValues = form?.getAll('notes') ?? [];
+  const action = actions[0];
+  const notes = noteValues[0] ?? '';
+  if (actions.length !== 1 || (action !== 'eject' && action !== 'restore')
+      || noteValues.length > 1 || typeof notes !== 'string') {
+    Astro.response.status = 400;
+    flash = { kind: 'err', message: 'Invalid action. No change was submitted.' };
+  } else {
+    const result = await api.post(env, `/users/${encodeURIComponent(id!)}/${action}`, {
+      actorId: Astro.locals.operator,
+      notes: notes.slice(0, 500),
+    });
+    if (result.ok) return Astro.redirect(`/users/${encodeURIComponent(id!)}`, 303);
+    flash = { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
   }
 }
 
 const [res, overviewRes] = await Promise.all([
-  api.get<Detail>(env, `/users/${id}`),
+  api.get<Detail>(env, `/users/${encodeURIComponent(id!)}`),
   api.get<Overview>(env, '/overview'),
 ]);
 
-if (!res.ok && res.status === 404) return Astro.redirect('/users');
+if (!flash && !res.ok && res.status === 404) return Astro.redirect('/users');
 
 const d = res.ok ? res.data : null;
 const u = d?.user;

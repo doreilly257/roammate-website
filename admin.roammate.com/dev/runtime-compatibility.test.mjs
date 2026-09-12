@@ -1,3 +1,6 @@
+import { readFileSync } from 'node:fs';
+import { createServer } from 'node:http';
+import ts from 'typescript';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { test } from 'node:test';
@@ -43,5 +46,39 @@ test('patched adapter runtime supports HTTP and WebSocket dispatch', { timeout: 
     await closed;
   } finally {
     await mf.dispose();
+  }
+});
+
+
+test('real API client works in Workerd and refuses credential-bearing redirects', { timeout: 20000 }, async () => {
+  const requests = [];
+  const server = createServer((req, res) => {
+    requests.push(req.url);
+    if (req.url.endsWith('/redirect')) {
+      res.writeHead(302, { location: '/credential-target' });
+      res.end('Do not expose redirect body');
+    } else {
+      res.setHeader('content-type', 'application/json');
+      res.end(JSON.stringify({ value: 42 }));
+    }
+  });
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  let mf;
+  try {
+    const source = ts.transpileModule(readFileSync(new URL('../src/lib/api.ts', import.meta.url), 'utf8'), {
+      compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext },
+    }).outputText;
+    mf = new Miniflare({ modules: true, compatibilityDate: '2025-12-01', script: source + `
+      export default { async fetch(request) {
+        const result = await api.get({ API_BASE_URL: 'http://127.0.0.1:${server.address().port}', ADMIN_API_KEY: 'local-test-only' }, new URL(request.url).pathname);
+        return Response.json(result);
+      } };`,
+    });
+    assert.deepEqual(await (await mf.dispatchFetch('http://localhost/ok')).json(), { ok: true, data: { value: 42 } });
+    assert.deepEqual(await (await mf.dispatchFetch('http://localhost/redirect')).json(), { ok: false, error: 'API redirect refused.', status: 302 });
+    assert.deepEqual(requests, ['/v1/admin/ok', '/v1/admin/redirect']);
+  } finally {
+    if (mf) await mf.dispose();
+    await new Promise(resolve => server.close(resolve));
   }
 });

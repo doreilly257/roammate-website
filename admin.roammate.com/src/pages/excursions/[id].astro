@@ -21,27 +21,32 @@ type Detail = {
 
 let flash: { kind: 'ok' | 'err'; message: string } | null = null;
 if (Astro.request.method === 'POST') {
-  const form = await Astro.request.formData();
-  const action = String(form.get('action') || '');
-  const notes = String(form.get('notes') || '').slice(0, 500);
-
-  if (action === 'delete' || action === 'restore') {
-    const result = await api.post(env, `/excursions/${id}/${action}`, {
+  let form: FormData | null = null;
+  try { form = await Astro.request.formData(); } catch { /* Invalid body: reject without mutation. */ }
+  const actions = form?.getAll('action') ?? [];
+  const noteValues = form?.getAll('notes') ?? [];
+  const action = actions[0];
+  const notes = noteValues[0] ?? '';
+  if (actions.length !== 1 || (action !== 'delete' && action !== 'restore')
+      || noteValues.length > 1 || typeof notes !== 'string') {
+    Astro.response.status = 400;
+    flash = { kind: 'err', message: 'Invalid action. No change was submitted.' };
+  } else {
+    const result = await api.post(env, `/excursions/${encodeURIComponent(id!)}/${action}`, {
       actorId: Astro.locals.operator,
-      notes,
+      notes: notes.slice(0, 500),
     });
-    flash = result.ok
-      ? { kind: 'ok', message: action === 'delete' ? 'Excursion removed.' : 'Excursion restored.' }
-      : { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
+    if (result.ok) return Astro.redirect(`/excursions/${encodeURIComponent(id!)}`, 303);
+    flash = { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
   }
 }
 
 const [res, overviewRes] = await Promise.all([
-  api.get<Detail>(env, `/excursions/${id}`),
+  api.get<Detail>(env, `/excursions/${encodeURIComponent(id!)}`),
   api.get<Overview>(env, '/overview'),
 ]);
 
-if (!res.ok && res.status === 404) return Astro.redirect('/excursions');
+if (!flash && !res.ok && res.status === 404) return Astro.redirect('/excursions');
 
 const d = res.ok ? res.data : null;
 const e = d?.excursion;

@@ -35,8 +35,13 @@ async function request<T>(
       body,
       signal: controller.signal,
       // Custom credential headers are not stripped on cross-origin redirects.
-      redirect: 'error',
+      redirect: 'manual',
     });
+    // Workerd does not support redirect:error. Never follow with the admin key.
+    if (res.status >= 300 && res.status < 400) {
+      await res.body?.cancel();
+      return { ok: false, error: 'API redirect refused.', status: res.status };
+    }
     const text = await res.text();
     if (!res.ok) {
       // Surface the API's own message when it sent one; a bare status tells the

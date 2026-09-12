@@ -73,15 +73,19 @@ for (const method of ['get', 'post', 'put']) {
 }
 
 for (const method of ['get', 'post', 'put']) {
-  test(`${method}: rejects redirects rather than forwarding the admin credential`, async t => {
-    const fetchMock = t.mock.method(globalThis, 'fetch', async (_url, init) => {
-      assert.equal(init.redirect, 'error');
-      throw new TypeError('Redirect rejected');
+  for (const status of [301, 302, 303, 307, 308]) {
+    test(`${method}: manually rejects HTTP ${status} without forwarding credentials`, async t => {
+      const clock = deadlineClock(t);
+      const fetchMock = t.mock.method(globalThis, 'fetch', async (_url, init) => {
+        assert.equal(init.redirect, 'manual', 'Workerd does not support redirect:error');
+        return new Response('secret redirect body', { status, headers: { Location: 'https://untrusted.test/' } });
+      });
+      const result = await api[method](env, '/flags', { enabled: true });
+      assert.deepEqual(result, { ok: false, error: 'API redirect refused.', status });
+      assert.equal(fetchMock.mock.callCount(), 1);
+      clock.assertClean();
     });
-    const result = await api[method](env, '/flags', { enabled: true });
-    assert.deepEqual(result, { ok: false, error: 'Redirect rejected', status: 0 });
-    assert.equal(fetchMock.mock.callCount(), 1, 'never retry a redirected admin request');
-  });
+  }
 
   test(`${method}: preserves successful requests and clears deadline`, async t => {
     const clock = deadlineClock(t);
