@@ -1,0 +1,112 @@
+{
+  "_about": "Claims that must not appear in store metadata while their gate is closed. Each rule names what has to become true before the claim is allowed, so this is a gate rather than a permanent blocklist. Written 2026-08-31 after an audit found 16 false claims on the website and 2 in App Store metadata, none of which any tool would have caught.",
+  "_usage": "python3 verify_store_metadata.py <metadata-dir> [...]  — exits non-zero on any violation. Wire into fastlane before deliver/supply.",
+  "rules": [
+    {
+      "id": "verification-is-mandatory",
+      "severity": "error",
+      "why": "Identity verification is OPTIONAL. verification_gate_enabled is false in DEFAULT_FLAGS and getFeatureFlags falls back to defaults even when the KV read throws, so the gate is off and stays off until someone writes the key. Most accounts are unverified.",
+      "allowed_when": "verification_gate_enabled is true in production AND the mandate has shipped in a released build (roammate-app-ios bead 8jlf)",
+      "owner": "roammate-app-ios",
+      "patterns": [
+        "every (user|account|profile|traveller|traveler)[^.]{0,40}verif",
+        "all (users|accounts|profiles|travellers|travelers)[^.]{0,40}verif",
+        "verified (travellers|travelers|users|profiles) (only|before)",
+        "verif\\w*[^.]{0,30}before (you can|they can|matching|any connection|connecting)",
+        "identity[- ]verified\\b",
+        "hard gate",
+        "todos los (viajeros|usuarios)[^.]{0,30}verific",
+        "tous les (voyageurs|utilisateurs)[^.]{0,30}vérifi",
+        "todos os (viajantes|usuários)[^.]{0,30}verific",
+        "모든 (사용자|여행자)[^.]{0,20}인증",
+        "すべての(ユーザー|旅行者)[^。]{0,20}確認",
+        "所有(用户|旅行者)[^。]{0,20}(验证|認證)",
+        "جميع (المستخدمين|المسافرين)[^.]{0,30}توثيق"
+      ]
+    },
+    {
+      "id": "ai-concierge",
+      "severity": "error",
+      "why": "GET /suggestions returns 404 to every caller. ai_concierge_enabled defaults false and the feature_flags key does not exist in the production DATA_STORE KV namespace, so nothing overrides the default. The Discover surface is also two taps deep behind a non-default segment of a non-default tab, so a reviewer following the description cannot reach it.",
+      "allowed_when": "ai_concierge_enabled is true in production KV AND the Discover surface is reachable without two deliberate taps",
+      "owner": "roammate-app-ios",
+      "patterns": [
+        "ai (travel )?concierge",
+        "conserje",
+        "コンシェルジュ",
+        "컨시어지",
+        "礼宾|管家",
+        "كونسيرج"
+      ]
+    },
+    {
+      "id": "read-receipts",
+      "severity": "error",
+      "why": "Messages carry an isRead field but no read-receipt UI exists — nothing shows a sender that their message was read. Typing indicators ARE real and are not covered by this rule.",
+      "allowed_when": "a read-receipt UI ships",
+      "owner": "roammate-app-ios",
+      "patterns": [
+        "read receipts?",
+        "acuse de lectura|confirmaci[oó]n de lectura",
+        "accus[ée] de lecture",
+        "confirma[çc][ãa]o de leitura|recibo de leitura",
+        "既読(通知|表示)",
+        "읽음 (확인|표시)",
+        "已读(回执|状态)",
+        "إشعار القراءة"
+      ]
+    },
+    {
+      "id": "request-to-join",
+      "severity": "error",
+      "why": "POST /v1/excursions/:id/join-requests is gated by areAccessRoutesEnabled, which needs EXCURSION_PRIVACY_ENABLED at stage >= 'write'. The flag is absent from api/wrangler.toml so the stage falls to 'off' and the route 404s. Direct join works; requesting to join does not.",
+      "allowed_when": "EXCURSION_PRIVACY_ENABLED is set to write or higher in production",
+      "owner": "roammate-api",
+      "patterns": [
+        "request to join",
+        "request a (spot|place)",
+        "ask to join",
+        "solicitar (unirse|un lugar)",
+        "demander [àa] (se joindre|participer)"
+      ]
+    },
+    {
+      "id": "no-paywall-forward-risk",
+      "severity": "warn",
+      "why": "True today — nothing charges. But domain:monetisation, data:monetisation and feature:monetisation are already wired into the Android base module, so this becomes false the moment monetisation ships. A store listing promising no paywall is a bad place to discover that.",
+      "allowed_when": "monetisation is not shipped; revisit this rule when it is",
+      "owner": "product",
+      "patterns": [
+        "no premium tier",
+        "no paywall",
+        "sin (nivel )?premium|sin muro de pago",
+        "sem (n[ií]vel )?premium|sem paywall"
+      ]
+    }
+  ],
+  "_retired": [
+    {
+      "id": "sos-contact-delivery",
+      "retired": "2026-09-01",
+      "why_retired": "The rule was based on a false premise and should never have been written. I created it from the bead TITLE ('minimise SOS disclosures and verify contact delivery channels') without reading its status note, which recorded the work as DONE and shipped in 2026.3.6. Verified in api/src/routes/sos.ts: ContactDeliveryState is delivered|failed|unsupported, summarizeContactDelivery marks 'delivered' only when a send actually succeeded, and the route comment states that since SMS was removed on 2026-08-25 a phone number is 'for the user to call, not something roammate can deliver to'. The listing claim 'Emergency SOS shares your live location with your emergency contacts' is TRUE TODAY for a contact with an email address, and the app does not claim delivery it did not achieve.",
+      "my_error": "I also set the wrong bar: 'if contacts are reached by one channel and not another the sentence is still false'. SMS was removed by product decision. The listing does not promise SMS and the app does not claim it, so a phone-only contact being unreachable is designed behaviour reported honestly, not a gap.",
+      "still_open_but_not_a_claim_problem": "A setup-time confidence signal showing whether an address has ever been reached, chosen 2026-08-27. It needs the backend to expose per-contact last-successful-delivery. It is a UI affordance, not delivery. HARD CONSTRAINT from the bead: it must NEVER gate an emergency send — an unverified contact still gets emailed, because not telling someone during an emergency is worse than emailing an unconfirmed address."
+    },
+    {
+      "id": "collect-badges",
+      "retired": "2026-09-01",
+      "why_retired": "The claim was never false. Backend transactional and idempotent awarding is live; an audited backfill ran against PRODUCTION — 32 missing awards across 16 users, 1,950 points, 0 gaps and 0 duplicates afterwards. Android decodes it, verified with and without the additive progress fields. Bead yb.1 is open because its acceptance criteria demand a two-account production test that a standing decision forbids creating accounts for. That is a VERIFICATION STALEMATE, not a broken feature."
+    },
+    {
+      "id": "actionable-groups",
+      "retired": "2026-09-01",
+      "why_retired": "The claim was never false. Groups exist and are joinable — GroupsScreen's Join button runs through GroupsViewModel.joinGroup to a use case. Bead fh.2 is about SEARCH: indexing groups as a searchable type, canonical places, sort options. Joining depends on none of it. The bead has been reassigned to the api session because every remaining item is backend — their DocumentType has no group type at all."
+    }
+  ],
+  "_rule_writing": {
+    "the_error_that_produced_three_bad_rules": "All three of sos-contact-delivery, collect-badges and actionable-groups were written from an OPEN BEAD whose title mentioned the same area as a store claim. All three were wrong. The beads were open for verification debt, backend search work, and a UI affordance — none of which made the claim on the store page false.",
+    "why_it_will_recur": "BEAD TITLES DESCRIBE WORK REMAINING. STORE CLAIMS DESCRIBE CAPABILITY. They routinely share a noun while meaning different things: 'verify contact delivery channels' and 'shares your location with your emergency contacts' are about the same feature and only one of them is a statement about whether it works.",
+    "rule_for_writing_rules": "A rule requires evidence that the CLAIM is false — a flag that is off, an endpoint that 404s, a UI that does not exist, a route that is gated. An open bead near the claim is a reason to LOOK, never a reason to write the rule. Read the bead's status note, then read the code, then decide.",
+    "the_four_that_survived_this_test": "verification-is-mandatory (gate inert, verified in DEFAULT_FLAGS), ai-concierge (flag absent from production KV, endpoint 404s for every caller), read-receipts (no UI exists), request-to-join (route gated by areAccessRoutesEnabled at stage 'off'). Each names a specific mechanism, not a ticket."
+  }
+}

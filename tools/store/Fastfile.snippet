@@ -1,0 +1,53 @@
+# Example only: owner reviews/copies into fastlane/Fastfile and copies tools/store/.
+# Resolve from Fastfile directory, independent of Fastlane's shell working directory.
+store_tools = File.expand_path("../tools/store", __dir__)
+ios_metadata = File.expand_path("metadata", __dir__)
+play_metadata = File.expand_path("metadata/android", __dir__)
+
+desc "Lint iOS metadata before upload"
+lane :verify_ios_metadata do
+  sh("python3", File.join(store_tools, "verify_store_metadata.py"), ios_metadata)
+end
+
+desc "Lint Play independently; empty or changelog-only trees fail"
+lane :verify_play_metadata do
+  sh("python3", File.join(store_tools, "verify_store_metadata.py"), play_metadata)
+end
+
+desc "Export ASC metadata (live authenticated operation)"
+lane :pull_metadata do
+  sh("python3", File.join(store_tools, "export_metadata.py"), "--out", ios_metadata)
+end
+
+desc "Report ASC drift without local writes (still live authenticated reads)"
+lane :metadata_drift do
+  sh("python3", File.join(store_tools, "export_metadata.py"), "--out", ios_metadata, "--diff")
+end
+
+desc "Upload iOS metadata only after lint; no screenshots or review submission"
+lane :push_ios_metadata do
+  verify_ios_metadata
+  deliver(
+    metadata_path: ios_metadata,
+    skip_binary_upload: true,
+    skip_app_version_update: true,
+    skip_screenshots: true,
+    submit_for_review: false,
+    force: false,
+    run_precheck_before_submit: true
+  )
+end
+
+desc "Upload Play listing text only after independent lint"
+lane :push_play_metadata do
+  verify_play_metadata
+  supply(
+    metadata_path: play_metadata,
+    skip_upload_apk: true,
+    skip_upload_aab: true,
+    skip_upload_images: true,
+    skip_upload_screenshots: true,
+    skip_upload_changelogs: true,
+    validate_only: false
+  )
+end
