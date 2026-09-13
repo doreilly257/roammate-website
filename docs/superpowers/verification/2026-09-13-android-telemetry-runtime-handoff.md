@@ -131,3 +131,14 @@ merely waiting after a process has exited is not equivalent. Neither process
 lifetime nor a working observer is inferred from successful APK assembly. Preserve
 `1k3c` instrumented no-egress acceptance and `46f`'s separate historical/demo-review
 exclusion boundary until the corresponding evidence exists.
+
+## Read-only owner handoff recheck — later September 13 continuation
+
+Owner HEAD advanced to `45fb2edd` with a clean worktree. The complete committed
+diff from the APK build revision `66932061` changes only two audit documents;
+it does not change startup implementation, tests or build configuration. Fresh
+SHA-256 reads of both APK files still match the two hashes recorded above.
+The earlier missing/stale APK premise must not be reinstated merely because HEAD
+advanced. No build, emulator, installation, packet capture or provider access was
+performed by this recheck. The preboot boundary and positive-controlled observer
+remain the runtime acceptance prerequisites.

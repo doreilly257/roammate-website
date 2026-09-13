@@ -1,0 +1,233 @@
+{
+  "checkedAt": "2026-09-13T14:21:20.026Z",
+  "results": [
+    {
+      "label": "ongoing-standard-daily",
+      "id": "21d83cab-a4cf-4c49-8f9a-de6dceaef49e",
+      "segments": 1,
+      "next": false,
+      "files": [
+        {
+          "id": "02a47e61-5889-4fbc-b0d3-89f00380a4f4",
+          "bytes": 2354,
+          "sha256": "588fdeabe31939e5c5601cebb7b4328cb698f2c5f6fa075fc5913d64eda7ac1d",
+          "rows": 360,
+          "delimiter": "TAB",
+          "headers": [
+            "Date",
+            "App Name",
+            "App Apple Identifier",
+            "Event",
+            "Page Type",
+            "Source Type",
+            "Engagement Type",
+            "Device",
+            "Platform Version",
+            "Territory",
+            "Counts",
+            "Unique Counts"
+          ],
+          "dateRanges": [
+            {
+              "column": "Date",
+              "min": "2026-09-09",
+              "max": "2026-09-11",
+              "distinct": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ongoing-detailed-daily",
+      "id": "53a66fb1-5606-4563-ba17-8db3a00db2b5",
+      "segments": 1,
+      "next": false,
+      "files": [
+        {
+          "id": "29851905-a492-421e-a92d-42caa685f328",
+          "bytes": 395,
+          "sha256": "b3b99cb423aa60871291472310a784a5c7fb0533828667e84a5376ecd57d1c91",
+          "rows": 17,
+          "delimiter": "TAB",
+          "headers": [
+            "Date",
+            "App Name",
+            "App Apple Identifier",
+            "Event",
+            "Page Type",
+            "Page Title",
+            "Source Type",
+            "Source Info",
+            "Campaign",
+            "Engagement Type",
+            "Device",
+            "Platform Version",
+            "Territory",
+            "Counts",
+            "Unique Counts"
+          ],
+          "dateRanges": [
+            {
+              "column": "Date",
+              "min": "2026-09-09",
+              "max": "2026-09-11",
+              "distinct": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ongoing-standard-weekly",
+      "id": "2ff79839-06e1-434d-b621-7817c60b5e01",
+      "segments": 1,
+      "next": false,
+      "files": [
+        {
+          "id": "30c65430-9954-41de-985c-da8351bc0bed",
+          "bytes": 3231,
+          "sha256": "c2db39f6dd215255ee22a17b6747f0cf0eb70eb22e6bc2bdc46c2c4043f3b082",
+          "rows": 504,
+          "delimiter": "TAB",
+          "headers": [
+            "Date",
+            "App Name",
+            "App Apple Identifier",
+            "Event",
+            "Page Type",
+            "Source Type",
+            "Engagement Type",
+            "Device",
+            "Platform Version",
+            "Territory",
+            "Counts",
+            "Unique Counts"
+          ],
+          "dateRanges": [
+            {
+              "column": "Date",
+              "min": "2026-08-31",
+              "max": "2026-08-31",
+              "distinct": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ongoing-standard-monthly",
+      "id": "8ca6947c-651c-4083-86d7-2b57af9bd766",
+      "segments": 1,
+      "next": false,
+      "files": [
+        {
+          "id": "0aecb2ff-d408-49cd-b151-dedf83d03d2f",
+          "bytes": 7970,
+          "sha256": "1c851da863c8bd9bdd655482943405ae972917c599581bffc9db86909964fdb3",
+          "rows": 1245,
+          "delimiter": "TAB",
+          "headers": [
+            "Date",
+            "App Name",
+            "App Apple Identifier",
+            "Event",
+            "Page Type",
+            "Source Type",
+            "Engagement Type",
+            "Device",
+            "Platform Version",
+            "Territory",
+            "Counts",
+            "Unique Counts"
+          ],
+          "dateRanges": [
+            {
+              "column": "Date",
+              "min": "2026-08-01",
+              "max": "2026-08-01",
+              "distinct": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "snapshot-standard-daily",
+      "id": "669a199d-0159-4d27-b414-eca9c5ca5c4d",
+      "segments": 1,
+      "next": false,
+      "files": [
+        {
+          "id": "d95ba516-6b2d-4222-946c-25cbf534469b",
+          "bytes": 58481,
+          "sha256": "1fb396bdf5a86f6cdf0ebdfe0332f04bb1aecda88fa0ed6158573793d1cfac91",
+          "rows": 8109,
+          "delimiter": "TAB",
+          "headers": [
+            "Date",
+            "App Name",
+            "App Apple Identifier",
+            "Event",
+            "Page Type",
+            "Source Type",
+            "Engagement Type",
+            "Device",
+            "Platform Version",
+            "Territory",
+            "Counts",
+            "Unique Counts"
+          ],
+          "dateRanges": [
+            {
+              "column": "Date",
+              "min": "2026-02-24",
+              "max": "2026-08-31",
+              "distinct": 189
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "snapshot-detailed-daily",
+      "id": "731d3ef9-5760-4d1d-a46e-0f221da40e36",
+      "segments": 1,
+      "next": false,
+      "files": [
+        {
+          "id": "545b3e5d-b00e-4a5f-bd4b-bb9fc33d841a",
+          "bytes": 2468,
+          "sha256": "5e464f5f40a4822de542ade2f7e0a15ff0533daf5c5e5b94db83dfc16683a3a3",
+          "rows": 327,
+          "delimiter": "TAB",
+          "headers": [
+            "Date",
+            "App Name",
+            "App Apple Identifier",
+            "Event",
+            "Page Type",
+            "Page Title",
+            "Source Type",
+            "Source Info",
+            "Campaign",
+            "Engagement Type",
+            "Device",
+            "Platform Version",
+            "Territory",
+            "Counts",
+            "Unique Counts"
+          ],
+          "dateRanges": [
+            {
+              "column": "Date",
+              "min": "2026-03-02",
+              "max": "2026-08-31",
+              "distinct": 121
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

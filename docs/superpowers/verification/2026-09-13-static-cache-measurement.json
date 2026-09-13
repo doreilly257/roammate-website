@@ -1,0 +1,435 @@
+{
+  "capturedAtUTC": "2026-09-13T14:16–14:20Z",
+  "query": "{viewer{zones(filter:{zoneTag:\"d95a8ba6093fba418fc47861a7f594f3\"}){images:httpRequestsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-12T14:00:00Z\",datetime_lt:\"2026-09-13T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/images/%.webp\"},{clientRequestPath_like:\"/images/%.png\"},{clientRequestPath_like:\"/images/%.jpg\"},{clientRequestPath_like:\"/images/%.jpeg\"},{clientRequestPath_like:\"/images/%.avif\"},{clientRequestPath_like:\"/images/%.svg\"},{clientRequestPath_like:\"/images/%.gif\"}]}){count dimensions{cacheStatus} sum{edgeResponseBytes} avg{sampleInterval}} fonts:httpRequestsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-12T14:00:00Z\",datetime_lt:\"2026-09-13T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/fonts/%.woff\"},{clientRequestPath_like:\"/fonts/%.woff2\"}]}){count dimensions{cacheStatus} sum{edgeResponseBytes} avg{sampleInterval}} astro:httpRequestsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-12T14:00:00Z\",datetime_lt:\"2026-09-13T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/_astro/%.js\"},{clientRequestPath_like:\"/_astro/%.css\"}]}){count dimensions{cacheStatus} sum{edgeResponseBytes} avg{sampleInterval}}}}}",
+  "baseline": {
+    "astro": [
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 1,
+        "dimensions": {
+          "cacheStatus": "revalidated"
+        },
+        "sum": {
+          "edgeResponseBytes": 2016
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 2.0665236051502145
+        },
+        "count": 1926,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 5317745
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.4075630252100841
+        },
+        "count": 335,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 973858
+        }
+      }
+    ],
+    "fonts": [
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 1,
+        "dimensions": {
+          "cacheStatus": "revalidated"
+        },
+        "sum": {
+          "edgeResponseBytes": 34814
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 2.708791208791209
+        },
+        "count": 493,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 30724508
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 2.096774193548387
+        },
+        "count": 65,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 4244806
+        }
+      }
+    ],
+    "images": [
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 1,
+        "dimensions": {
+          "cacheStatus": "bypass"
+        },
+        "sum": {
+          "edgeResponseBytes": 5168
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.210244648318043
+        },
+        "count": 1583,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 27446146
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.110569105691057
+        },
+        "count": 683,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 57739790
+        }
+      }
+    ]
+  },
+  "after": {
+    "astro": [
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 6,
+        "dimensions": {
+          "cacheStatus": "bypass"
+        },
+        "sum": {
+          "edgeResponseBytes": 26667
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 2.105997210599721
+        },
+        "count": 1510,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 4350875
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 2
+        },
+        "count": 10,
+        "dimensions": {
+          "cacheStatus": "none"
+        },
+        "sum": {
+          "edgeResponseBytes": 2975
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.451851851851852
+        },
+        "count": 588,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 1714391
+        }
+      }
+    ],
+    "fonts": [
+      {
+        "avg": {
+          "sampleInterval": 2.696551724137931
+        },
+        "count": 391,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 24555265
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.8333333333333333
+        },
+        "count": 165,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 10310665
+        }
+      }
+    ],
+    "images": [
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 1,
+        "dimensions": {
+          "cacheStatus": "revalidated"
+        },
+        "sum": {
+          "edgeResponseBytes": 142830
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 637,
+        "dimensions": {
+          "cacheStatus": "bypass"
+        },
+        "sum": {
+          "edgeResponseBytes": 3290779
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.1424397370343315
+        },
+        "count": 1564,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 52014778
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 612,
+        "dimensions": {
+          "cacheStatus": "none"
+        },
+        "sum": {
+          "edgeResponseBytes": 1767630
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.1501639344262296
+        },
+        "count": 1754,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 167827373
+        }
+      }
+    ]
+  },
+  "webp": {
+    "after": [
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 1,
+        "dimensions": {
+          "cacheStatus": "revalidated"
+        },
+        "sum": {
+          "edgeResponseBytes": 142830
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 3,
+        "dimensions": {
+          "cacheStatus": "bypass"
+        },
+        "sum": {
+          "edgeResponseBytes": 15435
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.3595238095238096
+        },
+        "count": 571,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 41399812
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.137004701141706
+        },
+        "count": 1693,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 167225086
+        }
+      }
+    ],
+    "baseline": [
+      {
+        "avg": {
+          "sampleInterval": 1.5885714285714285
+        },
+        "count": 556,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 16528809
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.1087314662273475
+        },
+        "count": 673,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 57645531
+        }
+      }
+    ]
+  },
+  "colos": {
+    "success": true,
+    "errors": [],
+    "rows": 250,
+    "colos": [
+      [
+        "AMS",
+        {
+          "hit": 1329,
+          "miss": 373,
+          "hitBytes": 41774119,
+          "missBytes": 38154433
+        }
+      ],
+      [
+        "SIN",
+        {
+          "hit": 443,
+          "miss": 174,
+          "hitBytes": 7845409,
+          "missBytes": 5122647
+        }
+      ],
+      [
+        "IAD",
+        {
+          "hit": 163,
+          "miss": 307,
+          "hitBytes": 3557717,
+          "missBytes": 29889418
+        }
+      ],
+      [
+        "LAX",
+        {
+          "hit": 371,
+          "miss": 70,
+          "hitBytes": 5567314,
+          "missBytes": 3725605
+        }
+      ],
+      [
+        "ATL",
+        {
+          "hit": 3,
+          "miss": 395,
+          "hitBytes": 194844,
+          "missBytes": 43869401
+        }
+      ],
+      [
+        "HKG",
+        {
+          "hit": 159,
+          "miss": 60,
+          "hitBytes": 3179457,
+          "missBytes": 2118919
+        }
+      ],
+      [
+        "SJC",
+        {
+          "hit": 172,
+          "miss": 37,
+          "hitBytes": 1454736,
+          "missBytes": 1567557
+        }
+      ],
+      [
+        "CDG",
+        {
+          "hit": 138,
+          "miss": 68,
+          "hitBytes": 4539393,
+          "missBytes": 3683708
+        }
+      ],
+      [
+        "LHR",
+        {
+          "hit": 166,
+          "miss": 31,
+          "hitBytes": 1966350,
+          "missBytes": 1085533
+        }
+      ],
+      [
+        "PDX",
+        {
+          "hit": 2,
+          "miss": 156,
+          "hitBytes": 355370,
+          "missBytes": 17530944
+        }
+      ]
+    ]
+  }
+}

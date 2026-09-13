@@ -88,6 +88,87 @@ would need an explicit reviewed code decision; it cannot be bypassed by configur
 
 ## Security and no-cost invariants
 
+### Fresh read-only topology snapshot — 2026-09-13 follow-up
+
+This operational follow-up is newly proposed for root review; the earlier
+independent approval does not automatically cover its new packaging proposal.
+
+Independent Cloudflare GETs returned the following non-secret operational
+metadata. No application records, secret values, identity email values or writes
+were requested. These observations supersede assumptions about the current
+rollback candidate, not the historical evaluation record.
+
+| Object | Observed identity and state |
+| --- | --- |
+| Zone | `roammate.com`, `d95a8ba6093fba418fc47861a7f594f3` |
+| API route | `d9aa5ca499d34f3d9e587c504bf7f511`, `api.roammate.com/*` → `roammate-api-production`, fail-open false |
+| Worker Custom Domains | No matching roammate domain returned by account listing; the API target is evidenced as routed, not a Custom Domain. |
+| Admin Pages | `roammate-admin`, production branch `main`; canonical deployment `c185fa92-1930-4020-958e-926545fa2a8f`, source `6f4cf940fe764b7ffd097085d16ec8365191c675`, created `2026-09-13T04:08:35.067026Z`, deploy stage success |
+| Current deployment URL | `https://c185fa92.roammate-admin.pages.dev` |
+| Pages custom domain | `admin.roammate.com`, association `da9a51d0-63f3-4f60-93f8-0f6ddaa20514`, status active |
+| DNS | Record `edd2b376c6c77fcf4dddf78717602137`, CNAME `admin.roammate.com` → `roammate-admin.pages.dev`, proxied true, TTL 1 (automatic) |
+
+The three existing self-hosted Access applications are:
+
+| Host coverage | Application ID | Policy ID |
+| --- | --- | --- |
+| `admin.roammate.com` | `cfeb71e6-fc96-4c72-beae-db47dd7fc34d` | `14da9d18-acf2-4624-a245-ce900cae7241` |
+| `roammate-admin.pages.dev` | `052d59f0-4733-4e45-ac84-d6ab649befe5` | `b8f15c0d-9b0e-485e-b8c6-589a8144ff6e` |
+| `*.roammate-admin.pages.dev` | `761938cd-0dfd-4a81-a43d-7a58588dd648` | `1e5ff2c8-ef9d-4fa1-abc1-1097faaa7c56` |
+
+Each returned one precedence-1 allow policy with one email-selector entry and
+no require/exclude selectors. Each application restricted allowed IdPs to
+`021f9421-aa48-4a0d-8700-c643e22889b1`; automatic identity redirect was false.
+The applications have distinct audiences. Preserve their identities/policies
+unchanged; do not substitute one Pages audience for the primary host audience.
+Metadata shape is not a successful operator-login or JWT-runtime attestation.
+
+Consequences: the local `ADMIN_API` seam has a concrete proposed existing target,
+`roammate-api-production`; no API route/DNS change is needed. The current Pages
+deployment `c185fa92` is the candidate to revalidate for whole-deployment rollback,
+not automatically the historical `b31868a4`. Deployment success alone does not
+prove its authenticated read behavior. Root separately observed the backend
+deployment still at September 10, identifier `4be27a68`, version `b100e60a`;
+instructions to use a scoped key do not prove a newer scoped-key contract is
+deployed or that the console currently holds that key.
+
+### Exact next decision, smaller than hosting cutover
+
+The next useful approval is **local release packaging only**: port the reviewed
+evaluation through `8a6bfd111a5ffddafd0da17d93898623dad018fe` onto a fresh isolated
+branch based on current main, prepare a reviewable production configuration for
+one proposed Worker `roammate-admin-console` (name availability still to be
+checked), and rerun Gate 2. Proposed configuration binds `ADMIN_API` directly to
+existing service `roammate-api-production`, retains primary-host API URL and
+Access issuer, and keeps `workers_dev: false`, `preview_urls: false`, Worker-first
+assets, `session: false` and image passthrough. Secret values and domain attachment
+are excluded from that local artifact. No resource is created by drafting it.
+This proposal is not authorization to merge, upload or create that Worker.
+
+Before requesting the later protected-candidate upload, obtain owner non-secret
+attestation of the **serving backend version's** scoped console-key contract and
+its secure provisioning path; do not ask for the key in chat. Revalidate current
+`c185fa92` via the intended operator and existing Access boundary as an explicitly
+authorized read-only acceptance step. Also establish account allowance and the
+credentials needed for both the proposed Worker upload and reverse domain
+operations—Pages write or zone read alone must not be presumed sufficient.
+
+That later approval can be restricted to one private Worker upload and its
+reviewed existing-service binding/secure secret provisioning, with no public
+hostname, preview URL, DNS or Access-policy change. The separate primary-host
+switch approval must identify only the captured Pages association/DNS record and
+the new Worker domain association, with the reverse sequence and maintenance
+window reviewed first. Do not collapse these approvals into a blanket migration.
+
+Operational reversal must restore the captured CNAME/proxy/TTL and Pages domain
+association while serving the retained complete deployment; the exact API
+operation ordering depends on then-current domain ownership checks. Until that
+ordering and two-way permissions are validated, this is a bounded proposal rather
+than an executable cutover command list. Existing `1wi` and `d3m` retain these
+requirements; no duplicate issue or tracking file is introduced.
+
+### Preserved invariants
+
 | Boundary | Required invariant |
 | --- | --- |
 | Primary host | Preserve the intended Access app, allowed operator identities, identity-provider restriction, issuer and audience; exact current values come from a reviewed non-secret snapshot, not stale README examples. |
