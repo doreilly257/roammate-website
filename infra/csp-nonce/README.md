@@ -173,8 +173,12 @@ behavior, production activation, billing, or live routing exclusion.
 A September 13 isolated static Pages run verified real local HTTP responses:
 `/search/` had one search-specific WASM CSP, `/` retained the ordinary baseline,
 and a `/pagefind/test.js` fixture had JavaScript content type and revalidation.
-This is local runtime/header evidence, not a live-edge or complete search-browser
-verification claim.
+An isolated local Functions fixture also verified a single scoped nonce-bearing
+search CSP, the unchanged baseline on other HTML, and static asset bypass.
+Chromium allowed WASM compilation on search and refused it on the homepage.
+The actual 587-entry index loaded with `noWorker: true`; a Bangkok query and
+facets worked. Final search-UI verification and live-edge checks remain pending:
+these local observations do not establish deployment or activation.
 
 The complete build generates `dist/pagefind/` from the same rendered release and
 fails on manifest/index validation errors. Keep generated assets out of `public/`

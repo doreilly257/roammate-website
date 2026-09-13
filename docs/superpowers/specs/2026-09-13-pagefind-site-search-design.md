@@ -1,7 +1,7 @@
 # Pagefind site search
 
 Date: 2026-09-13  
-Status: Independently reviewed — written-spec user approval pending. No implementation or deployment authorized by this document alone.
+Status: Independently reviewed and user-approved — the user continued the recommendation after receiving the written-spec link. Implementation is underway; this approval does not itself authorize deployment or establish live activation.
 
 ## Goal and constraints
 
@@ -63,6 +63,6 @@ Review `public/robots.txt` and `public/llms.txt` for the new `/search/` route. G
 
 ## Scope boundary and approval
 
-This document is design only. User review of this written spec, then implementation planning and tracked work, precede code changes. Production/preview deployment and live activation verification are separate actions, not accomplished here. Broader open-bead work is outside this focused design.
+This document records the approved design; implementation planning and tracked work are underway following user review. Production/preview deployment and live activation verification are separate actions, not accomplished here. Broader open-bead work is outside this focused design.
 
 Reference for verified Pagefind deployment requirements: https://pagefind.app/docs/hosting/ . The implementation must recheck API/indexing options against the pinned Pagefind release and official documentation.

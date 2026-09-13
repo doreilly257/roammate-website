@@ -136,6 +136,18 @@ test('only the exact search route receives WebAssembly permission', async () => 
     assert.doesNotMatch(response.headers.get('Content-Security-Policy'), /wasm-unsafe-eval/);
   }
 });
+test('search HEAD retains scoped policy and every response gets a distinct nonce', async () => {
+  const policies = [];
+  for (const method of ['GET', 'GET', 'HEAD']) {
+    const { response } = await run('https://roammate.com/search/', { method });
+    const policy = response.headers.get('Content-Security-Policy');
+    assert.equal(policy.replace(/ 'nonce-[^']+'/g, ''), searchPolicy);
+    assert.match(policy, /'nonce-[A-Za-z0-9+/]{43}='/);
+    policies.push(policy);
+    if (method === 'HEAD') assert.equal(await response.text(), '');
+  }
+  assert.equal(new Set(policies).size, 3);
+});
 test('search keeps exact route-specific upstream CSP validation', async () => {
   const { response } = await run('https://roammate.com/search/', {}, { headers: { 'Content-Security-Policy': searchPolicy } });
   assert.match(response.headers.get('Content-Security-Policy'), /'nonce-/);
