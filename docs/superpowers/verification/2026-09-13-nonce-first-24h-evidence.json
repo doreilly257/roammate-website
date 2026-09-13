@@ -1,0 +1,387 @@
+{
+  "aggregate": {
+    "capturedAt": "2026-09-13T16:26Z\u201316:28Z",
+    "baseline": {
+      "query": "{viewer{accounts(filter:{accountTag:\"3e8792b00414eadb1cde0e891c393317\"}){pagesFunctionsInvocationsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-11T16:24:40Z\",datetime_lt:\"2026-09-12T16:24:40Z\"}){dimensions{scriptName status}sum{requests errors subrequests wallTime}quantiles{cpuTimeP50 cpuTimeP99}avg{sampleInterval}}}}}",
+      "response": {
+        "success": true,
+        "status": 200,
+        "result": {
+          "viewer": {
+            "accounts": [
+              {
+                "pagesFunctionsInvocationsAdaptiveGroups": [
+                  {
+                    "avg": {
+                      "sampleInterval": 1.2925430210325048
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18564688-preview",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 1116,
+                      "cpuTimeP99": 5799
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 2704,
+                      "subrequests": 2704,
+                      "wallTime": 232112824
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--4861794-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 3360,
+                      "cpuTimeP99": 6870
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 2,
+                      "subrequests": 2,
+                      "wallTime": 275642
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 2.2107558139534884
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--5885532-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 792,
+                      "cpuTimeP99": 7672
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 1521,
+                      "subrequests": 1468,
+                      "wallTime": 14834568
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "errors": [],
+        "messages": []
+      }
+    },
+    "after": {
+      "query": "{viewer{accounts(filter:{accountTag:\"3e8792b00414eadb1cde0e891c393317\"}){pagesFunctionsInvocationsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-12T16:24:40Z\",datetime_lt:\"2026-09-13T16:24:40Z\"}){dimensions{scriptName status}sum{requests errors subrequests wallTime}quantiles{cpuTimeP50 cpuTimeP99}avg{sampleInterval}}workersInvocationsAdaptive(limit:100,filter:{datetime_geq:\"2026-09-12T16:24:40Z\",datetime_lt:\"2026-09-13T16:24:40Z\"}){sum{requests errors subrequests}avg{sampleInterval}}}}}",
+      "response": {
+        "success": true,
+        "status": 200,
+        "result": {
+          "viewer": {
+            "accounts": [
+              {
+                "pagesFunctionsInvocationsAdaptiveGroups": [
+                  {
+                    "avg": {
+                      "sampleInterval": 1
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18839675-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 5794,
+                      "cpuTimeP99": 35552
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 21,
+                      "subrequests": 65,
+                      "wallTime": 6876805
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1.2058823529411764
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18564688-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2378,
+                      "cpuTimeP99": 6091
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 8323,
+                      "subrequests": 8323,
+                      "wallTime": 907732485
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1.0235294117647058
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18564688-preview",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2180,
+                      "cpuTimeP99": 6503
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 174,
+                      "subrequests": 174,
+                      "wallTime": 8002215
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--4861794-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2540,
+                      "cpuTimeP99": 5076
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 4,
+                      "subrequests": 4,
+                      "wallTime": 324225
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1.1818181818181819
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--5885532-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2157,
+                      "cpuTimeP99": 9288
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 39,
+                      "subrequests": 27,
+                      "wallTime": 1019859
+                    }
+                  }
+                ],
+                "workersInvocationsAdaptive": [
+                  {
+                    "avg": {
+                      "sampleInterval": 1.1860422405876951
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 12916,
+                      "subrequests": 26499
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "errors": [],
+        "messages": []
+      }
+    },
+    "workersBefore": {
+      "query": "{viewer{accounts(filter:{accountTag:\"3e8792b00414eadb1cde0e891c393317\"}){workersInvocationsAdaptive(limit:100,filter:{datetime_geq:\"2026-09-11T16:24:40Z\",datetime_lt:\"2026-09-12T16:24:40Z\"}){sum{requests errors subrequests}avg{sampleInterval}}}}}",
+      "response": {
+        "success": true,
+        "status": 200,
+        "result": {
+          "viewer": {
+            "accounts": [
+              {
+                "workersInvocationsAdaptive": [
+                  {
+                    "avg": {
+                      "sampleInterval": 1.421271292064811
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 10263,
+                      "subrequests": 14585
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "errors": [],
+        "messages": []
+      }
+    }
+  },
+  "http": {
+    "checkedAt": "2026-09-13T16:17:54.320437+00:00",
+    "results": [
+      {
+        "path": "/",
+        "samples": [
+          {
+            "status": 200,
+            "headersLatencyMs": 970.59,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 700.69,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 712.45,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      },
+      {
+        "path": "/about/",
+        "samples": [
+          {
+            "status": 200,
+            "headersLatencyMs": 567.51,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 619.92,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 699.67,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      },
+      {
+        "path": "/faq/",
+        "samples": [
+          {
+            "status": 200,
+            "headersLatencyMs": 585.93,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 476.03,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 860.51,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      },
+      {
+        "path": "/guides/bangkok/",
+        "samples": [
+          {
+            "status": 200,
+            "headersLatencyMs": 550.37,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 2100.1,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 612.24,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      },
+      {
+        "path": "/nonce-observation-20260913",
+        "samples": [
+          {
+            "status": 404,
+            "headersLatencyMs": 546.52,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 404,
+            "headersLatencyMs": 1549.7,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 404,
+            "headersLatencyMs": 632.62,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      }
+    ],
+    "limit": "Small synthetic local-client header timings, not representative site latency or pre/post comparison."
+  }
+}
