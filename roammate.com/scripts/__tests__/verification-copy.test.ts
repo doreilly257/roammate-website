@@ -20,7 +20,7 @@ describe('optional verification marketing copy', () => {
   it('does not imply discovery surfaces only verified travellers', () => {
     const comparison = source('src/content/blog/roammate-vs-travello.json');
     expect(comparison.includes('surfaces verified travellers')).toBe(false);
-    expect(comparison.includes('surfaces compatible travellers who overlap on all three dimensions')).toBe(true);
+    expect(comparison.includes('uses travel style, daily budget and destination overlap to suggest potential companions')).toBe(true);
   });
 
   it('does not advertise verification as a matching requirement', () => {

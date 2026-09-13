@@ -113,6 +113,11 @@ headers and a redirect-target count. For independent faults reload after setting
 the mode, search, inspect the error, restore healthy mode, then click Retry on
 the same page. Tiny queries `travel` and `Bangkok` return 2 and 1 healthy results.
 
+Restart the fixture after rebuilding `dist`: it retains the manifest in memory.
+Stopping a shell/compression wrapper may leave its server child running; verify
+the listening port is free and stop the identified fixture process before
+starting the replacement. Do not reuse a fixture across rebuilt asset sets.
+
 ## Limits and release boundary
 
 The fixture deliberately serves `no-store`; this does **not** prove production
@@ -122,3 +127,37 @@ manifest, not origin authenticity, consistently corrupt bytes hashed by the
 build, all Pagefind file types or every browser. No new telemetry, service,
 dependency upgrade or deployment was performed. Existing preview evidence
 predates this integrity implementation; production activation remains separate.
+
+## Final integration verification after copy changes
+
+The supervising session's final combined gate command exited **0** after the
+additional reviewed copy changes: `npm run validate`; `npm test` (**348 tests in
+34 files**, 6.18 s); `npx astro check` (**149 files, 0 errors, 0 warnings, 83 hints**);
+`npm run build` (**3,505 pages**, Astro phase 35.57 s, **587 authorized indexed
+articles**, index/link checks passed); and the **662-file** claims check. These
+are whole-suite totals, not 348 new integrity tests. The earlier 296-test run
+above remains historical evidence from before final copy integration.
+
+The final output was independently rehashed: **all 128 entries** (**126 index,
+2 filter**) matched emitted bytes; the manifest remained **11,831 bytes**.
+Sitemap/RSS again contained no search assets, and the transient authorization
+manifest was absent. No deployment is implied by these final local gates.
+
+The first final browser-repeat attempt exposed a harness-lifecycle mistake:
+the wrapper exited on Ctrl-C, but the old server child retained the prior manifest
+while `dist` was rebuilt. Its replacement failed with `EADDRINUSE`; the old fixture
+correctly produced unavailable status with 0 items for the manifest/chunk mismatch
+and no CSP violations. Root identified and stopped the fixture children, verified
+the ports were free and restarted with healthy mode and empty counters. This is
+not recorded as a passing final-build browser run or an application regression.
+
+The corrected final-build repeat **passed** in Chromium 153.0.8010.37: healthy
+Bangkok search returned **73 results**, showing **10**. HTTP-200 index and filter
+corruption each produced unavailable status with **0 items**; restoring healthy
+mode and using same-page Retry recovered **73**, showing **10**. Both cases had
+**0 CSP violations**. Each recovery requested the manifest once, each of two
+filters once and the needed index once, with **0 redirect-target requests** and
+no query in `/search/`. Observed filter names `en_8274ff1`/`en_8bcd8d3` and index
+`en_d15024c` confirmed the new build's assets, rather than the stale fixture's set.
+This final repeat covered index/filter corruption; the earlier five-mode run
+above supplies the broader fault matrix.

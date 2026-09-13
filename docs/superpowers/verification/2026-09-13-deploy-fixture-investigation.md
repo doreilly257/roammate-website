@@ -37,7 +37,7 @@ summary, not a promise that those files remain available.
 
 ## Reviewed diagnostics improvement
 
-Commit `30bc212` improves `infra/csp-nonce/deploy.test.mjs` failure messages with
+Commit `b68cf19` improves `infra/csp-nonce/deploy.test.mjs` failure messages with
 spawn error stack/code, exit status, signal, elapsed time, stdout, stderr and
 timed Bash `SECONDS`/`LINENO` plus stub tracing. The trace is captured without
 printing it on successful runs. The fixture uses a minimal explicit environment

@@ -6,7 +6,7 @@ const apps = [
   {
     name: 'roammate',
     focus: 'Companion matching + meetups',
-    strengths: 'Matches on travel style, daily budget and destination overlap; excursion meetups you can create or join; optional identity verification with a badge you can filter on, in-app-only messaging and one-tap report/block',
+    strengths: 'Matches on travel style, daily budget and destination overlap; excursion meetups you can create or join; optional identity verification with a badge you can filter on, in-app-only messaging and in-app report/block tools',
     bestFor: 'Finding someone compatible for a specific upcoming trip',
     slug: null,
   },
@@ -71,7 +71,7 @@ const apps = [
 const faqs = [
   {
     q: 'What is the best app to meet travellers?',
-    a: 'It depends on what you actually need. If you want a companion for a specific upcoming trip, a matching app like roammate is the most direct route, because it filters on travel style, daily budget and destination before any conversation starts. If you just landed somewhere and want company tonight, Hostelworld or Bumble BFF are faster. If you want a local travel community between trips, use Meetup.',
+    a: 'It depends on what you actually need. If you want a companion for a specific upcoming trip, a matching app like roammate uses travel style, daily budget and destination overlap to suggest potential companions. If you just landed somewhere and want company tonight, Hostelworld or Bumble BFF are faster. If you want a local travel community between trips, use Meetup.',
   },
   {
     q: 'Are travel companion apps safe?',
@@ -133,8 +133,8 @@ const listItems = apps.map((app, i) => ({
       <h1 class="bta-title">Best Travel Companion Apps <em>(2026)</em></h1>
       <p class="bta-answer">
         There is no single best travel companion app. There is a best app for the problem you have right now.
-        If you need a companion for a specific upcoming trip, use a matching app like roammate, which filters
-        travellers by travel style, daily budget and destination before you ever start a conversation. If you
+        If you need a companion for a specific upcoming trip, use a matching app like roammate, which uses
+        travel style, daily budget and destination overlap to suggest potential companions. If you
         need a bed tonight use Hostelworld, if you want a local travel community between trips use Meetup, and
         if you want to travel only with other women use Tourlina.
       </p>
@@ -194,9 +194,9 @@ const listItems = apps.map((app, i) => ({
           compatibility only surfaces through conversation rather than a structured filter.
         </p>
         <p>
-          roammate inverts that. You set your parameters once and the app screens for compatibility before you
-          invest time in messaging. Choose GAFFL if you want control over who joins a fixed itinerary; choose
-          roammate if you would rather the filtering happen up front.
+          roammate uses your travel style, daily budget and destination overlap to suggest potential companions.
+          Review profiles and discuss your plans to assess compatibility. Choose GAFFL if you want control over who joins a fixed itinerary; choose
+          roammate if you want suggestions based on your travel profile.
         </p>
         <a class="bta-link" href="/blog/roammate-vs-gaffl/">Read the full roammate vs GAFFL comparison</a>
       </article>
@@ -321,21 +321,19 @@ const listItems = apps.map((app, i) => ({
       <article class="bta-app bta-app--own reveal">
         <h3>roammate: best for matching before the trip starts</h3>
         <p>
-          roammate matches solo travellers on travel style, daily budget bracket and destination overlap, so the
-          compatibility screening happens before you spend a week messaging someone who turns out to travel at
-          triple your pace. Alongside one-to-one matching, you can create or join excursion meetups (a hike, a
+          roammate matches solo travellers using travel style, daily budget bracket and destination overlap.
+          Discuss your pace, budget and plans with a potential companion before deciding to travel together. Alongside one-to-one matching, you can create or join excursion meetups (a hike, a
           day trip, a shared taxi), which is a lower-commitment way to meet people than committing to a whole
           route together.
         </p>
         <p>
           On safety, identity verification is free rather than a premium tier: travellers can complete a
           government-ID and liveness check, and verified accounts carry a badge you can filter on. Conversations stay inside the app, so you never need to hand over
-          your phone number, Instagram or WhatsApp to talk to someone, and report and block are one tap away on
-          every profile and conversation.
+          your phone number, Instagram or WhatsApp to talk to someone, and report and block tools are available in the app.
         </p>
         <p>
-          Where roammate is the wrong tool: it will not book your hostel, it has no events calendar for your
-          home city, and it does not have Facebook's raw volume. Pair it accordingly.
+          roammate focuses on finding travel companions; check dedicated accommodation or local-event providers
+          for those needs. For audience reach, it does not have Facebook's raw volume. Pair it accordingly.
         </p>
         <a class="bta-link" href="/find-travel-companion/">See how roammate matches travellers</a>
       </article>
