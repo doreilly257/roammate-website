@@ -82,12 +82,16 @@ body/headers/status, cache and conditional handling, preview noindex, HEAD/404,
 static/admin/API bypasses, routing exclusions and scratch-only deployment assembly.
 They cannot emulate Cloudflare's downstream injection or actual edge caching.
 
-## Pagefind search addition (local implementation; live verification pending)
+## Pagefind search addition (authorized preview; not production)
 
 The historical production evidence above covers the September 12 nonce release,
-**not activation of Pagefind or its search-specific policy**. Search changes need
-their own effective-header/browser verification and authorized release; this
-section does not claim either has happened.
+**not production activation of Pagefind or its search-specific policy**. The user
+authorized a public-site preview, deployed on September 13 at
+`https://4e3d35d0.roammate-cs7.pages.dev` (alias
+`https://preview.roammate-cs7.pages.dev`). See the
+[search preview evidence](search-preview-2026-09-13.md) for the exact source,
+gates, effective HTTP checks and verification limits. Production `/search/`
+remained **404**; no production search or admin release is claimed.
 
 Only the exact `/search` and `/search/` routes receive the additional
 `script-src 'wasm-unsafe-eval'` permission required by Pagefind's WebAssembly
@@ -182,8 +186,9 @@ facets worked. These local observations do not establish deployment or activatio
 ### September 13 final local search verification
 
 The following evidence was supplied by the supervising session for the final
-local Pagefind implementation. **Search has not been deployed.** Historical live
-nonce evidence above does not cover this search release or its route-specific CSP.
+local Pagefind implementation, before the separately authorized preview above.
+These are local results, not production verification. Historical live nonce
+evidence above does not cover this search release or its route-specific CSP.
 
 - Local gates passed: **175 public tests**, **21 nonce/deployment tests**, Astro
   check with **0 errors, 0 warnings and 83 hints**, and a full **3,505-page build**
@@ -214,10 +219,11 @@ nonce evidence above does not cover this search release or its route-specific CS
 
 Malformed HTTP-200 asset responses remain an upstream Pagefind limitation tracked
 in **`roammate-website-f6o`**; successful network-abort recovery does not establish
-recovery from every corrupt response. Authorized rollout and effective live
-header, asset-routing, browser and privacy verification remain pending in
-**`roammate-website-xsf`**. Do not infer release approval or production activation
-from these local results.
+recovery from every corrupt response. An isolated SRI prototype is not shipped
+in the preview. Preview verification for **`roammate-website-xsf`** is recorded
+separately in the linked report; production authorization and production-specific
+verification remain outstanding. Do not infer production activation from local
+or preview results.
 
 The complete build generates `dist/pagefind/` from the same rendered release and
 fails on manifest/index validation errors. Keep generated assets out of `public/`
