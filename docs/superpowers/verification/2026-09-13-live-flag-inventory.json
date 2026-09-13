@@ -1,0 +1,213 @@
+{
+  "checkedAt": "2026-09-13T17:13:59.988Z",
+  "scope": "Read-only configuration inventory for twelve exact known keys; not user evaluation or complete provider inventory",
+  "posthogProject": 292728,
+  "posthog": [
+    {
+      "key": "proximity_enabled",
+      "lookupStatus": "found",
+      "id": 613574,
+      "active": true,
+      "deleted": false,
+      "archived": false,
+      "version": 1,
+      "updated_at": "2026-03-17T11:06:28.646100Z",
+      "evaluation_runtime": "all",
+      "bucketing_identifier": "distinct_id",
+      "filtersShape": [
+        "groups",
+        "aggregation_group_type_index"
+      ],
+      "groups": [
+        {
+          "rollout_percentage": 100,
+          "propertyCount": 0,
+          "aggregation_group_type_index": null
+        }
+      ]
+    },
+    {
+      "key": "ai_concierge_enabled",
+      "lookupStatus": "found",
+      "id": 613575,
+      "active": false,
+      "deleted": false,
+      "archived": false,
+      "version": 2,
+      "updated_at": "2026-08-27T06:42:47.164891Z",
+      "evaluation_runtime": "all",
+      "bucketing_identifier": "distinct_id",
+      "filtersShape": [
+        "groups",
+        "aggregation_group_type_index"
+      ],
+      "groups": [
+        {
+          "rollout_percentage": 100,
+          "propertyCount": 0,
+          "aggregation_group_type_index": null
+        }
+      ],
+      "multivariatePresent": false,
+      "payloadsPresent": false
+    },
+    {
+      "key": "trip_memory_enabled",
+      "lookupStatus": "found",
+      "id": 613576,
+      "active": true,
+      "deleted": false,
+      "archived": false,
+      "version": 1,
+      "updated_at": "2026-03-17T11:06:38.858840Z",
+      "evaluation_runtime": "all",
+      "bucketing_identifier": "distinct_id",
+      "filtersShape": [
+        "groups",
+        "aggregation_group_type_index"
+      ],
+      "groups": [
+        {
+          "rollout_percentage": 100,
+          "propertyCount": 0,
+          "aggregation_group_type_index": null
+        }
+      ],
+      "multivariatePresent": false,
+      "payloadsPresent": false
+    },
+    {
+      "key": "tonight_push_enabled",
+      "lookupStatus": "found",
+      "id": 613577,
+      "active": true,
+      "deleted": false,
+      "archived": false,
+      "version": 1,
+      "updated_at": "2026-03-17T11:06:43.093736Z",
+      "evaluation_runtime": "all",
+      "bucketing_identifier": "distinct_id",
+      "filtersShape": [
+        "groups",
+        "aggregation_group_type_index"
+      ],
+      "groups": [
+        {
+          "rollout_percentage": 100,
+          "propertyCount": 0,
+          "aggregation_group_type_index": null
+        }
+      ],
+      "multivariatePresent": false,
+      "payloadsPresent": false
+    },
+    {
+      "key": "notifications_canonical_shadow",
+      "lookupStatus": "not_found"
+    },
+    {
+      "key": "notifications_canonical_active",
+      "lookupStatus": "not_found"
+    },
+    {
+      "key": "matchmaking_enabled",
+      "lookupStatus": "not_found"
+    },
+    {
+      "key": "verification_gate_enabled",
+      "lookupStatus": "not_found"
+    },
+    {
+      "key": "chat_translation",
+      "lookupStatus": "not_found"
+    },
+    {
+      "key": "chat_whatsapp_handoff",
+      "lookupStatus": "not_found"
+    },
+    {
+      "key": "chat_location_messages",
+      "lookupStatus": "not_found"
+    },
+    {
+      "key": "EXCURSION_PRIVACY_ENABLED",
+      "lookupStatus": "not_found"
+    }
+  ],
+  "worker": {
+    "script": "roammate-api-production",
+    "settingsRead": {
+      "status": 200,
+      "success": true,
+      "errorCodes": [],
+      "bindings": [
+        {
+          "name": "DATA_STORE",
+          "type": "kv_namespace",
+          "namespace_id": "0b3d98281f744c47abd411121d10822d"
+        }
+      ]
+    },
+    "deployedVersionRead": {
+      "status": 200,
+      "success": true,
+      "id": "b100e60a-4552-4c90-9e13-1256a28c09ff",
+      "number": 231,
+      "created_on": "2026-09-10T13:18:46.134533Z",
+      "bindings": [
+        {
+          "name": "DATA_STORE",
+          "type": "kv_namespace",
+          "namespace_id": "0b3d98281f744c47abd411121d10822d"
+        }
+      ]
+    },
+    "deployment": {
+      "id": "4be27a68-bfe0-44ba-a618-f3ff9ecc931f",
+      "version": "b100e60a-4552-4c90-9e13-1256a28c09ff",
+      "percentage": 100
+    },
+    "knownEnvironmentNames": [
+      {
+        "name": "ENABLE_CHAT_TRANSLATION",
+        "currentSettings": "absent",
+        "deployedVersion": "absent"
+      },
+      {
+        "name": "ENABLE_CHAT_WHATSAPP_HANDOFF",
+        "currentSettings": "absent",
+        "deployedVersion": "absent"
+      },
+      {
+        "name": "ENABLE_CHAT_LOCATION_MESSAGES",
+        "currentSettings": "absent",
+        "deployedVersion": "absent"
+      },
+      {
+        "name": "EXCURSION_PRIVACY_ENABLED",
+        "currentSettings": "absent",
+        "deployedVersion": "absent"
+      }
+    ],
+    "environmentAbsenceEvidence": "Root read-only inspection of the four allowlisted binding names; sanitized responses retain only the DATA_STORE binding"
+  },
+  "kv": {
+    "namespace": "0b3d98281f744c47abd411121d10822d",
+    "key": "feature_flags",
+    "lookupStatus": "not_found",
+    "providerErrorCode": 10009
+  },
+  "source": {
+    "head": "5dcab9b1aaf2673f554e393c8e03936782f74bf9",
+    "localTypedBooleanFixPresent": true,
+    "mappedToDeployedVersion": false
+  },
+  "limitations": [
+    "Configuration only, no evaluated identity, no cohort membership or people queries.",
+    "Endpoint creator/editor fields discarded; only allowlisted metadata retained.",
+    "No deployed-source mapping or production admin flags request.",
+    "No scoped production admin flags request or identity-specific evaluation.",
+    "No write, allowance, usage, billing, credential or personal-record query.",
+    "Absence is not disabled; local defaults are not confirmed served values."
+  ]
+}
