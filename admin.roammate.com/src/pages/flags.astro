@@ -63,9 +63,10 @@ const entries = flags ? (Object.keys(flags) as Array<keyof FeatureFlags>) : [];
     <div class="err">
       Could not load flags: {res.error} (HTTP {res.status}).
       {res.status === 401 && (
-        <> These endpoints accept only <code>ADMIN_API_KEY</code>, not the narrower
-        <code>ADMIN_READ_KEY</code>. If the console is configured with the read key, flags
-        will stay unavailable until the API is updated to accept it.</>
+        <> The Pages <code>ADMIN_API_KEY</code> binding should contain the backend's
+        scoped <code>ADMIN_CONSOLE_KEY</code> value. Verify that the deployed backend
+        supports this scoped key and that the values match. Do not broaden console
+        credentials to resolve this error.</>
       )}
     </div>
   )}

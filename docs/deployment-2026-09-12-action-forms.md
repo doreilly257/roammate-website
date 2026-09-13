@@ -21,3 +21,9 @@ Before/after serialized production configuration and all three Access applicatio
 Authenticated production operator acceptance remains unverified under `roammate-website-d3m`. Video and untyped-album moderation limitations remain pending the backend media-contract fix. Unauthenticated Access checks are not evidence of authenticated UI acceptance.
 
 The preceding deployment `ef10ab34` contains the discovered API redirect-mode defect and must not be described or selected as a known-good rollback without reassessment. Any rollback target needs independent compatibility and behavior verification.
+
+## Follow-up — 2026-09-13
+
+In response to the explicit request to sign in at `admin.roammate.com` and confirm that the dashboard loads without API errors, the user replied: “continue, no errors”. This records user-reported signed-in dashboard read acceptance for `roammate-website-d3m`; it is not independent browser verification, an all-route acceptance check, production mutation testing, or verification of credential/key scope. The September 12 evidence above remains a historical record of what was verified at deployment time.
+
+The read-only backend handoff review now reports `roammate-app-ios-g3sl` closed on September 12 at 21:32, with source commit `6ff09ae`. The backend owner reports photo/video metadata plus `album_id`, six native D1 tests, and passing full gates. That handoff does not authorize or confirm a backend deployment. `roammate-website-7ku` still requires original-media full-review integration; video and untyped-album moderation limitations must remain visible until the relevant integration and deployed behavior are verified.
