@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /deletedata/
+# Keep /search/ crawlable so its noindex,follow directive can be read.
 
 User-agent: GPTBot
 Allow: /

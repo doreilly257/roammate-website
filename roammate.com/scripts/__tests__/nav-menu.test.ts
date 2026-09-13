@@ -30,7 +30,8 @@ function setup() {
   const toggle = element();
   const links = element();
   const close = element();
-  const elements: Record<string, any> = { nav, navToggle: toggle, navLinks: links, navClose: close };
+  const search = element();
+  const elements: Record<string, any> = { nav, navToggle: toggle, navLinks: links, navClose: close, headerSearch: search };
   const mediaListeners: ((event: { matches: boolean }) => void)[] = [];
   const documentListeners = new Map<string, (event: any) => void>();
   const source = readFileSync(new URL('../../src/components/Nav.astro', import.meta.url), 'utf8');
@@ -51,7 +52,7 @@ function setup() {
     },
   });
   return {
-    main, toggle, links,
+    main, toggle, links, search,
     open: () => toggle.listeners.get('click')!(),
     resize: (mobile: boolean) => mediaListeners.forEach(fn => fn({ matches: mobile })),
     escape: () => documentListeners.get('keydown')!({ key: 'Escape' }),
@@ -59,6 +60,12 @@ function setup() {
 }
 
 describe('mobile navigation lifecycle', () => {
+  it('makes the header form inert behind the overlay and releases it on close or resize', () => {
+    const menu = setup();
+    menu.open(); expect(menu.search.hasAttribute('inert')).toBe(true);
+    menu.escape(); expect(menu.search.hasAttribute('inert')).toBe(false);
+    menu.open(); menu.resize(false); expect(menu.search.hasAttribute('inert')).toBe(false);
+  });
   it('releases page content when switching to desktop', () => {
     const menu = setup();
     menu.open();

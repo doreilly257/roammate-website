@@ -21,6 +21,7 @@ export default defineConfig({
   prefetch: true,
   integrations: [
     sitemap({
+      filter: (page) => !['/search/', '/search-manifest.json', '/search-manifest.json/'].includes(new URL(page).pathname),
       serialize(item) {
         // lastmod lets Google prioritize crawl scheduling across the ~3k URLs.
         // Pages derived from a guide take that guide's real last-edit date from

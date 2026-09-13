@@ -8,7 +8,7 @@ const layout = readFileSync(new URL('../../src/layouts/BaseLayout.astro', import
 const script = layout.match(/<script>\s*([\s\S]*?)<\/script>/)![1]
   .replace('import.meta.env.PUBLIC_POSTHOG_KEY', JSON.stringify('phc_test'));
 
-function boot(consent: string | null, idle = true, pathname = '/guides/bangkok/', storageFailure?: 'access' | 'read' | 'write') {
+function boot(consent: string | null, idle = true, pathname = '/guides/bangkok/', storageFailure?: 'access' | 'read' | 'write', analyticsEnabled = true) {
   const storage = new Map<string, string>();
   if (consent) storage.set('analytics_consent', consent);
   const callbacks: Array<() => void> = [];
@@ -18,6 +18,7 @@ function boot(consent: string | null, idle = true, pathname = '/guides/bangkok/'
   const observed: unknown[] = [];
   const reveal = {};
   const document = {
+    body: { dataset: { analyticsEnabled: String(analyticsEnabled) } },
     readyState: 'complete',
     querySelector: () => null,
     querySelectorAll: (selector: string) => selector === '.reveal' ? [reveal] : [],
@@ -56,6 +57,13 @@ function boot(consent: string | null, idle = true, pathname = '/guides/bangkok/'
 }
 
 describe('consent-gated analytics startup', () => {
+  it('suppresses the SDK and captures on opted-out pages even with prior consent', () => {
+    const page = boot('granted', true, '/search/', undefined, false);
+    page.flush();
+    expect(page.injected).toHaveLength(0);
+    expect(page.captures()).toHaveLength(0);
+    expect(page.observed).toHaveLength(1);
+  });
   it.each(['access', 'read'] as const)('keeps page initialization alive and analytics off when storage %s throws', failure => {
     const page = boot('granted', true, '/guides/bangkok/', failure);
     expect(page.banner.style.display).toBe('');

@@ -1,0 +1,132 @@
+<section class="site-search ph-no-capture ph-mask" aria-labelledby="search-heading" id="siteSearch">
+  <p class="eyebrow">THE NEXT CHAPTER</p>
+  <h1 id="search-heading">Where to <em>next?</em></h1>
+  <p class="intro">Find a place, plan a route, or get a little inspiration.</p>
+  <form id="searchForm" role="search" aria-label="Search public articles" action="/search/" method="get">
+    <label for="searchQuery">Search guides, routes & stories</label>
+    <div class="query-row">
+      <input id="searchQuery" type="search" maxlength="200" autocomplete="off" placeholder="Try Bangkok, hiking or solo travel" aria-describedby="searchHelp" class="ph-no-capture ph-mask">
+      <button type="submit">Search</button>
+    </div>
+    <p id="searchHelp" class="help">Enter a topic to search our public articles. Results update as you type.</p>
+    <div class="filters">
+      <div><label for="searchCountry">Country</label><select id="searchCountry"><option value="">All countries</option></select></div>
+      <div><label for="searchType">Content type</label><select id="searchType"><option value="">All content types</option></select></div>
+      <button id="searchReset" type="button" class="secondary">Reset</button>
+    </div>
+  </form>
+  <p id="searchStatus" role="status" aria-live="polite" aria-atomic="true">Enter a topic to begin.</p>
+  <button id="searchRetry" type="button" class="secondary" hidden>Retry search</button>
+  <ol id="searchResults" aria-label="Search results"></ol>
+  <button id="searchMore" type="button" class="secondary" hidden>Load more results</button>
+  <noscript><p>Search needs JavaScript. You can still <a href="/guides/">browse travel guides</a> or <a href="/blog/">read the blog</a>.</p></noscript>
+  <p class="browse">Prefer to explore? <a href="/guides/">Browse all guides</a> <span aria-hidden="true">·</span> <a href="/blog/">Read the blog</a></p>
+</section>
+
+<script>
+  import { consumeQuery } from '../lib/search-handoff';
+  import { createSearchController, createPagefindLoader, observePagefindFetch, safeResultPath, type SearchItem } from '../lib/search-client';
+  const query = document.getElementById('searchQuery') as HTMLInputElement;
+  const country = document.getElementById('searchCountry') as HTMLSelectElement;
+  const type = document.getElementById('searchType') as HTMLSelectElement;
+  const results = document.getElementById('searchResults')!;
+  const status = document.getElementById('searchStatus')!;
+  const more = document.getElementById('searchMore') as HTMLButtonElement;
+  const retry = document.getElementById('searchRetry') as HTMLButtonElement;
+  let facetsKey = '';
+  let renderedItems: SearchItem[] = [];
+  const loadRuntime = createPagefindLoader(path => import(/* @vite-ignore */ path));
+  const health = observePagefindFetch(window);
+  const controller = createSearchController(loadRuntime, state => {
+    const nextKey = JSON.stringify(state.facets);
+    if (nextKey !== facetsKey) {
+      facetsKey = nextKey;
+      for (const [select, key, all] of [[country, 'country', 'All countries'], [type, 'type', 'All content types']] as const) {
+        const selected = select.value;
+        select.replaceChildren(new Option(all, ''));
+        Object.keys(state.facets[key] ?? {}).sort().forEach(value => select.add(new Option(value, value)));
+        select.value = selected;
+      }
+    }
+    // Append pagination batches without replacing links the reader may have focused.
+    if (renderedItems.some((item, index) => state.items[index] !== item)) {
+      results.replaceChildren();
+      renderedItems = [];
+    }
+    for (const item of state.items.slice(renderedItems.length)) {
+      const path = safeResultPath(item.url, window.location.origin);
+      if (!path) continue;
+      const row = document.createElement('li');
+      const label = document.createElement('p');
+      label.className = 'result-type';
+      label.textContent = item.meta.type ?? 'Article';
+      const heading = document.createElement('h2');
+      const link = document.createElement('a');
+      link.href = path;
+      link.textContent = item.meta.title ?? 'Read article';
+      heading.append(link);
+      const excerpt = document.createElement('p');
+      excerpt.textContent = item.plain_excerpt || item.meta.description || '';
+      row.append(label, heading, excerpt);
+      results.append(row);
+    }
+    renderedItems = state.items;
+    status.textContent = state.status === 'loading' ? 'Searching…'
+      : state.status === 'error' ? (state.retryable ? 'Search is unavailable right now. Please retry or browse below.' : 'Search could not load after several attempts. Reload this page to try again, or browse below.')
+      : state.status === 'idle' ? 'Enter a topic to begin.'
+      : state.total === 0 ? 'No results. Try another topic or reset your filters.'
+      : `${state.total} ${state.total === 1 ? 'result' : 'results'}. Showing ${state.items.length}.`;
+    retry.hidden = state.status !== 'error' || !state.retryable;
+    more.hidden = state.items.length === 0 || state.total <= 10 || state.status === 'error';
+    more.disabled = state.status === 'loading' || state.items.length >= state.total;
+    more.textContent = state.items.length >= state.total ? 'All results loaded' : 'Load more results';
+  }, health);
+  const search = () => controller.search(query.value, country.value, type.value);
+  query.value = consumeQuery(() => window.sessionStorage);
+  if (query.value) void search();
+  query.addEventListener('input', () => controller.schedule(query.value, country.value, type.value));
+  country.addEventListener('change', () => { void search(); });
+  type.addEventListener('change', () => { void search(); });
+  document.getElementById('searchForm')!.addEventListener('submit', event => { event.preventDefault(); void search(); });
+  document.getElementById('searchReset')!.addEventListener('click', () => {
+    query.value = ''; country.value = ''; type.value = ''; void controller.reset();
+  });
+  more.addEventListener('click', () => { void controller.more(); });
+  retry.addEventListener('click', () => { void controller.retry(); });
+</script>
+
+<style>
+  .site-search { max-width: 860px; margin: 0 auto; padding: 190px 32px 96px; min-height: 75vh; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 3px; color: var(--color-terracotta); margin-bottom: 12px; }
+  h1 { font: 500 clamp(44px, 7vw, 76px)/1.08 var(--font-display); letter-spacing: -2px; color: var(--color-ink); }
+  h1 em { color: var(--color-terracotta); font-weight: 400; }
+  .intro { font-size: 19px; color: var(--color-text-muted); margin: 20px 0 40px; }
+  label { display: block; font-weight: 500; margin-bottom: 8px; }
+  input, select, button { font: inherit; min-height: 48px; border-radius: 5px; }
+  input, select { width: 100%; min-width: 0; border: 1px solid var(--color-text-muted); color: var(--color-ink); background: var(--color-bg); padding: 12px; }
+  input::placeholder { color: var(--color-text-muted); }
+  button { padding: 12px 22px; border: 1px solid var(--color-ink); background: var(--color-ink); color: var(--color-bg); cursor: pointer; }
+  button.secondary { color: var(--color-ink); background: transparent; }
+  button:hover { background: var(--color-teal-deep); color: white; }
+  button:disabled { opacity: .65; cursor: wait; }
+  :is(input, select, button, a):focus-visible { outline: 3px solid var(--color-terracotta); outline-offset: 3px; }
+  .query-row { display: flex; gap: 12px; }
+  .help { font-size: 14px; color: var(--color-text-muted); margin-top: 10px; }
+  .filters { display: grid; grid-template-columns: 1fr 1fr auto; align-items: end; gap: 16px; margin-top: 24px; }
+  #searchStatus { margin: 36px 0 12px; color: var(--color-text-muted); }
+  #searchResults { list-style: none; padding: 0; }
+  #searchResults :global(li) { padding: 26px 0; border-top: 1px solid #d6cec3; overflow-wrap: anywhere; }
+  #searchResults :global(.result-type) { text-transform: uppercase; letter-spacing: 2px; font-size: 12px; color: var(--color-teal-deep); margin-bottom: 8px; }
+  #searchResults :global(h2) { font: 500 28px/1.25 var(--font-display); margin-bottom: 12px; }
+  #searchResults :global(a) { color: var(--color-ink); }
+  #searchResults :global(a:focus-visible) { outline: 3px solid var(--color-terracotta); outline-offset: 3px; }
+  #searchResults :global(p) { line-height: 1.65; }
+  .browse { margin-top: 40px; padding-top: 24px; border-top: 1px solid #d6cec3; line-height: 2; }
+  .browse a, noscript a { color: var(--color-teal-deep); text-decoration: underline; text-underline-offset: 4px; }
+  @media (max-width: 540px) {
+    .site-search { padding: 185px 20px 72px; }
+    .query-row { flex-direction: column; }
+    .filters { grid-template-columns: 1fr; }
+    .intro { font-size: 17px; margin-bottom: 28px; }
+  }
+</style>

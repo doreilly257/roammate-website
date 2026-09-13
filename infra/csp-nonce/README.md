@@ -177,8 +177,46 @@ An isolated local Functions fixture also verified a single scoped nonce-bearing
 search CSP, the unchanged baseline on other HTML, and static asset bypass.
 Chromium allowed WASM compilation on search and refused it on the homepage.
 The actual 587-entry index loaded with `noWorker: true`; a Bangkok query and
-facets worked. Final search-UI verification and live-edge checks remain pending:
-these local observations do not establish deployment or activation.
+facets worked. These local observations do not establish deployment or activation.
+
+### September 13 final local search verification
+
+The following evidence was supplied by the supervising session for the final
+local Pagefind implementation. **Search has not been deployed.** Historical live
+nonce evidence above does not cover this search release or its route-specific CSP.
+
+- Local gates passed: **175 public tests**, **21 nonce/deployment tests**, Astro
+  check with **0 errors, 0 warnings and 83 hints**, and a full **3,505-page build**
+  with **587 authorized indexed URLs**. Built-link and claims checks passed.
+  A repeated full build removed an injected stale-output sentinel; the sitemap
+  included the search page and the index manifest excluded it.
+- Browser searches returned Bangkok **73**, Thailand + Guide **10**, Thailand +
+  Route **1**, and travel companion + Blog **23** results. Pagination advanced
+  from 10 to 20; reset, no-results and latest-input behavior passed.
+- At 320px there was no horizontal overflow. Mobile Escape/inert behavior and
+  keyboard handoff from the header passed. JavaScript-disabled fallback kept the
+  query out of the URL; denied storage produced an empty fallback rather than
+  exposing retained query state.
+- With consent denied, no PostHog requests were observed. With consent granted,
+  the real PostHog **1.430.3** SDK and recorder positive control ran with all
+  collection requests intercepted. Nine base64/gzip replay items were decoded;
+  none contained the test query sentinel. The URL stayed clean, the session query
+  key was removed, and the search page disabled the SDK. This is scoped local
+  privacy evidence, not a claim about every browser or production collection.
+- All five first-asset abort cases—runtime JavaScript, entry JSON, fragment,
+  index and filter—showed a truthful error/Retry state and recovered to **73**
+  Bangkok results. Runtime imports use the initial URL and at most `?retry=1`
+  through `?retry=3`, then require reload; reinitialization destroys the previous
+  Pagefind instance. The search-only fetch wrapper observes same-origin Pagefind
+  index/filter transport health while preserving request, response and error
+  behavior for other fetches.
+
+Malformed HTTP-200 asset responses remain an upstream Pagefind limitation tracked
+in **`roammate-website-f6o`**; successful network-abort recovery does not establish
+recovery from every corrupt response. Authorized rollout and effective live
+header, asset-routing, browser and privacy verification remain pending in
+**`roammate-website-xsf`**. Do not infer release approval or production activation
+from these local results.
 
 The complete build generates `dist/pagefind/` from the same rendered release and
 fails on manifest/index validation errors. Keep generated assets out of `public/`

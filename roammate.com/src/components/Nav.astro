@@ -18,6 +18,13 @@ const base = import.meta.env.BASE_URL;
     <li><a href={`${base}blog/`}>Blog</a></li>
     <li><a href={`${base}about/`}>About</a></li>
   </ul>
+  <form id="headerSearch" class="nav-search ph-no-capture ph-mask" role="search" aria-label="Site search" action="/search/" method="get">
+    <label class="search-label" for="headerQuery">Search guides and stories</label>
+    <input id="headerQuery" type="search" maxlength="200" placeholder="Search guides & stories" autocomplete="off" class="ph-no-capture ph-mask">
+    <button type="submit" aria-label="Search" class="ph-no-capture ph-mask">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+    </button>
+  </form>
 </nav>
 
 <script>
@@ -52,6 +59,7 @@ const base = import.meta.env.BASE_URL;
     links?.classList.add('open');
     toggle?.setAttribute('aria-expanded', 'true');
     setSiblingsInert(true);
+    document.getElementById('headerSearch')?.setAttribute('inert', '');
   }
 
   function closeMenu(restoreFocus = false) {
@@ -59,6 +67,7 @@ const base = import.meta.env.BASE_URL;
     links?.classList.remove('open');
     toggle?.setAttribute('aria-expanded', 'false');
     setSiblingsInert(false);
+    document.getElementById('headerSearch')?.removeAttribute('inert');
     if (restoreFocus) (toggle as HTMLElement | null)?.focus();
   }
 
@@ -84,6 +93,16 @@ const base = import.meta.env.BASE_URL;
     if (e.key === 'Escape' && links?.classList.contains('open')) {
       closeMenu(true);
     }
+  });
+</script>
+
+<script>
+  import { handoffQuery } from '../lib/search-handoff';
+  const form = document.getElementById('headerSearch');
+  const input = document.getElementById('headerQuery') as HTMLInputElement | null;
+  form?.addEventListener('submit', event => {
+    event.preventDefault();
+    handoffQuery(input?.value ?? '', () => window.sessionStorage, path => window.location.assign(path));
   });
 </script>
 
@@ -142,7 +161,7 @@ const base = import.meta.env.BASE_URL;
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 24px;
   }
 
   .nav-links a {
@@ -209,11 +228,19 @@ const base = import.meta.env.BASE_URL;
 
   .nav-close-li { display: none; }
 
+  .nav-search { display: flex; align-items: center; border: 1px solid var(--color-text-muted); border-radius: 6px; background: var(--color-bg); margin-left: 24px; width: 235px; flex-shrink: 0; }
+  .nav-search input { width: 100%; min-width: 0; border: 0; background: transparent; padding: 10px 8px 10px 12px; font: 14px var(--font-body); color: var(--color-ink); min-height: 44px; }
+  .nav-search button { display: grid; place-items: center; min-width: 44px; min-height: 44px; background: transparent; border: 0; color: var(--color-ink); cursor: pointer; }
+  .nav-search :focus-visible { outline: 2px solid var(--color-terracotta); outline-offset: 2px; border-radius: 4px; }
+  .search-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
   @media (max-width: 1024px) {
-    .nav { padding: 20px 24px; }
+    .nav { padding: 12px 24px; flex-wrap: wrap; gap: 8px; }
+    .nav-search { order: 3; margin: 0; width: 100%; }
+    .nav-logo { height: 64px; }
     .nav.scrolled { padding: 8px 24px; }
     .nav.scrolled .nav-logo { height: 48px; }
-    .nav-toggle { display: flex; }
+    .nav-toggle { display: flex; min-width: 44px; min-height: 44px; justify-content: center; }
 
     .nav-close-li {
       display: block;

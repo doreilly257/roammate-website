@@ -12,10 +12,13 @@ interface Props {
   ogType?: string;
   publishedAt?: string;
   updatedAt?: string;
+  analyticsEnabled?: boolean;
+  noindex?: boolean;
 }
 
 const { title, description = 'Connect with fellow travellers, share incredible experiences, and turn every trip into the adventure of a lifetime.', ogImage = '/images/hero-travelers-on-bus.webp', ogType = 'website', publishedAt, updatedAt } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { analyticsEnabled = true, noindex = false } = Astro.props;
 const ogImageURL = new URL(ogImage, Astro.site);
 const isHome = Astro.url.pathname === '/';
 // Freshness signal for the app schema, stamped at build time.
@@ -32,6 +35,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#c4562a">
   <meta name="description" content={description}>
+  {noindex && <meta name="robots" content="noindex,follow">}
   <title>{title}</title>
   <link rel="canonical" href={canonicalURL}>
   <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`}>
@@ -178,7 +182,7 @@ const buildDate = new Date().toISOString().split('T')[0];
     })} />
   )}
 </head>
-<body>
+<body data-analytics-enabled={String(analyticsEnabled)}>
   <div class="reading-progress" id="reading-progress"></div>
   <a href="#main" class="skip-to-content">Skip to content</a>
   <Nav />
@@ -203,6 +207,8 @@ const buildDate = new Date().toISOString().split('T')[0];
     const POSTHOG_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
 
     function init() {
+      // Search is a sensitive utility: omit all analytics initialization and handlers.
+      if (document.body.dataset.analyticsEnabled !== 'false') {
       // ---- PostHog idle loader (consent-gated) ----
       function readAnalyticsConsent() {
         try {
@@ -384,6 +390,8 @@ const buildDate = new Date().toISOString().split('T')[0];
           });
         }, { passive: true });
       })();
+
+      }
 
       // ---- Scroll reveal observer ----
       const reveals = document.querySelectorAll('.reveal');
