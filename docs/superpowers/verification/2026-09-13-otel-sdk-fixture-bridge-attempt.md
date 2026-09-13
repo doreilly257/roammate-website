@@ -97,16 +97,20 @@ inherited outer denial; it must separately demonstrate that any real macro child
 still runs inside that boundary. Success of the existing generic child control
 does not by itself establish the adjusted macro execution path.
 
-Until that prerequisite is resolved, the bridge remains unimplemented. Do not
+At that point, until the prerequisite was resolved, the bridge remained unimplemented. The constraints were: do not
 replace SDK types with stubs, strip `@TaskLocal`, weaken the outer policy, fetch
 packages, launch the app or call this SDK snapshot acceptance complete.
+Subsequent resolution and completed acceptance are recorded in the
+[final verification report](2026-09-13-otel-sdk-fixture-bridge.md).
 
 ### Subsequent approval, before a retry
 
 The user later explicitly approved testing the bounded compiler adjustment:
 package name plus disabling only Swift's inner subprocess sandbox while retaining
-and proving outer all-network denial for compiler children. The plan now proposes
+and proving outer all-network denial for compiler children. At that point, the plan proposed
 a temporary wrapper on the actual installed `SwiftMacros` plugin-server route to
 record explicit in-process TCP/UDP permission denials before `exec` of the
-unchanged Apple server. That concrete amendment awaits review; no adjusted build
-result or bridge implementation is claimed by this approval update.
+unchanged Apple server. That concrete amendment awaited review; no adjusted build
+result or bridge implementation was claimed by that approval update. Subsequent
+review, retry and successful acceptance are recorded in the
+[final verification report](2026-09-13-otel-sdk-fixture-bridge.md).
