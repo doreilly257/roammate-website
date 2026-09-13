@@ -2,6 +2,7 @@
 import AdminLayout from '../layouts/AdminLayout.astro';
 import { api, type Overview, type TimeseriesPoint, type ActivityEvent } from '../lib/api';
 import { num, pct, relative, sparkline, truncate } from '../lib/format';
+import { albumMetrics, safeRequestError } from '../lib/admin-metrics';
 
 const env = Astro.locals.runtime.env;
 
@@ -15,9 +16,8 @@ const [overviewRes, seriesRes, activityRes] = await Promise.all([
 const o = overviewRes.ok ? overviewRes.data : null;
 const points = seriesRes.ok ? seriesRes.data.points : [];
 const events = activityRes.ok ? activityRes.data.events : [];
-const errors = [overviewRes, seriesRes, activityRes]
-  .filter((r) => !r.ok)
-  .map((r) => (r as { error: string; status: number }));
+const albums = albumMetrics(o?.content);
+const errors = [safeRequestError(overviewRes, 'overview'), safeRequestError(seriesRes, 'timeseries'), safeRequestError(activityRes, 'activity')].filter(Boolean);
 
 const signupSpark = sparkline(points.map((p) => p.signups));
 const excursionSpark = sparkline(points.map((p) => p.excursions));
@@ -41,7 +41,7 @@ const KIND_LABEL: Record<string, string> = {
   reportsOpen={o?.queues.reportsOpen}
 >
   {errors.map((e) => (
-    <div class="err">Could not load part of this page: {e.error} (HTTP {e.status})</div>
+    <div class="err">{e}</div>
   ))}
 
   {o && (
@@ -133,17 +133,18 @@ const KIND_LABEL: Record<string, string> = {
         </div>
       </div>
 
+    </>
+  )}
+
       <h2>Content</h2>
+      {albums.warning && <p class="sub">{albums.warning}</p>}
       <div class="cards">
-        <div class="card">
-          <div class="label">Albums</div>
-          <div class="value">{num(o.content.albums)}</div>
-        </div>
-        <div class="card">
-          <div class="label">Media items</div>
-          <div class="value">{num(o.content.media)}</div>
-          <div class="foot"><a href="/media">Browse</a></div>
-        </div>
+        {albums.cards.map(card => <div class="card">
+          <div class="label">{card.label}</div>
+          <div class={card.metric.value === null ? 'sub' : 'value'}>{card.metric.text}{card.metric.note && ` — ${card.metric.note}`}</div>
+          <div class="foot">{card.help}{card.label === 'Media items' && <> · <a href="/media">Browse</a></>}</div>
+        </div>)}
+        {o && <>
         <div class="card">
           <div class="label">Messages (7d)</div>
           <div class="value">{num(o.content.messages7d)}</div>
@@ -159,9 +160,8 @@ const KIND_LABEL: Record<string, string> = {
           <div class="value">{num(o.queues.verificationPending)}</div>
           <div class="foot">Not yet approved or declined</div>
         </div>
+        </>}
       </div>
-    </>
-  )}
 
   <h2>Latest activity</h2>
   <div class="panel">

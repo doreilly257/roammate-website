@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import vm from 'node:vm';
 import ts from 'typescript';
+import * as metrics from '../src/lib/admin-metrics.ts';
 
 const quality = readFileSync(new URL('../src/pages/quality.astro', import.meta.url), 'utf8');
 const activity = readFileSync(new URL('../src/pages/activity.astro', import.meta.url), 'utf8');
@@ -32,6 +33,7 @@ test('quality makes incomplete structural checks explicit without hiding success
   }).outputText;
   const finding = { id: 'orphan', label: 'Orphan', count: 2, level: 'bad', why: 'Missing parent' };
   const result = await vm.runInNewContext(`${code}\nrender()`, {
+    ...metrics,
     Astro: { locals: { runtime: { env: {} } } },
     api: { get: async (_, path) => path === '/quality/anomalies'
       ? { ok: false, error: 'Unavailable', status: 503 }

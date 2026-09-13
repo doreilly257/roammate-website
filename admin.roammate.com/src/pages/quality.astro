@@ -3,6 +3,7 @@ import AdminLayout from '../layouts/AdminLayout.astro';
 import { api, type Overview } from '../lib/api';
 import { num, relative } from '../lib/format';
 import { bars, donut, fillMeter } from '../lib/charts';
+import { albumMetrics, webhookEvidence, safeRequestError, WEBHOOK_TABLE, WEBHOOK_SOURCES } from '../lib/admin-metrics';
 
 const env = Astro.locals.runtime.env;
 
@@ -19,13 +20,16 @@ const [tablesRes, colsRes, intRes, anomRes, freshRes, ovRes] = await Promise.all
   api.get<Overview>(env, '/overview'),
 ]);
 
-const tables = tablesRes.ok ? tablesRes.data.tables : [];
-const profiles = colsRes.ok ? colsRes.data.profiles : [];
+const tables = tablesRes.ok && Array.isArray(tablesRes.data.tables) ? tablesRes.data.tables.filter(t => t && typeof t === 'object') : [];
+const allProfiles = colsRes.ok && Array.isArray(colsRes.data.profiles) ? colsRes.data.profiles.filter(p => p && typeof p === 'object') : [];
+const profiles = allProfiles.filter(p => p.table !== WEBHOOK_TABLE);
 const integrity = intRes.ok ? intRes.data.checks : [];
 const anomalies = anomRes.ok ? anomRes.data.anomalies : [];
-const freshness = freshRes.ok ? freshRes.data.sources : [];
-const errors = [tablesRes, colsRes, intRes, anomRes, freshRes]
-  .filter((r) => !r.ok).map((r) => r as { error: string; status: number });
+const allFreshness = freshRes.ok && Array.isArray(freshRes.data.sources) ? freshRes.data.sources.filter(f => f && typeof f === 'object') : [];
+const freshness = allFreshness.filter(f => !WEBHOOK_SOURCES.includes(f.id));
+const albums = albumMetrics(ovRes.ok ? ovRes.data.content : undefined);
+const webhook = webhookEvidence(tables, allProfiles, allFreshness);
+const errors = [safeRequestError(tablesRes, 'tables'), safeRequestError(colsRes, 'columns'), safeRequestError(intRes, 'integrity'), safeRequestError(anomRes, 'anomalies'), safeRequestError(freshRes, 'freshness'), safeRequestError(ovRes, 'overview')].filter(Boolean);
 
 /** Anything not green, ordered worst first. This is the whole point of the page:
  *  a list of things to look at, before any of the detail. */
@@ -34,7 +38,7 @@ const failing = [...integrity, ...anomalies]
   .sort((a, b) => (a.level === b.level ? b.count - a.count : a.level === 'bad' ? -1 : 1));
 
 const tableChart = tables
-  .filter((t) => t.rows > 0)
+  .filter((t) => t.table !== WEBHOOK_TABLE && t.rows > 0)
   .sort((a, b) => b.rows - a.rows)
   .map((t) => ({ label: t.table, value: t.rows }));
 
@@ -65,7 +69,7 @@ const staleness = (iso: string | null) => {
   subtitle="Structural profiling of the production database"
   reportsOpen={ovRes.ok ? ovRes.data.queues.reportsOpen : undefined}
 >
-  {errors.map((e) => <div class="err">Could not load part of this page: {e.error} (HTTP {e.status})</div>)}
+  {errors.map((e) => <div class="err">{e}</div>)}
 
   <div class="err" style="background:rgba(245,165,36,0.1);border-color:#f5a524;color:#ffe0ad">
     <strong>These are structural checks.</strong> They find emptiness, orphans, duplicates and
@@ -73,6 +77,45 @@ const staleness = (iso: string | null) => {
     the right format but the wrong timezone, or a location that is real but stale. Clean here
     means nothing is structurally broken, never that the data is correct.
   </div>
+
+  <h2>Album content</h2>
+  {albums.warning && <p class="sub">{albums.warning}</p>}
+  <div class="cards">
+    {albums.cards.map(card => <div class="card">
+      <div class="label">{card.label}</div>
+      <div class={card.metric.value === null ? 'sub' : 'value'}>{card.metric.text}{card.metric.note && ` — ${card.metric.note}`}</div>
+      <div class="foot">{card.help}</div>
+    </div>)}
+  </div>
+
+  <section id="webhook-evidence" aria-labelledby="webhook-heading">
+    <h2 id="webhook-heading">Verification webhook evidence</h2>
+    <p class="sub" style="max-width:90ch;margin-bottom:12px">These are retained ledger records, not lifetime webhook deliveries. Processing includes ignored events and does not prove successful identity verification. Recent timestamps do not establish pipeline health; older timestamps may mean inactivity.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="label">Retained webhook rows</div>
+        <div class={webhook.rows.value === null ? 'sub' : 'value'}>{webhook.rows.text}</div>
+        {webhook.rows.note && <div class="foot">{webhook.rows.note}</div>}
+      </div>
+      {[{label:'Newest recorded receipt',metric:webhook.received},{label:'Newest recorded processing',metric:webhook.processed}].map(item => <div class="card">
+        <div class="label">{item.label}</div>
+        <div class="mono" style="overflow-wrap:anywhere">{item.metric.text}</div>
+        <div class="foot">{item.metric.note}</div>
+      </div>)}
+    </div>
+    <p class="sub" style="margin:12px 0">Column counts are reported aggregates, not proof of completeness. Zero aggregates cannot be distinguished from a failed probe. Receipt and processing maxima may refer to different events; no latency is inferred.</p>
+    <div class="panel"><div class="table-wrap">
+      <table>
+        <thead><tr><th>Ledger column</th><th>Filled</th><th>Blank</th><th>Distinct states</th></tr></thead>
+        <tbody>{webhook.columns.map(column => <tr>
+          <th scope="row" class="mono">{column.column}</th>
+          {[column.filled,column.blank,column.distinct].map(metric => <td style="white-space:normal;min-width:150px">
+            {metric ? <>{metric.text}<div class="sub">{metric.note}</div></> : 'Not applicable'}
+          </td>)}
+        </tr>)}</tbody>
+      </table>
+    </div></div>
+  </section>
 
   <h2>Needs attention</h2>
   {(!intRes.ok || !anomRes.ok) && (

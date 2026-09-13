@@ -101,7 +101,7 @@ export type Overview = {
   generatedAt: string;
   users: { total: number; verified: number; ejected: number; new7d: number; new30d: number; active7d: number };
   excursions: { total: number; upcoming: number; deleted: number; new7d: number; participants: number };
-  content: { albums: number; media: number; messages7d: number };
+  content: { albums: number; albumsWithMedia?: number; media: number; messages7d: number };
   queues: { reportsOpen: number; sosOpen: number; verificationPending: number };
 };
 

@@ -2,7 +2,7 @@
 
 Date: 2026-09-13
 
-Status: Draft; recommendation accepted for specification, not implementation. Written-spec review and user approval remain required before an implementation plan or code. Work paused when the user pivoted to site search.
+Status: Written design explicitly user-approved for local-only implementation, implemented in `652e642` and independently re-reviewed. Verification: 57 focused tests and the 219-test admin suite before metrics integration passed. No deployment authorized or claimed; production original-media review remains disabled.
 
 Scope: `roammate-website-7ku` (media), `roammate-website-xqs` (forms), and `roammate-website-i6q` (read failures). Beads remain the task/status authority.
 
