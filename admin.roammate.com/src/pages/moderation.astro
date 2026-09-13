@@ -2,10 +2,13 @@
 import AdminLayout from '../layouts/AdminLayout.astro';
 import { api, type AdminReport, type ModerationAction, type Overview } from '../lib/api';
 import { dateTime, num, relative, truncate } from '../lib/format';
+import { describeLocalTarget, localMediaEnabled, type ReviewDescription } from '../lib/moderation-media';
 
 const env = Astro.locals.runtime.env;
 const url = Astro.url;
 const status = url.searchParams.get('status') || 'open';
+// Build-time DEV is mandatory: neither a deployed binding nor request input can enable this prototype.
+const localOriginalMedia = import.meta.env.DEV && localMediaEnabled(true, import.meta.env.LOCAL_MODERATION_MEDIA);
 
 const [res, logRes, overviewRes] = await Promise.all([
   api.get<{ reports: AdminReport[] }>(env, `/reports?status=${encodeURIComponent(status)}&limit=200`),
@@ -29,17 +32,22 @@ const targetRes = selectedReport
   ? await api.get<TargetPayload>(env, `/reports/${encodeURIComponent(selectedReport.id)}/target`)
   : null;
 const targetPreview = targetRes?.ok && targetRes.data.targetType === selectedReport?.target_type
-  ? describeTarget(targetRes.data) : null;
+  ? (localOriginalMedia ? describeLocalTarget(targetRes.data) : describeTarget(targetRes.data)) : null;
+const mediaReviewRequired = !!(localOriginalMedia && targetPreview?.media?.length);
 const targetError = targetRes && !targetRes.ok
   ? `Could not load reported content: ${targetRes.error} (HTTP ${targetRes.status}).`
   : 'Reported content is unavailable, deleted, or not supported for full review here. Video messages and album media without a verified image type cannot be reviewed in this console.';
 const reviewHref = (id: string) => `/moderation?${new URLSearchParams({ status, report: id })}#report-${encodeURIComponent(id)}`;
 
 /** Renders the handful of fields that matter per target type. */
-function describeTarget(t: TargetPayload | undefined): { label: string; body: string; image?: string } | null {
-  if (!t || !t.target) return null;
+function describeTarget(t: TargetPayload | undefined): ReviewDescription | null {
+  if (!t || !t.target || typeof t.target !== 'object' || Array.isArray(t.target)) return null;
   const g = (k: string) => (t.target?.[k] == null ? '' : String(t.target[k]));
   if (t.targetType === 'message') {
+    if (t.target.is_deleted != null && t.target.is_deleted !== 0 && t.target.is_deleted !== false) return null;
+    if (t.target.content != null && typeof t.target.content !== 'string') return null;
+    if (t.target.image_url != null && typeof t.target.image_url !== 'string') return null;
+    if (!g('content').trim() && !g('image_url')) return null;
     if (g('video_url')) return null;
     return { label: 'Reported message', body: g('content') || '(no text — media only)', image: g('image_url') || undefined };
   }
@@ -47,8 +55,7 @@ function describeTarget(t: TargetPayload | undefined): { label: string; body: st
     return { label: 'Reported excursion', body: `${g('title')}\n\n${g('description')}`.trim(), image: g('cover_image_url') || undefined };
   }
   if (t.targetType === 'album_media') {
-    // The current API omits media type: do not guess from URL or thumbnail.
-    // Require a future authoritative image type before enabling this review.
+    // Preserve production restriction until deployed photo/video contract and UX are verified.
     if (g('type') !== 'image' || !g('url')) return null;
     return { label: 'Reported media', body: g('caption') || '(no caption)', image: g('url') };
   }
@@ -67,19 +74,29 @@ function overdue(r: AdminReport): boolean {
 
 let flash: { kind: 'ok' | 'err'; message: string } | null = null;
 if (Astro.request.method === 'POST') {
-  const form = await Astro.request.formData();
-  const reportId = String(form.get('reportId') || '');
-  const action = String(form.get('action') || 'dismiss');
-  const notes = String(form.get('notes') || '').slice(0, 500);
+  let form: FormData | null = null;
+  try { form = await Astro.request.formData(); } catch { /* Reject malformed bodies without mutation. */ }
+  const ids = form?.getAll('reportId') ?? [];
+  const actions = form?.getAll('action') ?? [];
+  const reviews = form?.getAll('reviewed') ?? [];
+  const noteValues = form?.getAll('notes') ?? [];
+  const reportId = ids[0];
+  const action = actions[0];
+  const notes = noteValues[0] ?? '';
 
   const allowedAction = action === 'dismiss' || (action === 'remove_content_and_eject_user' && !!selectedReport?.target_user_id);
-  if (!selectedReport || selectedReport.id !== reportId || selectedReport.status !== 'open' || !targetPreview || form.get('reviewed') !== 'yes' || !allowedAction) {
+  if (ids.length !== 1 || typeof reportId !== 'string' || !reportId || actions.length !== 1
+      || reviews.length !== 1 || reviews[0] !== 'yes' || noteValues.length > 1 || typeof notes !== 'string'
+      || (action !== 'dismiss' && action !== 'remove_content_and_eject_user')) {
+    Astro.response.status = 400;
+    flash = { kind: 'err', message: 'Invalid decision form. No change was submitted.' };
+  } else if (!selectedReport || selectedReport.id !== reportId || selectedReport.status !== 'open' || !targetPreview || !allowedAction) {
     flash = { kind: 'err', message: 'Open this report, load its content, and confirm your review before making a decision.' };
   } else {
     const result = await api.post(env, `/reports/${encodeURIComponent(reportId)}/resolve`, {
       actorId: Astro.locals.operator,
       action,
-      notes,
+      notes: notes.slice(0, 500),
     });
     if (result.ok) return Astro.redirect(`/moderation?status=${encodeURIComponent(status)}`, 303);
     flash = { kind: 'err', message: `${result.error} (HTTP ${result.status})` };
@@ -91,7 +108,7 @@ const STATUSES = ['open', 'resolved'];
 
 <AdminLayout
   title="Moderation"
-  subtitle={`${num(reports.length)} ${status} report${reports.length === 1 ? '' : 's'}`}
+  subtitle={res.ok ? `${num(reports.length)} ${status} report${reports.length === 1 ? '' : 's'}` : 'Moderation queue unavailable'}
   reportsOpen={overviewRes.ok ? overviewRes.data.queues.reportsOpen : undefined}
 >
   {flash && <div class={flash.kind === 'ok' ? 'notice' : 'err'}>{flash.message}</div>}
@@ -108,11 +125,11 @@ const STATUSES = ['open', 'resolved'];
     ))}
   </div>
 
-  {reports.length === 0 ? (
-    <div class="panel"><div class="empty">No {status} reports. Nothing needs attention.</div></div>
+  {res.ok && (reports.length === 0 ? (
+    <div class="panel"><div class="empty">No {status} reports in this queue.</div></div>
   ) : (
     reports.map((r) => (
-      <div class="panel" id={`report-${r.id}`} style="margin-bottom:12px">
+      <div class="panel" id={`report-${r.id}`} data-local-media-review={r.id === selectedReport?.id && mediaReviewRequired ? '' : undefined} style="margin-bottom:12px">
         <div class="panel-head">
           <h3>
             <span class="pill warn">{r.reason}</span>
@@ -164,6 +181,17 @@ const STATUSES = ['open', 'resolved'];
                   {targetPreview.image && (
                     <img src={targetPreview.image} alt="Reported content — review before deciding" referrerpolicy="no-referrer" style="max-width:100%;height:auto;border-radius:5px;display:block;margin-bottom:8px" />
                   )}
+                  {targetPreview.media?.map((media) => media.kind === 'image' ? (
+                    <img data-review-original src={media.url} alt="Original reported image — review before deciding" referrerpolicy="no-referrer" style="max-width:100%;height:auto;display:block;margin-bottom:8px" />
+                  ) : (
+                    <video data-review-original src={media.url} controls preload="metadata" aria-label="Original reported video with audio — review before deciding" style="max-width:100%;display:block;margin-bottom:8px">
+                      Original video playback is unavailable. Do not confirm full review.
+                    </video>
+                  ))}
+                  {mediaReviewRequired && <>
+                    <p data-media-status role="status">Local prototype: waiting for every original. Play videos with audible sound before confirming full review.</p>
+                    <noscript><p class="err">JavaScript is required for local media readiness checks. No decision is available for this media.</p></noscript>
+                  </>}
                   <p style="white-space:pre-wrap;margin:0;color:var(--ink)">{targetPreview.body}</p>
                 </div>
               ) : (
@@ -178,16 +206,17 @@ const STATUSES = ['open', 'resolved'];
               <div>
                 <form method="post" action={reviewHref(r.id)}>
                   <input type="hidden" name="reportId" value={r.id} />
-                  <label style="display:block;margin-bottom:8px"><input type="checkbox" name="reviewed" value="yes" required /> I have reviewed the full reported content, including any media, and am ready to decide.</label>
+                  <label style="display:block;margin-bottom:8px"><input type="checkbox" name="reviewed" value="yes" required disabled={mediaReviewRequired} /> I have reviewed the full reported content, including any media and audio, and am ready to decide.</label>
                   <textarea aria-label="Decision notes" name="notes" rows="2" placeholder="Notes (recorded against this decision)" style="width:100%;margin-bottom:8px"></textarea>
                   <div style="display:flex;gap:8px;flex-wrap:wrap">
-                    <button type="submit" name="action" value="dismiss">Dismiss</button>
+                    <button type="submit" name="action" value="dismiss" disabled={mediaReviewRequired}>Dismiss</button>
                     <button
                       type="submit"
                       name="action"
                       value="remove_content_and_eject_user"
                       class="danger"
-                      disabled={!r.target_user_id}
+                      disabled={!r.target_user_id || mediaReviewRequired}
+                      data-unavailable={!r.target_user_id ? 'true' : undefined}
                       title={r.target_user_id ? '' : 'This report has no target user to eject'}
                     >
                       Eject user &amp; remove content
@@ -200,11 +229,13 @@ const STATUSES = ['open', 'resolved'];
         </div>
       </div>
     ))
-  )}
+  ))}
 
   <h2>Recent moderation actions</h2>
   <div class="panel">
-    {log.length === 0 ? (
+    {!logRes.ok ? (
+      <div class="err" role="status">Could not load moderation history: {logRes.error} (HTTP {logRes.status}). Reload to retry.</div>
+    ) : log.length === 0 ? (
       <div class="empty">No moderation actions have been taken.</div>
     ) : (
       <div class="table-wrap">
@@ -232,3 +263,11 @@ const STATUSES = ['open', 'resolved'];
     )}
   </div>
 </AdminLayout>
+
+<script>
+  import { bindMediaReview } from '../lib/moderation-media-controller';
+  // Production builds do not initialize the local prototype, even with injected DOM attributes.
+  if (import.meta.env.DEV) {
+    document.querySelectorAll<HTMLElement>('[data-local-media-review]').forEach(bindMediaReview);
+  }
+</script>

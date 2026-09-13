@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import ts from 'typescript';
 
 const source = readFileSync(new URL('../src/pages/moderation.astro', import.meta.url), 'utf8');
-const frontmatter = source.split('---')[1].replace(/^import .*;\n/gm, '');
+const frontmatter = source.split('---')[1].replace(/^import .*;\n/gm, '').replaceAll('import.meta.env.DEV', 'false').replaceAll('import.meta.env.LOCAL_MODERATION_MEDIA', 'undefined');
 const compiled = ts.transpileModule(`async function render() { ${frontmatter} }`, {
   compilerOptions: { target: ts.ScriptTarget.ES2022 },
 }).outputText;
@@ -13,10 +13,12 @@ const compiled = ts.transpileModule(`async function render() { ${frontmatter} }`
 async function render({ selected = '', method = 'GET', form = {}, target = { targetType: 'message', target: { content: 'Full reported message' } }, failed = false, reportStatus = 'open', targetType = 'message' } = {}) {
   const calls = [];
   const reports = Array.from({ length: 200 }, (_, i) => ({ id: `r${i}`, status: reportStatus, target_type: targetType, target_user_id: 'u1' }));
+  const fields = new FormData();
+  for (const [key, value] of Object.entries(form)) fields.append(key, value);
   const Astro = {
     url: new URL(`https://admin.test/moderation?status=open&report=${encodeURIComponent(selected)}`),
     locals: { runtime: { env: {} }, operator: 'operator@test' },
-    request: { method, formData: async () => new Map(Object.entries(form)) },
+    request: new Request('https://admin.test/moderation', { method, ...(method === 'POST' ? { body: fields } : {}) }),
     response: { headers: new Headers() },
     redirect: (url) => ({ redirect: url }),
   };
@@ -54,6 +56,9 @@ for (const [label, options] of [
   ['missing acknowledgement', { selected: 'r1', form: { reportId: 'r1', action: 'dismiss' } }],
   ['failed target', { selected: 'r1', failed: true }],
   ['deleted target', { selected: 'r1', target: { targetType: 'message', target: null } }],
+  ['deleted message payload', { selected: 'r1', target: { targetType: 'message', target: { content: 'Deleted text', is_deleted: 1 } } }],
+  ['empty message payload', { selected: 'r1', target: { targetType: 'message', target: {} } }],
+  ['malformed message text', { selected: 'r1', target: { targetType: 'message', target: { content: {} } } }],
   ['unsupported target', { selected: 'r1', target: { targetType: 'unknown', target: {} } }],
   ['mismatched target type', { selected: 'r1', target: { targetType: 'user', target: { name: 'Other content' } } }],
   ['message video that cannot be reviewed', { selected: 'r1', target: { targetType: 'message', target: { id: 'msg1', content: 'Caption is not the full video', image_url: null, video_url: 'https://media.test/video.mp4' } } }],
@@ -74,12 +79,12 @@ test('acknowledged selected review fetches content before resolving', async () =
   assert.ok(calls.findIndex(([, path]) => path === '/reports/r1/target') < calls.findIndex(([method]) => method === 'POST'));
 });
 
-test('review UI explicitly gates decisions and offers native retry without client scripting', () => {
+test('review UI explicitly gates decisions and offers native retry with local-only media scripting', () => {
   assert.match(source, /View reported content/);
   assert.match(source, /Retry loading content/);
   assert.match(source, /r\.status === 'open' && r\.id === selectedReport\?\.id && targetPreview/);
   assert.match(source, /name="reviewed" value="yes" required/);
-  assert.doesNotMatch(source, /<script/);
+  assert.match(source, /import\.meta\.env\.DEV/);
 });
 
 test('reported media uses original content rather than thumbnail-only review', () => {
