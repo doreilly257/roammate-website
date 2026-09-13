@@ -67,10 +67,29 @@ Results:
 
 Root independently reran **both offline harness commands**, confirmed the same auth 15/ten-site and telemetry 45/gate/four-field results, inspected code and Android string-property parity, and approved the narrow local scope. Root also confirmed diff checking passed.
 
-The auth compilation harness uses minimal event-namespace/redaction stubs. It tests actual helper behavior but does not test real redaction or the complete app dependency graph. **No iOS XCTest target run or full Xcode build occurred** because concurrent-agent restrictions prohibited `xcodebuild`. Syntax parsing and pure Swift execution are not substitutes for that later target verification.
+The auth compilation harness uses minimal event-namespace/redaction stubs. It tests actual helper behavior but does not test real redaction or the complete app dependency graph. No iOS XCTest target run occurred. During delegated implementation, concurrent-agent restrictions prohibited `xcodebuild`.
+
+### Subsequent serial app build and lint cleanup
+
+After delegates finished, root ran the real app Debug build for `generic/platform=iOS Simulator`. The first verbose attempt exceeded the wrapper's 8 MB output cap; that wrapper result did not establish compiler failure. The incremental `-quiet` retry exited **0**, establishing an app build PASS, not a native XCTest target run. Root's retained log is `/Users/doreilly/.lean-ctx/tee/xcodebuild_-quiet_-project_roammate_xcod_c0f6c3dd.log`. Wrapper/parser diagnostic labels do not override the observed command exit status.
+
+That build exposed two new SwiftLint warnings. A narrow follow-up renamed the offline-only status case `ok` to `success` consistently in its source and both test fixtures, and compacted two capture-formatting lines in the existing interactive X sign-in function. Event behavior and exporter isolation are unchanged. Focused SwiftLint over the projection, WebOAuth extension and telemetry test file then completed without warnings; both pure Swift harnesses again passed all 15 auth combinations/ten sites and 45 telemetry combinations/gate/four-field checks, and owner diff checking passed. No additional `xcodebuild` was run by the delegate.
+
+Root subsequently reran both pure Swift harnesses with the same passing results and completed the **post-cleanup serial, quiet, unsigned Debug generic Simulator app build with exit 0** (execution session `6383`, terminal chunk `6b8eb8`). The new offline status identifier and WebOAuth body-length warnings were absent; unrelated existing compiler warnings remain. This establishes final local app build verification, not a warning-free full build, native XCTest execution, app launch, live export or release acceptance.
+
+The final command chain, run from the iOS owner repository, exited 0:
+
+```sh
+python3 scripts/test-offline-auth-telemetry.py auth &&
+python3 scripts/test-offline-auth-telemetry.py telemetry &&
+git diff --check &&
+xcodebuild -quiet -project roammate.xcodeproj -scheme roammate \
+  -configuration Debug build -destination 'generic/platform=iOS Simulator' \
+  -disableAutomaticPackageResolution -skipPackageUpdates CODE_SIGNING_ALLOWED=NO
+```
 
 ## Owner handoff and remaining acceptance
 
 Owner Beads `roammate-app-ios-agpm` and `roammate-app-ios-t5hy` were claimed and updated with local evidence, inventory correction and remaining boundaries. Their broader release/coverage scope was not closed merely because this slice passed. Website tracking remains the supervising root agent's responsibility.
 
-No owner commit or push, app/backend release or deployment, live provider exchange, production flag change, store upload or personal-record mutation was performed by these changes. Released social-event delivery, full iOS target verification and any future telemetry adapter/export integration remain separate acceptance tasks. The previously approved four English metadata edits are a different local change and are documented separately.
+No owner commit or push, app/backend release or deployment, live provider exchange, production flag change, store upload or personal-record mutation was performed by these changes. Released social-event delivery, native XCTest target execution and any future telemetry adapter/export integration remain separate acceptance tasks. The previously approved four English metadata edits are a different local change and are documented separately.
