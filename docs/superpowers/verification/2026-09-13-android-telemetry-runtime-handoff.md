@@ -83,3 +83,51 @@ build window plus an available approved offline VM/image or a demonstrated
 equivalent with preboot isolation and positive-controlled attempt observation.
 The prior local unit-test evidence remains separate from this unexecuted runtime
 acceptance.
+
+## Fresh APK prerequisite completed — 11:20 UTC follow-up
+
+The earlier September 10 artifact and active-build observations above are
+historical, not the current artifact state. At this follow-up the owner tree was
+clean at **`66932061aff7849d7d54d830fc3dbf20c8ce5850`** before and after assembly;
+the startup suppression was already committed in `caad7490`, not an outstanding
+dirty-file change. No active Gradle client was observed before starting this
+explicitly approved local assembly; a Gradle daemon remained present. This is not
+a claim that an owner-agreed build window was separately obtained.
+
+The root ran in `/Users/doreilly/Work/roammate-app-android`:
+
+```sh
+JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home \
+  ./gradlew --offline --console=plain :app:assembleDebug :app:assembleDebugAndroidTest
+```
+
+Assembly succeeded: **13 minutes 9 seconds**, 1,309 actionable tasks (48 executed,
+1,261 up-to-date), terminal session `69427`, chunk `fefd2a`, exit 0. The temporary
+log is `/Users/doreilly/.lean-ctx/tee/JAVA_HOME__opt_homebrew_opt_openjdk_21_l_1355ed4d.log`
+with 24-hour retention; it is not a durable verification artifact.
+
+| Artifact under owner repository | Bytes | Modified UTC, 2026-09-13 | SHA-256 |
+| --- | ---: | --- | --- |
+| `app/build/outputs/apk/debug/app-debug.apk` | 37,100,151 | 11:19:58 | `d061d3b22e9c8fc4e97f266639e457b677d5b91f7c3c892ae39e7f71b2f2cca6` |
+| `app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk` | 1,663,701 | 11:20:49 | `269bad8ed61c5be3948f838b2094789860c33994b33a085e9a2309565c3dbe16` |
+
+The report author independently rechecked both hashes and the clean source
+revision. Root inspection using build-tools `aapt` 36.0.0 confirmed instrumentation
+runner `com.roammate.app.RoammateTestRunner`, target package
+`com.roammate.app.android`, and app version code 13 / version name `2026.3.7`.
+No APK was installed, no emulator booted and no device test was run.
+
+**The fresh-APK prerequisite is now satisfied.** The remaining concrete runtime
+prerequisite is the approved disposable environment with demonstrated preboot
+isolation and a positive-controlled, app-attributed connection-attempt observer.
+The existing `TelemetryStartupTest` already checks actual absent SDK/analytics
+handles, null logging bridges, a non-recording span, counter/capture no-ops and
+flush calls. Its assertions do not include a timed observation interval.
+
+Owner `RoammateTelemetry.kt` configures trace/log batching at 5 seconds and the
+metric reader at 30 seconds. The eventual harness must record the actual process
+lifetime and observe the instrumented process for **longer than 30 seconds**;
+merely waiting after a process has exited is not equivalent. Neither process
+lifetime nor a working observer is inferred from successful APK assembly. Preserve
+`1k3c` instrumented no-egress acceptance and `46f`'s separate historical/demo-review
+exclusion boundary until the corresponding evidence exists.
