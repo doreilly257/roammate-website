@@ -2,13 +2,13 @@
 
 Date: 2026-09-13  
 Bead: `roammate-website-f6o`  
-Status: Independently reviewed and approved; awaiting user approval for local implementation. The user authorized design preparation, not implementation or deployment.
+Status: Independently reviewed and approved; local implementation and verification authorized by the user's subsequent instruction to proceed until done. Deployment remains unauthorized.
 
 ## Goal and scope
 
 Prevent malformed HTTP-200 Pagefind index/filter responses from appearing as successful empty or incomplete search results. Preserve the existing search error/Retry/browse fallback and no-additional-cost static architecture. This extends the approved site-search design, rather than introducing a new search engine or global transport layer.
 
-Approval would authorize local implementation and verification only. No production/preview deployment, backend/admin change, paid service, dependency upgrade, new infrastructure, GitHub Actions workflow, search telemetry, or customer-data probe is included. Generated output remains in `dist/pagefind/`, never `public/` or tracked source. Keep Pagefind pinned to `1.5.2`.
+Authorization covers local implementation and verification only. No production/preview deployment, backend/admin change, paid service, dependency upgrade, new infrastructure, GitHub Actions workflow, search telemetry, or customer-data probe is included. Generated output remains in `dist/pagefind/`, never `public/` or tracked source. Keep Pagefind pinned to `1.5.2`.
 
 ## Confirmed defect and selected approach
 
@@ -108,4 +108,4 @@ Required acceptance evidence:
 - Real locally served generated Pagefind 1.5.2 with at least two documents: healthy search; malformed HTTP-200 index; restore plus Retry; malformed HTTP-200 filter; restore plus Retry; genuine unmatched query. Corruption must show error, never ready/0 or incomplete successful facets. Genuine unmatched query remains ready/0. Destroy/reset between cases to defeat in-memory caches. Exercise stale/missing manifest entry and recovery, plus request redirect refusal without any redirect-target request. Capture fixed asset traffic showing one manifest load per epoch, no duplicate verification downloads, and no query-bearing search requests.
 - Repeat healthy/error/recovery against the full local generated site with enforced search CSP and no production telemetry. Run public tests, Astro type-check, full build/link/index validation, and applicable nonce/deploy tests. Verify complete generated manifest and unchanged sitemap/RSS behavior. Record actual browser/version and results, not untested coverage claims.
 
-Independent review approved this design without serious gaps. User approval of the written design is still required before local implementation. Local evidence cannot establish deployed activation; preview/production release and live verification require separate authorization.
+Independent review approved this design without serious gaps. The user's subsequent instruction authorizes proceeding with local implementation and verification without another approval prompt. Local evidence cannot establish deployed activation; preview/production release and live verification require separate authorization.
