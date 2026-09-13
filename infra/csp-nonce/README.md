@@ -217,10 +217,13 @@ evidence above does not cover this search release or its route-specific CSP.
   index/filter transport health while preserving request, response and error
   behavior for other fetches.
 
-Malformed HTTP-200 asset responses remain an upstream Pagefind limitation tracked
-in **`roammate-website-f6o`**; successful network-abort recovery does not establish
-recovery from every corrupt response. An isolated SRI prototype is not shipped
-in the preview. Preview verification for **`roammate-website-xsf`** is recorded
+The preview above predates integrity hardening: successful network-abort recovery
+alone does not establish recovery from malformed HTTP-200 responses. The reviewed
+local implementation for **`roammate-website-f6o`** now verifies index/filter chunks
+with a generated digest manifest and native Fetch SRI. See the
+[local integrity report](../../docs/superpowers/verification/2026-09-13-pagefind-integrity.md)
+for corruption/Retry evidence, fixture commands and limits. This implementation
+has not been deployed to preview or production. Preview verification for **`roammate-website-xsf`** is recorded
 separately in the linked report; production authorization and production-specific
 verification remain outstanding. Do not infer production activation from local
 or preview results.

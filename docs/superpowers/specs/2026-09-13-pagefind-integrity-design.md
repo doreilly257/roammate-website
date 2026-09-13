@@ -2,7 +2,7 @@
 
 Date: 2026-09-13  
 Bead: `roammate-website-f6o`  
-Status: Independently reviewed and approved; local implementation and verification authorized by the user's subsequent instruction to proceed until done. Deployment remains unauthorized.
+Status: Independently reviewed local implementation is present; local verification is recorded in the [integrity report](../verification/2026-09-13-pagefind-integrity.md). The user's subsequent instruction authorized proceeding locally until done. Deployment remains unauthorized.
 
 ## Goal and scope
 
