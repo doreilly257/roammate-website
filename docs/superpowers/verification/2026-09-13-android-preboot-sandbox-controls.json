@@ -1,0 +1,102 @@
+{
+  "assessment": "host-synthetic-only",
+  "results": [
+    {
+      "mode": "files",
+      "home_write": true,
+      "result": "allowed",
+      "case": "files-positive",
+      "elapsed_ms": 110,
+      "subprocess_exit": 0
+    },
+    {
+      "mode": "files",
+      "home_write": true,
+      "result": "error",
+      "errno": 1,
+      "case": "files-sandbox",
+      "elapsed_ms": 109,
+      "subprocess_exit": 0
+    },
+    {
+      "mode": "tcp4",
+      "result": "allowed",
+      "case": "deny-tcp4-positive",
+      "elapsed_ms": 151,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "mode": "tcp4",
+      "result": "error",
+      "errno": 1,
+      "case": "deny-tcp4-sandbox",
+      "elapsed_ms": 103,
+      "subprocess_exit": 0,
+      "receiver_markers": 0
+    },
+    {
+      "mode": "udp4",
+      "result": "allowed",
+      "case": "deny-udp4-positive",
+      "elapsed_ms": 104,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "mode": "udp4",
+      "result": "error",
+      "errno": 1,
+      "case": "deny-udp4-sandbox",
+      "elapsed_ms": 107,
+      "subprocess_exit": 0,
+      "receiver_markers": 0
+    },
+    {
+      "mode": "tcp6",
+      "result": "allowed",
+      "case": "deny-tcp6-positive",
+      "elapsed_ms": 105,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "mode": "tcp6",
+      "result": "error",
+      "errno": 1,
+      "case": "deny-tcp6-sandbox",
+      "elapsed_ms": 130,
+      "subprocess_exit": 0,
+      "receiver_markers": 0
+    },
+    {
+      "mode": "fd",
+      "result": "allowed",
+      "case": "fd-positive",
+      "elapsed_ms": 91,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "mode": "fd",
+      "result": "allowed",
+      "case": "fd-sandbox",
+      "elapsed_ms": 104,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "case": "numeric-ipv4-exception-policy",
+      "result": "unsupported_tested_syntax",
+      "subprocess_exit": 65,
+      "category": "numeric-host-selector-rejected"
+    }
+  ],
+  "host": {
+    "system": "Darwin",
+    "release": "25.6.0",
+    "machine": "arm64",
+    "python": "3.14.7"
+  },
+  "scriptSha256": "cc658dc8a99aa2ca00b9fb18d6935a1062cf3ad3a1a7ef8e506e56e47ee30988"
+}
