@@ -65,6 +65,27 @@ production binding is absent. If topology permits existing fetch instead, record
 why with owner evidence and verify that exact topology before live acceptance.
 No workaround using public aliases or bypassing Access may be improvised.
 
+### 2026-09-13 local transport follow-up — not cutover approval
+
+After this design review, the user separately approved local transport code and
+two synthetic Worker tests only. The resulting local-only evaluation commit
+`8a6bfd111a5ffddafd0da17d93898623dad018fe` implements `ADMIN_API` selection and
+requires it for every non-loopback API target, with ordinary fetch limited to
+credential-free HTTP loopback mocks. It does not configure a live service binding.
+The [transport verification](../verification/2026-09-13-admin-service-transport.md)
+records 255 passing tests, check/build/built-Worker smoke and independent review,
+including actual two-Worker redirect refusal, no fallback and header/body deadlines.
+The earlier paragraph about unimplemented transport describes original evaluation
+commit `26449774e009aa1918d39aaba2ae3231421e4926`, not this follow-up.
+
+This satisfies the locally approved transport implementation scope, not production
+topology or cutover acceptance. Exact target/environment confirmation, reviewed
+live binding configuration, scoped-key provenance, all-host Access, cost limits
+and the whole-Pages rollback sequence below remain gates. Main runtime is unchanged;
+neither evaluation commit was pushed, merged or deployed. If a future reviewed
+topology uses ordinary fetch instead, the new non-loopback binding requirement
+would need an explicit reviewed code decision; it cannot be bypassed by configuration.
+
 ## Security and no-cost invariants
 
 | Boundary | Required invariant |
