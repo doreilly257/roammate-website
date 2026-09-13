@@ -1,5 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getSearchArticle } from '../lib/search-manifest-data';
+const searchArticle = await getSearchArticle(Astro.url.pathname);
 import { getDerivedGuides } from '../data/guides';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import AppCTA from '../components/AppCTA.astro';
@@ -158,6 +160,13 @@ const renderInlineLinks = (text: string) => {
 
 <BaseLayout title={`${title} | roammate Blog`} description={description} ogImage={heroImage} ogType="article" publishedAt={isoPublishedAt} updatedAt={isoUpdatedAt}>
   <Fragment slot="head">
+    {searchArticle && <>
+      <meta data-pagefind-meta="title[content]" content={searchArticle.title} />
+      <meta data-pagefind-meta="description[content]" content={searchArticle.description} />
+      <meta data-pagefind-meta="type[content]" data-pagefind-filter="type[content]" content={searchArticle.type} />
+      {searchArticle.countries.map(country => <meta data-pagefind-filter="country[content]" content={country} />)}
+    </>}
+
     {category && <meta name="ph-category" content={category}>}
     <link rel="preload" as="image" type="image/webp" href={heroImage}>
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -203,11 +212,11 @@ const renderInlineLinks = (text: string) => {
       <slot name="head" />
   </Fragment>
 
-  <article>
+  <article data-pagefind-body={searchArticle ? true : undefined}>
     <section class="blog-post-hero">
       <div class="blog-post-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${escapeCssUrl(heroImage)}');`} />
       <div class="blog-post-hero-content">
-        <div class="blog-post-breadcrumb">
+        <div data-pagefind-ignore class="blog-post-breadcrumb">
           <a href="/">Home</a>
           <span>/</span>
           <a href="/blog/">Blog</a>
@@ -222,7 +231,7 @@ const renderInlineLinks = (text: string) => {
           {updatedLabel && <span>Updated {updatedLabel}</span>}
         </div>
       </div>
-      <div class="blog-hero-scroll">
+      <div data-pagefind-ignore class="blog-hero-scroll">
         <span>Scroll</span>
         <div class="blog-scroll-line"></div>
       </div>
@@ -233,12 +242,12 @@ const renderInlineLinks = (text: string) => {
         {intro && <p set:html={renderInlineLinks(intro)} />}
       </div>
 
-      <div class="blog-post-badges reveal">
+      <div data-pagefind-ignore class="blog-post-badges reveal">
         <AppCTA variant="badges" appStoreCt="blog-post-cta" appStoreEvent="blog_appstore_click" playStoreEvent="blog_playstore_click" />
       </div>
 
       {companionCities.length > 0 && (
-        <div class="blog-city-companions reveal">
+        <div data-pagefind-ignore class="blog-city-companions reveal">
           {companionCities.map((slug) => (
             <a href={`/companions/${slug}/`} class="blog-city-companion-link">
               Find travel companions in {formatCityName(slug)} →
@@ -272,7 +281,7 @@ const renderInlineLinks = (text: string) => {
                 </div>
               </section>
               {index === 0 && (
-                <div class="blog-midpost-cta reveal">
+                <div data-pagefind-ignore class="blog-midpost-cta reveal">
                   <p class="blog-midpost-cta-text">Find a <a href="/find-travel-companion/" class="blog-midpost-cta-link">travel companion</a> who matches your style and budget</p>
                   <AppCTA
                     variant="badges"
@@ -290,7 +299,7 @@ const renderInlineLinks = (text: string) => {
       <slot name="extra" />
     </section>
 
-    <div class="blog-post-share reveal">
+    <div data-pagefind-ignore class="blog-post-share reveal">
       <span class="blog-post-share-label">Share this</span>
       <a
         class="blog-post-share-btn"
@@ -342,7 +351,7 @@ const renderInlineLinks = (text: string) => {
       }
     </script>
 
-    <section class="blog-post-cta reveal">
+    <section data-pagefind-ignore class="blog-post-cta reveal">
       <div class="blog-post-cta-inner">
         <p class="blog-post-cta-label">Travel smarter</p>
         <h2 class="blog-post-cta-heading">Find your perfect <em>travel companion</em></h2>
@@ -358,10 +367,10 @@ const renderInlineLinks = (text: string) => {
       </div>
     </section>
 
-    <NewsletterSignup />
+    <div data-pagefind-ignore><NewsletterSignup /></div>
 
     {(relatedGuides.length > 0 || relatedPosts.length > 0) && (
-      <section class="blog-post-related">
+      <section data-pagefind-ignore class="blog-post-related">
         <div class="blog-post-related-inner">
           {relatedGuides.length > 0 && (
             <div class="blog-post-related-group reveal">

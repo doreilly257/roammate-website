@@ -1,5 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getSearchArticle } from '../lib/search-manifest-data';
+const searchArticle = await getSearchArticle(Astro.url.pathname);
 import { getRelated, getRoutes, getCityGuideSlugs } from '../data/guides';
 import { findRelatedPostsForGuide } from '../lib/related-content';
 import { getAllBlogPosts } from '../lib/blog-data';
@@ -73,6 +75,13 @@ const escapeCssUrl = (url: string) =>
 
 <BaseLayout title={title} description={description} ogImage={heroImage}>
   <Fragment slot="head">
+    {searchArticle && <>
+      <meta data-pagefind-meta="title[content]" content={searchArticle.title} />
+      <meta data-pagefind-meta="description[content]" content={searchArticle.description} />
+      <meta data-pagefind-meta="type[content]" data-pagefind-filter="type[content]" content={searchArticle.type} />
+      {searchArticle.countries.map(country => <meta data-pagefind-filter="country[content]" content={country} />)}
+    </>}
+
     <meta name="ph-region" content={heroRegion}>
     <meta name="ph-city" content={heroCity}>
     <link rel="preload" as="image" type="image/webp" href={heroImage}>
@@ -101,10 +110,11 @@ const escapeCssUrl = (url: string) =>
   </Fragment>
 
   <!-- Hero -->
+  <article data-pagefind-body={searchArticle ? true : undefined}>
   <section class="guide-hero">
     <div class="guide-hero-bg" style={`background-image: linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.35) 40%, rgba(15,15,15,0.2) 70%, rgba(15,15,15,0.4) 100%), url('${escapeCssUrl(heroImage)}');`}></div>
     <div class="guide-hero-content">
-      <div class="guide-hero-breadcrumb">
+      <div data-pagefind-ignore class="guide-hero-breadcrumb">
         <a href="/guides/">Guides</a>
         <span>/</span>
         <a href={`/guides/region/${regionSlug}/`}>{heroRegion}</a>
@@ -121,7 +131,7 @@ const escapeCssUrl = (url: string) =>
         ))}
       </div>
     </div>
-    <div class="guide-hero-scroll">
+    <div data-pagefind-ignore class="guide-hero-scroll">
       <span>Explore</span>
       <div class="guide-scroll-line"></div>
     </div>
@@ -294,6 +304,8 @@ const escapeCssUrl = (url: string) =>
       ))}
     </div>
   </section>
+
+  </article>
 
   <!-- Related Guides -->
   {relatedGuides.length > 0 && (

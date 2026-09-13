@@ -1,5 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getSearchArticle } from '../lib/search-manifest-data';
+const searchArticle = await getSearchArticle(Astro.url.pathname);
 import { getBySlug, getCityGuideSlugs } from '../data/guides';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import AppCTA from '../components/AppCTA.astro';
@@ -75,6 +77,13 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
 
 <BaseLayout title={title} description={description} ogImage={ogImage}>
   <Fragment slot="head">
+    {searchArticle && <>
+      <meta data-pagefind-meta="title[content]" content={searchArticle.title} />
+      <meta data-pagefind-meta="description[content]" content={searchArticle.description} />
+      <meta data-pagefind-meta="type[content]" data-pagefind-filter="type[content]" content={searchArticle.type} />
+      {searchArticle.countries.map(country => <meta data-pagefind-filter="country[content]" content={country} />)}
+    </>}
+
     <meta name="ph-region" content={heroRegion}>
     {ogImage && <link rel="preload" as="image" type="image/webp" href={ogImage}>}
     <slot name="head" />
@@ -105,6 +114,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
   </Fragment>
 
   <!-- Hero -->
+  <article data-pagefind-body={searchArticle ? true : undefined}>
   <section class="route-hero" style={`--accent: ${accentColor};`}>
     <div class="route-hero-bg">
       <div class="montage-grid">
@@ -115,7 +125,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
       <div class="route-hero-overlay"></div>
     </div>
     <div class="route-hero-content">
-      <div class="route-hero-breadcrumb">
+      <div data-pagefind-ignore class="route-hero-breadcrumb">
         <a href="/guides/">Guides</a>
         <span>/</span>
         <span>Backpacker Routes</span>
@@ -132,7 +142,7 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
         ))}
       </div>
     </div>
-    <div class="route-hero-scroll">
+    <div data-pagefind-ignore class="route-hero-scroll">
       <span>Explore</span>
       <div class="route-scroll-line"></div>
     </div>
@@ -279,6 +289,8 @@ function phasePills(phaseTitle: string, guideSlugs?: string[]) {
       ))}
     </div>
   </section>
+
+  </article>
 
   <!-- Newsletter -->
   <NewsletterSignup />
