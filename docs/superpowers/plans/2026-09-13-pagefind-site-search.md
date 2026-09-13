@@ -46,7 +46,7 @@ Implementers must verify the pinned Pagefind release's official API/types for `c
 2. Add negative fixtures for draft/private/gated entries, duplicate paths, noncanonical paths and unsupported types. Current loaders have no publication flags: explicitly reject those flags if encountered; do not advertise existing draft support or add a new CMS schema as scope creep.
 3. Run `cd roammate.com && npx vitest run scripts/__tests__/search-index.test.ts`; observe failure because helpers do not exist.
 4. Implement the smallest typed helper with strict path validation, whitespace normalization, deterministic sorting and deduplication. No body-text geography inference. Run the same command and expect all metadata cases to pass.
-5. Add `src/pages/search-manifest.json.ts` using actual guide/blog loaders. Resolve the exact standalone comparison inventory by reading the nine files: some comparison pages use `BlogPostLayout` even though the design describes bypasses. Include every reviewed published comparison once; never authorize arbitrary `/blog/*` files by glob alone. Cross-check known blog metadata and explicit reviewed standalone paths, rejecting overlaps or missing rendered pages.
+5. Add `src/pages/search-manifest.json.ts` using actual guide/blog loaders. All nine standalone comparisons use `BlogPostLayout` (confirmed during implementation), including GAFFL's extra-slot FAQ content. Include every reviewed published comparison once through the shared layout; never authorize arbitrary `/blog/*` files by glob alone or create duplicate body wrappers. Cross-check known blog metadata and explicit reviewed standalone paths, rejecting overlaps or missing rendered pages.
 
 ### A2. Test and apply article-only indexing boundaries
 

@@ -18,7 +18,7 @@ Use locally generated Pagefind runtime assets and its JavaScript API with a smal
 - `src/layouts/BaseLayout.astro` provides the canonical URL, shared `main`, navigation and footer. Do not mark its generic `main` as searchable: that would opt every page in.
 - `src/components/Nav.astro` already has a mobile overlay, Escape handling and sibling `inert` management; preserve these behaviors when adding the form.
 - `CityGuideLayout.astro` and `BackpackerRouteLayout.astro` render city/place guides and routes; both are reached through `/guides/[slug]/`.
-- `BlogPostLayout.astro` renders collection-backed articles. Nine standalone `/blog/roammate-vs-*` comparison pages bypass that layout and require explicit treatment.
+- `BlogPostLayout.astro` renders collection-backed articles and all nine standalone `/blog/roammate-vs-*` comparison pages (confirmed during implementation). Preserve comparison-specific extra-slot content, including GAFFL FAQs, within the shared article index boundary; do not add duplicate standalone wrappers.
 - `src/lib/blog-data.ts`, `src/data/guides.ts` and `src/content.config.ts` supply existing content metadata. Current collection loaders do not implement draft/gated flags, so do not claim such filtering already exists.
 
 ## Public index contract

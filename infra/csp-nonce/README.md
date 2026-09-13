@@ -44,8 +44,9 @@ headers, and restores `noindex, nofollow` on this project's Pages preview hosts
 and the explicitly allowlisted `csp-nonce-review.roammate.com` staging host.
 The test compares runtime policy against the real static `_headers` to catch
 drift. If headers change, update both policies before deployment.
-An upstream enforced CSP is accepted only when absent or exactly equal to that
-reviewed baseline. Any different/duplicate policy fails closed with an exception,
+An upstream enforced CSP is accepted only when absent or exactly equal to the
+reviewed policy for the requested route (see the search addition below). Any
+different/duplicate policy fails closed with an exception,
 rather than silently deleting new restrictions. There is no exception bypass;
 operators must resolve the mismatch before rollout.
 See [Pages headers](https://developers.cloudflare.com/pages/configuration/headers/).
@@ -80,6 +81,110 @@ Tests cover unique nonce format, exact security-header parity, preservation of
 body/headers/status, cache and conditional handling, preview noindex, HEAD/404,
 static/admin/API bypasses, routing exclusions and scratch-only deployment assembly.
 They cannot emulate Cloudflare's downstream injection or actual edge caching.
+
+## Pagefind search addition (local implementation; live verification pending)
+
+The historical production evidence above covers the September 12 nonce release,
+**not activation of Pagefind or its search-specific policy**. Search changes need
+their own effective-header/browser verification and authorized release; this
+section does not claim either has happened.
+
+Only the exact `/search` and `/search/` routes receive the additional
+`script-src 'wasm-unsafe-eval'` permission required by Pagefind's WebAssembly
+runtime. Ordinary HTML retains the original policy. The search runtime uses
+`noWorker: true`: do not add `blob:` workers, global WASM permission,
+`'unsafe-eval'`, or script `'unsafe-inline'` as a workaround. Static `_headers`
+and nonce middleware must agree on the route-specific baseline. The middleware's
+upstream guard must reject an ordinary-route policy on a search response, a
+search policy on an ordinary response, and unexpected or duplicate policies;
+it must not silently replace additional restrictions. Inspect the **effective**
+static response header as well: overlapping Pages rules must not combine two
+enforced CSPs and inadvertently block WebAssembly.
+
+`/pagefind/*` is excluded in `_routes.json`, not just short-circuited by the
+middleware, so index asset requests remain static rather than invoking the
+Function. Keep these assets revalidated (`max-age=0, must-revalidate`), including
+stable runtime/entry filenames; the existing immutable policy for fingerprinted
+`/_astro/*`, images and fonts does not extend to the Pagefind namespace. Check
+JavaScript and WASM response content types in the browser.
+
+### Build and preview locally without deploying
+
+`astro dev` alone does not generate the production search index. From the root
+of the intended checkout/worktree, run the complete build and then preview that
+same output; do not share a production index with a local or preview host:
+
+```sh
+ROOT="$(git rev-parse --show-toplevel)"
+(cd "$ROOT/roammate.com" && npm run build)
+(cd "$ROOT/roammate.com" && npm run preview -- --host 127.0.0.1)
+```
+
+Astro preview can exercise the index and UI but does not prove Pages `_headers`
+or Function behavior. For a local Pages-style check, stop preview and assemble
+the exact tested output in a fresh scratch directory. Run this from the intended
+checkout/worktree root in a dedicated shell; stopping the server exits the
+subshell and removes its scratch directory:
+
+```sh
+ROOT="$(git rev-parse --show-toplevel)"
+(
+  set -eu
+  SCRATCH="$(mktemp -d /tmp/roammate-pages.XXXXXX)"
+  trap 'rm -rf "$SCRATCH"' EXIT
+  cp -R "$ROOT/roammate.com/dist" "$SCRATCH/dist"
+  cp -R "$ROOT/infra/csp-nonce/functions" "$SCRATCH/functions"
+  cp "$ROOT/infra/csp-nonce/_routes.json" "$SCRATCH/dist/_routes.json"
+  npm install --prefix "$SCRATCH/wrangler-cli" --cache "$SCRATCH/npm-cache" --no-audit --no-fund --package-lock=false wrangler@4.131.1
+  cat > "$SCRATCH/wrangler.jsonc" <<'JSON'
+{
+  "name": "roammate-search-local",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-09-13"
+}
+JSON
+  cd "$SCRATCH"
+  WRANGLER_SEND_METRICS=false node "$SCRATCH/wrangler-cli/node_modules/wrangler/bin/wrangler.js" pages dev dist --cwd "$SCRATCH" --ip 127.0.0.1 --port 8788 --inspector-port 9288
+)
+```
+
+Both the scratch **and Wrangler installation must be outside the home/project
+tree, under `/tmp`**; the scratch `wrangler.jsonc` must contain no bindings.
+`pages dev` does **not** support `--config`; use the isolated working directory
+instead. Local testing traced unexpected AI bindings to the static Pages shim
+inside an npm-cached Wrangler installation under the home directory: its runtime
+rediscovered an unrelated ancestor `/Users/doreilly/wrangler.toml`. A local
+config or outside-home working directory alone did not isolate that executable.
+The command above installs the pinned executable and npm cache under scratch as
+well. Inspect startup output and stop if unexpected bindings or projects appear;
+the verified isolated static run had only built-in `CF_PAGES` bindings.
+Do not copy ancestor config, credentials, `.dev.vars`, or bindings
+into scratch, enable remote bindings, or run `pages deploy` for this check.
+
+From a second terminal, inspect `http://127.0.0.1:8788/search/`, `/search`, an
+ordinary article, an unknown HTML route and actual `/pagefind/` asset URLs.
+Compare status, effective CSP, fresh HTML nonces, cache headers and content
+types; verify local index searches and absence of browser CSP errors. Repeat
+with a **separate fresh static-only scratch assembly**, omitting both the
+`functions/` copy and `_routes.json` copy, to test static fallback policy; retain
+the isolated `wrangler.jsonc`. Neither emulator run proves Cloudflare edge/JSD
+behavior, production activation, billing, or live routing exclusion.
+
+A September 13 isolated static Pages run verified real local HTTP responses:
+`/search/` had one search-specific WASM CSP, `/` retained the ordinary baseline,
+and a `/pagefind/test.js` fixture had JavaScript content type and revalidation.
+This is local runtime/header evidence, not a live-edge or complete search-browser
+verification claim.
+
+The complete build generates `dist/pagefind/` from the same rendered release and
+fails on manifest/index validation errors. Keep generated assets out of `public/`
+and Git. A preview/deployment uploads the tested HTML/index pair through the
+existing scratch assembly; never update the index independently. Recheck the
+known-good Pages deployment before any authorized release, and roll back the
+**whole deployment**, including HTML, Pagefind assets, routing and CSP. A
+pre-search rollback target may intentionally have no search feature. Do not
+retain a newer index against older HTML or claim rollback succeeded without
+verifying the restored site's actual behavior.
 
 ## Normal production and preview deployment
 

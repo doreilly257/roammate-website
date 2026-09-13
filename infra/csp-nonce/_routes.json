@@ -3,7 +3,7 @@
   "description": "Approved public HTML nonce middleware; assembled only in scratch deployment output",
   "include": ["/*"],
   "exclude": [
-    "/_astro/*", "/images/*", "/fonts/*", "/.well-known/*",
+    "/_astro/*", "/images/*", "/fonts/*", "/pagefind", "/pagefind/*", "/.well-known/*",
     "/api", "/api/*", "/admin", "/admin/*", "/cdn-cgi/*",
     "/robots.txt", "/llms.txt", "/llms-full.txt", "/rss.xml",
     "/sitemap.xml", "/sitemap-*.xml", "/sitemap_index.xml",

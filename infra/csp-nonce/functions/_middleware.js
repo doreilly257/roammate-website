@@ -10,6 +10,9 @@ const SECURITY_HEADERS = Object.freeze({
 
 // Explicitly approved staging only; never allow arbitrary roammate subdomains.
 const STAGING_HOST = 'csp-nonce-review.roammate.com';
+const SEARCH_POLICY = SECURITY_HEADERS['Content-Security-Policy'].replace(
+  "script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'",
+);
 
 /** @param {URL} url */
 function isHtmlCandidate(url) {
@@ -17,7 +20,7 @@ function isHtmlCandidate(url) {
     || url.hostname === STAGING_HOST
     || url.hostname === 'roammate-cs7.pages.dev' || url.hostname.endsWith('.roammate-cs7.pages.dev')
     || url.hostname === 'localhost' || url.hostname === '127.0.0.1';
-  if (!publicHost || /^\/(?:api|admin|cdn-cgi|_astro|images|fonts|\.well-known)(?:\/|$)/.test(url.pathname)) return false;
+  if (!publicHost || /^\/(?:api|admin|cdn-cgi|_astro|images|fonts|pagefind|\.well-known)(?:\/|$)/.test(url.pathname)) return false;
   // Non-HTML extensions remain static; actual content type is checked below.
   return !/\.[^/]+$/.test(url.pathname) || /\.html$/i.test(url.pathname);
 }
@@ -37,20 +40,23 @@ export async function onRequest(context) {
   for (const name of ['If-None-Match', 'If-Modified-Since', 'If-Range', 'Range']) requestHeaders.delete(name);
   const response = await context.next(new Request(context.request, { headers: requestHeaders }));
   const headers = new Headers(response.headers);
+  const policy = url.pathname === '/search' || url.pathname === '/search/'
+    ? SEARCH_POLICY : SECURITY_HEADERS['Content-Security-Policy'];
   const upstreamPolicy = headers.get('Content-Security-Policy');
-  if (upstreamPolicy !== null && upstreamPolicy !== SECURITY_HEADERS['Content-Security-Policy']) {
+  if (upstreamPolicy !== null && upstreamPolicy !== policy) {
     // Refuse to silently discard a new restriction or a second enforced policy.
     // No passThroughOnException: a policy mismatch requires operator review.
     throw new Error('Unexpected upstream Content-Security-Policy; refusing nonce transformation');
   }
   for (const [name, value] of Object.entries(SECURITY_HEADERS)) headers.set(name, value);
+  headers.set('Content-Security-Policy', policy);
   if (url.hostname.endsWith('.pages.dev') || url.hostname === STAGING_HOST) headers.set('X-Robots-Tag', 'noindex, nofollow');
 
   const html = /^text\/html(?:\s*;|\s*$)/i.test(headers.get('Content-Type') ?? '');
   if (html && (response.status < 300 || response.status >= 400)) {
     // Request-local 256-bit CSPRNG; never stored, logged or embedded at build time.
     const nonce = btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(32))));
-    headers.set('Content-Security-Policy', SECURITY_HEADERS['Content-Security-Policy'].replace(
+    headers.set('Content-Security-Policy', policy.replace(
       /script-src ([^;]+)/, `script-src $1 'nonce-${nonce}'`,
     ));
     for (const name of ['Cache-Control', 'CDN-Cache-Control', 'Cloudflare-CDN-Cache-Control']) headers.set(name, 'no-store');

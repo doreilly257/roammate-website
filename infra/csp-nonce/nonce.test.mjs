@@ -119,3 +119,56 @@ test('opt-in routing excludes static resources and admin/API at the edge', () =>
   }
   assert.ok(routes.include.length + routes.exclude.length <= 100);
 });
+
+const searchPolicy = securityHeaders['Content-Security-Policy'].replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'");
+test('only the exact search route receives WebAssembly permission', async () => {
+  for (const path of ['/search', '/search/']) {
+    for (const status of [200, 404]) {
+      const { response } = await run(`https://roammate.com${path}`, {}, { status });
+      const policy = response.headers.get('Content-Security-Policy');
+      assert.equal(policy.replace(/ 'nonce-[^']+'/g, ''), searchPolicy);
+      assert.match(policy, /'nonce-/);
+      assert.equal(response.headers.get('Cache-Control'), 'no-store');
+    }
+  }
+  for (const path of ['/', '/guides/search/', '/searching/', '/search/other/', '/search.html']) {
+    const { response } = await run(`https://roammate.com${path}`);
+    assert.doesNotMatch(response.headers.get('Content-Security-Policy'), /wasm-unsafe-eval/);
+  }
+});
+test('search keeps exact route-specific upstream CSP validation', async () => {
+  const { response } = await run('https://roammate.com/search/', {}, { headers: { 'Content-Security-Policy': searchPolicy } });
+  assert.match(response.headers.get('Content-Security-Policy'), /'nonce-/);
+  for (const policy of [securityHeaders['Content-Security-Policy'], `${searchPolicy}, ${searchPolicy}`, `${searchPolicy}; worker-src blob:`]) {
+    await assert.rejects(run('https://roammate.com/search/', {}, { headers: { 'Content-Security-Policy': policy } }), /Unexpected upstream/);
+  }
+  await assert.rejects(run(undefined, {}, { headers: { 'Content-Security-Policy': searchPolicy } }), /Unexpected upstream/);
+});
+test('search redirects and non-HTML retain scoped policy without nonces', async () => {
+  for (const responseInit of [{ status: 308, headers: { Location: '/search/' } }, { headers: { 'Content-Type': 'application/json' } }]) {
+    const { response } = await run('https://roammate.com/search', {}, responseInit);
+    assert.equal(response.headers.get('Content-Security-Policy'), searchPolicy);
+    assert.equal(response.headers.get('Cache-Control'), null);
+  }
+});
+test('Pagefind namespace bypasses middleware and Function routing, including extensionless paths', async () => {
+  const routes = JSON.parse(readFileSync(new URL('./_routes.json', import.meta.url), 'utf8'));
+  assert.ok(routes.exclude.includes('/pagefind/*'));
+  assert.ok(routes.exclude.includes('/pagefind'));
+  for (const path of ['/pagefind', '/pagefind/', '/pagefind/pagefind.js', '/pagefind/wasm.en.pagefind', '/pagefind/chunk']) {
+    const { response } = await run(`https://roammate.com${path}`);
+    assert.equal(response.headers.get('Content-Security-Policy'), null);
+  }
+});
+test('static fallback declares the same search policy without globally enabling WASM', () => {
+  for (const path of ['/search', '/search/']) {
+    const block = baseline.split(`\n${path}\n`)[1]?.split('\n\n')[0];
+    assert.ok(block, `missing exact fallback rule ${path}`);
+    assert.ok(block.includes('! Content-Security-Policy'));
+    assert.ok(block.includes(`Content-Security-Policy: ${searchPolicy}`));
+  }
+  assert.doesNotMatch(securityHeaders['Content-Security-Policy'], /wasm-unsafe-eval/);
+  const assets = baseline.split('\n/pagefind/*\n')[1]?.split('\n\n')[0];
+  assert.match(assets ?? '', /Cache-Control: public, max-age=0, must-revalidate/);
+  assert.doesNotMatch(assets ?? '', /immutable/);
+});
