@@ -188,8 +188,9 @@ nonce evidence above does not cover this search release or its route-specific CS
 - Local gates passed: **175 public tests**, **21 nonce/deployment tests**, Astro
   check with **0 errors, 0 warnings and 83 hints**, and a full **3,505-page build**
   with **587 authorized indexed URLs**. Built-link and claims checks passed.
-  A repeated full build removed an injected stale-output sentinel; the sitemap
-  included the search page and the index manifest excluded it.
+  A repeated full build removed an injected stale-output sentinel; the generated
+  sitemap excluded both `/search/` and `/search-manifest.json`, and the transient
+  manifest was removed from `dist/`.
 - Browser searches returned Bangkok **73**, Thailand + Guide **10**, Thailand +
   Route **1**, and travel companion + Blog **23** results. Pagination advanced
   from 10 to 20; reset, no-results and latest-input behavior passed.
