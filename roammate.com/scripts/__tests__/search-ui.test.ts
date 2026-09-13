@@ -3,8 +3,31 @@ import { readFileSync } from 'node:fs';
 import { createSearchController, createPagefindLoader, observePagefindFetch, safeResultPath } from '../../src/lib/search-client';
 const read = (p:string) => readFileSync(new URL('../../'+p, import.meta.url),'utf8');
 const rows = (n:number) => Array.from({length:n}, (_,i)=>({data:vi.fn(async()=>({url:`/guides/place-${i}/`,meta:{title:'Place',type:'Guide'},plain_excerpt:'Useful text'}))}));
+const integrityResponse = () => new Response(JSON.stringify({version:1,pagefindVersion:'1.5.2',assets:Object.fromEntries(['index/x.pf_index','filter/x.pf_filter','index/a.pf_index','filter/b.pf_filter'].map(path=>['/pagefind/'+path,`sha256-${'A'.repeat(43)}=`]))}));
 function setup(n=25) { const results=rows(n); const api={options:vi.fn(async()=>{}),filters:vi.fn(async()=>({country:{Thailand:2},type:{Guide:2}})), search:vi.fn(async()=>({results}))}; const states:any[]=[]; const loader=vi.fn(async()=>api); const controller=createSearchController(loader,s=>states.push(s)); return {controller,api,results,states,loader}; }
 describe('search controller',()=>{
+ it.each(['index','filter'])('renders swallowed %s integrity failures as error and recovers only on Retry',async kind=>{
+   let corrupt=true;
+   const fetcher=vi.fn<typeof fetch>(async(input)=>{
+     if(input==='/pagefind/integrity.json') return integrityResponse();
+     if(corrupt) throw new TypeError('native integrity failure');
+     return new Response('chunk');
+   });
+   const target={fetch:fetcher as typeof fetch,location:{origin:'https://preview.test'}};
+   const health=observePagefindFetch(target); const x=setup(1);
+   const swallow=async()=>{try{await target.fetch(`/pagefind/${kind}/x.pf_${kind}`);}catch{/* pinned Pagefind swallows chunk failures */}};
+   if(kind==='filter') x.api.filters.mockImplementation(async()=>{await swallow();return {country:{Thailand:2},type:{Guide:2}};});
+   else x.api.search.mockImplementation(async()=>{await swallow();return {results:corrupt?[]:x.results};});
+   const states:any[]=[]; const module={...x.api,destroy:vi.fn(async()=>{})}; const importer=vi.fn(async()=>module);
+   const controller=createSearchController(createPagefindLoader(importer),s=>states.push(s),health);
+   await controller.search(''); expect(fetcher).not.toHaveBeenCalled();
+   await controller.search('Bangkok','Thailand','Guide'); expect(states.at(-1)).toMatchObject({status:'error',items:[],total:0});
+   corrupt=false; await controller.search('hiking','Thailand','Guide'); expect(states.at(-1).status).toBe('error');
+   await controller.retry(); expect(states.at(-1)).toMatchObject({status:'ready',total:1,query:'hiking',country:'Thailand',type:'Guide'});
+   expect(module.destroy).toHaveBeenCalledOnce(); expect(importer).toHaveBeenCalledOnce();
+   expect(fetcher.mock.calls.filter(([input])=>input==='/pagefind/integrity.json')).toHaveLength(2);
+   expect(fetcher.mock.calls.at(-1)?.[1]).toMatchObject({cache:'reload',redirect:'error'});
+ });
  it('reports swallowed chunk failures until explicit Retry clears the poisoned cache',async()=>{
    const x=setup(); let failed=true;
    const health={hasFailed:()=>failed,reset:vi.fn(()=>{failed=false;})};
@@ -83,9 +106,9 @@ describe('search controller',()=>{
  it('rejects unsafe and noncanonical links',()=>{expect(safeResultPath('/guides/bangkok/','https://preview.test')).toBe('/guides/bangkok/');for(const path of ['https://evil.test/guides/a/','javascript:alert(1)','//evil.test/guides/a/','/guides/a/?q=x','/guides/a/#x','/guides/a','/guides/../blog/a/','/search/']) expect(safeResultPath(path,'https://preview.test')).toBeNull();});
 });
 describe('search-page fetch health observer',()=>{
- it('forwards arguments and responses untouched and only flags local index/filter failures',async()=>{
+ it('preserves unrelated arguments and response identity and only flags local index/filter failures',async()=>{
    const response=new Response('missing',{status:503});
-   const fetcher=vi.fn(async()=>response);
+   const fetcher=vi.fn<typeof fetch>(async(input)=>input==='/pagefind/integrity.json'?integrityResponse():response);
    const target={fetch:fetcher as typeof fetch,location:{origin:'https://preview.test'}};
    const health=observePagefindFetch(target);
    const options={cache:'no-cache' as const};
@@ -95,18 +118,18 @@ describe('search-page fetch health observer',()=>{
    expect(fetcher).toHaveBeenLastCalledWith('/guides/pagefind/index/x.pf_index',options);
    await target.fetch('/pagefind/index/x.pf_index'); expect(health.hasFailed()).toBe(true);
    health.reset(); await target.fetch(new Request('https://preview.test/pagefind/filter/x.pf_filter')); expect(health.hasFailed()).toBe(true);
-   health.reset(); const healthy=new Response('ok'); fetcher.mockResolvedValueOnce(healthy);
+   health.reset(); const healthy=new Response('ok'); fetcher.mockImplementation(async(input)=>input==='/pagefind/integrity.json'?integrityResponse():healthy);
    expect(await target.fetch(new URL('https://preview.test/pagefind/index/x.pf_index'))).toBe(healthy);
    expect(health.hasFailed()).toBe(false);
  });
  it('keeps chunk rejection sticky across operations but ignores pre-reset in-flight failures',async()=>{
    let reject!:(error:Error)=>void;
    const failure=new Error('network');
-   const target={fetch:vi.fn(()=>new Promise<Response>((_,r)=>{reject=r;})) as unknown as typeof fetch,location:{origin:'https://preview.test'}};
+   const target={fetch:vi.fn<typeof fetch>(async(input)=>input==='/pagefind/integrity.json'?integrityResponse():new Promise<Response>((_,r)=>{reject=r;})) as typeof fetch,location:{origin:'https://preview.test'}};
    const health=observePagefindFetch(target);
-   const old=target.fetch('/pagefind/index/a.pf_index'); health.reset(); reject(failure);
+   const old=target.fetch('/pagefind/index/a.pf_index'); await vi.waitFor(()=>expect(reject).toBeDefined()); health.reset(); reject(failure);
    await expect(old).rejects.toBe(failure); expect(health.hasFailed()).toBe(false);
-   const current=target.fetch('/pagefind/filter/b.pf_filter'); reject(failure);
+   const previous=reject; const current=target.fetch('/pagefind/filter/b.pf_filter'); await vi.waitFor(()=>expect(reject).not.toBe(previous)); reject(failure);
    await expect(current).rejects.toBe(failure); expect(health.hasFailed()).toBe(true);
  });
 });

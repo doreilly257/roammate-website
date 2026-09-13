@@ -1,4 +1,5 @@
 import { boundQuery } from './search-handoff';
+import { INTEGRITY_MANIFEST_PATH, INTEGRITY_MAX_BYTES, isIntegrityAssetPath, validateIntegrityManifest } from './search-integrity';
 
 export interface SearchItem {
   url: string;
@@ -25,30 +26,71 @@ interface SearchHealth { hasFailed(): boolean; reset(): void }
 
 // Install only on /search/. Pagefind 1.5.2 swallows index/filter fetch failures,
 // otherwise turning a partial index into apparently successful (empty) results.
-// Observe transport health without changing requests, responses, errors or logging.
-// HTTP-200 malformed chunks remain an upstream limitation: there is no public error hook.
+// Native Fetch verifies exact index/filter bytes before Pagefind can consume them.
+// This is integrity relative to the trusted-origin manifest, not origin authenticity.
 export function observePagefindFetch(target: { fetch: typeof fetch; location: { origin: string } }): SearchHealth {
   const original = target.fetch;
-  let failed = false;
-  let epoch = 0;
+  type Epoch = { failed: boolean; retry: boolean; manifest?: Promise<Map<string, string>> };
+  let epoch: Epoch = { failed: false, retry: false };
+  async function loadManifest(): Promise<Map<string, string>> {
+    const response = await original.call(target, INTEGRITY_MANIFEST_PATH, { cache: 'no-store', redirect: 'error' });
+    if (!response.ok || !response.body) throw new Error('Search integrity manifest unavailable');
+    const reader = response.body.getReader();
+    try {
+      if (Number(response.headers.get('content-length')) > INTEGRITY_MAX_BYTES) {
+        throw new Error('Search integrity manifest too large');
+      }
+      const decoder = new TextDecoder('utf-8', { fatal: true });
+      let bytes = 0;
+      let json = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        bytes += value.byteLength;
+        if (bytes > INTEGRITY_MAX_BYTES) throw new Error('Search integrity manifest too large');
+        json += decoder.decode(value, { stream: true });
+      }
+      json += decoder.decode();
+      return validateIntegrityManifest(JSON.parse(json));
+    } catch (error) {
+      // Cancel overflow/unreadable bodies without masking the original failure.
+      await reader.cancel().catch(() => {});
+      throw error;
+    } finally { reader.releaseLock(); }
+  }
   target.fetch = async (...args: Parameters<typeof fetch>) => {
     const requestEpoch = epoch;
-    let watched = false;
+    let path: string | undefined;
     try {
       const input = args[0];
-      const url = new URL(input instanceof Request ? input.url : String(input), target.location.origin);
-      watched = url.origin === target.location.origin && /^\/pagefind\/(?:index\/[^/]+\.pf_index|filter\/[^/]+\.pf_filter)$/.test(url.pathname);
+      const url = new URL(typeof Request !== 'undefined' && input instanceof Request ? input.url : String(input), target.location.origin);
+      // Keep the broad observer matcher: invalid names must fail closed, not bypass SRI.
+      if (url.origin === target.location.origin && /^\/pagefind\/(?:index\/[^/]+\.pf_index|filter\/[^/]+\.pf_filter)$/.test(url.pathname)) path = url.pathname;
     } catch { /* Invalid or unrelated input is still handled by the original fetch. */ }
+    if (path === undefined) return original.apply(target, args);
     try {
-      const response = await original.apply(target, args);
-      if (watched && requestEpoch === epoch && !response.ok) failed = true;
+      if (typeof Request === 'undefined' || !('integrity' in Request.prototype)) {
+        throw new Error('Search integrity requires native Request support');
+      }
+      const assets = await (requestEpoch.manifest ??= loadManifest());
+      const integrity = isIntegrityAssetPath(path) ? assets.get(path) : undefined;
+      if (!integrity) throw new Error('Search chunk missing from integrity manifest');
+      const [input, init] = args;
+      const effectiveIntegrity = init?.integrity !== undefined ? init.integrity : input instanceof Request ? input.integrity : '';
+      if (effectiveIntegrity && effectiveIntegrity !== integrity) throw new Error('Conflicting search chunk integrity');
+      // Keeping the input Request preserves native inheritance (including its body).
+      // Only redirect refusal and explicit Retry cache reload override caller settings.
+      const verifiedInit: RequestInit = { ...init, integrity, redirect: 'error' };
+      if (requestEpoch.retry) verifiedInit.cache = 'reload';
+      const response = await original.call(target, input, verifiedInit);
+      if (!response.ok) requestEpoch.failed = true;
       return response;
     } catch (error) {
-      if (watched && requestEpoch === epoch) failed = true;
+      requestEpoch.failed = true;
       throw error;
     }
   };
-  return { hasFailed: () => failed, reset: () => { failed = false; epoch++; } };
+  return { hasFailed: () => epoch.failed, reset: () => { epoch = { failed: false, retry: true }; } };
 }
 
 export function createPagefindLoader(importer: (path: string) => Promise<PagefindModule>) {
