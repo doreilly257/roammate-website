@@ -96,3 +96,21 @@ LIMIT 4
 | 2026-09-07/09-14 | homepage | 37 | 23 | 2 | 2 |
 
 These small, unfiltered samples do not validate historical 60-day parity, download counts, or conversion claims. A person may appear under both paths; click events and pageview person IDs are not linked into a funnel. Apple-only coverage, potential test/bot traffic, and deployment/rollback confounds remain. No raw URLs, query strings, identities or event rows are reproduced. `bq3` and `lnn` remain open; the growth hold is unchanged.
+
+## Source-only click inventory and measurement method
+
+Root inspection of local templates found the following wiring. This is **local source evidence only**, not rendered element counts, full click coverage, content-body link coverage, or parity with the deployed bundle.
+
+| Local template/component | Inspected placement | Individual Apple / Play event labels |
+| --- | --- | --- |
+| `Hero` | Imported by homepage `index` | `hero_appstore_click` / `hero_playstore_click` |
+| `CTA` | Imported by homepage `index` | `cta_appstore_click` / `cta_playstore_click` |
+| `StickyBar` | Global `BaseLayout` component | `sticky_appstore_click` / `sticky_playstore_click` |
+| `AppCTA` | `BlogPostLayout` top and bottom | `blog_appstore_click` / `blog_playstore_click` |
+| Conditional mid-post CTA | `BlogPostLayout` | `blog_midpost_cta_appstore_click` / `blog_midpost_cta_playstore_click` |
+
+`BaseLayout` also includes navigation and footer; neither inspected component contains store links. Blog pages also inherit the global sticky bar. Conditional source placement does not establish whether a particular rendered page includes it.
+
+Under the inspected local wiring, an Apple interaction emits its individual event plus consolidated `app_store_click`; a measurement must use **one family, not their sum**. Play's individual source labels are candidates only: verify each event's actual analytics availability before querying it. Broad `cta_click` includes mixed actions and is not a store-click metric.
+
+A comparable measurement must fix verified UTC windows, exact host/path filters, and explicit platform groups; avoid Apple duplication; and return aggregates only. Any unknown, test or bot handling must be stated rather than silently assumed. Rollout/rollback confounds must remain visible. Distinct identifier counts must not be called humans, clicks must not be called downloads, and event-time grouping must not be presented as inferred person/session attribution. **A clean, comparable result is currently unavailable.** This inventory/method note neither implements tracking changes nor opens a new design project.
