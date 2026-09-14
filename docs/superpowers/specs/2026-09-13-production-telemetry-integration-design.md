@@ -14,9 +14,12 @@ review and root acceptance.
 One separately authorized synthetic record now establishes immediate receiver
 compatibility; the account screenshot establishes the current free allowance.
 The receiver-response amendment passed independent review and root acceptance.
-Written integration acceptance
-remains open; not implementation-ready.
-Implementation and release are not authorized.
+On September 14 the user accepted the written integration design and authorized
+local production-code wiring, offline fake-transport tests and compile checks,
+including eligibility from start through completion in the same epoch.
+Implementation verification remains open. No app launch, further telemetry sending
+or release is authorized. Execution is described in the
+[local implementation plan](../plans/2026-09-14-production-telemetry-integration.md).
 
 ## Goal and authorization
 
@@ -25,7 +28,7 @@ production-safe completion path: concurrent SDK callbacks become one minimal
 record per eligible operation, with explicit permission and bounded delivery.
 This describes actual future iOS application integration, not another fixture-only
 deliverable. Its implementation would modify owner production services, startup
-and tests after the remaining policy choices and written plan are approved.
+and tests under the September 14 local implementation approval and reviewed plan.
 
 The user initially authorized this design only. Initial preparation inspected local source, not
 personal records. It made no owner edits, created no provider/span, and ran no
@@ -184,13 +187,13 @@ from this predicate or silently broaden its session classification. Inject the
 same predicate for offline testing; explicit harness isolation must still prevent
 test traffic even when a process does not carry that XCTest environment key.
 
-**Proposed integration epoch rule, not an implementation approval:** start
+**Integration epoch rule accepted for local implementation September 14:** start
 admission requires that retained predicate to permit delivery and captures its
 epoch. Completion must still be permitted in the same epoch; operations begun
 while suppressed or spanning suppress/re-enable cannot later export. This
 intentionally differs from synthetic gate-at-completion tests and is not claimed
 as existing app behavior or as a consent mechanism. Its race semantics remain
-part of the written integration design requiring acceptance before implementation.
+part of the accepted written design and require offline implementation verification.
 Callbacks read a small synchronized immutable permission snapshot, never sync
 into the delivery queue or await an actor. Carry its epoch as internal metadata,
 not an exported field. Because permission can change after that snapshot, the
@@ -422,7 +425,8 @@ dashboard consequences need owner acceptance before release.
 1. **Suppression choice resolved September 14:** retain the exact existing
    non-guest/non-XCTest predicate, including its missing-guest-key behavior.
    No opt-in UI/storage/migration or consent claim is added. The proposed start
-   epoch/admission/race behavior still requires written integration acceptance.
+   epoch/admission/race behavior was accepted for local implementation September 14;
+   its offline verification remains required.
 2. **Wrapper design and single-record compatibility resolved September 14:**
    a minimal OTLP structure may carry the four permitted operation values plus
    the subsequently approved actual `observedTimeUnixNano`, with no IDs/resource
@@ -449,8 +453,9 @@ Production ownership would reside in `Services/TelemetryService.swift`, a new
 production processor/minimal-record component, a permission/delivery coordinator
 and `Services/SuperlogTelemetry.swift` legacy exclusions. Retain current session
 storage; no new consent UI or migration is included. Startup and state-transition
-integration details belong in the later approved plan. Add owner-required project entries for
-new app Swift files only under the later implementation plan; none are added now.
+integration details are specified in the linked local implementation plan. Add
+owner-required project entries for new production Swift files during that local
+implementation; this document amendment itself adds none.
 
 Acceptance must include actual pinned SDK callbacks with synthetic input,
 concurrent start/end/duplicate/setup/shutdown stress, supported Swift concurrency
@@ -510,6 +515,8 @@ resolved, not a remaining policy question. Separately authorized single-record
 receiver readback and the current free-allowance screenshot now replace the
 previous missing-evidence premises. The bounded response amendment passed
 independent review and root acceptance;
-proposed integration race behavior, written design acceptance and implementation
-verification remain open. No implementation-ready approval or completion of
-production integration is claimed while those gates remain open.
+the user subsequently accepted the written integration design, including its
+start-through-completion eligibility rule, and approved local code wiring,
+offline fake-transport tests and compile checks. Implementation verification is
+still open; no completed production integration, app launch, additional sending
+or release is claimed or authorized by this amendment.
