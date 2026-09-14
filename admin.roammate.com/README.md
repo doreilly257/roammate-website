@@ -50,47 +50,56 @@ Three layers, and the reasoning matters more than the code:
    and requires `iss` and `aud` to match. It **fails closed**: unconfigured
    means denied, never allowed.
 3. **The admin key never reaches a browser.** Every API call happens in the
-   Pages Function. `ADMIN_API_KEY` also authorises `POST /v1/admin/migrate`, so
-   a page that shipped it to the client would be handing out database
-   migrations. This is the reason the console is server-rendered at all.
+   Pages Function. Its `ADMIN_API_KEY` binding must contain the backend's
+   scoped `ADMIN_CONSOLE_KEY` value, **not** the backend master `ADMIN_API_KEY`.
+   The shared binding name does not mean the values should be the same across
+   services. Neither credential belongs in browser code or rendered output.
 
 Form POSTs are protected by Astro's `security.checkOrigin` (verified: a POST
 without a matching `Origin` returns 403).
 
-### Use a narrower key
+### Use the scoped console key
 
-The API now reads `ADMIN_READ_KEY` and falls back to `ADMIN_API_KEY`. Provision
-the narrower key on the Worker and give the console only that one.
+The required mapping is **Pages `ADMIN_API_KEY` = backend `ADMIN_CONSOLE_KEY`**,
+with the scoped value distinct from the backend master `ADMIN_API_KEY`.
+The inspected backend console routes and `/v1/admin/flags` GET/PUT handlers use
+`isConsoleKey`, which accepts the scoped key while retaining master compatibility.
+That compatibility is not permission to give the console the master key. A 401
+requires checking deployment compatibility and binding provenance, never a
+master-key fallback.
 
-**Caveat:** `/v1/admin/flags` (GET and PUT) predates this and still checks
-`ADMIN_API_KEY` only. With just the read key configured, the flags page will show
-a 401 and say so. Either keep using the master key, or update those two handlers.
+**Current evidence (September 14):** binding presence and deployed authorization
+support are verified, but the encrypted Pages value's scope remains unknown.
+See the [bounded consumer inventory](../docs/superpowers/verification/2026-09-14-admin-key-consumer-inventory.md)
+and [verification/remediation procedure](../docs/superpowers/plans/2026-09-14-admin-key-verification-remediation.md).
+Do not infer current key equality from this README or a successful request on a
+route accepting both keys. Secret access, provisioning, rotation and deployment
+require their separately reviewed approval and recovery gates.
 
-## Deployment state (2026-09-03) — LIVE
+## Historical deployment record — September 3, 2026
 
-Everything is deployed and working. admin.roammate.com serves real production
-data to an authenticated operator and refuses everyone else.
+The September 3 record reported a working production console behind Access.
+This is historical context, **not current deployment or credential attestation**.
 
     hostname     admin.roammate.com
     auth         Cloudflare Access, one-time PIN, dan@doreilly.com only
     team domain  quiet-hall-00a9.cloudflareaccess.com
     API          https://api.roammate.com  (/v1/admin/*, merged 7fadda2)
-    console key  ADMIN_CONSOLE_KEY, in ~/.roammate-secrets/roammate-api.env
+    console key  reported as ADMIN_CONSOLE_KEY (historical, not re-attested)
 
-Access covers three hostnames: the custom domain, roammate-admin.pages.dev, and
+The record described Access covering three hostnames: the custom domain, roammate-admin.pages.dev, and
 *.roammate-admin.pages.dev. The wildcard is load-bearing — each Pages deployment
 gets its own subdomain, and a policy naming only the custom domain leaves every
 one of them publicly reachable.
 
-### The console key is a CREATE, not a rotation
+### Historical scoped-key provisioning
 
-The original ADMIN_API_KEY is a Worker secret and is not recoverable — write-only,
-not in ~/.roammate-secrets, nobody has a copy. Two sessions had reduced the
-problem to "rotate it or stay broken". Daniel pointed out that ADMIN_CONSOLE_KEY
-has never existed, so provisioning it is a create: the unrecoverable key stays
-untouched, its blast radius never has to be measured, and the console ends up
-holding a key that CANNOT run migrations. Verified in production: the console key
-returns 401 on POST /v1/admin/migrate.
+The September 3 narrative reports creating a scoped key while leaving the
+existing master untouched, and reports rejection of a historical migration-route
+probe. **Do not repeat that probe:** the route can mutate the database. The
+narrative does not prove current secret values, recoverability or deployment
+bindings. The scoped key now exists; do not treat this old creation account as
+authorization to overwrite it or assume its consumer/rollback requirements.
 
 ### Non-secret vars belong in wrangler.jsonc, NOT the dashboard
 
@@ -119,6 +128,12 @@ login, and no response may contain the admin key or console markup. Re-check wit
 
 ## Deploying
 
+These commands are reference examples, **not authorization to change production**.
+Revalidate the exact artifact, target environment, Access protection, bindings and
+rollback/recovery before any separately approved change. A project secret update
+does not attest an existing immutable deployment's binding; the reviewed new
+deployment must consume the intended configuration.
+
 ### 1. Create the Pages project
 
 ```bash
@@ -129,14 +144,19 @@ npx wrangler pages project create roammate-admin --production-branch main   # al
 npm run deploy
 ```
 
-### 2. Set secrets
+### 2. Keep plain variables and secrets separate
+
+Keep `API_BASE_URL` and `ACCESS_TEAM_DOMAIN` in `wrangler.jsonc` under `vars`;
+do not provision them as secrets. Only the actual secret bindings appear below:
 
 ```bash
-npx wrangler pages secret put API_BASE_URL       --project-name roammate-admin
 npx wrangler pages secret put ADMIN_API_KEY      --project-name roammate-admin
-npx wrangler pages secret put ACCESS_TEAM_DOMAIN --project-name roammate-admin
 npx wrangler pages secret put ACCESS_AUD         --project-name roammate-admin
 ```
+
+For Pages `ADMIN_API_KEY`, only use the approved, provenance-verified backend
+scoped `ADMIN_CONSOLE_KEY` value, never the master. Do not paste values into
+documentation, chat or shell arguments; follow the secure procedure above.
 
 `ACCESS_TEAM_DOMAIN` is like `roammate.cloudflareaccess.com`. `ACCESS_AUD` is the
 Application Audience tag from the Access application in step 4.

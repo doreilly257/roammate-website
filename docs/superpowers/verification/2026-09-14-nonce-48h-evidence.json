@@ -1,0 +1,384 @@
+{
+  "collectedBy": "Read-only Cloudflare GraphQL queries; public HTTP header observations",
+  "windows": [
+    {
+      "query": "{viewer{accounts(filter:{accountTag:\"3e8792b00414eadb1cde0e891c393317\"}){pagesFunctionsInvocationsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-12T16:24:40Z\",datetime_lt:\"2026-09-13T16:24:40Z\"}){dimensions{scriptName status}sum{requests errors subrequests wallTime}quantiles{cpuTimeP50 cpuTimeP99}avg{sampleInterval}}workersInvocationsAdaptive(limit:100,filter:{datetime_geq:\"2026-09-12T16:24:40Z\",datetime_lt:\"2026-09-13T16:24:40Z\"}){sum{requests errors subrequests}avg{sampleInterval}}}}}",
+      "response": {
+        "success": true,
+        "status": 200,
+        "result": {
+          "viewer": {
+            "accounts": [
+              {
+                "pagesFunctionsInvocationsAdaptiveGroups": [
+                  {
+                    "avg": {
+                      "sampleInterval": 1
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18839675-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 5794,
+                      "cpuTimeP99": 35552
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 21,
+                      "subrequests": 65,
+                      "wallTime": 6876805
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1.2058823529411764
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18564688-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2378,
+                      "cpuTimeP99": 6091
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 8323,
+                      "subrequests": 8323,
+                      "wallTime": 907732485
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1.0235294117647058
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18564688-preview",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2180,
+                      "cpuTimeP99": 6503
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 174,
+                      "subrequests": 174,
+                      "wallTime": 8002215
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--4861794-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2540,
+                      "cpuTimeP99": 5076
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 4,
+                      "subrequests": 4,
+                      "wallTime": 324225
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1.1818181818181819
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--5885532-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2157,
+                      "cpuTimeP99": 9288
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 39,
+                      "subrequests": 27,
+                      "wallTime": 1019859
+                    }
+                  }
+                ],
+                "workersInvocationsAdaptive": [
+                  {
+                    "avg": {
+                      "sampleInterval": 1.1860422405876951
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 12916,
+                      "subrequests": 26499
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "errors": [],
+        "messages": []
+      }
+    },
+    {
+      "query": "{viewer{accounts(filter:{accountTag:\"3e8792b00414eadb1cde0e891c393317\"}){pagesFunctionsInvocationsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-13T16:24:40Z\",datetime_lt:\"2026-09-14T16:24:40Z\"}){dimensions{scriptName status}sum{requests errors subrequests wallTime}quantiles{cpuTimeP50 cpuTimeP99}avg{sampleInterval}}workersInvocationsAdaptive(limit:100,filter:{datetime_geq:\"2026-09-13T16:24:40Z\",datetime_lt:\"2026-09-14T16:24:40Z\"}){sum{requests errors subrequests}avg{sampleInterval}}}}}",
+      "response": {
+        "success": true,
+        "status": 200,
+        "result": {
+          "viewer": {
+            "accounts": [
+              {
+                "pagesFunctionsInvocationsAdaptiveGroups": [
+                  {
+                    "avg": {
+                      "sampleInterval": 1.2460517584605175
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18564688-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2453,
+                      "cpuTimeP99": 6312
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 9389,
+                      "subrequests": 9389,
+                      "wallTime": 721633579
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 1
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--18564688-preview",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 2714,
+                      "cpuTimeP99": 5616
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 44,
+                      "subrequests": 44,
+                      "wallTime": 2966524
+                    }
+                  },
+                  {
+                    "avg": {
+                      "sampleInterval": 3.2222222222222223
+                    },
+                    "dimensions": {
+                      "scriptName": "pages-worker--5885532-production",
+                      "status": "success"
+                    },
+                    "quantiles": {
+                      "cpuTimeP50": 957,
+                      "cpuTimeP99": 9729
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 754,
+                      "subrequests": 736,
+                      "wallTime": 8268016
+                    }
+                  }
+                ],
+                "workersInvocationsAdaptive": [
+                  {
+                    "avg": {
+                      "sampleInterval": 1.1795503541730827
+                    },
+                    "sum": {
+                      "errors": 0,
+                      "requests": 7660,
+                      "subrequests": 12478
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "errors": [],
+        "messages": []
+      }
+    }
+  ],
+  "canonical": {
+    "success": true,
+    "canonical": {
+      "id": "d1d8272a-bf47-4340-bb41-166cc6740d99",
+      "created_on": "2026-09-12T19:14:49.017717Z",
+      "source": "a95b835c9dc54fbdba415f9f964fda29b2aa1717"
+    }
+  },
+  "limitations": [
+    "Adaptive estimates, not billing receipts",
+    "No matched pre-rollout public HTML latency baseline",
+    "No production changes; no raw nonce or response body retained"
+  ],
+  "http": {
+    "checkedAt": "2026-09-14T17:15:10.250234+00:00",
+    "results": [
+      {
+        "path": "/",
+        "samples": [
+          {
+            "status": 200,
+            "headersLatencyMs": 1005.23,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 511.64,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 666.29,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      },
+      {
+        "path": "/about/",
+        "samples": [
+          {
+            "status": 200,
+            "headersLatencyMs": 555.97,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 489.26,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 526.38,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      },
+      {
+        "path": "/faq/",
+        "samples": [
+          {
+            "status": 200,
+            "headersLatencyMs": 523.97,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 522.88,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 397.48,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      },
+      {
+        "path": "/guides/bangkok/",
+        "samples": [
+          {
+            "status": 200,
+            "headersLatencyMs": 459.55,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 540.48,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 200,
+            "headersLatencyMs": 560.35,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      },
+      {
+        "path": "/nonce-observation-20260914",
+        "samples": [
+          {
+            "status": 404,
+            "headersLatencyMs": 538.08,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 404,
+            "headersLatencyMs": 411.88,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          },
+          {
+            "status": 404,
+            "headersLatencyMs": 414.24,
+            "cacheControl": "no-store",
+            "cacheStatus": "DYNAMIC",
+            "cspNoncePresent": true,
+            "etagPresent": false
+          }
+        ]
+      }
+    ],
+    "limit": "Synthetic local-client time to headers only; no response body or raw nonce retained; not representative latency or a matched before/after comparison."
+  },
+  "collectionCompletedAt": "2026-09-14T17:21:45.902129+00:00"
+}
