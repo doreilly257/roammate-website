@@ -11,8 +11,11 @@ and accepted by root. Existing suppression, minimal OTLP wrapper design and
 preservation of unrelated channels are resolved user choices. The user additionally
 approved one actual OTLP observation timestamp; that amendment passed independent
 review and root acceptance.
-Receiver/no-cost compatibility and integration-acceptance gates remain open;
-not implementation-ready.
+One separately authorized synthetic record now establishes immediate receiver
+compatibility; the account screenshot establishes the current free allowance.
+The receiver-response amendment passed independent review and root acceptance.
+Written integration acceptance
+remains open; not implementation-ready.
 Implementation and release are not authorized.
 
 ## Goal and authorization
@@ -24,11 +27,14 @@ This describes actual future iOS application integration, not another fixture-on
 deliverable. Its implementation would modify owner production services, startup
 and tests after the remaining policy choices and written plan are approved.
 
-The user authorized this design only. Preparation inspected local source, not
+The user initially authorized this design only. Initial preparation inspected local source, not
 personal records. It made no owner edits, created no provider/span, and ran no
 compiler, app, test, exporter, deployment or live telemetry request. Website
-documentation is the only changed artifact. No paid service or provisioning is
-proposed; a supported no-cost transport is an unresolved prerequisite.
+documentation is the only changed artifact. A later, separate approval authorized
+one synthetic POST; its [verification report](../verification/2026-09-14-minimal-otel-receiver.md)
+records immediate receiver readback and the current Free-plan allowance screenshot.
+No paid service/provisioning or further sending is authorized. Current allowance
+is not a guarantee of free operation at arbitrary future volume.
 
 The completed [synthetic lifecycle verification](../verification/2026-09-13-synthetic-sdk-lifecycle.md)
 proves useful SDK behavior, not production concurrency, consent or export safety.
@@ -241,7 +247,7 @@ initial safety bounds, **not measured production
 tuning**. Any local drop counters must be fixed categories/numbers only; do not
 add exported fields, identifiers or another diagnostic telemetry channel.
 
-### 4. Four-field content plus observation time, minimal OTLP wrapper and unresolved receiver
+### 4. Four-field content plus observation time, minimal OTLP wrapper and receiver evidence
 
 The logical operation record remains exactly this JSON object:
 
@@ -263,8 +269,8 @@ prefix matching or dynamic labels. Structural tests must compare the entire
 approved wrapper and nested four-field key sets/types, not merely the absence of
 one known sensitive field. This is not permission to use default exporter payloads.
 
-**Source-backed candidate with the approved observation timestamp, not receiver
-verified:** one OTLP log record
+**Source-backed structure with a separately verified single synthetic receiver
+example:** one OTLP log record
 whose typed body carries the operation record:
 
 ```json
@@ -324,7 +330,8 @@ not emitted as a sentinel. Queued records retain their original observation valu
 through delayed drains and never regenerate it.
 Use an injected deterministic observer clock in offline tests. A failed capture
 or conversion drops the record without substituting end time or extra diagnostics.
-This source-backed mapping is still not evidence of deployed receiver acceptance.
+The mapping alone is not receiver evidence; the separate single-record readback
+below supplies that limited evidence without proving all production behavior.
 
 This candidate omits `resource`, `scope`, both resource/record attributes,
 schema URLs, severity, trace/span IDs, flags and `timeUnixNano`. Start/end remain
@@ -335,36 +342,49 @@ the structural containers are named resourceLogs/scopeLogs, no resource or scope
 identity/attribute data is supplied. One log request replaces the target operation's
 old trace/log/counter trio; it is not an additional signal.
 
-Receiver compatibility with that minimal wrapper has **not** been established.
-Current `SuperlogTelemetry.emitSpan` remains incompatible. Do not invent a
-Superlog ingestion contract or reuse its credential as proof of authorization.
-Authoritative OTLP schema compatibility alone is not evidence that the actual
-receiver accepts, retains or displays this restricted record. Verify its contract
-and a no-cost operating path before implementation or sending; a live probe is
-not authorized by this design approval. An offline injected interface is not
-completed production integration by itself.
+The separately authorized [single-record receiver check](../verification/2026-09-14-minimal-otel-receiver.md)
+sent exactly one 340-byte synthetic request. A targeted Default log query was
+empty before and returned exactly one matching four-value body afterward, with
+the actual observation timestamp and empty client IDs/log attributes/service/
+severity. The server added `superlog.project_id`; this was not client-supplied
+and precludes a claim of metadata-free storage. Current `SuperlogTelemetry.emitSpan`
+remains incompatible with this minimal client payload.
+
+The user account screenshot showed Free, approximately 77K/5M logs and a $0
+current bill. This supports the present allowance baseline, not unlimited free
+production traffic, post-request billing reconciliation or long-term retention.
+No second probe, app integration or further sending follows from that approval.
 
 Evidence levels must remain distinct: (1) primary schema supports the proposed
 typed body and actual observation-time mapping, with timestamp permission resolved;
 (2) exact offline serialization/response tests remain future implementation work;
-(3) compatibility with the actual configured receiver, including acceptance,
-retention/display and no-cost operation, remains unverified. No level-3 result
-may be inferred from level 1, an endpoint name or general OTLP support.
+(3) actual targeted readback establishes immediate acceptance/display for that
+one synthetic record, and the screenshot establishes the current free allowance.
+Long-term retention, all names/outcomes and sustained-volume cost/operation are
+not established. No broader level-3 result may be inferred from schema support.
 
 The OTLP specification permits HTTP 200 with `partialSuccess` rejections; a 2xx
 status alone must never be reported as accepted. The primary
 [OTLP logs response schema](https://raw.githubusercontent.com/open-telemetry/opentelemetry-proto/main/opentelemetry/proto/collector/logs/v1/logs_service.proto)
 defines the response and partial-success count. A valid `{}` response expresses
-full success/default zero rejection counts; it is not a missing response. The
-proposed receiver adapter
+full success/default zero rejection counts; it is not a missing response.
+The authorized probe returned HTTP 200, `application/x-protobuf` and zero bytes;
+its JSON-only parser correctly retained an ambiguous classification, while the
+independent readback established actual ingestion. The proposed receiver adapter
+must explicitly recognize **HTTP 200 + `application/x-protobuf` + zero bytes** as
+the default empty protobuf `ExportLogsServiceResponse`. This is not generic empty
+body success: empty JSON, unsupported types or arbitrary 2xx remain ambiguous.
+Nonempty protobuf requires a bounded schema-aware decoder or an explicit
+unsupported/ambiguous result, never an assumed success. The adapter
 must bound response bytes before decoding (initial limit **16 KiB**, including
 streamed bodies irrespective of Content-Length), inspect the documented rejected
 record count, and distinguish accepted, rejected and ambiguous responses using
 fixed internal outcomes. With one submitted record, reject malformed/invalid
 counts or an undecodable/missing expected response rather than infer success;
 do not reject a valid empty JSON object merely because it omits default fields.
-Any response diagnostic text is never logged, persisted or exported. Detailed
-response schema rules require the receiver compatibility review before code.
+Any response diagnostic text is never logged, persisted or exported. Exact
+response schema/content-type cases require offline tests before app integration;
+the one-off JSON-only probe did not implement this production parser amendment.
 Retain no retries, one in-flight slot and the existing terminal-acknowledgement
 rules; HTTP errors, partial rejection or ambiguous responses drop the record
 without replay or a richer legacy fallback. This policy adds no output fields.
@@ -403,14 +423,16 @@ dashboard consequences need owner acceptance before release.
    non-guest/non-XCTest predicate, including its missing-guest-key behavior.
    No opt-in UI/storage/migration or consent claim is added. The proposed start
    epoch/admission/race behavior still requires written integration acceptance.
-2. **Wrapper design choice resolved September 14; compatibility remains open:**
+2. **Wrapper design and single-record compatibility resolved September 14:**
    a minimal OTLP structure may carry the four permitted operation values plus
    the subsequently approved actual `observedTimeUnixNano`, with no IDs/resource
    attributes/other telemetry. The timestamp-permission conflict is resolved;
    checked observer-clock conversion remains a concrete implementation requirement.
-   Establish actual receiver
-   compatibility before implementation or sending. Neither the
-   design approval nor general OTLP support authorizes a live compatibility probe.
+   The separately approved one-record POST and targeted readback establish
+   immediate compatibility for that synthetic example. The account screenshot
+   establishes the current free allowance, not future unlimited cost/retention.
+   Review/test the explicit empty-protobuf response rule before implementation;
+   no additional sending is authorized by the completed single-record probe.
 3. **Other-channel choice resolved September 14:** the user explicitly chose
    to preserve unrelated PostHog/replay, fatal/general error reporting, HTTP
    instrumentation and trace headers unchanged. Remove duplicate legacy exports
@@ -460,7 +482,11 @@ Observation-clock tests must inject deterministic readings and prove one capture
 at local observation, unchanged across delayed enqueue/send, independent of body
 start/end, correctly encoded as a uint64 decimal string. Test conversion boundaries,
 negative/nonfinite/zero/overflow rejection and absence of `timeUnixNano` or fallback
-values; reject any extra wire field. No runtime clock is read for this design.
+values; reject any extra wire field. The separate authorized probe captured a real
+observer clock; this document update performs no runtime capture or sending.
+Response acceptance must include HTTP 200/zero-byte protobuf default success,
+valid JSON `{}`, partial rejection, empty JSON, unsupported/malformed encodings
+and oversized streamed bodies. Never equate generic empty/2xx with success.
 
 The final production acceptance record must identify the reviewed receiver,
 privacy/permission policy, source/release version, one-owner cutover, bounded
@@ -480,7 +506,10 @@ The amendment passed independent review and root acceptance after correcting
 schema-structural versus semantic compatibility and valid empty-response handling.
 The observation-time amendment passed independent review and root acceptance;
 its prior permission blocker is
-resolved, not a remaining policy question. Receiver/no-cost compatibility,
-proposed integration race behavior and written design acceptance remain
-open. No implementation-ready approval or completion of production integration
-is claimed while those gates remain open.
+resolved, not a remaining policy question. Separately authorized single-record
+receiver readback and the current free-allowance screenshot now replace the
+previous missing-evidence premises. The bounded response amendment passed
+independent review and root acceptance;
+proposed integration race behavior, written design acceptance and implementation
+verification remain open. No implementation-ready approval or completion of
+production integration is claimed while those gates remain open.
