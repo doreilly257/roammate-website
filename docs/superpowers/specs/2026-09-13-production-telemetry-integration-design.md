@@ -2,10 +2,14 @@
 
 Date: 2026-09-13
 
+Policy amendment: 2026-09-14
+
 Bead: rb24
 
-Status: Independently reviewed architecture proposal, accepted by root. Consent,
-transport and other-channel policy gates remain open; not implementation-ready.
+Status: Architecture and September 14 policy amendment independently reviewed
+and accepted by root. Existing suppression and minimal OTLP wrapper design choices
+are resolved. Timing semantics, receiver/no-cost compatibility, other-channel and
+integration-acceptance gates remain open; not implementation-ready.
 Implementation and release are not authorized.
 
 ## Goal and authorization
@@ -161,17 +165,22 @@ setup, rather than treating a return during partially completed setup as success
 
 ### 3. Permission and transport serialization
 
-Production consent source and its migration policy are unresolved below. All
-unknown/missing/corrupt states default to no delivery in the recommended policy.
-Tests, guest/demo mode and explicit disablement independently suppress this path.
-Test detection must be injectable and cover unit/UI fixtures, previews and the
-approved offline harness rather than assuming one environment key covers all.
+On September 14 the user chose to **retain the existing non-guest/non-test
+policy**: `!AuthenticationViewModel.isGuestMode && !SuperlogTelemetry.isRunningTests`.
+Preserve the current UserDefaults boolean semantics, including an absent guest
+key reading false, and the existing `XCTestConfigurationFilePath` test predicate.
+Do not introduce opt-in UI, migrate existing installs to opt-out, infer consent
+from this predicate or silently broaden its session classification. Inject the
+same predicate for offline testing; explicit harness isolation must still prevent
+test traffic even when a process does not carry that XCTest environment key.
 
-**Proposed consent-epoch rule, pending user policy approval:** start admission
-also requires enabled permission and captures its epoch. Completion must still
-be permitted in that same epoch; operations begun before consent or spanning
-revoke/re-enable cannot later export. This intentionally differs from synthetic
-gate-at-completion tests and is not claimed as the existing app contract.
+**Proposed integration epoch rule, not an implementation approval:** start
+admission requires that retained predicate to permit delivery and captures its
+epoch. Completion must still be permitted in the same epoch; operations begun
+while suppressed or spanning suppress/re-enable cannot later export. This
+intentionally differs from synthetic gate-at-completion tests and is not claimed
+as existing app behavior or as a consent mechanism. Its race semantics remain
+part of the written integration design requiring acceptance before implementation.
 Callbacks read a small synchronized immutable permission snapshot, never sync
 into the delivery queue or await an actor. Carry its epoch as internal metadata,
 not an exported field. Because permission can change after that snapshot, the
@@ -228,29 +237,114 @@ initial safety bounds, **not measured production
 tuning**. Any local drop counters must be fixed categories/numbers only; do not
 add exported fields, identifiers or another diagnostic telemetry channel.
 
-### 4. Literal four-field output and unresolved transport
+### 4. Four-field content, minimal OTLP wrapper and unresolved receiver
 
-Each application payload must be exactly this JSON object, with no additional
-envelope, resource, identifiers, counter, log or build labels:
+The logical operation record remains exactly this JSON object:
 
 ```json
 {"name":"profile.load","start":1700000000,"end":1700000001,"outcome":"success"}
 ```
 
-The remaining 14 names are exactly those in the callsite table; no normalization,
-prefix matching or dynamic labels. Structural tests compare the entire key set
-and types, not merely the absence of one known sensitive field.
+On September 14 the user additionally approved **designing a minimal OTLP
+wrapper** around only name/start/end/outcome. This changes the earlier literal
+top-level-four-key wire requirement, not the permitted telemetry content. Only
+schema structure needed to carry that record may be added; no trace/span IDs,
+resource attributes, scope/build labels, extra timestamps, duplicate signals,
+counters, severity data, error text or other telemetry is authorized. The exact
+schema mapping must be source-backed and reviewed before implementation.
 
-No existing supported receiver for this literal payload was established.
-Current `SuperlogTelemetry.emitSpan` is incompatible. Do not invent a Superlog
-endpoint/ingestion schema, silently wrap records in OTLP or reuse its credential
-as proof of authorization. A documented receiver contract and no-cost operating
-path are required before transport implementation. An injected interface can be
-tested offline, but is not the completed production integration by itself.
+The remaining 14 names are exactly those in the callsite table; no normalization,
+prefix matching or dynamic labels. Structural tests must compare the entire
+approved wrapper and nested four-field key sets/types, not merely the absence of
+one known sensitive field. This is not permission to use default exporter payloads.
+
+**Schema-structurally representable candidate, not semantically or receiver
+verified:** one OTLP log record
+whose typed body carries the operation record:
+
+```json
+{
+  "resourceLogs": [{
+    "scopeLogs": [{
+      "logRecords": [{
+        "body": {
+          "kvlistValue": {
+            "values": [
+              {"key": "name", "value": {"stringValue": "profile.load"}},
+              {"key": "start", "value": {"doubleValue": 1700000000}},
+              {"key": "end", "value": {"doubleValue": 1700000001}},
+              {"key": "outcome", "value": {"stringValue": "success"}}
+            ]
+          }
+        }
+      }]
+    }]
+  }]
+}
+```
+
+The primary [OTLP logs schema](https://raw.githubusercontent.com/open-telemetry/opentelemetry-proto/main/opentelemetry/proto/logs/v1/logs.proto)
+permits omitted resource/scope (meaning unknown) and optional trace/span IDs;
+the [common AnyValue schema](https://raw.githubusercontent.com/open-telemetry/opentelemetry-proto/main/opentelemetry/proto/common/v1/common.proto)
+defines `kvlist_value` with typed values. The
+[OTLP specification](https://opentelemetry.io/docs/specs/otlp/)
+defines lower-camel-case JSON fields, `application/json` and the logs POST path
+`/v1/logs`. Root read these primary sources on September 14; the linked `main`
+schemas are moving references and must be rechecked/pinned at implementation.
+
+Structural representability is not full OTLP semantic compliance. The logs schema
+also requires `observedTimeUnixNano` to be set once an event is observed by
+OpenTelemetry. Applicability to this proposed client path, and its conflict with
+the approved no-extra-telemetry boundary, remain an explicit semantic gate.
+Do not silently add an observation timestamp, duplicate end as observation time,
+or fabricate a value to resolve it. If a compliant path requires additional data,
+obtain a revised data-contract approval before implementation or sending.
+
+This candidate omits `resource`, `scope`, both resource/record attributes,
+schema URLs, severity, trace/span IDs, flags, `timeUnixNano` and
+`observedTimeUnixNano`. Start/end remain finite epoch-second doubles only in the
+body; no timestamps or outcomes are duplicated into other OTLP fields. Although
+the structural containers are named resourceLogs/scopeLogs, no resource or scope
+identity/attribute data is supplied. One log request replaces the target operation's
+old trace/log/counter trio; it is not an additional signal.
+
+Receiver compatibility with that minimal wrapper has **not** been established.
+Current `SuperlogTelemetry.emitSpan` remains incompatible. Do not invent a
+Superlog ingestion contract or reuse its credential as proof of authorization.
+Authoritative OTLP schema compatibility alone is not evidence that the actual
+receiver accepts, retains or displays this restricted record. Verify its contract
+and a no-cost operating path before implementation or sending; a live probe is
+not authorized by this design approval. An offline injected interface is not
+completed production integration by itself.
+
+Evidence levels must remain distinct: (1) primary schema can structurally represent
+this candidate, but observation-timestamp semantic applicability is unresolved;
+(2) exact offline serialization/response tests remain future implementation work;
+(3) compatibility with the actual configured receiver, including acceptance,
+retention/display and no-cost operation, remains unverified. No level-3 result
+may be inferred from level 1, an endpoint name or general OTLP support.
+
+The OTLP specification permits HTTP 200 with `partialSuccess` rejections; a 2xx
+status alone must never be reported as accepted. The primary
+[OTLP logs response schema](https://raw.githubusercontent.com/open-telemetry/opentelemetry-proto/main/opentelemetry/proto/collector/logs/v1/logs_service.proto)
+defines the response and partial-success count. A valid `{}` response expresses
+full success/default zero rejection counts; it is not a missing response. The
+proposed receiver adapter
+must bound response bytes before decoding (initial limit **16 KiB**, including
+streamed bodies irrespective of Content-Length), inspect the documented rejected
+record count, and distinguish accepted, rejected and ambiguous responses using
+fixed internal outcomes. With one submitted record, reject malformed/invalid
+counts or an undecodable/missing expected response rather than infer success;
+do not reject a valid empty JSON object merely because it omits default fields.
+Any response diagnostic text is never logged, persisted or exported. Detailed
+response schema rules require the receiver compatibility review before code.
+Retain no retries, one in-flight slot and the existing terminal-acknowledgement
+rules; HTTP errors, partial rejection or ambiguous responses drop the record
+without replay or a richer legacy fallback. This policy adds no output fields.
 
 Ordinary HTTPS routing/authentication and network metadata are separate from the
 application payload; the receiver can still observe a source network address.
-Four-field JSON is not anonymity or zero network metadata. No new authentication
+Four-field content is not anonymity or zero network metadata. No new authentication
 header value, endpoint provisioning or traffic is authorized by this design.
 
 ### 5. Atomic legacy cutover and duplicate prevention
@@ -273,21 +367,23 @@ implementation to catch source drift. Counters/logs previously derived from
 these 15 names are deliberately retired rather than silently double-counted;
 dashboard consequences need owner acceptance before release.
 
-## Unresolved policy gates
+## Resolved choices and remaining gates
 
-1. **Consent:** recommend explicit telemetry opt-in, unknown/off by default,
-   including existing-install migration and revocation. The current non-guest
-   boolean is insufficient to infer that choice. Root has asked the user; no
-   answer is assumed. Specify UI/storage/version, signed-out behavior and which
-   authority changes the permission epoch before implementing integration.
-2. **Transport:** identify a documented, authorized, no-cost receiver accepting
-   literal four-field JSON. If the user instead wants OTLP envelope metadata,
-   revise and approve that different data contract explicitly; do not disguise
-   it as the current four-field design.
+1. **Suppression choice resolved September 14:** retain the exact existing
+   non-guest/non-XCTest predicate, including its missing-guest-key behavior.
+   No opt-in UI/storage/migration or consent claim is added. The proposed start
+   epoch/admission/race behavior still requires written integration acceptance.
+2. **Wrapper design choice resolved September 14; compatibility remains open:**
+   a minimal OTLP structure may carry only the four permitted values, with no
+   IDs/resource attributes/extra telemetry. Structural schema representation is
+   supported; observation-timestamp semantic applicability remains unresolved.
+   Establish a permitted semantically compliant mapping and actual receiver
+   compatibility before implementation or sending. Neither the
+   design approval nor general OTLP support authorizes a live compatibility probe.
 3. **Other channels:** explicitly decide whether general errors/fatal reports,
    PostHog/replay, HTTP instrumentation and trace headers remain unchanged or
    become separately gated/removed. Current source does not justify a claim that
-   consent for this new path governs those channels or all app telemetry.
+   suppression for this new path governs those channels or all app telemetry.
 4. **Release:** after design/policies and local implementation are reviewed,
    app build/runtime verification, staged network acceptance, store/release and
    any backend/receiver changes require their own applicable approvals. This
@@ -297,8 +393,9 @@ dashboard consequences need owner acceptance before release.
 
 Production ownership would reside in `Services/TelemetryService.swift`, a new
 production processor/minimal-record component, a permission/delivery coordinator
-and `Services/SuperlogTelemetry.swift` legacy exclusions. Startup and consent UI/
-storage files depend on resolved policy. Add owner-required project entries for
+and `Services/SuperlogTelemetry.swift` legacy exclusions. Retain current session
+storage; no new consent UI or migration is included. Startup and state-transition
+integration details belong in the later approved plan. Add owner-required project entries for
 new app Swift files only under the later implementation plan; none are added now.
 
 Acceptance must include actual pinned SDK callbacks with synthetic input,
@@ -306,7 +403,7 @@ concurrent start/end/duplicate/setup/shutdown stress, supported Swift concurrenc
 checks and race detection where the approved runtime permits. Test all 15 names
 and three outcomes, start/final rename behavior, weak identity reuse, both caps,
 closed/unknown objects and no raw getter/snapshot access. Use deterministic
-barriers for consent revocation at offer/preparation/resume/completion, including
+barriers for suppression changes at offer/preparation/resume/completion, including
 reentrant transitions and guest/test state changes.
 Explicitly test disabled-start/enabled-end and enabled-start/revoke/re-enable/end:
 under the proposed epoch rule both produce zero exports. Also interleave policy
@@ -317,7 +414,8 @@ and one drain wakeup are admitted; while the transport is stalled prove at most
 one request/timer exists. Race timeout, cancellation and late completion to prove
 one terminal transition, no slot reuse bug, no retry and bounded control wakeups.
 
-An offline fake transport must assert exact four-field bytes and no unexpected
+An offline fake transport must assert the exact reviewed minimal OTLP wrapper,
+only the four permitted operation values, and no unexpected
 legacy trace/log/counter requests for every inventoried path. Retain the existing
 91 snapshot, 64 lifecycle, two lifecycle-negative, 73 adapter, three input-negative
 and 45 projector combinations/gates. These do not substitute for the eventual
@@ -330,10 +428,14 @@ must not automatically re-enable richer legacy exports without separate review.
 
 ## Review status
 
-Independent architecture review approved with no remaining findings after
-clarifying pre-dispatch ingress bounds, immutable start consent epochs and the
+The September 13 independent architecture review approved with no remaining findings after
+clarifying pre-dispatch ingress bounds, immutable start permission epochs and the
 separate record-disposition/request-terminal acknowledgement states. Root accepted
-the architecture proposal. Consent, supported literal-payload transport and
-other-channel decisions still require explicit written resolution and user design
-acceptance. No implementation-ready approval or completion of production
-integration is claimed while those gates remain open.
+the architecture proposal. The September 14 user choices now retain existing
+non-guest/non-test suppression and permit minimal OTLP wrapper design only.
+The amendment passed independent review and root acceptance after correcting
+schema-structural versus semantic compatibility and valid empty-response handling.
+Timestamp semantic applicability, receiver/no-cost compatibility, other-channel
+decisions, proposed integration race behavior and written design acceptance remain
+open. No implementation-ready approval or completion of production integration
+is claimed while those gates remain open.
