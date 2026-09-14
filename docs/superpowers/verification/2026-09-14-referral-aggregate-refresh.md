@@ -1,17 +1,26 @@
 # Referral aggregate refresh — 2026-09-14
 
-**Scope:** Read-only, bounded measurement evidence for `roammate-website-lnn` only. This report does not close that Bead, authorize a growth campaign, or establish GSC acceptance. Parent-agent query receipts supplied the results below; no additional query was issued to prepare this report.
+**Scope:** Read-only, bounded measurement evidence for `roammate-website-lnn` and the separately labeled `roammate-website-bq3` comparison below. This report does not close either Bead, authorize a growth campaign, or establish GSC acceptance. Parent-agent query receipts supplied the results below; the report author issued no additional queries.
 
 ## Prerequisite checks
 
 - The available metric catalog was empty: no canonical conversion metric was available to reuse.
 - Event schema and event properties were checked before the aggregate query.
 - A September 13 count probe returned 54 `$pageview` events and 3 `app_store_click` events.
-- Current `BaseLayout.astro` consolidates Apple labels (`appstore` / `app_store`) into `app_store_click`, not Play labels. Individual Play events exist in the event schema, but are not included here. These figures are an Apple-click proxy, not all-store conversion.
+- Current `BaseLayout.astro` consolidates Apple labels (`appstore` / `app_store`) into `app_store_click`, not Play labels. `AppCTA` sends an individual Play event; individual Play events exist in the event schema, but are not included here. These figures are an Apple-click proxy, not all-store conversion. Individual Apple events must not be added to their consolidated counterparts, which would double-count the same interaction.
 
 ## Exact aggregate SQL
 
-The two intended complete UTC weeks are August 31–September 7 and September 7–14, with inclusive starts and exclusive ends. **UTC interpretation is an assumption of the query's default `toDateTime` handling; project timezone was not independently queried.** The result labels alone do not verify timezone semantics.
+The two complete UTC weeks are August 31–September 7 and September 7–14, with inclusive starts and exclusive ends. **UTC interpretation of these query boundaries is verified** by the following read-only scalar query. Its returned epoch values match JavaScript `Date.parse` of the corresponding explicit-`Z` timestamps, divided by 1,000. This verifies these boundary expressions, not an independently inspected project timezone setting.
+
+```sql
+SELECT
+    toUnixTimestamp(toDateTime('2026-09-07 00:00:00')) AS split_epoch,
+    toUnixTimestamp(toDateTime('2026-08-31 00:00:00')) AS start_epoch,
+    toUnixTimestamp(toDateTime('2026-09-14 00:00:00')) AS end_epoch
+```
+
+Returned `split_epoch | start_epoch | end_epoch`: `1788739200 | 1788134400 | 1789344000`.
 
 ```sql
 SELECT
@@ -53,5 +62,37 @@ Descriptive Apple-click-events / pageview-unique-person-ID ratios:
 - `uniqExactIf(person_id, ...)` returns aggregate identifier cardinalities, not verified human counts. No raw identities, event rows, personal records, or URL query strings were requested or reproduced for this report.
 - Ratios divide click-event counts by distinct pageview person IDs; numerator and denominator are not linked. They are descriptive only, not signup, install, unique-person conversion, retention, or causal lift estimates.
 - ChatGPT samples are tiny. No clean-traffic, test, bot, or cohort-membership exclusion was applied. `other_or_missing_utm` must not be relabeled “direct.”
-- Deployment and rollback changes confound period comparisons. Instrumentation consistency and timezone interpretation require further validation before stronger claims.
+- Deployment and rollback changes confound period comparisons. Instrumentation consistency requires further validation before stronger claims.
 - These bounded weekly aggregates cannot validate the historical 60-day “2.5×” claim, establish comparable acquisition quality, or justify closing growth/GSC Beads. They refresh a measurement prerequisite only; root review and Bead disposition remain separate.
+
+## Comparison blog versus homepage — `roammate-website-bq3`
+
+Read-only property metadata confirmed both path values below. The same verified UTC boundaries and aggregate-only privacy limits apply. This comparison groups events by their own pathname; it does not attribute a later click or download to an earlier page visit.
+
+```sql
+SELECT
+    if(timestamp < toDateTime('2026-09-07 00:00:00'), '2026-08-31/09-07', '2026-09-07/09-14') AS window_utc,
+    if(properties.$pathname = '/', 'homepage', 'comparison_blog') AS page_group,
+    countIf(event = '$pageview') AS pageviews,
+    uniqExactIf(person_id, event = '$pageview') AS pageview_person_ids,
+    countIf(event = 'app_store_click') AS apple_click_events,
+    uniqExactIf(person_id, event = 'app_store_click') AS apple_click_person_ids
+FROM events
+WHERE timestamp >= toDateTime('2026-08-31 00:00:00')
+    AND timestamp < toDateTime('2026-09-14 00:00:00')
+    AND event IN ('$pageview', 'app_store_click')
+    AND properties.$host = 'roammate.com'
+    AND properties.$pathname IN ('/', '/blog/best-travel-companion-apps-2026/')
+GROUP BY window_utc, page_group
+ORDER BY window_utc, page_group
+LIMIT 4
+```
+
+| Window label | Event-time page group | Pageviews | Pageview person IDs | Apple click events | Apple click person IDs |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 2026-08-31/09-07 | comparison_blog | 8 | 8 | 1 | 1 |
+| 2026-08-31/09-07 | homepage | 29 | 19 | 6 | 5 |
+| 2026-09-07/09-14 | comparison_blog | 10 | 8 | 5 | 5 |
+| 2026-09-07/09-14 | homepage | 37 | 23 | 2 | 2 |
+
+These small, unfiltered samples do not validate historical 60-day parity, download counts, or conversion claims. A person may appear under both paths; click events and pageview person IDs are not linked into a funnel. Apple-only coverage, potential test/bot traffic, and deployment/rollback confounds remain. No raw URLs, query strings, identities or event rows are reproduced. `bq3` and `lnn` remain open; the growth hold is unchanged.
