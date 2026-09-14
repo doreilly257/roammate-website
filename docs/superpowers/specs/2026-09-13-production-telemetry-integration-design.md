@@ -17,7 +17,8 @@ The receiver-response amendment passed independent review and root acceptance.
 On September 14 the user accepted the written integration design and authorized
 local production-code wiring, offline fake-transport tests and compile checks,
 including eligibility from start through completion in the same epoch.
-Implementation verification remains open. No app launch, further telemetry sending
+Scoped local implementation verification is complete as recorded in the September 14
+evidence amendment below. No full app build, owner merge, app launch, further telemetry sending
 or release is authorized. Execution is described in the
 [local implementation plan](../plans/2026-09-14-production-telemetry-integration.md).
 
@@ -529,6 +530,22 @@ previous missing-evidence premises. The bounded response amendment passed
 independent review and root acceptance;
 the user subsequently accepted the written integration design, including its
 start-through-completion eligibility rule, and approved local code wiring,
-offline fake-transport tests and compile checks. Implementation verification is
-still open; no completed production integration, app launch, additional sending
-or release is claimed or authorized by this amendment.
+offline fake-transport tests and compile checks. The scoped local implementation
+verification results follow below; no released production integration, app launch,
+additional sending or release is claimed or authorized by this amendment.
+
+September 14 implementation evidence amendment: all five local units have passing
+evidence and specification/code-quality approval. Combined root run `6278/a964b0`
+exited zero with 1,139 assertions, 318 SDK sources and two macro-denial receipts;
+normal nonfixture branches and the verbatim auth guest property compiled, **not
+the full app**. Fresh retained run `88098/a2967d` passed the 91/64/2/73/3/45 cases
+with 314 SDK sources and two macro-denial receipts. Fresh integrated static review
+approved without blockers. Six new production Swift files remain isolated; no
+owner merge, launch, additional sending or release occurred. Final auth run
+`93144/4ee66f` exited zero under the outer deny-network sandbox with 15 social
+matrices, unchanged email properties and all 10 social-completion sites. Worktree
+diff checking passed in receipt `98b2fb`; root reports all scoped local
+implementation gates complete. The
+[scoped report](../verification/2026-09-14-production-telemetry-integration.md)
+records preservation differences and precise limits; these results do not close
+broader `sie` or original-Bead acceptance.

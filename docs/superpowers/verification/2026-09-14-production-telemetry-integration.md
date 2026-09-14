@@ -1,12 +1,12 @@
-# Local production telemetry integration — interim verification
+# Local production telemetry integration — scoped verification
 
 Date: 2026-09-14
 
-**Status: IN PROGRESS. This is not an implementation-completion or release-acceptance report.**
+**Status: SCOPED LOCAL IMPLEMENTATION VERIFICATION COMPLETE. Units A–E, combined offline checks, retained suites and auth regression checks passed with review. This is not full-app-build, app-runtime, live-export, owner-merge or release acceptance.**
 
-Bead: `roammate-website-k9xc` (`in_progress` at this evidence snapshot).
+Bead: `roammate-website-k9xc`; root owns its final status update. Broader `sie` acceptance remains separate.
 
-Scope: [reviewed design](../specs/2026-09-13-production-telemetry-integration-design.md) and [implementation plan](../plans/2026-09-14-production-telemetry-integration.md). Website plan/spec changes were pushed as `b98f92e`. This interim report documents root-provided execution receipts and the current Bead; its documentation author did not independently rerun tests or inspect every tool transcript.
+Scope: [reviewed design](../specs/2026-09-13-production-telemetry-integration-design.md) and [implementation plan](../plans/2026-09-14-production-telemetry-integration.md). Website plan/spec changes were pushed as `b98f92e`; root separately handles landing these final evidence amendments. This report documents root-provided execution receipts; its documentation author did not independently rerun tests or inspect every tool transcript.
 
 ## Authorization boundary
 
@@ -18,9 +18,9 @@ The separately authorized [single synthetic receiver check](2026-09-14-minimal-o
 
 Implementation work is confined to `/Users/doreilly/Work/roammate-app-ios/.worktrees/telemetry-integration`, branch `local/telemetry-integration`, based on `8fc8118`. Root copied 17 relevant existing dirty iOS/project/script prerequisites into that worktree rather than discard or overwrite them. The manifest is `/tmp/roammate-telemetry-integration-owner-baseline.json` with the base and per-file preservation evidence. Four additional pre-edit boundary copies are retained under `/tmp/roammate-telemetry-edit-baseline` for the intended existing-file edits.
 
-The owner working tree remains untouched by this implementation slice. There is no owner commit or push. Future local patch handoff must compare the captured boundary against any intervening owner changes rather than copy blindly. Temporary manifests and edit-boundary copies are local evidence aids, not committed artifacts or permanent storage guarantees; do not include credential values in the website report.
+The owner working tree remains untouched by this implementation slice; that does not mean other owner work stopped changing. Preservation receipt `388687` reports 16 prior worktree prerequisites unchanged and 19 of 20 owner snapshot files unchanged. Owner `roammateTests/Services/ImageCacheServiceTests.swift` changed since the snapshot; this implementation did not modify or revert it. All four owner telemetry edit-boundary files remain unchanged. There is no owner commit, push or merge. Future local patch handoff must compare the captured boundary against intervening owner changes rather than copy blindly. Temporary manifests and edit-boundary copies are local evidence aids, not committed artifacts or permanent storage guarantees; do not include credential values in the website report.
 
-Root owns code changes, compiler/test processes, Bead status and repository landing. This report is documentation only. No full app build or production wiring acceptance is claimed at this snapshot.
+Root owns code changes, compiler/test processes, Bead status and repository landing. This report is documentation only. Local wiring has the offline evidence below; no full app build, app-runtime or released production wiring acceptance is claimed.
 
 ## Retained offline baseline
 
@@ -98,12 +98,33 @@ Root reports GREEN session `58645`, completion chunk `8f4f37`, exit zero: 79 ass
 
 The passing fake-session suite is evidence for production transport code under controlled offline callbacks. It is not additional receiver compatibility evidence, proof of deployed traffic behavior or authorization to send another synthetic record.
 
+## Unit E and combined verification
+
+Root reports Unit E session `42457`, chunk `44d27b`: 635 assertions, with independent specification and code-quality approval. This covers the local startup, guest transition and exact legacy-export wiring slice under the offline harness. The worktree contains **six new production Swift files** in `roammate/Services/`. A read-only `shasum -a 256 roammate/Services/OperationTelemetry*.swift` captured the following final local source identifiers; these hashes expose no source or credentials and are not owner commit identifiers.
+
+| Production file | SHA-256 |
+|---|---|
+| `OperationTelemetryDelivery.swift` | `581500fe79b53a50634c08486d24e86bbea7cd1f02b730f297b2ddf4f304086b` |
+| `OperationTelemetryHTTPTransport.swift` | `da9036e0f4ea737d504b8d4c18bfb616b260b475c2d238978547cdb7735992b3` |
+| `OperationTelemetryProcessor.swift` | `7024c557bcf617836d8462f892330b80511e08c54ab84382d0322941bcc809b6` |
+| `OperationTelemetryRecord.swift` | `82d1ddb6b7671af909a8ecedd4fd06e023bd972161760e809b741fd02ea7fecc` |
+| `OperationTelemetryRuntime.swift` | `4687ab4a1242f4cc96b131ecfd121a3c973ebdcf1ca031a54f0cff17b91accfb` |
+| `OperationTelemetryWire.swift` | `77839bce250734f0f0efc0daea5dec811c91a3b425a40e2840a1874c44fdb160` |
+
+| Root session / chunk | Evidence |
+|---|---|
+| `6278` / `a964b0` | Combined run, exit zero: 1,139 assertions = 226 record/wire + 63 delivery + 136 processor + 79 transport + 635 wiring. Compiled 318 SDK source files and recorded two macro-denial receipts. |
+| `88098` / `a2967d` | Fresh retained-suite run, exit zero: 91 snapshot, 64 lifecycle, two lifecycle-negative, 73 adapter, three compile-negative and 45 projection cases; 314 SDK source files and two macro-denial receipts. |
+| `93144` / `4ee66f` | Auth regression run, exit zero: 15 social matrices, unchanged email properties and all 10 social-completion sites. The entire script ran under the outer `sandbox-exec` deny-network sandbox. |
+
+The combined run compiled normal nonfixture branches and the verbatim authentication guest-mode property. That is bounded source/module compile evidence, **not a full app build**. A fresh integrated review by `telemetry_final_review` approved with no blockers; this was static review, not another test run or runtime observation. Root's worktree `git diff --check` passed in receipt `98b2fb`. With the final auth receipt, root reports all gates for this scoped local implementation complete. These results do not imply an owner merge, app launch, live request or release.
+
 ## Execution communication preference
 
-The user subsequently requested lettered, scored options after each task, with a recommendation compared against alternatives. Root uses progress 40, safety 40 and effort/cost 20 as the comparison weights. This communication preference does not expand authorization: execution continues within the already approved local scope unless the user chooses a different direction. The report remains evidence documentation rather than a competing task tracker.
+The user subsequently requested lettered, scored options after each task, with a recommendation compared against alternatives. Root uses progress 40, safety 40 and effort/cost 20 as the comparison weights. The user also permits recommending multiple compatible options together: score the combination separately and state its execution order. This communication preference does not expand authorization: execution continues within the already approved local scope unless the user chooses a different direction. The report remains evidence documentation rather than a competing task tracker.
 
 ## Remaining acceptance scope
 
-At this snapshot Unit E implementation is active: atomic local app startup, guest-mode transitions and legacy-export wiring are not yet accepted. Integrated retained-suite runs, root compile checks, preservation comparison and complete independent review are also still required before local implementation completion can be considered.
+The scoped local implementation gates are complete with the evidence above. No full app build has been established, no app has launched, and no additional telemetry has been sent. The owner has not merged this isolated patch. Any full-app/runtime, sending, merge or release acceptance remains a separate action within its applicable authorization. Broader `sie` and the original 35 unfinished Beads are not closed by these results. Root's fresh tracker refresh returned no ready work and retained the original 35 as 23 blocked, six dependent open and six deferred; root appended this integration evidence and its limits to `sie`, which remains blocked.
 
-Progress and blocker state remain in Beads; this narrative is an evidence snapshot, not a parallel task tracker. Root must amend this report with subsequent receipts before making any broader completion claim. Even a completed local implementation would not authorize app launch, further export or release.
+Progress and blocker state remain in Beads; this narrative is an evidence record, not a parallel task tracker. Root must record separate evidence before making any broader completion claim. This completed local implementation does not authorize app launch, further export or release.
