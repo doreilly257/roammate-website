@@ -8,8 +8,10 @@ Bead: rb24
 
 Status: Architecture and September 14 policy amendment independently reviewed
 and accepted by root. Existing suppression, minimal OTLP wrapper design and
-preservation of unrelated channels are resolved user choices. Timing semantics,
-receiver/no-cost compatibility and integration-acceptance gates remain open;
+preservation of unrelated channels are resolved user choices. The user additionally
+approved one actual OTLP observation timestamp; that amendment passed independent
+review and root acceptance.
+Receiver/no-cost compatibility and integration-acceptance gates remain open;
 not implementation-ready.
 Implementation and release are not authorized.
 
@@ -239,7 +241,7 @@ initial safety bounds, **not measured production
 tuning**. Any local drop counters must be fixed categories/numbers only; do not
 add exported fields, identifiers or another diagnostic telemetry channel.
 
-### 4. Four-field content, minimal OTLP wrapper and unresolved receiver
+### 4. Four-field content plus observation time, minimal OTLP wrapper and unresolved receiver
 
 The logical operation record remains exactly this JSON object:
 
@@ -248,10 +250,11 @@ The logical operation record remains exactly this JSON object:
 ```
 
 On September 14 the user additionally approved **designing a minimal OTLP
-wrapper** around only name/start/end/outcome. This changes the earlier literal
-top-level-four-key wire requirement, not the permitted telemetry content. Only
-schema structure needed to carry that record may be added; no trace/span IDs,
-resource attributes, scope/build labels, extra timestamps, duplicate signals,
+wrapper** around name/start/end/outcome, and subsequently approved adding only
+the required **actual observation timestamp**. This changes the earlier literal
+top-level-four-key wire requirement. Only schema structure and that one timestamp
+may accompany the four operation fields; no trace/span IDs,
+resource attributes, scope/build labels, any other timestamps, duplicate signals,
 counters, severity data, error text or other telemetry is authorized. The exact
 schema mapping must be source-backed and reviewed before implementation.
 
@@ -260,7 +263,7 @@ prefix matching or dynamic labels. Structural tests must compare the entire
 approved wrapper and nested four-field key sets/types, not merely the absence of
 one known sensitive field. This is not permission to use default exporter payloads.
 
-**Schema-structurally representable candidate, not semantically or receiver
+**Source-backed candidate with the approved observation timestamp, not receiver
 verified:** one OTLP log record
 whose typed body carries the operation record:
 
@@ -269,6 +272,7 @@ whose typed body carries the operation record:
   "resourceLogs": [{
     "scopeLogs": [{
       "logRecords": [{
+        "observedTimeUnixNano": "1700000002000000000",
         "body": {
           "kvlistValue": {
             "values": [
@@ -294,18 +298,39 @@ defines lower-camel-case JSON fields, `application/json` and the logs POST path
 `/v1/logs`. Root read these primary sources on September 14; the linked `main`
 schemas are moving references and must be rechecked/pinned at implementation.
 
-Structural representability is not full OTLP semantic compliance. The logs schema
-also requires `observedTimeUnixNano` to be set once an event is observed by
-OpenTelemetry. Applicability to this proposed client path, and its conflict with
-the approved no-extra-telemetry boundary, remain an explicit semantic gate.
-Do not silently add an observation timestamp, duplicate end as observation time,
-or fabricate a value to resolve it. If a compliant path requires additional data,
-obtain a revised data-contract approval before implementation or sending.
+The logs schema requires `observedTimeUnixNano` once the event is observed by
+OpenTelemetry. The user has now approved this field only, resolving the earlier
+timestamp-permission conflict. Capture the **actual observer clock once when the
+local callback path observes the eligible completed operation record**, before
+asynchronous enqueue; carry that immutable observation with the record. Never
+recapture at send, timeout or replay, derive it from the operation's end, or use
+zero/a fabricated fallback. The example represents a synthetic observer clock
+reading 1700000002 seconds, distinct from its operation end at 1700000001.
+
+Encode observation time as a **uint64 decimal string of Unix nanoseconds**, per
+the protobuf JSON mapping, not a floating-point JSON number. The later clock
+adapter must perform checked range/conversion: reject negative, nonfinite,
+out-of-range or unrepresentable readings before integer conversion and avoid
+unchecked multiplication/overflow. Specify the observer clock as integer Unix
+seconds plus a nanosecond component in `0..<1_000_000_000`; convert nonnegative
+seconds to UInt64, checked-multiply by 1_000_000_000, checked-add the component,
+and reject overflow or a zero/unknown result. No Double-to-UInt64 cast is needed
+for this field; body start/end retain their existing Double representation.
+The production adapter must obtain these components from the actual system
+wall clock, not estimate extra precision from an operation timestamp.
+Nanosecond encoding does not establish nanosecond clock accuracy; no clock
+precision/source label is exported. Zero represents unknown and is rejected,
+not emitted as a sentinel. Queued records retain their original observation value
+through delayed drains and never regenerate it.
+Use an injected deterministic observer clock in offline tests. A failed capture
+or conversion drops the record without substituting end time or extra diagnostics.
+This source-backed mapping is still not evidence of deployed receiver acceptance.
 
 This candidate omits `resource`, `scope`, both resource/record attributes,
-schema URLs, severity, trace/span IDs, flags, `timeUnixNano` and
-`observedTimeUnixNano`. Start/end remain finite epoch-second doubles only in the
-body; no timestamps or outcomes are duplicated into other OTLP fields. Although
+schema URLs, severity, trace/span IDs, flags and `timeUnixNano`. Start/end remain
+unchanged finite epoch-second doubles only in the body; `observedTimeUnixNano`
+is the sole separately approved clock reading. No operation timestamps or outcomes
+are duplicated into other OTLP fields. Although
 the structural containers are named resourceLogs/scopeLogs, no resource or scope
 identity/attribute data is supplied. One log request replaces the target operation's
 old trace/log/counter trio; it is not an additional signal.
@@ -319,8 +344,8 @@ and a no-cost operating path before implementation or sending; a live probe is
 not authorized by this design approval. An offline injected interface is not
 completed production integration by itself.
 
-Evidence levels must remain distinct: (1) primary schema can structurally represent
-this candidate, but observation-timestamp semantic applicability is unresolved;
+Evidence levels must remain distinct: (1) primary schema supports the proposed
+typed body and actual observation-time mapping, with timestamp permission resolved;
 (2) exact offline serialization/response tests remain future implementation work;
 (3) compatibility with the actual configured receiver, including acceptance,
 retention/display and no-cost operation, remains unverified. No level-3 result
@@ -379,10 +404,11 @@ dashboard consequences need owner acceptance before release.
    No opt-in UI/storage/migration or consent claim is added. The proposed start
    epoch/admission/race behavior still requires written integration acceptance.
 2. **Wrapper design choice resolved September 14; compatibility remains open:**
-   a minimal OTLP structure may carry only the four permitted values, with no
-   IDs/resource attributes/extra telemetry. Structural schema representation is
-   supported; observation-timestamp semantic applicability remains unresolved.
-   Establish a permitted semantically compliant mapping and actual receiver
+   a minimal OTLP structure may carry the four permitted operation values plus
+   the subsequently approved actual `observedTimeUnixNano`, with no IDs/resource
+   attributes/other telemetry. The timestamp-permission conflict is resolved;
+   checked observer-clock conversion remains a concrete implementation requirement.
+   Establish actual receiver
    compatibility before implementation or sending. Neither the
    design approval nor general OTLP support authorizes a live compatibility probe.
 3. **Other-channel choice resolved September 14:** the user explicitly chose
@@ -421,7 +447,8 @@ one request/timer exists. Race timeout, cancellation and late completion to prov
 one terminal transition, no slot reuse bug, no retry and bounded control wakeups.
 
 An offline fake transport must assert the exact reviewed minimal OTLP wrapper,
-only the four permitted operation values, and no unexpected
+only the four permitted operation values plus the one actual observation timestamp,
+and no unexpected
 legacy trace/log/counter requests for every inventoried path. Retain the existing
 91 snapshot, 64 lifecycle, two lifecycle-negative, 73 adapter, three input-negative
 and 45 projector combinations/gates. These do not substitute for the eventual
@@ -429,6 +456,11 @@ approved real application integration tests or receiver acceptance.
 Regression acceptance must also prove unrelated PostHog, fatal/general error,
 HTTP instrumentation and trace-header behavior is unchanged; the legacy export
 exclusions match only the exact 15 migrated names, not broader prefixes/channels.
+Observation-clock tests must inject deterministic readings and prove one capture
+at local observation, unchanged across delayed enqueue/send, independent of body
+start/end, correctly encoded as a uint64 decimal string. Test conversion boundaries,
+negative/nonfinite/zero/overflow rejection and absence of `timeUnixNano` or fallback
+values; reject any extra wire field. No runtime clock is read for this design.
 
 The final production acceptance record must identify the reviewed receiver,
 privacy/permission policy, source/release version, one-owner cutover, bounded
@@ -442,10 +474,13 @@ clarifying pre-dispatch ingress bounds, immutable start permission epochs and th
 separate record-disposition/request-terminal acknowledgement states. Root accepted
 the architecture proposal. The September 14 user choices now retain existing
 non-guest/non-test suppression, permit minimal OTLP wrapper design only, and
-preserve unrelated channels unchanged.
+preserve unrelated channels unchanged. A subsequent explicit approval adds only
+the actual observation timestamp alongside the four operation fields.
 The amendment passed independent review and root acceptance after correcting
 schema-structural versus semantic compatibility and valid empty-response handling.
-Timestamp semantic applicability, receiver/no-cost compatibility,
+The observation-time amendment passed independent review and root acceptance;
+its prior permission blocker is
+resolved, not a remaining policy question. Receiver/no-cost compatibility,
 proposed integration race behavior and written design acceptance remain
 open. No implementation-ready approval or completion of production integration
 is claimed while those gates remain open.
