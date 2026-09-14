@@ -7,9 +7,10 @@ Policy amendment: 2026-09-14
 Bead: rb24
 
 Status: Architecture and September 14 policy amendment independently reviewed
-and accepted by root. Existing suppression and minimal OTLP wrapper design choices
-are resolved. Timing semantics, receiver/no-cost compatibility, other-channel and
-integration-acceptance gates remain open; not implementation-ready.
+and accepted by root. Existing suppression, minimal OTLP wrapper design and
+preservation of unrelated channels are resolved user choices. Timing semantics,
+receiver/no-cost compatibility and integration-acceptance gates remain open;
+not implementation-ready.
 Implementation and release are not authorized.
 
 ## Goal and authorization
@@ -59,6 +60,7 @@ Owner source: `/Users/doreilly/Work/roammate-app-ios/roammate/`.
 - `Services/AnalyticsService.swift:386` separately emits fatal exceptions.
   PostHog analytics/replay, general errors, automatic HTTP spans and W3C trace
   propagation are distinct existing channels, not made private by this design.
+  The user explicitly approved preserving these unrelated channels unchanged.
 
 Direct approved SDK span callsites:
 
@@ -362,7 +364,10 @@ owner for allowlisted operations, or those operations produce no export.
 
 `recordError` with an allowlisted custom name is covered by that exclusion; its
 default `app.error`, fatal exception emission and PostHog are not covered by an
-allowlist claim. Re-run the complete app-tree callsite inventory during future
+allowlist claim and remain unchanged under the user's preservation decision.
+HTTP instrumentation and trace headers likewise remain unchanged. The four-field
+boundary applies only to the 15 migrated operation names, not all app telemetry.
+Re-run the complete app-tree callsite inventory during future
 implementation to catch source drift. Counters/logs previously derived from
 these 15 names are deliberately retired rather than silently double-counted;
 dashboard consequences need owner acceptance before release.
@@ -380,10 +385,11 @@ dashboard consequences need owner acceptance before release.
    Establish a permitted semantically compliant mapping and actual receiver
    compatibility before implementation or sending. Neither the
    design approval nor general OTLP support authorizes a live compatibility probe.
-3. **Other channels:** explicitly decide whether general errors/fatal reports,
-   PostHog/replay, HTTP instrumentation and trace headers remain unchanged or
-   become separately gated/removed. Current source does not justify a claim that
-   suppression for this new path governs those channels or all app telemetry.
+3. **Other-channel choice resolved September 14:** the user explicitly chose
+   to preserve unrelated PostHog/replay, fatal/general error reporting, HTTP
+   instrumentation and trace headers unchanged. Remove duplicate legacy exports
+   only for the 15 migrated names. Do not extend this path's suppression or
+   four-field boundary to unrelated channels or claim whole-app minimization.
 4. **Release:** after design/policies and local implementation are reviewed,
    app build/runtime verification, staged network acceptance, store/release and
    any backend/receiver changes require their own applicable approvals. This
@@ -420,6 +426,9 @@ legacy trace/log/counter requests for every inventoried path. Retain the existin
 91 snapshot, 64 lifecycle, two lifecycle-negative, 73 adapter, three input-negative
 and 45 projector combinations/gates. These do not substitute for the eventual
 approved real application integration tests or receiver acceptance.
+Regression acceptance must also prove unrelated PostHog, fatal/general error,
+HTTP instrumentation and trace-header behavior is unchanged; the legacy export
+exclusions match only the exact 15 migrated names, not broader prefixes/channels.
 
 The final production acceptance record must identify the reviewed receiver,
 privacy/permission policy, source/release version, one-owner cutover, bounded
@@ -432,10 +441,11 @@ The September 13 independent architecture review approved with no remaining find
 clarifying pre-dispatch ingress bounds, immutable start permission epochs and the
 separate record-disposition/request-terminal acknowledgement states. Root accepted
 the architecture proposal. The September 14 user choices now retain existing
-non-guest/non-test suppression and permit minimal OTLP wrapper design only.
+non-guest/non-test suppression, permit minimal OTLP wrapper design only, and
+preserve unrelated channels unchanged.
 The amendment passed independent review and root acceptance after correcting
 schema-structural versus semantic compatibility and valid empty-response handling.
-Timestamp semantic applicability, receiver/no-cost compatibility, other-channel
-decisions, proposed integration race behavior and written design acceptance remain
+Timestamp semantic applicability, receiver/no-cost compatibility,
+proposed integration race behavior and written design acceptance remain
 open. No implementation-ready approval or completion of production integration
 is claimed while those gates remain open.
