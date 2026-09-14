@@ -169,8 +169,20 @@ evict a live tombstone, grow without bound or admit an end with no start. A
 retained long-lived span can consume capacity; that is a deliberate bounded-loss
 trade-off. Tests must prove identity reuse after actual deallocation is safe.
 
-Shutdown is idempotent: close/increment generation, clear ownership, then notify
-delivery after releasing the state lock. Setup attaches one processor exactly
+Shutdown is idempotent: close/increment generation, clear ownership, then complete
+the synchronous delivery shutdown barrier after releasing the state lock. Registry
+closure prevents new ownership and invalidates completions that have not passed
+their final generation check. It is **not** an instantaneous delivery cutoff: an
+already generation-validated completion may offer or resume while shutdown is
+still in progress, before the delivery barrier completes. Eligibility and epoch
+checks still apply at offer and resume. The externally observable cutoff is the
+completed synchronous barrier: **no new request may resume after shutdown returns**.
+Already resumed requests are cancelled best effort, not recalled. Concurrent or
+repeated shutdown callers must not report completion before that barrier is
+complete. Preserve the lock ordering; never call delivery while holding the
+registry lock to manufacture an earlier cutoff. This clarifies the shutdown
+overlap using the existing barrier semantics, not a new eligibility or sending
+permission. Setup attaches one processor exactly
 once, remains synchronous before startup instrumentation, and must not replace
 or attach competing providers during repeated calls. The implementation plan
 must specify the startup serialization primitive and prove concurrent/repeated

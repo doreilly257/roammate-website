@@ -71,8 +71,39 @@ The deadline correction uses a monotonic UInt64 resume anchor and deducts elapse
 
 The reviewed delivery contract retains at most 256 unsent immutable records, one coalesced wakeup and one in-flight request. Record disposition and transport terminal acknowledgement are separate; cancellation or timeout must not free an unacknowledged request slot. Eligibility transitions are synchronous and epoch checked, with no replay after disable/re-enable. Review explicitly accepted an already-resumed request's terminal callback winning internal disposition during the revocation-publication/cancellation gap. That does not authorize a new old-epoch resume, recall an already-started request, or establish that suppression can undo receiver visibility. Unit B approval does not substitute for the integrated processor, transport and app-wiring checks.
 
+## Unit C — concrete SDK processor and strengthened offline evidence
+
+Root reports final GREEN session `8954`, completion chunk `03f313`, exit zero: 136 actual-SDK assertions, 314 compiled SDK source files and two macro-denial receipts. Independent specification and code-quality review approved this strengthened local component state. The fixtures exercise actual fake-request resumes for all 45 allowed-name/outcome mappings, concurrency, eligibility epochs, object lifetime, reentrant clock behavior and the clarified intermediate-shutdown cutoff. This establishes offline processor evidence, not completed app integration or real network behavior.
+
+| Root session / chunk | Evidence and classification |
+|---|---|
+| `90564` / `11efc7` | Initial wrong SDK-flag run reported missing production code without compiling the SDK. This was a prerequisite failure, not actual-SDK behavioral RED evidence. |
+| `48621` / `caa8d0` | Corrected intended RED after full SDK compilation. |
+| `82519` / `fef10a` | Initial GREEN: 80 actual-SDK assertions, 314 compiled SDK source files and two macro-denial receipts; preliminary before strengthening. |
+| `8954` / `03f313` | Final strengthened GREEN, exit zero: 136 actual-SDK assertions, 314 SDK source files and two macro-denial receipts; specification and code-quality review approved. |
+
+Root and specification review identified an overstatement in the prior plan's shutdown wording. An `onEnd` completion can finish its generation check and release the registry lock before shutdown closes that registry and subsequently enters the delivery barrier. Registry closure therefore prevents new ownership, but cannot promise that an already generation-validated completion will never offer or resume while shutdown is still in progress. The spec and plan now explicitly use the externally observable completed synchronous delivery barrier as the cutoff: **no new request may resume after shutdown returns**. Eligibility epochs remain checked at offer and resume, lock ordering is unchanged, and already resumed requests cannot be recalled.
+
+The strengthened processor fixtures now include the deterministic intermediate-shutdown test, and the corresponding comment is narrowed to that barrier guarantee. This technical clarification preserves the existing barrier semantics; it neither changes user eligibility policy nor authorizes live sending. Processor approval does not replace the subsequent real-transport, startup and complete integration checks.
+
+## Unit D — real transport with offline fake sessions
+
+Root reports GREEN session `58645`, completion chunk `8f4f37`, exit zero: 79 assertions using fake sessions only. Independent specification and code-quality review approved the local component. The 225-line production HTTP transport implements the streaming response cap, retains genuine transport terminal acknowledgement, constructs an ephemeral session lazily, preserves default TLS trust and does not reuse HTTP credentials through the session credential machinery. No real receiver request was made by these tests.
+
+| Root session / chunk | Evidence and classification |
+|---|---|
+| `99985` / `d927d8` | Intended RED for missing transport behavior. |
+| `9166` / `16e5e4` | Fixture header-canonicalization failure. The fixture subsequently normalized exact header names only; the permitted header set was not relaxed. |
+| `58645` / `8f4f37` | GREEN, exit zero: 79 assertions with fake sessions only; specification and code-quality review approved. |
+
+The passing fake-session suite is evidence for production transport code under controlled offline callbacks. It is not additional receiver compatibility evidence, proof of deployed traffic behavior or authorization to send another synthetic record.
+
+## Execution communication preference
+
+The user subsequently requested lettered, scored options after each task, with a recommendation compared against alternatives. Root uses progress 40, safety 40 and effort/cost 20 as the comparison weights. This communication preference does not expand authorization: execution continues within the already approved local scope unless the user chooses a different direction. The report remains evidence documentation rather than a competing task tracker.
+
 ## Remaining acceptance scope
 
-At this snapshot Unit C implementation is active with `telemetry_processor`: concrete SDK processor/weak lifecycle ownership is not yet accepted. Units D and E have not started: real transport exercised with offline fakes and atomic local app startup/guest-mode/legacy-export wiring remain unverified. Integrated retained-suite runs, root compile checks, preservation comparison and complete independent review are also still required before local implementation completion can be considered.
+At this snapshot Unit E implementation is active: atomic local app startup, guest-mode transitions and legacy-export wiring are not yet accepted. Integrated retained-suite runs, root compile checks, preservation comparison and complete independent review are also still required before local implementation completion can be considered.
 
 Progress and blocker state remain in Beads; this narrative is an evidence snapshot, not a parallel task tracker. Root must amend this report with subsequent receipts before making any broader completion claim. Even a completed local implementation would not authorize app launch, further export or release.
