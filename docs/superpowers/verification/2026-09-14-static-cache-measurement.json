@@ -1,0 +1,751 @@
+{
+  "capturedAtUTC": "2026-09-14 16:08:34 UTC",
+  "timestampMeaning": "Collection completion time; individual query start times not separately recorded",
+  "window": {
+    "start": "2026-09-13T14:00:00Z",
+    "end": "2026-09-14T14:00:00Z"
+  },
+  "query": "{viewer{zones(filter:{zoneTag:\"d95a8ba6093fba418fc47861a7f594f3\"}){images:httpRequestsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-13T14:00:00Z\",datetime_lt:\"2026-09-14T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/images/%.webp\"},{clientRequestPath_like:\"/images/%.png\"},{clientRequestPath_like:\"/images/%.jpg\"},{clientRequestPath_like:\"/images/%.jpeg\"},{clientRequestPath_like:\"/images/%.avif\"},{clientRequestPath_like:\"/images/%.svg\"},{clientRequestPath_like:\"/images/%.gif\"}]}){count dimensions{cacheStatus} sum{edgeResponseBytes} avg{sampleInterval}} fonts:httpRequestsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-13T14:00:00Z\",datetime_lt:\"2026-09-14T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/fonts/%.woff\"},{clientRequestPath_like:\"/fonts/%.woff2\"}]}){count dimensions{cacheStatus} sum{edgeResponseBytes} avg{sampleInterval}} astro:httpRequestsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-13T14:00:00Z\",datetime_lt:\"2026-09-14T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/_astro/%.js\"},{clientRequestPath_like:\"/_astro/%.css\"}]}){count dimensions{cacheStatus} sum{edgeResponseBytes} avg{sampleInterval}}}}}",
+  "second": {
+    "astro": [
+      {
+        "avg": {
+          "sampleInterval": 1.8610169491525423
+        },
+        "count": 2196,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 5757434
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.7064220183486238
+        },
+        "count": 372,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 1022674
+        }
+      }
+    ],
+    "fonts": [
+      {
+        "avg": {
+          "sampleInterval": 2.8162162162162163
+        },
+        "count": 521,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 32285521
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 2.4705882352941178
+        },
+        "count": 126,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 7902857
+        }
+      }
+    ],
+    "images": [
+      {
+        "avg": {
+          "sampleInterval": 2
+        },
+        "count": 2,
+        "dimensions": {
+          "cacheStatus": "revalidated"
+        },
+        "sum": {
+          "edgeResponseBytes": 20258
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 7,
+        "dimensions": {
+          "cacheStatus": "bypass"
+        },
+        "sum": {
+          "edgeResponseBytes": 37467
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.164504716981132
+        },
+        "count": 1975,
+        "dimensions": {
+          "cacheStatus": "hit"
+        },
+        "sum": {
+          "edgeResponseBytes": 140294687
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1
+        },
+        "count": 3,
+        "dimensions": {
+          "cacheStatus": "none"
+        },
+        "sum": {
+          "edgeResponseBytes": 5754
+        }
+      },
+      {
+        "avg": {
+          "sampleInterval": 1.062111801242236
+        },
+        "count": 1026,
+        "dimensions": {
+          "cacheStatus": "miss"
+        },
+        "sum": {
+          "edgeResponseBytes": 90253167
+        }
+      }
+    ]
+  },
+  "segmentQuery": "{viewer{zones(filter:{zoneTag:\"d95a8ba6093fba418fc47861a7f594f3\"}){hours:httpRequestsAdaptiveGroups(limit:1000,filter:{datetime_geq:\"2026-09-13T14:00:00Z\",datetime_lt:\"2026-09-14T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/images/%.webp\"},{clientRequestPath_like:\"/images/%.png\"},{clientRequestPath_like:\"/images/%.jpg\"},{clientRequestPath_like:\"/images/%.jpeg\"},{clientRequestPath_like:\"/images/%.avif\"},{clientRequestPath_like:\"/images/%.svg\"},{clientRequestPath_like:\"/images/%.gif\"},{clientRequestPath_like:\"/fonts/%.woff\"},{clientRequestPath_like:\"/fonts/%.woff2\"},{clientRequestPath_like:\"/_astro/%.js\"},{clientRequestPath_like:\"/_astro/%.css\"}]}){count dimensions{datetimeHour cacheStatus} sum{edgeResponseBytes}} colos:httpRequestsAdaptiveGroups(limit:1000,filter:{datetime_geq:\"2026-09-13T14:00:00Z\",datetime_lt:\"2026-09-14T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/images/%.webp\"},{clientRequestPath_like:\"/images/%.png\"},{clientRequestPath_like:\"/images/%.jpg\"},{clientRequestPath_like:\"/images/%.jpeg\"},{clientRequestPath_like:\"/images/%.avif\"},{clientRequestPath_like:\"/images/%.svg\"},{clientRequestPath_like:\"/images/%.gif\"},{clientRequestPath_like:\"/fonts/%.woff\"},{clientRequestPath_like:\"/fonts/%.woff2\"},{clientRequestPath_like:\"/_astro/%.js\"},{clientRequestPath_like:\"/_astro/%.css\"}]}){count dimensions{coloCode cacheStatus} sum{edgeResponseBytes}}}}}",
+  "segments": {
+    "success": true,
+    "errors": [],
+    "hourRows": 54,
+    "coloRows": 127,
+    "hours": [
+      [
+        "2026-09-13T14:00:00Z",
+        {
+          "hit": [
+            233,
+            12120230
+          ],
+          "miss": [
+            150,
+            8456244
+          ]
+        }
+      ],
+      [
+        "2026-09-13T15:00:00Z",
+        {
+          "miss": [
+            108,
+            7109039
+          ],
+          "hit": [
+            220,
+            10087799
+          ]
+        }
+      ],
+      [
+        "2026-09-13T16:00:00Z",
+        {
+          "hit": [
+            260,
+            10225941
+          ],
+          "bypass": [
+            2,
+            11342
+          ],
+          "miss": [
+            81,
+            6335634
+          ]
+        }
+      ],
+      [
+        "2026-09-13T17:00:00Z",
+        {
+          "miss": [
+            89,
+            5296264
+          ],
+          "hit": [
+            247,
+            11461352
+          ]
+        }
+      ],
+      [
+        "2026-09-13T18:00:00Z",
+        {
+          "miss": [
+            78,
+            5886698
+          ],
+          "hit": [
+            189,
+            8521326
+          ]
+        }
+      ],
+      [
+        "2026-09-13T19:00:00Z",
+        {
+          "miss": [
+            134,
+            7523706
+          ],
+          "hit": [
+            282,
+            10053826
+          ]
+        }
+      ],
+      [
+        "2026-09-13T20:00:00Z",
+        {
+          "hit": [
+            190,
+            6507176
+          ],
+          "miss": [
+            33,
+            3310488
+          ]
+        }
+      ],
+      [
+        "2026-09-13T21:00:00Z",
+        {
+          "hit": [
+            210,
+            5392365
+          ],
+          "miss": [
+            71,
+            4081116
+          ]
+        }
+      ],
+      [
+        "2026-09-13T22:00:00Z",
+        {
+          "hit": [
+            148,
+            4796195
+          ],
+          "miss": [
+            42,
+            3086273
+          ],
+          "bypass": [
+            2,
+            10686
+          ]
+        }
+      ],
+      [
+        "2026-09-13T23:00:00Z",
+        {
+          "hit": [
+            234,
+            10743382
+          ],
+          "miss": [
+            71,
+            4697215
+          ]
+        }
+      ],
+      [
+        "2026-09-14T00:00:00Z",
+        {
+          "miss": [
+            49,
+            4789052
+          ],
+          "hit": [
+            191,
+            10418378
+          ]
+        }
+      ],
+      [
+        "2026-09-14T01:00:00Z",
+        {
+          "hit": [
+            204,
+            13182875
+          ],
+          "miss": [
+            76,
+            6640558
+          ]
+        }
+      ],
+      [
+        "2026-09-14T02:00:00Z",
+        {
+          "miss": [
+            54,
+            5078435
+          ],
+          "hit": [
+            257,
+            12048835
+          ]
+        }
+      ],
+      [
+        "2026-09-14T03:00:00Z",
+        {
+          "hit": [
+            175,
+            7432266
+          ],
+          "miss": [
+            68,
+            5281414
+          ]
+        }
+      ],
+      [
+        "2026-09-14T04:00:00Z",
+        {
+          "miss": [
+            42,
+            2637156
+          ],
+          "hit": [
+            146,
+            8637813
+          ]
+        }
+      ],
+      [
+        "2026-09-14T05:00:00Z",
+        {
+          "hit": [
+            171,
+            7118380
+          ],
+          "miss": [
+            30,
+            1820644
+          ]
+        }
+      ],
+      [
+        "2026-09-14T06:00:00Z",
+        {
+          "hit": [
+            145,
+            5759593
+          ],
+          "miss": [
+            56,
+            1566470
+          ]
+        }
+      ],
+      [
+        "2026-09-14T07:00:00Z",
+        {
+          "hit": [
+            138,
+            3884841
+          ],
+          "miss": [
+            33,
+            1900238
+          ]
+        }
+      ],
+      [
+        "2026-09-14T08:00:00Z",
+        {
+          "miss": [
+            57,
+            3360015
+          ],
+          "hit": [
+            193,
+            4816123
+          ]
+        }
+      ],
+      [
+        "2026-09-14T09:00:00Z",
+        {
+          "none": [
+            1,
+            0
+          ],
+          "miss": [
+            54,
+            2696563
+          ],
+          "hit": [
+            135,
+            3028698
+          ]
+        }
+      ],
+      [
+        "2026-09-14T10:00:00Z",
+        {
+          "miss": [
+            49,
+            3235738
+          ],
+          "hit": [
+            204,
+            3512917
+          ]
+        }
+      ],
+      [
+        "2026-09-14T11:00:00Z",
+        {
+          "hit": [
+            192,
+            3460291
+          ],
+          "miss": [
+            13,
+            885726
+          ]
+        }
+      ],
+      [
+        "2026-09-14T12:00:00Z",
+        {
+          "miss": [
+            38,
+            2325797
+          ],
+          "revalidated": [
+            2,
+            20258
+          ],
+          "hit": [
+            131,
+            2729742
+          ]
+        }
+      ],
+      [
+        "2026-09-14T13:00:00Z",
+        {
+          "bypass": [
+            3,
+            15439
+          ],
+          "none": [
+            2,
+            5754
+          ],
+          "miss": [
+            48,
+            1178215
+          ],
+          "hit": [
+            197,
+            2397298
+          ]
+        }
+      ]
+    ],
+    "colos": [
+      [
+        "AMS",
+        {
+          "bypass": [
+            2,
+            10686
+          ],
+          "miss": [
+            405,
+            41440656
+          ],
+          "hit": [
+            1668,
+            120016843
+          ]
+        }
+      ],
+      [
+        "SIN",
+        {
+          "miss": [
+            71,
+            1377784
+          ],
+          "hit": [
+            661,
+            8828816
+          ]
+        }
+      ],
+      [
+        "IAD",
+        {
+          "miss": [
+            89,
+            8925750
+          ],
+          "hit": [
+            427,
+            17481854
+          ]
+        }
+      ],
+      [
+        "LAX",
+        {
+          "hit": [
+            278,
+            2582856
+          ],
+          "miss": [
+            50,
+            2490162
+          ]
+        }
+      ],
+      [
+        "SJC",
+        {
+          "hit": [
+            277,
+            3385580
+          ],
+          "miss": [
+            8,
+            409663
+          ]
+        }
+      ],
+      [
+        "HKG",
+        {
+          "hit": [
+            193,
+            2330780
+          ],
+          "miss": [
+            35,
+            1193536
+          ]
+        }
+      ],
+      [
+        "LHR",
+        {
+          "hit": [
+            148,
+            3083517
+          ],
+          "revalidated": [
+            2,
+            20258
+          ],
+          "miss": [
+            14,
+            1052517
+          ]
+        }
+      ],
+      [
+        "YYZ",
+        {
+          "hit": [
+            108,
+            2255040
+          ],
+          "miss": [
+            45,
+            1252929
+          ]
+        }
+      ],
+      [
+        "DFW",
+        {
+          "miss": [
+            19,
+            1759840
+          ],
+          "hit": [
+            91,
+            2982166
+          ]
+        }
+      ],
+      [
+        "MXP",
+        {
+          "miss": [
+            20,
+            1322284
+          ],
+          "hit": [
+            81,
+            1028378
+          ]
+        }
+      ]
+    ]
+  },
+  "cohortQuery": "{viewer{zones(filter:{zoneTag:\"d95a8ba6093fba418fc47861a7f594f3\"}){day1:httpRequestsAdaptiveGroups(limit:1000,filter:{datetime_geq:\"2026-09-12T14:00:00Z\",datetime_lt:\"2026-09-13T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/_astro/%.js\"},{clientRequestPath_like:\"/_astro/%.css\"}]}){count dimensions{clientRequestPath cacheStatus} sum{edgeResponseBytes}} day2:httpRequestsAdaptiveGroups(limit:1000,filter:{datetime_geq:\"2026-09-13T14:00:00Z\",datetime_lt:\"2026-09-14T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",OR:[{clientRequestPath_like:\"/_astro/%.js\"},{clientRequestPath_like:\"/_astro/%.css\"}]}){count dimensions{clientRequestPath cacheStatus} sum{edgeResponseBytes}}}}}",
+  "cohort": {
+    "success": true,
+    "errors": [],
+    "day1Rows": 88,
+    "day2Rows": 65,
+    "day1Paths": 51,
+    "day2Paths": 40,
+    "sharedPaths": [
+      "/_astro/404.B79QYsut.css",
+      "/_astro/404.astro_astro_type_script_index_0_lang.BAIBiFgl.js",
+      "/_astro/AppCTA.DTBH3lTA.css",
+      "/_astro/BaseLayout.F6gVK-rE.css",
+      "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.lKknCDoD.js",
+      "/_astro/BlogPostLayout.astro_astro_type_script_index_0_lang.5xEXTEhn.js",
+      "/_astro/CityGuideLayout.astro_astro_type_script_index_0_lang.CZLS9UYd.js",
+      "/_astro/Nav.astro_astro_type_script_index_0_lang.BzUzLf4p.js",
+      "/_astro/NewsletterSignup.astro_astro_type_script_index_0_lang.D8m10YGH.js",
+      "/_astro/StickyBar.astro_astro_type_script_index_0_lang.CGg1gW7r.js",
+      "/_astro/_city_.BDc4vOzT.css",
+      "/_astro/_city_.DWwZ2tze.css",
+      "/_astro/_city_.sFxHpGlt.css",
+      "/_astro/_region_.CeedIuk0.css",
+      "/_astro/_slug_.DCIsXFaI.css",
+      "/_astro/_slug_.EJ9RbHXg.css",
+      "/_astro/_slug_.UWgos7Se.css",
+      "/_astro/about.CnMb547q.css",
+      "/_astro/blog-utils.uod7ZycW.css",
+      "/_astro/how-it-works.Cc9VPFn6.css",
+      "/_astro/index.9wHdUqkU.css",
+      "/_astro/index.BU19RayR.css",
+      "/_astro/index.BpjZPLV5.css",
+      "/_astro/index.Dncp7UTy.css",
+      "/_astro/index.P_zoLPVv.css",
+      "/_astro/index.astro_astro_type_script_index_0_lang.CEv5XhJp.js",
+      "/_astro/index.astro_astro_type_script_index_0_lang.OkpPytI6.js",
+      "/_astro/index.astro_astro_type_script_index_1_lang.DGwXDXG8.js",
+      "/_astro/index.astro_astro_type_script_index_1_lang.DwcwMv_S.js",
+      "/_astro/page.D6Rx8f8Z.js",
+      "/_astro/privacy.rwOW4mu_.css",
+      "/_astro/related-content.6WLOPiIV.css",
+      "/_astro/roammate-vs-gaffl.Bc1_ceFL.css",
+      "/_astro/terms.8GvdhKZ8.css",
+      "/_astro/travel-companion-apps.eWeLg3WD.css"
+    ],
+    "outOfPrefix": 0,
+    "day1": {
+      "hit": [
+        1485,
+        4286748
+      ],
+      "miss": [
+        515,
+        1513031
+      ],
+      "none": [
+        10,
+        2975
+      ],
+      "bypass": [
+        1,
+        940
+      ]
+    },
+    "day2": {
+      "hit": [
+        2191,
+        5745924
+      ],
+      "miss": [
+        365,
+        1006268
+      ]
+    }
+  },
+  "webpQuery": "{viewer{zones(filter:{zoneTag:\"d95a8ba6093fba418fc47861a7f594f3\"}){webp:httpRequestsAdaptiveGroups(limit:100,filter:{datetime_geq:\"2026-09-13T14:00:00Z\",datetime_lt:\"2026-09-14T14:00:00Z\",clientRequestHTTPHost:\"roammate.com\",requestSource:\"eyeball\",clientRequestPath_like:\"/images/%.webp\"}){count dimensions{cacheStatus} sum{edgeResponseBytes} avg{sampleInterval}}}}}",
+  "webp": [
+    {
+      "avg": {
+        "sampleInterval": 1
+      },
+      "count": 2,
+      "dimensions": {
+        "cacheStatus": "bypass"
+      },
+      "sum": {
+        "edgeResponseBytes": 10686
+      }
+    },
+    {
+      "avg": {
+        "sampleInterval": 1.1520131470829909
+      },
+      "count": 1402,
+      "dimensions": {
+        "cacheStatus": "hit"
+      },
+      "sum": {
+        "edgeResponseBytes": 134171259
+      }
+    },
+    {
+      "avg": {
+        "sampleInterval": 1
+      },
+      "count": 1,
+      "dimensions": {
+        "cacheStatus": "none"
+      },
+      "sum": {
+        "edgeResponseBytes": 0
+      }
+    },
+    {
+      "avg": {
+        "sampleInterval": 1.0444444444444445
+      },
+      "count": 987,
+      "dimensions": {
+        "cacheStatus": "miss"
+      },
+      "sum": {
+        "edgeResponseBytes": 89861875
+      }
+    }
+  ],
+  "rule": {
+    "ruleset": "449fcb98dc44432593fc537ac6737e8b",
+    "version": "1",
+    "id": "735fae045d894e14b778745aaf23e8d4",
+    "ruleVersion": "1",
+    "enabled": true,
+    "lastUpdated": "2026-09-12T13:51:15.482743Z"
+  },
+  "limits": {
+    "authHeaderExclusionNotReproduced": true,
+    "queryVariantSegmentation": "unavailable on prior authorized attempt; not retried",
+    "sharedPathsDoNotProveByteIdentity": true,
+    "countsAreAdaptiveEstimates": true,
+    "initialFullSegmentResponse": "truncated, discarded; compact server-side summarization used"
+  }
+}
