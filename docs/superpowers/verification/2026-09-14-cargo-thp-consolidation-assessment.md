@@ -1,6 +1,32 @@
 # Cargo consolidation gate and THP assessment — September 14, 2026
 
-**Status:** Cargo archive-cache consolidation is **blocked by activity**; the subsequent THP assessment is read-only and found substantive differences. No Cargo/THP files were deleted, moved, overwritten or symlinked by this task.
+**Current status:** The approved Cargo archive-cache consolidation completed **September 14 at 20:16:55 UTC** (September 15 at 00:16:55 Dubai). The activity-blocked assessment below is preserved as historical evidence. THP remains untouched. Only the selected Cargo archive namespace was consolidated, not the whole Cargo or THP tree.
+
+## Dated completion — September 14, 20:16:55 UTC
+
+Root's [consolidation receipt](2026-09-14-cargo-archive-consolidation-receipt.json) records `COMPLETE`, including a **532-entry archive SHA-256 manifest**. The report author copied the supplied receipt and edited documentation only; it did not migrate or independently rehash the destination.
+
+| Completion observation | Root execution receipt |
+| --- | ---: |
+| Before: local / USB archives | 531 / 497 |
+| Shared archive hashes matched | 496 |
+| Local-only archives copied | 35, totaling 4,407,241 logical bytes |
+| USB-only archive preserved | 1 |
+| Final union | **532 archives** |
+| Local allocated bytes removed | **65,232,896**, about 62.2 MiB |
+| Local namespace symlinked to USB | Yes |
+| Temporary backup removed after validation | Yes |
+| Advisory locks used | Four |
+
+The changed local path is `~/.cargo/registry/cache/index.crates.io-1949cf8c6b5b557f`; its target is `/Volumes/Overflow/moved/.cargo/registry/cache/index.crates.io-1949cf8c6b5b557f`. Other Cargo directories, all THP targets and unique USB content were outside the migration. This namespace now depends on the USB being mounted; not all USB/SSD duplication has been eliminated.
+
+Cargo PID 80707 exited naturally. An initial **no-mutation `START` abort** caught unrelated `abtop` PID 91783 through an overly broad open-file gate. Review narrowed the gate to registry paths and four locks before execution. No process was stopped to force inactivity.
+
+**Independent post-migration verification:** Root separately rechecked all **532 archive SHA-256 hashes and sizes**, the exact entry set, the local symlink's resolution to the USB path and matching USB device, and absence of the temporary SSD backup. All checks passed. `abtop` remained running; it was not stopped for this operation. A subsequent free-space snapshot showed **3.6 GiB local / 28 GiB USB**; concurrent host activity means this snapshot is not a causal byte-for-byte measure of space reclaimed. THP partial-scan, conflicting-file and capacity caveats remain unchanged.
+
+## Historical assessment before consolidation
+
+The remaining sections describe the earlier blocked assessment, not the current Cargo migration status.
 
 The user approved Cargo archive consolidation only after inactivity and full-hash verification, followed by read-only THP assessment. Root observed active Cargo PID **80707**, whose working directory was `/Users/doreilly/Work/thp/.claude/worktrees/wdi-pagination-integration-20260914`; same-user open-file checks identified PIDs **80707 and 91783** using local `~/.cargo`. Root did not stop them or change Cargo while active. This blocks the approved operation's prerequisite, not merely its scheduling. No completed consolidation is claimed.
 
