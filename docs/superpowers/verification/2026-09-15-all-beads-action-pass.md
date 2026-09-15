@@ -107,3 +107,21 @@ All paths below are relative to this verification directory; Beads holds detaile
 - `2026-09-15-frozen-android-acceptance-audit.md`, `2026-09-15-android-reconciliation-sidecar.md` — earlier snapshot; fresh supersession above is newer.
 - `2026-09-15-public-metric-definitions.md`, `2026-09-15-analytics-vendor-questions.md` — real-source gaps and unsent questions.
 - `2026-09-15-play-coverage-cargo-cause.md` — retained coverage/unknown-writer investigation.
+
+## Newer evidence — 2026-09-15, subsequent resumed action pass
+
+This later snapshot supplements, rather than rewrites, the earlier receipt and owner-state observations above. Root reports `bd ready --json` is still empty on the resumed pass; growth constraints remain unchanged. The user explicitly confirmed no fluent-language review is available, so keyword adoption remains blocked. Browser work remains Obscura-only.
+
+**Owner-reported Android progress:** at HEAD `d4906e95671379bebe4c8926bba96d301c390e38`, the committed release-cut report describes replacement source `84869093`: full pipeline 44m27s, exit 0; 3,026 unit tests with zero failures/errors/skips; 64 lint reports with zero errors/fatals; replacement-bound N1 six native loads; and a genuine C1 fatal followed by normal cold launch and server deobfuscation. These are owner-reported results, not root execution.
+
+**Root-independent metadata read:** receipt `~/.local/share/codex/release-artifacts/roammate-app-android/2026.3.8-vc14-84869093/receipt.json` still declares **`UNACCEPTED_CANDIDATE_DO_NOT_UPLOAD`**, source `84869093`, version `2026.3.8`, code 14. Its recorded artifact metadata is:
+
+| Receipt field | Recorded value |
+|---|---|
+| `files.app-release.aab` bytes | `59911979` |
+| AAB SHA-256 | `4fde40c35df7e3564060437615eef133469c6b5256049c84853cf74cb3af4571` |
+| `files.mapping.txt` SHA-256 | `7c4bd283d1a155d7e5863b8833cffe692bed5d0e4d456fc5ea8f9db27bd80f8a` |
+
+Root did not independently rehash binaries, query private events, build or execute runtime tests. The owner report says PostHog's reused release record still names old source `23527166` despite observed deobfuscation; sampled frames expose no symbol-set ID. Existing owner issue `10zi.4` tracks crash-mapping reconciliation, so no duplicate issue is required.
+
+Guest/live journeys and final iOS/Play acceptance remain pending; no Play upload occurred. Replacement pipeline progress advances the earlier mutation-guard/build prerequisite but does not remove the receipt's acceptance prohibition or close j2y/sie/e3n/46f.
