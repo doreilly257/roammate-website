@@ -1,0 +1,42 @@
+{
+  "exit": 0,
+  "network_policy_denied": true,
+  "results": [
+    {
+      "locale": "ar-SA",
+      "source_sha256": "702f21059d8ad19ece323e1f8cd7ca3dc752035703990b565ff0e039ea959c8d",
+      "source_field_bytes": 152,
+      "proposal_sha256": "2bbdfba905712b555ecf38f49a2429d74d3f4a8e2dbd4ea5f33dd07231f43d10",
+      "proposal_bytes": 100,
+      "whole_terms_original_order": true,
+      "source_unchanged": true
+    },
+    {
+      "locale": "ja",
+      "source_sha256": "f685bfc334f69c95dd0ea5b469d752df617d5d9b4f162387c49ce3abe7b64a66",
+      "source_field_bytes": 152,
+      "proposal_sha256": "c734a1bedf23f948f287cd33eeb6eed4db542fc1bbf4c4fed408999935c3e3b1",
+      "proposal_bytes": 96,
+      "whole_terms_original_order": true,
+      "source_unchanged": true
+    },
+    {
+      "locale": "ko",
+      "source_sha256": "786b97e2f2c2983b513c97427207025f4fd68a8c805cb93f9b6441ef414841a8",
+      "source_field_bytes": 150,
+      "proposal_sha256": "5582bde06fde9519acea6e557a7e0c8ec621979d0b5cdf66bfe20a23533ec049",
+      "proposal_bytes": 96,
+      "whole_terms_original_order": true,
+      "source_unchanged": true
+    },
+    {
+      "locale": "zh-Hans",
+      "source_sha256": "846bbb7b8f4475d64b255f4740a3d19c12207fe92fd6b160fa82b49200dc6b9e",
+      "source_field_bytes": 142,
+      "proposal_sha256": "bb161be45115c873d49baf0eb548b584a73cffd0757a431609e9b96118031470",
+      "proposal_bytes": 98,
+      "whole_terms_original_order": true,
+      "source_unchanged": true
+    }
+  ]
+}
