@@ -1,0 +1,20 @@
+# Public metric-definition audit
+
+Date: 2026-09-15. Bead: **63x2**. Scope: official-source audit supplied by the supervisor; no additional browsing, private reads, code changes or metric calculations by this report’s author. Selected defaults are Apple `Counts` and Play `Daily Device Installs`; `Unique Counts` is a supporting distinction, not a substitute measure.
+
+## Supported meaning versus unresolved inference
+
+| Source / selected concept | Source-supported finding | Extrapolation or unresolved requirement |
+| --- | --- | --- |
+| Apple Discovery and Engagement | `Counts` counts events; `Unique Counts` counts unique users performing an event. `Date` is the event date, with weekly/monthly labels identifying period starts. An Impression excludes page views; a Tap is an interaction, not proof of download completion. [Apple report definition](https://developer.apple.com/documentation/analytics-reports/app-store-discovery-and-engagement) | Basic Count meaning is verified, but the chosen Event, full dimension grain and permitted aggregation still need verification. Do not sum unique users across days/dimensions or equate either field with downloads. |
+| Apple day-boundary context | App Analytics uses UTC. Sales and Trends defaults to UTC and can be changed to Pacific Time. [Apple reporting-tool differences](https://developer.apple.com/help/app-store-connect/measure-app-performance/differences-in-reporting-tools/) | This is strong general App Analytics context, not an explicit guarantee for the exact Analytics Reports API export’s `Date` boundary. The export-specific link remains unverified. |
+| Google modern installation statistics | Installation statistics use Pacific Time. Modern Device acquisition includes activation of preinstalled devices. Install events includes repeat installations and excludes preinstalls/reactivations. [Google statistics definitions](https://support.google.com/googleplay/android-developer/answer/139628?hl=en) | These definitions do not establish a mapping to the retained legacy `Daily Device Installs` field. Treat user/device/event/stock measures separately; no population or deduplication equivalence is proven. |
+| Google downloadable Installs schema | The Installs section lists `Daily Device Installs` as a required integer and `Date` as `YYYY-mm-dd`; that section supplies neither its exact metric semantics nor timezone. Its listed names differ from the retained twelve-column schema: for example, it includes `Current Device Installs`, uses `Uninstallations` rather than `Uninstalls`, and does not list the retained event columns. [Google export documentation](https://support.google.com/googleplay/android-developer/answer/6135870?hl=en-GB) | Presence/type is not a definition of legacy population, deduplication or aggregation. Schema drift prevents silently applying modern definitions to the retained export. |
+
+The [retained coverage receipt](2026-09-15-play-coverage.json) confirms the selected Play field exists in the inspected headers, but supplies no public proof of its legacy semantics. No community thread or quoted chatbot answer is used as authority.
+
+## Disposition
+
+The public audit attempt is complete; analytics acceptance remains blocked. Apple’s basic event-count meaning is supported, but the chosen event/grain/aggregation is not yet established. The legacy Google metric meaning remains unknown. General UTC versus Pacific Time guidance indicates potentially incompatible day boundaries, not a verified common-day mapping. **Shared-date matching remains unverified**: do not shift aggregate daily buckets, assume UTC for both exports or infer comparable populations from matching calendar labels.
+
+No live evidence flags were changed and no private query or baseline calculation occurred. Recommended next step: prepare a precise vendor question covering the legacy `Daily Device Installs` population, deduplication and aggregation rules, and both exact exports’ timezone/day-boundary semantics; alternatively locate authoritative API-specific day-boundary documentation. Keep metric values and cross-platform comparisons unavailable until those gates are resolved.
