@@ -1,6 +1,6 @@
 # Apple / Play native-metric comparison design
 
-Date: 2026-09-15. Status: **design only; technical review passed; awaiting user review of written design**. User selected policy A: separate platform-native metrics, with verified shared dates before comparison. This document authorizes no implementation, private reads, totals, uploads or tracking changes.
+Date: 2026-09-15. Status: **technical and user written review approved; implementation remains separately gated**. User selected policy A: separate platform-native metrics, with verified shared dates before comparison. This document authorizes no implementation, private reads, totals, uploads or tracking changes.
 
 ## Evidence and present decision
 
