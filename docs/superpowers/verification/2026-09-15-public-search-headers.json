@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-09-15T16:50:24Z",
+  "requests": [
+    {
+      "url": "https://roammate.com/",
+      "finalUrl": "https://roammate.com/",
+      "status": 200,
+      "headers": {
+        "cache-control": "no-store",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "a3b9214bd8f4fb97-AMS",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "pagefindReferences": []
+    },
+    {
+      "url": "https://roammate.com/search",
+      "finalUrl": "https://roammate.com/search",
+      "status": 404,
+      "headers": {
+        "cache-control": "no-store",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "a3b9214f199a6fd6-CDG",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "pagefindReferences": []
+    },
+    {
+      "url": "https://roammate.com/search/",
+      "finalUrl": "https://roammate.com/search/",
+      "status": 200,
+      "headers": {
+        "cache-control": "no-store",
+        "cf-cache-status": "DYNAMIC",
+        "age": "191090",
+        "cf-ray": "a3b921525ca108f9-HKG",
+        "content-type": "text/html; charset=utf-8"
+      },
+      "pagefindReferences": []
+    },
+    {
+      "url": "https://roammate.com/pagefind/pagefind.js",
+      "finalUrl": "https://roammate.com/pagefind/pagefind.js",
+      "status": 404,
+      "selection": "known stable runtime from prior rollout evidence; not a current HTML reference",
+      "headers": {
+        "cache-control": "no-store",
+        "cf-cache-status": "BYPASS",
+        "cf-ray": "a3b923d5082433d0-AMS",
+        "content-type": "text/html; charset=utf-8"
+      }
+    }
+  ],
+  "scope": "single-vantage normal GET, no purge/cachebusting/deployment, no JavaScript execution"
+}
