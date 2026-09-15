@@ -1,0 +1,49 @@
+{
+  "dateDubai": "2026-09-15",
+  "provenance": "Root-supplied read-only receipts; report author did not independently scan",
+  "mutations": false,
+  "thp": {
+    "perTreeBudgetSeconds": 60,
+    "local": {"filesObserved": 204388, "logicalBytesObserved": 38657149353, "allocatedBytesObserved": 39072559104, "complete": false},
+    "usb": {"filesObserved": 16332, "logicalBytesObserved": 2980072630, "allocatedBytesObserved": 3014029312, "complete": false},
+    "sharedObservedNames": 16331,
+    "sameSizeShared": 16275,
+    "sizeConflictsObserved": 56,
+    "contentHashesTaken": false,
+    "directSetDifferenceChecks": 10,
+    "actuallyPresentOnUsb": 9,
+    "directlyAbsentExample": {"relativePath": "debug/deps/horizon-4124697f843c7b26", "localObservedBytes": 77079224},
+    "activeCargoPid": 34121,
+    "multipleRustcObserved": true,
+    "usbFreeBytesSnapshot": 29872836608
+  },
+  "cargoExpandedSource": {
+    "scannedRoot": "registry/src",
+    "sharedNamesNamespace": "index.crates.io-1949cf8c6b5b557f",
+    "usbExtraNamespaceAndDSStoreIncludedInEnumeration": true,
+    "local": {"regularFiles": 39139, "logicalBytes": 836263416, "allocatedBytes": 932499456, "enumerationComplete": true},
+    "usb": {"regularFiles": 28938, "logicalBytes": 336896139, "allocatedBytes": 409432064, "enumerationComplete": true},
+    "atomicSnapshot": false,
+    "sharedNames": 28046,
+    "sameSizeShared": 28046,
+    "sizeConflictsObserved": 0,
+    "localObservedOnlyNames": 11093,
+    "localObservedOnlyLogicalBytes": 506480222,
+    "usbObservedOnlyNames": 892,
+    "pairedNamespaceUsbObservedOnlyNames": 115,
+    "usbRootBreakdown": {
+      "index.crates.io-1949cf8c6b5b557f": {"regularFiles": 28161, "logicalBytes": 330703664, "allocatedBytes": 401326080},
+      "index.crates.io-6f17d22bba15001f": {"regularFiles": 776, "logicalBytes": 6186327, "allocatedBytes": 8097792},
+      ".DS_Store": {"regularFiles": 1, "logicalBytes": 6148, "allocatedBytes": 8192}
+    },
+    "sharedHashSamples": 12,
+    "matchingHashSamples": 12,
+    "sampleSizeMtimeStable": true,
+    "allSharedFilesHashVerified": false,
+    "additionalUsbNamespacePreserved": "index.crates.io-6f17d22bba15001f",
+    "migrationApproved": false,
+    "archiveCacheSymlinkIntact": true,
+    "usbFreeBytesLaterSnapshot": 30627524608
+  },
+  "limits": ["Live non-atomic metadata", "THP scans partial", "Observed-set absence is not persistent uniqueness", "Cargo hashes sampled only", "No whole-tree capacity or reclaimability guarantee", "No migration or deletion performed"]
+}
