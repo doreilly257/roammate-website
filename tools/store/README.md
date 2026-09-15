@@ -37,6 +37,39 @@ a JSON object with a nonempty `rules` array; each rule requires a unique nonempt
 `id`, `why`, `allowed_when`, `owner`, severity `error` or `warn`, and a nonempty
 array of nonempty valid regex strings.
 
+## Standalone Apple keyword byte guard
+
+This separate offline validator accepts **explicit files**, not directory roots:
+
+```sh
+python3 tools/store/verify_apple_keywords.py /path/to/en-US/keywords.txt /path/to/ja/keywords.txt
+```
+
+It uses only Python's standard library, reads files without modifying them, and
+does not authenticate, contact Apple, discover files recursively, or run Fastlane.
+It is not wired into `verify_store_metadata.py` or any upload lane.
+
+Each input must be a regular file named exactly `keywords.txt`; final-component
+symlinks are rejected. Parent-directory symlinks are permitted. Valid resolved
+paths are deduplicated in first-input order; distinct hardlink paths need not be.
+Text must be strict UTF-8. At most **one terminal LF or CRLF** is removed before
+counting UTF-8 bytes; all other printable whitespace and Unicode sequences are
+preserved, with no normalization. Empty text, BOM, NUL, other ASCII controls,
+remaining line breaks and lone CR are invalid. Unlike the existing prose guard's
+optional fields, an empty keyword field does not pass this required-field guard.
+
+Output is JSON lines containing only escaped `path`, `bytes` and `limit` (100).
+Invalid inputs report `bytes: null`; no keyword contents or raw exception text
+are printed. Missing arguments produce fixed usage text.
+
+- **0:** All inputs valid and at most 100 bytes.
+- **1:** At least one over-limit field, with no invalid inputs.
+- **2:** Any invalid input, even alongside an over-limit field.
+
+Other explicitly supplied files are still checked after a per-file error. This
+is a byte/single-line input guard, not a keyword rewrite or full Apple policy,
+localisation, editable-version, live-parity or release acceptance check.
+
 ## Claim history, not release certification
 
 There are intentionally **five active rules**: `verification-is-mandatory`,
