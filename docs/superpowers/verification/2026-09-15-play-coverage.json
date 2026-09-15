@@ -1,0 +1,163 @@
+{
+  "checkedAt": "2026-09-15T11:15:05Z",
+  "listingCount": 49,
+  "selectedOverviewCount": 7,
+  "reports": [
+    {
+      "name": "installs_com.roammate.app.android_202603_overview.csv#1779329655753360",
+      "objectUpdated": "2026-05-21T02:14:15.846000+00:00",
+      "encoding": "utf-16",
+      "header": [
+        "Date",
+        "Package name",
+        "Daily Device Installs",
+        "Daily Device Uninstalls",
+        "Daily Device Upgrades",
+        "Total User Installs",
+        "Daily User Installs",
+        "Daily User Uninstalls",
+        "Active Device Installs",
+        "Install events",
+        "Update events",
+        "Uninstall events"
+      ],
+      "dateMin": "2026-03-01",
+      "dateMax": "2026-03-31",
+      "dateRowCount": 24
+    },
+    {
+      "name": "installs_com.roammate.app.android_202604_overview.csv#1779312273745917",
+      "objectUpdated": "2026-05-20T21:24:33.852000+00:00",
+      "encoding": "utf-16",
+      "header": [
+        "Date",
+        "Package name",
+        "Daily Device Installs",
+        "Daily Device Uninstalls",
+        "Daily Device Upgrades",
+        "Total User Installs",
+        "Daily User Installs",
+        "Daily User Uninstalls",
+        "Active Device Installs",
+        "Install events",
+        "Update events",
+        "Uninstall events"
+      ],
+      "dateMin": "2026-04-01",
+      "dateMax": "2026-04-30",
+      "dateRowCount": 30
+    },
+    {
+      "name": "installs_com.roammate.app.android_202605_overview.csv#1781246555987096",
+      "objectUpdated": "2026-06-12T06:42:36.097000+00:00",
+      "encoding": "utf-16",
+      "header": [
+        "Date",
+        "Package name",
+        "Daily Device Installs",
+        "Daily Device Uninstalls",
+        "Daily Device Upgrades",
+        "Total User Installs",
+        "Daily User Installs",
+        "Daily User Uninstalls",
+        "Active Device Installs",
+        "Install events",
+        "Update events",
+        "Uninstall events"
+      ],
+      "dateMin": "2026-05-01",
+      "dateMax": "2026-05-31",
+      "dateRowCount": 31
+    },
+    {
+      "name": "installs_com.roammate.app.android_202606_overview.csv#1783866313410374",
+      "objectUpdated": "2026-07-12T14:25:13.512000+00:00",
+      "encoding": "utf-16",
+      "header": [
+        "Date",
+        "Package name",
+        "Daily Device Installs",
+        "Daily Device Uninstalls",
+        "Daily Device Upgrades",
+        "Total User Installs",
+        "Daily User Installs",
+        "Daily User Uninstalls",
+        "Active Device Installs",
+        "Install events",
+        "Update events",
+        "Uninstall events"
+      ],
+      "dateMin": "2026-06-01",
+      "dateMax": "2026-06-30",
+      "dateRowCount": 30
+    },
+    {
+      "name": "installs_com.roammate.app.android_202607_overview.csv#1786608115414443",
+      "objectUpdated": "2026-08-13T08:01:55.512000+00:00",
+      "encoding": "utf-16",
+      "header": [
+        "Date",
+        "Package name",
+        "Daily Device Installs",
+        "Daily Device Uninstalls",
+        "Daily Device Upgrades",
+        "Total User Installs",
+        "Daily User Installs",
+        "Daily User Uninstalls",
+        "Active Device Installs",
+        "Install events",
+        "Update events",
+        "Uninstall events"
+      ],
+      "dateMin": "2026-07-01",
+      "dateMax": "2026-07-31",
+      "dateRowCount": 31
+    },
+    {
+      "name": "installs_com.roammate.app.android_202608_overview.csv#1787741434492427",
+      "objectUpdated": "2026-08-26T10:50:34.597000+00:00",
+      "encoding": "utf-16",
+      "header": [
+        "Date",
+        "Package name",
+        "Daily Device Installs",
+        "Daily Device Uninstalls",
+        "Daily Device Upgrades",
+        "Total User Installs",
+        "Daily User Installs",
+        "Daily User Uninstalls",
+        "Active Device Installs",
+        "Install events",
+        "Update events",
+        "Uninstall events"
+      ],
+      "dateMin": "2026-08-01",
+      "dateMax": "2026-08-21",
+      "dateRowCount": 21
+    },
+    {
+      "name": "installs_com.roammate.app.android_202609_overview.csv#1789290461964928",
+      "objectUpdated": "2026-09-13T09:07:42.008000+00:00",
+      "encoding": "utf-16",
+      "header": [
+        "Date",
+        "Package name",
+        "Daily Device Installs",
+        "Daily Device Uninstalls",
+        "Daily Device Upgrades",
+        "Total User Installs",
+        "Daily User Installs",
+        "Daily User Uninstalls",
+        "Active Device Installs",
+        "Install events",
+        "Update events",
+        "Uninstall events"
+      ],
+      "dateMin": "2026-09-01",
+      "dateMax": "2026-09-08",
+      "dateRowCount": 8
+    }
+  ],
+  "rawRowsRetained": false,
+  "metricsComputed": false
+}
