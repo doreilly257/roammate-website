@@ -1,0 +1,136 @@
+{
+  "time": "2026-09-15T19:45:07.376393+00:00",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/zones/d95a8ba6093fba418fc47861a7f594f3/rulesets/449fcb98dc44432593fc537ac6737e8b",
+      "status": 200,
+      "success": true,
+      "error_codes": []
+    },
+    {
+      "method": "POST",
+      "path": "/zones/d95a8ba6093fba418fc47861a7f594f3/rulesets/449fcb98dc44432593fc537ac6737e8b/rules",
+      "status": 200,
+      "success": true,
+      "error_codes": []
+    },
+    {
+      "method": "GET",
+      "path": "/zones/d95a8ba6093fba418fc47861a7f594f3/rulesets/449fcb98dc44432593fc537ac6737e8b",
+      "status": 200,
+      "success": true,
+      "error_codes": []
+    },
+    {
+      "method": "POST",
+      "path": "/zones/d95a8ba6093fba418fc47861a7f594f3/purge_cache",
+      "status": 401,
+      "success": false,
+      "error_codes": [
+        10000
+      ]
+    }
+  ],
+  "before": {
+    "description": "",
+    "id": "449fcb98dc44432593fc537ac6737e8b",
+    "kind": "zone",
+    "last_updated": "2026-09-12T13:51:15.482743Z",
+    "name": "Public static asset cache",
+    "phase": "http_request_cache_settings",
+    "rules": [
+      {
+        "action": "set_cache_settings",
+        "action_parameters": {
+          "cache_key": {
+            "cache_deception_armor": true,
+            "custom_key": {
+              "query_string": {
+                "exclude": {
+                  "all": true
+                }
+              }
+            }
+          }
+        },
+        "description": "Reuse public static assets across query variants; retain origin cache controls",
+        "enabled": true,
+        "expression": "(http.host eq \"roammate.com\" and not any(http.request.headers.names[*] eq \"authorization\") and ((starts_with(http.request.uri.path, \"/images/\") and http.request.uri.path.extension in {\"webp\" \"png\" \"jpg\" \"jpeg\" \"avif\" \"svg\" \"gif\"}) or (starts_with(http.request.uri.path, \"/fonts/\") and http.request.uri.path.extension in {\"woff\" \"woff2\"}) or (starts_with(http.request.uri.path, \"/_astro/\") and http.request.uri.path.extension in {\"js\" \"css\"})))",
+        "id": "735fae045d894e14b778745aaf23e8d4",
+        "last_updated": "2026-09-12T13:51:15.482743Z",
+        "ref": "public_static_ignore_query",
+        "version": "1"
+      }
+    ],
+    "version": "1"
+  },
+  "after": {
+    "description": "",
+    "id": "449fcb98dc44432593fc537ac6737e8b",
+    "kind": "zone",
+    "last_updated": "2026-09-15T19:45:09.64921Z",
+    "name": "Public static asset cache",
+    "phase": "http_request_cache_settings",
+    "rules": [
+      {
+        "action": "set_cache_settings",
+        "action_parameters": {
+          "cache_key": {
+            "cache_deception_armor": true,
+            "custom_key": {
+              "query_string": {
+                "exclude": {
+                  "all": true
+                }
+              }
+            }
+          }
+        },
+        "description": "Reuse public static assets across query variants; retain origin cache controls",
+        "enabled": true,
+        "expression": "(http.host eq \"roammate.com\" and not any(http.request.headers.names[*] eq \"authorization\") and ((starts_with(http.request.uri.path, \"/images/\") and http.request.uri.path.extension in {\"webp\" \"png\" \"jpg\" \"jpeg\" \"avif\" \"svg\" \"gif\"}) or (starts_with(http.request.uri.path, \"/fonts/\") and http.request.uri.path.extension in {\"woff\" \"woff2\"}) or (starts_with(http.request.uri.path, \"/_astro/\") and http.request.uri.path.extension in {\"js\" \"css\"})))",
+        "id": "735fae045d894e14b778745aaf23e8d4",
+        "last_updated": "2026-09-12T13:51:15.482743Z",
+        "ref": "public_static_ignore_query",
+        "version": "1"
+      },
+      {
+        "action": "set_cache_settings",
+        "action_parameters": {
+          "browser_ttl": {
+            "mode": "respect_origin"
+          }
+        },
+        "description": "Respect origin browser cache headers for Pagefind release assets only",
+        "enabled": true,
+        "expression": "(http.host eq \"roammate.com\" and starts_with(http.request.uri.path, \"/pagefind/\"))",
+        "id": "77e1bb80f450494198266c6583081e38",
+        "last_updated": "2026-09-15T19:45:09.64921Z",
+        "ref": "pagefind_respect_origin",
+        "version": "1"
+      }
+    ],
+    "version": "2"
+  },
+  "purged_urls": [
+    "https://roammate.com/search",
+    "https://roammate.com/search/",
+    "https://roammate.com/pagefind/pagefind.js",
+    "https://roammate.com/pagefind/pagefind-modular-ui.js",
+    "https://roammate.com/pagefind/pagefind-highlight.js",
+    "https://roammate.com/pagefind/pagefind-worker.js",
+    "https://roammate.com/pagefind/pagefind-ui.js",
+    "https://roammate.com/pagefind/pagefind-component-ui.js"
+  ],
+  "purge_retry": {
+    "time": "2026-09-15T19:48:01.776632+00:00",
+    "http_status": 200,
+    "success": true,
+    "error_codes": [],
+    "url_count": 8
+  },
+  "purge_result": {
+    "id": "d95a8ba6093fba418fc47861a7f594f3"
+  }
+}

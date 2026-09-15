@@ -1,0 +1,141 @@
+{
+  "time": "2026-09-15T19:53:19.701670+00:00",
+  "search_nonces_distinct": true,
+  "results": [
+    {
+      "url": "https://roammate.com/",
+      "status": 200,
+      "cache": "no-store",
+      "location": null,
+      "robots": null,
+      "nonce_count": 1,
+      "wasm": false,
+      "csp_count": 1,
+      "canonical": [
+        "https://roammate.com/"
+      ]
+    },
+    {
+      "url": "https://roammate.com/search",
+      "status": 308,
+      "cache": null,
+      "location": "/search/",
+      "robots": null,
+      "nonce_count": 0,
+      "wasm": true,
+      "csp_count": 1,
+      "canonical": []
+    },
+    {
+      "url": "https://roammate.com/search/",
+      "status": 200,
+      "cache": "no-store",
+      "location": null,
+      "robots": null,
+      "nonce_count": 1,
+      "wasm": true,
+      "csp_count": 1,
+      "canonical": [
+        "https://roammate.com/search/"
+      ]
+    },
+    {
+      "url": "https://roammate.com/search/",
+      "status": 200,
+      "cache": "no-store",
+      "location": null,
+      "robots": null,
+      "nonce_count": 1,
+      "wasm": true,
+      "csp_count": 1,
+      "canonical": [
+        "https://roammate.com/search/"
+      ]
+    },
+    {
+      "url": "https://roammate.com/about/",
+      "status": 200,
+      "cache": "no-store",
+      "location": null,
+      "robots": null,
+      "nonce_count": 1,
+      "wasm": false,
+      "csp_count": 1,
+      "canonical": [
+        "https://roammate.com/about/"
+      ]
+    },
+    {
+      "url": "https://roammate.com/search-manifest.json",
+      "status": 404,
+      "cache": "no-store",
+      "location": null,
+      "robots": null,
+      "nonce_count": 0,
+      "wasm": false,
+      "csp_count": 1,
+      "canonical": [
+        "https://roammate.com/404/"
+      ]
+    },
+    {
+      "url": "https://roammate.com/sitemap.xml",
+      "status": 200,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "robots": null,
+      "nonce_count": 0,
+      "wasm": false,
+      "csp_count": 1,
+      "canonical": [],
+      "excludes_search": true
+    },
+    {
+      "url": "https://roammate.com/robots.txt",
+      "status": 200,
+      "cache": "public, max-age=2678400, must-revalidate",
+      "location": null,
+      "robots": null,
+      "nonce_count": 0,
+      "wasm": false,
+      "csp_count": 1,
+      "canonical": [],
+      "sitemap_and_rss": true
+    },
+    {
+      "url": "https://roammate.com/llms.txt",
+      "status": 200,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "robots": null,
+      "nonce_count": 0,
+      "wasm": false,
+      "csp_count": 1,
+      "canonical": []
+    },
+    {
+      "url": "https://roammate.com/rss.xml",
+      "status": 200,
+      "cache": "public, max-age=0, must-revalidate",
+      "location": null,
+      "robots": null,
+      "nonce_count": 0,
+      "wasm": false,
+      "csp_count": 1,
+      "canonical": []
+    },
+    {
+      "url": "https://435c1c38.roammate-cs7.pages.dev/search/",
+      "status": 200,
+      "cache": "no-store",
+      "location": null,
+      "robots": "noindex, nofollow",
+      "nonce_count": 1,
+      "wasm": true,
+      "csp_count": 1,
+      "canonical": [
+        "https://roammate.com/search/"
+      ]
+    }
+  ]
+}
