@@ -1,0 +1,9 @@
+{
+  "blocked_read_query": 1,
+  "allowed_read_query": 0,
+  "allowed_write_query": 1,
+  "outside_write_query": 1,
+  "synthetic_denied_read": true,
+  "synthetic_denied_write": true,
+  "scratch_write": true
+}
