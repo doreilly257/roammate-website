@@ -2,7 +2,9 @@
 
 > **For agentic workers:** Use the applicable subagent-driven-development or executing-plans skill after separate implementation approval, with independent specification and quality reviews. Bead `gp60` tracks this planning work; use Beads, not Markdown task checkboxes, for execution status.
 
-**Goal:** Plan a pure Ruby validator of two synthetic JSON strings, without authorizing its implementation or execution.
+**Goal:** Implement the approved pure offline Ruby validator of two synthetic JSON strings, preserving all non-production boundaries.
+
+**Approval chronology:** this plan was originally planning-only; the user later approved offline implementation. Following the blocked system-parser checkpoint, the user explicitly approved the [parser revision](2026-09-16-synthetic-archive-parser-revision.md) and original offline implementation resumption. This amendment records authorization, not test success.
 
 **Architecture:** A standalone website module performs bounded duplicate-aware parsing, exact shape validation, expected-fixture consistency and observation comparisons. An independent manual test harness supplies separately authored expected/observed fixtures and literal rejection-code oracles; no owner code or real evidence is imported.
 
@@ -10,7 +12,7 @@
 
 ## Authority and file map
 
-Source: [approved design](../specs/2026-09-16-synthetic-archive-evidence-design.md). **User approval currently covers this plan only. None of the commands below has been executed by planning, and none authorizes implementation.** No native/provider/archive/credential reads, owner changes, Fastlane loading or production wiring.
+Source: [approved design](../specs/2026-09-16-synthetic-archive-evidence-design.md). **User approval now covers the reviewed parser revision and original offline implementation scope only. No command was executed while authoring this amendment; actual execution and results must be recorded separately.** No native/provider/archive/credential reads, owner changes, Fastlane loading or production wiring.
 
 Read-only path inspection found no existing `tools/release/synthetic_archive_evidence` directory. Proposed files, all in this website repository:
 
@@ -25,7 +27,7 @@ Keep this small unit in these files unless review demonstrates a needed split. D
 
 ## 1. Establish containment before any future Ruby run
 
-After implementation approval, first verify the fixed installed interpreter **`/usr/bin/ruby --disable-gems`**. An earlier offline-keyword fixture verified Ruby 2.6.10 through this path under sandbox; historical success does **not** establish current startup success. Do not select an alternate interpreter if the fixed path fails.
+Before resumed execution, verify the newly approved fixed interpreter **`/opt/homebrew/Cellar/ruby/4.0.7/bin/ruby --disable-gems`**, JSON **2.18.0**, executable SHA-256 **`0abc5dafa91bf31774888e70580d9b7d2739006beecf37795d3a2c3d383b974f`**, and loaded JSON components within its Cellar `4.0.7/lib/ruby/4.0.0` tree. Prior tiny compatibility probes do **not** establish current startup success or full conformance. Do not select another interpreter if identity, containment or startup checks fail. System Ruby 2.6.10 / JSON 2.1.0 is the historical blocked runtime, not an authorized fallback.
 
 The existing [offline comparison containment receipt](../verification/2026-09-15-offline-comparison-contract.md) records the exact inline network-only policy **`(version 1) (allow default) (deny network*)`** and current-PID `sandbox_check` results: sandboxed parent/child return 1 versus unsandboxed control 0, without traffic. Before a future Ruby test run, repeat only that reviewed current-PID preflight using its existing reviewed helper. If the helper is unavailable or controls cannot be verified, stop; do not improvise traffic probes or a new helper under this plan. Historical receipts alone are not current proof.
 
@@ -38,7 +40,7 @@ The future launch pattern uses run-specific absolute scratch/test paths; plannin
 ```text
 /usr/bin/sandbox-exec -p '(version 1) (allow default) (deny network*)'
   /usr/bin/env -i HOME=<owned-home> TMPDIR=<owned-tmp> PATH=/usr/bin:/bin:/usr/sbin:/sbin
-  /usr/bin/ruby --disable-gems <absolute-test_validator.rb> --group <fixed-group>
+  /opt/homebrew/Cellar/ruby/4.0.7/bin/ruby --disable-gems <absolute-test_validator.rb> --group <fixed-group>
 ```
 
 Quotes above display one literal policy argument; no shell expansion or arbitrary caller flags belong in the supervisor. Missing prerequisites or unsupported runtime behavior block execution. This plan authorizes neither new containment infrastructure nor owner reads.
@@ -54,11 +56,11 @@ The runner accepts only fixed documented groups (`happy`, `parse`, `shape`, `exp
 
 ## 3. Duplicate-safe parser and limit checks
 
-1. Implement parser tests **before** schema logic, including raw JSON strings with duplicate keys at top level and nested objects. Do not construct those malformed inputs as Ruby hashes, which would already collapse duplicates. Include escaped-equivalent duplicate names using this complete **raw JSON** with exactly one backslash before `u`: `{"mode":"synthetic","m\u006fde":"synthetic"}`. Both keys decode to `mode` and must reject as `DUPLICATE_KEY`. A Ruby double-quoted source literal needs `\\` to produce that one raw backslash; source escaping is not an instruction to put two backslashes in the JSON. Also cover trailing tokens, malformed escaping, BOM, invalid UTF-8, NaN/Infinity syntax, and nested duplicate versus later syntax faults.
-2. Proposed stdlib mechanism: a dedicated internal Hash subclass supplied as JSON `object_class`, overriding `[]=` to raise a private fixed-category duplicate exception when `key?` is already true. Use explicit `create_additions: false`, `allow_nan: false`, and parser nesting limit 12. Do not enable JSON object additions or deserialize arbitrary classes. Do not patch global Hash/JSON behavior.
-3. Under containment, first run a fixed synthetic parser-compatibility check proving that this installed JSON implementation invokes the duplicate-aware insertion path at every nesting and for escaped-equivalent keys. Check that first duplicate encountered wins over a later syntax error. If the runtime bypasses insertion, collapses duplicates, wraps faults incompatibly or cannot enforce nesting, **stop as unsupported**; never fall back to ordinary parse plus a post-parse duplicate check. Any alternate parser needs a reviewed plan revision, not an improvised lexer.
+1. Implement parser tests **before** schema logic, including raw JSON strings with duplicate keys at top level and nested objects. Do not construct those malformed inputs as Ruby hashes, which would already collapse duplicates. Include escaped-equivalent duplicate names using this complete **raw JSON** with exactly one backslash before `u`: `{"mode":"synthetic","m\u006fde":"synthetic"}`. Both keys decode to `mode` and must reject as `INPUT_SYNTAX`. A Ruby double-quoted source literal needs `\\` to produce that one raw backslash; source escaping is not an instruction to put two backslashes in the JSON. Also cover trailing tokens, malformed escaping, BOM, invalid UTF-8, NaN/Infinity syntax, and nested duplicate versus later syntax faults.
+2. Use the pinned JSON 2.18.0 parser with explicit `allow_duplicate_key: false`, `create_additions: false`, `allow_nan: false`, and `max_nesting: 12`. The modern parser bypasses the tested `object_class` Hash `[]=` hook; remove dependence on that strategy. Do not patch global Hash/JSON behavior, enable additions, permit duplicates, or perform a post-parse duplicate check after collapse.
+3. Under fresh verified containment, run fixed synthetic parser controls for top-level/nested/escaped-equivalent duplicates, duplicate-before-malformed input, invalid backslash-q, raw control, trailing data, NaN and depth 12/13. Duplicate and other `JSON::ParserError` failures map to `INPUT_SYNTAX`; catch typed `JSON::NestingError` first and map to `INPUT_LIMIT`. No distinct duplicate diagnostic remains. Do not use message regex, expose exceptions, add a lexer or fall back to another parser/runtime. If strict rejection or runtime identity differs from the approved controls, stop with evidence rather than weakening them.
 4. Accept only ordinary String inputs; do not coerce arbitrary objects, call `to_str`/`to_json`, or dispatch input-defined methods. Preserve bytes on an owned plain-string copy when checking UTF-8, with no normalization. Return `FIELD_SHAPE` for non-string inputs, `INPUT_ENCODING` for invalid UTF-8/BOM, then `INPUT_LIMIT` for more than 65,536 bytes. Pin behavior for subclass/non-UTF-8 Ruby encoding wrappers in tests without invoking their custom methods; reject ambiguous nonordinary input rather than broadening the JSON-string contract.
-5. Parse with duplicate/depth defense. Map the first encountered parser failure to `INPUT_SYNTAX`, `DUPLICATE_KEY`, or `INPUT_LIMIT`; never include the parser exception message. After parse, traverse with bounded iteration: root container depth 1, at most 12 container levels, 2,048 values (root/containers/scalars count; object keys count toward string-size checks, not value nodes), 128 UTF-8 bytes per string including keys, 32 object members and eight array entries. Limits precede schema validation. This node-count convention must be reviewed against the design before code acceptance; do not let test helper and implementation silently use different definitions.
+5. Parse with duplicate/depth defense. Map the first encountered parser failure to `INPUT_SYNTAX` or `INPUT_LIMIT`; never include the parser exception message. After parse, traverse with bounded iteration: root container depth 1, at most 12 container levels, 2,048 values (root/containers/scalars count; object keys count toward string-size checks, not value nodes), 128 UTF-8 bytes per string including keys, 32 object members and eight array entries. Limits precede schema validation. This node-count convention must be reviewed against the design before code acceptance; do not let test helper and implementation silently use different definitions.
 6. Run contained `--group parse`; require direct assertions for exact boundary and one-over rejection at each limit. Because several limit boundaries are not achievable in a valid schema, test them with bounded parser/limit fixtures and assert that at-limit input proceeds to the expected later shape/schema rejection rather than falsely requiring overall success. For raw-byte boundary, legal trailing whitespace can pad an otherwise valid document without changing its value.
 
 No credential/file hash is computed by the validator: synthetic digest labels are compared as strings only.
@@ -98,6 +100,6 @@ Independent review must assess design compliance before quality: duplicate detec
 
 ## 8. Evidence and handoff
 
-Record exact website commit/source hashes, approved containment identity, pinned Ruby/JSON versions, meaningful red/green outcomes, actual assertion totals and reviews in a concise sanitized verification report. Distinguish pure consistency verification from extraction/authenticity and include any runtime limitation. Parent performs owned-file commit/push and Bead updates after implementation is separately approved and verified; this planning task authorizes no implementation commit; the parent may commit the reviewed plan document.
+Record exact website commit/source hashes, approved containment identity, pinned Ruby/JSON versions, meaningful red/green outcomes, actual assertion totals and reviews in a concise sanitized verification report. Distinguish pure consistency verification from extraction/authenticity and include any runtime limitation. Parent performs owned-file commit/push and Bead updates after the authorized implementation is verified; this planning task authorizes no implementation commit; the parent may commit the reviewed plan document.
 
 Owner `p2z9` acceptance remains required before any integration. No owner contact or acceptance is implied; U3/`vbet` transport and reconcile changes remain untouched. Real collector provenance, authoritative policy, native artifact validation, production schema/adapter design and execution approvals remain future work. Neither planning nor a later synthetic pass establishes candidate or release readiness.
