@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-09-16T07:50:30.067Z",
+  "version": "2026.3.8",
+  "attached_build": null,
+  "locales": [
+    {
+      "locale": "zh-Hans",
+      "keyword_bytes": 142,
+      "keywords_nonempty": true,
+      "description_matches_owner": true,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "es-MX",
+      "keyword_bytes": 98,
+      "keywords_nonempty": true,
+      "description_matches_owner": true,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "en-US",
+      "keyword_bytes": 100,
+      "keywords_nonempty": true,
+      "description_matches_owner": false,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "ja",
+      "keyword_bytes": 152,
+      "keywords_nonempty": true,
+      "description_matches_owner": true,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "en-AU",
+      "keyword_bytes": 99,
+      "keywords_nonempty": true,
+      "description_matches_owner": false,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "es-ES",
+      "keyword_bytes": 95,
+      "keywords_nonempty": true,
+      "description_matches_owner": true,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "fr-CA",
+      "keyword_bytes": 95,
+      "keywords_nonempty": true,
+      "description_matches_owner": true,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "pt-BR",
+      "keyword_bytes": 95,
+      "keywords_nonempty": true,
+      "description_matches_owner": true,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "en-CA",
+      "keyword_bytes": 100,
+      "keywords_nonempty": true,
+      "description_matches_owner": false,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "ko",
+      "keyword_bytes": 150,
+      "keywords_nonempty": true,
+      "description_matches_owner": true,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "ar-SA",
+      "keyword_bytes": 152,
+      "keywords_nonempty": true,
+      "description_matches_owner": true,
+      "release_notes_nonempty": false
+    },
+    {
+      "locale": "en-GB",
+      "keyword_bytes": 96,
+      "keywords_nonempty": true,
+      "description_matches_owner": false,
+      "release_notes_nonempty": false
+    }
+  ],
+  "more_locales": false
+}
