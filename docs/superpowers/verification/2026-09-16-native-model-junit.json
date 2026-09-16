@@ -1,0 +1,306 @@
+{
+  "scope": "Existing compiled model tests only; not a fresh build or release artifact acceptance",
+  "test_classes": [
+    "com.roammate.core.model.ActualResponseNullabilityTest",
+    "com.roammate.core.model.ApiPayloadContractTest",
+    "com.roammate.core.model.BackendWireFormatDecodeTest",
+    "com.roammate.core.model.GroupPostTitleContractTest",
+    "com.roammate.core.model.SafetyExtensionWireTest",
+    "com.roammate.core.model.UploadFeedbackModerationWireTest",
+    "com.roammate.core.model.auth.AuthResponseSerializationTest",
+    "com.roammate.core.model.bucketlist.BucketListCursorWireTest",
+    "com.roammate.core.model.chat.LocationShareMetadataTest",
+    "com.roammate.core.model.chat.MessageTranslationTest",
+    "com.roammate.core.model.chat.SharedFixtureParityTest",
+    "com.roammate.core.model.chat.TypingStatusResponseTest",
+    "com.roammate.core.model.connect.ConnectModelsSerializationTest",
+    "com.roammate.core.model.connect.FollowResponseSerializationTest",
+    "com.roammate.core.model.directions.DirectionsModelsSerializationTest",
+    "com.roammate.core.model.directions.DirectionsNullablePayloadTest",
+    "com.roammate.core.model.excursions.ExcursionInvitationAcknowledgementTest",
+    "com.roammate.core.model.excursions.ExcursionLifecycleStatusTest",
+    "com.roammate.core.model.excursions.ExcursionPrivacyDecodingTest",
+    "com.roammate.core.model.excursions.ExcursionStatusTest",
+    "com.roammate.core.model.excursions.ExcursionViewerPermissionWireTest",
+    "com.roammate.core.model.feed.FeedActivityActionTest",
+    "com.roammate.core.model.gamification.LevelProgressTest",
+    "com.roammate.core.model.itineraries.GeneratedItineraryModelsTest",
+    "com.roammate.core.model.itineraries.ItineraryModelsTest",
+    "com.roammate.core.model.monetisation.FundModelsTest",
+    "com.roammate.core.model.notifications.ActivityNotificationModelsTest",
+    "com.roammate.core.model.notifications.CanonicalNotificationModelsTest",
+    "com.roammate.core.model.onboarding.OnboardingJourneyTest",
+    "com.roammate.core.model.onboarding.OnboardingServerContractTest",
+    "com.roammate.core.model.onboarding.OnboardingTriggerTest",
+    "com.roammate.core.model.profilesetup.ProfileSetupModelsTest",
+    "com.roammate.core.model.suggestions.SuggestionModelsTest",
+    "com.roammate.core.model.trips.TripLegPatchSerializationTest",
+    "com.roammate.core.model.trips.TripRadarModelsTest",
+    "com.roammate.core.model.trips.TripSummaryContractTest",
+    "com.roammate.core.model.user.UserNameSerializationTest",
+    "com.roammate.core.model.websocket.WsEnvelopeTest"
+  ],
+  "inputs": [
+    {
+      "file": "model.jar",
+      "sha256": "31714271c048af6dbcb9a82c8d1ef7e1da33642284488c960fc5dd1ad8c1344e"
+    },
+    {
+      "file": "junit-4.13.2.jar",
+      "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3"
+    },
+    {
+      "file": "kotlinx-serialization-core-jvm-1.11.0.jar",
+      "sha256": "f4a801c647d4351327cd9e1ac4113e2be9ea37a64ab0abae269c25a52e28f35d"
+    },
+    {
+      "file": "hamcrest-core-1.3.jar",
+      "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9"
+    },
+    {
+      "file": "kotlinx-serialization-json-jvm-1.11.0.jar",
+      "sha256": "563a25b4eb5c9128ae9c2479f3d1a5c44dcd176112b91cf03682e906eba5c935"
+    },
+    {
+      "file": "kotlin-stdlib-2.4.10.jar",
+      "sha256": "4ec0293bc3751423b203f1d8493251c57c42e73eb6377a6b8560d0974ff0a6df"
+    },
+    {
+      "file": "tests/META-INF/model.kotlin_module",
+      "sha256": "06d262cf732152000d8cb1453e8dc1209b37fa4411e5c4d202265ff0d18ec16d"
+    },
+    {
+      "file": "tests/com/roammate/core/model/UploadFeedbackModerationWireTest.class",
+      "sha256": "a6f781db4cbf581d2107ea51f3f433a2e9c63060eddc0b8824ada93d126e46f1"
+    },
+    {
+      "file": "tests/com/roammate/core/model/ActualResponseNullabilityTest.class",
+      "sha256": "37439a3a46e4604173b84564cbb21a82551720679ea64a4abb9e63f590f78695"
+    },
+    {
+      "file": "tests/com/roammate/core/model/BackendWireFormatDecodeTest.class",
+      "sha256": "b50ce4e95c81ab74210fa2011b0b934d9a53305d979793b6bb1aa83bd6653333"
+    },
+    {
+      "file": "tests/com/roammate/core/model/ApiPayloadContractTest.class",
+      "sha256": "76b0a94572847ad4c77ba1b93efb7e3677e62f0f4fe80fef7bc96e96055bc567"
+    },
+    {
+      "file": "tests/com/roammate/core/model/SafetyExtensionWireTest.class",
+      "sha256": "4a053d0c530355162b26afe8adba6018b6d7d7f6965140fc1f7494c334eadb25"
+    },
+    {
+      "file": "tests/com/roammate/core/model/GroupPostTitleContractTest.class",
+      "sha256": "1672d99338012a8c768b7f78c7d92fcd66f23618a37aec5bcf1f0d409326b1b8"
+    },
+    {
+      "file": "tests/com/roammate/core/model/excursions/ExcursionInvitationAcknowledgementTest.class",
+      "sha256": "15229cc926ce78bd452a982d7e3d8f67a61d6a3daf5023825f968ad3266876bc"
+    },
+    {
+      "file": "tests/com/roammate/core/model/excursions/ExcursionStatusTest.class",
+      "sha256": "58406c9c5b33d90052894e5f88190612f1225bfc597e49379c1123ec11a7ad09"
+    },
+    {
+      "file": "tests/com/roammate/core/model/excursions/ExcursionLifecycleStatusTest.class",
+      "sha256": "2e91c485f74fe8b992d3ffe66b07ef17bb09b6a5cbbed96c7df0103807dac90a"
+    },
+    {
+      "file": "tests/com/roammate/core/model/excursions/ExcursionPrivacyDecodingTest.class",
+      "sha256": "8019657eddd3cae083d9ee62a74760567c4339c1f019d96ff8c76b5b125cead1"
+    },
+    {
+      "file": "tests/com/roammate/core/model/excursions/ExcursionViewerPermissionWireTest.class",
+      "sha256": "10843aebcacb2144c246799ca30b9ca29b4f913e43f2a73b8ebe16983d5ba5db"
+    },
+    {
+      "file": "tests/com/roammate/core/model/directions/DirectionsModelsSerializationTest.class",
+      "sha256": "9b76e89ba3352fd6c99cd4bf95a7cd12c2e52735c20e974517d40db9b5cc6de4"
+    },
+    {
+      "file": "tests/com/roammate/core/model/directions/DirectionsNullablePayloadTest.class",
+      "sha256": "927d2f7b6935a322caaf358c0155bf3c34faa605756d5ca0c8296cabc200ebb6"
+    },
+    {
+      "file": "tests/com/roammate/core/model/websocket/WsEnvelopeTest.class",
+      "sha256": "725dbac7973a7ec06bb7eff0b527b9442ac928c4e8168a285a55ca359b17baf2"
+    },
+    {
+      "file": "tests/com/roammate/core/model/bucketlist/BucketListCursorWireTest.class",
+      "sha256": "eb94d4077f75d13cb4ff6c4e5ad3e22fda743d3786164028130c11d88998ff7c"
+    },
+    {
+      "file": "tests/com/roammate/core/model/chat/LocationShareMetadataTest.class",
+      "sha256": "ec63624541db58f0e4a978620271341c7f7cecfa68d36c9b59c3c5376ca4b9d8"
+    },
+    {
+      "file": "tests/com/roammate/core/model/chat/TypingStatusResponseTest.class",
+      "sha256": "8e35eac9b013b981b897ad50821f53e8a8ac41d25a76bf4795b6e16a550d4262"
+    },
+    {
+      "file": "tests/com/roammate/core/model/chat/MessageTranslationTest.class",
+      "sha256": "c16e44a6b22d6e73d26b3053a821736f10df816f63bcd334fb090308576b39c5"
+    },
+    {
+      "file": "tests/com/roammate/core/model/chat/SharedFixtureParityTest.class",
+      "sha256": "0b4a8e547f1de46bbca0b80f1977f4116ee36d41daf6e58ee4fd42bb0f997263"
+    },
+    {
+      "file": "tests/com/roammate/core/model/auth/AuthResponseSerializationTest.class",
+      "sha256": "258c6ec8a044603f476fb558564a6da187d8ba2b434c3e6501953e2afbcf7d05"
+    },
+    {
+      "file": "tests/com/roammate/core/model/gamification/LevelProgressTest.class",
+      "sha256": "843eb7340ae46c7095168d6ec51dc6fa908debc9dd47edca86a815e155602fee"
+    },
+    {
+      "file": "tests/com/roammate/core/model/monetisation/FundModelsTest.class",
+      "sha256": "431d642c00331290b212ac19d7550cfba717cf2dbf0078420d918172e71f0a3c"
+    },
+    {
+      "file": "tests/com/roammate/core/model/profilesetup/ProfileSetupModelsTest.class",
+      "sha256": "2748b8df743bba723ec566afc638d6e1e2d749d7e383b616460938010d8b4c4b"
+    },
+    {
+      "file": "tests/com/roammate/core/model/user/UserNameSerializationTest$BaselineName.class",
+      "sha256": "40f94a580e6af9c97d274eac110a5c6ce5b746cc814266be8c489668508e455d"
+    },
+    {
+      "file": "tests/com/roammate/core/model/user/UserNameSerializationTest$BaselineName$$serializer.class",
+      "sha256": "434d8f4bfe5b6aac921cb5e071176ea4353cae247edd439bbfea52fe73af9f47"
+    },
+    {
+      "file": "tests/com/roammate/core/model/user/UserNameSerializationTest$BaselineName$Companion.class",
+      "sha256": "c05b5208ab92d296c3a3f5cc7f7c4938bbffd7b220fa4a97fb945e87d15cba78"
+    },
+    {
+      "file": "tests/com/roammate/core/model/user/UserNameSerializationTest.class",
+      "sha256": "d2f263761562b6747905db9fa474fc57d1127b07b348b1e4d5ed1b2d24171771"
+    },
+    {
+      "file": "tests/com/roammate/core/model/itineraries/GeneratedItineraryModelsTest.class",
+      "sha256": "e3933571c8d70f90a8652ddec5e340eb21e335ef613ec3d9adbcc264f27bed1c"
+    },
+    {
+      "file": "tests/com/roammate/core/model/itineraries/ItineraryModelsTest.class",
+      "sha256": "5ffc76e88240a9ea898972cc7418e804e9ddae9c3e2434e147a6cc7ec18852e9"
+    },
+    {
+      "file": "tests/com/roammate/core/model/feed/FeedActivityActionTest.class",
+      "sha256": "a6450ad9e498084b9e5491ba4ecbdf84032e175b43eb894c0346735d4ba8655b"
+    },
+    {
+      "file": "tests/com/roammate/core/model/suggestions/SuggestionModelsTest.class",
+      "sha256": "daa6b192f26113a36d5b68c1edc56aeca0398ccba63b5c27c58f2dc5f8028cab"
+    },
+    {
+      "file": "tests/com/roammate/core/model/connect/FollowResponseSerializationTest.class",
+      "sha256": "2cf80b53db5b3a981b4262c6513dd3c102a85656fae1860fb6b9021e5cf8fac4"
+    },
+    {
+      "file": "tests/com/roammate/core/model/connect/ConnectModelsSerializationTest.class",
+      "sha256": "2ba2d8e3d7e746f2a91f26399f6115d9f564b6456a0bd98f5fc3f5b9827a6bd5"
+    },
+    {
+      "file": "tests/com/roammate/core/model/trips/TripLegPatchSerializationTest.class",
+      "sha256": "7e10101ef1ed7805e2179bb65fcca5dda0f150c9c08bb826cabc19601f957e33"
+    },
+    {
+      "file": "tests/com/roammate/core/model/trips/TripSummaryContractTest.class",
+      "sha256": "9da8d33353ce5daedd2e9a493e963fcba9b8ba4beff0f7bc7810265dedeef7ee"
+    },
+    {
+      "file": "tests/com/roammate/core/model/trips/TripRadarModelsTest.class",
+      "sha256": "bff35283023eaccfa32ef44a2783e35c0c19b9ce208908fef3a9973c793df86a"
+    },
+    {
+      "file": "tests/com/roammate/core/model/notifications/CanonicalNotificationModelsTest.class",
+      "sha256": "6c4d0a918c4cf1a9d2ec6f2f21ae73496b93eee4a020d2f340c6cd0c197e97a0"
+    },
+    {
+      "file": "tests/com/roammate/core/model/notifications/ActivityNotificationModelsTest.class",
+      "sha256": "f0d785a717482316e800b645762b1e06230d339028595327c9fa37f51ede05f5"
+    },
+    {
+      "file": "tests/com/roammate/core/model/onboarding/OnboardingJourneyTest.class",
+      "sha256": "164910491a13d4a685ea16d45fbe435ead61b89b4bb9bb22e2fcc02d8dabd77f"
+    },
+    {
+      "file": "tests/com/roammate/core/model/onboarding/OnboardingServerContractTest.class",
+      "sha256": "9245b49eda2f85772b25b0b911111e5102d200d5c537f42e14b90687e78e3165"
+    },
+    {
+      "file": "tests/com/roammate/core/model/onboarding/OnboardingTriggerTest.class",
+      "sha256": "bc58593f89c4ea8242973e4077625f7e629623076dae0d5e0fef3e9a49206375"
+    },
+    {
+      "file": "resources/notification-events/chat-message.json",
+      "sha256": "9e4585ea26393e31c639068cdc99ab4a9e2a65637e90bc26d2af42f89b716efc"
+    },
+    {
+      "file": "resources/notification-events/chat-deleted.json",
+      "sha256": "5d39ee1457c92008b3cc59974c6b4dbba1477bbd66cbaf6c81f2b1b1e59af4e8"
+    },
+    {
+      "file": "resources/notification-events/transport-hint-delete.json",
+      "sha256": "7f3ca1795f357f4ff9b0d5f55fc71236b4f26fa013cfc35c00de6151519d68c6"
+    },
+    {
+      "file": "resources/notification-events/counts.json",
+      "sha256": "8e83a00805c2a46ae174f9e06ea6aee9d38360d97c32f2d351c5638797dba118"
+    },
+    {
+      "file": "resources/notification-events/transport-hint-upsert.json",
+      "sha256": "be3d38b981bf38835af7bf51d7364cb363e8cdc2cd936a68175c5c81353ddd23"
+    },
+    {
+      "file": "resources/notification-events/unknown-type.json",
+      "sha256": "0164596b0648a4ce0a84a2a56a2fc0ae10cc1e331ca51a628190ac7b8bd6a217"
+    },
+    {
+      "file": "resources/notification-events/page.json",
+      "sha256": "48f70d98f135034bfadd15dc32919eddc91b72722b83c8b86f5787ecebab629f"
+    },
+    {
+      "file": "resources/notification-events/activity-follow.json",
+      "sha256": "2d9e3169094620562db47bd6673e291eeb3c123ec47ec27a79193781c59c5015"
+    },
+    {
+      "file": "resources/notification-events/minimal-redacted.json",
+      "sha256": "57132838f3df5fa0765a8da8f3bb9631a02fcb55754898135dff313220fc903f"
+    },
+    {
+      "file": "resources/META-INF/model.kotlin_module",
+      "sha256": "06d262cf732152000d8cb1453e8dc1209b37fa4411e5c4d202265ff0d18ec16d"
+    },
+    {
+      "file": "resources/fixtures/chat-translation/unknown-status.json",
+      "sha256": "784793834d3a032cefe5e3c3f1251120bc101dd209857927d020360f6945b5e9"
+    },
+    {
+      "file": "resources/fixtures/chat-translation/translated.json",
+      "sha256": "c68ce77594b6c4c19c8e34e92d18ad1758424017b99872bdf5a83442ffa7a73a"
+    },
+    {
+      "file": "resources/fixtures/chat-translation/skipped.json",
+      "sha256": "648ff754ed1e81905719b35f6ef1b314400c458bfe7fcb72fff80ff6bc765610"
+    },
+    {
+      "file": "resources/fixtures/chat-translation/location-minimal.json",
+      "sha256": "383b09689c947b19e8abd16ddfa7649443464c6d7f07e5889d4c8238b1e9001d"
+    },
+    {
+      "file": "resources/fixtures/chat-translation/location-full.json",
+      "sha256": "58751cd1f581cf2fe5dd9f116bc793a28e4c3a98d2e87886d087d11a76a6a789"
+    }
+  ],
+  "exit": 0,
+  "seconds": 0.9,
+  "initial_missing_resource_attempt": {
+    "exit": 1,
+    "tests": 201,
+    "failures": 12,
+    "cause": "runner omitted processed fixture resources; no product code change"
+  },
+  "output": "JUnit version 4.13.2\n.........................................................................................................................................................................................................\nTime: 0.543\n\nOK (201 tests)\n\n"
+}

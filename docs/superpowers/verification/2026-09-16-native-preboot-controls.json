@@ -1,0 +1,105 @@
+{
+  "assessment": "host-synthetic-only",
+  "results": [
+    {
+      "mode": "files",
+      "pid": 35277,
+      "home_write": true,
+      "result": "allowed",
+      "case": "files-positive",
+      "elapsed_ms": 74,
+      "subprocess_exit": 0
+    },
+    {
+      "mode": "files",
+      "pid": 35278,
+      "home_write": true,
+      "result": "error",
+      "errno": 1,
+      "case": "files-sandbox",
+      "elapsed_ms": 94,
+      "subprocess_exit": 0
+    },
+    {
+      "mode": "tcp4",
+      "pid": 35280,
+      "result": "allowed",
+      "case": "deny-tcp4-positive",
+      "elapsed_ms": 71,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "mode": "tcp4",
+      "pid": 35281,
+      "result": "error",
+      "errno": 1,
+      "case": "deny-tcp4-sandbox",
+      "elapsed_ms": 79,
+      "subprocess_exit": 0,
+      "receiver_markers": 0
+    },
+    {
+      "mode": "udp4",
+      "pid": 35282,
+      "result": "allowed",
+      "case": "deny-udp4-positive",
+      "elapsed_ms": 61,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "mode": "udp4",
+      "pid": 35283,
+      "result": "error",
+      "errno": 1,
+      "case": "deny-udp4-sandbox",
+      "elapsed_ms": 78,
+      "subprocess_exit": 0,
+      "receiver_markers": 0
+    },
+    {
+      "mode": "tcp6",
+      "pid": 35284,
+      "result": "allowed",
+      "case": "deny-tcp6-positive",
+      "elapsed_ms": 48,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "mode": "tcp6",
+      "pid": 35285,
+      "result": "error",
+      "errno": 1,
+      "case": "deny-tcp6-sandbox",
+      "elapsed_ms": 51,
+      "subprocess_exit": 0,
+      "receiver_markers": 0
+    },
+    {
+      "mode": "fd",
+      "pid": 35286,
+      "result": "allowed",
+      "case": "fd-positive",
+      "elapsed_ms": 41,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "mode": "fd",
+      "pid": 35287,
+      "result": "allowed",
+      "case": "fd-sandbox",
+      "elapsed_ms": 51,
+      "subprocess_exit": 0,
+      "receiver_markers": 1
+    },
+    {
+      "case": "numeric-ipv4-exception-policy",
+      "result": "unsupported_tested_syntax",
+      "subprocess_exit": 65,
+      "category": "numeric-host-selector-rejected"
+    }
+  ]
+}
