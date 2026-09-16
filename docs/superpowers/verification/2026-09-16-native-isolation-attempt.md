@@ -42,4 +42,12 @@ The Gradle and Xcode attempts did not reach compilation/tests; the narrower dire
 
 A subsequent read-only toolchain check reported **Xcode 26.6, build 17F113**. `xcodebuild -showsdks` lists **iOS 26.5 and iOS Simulator 26.5**, and their SDK directories exist. Known installed runtime bundle paths under CoreSimulator volumes include **iOS 18.3 and 26.2**. Therefore, the isolated destination error must not be reported as an absent SDK or used to recommend downloading one. SDK availability, installed simulator runtimes, and discovery through an isolated HOME/CoreSimulator environment are distinct; the exact destination-discovery cause remains unresolved. No device inventory, boot, or installation was performed for this follow-up.
 
+## A: bounded iOS destination diagnosis follow-up
+
+Under the unchanged deny-all-network boundary, the supervising agent ran `simctl --set` against a dedicated empty, unbooted device set with `list runtimes --json`. Both fresh-HOME variants, with and without `CFFIXED_USER_HOME`, exited **0** and reported **iOS 18.3.1 and 26.2 available**. This runtime inventory did not create or boot a device, and no personal-device inventory was persisted.
+
+Bounded `xcodebuild -showdestinations` checks, first with the default deployment target and then with explicit `IPHONEOS_DEPLOYMENT_TARGET=17.0`, both exited **0** but offered **no eligible Simulator destination** and repeated the iOS 26.5-not-installed message. The earlier nested manifest sandbox error no longer occurred. Exit 0 for discovery is not a usable destination or successful build: neither the HOME toggle nor lowering the deployment target resolved the observed problem. The exact Xcode destination-discovery cause remains unresolved; these results do not justify claiming an absent SDK or installing anything.
+
+No device was created or booted, no native tests ran in this follow-up, and no installation or sandbox relaxation occurred. Bead **`c2r4`** tracks control prerequisites; it is not new release approval. The separate proposed [synthetic Gradle control-channel design](../specs/2026-09-16-gradle-control-channel-isolation-design.md) remains behind written review/approval before implementation.
+
 Both JSON receipts parse successfully and contain no absolute local root paths or credential markers under the report's scan. The raw iOS log was **not copied**, because it contains a physical-device identifier; only the generic destination error is summarized here. These receipts and this report do not enlarge runtime or production-traffic authority.
