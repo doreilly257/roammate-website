@@ -39,6 +39,7 @@ const RULES = [
       /verif\w*[^.]{0,30}before (you can|they can|matching|any connection|connecting)/i,
       /identity[- ]verified\b/i,
       /\bhard gate\b/i,
+      /built (around|on) verified profiles/i,
       // Comparison label precedes roammate's cell; never consume the competitor cell.
       /<td>\s*(?:verified profiles|profile verification)\s*<\/td>\s*<td>\s*yes\s*\(all users\)/i,
       /potential companion has verified their identity and travel history before you agree/i,

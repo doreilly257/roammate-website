@@ -46,6 +46,8 @@ fail=0
 if [ "$needs_claims" = true ]; then
   echo "pre-push: checking claims…"
   node scripts/check-claims.mjs --all || fail=1
+  # Warn-only: a probability is not proof. Changed files only; skips without a key.
+  node scripts/check-claims-semantic.mjs || true
 fi
 
 if [ "$needs_typecheck" = true ]; then
