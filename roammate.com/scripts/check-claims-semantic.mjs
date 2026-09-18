@@ -131,9 +131,14 @@ if (!key) {
 }
 
 const textArg = process.argv.indexOf('--text');
+const jsonlArg = process.argv.indexOf('--jsonl');
 let work;
 if (textArg !== -1) {
   work = [{ file: '(--text)', line: 1, text: process.argv[textArg + 1] || '' }];
+} else if (jsonlArg !== -1) {
+  // one {"f","line","s"} per line: passages extracted elsewhere (store listings, JSON data)
+  work = readFileSync(process.argv[jsonlArg + 1], 'utf8').split('\n').filter(Boolean)
+    .map((l) => JSON.parse(l)).map((p) => ({ file: p.f, line: p.line, text: p.s.slice(0, 1200) }));
 } else {
   const scanAll = process.argv.includes('--all');
   const base = git(['merge-base', 'HEAD', 'origin/main']) || git(['rev-parse', 'HEAD~1']);
