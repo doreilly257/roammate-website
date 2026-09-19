@@ -31,6 +31,41 @@
 - Those sessions cannot write to beads in this workspace, so relay their findings onto
   the relevant bead here on their behalf.
 
+## Verification Before Commit
+
+- **Never report something as done, fixed or green that you did not watch pass.** Say
+  which checks actually ran and name the ones still unverified. On 2026-09-19 a commit
+  message naming a bead was reported up as "fixed, committed and pushed"; the commit did
+  not compile. A commit message is not evidence.
+- **Anything that reports health must be shown capable of failing before its green is
+  trusted.** Mutation-test the gate, run the control with bad input, see the red first —
+  and confirm it still passes on correct code, because always-red is the same fault
+  wearing the other mask. Five defects in three days were all one shape: something
+  reporting a state that was not true. `scripts/check-claims.mjs` says this in its own
+  header: a clean run means no LISTED claim matched a KNOWN-FALSE pattern, nothing more.
+- A bug closes when it is fixed **and** a test covering it has run green — Daniel,
+  2026-09-19.
+
+## Destructive Command Guardrails
+
+- `bd update --notes` **OVERWRITES**. Use `--append-notes`. This destroyed a bead's
+  history once and it had to be reconstructed from context and labelled as reconstructed.
+- Capture prior state before mutating anything you cannot trivially undo — production
+  rows, bead schema, store metadata. A 3-row delete from production D1 on 2026-09-19 was
+  backed up first, which is why the surprising `changes: 3` could be checked rather than
+  panicked about.
+- Never delete, clean or modify files in a repo another session is working in, even
+  regenerable build output. Message the owning session. Directory mtime and a single
+  `pgrep` cannot prove a build tree is idle.
+
+## Local Environment
+
+- `lean-ctx` rejects paths outside the active project root. Use native `Read` for files
+  in the mobile repos or elsewhere outside this one, rather than retrying `ctx_*` calls.
+- One heavy job at a time on this 8 GB Mac: `~/.claude/heavy-lock.sh take|release|status`
+  before any site build, deploy or `git push` (the pre-push hook runs `astro check`).
+  Release it in the same step the job finishes, not at the start of the next one.
+
 ## Project Structure
 
 - `roammate.com/` — Astro site for roammate.com
