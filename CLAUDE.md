@@ -45,6 +45,15 @@
   header: a clean run means no LISTED claim matched a KNOWN-FALSE pattern, nothing more.
 - A bug closes when it is fixed **and** a test covering it has run green — Daniel,
   2026-09-19.
+- **A claim in a comment, README or CLAUDE.md is an assertion nobody checked.** It
+  has the authority of being in the repo and none of the verification. `auth.ts`
+  accepted `com.roammate.services` as an Apple audience under "Keep backward
+  compatibility across historical Apple client IDs"; that Services ID has never
+  existed. The comment landed 2026-02-10, propagated into the iOS CLAUDE.md as a
+  required audience, and was repeated as fact for seven months. Before repeating
+  a claim about **external state** — registered identifiers, console config,
+  deployed flags, third-party setup — go and look. When writing one, state what
+  the code REQUIRES, or date it and name who verified it.
 
 ## Destructive Command Guardrails
 
