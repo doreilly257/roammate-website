@@ -13,7 +13,11 @@ function answerFor(question: string): string {
 describe('FAQ content consistency', () => {
   it('does not invite underage users contrary to published eligibility', () => {
     expect(page('terms')).toContain('at least 18 years old');
-    expect(page('privacy')).toContain('not intended for users under 18');
+    // Asserts the statement, not one phrasing of it: the wording changed on
+    // 2026-09-23 when the 18+ gate began collecting a date of birth. Both
+    // halves must hold, so deleting the eligibility sentence still fails here.
+    expect(page('privacy')).toMatch(/only for people aged 18 and over/i);
+    expect(page('privacy')).toMatch(/under 18/i);
     const answer = answerFor('What types of travellers use roammate?');
     expect(answer).not.toMatch(/all ages/i);
     expect(answer).toMatch(/18/);
