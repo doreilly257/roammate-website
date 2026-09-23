@@ -19,6 +19,9 @@
 /guides/region/australia-and-new-zealand/  /guides/region/oceania/  301
 /guides/region/southern-europe/  /guides/region/europe/  301
 
-# /companions/ only builds for curated city guides. These 222 place guides were
-# linked here before that was gated, and Search Console still reports them as
-# 404s. Each one has a real guide page covering the same place.
+# Pages from the pre-Astro static site (www.old/). /privacy.html was still being
+# requested in September 2026 (PostHog 404 pageviews), and a policy link that 404s
+# can fail an app store review.
+/privacy.html  /privacy/  301
+/terms.html  /terms/  301
+/faq.html  /faq/  301
