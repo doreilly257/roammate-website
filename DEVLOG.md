@@ -1,75 +1,76 @@
 # roammate Website Dev Log
 
 ## Working State
-**Session:** 6 | **Date:** 2026-08-30
+**Session:** 7 | **Date:** 2026-09-23
+
+### Role now
+This session is the website AND the cross-platform analytics/triage desk: it measures
+field data in PostHog and D1, records findings on beads for the iOS and Android sessions
+(they can't write here), and hands app/backend work off via SendMessage.
 
 ### Active task
-None — everything shipped and verified live (commit e990570). Working tree clean.
+None open in code. Working tree clean; `main` pushed at 46e243d (pre-push hook passed:
+claims clean, `astro check` 0 errors).
 
-### SHIPPED: site-wide em dash removal + 9 new posts
-Removed **35,104 of 35,118 em dashes** as a rewrite, not a find-and-replace: clauses a
-dash joined became full stops, headings took colons, asides containing commas moved to
-brackets, and sentences were restructured where punctuation alone read badly.
+### Shipped today
+- **Privacy policy: date of birth for the 18+ gate** (34ce127, pn1n part A). Live and
+  verified on roammate.com/privacy/. Part B (TypeSafe content review) waits until user
+  content actually goes to TypeSafe.
 
-| area | removed |
-|-|-|
-| 454 city + route guides | 33,507 |
-| 107 blog posts | 624 |
-| 48 pages/layouts/components/data | 339 |
-| llms.txt + llms-full.txt | 630 |
+### Measured / decided today (field data, per person, test traffic excluded)
+- **j8md closed.** "613 lost in onboarding" was an event-count artefact; real is ~17 of
+  ~350 starters per 30 days. Decisions (Daniel): Android onboarding_abandoned stays
+  per-departure, counted as distinct people with no later completion; iOS gets no page-0
+  or abandon event (D100-A: onboarding_started already marks page 0).
+- **kvcj P0 -> P2** (Daniel, D99-A). Recovered 401s from 15-min tokens with no expiry
+  check; reported because iOS build 18 lacks d8kr. Fix: proactive expiry check in APIClient.
+- **vc19 (Android build 19, prod 20% from 07:58Z)** had no real users in its first hours;
+  all traffic was Play pre-launch devices (7i5v = Android 5ygw). v8dd unverifiable yet.
+- **push_opened** may double-capture on vc19 (ej7i.2). Dedupe per person+type within 10s.
+- **3on, without GSC:** the 210 /companions/ place pages added 2026-08-29 drew zero Google
+  landings in 24 days (PostHog proxy; pages verified live, indexable, in sitemap). Old
+  city pages +42%, confounded. GSC export still needed for impressions and indexing.
 
-The 14 left are code comments plus 2 `data-ph-label` values on `about.astro` — invisible
-to readers, and renaming them would split PostHog history.
-
-**24 parallel subagents, verified mechanically, not by report.** `.tmp/verify_dash.py`
-diffs every changed file against git HEAD for JSON shape, every numeric/currency token
-inside every string, every URL, en-dash preservation and punctuation artifacts. 551 files,
-550 clean, 1 benign (`4+ hours` → `Four or more hours`, sentence now starts there).
-
-**9 posts live**, `best-apps-solo-female-travel-2026` deliberately held in `.tmp/`
-until eKYC ships (bead e4a; verified 404 on production).
-
-### Bugs found during the sweep — all pre-existing, all fixed
-- **`BackpackerRouteLayout:154` `.colour` → `.color`.** The UK spelling sweep (547513d)
-  anglicised a property name, so every route-map gradient rendered `undefined`. Live
-  since that commit. `astro check` went 1 error → 0.
-- **Duplicate store badges** in the blog CTA, on all 127 posts (from b6e008d).
-- **48 taxi "metres" → "meters"** — the fare device is a meter in British English too.
-- 5 `heroFlag` emoji stored double-escaped, rendering as literal `\ud83c\uddf3`.
-- 24 escaped apostrophes, `¥uancun station`, `orchting`, `Book accommodation with advance`.
-- `central-america` carried an unresolved authoring note in live copy ("Tuesday is Filthy
-  Friday's... wait, no.") that also contradicted the Bocas guide on which night runs.
+### Key Files (current shape)
+**`roammate.com/scripts/triage-errors-jev.mjs`** (f1e3aa7)
+Warn-only error-group triage: deterministic rules first (test traffic, network), Jev only
+for real-user groups, REVIEW unless confident. Run by hand; the scheduled run waits on a
+PostHog key with query:read at ~/.roammate-secrets/posthog-query.env.
+**`roammate.com/scripts/check-claims.mjs`**
+Fails on known-false capability claims; semantic pass is warn-only. Run by pre-push.
+**`roammate.com/src/pages/privacy.astro`**
+Policy text must move in step with what shipped builds collect.
 
 ### Next steps
-1. **dpm (P1)** — 15 live places across 10 files assert identity verification that has
-   NOT shipped. Needs the app sessions to say what a released build enforces. Blocks e4a.
-2. **duv (P2)** — llms.txt founding date ("2017") unverified; counts still hand-maintained.
-3. **2u3** — note added: the corpus rewrite lands mid-holdout. Both arms moved equally and
-   `geoTestSet.ts` is untouched, so only a DIVERGENCE between arms is evidence.
+1. When real vc19 users appear: v8dd (no trips/summary 400 on build 19), push_opened pairs.
+2. When an iOS build with d8kr ships: confirm /users/me 401 volume drops (kvcj).
+3. When vc20 ships: 77bj transport failures gain endpoint + failure type (Android mm3g).
 
 ### Watch out
-- **`lastmod` comes from the last commit per guide file** (`scripts/build-lastmod.mjs`),
-  so e990570 stamped all 454 guides 2026-08-30 → expect a full recrawl before the 3on export.
-- **Counting a character in source undercounts what the source escapes.** Two em dashes
-  hid as `\u2014` in `roammate-vs-gaffl.astro` and survived every literal grep, including
-  the baseline count. Only found by grepping `dist/`. Check built output, not just src.
-- A `security-guidance` hook blocks `Write` on the word **"pickle"** (Python pickle
-  false-positive). It hit 6 agents on food copy; each worked around it with a placeholder.
-  Verified no placeholder was stranded, but check if it recurs.
+- **Measure per person, test traffic excluded, before filing.** Emulators AND the Play
+  test fleet (OnePlus8Pro/US, $is_emulator=false) faked two P1s this week.
+- bd's Dolt connection can drop mid-write ("invalid connection"): re-run, then confirm
+  the note landed with `bd show`.
+- The heavy-job lock covers `git push` here (pre-push runs `astro check`).
 
 ### Known, accepted
-- **No GitHub CI on this repo.** `.github/workflows/ci.yml` removed 2026-08-29 at user
-  instruction. Verification is local: `npm run build` runs `validateBuiltLinks()`, and
-  **`npx astro check` must be run by hand** — the build does NOT type-check. Do not
-  reintroduce a GitHub Actions workflow.
-- Cloudflare injects `/cdn-cgi/challenge-platform/.../jsd` at zone level and our CSP
-  blocks it. Cosmetic; Bot Fight Mode is OFF and it still injects. Left by choice.
+- **No GitHub CI.** Verification is local and enforced by `.githooks/pre-push`.
+- Cloudflare's injected challenge script is blocked by our CSP. Cosmetic, left by choice.
 - API tokens remain in public git history; closed at user direction (21r.5).
 
 ---
 ---
 
 ## Session Archive
+
+### Session 7 — 2026-08-31 to 2026-09-23: claims lint, triage, privacy, field analytics
+**What we did:** Copy made honest about optional identity verification (dpm, closed) and
+gated by `check-claims.mjs` plus a warn-only semantic pass; pre-push hook added; Jev
+error triage built; privacy policy updated twice (sign-in diagnostics, date of birth);
+release, store and archive evidence docs 2026-09-14 to 09-16; field-data re-measurement.
+**Files:** roammate.com/scripts/check-claims.mjs, .githooks/pre-push, roammate.com/scripts/triage-errors-jev.mjs, privacy.astro, CLAUDE.md
+**Decisions:** Verification is local and hook-enforced; claims rules need evidence the
+claim is false; analytics findings are measured per person with test traffic excluded.
 
 ### Session 6 — 2026-08-30: em dash removal site-wide + 9 posts published
 **What we did:** Drafted 10 blog posts from the content beads, then removed 35,104 em
