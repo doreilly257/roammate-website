@@ -16,6 +16,12 @@ claims clean, `astro check` 0 errors).
 - **Privacy policy: date of birth for the 18+ gate** (34ce127, pn1n part A). Live and
   verified on roammate.com/privacy/. Part B (TypeSafe content review) waits until user
   content actually goes to TypeSafe.
+- **Old static-site URLs redirect** (08fcb9b): /privacy.html, /terms.html, /faq.html 301
+  to their Astro routes. /privacy.html was still being requested and 404ing. Verified
+  on preview, then production.
+- **Monitoring cleanup** (no code): PostHog Android crash alert retargeted from build 17
+  to 17+ with the Play test fleet excluded; Superlog Facebook "stopped" alert muted
+  (2-3 attempts/week cannot fit a 24h window). Details on beads 7i5v and 3on.
 
 ### Measured / decided today (field data, per person, test traffic excluded)
 - **j8md closed.** "613 lost in onboarding" was an event-count artefact; real is ~17 of
