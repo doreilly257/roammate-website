@@ -43,10 +43,6 @@ fi
 
 fail=0
 
-# astro check at background priority (macOS taskpolicy -b): shared 8 GB Mac.
-BG=""
-command -v taskpolicy >/dev/null 2>&1 && BG="taskpolicy -b"
-
 if [ "$needs_claims" = true ]; then
   echo "pre-push: checking claims…"
   node scripts/check-claims.mjs --all || fail=1
@@ -57,7 +53,7 @@ fi
 if [ "$needs_typecheck" = true ]; then
   echo "pre-push: astro check…"
   # astro check is slow; only its errors matter here, warnings and hints do not
-  if ! $BG npx --no-install astro check 2>&1 | tee /tmp/roammate-astro-check.log | tail -4; then
+  if ! npx --no-install astro check 2>&1 | tee /tmp/roammate-astro-check.log | tail -4; then
     fail=1
   fi
   if grep -qE '^- [1-9][0-9]* error' /tmp/roammate-astro-check.log; then
@@ -69,7 +65,7 @@ fi
 if [ "$needs_admin" = true ]; then
   if [ -d "$ROOT/admin.roammate.com/node_modules" ]; then
     echo "pre-push: astro check (admin console)…"
-    if ! ( cd "$ROOT/admin.roammate.com" && $BG npx --no-install astro check 2>&1 | tee /tmp/roammate-admin-check.log | tail -4 ); then
+    if ! ( cd "$ROOT/admin.roammate.com" && npx --no-install astro check 2>&1 | tee /tmp/roammate-admin-check.log | tail -4 ); then
       fail=1
     fi
     if grep -qE '^- [1-9][0-9]* error' /tmp/roammate-admin-check.log; then

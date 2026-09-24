@@ -43,21 +43,16 @@ fi
 echo "Running validation..."
 npm run validate
 
-# Heavy steps run at background priority (macOS taskpolicy -b) so a deploy on
-# this shared 8 GB Mac doesn't starve other sessions' builds and tests.
-BG=""
-command -v taskpolicy >/dev/null 2>&1 && BG="taskpolicy -b"
-
 echo "Running tests..."
-$BG npm test
+npm test
 
 echo "Checking Astro types..."
-$BG npx --no-install astro check
+npx --no-install astro check
 
 echo "Building Astro site..."
 # npm run build runs scripts/normalize-sitemap.mjs, which merges Astro's
 # sitemap shards into a single dist/sitemap.xml and removes the index.
-$BG npm run build
+npm run build
 node scripts/check-claims.mjs --all
 cd ..
 
