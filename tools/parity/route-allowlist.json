@@ -84,12 +84,6 @@
     "bead": "roammate-website-5be8"
   },
   {
-    "route": "/v1/essentials/:destination",
-    "status": "none",
-    "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
-    "bead": "roammate-website-5be8"
-  },
-  {
     "route": "/v1/excursions/:id/invitations/:inviteId",
     "status": "none",
     "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
@@ -187,12 +181,6 @@
   },
   {
     "route": "/v1/places/nearby",
-    "status": "none",
-    "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
-    "bead": "roammate-website-5be8"
-  },
-  {
-    "route": "/v1/places/popular",
     "status": "none",
     "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
     "bead": "roammate-website-5be8"
@@ -352,5 +340,11 @@
     "status": "none",
     "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
     "bead": "roammate-website-5be8"
+  },
+  {
+    "route": "/v1/sos/timers/active",
+    "status": "ios-only",
+    "reason": "Server-truth rebuild of the SOS Check in button on launch/foreground (D134-A). iOS calls it from 2026.3.10; Android's p9cv already decodes it and merges after vc20's gate, so this entry is temporary \u2014 remove it when p9cv lands.",
+    "bead": "roammate-app-android-p9cv"
   }
 ]
