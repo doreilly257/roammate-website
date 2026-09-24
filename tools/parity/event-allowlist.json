@@ -1,0 +1,963 @@
+{
+  "$comment": "Allowlist for tools/parity/event-coverage.mjs. events: contract events declared for one platform only (platforms must match the contract). not_yet_instrumented: events declared for a platform with no call site there. undeclared: names emitted on a platform the contract does not declare them for. Remove an entry when the gap closes; the gate lists stale entries.",
+  "events": [
+    {
+      "event": "account_deleted",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "ai_concierge_request_failed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "ai_concierge_suggestion_dismissed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "album_created",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "album_media_added",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "album_shared",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "app_opened",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "biometric_toggled",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "bucket_list_discovery_viewed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "bucket_list_item_added",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "bucket_list_item_completed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "bucket_list_item_deleted",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "check_in_started",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "conversation_created",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "dark_mode_toggled",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "deep_link_opened",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "directions_started",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "emergency_contact_added",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "feed_viewed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "group_comment_created",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "group_post_liked",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "image_sent",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "itinerary_forked",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "itinerary_generated",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "itinerary_shared",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "location_permission_fallback",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "location_sharing_toggled",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "login_started",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "logout",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "media_shared",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "notification_permission_denied",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "notification_permission_granted",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "notification_received",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "onboarding_abandoned",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "onboarding_journey_step_selected",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "onboarding_journey_unavailable",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "onboarding_skipped",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "onboarding_step_left",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "profile_edited",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "profile_photo_updated",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "profile_setup_unavailable",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "proximity_location_updated",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "proximity_user_tapped",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "push_opened",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "referral_link_copied",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "review_submitted",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "route_saved",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "session_restore_failed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "settings_opened",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "sos_activated",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "sos_alert_created",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "sos_deactivate_failed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "sos_deactivated",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "sos_timer_checked_in",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "sos_timer_started",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "translation_failed",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "translation_requested",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "translation_shown",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_memory_generated",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_overlap_push_opened",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "upload_failed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "user_blocked",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "user_reported",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "video_sent",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "weather_viewed",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "websocket_disconnected",
+      "platforms": [
+        "ios"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "whatsapp_invite_opened",
+      "platforms": [
+        "android"
+      ],
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    }
+  ],
+  "not_yet_instrumented": [
+    {
+      "event": "account_delete_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "account_delete_completed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "account_delete_failed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "account_delete_started",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "ai_concierge_suggestion_dismissed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "album_shared",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "chat_reconnect_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "chat_reconnect_completed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "chat_reconnect_failed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "chat_reconnect_started",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "chat_send_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "checkin_alert_cancelled",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "checkin_alert_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "emergency_contact_add_cancelled",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "emergency_contact_add_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "excursion_create_cancelled",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "excursion_create_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "excursion_join_cancelled",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "excursion_join_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "excursion_leave_cancelled",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "excursion_leave_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "excursion_shared",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "itinerary_forked",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "photo_upload_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "photo_upload_completed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "photo_upload_failed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "photo_upload_started",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "profile_edit_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "profile_edit_completed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "profile_edit_failed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "profile_edit_started",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "proximity_ghost_mode_toggled",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "proximity_location_updated",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "proximity_shown",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "proximity_user_tapped",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "purchase_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "purchase_completed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "purchase_failed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "purchase_started",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "push_received_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "push_received_completed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "push_received_failed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "push_received_started",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "search_result_tapped",
+      "platform": "android",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_create_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_create_completed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_create_failed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_create_started",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_overlap_match_cancelled",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_overlap_match_completed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_overlap_match_failed",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "trip_overlap_match_started",
+      "platform": "ios",
+      "not_yet_instrumented": true,
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "excursion_leave_failed",
+      "platform": "android",
+      "reason": "REAL GAP found 2026-09-24 by the scoped journey check: ExcursionsViewModel.leaveExcursion onFailure (:625-638) never calls attempt.failed(); previously masked by joinExcursion's same-named local. Remove when Android adds attempt.failed there.",
+      "bead": "roammate-website-5be8.1"
+    }
+  ],
+  "undeclared": [
+    {
+      "event": "app_breadcrumb",
+      "platform": "ios",
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "app_crash",
+      "platform": "android",
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "app_error",
+      "platform": "android",
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "location_permission_fallback",
+      "platform": "ios",
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "translation_failed",
+      "platform": "ios",
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "translation_requested",
+      "platform": "ios",
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "translation_shown",
+      "platform": "ios",
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    },
+    {
+      "event": "workmanager_unavailable",
+      "platform": "android",
+      "reason": "baseline 2026-09-24, see epic roammate-website-5be8",
+      "bead": "roammate-website-5be8.1"
+    }
+  ]
+}
